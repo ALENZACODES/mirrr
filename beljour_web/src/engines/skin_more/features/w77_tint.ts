@@ -1,7 +1,0 @@
-/** W77 sheer skin tint orchestration. Author: John Khan. */
-import { applyTint, tintPlan } from "../complexion.js";
-import { robustRegionColour, type RGB } from "../colorimetry.js";
-import { textureGate } from "../texture.js";
-export function previewW77(pixels: Uint8ClampedArray, w: number, h: number, face: Float32Array, target: RGB, style: "sheer" | "light" | "medium" = "sheer", amount = .5) { const base = robustRegionColour(pixels, w, h, face), source = base.rgb.map(Math.round) as unknown as RGB, plan = tintPlan(source, target, style, amount), out = applyTint(pixels, w, h, face, plan), gate = textureGate(pixels, out, w, h, face, .72); return { pixels: out, targetRgb: plan.targetRgb, opacity: plan.opacity, textureScore: gate.score, passed: gate.pass, notes: [plan.warning, "No skin-tone ranking or lightening objective."] }; }
-export const passDefinitionW77 = "texture score >=0.72, bounded sheer opacity, alpha unchanged, zero-strength identity";
-

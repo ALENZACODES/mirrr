@@ -25,9 +25,7 @@
   ],
   "author": "John Khan / Alenza Capital (ALENZACODES)",
   "license": "MIT",
-  "dependencies": {
-    "express": "^4.21.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "eslint": "^9.0.0",
     "jest": "^29.0.0"

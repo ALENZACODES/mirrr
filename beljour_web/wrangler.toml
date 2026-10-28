@@ -1,5 +1,0 @@
-# Cloudflare Pages static-only project. No Functions or paid service dependencies.
-# An explicit owner-approved deploy is required; this file is configuration only.
-name = "beljour"
-pages_build_output_dir = "dist"
-compatibility_date = "2026-10-01"

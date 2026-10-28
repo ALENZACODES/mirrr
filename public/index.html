@@ -2,166 +2,194 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="MIRRR — Your Taste. Your Looks. Your Style. Beauty discovery built for Black, South Asian, Arab, Latina, Caribbean, and East Asian women." />
   <title>MIRRR — Your Taste. Your Looks. Your Style.</title>
-  <meta name="description" content="Most beauty apps were built for the West. MIRRR was built for the rest." />
-  <meta property="og:title" content="MIRRR — Your Taste. Your Looks. Your Style." />
-  <meta property="og:description" content="Beauty discovery powered by Qloo Taste AI. Built for Black, South Asian, Arab, Latina, Caribbean and East Asian beauty." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- ============================== HERO ============================== -->
-  <header class="hero">
+  <!-- ─── NAV ─────────────────────────────────────────────────────────── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#hero">🪞 MIRRR</a>
+      <div class="nav-links">
+        <button class="nav-link" data-view="quiz">DNA Quiz</button>
+        <button class="nav-link" data-view="taste">Taste Profile</button>
+        <button class="nav-link" data-view="shade">Shade Finder</button>
+        <button class="nav-link" data-view="wig">Wig Match</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────────────── -->
+  <section id="hero" class="hero">
     <div class="hero-inner">
-      <div class="wordmark">MIRRR</div>
+      <p class="hero-eyebrow">🌍 Built for the Rest</p>
+      <h1 class="hero-title">🪞 MIRRR</h1>
       <p class="hero-tagline">Your Taste. Your Looks. Your Style.</p>
-      <p class="hero-sub">
-        Most beauty apps were built for the West.<br>
-        <strong>MIRRR was built for the rest.</strong>
-      </p>
-      <a href="#discover" class="btn-primary">Discover Your Look</a>
-    </div>
-  </header>
-
-  <!-- ============================== WHY MIRRR ============================== -->
-  <section class="why-section" aria-label="Why MIRRR">
-    <div class="container">
-      <h2 class="section-title">The gap nobody talks about</h2>
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="why-icon">🪞</div>
-          <h3>Built for culture</h3>
-          <p>Mainstream beauty apps optimise for Western standards. MIRRR starts with Afrobeats, Bollywood, K-pop, Caribbean, Gulf, and Latina aesthetics.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">🎵</div>
-          <h3>Taste as identity</h3>
-          <p>Your music, your films, your culture — powered by Qloo Taste AI, MIRRR reads what you love and translates it into looks made for you.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">💄</div>
-          <h3>Shade ranges that actually exist</h3>
-          <p>Every look recommendation respects real shade ranges for deeper skin tones — no more searching for "does this even come in my shade?"</p>
-        </div>
+      <p class="hero-sub">Most beauty apps were built for the West.<br>MIRRR was built for the rest.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" id="heroQuizBtn">Take Your DNA Quiz</button>
+        <button class="btn btn-secondary" id="heroTasteBtn">Explore by Taste</button>
       </div>
+      <p class="hero-communities">Celebrating Black · South Asian · Arab · Latina · Caribbean · East Asian beauty</p>
     </div>
   </section>
 
-  <!-- ============================== TASTE INPUT ============================== -->
-  <section class="discover-section" id="discover" aria-label="Discover your look">
-    <div class="container">
-      <h2 class="section-title">What's your culture?</h2>
-      <p class="section-sub">Tell MIRRR who you're into — artists, films, places, cuisines. We'll do the rest.</p>
+  <!-- ─── MAIN APP ─────────────────────────────────────────────────────── -->
+  <main id="app">
 
-      <!-- Quick-select cultural chips -->
-      <div class="chips-label">Quick picks →</div>
-      <div class="chips" id="culture-chips">
-        <button class="chip" data-value="Burna Boy">Burna Boy</button>
-        <button class="chip" data-value="Nollywood">Nollywood</button>
-        <button class="chip" data-value="Amapiano">Amapiano</button>
-        <button class="chip" data-value="Afrobeats">Afrobeats</button>
-        <button class="chip" data-value="Hip Hop">Hip Hop</button>
-        <button class="chip" data-value="R&B">R&B</button>
-        <button class="chip" data-value="Bollywood">Bollywood</button>
-        <button class="chip" data-value="Bhangra">Bhangra</button>
-        <button class="chip" data-value="Desi">Desi</button>
-        <button class="chip" data-value="K-pop">K-pop</button>
-        <button class="chip" data-value="K-Beauty">K-Beauty</button>
-        <button class="chip" data-value="Dancehall">Dancehall</button>
-        <button class="chip" data-value="Soca">Soca</button>
-        <button class="chip" data-value="Caribbean">Caribbean</button>
-        <button class="chip" data-value="Reggaeton">Reggaeton</button>
-        <button class="chip" data-value="Salsa">Salsa</button>
-        <button class="chip" data-value="Dubai">Dubai</button>
-        <button class="chip" data-value="Khaleeji">Khaleeji</button>
-        <button class="chip" data-value="Gulf">Gulf</button>
-        <button class="chip" data-value="Arabic Music">Arabic Music</button>
-        <button class="chip" data-value="Lagos">Lagos</button>
-        <button class="chip" data-value="Accra">Accra</button>
-        <button class="chip" data-value="Nairobi">Nairobi</button>
-        <button class="chip" data-value="Seoul">Seoul</button>
-        <button class="chip" data-value="Mumbai">Mumbai</button>
-        <button class="chip" data-value="Kingston">Kingston</button>
-        <button class="chip" data-value="Port of Spain">Port of Spain</button>
-        <button class="chip" data-value="Afro-Latina">Afro-Latina</button>
-        <button class="chip" data-value="Telenovela">Telenovela</button>
-        <button class="chip" data-value="Ankara fashion">Ankara fashion</button>
+    <!-- ── DNA QUIZ VIEW ─────────────────────────────────────────────── -->
+    <section id="view-quiz" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Cultural DNA Quiz</h2>
+        <p class="view-sub">5 questions. Your beauty archetype unlocked.</p>
+      </div>
+      <div id="quizContainer" class="quiz-container"></div>
+      <div id="quizResult" class="quiz-result hidden"></div>
+    </section>
+
+    <!-- ── TASTE PROFILE VIEW ────────────────────────────────────────── -->
+    <section id="view-taste" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Taste Profile</h2>
+        <p class="view-sub">Tell us who moves you — music, films, brands, icons.</p>
       </div>
 
-      <!-- Selected tags display -->
-      <div class="selected-inputs" id="selected-inputs" aria-live="polite"></div>
-
-      <!-- Free-text input -->
-      <form class="taste-form" id="taste-form" novalidate>
-        <label for="free-input" class="sr-only">Add more cultural influences</label>
-        <div class="input-row">
-          <input
-            type="text"
-            id="free-input"
-            class="taste-input"
-            placeholder="Or type an artist, film, place, cuisine..."
-            autocomplete="off"
-            maxlength="100"
-          />
-          <button type="button" class="btn-add" id="btn-add">+</button>
+      <!-- Input form -->
+      <div class="taste-form card">
+        <div class="chip-input-wrap">
+          <input id="tasteInput" class="chip-input" type="text"
+            placeholder="Type a name and press Enter — Burna Boy, Huda Beauty, K-Drama…" />
         </div>
-        <button type="submit" class="btn-primary btn-discover" id="btn-discover">
-          <span class="btn-text">Find My Look →</span>
-          <span class="btn-spinner" aria-hidden="true"></span>
-        </button>
-        <p class="demo-note">
-          No API key? <button type="button" class="link-btn" id="btn-demo">Run demo mode</button>
-        </p>
-      </form>
-    </div>
-  </section>
+        <div id="tasteChips" class="chips"></div>
 
-  <!-- ============================== RESULTS ============================== -->
-  <section class="results-section" id="results-section" aria-live="polite" hidden>
-    <div class="container">
-      <div id="narration-block" class="narration" hidden></div>
+        <div class="form-row">
+          <label class="form-label">Community (optional)</label>
+          <select id="communitySelect" class="select">
+            <option value="">— Any —</option>
+          </select>
+        </div>
 
-      <div class="aesthetic-block" id="aesthetic-block" hidden>
-        <h3 class="results-heading">Your Aesthetic</h3>
-        <div class="aesthetic-bars" id="aesthetic-bars"></div>
-        <div class="archetypes" id="archetypes"></div>
+        <div class="form-actions">
+          <button class="btn btn-primary" id="fetchLooksBtn" disabled>Get My Looks</button>
+          <button class="btn btn-ghost" id="demoBtn">Try a Demo</button>
+        </div>
+        <select id="demoSelect" class="select hidden" style="margin-top:0.75rem">
+          <option value="afrobeats">Afrobeats / West African</option>
+          <option value="hiphop">Hip-Hop Glam</option>
+          <option value="bollywood">Bollywood / Desi Glam</option>
+          <option value="gulf">Gulf / Arab Glam</option>
+          <option value="caribbean">Caribbean Carnival</option>
+          <option value="latina">Latina Glam</option>
+          <option value="kbeauty">K-Beauty Glass Skin</option>
+        </select>
       </div>
 
-      <div id="looks-block" hidden>
-        <h3 class="results-heading">Your Looks</h3>
-        <div class="looks-grid" id="looks-grid"></div>
+      <!-- Loader -->
+      <div id="tasteLoader" class="loader hidden">
+        <div class="spinner"></div>
+        <p>Reading your taste…</p>
       </div>
 
-      <button class="btn-secondary btn-reset" id="btn-reset">Start Over</button>
-    </div>
-  </section>
-
-  <!-- ============================== ARCHETYPES SHOWCASE ============================== -->
-  <section class="archetypes-section" aria-label="Aesthetic archetypes">
-    <div class="container">
-      <h2 class="section-title">Eight aesthetics. One mirror.</h2>
-      <div class="archetypes-grid" id="archetypes-grid">
-        <!-- Filled by app.js -->
+      <!-- Results -->
+      <div id="tasteResults" class="hidden">
+        <div id="tasteNarration" class="narration card"></div>
+        <div id="tasteAesthetic" class="aesthetic-card card"></div>
+        <div id="tasteLooks" class="looks-grid"></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============================== FOOTER ============================== -->
+    <!-- ── SHADE FINDER VIEW ─────────────────────────────────────────── -->
+    <section id="view-shade" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Shade Finder</h2>
+        <p class="view-sub">30 shades across the full spectrum. Find yours.</p>
+      </div>
+
+      <div class="shade-form card">
+        <div class="form-row">
+          <label class="form-label">Skin Depth</label>
+          <div id="depthButtons" class="depth-buttons"></div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Undertone</label>
+          <div id="undertoneButtons" class="chip-row"></div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Your Community (optional)</label>
+          <select id="shadeCommunitySelect" class="select">
+            <option value="">— Any —</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-primary" id="findShadesBtn">Find My Shades</button>
+        </div>
+      </div>
+
+      <div id="shadeResults" class="hidden">
+        <div id="shadeSpectrum" class="shade-spectrum"></div>
+        <div id="shadeCards" class="shade-cards"></div>
+      </div>
+    </section>
+
+    <!-- ── WIG MATCHMAKER VIEW ───────────────────────────────────────── -->
+    <section id="view-wig" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Wig Matchmaker</h2>
+        <p class="view-sub">14 styles. Matched to your archetype and vibe.</p>
+      </div>
+
+      <div id="wigFromLooks" class="wig-context-banner hidden card">
+        <p>✨ Matching wigs to your looks profile…</p>
+      </div>
+
+      <div class="wig-form card">
+        <div class="form-row">
+          <label class="form-label">Length Preference</label>
+          <div id="wigLengthButtons" class="chip-row"></div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Texture Preference</label>
+          <div id="wigTextureButtons" class="chip-row"></div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Community (optional)</label>
+          <select id="wigCommunitySelect" class="select">
+            <option value="">— Any —</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-primary" id="matchWigsBtn">Match My Wigs</button>
+        </div>
+      </div>
+
+      <div id="wigResults" class="hidden">
+        <div id="wigCards" class="wig-cards"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── LOOK DETAIL MODAL ─────────────────────────────────────────────── -->
+  <div id="lookModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- ─── TOAST ─────────────────────────────────────────────────────────── -->
+  <div id="toast" class="toast hidden" aria-live="polite"></div>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────────────── -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-wordmark">MIRRR</div>
-      <p class="footer-tagline">Built for the rest.</p>
-      <p class="footer-credits">
-        Powered by <a href="https://qloo.com" target="_blank" rel="noopener">Qloo Taste AI</a>
-        &nbsp;·&nbsp;
-        Built for the Qloo Agentic AI Hackathon 2026
-      </p>
-    </div>
+    <p>🪞 MIRRR · Built for the Qloo Agentic Hackathon 2026</p>
+    <p class="footer-sub">Powered by <a href="https://hackathon.api.qloo.com" target="_blank" rel="noopener">Qloo Taste AI</a> · Celebrating global beauty diversity</p>
   </footer>
 
-  <script src="app.js" type="module"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>

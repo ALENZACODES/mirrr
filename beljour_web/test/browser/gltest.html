@@ -1,0 +1,43 @@
+<!doctype html><html><body><script type="module">
+import { ColourPass } from "./js/reel/gl.js";
+import { applyDeltas, drawMasks, splitMasks } from "./js/reel/colour.js";
+const out = {};
+try {
+  const W = 64, H = 64;
+  const src = document.createElement("canvas"); src.width = W; src.height = H;
+  const sg = src.getContext("2d"); sg.fillStyle = "rgb(180,140,120)"; sg.fillRect(0, 0, W, H);
+  const mask = document.createElement("canvas"); mask.width = W; mask.height = H;
+  const mg = mask.getContext("2d"); mg.fillStyle = "#000"; mg.fillRect(0,0,W,H); mg.fillStyle = "#00ff00"; mg.fillRect(0, 0, W / 2, H);
+  const gl = document.createElement("canvas"); gl.width = W; gl.height = H;
+  const pass = new ColourPass(gl);
+  const d = { skin: [0,0,0], lips: [-10, 20, 5], cheeks: [0,0,0] };
+  pass.render(src, mask, d);
+  const read = document.createElement("canvas"); read.width = W; read.height = H;
+  const rg = read.getContext("2d"); rg.drawImage(gl, 0, 0);
+  const gpuLeft = Array.from(rg.getImageData(5, 30, 1, 1).data.slice(0, 3));
+  const gpuRight = Array.from(rg.getImageData(50, 30, 1, 1).data.slice(0, 3));
+  const cpu = applyDeltas(new Uint8ClampedArray([180,140,120,255]), { skin: new Float32Array([0]), lips: new Float32Array([1]), cheeks: new Float32Array([0]) }, d);
+  out.gpuLeft = gpuLeft; out.gpuRight = gpuRight; out.cpu = Array.from(cpu.slice(0,3));
+  // masks from a fake face
+  const pts = Array.from({ length: 478 }, () => ({ x: 0.5, y: 0.5 }));
+  const ring = (idx, cx, cy, rx, ry) => idx.forEach((i, k) => { const a = (k / idx.length) * Math.PI * 2; pts[i] = { x: cx + rx * Math.cos(a), y: cy + ry * Math.sin(a) }; });
+  const m = await import("./js/reel/colour.js");
+  ring(m.FACE_OVAL, 0.5, 0.5, 0.35, 0.42); ring(m.LIPS_OUTER, 0.5, 0.72, 0.1, 0.04); ring(m.LIPS_INNER, 0.5, 0.72, 0.06, 0.01);
+  ring(m.EYE_R, 0.36, 0.42, 0.06, 0.02); ring(m.EYE_L, 0.64, 0.42, 0.06, 0.02); ring(m.BROW_R, 0.36, 0.35, 0.07, 0.01); ring(m.BROW_L, 0.64, 0.35, 0.07, 0.01);
+  pts[33] = { x: 0.3, y: 0.42 }; pts[263] = { x: 0.7, y: 0.42 }; pts[205] = { x: 0.33, y: 0.58 }; pts[425] = { x: 0.67, y: 0.58 };
+  const MW = 135, MH = 240;
+  const mc = document.createElement("canvas"); mc.width = MW; mc.height = MH;
+  const sc = document.createElement("canvas"); sc.width = MW; sc.height = MH;
+  drawMasks(mc.getContext("2d"), sc.getContext("2d"), pts, MW, MH, 2);
+  const masks = splitMasks(mc.getContext("2d").getImageData(0, 0, MW, MH).data);
+  const at = (arr, x, y) => Math.round(arr[Math.round(y * MH) * MW + Math.round(x * MW)] * 100) / 100;
+  out.forehead = [at(masks.skin, 0.5, 0.25), at(masks.lips, 0.5, 0.25), at(masks.cheeks, 0.5, 0.25)];
+  out.lip = [at(masks.skin, 0.5, 0.735), at(masks.lips, 0.42, 0.72), at(masks.cheeks, 0.42, 0.72)];
+  out.mouthOpening = at(masks.lips, 0.5, 0.72);
+  out.eye = at(masks.skin, 0.36, 0.42);
+  out.cheek = [at(masks.skin, 0.33, 0.58), at(masks.cheeks, 0.33, 0.58)];
+  out.outside = at(masks.skin, 0.05, 0.05);
+} catch (e) { out.error = String(e); }
+document.title = "done";
+window.RESULT = out;
+</script></body></html>

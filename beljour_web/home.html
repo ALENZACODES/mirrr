@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000091">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>BELJOUR — FULL BEAUTY STUDIO — Home</title>
+  <meta name="description" content="BELJOUR — FULL BEAUTY STUDIO. Your best day. Still you. Private photo edits and clearly labelled local demonstrations.">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="layout.css">
+</head>
+<body class="lg-page" data-page="home">
+  <a href="#lg-main" class="lg-hidden">Skip to content</a>
+  <header class="lg-topbar">
+    <div class="lg-left">
+      <a class="lg-brand" href="home.html" aria-label="BELJOUR — FULL BEAUTY STUDIO. Your best day. Still you. Home"><span class="lg-brand-stack"><span class="lg-wordmark">BELJOUR</span><span class="lg-brand-descriptor">FULL BEAUTY STUDIO</span><span class="lg-brand-tagline">Your best day. Still you.</span></span></a>
+    </div>
+    <span></span>
+    <div class="lg-right"><a class="lg-trust-pill" href="trust.html">Trust</a></div>
+  </header>
+  <div id="lg-client-root" class="lg-client-root" aria-label="Page navigation and status"></div>
+  <div class="lg-rule" aria-hidden="true"></div>
+  <main id="lg-main" class="lg-main">
+    <section id="lg-judge-root" class="lg-judge-root" aria-label="Judge Mode" hidden></section>
+    <section id="lg-timing-root" aria-label="Device timing report" hidden></section>
+    <section id="lg-accessibility-root" aria-label="Accessibility self-check" hidden></section>
+    <section id="lg-install-root" aria-label="Optional app installation" hidden></section>
+    <h1 class="lg-greeting">Your best day. Still you.</h1>
+    <section class="lg-judge-launch" aria-label="Explore the guided walkthrough">
+      <span class="lg-caps">For judges and visitors</span>
+      <h2>See the experience in under three minutes</h2>
+      <p>A guided, illustrated walkthrough. No real sample faces and no live API calls.</p>
+      <a id="lg-judge-launch" class="lg-button lg-primary" href="#judge">Start Judge Mode</a>
+      <a id="lg-full-demo-launch" class="lg-button" href="#judge-full">Continuous illustrated demo</a>
+      <a id="lg-verify-launch" class="lg-button" href="#judge-verify">Check real-demo readiness</a>
+    </section>
+    <section class="lg-timing-launch" aria-label="Device performance checks">
+      <h2>Measure this device</h2>
+      <p>Run a local-only, synthetic Canvas timing check and see median and p95.</p>
+      <a class="lg-button" id="lg-timing-launch" href="#timing">Open timing diagnostics</a>
+    </section>
+    <section class="lg-accessibility-launch" aria-label="Accessibility self-check">
+      <h2>Review keyboard and mobile access</h2>
+      <p>Optional, private device checks. No screen-reader certification or automatic upload.</p>
+      <a class="lg-button" href="#accessibility">Accessibility review</a>
+    </section>
+    <section class="lg-install-launch" aria-label="Install and offline access">
+      <h2>Optional offline shell</h2>
+      <p>Cache public pages on your device by choice. No image or editing history is cached.</p>
+      <a class="lg-button" href="#install">Install and offline options</a>
+    </section>
+    <section class="lg-rescue" aria-labelledby="lg-rescue-title">
+      <span class="lg-caps" style="color: var(--on-bleu-soft)">One tap</span>
+      <h2 id="lg-rescue-title">Bad Day Rescue</h2>
+      <p id="lg-rescue-line">Gentle enhance on your photo.</p>
+      <a class="lg-button" href="studio.html#rescue">Rescue</a>
+    </section>
+    <section class="lg-section" id="looks" aria-labelledby="lg-looks-title">
+      <h2 id="lg-looks-title">My Looks</h2>
+      <ul id="lg-looks" class="lg-looks"></ul>
+    </section>
+    <section id="lg-editorial-calendar-rail" class="lg-section lg-editorial-calendar-rail" aria-label="Coming up and the Season Book" hidden>
+      <section id="lg-holiday-engine-slot" class="lg-holiday-slot" aria-label="Coming up" hidden></section>
+      <section id="lg-season-book-root" class="lg-season-book-root" aria-label="The Season Book" hidden></section>
+    </section>
+    <section class="lg-section" aria-labelledby="lg-group-title">
+      <h2 id="lg-group-title">Group photo</h2>
+      <div class="lg-card">
+        <strong>Fix everyone</strong>
+        <span class="lg-small">One tap for every face in a group photo. Not built yet: the face picker is in the studio, and per-face edits come with plan R22.</span>
+        <a class="lg-link" href="studio.html#open">Open a group photo</a>
+      </div>
+    </section>
+    <section class="lg-section" aria-labelledby="lg-recent-title">
+      <h2 id="lg-recent-title">Recent photos</h2>
+      <p class="lg-small">Photos stay on this device and are not kept between visits, so there is nothing recent to show.</p>
+      <div class="lg-recent"><a class="lg-tile-add" href="studio.html#open">+ Add a photo</a></div>
+    </section>
+    <section class="lg-section" aria-labelledby="lg-tools-title">
+      <h2 id="lg-tools-title">All tools</h2>
+      <nav id="lg-tools" class="lg-tools" aria-label="All tools"></nav>
+    </section>
+  </main>
+  <nav class="lg-tabs" aria-label="Main">
+    <a href="home.html" aria-current="page">Home</a>
+    <a href="studio.html">Edit</a>
+    <a href="home.html#looks">My Looks</a>
+    <a href="trust.html">Trust</a>
+  </nav>
+  <script type="module" src="js/layout/entries.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000091">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>BELJOUR — FULL BEAUTY STUDIO — Trust Centre</title>
+  <meta name="description" content="How your photos are handled, in one screen: on-device mode, no training on your photos, neutral defaults and deletion with a receipt.">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="layout.css">
+</head>
+<body class="lg-page" data-page="trust">
+  <a href="#lg-main" class="lg-hidden">Skip to content</a>
+  <header class="lg-topbar">
+    <div class="lg-left">
+      <a class="lg-brand" href="home.html" aria-label="BELJOUR — FULL BEAUTY STUDIO. Your best day. Still you. Home"><span class="lg-brand-stack"><span class="lg-wordmark">BELJOUR</span><span class="lg-brand-descriptor">FULL BEAUTY STUDIO</span><span class="lg-brand-tagline">Your best day. Still you.</span></span></a>
+    </div>
+    <span class="lg-title">Trust</span>
+    <div class="lg-right"><a class="lg-trust-pill" href="trust.html" aria-current="page">Trust</a></div>
+  </header>
+  <div id="lg-client-root" class="lg-client-root" aria-label="Page navigation and status"></div>
+  <div class="lg-rule" aria-hidden="true"></div>
+  <main id="lg-main" class="lg-main">
+    <h1>Trust Centre</h1>
+    <p class="lg-small">Every line here is a switch or a fact about how this app works today. Anything that isn't built says so.</p>
+    <ul id="lg-trust-list" class="lg-trust-list" aria-label="Privacy and safety settings"></ul>
+    <section class="lg-section" aria-labelledby="lg-delete-title">
+      <h2 id="lg-delete-title">Delete my face data</h2>
+      <p class="lg-small">Removes consent, this tab's session, skin and body history on this device, and asks our server to delete any photo you uploaded in this tab. On-device mode stays as you set it.</p>
+      <p><label class="lg-switch"><input type="checkbox" id="lg-delete-looks"> Also delete my saved looks (they hold settings only)</label></p>
+      <button type="button" id="lg-delete" class="lg-delete">Delete my face data</button>
+      <div id="lg-receipt" class="lg-receipt" role="status" aria-live="polite" hidden></div>
+    </section>
+  </main>
+  <nav class="lg-tabs" aria-label="Main">
+    <a href="home.html">Home</a>
+    <a href="studio.html">Edit</a>
+    <a href="home.html#looks">My Looks</a>
+    <a href="trust.html" aria-current="page">Trust</a>
+  </nav>
+  <script type="module" src="js/layout/entries.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+{
+ "format": "beljour-cassette/1",
+ "interactions": [
+  {
+   "request": {
+    "host": "api",
+    "method": "GET",
+    "path": "/s2s/v2.0/task/template/hair-style?page_size=100"
+   },
+   "response": {
+    "json": {
+     "data": {
+      "templates": [
+       {
+        "category": "hairstyle",
+        "id": "tpl-low-fade",
+        "title": "Low fade"
+       },
+       {
+        "category": "hairstyle",
+        "id": "tpl-mid-fade-crop",
+        "title": "Mid fade crop"
+       },
+       {
+        "category": "hairstyle",
+        "id": "tpl-textured-crop",
+        "title": "Textured crop"
+       },
+       {
+        "category": "hairstyle",
+        "id": "tpl-buzz",
+        "title": "Buzz cut"
+       },
+       {
+        "category": "hairstyle",
+        "id": "tpl-undercut",
+        "title": "Undercut"
+       },
+       {
+        "category": "hairstyle",
+        "id": "tpl-side-part",
+        "title": "Side part"
+       },
+       {
+        "category": "hairstyle",
+        "id": "tpl-long-layers",
+        "title": "Long layers"
+       },
+       {
+        "category": "hairstyle",
+        "id": "tpl-bob",
+        "title": "Bob"
+       },
+       {
+        "category": "hairstyle",
+        "id": "tpl-pixie",
+        "title": "Pixie"
+       },
+       {
+        "category": "hairstyle",
+        "id": "tpl-curtain",
+        "title": "Curtain bangs"
+       },
+       {
+        "category": "hairstyle",
+        "id": "tpl-shag",
+        "title": "Shag"
+       },
+       {
+        "category": "hairstyle",
+        "id": "tpl-waves",
+        "title": "Loose waves"
+       }
+      ]
+     },
+     "status": 200
+    },
+    "status": 200
+   }
+  },
+  {
+   "request": {
+    "host": "api",
+    "method": "POST",
+    "path": "/s2s/v2.0/file"
+   },
+   "response": {
+    "json": {
+     "data": {
+      "files": [
+       {
+        "content_type": "image/jpeg",
+        "file_id": "file-1-0",
+        "file_name": "beljour.jpeg",
+        "requests": [
+         {
+          "headers": {
+           "Content-Type": "image/jpeg"
+          },
+          "method": "PUT",
+          "url": "https://storage.replay/1-0"
+         }
+        ]
+       }
+      ]
+     },
+     "status": 200
+    },
+    "status": 200
+   }
+  },
+  {
+   "request": {
+    "host": "storage",
+    "method": "PUT",
+    "path": "/1-0"
+   },
+   "response": {
+    "status": 200
+   }
+  },
+  {
+   "request": {
+    "host": "api",
+    "method": "POST",
+    "path": "/s2s/v2.0/task/hair-style"
+   },
+   "response": {
+    "json": {
+     "data": {
+      "task_id": "task-1"
+     },
+     "status": 200
+    },
+    "status": 200
+   }
+  },
+  {
+   "request": {
+    "host": "api",
+    "method": "GET",
+    "path": "/s2s/v2.0/task/hair-style/task-1"
+   },
+   "response": {
+    "json": {
+     "data": {
+      "task_status": "running"
+     },
+     "status": 200
+    },
+    "status": 200
+   }
+  },
+  {
+   "request": {
+    "host": "api",
+    "method": "GET",
+    "path": "/s2s/v2.0/task/hair-style/task-1"
+   },
+   "response": {
+    "json": {
+     "data": {
+      "results": {
+       "url": "https://results.replay/1"
+      },
+      "task_status": "success"
+     },
+     "status": 200
+    },
+    "status": 200
+   }
+  },
+  {
+   "request": {
+    "host": "results",
+    "method": "GET",
+    "path": "/1"
+   },
+   "response": {
+    "blob": "s2_hairstyle.blob1.jpeg",
+    "content_type": "image/jpeg",
+    "status": 200
+   }
+  },
+  {
+   "request": {
+    "host": "api",
+    "method": "POST",
+    "path": "/s2s/v2.0/task/delete"
+   },
+   "response": {
+    "json": {
+     "data": {},
+     "status": 200
+    },
+    "status": 200
+   }
+  }
+ ],
+ "name": "s2_hairstyle",
+ "notes": "Hand made in the reply shapes the YouCam docs describe. Not a recording.",
+ "recorded_at": null,
+ "synthetic": true
+}

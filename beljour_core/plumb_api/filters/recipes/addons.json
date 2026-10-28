@@ -1,0 +1,123 @@
+{
+ "format": "beljour-filter-addons/1",
+ "author": "John Khan",
+ "about": "Shared original filter add-ons. Grain and Structure require an explicit user-selected amount until frozen real-face quality review clears their old preset defaults; missing explicit amounts keep the original pending result.",
+ "addons": [
+  {
+   "id": "fade",
+   "label": "Fade",
+   "built": true,
+   "round": "FX1",
+   "stage": {
+    "op": "colour.fade",
+    "params": {
+     "amount": 0.6
+    }
+   }
+  },
+  {
+   "id": "grain",
+   "label": "Grain",
+   "built": true,
+   "round": "FX2",
+   "manualOnly": true,
+   "stage": {
+    "op": "spatial.grain",
+    "params": {
+     "amount": 0.85,
+     "seed": 104729
+    }
+   }
+  },
+  {
+   "id": "vignette",
+   "label": "Vignette",
+   "built": true,
+   "round": "FX2",
+   "stage": {
+    "op": "light.vignette",
+    "params": {
+     "amount": 0.7,
+     "inner": 0.35,
+     "outer": 1.0
+    }
+   }
+  },
+  {
+   "id": "centre-light",
+   "label": "Centre light",
+   "built": true,
+   "round": "FX2",
+   "stage": {
+    "op": "light.centre",
+    "params": {
+     "amount": 0.55,
+     "warmth": 0.1,
+     "radius": 0.5,
+     "cx": 0.5,
+     "cy": 0.45,
+     "follow": 1.0
+    }
+   }
+  },
+  {
+   "id": "glow",
+   "label": "Glow",
+   "built": true,
+   "round": "FX2",
+   "stage": {
+    "op": "spatial.glow",
+    "params": {
+     "amount": 0.48,
+     "threshold": 0.78,
+     "radius": 0.02,
+     "warmth": 0.0
+    }
+   }
+  },
+  {
+   "id": "halation",
+   "label": "Halation",
+   "built": true,
+   "round": "FX2",
+   "stage": {
+    "op": "spatial.halation",
+    "params": {
+     "amount": 0.7,
+     "threshold": 0.72,
+     "radius": 0.025,
+     "warmth": 0.85
+    }
+   }
+  },
+  {
+   "id": "structure",
+   "label": "Structure",
+   "built": true,
+   "round": "FX2",
+   "manualOnly": true,
+   "stage": {
+    "op": "spatial.structure",
+    "params": {
+     "amount": 0.8,
+     "radius": 0.012,
+     "threshold": 0.015
+    }
+   }
+  },
+  {
+   "id": "border",
+   "label": "Border",
+   "built": true,
+   "round": "FX2",
+   "stage": {
+    "op": "light.border",
+    "params": {
+     "amount": 0.7,
+     "width": 0.07,
+     "tone": -1.0
+    }
+   }
+  }
+ ]
+}

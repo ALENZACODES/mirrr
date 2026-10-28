@@ -1,0 +1,118 @@
+{
+  "version": "beljour-neutral-upscale-parity/1",
+  "author": "John Khan",
+  "cases": [
+    {
+      "width": 1,
+      "height": 1,
+      "channels": 3,
+      "scale": 2,
+      "sha256": "8527c6ed7e9607e1290503a1bcba9f5c64961ad88836518336080e850f41799e"
+    },
+    {
+      "width": 1,
+      "height": 1,
+      "channels": 3,
+      "scale": 4,
+      "sha256": "9417406b04fba445f08ca030842b43b3112038ff62702a59dbe6d8b285442a60"
+    },
+    {
+      "width": 1,
+      "height": 1,
+      "channels": 4,
+      "scale": 2,
+      "sha256": "cda4229e59bce1cf867b4d0ef45baf5f3c71a88e4b7090daecdf3c20523b8f23"
+    },
+    {
+      "width": 1,
+      "height": 1,
+      "channels": 4,
+      "scale": 4,
+      "sha256": "b28ff0e0ed1498403a8d5724e1ad2397c1db0d165b61b9b3bc70c34f1bc1c2be"
+    },
+    {
+      "width": 3,
+      "height": 5,
+      "channels": 3,
+      "scale": 2,
+      "sha256": "716aa2042a9be54b1525cf5d0444a79a87453fdd378dfee47a8d6f1fabb232a7"
+    },
+    {
+      "width": 3,
+      "height": 5,
+      "channels": 3,
+      "scale": 4,
+      "sha256": "7b5f300a244bc2cc575c5685e854c4954e09d0267450611d0d852ddb5849e7f3"
+    },
+    {
+      "width": 3,
+      "height": 5,
+      "channels": 4,
+      "scale": 2,
+      "sha256": "953265f07c76018bab9c0333c56cce05c3edeb7e25e8b98361c8cace1c644809"
+    },
+    {
+      "width": 3,
+      "height": 5,
+      "channels": 4,
+      "scale": 4,
+      "sha256": "8dcd88a2a5d45caa958fe106eb0fde70b700f0d0b5f5bff4aeb2b1dde11a0eb2"
+    },
+    {
+      "width": 9,
+      "height": 7,
+      "channels": 3,
+      "scale": 2,
+      "sha256": "1ea3a9806cdfe977c5a3a310d2200164b15489a82f8e8dd6dac5282d3150c01a"
+    },
+    {
+      "width": 9,
+      "height": 7,
+      "channels": 3,
+      "scale": 4,
+      "sha256": "c5d244b625d6ead4c3c394d13e48d74c2c791af5b92c7c1fd00c902581946652"
+    },
+    {
+      "width": 9,
+      "height": 7,
+      "channels": 4,
+      "scale": 2,
+      "sha256": "933bbd77ea9f17e5597d2206a643d22c81e4b9901d27daf8fe1e6d08014e1904"
+    },
+    {
+      "width": 9,
+      "height": 7,
+      "channels": 4,
+      "scale": 4,
+      "sha256": "038a965258a6ab130d2f594cf9751125641e8bdbf1db4ec11f7b12b9b0779261"
+    },
+    {
+      "width": 17,
+      "height": 13,
+      "channels": 3,
+      "scale": 2,
+      "sha256": "8b13148895914e644646563e8ce4d5a0165b4d17efb4290d05caa68348697293"
+    },
+    {
+      "width": 17,
+      "height": 13,
+      "channels": 3,
+      "scale": 4,
+      "sha256": "ad6553a6f75ccdf930eaef1b7fcbd87a9d3fbda3890fff38121a629ef12b183c"
+    },
+    {
+      "width": 17,
+      "height": 13,
+      "channels": 4,
+      "scale": 2,
+      "sha256": "8796a2ddf361881260beb7d40cdfe8f77bd71ad213a4bd7d059b7f7354834c4c"
+    },
+    {
+      "width": 17,
+      "height": 13,
+      "channels": 4,
+      "scale": 4,
+      "sha256": "ba57326824274e971164d09faac7148d015c919b91e42fbce8ac4495602391f0"
+    }
+  ]
+}

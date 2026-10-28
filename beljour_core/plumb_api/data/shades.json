@@ -1,0 +1,623 @@
+{
+ "_note": "Made up sample range for demos. Not real products. No brand names, no affiliate links.",
+ "products": {
+  "foundation": [
+   {
+    "id": "F01C",
+    "name": "Sample Base 1C",
+    "hex": "#F2D4C8",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #F2D4C8"
+   },
+   {
+    "id": "F01N",
+    "name": "Sample Base 1N",
+    "hex": "#F0D5C6",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #F0D5C6"
+   },
+   {
+    "id": "F01W",
+    "name": "Sample Base 1W",
+    "hex": "#EDD6C4",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #EDD6C4"
+   },
+   {
+    "id": "F02C",
+    "name": "Sample Base 2C",
+    "hex": "#EDCBBF",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #EDCBBF"
+   },
+   {
+    "id": "F02N",
+    "name": "Sample Base 2N",
+    "hex": "#EBCDBC",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #EBCDBC"
+   },
+   {
+    "id": "F02W",
+    "name": "Sample Base 2W",
+    "hex": "#E8CEBA",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #E8CEBA"
+   },
+   {
+    "id": "F03C",
+    "name": "Sample Base 3C",
+    "hex": "#E8C3B5",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #E8C3B5"
+   },
+   {
+    "id": "F03N",
+    "name": "Sample Base 3N",
+    "hex": "#E6C4B2",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #E6C4B2"
+   },
+   {
+    "id": "F03W",
+    "name": "Sample Base 3W",
+    "hex": "#E2C6B0",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #E2C6B0"
+   },
+   {
+    "id": "F04C",
+    "name": "Sample Base 4C",
+    "hex": "#E3BBAC",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #E3BBAC"
+   },
+   {
+    "id": "F04N",
+    "name": "Sample Base 4N",
+    "hex": "#E1BDA9",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #E1BDA9"
+   },
+   {
+    "id": "F04W",
+    "name": "Sample Base 4W",
+    "hex": "#DDBEA6",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #DDBEA6"
+   },
+   {
+    "id": "F05C",
+    "name": "Sample Base 5C",
+    "hex": "#DEB3A3",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #DEB3A3"
+   },
+   {
+    "id": "F05N",
+    "name": "Sample Base 5N",
+    "hex": "#DBB59F",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #DBB59F"
+   },
+   {
+    "id": "F05W",
+    "name": "Sample Base 5W",
+    "hex": "#D7B69C",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #D7B69C"
+   },
+   {
+    "id": "F06C",
+    "name": "Sample Base 6C",
+    "hex": "#D9AB9A",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #D9AB9A"
+   },
+   {
+    "id": "F06N",
+    "name": "Sample Base 6N",
+    "hex": "#D6AD96",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #D6AD96"
+   },
+   {
+    "id": "F06W",
+    "name": "Sample Base 6W",
+    "hex": "#D1AF93",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #D1AF93"
+   },
+   {
+    "id": "F07C",
+    "name": "Sample Base 7C",
+    "hex": "#D4A391",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #D4A391"
+   },
+   {
+    "id": "F07N",
+    "name": "Sample Base 7N",
+    "hex": "#D0A58D",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #D0A58D"
+   },
+   {
+    "id": "F07W",
+    "name": "Sample Base 7W",
+    "hex": "#CCA789",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #CCA789"
+   },
+   {
+    "id": "F08C",
+    "name": "Sample Base 8C",
+    "hex": "#CE9C88",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #CE9C88"
+   },
+   {
+    "id": "F08N",
+    "name": "Sample Base 8N",
+    "hex": "#CB9D84",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #CB9D84"
+   },
+   {
+    "id": "F08W",
+    "name": "Sample Base 8W",
+    "hex": "#C6A080",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #C6A080"
+   },
+   {
+    "id": "F09C",
+    "name": "Sample Base 9C",
+    "hex": "#C89480",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #C89480"
+   },
+   {
+    "id": "F09N",
+    "name": "Sample Base 9N",
+    "hex": "#C5967B",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #C5967B"
+   },
+   {
+    "id": "F09W",
+    "name": "Sample Base 9W",
+    "hex": "#C09878",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #C09878"
+   },
+   {
+    "id": "F10C",
+    "name": "Sample Base 10C",
+    "hex": "#C28C78",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #C28C78"
+   },
+   {
+    "id": "F10N",
+    "name": "Sample Base 10N",
+    "hex": "#BF8E73",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #BF8E73"
+   },
+   {
+    "id": "F10W",
+    "name": "Sample Base 10W",
+    "hex": "#B9916F",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #B9916F"
+   },
+   {
+    "id": "F11C",
+    "name": "Sample Base 11C",
+    "hex": "#BC8570",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #BC8570"
+   },
+   {
+    "id": "F11N",
+    "name": "Sample Base 11N",
+    "hex": "#B9876B",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #B9876B"
+   },
+   {
+    "id": "F11W",
+    "name": "Sample Base 11W",
+    "hex": "#B38A66",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #B38A66"
+   },
+   {
+    "id": "F12C",
+    "name": "Sample Base 12C",
+    "hex": "#B67E68",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #B67E68"
+   },
+   {
+    "id": "F12N",
+    "name": "Sample Base 12N",
+    "hex": "#B28063",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #B28063"
+   },
+   {
+    "id": "F12W",
+    "name": "Sample Base 12W",
+    "hex": "#AD835E",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #AD835E"
+   },
+   {
+    "id": "F13C",
+    "name": "Sample Base 13C",
+    "hex": "#B07660",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #B07660"
+   },
+   {
+    "id": "F13N",
+    "name": "Sample Base 13N",
+    "hex": "#AC795B",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #AC795B"
+   },
+   {
+    "id": "F13W",
+    "name": "Sample Base 13W",
+    "hex": "#A67C56",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #A67C56"
+   },
+   {
+    "id": "F14C",
+    "name": "Sample Base 14C",
+    "hex": "#A96F59",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #A96F59"
+   },
+   {
+    "id": "F14N",
+    "name": "Sample Base 14N",
+    "hex": "#A57253",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #A57253"
+   },
+   {
+    "id": "F14W",
+    "name": "Sample Base 14W",
+    "hex": "#A0754F",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #A0754F"
+   },
+   {
+    "id": "F15C",
+    "name": "Sample Base 15C",
+    "hex": "#A36852",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #A36852"
+   },
+   {
+    "id": "F15N",
+    "name": "Sample Base 15N",
+    "hex": "#9F6B4C",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #9F6B4C"
+   },
+   {
+    "id": "F15W",
+    "name": "Sample Base 15W",
+    "hex": "#996E47",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #996E47"
+   },
+   {
+    "id": "F16C",
+    "name": "Sample Base 16C",
+    "hex": "#9C614B",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #9C614B"
+   },
+   {
+    "id": "F16N",
+    "name": "Sample Base 16N",
+    "hex": "#986445",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #986445"
+   },
+   {
+    "id": "F16W",
+    "name": "Sample Base 16W",
+    "hex": "#926740",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #926740"
+   },
+   {
+    "id": "F17C",
+    "name": "Sample Base 17C",
+    "hex": "#955B44",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #955B44"
+   },
+   {
+    "id": "F17N",
+    "name": "Sample Base 17N",
+    "hex": "#915D3F",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #915D3F"
+   },
+   {
+    "id": "F17W",
+    "name": "Sample Base 17W",
+    "hex": "#8B603A",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #8B603A"
+   },
+   {
+    "id": "F18C",
+    "name": "Sample Base 18C",
+    "hex": "#8D553F",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #8D553F"
+   },
+   {
+    "id": "F18N",
+    "name": "Sample Base 18N",
+    "hex": "#89573A",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #89573A"
+   },
+   {
+    "id": "F18W",
+    "name": "Sample Base 18W",
+    "hex": "#835A35",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #835A35"
+   },
+   {
+    "id": "F19C",
+    "name": "Sample Base 19C",
+    "hex": "#844F3A",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #844F3A"
+   },
+   {
+    "id": "F19N",
+    "name": "Sample Base 19N",
+    "hex": "#805135",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #805135"
+   },
+   {
+    "id": "F19W",
+    "name": "Sample Base 19W",
+    "hex": "#7B5431",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #7B5431"
+   },
+   {
+    "id": "F20C",
+    "name": "Sample Base 20C",
+    "hex": "#7C4936",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #7C4936"
+   },
+   {
+    "id": "F20N",
+    "name": "Sample Base 20N",
+    "hex": "#784C31",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #784C31"
+   },
+   {
+    "id": "F20W",
+    "name": "Sample Base 20W",
+    "hex": "#734E2D",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #734E2D"
+   },
+   {
+    "id": "F21C",
+    "name": "Sample Base 21C",
+    "hex": "#734432",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #734432"
+   },
+   {
+    "id": "F21N",
+    "name": "Sample Base 21N",
+    "hex": "#70462D",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #70462D"
+   },
+   {
+    "id": "F21W",
+    "name": "Sample Base 21W",
+    "hex": "#6B4929",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #6B4929"
+   },
+   {
+    "id": "F22C",
+    "name": "Sample Base 22C",
+    "hex": "#6B3E2D",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #6B3E2D"
+   },
+   {
+    "id": "F22N",
+    "name": "Sample Base 22N",
+    "hex": "#674029",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #674029"
+   },
+   {
+    "id": "F22W",
+    "name": "Sample Base 22W",
+    "hex": "#634325",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #634325"
+   },
+   {
+    "id": "F23C",
+    "name": "Sample Base 23C",
+    "hex": "#623929",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #623929"
+   },
+   {
+    "id": "F23N",
+    "name": "Sample Base 23N",
+    "hex": "#5F3B25",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #5F3B25"
+   },
+   {
+    "id": "F23W",
+    "name": "Sample Base 23W",
+    "hex": "#5B3D21",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #5B3D21"
+   },
+   {
+    "id": "F24C",
+    "name": "Sample Base 24C",
+    "hex": "#5A3425",
+    "undertone": "cool",
+    "search": "foundation cool undertone shade #5A3425"
+   },
+   {
+    "id": "F24N",
+    "name": "Sample Base 24N",
+    "hex": "#573521",
+    "undertone": "neutral",
+    "search": "foundation neutral undertone shade #573521"
+   },
+   {
+    "id": "F24W",
+    "name": "Sample Base 24W",
+    "hex": "#54381E",
+    "undertone": "warm",
+    "search": "foundation warm undertone shade #54381E"
+   }
+  ],
+  "lip": [
+   {
+    "id": "L01",
+    "name": "Sample Lip Coral",
+    "hex": "#E0614F",
+    "family": "coral",
+    "search": "coral lipstick #E0614F"
+   },
+   {
+    "id": "L02",
+    "name": "Sample Lip Peach",
+    "hex": "#D9826A",
+    "family": "coral",
+    "search": "coral lipstick #D9826A"
+   },
+   {
+    "id": "L03",
+    "name": "Sample Lip Brick",
+    "hex": "#A6402F",
+    "family": "brick",
+    "search": "brick lipstick #A6402F"
+   },
+   {
+    "id": "L04",
+    "name": "Sample Lip Terracotta",
+    "hex": "#B35A3C",
+    "family": "brick",
+    "search": "brick lipstick #B35A3C"
+   },
+   {
+    "id": "L05",
+    "name": "Sample Lip Honey Nude",
+    "hex": "#C08A6E",
+    "family": "warm nude",
+    "search": "warm nude lipstick #C08A6E"
+   },
+   {
+    "id": "L06",
+    "name": "Sample Lip Toffee",
+    "hex": "#9E6650",
+    "family": "warm nude",
+    "search": "warm nude lipstick #9E6650"
+   },
+   {
+    "id": "L07",
+    "name": "Sample Lip Rosewood",
+    "hex": "#B05A6A",
+    "family": "rose",
+    "search": "rose lipstick #B05A6A"
+   },
+   {
+    "id": "L08",
+    "name": "Sample Lip Petal",
+    "hex": "#D47A8E",
+    "family": "rose",
+    "search": "rose lipstick #D47A8E"
+   },
+   {
+    "id": "L09",
+    "name": "Sample Lip Berry",
+    "hex": "#8C2A4C",
+    "family": "berry",
+    "search": "berry lipstick #8C2A4C"
+   },
+   {
+    "id": "L10",
+    "name": "Sample Lip Plum",
+    "hex": "#6E2442",
+    "family": "berry",
+    "search": "berry lipstick #6E2442"
+   },
+   {
+    "id": "L11",
+    "name": "Sample Lip Mauve Nude",
+    "hex": "#A97A86",
+    "family": "cool nude",
+    "search": "cool nude lipstick #A97A86"
+   },
+   {
+    "id": "L12",
+    "name": "Sample Lip Dusty Pink",
+    "hex": "#C28A96",
+    "family": "cool nude",
+    "search": "cool nude lipstick #C28A96"
+   }
+  ],
+  "blush": [
+   {
+    "id": "B01",
+    "name": "Sample Blush Apricot",
+    "hex": "#E8906E",
+    "search": "blush #E8906E"
+   },
+   {
+    "id": "B02",
+    "name": "Sample Blush Rose",
+    "hex": "#D8798A",
+    "search": "blush #D8798A"
+   },
+   {
+    "id": "B03",
+    "name": "Sample Blush Berry",
+    "hex": "#B0506A",
+    "search": "blush #B0506A"
+   },
+   {
+    "id": "B04",
+    "name": "Sample Blush Terracotta",
+    "hex": "#B8664C",
+    "search": "blush #B8664C"
+   }
+  ]
+ }
+}

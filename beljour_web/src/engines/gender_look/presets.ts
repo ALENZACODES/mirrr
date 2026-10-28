@@ -1,0 +1,8 @@
+/** Neutral full-look signal presets for R17B. Author: John Khan. */
+export type SignalLevel="normal"|"extra"|"hyper";
+export type SignalDirection="feminine"|"masculine"|"neutral";
+export interface SignalPreset{level:SignalLevel;browTint:number;browDensity:number;skinTexture:number;stubbleSignal:number;geometryChange:0;}
+export const SIGNAL_PRESETS:Record<SignalLevel,SignalPreset>={normal:{level:"normal",browTint:.16,browDensity:.12,skinTexture:.08,stubbleSignal:.13,geometryChange:0},extra:{level:"extra",browTint:.26,browDensity:.20,skinTexture:.13,stubbleSignal:.21,geometryChange:0},hyper:{level:"hyper",browTint:.38,browDensity:.30,skinTexture:.18,stubbleSignal:.28,geometryChange:0}};
+export function signalPreset(level:SignalLevel,amount=1):SignalPreset{if(!Number.isFinite(amount)||amount<0||amount>1)throw new RangeError("amount outside range");const base=SIGNAL_PRESETS[level];return{level,browTint:base.browTint*amount,browDensity:base.browDensity*amount,skinTexture:base.skinTexture*amount,stubbleSignal:base.stubbleSignal*amount,geometryChange:0};}
+export function levelsAreMonotone():boolean{const rows=[SIGNAL_PRESETS.normal,SIGNAL_PRESETS.extra,SIGNAL_PRESETS.hyper];return rows.slice(1).every((row,i)=>{const prev=rows[i]!;return row.browTint>prev.browTint&&row.browDensity>prev.browDensity&&row.skinTexture>prev.skinTexture&&row.stubbleSignal>prev.stubbleSignal&&row.geometryChange===0;});}
+export function signalDisclosure(direction:SignalDirection,level:SignalLevel):readonly string[]{return[`${direction} full-look signal preview at ${level} intensity.`,"Brow tint/density, local texture and imported stubble signals only.","Face geometry and identity landmarks are not moved.","These presentation signals do not determine gender identity."];}

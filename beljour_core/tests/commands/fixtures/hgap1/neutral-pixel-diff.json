@@ -1,0 +1,1034 @@
+{
+  "after_different_bytes": 0,
+  "after_mismatch_cases": 0,
+  "before_different_bytes": 343147,
+  "before_mismatch_cases": 14,
+  "cases": [
+    {
+      "after": {
+        "claim_wording": "At strength 1.0, /UPSCALE performs pixel-centre bilinear resizing without added detail. Pixel-exact parity applies only to the delivered 2x/4x RGB/RGBA bytes compared with an independent resize of the exact input supplied to /UPSCALE. With /CLEANUP, that input is the guarded post-cleanup frame. Higher strengths use different sampling; none of these checks establish reconstructed detail, identity or real-face quality.",
+        "cleanup_before_upscale": false,
+        "comparison": {
+          "compared_bytes": 12,
+          "differences_per_channel": [
+            0,
+            0,
+            0
+          ],
+          "different_bytes": 0,
+          "first_difference_yxc": null,
+          "max_delta": 0,
+          "mse_byte": 0.0,
+          "psnr_db": null,
+          "psnr_infinite": true,
+          "ssim8_rgb": 1.0,
+          "ssim_diagnostic_only": true,
+          "ssim_windows_sampled": 1
+        },
+        "factor": 2,
+        "input_stage_verified": true,
+        "level": "1.0",
+        "pixel_exact": true,
+        "preview": false,
+        "production_identity_proved": false,
+        "realface_release_approved": false,
+        "stage": "original",
+        "status": "PIXEL_EXACT",
+        "synthetic_or_local_only": true,
+        "version": "beljour-upscale-neutral-claim/1"
+      },
+      "before": {
+        "compared_bytes": 12,
+        "differences_per_channel": [
+          0,
+          0,
+          0
+        ],
+        "different_bytes": 0,
+        "first_difference_yxc": null,
+        "max_delta": 0,
+        "mse_byte": 0.0,
+        "psnr_db": null,
+        "psnr_infinite": true,
+        "ssim8_rgb": 1.0,
+        "ssim_diagnostic_only": true,
+        "ssim_windows_sampled": 1
+      },
+      "case": 0,
+      "channels": 3,
+      "factor": 2,
+      "pattern": "uniform",
+      "source_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "after": {
+        "claim_wording": "At strength 1.0, /UPSCALE performs pixel-centre bilinear resizing without added detail. Pixel-exact parity applies only to the delivered 2x/4x RGB/RGBA bytes compared with an independent resize of the exact input supplied to /UPSCALE. With /CLEANUP, that input is the guarded post-cleanup frame. Higher strengths use different sampling; none of these checks establish reconstructed detail, identity or real-face quality.",
+        "cleanup_before_upscale": false,
+        "comparison": {
+          "compared_bytes": 48,
+          "differences_per_channel": [
+            0,
+            0,
+            0
+          ],
+          "different_bytes": 0,
+          "first_difference_yxc": null,
+          "max_delta": 0,
+          "mse_byte": 0.0,
+          "psnr_db": null,
+          "psnr_infinite": true,
+          "ssim8_rgb": 1.0,
+          "ssim_diagnostic_only": true,
+          "ssim_windows_sampled": 1
+        },
+        "factor": 4,
+        "input_stage_verified": true,
+        "level": "1.0",
+        "pixel_exact": true,
+        "preview": false,
+        "production_identity_proved": false,
+        "realface_release_approved": false,
+        "stage": "original",
+        "status": "PIXEL_EXACT",
+        "synthetic_or_local_only": true,
+        "version": "beljour-upscale-neutral-claim/1"
+      },
+      "before": {
+        "compared_bytes": 48,
+        "differences_per_channel": [
+          0,
+          0,
+          0
+        ],
+        "different_bytes": 0,
+        "first_difference_yxc": null,
+        "max_delta": 0,
+        "mse_byte": 0.0,
+        "psnr_db": null,
+        "psnr_infinite": true,
+        "ssim8_rgb": 1.0,
+        "ssim_diagnostic_only": true,
+        "ssim_windows_sampled": 1
+      },
+      "case": 0,
+      "channels": 3,
+      "factor": 4,
+      "pattern": "uniform",
+      "source_size": [
+        1,
+        1
+      ]
+    },
+    {
+      "after": {
+        "claim_wording": "At strength 1.0, /UPSCALE performs pixel-centre bilinear resizing without added detail. Pixel-exact parity applies only to the delivered 2x/4x RGB/RGBA bytes compared with an independent resize of the exact input supplied to /UPSCALE. With /CLEANUP, that input is the guarded post-cleanup frame. Higher strengths use different sampling; none of these checks establish reconstructed detail, identity or real-face quality.",
+        "cleanup_before_upscale": false,
+        "comparison": {
+          "compared_bytes": 672,
+          "differences_per_channel": [
+            0,
+            0,
+            0
+          ],
+          "different_bytes": 0,
+          "first_difference_yxc": null,
+          "max_delta": 0,
+          "mse_byte": 0.0,
+          "psnr_db": null,
+          "psnr_infinite": true,
+          "ssim8_rgb": 1.0,
+          "ssim_diagnostic_only": true,
+          "ssim_windows_sampled": 4
+        },
+        "factor": 2,
+        "input_stage_verified": true,
+        "level": "1.0",
+        "pixel_exact": true,
+        "preview": false,
+        "production_identity_proved": false,
+        "realface_release_approved": false,
+        "stage": "original",
+        "status": "PIXEL_EXACT",
+        "synthetic_or_local_only": true,
+        "version": "beljour-upscale-neutral-claim/1"
+      },
+      "before": {
+        "compared_bytes": 672,
+        "differences_per_channel": [
+          124,
+          64,
+          186
+        ],
+        "different_bytes": 374,
+        "first_difference_yxc": [
+          0,
+          3,
+          0
+        ],
+        "max_delta": 26,
+        "mse_byte": 63.16964286,
+        "psnr_db": 30.125719,
+        "psnr_infinite": false,
+        "ssim8_rgb": 0.99492494,
+        "ssim_diagnostic_only": true,
+        "ssim_windows_sampled": 4
+      },
+      "case": 1,
+      "channels": 3,
+      "factor": 2,
+      "pattern": "checker",
+      "source_size": [
+        8,
+        7
+      ]
+    },
+    {
+      "after": {
+        "claim_wording": "At strength 1.0, /UPSCALE performs pixel-centre bilinear resizing without added detail. Pixel-exact parity applies only to the delivered 2x/4x RGB/RGBA bytes compared with an independent resize of the exact input supplied to /UPSCALE. With /CLEANUP, that input is the guarded post-cleanup frame. Higher strengths use different sampling; none of these checks establish reconstructed detail, identity or real-face quality.",
+        "cleanup_before_upscale": false,
+        "comparison": {
+          "compared_bytes": 2688,
+          "differences_per_channel": [
+            0,
+            0,
+            0
+          ],
+          "different_bytes": 0,
+          "first_difference_yxc": null,
+          "max_delta": 0,
+          "mse_byte": 0.0,
+          "psnr_db": null,
+          "psnr_infinite": true,
+          "ssim8_rgb": 1.0,
+          "ssim_diagnostic_only": true,
+          "ssim_windows_sampled": 16
+        },
+        "factor": 4,
+        "input_stage_verified": true,
+        "level": "1.0",
+        "pixel_exact": true,
+        "preview": false,
+        "production_identity_proved": false,
+        "realface_release_approved": false,
+        "stage": "original",
+        "status": "PIXEL_EXACT",
+        "synthetic_or_local_only": true,
+        "version": "beljour-upscale-neutral-claim/1"
+      },
+      "before": {
+        "compared_bytes": 2688,
+        "differences_per_channel": [
+          496,
+          68,
+          578
+        ],
+        "different_bytes": 1142,
+        "first_difference_yxc": [
+          0,
+          4,
+          2
+        ],
+        "max_delta": 32,
+        "mse_byte": 44.01934524,
+        "psnr_db": 31.694368,
+        "psnr_infinite": false,
+        "ssim8_rgb": 0.9867299,
+        "ssim_diagnostic_only": true,
+        "ssim_windows_sampled": 16
+      },
+      "case": 1,
+      "channels": 3,
+      "factor": 4,
+      "pattern": "checker",
+      "source_size": [
+        8,
+        7
+      ]
+    },
+    {
+      "after": {
+        "claim_wording": "At strength 1.0, /UPSCALE performs pixel-centre bilinear resizing without added detail. Pixel-exact parity applies only to the delivered 2x/4x RGB/RGBA bytes compared with an independent resize of the exact input supplied to /UPSCALE. With /CLEANUP, that input is the guarded post-cleanup frame. Higher strengths use different sampling; none of these checks establish reconstructed detail, identity or real-face quality.",
+        "cleanup_before_upscale": false,
+        "comparison": {
+          "compared_bytes": 2964,
+          "differences_per_channel": [
+            0,
+            0,
+            0
+          ],
+          "different_bytes": 0,
+          "first_difference_yxc": null,
+          "max_delta": 0,
+          "mse_byte": 0.0,
+          "psnr_db": null,
+          "psnr_infinite": true,
+          "ssim8_rgb": 1.0,
+          "ssim_diagnostic_only": true,
+          "ssim_windows_sampled": 20
+        },
+        "factor": 2,
+        "input_stage_verified": true,
+        "level": "1.0",
+        "pixel_exact": true,
+        "preview": false,
+        "production_identity_proved": false,
+        "realface_release_approved": false,
+        "stage": "original",
+        "status": "PIXEL_EXACT",
+        "synthetic_or_local_only": true,
+        "version": "beljour-upscale-neutral-claim/1"
+      },
+      "before": {
+        "compared_bytes": 2964,
+        "differences_per_channel": [
+          536,
+          892,
+          975
+        ],
+        "different_bytes": 2403,
+        "first_difference_yxc": [
+          0,
+          0,
+          0
+        ],
+        "max_delta": 31,
+        "mse_byte": 165.59176788,
+        "psnr_db": 25.940416,
+        "psnr_infinite": false,
+        "ssim8_rgb": 0.97443456,
+        "ssim_diagnostic_only": true,
+        "ssim_windows_sampled": 20
+      },
+      "case": 2,
+      "channels": 3,
+      "factor": 2,
+      "pattern": "gradient",
+      "source_size": [
+        19,
+        13
+      ]
+    },
+    {
+      "after": {
+        "claim_wording": "At strength 1.0, /UPSCALE performs pixel-centre bilinear resizing without added detail. Pixel-exact parity applies only to the delivered 2x/4x RGB/RGBA bytes compared with an independent resize of the exact input supplied to /UPSCALE. With /CLEANUP, that input is the guarded post-cleanup frame. Higher strengths use different sampling; none of these checks establish reconstructed detail, identity or real-face quality.",
+        "cleanup_before_upscale": false,
+        "comparison": {
+          "compared_bytes": 11856,
+          "differences_per_channel": [
+            0,
+            0,
+            0
+          ],
+          "different_bytes": 0,
+          "first_difference_yxc": null,
+          "max_delta": 0,
+          "mse_byte": 0.0,
+          "psnr_db": null,
+          "psnr_infinite": true,
+          "ssim8_rgb": 1.0,
+          "ssim_diagnostic_only": true,
+          "ssim_windows_sampled": 70
+        },
+        "factor": 4,
+        "input_stage_verified": true,
+        "level": "1.0",
+        "pixel_exact": true,
+        "preview": false,
+        "production_identity_proved": false,
+        "realface_release_approved": false,
+        "stage": "original",
+        "status": "PIXEL_EXACT",
+        "synthetic_or_local_only": true,
+        "version": "beljour-upscale-neutral-claim/1"
+      },
+      "before": {
+        "compared_bytes": 11856,
+        "differences_per_channel": [
+          2013,
+          3502,
+          3875
+        ],
+        "different_bytes": 9390,
+        "first_difference_yxc": [
+          0,
+          0,
+          0
+        ],
+        "max_delta": 34,
+        "mse_byte": 127.62634953,
+        "psnr_db": 27.0714,
+        "psnr_infinite": false,
+        "ssim8_rgb": 0.97690298,
+        "ssim_diagnostic_only": true,
+        "ssim_windows_sampled": 70
+      },
+      "case": 2,
+      "channels": 3,
+      "factor": 4,
+      "pattern": "gradient",
+      "source_size": [
+        19,
+        13
+      ]
+    },
+    {
+      "after": {
+        "claim_wording": "At strength 1.0, /UPSCALE performs pixel-centre bilinear resizing without added detail. Pixel-exact parity applies only to the delivered 2x/4x RGB/RGBA bytes compared with an independent resize of the exact input supplied to /UPSCALE. With /CLEANUP, that input is the guarded post-cleanup frame. Higher strengths use different sampling; none of these checks establish reconstructed detail, identity or real-face quality.",
+        "cleanup_before_upscale": false,
+        "comparison": {
+          "compared_bytes": 23312,
+          "differences_per_channel": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "different_bytes": 0,
+          "first_difference_yxc": null,
+          "max_delta": 0,
+          "mse_byte": 0.0,
+          "psnr_db": null,
+          "psnr_infinite": true,
+          "ssim8_rgb": 1.0,
+          "ssim_diagnostic_only": true,
+          "ssim_windows_sampled": 96
+        },
+        "factor": 2,
+        "input_stage_verified": true,
+        "level": "1.0",
+        "pixel_exact": true,
+        "preview": false,
+        "production_identity_proved": false,
+        "realface_release_approved": false,
+        "stage": "original",
+        "status": "PIXEL_EXACT",
+        "synthetic_or_local_only": true,
+        "version": "beljour-upscale-neutral-claim/1"
+      },
+      "before": {
+        "compared_bytes": 23312,
+        "differences_per_channel": [
+          1810,
+          2305,
+          2480,
+          0
+        ],
+        "different_bytes": 6595,
+        "first_difference_yxc": [
+          0,
+          0,
+          0
+        ],
+        "max_delta": 255,
+        "mse_byte": 302.3726836,
+        "psnr_db": 23.325378,
+        "psnr_infinite": false,
+        "ssim8_rgb": 0.90656511,
+        "ssim_diagnostic_only": true,
+        "ssim_windows_sampled": 96
+      },
+      "case": 3,
+      "channels": 4,
+      "factor": 2,
+      "pattern": "alpha_corner",
+      "source_size": [
+        47,
+        31
+      ]
+    },
+    {
+      "after": {
+        "claim_wording": "At strength 1.0, /UPSCALE performs pixel-centre bilinear resizing without added detail. Pixel-exact parity applies only to the delivered 2x/4x RGB/RGBA bytes compared with an independent resize of the exact input supplied to /UPSCALE. With /CLEANUP, that input is the guarded post-cleanup frame. Higher strengths use different sampling; none of these checks establish reconstructed detail, identity or real-face quality.",
+        "cleanup_before_upscale": false,
+        "comparison": {
+          "compared_bytes": 93248,
+          "differences_per_channel": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "different_bytes": 0,
+          "first_difference_yxc": null,
+          "max_delta": 0,
+          "mse_byte": 0.0,
+          "psnr_db": null,
+          "psnr_infinite": true,
+          "ssim8_rgb": 1.0,
+          "ssim_diagnostic_only": true,
+          "ssim_windows_sampled": 384
+        },
+        "factor": 4,
+        "input_stage_verified": true,
+        "level": "1.0",
+        "pixel_exact": true,
+        "preview": false,
+        "production_identity_proved": false,
+        "realface_release_approved": false,
+        "stage": "original",
+        "status": "PIXEL_EXACT",
+        "synthetic_or_local_only": true,
+        "version": "beljour-upscale-neutral-claim/1"
+      },
+      "before": {
+        "compared_bytes": 93248,
+        "differences_per_channel": [
+          7017,
+          8876,
+          9510,
+          0
+        ],
+        "different_bytes": 25403,
+        "first_difference_yxc": [
+          0,
+          0,
+          0
+        ],
+        "max_delta": 255,
+        "mse_byte": 350.26046671,
+        "psnr_db": 22.686892,
+        "psnr_infinite": false,
+        "ssim8_rgb": 0.91868742,
+        "ssim_diagnostic_only": true,
+        "ssim_windows_sampled": 384
+      },
+      "case": 3,
+      "channels": 4,
+      "factor": 4,
+      "pattern": "alpha_corner",
+      "source_size": [
+        47,
+        31
+      ]
+    },
+    {
+      "after": {
+        "claim_wording": "At strength 1.0, /UPSCALE performs pixel-centre bilinear resizing without added detail. Pixel-exact parity applies only to the delivered 2x/4x RGB/RGBA bytes compared with an independent resize of the exact input supplied to /UPSCALE. With /CLEANUP, that input is the guarded post-cleanup frame. Higher strengths use different sampling; none of these checks establish reconstructed detail, identity or real-face quality.",
+        "cleanup_before_upscale": false,
+        "comparison": {
+          "compared_bytes": 8704,
+          "differences_per_channel": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "different_bytes": 0,
+          "first_difference_yxc": null,
+          "max_delta": 0,
+          "mse_byte": 0.0,
+          "psnr_db": null,
+          "psnr_infinite": true,
+          "ssim8_rgb": 1.0,
+          "ssim_diagnostic_only": true,
+          "ssim_windows_sampled": 40
+        },
+        "factor": 2,
+        "input_stage_verified": true,
+        "level": "1.0",
+        "pixel_exact": true,
+        "preview": false,
+        "production_identity_proved": false,
+        "realface_release_approved": false,
+        "stage": "original",
+        "status": "PIXEL_EXACT",
+        "synthetic_or_local_only": true,
+        "version": "beljour-upscale-neutral-claim/1"
+      },
+      "before": {
+        "compared_bytes": 8704,
+        "differences_per_channel": [
+          922,
+          1058,
+          1152,
+          0
+        ],
+        "different_bytes": 3132,
+        "first_difference_yxc": [
+          0,
+          0,
+          0
+        ],
+        "max_delta": 234,
+        "mse_byte": 548.84420956,
+        "psnr_db": 20.736313,
+        "psnr_infinite": false,
+        "ssim8_rgb": 0.89279938,
+        "ssim_diagnostic_only": true,
+        "ssim_windows_sampled": 40
+      },
+      "case": 4,
+      "channels": 4,
+      "factor": 2,
+      "pattern": "edge",
+      "source_size": [
+        32,
+        17
+      ]
+    },
+    {
+      "after": {
+        "claim_wording": "At strength 1.0, /UPSCALE performs pixel-centre bilinear resizing without added detail. Pixel-exact parity applies only to the delivered 2x/4x RGB/RGBA bytes compared with an independent resize of the exact input supplied to /UPSCALE. With /CLEANUP, that input is the guarded post-cleanup frame. Higher strengths use different sampling; none of these checks establish reconstructed detail, identity or real-face quality.",
+        "cleanup_before_upscale": false,
+        "comparison": {
+          "compared_bytes": 34816,
+          "differences_per_channel": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "different_bytes": 0,
+          "first_difference_yxc": null,
+          "max_delta": 0,
+          "mse_byte": 0.0,
+          "psnr_db": null,
+          "psnr_infinite": true,
+          "ssim8_rgb": 1.0,
+          "ssim_diagnostic_only": true,
+          "ssim_windows_sampled": 144
+        },
+        "factor": 4,
+        "input_stage_verified": true,
+        "level": "1.0",
+        "pixel_exact": true,
+        "preview": false,
+        "production_identity_proved": false,
+        "realface_release_approved": false,
+        "stage": "original",
+        "status": "PIXEL_EXACT",
+        "synthetic_or_local_only": true,
+        "version": "beljour-upscale-neutral-claim/1"
+      },
+      "before": {
+        "compared_bytes": 34816,
+        "differences_per_channel": [
+          3511,
+          3968,
+          4364,
+          0
+        ],
+        "different_bytes": 11843,
+        "first_difference_yxc": [
+          0,
+          0,
+          0
+        ],
+        "max_delta": 234,
+        "mse_byte": 638.43342142,
+        "psnr_db": 20.079647,
+        "psnr_infinite": false,
+        "ssim8_rgb": 0.90588304,
+        "ssim_diagnostic_only": true,
+        "ssim_windows_sampled": 144
+      },
+      "case": 4,
+      "channels": 4,
+      "factor": 4,
+      "pattern": "edge",
+      "source_size": [
+        32,
+        17
+      ]
+    },
+    {
+      "after": {
+        "claim_wording": "At strength 1.0, /UPSCALE performs pixel-centre bilinear resizing without added detail. Pixel-exact parity applies only to the delivered 2x/4x RGB/RGBA bytes compared with an independent resize of the exact input supplied to /UPSCALE. With /CLEANUP, that input is the guarded post-cleanup frame. Higher strengths use different sampling; none of these checks establish reconstructed detail, identity or real-face quality.",
+        "cleanup_before_upscale": false,
+        "comparison": {
+          "compared_bytes": 33264,
+          "differences_per_channel": [
+            0,
+            0,
+            0
+          ],
+          "different_bytes": 0,
+          "first_difference_yxc": null,
+          "max_delta": 0,
+          "mse_byte": 0.0,
+          "psnr_db": null,
+          "psnr_infinite": true,
+          "ssim8_rgb": 1.0,
+          "ssim_diagnostic_only": true,
+          "ssim_windows_sampled": 176
+        },
+        "factor": 2,
+        "input_stage_verified": true,
+        "level": "1.0",
+        "pixel_exact": true,
+        "preview": false,
+        "production_identity_proved": false,
+        "realface_release_approved": false,
+        "stage": "original",
+        "status": "PIXEL_EXACT",
+        "synthetic_or_local_only": true,
+        "version": "beljour-upscale-neutral-claim/1"
+      },
+      "before": {
+        "compared_bytes": 33264,
+        "differences_per_channel": [
+          5956,
+          11079,
+          5531
+        ],
+        "different_bytes": 22566,
+        "first_difference_yxc": [
+          0,
+          0,
+          1
+        ],
+        "max_delta": 34,
+        "mse_byte": 107.7362013,
+        "psnr_db": 27.807187,
+        "psnr_infinite": false,
+        "ssim8_rgb": 0.98456419,
+        "ssim_diagnostic_only": true,
+        "ssim_windows_sampled": 176
+      },
+      "case": 5,
+      "channels": 3,
+      "factor": 2,
+      "pattern": "ramp",
+      "source_size": [
+        63,
+        44
+      ]
+    },
+    {
+      "after": {
+        "claim_wording": "At strength 1.0, /UPSCALE performs pixel-centre bilinear resizing without added detail. Pixel-exact parity applies only to the delivered 2x/4x RGB/RGBA bytes compared with an independent resize of the exact input supplied to /UPSCALE. With /CLEANUP, that input is the guarded post-cleanup frame. Higher strengths use different sampling; none of these checks establish reconstructed detail, identity or real-face quality.",
+        "cleanup_before_upscale": false,
+        "comparison": {
+          "compared_bytes": 133056,
+          "differences_per_channel": [
+            0,
+            0,
+            0
+          ],
+          "different_bytes": 0,
+          "first_difference_yxc": null,
+          "max_delta": 0,
+          "mse_byte": 0.0,
+          "psnr_db": null,
+          "psnr_infinite": true,
+          "ssim8_rgb": 1.0,
+          "ssim_diagnostic_only": true,
+          "ssim_windows_sampled": 512
+        },
+        "factor": 4,
+        "input_stage_verified": true,
+        "level": "1.0",
+        "pixel_exact": true,
+        "preview": false,
+        "production_identity_proved": false,
+        "realface_release_approved": false,
+        "stage": "original",
+        "status": "PIXEL_EXACT",
+        "synthetic_or_local_only": true,
+        "version": "beljour-upscale-neutral-claim/1"
+      },
+      "before": {
+        "compared_bytes": 133056,
+        "differences_per_channel": [
+          22442,
+          44005,
+          21348
+        ],
+        "different_bytes": 87795,
+        "first_difference_yxc": [
+          0,
+          0,
+          1
+        ],
+        "max_delta": 33,
+        "mse_byte": 82.05749459,
+        "psnr_db": 28.989621,
+        "psnr_infinite": false,
+        "ssim8_rgb": 0.9871754,
+        "ssim_diagnostic_only": true,
+        "ssim_windows_sampled": 512
+      },
+      "case": 5,
+      "channels": 3,
+      "factor": 4,
+      "pattern": "ramp",
+      "source_size": [
+        63,
+        44
+      ]
+    },
+    {
+      "after": {
+        "claim_wording": "At strength 1.0, /UPSCALE performs pixel-centre bilinear resizing without added detail. Pixel-exact parity applies only to the delivered 2x/4x RGB/RGBA bytes compared with an independent resize of the exact input supplied to /UPSCALE. With /CLEANUP, that input is the guarded post-cleanup frame. Higher strengths use different sampling; none of these checks establish reconstructed detail, identity or real-face quality.",
+        "cleanup_before_upscale": false,
+        "comparison": {
+          "compared_bytes": 43216,
+          "differences_per_channel": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "different_bytes": 0,
+          "first_difference_yxc": null,
+          "max_delta": 0,
+          "mse_byte": 0.0,
+          "psnr_db": null,
+          "psnr_infinite": true,
+          "ssim8_rgb": 1.0,
+          "ssim_diagnostic_only": true,
+          "ssim_windows_sampled": 190
+        },
+        "factor": 2,
+        "input_stage_verified": true,
+        "level": "1.0",
+        "pixel_exact": true,
+        "preview": false,
+        "production_identity_proved": false,
+        "realface_release_approved": false,
+        "stage": "original",
+        "status": "PIXEL_EXACT",
+        "synthetic_or_local_only": true,
+        "version": "beljour-upscale-neutral-claim/1"
+      },
+      "before": {
+        "compared_bytes": 43216,
+        "differences_per_channel": [
+          6853,
+          9760,
+          10682,
+          0
+        ],
+        "different_bytes": 27295,
+        "first_difference_yxc": [
+          0,
+          0,
+          0
+        ],
+        "max_delta": 238,
+        "mse_byte": 704.30132358,
+        "psnr_db": 19.653219,
+        "psnr_infinite": false,
+        "ssim8_rgb": 0.86870092,
+        "ssim_diagnostic_only": true,
+        "ssim_windows_sampled": 190
+      },
+      "case": 6,
+      "channels": 4,
+      "factor": 2,
+      "pattern": "gradient",
+      "source_size": [
+        73,
+        37
+      ]
+    },
+    {
+      "after": {
+        "claim_wording": "At strength 1.0, /UPSCALE performs pixel-centre bilinear resizing without added detail. Pixel-exact parity applies only to the delivered 2x/4x RGB/RGBA bytes compared with an independent resize of the exact input supplied to /UPSCALE. With /CLEANUP, that input is the guarded post-cleanup frame. Higher strengths use different sampling; none of these checks establish reconstructed detail, identity or real-face quality.",
+        "cleanup_before_upscale": false,
+        "comparison": {
+          "compared_bytes": 172864,
+          "differences_per_channel": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "different_bytes": 0,
+          "first_difference_yxc": null,
+          "max_delta": 0,
+          "mse_byte": 0.0,
+          "psnr_db": null,
+          "psnr_infinite": true,
+          "ssim8_rgb": 1.0,
+          "ssim_diagnostic_only": true,
+          "ssim_windows_sampled": 512
+        },
+        "factor": 4,
+        "input_stage_verified": true,
+        "level": "1.0",
+        "pixel_exact": true,
+        "preview": false,
+        "production_identity_proved": false,
+        "realface_release_approved": false,
+        "stage": "original",
+        "status": "PIXEL_EXACT",
+        "synthetic_or_local_only": true,
+        "version": "beljour-upscale-neutral-claim/1"
+      },
+      "before": {
+        "compared_bytes": 172864,
+        "differences_per_channel": [
+          26044,
+          37484,
+          42606,
+          0
+        ],
+        "different_bytes": 106134,
+        "first_difference_yxc": [
+          0,
+          0,
+          0
+        ],
+        "max_delta": 239,
+        "mse_byte": 715.77652374,
+        "psnr_db": 19.583029,
+        "psnr_infinite": false,
+        "ssim8_rgb": 0.87503415,
+        "ssim_diagnostic_only": true,
+        "ssim_windows_sampled": 512
+      },
+      "case": 6,
+      "channels": 4,
+      "factor": 4,
+      "pattern": "gradient",
+      "source_size": [
+        73,
+        37
+      ]
+    },
+    {
+      "after": {
+        "claim_wording": "At strength 1.0, /UPSCALE performs pixel-centre bilinear resizing without added detail. Pixel-exact parity applies only to the delivered 2x/4x RGB/RGBA bytes compared with an independent resize of the exact input supplied to /UPSCALE. With /CLEANUP, that input is the guarded post-cleanup frame. Higher strengths use different sampling; none of these checks establish reconstructed detail, identity or real-face quality.",
+        "cleanup_before_upscale": false,
+        "comparison": {
+          "compared_bytes": 17632,
+          "differences_per_channel": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "different_bytes": 0,
+          "first_difference_yxc": null,
+          "max_delta": 0,
+          "mse_byte": 0.0,
+          "psnr_db": null,
+          "psnr_infinite": true,
+          "ssim8_rgb": 1.0,
+          "ssim_diagnostic_only": true,
+          "ssim_windows_sampled": 80
+        },
+        "factor": 2,
+        "input_stage_verified": true,
+        "level": "1.0",
+        "pixel_exact": true,
+        "preview": false,
+        "production_identity_proved": false,
+        "realface_release_approved": false,
+        "stage": "original",
+        "status": "PIXEL_EXACT",
+        "synthetic_or_local_only": true,
+        "version": "beljour-upscale-neutral-claim/1"
+      },
+      "before": {
+        "compared_bytes": 17632,
+        "differences_per_channel": [
+          2880,
+          2006,
+          4014,
+          0
+        ],
+        "different_bytes": 8900,
+        "first_difference_yxc": [
+          0,
+          0,
+          1
+        ],
+        "max_delta": 255,
+        "mse_byte": 267.75034029,
+        "psnr_db": 23.853503,
+        "psnr_infinite": false,
+        "ssim8_rgb": 0.96747186,
+        "ssim_diagnostic_only": true,
+        "ssim_windows_sampled": 80
+      },
+      "case": 7,
+      "channels": 4,
+      "factor": 2,
+      "pattern": "checker",
+      "source_size": [
+        29,
+        38
+      ]
+    },
+    {
+      "after": {
+        "claim_wording": "At strength 1.0, /UPSCALE performs pixel-centre bilinear resizing without added detail. Pixel-exact parity applies only to the delivered 2x/4x RGB/RGBA bytes compared with an independent resize of the exact input supplied to /UPSCALE. With /CLEANUP, that input is the guarded post-cleanup frame. Higher strengths use different sampling; none of these checks establish reconstructed detail, identity or real-face quality.",
+        "cleanup_before_upscale": false,
+        "comparison": {
+          "compared_bytes": 70528,
+          "differences_per_channel": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "different_bytes": 0,
+          "first_difference_yxc": null,
+          "max_delta": 0,
+          "mse_byte": 0.0,
+          "psnr_db": null,
+          "psnr_infinite": true,
+          "ssim8_rgb": 1.0,
+          "ssim_diagnostic_only": true,
+          "ssim_windows_sampled": 285
+        },
+        "factor": 4,
+        "input_stage_verified": true,
+        "level": "1.0",
+        "pixel_exact": true,
+        "preview": false,
+        "production_identity_proved": false,
+        "realface_release_approved": false,
+        "stage": "original",
+        "status": "PIXEL_EXACT",
+        "synthetic_or_local_only": true,
+        "version": "beljour-upscale-neutral-claim/1"
+      },
+      "before": {
+        "compared_bytes": 70528,
+        "differences_per_channel": [
+          11485,
+          5408,
+          13282,
+          0
+        ],
+        "different_bytes": 30175,
+        "first_difference_yxc": [
+          0,
+          0,
+          1
+        ],
+        "max_delta": 255,
+        "mse_byte": 257.35554673,
+        "psnr_db": 24.025468,
+        "psnr_infinite": false,
+        "ssim8_rgb": 0.94319927,
+        "ssim_diagnostic_only": true,
+        "ssim_windows_sampled": 285
+      },
+      "case": 7,
+      "channels": 4,
+      "factor": 4,
+      "pattern": "checker",
+      "source_size": [
+        29,
+        38
+      ]
+    }
+  ],
+  "checked_bytes": 648880,
+  "data_source": "generated_synthetic_only",
+  "external_reference_set": "NOT_RUN",
+  "fixed_algorithm": "tiled_float64_bilinear_with_half_up_rounding",
+  "identity_model_approved": false,
+  "old_algorithm": "keys_cubic_sampling_at_neutral_level",
+  "pairs": 16,
+  "reference_algorithm": "clamped_pixel_center_straight_channel_bilinear",
+  "release_authorized": false,
+  "version": "beljour-neutral-upscale-regression/1"
+}

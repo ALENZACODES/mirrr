@@ -1,0 +1,108 @@
+/** Observed-pigmentation-aware helpers for W46/W57. Author: John Khan. */
+import type { Photo, RGB } from "./contracts.js";
+export interface PigmentationStats {
+    meanRgb: readonly [
+        number,
+        number,
+        number
+    ];
+    leftRgb: readonly [
+        number,
+        number,
+        number
+    ];
+    rightRgb: readonly [
+        number,
+        number,
+        number
+    ];
+    upperRgb: readonly [
+        number,
+        number,
+        number
+    ];
+    lowerRgb: readonly [
+        number,
+        number,
+        number
+    ];
+    sideDelta: number;
+    verticalDelta: number;
+    twoToneScore: number;
+}
+function mean(photo: Photo, mask: Float32Array, predicate: (x: number, y: number) => boolean): readonly [
+    number,
+    number,
+    number
+] {
+    const sums = [0, 0, 0];
+    let count = 0;
+    for (let y = 0; y < photo.height; y++) {
+        for (let x = 0; x < photo.width; x++) {
+            const i = y * photo.width + x;
+            if (mask[i]! <= 0.1 || !predicate(x, y))
+                continue;
+            const o = i * photo.channels;
+            sums[0] += photo.data[o]!;
+            sums[1] += photo.data[o + 1]!;
+            sums[2] += photo.data[o + 2]!;
+            count++;
+        }
+    }
+    return count ? [sums[0]! / count, sums[1]! / count, sums[2]! / count] : [0, 0, 0];
+}
+function delta(a: readonly [
+    number,
+    number,
+    number
+], b: readonly [
+    number,
+    number,
+    number
+]): number { return Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]) / 441.673; }
+export function analysePigmentation(photo: Photo, mask: Float32Array): PigmentationStats {
+    if (mask.length !== photo.width * photo.height)
+        throw new RangeError("mask shape does not match photo");
+    let count = 0;
+    let sx = 0;
+    let sy = 0;
+    for (let y = 0; y < photo.height; y++)
+        for (let x = 0; x < photo.width; x++) {
+            const i = y * photo.width + x;
+            if (mask[i]! <= 0.1)
+                continue;
+            count++;
+            sx += x;
+            sy += y;
+        }
+    if (count < 8)
+        throw new RangeError("not enough observed lip pixels for pigmentation analysis");
+    const cx = sx / count;
+    const cy = sy / count;
+    const all = mean(photo, mask, () => true);
+    const left = mean(photo, mask, x => x <= cx);
+    const right = mean(photo, mask, x => x > cx);
+    const upper = mean(photo, mask, (_x, y) => y <= cy);
+    const lower = mean(photo, mask, (_x, y) => y > cy);
+    const sideDelta = delta(left, right);
+    const verticalDelta = delta(upper, lower);
+    return { meanRgb: all,
+        leftRgb: left,
+        rightRgb: right,
+        upperRgb: upper,
+        lowerRgb: lower,
+        sideDelta,
+        verticalDelta,
+        twoToneScore: Math.max(0, Math.min(1, Math.max(sideDelta, verticalDelta) / 0.25)),
+    };
+}
+export function linerPairing(colour: RGB, stats: PigmentationStats): RGB { const values = colour.map((channel, index) => (channel * 0.72 + stats.meanRgb[index]! * 0.28) * 0.88); return values.map(value => Math.max(0, Math.min(255, Math.round(value)))) as unknown as RGB; }
+export function pigmentationDisclosure(stats: PigmentationStats): string[] {
+    const lines = ["Colour is composited over the observed lip pixels; the base lip is never normalized to pink."];
+    if (stats.twoToneScore >= 0.25)
+        lines.push("Visible pigmentation differences are retained across the lip.");
+    if (stats.twoToneScore >= 0.55)
+        lines.push("An optional liner pairing can improve edge consistency without lightening the base lip.");
+    return lines;
+}
+

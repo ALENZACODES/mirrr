@@ -1,0 +1,18 @@
+{
+  "format": "beljour-price-table/1",
+  "author": "John Khan",
+  "currency": "CAD",
+  "about": "Editable price table for the cost-per-edit meter. Every price is ASSUMED: none comes from an invoice, a price list or a contract. Change a value (or set it to null, which shows NOT_SET) and rerun make instrument-panel.",
+  "prices": {
+    "youcam_unit": {
+      "cad": 0.1,
+      "basis": "ASSUMED",
+      "note": "No YouCam price per unit is on file; youcam/units.py holds unit counts only and the hackathon units are promotional (licences.json services). Replace with the paid plan's price per unit."
+    },
+    "server_cpu_hour": {
+      "cad": 0.05,
+      "basis": "ASSUMED",
+      "note": "One CPU hour on our API host, for edits the API renders itself. The free hosting tier bills nothing but is not cleared for a commercial launch (licences.json services). Replace with the chosen plan's price divided by its CPU hours."
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+  role="img" aria-label="BELJOUR — FULL BEAUTY STUDIO. Your best day. Still you.">
+  <title>BELJOUR — FULL BEAUTY STUDIO — Your best day. Still you.</title>
+  <rect width="512" height="512" rx="94" fill="#000091"/>
+  <path d="M72 140H440" stroke="#FFFFFF" stroke-width="1" fill="none"/>
+  <text x="256" y="248" font-family="Georgia,Times New Roman,serif"
+    font-size="73" text-anchor="middle" letter-spacing="1.5" fill="#FFFFFF">BELJOUR</text>
+  <text x="256" y="296" font-family="Arial,sans-serif" font-size="21"
+    text-anchor="middle" letter-spacing="3" fill="#FFFFFF">FULL BEAUTY STUDIO</text>
+  <path d="M192 322H320" stroke="#E1000F" stroke-width="3" fill="none"/>
+  <text x="256" y="375" font-family="Georgia,Times New Roman,serif"
+    font-size="25" text-anchor="middle" fill="#FFFFFF">Your best day. Still you.</text>
+  <path d="M72 405H440" stroke="#FFFFFF" stroke-width="1" fill="none"/>
+</svg>

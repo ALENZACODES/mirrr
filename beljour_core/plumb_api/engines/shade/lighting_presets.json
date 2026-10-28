@@ -1,0 +1,22 @@
+{
+  "format": "beljour-lighting-presets/1",
+  "author": "John Khan",
+  "status": "ASSUMED: colour temperatures are standard textbook values; intensity, eye adaptation and camera exposure shares are engineering choices, not measurements.",
+  "shown_first": ["daylight", "office", "evening"],
+  "presets": [
+    {"id": "daylight", "label": "Daylight", "cct": 6504, "locus": "d65", "duv": 0.0, "intensity": 1.0, "adaptation": 1.0},
+    {"id": "office", "label": "Office", "cct": 4000, "locus": "planckian", "duv": 0.0, "intensity": 0.8, "adaptation": 0.8},
+    {"id": "evening", "label": "Evening", "cct": 2700, "locus": "planckian", "duv": 0.0, "intensity": 0.45, "adaptation": 0.65},
+    {"id": "overcast", "label": "Overcast", "cct": 7500, "locus": "daylight", "duv": 0.0, "intensity": 0.7, "adaptation": 0.9},
+    {"id": "golden_hour", "label": "Golden hour", "cct": 3500, "locus": "planckian", "duv": 0.0, "intensity": 0.75, "adaptation": 0.6},
+    {"id": "retail_fluorescent", "label": "Shop fluorescent", "cct": 4100, "locus": "planckian", "duv": 0.004, "intensity": 0.9, "adaptation": 0.8},
+    {"id": "dim_restaurant", "label": "Dim restaurant", "cct": 2400, "locus": "planckian", "duv": 0.0, "intensity": 0.2, "adaptation": 0.6},
+    {"id": "camera_flash", "label": "Camera flash", "cct": 5500, "locus": "daylight", "duv": 0.0, "intensity": 1.5, "adaptation": 1.0}
+  ],
+  "exposure_compensation": 0.6,
+  "rules": {
+    "match_delta_e_max": 3.5,
+    "contrast_delta_e_min": 8.0,
+    "large_shift_delta_e": 12.0
+  }
+}

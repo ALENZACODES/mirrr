@@ -1,0 +1,18 @@
+# Ruff settings for BELJOUR. `make lint` applies them to the modules listed in the
+# Makefile's LINT_PY; Plumb's older modules join that list as they are touched.
+line-length = 120
+target-version = "py311"
+
+[lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501"]
+
+[lint.isort]
+known-first-party = ["plumb_api"]
+
+[lint.per-file-ignores]
+# time_warp.py is bound by hash to its measured benchmark evidence
+# (docs/artistic/studio_play/time_warp/BELJOUR_TIME_WARP_EVIDENCE.json, checked by
+# tests/r38b/test_time_warp.py). Any edit, even a noqa comment, voids those timings, so its
+# two style findings (a str-mixin Enum, a frozen dataclass default) are accepted here.
+"**/plumb_api/filters/artistic/time_warp.py" = ["UP042", "B008"]

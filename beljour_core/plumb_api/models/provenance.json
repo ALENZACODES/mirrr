@@ -1,0 +1,215 @@
+{
+  "format": "beljour-model-evidence/1",
+  "author": "John Khan",
+  "checked": "2026-10-23",
+  "method": "Official source bytes hashed without executing models. No images used. Tests use synthetic bytes only.",
+  "models": [
+    {
+      "id": "face-detector-short",
+      "url": "https://storage.googleapis.com/mediapipe-models/face_detector/blaze_face_short_range/float16/1/blaze_face_short_range.tflite",
+      "sha256": "b4578f35940bf5a1a655214a1cce5cab13eba73c1297cd78e1a04c2380b0152f",
+      "bytes": 229746,
+      "components": [],
+      "checked": "2026-10-23",
+      "status": "allowed",
+      "modelCards": [
+        "https://storage.googleapis.com/mediapipe-assets/MediaPipe%20BlazeFace%20Model%20Card%20%28Short%20Range%29.pdf"
+      ],
+      "cardLicence": "Apache-2.0",
+      "scope": "Exact standalone artifact",
+      "sourceGuide": "https://ai.google.dev/edge/mediapipe/solutions/vision/face_detector",
+      "guideArtifactUrl": "https://storage.googleapis.com/mediapipe-models/face_detector/blaze_face_short_range/float16/latest/blaze_face_short_range.tflite",
+      "guideArtifactMatchesPin": true,
+      "blocker": null
+    },
+    {
+      "id": "face-landmarker-478",
+      "url": "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task",
+      "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+      "bytes": 3758596,
+      "components": [
+        {
+          "filename": "face_detector.tflite",
+          "bytes": 229746,
+          "sha256": "b4578f35940bf5a1a655214a1cce5cab13eba73c1297cd78e1a04c2380b0152f",
+          "licence": "Apache-2.0",
+          "rightsSource": "https://storage.googleapis.com/mediapipe-assets/MediaPipe%20BlazeFace%20Model%20Card%20%28Short%20Range%29.pdf"
+        },
+        {
+          "filename": "face_landmarks_detector.tflite",
+          "bytes": 2553590,
+          "sha256": "c7d54204ce0448474c7f3fa9af494787c0965cbdd6f20fc72867e43046bd43d5",
+          "licence": "Apache-2.0",
+          "rightsSource": "https://storage.googleapis.com/mediapipe-assets/Model%20Card%20MediaPipe%20Face%20Mesh%20V2.pdf"
+        },
+        {
+          "filename": "geometry_pipeline_metadata_landmarks.binarypb",
+          "bytes": 19376,
+          "sha256": "bdbcda96dfcb7da883da124aaa2c55dee49770d934f0fcc71747f8c21bdc75b4",
+          "licence": "Apache-2.0",
+          "rightsSource": "https://raw.githubusercontent.com/google-ai-edge/mediapipe/fd288e22e1b9fa5c2639dcd01129c15677630057/mediapipe/modules/face_geometry/data/geometry_pipeline_metadata_landmarks.pbtxt"
+        },
+        {
+          "filename": "face_blendshapes.tflite",
+          "bytes": 955312,
+          "sha256": "4f36dded049db18d76048567439b2a7f58f1daabc00d78bfe8f3ad396a2d2082",
+          "licence": "Apache-2.0",
+          "rightsSource": "https://storage.googleapis.com/mediapipe-assets/Model%20Card%20Blendshape%20V2.pdf"
+        }
+      ],
+      "checked": "2026-10-23",
+      "status": "allowed",
+      "modelCards": [
+        "https://storage.googleapis.com/mediapipe-assets/MediaPipe%20BlazeFace%20Model%20Card%20%28Short%20Range%29.pdf",
+        "https://storage.googleapis.com/mediapipe-assets/Model%20Card%20MediaPipe%20Face%20Mesh%20V2.pdf",
+        "https://storage.googleapis.com/mediapipe-assets/Model%20Card%20Blendshape%20V2.pdf"
+      ],
+      "cardLicence": "Apache-2.0",
+      "scope": "Exact task bundle: three guide-linked Apache-2.0 model components and reproduced Apache-2.0 geometry metadata",
+      "sourceGuide": "https://ai.google.dev/edge/mediapipe/solutions/vision/face_landmarker",
+      "guideArtifactUrl": "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/latest/face_landmarker.task",
+      "guideArtifactMatchesPin": true,
+      "blocker": null,
+      "guideArtifactSha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+      "guideArtifactBytes": 3758596,
+      "geometryMetadata": {
+        "licence": "Apache-2.0",
+        "sourceCommit": "fd288e22e1b9fa5c2639dcd01129c15677630057",
+        "source": {
+          "name": "geometry_pipeline_metadata_landmarks.pbtxt",
+          "url": "https://raw.githubusercontent.com/google-ai-edge/mediapipe/fd288e22e1b9fa5c2639dcd01129c15677630057/mediapipe/modules/face_geometry/data/geometry_pipeline_metadata_landmarks.pbtxt",
+          "bytes": 117675,
+          "sha256": "55ca7c4c7bf195673b9d12a1b5d49d4b9c82b5ade8fed4b565496590866e359d"
+        },
+        "schemaFiles": [
+          {
+            "name": "geometry_pipeline_metadata.proto",
+            "url": "https://raw.githubusercontent.com/google-ai-edge/mediapipe/fd288e22e1b9fa5c2639dcd01129c15677630057/mediapipe/modules/face_geometry/protos/geometry_pipeline_metadata.proto",
+            "bytes": 2393,
+            "sha256": "8c589997a6c0a326c4db7f2cf3c8286bebce5498cf30cb1891b5731325aadb45"
+          },
+          {
+            "name": "mesh_3d.proto",
+            "url": "https://raw.githubusercontent.com/google-ai-edge/mediapipe/fd288e22e1b9fa5c2639dcd01129c15677630057/mediapipe/modules/face_geometry/protos/mesh_3d.proto",
+            "bytes": 1339,
+            "sha256": "22c66425b947a73992c76c7638630dd0b3bb0773eda8426e47f5ccc2cb0185a5"
+          }
+        ],
+        "build": {
+          "name": "BUILD",
+          "url": "https://raw.githubusercontent.com/google-ai-edge/mediapipe/fd288e22e1b9fa5c2639dcd01129c15677630057/mediapipe/modules/face_geometry/data/BUILD",
+          "bytes": 3037,
+          "sha256": "1619aab3eabc1070494bea7f985753089e9f4092ffb4b70e8738c112a8ebef1b"
+        },
+        "encoderRule": {
+          "name": "encode_binary_proto.bzl",
+          "url": "https://raw.githubusercontent.com/google-ai-edge/mediapipe/fd288e22e1b9fa5c2639dcd01129c15677630057/mediapipe/framework/encode_binary_proto.bzl",
+          "bytes": 8867,
+          "sha256": "65168ba8b02c39266de7a21a68e1d2ad92785a7ff03e67ae5191dde4c966ff41"
+        },
+        "licenceFile": {
+          "name": "LICENSE",
+          "url": "https://raw.githubusercontent.com/google-ai-edge/mediapipe/fd288e22e1b9fa5c2639dcd01129c15677630057/LICENSE",
+          "bytes": 12331,
+          "sha256": "8707eef0533987efc5b155d64761eeb6e20793f50b9bd1a68dad1cf4719d0ed8"
+        },
+        "comparison": {
+          "bytes": 19376,
+          "sha256": "bdbcda96dfcb7da883da124aaa2c55dee49770d934f0fcc71747f8c21bdc75b4",
+          "exactByteMatch": true,
+          "method": "Complete textproto parse and proto2 encoding from the pinned official schema; exact bytes compared with the pinned task member. No model execution."
+        },
+        "offlineVerifier": "scripts/audit_face_metadata.py"
+      }
+    },
+    {
+      "id": "pose-landmarker-lite",
+      "url": "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task",
+      "sha256": "59929e1d1ee95287735ddd833b19cf4ac46d29bc7afddbbf6753c459690d574a",
+      "bytes": 5777746,
+      "components": [
+        {
+          "filename": "pose_detector.tflite",
+          "bytes": 2959078,
+          "sha256": "46837eb883e6ec75b52c5f5ff6a9b78bd35e66c13f95e8c3566c582d146cb1d9"
+        },
+        {
+          "filename": "pose_landmarks_detector.tflite",
+          "bytes": 2818390,
+          "sha256": "ad6cfd3c903eb31a4ee788b809e45ecf9fa69923b69b9f3f2d9ae616ff433e58"
+        }
+      ],
+      "checked": "2026-10-23",
+      "status": "pending",
+      "modelCards": [
+        "https://storage.googleapis.com/mediapipe-assets/Model%20Card%20BlazePose%20GHUM%203D.pdf"
+      ],
+      "cardLicence": "Apache-2.0",
+      "scope": "Listed model-card components only; whole bundle not cleared",
+      "sourceGuide": null,
+      "guideArtifactUrl": null,
+      "guideArtifactMatchesPin": false,
+      "blocker": "R14: task bundle and both component hashes measured. GHUM 3D model card states Apache-2.0 for pose tracking; detector component and complete bundle rights mapping remain unverified. Manual pose remains required."
+    },
+    {
+      "id": "hair-segmenter",
+      "url": "https://storage.googleapis.com/mediapipe-models/image_segmenter/hair_segmenter/float32/1/hair_segmenter.tflite",
+      "sha256": "2628cf3ce5f695f604cbea2841e00befcaa3624bf80caf3664bef2656d59bf84",
+      "bytes": 781618,
+      "components": [
+        {
+          "filename": "labels.txt",
+          "bytes": 16,
+          "sha256": "0eb0fc074620775afe3908655e9ce6d55d132394e1e4a68b72b0adbee1cdac51"
+        }
+      ],
+      "checked": "2026-10-23",
+      "status": "allowed",
+      "modelCards": [
+        "https://storage.googleapis.com/mediapipe-assets/Model%20Card%20-%20Hair%20Segmentation.pdf"
+      ],
+      "cardLicence": "Apache-2.0",
+      "scope": "Exact standalone artifact",
+      "sourceGuide": "https://ai.google.dev/edge/mediapipe/solutions/vision/image_segmenter",
+      "guideArtifactUrl": "https://storage.googleapis.com/mediapipe-models/image_segmenter/hair_segmenter/float32/latest/hair_segmenter.tflite",
+      "guideArtifactMatchesPin": true,
+      "blocker": null,
+      "categories": [
+        "background",
+        "hair"
+      ]
+    },
+    {
+      "id": "selfie-multiclass",
+      "url": "https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/1/selfie_multiclass_256x256.tflite",
+      "sha256": "c6748b1253a99067ef71f7e26ca71096cd449baefa8f101900ea23016507e0e0",
+      "bytes": 16371837,
+      "components": [
+        {
+          "filename": "labels.txt",
+          "bytes": 51,
+          "sha256": "d8aba95420f795c8748651d9eba63635e8a1070c6c2cce9179f40eab68e0054c"
+        }
+      ],
+      "checked": "2026-10-23",
+      "status": "allowed",
+      "modelCards": [
+        "https://storage.googleapis.com/mediapipe-assets/Model%20Card%20Multiclass%20Segmentation.pdf"
+      ],
+      "cardLicence": "Apache-2.0",
+      "scope": "Exact standalone artifact",
+      "sourceGuide": "https://ai.google.dev/edge/mediapipe/solutions/vision/image_segmenter",
+      "guideArtifactUrl": "https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/latest/selfie_multiclass_256x256.tflite",
+      "guideArtifactMatchesPin": true,
+      "blocker": null,
+      "categories": [
+        "background",
+        "hair",
+        "body-skin",
+        "face-skin",
+        "clothes",
+        "others"
+      ]
+    }
+  ]
+}

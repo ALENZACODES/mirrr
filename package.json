@@ -1,0 +1,38 @@
+{
+  "name": "mirrr",
+  "version": "1.0.0",
+  "description": "Your Taste. Your Looks. Your Style. Beauty discovery for the rest of the world, powered by Qloo Taste AI.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --runInBand",
+    "lint": "eslint src test",
+    "check": "npm run lint && npm test"
+  },
+  "keywords": [
+    "qloo",
+    "beauty",
+    "makeup",
+    "wigs",
+    "black beauty",
+    "urban beauty",
+    "cultural intelligence",
+    "taste AI",
+    "diversity",
+    "inclusion"
+  ],
+  "author": "John Khan / Alenza Capital (ALENZACODES)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "jest": "^29.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

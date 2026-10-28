@@ -1,0 +1,1144 @@
+{
+ "format": "beljour-filter/1",
+ "family": "originals",
+ "about": "FX1 recipes written from the plain descriptions in filters-plan.md only: no other app's names, output, presets, LUTs or assets, and no YouCam. Values are each op's target at strength 100; the slider moves every value from neutral (0) to target (100) and re-bakes the LUT. The twelve 5-rated originals of table 1H.",
+ "author": "John Khan",
+ "recipes": [
+  {
+   "id": "C50",
+   "name": "Arcachon",
+   "version": 1,
+   "class": 1,
+   "tab": "Warm",
+   "status": "Build",
+   "round": "FX1",
+   "rank": 27,
+   "like": {
+    "score": 5,
+    "source": "assumed",
+    "reason": "Warm and kind"
+   },
+   "description": "Honey mids, gentle gold highlights, low contrast",
+   "editorial": {
+    "family": "Editorial Day",
+    "light": "Evening"
+   },
+   "defaults": {
+    "strength": 30,
+    "guard": true,
+    "protectSkin": false,
+    "backgroundOnly": false,
+    "addons": [
+     {
+      "id": "fade",
+      "amount": 0
+     }
+    ]
+   },
+   "limits": {
+    "strengthMax": 100,
+    "geometry": "none",
+    "simulationLabel": false,
+    "funTab": false,
+    "guardMode": "full"
+   },
+   "needs": {
+    "landmarks": false,
+    "masks": [
+     "face-skin",
+     "body-skin"
+    ],
+    "depth": false,
+    "camera": false,
+    "clip": false
+   },
+   "stages": [
+    {
+     "op": "colour.tint",
+     "params": {
+      "hue": 75,
+      "amount": 0.025
+     }
+    },
+    {
+     "op": "colour.splitTone",
+     "params": {
+      "shadowHue": 0,
+      "shadowAmount": 0,
+      "highlightHue": 85,
+      "highlightAmount": 0.025,
+      "balance": 0.0
+     }
+    },
+    {
+     "op": "colour.contrast",
+     "params": {
+      "amount": -0.12
+     }
+    }
+   ],
+   "presets": [],
+   "seed": "photo",
+   "safety": {
+    "eyesClear": false,
+    "faceClear": false
+   },
+   "provenance": {
+    "writtenFrom": "filters-plan.md §2.1 table 1H",
+    "answers": [],
+    "concepts": [
+     "OKLab"
+    ]
+   }
+  },
+  {
+   "id": "C53",
+   "name": "Granville",
+   "version": 1,
+   "class": 1,
+   "tab": "Natural",
+   "status": "Build",
+   "round": "FX1",
+   "rank": 28,
+   "like": {
+    "score": 5,
+    "source": "assumed",
+    "reason": "True colour"
+   },
+   "description": "True colour: half the colour cast removed",
+   "editorial": {
+    "family": "Masthead",
+    "light": "Window"
+   },
+   "defaults": {
+    "strength": 30,
+    "guard": true,
+    "protectSkin": false,
+    "backgroundOnly": false,
+    "addons": [
+     {
+      "id": "fade",
+      "amount": 0
+     }
+    ]
+   },
+   "limits": {
+    "strengthMax": 100,
+    "geometry": "none",
+    "simulationLabel": false,
+    "funTab": false,
+    "guardMode": "full"
+   },
+   "needs": {
+    "landmarks": false,
+    "masks": [
+     "face-skin",
+     "body-skin"
+    ],
+    "depth": false,
+    "camera": false,
+    "clip": false
+   },
+   "stages": [
+    {
+     "op": "colour.greyWorld",
+     "params": {
+      "amount": 0.6
+     }
+    },
+    {
+     "op": "colour.vibrance",
+     "params": {
+      "amount": 0.15
+     }
+    }
+   ],
+   "presets": [],
+   "seed": "photo",
+   "safety": {
+    "eyesClear": false,
+    "faceClear": false
+   },
+   "provenance": {
+    "writtenFrom": "filters-plan.md §2.1 table 1H",
+    "answers": [],
+    "concepts": [
+     "OKLab",
+     "grey-world white balance"
+    ]
+   }
+  },
+  {
+   "id": "C54",
+   "name": "Dinard",
+   "version": 1,
+   "class": 1,
+   "tab": "Natural",
+   "status": "Build",
+   "round": "FX1",
+   "rank": 29,
+   "like": {
+    "score": 5,
+    "source": "assumed",
+    "reason": "Fresh"
+   },
+   "description": "A little brighter, livelier, cleaner greens",
+   "editorial": {
+    "family": "Editorial Day",
+    "light": "Window"
+   },
+   "defaults": {
+    "strength": 30,
+    "guard": true,
+    "protectSkin": false,
+    "backgroundOnly": false,
+    "addons": [
+     {
+      "id": "fade",
+      "amount": 0
+     }
+    ]
+   },
+   "limits": {
+    "strengthMax": 100,
+    "geometry": "none",
+    "simulationLabel": false,
+    "funTab": false,
+    "guardMode": "full"
+   },
+   "needs": {
+    "landmarks": false,
+    "masks": [
+     "face-skin",
+     "body-skin"
+    ],
+    "depth": false,
+    "camera": false,
+    "clip": false
+   },
+   "stages": [
+    {
+     "op": "colour.exposure",
+     "params": {
+      "ev": 0.2
+     }
+    },
+    {
+     "op": "colour.vibrance",
+     "params": {
+      "amount": 0.25
+     }
+    },
+    {
+     "op": "colour.hsl",
+     "params": {
+      "bands": {
+       "green": {
+        "chroma": 0.3,
+        "hue": 8
+       }
+      }
+     }
+    }
+   ],
+   "presets": [],
+   "seed": "photo",
+   "safety": {
+    "eyesClear": false,
+    "faceClear": false
+   },
+   "provenance": {
+    "writtenFrom": "filters-plan.md §2.1 table 1H",
+    "answers": [],
+    "concepts": [
+     "OKLab"
+    ]
+   }
+  },
+  {
+   "id": "C55",
+   "name": "Bréhat",
+   "version": 1,
+   "class": 1,
+   "tab": "Natural",
+   "status": "Build",
+   "round": "FX1",
+   "rank": 30,
+   "like": {
+    "score": 5,
+    "source": "assumed",
+    "reason": "Soft daylight"
+   },
+   "description": "Soft highlights, open shadows, neutral colour",
+   "editorial": {
+    "family": "Editorial Day",
+    "light": "Window"
+   },
+   "defaults": {
+    "strength": 30,
+    "guard": true,
+    "protectSkin": false,
+    "backgroundOnly": false,
+    "addons": [
+     {
+      "id": "fade",
+      "amount": 0
+     }
+    ]
+   },
+   "limits": {
+    "strengthMax": 100,
+    "geometry": "none",
+    "simulationLabel": false,
+    "funTab": false,
+    "guardMode": "full"
+   },
+   "needs": {
+    "landmarks": false,
+    "masks": [
+     "face-skin",
+     "body-skin"
+    ],
+    "depth": false,
+    "camera": false,
+    "clip": false
+   },
+   "stages": [
+    {
+     "op": "colour.highlightRolloff",
+     "params": {
+      "amount": 0.7,
+      "knee": 0.65
+     }
+    },
+    {
+     "op": "colour.tone",
+     "params": {
+      "shadows": 0.5,
+      "highlights": 0.0
+     }
+    }
+   ],
+   "presets": [],
+   "seed": "photo",
+   "safety": {
+    "eyesClear": false,
+    "faceClear": false
+   },
+   "provenance": {
+    "writtenFrom": "filters-plan.md §2.1 table 1H",
+    "answers": [],
+    "concepts": [
+     "OKLab"
+    ]
+   }
+  },
+  {
+   "id": "C63",
+   "name": "Chenonceau",
+   "version": 1,
+   "class": 1,
+   "tab": "Classic",
+   "status": "Build",
+   "round": "FX1",
+   "rank": 31,
+   "like": {
+    "score": 5,
+    "source": "assumed",
+    "reason": "Soft portrait classic"
+   },
+   "description": "Low contrast with a slight highlight glow",
+   "editorial": {
+    "family": "Heritage",
+    "light": "Window"
+   },
+   "defaults": {
+    "strength": 30,
+    "guard": true,
+    "protectSkin": false,
+    "backgroundOnly": false,
+    "addons": [
+     {
+      "id": "fade",
+      "amount": 0
+     }
+    ]
+   },
+   "limits": {
+    "strengthMax": 100,
+    "geometry": "none",
+    "simulationLabel": false,
+    "funTab": false,
+    "guardMode": "full"
+   },
+   "needs": {
+    "landmarks": false,
+    "masks": [
+     "face-skin",
+     "body-skin"
+    ],
+    "depth": false,
+    "camera": false,
+    "clip": false
+   },
+   "stages": [
+    {
+     "op": "colour.contrast",
+     "params": {
+      "amount": -0.2
+     }
+    },
+    {
+     "op": "spatial.glow",
+     "params": {
+      "amount": 0.15,
+      "threshold": 0.72,
+      "radius": 0.025,
+      "warmth": 0.0
+     }
+    }
+   ],
+   "presets": [],
+   "seed": "photo",
+   "safety": {
+    "eyesClear": false,
+    "faceClear": false
+   },
+   "provenance": {
+    "writtenFrom": "filters-plan.md §2.1 table 1H",
+    "answers": [],
+    "concepts": [
+     "OKLab",
+     "Orton soft focus"
+    ]
+   }
+  },
+  {
+   "id": "C77",
+   "name": "Villefranche",
+   "version": 1,
+   "class": 1,
+   "tab": "Pastel",
+   "status": "Build",
+   "round": "FX1",
+   "rank": 32,
+   "like": {
+    "score": 5,
+    "source": "assumed",
+    "reason": "Flattering peach light"
+   },
+   "description": "Peach in the highlights",
+   "editorial": {
+    "family": "Editorial Day",
+    "light": "Window"
+   },
+   "defaults": {
+    "strength": 30,
+    "guard": true,
+    "protectSkin": false,
+    "backgroundOnly": false,
+    "addons": [
+     {
+      "id": "fade",
+      "amount": 0
+     }
+    ]
+   },
+   "limits": {
+    "strengthMax": 100,
+    "geometry": "none",
+    "simulationLabel": false,
+    "funTab": false,
+    "guardMode": "full"
+   },
+   "needs": {
+    "landmarks": false,
+    "masks": [
+     "face-skin",
+     "body-skin"
+    ],
+    "depth": false,
+    "camera": false,
+    "clip": false
+   },
+   "stages": [
+    {
+     "id": "split",
+     "op": "colour.splitTone",
+     "params": {
+      "shadowHue": 0,
+      "shadowAmount": 0,
+      "highlightHue": 48,
+      "highlightAmount": 0.045,
+      "balance": -0.2
+     }
+    },
+    {
+     "id": "expo",
+     "op": "colour.exposure",
+     "params": {
+      "ev": 0.05
+     }
+    }
+   ],
+   "presets": [
+    {
+     "name": "Lilac Air",
+     "patch": {
+      "split": {
+       "shadowHue": 260,
+       "shadowAmount": 0.012,
+       "highlightHue": 314,
+       "highlightAmount": 0.028,
+       "balance": -0.08
+      },
+      "expo": {
+       "ev": 0.08
+      }
+     },
+     "append": [
+      {
+       "op": "colour.curve",
+       "params": {
+        "master": [
+         [
+          0,
+          0.03
+         ],
+         [
+          0.32,
+          0.34
+         ],
+         [
+          0.7,
+          0.72
+         ],
+         [
+          1,
+          0.99
+         ]
+        ]
+       }
+      },
+      {
+       "op": "colour.saturation",
+       "params": {
+        "amount": 0.04
+       }
+      }
+     ]
+    }
+   ],
+   "seed": "photo",
+   "safety": {
+    "eyesClear": false,
+    "faceClear": false
+   },
+   "provenance": {
+    "writtenFrom": "filters-plan.md §2.1 table 1H",
+    "answers": [],
+    "concepts": [
+     "OKLab"
+    ]
+   }
+  },
+  {
+   "id": "C93",
+   "name": "Palavas",
+   "version": 1,
+   "class": 1,
+   "tab": "Film-style",
+   "status": "Build",
+   "round": "FX1",
+   "rank": 33,
+   "like": {
+    "score": 5,
+    "source": "assumed",
+    "reason": "Made for faces"
+   },
+   "description": "Portrait film: soft contrast, warm mids",
+   "editorial": {
+    "family": "Heritage",
+    "light": "Studio"
+   },
+   "defaults": {
+    "strength": 30,
+    "guard": true,
+    "protectSkin": false,
+    "backgroundOnly": false,
+    "addons": [
+     {
+      "id": "fade",
+      "amount": 0
+     },
+     {
+      "id": "grain",
+      "amount": 15
+     }
+    ]
+   },
+   "limits": {
+    "strengthMax": 100,
+    "geometry": "none",
+    "simulationLabel": false,
+    "funTab": false,
+    "guardMode": "full"
+   },
+   "needs": {
+    "landmarks": false,
+    "masks": [
+     "face-skin",
+     "body-skin"
+    ],
+    "depth": false,
+    "camera": false,
+    "clip": false
+   },
+   "stages": [
+    {
+     "id": "curve",
+     "op": "colour.curve",
+     "params": {
+      "master": [
+       [
+        0,
+        0.03
+       ],
+       [
+        0.5,
+        0.5
+       ],
+       [
+        1,
+        0.97
+       ]
+      ]
+     }
+    },
+    {
+     "id": "contrast",
+     "op": "colour.contrast",
+     "params": {
+      "amount": -0.15
+     }
+    },
+    {
+     "id": "tint",
+     "op": "colour.tint",
+     "params": {
+      "hue": 65,
+      "amount": 0.015
+     }
+    },
+    {
+     "id": "roll",
+     "op": "colour.highlightRolloff",
+     "params": {
+      "amount": 0.3,
+      "knee": 0.7
+     }
+    }
+   ],
+   "presets": [
+    {
+     "name": "Midnight Gloss",
+     "patch": {
+      "curve": {
+       "master": [
+        [
+         0,
+         0.035
+        ],
+        [
+         0.22,
+         0.24
+        ],
+        [
+         0.58,
+         0.57
+        ],
+        [
+         1,
+         0.95
+        ]
+       ]
+      },
+      "contrast": {
+       "amount": -0.2
+      },
+      "tint": {
+       "hue": 240,
+       "amount": 0.018
+      },
+      "roll": {
+       "amount": 0.35,
+       "knee": 0.68,
+       "chroma": -0.05
+      }
+     },
+     "append": [
+      {
+       "op": "colour.curve",
+       "params": {
+        "b": [
+         [
+          0,
+          0.025
+         ],
+         [
+          0.56,
+          0.58
+         ],
+         [
+          1,
+          0.985
+         ]
+        ]
+       }
+      },
+      {
+       "op": "colour.whiteBalance",
+       "params": {
+        "temperature": -0.16,
+        "tint": 0.05
+       }
+      }
+     ]
+    }
+   ],
+   "seed": "photo",
+   "safety": {
+    "eyesClear": false,
+    "faceClear": false
+   },
+   "provenance": {
+    "writtenFrom": "filters-plan.md §2.1 table 1H",
+    "answers": [],
+    "concepts": [
+     "OKLab"
+    ]
+   }
+  },
+  {
+   "id": "C102",
+   "name": "Sceaux",
+   "version": 1,
+   "class": 1,
+   "tab": "Clean",
+   "status": "Build",
+   "round": "FX1",
+   "rank": 13,
+   "like": {
+    "score": 5,
+    "source": "assumed",
+    "reason": "Ivory light"
+   },
+   "description": "Ivory highlights, soft contrast",
+   "editorial": {
+    "family": "Salon Suite",
+    "light": "Window"
+   },
+   "defaults": {
+    "strength": 30,
+    "guard": true,
+    "protectSkin": false,
+    "backgroundOnly": false,
+    "addons": [
+     {
+      "id": "fade",
+      "amount": 0
+     }
+    ]
+   },
+   "limits": {
+    "strengthMax": 100,
+    "geometry": "none",
+    "simulationLabel": false,
+    "funTab": false,
+    "guardMode": "full"
+   },
+   "needs": {
+    "landmarks": false,
+    "masks": [
+     "face-skin",
+     "body-skin"
+    ],
+    "depth": false,
+    "camera": false,
+    "clip": false
+   },
+   "stages": [
+    {
+     "op": "colour.splitTone",
+     "params": {
+      "shadowHue": 0,
+      "shadowAmount": 0,
+      "highlightHue": 90,
+      "highlightAmount": 0.04,
+      "balance": 0.0
+     }
+    },
+    {
+     "op": "colour.contrast",
+     "params": {
+      "amount": -0.18
+     }
+    },
+    {
+     "op": "colour.highlightRolloff",
+     "params": {
+      "amount": 0.3,
+      "knee": 0.7
+     }
+    }
+   ],
+   "presets": [],
+   "seed": "photo",
+   "safety": {
+    "eyesClear": false,
+    "faceClear": false
+   },
+   "provenance": {
+    "writtenFrom": "filters-plan.md §2.1 table 1H",
+    "answers": [],
+    "concepts": [
+     "OKLab"
+    ]
+   }
+  },
+  {
+   "id": "C103",
+   "name": "Senlis",
+   "version": 1,
+   "class": 1,
+   "tab": "Clean",
+   "status": "Build",
+   "round": "FX1",
+   "rank": 14,
+   "like": {
+    "score": 5,
+    "source": "assumed",
+    "reason": "Clean white"
+   },
+   "description": "Clean whites, her skin tone neutral",
+   "editorial": {
+    "family": "Salon Suite",
+    "light": "Window"
+   },
+   "defaults": {
+    "strength": 30,
+    "guard": true,
+    "protectSkin": false,
+    "backgroundOnly": false,
+    "addons": [
+     {
+      "id": "fade",
+      "amount": 0
+     }
+    ]
+   },
+   "limits": {
+    "strengthMax": 100,
+    "geometry": "none",
+    "simulationLabel": false,
+    "funTab": false,
+    "guardMode": "full"
+   },
+   "needs": {
+    "landmarks": false,
+    "masks": [
+     "face-skin",
+     "body-skin"
+    ],
+    "depth": false,
+    "camera": false,
+    "clip": false
+   },
+   "stages": [
+    {
+     "op": "colour.highlightRolloff",
+     "params": {
+      "amount": 0.25,
+      "knee": 0.7,
+      "chroma": -0.6
+     }
+    },
+    {
+     "op": "colour.tone",
+     "params": {
+      "shadows": 0.0,
+      "highlights": 0.2
+     }
+    }
+   ],
+   "presets": [],
+   "seed": "photo",
+   "safety": {
+    "eyesClear": false,
+    "faceClear": false
+   },
+   "provenance": {
+    "writtenFrom": "filters-plan.md §2.1 table 1H",
+    "answers": [],
+    "concepts": [
+     "OKLab"
+    ]
+   }
+  },
+  {
+   "id": "C105",
+   "name": "Chatou",
+   "version": 1,
+   "class": 1,
+   "tab": "Clean",
+   "status": "Build",
+   "round": "FX1",
+   "rank": 15,
+   "like": {
+    "score": 5,
+    "source": "assumed",
+    "reason": "Soft focus"
+   },
+   "description": "Gentle diffusion, neutral colour",
+   "editorial": {
+    "family": "Salon Suite",
+    "light": "Window"
+   },
+   "defaults": {
+    "strength": 30,
+    "guard": true,
+    "protectSkin": false,
+    "backgroundOnly": false,
+    "addons": [
+     {
+      "id": "fade",
+      "amount": 0
+     }
+    ]
+   },
+   "limits": {
+    "strengthMax": 100,
+    "geometry": "none",
+    "simulationLabel": false,
+    "funTab": false,
+    "guardMode": "full"
+   },
+   "needs": {
+    "landmarks": false,
+    "masks": [
+     "face-skin",
+     "body-skin"
+    ],
+    "depth": false,
+    "camera": false,
+    "clip": false
+   },
+   "stages": [
+    {
+     "op": "spatial.glow",
+     "params": {
+      "amount": 0.35,
+      "threshold": 0.5,
+      "radius": 0.04,
+      "warmth": 0.0
+     }
+    },
+    {
+     "op": "colour.saturation",
+     "params": {
+      "amount": -0.05
+     }
+    },
+    {
+     "op": "colour.fade",
+     "params": {
+      "amount": 0.15,
+      "toneHue": 0.0,
+      "toneAmount": 0.0
+     }
+    }
+   ],
+   "presets": [],
+   "seed": "photo",
+   "safety": {
+    "eyesClear": false,
+    "faceClear": false
+   },
+   "provenance": {
+    "writtenFrom": "filters-plan.md §2.1 table 1H",
+    "answers": [],
+    "concepts": [
+     "OKLab",
+     "Orton soft focus"
+    ]
+   }
+  },
+  {
+   "id": "C106",
+   "name": "Bougival",
+   "version": 1,
+   "class": 1,
+   "tab": "Clean",
+   "status": "Build",
+   "round": "FX1",
+   "rank": 16,
+   "like": {
+    "score": 5,
+    "source": "assumed",
+    "reason": "Pearl"
+   },
+   "description": "Pearly highlight glow, very subtle",
+   "editorial": {
+    "family": "Salon Suite",
+    "light": "Studio"
+   },
+   "defaults": {
+    "strength": 30,
+    "guard": true,
+    "protectSkin": false,
+    "backgroundOnly": false,
+    "addons": [
+     {
+      "id": "fade",
+      "amount": 0
+     }
+    ]
+   },
+   "limits": {
+    "strengthMax": 100,
+    "geometry": "none",
+    "simulationLabel": false,
+    "funTab": false,
+    "guardMode": "full"
+   },
+   "needs": {
+    "landmarks": false,
+    "masks": [
+     "face-skin",
+     "body-skin"
+    ],
+    "depth": false,
+    "camera": false,
+    "clip": false
+   },
+   "stages": [
+    {
+     "op": "spatial.glow",
+     "params": {
+      "amount": 0.2,
+      "threshold": 0.78,
+      "radius": 0.02,
+      "warmth": -0.1
+     }
+    },
+    {
+     "op": "colour.splitTone",
+     "params": {
+      "shadowHue": 0,
+      "shadowAmount": 0,
+      "highlightHue": 320,
+      "highlightAmount": 0.012,
+      "balance": 0.0
+     }
+    }
+   ],
+   "presets": [],
+   "seed": "photo",
+   "safety": {
+    "eyesClear": false,
+    "faceClear": false
+   },
+   "provenance": {
+    "writtenFrom": "filters-plan.md §2.1 table 1H",
+    "answers": [],
+    "concepts": [
+     "OKLab",
+     "Orton soft focus"
+    ]
+   }
+  },
+  {
+   "id": "C107",
+   "name": "Croissy",
+   "version": 1,
+   "class": 1,
+   "tab": "Clean",
+   "status": "Build",
+   "round": "FX1",
+   "rank": 17,
+   "like": {
+    "score": 5,
+    "source": "assumed",
+    "reason": "Warm light"
+   },
+   "description": "Warm white balance, soft",
+   "editorial": {
+    "family": "Salon Suite",
+    "light": "Window"
+   },
+   "defaults": {
+    "strength": 30,
+    "guard": true,
+    "protectSkin": false,
+    "backgroundOnly": false,
+    "addons": [
+     {
+      "id": "fade",
+      "amount": 0
+     }
+    ]
+   },
+   "limits": {
+    "strengthMax": 100,
+    "geometry": "none",
+    "simulationLabel": false,
+    "funTab": false,
+    "guardMode": "full"
+   },
+   "needs": {
+    "landmarks": false,
+    "masks": [
+     "face-skin",
+     "body-skin"
+    ],
+    "depth": false,
+    "camera": false,
+    "clip": false
+   },
+   "stages": [
+    {
+     "op": "colour.whiteBalance",
+     "params": {
+      "temperature": 0.45
+     }
+    },
+    {
+     "op": "colour.contrast",
+     "params": {
+      "amount": -0.1
+     }
+    },
+    {
+     "op": "colour.tone",
+     "params": {
+      "shadows": 0.2,
+      "highlights": 0.0
+     }
+    }
+   ],
+   "presets": [],
+   "seed": "photo",
+   "safety": {
+    "eyesClear": false,
+    "faceClear": false
+   },
+   "provenance": {
+    "writtenFrom": "filters-plan.md §2.1 table 1H",
+    "answers": [],
+    "concepts": [
+     "OKLab"
+    ]
+   }
+  }
+ ]
+}

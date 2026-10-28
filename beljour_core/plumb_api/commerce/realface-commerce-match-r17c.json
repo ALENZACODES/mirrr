@@ -1,0 +1,118 @@
+{
+  "format": "beljour-realface-pass/1",
+  "version": 3,
+  "author": "John Khan",
+  "face_set": {
+    "id": "frozen-10000",
+    "number_of_faces": 10000,
+    "manifest_policy": "Exact SHA-256 image-content hashes frozen in advance. No training, tuning or data duplication."
+  },
+  "test_kind": "quality",
+  "slices": [
+    "source",
+    "race",
+    "gender",
+    "age",
+    "monk",
+    "monk_gender_age",
+    "slice",
+    "size",
+    "yaw",
+    "occlusion"
+  ],
+  "minimum_slice_faces": 1,
+  "required_monk_tones": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+  ],
+  "required_matrix": {
+    "gender": [
+      "female",
+      "male"
+    ],
+    "age": [
+      "10-19",
+      "20-29",
+      "30-39",
+      "40-59",
+      "60+"
+    ]
+  },
+  "required_labels": [
+    "monk",
+    "gender",
+    "age"
+  ],
+  "regression": {
+    "required": true,
+    "max_drop": 0.0,
+    "same_faces": true,
+    "same_definition": true
+  },
+  "threshold": {
+    "overall": 0.95,
+    "every_slice": 0.95
+  },
+  "human_required": true,
+  "id": "commerce_match",
+  "metric": "A consented or explicitly local shade-class path yields only fictional listed products; independent human-labelled undertone/depth agreement, interpretable reasons, privacy and no diagnosis. Unlabelled samples are UNPROVEN, never silently passed.",
+  "expected_check_names": [
+    "match:manual-cool",
+    "match:manual-warm",
+    "match:skinopt-in",
+    "match:shade-correction"
+  ],
+  "expected_checks": 4,
+  "rules": {
+    "*": [
+      {
+        "field": "q1_pass",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "listed_products_only",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "reason_valid_for_catalogue",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "no_medical_claims",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "unconsented_upload_count",
+        "op": "le",
+        "value": 0
+      },
+      {
+        "field": "photo_sha_unchanged",
+        "op": "eq",
+        "value": true
+      }
+    ]
+  },
+  "test_protocol": {
+    "source": "Frozen photos remain offline; manual baseline uses human-labelled undertone/depth, not race or inferred skin tone.",
+    "comparison": "For skinopt-in, YouCam calls require adult consent and paid-free quota checks; cannot be exercised on all faces without sufficient legal units. Missing measurements stay UNPROVEN.",
+    "reference": "Human-approved controlled-lighting depth and undertone labels, separately provisioned; no colour classification by race.",
+    "rejection": "Invalid lighting, missing lab reference, or withdrawn consent means UNPROVEN for that face, never impute labels."
+  },
+  "notes": [
+    "Preregistered acceptance proposal, not measured performance; provider integration uses mocks in the automated test suite.",
+    "The full set and all required matrix slices must pass. Do not count synthetic checks as real-face observations."
+  ]
+}

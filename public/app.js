@@ -133,7 +133,7 @@ function setupHero() {
 function showView(viewId) {
   // Clear any lingering error/warn toasts so they don't bleed across views
   const toastEl = document.getElementById('toast');
-  if (toastEl) toastEl.classList.add('hidden');
+  if (toastEl) { toastEl.classList.remove('show'); toastEl.classList.add('hidden'); }
 
   // Hide all views + hero
   document.querySelectorAll('.view, #hero').forEach(el => el.classList.add('hidden'));
@@ -1058,9 +1058,11 @@ function toast(msg, type = 'info') {
   const el = document.getElementById('toast');
   if (!el) return;
   el.textContent = msg;
-  el.className = `toast toast--${type}`;
-  el.classList.remove('hidden');
-  setTimeout(() => el.classList.add('hidden'), 3500);
+  el.className = `toast toast--${type} show`;
+  setTimeout(() => {
+    el.classList.remove('show');
+    el.classList.add('hidden');
+  }, 3500);
 }
 
 // ---------------------------------------------------------------------------
@@ -2000,11 +2002,116 @@ window.addEventListener('load', () => {
   });
 });
 
-// Patch showView to init stylist page when navigated to
+// Patch showView to init stylist page and style-match when navigated to
 const _origShowView = showView;
 showView = function(viewId) {
   _origShowView(viewId);
   if (viewId === 'stylist') initStylistPage();
+  if (viewId === 'style-match') initStyleMatch();
 };
+
+// ── STYLE MATCH ────────────────────────────────────────────────────────────
+
+let _smLoaded = false;
+
+async function initStyleMatch() {
+  if (_smLoaded) return;
+  _smLoaded = true;
+  await loadStyleMatchLooks();
+
+  document.getElementById('smFilterBtn')?.addEventListener('click', loadStyleMatchLooks);
+}
+
+async function loadStyleMatchLooks() {
+  const fitzpatrick = document.getElementById('smFitzpatrick')?.value || '';
+  const community   = document.getElementById('smCommunity')?.value || '';
+  const vibe        = document.getElementById('smVibe')?.value || '';
+
+  const params = new URLSearchParams();
+  if (fitzpatrick) params.set('fitzpatrick', fitzpatrick);
+  if (community)   params.set('community', community);
+  if (vibe)        params.set('vibe', vibe);
+
+  const container = document.getElementById('smResults');
+  if (!container) return;
+  container.innerHTML = '<p style="color:#888;text-align:center;padding:2rem;">Loading looks…</p>';
+
+  try {
+    const qs = params.toString();
+    const data = await api(`/api/style-match/looks${qs ? '?' + qs : ''}`);
+    const looks = data.looks || [];
+
+    if (!looks.length) {
+      container.innerHTML = '<p style="color:#888;text-align:center;padding:2rem;">No looks matched those filters — try broadening your search.</p>';
+      return;
+    }
+
+    container.innerHTML = looks.map(look => `
+      <div class="shade-card" style="cursor:pointer;" onclick="openStyleGuide('${look.id}')">
+        <div class="shade-swatch" style="background:linear-gradient(135deg,#2a1a2e,#4a2040,#1a0a1e);display:flex;align-items:center;justify-content:center;font-size:2rem;">✦</div>
+        <div class="shade-info">
+          <div class="shade-name">${look.name}</div>
+          <div class="shade-community" style="font-size:0.72rem;color:#c9a96e;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem;">${look.community.replace('-', ' ')}</div>
+          <div class="shade-desc">${look.description}</div>
+          <div style="margin-top:0.5rem;display:flex;gap:0.4rem;flex-wrap:wrap;">
+            ${(look.vibe || []).map(v => `<span style="background:#2a1a2e;border:1px solid #4a2040;border-radius:999px;padding:0.15rem 0.5rem;font-size:0.68rem;color:#c9a96e;">${v}</span>`).join('')}
+          </div>
+          <button class="btn btn-secondary" style="margin-top:0.75rem;font-size:0.78rem;padding:0.4rem 0.9rem;" onclick="event.stopPropagation();openStyleGuide('${look.id}')">Get My Guide →</button>
+        </div>
+      </div>
+    `).join('');
+
+  } catch (err) {
+    container.innerHTML = `<p style="color:#e05;text-align:center;padding:2rem;">Could not load looks — ${err.message}</p>`;
+    toast('Style match error: ' + err.message, 'error');
+  }
+}
+
+async function openStyleGuide(lookId) {
+  const drawer = document.getElementById('smGuideDrawer');
+  const titleEl = document.getElementById('smGuideTitle');
+  const stepsEl = document.getElementById('smGuideSteps');
+  const tipsEl  = document.getElementById('smGuideTips');
+  if (!drawer) return;
+
+  // Grab current fitzpatrick filter
+  const fitzpatrick = document.getElementById('smFitzpatrick')?.value || 'IV';
+  const undertone   = 'neutral';
+
+  titleEl.textContent = 'Loading guide…';
+  stepsEl.innerHTML = '';
+  tipsEl.innerHTML  = '';
+  drawer.classList.remove('hidden');
+
+  try {
+    const data = await api('/api/style-match/guide', 'POST', { lookId, fitzpatrick, undertone });
+    titleEl.textContent = data.lookId?.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) + ' — Step-by-Step Guide';
+
+    if (data.steps?.length) {
+      stepsEl.innerHTML = data.steps.map((step, i) => `
+        <div style="margin-bottom:1.2rem;padding:1rem;background:#111;border-radius:0.75rem;border-left:3px solid #c9a96e;">
+          <div style="font-size:0.72rem;color:#c9a96e;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.25rem;">Step ${i+1} · ${step.zone || ''}</div>
+          <div style="font-weight:600;color:#f0e8da;margin-bottom:0.4rem;">${step.stepName}</div>
+          <div style="font-size:0.85rem;color:#aaa;margin-bottom:0.6rem;">${step.technique}</div>
+          ${step.products ? `<div style="font-size:0.8rem;color:#c9a96e;">${Object.entries(step.products).map(([k,v]) => `<span style="color:#888;">${k}:</span> ${v}`).join(' · ')}</div>` : ''}
+        </div>
+      `).join('');
+    } else {
+      stepsEl.innerHTML = `<p style="color:#888;padding:1rem;">Full step-by-step guide for this look coming soon.</p>`;
+    }
+
+    if (data.proTips?.length) {
+      tipsEl.innerHTML = `<div style="font-size:0.72rem;color:#c9a96e;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;">Pro Tips</div>` +
+        data.proTips.map(tip => `<div style="font-size:0.83rem;color:#ccc;margin-bottom:0.4rem;">✦ ${tip}</div>`).join('');
+    }
+
+    if (data.shoppingEstimate) {
+      tipsEl.innerHTML += `<div style="margin-top:0.75rem;font-size:0.8rem;color:#888;">Estimated budget: ${data.shoppingEstimate.currency} $${data.shoppingEstimate.low}–$${data.shoppingEstimate.high}</div>`;
+    }
+
+  } catch (err) {
+    stepsEl.innerHTML = `<p style="color:#e05;">Guide unavailable — ${err.message}</p>`;
+  }
+}
 
 document.addEventListener('DOMContentLoaded', bootWithTrending);

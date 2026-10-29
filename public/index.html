@@ -353,6 +353,7 @@
       <div class="nav-links">
         <button class="nav-link" data-view="quiz">DNA Quiz</button>
         <button class="nav-link" data-view="taste">Taste Profile</button>
+        <button class="nav-link" data-view="style-match">Style Match</button>
         <button class="nav-link" data-view="shade">Shade Finder</button>
         <button class="nav-link" data-view="wig">Wig Match</button>
         <button class="nav-link" data-view="stylist">AI Stylist</button>
@@ -915,6 +916,75 @@
         </div>
         <div id="shadeSpectrum" class="shade-spectrum"></div>
         <div id="shadeCards" class="shade-cards"></div>
+      </div>
+    </section>
+
+    <!-- ── STYLE MATCH VIEW ─────────────────────────────────────────── -->
+    <section id="view-style-match" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Style Match</h2>
+        <p class="view-sub">8 signature looks. Matched to your skin tone and community.</p>
+      </div>
+      <div class="shade-form card" style="margin-bottom:1.5rem;">
+        <div class="form-row" style="gap:1rem;flex-wrap:wrap;">
+          <div>
+            <label class="form-label">Fitzpatrick Type</label>
+            <select id="smFitzpatrick" class="select">
+              <option value="">— Any —</option>
+              <option value="I">I – Very Fair</option>
+              <option value="II">II – Fair</option>
+              <option value="III">III – Medium</option>
+              <option value="IV">IV – Olive / Medium-Brown</option>
+              <option value="V">V – Brown / Deep</option>
+              <option value="VI">VI – Deepest</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Community</label>
+            <select id="smCommunity" class="select">
+              <option value="">— Any —</option>
+              <option value="west-african">West African</option>
+              <option value="south-asian">South Asian</option>
+              <option value="caribbean">Caribbean</option>
+              <option value="arab">Arab</option>
+              <option value="latina">Latina</option>
+              <option value="east-asian">East Asian</option>
+              <option value="east-african">East African</option>
+              <option value="south-african">South African</option>
+              <option value="black-american">Black American</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Vibe</label>
+            <select id="smVibe" class="select">
+              <option value="">— Any —</option>
+              <option value="bold">Bold</option>
+              <option value="sultry">Sultry</option>
+              <option value="regal">Regal</option>
+              <option value="glowing">Glowing</option>
+              <option value="fresh">Fresh</option>
+              <option value="earthy">Earthy</option>
+              <option value="editorial">Editorial</option>
+              <option value="bridal">Bridal</option>
+              <option value="golden">Golden</option>
+            </select>
+          </div>
+          <div style="display:flex;align-items:flex-end;">
+            <button class="btn btn-primary" id="smFilterBtn">Find Looks</button>
+          </div>
+        </div>
+      </div>
+      <div id="smResults" class="shade-cards"></div>
+      <!-- Guide drawer -->
+      <div id="smGuideDrawer" class="hidden" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:900;display:flex;align-items:flex-end;justify-content:center;">
+        <div style="background:#1a1a1a;border-radius:1.5rem 1.5rem 0 0;padding:2rem;max-width:600px;width:100%;max-height:80vh;overflow-y:auto;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+            <h3 id="smGuideTitle" style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#f0e8da;"></h3>
+            <button onclick="document.getElementById('smGuideDrawer').classList.add('hidden')" style="background:none;border:none;color:#888;font-size:1.5rem;cursor:pointer;">✕</button>
+          </div>
+          <div id="smGuideSteps"></div>
+          <div id="smGuideTips" style="margin-top:1rem;padding:1rem;background:#111;border-radius:0.75rem;"></div>
+        </div>
       </div>
     </section>
 

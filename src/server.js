@@ -400,20 +400,23 @@ async function router(req, res) {
     try {
       const apiKey = process.env.QLOO_API_KEY;
 
-      // Build a revised set of taste inputs from the message
-      const refinedInputs = extractRefinementSignals(message, tasteChips, currentAesthetic);
+      // Build a revised set of taste signals from the message + history
+      const signals = extractRefinementSignals(message, history);
 
       let looks = [];
       let newAesthetic = currentAesthetic;
       let newCommunityId = communityId;
 
-      if (apiKey && refinedInputs.length > 0) {
+      // Use taste chips as entity inputs for Qloo if available
+      const qlooInputs = tasteChips.length > 0 ? tasteChips : signals.extractedKeywords;
+
+      if (apiKey && qlooInputs.length > 0) {
         const agent = new MirrrAgent({
           qlooApiKey: apiKey,
           options: { topLooks: 6, topShades: 3, topWigs: 3 },
         });
         const result = await agent.run({
-          inputs: refinedInputs,
+          inputs: qlooInputs,
           freeText: [message],
           communityId,
         });
@@ -422,10 +425,10 @@ async function router(req, res) {
         newCommunityId = result.communityId ?? communityId;
       } else {
         // Keyword-based refinement fallback using look engine
-        looks = getRefinedLooksFallback(message, communityId, currentAesthetic);
+        looks = getRefinedLooksFallback(signals, communityId);
       }
 
-      const reply = buildStylistReply(message, looks, history, refinementCount);
+      const reply = buildStylistReply(signals, looks, refinementCount);
 
       return sendJSON(res, 200, {
         reply,
@@ -465,6 +468,89 @@ async function router(req, res) {
       console.error('[/api/agent/demo]', err);
       return sendJSON(res, 500, { error: err.message ?? 'Demo agent error' });
     }
+  }
+
+  // GET /api/style-match/looks — all look previews (optionally filtered)
+  if (method === 'GET' && path === '/api/style-match/looks') {
+    const fitzpatrick = url.searchParams.get('fitzpatrick');
+    const community = url.searchParams.get('community');
+    const vibe = url.searchParams.get('vibe');
+
+    const LOOKS_CATALOGUE = {
+      desi_baddie: { id: 'desi_baddie', name: 'Desi Baddie', community: 'south-asian', description: 'Smoky kohl eyes, glossy nude-brown lip, glass skin glow', image: '/look-kohl-smoky.png', vibe: ['bold', 'sultry', 'editorial'], occasion: ['night-out', 'wedding-guest', 'photoshoot'], fitzpatrickRange: ['III', 'IV', 'V'], tags: ['kohl', 'smoky-eye', 'glass-skin', 'nude-lip'] },
+      persian_queen: { id: 'persian_queen', name: 'Persian Queen', community: 'arab', description: 'Thick winged liner, jewel-tone lid, bold brows, berry lip', image: '/look-kohl-smoky.png', vibe: ['regal', 'dramatic', 'jewel-toned'], occasion: ['evening', 'celebration', 'eid'], fitzpatrickRange: ['II', 'III', 'IV'], tags: ['winged-liner', 'jewel-tone', 'bold-brow', 'berry-lip'] },
+      west_african_glow: { id: 'west_african_glow', name: 'West African Glow', community: 'west-african', description: 'Luminous glass skin, bold orange-coral lip, natural glossy eye', image: '/look-west-african-skin.png', vibe: ['glowing', 'joyful', 'radiant'], occasion: ['daytime', 'brunch', 'owambe'], fitzpatrickRange: ['V', 'VI'], tags: ['glass-skin', 'coral-lip', 'glow', 'melanin'] },
+      k_beauty_seoul: { id: 'k_beauty_seoul', name: 'K-Beauty Seoul', community: 'east-asian', description: 'Dewy glass skin, straight brows, gradient lip, puppy-eye liner', image: '/look-k-beauty-seoul.png', vibe: ['fresh', 'youthful', 'dewy'], occasion: ['everyday', 'daytime', 'casual-date'], fitzpatrickRange: ['I', 'II', 'III'], tags: ['glass-skin', 'gradient-lip', 'puppy-eye', 'k-beauty'] },
+      hammam_goddess: { id: 'hammam_goddess', name: 'Hammam Goddess', community: 'arab', description: 'Luminous bronze skin, gold kohl, terracotta lip, no-makeup-makeup', image: '/look-hammam-glow.png', vibe: ['ethereal', 'golden', 'natural'], occasion: ['beach', 'daytime', 'travel', 'summer'], fitzpatrickRange: ['III', 'IV', 'V'], tags: ['bronze', 'gold-kohl', 'terracotta', 'natural'] },
+      mehndi_bride: { id: 'mehndi_bride', name: 'Mehndi Bride', community: 'south-asian', description: 'Full bridal glam — jewel eyes, statement brows, deep red lip, glass skin', image: '/look-mehndi-hands.png', vibe: ['bridal', 'traditional', 'opulent'], occasion: ['wedding', 'mehndi-night', 'diwali', 'sangeet'], fitzpatrickRange: ['III', 'IV', 'V'], tags: ['bridal', 'jewel-eye', 'red-lip', 'mehndi'] },
+      rooibos_glow: { id: 'rooibos_glow', name: 'Rooibos Glow', community: 'south-african', description: 'Earthy terracotta tones, warm berry lip, brow-forward, sun-kissed skin', image: '/look-rooibos-glow.png', vibe: ['earthy', 'warm', 'grounded'], occasion: ['everyday', 'outdoor', 'casual'], fitzpatrickRange: ['IV', 'V', 'VI'], tags: ['terracotta', 'berry-lip', 'sun-kissed', 'earthy'] },
+      loc_journey: { id: 'loc_journey', name: 'LOC Journey', community: 'black-american', description: 'Powerful matte skin, sculpted brows, bold jewel lip, editorial', image: '/look-loc-journey.png', vibe: ['powerful', 'editorial', 'artistic'], occasion: ['editorial', 'photoshoot', 'statement-look'], fitzpatrickRange: ['V', 'VI'], tags: ['locs', 'editorial', 'bold-lip', 'sculpted'] },
+    };
+
+    let looks = Object.values(LOOKS_CATALOGUE);
+    if (fitzpatrick) looks = looks.filter(l => l.fitzpatrickRange.includes(fitzpatrick));
+    if (community) looks = looks.filter(l => l.community === community);
+    if (vibe) looks = looks.filter(l => l.vibe.includes(vibe));
+
+    return sendJSON(res, 200, { looks, total: looks.length, filters: { fitzpatrick, community, vibe } });
+  }
+
+  // POST /api/style-match/guide — personalised product breakdown for a look
+  if (method === 'POST' && path === '/api/style-match/guide') {
+    const body = await readBody(req).catch(err => { sendJSON(res, 400, { error: err.message }); return null; });
+    if (!body) return;
+    const { lookId, fitzpatrick = 'IV', undertone = 'neutral' } = body;
+    if (!lookId) return sendJSON(res, 400, { error: 'lookId is required' });
+
+    // Step-by-step product breakdown for the look × skin tone
+    const GUIDE_DATA = {
+      desi_baddie: {
+        steps: [
+          { stepName: 'Glass Skin Base', zone: 'skin', technique: 'Press foundation into skin with damp beauty sponge. Bounce, do not drag.', products: { III: { foundation: 'Fenty Pro Filt\'r 230W', concealer: 'NARS Radiant Creamy — Syracuse', powder: 'Laura Mercier Translucent Loose' }, IV: { foundation: 'Fenty Pro Filt\'r 350W', concealer: 'NARS Radiant Creamy — Custard', powder: 'Laura Mercier Translucent Medium Deep' }, V: { foundation: 'Fenty Pro Filt\'r 420W', concealer: 'NARS Radiant Creamy — Amande', powder: 'Black Radiance Loose Setting — Warm Caramel' } } },
+          { stepName: 'Kohl Smoky Eye', zone: 'eyes', technique: 'Prime lids. Black shadow on lid, brown in crease. Kohl the entire waterline — both top and bottom. This is the Desi Baddie signature.', products: { all: { primer: 'Urban Decay EPPP Original', lid: 'MAC Carbon (matte black)', crease: 'MAC Mulch (warm brown)', liner: "L'Oréal Le Khol 101 Midnight Black", mascara: "L'Oréal Voluminous Lash Paradise — Blackest Black" } } },
+          { stepName: 'Bold Brows', zone: 'brows', technique: 'Short hair-strokes fill gaps only. Do not overdraw.', products: { all: { pencil: 'Anastasia Brow Wiz — Dark Brown or Ebony', gel: 'Glossier Boy Brow — Brown or Black' } } },
+          { stepName: 'Glossy Nude-Brown Lip', zone: 'lips', technique: 'Line with brown liner slightly outside lip line. Fill in. Apply lipstick, then gloss on centre only.', products: { III: { liner: 'MAC Spice Lip Pencil', lipstick: 'MAC Velvet Teddy', gloss: 'Fenty Gloss Bomb — Fenty Glow' }, IV: { liner: 'MAC Chestnut Lip Pencil', lipstick: 'MAC Kinda Sexy', gloss: 'Fenty Gloss Bomb — Fu$$y' }, V: { liner: 'MAC Currant Lip Pencil', lipstick: 'MAC Marrakesh', gloss: 'NARS Afterglow Lip Shine — Orgasm' } } },
+        ],
+        proTips: ['Kohl the entire waterline — top and bottom — this is what makes the look distinctly Desi', 'Clean up eyeshadow fallout AFTER completing eyes, not during', 'For photos: increase highlighter 20% — cameras eat light'],
+        budget: { low: 85, high: 220, currency: 'CAD' },
+      },
+      persian_queen: {
+        steps: [
+          { stepName: 'Matte Olive Base', zone: 'skin', technique: 'Persian/Arab skin has olive undertones. Avoid pink foundations. Build coverage only where needed.', products: { II: { foundation: 'Giorgio Armani Luminous Silk 3.5', concealer: 'Charlotte Tilbury Magic Away 3 Fair' }, III: { foundation: 'Giorgio Armani Luminous Silk 5', concealer: 'Charlotte Tilbury Magic Away 5 Medium' }, IV: { foundation: 'NARS Sheer Glow — Syracuse', concealer: 'NARS Radiant Creamy — Custard' } } },
+          { stepName: 'Jewel Lid + Thick Wing', zone: 'eyes', technique: 'Emerald, sapphire or amethyst on lid. Apply shadow BEFORE liner to avoid disturbing wing. Then draw thick wing — extend 1–1.5cm past outer corner.', products: { all: { primer: 'Too Faced Shadow Insurance', jewel: 'Urban Decay Woodstock (purple) or Pat McGrath Emerald', crease: 'MAC Woodwinked (warm gold-brown)', liner: 'Kat Von D Tattoo Liner — Trooper Black', mascara: 'Benefit BADgal BANG — Black' } } },
+          { stepName: 'Statement Brows', zone: 'brows', technique: 'Square the front of the brow slightly for power. Not arched — horizontal.', products: { all: { pencil: 'Anastasia Brow Definer — Dark Brown or Ebony', pomade: 'Anastasia Dipbrow — Dark Brown', gel: 'Boy Brow Glossier — Black' } } },
+          { stepName: 'Rich Berry Lip', zone: 'lips', technique: 'Fill lips fully with liner for staying power. Berry, wine, deep rose — rich not muted.', products: { II: { liner: 'Charlotte Tilbury Lip Cheat — Pillow Talk Medium', lipstick: 'Charlotte Tilbury Matte Revolution — Glastonberry' }, III: { liner: 'MAC Currant', lipstick: 'MAC Rebel (berry-plum)' }, IV: { liner: 'MAC Vino', lipstick: 'Huda Beauty Power Bullet — Starstruck' } } },
+        ],
+        proTips: ['Apply jewel shadow before liner to avoid ruining your wing with fallout', 'Practice the wing on the back of your hand first — both sides must match', 'Set whole face with rosewater mist at end for dewy-over-matte finish'],
+        budget: { low: 110, high: 300, currency: 'CAD' },
+      },
+    };
+
+    const guide = GUIDE_DATA[lookId];
+    if (!guide) {
+      return sendJSON(res, 200, {
+        lookId,
+        message: `Style guide for ${lookId} — personalised for Fitzpatrick Type ${fitzpatrick}`,
+        fitzpatrick,
+        undertone,
+        steps: [],
+        note: 'Full guide available in the Style Match feature on the app',
+      });
+    }
+
+    const personalisedSteps = guide.steps.map(step => {
+      const products = step.products[fitzpatrick] || step.products['all'] || step.products;
+      return { ...step, products };
+    });
+
+    return sendJSON(res, 200, {
+      lookId,
+      fitzpatrick,
+      undertone,
+      steps: personalisedSteps,
+      proTips: guide.proTips,
+      shoppingEstimate: guide.budget,
+    });
   }
 
   // 404
@@ -622,86 +708,3 @@ function buildStylistReply(signals, looks, refinementCount) {
 
   return `${opener} ${body} ${closer}`;
 }
-
-  // GET /api/style-match/looks — all look previews (optionally filtered)
-  if (method === 'GET' && path === '/api/style-match/looks') {
-    const fitzpatrick = url.searchParams.get('fitzpatrick');
-    const community = url.searchParams.get('community');
-    const vibe = url.searchParams.get('vibe');
-
-    const LOOKS_CATALOGUE = {
-      desi_baddie: { id: 'desi_baddie', name: 'Desi Baddie', community: 'south-asian', description: 'Smoky kohl eyes, glossy nude-brown lip, glass skin glow', image: '/look-kohl-smoky.png', vibe: ['bold', 'sultry', 'editorial'], occasion: ['night-out', 'wedding-guest', 'photoshoot'], fitzpatrickRange: ['III', 'IV', 'V'], tags: ['kohl', 'smoky-eye', 'glass-skin', 'nude-lip'] },
-      persian_queen: { id: 'persian_queen', name: 'Persian Queen', community: 'arab', description: 'Thick winged liner, jewel-tone lid, bold brows, berry lip', image: '/look-kohl-smoky.png', vibe: ['regal', 'dramatic', 'jewel-toned'], occasion: ['evening', 'celebration', 'eid'], fitzpatrickRange: ['II', 'III', 'IV'], tags: ['winged-liner', 'jewel-tone', 'bold-brow', 'berry-lip'] },
-      west_african_glow: { id: 'west_african_glow', name: 'West African Glow', community: 'west-african', description: 'Luminous glass skin, bold orange-coral lip, natural glossy eye', image: '/look-west-african-skin.png', vibe: ['glowing', 'joyful', 'radiant'], occasion: ['daytime', 'brunch', 'owambe'], fitzpatrickRange: ['V', 'VI'], tags: ['glass-skin', 'coral-lip', 'glow', 'melanin'] },
-      k_beauty_seoul: { id: 'k_beauty_seoul', name: 'K-Beauty Seoul', community: 'east-asian', description: 'Dewy glass skin, straight brows, gradient lip, puppy-eye liner', image: '/look-k-beauty-seoul.png', vibe: ['fresh', 'youthful', 'dewy'], occasion: ['everyday', 'daytime', 'casual-date'], fitzpatrickRange: ['I', 'II', 'III'], tags: ['glass-skin', 'gradient-lip', 'puppy-eye', 'k-beauty'] },
-      hammam_goddess: { id: 'hammam_goddess', name: 'Hammam Goddess', community: 'arab', description: 'Luminous bronze skin, gold kohl, terracotta lip, no-makeup-makeup', image: '/look-hammam-glow.png', vibe: ['ethereal', 'golden', 'natural'], occasion: ['beach', 'daytime', 'travel', 'summer'], fitzpatrickRange: ['III', 'IV', 'V'], tags: ['bronze', 'gold-kohl', 'terracotta', 'natural'] },
-      mehndi_bride: { id: 'mehndi_bride', name: 'Mehndi Bride', community: 'south-asian', description: 'Full bridal glam — jewel eyes, statement brows, deep red lip, glass skin', image: '/look-mehndi-hands.png', vibe: ['bridal', 'traditional', 'opulent'], occasion: ['wedding', 'mehndi-night', 'diwali', 'sangeet'], fitzpatrickRange: ['III', 'IV', 'V'], tags: ['bridal', 'jewel-eye', 'red-lip', 'mehndi'] },
-      rooibos_glow: { id: 'rooibos_glow', name: 'Rooibos Glow', community: 'south-african', description: 'Earthy terracotta tones, warm berry lip, brow-forward, sun-kissed skin', image: '/look-rooibos-glow.png', vibe: ['earthy', 'warm', 'grounded'], occasion: ['everyday', 'outdoor', 'casual'], fitzpatrickRange: ['IV', 'V', 'VI'], tags: ['terracotta', 'berry-lip', 'sun-kissed', 'earthy'] },
-      loc_journey: { id: 'loc_journey', name: 'LOC Journey', community: 'black-american', description: 'Powerful matte skin, sculpted brows, bold jewel lip, editorial', image: '/look-loc-journey.png', vibe: ['powerful', 'editorial', 'artistic'], occasion: ['editorial', 'photoshoot', 'statement-look'], fitzpatrickRange: ['V', 'VI'], tags: ['locs', 'editorial', 'bold-lip', 'sculpted'] },
-    };
-
-    let looks = Object.values(LOOKS_CATALOGUE);
-    if (fitzpatrick) looks = looks.filter(l => l.fitzpatrickRange.includes(fitzpatrick));
-    if (community) looks = looks.filter(l => l.community === community);
-    if (vibe) looks = looks.filter(l => l.vibe.includes(vibe));
-
-    return sendJSON(res, 200, { looks, total: looks.length, filters: { fitzpatrick, community, vibe } });
-  }
-
-  // POST /api/style-match/guide — personalised product breakdown for a look
-  if (method === 'POST' && path === '/api/style-match/guide') {
-    const body = await readBody(req).catch(err => { sendJSON(res, 400, { error: err.message }); return null; });
-    if (!body) return;
-    const { lookId, fitzpatrick = 'IV', undertone = 'neutral' } = body;
-    if (!lookId) return sendJSON(res, 400, { error: 'lookId is required' });
-
-    // Step-by-step product breakdown for the look × skin tone
-    const GUIDE_DATA = {
-      desi_baddie: {
-        steps: [
-          { stepName: 'Glass Skin Base', zone: 'skin', technique: 'Press foundation into skin with damp beauty sponge. Bounce, do not drag.', products: { III: { foundation: 'Fenty Pro Filt\'r 230W', concealer: 'NARS Radiant Creamy — Syracuse', powder: 'Laura Mercier Translucent Loose' }, IV: { foundation: 'Fenty Pro Filt\'r 350W', concealer: 'NARS Radiant Creamy — Custard', powder: 'Laura Mercier Translucent Medium Deep' }, V: { foundation: 'Fenty Pro Filt\'r 420W', concealer: 'NARS Radiant Creamy — Amande', powder: 'Black Radiance Loose Setting — Warm Caramel' } } },
-          { stepName: 'Kohl Smoky Eye', zone: 'eyes', technique: 'Prime lids. Black shadow on lid, brown in crease. Kohl the entire waterline — both top and bottom. This is the Desi Baddie signature.', products: { all: { primer: 'Urban Decay EPPP Original', lid: 'MAC Carbon (matte black)', crease: 'MAC Mulch (warm brown)', liner: "L'Oréal Le Khol 101 Midnight Black", mascara: "L'Oréal Voluminous Lash Paradise — Blackest Black" } } },
-          { stepName: 'Bold Brows', zone: 'brows', technique: 'Short hair-strokes fill gaps only. Do not overdraw.', products: { all: { pencil: 'Anastasia Brow Wiz — Dark Brown or Ebony', gel: 'Glossier Boy Brow — Brown or Black' } } },
-          { stepName: 'Glossy Nude-Brown Lip', zone: 'lips', technique: 'Line with brown liner slightly outside lip line. Fill in. Apply lipstick, then gloss on centre only.', products: { III: { liner: 'MAC Spice Lip Pencil', lipstick: 'MAC Velvet Teddy', gloss: 'Fenty Gloss Bomb — Fenty Glow' }, IV: { liner: 'MAC Chestnut Lip Pencil', lipstick: 'MAC Kinda Sexy', gloss: 'Fenty Gloss Bomb — Fu$$y' }, V: { liner: 'MAC Currant Lip Pencil', lipstick: 'MAC Marrakesh', gloss: 'NARS Afterglow Lip Shine — Orgasm' } } },
-        ],
-        proTips: ['Kohl the entire waterline — top and bottom — this is what makes the look distinctly Desi', 'Clean up eyeshadow fallout AFTER completing eyes, not during', 'For photos: increase highlighter 20% — cameras eat light'],
-        budget: { low: 85, high: 220, currency: 'CAD' },
-      },
-      persian_queen: {
-        steps: [
-          { stepName: 'Matte Olive Base', zone: 'skin', technique: 'Persian/Arab skin has olive undertones. Avoid pink foundations. Build coverage only where needed.', products: { II: { foundation: 'Giorgio Armani Luminous Silk 3.5', concealer: 'Charlotte Tilbury Magic Away 3 Fair' }, III: { foundation: 'Giorgio Armani Luminous Silk 5', concealer: 'Charlotte Tilbury Magic Away 5 Medium' }, IV: { foundation: 'NARS Sheer Glow — Syracuse', concealer: 'NARS Radiant Creamy — Custard' } } },
-          { stepName: 'Jewel Lid + Thick Wing', zone: 'eyes', technique: 'Emerald, sapphire or amethyst on lid. Apply shadow BEFORE liner to avoid disturbing wing. Then draw thick wing — extend 1–1.5cm past outer corner.', products: { all: { primer: 'Too Faced Shadow Insurance', jewel: 'Urban Decay Woodstock (purple) or Pat McGrath Emerald', crease: 'MAC Woodwinked (warm gold-brown)', liner: 'Kat Von D Tattoo Liner — Trooper Black', mascara: 'Benefit BADgal BANG — Black' } } },
-          { stepName: 'Statement Brows', zone: 'brows', technique: 'Square the front of the brow slightly for power. Not arched — horizontal.', products: { all: { pencil: 'Anastasia Brow Definer — Dark Brown or Ebony', pomade: 'Anastasia Dipbrow — Dark Brown', gel: 'Boy Brow Glossier — Black' } } },
-          { stepName: 'Rich Berry Lip', zone: 'lips', technique: 'Fill lips fully with liner for staying power. Berry, wine, deep rose — rich not muted.', products: { II: { liner: 'Charlotte Tilbury Lip Cheat — Pillow Talk Medium', lipstick: 'Charlotte Tilbury Matte Revolution — Glastonberry' }, III: { liner: 'MAC Currant', lipstick: 'MAC Rebel (berry-plum)' }, IV: { liner: 'MAC Vino', lipstick: 'Huda Beauty Power Bullet — Starstruck' } } },
-        ],
-        proTips: ['Apply jewel shadow before liner to avoid ruining your wing with fallout', 'Practice the wing on the back of your hand first — both sides must match', 'Set whole face with rosewater mist at end for dewy-over-matte finish'],
-        budget: { low: 110, high: 300, currency: 'CAD' },
-      },
-    };
-
-    const guide = GUIDE_DATA[lookId];
-    if (!guide) {
-      return sendJSON(res, 200, {
-        lookId,
-        message: `Style guide for ${lookId} — personalised for Fitzpatrick Type ${fitzpatrick}`,
-        fitzpatrick,
-        undertone,
-        steps: [],
-        note: 'Full guide available in the Style Match feature on the app',
-      });
-    }
-
-    const personalisedSteps = guide.steps.map(step => {
-      const products = step.products[fitzpatrick] || step.products['all'] || step.products;
-      return { ...step, products };
-    });
-
-    return sendJSON(res, 200, {
-      lookId,
-      fitzpatrick,
-      undertone,
-      steps: personalisedSteps,
-      proTips: guide.proTips,
-      shoppingEstimate: guide.budget,
-    });
-  }

@@ -107,9 +107,14 @@ export class MirrrAgent {
 
         // Fetch taste profile for resolved entities
         if (entities.length > 0) {
-          const entityIds = entities.map(e => e.entity_id);
+          const entityIds = entities.map(e => e.id).filter(Boolean);
           const tasteData = await this.qloo.tasteProfile(entityIds).catch(() => null);
-          if (tasteData?.tags) qlooTags = tasteData.tags;
+          // Qloo tasteProfile returns { results: { entities: [...] } } — extract tags from entity names
+          if (tasteData?.results?.entities?.length) {
+            qlooTags = tasteData.results.entities.map(e => e.name ?? e.id).filter(Boolean);
+          } else if (tasteData?.tags) {
+            qlooTags = tasteData.tags;
+          }
         }
       } catch (err) {
         this._log('resolve', `Qloo resolve failed: ${err.message} — continuing`);

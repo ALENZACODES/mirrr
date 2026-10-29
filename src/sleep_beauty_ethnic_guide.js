@@ -1,510 +1,1287 @@
 /**
- * MIRRR — Sleep & Beauty Recovery Ethnic Guide
- * The science of sleep and skin repair, protective sleep practices by community
- * Topics: circadian rhythm, growth hormone, silk bonnets, satin pillowcases, nighttime routines
+ * MIRRR — Sleep Beauty Ethnic Guide
+ * The science of beauty sleep and repair, protective nighttime practices by community
+ * Topics: circadian rhythm, growth hormone, silk bonnets, satin pillowcases, nighttime routines,
+ *         overnight treatments, hair protection, pre-sleep skincare, sleep deprivation effects
+ *
+ * Communities: west-african, south-asian, caribbean, arab, latina, east-asian,
+ *              east-african, south-african, black-american
  */
 
 // ============================================================
-// SLEEP SKIN SCIENCE
+// BEAUTY SLEEP SCIENCE — UNIVERSAL FOUNDATIONS
 // ============================================================
 
-export const SLEEP_SKIN_SCIENCE = {
-  overview: `Sleep is the skin\'s primary repair window. During deep sleep (NREM stages 3-4), the body
-  releases 70-80% of its daily growth hormone pulse — the primary driver of cellular repair, collagen
-  synthesis, and tissue regeneration. Chronic sleep deprivation is demonstrably aging: a 2015 Royal
-  Society Open Science study showed that sleep-deprived individuals were perceived as less attractive,
-  less healthy, and more tired by independent raters. Beauty sleep is not a myth — it\'s biochemistry.`,
+export const BEAUTY_SLEEP_SCIENCE = {
+  overview: `Sleep is the body's primary maintenance and repair window. During the deep stages of
+  non-REM sleep, the pituitary gland releases 70–80 percent of the day's growth hormone (GH) supply.
+  GH is the master signal for cellular repair: it drives collagen synthesis, accelerates tissue
+  regeneration, promotes keratinocyte division, and stimulates the production of hyaluronic acid in
+  the dermis. The popular idea of "beauty sleep" is grounded in solid biochemistry — shortchanging
+  sleep shortchanges every restorative process the skin depends on.`,
 
-  circadianSkinBiology: {
-    overview: 'Skin has its own circadian clock (peripheral clock) synchronized to the suprachiasmatic nucleus (SCN) master clock',
-    nightPhase: {
-      growthHormone: '70-80% of daily growth hormone released during slow-wave sleep (SWS); GH drives tissue repair and collagen synthesis',
-      melatonin: 'Antioxidant in addition to sleep hormone; melatonin receptors in skin; protects from oxidative stress',
-      cortisol: 'Cortisol at its lowest during early sleep; cortisol inhibits collagen synthesis and degrades skin barrier',
-      cellDivision: 'Keratinocyte division peaks at midnight; skin cells replicate 2-3x faster at night than day',
-      bloodFlow: 'Blood flow to skin increases during sleep; nutrient delivery and waste removal optimized',
-      repair: 'DNA repair mechanisms more active at night; UV damage repair primarily overnight'
+  sleepStagesAndBeauty: {
+    overview: 'Beauty repair is not uniform across the night. Each sleep stage contributes a distinct function.',
+    stages: {
+      stage1_NREM: {
+        name: 'NREM Stage 1 (N1) — Light Sleep',
+        duration: '5–10 minutes per cycle',
+        beautyRole: 'Transition state; cortisol begins to fall; minimal repair value but essential gate to deeper stages',
+        skinEffect: 'Vasoconstriction from waking stress eases; skin blood flow begins to increase'
+      },
+      stage2_NREM: {
+        name: 'NREM Stage 2 (N2) — True Sleep',
+        duration: '20–25 minutes per cycle; ~50% of total sleep',
+        beautyRole: 'Core sleep stage; body temperature drops, growth hormone begins to rise, heart rate slows',
+        skinEffect: 'Increased blood flow to skin; nutrient delivery accelerates; cortisol drops below daytime baseline'
+      },
+      stage3_NREM: {
+        name: 'NREM Stage 3 (N3) — Slow-Wave / Deep Sleep',
+        duration: '20–40 minutes; concentrated in first half of night',
+        beautyRole: 'PRIMARY BEAUTY STAGE. Peak GH release (80% of nightly pulse). Maximum collagen synthesis. Peak keratinocyte division rate (2–3x daytime). DNA repair mechanisms at full activity.',
+        skinEffect: 'Transepidermal water loss (TEWL) rate changes; skin barrier actively rebuilds; inflammatory cytokines at daily low; melatonin (a potent skin antioxidant) peaks'
+      },
+      stage4_REM: {
+        name: 'REM Sleep',
+        duration: '20–25 minutes per cycle; expands across the night; largest REM blocks in final two hours',
+        beautyRole: 'Cognitive repair dominant; cortisol begins modest rise. Supports stress resilience, which reduces cortisol-driven collagen breakdown next day.',
+        skinEffect: 'Muscle tone at nadir — facial muscles fully relaxed (temporary compression-line relaxation). Blood flow peaks again. Immune surveillance active.'
+      }
     },
-    dayPhase: {
-      cortisol: 'Morning cortisol spike prepares body for day; suppresses inflammatory response',
-      sebum: 'Sebum production peaks mid-afternoon; acne tends to worsen across the day',
-      barrier: 'Skin barrier function at its strongest in afternoon; weakest in early morning'
-    }
+    sleepCycleBeautyImplication: `Each 90-minute sleep cycle visits all four stages. The first two cycles
+    deliver the longest slow-wave (deep) sleep and thus the highest GH release — this is why the first
+    4–5 hours of sleep are disproportionately valuable for skin repair. The final two cycles are REM-heavy,
+    supporting immune regulation and stress recovery. A full 7–9 hours captures both peaks optimally.`
+  },
+
+  growthHormoneCollagen: {
+    mechanism: `Human growth hormone (hGH) binds receptors on fibroblasts in the dermis, triggering
+    insulin-like growth factor 1 (IGF-1) production. IGF-1 drives fibroblasts to synthesize Type I and
+    Type III collagen — the structural proteins that give skin its firmness and elasticity. Peak GH
+    release occurs within the first 90 minutes of sleep onset (slow-wave sleep). By middle age, this
+    pulse weakens by 50–70%, contributing to the accelerated skin aging seen in people who chronically
+    sleep fewer than 6 hours.`,
+    keyFacts: [
+      '70–80% of daily GH secretion occurs during slow-wave sleep (NREM Stage 3)',
+      'GH → IGF-1 → Type I and III collagen synthesis in dermal fibroblasts',
+      'Sleep deprivation reduces nightly GH pulse by up to 40% in a single night',
+      'Chronic 6-hour sleepers show measurably lower skin collagen density than 8-hour sleepers',
+      'Cortisol (elevated in sleep deprivation) ANTAGONIZES GH and DEGRADES existing collagen via MMP activation',
+      'GH also stimulates hyaluronic acid synthesis — overnight topical hydration stacks with endogenous HA'
+    ]
+  },
+
+  cellTurnoverDuringSleep: {
+    overview: `Epidermal cell turnover (the journey of a keratinocyte from basal layer to shed corneocyte)
+    takes 28–40 days on average — but the individual mitotic events that power this cycle are strongly
+    circadian. Keratinocyte division peaks near midnight (approximately 00:00–02:00 local time). This means
+    new skin cells are born predominantly at night, making nighttime the optimal window for actives that
+    support cell renewal: retinoids, AHAs, peptides, and stem-cell-signaling serums.`,
+    skinBarrierRepair: `The skin barrier — the stratum corneum plus the intercellular lipid matrix —
+    loses water (TEWL) slightly more at night due to lower humidity in bedrooms and absence of physical
+    activity that would otherwise drive blood flow. The body compensates by upregulating lipid synthesis
+    enzymes (ceramidase, serine palmitoyl transferase) during sleep. Overnight occlusive moisturizers
+    (sleep masks, slugging agents) amplify this natural repair by reducing TEWL and providing the lipid
+    building blocks the barrier needs.`,
+    melatoninSkin: `Melatonin is not only a sleep hormone — it acts as one of the body's most potent
+    endogenous antioxidants. Melatonin receptors (MT1, MT2) are expressed in keratinocytes, fibroblasts,
+    and melanocytes. At night, rising melatonin scavenges free radicals (including reactive oxygen species
+    generated by daytime UV exposure), modulates melanogenesis (pigmentation), and reduces inflammatory
+    cytokine cascades in the dermis. Light pollution (blue light from phones) suppresses melatonin
+    production and, by extension, blunts this nightly antioxidant defense in skin.`
   },
 
   sleepDeprivationEffects: {
-    immediate: ['Puffy eyes (fluid retention)', 'Pallor/dullness (vasoconstriction from cortisol)', 'Dark circles accentuated', 'Increased oil production'],
-    chronic: {
-      cortisol: 'Chronically elevated cortisol breaks down collagen, degrades hyaluronic acid, impairs wound healing',
-      inflammation: 'IL-6, TNF-alpha, CRP elevated in sleep deprivation — inflammatory cytokines worsen acne, eczema, psoriasis',
-      barrier: 'Transepidermal water loss (TEWL) increases with sleep deprivation; barrier function impaired',
-      darkcircles: 'Vasodilation under eyes + thinning skin + hyperpigmentation from chronic fatigue = dark circles worsen',
-      research: '2015 Royal Society Open Science: sleep-deprived faces rated 6% less attractive, 19% less healthy by blind raters'
+    immediate: [
+      'Periorbital puffiness (lymphatic drainage impaired, fluid pools under eyes)',
+      'Pallor and grey cast (cortisol-driven vasoconstriction reduces skin blood flow)',
+      'Accentuated dark circles (vasodilation rebound + thin skin under eyes)',
+      'Dull, flat complexion (decreased microcirculation)',
+      'Increased fine line visibility (skin dehydration from reduced barrier function)'
+    ],
+    chronicEffects: {
+      collagenLoss: 'Chronically elevated cortisol activates matrix metalloproteinases (MMPs) that degrade Type I collagen; skin thins and loses firmness',
+      inflammation: 'Elevated IL-6, TNF-alpha, and CRP (the "inflammaging" triad) worsen acne, eczema, rosacea, psoriasis — all inflammatory skin conditions',
+      barrierImpairment: 'TEWL increases by ~30% in chronically sleep-deprived subjects; skin loses moisture faster',
+      hyperpigmentation: 'Cortisol-driven inflammation up-regulates melanogenesis, worsening post-inflammatory hyperpigmentation (PIH) — especially in Fitzpatrick IV-VI skin',
+      immuneDysregulation: 'Reduced natural killer (NK) cell activity; increased infection susceptibility (impetigo, folliculitis, herpes outbreaks)',
+      research: '2015 Royal Society Open Science study: faces rated after one night of sleep deprivation were judged 19% less healthy, 6% less attractive by blind raters'
     },
-    darkSkinSpecific: {
-      darkCircles: 'Periorbital hyperpigmentation (pigmentary dark circles common in South Asian, Arab, East African skin) worsened significantly by sleep deprivation',
-      pih: 'Sleep deprivation-elevated cortisol → inflammation → triggers PIH in Fitzpatrick IV-VI',
-      dullness: 'Melanin-rich skin shows dullness/grey cast more visibly when fatigued'
+    darkSkinConsiderations: {
+      pih: 'In melanin-rich skin (Fitzpatrick IV–VI), inflammation from poor sleep is a reliable PIH trigger; clearing PIH requires addressing sleep quality first',
+      darkCircles: 'Periorbital hyperpigmentation (structural dark circles common in South Asian, Arab, East African heritage) is dramatically worsened by sleep deprivation — fatigue congests periorbital vessels',
+      dullness: 'Grey/ashy cast from poor sleep is most visible in deeper skin tones where the contrast between well-rested radiance and depleted skin is highest'
     }
   },
 
-  optimalSleep: {
-    duration: 'Adults 7-9 hours (National Sleep Foundation); athletes 8-10 hours for recovery',
-    timing: 'Sleep aligned with natural darkness (10pm-6am or similar) maximizes circadian synchronization',
-    stages: {
-      n1: '5-10 min; transitional; lightest sleep',
-      n2: '20-30 min per cycle; sleep spindles; memory consolidation',
-      n3: 'Deep/slow-wave sleep (SWS); growth hormone release; physical repair; decreases with age',
-      rem: 'REM = Rapid Eye Movement; dreaming; emotional processing; consolidation; also important for restoration'
-    },
-    cycles: '90-minute cycles; 4-6 cycles per night; SWS peaks in first half; REM peaks in second half',
-    aging: 'SWS decreases with age; growth hormone output decreases; explains why aging skin repairs more slowly',
-    children: 'Children have extraordinarily high SWS — explains their skin\'s rapid repair and regeneration'
-  },
-
-  sleepPosition: {
-    back: {
-      rating: 'BEST for skin',
-      reason: 'No pressure on face; no fabric friction; even fluid drainage; no pillow lines',
-      challenge: 'Back sleeping uncomfortable for many; snoring risk; can use sleep position trainer products'
-    },
-    side: {
-      rating: 'MANAGEABLE with protection',
-      reason: 'Most common sleep position; creates one-sided pillow lines (sleep wrinkles); uneven eye puffiness',
-      protection: 'Silk or satin pillowcase significantly reduces friction; switch sides regularly'
-    },
-    stomach: {
-      rating: 'WORST for skin',
-      reason: 'Maximum face pressure; most pillow friction; worst sleep wrinkles; spinal alignment issues too',
-      note: 'Noticeably more facial lines on stomach sleepers in studies; pillow lines become permanent wrinkles over time'
-    }
-  },
-
-  sleepWrinkles: {
-    mechanism: 'Mechanical compression and friction of face against pillow over 6-8 hours nightly; 2,500 hours of compression per year',
-    development: 'Sleep lines visible in youth are temporary; in aging (decreased collagen/elasticity) they become permanent',
-    prevention: ['Silk/satin pillowcase (reduces friction coefficient dramatically)', 'Back sleeping', 'Silk sleep mask', 'Night cream or facial oil (reduces friction coefficient)'],
-    treatment: 'Once established: retinol, hyaluronic acid, peptides; professional: Botox (relaxes compression pattern), filler, laser'
+  circadianRhythmBeauty: {
+    overview: `Skin operates on a peripheral circadian clock synchronized (entrained) to the
+    suprachiasmatic nucleus (SCN) in the hypothalamus via light/dark cues. This means skincare timing
+    genuinely matters — not as marketing myth, but as biology.`,
+    morningOptimal: [
+      'Antioxidants (Vitamin C, niacinamide, resveratrol) — to defend against impending UV and pollution oxidative stress',
+      'SPF — daytime barrier against photoaging driver',
+      'Caffeine eye products — peripheral vasoconstrictor, reduces morning puffiness',
+      'Lightweight hydration — skin barrier is at its AM-weakest just after waking, so hydration first'
+    ],
+    eveningOptimal: [
+      'Retinoids (tretinoin, retinol, retinal) — photodegradable; work better at night; align with peak cell turnover midnight window',
+      'AHA/BHA exfoliants — cause temporary photosensitivity; nighttime use avoids UV exposure risk',
+      'Heavy occlusives and sleeping masks — take advantage of the nightly lipid-synthesis repair window',
+      'Peptides and collagen-supporting actives — align with nightly collagen synthesis GH pulse',
+      'Skin barrier lipids (ceramides, fatty acids, cholesterol) — align with nightly barrier repair'
+    ],
+    chronotypeTip: `Evening chronotypes ("night owls") tend to apply nighttime skincare later,
+    which actually aligns better with their delayed melatonin onset. Morning types should apply
+    actives earlier in the evening to ensure absorption before their earlier sleep onset.`
   }
 };
 
 // ============================================================
-// PROTECTIVE SLEEP PRACTICES
-// ============================================================
-
-export const PROTECTIVE_SLEEP_PRACTICES = {
-  silkAndSatin: {
-    overview: `Silk and satin pillowcases are genuinely beneficial for hair and skin — not just marketing.
-    The science relates to friction coefficient: cotton has a high friction coefficient; silk and satin are
-    smooth and create less mechanical stress on hair cuticles and skin.`,
-
-    silk: {
-      material: 'Bombyx mori silkworm cocoon protein (fibroin and sericin)',
-      friction: 'Natural silk has one of the lowest friction coefficients of any natural fiber',
-      hairBenefit: 'Less cuticle damage; less frizz; less moisture stripping; less breakage at friction points',
-      skinBenefit: 'Less sleep wrinkle formation; less friction on sensitive skin; less product absorption from pillow',
-      protein: 'Silk proteins (sericin) mildly moisturising; some evidence for reduced TEWL',
-      grade: 'Momme (mm) weight: 19-25 momme is high quality; lower is thinner/less durable',
-      care: 'Hand wash or delicate cycle cold; air dry; do not wring; silk pillowcases last years with care'
-    },
-
-    satin: {
-      material: 'Weave pattern (not fiber); can be polyester, nylon, or silk weave — polyester satin is budget option',
-      friction: 'Satin weave creates smooth surface regardless of fiber; similar friction reduction to silk',
-      hairBenefit: 'Good hair protection; similar to silk for cuticle protection',
-      skinBenefit: 'Good skin friction reduction; less luxury feel than silk but functionally similar for sleep wrinkles',
-      cost: 'Polyester satin $5-30 vs silk $40-200+; for hair and skin protection, both work',
-      care: 'Machine washable; durable; practical choice for those who want benefit without silk price'
-    },
-
-    cotton: {
-      friction: 'High friction coefficient; absorbs moisture from skin and hair; creates mechanical stress',
-      result: 'More frizz; more cuticle damage; more sleep line formation; strips product from skin at night',
-      recommendation: 'Upgrade pillowcase to silk or satin — highest ROI beauty purchase for dark/curly hair'
-    }
-  },
-
-  bonnetsCapsWraps: {
-    overview: `Protective hair coverings during sleep are critical for Type 3-4 hair (coils, curls, kinks).
-    Without protection, pillowcase friction causes cuticle lifting, moisture loss, tangles, and breakage overnight.`,
-
-    silkBonnet: {
-      description: 'Cap-style hair covering made from silk; encloses all hair',
-      benefit: 'Protects entire hair from friction; retains moisture; maintains style (wash-and-go, twists, braids)',
-      use: 'Put on after nighttime hair routine; secure but not too tight (avoid tension at hairline)',
-      types: 'Tie-style (adjustable) vs pull-on (looser); choose based on hair volume',
-      cultural: 'Deep tradition in Black American women\'s beauty culture; passed mother to daughter; non-negotiable for natural hair care'
-    },
-
-    satinBonnet: {
-      description: 'Polyester satin version; more affordable, machine washable',
-      benefit: 'Same protective function as silk at lower price point',
-      recommendation: 'Multiple satin bonnets (rotate while washing) vs one silk bonnet'
-    },
-
-    silkScarf: {
-      description: 'Large silk or satin scarf wrapped around hair; pineapple wrap or full wrap',
-      history: 'African American hair scarf tradition dating to enslavement period (practical + beauty preservation)',
-      technique: 'Pineapple: gather all hair to top of head in loose ponytail before scarf; wrapping prevents flattening',
-      cultural: 'Head wrapping traditions span Africa, Caribbean, South Asia, Middle East; reclaimed as beauty practice'
-    },
-
-    durags: {
-      description: 'Traditional Black American men\'s head covering; waves maintenance',
-      hair: 'Velvet durags for compression and wave pattern maintenance; silk/satin for moisture retention',
-      benefit: 'Compresses hair into wave pattern; protects waves overnight; reduces frizz',
-      culture: 'Durag culture reclaimed as Black fashion statement after years of racist stigmatization'
-    },
-
-    twistBraidProtection: {
-      description: 'Protective styles (twists, braids) loose enough for overnight wearing',
-      technique: 'Pineapple twist or loose two-strand twist before bed; reduces tangling; maintains curl pattern',
-      morning: 'Unravel in morning for stretched, defined curls'
-    }
-  },
-
-  nighttimeRoutines: {
-    overview: 'Nighttime is maximum absorption time for skincare — skin permeability is higher at night, and no makeup or SPF competition.',
-
-    skinRoutineOrder: {
-      steps: [
-        { step: 1, name: 'Double Cleanse', description: 'Oil cleanser removes makeup/sunscreen/sebum; water-based cleanser removes remaining impurities' },
-        { step: 2, name: 'Exfoliate', description: '2-3x weekly only; AHA (lactic/glycolic) or BHA (salicylic); never exfoliate daily — over-exfoliation worsens barrier' },
-        { step: 3, name: 'Treatment Actives', description: 'Retinol/retinoid (night only), azelaic acid, niacinamide — actives go on clean skin for best penetration' },
-        { step: 4, name: 'Moisturizer', description: 'Hyaluronic acid serum first (humectant); then moisturizer (emollient/occlusive combo)' },
-        { step: 5, name: 'Facial Oil', description: 'Optional; seal everything in; most oils absorb overnight; reduces friction on pillow' },
-        { step: 6, name: 'Spot Treatment', description: 'Acne spot treatments (benzoyl peroxide, salicylic acid, sulfur) last; targeted application' }
-      ]
-    },
-
-    sluggingTrend: {
-      name: 'Slugging',
-      description: 'Final step of applying thin layer of petrolatum (Vaseline) to seal in entire routine',
-      science: 'Creates occlusive film; virtually eliminates TEWL; maximizes overnight moisture retention',
-      origin: 'Korean skincare trend; popular in Black American beauty communities (overlaps with "greasing" tradition)',
-      darkSkin: 'Particularly beneficial for dry/ashy dark skin; does NOT cause acne for most (petrolatum is non-comedogenic)',
-      technique: 'Thin layer only — fingertip amount; after all other products; avoid eye area for some'
-    },
-
-    neckAndDecollettage: {
-      reminder: 'Neck ages as fast as face; same products same routine; work upward, not downward (avoid lymph drain push)',
-      stretch: 'Stretch marks on chest/décolletage benefit from same retinol/vitamin C routine as face',
-      sunProtection: 'SPF on neck and décolletage every day; one of most UV-exposed areas, least moisturised'
-    }
-  }
-};
-
-// ============================================================
-// 9 COMMUNITY SLEEP BEAUTY GUIDES
+// ETHNIC SLEEP BEAUTY GUIDES — PER COMMUNITY
 // ============================================================
 
 export const ETHNIC_SLEEP_BEAUTY_GUIDES = {
+
+  // ──────────────────────────────────────────────────
+  // WEST AFRICAN
+  // ──────────────────────────────────────────────────
   'west-african': {
     communityName: 'West African',
-    primaryConcerns: ['Type 4 natural hair moisture retention overnight', 'Preventing dryness/ashiness', 'PIH from pressure points'],
+    heritageRegions: ['Nigeria', 'Ghana', 'Senegal', 'Côte d\'Ivoire', 'Mali', 'Cameroon', 'Togo', 'Benin'],
+    skinToneRange: 'Fitzpatrick IV–VI predominant; deep melanin-rich complexions',
+    hairTextures: 'Type 4A, 4B, 4C predominant; high-density coil and kink patterns',
 
-    hairProtection: {
-      tradition: 'Head scarf wrapping deeply traditional across West Africa — extends from cultural and religious practice to beauty',
-      modern: 'Silk bonnet or satin scarf mandatory for Type 4 hair; Ghana braids, Senegalese twists protected inside satin',
-      technique: 'Loose pineapple or two-strand twists for loose hair; laid flat with bonnet for braids/twists styles',
-      LOC: 'Apply LOC method (Liquid-Oil-Cream) before bed; seal with oil to protect Type 4 hair overnight'
+    sleepBeautyPhilosophy: `In West African beauty culture, nighttime is when you feed the skin and hair —
+    not just clean them. Traditional mothers in Yoruba, Igbo, Akan, and Wolof households applied shea
+    butter (orí in Yoruba, nkuto in Twi) to their children's skin before bed as a matter of course —
+    a routine layered into domestic life without clinical language but with precise inherited knowledge.
+    The skin absorbs what it needs while the body is still; the hair is protected so morning reveals
+    moisture, not breakage.`,
+
+    traditionalSleepBeautyRituals: {
+      sheaButterNightRoutine: {
+        name: 'Overnight Shea Butter Treatment (Orí Treatment)',
+        description: `Raw, unrefined shea butter is the cornerstone West African overnight skin treatment.
+        Applied generously to face, neck, body, and scalp before sleep. Shea's rich stearic and oleic
+        acid content creates a powerful occlusive layer that seals moisture in overnight — amplifying the
+        skin's natural nocturnal barrier repair. Unrefined shea also contains significant levels of
+        triterpene alcohols (lupeol, alpha-amyrin) with anti-inflammatory and cicatrizing properties.`,
+        application: [
+          'After evening bath, pat skin 80% dry (damp skin absorbs better)',
+          'Warm a generous amount of raw shea butter between palms until liquefied',
+          'Apply to face, neck, and décolletage using upward strokes',
+          'Apply liberally to elbows, knees, heels',
+          'If using for scalp: apply directly to scalp in sections, massage in circular motions',
+          'For full hair mask: apply through lengths of hair (see overnight twist treatment below)',
+          'Wear older T-shirt or keep a dedicated pillowcase for heavy shea nights'
+        ],
+        scienceNote: 'Shea butter occlusion increases hydration (corneometry readings) by 30–50% overnight in dry skin types. Triterpenes suppress NF-κB inflammatory pathway in keratinocytes.'
+      },
+
+      overnightTwistOrBraid: {
+        name: 'Sleeping in Two-Strand Twists or Box Braids',
+        description: `For West African coil and kink hair textures, sleeping in twists (two-strand or
+        flat twists) or loose protective braids is a standard hair preservation technique. The twisted
+        or braided configuration keeps individual strands from rubbing against each other and the
+        pillowcase, dramatically reducing friction-induced cuticle damage and mechanical breakage —
+        the primary cause of length retention failure in Type 4 hair.`,
+        styles: {
+          twoStrandTwists: 'Hair divided into sections, each twisted loosely in two-strand pattern; held at end with small coil or loose elastic; morning unravel reveals elongated, defined coils',
+          flatTwists: 'Flat to the scalp; follow natural parting; used for scalp health and overnight edge smoothing',
+          boxBraids: 'Three-strand braids; looser tension appropriate for overnight; cornrows laid flat',
+          pineappleForCoils: 'Loose gathering at crown using a large-diameter scrunchie for shorter coils; keeps coil definition'
+        },
+        materials: ['Satin scrunchies only (no metal, no rough elastics)', 'Fingertips for loose ends rather than tight bands'],
+        morningResult: 'Soft, defined coils with retained moisture; elongated pattern; reduced frizz vs. loose overnight'
+      },
+
+      headWrapSleep: {
+        name: 'Sleeping in a Head Wrap (Gele-Style Sleep Covering)',
+        description: `Across West Africa, the cultural head wrap (gele in Yoruba; duku in Twi and Hausa
+        contexts; tignon historically) has both ceremonial and practical significance. As a sleep
+        practice, women tie a large piece of satin, silk, or smooth fabric over their hair (styled
+        or braided) before bed. This serves the same function as a bonnet but maintains cultural
+        continuity and personal dignity — it is hair protection that carries pride, not a utilitarian
+        afterthought. The wrap keeps the hairstyle intact, prevents friction, retains moisture in the
+        hair shaft, and shields the edges — the delicate hairline hairs most vulnerable to breakage.`,
+        tying: [
+          'Style hair first (in twists, flat twists, or braids)',
+          'Fold a large square of satin or silk fabric into a triangle',
+          'Place longest edge along hairline at front',
+          'Bring two tail ends to the back and tie securely but not tightly',
+          'Tuck remaining fabric tail up and under for a clean finish',
+          'Knot should rest comfortably at nape — not on scalp'
+        ],
+        materials: 'Ankara-print satin, solid satin, 100% silk; avoid rayon, polyester, or cotton that draws moisture'
+      },
+
+      blackSoapPreSleep: {
+        name: 'Dudu Osun / African Black Soap Pre-Sleep Cleanse',
+        description: `Authentic African black soap (dudu osun in Yoruba; alata samina in Twi) made from
+        plantain skin ash, palm oil, cocoa pod, and shea is used as a pre-sleep cleanser for face and
+        body. It provides gentle exfoliation, anti-bacterial action (from the potassium hydroxide formed
+        during saponification), and a clean base for the overnight shea treatment. The charcoal and ash
+        components draw impurities from pores without stripping the skin's oil mantle.`,
+        usage: 'Wet face, work small amount of black soap into lather, massage 30–60 seconds, rinse thoroughly, follow immediately with shea butter or a lighter moisturizer',
+        caution: 'Authentic raw black soap is alkaline (pH 9–10); limit to 2–3 times per week on face; use sparingly if skin is eczema-prone; avoid around eyes'
+      }
     },
 
-    skinNightRoutine: {
-      cleanse: 'African black soap or gentle cleanser to remove day\'s sweat and SPF',
-      treatment: 'Niacinamide serum for PIH treatment (most important active for dark skin)',
-      moisture: 'Rich shea butter-based night cream; extra moisture on elbows if prone to dryness',
-      seal: 'Slugging with petrolatum on very dry patches; shea butter on body'
+    hairProtectionSleep: {
+      primaryMethod: 'Head wrap or satin/silk bonnet over braids, twists, or loose coils',
+      edges: 'Edge control product (light hold) applied before wrapping; protects finest, most breakage-prone hairs at hairline',
+      moistureRetention: 'Shea butter or leave-in conditioner applied to hair before wrapping; wrap seals moisture in',
+      pillowcase: 'Satin pillowcase as backup; some West African women use both wrap AND satin pillowcase for double protection'
     },
 
-    sleepEnvironment: {
-      satin: 'Satin pillowcase in addition to bonnet — extra protection if bonnet slips off',
-      humidity: 'Humidifier in winter prevents moisture loss from dry indoor heating air'
-    },
-
-    culturalPractice: {
-      headWrap: 'Head wrapping at night is continuation of West African scarf culture; many women sleep with gele (headwrap) or tied scarf',
-      naturalOil: 'Nightly oiling of scalp and ends with shea or coconut is generational practice'
-    },
-
-    advice: `West African women have some of the most intentional nighttime hair care practices globally —
-    and it\'s necessary. Type 4 hair loses moisture rapidly on cotton; the silk bonnet is non-negotiable.
-    For skin: niacinamide serum nightly on face (PIH treatment) + rich shea butter on body immediately
-    before sleep is the combination that maintains and improves melanin-rich skin condition over time.`
+    skinScienceNote: `Melanin-rich Fitzpatrick V–VI skin found most commonly in West African heritage has
+    a more robust melanocyte response to inflammation — meaning sleep-deprivation-driven cortisol spikes
+    reliably worsen PIH and produce an ashy/grey fatigue cast. Shea butter and nightly anti-inflammatory
+    rituals directly counteract this. The deep skin tones also show slower visible signs of intrinsic
+    aging (the "Black don't crack" phenomenon is real: higher melanin density provides inherent photoprotection
+    and antioxidant activity), but sleep quality remains the primary controllable variable for radiance
+    and clarity.`
   },
 
+  // ──────────────────────────────────────────────────
+  // SOUTH ASIAN
+  // ──────────────────────────────────────────────────
   'south-asian': {
     communityName: 'South Asian',
-    primaryConcerns: ['Dark circles (constitutional/genetic)', 'Hyperpigmentation', 'Hair oiling tradition'],
+    heritageRegions: ['India', 'Pakistan', 'Bangladesh', 'Sri Lanka', 'Nepal', 'Afghanistan', 'Myanmar'],
+    skinToneRange: 'Fitzpatrick III–V predominant; significant diversity from fair North Indian to deep South Indian and Sri Lankan tones',
+    hairTextures: 'Type 1C to 3A predominant; thick, high-density straight to wavy to loose curl',
 
-    hairProtection: {
-      oilNight: 'Overnight oiling (champi + leave-in oil) traditional in South Asia; cover with silk scarf or shower cap',
-      braiding: 'Loose braid before bed protects long hair; traditional across South Asia',
-      oil: 'Coconut oil (South India), casame (mustard, North India), bhringraj or amla oil on scalp; wrap and sleep'
+    sleepBeautyPhilosophy: `Ayurveda, the 5,000-year-old Indian system of medicine, explicitly frames
+    sleep as the second pillar of health (after ahara, or diet). Nidra (sleep) is one of the tri-upasthambha
+    — three sub-pillars of life. In Ayurvedic beauty practice, the nighttime is understood as a Kapha
+    window: the body is cool, still, and in restoration mode. Oiling the hair and scalp before bed is
+    an act called champi (head massage with oil), practiced by grandmothers, mothers, and daughters
+    across South Asia for centuries — it is both a bonding ritual and a serious hair-growth and
+    scalp-health practice.`,
+
+    traditionalSleepBeautyRituals: {
+      champi: {
+        name: 'Champi — Overnight Oil Hair Treatment',
+        description: `Champi (from Sanskrit campā, referring to the champa flower whose oil was
+        traditionally used) is the South Asian tradition of massaging oil into the scalp and hair
+        before sleep. In its simplest form it is warm coconut oil worked into the scalp with firm
+        fingertip pressure; in more elaborate versions it layers multiple oils — brahmi oil for the
+        scalp, sesame for the lengths, and amla oil along the hairline — before covering with a
+        soft cotton dupatta or muslin cloth and sleeping. The practice improves scalp circulation
+        (fingertip massage mechanically stimulates dermal papillae blood flow, a proven mechanism
+        for hair growth support), conditions the hair shaft, and reduces DHT's effects on the
+        follicle through the anti-androgenic properties of certain traditional oils.`,
+        oils: {
+          coconut: 'Most widely used; high lauric acid content allows penetration into cortex of hair shaft (unlike most oils that coat only the cuticle); reduces protein loss from wet and dry combing',
+          amla: 'Indian gooseberry oil; rich in Vitamin C (one of the highest plant sources); inhibits 5-alpha-reductase (the enzyme that converts testosterone to DHT); used along hairline and crown',
+          brahmi: 'Bacopa monnieri-infused oil; Ayurvedic nerve tonic applied to scalp; supports scalp circulation; traditionally used for premature greying',
+          bhringraj: 'Eclipta alba; traditional hair growth tonic; used in formulations targeting thinning or shedding; anti-inflammatory for scalp conditions',
+          castor: 'Ricinus communis; thick, deeply conditioning; applied to ends and hairline edges; ricinoleic acid may support follicle health; mixes with thinner oils for workability',
+          sesame: 'Traditional base oil for Ayurvedic preparations; warming property in Ayurvedic classification; good for Vata dosha dryness; slightly sun-filtering'
+        },
+        application: [
+          'Warm oil in a small container placed in hot water (not microwave)',
+          'Section hair into four or more parts',
+          'Apply oil directly to scalp in each section using fingertips or an applicator bottle',
+          'Massage scalp in small circular motions for 5–10 minutes minimum; use moderate pressure',
+          'Work remaining oil through the lengths of hair',
+          'Braid or twist hair to prevent oil transfer to pillow',
+          'Cover with old pillowcase or cloth',
+          'Leave overnight; shampoo thoroughly in the morning (may require two shampoo applications to remove oil fully)'
+        ],
+        frequency: '1–2 times per week for maintenance; 2–3 times for dry, damaged, or thinning hair',
+        caution: 'Those with seborrheic dermatitis or oily scalp should use lighter oils (amla, argan) and avoid scalp saturation; focus oil on lengths only'
+      },
+
+      ayurvedicSleepBeautyConnection: {
+        name: 'Ayurvedic Sleep-Beauty Framework',
+        description: `In Ayurveda, sleep before midnight is considered far more restorative than sleep
+        after midnight — a concept that maps surprisingly well to the modern understanding that the
+        deepest slow-wave sleep (peak GH release) occurs in the first half of the night. The recommended
+        sleep time is 10:00 PM to 6:00 AM (Brahma Muhurta, the "hour of the creator," begins at
+        approximately 4:30 AM and was the traditional waking time for advanced practitioners). Sleeping
+        during Kapha time (approximately 6–10 PM and 6–10 AM) is considered especially restorative
+        for tissues (dhatus) including the skin.`,
+        doshaBeautyConnection: {
+          vata: 'Dry, thin, brittle hair and dry skin; Vata types benefit most from heavy overnight oiling (sesame) and rich emollient skin balms',
+          pitta: 'Sensitive, inflamed skin and premature greying; Pitta types need cooling oils (coconut, brahmi) and anti-inflammatory skincare before bed',
+          kapha: 'Thick, oily hair and skin; Kapha types benefit from lighter application and invigorating scalp massage rather than heavy oil saturation'
+        },
+        preSleepalRituals: [
+          'Abhyanga (self-massage with warm oil, applied before bath or before sleep)',
+          'Nasya (application of a single drop of sesame oil or ghee to each nostril for nasal and sinus health)',
+          'Pada abhyanga (foot oiling; stimulates marma points that correspond to face and scalp)',
+          'Milk with turmeric and black pepper before bed (haldi doodh / golden milk; supports sleep and provides curcumin antioxidant)'
+        ]
+      },
+
+      turmericPreSleepMask: {
+        name: 'Haldi Ubtan — Overnight Turmeric Mask',
+        description: `An ubtan (traditional Indian exfoliating paste) left on overnight as a brightening
+        treatment. A simple version mixes turmeric powder with raw milk, a few drops of rose water,
+        and chickpea flour (besan). Applied to face after cleansing, left for 20–30 minutes or
+        very lightly overnight (turmeric stains require a short leave-on for face; overnight is
+        more appropriate for body). Curcumin in turmeric inhibits tyrosinase (the melanin synthesis
+        enzyme), making it a traditional answer to uneven skin tone and hyperpigmentation.`,
+        application: 'Apply thin layer, allow to dry; sleep on back to prevent staining pillow; rinse thoroughly in morning; note: turmeric will temporarily stain skin a slight yellow that washes away with cleanser',
+        modernAdaptation: 'Commercial formulations often use tetrahydrocurcumin (non-staining curcumin derivative) for overnight brightening'
+      },
+
+      roseWaterToner: {
+        name: 'Gulab Jal — Rose Water Pre-Sleep Toner',
+        description: `Pure rose water (gulab jal) applied to the face via cotton pad or mist after
+        cleansing and before oil or moisturizer is a standard South Asian pre-sleep skincare step.
+        Rose water maintains skin pH, provides phenylethanol (mild antimicrobial), delivers
+        flavonoids with antioxidant properties, and creates a light hydrating base for subsequent
+        products to absorb into. It is particularly cooling and calming for Pitta-type sensitive skin.`
+      }
     },
 
-    skinNightRoutine: {
-      darkCircles: 'Cold eye compresses before bed for periorbital hyperpigmentation; keep eye cream refrigerated',
-      retinol: 'Retinol 0.025-0.05% for hyperpigmentation; use buffer technique on Fitzpatrick IV-V skin',
-      vitamin C: 'L-ascorbic acid or sodium ascorbyl phosphate serum for brightening; nighttime use avoids photodegradation',
-      moisture: 'Hyaluronic acid serum + niacinamide + lightweight gel moisturizer; Ayurvedic tradition of milk cream (malai) or almond oil on face overnight'
+    hairProtectionSleep: {
+      primaryMethod: 'Single loose braid (French or simple three-strand) after oiling; often wrapped in dupatta or muslin cloth',
+      silkPillowcase: 'Increasingly adopted; satin/silk pillowcase protects hair and reduces facial creasing',
+      edges: 'Hair oil applied along parting lines; less edge-specific focus than in Black American or Caribbean tradition but hairline protection built into oiling practice',
+      morningUnravel: 'Loose braid unravels to soft, defined waves; hair pre-stretched for styling'
     },
 
-    culturalPractice: {
-      oilNight: 'Leaving oil in hair overnight and washing morning of important events is standard South Asian preparation',
-      jasmine: 'Jasmine flowers worn in hair during day removed at night; sometimes the scent absorbed into hair is considered beauty'
-    },
-
-    advice: `South Asian nighttime beauty is about the long game — overnight oil treatment for hair,
-    consistent retinol for hyperpigmentation, niacinamide for dark circles. The constitutional dark circles
-    in South Asian skin are largely genetic/vascular; cold compresses and adequate sleep help but won\'t
-    eliminate entirely. The overnight champi (oil massage) tradition has genuine benefit: scalp oils absorbed
-    overnight before morning wash are more effective than quick oil-then-wash routines.`
+    skinScienceNote: `South Asian skin frequently presents with higher melanocyte sensitivity (pigmentary
+    dark circles, PIH susceptibility, uneven tone) combined with a mixed oiliness profile (T-zone oily,
+    cheeks dry). The overnight champi tradition addresses scalp circulation directly — scalp blood flow
+    and the health of dermal papillae surrounding hair follicles are the primary determinants of hair
+    thickness and density. Sleep quality research specific to South Asian populations shows elevated
+    rates of sleep apnea (partly driven by craniofacial anatomy), which directly suppresses GH release
+    and contributes to fatigue-related skin deterioration.`
   },
 
-  caribbean: {
+  // ──────────────────────────────────────────────────
+  // CARIBBEAN
+  // ──────────────────────────────────────────────────
+  'caribbean': {
     communityName: 'Caribbean',
-    primaryConcerns: ['Type 3-4 curl definition maintenance', 'Frizz prevention', 'Skin moisture in dry climates after migration'],
+    heritageRegions: ['Jamaica', 'Trinidad and Tobago', 'Barbados', 'Haiti', 'Dominican Republic', 'Cuba', 'Puerto Rico', 'Bahamas', 'Guyana', 'St. Lucia'],
+    skinToneRange: 'Fitzpatrick III–VI; richly diverse including Afro-Caribbean (IV–VI), Indo-Caribbean (III–IV), mixed heritage',
+    hairTextures: 'Highly diverse: Type 4 (Afro-Caribbean), Type 2–3 (Indo-Caribbean), type 1C–3B (mixed heritage)',
 
-    hairProtection: {
-      pineapple: 'Loose pineapple (high ponytail) or pineapple + bonnet to maintain curl definition overnight',
-      moisturise: 'Spray with water + leave-in conditioner; seal with coconut oil before bonnet',
-      braids: 'Mini twists or flat twists overnight protect defined styles for multiple days',
-      satin: 'Satin bonnet or satin pillowcase; Caribbean heat means lighter weight satin preferred'
+    sleepBeautyPhilosophy: `Caribbean beauty culture is syncretic — African, Indigenous Arawak/Taíno,
+    European, and South Asian traditions blend depending on island and heritage. What runs through most
+    Caribbean beauty traditions is an orientation toward nature: the aloe vera plant that grows in most
+    yards, the coconut oil pressed fresh, the lime used for both cooking and skin brightening. Nighttime
+    beauty in the Caribbean is practical and botanical — what's in the garden, what works, and what
+    grandmother said.`,
+
+    traditionalSleepBeautyRituals: {
+      aloeOvernightTreatment: {
+        name: 'Fresh Aloe Vera Overnight Treatment',
+        description: `In Caribbean households, aloe vera (sábila in Spanish-speaking islands; aloes in
+        Jamaica and Barbados) is the primary overnight skin remedy. A fresh leaf is cut, the gel scooped
+        out with a spoon, and applied directly to the face, scalp, or body before sleep. Fresh aloe gel
+        contains acemannan (an immunomodulating polysaccharide), aloin (a bitter compound that should be
+        washed off with a thorough rinse), vitamins C, E, and B12, and various enzymes that gently
+        exfoliate the skin surface. Left overnight, it provides hydration, calms inflammation (especially
+        useful after sun exposure), and supports wound healing for post-acne marks.`,
+        application: [
+          'Cut a thick leaf from the aloe plant close to the base',
+          'Stand upright for 10 minutes to drain the yellow aloin latex (this can irritate skin)',
+          'Slice the leaf along the flat side and scoop gel with a spoon',
+          'Apply fresh gel directly to clean face, scalp, or body',
+          'Allow to absorb; apply light oil over top if skin is very dry',
+          'Rinse in the morning; fresh gel oxidizes and may leave a slight yellowing if left too long'
+        ],
+        hairUse: 'Applied to scalp and lengths as pre-sleep treatment for dandruff, scalp inflammation, dryness; activates hair follicles via proteolytic enzyme action',
+        scienceNote: 'Acemannan in aloe vera accelerates wound healing by 8–9 days in controlled studies; anti-inflammatory via bradykinin inhibition'
+      },
+
+      pineappleUpdo: {
+        name: 'The Pineapple Updo — Curl Preservation Sleep Method',
+        description: `The pineapple is the signature sleep hairstyle for Caribbean women (and diaspora)
+        with naturally curly or coily hair. The hair is gathered loosely at the very top of the head —
+        above where a regular high ponytail would sit — and secured with a large, soft scrunchie (satin
+        or silk). The name comes from the resulting shape: the high gathered hair fans out like a pineapple
+        top. When performed correctly, the pineapple keeps curl clumps intact overnight, prevents the
+        flattening of roots that happens when curls are pressed against a pillow, and dramatically reduces
+        the morning frizz caused by friction. The satin scrunchie prevents the elastic-induced crease that
+        would disturb the curl pattern.`,
+        steps: [
+          'Flip head forward so all hair falls toward the top of the head',
+          'Gather hair loosely at the absolute crown (do not pull tight)',
+          'Secure with a large satin scrunchie — two gentle loops, no more',
+          'Flip head back upright and fan the gathered hair out',
+          'Sleep on a satin or silk pillowcase for additional protection',
+          'In the morning, remove scrunchie and shake out; apply a small amount of curl refresher or water mist to revive'
+        ],
+        variations: {
+          multiPineapple: 'For longer hair or multiple curl patterns: two or three gathered sections across the top of the head, each in its own scrunchie',
+          bantuKnotsAlternative: 'Hair wound into small knots before sleep; releases as defined, stretched curls in the morning'
+        },
+        scienceNote: 'Friction against cotton pillowcases generates static electricity that disrupts hydrogen bonds in the hair shaft (creating frizz) and physically abrades cuticle scales; satin/silk reduces friction coefficient by up to 40%'
+      },
+
+      silkPillowcaseCulture: {
+        name: 'Silk Pillowcase as Nighttime Staple',
+        description: `Caribbean women, particularly in Jamaica and Trinidad, have long invested in
+        silk or satin pillowcases as a beauty priority — not a luxury. The practice predates modern
+        marketing of "beauty pillowcases." The practical reasoning is simple: silk and satin
+        allow hair and skin to slide rather than drag against the fabric, preserving curl pattern,
+        reducing wrinkle formation from sleep creasing (sleep lines), and retaining skin's own
+        moisture rather than absorbing it into the cotton fabric.`,
+        benefits: {
+          hair: 'Reduced cuticle damage, preserved curl clumps, less morning frizz, less breakage from friction',
+          skin: 'Reduced sleep compression lines (repetitive mechanical folding of skin contributes to static wrinkles over time); silk does not absorb overnight moisturizers, allowing them to stay on skin rather than transferring to fabric',
+          hypoallergenic: 'Natural silk resists dust mites more effectively than cotton'
+        },
+        choosingRight: {
+          silk: 'Momme weight 19–25 ideal; mulberry silk is highest quality; pure silk breathes better in warm Caribbean climates',
+          satin: 'Polyester satin is more affordable; breathes less; still significantly reduces friction vs cotton',
+          care: 'Wash in cold water, gentle cycle, air dry; silk degrades with harsh detergents and heat'
+        }
+      },
+
+      coconutOilHairPrep: {
+        name: 'Overnight Coconut Oil Hair Treatment',
+        description: `Fresh-pressed or minimally refined coconut oil applied to hair before sleep is
+        a tradition that spans Afro-Caribbean, Indo-Caribbean, and mixed heritage households.
+        The treatment is especially effective when left overnight: coconut oil's small molecular size
+        allows it to penetrate the hair cortex (unlike most conditioning oils that coat only the cuticle),
+        reducing internal protein loss from both chemical and mechanical damage. Applied to pre-shampooed
+        damp hair, covered with a shower cap, and left overnight, it functions as a deep conditioning
+        pre-poo (pre-shampoo) treatment.`,
+        application: [
+          'Melt a generous amount of coconut oil between palms',
+          'Apply to length of hair from mid-shaft to ends (avoid heavy application at scalp if scalp is oily)',
+          'For scalp treatment: massage in circular motions with fingertips',
+          'Loosely braid or pineapple hair',
+          'Cover with a plastic shower cap or bonnet',
+          'Shampoo in the morning'
+        ]
+      }
     },
 
-    skinNightRoutine: {
-      cleanser: 'Remove day\'s sweat (humid original climate) or dry skin (northern climate) with gentle cleanser',
-      vitamin C: 'Vitamin C serum for brightening; Caribbean skin prone to tanning and uneven tone',
-      moisture: 'Coconut oil-based night moisturiser; aloe vera gel for lighter option',
-      feet: 'Petroleum jelly on heels; socks over; preventive cracked heel care'
+    hairProtectionSleep: {
+      primaryMethod: 'Pineapple updo with satin scrunchie + satin or silk pillowcase',
+      bonnets: 'Satin bonnets also used; less culturally specific than in Black American tradition but widely adopted, especially in diaspora communities',
+      braids: 'Overnight cornrows or box braids for wash-and-go styles on subsequent days',
+      textureSpecific: {
+        afroCaribbean: 'Pineapple or bonnet; heavy on overnight moisture via LOC or LCO method',
+        indoCaribbean: 'Single loose braid with coconut oil; dupatta influence from Indian heritage',
+        mixedHeritage: 'Pineapple or multiple mini pineapples depending on curl pattern'
+      }
     },
 
-    culturalPractice: {
-      headScarf: 'Tying hair before bed with scarf traditional across Caribbean; grandmothers\' practice passed down',
-      naturalRemedy: 'Aloe vera leaf gel applied before sleep for skin healing; fresh from plant most effective'
-    },
-
-    advice: `Caribbean hair sleeps best protected. The pineapple + satin bonnet technique preserves wash-and-go
-    styles for multiple days, reducing washing frequency (which dries Type 3-4 hair). For skin: the climate
-    of origin (high humidity) means Caribbean skin may feel tight/uncomfortable after migrating to drier northern
-    climates; richer nighttime moisturisers than used "back home" are needed to compensate for the humidity loss.`
+    skinScienceNote: `Caribbean skin covers a vast spectrum but shares a tropical climate heritage that
+    creates specific skin concerns: high UV exposure creating photoaging and hyperpigmentation (PIH),
+    humidity-driven acne, and the need for lightweight yet effective overnight treatments. Aloe vera
+    is scientifically supported as a nighttime treatment for all these concerns: its enzyme content
+    gently exfoliates, its mucopolysaccharides hydrate, and its salicylate-like compounds reduce
+    inflammation. The Caribbean tradition of using fresh plant material rather than processed
+    formulations maximizes the concentration of bioactive compounds.`
   },
 
-  arab: {
-    communityName: 'Arab / Middle Eastern',
-    primaryConcerns: ['Hyperpigmentation from sun exposure', 'Under-eye circles', 'Hair protection (long hair tradition)'],
+  // ──────────────────────────────────────────────────
+  // ARAB
+  // ──────────────────────────────────────────────────
+  'arab': {
+    communityName: 'Arab',
+    heritageRegions: ['Egypt', 'Lebanon', 'Saudi Arabia', 'UAE', 'Jordan', 'Morocco', 'Tunisia', 'Algeria', 'Iraq', 'Syria', 'Kuwait', 'Yemen'],
+    skinToneRange: 'Fitzpatrick III–V predominant; ranges from olive Lebanese and North African to deeper Yemeni and Sudanese tones',
+    hairTextures: 'Type 2C–3C predominant; thick, dense, often with high natural wave; Moroccan and Yemeni hair may show tighter curl',
 
-    hairProtection: {
-      oilTreatment: 'Argan oil, olive oil, or black seed oil overnight hair treatment before wash day',
-      braid: 'Single loose braid traditional for long hair overnight; protects from friction and tangles',
-      scarf: 'Silk or satin scarf wrapped over braid; hijab-wearing women\'s nighttime hair protection critical as hair exposed at home',
-      henna: 'Post-henna hair treatment: overnight conditioning mask after henna application to restore moisture'
+    sleepBeautyPhilosophy: `Arab beauty culture places exceptional emphasis on the use of natural oils
+    as overnight treatments — this tradition is ancient and extends through trade routes that made argan
+    (from Morocco), oud, rose of Damascus, and frankincense available across the Arab world. The hammam
+    (bathhouse) ritual, practiced across the MENA region, is not merely a cleansing tradition but a
+    pre-sleep beauty preparation: the steam opens pores, the kessa exfoliates dead skin, and the body
+    emerges clean and receptive to overnight treatment. The beauty sleep begins at the hammam door.`,
+
+    traditionalSleepBeautyRituals: {
+      arganOvernightTreatment: {
+        name: 'Argan Oil Overnight Hair and Skin Treatment (Zit Argan)',
+        description: `Argan oil, called "liquid gold" in Morocco, is the preeminent overnight beauty
+        oil in Arab culture — and increasingly globally. Cold-pressed from the kernels of the Argania
+        spinosa tree (endemic to southwestern Morocco), pure argan oil provides a remarkable concentration
+        of tocopherols (Vitamin E, particularly gamma-tocopherol), squalene, oleic acid, linoleic acid,
+        and ferulic acid. Applied to the face overnight, it penetrates without occlusion (it is a
+        dry oil), regulates sebum, and provides significant antioxidant protection to the skin during
+        its repair phase. Applied to hair overnight, it repairs oxidative and chemical damage to the
+        cuticle and cortex.`,
+        hairApplication: [
+          'Apply 3–8 drops of pure argan oil to palms (amount depends on hair length and thickness)',
+          'Work through damp or dry hair from mid-shaft to ends',
+          'Apply a small amount to scalp if dry (avoid if scalp is seborrheic)',
+          'Braid loosely or gather in a satin scrunchie',
+          'Sleep; rinse if desired in morning, or leave in as styling oil'
+        ],
+        skinApplication: [
+          'After cleansing and toning, apply 3–5 drops argan oil to palm',
+          'Press gently into face and neck — do not rub',
+          'Apply before or after moisturizer depending on skin type (oily skin: argan replaces moisturizer; dry skin: apply over moisturizer as the final seal)',
+          'Argan absorbs without greasy residue; gentle enough for overnight acne-prone skin'
+        ],
+        scienceNote: 'Argan oil\'s squalene content (approximately 8%) matches skin\'s own squalene; tocopherol concentration reduces oxidative damage to collagen fibers; linoleic acid helps regulate sebum in acne-prone skin'
+      },
+
+      roseWaterOvernightTreatment: {
+        name: 'Maward / Rose Water Overnight Treatment (Damascene Rose)',
+        description: `Rose water from the Damascene rose (Rosa damascena) or Taif rose (Rosa × damascena
+        'Trigintipetala' as grown in Saudi Arabia's Taif region) is far richer in bioactives than mass
+        commercial rose water. The Arab world's tradition of distilling rose petals into hydrosol predates
+        modern cosmetic chemistry by centuries. Used as a pre-sleep toner, light mist over the face,
+        and scalp spritz, authentic rose water provides geraniol, citronellol, and nerol (terpene
+        alcohols with anti-inflammatory and antimicrobial properties), phenylethyl alcohol
+        (gentle antimicrobial), and flavonoids with antioxidant activity. The scent itself is clinically
+        anxiolytic (anxiety-reducing), making it a natural sleep aid.`,
+        uses: [
+          'Spray over face after cleansing as hydrating toner before argan oil',
+          'Spritz over hair after styling to refresh and hydrate without weighing down',
+          'Apply to cotton pads and place over closed eyes for 10 minutes before sleep (for puffiness and dark circles)',
+          'Add to bath water for full-body rose treatment before sleep',
+          'Mist over pillow before sleep (the scent supports sleep onset)'
+        ],
+        scienceNote: 'Phenylethanol and rose fragrance components have documented anxiolytic effects in controlled trials; reduced anxiety = lower cortisol = better sleep quality = better skin repair'
+      },
+
+      hammamToBeautyRitual: {
+        name: 'Hammam Pre-Sleep Ritual',
+        description: `The hammam (Arabic: حمّام, "baths") as a pre-sleep beauty preparation is a
+        tradition across Morocco, Egypt, Lebanon, and the wider Arab world. A full hammam session
+        before sleep includes: hot steam room to open pores and soften skin; kessa (exfoliating mitt)
+        to remove dead skin layers; ghassoul clay (Moroccan lava clay) or black soap (savon beldi)
+        cleanse; cool rinse; and the application of argan oil, rosewater, or a traditional kohl-and-oil
+        preparation before dressing and sleeping. The result is deeply clean, freshly exfoliated,
+        properly pH-balanced skin that is maximally receptive to overnight repair.`,
+        modernAdaptation: [
+          'Weekly home hammam: hot shower + exfoliation (kessa mitt) + ghassoul clay mask',
+          'Savon beldi (black olive soap) cleanse in the shower',
+          'Argan oil applied to damp skin immediately after drying (locks in shower moisture)',
+          'Rose water mist over face',
+          'Kohl-rimmed eyes (traditional; also worn during sleep by some Arab women)'
+        ],
+        ghassoulClay: 'Moroccan rhassoul (lava clay from the Atlas Mountains) is uniquely high in silica, magnesium, and iron; absorbs sebum and dead cells without stripping moisture; ideal as a weekly pre-sleep deep cleanse'
+      },
+
+      oudOil: {
+        name: 'Oud and Bakhoor — Aromatic Pre-Sleep Ritual',
+        description: `Across the Gulf Arab states, burning bakhoor (wood chips infused with oud —
+        agarwood resin) before sleep is a traditional scenting ritual for both the body and the room.
+        The fragrance of oud has documented effects on the central nervous system: oud aroma has been
+        studied for anxiolytic (anxiety-reducing) and sedative properties, and its use before sleep
+        supports the olfactory-relaxation pathway to deeper, faster sleep onset. From a beauty
+        perspective, better sleep onset = earlier entry into slow-wave sleep = more GH release = more
+        collagen synthesis. The indirect beauty benefit of ritual scenting is physiological, not merely
+        symbolic.`
+      }
     },
 
-    skinNightRoutine: {
-      argan: 'Argan oil facial oil as final step; overnight penetration maximized',
-      roseWater: 'Rose water toner before serums; Moroccan tradition of rose water on face throughout day and before sleep',
-      eye: 'Rose hip seed oil around eyes for dark circle support; vitamin K in rose hip for vascular dark circles',
-      treatment: 'Niacinamide + tranexamic acid for sun hyperpigmentation management; consistent nightly use'
+    hairProtectionSleep: {
+      primaryMethod: 'Loose braid after argan oil treatment; satin pillowcase',
+      headScarf: 'A thin silk or satin hijab-style wrap for sleep is used by some women to protect both hair and scalp',
+      oilSchedule: 'Argan oil treatment 2–3 times per week overnight; coconut or olive oil for body',
+      morningStyle: 'Loose overnight braid releases as natural wave; argan applied again to smooth and define'
     },
 
-    culturalPractice: {
-      perfumed: 'Arab culture values scented body and hair; applying light rose or oud scent before sleep traditional',
-      overnight: 'Overnight hair oil treatment (zaytoun/olive oil) weekend tradition before Friday bath (Jumu\'ah preparation)'
-    },
-
-    advice: `Arab nighttime beauty prioritizes hair protection and skin brightening — two areas where the
-    traditional toolkit (argan oil, rose water, olive oil) aligns remarkably well with modern science.
-    Argan oil as the final step in nighttime skincare is one of the best overnight treatments available:
-    light enough not to clog pores, rich enough to repair barrier. For hyperpigmentation from sun (common
-    with outdoor lifestyles in hot Arab climates), consistent nightly niacinamide + tranexamic acid is the
-    evidence-based combination.`
+    skinScienceNote: `Arab skin tones in the Fitzpatrick III–V range often show a challenging combination:
+    olive undertones that can appear sallow when fatigued, periorbital hyperpigmentation (pigmentary dark
+    circles exacerbated by sleep deprivation), and PIH susceptibility. The argan oil tradition is
+    particularly well-matched to these concerns: its squalene (matching the skin's own) prevents moisture
+    loss, its tocopherols address oxidative stress from UV exposure common in MENA climates, and its
+    non-comedogenic profile suits the often oily T-zones seen in this skin type. Rose water's
+    anti-inflammatory properties directly reduce the inflammation that triggers PIH.`
   },
 
-  latina: {
-    communityName: 'Latina / Hispanic',
-    primaryConcerns: ['Frizz management', 'Hyperpigmentation', 'Cellulite and body skin'],
+  // ──────────────────────────────────────────────────
+  // LATINA
+  // ──────────────────────────────────────────────────
+  'latina': {
+    communityName: 'Latina',
+    heritageRegions: ['Mexico', 'Colombia', 'Brazil', 'Peru', 'Venezuela', 'Argentina', 'Chile', 'Dominican Republic', 'Puerto Rico', 'Cuba', 'Ecuador', 'Guatemala'],
+    skinToneRange: 'Fitzpatrick III–V predominant; great diversity including Indigenous mestiza (IV–V), European-heritage lighter (III), and Afro-Latina (V–VI)',
+    hairTextures: 'Type 1C–4A; extensive variation; wavy to loose curl most common; significant 4A–4B in Afro-Latina communities',
 
-    hairProtection: {
-      silkBonnet: 'Silk bonnet for Type 3-4 curls; satin pillowcase for Type 2 waves',
-      braid: 'Loose French braid for length protection; finger coils on 3c-4a hair for defined morning curls',
-      oil: 'Coconut oil on ends before bed; argán oil for frizz-prone hair',
-      type2: 'Type 2a-b wavy hair: loose braid or satin pillowcase enough; bonnet optional'
+    sleepBeautyPhilosophy: `Latin American beauty culture combines Indigenous botanical wisdom (the
+    avocado, the aloe, the eggs and herbs from the milpa garden) with Spanish colonial influence
+    and, in the Caribbean, African traditions. The kitchen is the beauty lab: an overnight mask
+    might be avocado, egg yolk, and olive oil; a pre-sleep hair rinse might be diluted apple
+    cider vinegar for shine; a scalp treatment might be garlic-infused oil for growth. The satin
+    pillowcase (pañoleta) and overnight satin head covering are central protective elements,
+    especially for maintaining the waves and curls styled for the week. Abuela knows.`,
+
+    traditionalSleepBeautyRituals: {
+      avocadoEggOvernightMask: {
+        name: 'Overnight Avocado and Egg Hair Mask',
+        description: `One of the most traditional Latin American overnight hair treatments combines
+        avocado (aguacate/abacate), egg yolk, and olive oil into a deep conditioning mask applied
+        before sleep. Avocado provides oleic acid, linoleic acid, palmitic acid, and Vitamin E — a
+        natural cocktail that penetrates the hair cortex and reduces hygral fatigue (the swelling and
+        contracting from moisture cycling that causes porosity and breakage over time). Egg yolk
+        provides lecithin (a natural emulsifier that smooths the cuticle) and biotin-adjacent proteins.
+        Olive oil provides squalene and polyphenols. Applied as a scalp-to-tip mask, covered, and
+        left overnight, this mixture is a traditional remedy for damaged, over-processed, or dry hair.`,
+        recipe: {
+          ingredients: [
+            '1/2 ripe avocado, mashed smooth',
+            '1 egg yolk (whole egg acceptable for fine hair)',
+            '2 tablespoons extra-virgin olive oil',
+            'Optional: 1 tablespoon honey for added humectancy',
+            'Optional: 5 drops rosemary essential oil for scalp circulation'
+          ],
+          method: [
+            'Mash avocado until completely smooth (no chunks that will tangle in hair)',
+            'Mix in egg yolk and olive oil thoroughly',
+            'Apply to damp hair in sections from roots to ends',
+            'Massage into scalp for 5 minutes',
+            'Gather hair and cover with a plastic shower cap or grocery bag',
+            'Sleep on a towel or old pillowcase',
+            'Shampoo thoroughly in the morning; may need two shampoo rounds'
+          ],
+          frequency: 'Weekly for damaged hair; bi-weekly for maintenance',
+          scienceNote: 'Avocado oil penetrates the hair shaft (confirmed by fluorescence microscopy studies); reduces protein loss by up to 20% in high-porosity hair when used as pre-poo treatment'
+        }
+      },
+
+      satinPanoleta: {
+        name: 'Pañoleta / Satin Head Covering',
+        description: `The pañoleta (from Spanish pañuelo, handkerchief or scarf) as a sleep head
+        covering is a tradition especially strong in Mexican and Caribbean Latina communities. A large
+        square of satin fabric is tied at the nape or crown over the hair (styled in waves or curls
+        for the week) to preserve the style, prevent frizz, and protect the cuticle from friction
+        against cotton pillowcases. In Cuban and Dominican communities, women going to the salon
+        for a blow-out or hair set would protect it for multiple nights with a pañoleta, sometimes
+        sleeping with their head elevated on a small pillow to maintain the set longer.`,
+        uses: [
+          'Tie over rolled or set hair to preserve weekly blow-out or roller set',
+          'Use as head covering over braided hair to reduce friction',
+          'Fold diagonally and tie at nape for a casual sleep head wrap',
+          'Protect overnight treatments (oil, avocado mask) from transferring to pillowcase'
+        ],
+        material: 'Satin or silk; traditional pañoleta was often a square cut from a satin slip or bed sheet; modern versions are purpose-made satin scarves'
+      },
+
+      braidForMorningWaves: {
+        name: 'Overnight Braid for Morning Waves (Trenzas para Ondas)',
+        description: `A deeply practical Latina sleep beauty technique: damp or slightly moisturized
+        hair is braided into two or more sections before sleep. By morning, the braids are removed
+        to reveal natural-looking waves without heat styling. The number and size of braids determines
+        the wave tightness: two large French braids create loose beach waves; four to six smaller
+        braids create tighter, curlier waves; eight to ten thin braids across the whole head create
+        crimped waves. Applied with a curl-enhancing cream or leave-in conditioner before braiding,
+        the resulting morning waves hold longer and look more defined. This heat-free styling method
+        is gentler on the hair than hot tools and preserves overnight moisture treatment benefits.`,
+        technique: {
+          looseWaves: 'Two large French braids from front to nape; secure with satin elastics; sleep; morning: remove, shake out, apply light oil to smooth',
+          tighterWaves: 'Four to six smaller braids; apply leave-in conditioner before braiding; sleep; morning: remove and finger-comb',
+          naturalCurlEnhancement: 'Braid damp curly hair with curl cream; sleep on satin; morning: undo braids and scrunch to define natural curl pattern'
+        }
+      },
+
+      preguntaLeAbuela: {
+        name: 'Traditional Remedios — Grandmother\'s Overnight Remedies',
+        description: `Latin American grandmothers (abuelas) maintained an oral pharmacy of overnight
+        skin and hair remedies that span pre-Columbian Indigenous knowledge and colonial-era home
+        practice.`,
+        remedies: {
+          riceCreamMask: 'Cooked rice water (milky, starchy water from rinsing rice) applied to face as overnight brightening treatment; later validated by science as rich in inositol, a carbohydrate that penetrates hair and skin and reduces friction damage',
+          pepinoCucumber: 'Fresh cucumber slices over eyes before sleep; cucurbitacin B (anti-inflammatory), caffeic acid (vasoconstrictor); reduces periorbital puffiness and dark circles',
+          tomateParaOjos: 'Tomato juice (lycopene-rich) mixed with turmeric applied to periorbital area; antioxidant and brightening',
+          cebolla: 'Garlic or onion juice applied to thinning areas of scalp before sleep (strong smell; sleep solo or with understanding partner); quercetin and sulfur compounds in allicin may stimulate blood flow and DHT reduction at follicle',
+          mielDeAbeja: 'Raw honey applied to face before sleep as overnight humectant and antimicrobial mask; H2O2-generating capacity provides gentle antibacterial action for acne'
+        }
+      }
     },
 
-    skinNightRoutine: {
-      retinol: 'Retinol for aging prevention and hyperpigmentation; buffer with moisturiser if 3c-4a skin shows PIH risk',
-      vitamin C: 'Vitamin C serum for brightening tan lines and uneven skin',
-      moisture: 'Rich moisturiser or sleeping mask 2-3 nights per week; lighter moisturiser other nights',
-      body: 'Massage centella asiatica or vitamin C body lotion on legs before bed; anti-cellulite routine'
+    hairProtectionSleep: {
+      primaryMethod: 'Pañoleta or satin scrunchie pineapple-style; overnight braid for wave styling',
+      silkPillowcase: 'Widely used, especially in urban Latin communities; combined with overnight braid for maximum protection',
+      stylingPreservation: 'Major cultural priority: preserving the blowout or roller set for multiple days; pañoleta is the tool',
+      products: 'Leave-in conditioner, curl cream, or light oil applied before braiding or wrapping'
     },
 
-    culturalPractice: {
-      beauty: 'Latina beauty culture values effort — elaborate nighttime routines normalized; self-care as priority',
-      grandmother: 'Grandmother\'s overnight remedies: petroleum jelly on lips and heels; egg yolk hair mask; continue these'
-    },
-
-    advice: `Latina nighttime beauty is taken seriously — and rightly so. The abuelita tradition of petroleum
-    jelly on lips and heels, egg yolk hair masks, and olive oil on face are genuinely effective remedies.
-    Modern additions: retinol for the face (buffer technique for darker skin tones to prevent PIH), and
-    centella asiatica body lotion for stretch mark support. The satin pillowcase or bonnet depends entirely
-    on hair type — Type 3c-4a Latinas absolutely need the bonnet; Type 2 wavy Latinas can often get away
-    with just the satin pillowcase.`
+    skinScienceNote: `Latina skin encompasses one of the widest phenotypic ranges of any ethnic group —
+    from very fair European-heritage Argentines to deeply melanated Afro-Latina and dark-skinned
+    Indigenous-heritage Guatemalans. What unites the nighttime skincare tradition is the kitchen-as-pharmacy
+    approach: avocado provides genuinely penetrating fatty acids (documented in peer-reviewed literature),
+    egg yolk lecithin is an effective cuticle smoother, and honey's osmotic and enzymatic properties make
+    it a legitimate overnight acne treatment. The traditional knowledge base has more scientific support
+    than is commonly recognized.`
   },
 
+  // ──────────────────────────────────────────────────
+  // EAST ASIAN
+  // ──────────────────────────────────────────────────
   'east-asian': {
     communityName: 'East Asian',
-    primaryConcerns: ['Skin barrier integrity', 'Anti-aging prevention', 'Under-eye care'],
+    heritageRegions: ['South Korea', 'Japan', 'China', 'Taiwan', 'Hong Kong', 'Vietnam', 'Philippines', 'Indonesia', 'Thailand', 'Singapore'],
+    skinToneRange: 'Fitzpatrick II–IV predominant; porcelain to medium golden tones; significant melasma and hyperpigmentation susceptibility',
+    hairTextures: 'Type 1B–2A predominant; typically straight to low wave; extremely high density and thickness per strand; strong cuticle but prone to frizz in humidity',
 
-    hairProtection: {
-      silk: 'Korean and Japanese beauty cultures favor silk pillowcases over bonnets (straight/fine hair)',
-      overnight: 'Occasional overnight hair treatment (camelia oil, argan) washed out in morning',
-      dry: 'Minimal use of hair ties overnight; loose or free is preferred for fine East Asian hair'
-    },
+    sleepBeautyPhilosophy: `East Asian (particularly Korean and Japanese) beauty culture has elevated
+    the overnight skincare ritual to a sophisticated science. The Korean concept of "chok chok" (dewy,
+    bouncy, well-hydrated skin) is pursued through nightly layering protocols that work with the skin's
+    overnight repair biology. The Japanese concept of "mochi hada" (mochi-skin: smooth, stretchy, even)
+    similarly centers nighttime as the primary skincare window. Sleeping pack (sleeping mask) culture —
+    applying a thick, occlusive final layer before sleep — is Korea's most globally influential beauty
+    export and directly aligns with skin science.`,
 
-    skinNightRoutine: {
-      korean: {
-        name: 'Korean Nighttime Routine (adapted for sleeping)',
-        steps: [
-          'Oil cleanser (cleansing balm)',
-          'Foam or gel cleanser (double cleanse)',
-          'Toner (prep and hydration)',
-          'Serum/essence (treatment actives)',
-          'Eye cream',
-          'Moisturizer (gel in summer; cream in winter)',
-          'Sleeping mask 3-4 nights per week (occlusve overnight treatment)'
-        ]
+    traditionalSleepBeautyRituals: {
+      koreanSleepingPack: {
+        name: 'Korean Overnight Sleeping Pack / Sleeping Mask',
+        description: `The sleeping pack (수면팩, su-myeon paek) is Korea's defining overnight skincare
+        innovation. Applied as the final step of the PM skincare routine, it creates a semi-occlusive
+        seal over all preceding active layers (serum, essence, moisturizer) — trapping hydration,
+        preventing TEWL through the night, and allowing actives to penetrate without interruption.
+        Unlike a traditional wash-off mask, the sleeping pack is left on until morning and then gently
+        rinsed off. It was designed specifically around the understanding that skin absorption peaks
+        overnight and that an occlusive seal maximizes the benefit of all layers beneath it.`,
+        keyIngredients: {
+          panthenol: 'Pro-Vitamin B5; humectant that draws moisture into skin and promotes barrier repair',
+          niacinamide: 'Vitamin B3; inhibits melanin transfer, reduces PIH, strengthens barrier, minimizes pores',
+          ceramides: 'Lipid molecules matching skin\'s own barrier lipids; repair stratum corneum overnight',
+          adenosine: 'Purine nucleoside; reduces fine lines and supports skin elasticity; common in K-beauty sleeping packs',
+          hyaluronic: 'Multiple molecular weights (high-MW for surface hydration, low-MW for dermal penetration)',
+          centella: 'Cica / tiger grass; anti-inflammatory, wound healing, collagen stimulating; quintessential K-beauty ingredient'
+        },
+        application: [
+          'Complete full PM skincare routine (cleanse, tone, essence, serum, moisturizer)',
+          'Scoop a generous layer of sleeping pack and press into skin',
+          'Apply to face, neck, and décolletage if desired',
+          'Sleep on silk or satin pillowcase',
+          'Rinse off with lukewarm water in the morning',
+          'Proceed with AM routine'
+        ],
+        frequency: 'Every night for dry/dehydrated skin; 3–4x weekly for oily skin; daily during winter or in dry climates',
+        scienceNote: 'Occlusive agents reduce TEWL by 50–90%; the sleeping pack occlusion combined with skin\'s nightly barrier synthesis means overnight hydration gains are roughly 3x those achieved from daytime moisturizer alone'
       },
-      japaneseMinimal: {
-        name: 'Japanese Minimal Nighttime',
-        steps: [
-          'Oil cleanse',
-          'Gentle milk cleanser',
-          'Lotion (Japanese toner — thicker than Korean toner)',
-          'Serum (retinol or brightening)',
-          'Emulsion (light moisturizer)',
-          'Sleeping pack if needed'
-        ]
+
+      japaneseOvernightOil: {
+        name: 'Japanese Overnight Treatment Oils (Tsubaki, Sake, Rice Bran)',
+        description: `Japan's overnight beauty tradition centers on exceptionally refined oils pressed
+        from plants with centuries of cosmetic use. Tsubaki oil (camellia oil, 椿油), sake (fermented
+        rice) ferment, and kome bran (rice bran oil) are the three pillars of traditional Japanese
+        overnight beauty. Tsubaki oil's oleic acid composition (approximately 82%) closely mirrors
+        human sebum, making it one of the most skin-compatible facial oils available. It absorbs into
+        the hair cuticle to restore shine without greasiness and penetrates the dermis to support
+        the skin barrier overnight.`,
+        oils: {
+          tsubakaKinoFlower: 'Camellia japonica seed oil; 82% oleic acid; absorbs like skin\'s own sebum; prized for hair gloss since the Edo period; applied overnight for lustrous, smooth hair',
+          riceBranOil: 'Rich in gamma-oryzanol (antioxidant), ferulic acid, and squalene; used as face and hair oil; excellent for UV-induced damage repair overnight',
+          sakeKoji: 'Fermented rice produces kojic acid (tyrosinase inhibitor for brightening) and alpha-hydroxy acids; sake-based essences applied overnight for PIH and uneven tone',
+          yuzu: 'Japanese citrus; Vitamin C-rich; brightening; added to bath water before sleep or as essence'
+        },
+        j_beauty_philosophy: `Japanese skincare operates on "less is more" with "more quality, more
+        science." The overnight routine may be fewer steps than K-beauty but each product is formulated
+        with extraordinary precision. The pre-sleep bath (ofuro, お風呂) is a mandatory ritual for most
+        Japanese households — not merely for cleanliness but as transition from waking to sleep, body
+        temperature regulation (the post-bath temperature drop accelerates sleep onset), and skin
+        preparation. The bath is the gateway to both sleep and overnight beauty.`
       },
-      sleepingMask: 'Korean sleeping pack/mask: thick occlusive layer left on overnight; dramatically improves morning skin texture and glow'
+
+      silkPillowcaseCultureEastAsia: {
+        name: 'Silk Pillowcase Culture — East Asian Tradition',
+        description: `Silk pillowcases have been part of Chinese aristocratic sleeping culture for over
+        two thousand years — silk (丝绸, sīchóu) was China's most prized textile. In modern East Asian
+        beauty culture, the silk or satin pillowcase is valued for both skin and hair: it prevents sleep
+        creasing (mechanical compression of skin into wrinkles over repeated nights), allows the face
+        oil or sleeping pack to remain on skin (not transfer to cotton), and for the straight, fine hair
+        common in East Asian women, eliminates the frizz and static that cotton causes. Japanese beauty
+        culture also uses silk sleep masks (eye masks) to block light (melatonin suppression prevention)
+        and keep the delicate eye area moisturized.`
+      },
+
+      doubleCleansePMRoutine: {
+        name: 'Double Cleanse Pre-Sleep Foundation (K-Beauty Protocol)',
+        description: `The double cleanse — Korean-origin skincare practice now adopted globally — is the
+        non-negotiable foundation of effective overnight skincare. Step 1: oil-based cleanser (balm,
+        cleansing oil) dissolves oil-soluble impurities (sunscreen, sebum, makeup, pollution particles
+        that bind to oil). Step 2: water-based cleanser (foam, gel, cream) removes remaining water-soluble
+        impurities (sweat, residual oil cleanser, environmental residue). The result is a clean skin
+        surface that has not been stripped of its natural sebum mantle (which the oil cleanser protects
+        by attracting like-to-like). Only genuinely clean, pH-balanced skin receives the full benefit
+        of the sleeping pack layered on top.`,
+        whyItMatters: `Sleeping with residual sunscreen, makeup, or pollution creates oxidative stress
+        in the very window when the skin should be repairing. Free radicals from pollution particles
+        degrade collagen. Sunscreen ingredients that photoactivate obviously shouldn't be present
+        overnight. Studies show that skin left with residual makeup overnight shows measurably more
+        free radical activity and higher inflammation markers than properly cleansed skin — negating
+        much of the overnight repair benefit.`
+      }
     },
 
-    culturalPractice: {
-      mask: 'Korean sleeping packs originated in Korean beauty; now global; apply as final step 3-4x/week',
-      pillow: 'Japanese and Korean premium silk pillowcases considered essential beauty investment',
-      eyePatches: 'Hydrogel undereye patches during bath or relaxation time before bed'
+    hairProtectionSleep: {
+      primaryMethod: 'Hair left down or in a very loose low ponytail; silk pillowcase primary protection',
+      oilApplication: 'Tsubaki oil or rice bran oil applied to lengths before sleep for overnight conditioning',
+      avoidTightTies: 'Tight ponytails at sleep associated with traction alopecia over time; Japanese beauty advice traditionally cautions against this',
+      straightHairProtection: 'Straight hair is less prone to overnight frizz vs curly hair but benefits from silk pillowcase for preventing static and sleep-crease bends'
     },
 
-    advice: `East Asian nighttime skincare is the most developed globally — the Korean multi-step and Japanese
-    minimalist approaches are both extraordinarily effective. The sleeping pack/mask concept is genuinely
-    genius: an occlusive layer left on overnight maximizes every other product underneath it. For East Asian
-    skin specifically: barrier care is essential (ceramides, hyaluronic acid) because fine skin dehydrates
-    more easily, and anti-aging starts in the 20s in Korean/Japanese culture — early investment in retinol
-    and vitamin C prevents rather than reverses damage.`
+    skinScienceNote: `East Asian skin (particularly in East and Southeast Asian populations) shows a
+    notably different aging pattern: melanocyte density is high enough to provide moderate photoprotection,
+    and the collagen matrix in Asian skin tends to be denser and thicker — resulting in the well-documented
+    "delayed aging" appearance in Asian women compared to European counterparts. However, Asian skin also
+    shows higher melasma prevalence (triggered by UV and hormonal changes), and the melanocyte network
+    responds vigorously to inflammation and sleep deprivation, making PIH and uneven pigmentation the
+    primary overnight skincare concern. The K-beauty sleeping pack with niacinamide (melanin transfer
+    inhibitor) directly addresses this via the overnight window.`
   },
 
+  // ──────────────────────────────────────────────────
+  // EAST AFRICAN
+  // ──────────────────────────────────────────────────
   'east-african': {
     communityName: 'East African',
-    primaryConcerns: ['Deep skin moisture retention', 'PIH prevention', 'Type 4 hair protection'],
+    heritageRegions: ['Ethiopia', 'Eritrea', 'Somalia', 'Kenya', 'Uganda', 'Tanzania', 'Rwanda', 'Burundi', 'Djibouti'],
+    skinToneRange: 'Fitzpatrick V–VI predominant; some of the most luminously deep skin tones in the world, particularly Somali and Ethiopian complexions',
+    hairTextures: 'Type 4A–4C with some Type 3C; often finer in strand diameter than West African 4C despite similar coil pattern; Somali hair may show 3C–4A',
 
-    hairProtection: {
-      bonnet: 'Silk bonnet mandatory for Type 4 coil patterns; extremely tight coils most fragile',
-      oil: 'Black seed (nigella) oil, coconut oil, or castor oil on scalp and ends before bonnet',
-      protective: 'Protective styles (box braids, Senegalese twists, etc.) still require bonnet at night',
-      SomaliTradition: 'Sesame oil overnight hair treatment traditional in Somali beauty practice'
+    sleepBeautyPhilosophy: `East African beauty culture — particularly Ethiopian and Somali — places
+    extraordinary value on natural resins, incense, and aromatic botanicals in the beauty ritual.
+    Frankincense (itan in Somali; etan in Amharic) is not merely a fragrance material or ritual
+    incense: it is a medicine, a skin treatment, and a beauty staple. Women in Ethiopia and Somalia
+    historically applied frankincense resin solutions to their skin and hair as overnight treatments,
+    and the science increasingly supports what generations of practical knowledge established.
+    The hammam-like Ethiopian practice of using coffee grounds (Yirgacheffe, Sidama) as body
+    exfoliants and the pre-sleep braiding traditions are woven into daily life, not occasional rituals.`,
+
+    traditionalSleepBeautyRituals: {
+      frankincenseOvernightTreatment: {
+        name: 'Overnight Frankincense Resin Treatment (Itan/Etan)',
+        description: `Boswellia serrata and Boswellia sacra (Omani frankincense, historically traded
+        through East Africa) produce resins whose active compounds — boswellic acids, including AKBA
+        (acetyl-11-keto-beta-boswellic acid) — are among the most studied natural anti-inflammatory
+        agents in modern pharmacology. East African women historically burned frankincense over charcoal
+        (using a d'aalacad, a traditional incense burner in Somali culture) and stood over the smoke
+        to perfume and treat their skin and hair. More directly as a topical, frankincense resin was
+        dissolved in carrier oil (sesame, castor, or jojoba) and applied to the face overnight as
+        an anti-aging and skin-toning treatment.`,
+        modernApplication: {
+          oil: 'Frankincense essential oil (3–5 drops) diluted in 1 tablespoon jojoba or argan oil; applied to face and neck before sleep; do not use undiluted essential oil on skin',
+          serumIngredient: 'Look for "Boswellia serrata extract" in overnight serums; concentrations of 0.5–2% are effective',
+          smokeRitual: 'Traditional burning of frankincense in bedroom before sleep; the aromatic compounds create a ritual transition to sleep and may have mild antimicrobial effects on airborne bacteria in the room'
+        },
+        scienceNote: 'Boswellic acids inhibit 5-lipoxygenase (5-LOX), an enzyme in the leukotriene inflammatory pathway; AKBA inhibits NF-κB; topical boswellia preparations show clinical improvement in photo-aged skin, reduced wrinkle depth, and improved skin elasticity in randomized trials'
+      },
+
+      coffeeGroundExfoliation: {
+        name: 'Pre-Sleep Coffee Ground Exfoliation (Ethiopian Coffee Beauty)',
+        description: `Ethiopia is the birthplace of coffee (Coffea arabica), and Ethiopian women have
+        used spent coffee grounds as a body and face exfoliant for centuries — what might now be called
+        a "green" recycling of kitchen waste is, in Ethiopian households, simply an inherited beauty
+        practice. Used as a weekly pre-sleep exfoliation, coffee grounds physically remove dead skin
+        cells, while the residual caffeine in spent grounds temporarily vasoconstricts blood vessels
+        (reducing puffiness and briefly plumping skin surface). When mixed with coconut oil or shea
+        butter, the combination creates a scrub that exfoliates and conditions simultaneously.`,
+        recipe: {
+          ingredients: ['2 tablespoons cooled spent coffee grounds', '1 tablespoon raw shea butter or coconut oil', 'Optional: 1/2 teaspoon turmeric for brightening', 'Optional: 5 drops frankincense essential oil'],
+          method: ['Mix to a paste', 'Apply to face and body in circular motions', 'Focus on elbows, knees, underarms', 'Rinse thoroughly', 'Apply overnight shea butter or oil treatment immediately after']
+        }
+      },
+
+      sleepBraiding: {
+        name: 'Traditional Sleep Braiding — Ethiopian and Somali',
+        description: `In Ethiopian culture, the practice of cornrow braiding (called tibeb in decorative
+        form; regular cornrows as everyday protective style) has deep roots. Women maintain their braids
+        for weeks at a time; during sleep, the braided hair is covered with a light cotton or satin scarf
+        to keep braids neat and prevent lint accumulation. In Somali culture, women traditionally wrap
+        hair in a garbasaar (a light decorative scarf/shawl) which also serves as a sleep covering for
+        the hair. The braid-and-wrap system protects the naturally fine East African coil pattern from
+        friction, maintains the braid pattern's longevity, and allows the scalp to breathe while
+        preventing moisture loss.`,
+        braidsForSleep: [
+          'Cornrows (flat to scalp; stay secure through the night)',
+          'Feed-in braids (extensions; kept for 4–6 weeks; satin wrap maintains freshness)',
+          'Natural coil protective styles (Bantu knots or flat twists; covered with satin scarf)'
+        ],
+        scalpCare: 'Light oil (jojoba, argan, or sesame) applied to cornrow partings at scalp before sleeping; maintains scalp moisture under braids'
+      },
+
+      shuroWheatTreatment: {
+        name: 'Shuro / Chickpea Flour Overnight Face Treatment',
+        description: `Chickpea flour (shuro or besan) mixed with yogurt, honey, or rose water into a
+        paste is used as an overnight facial brightening treatment in Ethiopian and Eritrean beauty
+        traditions. Chickpea flour provides gentle chemical exfoliation (saponins and protease enzymes),
+        skin-brightening properties (zinc and manganese content), and a protein-rich conditioning
+        layer. Left overnight as a thin mask, it dries and gently tightens, promoting cell turnover
+        and leaving skin clearer and more even-toned in the morning.`
+      }
     },
 
-    skinNightRoutine: {
-      frankincense: 'Frankincense facial oil (boswellia) or diluted boswellia essential oil as nighttime facial oil',
-      niacinamide: 'Niacinamide 10% serum for PIH — most important active for Fitzpatrick V-VI skin at night',
-      vitamin C: 'Vitamin C for brightening; layered under frankincense oil',
-      body: 'Shea butter + marula oil on body immediately before sleep; don\'t wait — apply straight from shower'
+    hairProtectionSleep: {
+      primaryMethod: 'Satin or light cotton scarf over cornrows or natural hair; garbasaar (Somali style)',
+      moistureRetention: 'Very light oil (jojoba or argan) applied to scalp partings before wrapping; finer East African hair benefits from lighter oils than West African 4C',
+      braidsLongevity: 'Maintaining braid freshness is cultural and aesthetic priority; satin wrap extends braid life by 1–2 weeks',
+      naturalCoilCare: 'For non-braided coils: pineapple or large Bantu knots covered with satin bonnet'
     },
 
-    culturalPractice: {
-      frankincense: 'Boswellia/frankincense ritual before sleep; burning resin or applying oil; calming and skin-beneficial',
-      myrrh: 'Myrrh oil on skin; traditional Somali, Ethiopian, and Eritrean beauty practice; antimicrobial and healing'
-    },
-
-    advice: `East African nighttime beauty is rooted in frankincense and myrrh — literally the ancient
-    beauty medicines of the Horn of Africa. Boswellia (frankincense) oil is genuinely anti-inflammatory
-    and wound-healing; apply it as the final facial oil step. For the critical dark skin concern of PIH:
-    niacinamide 10% serum applied consistently every night for 8-12 weeks produces visible brightening.
-    The Type 4 hair bonnet is as non-negotiable here as in West African or Black American communities —
-    tight coils simply cannot maintain moisture on cotton.`
+    skinScienceNote: `East African skin — particularly Somali and Ethiopian complexions — often exhibits
+    exceptional luminosity and evenness despite deep Fitzpatrick VI tones, which is partly attributable
+    to the traditional use of frankincense (anti-inflammatory) and botanicals that prevent the PIH
+    common in deeply melanated skin. The relatively fine melanosomes in Somali skin (compared to West
+    African) may explain some differences in PIH susceptibility. Sleep deprivation in deeply melanated
+    East African skin triggers the same inflammatory cascade and grey/ashy fatigue cast as in West
+    African skin — overnight frankincense and shea are the traditional countermeasures.`
   },
 
+  // ──────────────────────────────────────────────────
+  // SOUTH AFRICAN
+  // ──────────────────────────────────────────────────
   'south-african': {
     communityName: 'South African',
-    primaryConcerns: ['Diverse hair types requiring different approaches', 'Sun damage repair (lighter SA)', 'PIH (darker SA)'],
+    heritageRegions: ['South Africa (Zulu, Xhosa, Sotho, Tswana, Venda, Swazi)', 'Namibia', 'Botswana', 'Zimbabwe', 'Mozambique'],
+    skinToneRange: 'Fitzpatrick V–VI predominant (Nguni/Sotho groups); Fitzpatrick III–IV (Cape Malay, Indian-South African); significant diversity',
+    hairTextures: 'Type 4A–4C predominant; Zulu and Xhosa hair typically very tightly coiled 4C; Sotho and Tswana also Type 4; Cape Malay heritage shows more 3B–4A',
 
-    hairProtection: {
-      darkSkin: 'Black South African hair (Type 4): silk bonnet or satin scarf mandatory',
-      lighter: 'Cape Malay, Coloured, Indian-South African hair (Type 2-3): satin pillowcase minimum; bonnet for curlier textures',
-      white: 'White South African hair: silk pillowcase for reduced friction and improved hair condition'
+    sleepBeautyPhilosophy: `South African beauty culture — particularly among Zulu, Xhosa, and Sotho
+    communities — has its own extraordinary botanical heritage rooted in the fynbos biome (the Cape
+    Floristic Region, one of the world's six plant kingdoms) and the sub-Saharan savanna. Marula oil
+    (from the fruit of the marula tree, Sclerocarya birrea) is the quintessential South African beauty
+    oil — used by indigenous communities for centuries to condition skin and protect against the
+    harsh southern African sun and dry season. Rooibos (Aspalathus linearis), native only to the
+    Cederberg region of the Western Cape, provides a uniquely South African antioxidant complex that
+    is only now gaining global recognition in skincare.`,
+
+    traditionalSleepBeautyRituals: {
+      marulaOilTreatment: {
+        name: 'Overnight Marula Oil Treatment (Amarula Yama Oil)',
+        description: `Marula oil, cold-pressed from the kernels of the marula tree (morula in Sotho;
+        umganu in Zulu), has been used by southern African women for skin conditioning and hair
+        treatment since before colonial contact. The Tsonga women of Limpopo traded it; Zulu women
+        applied it after bathing. Marula oil is exceptionally high in oleic acid (approximately 70–78%),
+        matching skin's own sebum composition, and contains significant palmitoleic acid (an omega-7
+        fatty acid that is a key component of the skin's lipid barrier and declines markedly with age).
+        It absorbs rapidly without residue, is non-comedogenic, and delivers excellent overnight
+        hydration and anti-aging benefit.`,
+        hairApplication: [
+          'Apply 3–6 drops of pure marula oil to palms',
+          'Work through damp or dry hair from mid-shaft to ends',
+          'Apply additional drops to scalp if dry or flaking',
+          'Braid or twist hair before sleep',
+          'Leave-in through the night; does not require rinsing'
+        ],
+        skinApplication: [
+          'After cleansing and toning, apply 3–5 drops of marula oil to face and neck',
+          'Press gently into skin; do not rub aggressively',
+          'Layer over moisturizer for very dry skin; use alone for oily skin',
+          'Absorbs within minutes; no residue on pillow'
+        ],
+        comparison: 'Marula oil outperforms argan oil in palmitoleic acid content (1–3% vs negligible in argan); comparable in oleic acid; both are dry oils that absorb without greasiness; marula has a lighter, less fatty scent',
+        scienceNote: 'Marula oil showed significantly higher oxidative stability than olive, grape seed, avocado, and macadamia oils in DPPH radical scavenging assays; palmitoleic acid declines with age in skin, making marula an ideal anti-aging supplement'
+      },
+
+      rooibosOvernightCompress: {
+        name: 'Rooibos Overnight Compress and Treatment',
+        description: `Rooibos (Aspalathus linearis), the South African red bush tea, is unique in
+        the world: it grows only in the Cederberg mountains of the Western Cape and contains aspalathin
+        and nothofagin — flavonoids found in no other plant. These compounds are potent antioxidants
+        that inhibit elastin degradation, stimulate collagen synthesis, reduce melanogenesis
+        (anti-hyperpigmentation), and calm inflammatory skin responses. Traditionally, women in
+        the Western Cape made strong rooibos tea, soaked cloths in it, and applied them to the face
+        as an overnight or long-leave compress for sunburned, irritated, or dull skin.`,
+        applications: {
+          compress: [
+            'Brew very strong rooibos tea (3 teabags in 1 cup boiling water; steep 15 minutes)',
+            'Allow to cool to skin-safe temperature (test on inner wrist)',
+            'Soak a soft flannel cloth or cotton gauze in the tea',
+            'Apply to face and neck for 15–30 minutes before sleep',
+            'Pat dry and follow with marula oil'
+          ],
+          rooibosIceCubes: 'Freeze strong rooibos tea in ice cube trays; use one ice cube to de-puff face and stimulate circulation the morning after a poor night\'s sleep',
+          rooibosInSkincare: 'Look for Aspalathus linearis extract in night creams and serums; concentrations of 1–3% are effective for antioxidant benefit'
+        },
+        scienceNote: 'Rooibos extract inhibits hyaluronidase (the enzyme that breaks down hyaluronic acid in the dermis), preserving skin hydration; aspalathin inhibits 5-LOX and COX-2 (primary inflammatory enzymes); zinc content supports wound healing'
+      },
+
+      sheaAndSungaBodyRitual: {
+        name: 'Full Body Shea and Ubukhali Pre-Sleep Body Ritual',
+        description: `In Zulu and Xhosa culture, a pre-sleep full body conditioning practice using
+        shea butter, animal fat (historically), or modern equivalent emollients is documented in
+        anthropological records. The ritual includes self-massage of the legs, arms, back, and
+        abdomen — both for conditioning the skin and for the relaxation-inducing benefit of
+        self-touch (which activates the parasympathetic nervous system, reducing cortisol and
+        facilitating sleep onset). Modern South African women who practice this full-body pre-sleep
+        massage report significantly better sleep quality — directly linking the beauty ritual
+        to the deep-sleep GH release that drives overnight skin repair.`
+      },
+
+      proteaExtract: {
+        name: 'Protea — South African Beauty Botanic',
+        description: `The protea, South Africa's national flower, is being studied for skincare use.
+        Protea cynaroides (King Protea) extracts contain cynaroside, luteolin, and isovitexin —
+        antioxidant flavonoids with preliminary anti-inflammatory and skin-barrier-supporting
+        properties. Presently, protea extract appears in luxury South African skincare formulations;
+        the traditional use was less developed than marula or rooibos, but it represents an
+        emerging South African botanical in the global skincare ingredient conversation.`
+      }
     },
 
-    skinNightRoutine: {
-      rooibos: 'Rooibos-infused toner or essence; South African beauty innovation',
-      retinol: 'Retinol for white/lighter-skinned South Africans for sun damage repair (high UV index exposure)',
-      niacinamide: 'Niacinamide for darker-skinned South Africans for PIH management',
-      marula: 'Marula facial oil as overnight treatment — deeply South African and scientifically validated',
-      spf: 'Morning SPF 50 is required daily; nighttime repair products compensate for UV exposure'
+    hairProtectionSleep: {
+      primaryMethod: 'Satin bonnet or satin-lined sleep cap over Type 4 coils; traditional fabric wrap for braided styles',
+      oils: 'Marula oil for scalp and lengths; absorbs without greasiness; suitable for fine-to-medium coil patterns',
+      styles: 'Twists, flat twists, or loose cornrows before sleep; satin bonnet over; pineapple for shorter coils',
+      rooibosRinse: 'Weekly pre-sleep rooibos tea hair rinse for scalp health and natural highlights in lighter hair'
     },
 
-    culturalPractice: {
-      ubuntu: 'Ubuntu beauty philosophy — communal sharing of beauty knowledge; intergenerational beauty traditions',
-      rooibos: 'Rooibos tea before bed is South African tradition; also benefits internal skin health (antioxidants)'
-    },
-
-    advice: `South African nighttime beauty must account for the country\'s extraordinary UV index — nightly
-    repair work compensates for daytime sun exposure that damages skin even with SPF. Marula oil is South
-    Africa\'s nighttime gift: apply 3-5 drops as the final step and it works overnight to restore barrier
-    and fight oxidative stress. For darker South African skin, niacinamide at night is the primary tool
-    against PIH. For lighter South African skin, retinol at night is the primary tool against photoaging
-    (the UV damage is severe and accumulates rapidly).`
+    skinScienceNote: `South African skin, particularly in Nguni and Sotho populations (Fitzpatrick V–VI),
+    shares with West African and East African skin the elevated PIH risk, the ashy fatigue cast from
+    cortisol-driven vasoconstriction in sleep deprivation, and the long-term advantage of higher melanin
+    density providing natural photoprotection. Marula oil's palmitoleic acid is a direct replacement
+    for the omega-7 that depletes with age in the skin barrier — making it uniquely well-matched to
+    the specific needs of aging South African skin. Rooibos's aspalathin content makes it one of the
+    few plant-derived inhibitors of hyaluronic acid degradation that grows in Sub-Saharan Africa.`
   },
 
+  // ──────────────────────────────────────────────────
+  // BLACK AMERICAN
+  // ──────────────────────────────────────────────────
   'black-american': {
     communityName: 'Black American',
-    primaryConcerns: ['Type 4 natural hair moisture retention', 'Preventing ashiness overnight', 'PIH and dark spot treatment'],
+    heritageRegions: ['United States (African American / Black American heritage; rooted in West and Central African ancestry via the African diaspora)'],
+    skinToneRange: 'Fitzpatrick IV–VI predominant; enormous range from medium-brown to deepest ebony; melanin-rich skin throughout',
+    hairTextures: 'Type 4A, 4B, 4C with significant 3C–4A; the widest diversity of coil and kink patterns of any single community',
 
-    hairProtection: {
-      bonnet: 'Silk or satin bonnet is CORE Black American beauty practice — passed mother to daughter; non-negotiable for natural hair',
-      satin: 'Satin pillowcase backup if bonnet slips; also good option for relaxed hair',
-      pineapple: 'Loose pineapple technique for wash-and-go styles; 2-minute technique that saves hairstyles for days',
-      loc: 'LOC method (Liquid-Oil-Cream) before bonnet: spray water, seal with oil, top with leave-in cream; Type 4 hair moisture protocol',
-      twists: 'Two-strand twists before sleep maintain definition; unravel in morning for styled, stretched look'
+    sleepBeautyPhilosophy: `The Black American nighttime beauty routine — particularly the hair protection
+    element — is one of the most culturally specific, emotionally resonant, and practically effective
+    beauty traditions in the world. The silk or satin bonnet is not simply a hair accessory: it is
+    a cultural institution. It is something a grandmother placed on a granddaughter's head while
+    explaining why. It is something Black women have fought to be taken seriously about wearing. It
+    is something defended publicly when airlines, schools, or workplaces attempted to ban it. The
+    bonnet is protection, heritage, and self-respect in fabric form.`,
+
+    traditionalSleepBeautyRituals: {
+      satinBonnet: {
+        name: 'The Silk/Satin Bonnet — Cornerstone of Black American Nighttime Beauty',
+        description: `The satin or silk bonnet (also called a sleep cap, hair bonnet, or "my bonnet")
+        is the single most important nighttime hair protective tool in Black American beauty culture.
+        Type 4 natural hair — particularly 4B and 4C — is uniquely vulnerable to the friction of
+        cotton pillowcases: the cuticle of tightly coiled hair is already under mechanical stress
+        from the coil pattern itself; add friction against rough cotton fibers and the result is
+        mass cuticle scale lifting, breakage, moisture loss, and frizz. A satin bonnet eliminates
+        all of this. The smooth surface allows hair to glide rather than snag; the non-absorbent
+        nature of satin means the hair's moisture stays in the hair shaft rather than transferring
+        to the pillowcase fabric. For natural hair, the bonnet is the difference between a successful
+        protective style lasting two weeks and one lasting four days.`,
+        history: `Black women have used some form of head covering during sleep for generations —
+        long before the modern bonnet as marketed product. Pre-emancipation, enslaved Black women
+        wore head coverings mandated by slave owners (the tignon laws in colonial Louisiana required
+        free Black women to cover their hair); these coverings were transformed into an aesthetic
+        and cultural statement. By the mid-20th century, the silk or satin sleep cap was a fixture
+        of Black American women's bedside rituals, documented in countless memoirs, interviews,
+        and cultural records. The modern bonnet is a continuation of this protective inheritance.`,
+        types: {
+          satinBonnet: 'Elasticized dome; fits over entire head; most common; price range $5–$30; wash weekly',
+          doubleLayeredBonnet: 'Two layers of satin for extra friction protection; durable; good for long, thick Type 4 hair',
+          satinLinedCap: 'Satin-lined fabric cap with exterior in cotton, velvet, or prints; fashionable; culturally reclaimed as daywear',
+          largeExtraLargeBonnet: 'For larger hair volumes, stretched natural styles, or twist-outs; important to not compress the style',
+          silkBonnet: 'Pure silk; most luxurious option; breathes better in warm climates; 19–25 momme preferred'
+        },
+        application: [
+          'Complete nighttime hair routine (moisture, seal)',
+          'Place bonnet on head from forehead back; ensure all edges are inside the bonnet',
+          'Adjust elastic to sit securely but not tightly on hairline',
+          'Do not pull elastic tight enough to create tension on hairline (traction alopecia risk)',
+          'If hair is in a protective style (twists, braids), ensure all ends are tucked inside',
+          'If hair volume is too large, use a large bonnet or oversized sleep cap'
+        ],
+        bonnetsAndEdges: `Edges — the delicate hairline hairs and baby hairs at the perimeter of the
+        face — are a specific focus of Black American nighttime hair care. They are the most fragile
+        hairs on the head, most susceptible to traction alopecia, and culturally significant as a
+        styling element. The bonnet must sit below the hairline without pulling it; many Black women
+        apply a light holding gel or edge cream along the hairline before bonneting to lay and
+        protect edges overnight.`
+      },
+
+      locMethodOvernight: {
+        name: 'LOC Method — Overnight Hair Moisturization for Type 4 Natural Hair',
+        description: `The LOC method (Liquid → Oil → Cream) is the dominant moisturization protocol
+        for Type 4 natural hair in the Black American natural hair community. Applied before sleep
+        (particularly on wash day or when hair is in a twist-out or fresh protective style), the LOC
+        method builds a moisture stack that the bonnet then seals:
+        L = Liquid (water or a water-based leave-in conditioner) — provides actual water molecules
+        to the hair shaft, the only true humectant;
+        O = Oil (seals the moisture in; prevents TEWL from hair shaft; penetrating oils like
+        coconut or avocado oil for deeper conditioning; sealing oils like castor, grapeseed, or
+        jojoba for surface seal);
+        C = Cream (heavier butter or cream that provides a final seal layer and adds slip and
+        definition to coils; shea butter, curl cream, or a thick leave-in).`,
+        layers: {
+          liquid: {
+            options: ['Plain water from spray bottle', 'Aloe vera juice diluted in water', 'Water-based leave-in conditioner (Kinky Curly Knot Today, Camille Rose Naturals, as you b.e.a.u.t.i.f.u.l)'],
+            purpose: 'Hydration — actual water entering the hair cortex through the cuticle (cuticle raised slightly by water)'
+          },
+          oil: {
+            penetratingOils: ['Coconut oil (penetrates cortex; reduces protein loss)', 'Avocado oil (penetrates cortex)', 'Olive oil (partial penetration; conditioning)'],
+            sealingOils: ['Castor oil (thick; excellent sealer; stimulates scalp circulation)', 'Jojoba oil (mimics sebum; good sealer and scalp conditioner)', 'Grapeseed oil (light; seals without heaviness for fine 4A hair)'],
+            purpose: 'Seal moisture from L layer inside the hair shaft; prevent overnight TEWL from hair'
+          },
+          cream: {
+            options: ['Shea butter (raw unrefined)', 'Eco Styler Gel (olive or argan variety)', 'Cantu Shea Butter Leave-in', 'SheaMoisture Curl Enhancing Smoothie'],
+            purpose: 'Final seal and definition; prevents frizz; adds slip for morning manipulation'
+          }
+        },
+        variation: 'LCO (Liquid → Cream → Oil): cream applied before oil; preferred by those with high porosity hair where cream absorbs better before the oil seal',
+        application: [
+          'Apply liquid (spray or section by section)',
+          'While damp, apply oil to each section',
+          'Follow immediately with cream, working through to distribute evenly',
+          'Style into twists, braids, or pineapple',
+          'Cover with satin bonnet',
+          'Morning: remove bonnet, refresh with light water mist, unravel style or proceed as desired'
+        ]
+      },
+
+      skinSlugging: {
+        name: 'Skin Slugging — Black American Overnight Skincare Method',
+        description: `Slugging — applying a thick occlusive (typically a petroleum jelly or petrolatum
+        derivative like Vaseline) as the final layer of the PM skincare routine — is a technique that
+        has been practiced in Black American households for generations, long before the term "slugging"
+        was coined by the K-beauty skincare internet community in the early 2020s. Grandmothers
+        applied Vaseline (petroleum jelly) to their grandchildren's faces, hands, and knees before
+        bed; it was the reliable, affordable seal that kept moisture in through the night. The modern
+        skincare community's "discovery" of slugging (creating the "slug" appearance) was in many
+        ways a rediscovery of what Black American households already knew.`,
+        mechanism: `Petrolatum creates a near-100% occlusive barrier on the skin surface —
+        it does not penetrate and does not provide moisture itself, but it reduces TEWL by up to
+        98%. Placed as the final layer over a moisturizer or serum, it traps all the moisture from
+        those layers inside the skin all night. By morning, the skin is notably plumper, softer,
+        and more elastic. In dry winter climates (where indoor heating further desiccates skin),
+        slugging is particularly transformative.`,
+        modern: {
+          vaseline: 'Original slugging product; pure petroleum jelly; fragrance-free; the budget classic; safe for all skin types',
+          aquaphor: 'Petroleum jelly + bisabolol + panthenol; slightly more conditioning than plain Vaseline; good for dry or eczema-prone skin',
+          lanolin: 'Animal-derived; more natural alternative; creates similar occlusive seal; great for extremely dry skin or cracked lips',
+          squalen: 'Plant-derived squalane (from sugarcane or olives); lighter than petrolatum; non-comedogenic; suitable for acne-prone skin that cannot tolerate petrolatum'
+        },
+        guidance: [
+          'Complete full PM skincare routine (cleanse, treatment serum, moisturizer)',
+          'Take a small amount of petrolatum or selected occlusive (size of a grape seed)',
+          'Press gently into face (do not rub aggressively)',
+          'Apply to hands and feet if dry',
+          'Sleep on satin pillowcase (petroleum does not transfer readily but satin is preferred anyway)',
+          'Rinse face in the morning with warm water; no harsh cleanser required'
+        ],
+        caution: 'Those with acne-prone skin or fungal acne history should use non-comedogenic occlusives (squalane, non-acnegenic sunscreen barriers) rather than petrolatum',
+        scienceNote: 'Petrolatum reduces TEWL by 98%; the overnight occlusion combined with nightly barrier synthesis means skin hydration and barrier function can recover within a single night even after significant dehydration'
+      },
+
+      overnightEdgeLay: {
+        name: 'Overnight Edge Care and Edge Laying',
+        description: `Edges (the baby hairs and delicate perimeter hairs at the hairline) receive
+        special attention in Black American hair care. Overnight, two goals compete: (1) laying and
+        smoothing the edges with a light gel or edge control product to train them into a smooth
+        pattern while sleeping, and (2) not applying so much tension to the hairline that the bonnet
+        or sleep cap causes traction alopecia over time. The gold standard is applying a small
+        amount of a flexible-hold edge control (not a hard gel that will crack and break hair), laying
+        edges with a smooth brush or fingers, and then positioning the bonnet so it sits just below
+        the hairline without pulling.`,
+        edgeProducts: ['Eco Styler Olive Oil Gel', 'Mielle Organics Rosemary Mint Scalp & Hair Oil applied along hairline', 'Got2b Glued (sparingly; for very strong lay)', 'TGIN Honey Miracle Mask (conditioning hold)'],
+        alopeciaRisk: 'Traction alopecia of the hairline is one of the most common hair loss patterns in Black women; it is largely preventable with proper bonnet fit and avoiding excessively tight edge laying overnight'
+      },
+
+      preGPH: {
+        name: 'Pre-Sleep GHK-Cu (Copper Peptide) and Retinol — Black American Skincare Adoption',
+        description: `Black American skincare consumers are among the most sophisticated and fastest-
+        adopting in the world — a 2022 Nielsen study found that Black consumers over-index on
+        skincare purchase and that Black women are major drivers of skincare innovation adoption.
+        Pre-sleep application of copper peptides (GHK-Cu) is increasingly common in Black
+        American skincare routines, particularly for anti-aging and hyperpigmentation management.
+        GHK-Cu stimulates collagen and elastin production, activates skin repair genes, and
+        promotes hair follicle health — making it a natural complement to the GH-driven overnight
+        repair that deep sleep provides. Paired with a satin bonnet (to keep product on hair and
+        scalp rather than on a pillowcase), the overnight copper peptide treatment is a modern
+        science-backed evolution of the traditional overnight oil-and-protect routine.`
+      }
     },
 
-    skinNightRoutine: {
-      cleanse: 'Remove makeup and SPF; oil cleanse or micellar water for heavy products; gentle follow-up cleanser',
-      niacinamide: 'Niacinamide 10% serum every night for dark spots, PIH treatment; most impactful night active for dark skin',
-      retinol: 'Retinol 0.025-0.05% (buffered) for PIH, aging prevention; 2-3x weekly initially; use buffer technique',
-      moisture: 'Rich moisturiser (ceramide + hyaluronic acid-based); CeraVe PM or similar',
-      slug: 'Slugging (thin Vaseline layer over everything) on nights of extreme dryness; especially effective in winter',
-      body: 'Petrolatum on elbows, knees, heels before sleep; shea butter on body; the "greasing" tradition optimized'
+    hairProtectionSleep: {
+      primaryMethod: 'Satin or silk bonnet (the non-negotiable baseline); satin pillowcase as additional protection',
+      locMethod: 'LOC (Liquid-Oil-Cream) moisturization applied before bonneting',
+      stylesForSleep: {
+        twistout: 'Two-strand twists before sleep; unravel in morning for defined twist-out pattern; bonnet essential',
+        braidout: 'Box braids or cornrows before sleep; unravel for stretched, defined pattern',
+        pineapple: 'Loose gathering at crown for longer natural hair; preserves curl clumps; combined with bonnet',
+        protectiveStyles: 'Braids, locs, twists (installed): bonnet over installed styles; keeps lint out, style fresh'
+      },
+      edges: 'Edge care is a specific and culturally important practice; edge control applied lightly before bonneting',
+      productCulture: 'Black haircare industry generates $2.5B annually in the US; most Black women own 5+ hair products specifically for nighttime routine'
     },
 
-    culturalPractice: {
-      bonnet: 'Silk bonnet is cultural symbol of Black womanhood; reclaimed from shame to pride (white beauty standards once pathologized protective practices)',
-      greasing: 'Nightly body "greasing" with Vaseline or shea — intergenerational transmission of skin wisdom',
-      selfCare: '2010s natural hair movement reinvigorated intentional nighttime care as radical self-love for Black women'
-    },
-
-    advice: `Black American nighttime beauty culture is among the most intentional and knowledge-rich in
-    the world — and it\'s been proven right by science. The silk bonnet isn\'t a quirky habit; it\'s the
-    optimal solution for Type 4 hair protection. The "greasing" tradition (petrolatum after bathing) is the
-    most effective occlusive practice available. Niacinamide 10% nightly is clinically the most impactful
-    skincare active for Fitzpatrick IV-VI dark spot treatment. The natural hair and skin care movement that
-    emerged strongly after 2012 has created extraordinary community knowledge around nighttime care —
-    this collective wisdom is worth preserving and building upon.`
+    skinScienceNote: `Black American skin — predominantly Fitzpatrick IV–VI — has the same structural
+    advantages (thicker dermis, higher collagen density, natural photoprotection from melanin) and
+    the same vulnerabilities (PIH susceptibility, inflammation-driven hyperpigmentation, razor bump
+    tendency) as other melanin-rich skin types globally. The unique cultural context in Black American
+    beauty is the extraordinary intergenerational oral transmission of skincare knowledge — grandmothers
+    who knew to slug with Vaseline, who wrapped in satin, who applied castor oil to edges, were
+    passing scientifically valid practices long before those practices appeared in clinical literature.
+    Black American beauty culture deserves recognition as a sophisticated empirical tradition, not
+    merely an aesthetic one.`
   }
 };
 
 // ============================================================
-// HELPER FUNCTION
+// UNIVERSAL SLEEP OPTIMIZATION FOR BEAUTY
+// ============================================================
+
+export const UNIVERSAL_SLEEP_BEAUTY_OPTIMIZATION = {
+  overview: `Regardless of heritage, skin tone, or hair texture, certain sleep-quality optimization
+  principles apply universally. The most perfectly crafted overnight treatment cannot compensate
+  for chronically poor sleep — the GH pulse requires genuine deep sleep to fire, and that requires
+  sleep architecture that is not disrupted by light, heat, timing misalignment, or screen use.`,
+
+  environmentForBeautySleep: {
+    temperature: {
+      optimal: '15–19°C (60–67°F) — cooler than most people keep their rooms',
+      reason: 'Core body temperature must drop 1–2°C to initiate sleep; a cool room accelerates this; a warm room prevents the drop and delays sleep onset and deep sleep',
+      skinBenefit: 'Cool skin temperature reduces sebum production overnight (acne prevention) and supports the vasoconstriction that primes skin for morning repair'
+    },
+    darkness: {
+      optimal: 'Complete darkness or sleep mask',
+      reason: 'Even low light (a glowing clock, streetlight through a gap in curtains) suppresses melatonin; melatonin is both a sleep initiator and a potent antioxidant in skin',
+      skinBenefit: 'Maximal melatonin release = maximal antioxidant protection during skin repair; neutralizes free radical damage accumulated during the day'
+    },
+    humidity: {
+      optimal: '40–60% relative humidity',
+      reason: 'Rooms below 40% humidity accelerate TEWL (transepidermal water loss); overnight skin dehydration worsens in dry climates and in winter with heating',
+      skinBenefit: 'A humidifier in the bedroom is one of the highest-return skincare investments for people in dry climates; 60% humidity can reduce nightly TEWL by up to 50%'
+    },
+    phoneBlueLight: {
+      recommendation: 'No screen use 60–90 minutes before desired sleep onset',
+      reason: 'Blue light (460–480nm wavelength emitted by screens) directly suppresses melatonin secretion from the pineal gland via intrinsically photosensitive retinal ganglion cells (ipRGCs)',
+      skinImpact: 'Phone blue light before bed = delayed melatonin = delayed antioxidant protection = more free radical damage to skin during the sleep window'
+    }
+  },
+
+  timingBeautySleep: {
+    goldenHours: 'Approximately 10:00 PM – 2:00 AM contains the most slow-wave (deep) sleep; this is when GH release and collagen synthesis are at their peak',
+    totalDuration: '7–9 hours for optimal beauty repair; below 6 hours measurably increases visible aging markers within 2–3 weeks',
+    consistency: 'Consistent sleep and wake times are more important than total hours; irregular sleep disrupts circadian skin clock even if total time is adequate',
+    weekendCatchUp: 'Sleep debt from weekdays cannot be fully repaid on weekends; beauty sleep must be consistently banked nightly'
+  },
+
+  nighttimeSkincareLayeringUniversal: {
+    overview: 'Regardless of ethnic background, the universal pre-sleep skincare order maximizes overnight efficacy',
+    order: [
+      '1. Double cleanse (oil cleanser → water-based cleanser): removes all barriers to product absorption',
+      '2. Exfoliant if desired (AHA/BHA 2–3x per week; never mix with retinoid on same night)',
+      '3. Treatment actives (vitamin C if used at night; niacinamide; azelaic acid; tranexamic acid for hyperpigmentation)',
+      '4. Retinoid (if used; start 2x per week and build up; avoid eye area; wait 20 minutes after exfoliant if both are used)',
+      '5. Hydrating serum (hyaluronic acid, peptides; applied to slightly damp skin)',
+      '6. Moisturizer (cream or gel depending on skin type)',
+      '7. Occlusive or sleeping mask (final seal; the "lock" step)',
+      '8. Eye cream (targeted peptides or caffeine for periorbital; applied last to avoid migration into eyes)'
+    ]
+  },
+
+  nutritionForBeautySleep: {
+    preSleeepNutrition: [
+      'Tart cherry juice (natural melatonin source; 240ml before bed increases sleep duration by 84 minutes in studies)',
+      'Magnesium glycinate (deficiency impairs deep sleep; glycinate form is most bioavailable; 200–400mg before bed)',
+      'Collagen peptides (10–15g before sleep; provides proline and glycine, amino acids the body uses for collagen synthesis during overnight repair; the GH-collagen synthesis window uses these substrates)',
+      'Kiwifruit (two kiwis one hour before bed reduced time to fall asleep by 42% and sleep duration by 13% in a 2011 study; serotonin precursors and antioxidants)',
+      'Avoid alcohol within 3 hours of sleep (suppresses REM sleep; increases TEWL; causes night sweats that dehydrate skin)'
+    ]
+  }
+};
+
+// ============================================================
+// GETTER FUNCTION — REQUIRED DIRECT MAP PATTERN
 // ============================================================
 
 export function getSleepBeautyGuide(communityId) {
@@ -517,30 +1294,614 @@ export function getSleepBeautyGuide(communityId) {
     'east-asian': ETHNIC_SLEEP_BEAUTY_GUIDES['east-asian'],
     'east-african': ETHNIC_SLEEP_BEAUTY_GUIDES['east-african'],
     'south-african': ETHNIC_SLEEP_BEAUTY_GUIDES['south-african'],
-    'black-american': ETHNIC_SLEEP_BEAUTY_GUIDES['black-american']
+    'black-american': ETHNIC_SLEEP_BEAUTY_GUIDES['black-american'],
   };
   return directMap[communityId] || null;
 }
 
 // ============================================================
-// STATS
+// UTILITY EXPORTS
 // ============================================================
 
-export const SLEEP_BEAUTY_STATS = {
-  moduleId: 'sleep_beauty_ethnic_guide',
-  version: '1.0.0',
-  communities: 9,
-  keyFacts: [
-    '70-80% of daily growth hormone is released during deep slow-wave sleep — primary collagen repair window',
-    'Skin cell division peaks at midnight — the body\'s built-in "beauty sleep" programming',
-    'Sleep-deprived faces rated 6% less attractive and 19% less healthy by blind raters (Royal Society 2015)',
-    'Silk pillowcase friction coefficient is dramatically lower than cotton — reduces sleep wrinkles and hair breakage',
-    'The LOC method (Liquid-Oil-Cream) before sleeping is the optimal moisture protocol for Type 4 hair',
-    'Slugging (petrolatum occlusion) reduces transepidermal water loss by up to 99% overnight',
-    'Stomach sleeping creates most sleep wrinkles — some permanent over time; back sleeping is best for skin',
-    'Silk bonnet tradition in Black American culture is scientifically validated: protects Type 4 hair from cuticle damage',
-    'Cortisol is lowest during sleep — the only time skin can fully synthesize collagen without cortisol suppression',
-    'Niacinamide 10% applied nightly for 8-12 weeks produces clinically significant dark spot reduction in dark skin'
-  ],
-  lastUpdated: '2026-10-29'
+export const SUPPORTED_COMMUNITIES = [
+  'west-african',
+  'south-asian',
+  'caribbean',
+  'arab',
+  'latina',
+  'east-asian',
+  'east-african',
+  'south-african',
+  'black-american'
+];
+
+export const SLEEP_BEAUTY_INGREDIENTS_GLOSSARY = {
+  shea: {
+    inci: 'Butyrospermum Parkii (Shea) Butter',
+    origin: 'West Africa (Vitellaria paradoxa tree)',
+    keyActives: ['Stearic acid', 'Oleic acid', 'Lupeol (triterpene)', 'Alpha-amyrin'],
+    overnight: 'Occlusive + anti-inflammatory; ideal final seal for melanin-rich skin'
+  },
+  argan: {
+    inci: 'Argania Spinosa Kernel Oil',
+    origin: 'Morocco',
+    keyActives: ['Tocopherols (Vitamin E)', 'Squalene', 'Oleic acid', 'Linoleic acid', 'Ferulic acid'],
+    overnight: 'Dry oil; penetrating antioxidant; sebum-regulating for oily skin'
+  },
+  marula: {
+    inci: 'Sclerocarya Birrea Seed Oil',
+    origin: 'Southern Africa',
+    keyActives: ['Oleic acid (70–78%)', 'Palmitoleic acid', 'Tocopherols'],
+    overnight: 'Fastest-absorbing overnight facial oil; anti-aging via palmitoleic acid'
+  },
+  rooibos: {
+    inci: 'Aspalathus Linearis Extract',
+    origin: 'Cederberg, Western Cape, South Africa',
+    keyActives: ['Aspalathin', 'Nothofagin', 'Quercetin', 'Luteolin'],
+    overnight: 'Hyaluronidase inhibitor; anti-inflammatory; unique to South African skincare'
+  },
+  frankincense: {
+    inci: 'Boswellia Serrata Resin Extract',
+    origin: 'East Africa, Arabian Peninsula, India',
+    keyActives: ['AKBA (acetyl-11-keto-beta-boswellic acid)', 'Alpha-boswellic acid', 'Beta-boswellic acid'],
+    overnight: '5-LOX and NF-κB inhibitor; anti-aging; skin elasticity improvement in RCTs'
+  },
+  camellia: {
+    inci: 'Camellia Japonica Seed Oil (Tsubaki)',
+    origin: 'Japan, Korea, China',
+    keyActives: ['Oleic acid (82%)', 'Polyphenols', 'Squalene'],
+    overnight: 'Closest oil to sebum composition; ideal overnight facial oil for East Asian skin'
+  },
+  petrolatum: {
+    inci: 'Petrolatum',
+    origin: 'Mineral (refined petroleum jelly)',
+    keyActives: ['Saturated hydrocarbons (pure occlusive; no active ingredients)'],
+    overnight: 'Reduces TEWL by 98%; the definitive overnight occlusive for barrier repair'
+  },
+  coconut: {
+    inci: 'Cocos Nucifera (Coconut) Oil',
+    origin: 'Tropical; Caribbean, South Asia, Pacific',
+    keyActives: ['Lauric acid (penetrates hair cortex)', 'Caprylic/capric acid', 'Tocopherols'],
+    overnight: 'Hair cortex penetrator (reduces protein loss); good skin occlusive for dry skin; comedogenic for acne-prone face'
+  },
+  aloe: {
+    inci: 'Aloe Barbadensis Leaf Juice',
+    origin: 'Caribbean, Africa, Mediterranean',
+    keyActives: ['Acemannan', 'Vitamins C, E, B12', 'Aloin (remove before use)', 'Enzymes (bradykinin inhibitors)'],
+    overnight: 'Wound healing accelerator; anti-inflammatory; skin hydration via mucopolysaccharides'
+  },
+  rosewater: {
+    inci: 'Rosa Damascena Flower Water',
+    origin: 'Syria, Bulgaria, Saudi Arabia (Taif)',
+    keyActives: ['Geraniol', 'Citronellol', 'Nerol', 'Phenylethanol'],
+    overnight: 'Pre-serum toner; anti-inflammatory; anxiolytic scent supports sleep onset'
+  }
 };
+
+export function getAllSleepBeautyGuides() {
+  return ETHNIC_SLEEP_BEAUTY_GUIDES;
+}
+
+export function getSleepScienceSection(sectionKey) {
+  const sections = {
+    stages: BEAUTY_SLEEP_SCIENCE.sleepStagesAndBeauty,
+    collagen: BEAUTY_SLEEP_SCIENCE.growthHormoneCollagen,
+    turnover: BEAUTY_SLEEP_SCIENCE.cellTurnoverDuringSleep,
+    deprivation: BEAUTY_SLEEP_SCIENCE.sleepDeprivationEffects,
+    circadian: BEAUTY_SLEEP_SCIENCE.circadianRhythmBeauty,
+    overview: BEAUTY_SLEEP_SCIENCE.overview
+  };
+  return sections[sectionKey] || null;
+}
+
+export function getOvernightIngredientsByHeritage(communityId) {
+  const ingredientMap = {
+    'west-african': ['shea', 'coconut'],
+    'south-asian': ['coconut', 'argan', 'rosewater'],
+    'caribbean': ['aloe', 'coconut', 'rosewater'],
+    'arab': ['argan', 'rosewater', 'frankincense'],
+    'latina': ['coconut', 'aloe', 'rosewater'],
+    'east-asian': ['camellia', 'rosewater'],
+    'east-african': ['frankincense', 'shea'],
+    'south-african': ['marula', 'rooibos', 'shea'],
+    'black-american': ['shea', 'coconut', 'petrolatum', 'argan']
+  };
+  const keys = ingredientMap[communityId] || [];
+  return keys.reduce((acc, key) => {
+    acc[key] = SLEEP_BEAUTY_INGREDIENTS_GLOSSARY[key];
+    return acc;
+  }, {});
+}
+
+// ============================================================
+// HAIR PROTECTION METHODS — CROSS-COMMUNITY COMPARISON
+// ============================================================
+
+export const HAIR_PROTECTION_SLEEP_METHODS = {
+  overview: `Protective sleep hairstyling is a universal practice — every culture with textured,
+  wavy, or long hair has developed methods to preserve hair health and style integrity through the
+  night. The specific methods differ by hair texture, cultural tradition, and available materials,
+  but all address the same core problems: friction, moisture loss, and mechanical stress from
+  sleeping.`,
+
+  methodsByType: {
+    bonnet: {
+      name: 'Satin/Silk Bonnet',
+      bestFor: ['Type 4A', 'Type 4B', 'Type 4C', 'Type 3C'],
+      primaryCommunities: ['black-american', 'west-african', 'east-african', 'south-african'],
+      description: `The bonnet is the most comprehensive nighttime hair protection tool for tightly
+      coiled and kinky hair textures. It encloses all hair inside a smooth, low-friction dome that
+      prevents cuticle abrasion, seals in moisture, and keeps styled hair intact. Essential for
+      natural hair protective styling.`,
+      tips: [
+        'Size up if hair is voluminous or in a pineapple',
+        'Do not tighten elastic to the point of putting tension on hairline',
+        'Wash bonnet weekly — accumulates product buildup that can transfer to hair',
+        'Double-satin-lined bonnets provide extra protection for very fragile hair',
+        'Choose bonnets with wide, flat elastic rather than thin elastic to minimize hairline pressure'
+      ]
+    },
+    headWrap: {
+      name: 'Satin Head Wrap / Scarf',
+      bestFor: ['All textures', 'Long hair', 'Braided styles', 'Natural coils'],
+      primaryCommunities: ['west-african', 'arab', 'south-asian', 'east-african', 'latina'],
+      description: `A large square or rectangular piece of satin or silk tied around the hair. More
+      versatile than a bonnet — accommodates any hair volume, can be styled for cultural expression,
+      and provides both hair protection and a sense of intention in the nighttime ritual.`,
+      tips: [
+        'A 36" x 36" satin square covers even very long or voluminous hair',
+        'Fold into a triangle, center on hairline, tie at nape for classic wrap',
+        'For braids: tie loosely so knot does not put pressure on installed braids at nape',
+        'Ankara satin print fabrics combine cultural aesthetic with functional hair protection',
+        'Store wrapped around a small pillow or hanger when not in use to prevent creasing'
+      ]
+    },
+    pineapple: {
+      name: 'Pineapple Updo',
+      bestFor: ['Type 3A', 'Type 3B', 'Type 3C', 'Type 4A (longer lengths)'],
+      primaryCommunities: ['caribbean', 'black-american', 'latina'],
+      description: `Hair loosely gathered at the very top of the head with a satin scrunchie.
+      Maintains curl clump integrity, prevents root compression and flattening, reduces frizz.
+      Most effective for curly hair types with elongated curl patterns (3A–4A). Combine with
+      satin pillowcase for maximum benefit.`,
+      tips: [
+        'The higher the gather, the better — at the very crown of the head',
+        'Use a large-diameter satin scrunchie: no metal, no rubber, no snag',
+        'Two gentle loops of the scrunchie only — over-tightening creates a crease',
+        'For shrinkage-prone hair: stretch slightly before pineappling to preserve length',
+        'Apply a light curl refresher or water mist to revive in the morning'
+      ]
+    },
+    looseBraid: {
+      name: 'Loose Overnight Braid',
+      bestFor: ['Type 1C', 'Type 2A–2C', 'Type 3A', 'Long straight to wavy hair'],
+      primaryCommunities: ['south-asian', 'arab', 'latina', 'east-african'],
+      description: `A single loose three-strand or French braid secured at the end with a satin
+      elastic. Keeps hair from tangling during sleep, prevents friction from loose hair on pillow,
+      and — when hair is braided damp with a styling product — produces natural-looking waves by
+      morning. The go-to method for straight-to-wavy hair types across multiple cultural traditions.`,
+      tips: [
+        'Braid loosely — a tight braid creates tension at the scalp and visible crease in the braid pattern',
+        'French or Dutch braid reduces the chance of the braid slipping off long, smooth hair',
+        'Apply a leave-in conditioner or lightweight hair oil before braiding for morning softness',
+        'Wrap finished braid over one shoulder rather than behind the head to prevent lying on the braid',
+        'Use a satin elastic at the end — standard rubber bands cause breakage at the tie point'
+      ]
+    },
+    twistMethod: {
+      name: 'Two-Strand Twists (Overnight)',
+      bestFor: ['Type 3C', 'Type 4A', 'Type 4B'],
+      primaryCommunities: ['west-african', 'black-american', 'caribbean'],
+      description: `Hair divided into sections (anywhere from 4 to 20+ depending on desired
+      definition), each section twisted in a two-strand pattern and loosely coiled at the end.
+      Covered with a bonnet before sleep. By morning, twists are unwound to reveal defined,
+      elongated coils with a natural-looking twist-out pattern. This technique is both a protective
+      sleep style and a styling method — two benefits in one overnight routine.`,
+      tips: [
+        'Apply LOC method before twisting on freshly washed or refreshed hair',
+        'The larger the twist, the looser the resulting coil pattern',
+        'Avoid twisting too tightly at the root — this puts traction on the follicle',
+        'Let twists dry fully before unwinding if hair was damp when twisted',
+        'Unwind gently by separating only with fingers, never a comb, to preserve definition'
+      ]
+    },
+    silkPillowcase: {
+      name: 'Silk or Satin Pillowcase',
+      bestFor: ['All hair textures', 'Especially straight and wavy hair (Type 1–2)'],
+      primaryCommunities: ['east-asian', 'caribbean', 'arab', 'latina'],
+      description: `A silk or satin pillowcase is the minimum viable overnight hair protection for
+      any hair type. It reduces friction coefficient by up to 40% versus cotton, prevents static
+      electricity generation (a primary driver of frizz in straight and wavy hair), and keeps
+      overnight treatments on hair rather than absorbing into the pillowcase fabric. For very straight
+      hair types (Type 1) where a bonnet would flatten the style, the silk pillowcase is often the
+      primary and sufficient protective measure.`,
+      choosing: {
+        mulberrySilk: 'Grade 6A, 19–25 momme; the standard for quality; breathable; temperature-regulating; long-lasting',
+        charmeuseSatin: 'Polyester or silk-charmeuse weave; smooth finish; more affordable; less breathable but functionally effective for friction reduction',
+        mommeWeight: '19 momme is lightweight; 22 momme is the sweet spot of durability and drape; 25 momme is thick and luxurious',
+        care: 'Hand wash or delicate machine cycle with silk-specific detergent; never tumble dry; air dry flat; no ironing at high heat'
+      }
+    }
+  },
+
+  frictionScienceExplained: `Cotton pillowcases have a surface texture coefficient of friction
+  (CoF) of approximately 0.3–0.5. Silk and satin have a CoF of 0.1–0.15. This difference seems
+  small but is enormous in practical terms: over 8 hours of sleep involving potentially hundreds of
+  head position changes, the cumulative abrasion from high-CoF cotton on the outer cuticle of the
+  hair shaft adds up to measurable cuticle scale lifting, protein loss from the cortex, moisture
+  evaporation, and static charge accumulation (which causes individual hair strands to repel each
+  other, creating frizz). Silk and satin's lower CoF eliminates the majority of this overnight
+  abrasion. For the face, the lower CoF also means less mechanical compression into the same
+  folded position night after night — reducing the reinforcement of "sleep lines" that, over
+  years, become static wrinkles.`
+};
+
+// ============================================================
+// SLEEP DEPRIVATION BEAUTY EFFECTS — EXTENDED REFERENCE
+// ============================================================
+
+export const SLEEP_DEPRIVATION_BEAUTY_SCIENCE = {
+  immediateEffects: {
+    timeline: 'Visible within one night of less than 5 hours sleep',
+    manifestations: {
+      periorbitalPuffiness: {
+        mechanism: 'Lymphatic drainage slows during sleep; cortisol elevation causes fluid retention; adipose tissue around the eye (fat pads) shifts anteriorly with supine position and reduced lymph flow',
+        appearance: 'Swollen, puffy under-eye area; especially prominent in morning',
+        remedy: 'Cold compress (cool green tea bags or chilled rooibos-soaked pads); caffeine eye cream (vasoconstrictor); elevation (sleep with head slightly elevated)'
+      },
+      darkCircles: {
+        mechanism: 'Vasodilation of periorbital microvasculature after sleep deprivation; thin skin under the eyes allows visibility of vessels; haemoglobin oxidation products cause blue-purple discoloration',
+        appearance: 'Blue-purple under-eye shadow; worse in those with thinner periorbital skin',
+        exacerbation: 'Worse in South Asian, Arab, and East African heritage where pigmentary dark circles (structural hyperpigmentation) compound vascular dark circles from fatigue',
+        remedy: 'Vitamin K eye creams (promote vessel strengthening); cold; caffeine; adequate sleep'
+      },
+      dullness: {
+        mechanism: 'Cortisol-driven vasoconstriction reduces skin perfusion; less oxygenated blood in capillaries means less pink flush; melanin-rich skin shows grey or ashy cast',
+        appearance: 'Flat, lifeless complexion; lack of normal radiance glow; grey cast in medium-to-deep skin tones',
+        remedy: 'Morning lymphatic facial massage; cold water splash; niacinamide (improves circulation); adequate sleep cannot be substituted'
+      },
+      increasedBreakouts: {
+        mechanism: 'Cortisol spike from sleep deprivation → increased sebum production → comedone formation; cortisol also elevates androgen activity, further driving sebaceous gland activity; immune surveillance impaired (more P. acnes proliferation)',
+        appearance: 'New breakouts within 24–48 hours of sleep deprivation; particularly along jawline and cheeks',
+        remedy: 'Prevention is the only real solution; topical salicylic acid can address existing lesions but the hormonal driver (cortisol) must be addressed via adequate sleep'
+      }
+    }
+  },
+
+  chronicEffects: {
+    timeline: 'Measurable skin aging changes within 2–3 weeks of consistently poor sleep',
+    collagenDegradation: {
+      mechanism: 'Elevated cortisol (from HPA axis dysregulation in chronic sleep deprivation) activates matrix metalloproteinases MMP-1, MMP-3, and MMP-9 — enzymes that directly degrade collagen fibers in the dermis',
+      measuredEffect: 'Skin collagen density measurably lower in poor sleepers vs. good sleepers in matched-age studies; skin thickness reduced',
+      appearance: 'Increased fine lines; loss of skin firmness; earlier onset of static wrinkles'
+    },
+    barrierDysfunction: {
+      mechanism: 'Chronic sleep deprivation reduces ceramide synthesis in the stratum corneum; ceramides are the primary lipid of the skin barrier; barrier function impairment = higher TEWL = chronically dehydrated skin',
+      measuredEffect: 'TEWL increases by ~30% in chronic poor sleepers; takes 3 consecutive nights of adequate sleep to restore to baseline',
+      appearance: 'Chronically dry, tight skin; increased sensitivity and reactivity; products absorb less effectively due to impaired barrier'
+    },
+    hyperpigmentation: {
+      mechanism: 'Inflammation from chronic sleep deprivation (elevated IL-6, TNF-alpha) upregulates tyrosinase and MITF (melanocyte-inducing transcription factor); melanocyte activity increases',
+      risk: 'Highest in Fitzpatrick IV–VI skin types; once PIH is established, it is far harder to reverse than to prevent',
+      appearance: 'Dark spots, uneven skin tone, worsening of existing hyperpigmentation'
+    },
+    hairLoss: {
+      mechanism: 'Chronic stress/cortisol elevation causes telogen effluvium — a diffuse hair shedding where follicles are pushed prematurely into the resting (telogen) phase; GH reduction also weakens follicle activity',
+      appearance: 'Diffuse thinning, increased daily shed count, reduced hair density over months',
+      timecourse: 'Telogen effluvium typically manifests 2–4 months after the stress event; recovery takes 3–6 months of adequate sleep'
+    }
+  },
+
+  sleepQualityVsQuantity: `Sleep quality matters as much as sleep quantity. A person who sleeps 8 hours
+  but with frequent awakenings (common in untreated sleep apnea, anxiety, or exposure to blue light)
+  may not reach sufficient slow-wave sleep duration to trigger the GH pulse. This means beauty sleep
+  is not simply about "being in bed for 8 hours" — it requires genuinely undisturbed, progressively
+  deepening sleep. Sleep apnea in particular is catastrophic for skin repair: the oxygen desaturation
+  events that characterize apnea generate massive oxidative stress in every cell of the body, including
+  skin cells, during the exact window when antioxidant (melatonin) protection should be highest.
+  Untreated sleep apnea has been associated with significantly accelerated facial aging in multiple
+  facial anthropometry studies.`
+};
+
+// ============================================================
+// CIRCADIAN SKINCARE TIMING — DETAILED GUIDE
+// ============================================================
+
+export const CIRCADIAN_SKINCARE_TIMING = {
+  overview: `The skin's circadian clock (peripheral oscillator) operates on roughly the same 24-hour
+  rhythm as the central SCN clock, but its phase can be partially decoupled from the central clock
+  by local cues including topical products, UV exposure, and temperature. This means skincare timing
+  is a real lever: applying the right ingredient at the right time of day can amplify its efficacy
+  by as much as 2–4 fold in some cases.`,
+
+  morning: {
+    ideal: '6:00 AM – 9:00 AM',
+    skinState: 'Skin barrier at its weakest (lowest AM barrier function); cortisol beginning its natural morning rise; sebum production ramping up; skin surface dehydrated from night of moderate TEWL',
+    bestIngredients: [
+      {
+        ingredient: 'Vitamin C (L-Ascorbic Acid or stable derivatives)',
+        why: 'Photodegradable; must be applied before UV exposure; neutralizes UV-generated free radicals in real time; stimulates collagen synthesis in response to daytime fibroblast activity',
+        timing: 'Apply after cleansing, before all other products; allow 10 minutes to absorb before SPF'
+      },
+      {
+        ingredient: 'Niacinamide (Vitamin B3)',
+        why: 'Supports barrier function in the AM-weak window; inhibits melanin transfer (morning application can work throughout the day); oil regulation (useful as daytime AM sebum rises)',
+        timing: 'After Vitamin C or alone; pairs well with morning moisturizer'
+      },
+      {
+        ingredient: 'SPF (Broad Spectrum UVA/UVB)',
+        why: 'The most important anti-aging intervention; UV is the largest extrinsic driver of skin aging; non-negotiable in every AM routine regardless of skin tone or heritage',
+        timing: 'Absolute last step before makeup; minimum SPF 30; SPF 50 preferred for Fitzpatrick I–III; SPF 30–50 for Fitzpatrick IV–VI (melanin provides some inherent UV absorption but does not eliminate photoaging or skin cancer risk)'
+      },
+      {
+        ingredient: 'Hyaluronic Acid (AM application)',
+        why: 'Replaces overnight-depleted surface hydration; apply to damp skin immediately after morning cleanse for maximum effectiveness',
+        timing: 'On damp skin before serum; lock in with lightweight moisturizer'
+      },
+      {
+        ingredient: 'Caffeine (eye area)',
+        why: 'Vasoconstrictive effect most useful in AM when periorbital puffiness from overnight fluid retention is highest; reduces visible swelling within 20–30 minutes',
+        timing: 'After Vitamin C, before SPF; gentle patting motion around orbital bone'
+      }
+    ]
+  },
+
+  evening: {
+    ideal: '9:00 PM – 11:00 PM (before sleep onset)',
+    skinState: 'Cell division peaking toward midnight; GH release imminent; cortisol at daily nadir; barrier repair enzymes upregulated; melatonin rising (antioxidant mode active)',
+    bestIngredients: [
+      {
+        ingredient: 'Retinoids (Tretinoin, Retinal, Retinol, Retinyl Esters)',
+        why: 'Photodegradable — night use avoids UV-induced degradation; align with peak cell turnover window; support collagen synthesis that GH-driven fibroblast activity is primed to execute overnight; most studied anti-aging ingredient with decades of RCT evidence',
+        timing: 'After double cleanse and toner; wait 20 minutes after any acid application (buffer time); apply to FULLY dry face (wet skin increases penetration and thus irritation potential); use pea-sized amount for entire face',
+        beginner: 'Start 0.025% retinol 2x per week; increase frequency over months; full efficacy achieved after 12 weeks of consistent use'
+      },
+      {
+        ingredient: 'AHA/BHA Chemical Exfoliants (Glycolic, Lactic, Salicylic)',
+        why: 'Cause temporary photosensitivity — PM only; align with peak keratinocyte division (supporting cell renewal); glycolic acid stimulates fibroblast activity and GAG synthesis overnight',
+        timing: '2–3x per week; never on the same night as retinoids (for beginners); after cleansing, before serum',
+        ethnicConsideration: 'Lower concentrations (5–7% glycolic; 5–10% lactic) recommended for Fitzpatrick IV–VI to minimize post-inflammatory hyperpigmentation risk from over-exfoliation'
+      },
+      {
+        ingredient: 'Peptides (Copper Peptides, Matrixyl, Argireline)',
+        why: 'Signal fibroblasts to produce collagen and elastin; copper peptides (GHK-Cu) also activate tissue remodeling genes; benefit maximized at night when fibroblasts are most active',
+        timing: 'After serum, before moisturizer; can be used nightly; no photosensitivity'
+      },
+      {
+        ingredient: 'Ceramides + Fatty Acids + Cholesterol (the "skin barrier trio")',
+        why: 'Match the exact lipid composition of the stratum corneum; the barrier actively rebuilds overnight using lipid synthesis enzymes that are circadian-regulated; topical lipids provide substrate for this repair',
+        timing: 'In PM moisturizer or as a dedicated barrier repair step; nightly application; suitable for all skin types',
+        ratio: 'Optimal ratio approximated in several clinical studies: ceramides 3:1 fatty acids 1:1 cholesterol'
+      },
+      {
+        ingredient: 'Tranexamic Acid / Azelaic Acid (for hyperpigmentation)',
+        why: 'Both are melanin synthesis inhibitors; PM use avoids any theoretical photosensitivity concern; tranexamic acid works by blocking melanocyte plasminogen activator receptor; azelaic acid inhibits tyrosinase and has anti-acne and anti-rosacea activity',
+        timing: 'After toner, before or instead of Vitamin C if Vitamin C is reserved for AM only; 5–10% azelaic; 3–5% tranexamic',
+        ethnicRelevance: 'Essential PM ingredients for PIH-prone Fitzpatrick IV–VI skin types across all communities covered in this guide'
+      }
+    ]
+  },
+
+  phaseRelationships: {
+    doNotCombineOnSameNight: [
+      'Retinoids + AHA/BHA (for beginners; increases irritation risk)',
+      'Vitamin C (acidic, pH 2.5–3.5) + Niacinamide (may form niacin; flush; largely theoretical but cautious formulations separate them)',
+      'Multiple actives on broken, irritated, or compromised barrier skin (fix the barrier first with ceramides and plain moisturizer)'
+    ],
+    safeToLayer: [
+      'Hyaluronic acid + any other active (pure humectant; no interactions)',
+      'Niacinamide + Peptides',
+      'Ceramides + any other active (barrier support; enhances penetration of subsequent products)',
+      'Retinoids + Peptides (apply retinoid first, wait 20 minutes, then peptide serum)'
+    ]
+  }
+};
+
+// ============================================================
+// COMMUNITY SUMMARY TABLE — QUICK REFERENCE
+// ============================================================
+
+export const COMMUNITY_SLEEP_BEAUTY_SUMMARY = {
+  'west-african': {
+    keyOvernightHero: 'Raw unrefined shea butter (orí)',
+    hairProtectionMethod: 'Head wrap over twists or braids',
+    sleepPhilosophyCore: 'Feed the skin and hair while the body is still',
+    primarySkinConcern: 'PIH prevention; moisture retention in dry season climates',
+    uniqueTradition: 'African black soap (dudu osun) pre-sleep cleanse before shea application'
+  },
+  'south-asian': {
+    keyOvernightHero: 'Warm hair oiling (champi) — coconut, amla, brahmi, bhringraj',
+    hairProtectionMethod: 'Loose braid after oiling; covered with dupatta or muslin',
+    sleepPhilosophyCore: 'Ayurvedic nidra — nighttime as Kapha window for tissue restoration',
+    primarySkinConcern: 'Periorbital hyperpigmentation; PIH; uneven skin tone',
+    uniqueTradition: 'Haldi ubtan (turmeric) brightening overnight mask; golden milk before sleep'
+  },
+  'caribbean': {
+    keyOvernightHero: 'Fresh aloe vera gel overnight treatment',
+    hairProtectionMethod: 'Pineapple updo with satin scrunchie; silk pillowcase',
+    sleepPhilosophyCore: 'Nature-as-pharmacy; botanical tradition meets practical protection',
+    primarySkinConcern: 'Post-UV hyperpigmentation; curl preservation',
+    uniqueTradition: 'Fresh aloe cut from household plant; coconut oil deep conditioning overnight'
+  },
+  'arab': {
+    keyOvernightHero: 'Argan oil (zit argan) for face and hair; Damascene rose water',
+    hairProtectionMethod: 'Loose braid after argan oil; satin pillowcase or silk sleep scarf',
+    sleepPhilosophyCore: 'Hammam as pre-sleep skin preparation; scenting (bakhoor) as sleep ritual',
+    primarySkinConcern: 'Periorbital hyperpigmentation; olive skin dullness from fatigue',
+    uniqueTradition: 'Hammam-to-bed ritual; ghassoul clay weekly pre-sleep deep cleanse; oud burning'
+  },
+  'latina': {
+    keyOvernightHero: 'Avocado-egg-olive oil overnight hair mask; raw honey face mask',
+    hairProtectionMethod: 'Pañoleta (satin head covering) over weekly blowout or curl set',
+    sleepPhilosophyCore: 'Kitchen as beauty lab; abuela\'s remedios as empirical beauty science',
+    primarySkinConcern: 'Diverse (mirrors phenotypic diversity); curl preservation; PIH in darker heritage',
+    uniqueTradition: 'Overnight braid for heatless morning waves; cucumber eye compress'
+  },
+  'east-asian': {
+    keyOvernightHero: 'Korean sleeping pack (sleeping mask); Japanese tsubaki (camellia) oil',
+    hairProtectionMethod: 'Silk pillowcase primary; tsubaki oil on lengths before sleep',
+    sleepPhilosophyCore: 'Chok chok (K-beauty dewy skin) and mochi hada (J-beauty smooth skin) via layered overnight protocol',
+    primarySkinConcern: 'Melasma; uneven pigmentation; periorbital pigmentation; skin texture',
+    uniqueTradition: 'Double cleanse as non-negotiable PM foundation; ofuro (Japanese pre-sleep bath ritual); sake ferment essences for overnight brightening'
+  },
+  'east-african': {
+    keyOvernightHero: 'Frankincense (boswellia) oil or resin — anti-inflammatory overnight treatment',
+    hairProtectionMethod: 'Satin scarf over cornrows or natural coils; garbasaar (Somali style)',
+    sleepPhilosophyCore: 'Aromatic botanicals as medicine and beauty; incense as sleep ritual',
+    primarySkinConcern: 'Deep Fitzpatrick V–VI luminosity maintenance; PIH prevention; scalp health under braids',
+    uniqueTradition: 'Frankincense smoke ritual (d\'aalacad); Ethiopian coffee ground exfoliation; shuro (chickpea flour) overnight brightening mask'
+  },
+  'south-african': {
+    keyOvernightHero: 'Marula oil (Sclerocarya birrea) — palmitoleic-rich overnight facial oil',
+    hairProtectionMethod: 'Satin bonnet or satin-lined sleep cap over Type 4 coils or braids',
+    sleepPhilosophyCore: 'Fynbos and savanna botanicals as skincare heritage; pre-sleep self-massage as sleep aid',
+    primarySkinConcern: 'PIH prevention; barrier maintenance; deep skin tone radiance',
+    uniqueTradition: 'Rooibos overnight compress (unique to South Africa); marula oil — higher palmitoleic acid than any common oil'
+  },
+  'black-american': {
+    keyOvernightHero: 'Satin/silk bonnet (cultural cornerstone); petrolatum slugging; LOC method',
+    hairProtectionMethod: 'Satin bonnet (mandatory baseline); LOC method before bonneting; satin pillowcase as backup',
+    sleepPhilosophyCore: 'The bonnet is heritage, protection, and self-respect — not a trend',
+    primarySkinConcern: 'PIH; dark circle management; skin slugging for barrier repair; edge care',
+    uniqueTradition: 'Generational transmission of bonnet practice; skin slugging with Vaseline (preceded K-beauty slugging trend); LOC moisturization method'
+  }
+};
+
+// ============================================================
+// SLEEP BEAUTY RITUALS — PRE-SLEEP WIND-DOWN ROUTINES
+// ============================================================
+
+export const PRE_SLEEP_WIND_DOWN_RITUALS = {
+  overview: `The transition into sleep is not instantaneous — the body requires a wind-down period
+  during which cortisol falls, core body temperature drops, and melatonin rises. A purposeful
+  pre-sleep beauty ritual, typically 20–45 minutes before bed, serves a dual function: it prepares
+  the skin and hair for overnight repair AND it operates as a behavioral sleep cue that trains the
+  brain's sleep-onset mechanism. The ritual itself — the familiar sequence of steps, scents, and
+  textures — becomes a powerful contextual sleep trigger over time.`,
+
+  universalWindDownSequence: {
+    step1: {
+      name: 'Technology Sunset',
+      time: '60–90 minutes before sleep',
+      action: 'Shift phone to night mode or warm filter; begin stepping away from screens; the beauty ritual naturally fills this space',
+      beautyConnection: 'Melatonin begins rising once blue light exposure decreases; this is the optimal start of the nighttime antioxidant protection for skin'
+    },
+    step2: {
+      name: 'Warm Shower or Bath',
+      time: '45–60 minutes before sleep',
+      action: 'Warm (not hot) shower; full body cleanse; exfoliate if desired; ofuro (Japanese bath) concept: bath as transition ritual',
+      beautyConnection: 'Post-bath body temperature drop of 1–2°C accelerates sleep onset; warm water opens pores for cleansing; skin is most receptive to product absorption in the 10 minutes after bathing',
+      ethnicVariations: {
+        japanese: 'Ofuro — deep soak bath; ritualistic preparation for sleep',
+        southAsian: 'Warm bath with turmeric or neem for antibacterial benefit',
+        arab: 'Hammam-inspired full body exfoliation and steam',
+        caribbean: 'Cool shower (in tropical climates) with coconut-based soap'
+      }
+    },
+    step3: {
+      name: 'Full PM Skincare Routine',
+      time: '30–45 minutes before sleep',
+      action: 'Complete layered skincare protocol appropriate to skin type and heritage',
+      beautyConnection: 'Timed before sleep so products have absorbed by the time pillow contact occurs; avoids excessive product transfer to pillow fabric'
+    },
+    step4: {
+      name: 'Hair Protection',
+      time: '15–20 minutes before sleep',
+      action: 'Apply overnight hair treatment if desired; style into protective configuration; apply bonnet, wrap, or pineapple',
+      beautyConnection: 'Final step in hair care; bonnet or wrap goes on last after all products have had initial absorption time'
+    },
+    step5: {
+      name: 'Aromatic Sleep Cue',
+      time: '10–15 minutes before sleep',
+      action: 'Apply a sleep-associated scent: lavender pillow spray, rose water mist, frankincense diffuse, oud bakhoor, or chamomile herbal tea in the room',
+      beautyConnection: 'Olfactory-cortical pathways; conditioned scent associations accelerate sleep onset by triggering the learned relaxation response; reduced stress = lower cortisol = better overnight skin repair'
+    },
+    step6: {
+      name: 'Final Occlusive or Sleep Mask',
+      time: '5–10 minutes before sleep',
+      action: 'Apply sleeping pack, slugging layer, shea butter seal, or chosen final occlusive as the last skincare step',
+      beautyConnection: 'Last application ensures maximum overnight contact time; occlusives take approximately 5 minutes to form their seal — applying at this step means the full overnight benefit'
+    }
+  },
+
+  aromaticSleepCuesByCommunity: {
+    'west-african': 'Shea butter scent (naturally mild and nutty); black soap lather during shower',
+    'south-asian': 'Champi oil fragrance (coconut, brahmi); golden milk turmeric aroma; jasmine (mogra) flower in the room',
+    'caribbean': 'Aloe vera (fresh, clean green scent); coconut oil; tropical florals (hibiscus, frangipani)',
+    'arab': 'Oud/bakhoor burning; Damascene rose water mist; sandalwood',
+    'latina': 'Rosewater (agua de rosas); coconut; chamomile (manzanilla) tea in the room',
+    'east-asian': 'Green tea (matcha); sakura (cherry blossom) notes; ofuro bath steam; camellia oil',
+    'east-african': 'Frankincense resin burning (d\'aalacad); Yirgacheffe coffee grounds (post-exfoliation scent); jasmine',
+    'south-african': 'Rooibos tea (warm, earthy, vanilla-adjacent); marula oil (light, non-greasy); fynbos botanicals',
+    'black-american': 'Shea butter; castor oil; lavender (widely adopted in Black American sleep rituals); vanilla'
+  }
+};
+
+// ============================================================
+// SLEEP BEAUTY MYTHS — DEBUNKED
+// ============================================================
+
+export const SLEEP_BEAUTY_MYTHS = [
+  {
+    myth: 'You can "catch up" on lost beauty sleep over the weekend',
+    reality: `Sleep debt accumulated over weekdays creates real, measurable skin damage — elevated
+    cortisol, collagen degradation, barrier impairment — that weekend sleep only partially reverses.
+    Studies show that "recovery sleep" restores some cognitive performance but does not fully restore
+    the immune, metabolic, and skin-repair processes to baseline. Consistent nightly sleep is the only
+    effective strategy. A weekend sleep binge also disrupts the circadian rhythm, making Sunday-night
+    insomnia common — setting up the following week's sleep deficit.`,
+    verdict: 'False — prevention, not recovery, is the only beauty sleep strategy'
+  },
+  {
+    myth: 'Sleeping on your back prevents wrinkles permanently',
+    reality: `Back sleeping does reduce sleep compression lines (mechanical folding of skin into the
+    pillow) and is the single best sleep-position intervention for wrinkle prevention. However,
+    many people cannot maintain back sleeping through the night (they roll to the side unconsciously),
+    and for those with sleep apnea, back sleeping worsens airway collapse. The realistic solution
+    is combining a preferred sleep position with a silk/satin pillowcase (which reduces the
+    friction and compression of side-sleeping) rather than demanding a sleeping position many
+    people cannot sustain.`,
+    verdict: 'True but incomplete — silk/satin pillowcase achieves most of the benefit for side sleepers'
+  },
+  {
+    myth: 'More skincare products applied overnight = more benefit',
+    reality: `Skin has finite receptor capacity, and many active ingredients compete for the same
+    pathways. Applying ten different actives overnight does not produce ten times the benefit —
+    it often produces irritation, barrier damage (from conflicting pH levels of different products),
+    and reduced efficacy of each individual ingredient due to interaction effects. The ideal PM
+    routine is strategic and minimal: one or two actives targeted to specific concerns, properly
+    layered, with a sound barrier repair final layer.`,
+    verdict: 'False — strategic minimalism outperforms maximal layering for most skin types'
+  },
+  {
+    myth: 'Natural ingredients are always safer than synthetic ones overnight',
+    reality: `Naturalistic fallacy. Many traditional natural ingredients are highly bioactive
+    and require the same care as synthetic actives. Undiluted essential oils (including frankincense,
+    tea tree, and citrus) cause chemical burns when applied directly to skin. Fresh lemon juice
+    on skin overnight causes phototoxic reactions (with UV the next day). Raw aloin from aloe vera
+    (the yellow latex under the green skin) is an irritant. The dose, formulation, and preparation
+    matter as much for natural ingredients as for synthetic ones.`,
+    verdict: 'False — all actives require proper formulation and dosing, natural or synthetic'
+  },
+  {
+    myth: 'Bonnet/head covering = not caring about appearance',
+    reality: `The cultural attack on sleep bonnets as "low effort" or "inappropriate in public"
+    reflects ignorance of the significant protective and beauty function the bonnet serves. The
+    satin bonnet is the reason many Black women's natural hair retains its length, definition, and
+    health. It represents deliberate, knowledgeable hair care — the opposite of not caring about
+    appearance. This myth has been used to shame women for visible hair protection tools in shared
+    spaces; it is a prejudice without any basis in beauty science.`,
+    verdict: 'False — bonnets represent sophisticated, intentional hair care'
+  },
+  {
+    myth: 'Expensive skincare products work better overnight than affordable ones',
+    reality: `Price is not a reliable proxy for efficacy in skincare. Petroleum jelly (Vaseline,
+    approximately $5) reduces TEWL by 98% — a performance no $300 luxury sleeping mask meaningfully
+    exceeds. Raw shea butter from a farmers' cooperative in Ghana outperforms many processed shea
+    derivatives in luxury formulations. The key variables are ingredient concentration, formulation
+    stability, and pH appropriateness — not price. Heritage beauty practices demonstrate this clearly:
+    the most effective traditional treatments (argan oil, marula oil, shea butter, fresh aloe)
+    are ingredients, not luxury packaged products.`,
+    verdict: 'False — ingredient quality and concentration drive efficacy; price does not'
+  }
+];

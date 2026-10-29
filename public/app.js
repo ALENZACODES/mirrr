@@ -585,6 +585,17 @@ const WIG_IMAGES = {
   bollywood_blowout:   'wig-bollywood_blowout.png',
   slicked_bun:         'wig-slicked_bun.png',
   coloured_wig:        'wig-coloured_wig.png',
+  // Batch 11
+  beach_wave_medium:   'wig-beach_wave_medium.png',
+  blunt_lob:           'wig-blunt_lob.png',
+  curtain_bang_layers: 'wig-curtain_bang_layers.png',
+  highlighted_balayage:'wig-highlighted_balayage.png',
+  khaleeji_blowout:    'wig-khaleeji_blowout.png',
+  kpop_idol_straight:  'wig-kpop_idol_straight.png',
+  loose_deep_wave:     'wig-loose_deep_wave.png',
+  peruvian_body_wave:  'wig-peruvian_body_wave.png',
+  sleek_bob:           'wig-sleek_bob.png',
+  ultra_silky_xl:      'wig-ultra_silky_xl.png',
 };
 
 function renderLookCard(look, score) {

@@ -969,12 +969,10 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           practices through culturally sensitive engagement, arguing that
           alternative initiation rituals can carry the same identity and social
           significance without irreversible dental modification.
-          Among some Mursi and Surma communities in southern Ethiopia, lip plates
-          (dhebi a tugoin) are worn by women in the lower lip — an oral-adjacent
-          beauty modification that extends the beauty domain of the mouth into
-          dramatic body art. The lip plate is considered a sign of beauty and
-          marriageability in communities that practice it, though younger
-          generations increasingly opt out.`,
+          Among Mursi and Surma communities in southern Ethiopia, lip plates
+          (dhebi a tugoin) extend the mouth's beauty domain into dramatic body
+          art — a sign of beauty and marriageability that younger generations
+          increasingly opt out of.`,
       },
       frankincense: {
         title: 'Frankincense as Gum Treatment',
@@ -989,13 +987,10 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           anti-inflammatory effects. This mechanism is the same exploited by
           pharmaceutical anti-inflammatory drugs but achieved through a natural
           resin.
-          Somali women traditionally chew frankincense resin after childbirth
-          as a uterine tonic and also for breath and oral freshening during
-          the recovery period. The resin is also burned and the smoke inhaled,
-          similarly to the Wolof thiouraye practice. Frankincense gum
-          (as opposed to resin) is commercially available in the Gulf and East
-          Africa and is chewed as a functional health product with oral
-          health claims.`,
+          Somali women chew frankincense resin post-childbirth for breath and
+          oral freshening. The resin is also burned and inhaled (like Wolof
+          thiouraye). Commercial frankincense gum is available across the Gulf
+          and East Africa as a functional oral health product.`,
       },
       modernAdaptations: {
         title: 'Modern Oral Care Adaptations',
@@ -1052,10 +1047,9 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           The aspalathin content has also shown antibacterial activity against
           S. mutans in vitro at concentrations achievable through normal tea
           consumption.
-          Rooibos is caffeine-free and very low in tannins, which means it does
-          not contribute to tooth staining in the way that black tea or coffee do.
-          This makes it useful as a long-duration gargling medium without the
-          cosmetic downside of tannin-heavy alternatives.`,
+          Rooibos is caffeine-free and very low in tannins — non-staining, making
+          it a useful long-duration gargling medium without the cosmetic downside
+          of black tea or coffee.`,
       },
       buchu: {
         title: 'Buchu as Antiseptic',
@@ -1091,16 +1085,11 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           that is consumed as a tea. While not directly an oral health agent,
           improved immune function affects susceptibility to periodontal disease,
           creating an indirect oral health benefit.
-          The traditional healer (isangoma or inyanga) in Zulu and Xhosa
-          communities addresses oral conditions — toothache, swollen gums,
-          mouth sores — with plant preparations that are specifically prepared
-          for oral use, distinct from preparations for other body systems.
-          The knowledge system distinguishes oral-specific plants and application
-          methods with considerable precision.
-          Tswana communities use the chewing stick from Euclea undulata
-          (guarri) — a hard-wooded tree whose twig provides mechanical
-          cleaning and whose bark contains diospyrin and related naphthoquinones
-          with documented antimicrobial activity.`,
+          The traditional healer (isangoma or inyanga) addresses oral conditions
+          with plant preparations specifically prepared for oral use — toothache,
+          swollen gums, mouth sores — distinct from preparations for other systems.
+          Tswana communities use Euclea undulata (guarri) chewing sticks whose
+          bark contains diospyrin with documented antimicrobial activity.`,
       },
       africanChewingSticks: {
         title: 'African Chewing Sticks in Southern Africa',
@@ -1242,14 +1231,10 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           are a different cultural artifact than a gold grill on a young
           performer — but they share the aesthetic tradition of gold as a
           material of value and visibility on the body.
-          The modern grillz era is traced to the early 1980s in New York
-          and Atlanta hip-hop culture. Eddie Plein, a jeweler in New York,
-          is credited as one of the early craftspeople for rapper clientele
-          in the late 1980s. The grillz aesthetic became nationally visible
-          through artists including Nelly (whose 2005 song "Grillz" brought
-          the accessory to mainstream awareness), Lil Wayne, Paul Wall,
-          and later Beyoncé (who wore grillz in the "Formation" era) and
-          Post Malone.
+          The modern grillz era traces to early 1980s New York and Atlanta
+          hip-hop culture. Eddie Plein is credited as an early craftsperson
+          for rapper clientele. The aesthetic became nationally visible through
+          Nelly (2005 song "Grillz"), Lil Wayne, Paul Wall, Beyoncé, and Post Malone.
           High-end grillz are custom-fabricated by jewelers who take
           dental impressions of the client's teeth, cast a model, and
           fabricate the grill to fit precisely over the tooth surfaces.
@@ -1257,13 +1242,10 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           platinum) varies by jeweler and price point. Gemstones — diamonds,
           rubies, emeralds — are set into the metal in patterns that may
           form letters, patterns, or abstract designs.
-          Dental care for grillz wearers: removable grillz should be taken
-          out and cleaned separately from the teeth; the teeth underneath
-          must be brushed and flossed normally. Dentists advise against
-          wearing grillz while eating or sleeping. The risk of permanent
-          grillz (cemented onto existing teeth) includes the same concerns
-          as any crown: the underlying tooth requires significant preparation
-          (drilling) and the restoration must be maintained professionally.`,
+          Dental care: removable grillz should be cleaned separately; teeth
+          underneath brushed and flossed normally; do not wear while eating or
+          sleeping. Permanent grillz require significant tooth preparation and
+          professional maintenance like any crown.`,
       },
       lipGlossCulture: {
         title: 'Lip Gloss Culture — Heavy Lip Product as Beauty Signature',
@@ -1296,26 +1278,13 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
       },
       smileDisparities: {
         title: 'Smile Confidence and Orthodontia Access Disparities',
-        body: `The structural story of Black American oral health cannot be separated
-          from the oral beauty story. The NIDCR (National Institute of Dental
-          and Craniofacial Research) data consistently show that Black Americans
-          experience:
-          — Higher rates of untreated dental caries compared to white Americans
-            at every income level, though the disparity narrows at higher incomes.
-          — Lower rates of orthodontic treatment, reflecting both cost barriers
-            and historical underrepresentation of orthodontic patients in
-            clinical research and practice.
-          — Higher rates of complete tooth loss (edentulism) in older adults.
-          — Greater difficulty accessing dental care, with dental care deserts
-            concentrated in predominantly Black neighbourhoods in both urban and
-            rural settings.
-          These structural realities shape oral beauty culture: when access to
-          orthodontia is limited, the aesthetics of natural and imperfect
-          teeth become part of the beauty vocabulary. Gap teeth (diastema) in
-          Black beauty culture — associated with models like Lauren Hutton and
-          Vanessa Paradis but also with many Black celebrities — have been
-          framed as alluring and distinctive rather than as flaws requiring
-          correction.
+        body: `NIDCR data consistently show Black Americans experience higher rates of
+          untreated caries and complete tooth loss (edentulism) in older adults,
+          lower orthodontic treatment rates, and dental care deserts concentrated
+          in predominantly Black neighbourhoods — at every income level.
+          These structural realities shape oral beauty culture. Gap teeth (diastema)
+          in Black beauty culture have been framed as alluring and distinctive
+          rather than as flaws requiring correction.
           The rise of direct-to-consumer aligner companies (SmileDirectClub,
           Byte, Candid) was partly driven by Black consumers who saw the $4,000–
           8,000 cost of traditional orthodontia as prohibitive and embraced
@@ -1479,12 +1448,10 @@ export const CROSS_COMMUNITY_PRACTICES = {
       'Catha edulis': ['east-african'],
     },
     evidenceLevel: 'HIGH',
-    clinicalNotes: `Salvadora persica (miswak) has the strongest evidence base of any
-      traditional oral hygiene tool. Over 200 peer-reviewed studies have examined
-      its antimicrobial, anti-plaque, and anti-gingivitis effects. WHO has formally
-      endorsed its use. Neem (Azadirachta indica) has the second-strongest evidence
-      base, with multiple randomised controlled trials confirming efficacy comparable
-      to standard toothbrushes for plaque and gingivitis control when used correctly.`,
+    clinicalNotes: `Miswak has the strongest evidence base of any traditional oral tool —
+      over 200 peer-reviewed studies; WHO-endorsed. Neem has the second-strongest
+      base, with RCTs confirming plaque and gingivitis control comparable to a
+      standard toothbrush when used correctly.`,
   },
   oilPulling: {
     label: 'Oil Pulling (Kavala / Gandusha)',
@@ -1494,12 +1461,9 @@ export const CROSS_COMMUNITY_PRACTICES = {
       'Coconut oil': ['south-asian', 'caribbean', 'black-american'],
     },
     evidenceLevel: 'MODERATE',
-    clinicalNotes: `Multiple randomised controlled trials support oil pulling with sesame
-      or coconut oil for reducing plaque, gingivitis, and oral bacterial counts.
-      The largest evidence base exists for sesame oil, as the classical Ayurvedic
-      medium. Coconut oil studies show comparable results. Evidence does not support
-      systemic health claims (detoxification, whitening) beyond the oral antimicrobial
-      and mechanical effects.`,
+    clinicalNotes: `RCTs support sesame and coconut oil pulling for plaque and gingivitis
+      reduction. Sesame oil has the largest evidence base. Evidence does not support
+      systemic detoxification claims beyond oral antimicrobial and mechanical effects.`,
   },
   charcoalWhitening: {
     label: 'Charcoal Tooth Powder / Paste',
@@ -1510,46 +1474,34 @@ export const CROSS_COMMUNITY_PRACTICES = {
       'Activated charcoal (commercial)': ['black-american', 'latina', 'caribbean'],
     },
     evidenceLevel: 'LOW-MODERATE',
-    clinicalNotes: `Traditional plant-ash preparations with fine particle size show
-      modest abrasive polishing effects that remove surface stains. Commercial
-      activated charcoal products vary enormously in abrasivity (RDA values);
-      some have RDA above the 250 limit considered safe for long-term use.
-      Neither traditional ash nor commercial charcoal has been shown to whiten
-      teeth beyond the polishing of extrinsic stains. No evidence of intrinsic
-      whitening. ADA does not endorse charcoal toothpastes.`,
+    clinicalNotes: `Traditional plant ash polishes extrinsic stains modestly. Commercial
+      activated charcoal products vary widely in RDA; some exceed the safe 250 limit.
+      No evidence of intrinsic whitening. ADA does not endorse charcoal toothpastes.`,
   },
   greenTea: {
     label: 'Green Tea for Oral Health',
     communities: ['east-asian'],
     evidenceLevel: 'HIGH',
-    clinicalNotes: `Green tea catechins — particularly EGCG — have among the strongest
-      evidence of any natural compound for oral antibacterial activity. Inhibition
-      of S. mutans glucosyltransferase is the key mechanism, preventing plaque
-      adhesion. Epidemiological data from Japan link daily green tea consumption
-      to reduced tooth loss. The evidence supports green tea as a meaningful oral
-      health adjunct when consumed regularly.`,
+    clinicalNotes: `EGCG inhibits S. mutans glucosyltransferase, blocking plaque adhesion.
+      Japanese epidemiological data link daily consumption to lower tooth loss rates.
+      Green tea is a well-evidenced oral health adjunct when consumed regularly.`,
   },
   tongueScraping: {
     label: 'Tongue Scraping',
     communities: ['south-asian'],
     evidenceLevel: 'HIGH',
-    clinicalNotes: `Tongue scraping for halitosis control is strongly supported.
-      Randomised controlled trials consistently find tongue scraping reduces
-      volatile sulphur compound (VSC) levels more than tooth brushing alone.
-      The anaerobic bacteria that produce VSCs are concentrated on the tongue
-      dorsum and are not adequately removed by brushing. Copper scrapers may
-      provide additional antimicrobial benefit via oligodynamic copper ion release.`,
+    clinicalNotes: `RCTs consistently show tongue scraping reduces VSC levels more than
+      brushing alone. Anaerobic VSC-producing bacteria concentrate on the tongue
+      dorsum, inaccessible to brushing. Copper scrapers add oligodynamic antimicrobial
+      benefit between sessions.`,
   },
   saltWaterRinse: {
     label: 'Salt Water Rinse',
     communities: ['east-asian', 'caribbean', 'arab'],
     evidenceLevel: 'HIGH',
-    clinicalNotes: `Warm salt water rinse is endorsed by virtually all dental professional
-      bodies worldwide for post-extraction healing, acute gingivitis management,
-      and canker sore relief. The evidence base is robust. Mechanism is osmotic:
-      hypertonic salt solution draws fluid from inflamed tissue (reducing oedema)
-      and inhibits bacterial cell function. Optimal concentration is approximately
-      0.9% (isotonic) to 3% (hypertonic) sodium chloride in warm water.`,
+    clinicalNotes: `Endorsed by all major dental bodies for post-extraction healing,
+      gingivitis, and canker sores. Osmotic mechanism draws fluid from inflamed tissue
+      and inhibits bacteria. Optimal: 0.9–3% NaCl in warm water.`,
   },
   naturalBreathFresheners: {
     label: 'Botanical Breath Fresheners',
@@ -1562,25 +1514,19 @@ export const CROSS_COMMUNITY_PRACTICES = {
       'Kola nut': ['west-african'],
     },
     evidenceLevel: 'MODERATE',
-    clinicalNotes: `The essential oils in cardamom, clove, and fennel have documented
-      antimicrobial activity against oral pathogens. Eugenol (clove) is used
-      clinically as an analgesic and antimicrobial in dental materials. The
-      breath-freshening effect is primarily via volatile aromatic compounds
-      that mask odour and via antimicrobial activity reducing the VSC-producing
-      bacterial load. Clove's eugenol additionally provides genuine local
-      anaesthesia for toothache.`,
+    clinicalNotes: `Cardamom, clove, and fennel essential oils have antimicrobial activity
+      against oral pathogens. Eugenol (clove) is used clinically as a dental
+      analgesic and antimicrobial. Breath-freshening is primarily aromatic masking
+      plus bacterial load reduction.`,
   },
   honeyOralCare: {
     label: 'Honey for Oral Wound Healing',
     communities: ['east-african', 'caribbean', 'south-african'],
     evidenceLevel: 'MODERATE-HIGH',
-    clinicalNotes: `Medical-grade honey (Manuka UMF 10+) is used clinically for wound
-      healing and has evidence for oral wound care including post-extraction
-      sockets and aphthous ulcers. Traditional raw honeys — Ethiopian highland
-      forest honey, Caribbean honey — have variable antimicrobial activity
-      depending on botanical source, hydrogen peroxide content, and water
-      activity. The evidence supports raw honey as a biologically active wound
-      treatment with genuine benefit, though clinical standardisation is limited.`,
+    clinicalNotes: `Medical-grade Manuka honey is used clinically for oral wound care.
+      Traditional raw honeys (Ethiopian forest, Caribbean) have variable antimicrobial
+      activity by botanical source and H2O2 content. Raw honey is biologically
+      active with genuine wound-healing benefit; clinical standardisation is limited.`,
   },
 };
 
@@ -1620,10 +1566,9 @@ export const ORAL_INGREDIENT_GLOSSARY = {
       'Quercetin',
       'Triterpenoids',
     ],
-    evidenceSummary: `Proven antibacterial activity against S. mutans and P. gingivalis.
-      Multiple randomised controlled trials confirm anti-plaque and anti-gingivitis
-      efficacy. Neem extract toothpastes outperform fluoride-only toothpastes in
-      some gingivitis metrics in clinical trials.`,
+    evidenceSummary: `Antibacterial against S. mutans and P. gingivalis confirmed in
+      multiple RCTs. Neem extract toothpastes outperform fluoride-only formulations
+      on some gingivitis metrics in clinical trials.`,
   },
   egcg: {
     commonName: 'Green tea catechins (EGCG)',
@@ -1651,10 +1596,9 @@ export const ORAL_INGREDIENT_GLOSSARY = {
       'Demethoxycurcumin',
       'Bisdemethoxycurcumin',
     ],
-    evidenceSummary: `Anti-inflammatory via NF-κB pathway inhibition. Randomised
-      controlled trial found turmeric mouthwash equivalent to chlorhexidine
-      for plaque and gingivitis over 21 days, without chlorhexidine's
-      staining side effect. Topical application to gums is safe and effective.`,
+    evidenceSummary: `Anti-inflammatory via NF-κB inhibition. RCT: turmeric mouthwash
+      equivalent to chlorhexidine for plaque/gingivitis at 21 days, without
+      chlorhexidine's staining side effect.`,
   },
   clove: {
     commonName: 'Clove',
@@ -1662,10 +1606,9 @@ export const ORAL_INGREDIENT_GLOSSARY = {
     communities: ['west-african', 'south-asian', 'arab', 'caribbean'],
     primaryUse: 'Toothache analgesia; breath freshening; antimicrobial',
     activeCompounds: ['Eugenol (70-90% of essential oil)', 'Beta-caryophyllene'],
-    evidenceSummary: `Eugenol is a clinically used dental analgesic (component of ZOE
-      cement). Documented antimicrobial activity against oral pathogens.
-      Topical eugenol provides genuine local anaesthesia for toothache pain.
-      The evidence base is among the strongest of any traditional dental remedy.`,
+    evidenceSummary: `Eugenol is a pharmaceutical dental analgesic (ZOE cement component).
+      Genuine local anaesthesia for toothache pain plus antimicrobial activity
+      against oral pathogens — one of the strongest-evidenced traditional remedies.`,
   },
   coconutOil: {
     commonName: 'Coconut oil',
@@ -1673,11 +1616,9 @@ export const ORAL_INGREDIENT_GLOSSARY = {
     communities: ['south-asian', 'caribbean', 'black-american'],
     primaryUse: 'Oil pulling; lip care; antimicrobial rinse',
     activeCompounds: ['Lauric acid (50%)', 'Monolaurin (metabolite)'],
-    evidenceSummary: `Lauric acid and its metabolite monolaurin disrupt bacterial cell
-      membranes. Multiple small randomised controlled trials support coconut oil
-      pulling for plaque and gingivitis reduction. Evidence comparable to sesame
-      oil pulling. Not superior to conventional fluoride toothpaste for caries
-      prevention.`,
+    evidenceSummary: `Lauric acid / monolaurin disrupts bacterial membranes. Small RCTs
+      support coconut oil pulling for plaque and gingivitis reduction, comparable
+      to sesame oil. Not superior to fluoride toothpaste for caries prevention.`,
   },
   rooibos: {
     commonName: 'Rooibos / Red bush tea',
@@ -1690,11 +1631,9 @@ export const ORAL_INGREDIENT_GLOSSARY = {
       'Quercetin',
       'Rutin',
     ],
-    evidenceSummary: `Anti-inflammatory activity documented in vitro and in animal models.
-      Inhibition of TNF-alpha and IL-6. Antibacterial activity against S. mutans
-      in vitro. Human clinical trials for oral applications are limited but
-      preliminary evidence is positive. Caffeine-free and very low in tannins
-      (non-staining) — a significant practical advantage.`,
+    evidenceSummary: `Inhibits TNF-alpha and IL-6; antibacterial against S. mutans in vitro.
+      Human oral clinical trials limited but preliminary evidence positive.
+      Caffeine-free and very low tannin — non-staining, a practical advantage.`,
   },
   frankincense: {
     commonName: 'Frankincense / Luban / Olibanum',
@@ -1706,11 +1645,9 @@ export const ORAL_INGREDIENT_GLOSSARY = {
       'Alpha-pinene',
       'Limonene',
     ],
-    evidenceSummary: `Boswellic acids inhibit 5-lipoxygenase, producing documented
-      anti-inflammatory effects. Clinical trials for Boswellia in inflammatory
-      joint conditions provide mechanistic validation applicable to gingival
-      inflammation. Oral applications are less clinically studied but
-      consistent with documented mechanisms.`,
+    evidenceSummary: `Boswellic acids inhibit 5-lipoxygenase — documented anti-inflammatory
+      effect validated in joint-condition RCTs, applicable to gingival inflammation.
+      Oral-specific clinical data are limited but mechanistically consistent.`,
   },
   aloeVera: {
     commonName: 'Aloe vera',
@@ -1723,10 +1660,9 @@ export const ORAL_INGREDIENT_GLOSSARY = {
       'Barbaloin',
       'Vitamins C and E',
     ],
-    evidenceSummary: `Acemannan has documented immunomodulatory and wound-healing properties.
-      Randomised controlled trial found aloe vera toothpaste equivalent to fluoride
-      toothpaste for plaque and gingivitis control over 30 days. Aloe vera gel
-      is well-supported for oral wound healing and aphthous ulcer management.`,
+    evidenceSummary: `Acemannan: immunomodulatory and wound-healing effects documented.
+      RCT: aloe vera toothpaste equivalent to fluoride for plaque/gingivitis at 30
+      days. Well-supported for oral wound healing and aphthous ulcer management.`,
   },
 };
 
@@ -1804,11 +1740,10 @@ export const ORAL_CONCERNS_MAP = {
       { community: 'latina', method: 'Hierba santa / guava leaf paste', evidence: 'LOW-MODERATE' },
       { community: 'east-african', method: 'Raw honey on exposed site', evidence: 'MODERATE' },
     ],
-    clinicalNote: `Eugenol (clove oil) is the only traditional toothache remedy with
-      high-level clinical evidence — it is used in pharmaceutical dental materials
-      (ZOE cement) for exactly this purpose. All traditional toothache remedies
-      are temporary measures. Toothache arising from caries, pulpitis, or abscess
-      requires professional dental treatment; delays risk systemic infection.`,
+    clinicalNote: `Eugenol (clove oil) is used in pharmaceutical ZOE dental cement —
+      the only traditional remedy with high clinical evidence. All are temporary
+      measures. Toothache from caries, pulpitis, or abscess requires professional
+      treatment; delays risk systemic infection.`,
   },
 };
 
@@ -1824,6 +1759,7 @@ export function getCrossCommunityPractice(practiceKey) {
   return CROSS_COMMUNITY_PRACTICES[practiceKey] || null;
 }
 
+// List concern keys and labels for UI dropdowns.
 export function listConcerns() {
   return Object.keys(ORAL_CONCERNS_MAP).map((key) => ({
     key,
@@ -1860,6 +1796,8 @@ export function getHighEvidencePractices() {
 }
 
 export function getPracticesByCommunity(communityId) {
+  // Returns all cross-community practices that include the given communityId,
+  // with practice key, label and evidence level for display in the MIRRR app.
   const practices = [];
   for (const [key, practice] of Object.entries(CROSS_COMMUNITY_PRACTICES)) {
     if (practice.communities.includes(communityId)) {

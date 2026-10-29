@@ -507,11 +507,9 @@ const LOOK_IMAGES = {
   polynesian_warrior:       'look-polynesian-warrior.png',
   persian_editorial:        'look-persian-editorial.png',
   j_beauty:                 'look-j-beauty.png',
-  first_nations_powwow:     'look-indigenous-star.png',
   ethiopian_jewel:          'look-ethiopian-jewel.png',
   desi_everyday_chic:       'look-desi-everyday-chic.png',
   brazilian_carnival:       'look-brazilian-carnival.png',
-  central_asian_steppe:     'look-silk-road-siren.png',
   afrofuturist_editorial:   'look-afrofuturist-editorial.png',
   haitian_vodou_editorial:  'look-haitian-vodou-editorial.png',
   // Batch 3
@@ -562,6 +560,20 @@ const LOOK_IMAGES = {
   mixed_heritage_luminous:  'look-mixed-heritage-luminous.png',
   office_power:             'look-office-power.png',
   wedding_guest_universal:  'look-wedding-guest-universal.png',
+};
+
+// Wig portrait images — mapped by wig style ID
+const WIG_IMAGES = {
+  kinky_coily_afro:    'wig-kinky_coily_afro.png',
+  big_chop_fro:        'wig-big_chop_fro.png',
+  twist_out_natural:   'wig-twist_out_natural.png',
+  faux_locs:           'wig-faux_locs.png',
+  butterfly_locs:      'wig-butterfly_locs.png',
+  loc_wig:             'wig-loc_wig.png',
+  sister_locs:         'wig-sisterlocks.png',
+  knotless_box_braids: 'wig-knotless_box_braids.png',
+  goddess_braids:      'wig-goddess_braids.png',
+  senegalese_twists:   'wig-senegalese_twists.png',
 };
 
 function renderLookCard(look, score) {
@@ -815,8 +827,14 @@ function renderWigResults(wigs) {
   cardsEl.innerHTML = `
     <h3 class="section-title">Your Wig Matches</h3>
     <div class="wig-cards-inner">
-      ${wigs.map(({ wig, score, reason }) => `
+      ${wigs.map(({ wig, score, reason }) => {
+        const wigImgFile = WIG_IMAGES[wig.id];
+        const wigImgHtml = wigImgFile
+          ? `<div class="wig-card-img-wrap"><img src="${wigImgFile}" alt="${wig.name}" class="wig-card-img" loading="lazy" /></div>`
+          : '';
+        return `
         <div class="wig-card">
+          ${wigImgHtml}
           <div class="wig-card-top">
             <span class="wig-emoji">💇🏾</span>
             <div class="wig-match-pct">${Math.round(score * 100)}%</div>
@@ -833,7 +851,8 @@ function renderWigResults(wigs) {
             ${(wig.colours ?? []).map(c => `<span class="colour-dot" title="${c}" style="background:${colourToHex(c)}"></span>`).join('')}
           </div>
         </div>
-      `).join('')}
+      `;
+      }).join('')}
     </div>
   `;
 

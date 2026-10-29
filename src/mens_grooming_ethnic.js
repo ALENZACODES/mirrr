@@ -1,252 +1,170 @@
 /**
- * MIRRR Men's Grooming — Ethnic Communities
- * Skincare, haircare, style, and grooming rituals for men
- * across all 9 ethnic communities
+ * MIRRR — Men's Grooming for Ethnic Communities
+ * Skincare, beard care, hair grooming, and grooming traditions
+ * across all 9 ethnic communities.
  */
 
-// ─── MENS GROOMING OVERVIEW ───────────────────────────────────────────────────
-
-export const MENS_GROOMING_OVERVIEW = {
-  shifting_norms: 'Men\'s grooming has expanded dramatically. The global men\'s grooming market exceeded $55 billion in 2022 and is growing. Social media (particularly TikTok and YouTube) has normalised multi-step skincare routines for men of all ethnicities.',
-  unique_considerations: {
-    thicker_skin: 'Male skin is on average 20-25% thicker than female skin due to higher androgen levels (testosterone increases dermal thickness). This provides more natural collagen protection but doesn\'t mean male skin requires less care.',
-    higher_sebum: 'Testosterone drives significantly higher sebum production. Men\'s skin is on average oilier, with larger pores.',
-    shaving_damage: 'Regular shaving creates daily micro-trauma to the skin. Razor burn, ingrown hairs, and irritation are daily concerns for those who shave.',
-    later_start: 'Men often start skincare later than women, meaning more accumulated UV damage before beginning SPF use.',
-    product_minimalism: 'Men generally prefer fewer steps and multi-use products.',
+export const MENS_SKIN_BASICS = {
+  title: 'Men\'s Skin Biology and Basic Care',
+  biology: {
+    thickness: 'Men\'s skin is approximately 25% thicker than women\'s skin due to higher androgen (testosterone) levels; testosterone stimulates collagen production (men\'s skin retains collagen density for longer than women\'s, which is why the visible signs of ageing in men tend to appear later but then progress more rapidly); thicker skin means some treatment products work differently on men',
+    sebum: 'Men produce significantly more sebum than women due to androgens; sebaceous glands in men are larger and more active; this contributes to: more oiliness; more frequent acne (particularly in teen years and into the 20s); larger visible pores; potentially greater tolerance for some actives without dryness',
+    collagen: 'Men\'s skin contains more collagen than women\'s same-age skin for most of adulthood; however, men\'s collagen loss is more linear with age (women\'s accelerates dramatically at menopause); men who use SPF and basic skincare maintain their collagen density advantage into old age',
+    beard: 'Men with facial hair have a physical exfoliation barrier (beard hair) on much of the face; beard hairs are anchored in large follicles that require different care from scalp or eyebrow hair; ingrown hairs (pseudofolliculitis barbae) are a major concern for men with coily beard hair'
   },
-  mens_essential_routine: {
-    step1: 'Cleanser — gentle, twice daily (or once daily + water rinse for dry skin).',
-    step2: 'Moisturiser with SPF — combined moisturiser+SPF in the morning is the most male-friendly format.',
-    step3: 'Eye cream or serum — optional, but the under-eye area shows early aging.',
-    optional_evening: 'Evening: cleanser + retinol or niacinamide serum + moisturiser.',
-    minimum: 'Absolute minimum: cleanser + SPF moisturiser. Everything else is optional but beneficial.',
-  },
-};
-
-// ─── SKIN TYPE GUIDE FOR MEN ──────────────────────────────────────────────────
-
-export const MENS_SKIN_GUIDE = {
-  oily: {
-    type: 'Oily',
-    signs: 'Shiny T-zone (forehead/nose/chin) by mid-day. Visible pores. Prone to blackheads. Makeup (if worn) breaks down quickly.',
-    prevalence: 'Very common in men due to testosterone-driven sebum production.',
-    routine: {
-      cleanser: 'Gel or foaming cleanser with salicylic acid 0.5-2% (BHA penetrates the pore to dissolve sebum). Niacinamide in cleanser reduces long-term sebum production.',
-      toner: 'Optional: salicylic acid toner or niacinamide toner.',
-      moisturiser: 'Gel or fluid moisturiser — not cream. Oil-free.',
-      spf: 'Fluid or gel SPF. Not cream.',
-      avoid: 'Heavy creams, coconut oil, mineral oil-heavy products.',
-    },
-  },
-  dry: {
-    type: 'Dry',
-    signs: 'Tightness after washing. Flaking. Less visible pores. Can feel rough.',
-    prevalence: 'Less common than oily but increases with age as testosterone decreases.',
-    routine: {
-      cleanser: 'Cream or lotion cleanser. Micellar water for mornings.',
-      moisturiser: 'Rich moisturiser with hyaluronic acid and ceramides.',
-      spf: 'Tinted SPF moisturiser provides both SPF and extra moisture.',
-      face_oil: 'Facial oil (squalane or rosehip) applied before or mixed into moisturiser.',
-    },
-  },
-  combination: {
-    type: 'Combination',
-    signs: 'Oily T-zone, normal to dry cheeks. Most common skin type.',
-    routine: 'Can zone-treat — BHA toner on T-zone only, richer moisturiser on dry cheeks.',
-  },
-  sensitive: {
-    type: 'Sensitive',
-    signs: 'Reacts to new products. Redness. Stinging/burning with some products. Post-shave irritation.',
-    routine: 'Fragrance-free products. Minimal active ingredients. Patch test everything new. Gentle exfoliation (PHA or polyglutamic acid) rather than strong AHAs. Look for calming ingredients: centella asiatica, aloe vera, green tea extract.',
-  },
-};
-
-// ─── MENS HAIRCARE ────────────────────────────────────────────────────────────
-
-export const MENS_HAIRCARE = {
-  scalp_types: {
-    oily_scalp: 'Wash 3-5x per week. Use a lightweight clarifying shampoo. Don\'t apply conditioner to the scalp — only mid-lengths to ends.',
-    dry_scalp: 'Wash 1-2x per week. Use a moisturising shampoo. Scalp massage with oil 1x per week.',
-    dandruff: 'Use a medicated shampoo with zinc pyrithione, selenium sulfide, or ketoconazole 2-3x per week. Leave on for 3-5 minutes before rinsing for efficacy.',
-  },
-  short_hair_care: {
-    note: 'Short hair (common in men) still requires scalp care, SPF on any exposed scalp (buzz cuts, fades), and moisturisation for the hair that is there.',
-    styling_products: {
-      pomade: 'Water-based pomades: medium hold, high shine, easy to wash out. Oil-based pomades: strong hold, high shine, harder to wash out.',
-      clay: 'Hair clay: medium hold, matte finish. Adds texture and volume. Very popular in contemporary men\'s styling.',
-      wax: 'Hair wax: strong hold, natural to medium shine.',
-      gel: 'Strong hold, high shine. Can create a wet look (traditional) or crispy result if over-applied.',
-      cream: 'Hair cream: light hold, adds moisture and definition. Good for wavy or curly men\'s hair.',
-    },
-  },
-  fade_care: 'Men who regularly get skin fades (very short hair at the sides, tapering to skin) expose the scalp to UV. SPF application on the faded scalp areas is important.',
-  low_cut_waves: 'Waves (360 waves / 720 waves) are a specific haircut style in Black American culture involving compression of coiled hair into a ripple pattern. Requires a durag or wave cap worn overnight after brushing. Moisturiser and wave grease are part of the maintenance routine.',
-};
-
-// ─── MEN'S NAIL CARE ──────────────────────────────────────────────────────────
-
-export const MENS_NAIL_CARE = {
   basics: {
-    trim: 'Trim nails regularly (every 1-2 weeks). Cut straight across and slightly round the corners. Use nail clippers for toenails, scissors or clippers for fingernails.',
-    file: 'File edges smooth after cutting to prevent snags.',
-    push_back: 'Push back cuticles gently after soaking (bath or shower) — do not cut cuticles, which increases infection risk.',
-    moisturise: 'Apply hand cream or cuticle oil to hands and cuticles regularly.',
-  },
-  professional_manicure: 'A basic men\'s manicure (shaping, cuticle care, buff) is a practical grooming service increasingly sought by men of all ethnicities.',
-  polish_and_gel: 'Nail polish on men is increasingly mainstream and culturally accepted — from a single neutral coat to full colour (heavily influenced by K-pop and Gen Z culture).',
+    cleanser: 'A gentle face wash appropriate for skin type is the single most important grooming product; many men overwash with harsh soap or body wash on the face, disrupting the skin barrier; for oily/acne skin: salicylic acid or niacinamide cleanser; for dry or sensitive skin: cream or gel cleanser with no surfactant stripping',
+    moisturiser: 'Moisturiser after cleansing; men\'s skin, despite higher sebum, still needs hydration (sebum is not the same as water-based hydration); lighter gel moisturisers for oily skin; cream moisturisers for dry skin; many men prefer moisturisers with SPF for a one-step morning routine',
+    SPF: 'Sunscreen is the most skipped grooming step by men globally; skin cancer rates are higher in men than women, partly due to chronic lower SPF use; men are less likely to see a dermatologist; SPF 30+ daily is the single most evidence-backed skincare product for any gender',
+    shaving: 'For men who shave: proper shaving technique dramatically reduces razor burn, ingrown hairs, and irritation; the shaving prep (softening the beard with warm water or a pre-shave oil) is as important as the razor and shaving cream'
+  }
 };
 
-// ─── ETHNIC MENS GROOMING CULTURE ─────────────────────────────────────────────
-
-export const ETHNIC_MENS_GROOMING = {
-  west_african: {
-    community: 'West African',
-    skincare_tradition: 'Shea butter has long been used by West African men for skin moisturisation and as a protective barrier. Traditional West African men\'s grooming was practical and focused on skin health in a high UV, often hot/humid climate.',
-    contemporary: 'Contemporary West African men\'s grooming (particularly in Nigeria and Ghana) has embraced comprehensive skincare. "Nigerian men\'s grooming" content is widely popular on YouTube and TikTok — featuring premium skincare routines adapted for dark skin.',
-    hair: 'Short fades and tapers are the standard. Waves (for softer coil patterns), TWA (teeny weeny afro), or maintained natural coil are increasingly popular.',
-    common_products: 'Shea butter, black soap (dudu osun), coconut oil, vitamin C serums for pigmentation.',
-    barbershop: 'The West African barbershop (often Nigerian or Ghanaian) is a cultural institution — precision fades, edge-ups, and beard grooming are core services.',
-    concern: 'Ashy skin — dryness that causes grey/ashy appearance on dark skin. Resolved with adequate moisturisation. PIH from any skin trauma.',
+export const BEARD_GUIDE = {
+  title: 'Beard Care — The Complete Guide',
+  biology: {
+    growth: 'Beard hair grows approximately 0.5 inches (1.27 cm) per month; influenced by genetics, testosterone levels, nutrition, and age; beard growth potential is largely determined by genetics (androgen receptor sensitivity) and varies enormously by individual and by ethnic background',
+    ethnicGrowth: {
+      dense: 'Mediterranean, Middle Eastern, South Asian, and some Latin American men tend to have the densest beard growth capability; genetic androgen receptor sensitivity in these populations often produces fuller beards',
+      lighter: 'Many East Asian men (particularly Korean, Japanese, Chinese) have naturally lighter beard growth; this is not a deficiency — different androgen receptor expression; some East Asian men can grow full beards while others have minimal growth',
+      coily: 'West African, East African, and Black American men have coily beard hair that follows the same curl pattern as scalp hair; coily beard hair requires different care and is significantly more prone to pseudofolliculitis barbae (PFB/razor bumps)'
+    },
+    lifecycle: 'Like scalp hair, beard hair has anagen (growth), catagen (transition), and telogen (resting/shedding) phases; beard hair phases are shorter than scalp hair, which is why beard hair doesn\'t grow as long as scalp hair without deliberate growth'
   },
-  south_asian: {
-    community: 'South Asian',
-    skincare_tradition: 'Oil-based skincare for men is deeply embedded in South Asian tradition — coconut oil, mustard oil, and sesame oil for hair and skin. Face packs using besan (gram flour) and turmeric were used by men and women alike.',
-    contemporary: 'South Asian men\'s grooming has seen significant social media influence. The "desi skincare routine" genre is popular on YouTube — often featuring South Asian male YouTubers with comprehensive routines.',
-    hair: 'South Asian men\'s hair ranges from straight to wavy. Oil treatments (champi — Indian head massage with oil) are a traditional practice for scalp health. Classic South Asian men\'s styles: undercut, side part, slick back with pomade, and more recently textured crops.',
-    beard: 'Significant beard culture — see beard_grooming_ethnic for detail. The Sikh beard (kesh) is a distinct spiritual and cultural practice.',
-    common_products: 'Coconut oil, mustard oil, aloe vera gel, turmeric face packs (with rosewater), vitamin C for hyperpigmentation.',
-    concern: 'Oily skin, open pores, post-acne PIH.',
+  beardCare: {
+    washing: 'Beard should be washed 2-4 times per week (not daily with harsh shampoo); the skin under the beard needs care too — sebum, dead skin cells, and product buildup accumulate; a gentle beard wash or facial cleanser works better than regular shampoo (which can be too harsh for facial skin)',
+    conditioning: 'Beard conditioner or beard oil used after washing keeps beard hair soft and moisturised; reduces beard itch (particularly during the early growth phase when new beard hairs can scratch the skin and surrounding skin areas)',
+    oil: {
+      what: 'Beard oil is the cornerstone of beard grooming; typically contains carrier oils (jojoba, argan, sweet almond, grapeseed, vitamin E) with optional essential oils for fragrance; primarily conditions the beard hair and the skin underneath; reduces beard dandruff (seborrhoeic dermatitis under beard)',
+      application: 'Applied to a slightly damp beard after washing; warm a few drops in the palm; work through the beard from skin to ends; follow with a beard comb or brush to distribute evenly',
+      popular: 'Jack Black Beard Oil; Baxter of California Beard Oil; Scotch Porter Beard Oil; Bossman Jelly Beard Oil; many independent Black-owned grooming brands'
+    },
+    balm: 'Beard balm contains similar ingredients to beard oil plus waxes (beeswax, shea butter) for hold and styling; more styling control than beard oil; particularly useful for longer or fuller beards where shape maintenance is important',
+    brush: 'Boar bristle beard brushes distribute oil through the beard and exfoliate the skin underneath; particularly useful for longer beards; for shorter coily beards, a soft-bristle brush or beard comb with appropriate tooth spacing for coily beard texture'
+  },
+  pseudofolliculitis: {
+    what: 'Pseudofolliculitis barbae (PFB), commonly called "razor bumps" or "shaving bumps," occurs when shaved or cut hairs curl back and re-enter the skin or grow sideways under the skin surface, causing a foreign body inflammatory reaction; the result is raised, sometimes pus-filled bumps that can be mistaken for acne; they can cause significant PIH in darker skin tones',
+    prevalence: 'PFB affects up to 45-83% of Black men who shave; it also affects men of any ethnicity with coily/curly beard hair; it is significantly less common in men with straight beard hair (where the hair grows straight out of the follicle after cutting and does not re-enter the skin)',
+    mechanism: 'Coily beard hair has a curved follicle; when cut at an angle (as with a razor blade), the pointed hair tip can pierce back into the skin as it curls; the immune system treats the hair as a foreign body and mounts an inflammatory response',
+    prevention: {
+      technique: ['Single-blade razor or electric clippers (not multi-blade razors which pull the hair before cutting, leaving a very sharp angled tip that more easily re-enters the skin)', 'Shave in the direction of hair growth (with the grain), not against it', 'Do not pull the skin taut while shaving (reduces the sub-surface cutting that leaves an inward-curving sharp tip)', 'Shave less frequently (every other day minimum, allowing more hair growth before cutting)', 'Use warm water and a shaving cream/soap to soften the beard thoroughly before shaving', 'Rinse with cool water after shaving; apply soothing product'],
+      products: ['Pre-shave oil or cream softens beard before shaving', 'Tend Skin Solution or PFB Vanish (both contain isopropyl alcohol and salicylic acid to prevent and treat ingrown hairs)', 'Chemical exfoliant (2% salicylic acid) after shaving to prevent ingrown hairs', 'Glycolic acid toner on shaved area to reduce ingrown hair formation'],
+      growing: 'For men with severe PFB, growing a beard entirely (stopping shaving) eliminates the razor-related cause; many men opt to keep a short beard rather than shave'
+    },
+    treatment: 'For existing PFB/razor bumps: topical retinoids (tretinoin); salicylic acid to dissolve blocked follicles; niacinamide for PIH; see a dermatologist for severe cases; laser hair removal (Nd:YAG 1064nm for Fitzpatrick V-VI skin) can permanently reduce beard growth in problematic areas, eliminating PFB'
+  }
+};
+
+export const MENS_HAIR_GROOMING = {
+  title: 'Men\'s Hair Grooming by Ethnic Community',
+  basics: {
+    scalp: 'Men\'s scalp care follows the same principles as women\'s but with some differences: men are more susceptible to androgenetic alopecia (male pattern baldness); shorter hair means the scalp is more exposed to sun (scalp sunscreen or a hat is important); short hair means scalp health is more directly visible',
+    MPB: {
+      what: 'Male pattern baldness (androgenetic alopecia) affects approximately 50% of men by age 50; 25% of men start losing hair before 21; driven by genetic sensitivity to DHT (dihydrotestosterone, a testosterone derivative); the classic pattern: receding hairline at temples and/or thinning at the crown',
+      treatment: ['Minoxidil (Rogaine): OTC topical or oral (prescription); the most accessible treatment; promotes hair growth by extending the anagen phase; stops hair loss in the majority of users and regrows hair in many; must be used indefinitely (hair loss returns when stopped)', 'Finasteride (Propecia): oral prescription medication; blocks DHT conversion (a more targeted mechanism than minoxidil); more effective than minoxidil for most men; sexual side effects in a minority of users; must be used indefinitely', 'Low-level laser therapy (LLLT): FDA-cleared for hair loss; some evidence of benefit; no safety concerns', 'Hair transplant: FUE (follicular unit extraction) and FUT (follicular unit transplant) are surgical options; best for those with stable hair loss; works by relocating DHT-resistant follicles from the back of the head to balding areas']
+    },
+    haircutFrequency: 'Most men maintain hair length with cuts every 2-6 weeks depending on style; edges and fade maintenance more frequent (every 1-2 weeks for a sharp fade); men with natural hair may go longer between cuts'
+  }
+};
+
+export const ETHNIC_MENS_GROOMING_GUIDES = {
+  'west-african': {
+    hair: 'West African men\'s hair care spans a wide range: from very short cuts to locs, twists, fades, and natural styling; the traditional low fade with a sharp edge-up is an iconic barbershop style across West African communities and diaspora; barber culture is significant in West African communities — the barbershop is a social institution',
+    skin: 'West African men have Fitzpatrick V-VI skin; PIH from razor bumps (PFB) and acne scarring is a primary grooming concern; niacinamide and SPF 30+ are the most important skincare priorities; African black soap is a traditional cleansing option; shea butter is widely used as an all-purpose moisturiser',
+    beard: 'Beard care is important for West African men who choose to grow beards; coily beard hair requires beard oil and careful shaving technique to prevent PFB; the "waves" hairstyle (360 waves, 720 waves) is an iconic West African-American and Black American men\'s style achieved by brushing short hair with a wave brush and using pomade',
+    barbershop: 'The Black and West African barbershop is a cultural institution; in diaspora communities (UK, US, Europe), West African and Black barbershops are community gathering spaces; the barber-client relationship is significant; getting a fresh cut is deeply connected to confidence and presentation in West African and Black male beauty culture'
+  },
+  'south-asian': {
+    hair: 'South Asian men\'s hair is typically dark, thick, and with a tendency to be straight to wavy; high hair density is common; hair grooming priorities include managing volume and maintaining healthy shine; traditional champi (head massage with oil) is historically as common for South Asian men as for women',
+    beard: 'Beard culture is extremely significant for many South Asian men; Sikh men (who do not cut their hair or beard as part of their faith — the kesh principle) have elaborate beard care practices including regular oiling, combing, and wrapping the dastar (turban); non-Sikh South Asian men often maintain short beards or are clean-shaven depending on cultural and professional context',
+    dasturWinding: 'The Sikh turban (dastar) is an article of faith; winding the turban is a sacred and skilled practice; different communities (Nihang Sikhs, Namdhari Sikhs, urban Sikh men) have different turban styles; care for the hair beneath includes regular oiling with coconut oil and tying the hair in a joora (bun)',
+    skin: 'South Asian men have Fitzpatrick III-V skin; PIH from acne is a concern; brightening ingredients (vitamin C, niacinamide) are popular in South Asian men\'s grooming; SPF is increasingly adopted but historically less consistently used than in female South Asian beauty culture',
+    traditional: 'Paan (betel leaf preparations) staining of teeth and lips is declining but historically significant; natural grooming preparations using coconut oil, rose water, and Ayurvedic herbs are traditional in South Asian men\'s grooming'
   },
   caribbean: {
-    community: 'Caribbean',
-    skincare_tradition: 'Coconut oil is the quintessential Caribbean grooming product — used on skin, hair, and beard by men and women for generations. Aloe vera (commonly grown in Caribbean home gardens) is applied directly to the skin for burns, rashes, and daily moisture.',
-    contemporary: 'Caribbean men\'s grooming intersects with Black American grooming culture significantly, particularly in diaspora communities.',
-    hair: 'Caribbean men\'s hair varies widely by ethnic origin. Afro-Caribbean men: skin fades, tapers, high tops, dreadlocks, cornrows. Mixed heritage men: various wave/curl patterns. Dreadlocks as a spiritual practice (Rastafarianism) or cultural style.',
-    common_products: 'Coconut oil, shea butter, aloe vera, bay rum aftershave (a Caribbean tradition — derived from bay leaf essential oil in alcohol).',
-    concern: 'PFB (razor bumps). PIH. Dry skin in drier island climates.',
+    hair: 'Caribbean men\'s hair spans the same Type 1-4 range as Caribbean women\'s; Afro-Caribbean men in the UK, US, and Canada have popularised the "skin fade" with natural texture top; cane rows (cornrows) on men are both traditional and contemporary fashion statements',
+    skin: 'Afro-Caribbean men share the Fitzpatrick V-VI PIH concerns; PFB from shaving is a major grooming challenge; Caribbean men\'s grooming culture has been influenced by Jamaican and wider Caribbean masculinity norms; sportsman and dancer aesthetics drive grooming trends',
+    beard: 'The full beard is increasingly popular across Caribbean male communities; JBCO (Jamaican Black Castor Oil) for beard and scalp care; the Rastafarian locs tradition (originating in Jamaica) is one of the most globally recognisable Caribbean male hair traditions; Bob Marley\'s locs became a global icon',
+    rasta: 'Rastafarian dreadlocks are a spiritual practice for devout Rastafarians (locs should not be cut; natural loc formation encouraged); for many Caribbean men, locs have cultural rather than strictly religious significance; loc grooming including retwisting, washing, and loc butter maintenance is an important grooming practice'
   },
   arab: {
-    community: 'Arab',
-    skincare_tradition: 'Arab men\'s grooming has a rich historical tradition. Hammam (bathhouse) visits for full-body exfoliation were a communal ritual for men. Rose water, argan oil, and natural ingredients were historically used in skin and beard care.',
-    contemporary: 'Gulf Arab grooming culture is extremely premium — high-end fragrances (oud, musk), luxury skincare, and meticulous grooming are cultural values. In the Levant, French-influenced skincare culture intersects with Arab tradition.',
-    hair: 'Arab men\'s hair is typically wavy to curly. Popular styles: textured quiff, slick back, side part, mid-fade with styled top. Hair products with medium hold and shine finish.',
-    fragrance: 'Fragrance is extremely significant in Arab men\'s culture. Oud (agarwood resin) is particularly prized. Applying oud oil or oud-containing products is a cultural ritual with deep historical roots.',
-    common_products: 'Argan oil, rose water, oud oil, premium fragrances, black seed oil (Nigella sativa — used in Arab traditional medicine for skin and hair).',
-    concern: 'Sun damage from high UV in MENA region. Oily skin in some Arab men. Ingrown hairs from coarser wavy beard hair.',
+    hair: 'Arab men\'s grooming is highly sophisticated; hair and beard grooming are taken very seriously across Arab cultures; classic short styles with pomade; the "Arab fade" (skin fade with longer top); historically, the moustache was a significant symbol of masculinity in many Arab cultures; the well-groomed beard is associated with religious practice (following the Sunnah for Muslim men) and masculinity',
+    beard: 'Beard grooming is extremely important in Arab male culture: regular oiling (argan oil, black seed oil); trimming for shape; some Arab men grow full beards for religious reasons; the beard is groomed meticulously; Arabic beard care products (oud-scented beard oils, perfumed beard balms) are a significant market',
+    sunnah: 'For Muslim Arab men, maintaining a beard is Sunnah (following the example of the Prophet Muhammad); length preferences vary by scholarly opinion but many Muslim men maintain beards of varying lengths; the beard represents religious identity and pride; it is cared for with particular attention',
+    oudGrooming: 'Oud-scented grooming products (hair pomade, beard oil, aftershave) are extremely popular in Arab male grooming; oud is associated with wealth, prestige, and masculinity in Arab culture; high-end Arab grooming brands incorporate oud into virtually every grooming product category',
+    eyebrowMen: 'Eyebrow grooming for Arab men is common practice; threading or trimming to neaten the brows; the monobrow (unibrow) that is celebrated in some South Asian contexts is typically groomed out in Arab male beauty culture; very groomed brows are associated with style-consciousness'
   },
   latina: {
-    community: 'Latina (Male)',
-    skincare_tradition: 'Latin American men\'s grooming is influenced by barbershop culture (the Latin barbershop — la barbería — is a community institution), traditional remedies (aloe vera, lime, avocado), and increasingly by US grooming trends in diaspora communities.',
-    contemporary: 'Latin men\'s grooming content is growing on social media. Mexican-American and Puerto Rican men\'s grooming aesthetics have had significant influence on mainstream American barbershop culture.',
-    hair: 'Latin American men\'s hair varies by ethnic background — from fine and straight (European background) to coily (African background) to wavy (mixed). Textured crops, undercuts, and fades are popular.',
-    barbershop: 'The Latin barbershop (particularly Mexican and Cuban) has a distinct character — precision fades, temple fades, and pompadour/quiff styles.',
-    common_products: 'Pomades (hair pomade is iconic in Latin American men\'s styling), aloe vera gel, lime (for skin brightening), avocado hair masks.',
-    concern: 'Melasma can affect men (triggered by sun exposure and genetics). Sun damage in Latin American men with lighter skin.',
+    hair: 'Latino men\'s hair spans the full Type 1-4 spectrum depending on heritage; the classic "Edgar cut" (blunt fringe with fade, also called a "takuache cut") originated in Mexican-American youth culture and became a global barbershop trend in the 2010s-2020s; comb-over fades with textured tops are popular across Latin American communities',
+    edgar: 'The Edgar cut (Edgar haircut) is one of the most culturally specific hair trends to emerge from Chicano/Mexican-American youth culture in the US Southwest; the blunt straight fringe with a high skin fade became recognised globally as a distinctive Chicano style; TikTok and social media amplified its spread globally; it is both a hairstyle and a cultural identity marker',
+    skin: 'Latino men span Fitzpatrick III-VI skin tones; PIH concerns are present for many; acne is a common concern; SPF use is improving but historically low; traditional male grooming included applying brillantina (brilliantine/hair pomade — petroleum/oil-based pomade for slick styling) — still used for certain traditional styles',
+    machismo: 'Traditional Latin American machismo ideals historically discouraged male skincare adoption; this is changing significantly, particularly in urban Latin American cities and in US Latino communities; younger Latino men are significant consumers of skincare and grooming products; the term "metro" (metrosexual influenced) describes style-conscious Latino men who invest in grooming'
   },
-  east_asian: {
-    community: 'East Asian',
-    skincare_tradition: 'East Asian men\'s grooming has been globally influential. Korean men\'s grooming (K-beauty for men, sometimes called "K-grooming") has normalised comprehensive skincare routines — BB creams, serums, and multi-step routines — for men in a way that has influenced global trends.',
-    contemporary: 'K-pop influence has dramatically shifted East Asian (and global) men\'s grooming norms. Male K-pop and C-pop idols with flawless, dewy skin have normalised skincare as a masculine practice.',
-    skin_tone_note: 'The idealised appearance in Korean pop culture — glass skin, very even tone, no visible pores — is a significant influencer of East Asian men\'s skincare ambitions.',
-    hair: 'Precision styling is paramount in East Asian men\'s haircare. Popular styles: two-block cut (longer on top, faded sides), perm/perm texture (controlled waves added for volume), undercut, slick back.',
-    perms: 'Korean men\'s perms (allowing styling into waves or controlled texture for Asian straight hair) are increasingly popular in East Asian men\'s salons globally.',
-    common_products: 'BB creams and tinted moisturisers for men (pioneered in Korea). Cushion foundations. Snail mucin serums. Niacinamide. Hair clay for texture.',
-    concern: 'Under-eye circles (vascular — blue-purple tone). Oilier T-zone. Uneven skin tone.',
-    bbcream: 'BB cream (Blemish Balm) was originally developed in Korea for men who had dermatological procedures and needed light coverage. It became a foundation of Korean men\'s everyday grooming and spawned the entire Western BB cream category.',
+  'east-asian': {
+    hair: 'East Asian men\'s hair care and styling is highly sophisticated; Korean and Japanese men\'s hair trends are globally influential; popular styles: Korean "bowl cut" (mushroom cut) adapted into a soft modern version; bleached tips; textured perms; the "two-block" haircut (cropped sides, longer textured top) is one of the most globally-copied Korean men\'s hairstyles',
+    kPop: 'K-pop male idol grooming is enormously globally influential; skin care, well-groomed brows, subtle skin tint (BB cream or foundation), bleached or coloured hair are normalised for K-pop idols; this has shifted global male grooming norms, particularly among younger generations; BTS\'s grooming and beauty product endorsements (they became L\'Oréal ambassadors) have been industry-defining',
+    skin: 'East Asian men, particularly Korean and Japanese men, are among the most skincare-aware male consumers globally; K-beauty and J-beauty have normalised skincare for men in East Asian cultures more than in many Western cultures; toner, serum, and moisturiser use by men is commonplace in South Korea; male BB cream and cushion foundation use is significantly more normalised in Korea than in Western markets',
+    grooming: 'K-beauty male grooming trends include: "glass skin" for men (focus on hydration and radiance); targeted dark eye circle treatment (very prevalent in East Asian male consumers due to high rates of sleep deprivation from work culture); eyebrow grooming to create a soft, clean shape (significantly different from Western male brow grooming norms); men\'s BB cream and skin tint are widely used in South Korea',
+    anime: 'Anime and manga aesthetic influences East Asian male hair styling; dramatic, gravity-defying styles with colour; these have moved from subculture to mainstream in Japan particularly'
   },
-  east_african: {
-    community: 'East African',
-    skincare_tradition: 'Shea butter and neem oil are traditional East African skin care ingredients. Frankincense (boswellia) is an East African (Somali, Ethiopian) traditional ingredient — used as incense but also in skin preparations for its anti-inflammatory properties.',
-    contemporary: 'East African diaspora men\'s grooming is influenced by both homeland traditions and host country cultures (particularly in the UK, Canada, and US).',
-    hair: 'East African hair texture ranges from very tightly coiled (Somali, Eritrean) to slightly softer coil (Ethiopian). Short fades and natural styles.',
-    fragrance: 'Frankincense is culturally significant — oud and incense-based fragrances are important in Ethiopian and Somali grooming traditions.',
-    common_products: 'Shea butter, neem oil, frankincense oil, black seed oil.',
-    concern: 'PFB in coily-beard communities. PIH. Dry skin.',
+  'east-african': {
+    hair: 'East African men\'s hair varies by community: Ethiopian and Eritrean men often have Type 3b-3c loose coils or waves; Somali men may have similar or slightly tighter patterns; Kenyan and Tanzanian men may have Type 3c-4b depending on heritage; short natural cuts, fades, and locs are popular',
+    skin: 'East African men have Fitzpatrick IV-VI skin with similar PIH concerns to West African men; SPF is important in the intensely UV-rich Horn of Africa environments; natural ingredient approaches (shea butter, aloe vera, frankincense) for skincare',
+    cultural: 'Ethiopian male grooming includes traditional practices; coffee-based scrubs and preparations; Ethiopian men of the Omo Valley tribes practice elaborate body and face painting for cultural ceremonies — one of the most striking examples of traditional male beauty practices globally',
+    diaspora: 'East African diaspora men (Ethiopian-American, Somali-American, etc.) negotiate traditional and Western grooming norms; the barbershop is a community gathering space in diaspora East African communities'
   },
-  south_african: {
-    community: 'South African',
-    skincare_tradition: 'Rooibos (red bush tea) is uniquely South African — used in skincare for its anti-inflammatory, antioxidant properties. Traditional Zulu and Xhosa men used naturally occurring clays and plant-based preparations.',
-    contemporary: 'Contemporary South African men\'s grooming parallels both Black American trends (for Black South African men) and European trends (for white South African men), with South African-specific innovations (rooibos, marula oil).',
-    hair: 'Similar range to West African hair in Black South African men. Fades and tapers are standard.',
-    marula_oil: 'Marula oil is a South African-origin oil (from the marula tree — also associated with wildlife and the Amarula cream liqueur). Used in luxury South African skincare for men and women.',
-    common_products: 'Rooibos skincare products, marula oil, shea butter.',
-    concern: 'PFB. PIH. Sun damage (UV index in South Africa is high).',
+  'south-african': {
+    hair: 'South African men\'s hair spans the full diversity of the country: short natural fades for Black South African men; Cape Malay heritage men; white South African heritage with European hair types; diverse barbershop culture reflecting this diversity',
+    skin: 'South African men face high UV exposure (South Africa has intense solar radiation; very high skin cancer rates in the white South African population; lower but still significant risk for Black South African men who are significantly underdiagnosed); SPF is crucial; South African Rugby culture has contributed to high skin damage rates from outdoor sun exposure',
+    rugby: 'Rugby is the most popular sport among Afrikaner/white South African men; decades of outdoor sport without adequate SPF has contributed to high skin cancer rates in this demographic; melanoma education campaigns are important in South African public health',
+    indigenous: 'Indigenous South African grooming practices include the use of marula oil and rooibos; Ndebele, Zulu, and Xhosa male traditional dress and body adornment practices for ceremonies are among the most visually spectacular traditional male aesthetics globally',
+    township: 'South African township barbershop culture (particularly in Soweto, Khayelitsha, and other townships) is vibrant and sophisticated; the "shisanyama" (braai/barbecue) and barbershop are social centres for Black South African working-class men'
   },
-  black_american: {
-    community: 'Black American',
-    skincare_tradition: 'Black American men\'s grooming is deeply rooted in barbershop culture — the barbershop is arguably THE central institution of Black American men\'s grooming. Vaseline (petroleum jelly) as a moisturiser, shea butter, and cocoa butter are traditional household grooming products for Black American men.',
-    contemporary: 'Black men\'s grooming is experiencing a cultural moment — Black-owned grooming brands (Bevel, Scotch Porter, Mielle Organics for women, Love Beauty and Planet) and influential Black male YouTubers and TikTokers have driven comprehensive grooming adoption.',
-    barbershop: 'The Black American barbershop provides: precision fades (skin fade, taper fade, burst fade, temp fade), edge-ups, beard grooming, hot towel shaves, and razor bump consultations. The barbershop is a social and cultural institution beyond just hair.',
-    waves: '360 Waves (and 720 waves) are an iconic Black American men\'s hair style — compression of coily hair into a ripple pattern using brushing, durags, and wave-enhancing products.',
-    skincare_routine: 'Black men\'s skincare content on social media (largely from creators like Hyram, Deion\'s grooming content, and Black male skincare influencers) emphasises: BHA for razor bumps, vitamin C for PIH, SPF (addressing the myth that dark skin doesn\'t need SPF), and retinol for anti-aging.',
-    concern: 'PFB (pseudofolliculitis barbae / razor bumps) — THE dominant men\'s skin concern in the Black American community. PIH from razor bumps. Ashy skin from dryness. Hyperpigmentation.',
-    bevel: 'Bevel is a Black American-founded brand specifically addressing Black men\'s grooming — single-blade razor designed for coily beard hair, priming oil pre-shave, BHA toner post-shave. Founded by Tristan Walker.',
-    spf_gap: 'Surveys consistently show lower SPF adoption among Black American men versus women and versus white men. Community education around melanin\'s limits of UV protection is important.',
-  },
+  'black-american': {
+    hair: 'Black American men\'s hair is one of the most culturally significant and creatively diverse in the world; from the high top fade of the 1980s/1990s to the contemporary taper fade, waves, locs, and natural styles; the barbershop is a sacred cultural institution in Black American communities',
+    barbershop: 'The Black American barbershop is one of the most important cultural institutions; it is a gathering place for community, politics, debate, mentorship, and bonding; barbers are trusted community figures; the tradition has spawned films ("Barbershop" franchise), TV shows, and extensive cultural documentation; getting a fresh cut before important occasions is deeply culturally significant',
+    waves: '360 waves (or 360s) is a hairstyle unique to Black men created by intensive brushing of short hair to create a wave pattern; requires: a wave brush (stiff bristle); a wave pomade or "grease" (often petroleum-based); compression with a durag (fabric skull cap); dedication to daily brushing routine; a cultural art form and hairstyle with its own competitive community',
+    locs: 'Dreadlocks and locs are significant in Black American culture as both a cultural and spiritual practice; associated with Rastafarianism, Black pride, and natural hair movements; "loc journey" is a significant identity milestone for many Black men; loc maintenance includes retwisting, interlocking, and loc sheen products',
+    edge: 'Edge-up (line-up) — crisp, precisely cut hairline edges — is one of the most important elements of Black men\'s haircuts; a fresh edge-up transforms the appearance and is a barbershop skill that commands respect; edge-up tools (clippers, trimmers, straight razor) require skill to perfect',
+    skin: 'Black American men have Fitzpatrick V-VI skin; PFB/razor bumps are the most significant grooming challenge; PIH from acne and ingrown hairs is also a major concern; the traditional "Bump Fighter" razor with single blade has been designed specifically for Black men\'s PFB prevention; natural skincare brands for Black men are growing (Scotch Porter, Bevel, Lumin) with PFB, PIH, and melanin-rich skin specifically addressed',
+    bevel: 'Bevel, founded by Tristan Walker (a Black American entrepreneur), was one of the first shaving brands specifically designed for Black men with coily facial hair and PFB; Bevel\'s single-blade safety razor, pre-shave brush, and shave cream system was explicitly designed to prevent razor bumps; the brand\'s success demonstrated the underserved need in the market'
+  }
 };
 
-// ─── MEN'S BODY CARE ──────────────────────────────────────────────────────────
-
-export const MENS_BODY_CARE = {
-  deodorant: {
-    types: {
-      deodorant: 'Masks odour without stopping sweating. Natural alternatives: crystal deodorant (potassium alum), charcoal.',
-      antiperspirant: 'Blocks sweat glands with aluminium salts. Reduces sweating and odour. More effective for heavy sweating.',
-      natural: 'Natural deodorants (without aluminium) are preferred by those concerned about aluminium. Effectiveness varies — often less effective than clinical-strength antiperspirants.',
-    },
-    application: 'Apply to dry skin after showering. For all-day efficacy, apply at night to allow aluminium salts to fully absorb into the gland.',
-    clinical_strength: 'For hyperhidrosis (excessive sweating), clinical-strength prescription antiperspirants are available.',
-  },
-  body_wash: 'Men\'s body washes are often formulated for higher sebum production. A simple, non-stripping body wash is ideal. For back acne, use a salicylic acid body wash or benzoyl peroxide wash.',
-  bacne: 'Back and chest acne (bacne) is common in men. Treatment: BHA body wash (salicylic acid 2%), benzoyl peroxide wash. Ensure shampoo residue is rinsed from back (shampoo down your back after washing hair). Shower immediately after exercise.',
-  moisturiser: 'Men frequently skip body moisturiser. Unscented, simple lotion applied post-shower to damp skin is sufficient.',
-  spf_body: 'SPF for arms and neck (commonly exposed) is relevant, particularly for men who work outdoors.',
-};
-
-// ─── MENS FRAGRANCE ───────────────────────────────────────────────────────────
-
-export const MENS_FRAGRANCE_GUIDE = {
-  families: {
-    fresh: 'Citrus, aquatic, green notes. Light, clean scents. Summer appropriate. Examples: Bleu de Chanel, Acqua di Gio.',
-    woody: 'Sandalwood, cedar, vetiver. Warm, grounding. Year-round. Examples: Terre d\'Hermès, Le Labo Santal 33.',
-    oriental: 'Amber, vanilla, musk, oud, spices. Rich, warm, sometimes sweet. Evening and winter. Examples: Spicebomb, oud-based fragrances.',
-    aromatic: 'Lavender, sage, herbs. Woody-fresh. Clean masculine classic. Examples: Drakkar Noir, Fahrenheit.',
-  },
-  application: {
-    pulse_points: 'Wrists, neck (behind ears), inner elbow, chest. Heat amplifies fragrance projection.',
-    hair: 'Hair holds fragrance well — a light spray into hair (from 30cm+ distance) can extend longevity. Avoid direct spray into beard if using an alcohol-heavy fragrance as it can be drying.',
-    not_rub: 'Do NOT rub wrists together — this breaks the fragrance molecules and changes the scent profile.',
-  },
-  ethnic_fragrance: {
-    arab: 'Oud is the fragrance of Gulf Arab culture. Heavy, warm, animalic-woody. Used as pure oil (attar) or in eau de parfum. Very long-lasting.',
-    south_asian: 'Sandal (sandalwood), jasmine, rose, and musk are traditional South Asian fragrance notes. Attar (concentrated fragrance oil) tradition.',
-    east_asian: 'Japanese perfumery (kōdō, the art of incense) emphasises subtle, clean, woody notes. Korean fragrance culture often features fresh, clean aquatics.',
-    black_american: 'Musk, vanilla, wood notes and Afrocentric fragrance brands are increasingly prominent.',
-    west_african: 'Shea, cocoa, and tropical notes. African fragrance brands drawing on West African botanicals are a growing sector.',
-  },
-};
-
-// ─── API ──────────────────────────────────────────────────────────────────────
-
-export function getMensGroomingOverview() { return MENS_GROOMING_OVERVIEW; }
-export function getMensSkinGuide(type) {
-  return type ? MENS_SKIN_GUIDE[type] : MENS_SKIN_GUIDE;
-}
-export function getMensHaircare() { return MENS_HAIRCARE; }
-export function getMensNailCare() { return MENS_NAIL_CARE; }
-export function getEthnicMensGrooming(communityId) {
-  const key = communityId?.replace('-', '_');
-  return ETHNIC_MENS_GROOMING[key] || Object.values(ETHNIC_MENS_GROOMING);
-}
-export function getMensBodyCare() { return MENS_BODY_CARE; }
-export function getMensFragranceGuide(family) {
-  return family ? MENS_FRAGRANCE_GUIDE.families[family] : MENS_FRAGRANCE_GUIDE;
+export function getMensGroomingBasics(section) {
+  const map = {
+    skin: MENS_SKIN_BASICS,
+    beard: BEARD_GUIDE,
+    hair: MENS_HAIR_GROOMING
+  };
+  return map[section] || null;
 }
 
-export const MENS_GROOMING_STATS = {
-  ethnicEntries: Object.keys(ETHNIC_MENS_GROOMING).length,
-  skinTypes: Object.keys(MENS_SKIN_GUIDE).length,
-  fragranceFamilies: Object.keys(MENS_FRAGRANCE_GUIDE.families).length,
-  bodyCareSections: Object.keys(MENS_BODY_CARE).length,
+export function getEthnicMensGroomingGuide(communityId) {
+  const directMap = {
+    'west-african': ETHNIC_MENS_GROOMING_GUIDES['west-african'],
+    'south-asian': ETHNIC_MENS_GROOMING_GUIDES['south-asian'],
+    caribbean: ETHNIC_MENS_GROOMING_GUIDES.caribbean,
+    arab: ETHNIC_MENS_GROOMING_GUIDES.arab,
+    latina: ETHNIC_MENS_GROOMING_GUIDES.latina,
+    'east-asian': ETHNIC_MENS_GROOMING_GUIDES['east-asian'],
+    'east-african': ETHNIC_MENS_GROOMING_GUIDES['east-african'],
+    'south-african': ETHNIC_MENS_GROOMING_GUIDES['south-african'],
+    'black-american': ETHNIC_MENS_GROOMING_GUIDES['black-american']
+  };
+  return directMap[communityId] || null;
+}
+
+export const MENS_GROOMING_ETHNIC_STATS = {
+  moduleId: 'mens_grooming_ethnic',
+  version: '1.0.0',
+  topics: ['pseudofolliculitis barbae PFB razor bumps coily beard', 'single-blade razor PFB prevention Black men', 'Bevel razor brand Black men grooming', 'waves 360 waves durag wave brush Black men', 'edge-up lineup barbershop Black American culture', 'barbershop Black American cultural institution', 'K-pop male grooming glass skin BB cream Korean', 'two-block Korean haircut global trend', 'Edgar cut Mexican-American Chicano barbershop', 'Sikh dastar kesh beard turban grooming', 'oud Arab male grooming fragrance', 'Sunnah beard Muslim Arab men', 'Rasta locs Caribbean Jamaican', 'androgenetic alopecia male pattern baldness DHT minoxidil finasteride', 'men skin biology androgen testosterone sebum collagen', 'beard oil carrier oils jojoba argan', 'African American barbershop South African township barbershop'],
+  communitiesSupported: 9,
+  keyFacts: [
+    'Pseudofolliculitis barbae (PFB / razor bumps) affects up to 45-83% of Black men who shave; it occurs when coily beard hairs curl back and re-enter the skin after being cut at an angle by a razor; it disproportionately affects men with coily facial hair (West African, East African, Caribbean, and Black American men); a single-blade safety razor (like those made by Bevel, specifically designed for Black men) significantly reduces PFB compared to multi-blade razors',
+    'The Black American barbershop is one of the most culturally significant institutions in the community — a gathering place for politics, mentorship, debate, and community bonding; getting a fresh cut is deeply linked to confidence and social presentation; barbers are respected community figures; the institution has been documented in films, TV, and extensive cultural studies',
+    'K-pop male idol grooming has normalised skincare, subtle makeup (BB cream, skin tint, concealer), eyebrow grooming, and hair colouring for men globally, particularly among younger generations; BTS\'s L\'Oréal ambassadorship marked a major moment in the normalisation of male beauty product consumption; South Korea has one of the highest rates of male skincare product use in the world',
+    'The "Edgar cut" (blunt fringe with high skin fade) originated in Mexican-American/Chicano youth culture in the US Southwest and became a global barbershop trend in the 2010s-2020s via TikTok; it is simultaneously a hairstyle and a cultural identity marker for many young Chicano men',
+    'For Sikh men, uncut hair (kesh) is one of the five Ks (panj kakars) — articles of faith; the beard is kept and maintained with oil and combing; the dastar (turban) is wound around hair collected in a topknot (joora); Sikh beard grooming is both a devotional and an aesthetic practice, creating the elaborate, well-maintained beards visible in Sikh communities globally'
+  ]
 };

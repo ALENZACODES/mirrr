@@ -1643,9 +1643,9 @@ export const ECO_INGREDIENT_DEEP_DIVES = {
     origins: 'Red Yao women of Huangluo village, Guangxi, China; Japanese geisha beauty traditions; widespread across Southeast and East Asia',
     science: {
       inositol: 'Carbohydrate molecule that penetrates the hair shaft and repairs damage from the inside; particularly notable because inositol remains in hair even after rinsing, providing ongoing protection',
-      ferulic acid: 'Antioxidant that protects against UV damage; abundant in rice bran and fermented rice water',
+      'ferulic acid': 'Antioxidant that protects against UV damage; abundant in rice bran and fermented rice water',
       allantoin: 'Soothing compound that reduces scalp irritation; present in rice water',
-      amino acids: 'Trace proteins from the rice grain coat the hair shaft, reducing porosity and improving smoothness',
+      'amino acids': 'Trace proteins from the rice grain coat the hair shaft, reducing porosity and improving smoothness',
     },
     fermentationBenefit: 'Fermenting rice water for 24–48 hours at room temperature allows beneficial bacteria to produce additional lactic acid and ferulic acid, lower the pH to match skin (around 4.5–5.5), and break down starches into more bioavailable sugars. The result is more potent and skin-compatible than plain rice water.',
     diyProtocol: {
@@ -1684,10 +1684,10 @@ export const ECO_INGREDIENT_DEEP_DIVES = {
     },
     beautyOilProfile: {
       name: 'Ben oil (behenic acid oil)',
-      behenic acid: '~8%: unusual long-chain fatty acid providing exceptional oxidative stability — moringa oil does not go rancid for years',
-      oleic acid: '~70%: deeply moisturizing; similar profile to olive oil but lighter texture',
-      palmitic acid: '~6%',
-      linoleic acid: '~2%',
+      'behenic acid': '~8%: unusual long-chain fatty acid providing exceptional oxidative stability — moringa oil does not go rancid for years',
+      'oleic acid': '~70%: deeply moisturizing; similar profile to olive oil but lighter texture',
+      'palmitic acid': '~6%',
+      'linoleic acid': '~2%',
       zeatin: 'Plant cytokinin that may delay skin aging; bioactive compound found in few other beauty oils',
     },
     growingMoringa: {

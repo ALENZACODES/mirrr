@@ -336,7 +336,7 @@ export const ETHNIC_WATER_BEAUTY_GUIDES = {
       waterQualityMatters: 'The water quality used in the LOC method significantly affects results. Soft or filtered water creates noticeably better moisture retention than hard chlorinated water.',
     },
     aloeVeraWater: {
-      tradition: 'Aloe vera juice as a "water" substitute or addition is widely used in Black American natural hair communities. The aloe's gel contains 99.5% water plus active compounds.',
+      tradition: 'Aloe vera juice as a "water" substitute or addition is widely used in Black American natural hair communities. The aloe\'s gel contains 99.5% water plus active compounds.',
       hairBenefit: 'Aloe vera juice (not gel) applied to hair before other products: conditions the cuticle, provides humectant moisture, reduces frizz, defines coils. Its natural pH (~4.5) matches the hair shaft\'s ideal pH, improving cuticle laying.',
       use: 'Use pure aloe vera juice (not gel with preservatives and fillers) in the spray bottle. Can be mixed 50/50 with water or used straight. Apply to hair at the liquid step of LOC method.',
     },

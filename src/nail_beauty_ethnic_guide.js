@@ -40,7 +40,7 @@ export const NAIL_BIOLOGY = {
   nailHealth: {
     brittleNails: {
       causes: ['Low biotin', 'Low iron', 'Thyroid disorder', 'Repeated water exposure', 'Acetone nail polish remover', 'Age-related nail plate thinning'],
-      treatment: ['Biotin 2.5mg daily: most evidence for brittle nails (but won\'t help if not deficient)', 'Wear gloves for dishes/cleaning', 'Use acetone-free remover', 'Nail hardener with protein (keratin)')],
+      treatment: ['Biotin 2.5mg daily: most evidence for brittle nails (but won\'t help if not deficient)', 'Wear gloves for dishes/cleaning', 'Use acetone-free remover', 'Nail hardener with protein (keratin)'],
       note: 'Biotin only helps nail brittleness if deficiency is the cause; check levels before supplementing'
     },
     fungalInfection: {
@@ -159,7 +159,7 @@ export const NAIL_ART_CULTURAL_TRADITIONS = {
     egypt: 'Henna on nails: Egyptian tradition; Cleopatra reportedly used henna on nails; color reflected status',
     india: 'Mehndi (henna) on nails: ancient practice; nail art component of wedding preparations',
     victorian: 'Victorian nail care: buffing to a sheen; no color (considered improper); pink paste applied then buffed',
-    1920s: '1920s: nail polish invention by Charles Revson (Revlon); tied to auto industry lacquer technology'
+    '1920s': '1920s: nail polish invention by Charles Revson (Revlon); tied to auto industry lacquer technology'
   },
 
   modern: {
@@ -435,7 +435,7 @@ export const ETHNIC_NAIL_GUIDES = {
     statements. Marula oil for cuticle care is quintessentially South African: the Tsonga
     tradition of marula oil for skin care extends perfectly to nails — its lightweight, non-greasy
     formula makes it ideal for cuticle use. Rooibos tea hand soak is a uniquely South African
-    beauty ritual: brew strong, cool, soak for 10 minutes; the aspalathin and zinc in rooibos
+    'beauty ritual': brew strong, cool, soak for 10 minutes; the aspalathin and zinc in rooibos
     nourish the skin around nails. For deep South African skin tones: vibrancy is the key —
     deep jewel tones, vivid brights, gold metallics — nails as celebration of rich melanin.`
   },

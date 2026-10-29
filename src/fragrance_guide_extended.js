@@ -293,7 +293,7 @@ export const FRAGRANCE_ALTERNATIVES = {
     { brand: 'Lattafa', region: 'UAE', note: 'Middle Eastern house with excellent affordable orientals and oud' },
     { brand: 'Rasasi', region: 'Dubai', note: 'Quality Arabic-style fragrances at accessible prices' },
     { brand: 'Armaf', region: 'India/UAE', note: 'Club de Nuit series offers impressive quality' },
-    { brand: 'Zara', region: 'Spain', note: 'Zara's fragrance line has some exceptional offerings — developed in collaboration with major fragrance houses' },
+    { brand: 'Zara', region: 'Spain', note: 'Zara\'s fragrance line has some exceptional offerings — developed in collaboration with major fragrance houses' },
     { brand: 'Lidl/Aldi brands', region: 'Europe', note: 'Surprise quality — often copied from designer fragrances at a fraction of cost' },
   ],
 };

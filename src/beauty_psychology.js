@@ -35,10 +35,10 @@ export const BEAUTY_STANDARDS_CULTURAL = {
 
   historical_shifts: {
     victorian: 'Pale skin (a mark of not having to work outdoors); slightly plump (a mark of prosperity); corseted waist.',
-    1920s: 'Flat chest; short hair; androgynous; cosmetics becoming acceptable (previously associated with sex workers).',
-    1950s: 'Hourglass figure; red lips; feminine; Gloria Steinem era pushing back against this.',
-    1990s: 'Heroin chic — very thin, pale; androgynous; Kate Moss era.',
-    2010s: 'The Brazilian butt lift era — curves celebrated (but specifically the Kardashian-informed version); tan skin normalised.',
+    '1920s': 'Flat chest; short hair; androgynous; cosmetics becoming acceptable (previously associated with sex workers).',
+    '1950s': 'Hourglass figure; red lips; feminine; Gloria Steinem era pushing back against this.',
+    '1990s': 'Heroin chic — very thin, pale; androgynous; Kate Moss era.',
+    '2010s': 'The Brazilian butt lift era — curves celebrated (but specifically the Kardashian-informed version); tan skin normalised.',
     current_2020s: 'Extremely varied and fragmented; paradoxically both body-positive and intensely focused on specific body modifications; social media has simultaneously diversified and intensified beauty pressure.',
   },
 
@@ -105,7 +105,7 @@ export const SOCIAL_MEDIA_BEAUTY = {
 
   research_highlights: {
     instagram_pause: 'A 2019 study had one group delete Instagram for 4 weeks. The group that deleted showed significantly improved body image and overall wellbeing versus those who kept the app.',
-    15_minutes: 'Even 15 minutes of scrolling through "fitspiration" accounts (fitness/body transformation content) was found to decrease body satisfaction in study participants.',
+    '15_minutes': 'Even 15 minutes of scrolling through "fitspiration" accounts (fitness/body transformation content) was found to decrease body satisfaction in study participants.',
     reminder_effects: 'Adding simple reminders that images are edited, or seeing "before" versions alongside edited images, significantly reduced social comparison effects in studies.',
   },
 };

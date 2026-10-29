@@ -6,18 +6,18 @@
 // ─── FESTIVAL MONTHS ─────────────────────────────────────────────────────────
 
 export const MONTHS = {
-  1:  { id: 1,  name: 'January',   short: 'Jan', season: 'winter' },
-  2:  { id: 2,  name: 'February',  short: 'Feb', season: 'winter' },
-  3:  { id: 3,  name: 'March',     short: 'Mar', season: 'spring' },
-  4:  { id: 4,  name: 'April',     short: 'Apr', season: 'spring' },
-  5:  { id: 5,  name: 'May',       short: 'May', season: 'spring' },
-  6:  { id: 6,  name: 'June',      short: 'Jun', season: 'summer' },
-  7:  { id: 7,  name: 'July',      short: 'Jul', season: 'summer' },
-  8:  { id: 8,  name: 'August',    short: 'Aug', season: 'summer' },
-  9:  { id: 9,  name: 'September', short: 'Sep', season: 'fall'   },
-  10: { id: 10, name: 'October',   short: 'Oct', season: 'fall'   },
-  11: { id: 11, name: 'November',  short: 'Nov', season: 'fall'   },
-  12: { id: 12, name: 'December',  short: 'Dec', season: 'winter' },
+  '1':  { id: 1,  name: 'January',   short: 'Jan', season: 'winter' },
+  '2':  { id: 2,  name: 'February',  short: 'Feb', season: 'winter' },
+  '3':  { id: 3,  name: 'March',     short: 'Mar', season: 'spring' },
+  '4':  { id: 4,  name: 'April',     short: 'Apr', season: 'spring' },
+  '5':  { id: 5,  name: 'May',       short: 'May', season: 'spring' },
+  '6':  { id: 6,  name: 'June',      short: 'Jun', season: 'summer' },
+  '7':  { id: 7,  name: 'July',      short: 'Jul', season: 'summer' },
+  '8':  { id: 8,  name: 'August',    short: 'Aug', season: 'summer' },
+  '9':  { id: 9,  name: 'September', short: 'Sep', season: 'fall'   },
+  '10': { id: 10, name: 'October',   short: 'Oct', season: 'fall'   },
+  '11': { id: 11, name: 'November',  short: 'Nov', season: 'fall'   },
+  '12': { id: 12, name: 'December',  short: 'Dec', season: 'winter' },
 };
 
 // ─── FESTIVAL DATABASE ────────────────────────────────────────────────────────
@@ -87,7 +87,7 @@ export const FESTIVALS = {
     beautyTradition: 'Body painting, face art inspired by Adinkra symbols, Kente-pattern graphic liner, Afrofuturism aesthetics.',
     recommendedLooks: ['nigerian_editorial', 'afrobeats_festival'],
     colourPalette: ['#FFD700', '#E63946', '#1D3461', '#2DC653'],
-    hairTraditions: 'Natural hair, loc'd hair, creative colour — bold and political',
+    hairTraditions: 'Natural hair, loc\'d hair, creative colour — bold and political',
     skincareTip: 'Sweat-proof primer and setting spray essential for outdoor festival.',
     significance: 'Leading African street art festival celebrating creativity and cultural heritage',
     beautyRituals: [
@@ -695,7 +695,7 @@ export const FESTIVALS = {
     beautyTradition: 'Pan-African colour palette (red, black, green). Afrocentric fashion — dashikis, kente, head wraps. Natural hair in traditional African styles.',
     recommendedLooks: ['black_girl_magic', 'harlem_renaissance'],
     colourPalette: ['#FF0000', '#000000', '#008000'],
-    hairTraditions: 'Loc'd hair, afro, braids, head wrap (gele or African headwrap). Kente fabric in styling.',
+    hairTraditions: 'Loc\'d hair, afro, braids, head wrap (gele or African headwrap). Kente fabric in styling.',
     skincareTip: 'Winter Kwanzaa — boost with shea butter and baobab oil for melanin-rich skin in cold weather.',
     significance: 'African-American celebration of African cultural heritage and Nguzo Saba (seven principles)',
     beautyRituals: [

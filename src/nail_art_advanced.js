@@ -169,7 +169,7 @@ export const NAIL_ART_TECHNIQUES = {
     technique: 'Apply over gel layer, cure, rub chrome powder with applicator in circular motions. Do not add top coat — it removes the effect (use Chrome-compatible top coat).',
   },
 
-  3d_nail_art: {
+  '3d_nail_art': {
     what: 'Raised, dimensional elements on nails — acrylic roses, gems, charms, gel flowers.',
     methods: [
       'Acrylic flowers — sculpted from acrylic mix on the nail',

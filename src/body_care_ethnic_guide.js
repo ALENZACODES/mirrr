@@ -194,7 +194,7 @@ export const STRETCH_MARKS_SCIENCE = {
       retinoids: { evidence: 'Strongest topical evidence for striae rubra; stimulates collagen production', protocol: 'Tretinoin 0.05-0.1% nightly; avoid in pregnancy', darkerSkinCaution: 'Buffer technique required to prevent retinoid dermatitis + PIH in Fitzpatrick IV-VI' },
       centellAsiatica: { evidence: 'Gotu kola; studied in pregnancy for prevention; stimulates collagen synthesis', benefit: 'Safe in pregnancy unlike retinoids; traditional Ayurvedic use' },
       hyaluronicAcid: { evidence: 'Applied during striae rubra stage; improves hydration and may improve appearance', note: 'Prevention evidence stronger than treatment' },
-      vitamin C: { evidence: 'Ascorbic acid stimulates collagen synthesis; antioxidant; brightens hyperpigmented striae' },
+      'vitamin C': { evidence: 'Ascorbic acid stimulates collagen synthesis; antioxidant; brightens hyperpigmented striae' },
       cocoaButter: { evidence: 'Popular but limited RCT evidence for prevention; well-tolerated; may help with itch', cultural: 'Iconic in Caribbean and Black American communities for pregnancy skincare' },
       niacinamide: { evidence: 'Helps with pigmentation component; improves skin barrier' }
     },

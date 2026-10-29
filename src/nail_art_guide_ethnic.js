@@ -176,7 +176,7 @@ export const NAIL_ART_TECHNIQUES = {
     }
   },
   advanced: {
-    3D_nail_art: {
+    '3D_nail_art': {
       description: 'Dimensional designs using acrylic, gel, resin, or decorative elements',
       types: ['Acrylic flowers modelled by hand', 'Gel embossing designs', 'Resin charms embedded', 'Crystals and rhinestones (Swarovski and alternatives)', 'Dried flowers encapsulated in gel', 'Baroque sculpted designs'],
       technique: 'Requires gel builder to embed 3D elements; seal thoroughly to prevent elements lifting'

@@ -800,7 +800,7 @@ of floats, dancers in elaborate costumes, and music traditions blending African,
 Indigenous, and Spanish heritage create an intoxicating visual explosion. Beauty
 at Barranquilla Carnaval is theatrical, loud, and joyfully excessive.`,
         beautyNotes: [
-          'Face paint in yellow, red, blue, and green — Colombia's flag colours used prominently',
+          'Face paint in yellow, red, blue, and green — Colombia\'s flag colours used prominently',
           'Mapalé and cumbia dance costumes incorporate elaborate headdresses with feathers',
           'Marimonda costume: trunk-nosed mask with polka dots — full-face coverage',
           'Congo women dancers wear vibrant skirts and body paint inspired by African tradition',

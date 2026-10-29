@@ -64,7 +64,7 @@ export const WIG_CONSTRUCTION = {
       best_for: 'Protective styling while leaving edges exposed',
       price_range: '$60-$300',
     },
-    360_lace: {
+    '360_lace': {
       name: '360 Lace',
       construction: 'Lace band around the entire perimeter of the wig; machine-sewn cap in the middle.',
       advantage: 'Allows high ponytails and updos (edges look natural all around) without full lace cost.',

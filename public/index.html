@@ -38,6 +38,9 @@
       </div>
       <p class="hero-communities">Celebrating Black · South Asian · Arab · Latina · Caribbean · East Asian beauty</p>
     </div>
+    <div class="hero-mockup-wrap">
+      <img src="mobile-mockup.png" alt="MIRRR app — Which artist speaks to your soul? Tiwa Savage, Nicki Minaj, Anitta, BLACKPINK" class="hero-mockup-img" />
+    </div>
   </section>
 
   <!-- ─── MAIN APP ─────────────────────────────────────────────────────── -->
@@ -50,7 +53,11 @@
         <p class="view-sub">5 questions. Your beauty archetype unlocked.</p>
       </div>
       <div id="quizContainer" class="quiz-container"></div>
-      <div id="quizResult" class="quiz-result hidden"></div>
+      <div id="quizResult" class="quiz-result hidden">
+        <div class="results-image-card dna-badge-card">
+          <img src="dna-badge.png" alt="Your Cultural DNA Badge" class="dna-badge-img" />
+        </div>
+      </div>
     </section>
 
     <!-- ── TASTE PROFILE VIEW ────────────────────────────────────────── -->
@@ -92,14 +99,16 @@
 
       <!-- Loader -->
       <div id="tasteLoader" class="loader hidden">
-        <div class="spinner"></div>
-        <p>Reading your taste…</p>
+        <img src="loading-screen.png" alt="Reading your cultural DNA..." class="loading-mirror-img" />
       </div>
 
       <!-- Results -->
       <div id="tasteResults" class="hidden">
         <div id="tasteNarration" class="narration card"></div>
         <div id="tasteAesthetic" class="aesthetic-card card"></div>
+        <div class="results-image-card your-look-card">
+          <img src="your-look.png" alt="Your Look — Skin, Eyes, Lips breakdown" class="results-image" />
+        </div>
         <div id="tasteLooks" class="looks-grid"></div>
       </div>
     </section>
@@ -109,6 +118,10 @@
       <div class="view-header">
         <h2 class="view-title">Shade Finder</h2>
         <p class="view-sub">30 shades across the full spectrum. Find yours.</p>
+      </div>
+
+      <div class="shade-palette-preview">
+        <img src="shade-palette.png" alt="Shade palette — Mocha, Caramel, Bronze, Mahogany, Espresso, Warm Sand" class="shade-palette-img" />
       </div>
 
       <div class="shade-form card">

@@ -261,16 +261,18 @@ function renderQuizResult(result) {
 
   const seed = result.seedAesthetic ?? {};
 
-  const topComImg = topComId ? COMMUNITY_IMAGES[topComId] : null;
-  const runnerComImg = runnerUpId ? COMMUNITY_IMAGES[runnerUpId] : null;
+  const slug = (id) => String(id ?? '').replace(/_/g, '-');
+  const topComImg = topComId ? COMMUNITY_IMAGES[slug(topComId)] : null;
+  const runnerComImg = runnerUpId ? COMMUNITY_IMAGES[slug(runnerUpId)] : null;
 
   resultEl.innerHTML = `
     <div class="dna-result card">
-      <div class="dna-hero">
+      <div class="dna-hero dna-hero--big">
         ${topComImg
-          ? `<img src="${topComImg}" alt="${topCom?.label ?? 'Community'}" class="dna-community-icon" />`
+          ? `<img src="${topComImg}" alt="${topCom?.label ?? 'Community'}" class="dna-big-photo" />`
           : `<div class="dna-emoji">${topCom?.emoji ?? '🌍'}</div>`}
-        <h2 class="dna-title">${topCom?.label ?? 'Your Community'}</h2>
+        <p class="dna-kicker">Your Beauty DNA</p>
+        <h2 class="dna-title dna-title--big">${topCom?.label ?? 'Your Community'}</h2>
         ${topCom?.subLabel ? `<p class="dna-sub">${topCom.subLabel}</p>` : ''}
         ${runnerCom ? `<p class="dna-runner">
           ${runnerComImg ? `<img src="${runnerComImg}" alt="${runnerCom.label}" class="dna-runner-icon" />` : runnerCom.emoji}
@@ -290,6 +292,11 @@ function renderQuizResult(result) {
         </div>
       </div>
 
+      <div class="dna-looks">
+        <h3 class="bars-title">Looks made for you</h3>
+        <div class="dna-looks-grid" id="dnaLooksGrid"><p class="dna-looks-loading">Finding your looks…</p></div>
+      </div>
+
       <div class="dna-actions">
         <button class="btn btn-primary" id="dnaToTasteBtn">Get My Looks →</button>
         <button class="btn btn-secondary" id="dnaToShadeBtn">Find My Shades →</button>
@@ -297,6 +304,8 @@ function renderQuizResult(result) {
       </div>
     </div>
   `;
+
+  loadDnaLooks(topComId);
 
   document.getElementById('dnaToTasteBtn').addEventListener('click', () => {
     showView('taste');
@@ -2440,3 +2449,31 @@ document.addEventListener('click', (e) => {
   }
 });
 window.openStyleGuide = (id) => openStyleGuide(id);
+
+
+// Quiz result -> real looks for the matched community, with photos
+const COMMUNITY_ARCHETYPES = {
+  west_african: ['afro_glam', 'amapiano_beat'], east_african: ['afro_glam'], black_american: ['hip_hop_glam', 'afro_glam'],
+  caribbean: ['caribbean_carnival'], south_asian: ['bollywood_bridal'], arab: ['gulf_glam'], latina: ['latina_glam'],
+  east_asian: ['k_beauty'], southeast_asian: ['k_beauty', 'clean_minimal'], mixed: ['clean_minimal'],
+};
+async function loadDnaLooks(communityId) {
+  const grid = document.getElementById('dnaLooksGrid');
+  if (!grid) return;
+  try {
+    const key = String(communityId ?? '').replace(/-/g, '_');
+    const archs = COMMUNITY_ARCHETYPES[key] ?? ['clean_minimal'];
+    const { looks } = await api('/api/looks');
+    const picks = looks.filter(l => archs.includes(l.archetype) && LOOK_IMAGES[l.id]).slice(0, 6);
+    if (!picks.length) { grid.innerHTML = ''; return; }
+    grid.innerHTML = picks.map(l => `
+      <button class="dna-look-card" data-look="${l.id}">
+        <img src="${LOOK_IMAGES[l.id]}" alt="${l.name}" loading="lazy" decoding="async">
+        <span class="dna-look-name">${l.name}</span>
+      </button>`).join('');
+    grid.querySelectorAll('.dna-look-card').forEach(b => b.addEventListener('click', () => {
+      const sel = document.getElementById('communitySelect'); if (sel && communityId) sel.value = communityId;
+      showView('taste');
+    }));
+  } catch { grid.innerHTML = ''; }
+}

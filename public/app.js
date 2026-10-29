@@ -104,7 +104,7 @@ function populateCommunitySelects() {
     state.communities.forEach(c => {
       const opt = document.createElement('option');
       opt.value = c.id;
-      opt.textContent = `${c.emoji} ${c.label}`;
+      opt.textContent = c.label;
       sel.appendChild(opt);
     });
   });
@@ -479,7 +479,7 @@ function renderTasteResults(result) {
   const narEl = document.getElementById('tasteNarration');
   if (narEl && narration) {
     narEl.innerHTML = `
-      <p class="narration-badge">${meta?.qloo_powered ? '⚡ Qloo-Powered' : '✨ Demo Mode'} · via ${narration_source ?? 'template'}</p>
+      ${sourceBadgeHtml(meta, narration_source)}
       <p class="narration-text">${narration}</p>
       ${entities?.length ? `
         <div class="entity-chips">
@@ -2115,3 +2115,316 @@ async function openStyleGuide(lookId) {
 }
 
 document.addEventListener('DOMContentLoaded', bootWithTrending);
+
+
+// ===========================================================================
+// Honest source badge, agent trace, persistence, planner, help
+// ===========================================================================
+
+function esc(v) {
+  return String(v ?? '').replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+}
+const ico = (name, cls) => (window.MirrrIcons ? window.MirrrIcons.svg(name, cls) : '');
+
+/** "Powered by Qloo" only when Qloo actually returned data for this result. */
+function sourceBadgeHtml(meta, narrationSource) {
+  const live = meta?.qloo_powered === true;
+  const via = narrationSource ? ` · narration: ${esc(narrationSource)}` : '';
+  const err = meta?.qloo_error ? `<p class="src-error">Qloo error: ${esc(meta.qloo_error)}</p>` : '';
+  return live
+    ? `<p class="src-badge src-badge--live">${ico('bolt')} Powered by Qloo · live${via}</p>${err}`
+    : `<p class="src-badge src-badge--template">${ico('sparkle')} Template mode · Qloo not used for this result${via}</p>${err}`;
+}
+
+// ---- Trace ("How MIRRR got this") -----------------------------------------
+
+function describeTraceStep(t) {
+  const bits = [];
+  if (t.inputs_count != null) bits.push(`${t.inputs_count} input(s)`);
+  if (t.entities_found != null) bits.push(`${t.entities_found} Qloo entities resolved`);
+  if (t.tags_found != null) bits.push(`${t.tags_found} taste signals`);
+  if (t.communityId) bits.push(`community: ${t.communityId}`);
+  if (t.top_look) bits.push(`top look: ${String(t.top_look).replace(/_/g, ' ')}`);
+  if (t.looks_count != null) bits.push(`${t.looks_count} looks scored`);
+  if (t.shades_count) bits.push(`${t.shades_count} shades`);
+  if (t.wigs_count != null) bits.push(`${t.wigs_count} wigs`);
+  if (t.source) bits.push(`source: ${t.source}`);
+  if (t.aesthetic) bits.push('aesthetic vector built');
+  return bits.join(' · ');
+}
+
+function renderTrace(result) {
+  const host = document.getElementById('tasteNarration');
+  if (!host) return;
+  host.querySelector('.trace-box')?.remove();
+  const meta = result?.meta;
+  if (!meta) return;
+  const trace = Array.isArray(meta.trace) ? meta.trace : [];
+  const aff = Array.isArray(meta.top_affinities) ? meta.top_affinities : [];
+  if (!trace.length && !aff.length && meta.entities_resolved == null) return;
+
+  const maxA = Math.max(0.0001, ...aff.map(a => Number(a.affinity ?? a.score ?? 0)));
+  const stepsHtml = trace.length ? `<ul class="trace-steps">${trace.map(t => `
+      <li><span class="t-step">${esc(t.step)}</span><span>${esc(describeTraceStep(t)) || '&mdash;'}</span></li>`).join('')}</ul>` : '';
+  const affHtml = aff.length ? `<div><strong>Top affinities</strong>${aff.slice(0, 8).map(a => {
+      const v = Number(a.affinity ?? a.score ?? 0);
+      return `<div class="aff-row"><span>${esc(a.name ?? a.id)}</span><div class="aff-bar"><div class="aff-fill" style="width:${Math.round((v / maxA) * 100)}%"></div></div><span>${v <= 1 ? Math.round(v * 100) + '%' : v.toFixed(1)}</span></div>`;
+    }).join('')}</div>` : '';
+  const summary = `Resolved ${meta.entities_resolved ?? 0} entities · ${meta.tags_from_qloo ?? 0} Qloo signals`;
+  const box = document.createElement('details');
+  box.className = 'trace-box';
+  box.innerHTML = `<summary>${ico('search')} How MIRRR got this <span style="opacity:.7">· ${esc(summary)}</span></summary><div class="trace-body">${stepsHtml}${affHtml}</div>`;
+  host.appendChild(box);
+}
+
+// ---- Persistence (localStorage only, always try/catch) --------------------
+
+const STORE_KEY = 'mirrr.profile.v1';
+let _lastTaste = null;
+let _lastShades = null;
+
+function loadProfile() {
+  try { return JSON.parse(localStorage.getItem(STORE_KEY) || 'null'); } catch { return null; }
+}
+function persist(extra = {}) {
+  try {
+    const prev = loadProfile() || {};
+    const data = {
+      v: 1,
+      savedAt: new Date().toISOString(),
+      chips: state.tasteChips,
+      aesthetic: state.aesthetic,
+      communityId: state.communityId,
+      depthTarget: state.depthTarget,
+      undertone: state.undertone,
+      lastTaste: _lastTaste ?? prev.lastTaste ?? null,
+      shades: _lastShades ?? prev.shades ?? null,
+      savedLooks: prev.savedLooks ?? [],
+      ...extra,
+    };
+    localStorage.setItem(STORE_KEY, JSON.stringify(data));
+  } catch { /* storage unavailable or full: persistence is best-effort */ }
+}
+function clearProfile() {
+  try { localStorage.removeItem(STORE_KEY); } catch { /* ignore */ }
+}
+function profileIsEmpty(p) {
+  return !p || (!(p.chips && p.chips.length) && !p.aesthetic && !(p.savedLooks && p.savedLooks.length) && !p.shades);
+}
+function archetypeLabel(aes) {
+  const a = aes?.archetypes?.[0];
+  return a ? String(a).replace(/_/g, ' ') : null;
+}
+
+// Wrap render functions so every result is saved
+const _renderTasteResults = renderTasteResults;
+renderTasteResults = function (result) {
+  _renderTasteResults(result);
+  try { renderTrace(result); } catch { /* non-fatal */ }
+  _lastTaste = { aesthetic: result.aesthetic, looks: result.looks, narration: result.narration, narration_source: result.narration_source, entities: (result.entities ?? []).map(e => ({ name: e.name ?? e.input })), tags: result.tags, communityId: result.communityId, meta: result.meta ? { qloo_powered: result.meta.qloo_powered, qloo_error: result.meta.qloo_error, entities_resolved: result.meta.entities_resolved, tags_from_qloo: result.meta.tags_from_qloo, top_affinities: result.meta.top_affinities } : undefined };
+  persist();
+};
+const _renderShadeResults = renderShadeResults;
+renderShadeResults = function (shades) {
+  _renderShadeResults(shades);
+  _lastShades = shades;
+  persist();
+};
+const _addChip = addChip;
+addChip = function (text) { _addChip(text); persist(); };
+const _removeChip = removeChip;
+removeChip = function (text) { _removeChip(text); persist(); };
+
+// Save-a-look button inside the look modal
+const _openLookModal = openLookModal;
+openLookModal = async function (lookId) {
+  await _openLookModal(lookId);
+  const content = document.getElementById('modalContent');
+  const title = document.getElementById('modalTitle');
+  if (!content || !title) return;
+  const p = loadProfile() || {};
+  const already = (p.savedLooks || []).some(l => l.id === lookId);
+  const btn = document.createElement('button');
+  btn.className = 'btn btn-secondary';
+  btn.style.marginTop = '1rem';
+  btn.innerHTML = `${ico('bookmark')} ${already ? 'Saved' : 'Save this look'}`;
+  btn.disabled = already;
+  btn.addEventListener('click', () => {
+    const cur = loadProfile() || {};
+    const list = cur.savedLooks || [];
+    if (!list.some(l => l.id === lookId)) list.push({ id: lookId, name: title.textContent });
+    persist({ savedLooks: list });
+    btn.disabled = true;
+    btn.innerHTML = `${ico('check')} Saved`;
+    toast('Look saved in this browser', 'info');
+  });
+  content.appendChild(btn);
+};
+
+function restoreProfile(p) {
+  state.tasteChips = Array.isArray(p.chips) ? p.chips.slice(0, 20) : [];
+  state.communityId = p.communityId ?? null;
+  state.depthTarget = p.depthTarget ?? null;
+  state.undertone = p.undertone ?? null;
+  state.aesthetic = p.aesthetic ?? null;
+  renderChips();
+  const fetchBtn = document.getElementById('fetchLooksBtn');
+  if (fetchBtn) fetchBtn.disabled = state.tasteChips.length === 0;
+  const sel = document.getElementById('communitySelect');
+  if (sel && state.communityId) sel.value = state.communityId;
+  if (p.lastTaste?.looks?.length) { renderTasteResults(p.lastTaste); showView('taste'); }
+  if (Array.isArray(p.shades) && p.shades.length) { try { renderShadeResults(p.shades); } catch { /* ignore */ } }
+}
+
+function resetEverything() {
+  clearProfile();
+  location.reload();
+}
+
+function showReturnBanner() {
+  const p = loadProfile();
+  const banner = document.getElementById('returnBanner');
+  if (!banner || profileIsEmpty(p)) return;
+  const arch = archetypeLabel(p.aesthetic);
+  const chips = (p.chips || []).slice(0, 3).map(esc).join(', ');
+  banner.innerHTML = `<span>Welcome back${arch ? ` &mdash; your saved aesthetic is <strong>${esc(arch)}</strong>` : ''}${chips ? ` (${chips})` : ''}.</span>
+    <button class="btn btn-primary" id="rbContinue">Continue</button>
+    <button class="btn btn-ghost" id="rbReset">Start over</button>`;
+  banner.classList.remove('hidden');
+  document.getElementById('rbContinue').addEventListener('click', () => { restoreProfile(p); banner.classList.add('hidden'); });
+  document.getElementById('rbReset').addEventListener('click', resetEverything);
+}
+
+function toggleProfilePanel() {
+  const panel = document.getElementById('profilePanel');
+  if (!panel) return;
+  if (!panel.classList.contains('hidden')) { panel.classList.add('hidden'); return; }
+  const p = loadProfile();
+  const empty = profileIsEmpty(p);
+  const arch = archetypeLabel(p?.aesthetic);
+  panel.innerHTML = empty
+    ? `<h3>Your saved profile</h3><p>Nothing saved yet. Build a taste profile or save a look and it will appear here. Everything stays in this browser.</p>
+       <div class="pp-actions"><button class="btn btn-ghost" id="ppClose">Close</button></div>`
+    : `<h3>Your saved profile</h3>
+       <div class="pp-row"><strong>Taste signals</strong>${(p.chips || []).map(esc).join(', ') || 'none'}</div>
+       <div class="pp-row"><strong>Aesthetic</strong>${esc(arch || 'not built yet')}</div>
+       <div class="pp-row"><strong>Community</strong>${esc(p.communityId || 'not set')}</div>
+       <div class="pp-row"><strong>Shade result</strong>${p.shades?.[0]?.shade ? esc(p.shades[0].shade.label || p.shades[0].shade.id) : 'none'}</div>
+       <div class="pp-row"><strong>Saved looks</strong>${(p.savedLooks || []).map(l => esc(l.name)).join(', ') || 'none'}</div>
+       <div class="pp-row" style="opacity:.75">Saved ${esc(new Date(p.savedAt).toLocaleString())}. Stored only in this browser.</div>
+       <div class="pp-actions"><button class="btn btn-primary" id="ppRestore">Restore</button><button class="btn btn-secondary" id="ppClear">Clear my data</button><button class="btn btn-ghost" id="ppClose">Close</button></div>`;
+  panel.classList.remove('hidden');
+  document.getElementById('ppClose')?.addEventListener('click', () => panel.classList.add('hidden'));
+  document.getElementById('ppClear')?.addEventListener('click', resetEverything);
+  document.getElementById('ppRestore')?.addEventListener('click', () => { restoreProfile(p); panel.classList.add('hidden'); });
+}
+
+// ---- Occasion Planner ------------------------------------------------------
+
+function flat(v) {
+  if (v == null) return '';
+  if (typeof v === 'string' || typeof v === 'number') return String(v);
+  if (Array.isArray(v)) return v.map(flat).filter(Boolean).join(', ');
+  return v.name ?? v.label ?? v.title ?? v.description ?? v.text ?? '';
+}
+function planList(v) {
+  if (!v) return [];
+  if (Array.isArray(v)) return v.map(flat).filter(Boolean);
+  if (typeof v === 'object') return Object.values(v).map(flat).filter(Boolean);
+  return [String(v)];
+}
+function planCard(iconName, title, bodyHtml) {
+  if (!bodyHtml) return '';
+  return `<div class="plan-card"><h3>${ico(iconName)} ${esc(title)}</h3>${bodyHtml}</div>`;
+}
+
+function renderPlan(plan) {
+  const out = document.getElementById('plannerResult');
+  if (!out) return;
+  const look = plan.look;
+  const lookBody = look ? `<p><strong>${esc(flat(look))}</strong>${look.description ? ` &mdash; ${esc(look.description)}` : ''}</p>${look.why ? `<p>${esc(look.why)}</p>` : ''}` : '';
+  const sh = plan.shade;
+  const shadeBody = sh ? `<p><strong>${esc(flat(sh))}</strong>${sh.undertone ? ` &middot; ${esc(sh.undertone)} undertone` : ''}${sh.hex ? ` <span style="display:inline-block;width:1em;height:1em;border-radius:50%;background:${esc(sh.hex)};vertical-align:-0.15em"></span>` : ''}</p>${sh.note ? `<p>${esc(sh.note)}</p>` : ''}` : '';
+  const wg = plan.wig;
+  const wigBody = wg ? `<p><strong>${esc(flat(wg))}</strong>${wg.description ? ` &mdash; ${esc(wg.description)}` : ''}</p>` : '';
+  const ritualItems = planList(plan.ritual?.steps ?? plan.ritual);
+  const ritualBody = ritualItems.length ? `${plan.ritual?.name ? `<p><strong>${esc(plan.ritual.name)}</strong></p>` : ''}<ul>${ritualItems.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : '';
+  const tl = Array.isArray(plan.timeline) ? plan.timeline : [];
+  const tlBody = tl.length ? `<ul class="plan-timeline">${tl.map(t => `<li><span class="tl-when">${esc(t.when ?? t.time ?? '')}</span><span>${esc(t.step ?? t.text ?? flat(t))}</span></li>`).join('')}</ul>` : '';
+  const cons = planList(plan.constraints);
+  const consBody = cons.length ? `<div class="plan-chips">${cons.map(c => `<span class="tag">${esc(c)}</span>`).join('')}</div>` : '';
+  const summary = plan.summary || plan.narration ? `<p>${esc(plan.summary || plan.narration)}</p>` : '';
+  const html = [
+    plan.meta ? `<div>${sourceBadgeHtml(plan.meta, null)}</div>` : '',
+    planCard('sparkle', 'Your plan', summary),
+    planCard('chat', 'Constraints it respected', consBody),
+    planCard('mirror', 'The look', lookBody),
+    planCard('drop', 'Your shade', shadeBody),
+    planCard('wig', 'Wig pairing', wigBody),
+    planCard('leaf', 'Ritual & prep', ritualBody),
+    planCard('calendar', 'Timeline', tlBody),
+  ].join('');
+  out.innerHTML = html || '<div class="plan-error">The planner returned no plan for that request. Try describing the occasion in more detail.</div>';
+  out.classList.remove('hidden');
+}
+
+async function buildPlan() {
+  const occasion = document.getElementById('plannerOccasion')?.value.trim();
+  const out = document.getElementById('plannerResult');
+  const btn = document.getElementById('plannerBtn');
+  if (!occasion) { toast('Describe the occasion first', 'warn'); return; }
+  btn.disabled = true;
+  const label = btn.textContent;
+  btn.textContent = 'Planning…';
+  out.classList.remove('hidden');
+  out.innerHTML = '<div class="plan-card"><p>Building your plan…</p></div>';
+  try {
+    const plan = await api('/api/plan', 'POST', {
+      occasion,
+      communityId: document.getElementById('plannerCommunity')?.value || state.communityId || undefined,
+      fitzpatrick: document.getElementById('plannerFitz')?.value || undefined,
+      undertone: document.getElementById('plannerUndertone')?.value || state.undertone || undefined,
+      tasteChips: state.tasteChips,
+    });
+    renderPlan(plan);
+    persist({ lastPlan: { occasion, at: new Date().toISOString() } });
+  } catch (err) {
+    out.innerHTML = `<div class="plan-error">The planner could not build a plan: ${esc(err.message || 'server error')}. Nothing was saved. Please try again.</div>`;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = label;
+  }
+}
+
+function initPlannerView() {
+  const sel = document.getElementById('plannerCommunity');
+  if (sel && sel.options.length <= 1) {
+    state.communities.forEach(c => {
+      const o = document.createElement('option');
+      o.value = c.id; o.textContent = c.label;
+      sel.appendChild(o);
+    });
+  }
+  if (sel && state.communityId) sel.value = state.communityId;
+  const note = document.getElementById('plannerTasteNote');
+  if (note) note.textContent = state.tasteChips.length
+    ? `Using your taste signals: ${state.tasteChips.slice(0, 6).join(', ')}.`
+    : 'Tip: add taste signals in Taste Profile and the plan will use them.';
+}
+
+// ---- Wiring ---------------------------------------------------------------
+
+const _showView2 = showView;
+showView = function (viewId) {
+  _showView2(viewId);
+  if (viewId === 'planner') initPlannerView();
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('plannerBtn')?.addEventListener('click', buildPlan);
+  document.getElementById('profileBtn')?.addEventListener('click', toggleProfilePanel);
+  document.getElementById('helpClearBtn')?.addEventListener('click', () => {
+    if (confirm('Clear all MIRRR data saved in this browser?')) resetEverything();
+  });
+  showReturnBanner();
+});

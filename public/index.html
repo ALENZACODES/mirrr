@@ -357,9 +357,15 @@
         <button class="nav-link" data-view="shade">Shade Finder</button>
         <button class="nav-link" data-view="wig">Wig Match</button>
         <button class="nav-link" data-view="stylist">AI Stylist</button>
+        <button class="nav-link" data-view="planner">Occasion Planner</button>
+        <button class="nav-link" data-view="help">Help &amp; Privacy</button>
+        <button class="nav-link nav-profile-btn" id="profileBtn" aria-label="Your saved profile" title="Your saved profile">Profile</button>
       </div>
     </div>
   </nav>
+
+  <div id="returnBanner" class="return-banner hidden" role="status"></div>
+  <div id="profilePanel" class="profile-panel hidden" role="dialog" aria-label="Your saved profile"></div>
 
   <!-- ─── HERO ─────────────────────────────────────────────────────────── -->
   <section id="hero" class="hero">
@@ -919,6 +925,75 @@
       </div>
     </section>
 
+    <!-- ── OCCASION PLANNER VIEW ─────────────────────────────────────── -->
+    <section id="view-planner" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Occasion Planner</h2>
+        <p class="view-sub">Tell MIRRR the occasion. It builds one plan: look, shade, wig, ritual and a timeline.</p>
+      </div>
+      <div class="card planner-form">
+        <div class="form-row">
+          <label class="form-label" for="plannerOccasion">The occasion</label>
+          <textarea id="plannerOccasion" class="input" rows="3" placeholder="e.g. A Desi wedding on Saturday, outdoors, I want to honour tradition but keep my signature warmth"></textarea>
+        </div>
+        <div class="form-row planner-grid">
+          <div>
+            <label class="form-label" for="plannerCommunity">Community</label>
+            <select id="plannerCommunity" class="select"><option value="">— Any —</option></select>
+          </div>
+          <div>
+            <label class="form-label" for="plannerFitz">Fitzpatrick type</label>
+            <select id="plannerFitz" class="select">
+              <option value="">— Skip —</option>
+              <option value="I">I</option><option value="II">II</option><option value="III">III</option>
+              <option value="IV">IV</option><option value="V">V</option><option value="VI">VI</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label" for="plannerUndertone">Undertone</label>
+            <select id="plannerUndertone" class="select">
+              <option value="">— Skip —</option>
+              <option value="warm">Warm</option><option value="cool">Cool</option>
+              <option value="neutral">Neutral</option><option value="olive">Olive</option>
+            </select>
+          </div>
+        </div>
+        <p class="planner-note" id="plannerTasteNote"></p>
+        <div class="form-actions">
+          <button class="btn btn-primary" id="plannerBtn">Build My Plan</button>
+        </div>
+      </div>
+      <div id="plannerResult" class="planner-result hidden"></div>
+    </section>
+
+    <!-- ── HELP / PRIVACY VIEW ───────────────────────────────────────── -->
+    <section id="view-help" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Help, Privacy &amp; About</h2>
+        <p class="view-sub">How MIRRR works, what it stores, and what Qloo does here.</p>
+      </div>
+      <div class="help-grid">
+        <article class="card help-card">
+          <h3>How taste mapping works</h3>
+          <p>You enter artists, brands or places you love. MIRRR sends those names to Qloo, a cultural taste graph, which returns related taste signals. MIRRR turns those signals into three scores (intensity, warmth, boldness), picks matching beauty archetypes, then ranks looks from its catalogue.</p>
+          <p>When Qloo cannot be reached, MIRRR says so on the result with a &ldquo;Template mode&rdquo; badge and uses its built-in keyword rules instead. It never shows the Qloo badge unless Qloo actually returned data for that result.</p>
+        </article>
+        <article class="card help-card">
+          <h3>What Qloo does here</h3>
+          <p>Qloo resolves the names you type to entities in its taste graph and returns the taste signals linked to them. That is the only thing Qloo does in MIRRR. Shade matching, wig matching, the planner and the written guides run on MIRRR&rsquo;s own data.</p>
+        </article>
+        <article class="card help-card">
+          <h3>Privacy: what is stored</h3>
+          <p>MIRRR has no accounts and no database. Your taste chips, profile, shade result and saved looks are kept only in this browser (local storage) so you can return to them. Nothing you save is sent to a MIRRR server to be stored. The names you search are sent to the server to fetch results.</p>
+          <p><button class="btn btn-secondary" id="helpClearBtn">Clear my saved data</button></p>
+        </article>
+        <article class="card help-card">
+          <h3>About</h3>
+          <p>MIRRR is a beauty and taste app for nine communities: West African, South Asian, Arab, Caribbean, Latina, East Asian, East African, South African and Black American. It includes a 60-point shade spectrum and 42 wig styles. Built for the Qloo Agentic Hackathon.</p>
+        </article>
+      </div>
+    </section>
+
     <!-- ── STYLE MATCH VIEW ─────────────────────────────────────────── -->
     <section id="view-style-match" class="view hidden">
       <div class="view-header">
@@ -1047,6 +1122,7 @@
     <p class="footer-sub" style="margin-top:0.25rem;font-size:0.6rem;color:#333">West African · South Asian · Arab · Caribbean · Latina · East Asian · East African · South African · Black American</p>
   </footer>
 
+  <script src="icons.js"></script>
   <script type="module" src="app.js"></script>
   <script>
     // Community detail panel interactions

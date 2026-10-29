@@ -8,7 +8,7 @@
  * Output: { aesthetic, looks, tags, entities, meta }
  */
 
-import { QlooClient } from '../qloo.js';
+import { QlooClient, qlooClient as _sharedClient } from '../qloo.js';
 import { resolveInputs } from './resolve.js';
 import { buildAestheticVector } from '../aesthetic.js';
 import { recommendLooks } from '../look_engine.js';
@@ -24,7 +24,9 @@ import { recommendLooks } from '../look_engine.js';
  * @returns {Promise<object>}
  */
 export async function runPipeline({ inputs = [], freeText = [], topLooks = 3, client }) {
-  client = client ?? new QlooClient();
+  // Use the process-level singleton so TtlCache persists across requests.
+  // Tests can still inject a mock via the `client` param.
+  client = client ?? _sharedClient;
 
   const start = Date.now();
 

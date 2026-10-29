@@ -242,3 +242,14 @@ export class QlooClient {
     return results;
   }
 }
+
+// ---------------------------------------------------------------------------
+// Singleton — shared across all requests so the TtlCache persists
+// ---------------------------------------------------------------------------
+
+/**
+ * Process-level singleton QlooClient.
+ * Import this instead of `new QlooClient()` in route handlers so that
+ * the TtlCache survives between requests.
+ */
+export const qlooClient = new QlooClient();

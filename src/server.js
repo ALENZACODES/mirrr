@@ -20,7 +20,7 @@ import { matchWigs, getWigCatalogue, getWigLengths, getWigTextures } from './wig
 import { getLookProducts, getAllFormulas, getProductCategories } from './product_engine.js';
 import { DEMO_PROFILES } from './demo_profiles.js';
 import { getTrendingArtists, getAllTrendingArtists, REGIONAL_ANCHORS } from './trending_artists.js';
-import { QlooClient } from './qloo.js';
+import { QlooClient, qlooClient } from './qloo.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT ?? 3000;
@@ -104,15 +104,27 @@ function readBody(req) {
 function serveStatic(res, filePath) {
   const ext = extname(filePath).toLowerCase();
   const mime = MIME[ext] ?? 'application/octet-stream';
+  // Images and fonts: cache 7 days; CSS/JS: cache 1 hour (versioned by deploy)
+  const isAsset = ['.png','.jpg','.jpeg','.svg','.ico','.woff','.woff2'].includes(ext);
+  const cacheControl = isAsset ? 'public, max-age=604800, immutable' : 'public, max-age=3600';
   try {
     const stat = statSync(filePath);
-    res.writeHead(200, { 'Content-Type': mime, 'Content-Length': stat.size });
+    res.writeHead(200, {
+      'Content-Type': mime,
+      'Content-Length': stat.size,
+      'Cache-Control': cacheControl,
+      'Vary': 'Accept-Encoding',
+    });
     createReadStream(filePath).pipe(res);
   } catch {
     // Fall through to index.html for SPA routing
     const idx = join(PUBLIC_DIR, 'index.html');
     const stat = statSync(idx);
-    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': stat.size });
+    res.writeHead(200, {
+      'Content-Type': 'text/html; charset=utf-8',
+      'Content-Length': stat.size,
+      'Cache-Control': 'no-cache',
+    });
     createReadStream(idx).pipe(res);
   }
 }
@@ -345,15 +357,14 @@ async function router(req, res) {
   if (method === 'GET' && path === '/api/trending') {
     const communityId = url.searchParams.get('community') ?? null;
     const limit = Math.min(parseInt(url.searchParams.get('limit') ?? '6', 10), 12);
-    const qlooClient = process.env.QLOO_API_KEY
-      ? new QlooClient({ apiKey: process.env.QLOO_API_KEY })
-      : null;
+    // Use process-level singleton so TtlCache persists across requests
+    const activeQlooClient = process.env.QLOO_API_KEY ? qlooClient : null;
     try {
       if (communityId) {
-        const result = await getTrendingArtists({ communityId, qlooClient, limit });
+        const result = await getTrendingArtists({ communityId, qlooClient: activeQlooClient, limit });
         return sendJSON(res, 200, { trending: result, community: communityId });
       } else {
-        const all = await getAllTrendingArtists({ qlooClient, limitPerRegion: limit });
+        const all = await getAllTrendingArtists({ qlooClient: activeQlooClient, limitPerRegion: limit });
         return sendJSON(res, 200, { trending: all });
       }
     } catch (err) {
@@ -423,6 +434,16 @@ server.listen(PORT, () => {
   console.log(`   Most beauty apps were built for the West. MIRRR was built for the rest.\n`);
   console.log(`   Server running on http://localhost:${PORT}`);
   console.log(`   Qloo key: ${process.env.QLOO_API_KEY ? '✓ set' : '✗ not set (demo mode available)'}\n`);
+
+  // Self-ping every 10 minutes to prevent Render free-tier cold starts.
+  // Render spins down after ~15 min inactivity; this keeps the process warm.
+  const SELF_URL = process.env.RENDER_EXTERNAL_URL ?? `http://localhost:${PORT}`;
+  setInterval(() => {
+    import('http').then(({ default: http }) => {
+      const req = http.get(`${SELF_URL}/api/health`, (res) => { res.resume(); });
+      req.on('error', () => {}); // silently ignore; best-effort
+    }).catch(() => {});
+  }, 10 * 60 * 1000); // 10 minutes
 });
 
 export default server;

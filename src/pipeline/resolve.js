@@ -5,7 +5,7 @@
  * cuisines, etc.) into Qloo entity IDs that can seed the taste profile.
  */
 
-import { QlooClient } from '../qloo.js';
+import { QlooClient, qlooClient as _sharedClient } from '../qloo.js';
 
 /**
  * Preferred entity type URNs — tried in order for each input.
@@ -30,7 +30,7 @@ const PREFERRED_TYPES = [
  * @returns {Promise<{ resolved: string[], failed: string[], entities: object[] }>}
  */
 export async function resolveInputs(inputs, client) {
-  client = client ?? new QlooClient();
+  client = client ?? _sharedClient;
 
   const entities = [];
   const failed = [];

@@ -574,6 +574,17 @@ const WIG_IMAGES = {
   knotless_box_braids: 'wig-knotless_box_braids.png',
   goddess_braids:      'wig-goddess_braids.png',
   senegalese_twists:   'wig-senegalese_twists.png',
+  // Batch 10
+  bone_straight_long:  'wig-bone_straight_long.png',
+  silk_press_natural:  'wig-silk_press_natural.png',
+  high_pony_sleek:     'wig-high_pony_sleek.png',
+  curly_ombre:         'wig-curly_ombre.png',
+  kinky_curly_mix:     'wig-kinky_curly_mix.png',
+  water_wave:          'wig-water_wave.png',
+  indian_remy_wavy:    'wig-indian_remy_wavy.png',
+  bollywood_blowout:   'wig-bollywood_blowout.png',
+  slicked_bun:         'wig-slicked_bun.png',
+  coloured_wig:        'wig-coloured_wig.png',
 };
 
 function renderLookCard(look, score) {

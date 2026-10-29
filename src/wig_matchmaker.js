@@ -1,19 +1,17 @@
 /**
  * MIRRR Wig Matchmaker
  *
- * Standalone wig recommendation engine. Takes hair texture, length preference,
- * colour preference, and the aesthetic vector to return a curated wig shortlist.
+ * 35-style wig catalogue covering every wig type that exists — from natural
+ * kinky afros to Nilotic locs, from Khaleeji blowouts to K-pop idol cuts,
+ * from Senegalese twists to Peruvian body waves to fulani braids.
  *
- * Wigs are a cornerstone of beauty for Black, South Asian, Arab, and Caribbean
- * women — yet they're an afterthought in most beauty apps. MIRRR leads with them.
+ * Wigs are a cornerstone of Black, South Asian, Arab, and Caribbean beauty.
+ * MIRRR leads with them. No style left out.
  */
 
-// ---------------------------------------------------------------------------
-// Wig catalogue
-// ---------------------------------------------------------------------------
-
 export const WIG_CATALOGUE = [
-  // ── Natural / Afro textures ──────────────────────────────────────────────
+
+  // ── NATURAL KINKY / COILY ─────────────────────────────────────────────────
   {
     id: 'kinky_coily_afro',
     name: 'Kinky Coily Afro',
@@ -21,11 +19,24 @@ export const WIG_CATALOGUE = [
     length: 'short-medium',
     colours: ['natural-black', 'dark-brown'],
     finish: 'natural',
-    archetype_fit: ['afro_glam', 'hip_hop_glam'],
-    communities: ['west_african', 'east_african', 'black_american'],
+    archetype_fit: ['afro_glam', 'hip_hop_glam', 'clean_minimal'],
+    communities: ['west_african', 'east_african', 'black_american', 'caribbean', 'south_african'],
     hair_vibe_match: ['natural-afro'],
-    tags: ['protective', 'natural', 'low-maintenance'],
-    description: 'Defined coils and full volume — your crown, amplified.',
+    tags: ['protective', 'natural', 'statement', 'low-maintenance'],
+    description: 'Defined coils, full volume — your crown, amplified.',
+  },
+  {
+    id: 'big_chop_fro',
+    name: 'Big Chop Fro',
+    texture: 'kinky',
+    length: 'short',
+    colours: ['natural-black', 'dark-brown', 'auburn'],
+    finish: 'natural',
+    archetype_fit: ['afro_glam', 'clean_minimal', 'amapiano_beat'],
+    communities: ['west_african', 'east_african', 'black_american', 'south_african'],
+    hair_vibe_match: ['natural-afro'],
+    tags: ['statement', 'editorial', 'bold'],
+    description: 'Short, full, unapologetically natural. The ultimate power move.',
   },
   {
     id: 'twist_out_natural',
@@ -34,27 +45,172 @@ export const WIG_CATALOGUE = [
     length: 'medium',
     colours: ['natural-black', 'dark-brown', 'honey-brown'],
     finish: 'natural',
-    archetype_fit: ['afro_glam', 'clean_minimal'],
-    communities: ['west_african', 'black_american', 'caribbean'],
+    archetype_fit: ['afro_glam', 'clean_minimal', 'hip_hop_glam'],
+    communities: ['west_african', 'black_american', 'caribbean', 'south_african'],
     hair_vibe_match: ['natural-afro'],
     tags: ['protective', 'versatile', 'natural'],
-    description: 'Juicy twist-out coils with definition and bounce.',
+    description: 'Juicy, defined twist-out coils with bounce and body.',
   },
   {
-    id: 'big_chop_fro',
-    name: 'Big Chop Fro',
-    texture: 'kinky',
-    length: 'short',
+    id: 'stretched_puff',
+    name: 'Blown-Out Stretched Puff',
+    texture: 'kinky-straight',
+    length: 'medium',
+    colours: ['natural-black', 'dark-brown', 'honey'],
+    finish: 'natural',
+    archetype_fit: ['afro_glam', 'hip_hop_glam'],
+    communities: ['black_american', 'west_african', 'caribbean'],
+    hair_vibe_match: ['natural-afro'],
+    tags: ['voluminous', 'textured', 'halo'],
+    description: 'Stretched and blown out — big halo puff energy, all volume.',
+  },
+  {
+    id: 'loc_wig',
+    name: 'Locs (Medium Length)',
+    texture: 'locs',
+    length: 'medium',
+    colours: ['natural-black', 'dark-brown', 'burgundy', 'blonde'],
+    finish: 'natural',
+    archetype_fit: ['afro_glam', 'clean_minimal', 'amapiano_beat'],
+    communities: ['west_african', 'black_american', 'caribbean', 'east_african', 'south_african'],
+    hair_vibe_match: ['natural-afro', 'locs'],
+    tags: ['spiritual', 'cultural', 'protective', 'statement'],
+    description: 'Gorgeous, defined locs — cultural roots worn with pride.',
+  },
+  {
+    id: 'faux_locs',
+    name: 'Faux Locs (Long)',
+    texture: 'faux-locs',
+    length: 'long',
+    colours: ['natural-black', 'dark-brown', 'auburn', 'honey-blonde'],
+    finish: 'natural',
+    archetype_fit: ['afro_glam', 'hip_hop_glam', 'caribbean_carnival'],
+    communities: ['west_african', 'black_american', 'caribbean'],
+    hair_vibe_match: ['natural-afro', 'locs'],
+    tags: ['bohemian', 'protective', 'statement'],
+    description: 'Effortlessly textured faux locs — bohemian and protective.',
+  },
+  {
+    id: 'butterfly_locs',
+    name: 'Butterfly Locs',
+    texture: 'butterfly-locs',
+    length: 'long',
+    colours: ['natural-black', 'dark-brown', 'burgundy', 'caramel'],
+    finish: 'natural',
+    archetype_fit: ['afro_glam', 'hip_hop_glam'],
+    communities: ['black_american', 'west_african', 'caribbean'],
+    hair_vibe_match: ['natural-afro', 'locs'],
+    tags: ['bohemian', 'romantic', 'textured', 'protective'],
+    description: 'Soft, distressed butterfly locs with wispy, romantic texture.',
+  },
+  {
+    id: 'sister_locs',
+    name: 'Sisterlocks / Micro Locs',
+    texture: 'micro-locs',
+    length: 'medium',
     colours: ['natural-black', 'dark-brown'],
     finish: 'natural',
     archetype_fit: ['afro_glam', 'clean_minimal'],
-    communities: ['west_african', 'east_african', 'black_american'],
-    hair_vibe_match: ['natural-afro'],
-    tags: ['statement', 'editorial', 'low-maintenance'],
-    description: 'Short, full, and unapologetically you.',
+    communities: ['black_american', 'west_african', 'caribbean'],
+    hair_vibe_match: ['natural-afro', 'locs'],
+    tags: ['refined', 'versatile', 'natural', 'elegant'],
+    description: 'Tiny, neat micro locs — sophisticated natural texture at its finest.',
   },
 
-  // ── Sleek / Straight ─────────────────────────────────────────────────────
+  // ── BRAIDED / PROTECTIVE ──────────────────────────────────────────────────
+  {
+    id: 'knotless_box_braids',
+    name: 'Knotless Box Braids',
+    texture: 'braided',
+    length: 'long',
+    colours: ['natural-black', 'dark-brown', 'honey-brown', 'blonde', 'burgundy'],
+    finish: 'matte',
+    archetype_fit: ['afro_glam', 'hip_hop_glam', 'caribbean_carnival'],
+    communities: ['west_african', 'black_american', 'caribbean', 'south_african'],
+    hair_vibe_match: ['natural-afro', 'braided'],
+    tags: ['protective', 'versatile', 'cultural', 'low-tension'],
+    description: 'Tension-free knotless braids — traditional roots, modern wear.',
+  },
+  {
+    id: 'jumbo_box_braids',
+    name: 'Jumbo Box Braids',
+    texture: 'braided',
+    length: 'long',
+    colours: ['natural-black', 'dark-brown', 'blonde', 'red', 'blue'],
+    finish: 'matte',
+    archetype_fit: ['afro_glam', 'hip_hop_glam', 'caribbean_carnival'],
+    communities: ['west_african', 'black_american', 'caribbean'],
+    hair_vibe_match: ['natural-afro', 'braided'],
+    tags: ['bold', 'statement', 'fast-install', 'protective'],
+    description: 'Chunky jumbo braids — big, bold, zero apologies.',
+  },
+  {
+    id: 'senegalese_twists',
+    name: 'Senegalese Twists',
+    texture: 'twist-braided',
+    length: 'long',
+    colours: ['natural-black', 'dark-brown', 'honey', 'auburn'],
+    finish: 'silky',
+    archetype_fit: ['afro_glam', 'hip_hop_glam', 'clean_minimal'],
+    communities: ['west_african', 'black_american', 'caribbean'],
+    hair_vibe_match: ['natural-afro', 'braided'],
+    tags: ['elegant', 'silky', 'protective', 'cultural'],
+    description: 'Sleek, rope-like Senegalese twists — elegant and enduring.',
+  },
+  {
+    id: 'fulani_braids',
+    name: 'Fulani Braids',
+    texture: 'braided',
+    length: 'medium',
+    colours: ['natural-black', 'dark-brown', 'auburn'],
+    finish: 'natural',
+    archetype_fit: ['afro_glam', 'clean_minimal'],
+    communities: ['west_african'],
+    hair_vibe_match: ['natural-afro', 'braided'],
+    tags: ['cultural', 'traditional', 'tribal', 'statement'],
+    description: 'Traditional Fulani braids with centre part and accessories — heritage beauty.',
+  },
+  {
+    id: 'goddess_braids',
+    name: 'Goddess Braids',
+    texture: 'cornrow-braided',
+    length: 'medium',
+    colours: ['natural-black', 'dark-brown', 'honey'],
+    finish: 'natural',
+    archetype_fit: ['afro_glam', 'caribbean_carnival'],
+    communities: ['west_african', 'black_american', 'caribbean'],
+    hair_vibe_match: ['natural-afro', 'braided'],
+    tags: ['regal', 'cultural', 'protective', 'editorial'],
+    description: 'Thick, chunky cornrow-style goddess braids — regal and editorial.',
+  },
+  {
+    id: 'passion_twists',
+    name: 'Passion Twists',
+    texture: 'curly-twist',
+    length: 'long',
+    colours: ['natural-black', 'dark-brown', 'honey', 'auburn', 'peach'],
+    finish: 'natural',
+    archetype_fit: ['afro_glam', 'hip_hop_glam'],
+    communities: ['black_american', 'caribbean', 'west_african'],
+    hair_vibe_match: ['natural-afro', 'braided'],
+    tags: ['romantic', 'bohemian', 'protective', 'textured'],
+    description: 'Springy, curly-tipped passion twists — soft and gorgeous.',
+  },
+  {
+    id: 'spring_twist',
+    name: 'Spring / Bomb Twists',
+    texture: 'kinky-twist',
+    length: 'medium',
+    colours: ['natural-black', 'dark-brown', 'honey', 'burgundy'],
+    finish: 'natural',
+    archetype_fit: ['afro_glam', 'clean_minimal'],
+    communities: ['black_american', 'west_african', 'caribbean'],
+    hair_vibe_match: ['natural-afro', 'braided'],
+    tags: ['fluffy', 'soft', 'protective', 'light'],
+    description: 'Ultra-light, fluffy spring twists — airy and effortless.',
+  },
+
+  // ── SLEEK / STRAIGHT ──────────────────────────────────────────────────────
   {
     id: 'bone_straight_long',
     name: 'Bone Straight (Long)',
@@ -62,11 +218,24 @@ export const WIG_CATALOGUE = [
     length: 'long',
     colours: ['jet-black', 'natural-black', 'dark-brown', 'warm-brown'],
     finish: 'silky',
-    archetype_fit: ['hip_hop_glam', 'gulf_glam', 'clean_minimal'],
-    communities: ['black_american', 'arab', 'latina', 'east_asian'],
+    archetype_fit: ['hip_hop_glam', 'gulf_glam', 'clean_minimal', 'bollywood_bridal'],
+    communities: ['black_american', 'arab', 'latina', 'east_asian', 'south_asian'],
     hair_vibe_match: ['long-sleek-wig', 'straight-sleek', 'long-silky'],
     tags: ['sleek', 'versatile', 'high-gloss'],
     description: 'Pin-straight, glass-smooth, endless length.',
+  },
+  {
+    id: 'ultra_silky_xl',
+    name: 'Ultra Silky Extra-Long',
+    texture: 'silky-straight',
+    length: 'extra-long',
+    colours: ['jet-black', 'natural-black', 'warm-brown'],
+    finish: 'mirror-gloss',
+    archetype_fit: ['gulf_glam', 'bollywood_bridal', 'hip_hop_glam'],
+    communities: ['arab', 'south_asian', 'east_asian', 'black_american'],
+    hair_vibe_match: ['long-silky', 'long-sleek-wig'],
+    tags: ['luxe', 'statement', 'bridal', 'editorial'],
+    description: 'Mirror-gloss silk, floor-grazing length — Gulf luxury defined.',
   },
   {
     id: 'sleek_bob',
@@ -77,9 +246,9 @@ export const WIG_CATALOGUE = [
     finish: 'silky',
     archetype_fit: ['k_beauty_glass', 'clean_minimal', 'hip_hop_glam'],
     communities: ['east_asian', 'southeast_asian', 'black_american'],
-    hair_vibe_match: ['straight-sleek', 'long-sleek-wig'],
+    hair_vibe_match: ['straight-sleek'],
     tags: ['chic', 'editorial', 'low-maintenance'],
-    description: 'The Korean chic bob — sharp, sleek, effortlessly modern.',
+    description: 'The classic chic bob — sharp, sleek, effortlessly modern.',
   },
   {
     id: 'blunt_lob',
@@ -88,85 +257,14 @@ export const WIG_CATALOGUE = [
     length: 'lob',
     colours: ['natural-black', 'dark-brown', 'honey-brown', 'ash-brown'],
     finish: 'silky',
-    archetype_fit: ['k_beauty_glass', 'gulf_glam', 'clean_minimal'],
-    communities: ['east_asian', 'arab', 'southeast_asian'],
+    archetype_fit: ['k_beauty_glass', 'gulf_glam', 'clean_minimal', 'latina_glam'],
+    communities: ['east_asian', 'arab', 'southeast_asian', 'latina'],
     hair_vibe_match: ['straight-sleek', 'long-silky'],
-    tags: ['minimalist', 'versatile', 'glass-skin compatible'],
+    tags: ['minimalist', 'versatile'],
     description: 'Blunt ends, mid-length, the understated power cut.',
   },
-
-  // ── Wavy / Indian Remy ──────────────────────────────────────────────────
   {
-    id: 'indian_remy_wavy',
-    name: 'Indian Remy Wavy (Long)',
-    texture: 'wavy',
-    length: 'long',
-    colours: ['jet-black', 'natural-black', 'dark-brown'],
-    finish: 'silky',
-    archetype_fit: ['desi_glam', 'gulf_glam', 'latina_glam'],
-    communities: ['south_asian', 'arab', 'latina'],
-    hair_vibe_match: ['long-wavy-indian', 'long-silky'],
-    tags: ['bridal', 'luxe', 'traditional-modern'],
-    description: 'Full, flowing waves in authentic Indian Remy texture — wedding-ready.',
-  },
-  {
-    id: 'beach_wave_medium',
-    name: 'Beach Wave (Medium)',
-    texture: 'wavy',
-    length: 'medium',
-    colours: ['natural-black', 'dark-brown', 'honey-brown', 'golden-blonde'],
-    finish: 'natural',
-    archetype_fit: ['latina_glam', 'clean_minimal', 'desi_glam'],
-    communities: ['latina', 'south_asian', 'mixed'],
-    hair_vibe_match: ['long-wavy-indian', 'curly-ombre'],
-    tags: ['effortless', 'versatile', 'everyday'],
-    description: 'Relaxed, sun-kissed waves — effortless and always pretty.',
-  },
-
-  // ── Curly / Ombré ────────────────────────────────────────────────────────
-  {
-    id: 'curly_ombre_carnival',
-    name: 'Curly Ombré',
-    texture: 'curly',
-    length: 'long',
-    colours: ['black-to-honey', 'brown-to-caramel', 'black-to-auburn'],
-    finish: 'natural',
-    archetype_fit: ['caribbean_carnival', 'latina_glam', 'hip_hop_glam'],
-    communities: ['caribbean', 'latina', 'black_american'],
-    hair_vibe_match: ['curly-ombre'],
-    tags: ['festival', 'statement', 'colour'],
-    description: 'Defined curls graduating into sun-kissed colour — festival gold.',
-  },
-  {
-    id: 'deep_wave_body',
-    name: 'Deep Wave Body',
-    texture: 'deep-wave',
-    length: 'long',
-    colours: ['natural-black', 'dark-brown', 'burgundy'],
-    finish: 'silky',
-    archetype_fit: ['hip_hop_glam', 'afro_glam', 'latina_glam'],
-    communities: ['black_american', 'caribbean', 'latina'],
-    hair_vibe_match: ['long-sleek-wig', 'curly-ombre'],
-    tags: ['glam', 'voluminous', 'versatile'],
-    description: 'Lush, deep-wave texture with serious body and movement.',
-  },
-
-  // ── Gulf / Luxe Silky ────────────────────────────────────────────────────
-  {
-    id: 'ultra_silky_long',
-    name: 'Ultra Silky (Long)',
-    texture: 'silky-straight',
-    length: 'extra-long',
-    colours: ['jet-black', 'natural-black', 'warm-brown'],
-    finish: 'mirror-gloss',
-    archetype_fit: ['gulf_glam', 'desi_glam', 'hip_hop_glam'],
-    communities: ['arab', 'south_asian', 'east_asian'],
-    hair_vibe_match: ['long-silky', 'long-wavy-indian'],
-    tags: ['luxe', 'statement', 'bridal'],
-    description: 'Mirror-gloss silk, floor-grazing length — Gulf luxury defined.',
-  },
-  {
-    id: 'layered_silk_curtain',
+    id: 'curtain_bang_layers',
     name: 'Curtain-Bang Silk Layers',
     texture: 'straight',
     length: 'long',
@@ -175,26 +273,9 @@ export const WIG_CATALOGUE = [
     archetype_fit: ['gulf_glam', 'k_beauty_glass', 'clean_minimal'],
     communities: ['arab', 'east_asian', 'southeast_asian'],
     hair_vibe_match: ['long-silky', 'straight-sleek'],
-    tags: ['editorial', 'face-framing', 'K-beauty compatible'],
-    description: 'Curtain bangs with long silk layers — the sophisticated K-beauty update.',
+    tags: ['editorial', 'face-framing', 'romantic'],
+    description: 'Curtain bangs with long silk layers — the K-beauty update.',
   },
-
-  // ── Protective / Braided ─────────────────────────────────────────────────
-  {
-    id: 'knotless_braids',
-    name: 'Knotless Box Braids',
-    texture: 'braided',
-    length: 'long',
-    colours: ['natural-black', 'dark-brown', 'honey-brown', 'blonde'],
-    finish: 'matte',
-    archetype_fit: ['afro_glam', 'hip_hop_glam', 'caribbean_carnival'],
-    communities: ['west_african', 'black_american', 'caribbean'],
-    hair_vibe_match: ['natural-afro'],
-    tags: ['protective', 'versatile', 'cultural'],
-    description: 'Tension-free knotless braids — traditional roots, modern wear.',
-  },
-
-  // ── Glass Skin / K-Beauty ─────────────────────────────────────────────────
   {
     id: 'kpop_idol_straight',
     name: 'K-Pop Idol Straight',
@@ -208,40 +289,239 @@ export const WIG_CATALOGUE = [
     tags: ['glass-skin', 'K-pop', 'idol-ready'],
     description: 'Idol-perfect straight hair — zero frizz, maximum luminance.',
   },
+  {
+    id: 'silk_press_natural',
+    name: 'Silk Press (Natural Hair)',
+    texture: 'silk-press-straight',
+    length: 'medium',
+    colours: ['natural-black', 'dark-brown', 'honey'],
+    finish: 'silky',
+    archetype_fit: ['hip_hop_glam', 'clean_minimal', 'afro_glam'],
+    communities: ['black_american', 'caribbean', 'west_african'],
+    hair_vibe_match: ['straight-sleek', 'long-sleek-wig'],
+    tags: ['silk-press', 'sleek', 'versatile', 'natural-hair-alternative'],
+    description: 'The silk press glow — natural hair, heat-styled to mirror perfection.',
+  },
+  {
+    id: 'pixie_cut',
+    name: 'Pixie Cut',
+    texture: 'straight',
+    length: 'pixie',
+    colours: ['natural-black', 'dark-brown', 'auburn', 'platinum', 'burgundy'],
+    finish: 'silky',
+    archetype_fit: ['clean_minimal', 'afro_glam', 'k_beauty_glass'],
+    communities: ['black_american', 'east_asian', 'latina', 'mixed'],
+    hair_vibe_match: ['straight-sleek'],
+    tags: ['editorial', 'bold', 'cropped', 'statement'],
+    description: 'The iconic pixie cut — cropped, fierce, and unforgettable.',
+  },
+
+  // ── WAVY ──────────────────────────────────────────────────────────────────
+  {
+    id: 'indian_remy_wavy',
+    name: 'Indian Remy Wavy (Long)',
+    texture: 'wavy',
+    length: 'long',
+    colours: ['jet-black', 'natural-black', 'dark-brown'],
+    finish: 'silky',
+    archetype_fit: ['bollywood_bridal', 'gulf_glam', 'latina_glam'],
+    communities: ['south_asian', 'arab', 'latina'],
+    hair_vibe_match: ['long-wavy-indian', 'long-silky'],
+    tags: ['bridal', 'luxe', 'traditional-modern'],
+    description: 'Full, flowing waves in authentic Indian Remy — wedding-ready.',
+  },
+  {
+    id: 'peruvian_body_wave',
+    name: 'Peruvian Body Wave',
+    texture: 'wavy',
+    length: 'long',
+    colours: ['natural-black', 'dark-brown', 'warm-brown'],
+    finish: 'silky',
+    archetype_fit: ['latina_glam', 'hip_hop_glam', 'caribbean_carnival'],
+    communities: ['latina', 'black_american', 'caribbean'],
+    hair_vibe_match: ['long-wavy-indian', 'long-sleek-wig'],
+    tags: ['voluminous', 'soft', 'luxe'],
+    description: 'Lush Peruvian body wave with serious volume and natural movement.',
+  },
+  {
+    id: 'beach_wave_medium',
+    name: 'Beach Wave (Medium)',
+    texture: 'wavy',
+    length: 'medium',
+    colours: ['natural-black', 'dark-brown', 'honey-brown', 'golden-blonde'],
+    finish: 'natural',
+    archetype_fit: ['latina_glam', 'clean_minimal', 'bollywood_bridal'],
+    communities: ['latina', 'south_asian', 'mixed', 'arab'],
+    hair_vibe_match: ['long-wavy-indian'],
+    tags: ['effortless', 'versatile', 'everyday'],
+    description: 'Relaxed, sun-kissed waves — effortless and always pretty.',
+  },
+  {
+    id: 'loose_deep_wave',
+    name: 'Loose Deep Wave',
+    texture: 'loose-wave',
+    length: 'long',
+    colours: ['natural-black', 'dark-brown', 'burgundy', 'auburn'],
+    finish: 'silky',
+    archetype_fit: ['hip_hop_glam', 'afro_glam', 'caribbean_carnival'],
+    communities: ['black_american', 'caribbean', 'latina'],
+    hair_vibe_match: ['long-sleek-wig', 'long-wavy-indian'],
+    tags: ['voluminous', 'glamorous', 'versatile'],
+    description: 'Deeply defined loose waves with movement and gloss.',
+  },
+
+  // ── CURLY ─────────────────────────────────────────────────────────────────
+  {
+    id: 'curly_ombre',
+    name: 'Curly Ombré',
+    texture: 'curly',
+    length: 'long',
+    colours: ['black-to-honey', 'brown-to-caramel', 'black-to-auburn', 'black-to-burgundy'],
+    finish: 'natural',
+    archetype_fit: ['caribbean_carnival', 'latina_glam', 'hip_hop_glam'],
+    communities: ['caribbean', 'latina', 'black_american'],
+    hair_vibe_match: ['curly-ombre'],
+    tags: ['festival', 'statement', 'colour'],
+    description: 'Defined curls graduating into sun-kissed colour — festival gold.',
+  },
+  {
+    id: 'water_wave',
+    name: 'Water Wave',
+    texture: 'water-wave',
+    length: 'long',
+    colours: ['natural-black', 'dark-brown', 'honey', 'auburn'],
+    finish: 'natural',
+    archetype_fit: ['afro_glam', 'caribbean_carnival', 'latina_glam'],
+    communities: ['black_american', 'caribbean', 'west_african'],
+    hair_vibe_match: ['curly-ombre', 'long-wavy-indian'],
+    tags: ['bouncy', 'voluminous', 'romantic'],
+    description: 'Tight, rippling water waves — bouncy, full, and gorgeous.',
+  },
+  {
+    id: 'kinky_curly_mix',
+    name: 'Kinky Curly Mix',
+    texture: 'kinky-curly',
+    length: 'medium',
+    colours: ['natural-black', 'dark-brown', 'honey'],
+    finish: 'natural',
+    archetype_fit: ['afro_glam', 'hip_hop_glam', 'clean_minimal'],
+    communities: ['black_american', 'caribbean', 'mixed', 'west_african'],
+    hair_vibe_match: ['natural-afro', 'curly-ombre'],
+    tags: ['natural', 'textured', 'mixed-hair'],
+    description: 'Kinky-curly blend — natural coil texture with curl definition.',
+  },
+  {
+    id: 'jerry_curl',
+    name: 'Jerry Curl / Loose Curl',
+    texture: 'loose-curl',
+    length: 'medium',
+    colours: ['natural-black', 'dark-brown', 'wet-look-black'],
+    finish: 'wet-look',
+    archetype_fit: ['hip_hop_glam', 'afro_glam'],
+    communities: ['black_american', 'caribbean'],
+    hair_vibe_match: ['curly-ombre'],
+    tags: ['retro', 'wet-look', 'nostalgic', 'glossy'],
+    description: 'Classic Jerry curl — wet-look glossy coils with old-school glam energy.',
+  },
+
+  // ── KHALEEJI / VOLUMINOUS ────────────────────────────────────────────────
+  {
+    id: 'khaleeji_blowout',
+    name: 'Khaleeji Voluminous Blow-Out',
+    texture: 'voluminous-straight',
+    length: 'extra-long',
+    colours: ['jet-black', 'dark-brunette', 'deep-espresso'],
+    finish: 'glossy',
+    archetype_fit: ['gulf_glam', 'arab_chic'],
+    communities: ['arab', 'south_asian', 'east_african'],
+    hair_vibe_match: ['long-silky', 'long-sleek-wig'],
+    tags: ['voluminous', 'luxe', 'Gulf', 'statement'],
+    description: 'Sky-high volume with a perfect blow-out — Khaleeji beauty at its peak.',
+  },
+  {
+    id: 'bollywood_blowout',
+    name: 'Bollywood Blowout Waves',
+    texture: 'voluminous-wavy',
+    length: 'long',
+    colours: ['jet-black', 'dark-brown', 'warm-black'],
+    finish: 'glossy',
+    archetype_fit: ['bollywood_bridal', 'desi_glam', 'gulf_glam'],
+    communities: ['south_asian', 'arab'],
+    hair_vibe_match: ['long-wavy-indian', 'long-silky'],
+    tags: ['voluminous', 'cinematic', 'bridal', 'romantic'],
+    description: 'The Bollywood blow-out — lush, cinematic, deeply romantic waves.',
+  },
+
+  // ── UPDO / SLEEK ────────────────────────────────────────────────────────
+  {
+    id: 'slicked_bun',
+    name: 'Sleek Slicked Bun',
+    texture: 'straight',
+    length: 'updo',
+    colours: ['jet-black', 'natural-black', 'dark-brown'],
+    finish: 'silky',
+    archetype_fit: ['clean_minimal', 'gulf_glam', 'k_beauty_glass'],
+    communities: ['east_asian', 'arab', 'black_american', 'south_asian'],
+    hair_vibe_match: ['straight-sleek'],
+    tags: ['sleek', 'chic', 'editorial', 'sculpted'],
+    description: 'Baby-hair-slicked, gel-smooth bun — the ultimate controlled glam.',
+  },
+  {
+    id: 'high_pony_sleek',
+    name: 'High Sleek Ponytail',
+    texture: 'straight',
+    length: 'long',
+    colours: ['jet-black', 'natural-black', 'warm-brown', 'honey'],
+    finish: 'silky',
+    archetype_fit: ['hip_hop_glam', 'clean_minimal', 'latina_glam'],
+    communities: ['black_american', 'latina', 'east_asian', 'arab'],
+    hair_vibe_match: ['straight-sleek', 'long-sleek-wig'],
+    tags: ['sleek', 'versatile', 'statement', 'everyday-glam'],
+    description: 'Sky-high sleek ponytail — the beauty power move.',
+  },
+
+  // ── COLOUR / STATEMENT ────────────────────────────────────────────────────
+  {
+    id: 'coloured_wig',
+    name: 'Bold Colour Wig',
+    texture: 'straight',
+    length: 'medium',
+    colours: ['platinum-blonde', 'hot-pink', 'silver', 'red', 'cobalt-blue', 'lavender', 'orange'],
+    finish: 'silky',
+    archetype_fit: ['hip_hop_glam', 'afro_glam', 'caribbean_carnival'],
+    communities: ['black_american', 'caribbean', 'mixed'],
+    hair_vibe_match: ['long-sleek-wig'],
+    tags: ['bold', 'colour', 'statement', 'creative'],
+    description: 'Go full colour — platinum, pink, cobalt, red. No limits.',
+  },
+  {
+    id: 'highlighted_balayage',
+    name: 'Balayage / Highlighted',
+    texture: 'wavy',
+    length: 'long',
+    colours: ['brunette-to-caramel', 'black-to-honey', 'dark-to-copper', 'brown-to-gold'],
+    finish: 'natural',
+    archetype_fit: ['latina_glam', 'hip_hop_glam', 'clean_minimal'],
+    communities: ['latina', 'black_american', 'mixed', 'arab'],
+    hair_vibe_match: ['long-wavy-indian', 'curly-ombre'],
+    tags: ['sun-kissed', 'dimensional', 'natural'],
+    description: 'Hand-painted balayage — lived-in colour that catches every light.',
+  },
 ];
 
 // ---------------------------------------------------------------------------
 // Wig Matchmaker API
 // ---------------------------------------------------------------------------
 
-/**
- * Recommend wigs based on aesthetic vector + explicit preferences.
- *
- * @param {object} opts
- * @param {object} opts.aesthetic       - aesthetic vector from buildAestheticVector()
- * @param {string} opts.communityId     - from cultural DNA quiz
- * @param {string} opts.lengthPref      - 'short' | 'bob' | 'lob' | 'medium' | 'long' | 'extra-long' | 'any'
- * @param {string} opts.texturePref     - 'straight' | 'wavy' | 'curly' | 'kinky' | 'braided' | 'any'
- * @param {number} opts.topN
- * @returns {{ wig: object, score: number, reason: string }[]}
- */
-export function matchWigs({ aesthetic = {}, communityId = 'mixed', lengthPref = 'any', texturePref = 'any', topN = 4 }) {
+export function matchWigs({ aesthetic = {}, communityId = 'mixed', lengthPref = 'any', texturePref = 'any', topN = 6 }) {
   const hairVibe = aesthetic.hair_vibe ?? 'natural';
 
   return WIG_CATALOGUE
     .map(wig => {
       let score = 0;
-
-      // Hair vibe match (primary signal)
       if (wig.hair_vibe_match.includes(hairVibe)) score += 0.40;
-
-      // Community match
       if (wig.communities.includes(communityId)) score += 0.25;
-
-      // Archetype match
       if (aesthetic.archetypes?.some(a => wig.archetype_fit.includes(a))) score += 0.20;
-
-      // User preferences
       if (lengthPref !== 'any' && wig.length === lengthPref) score += 0.10;
       if (texturePref !== 'any' && wig.texture.includes(texturePref)) score += 0.05;
 
@@ -255,45 +535,40 @@ export function matchWigs({ aesthetic = {}, communityId = 'mixed', lengthPref = 
 function buildReason(wig, hairVibe, communityId, aesthetic) {
   const parts = [];
   if (wig.hair_vibe_match.includes(hairVibe)) parts.push(`matches your ${hairVibe.replace(/-/g, ' ')} vibe`);
-  if (wig.communities.includes(communityId)) parts.push('common in your community');
+  if (wig.communities.includes(communityId)) parts.push('popular in your community');
   if (aesthetic.archetypes?.some(a => wig.archetype_fit.includes(a))) {
     parts.push(`pairs with ${wig.archetype_fit[0].replace(/_/g, ' ')} look`);
   }
   return parts.slice(0, 2).join(' · ') || 'versatile choice';
 }
 
-/**
- * Get available length options for the wig preferences UI.
- */
 export function getWigLengths() {
   return [
     { id: 'any',        label: 'Any length' },
+    { id: 'pixie',      label: 'Pixie' },
     { id: 'short',      label: 'Short' },
     { id: 'bob',        label: 'Bob' },
     { id: 'lob',        label: 'Lob (long bob)' },
     { id: 'medium',     label: 'Medium' },
     { id: 'long',       label: 'Long' },
     { id: 'extra-long', label: 'Extra long' },
+    { id: 'updo',       label: 'Updo' },
   ];
 }
 
-/**
- * Get available texture options for the wig preferences UI.
- */
 export function getWigTextures() {
   return [
-    { id: 'any',     label: 'Any texture' },
-    { id: 'straight', label: 'Straight / Silky' },
-    { id: 'wavy',    label: 'Wavy' },
-    { id: 'curly',   label: 'Curly' },
-    { id: 'kinky',   label: 'Kinky / Natural' },
-    { id: 'braided', label: 'Braided / Protective' },
+    { id: 'any',           label: 'Any texture' },
+    { id: 'straight',      label: 'Straight / Silky' },
+    { id: 'wavy',          label: 'Wavy' },
+    { id: 'curly',         label: 'Curly' },
+    { id: 'kinky',         label: 'Kinky / Natural' },
+    { id: 'braided',       label: 'Braided / Protective' },
+    { id: 'locs',          label: 'Locs / Dreadlocks' },
+    { id: 'twist-braided', label: 'Twists' },
+    { id: 'voluminous',    label: 'Voluminous / Blow-Out' },
+    { id: 'colour',        label: 'Bold Colour' },
   ];
 }
 
-/**
- * Full catalogue for browsing UI.
- */
-export function getWigCatalogue() {
-  return WIG_CATALOGUE;
-}
+export function getWigCatalogue() { return WIG_CATALOGUE; }

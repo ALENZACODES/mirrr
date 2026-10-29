@@ -492,16 +492,28 @@ function renderTasteResults(result) {
 
 // Editorial look images — mapped by look ID
 const LOOK_IMAGES = {
-  afrobeats_concert:      'look-afrobeats-queen.png',
-  afropunk_edge:          'look-afropunk-rebel.png',
-  amapiano_beat:          'look-amapiano-babe.png',
-  bollywood_bridal:       'look-bollywood-diva.png',
-  dancehall_queen:        'look-dancehall-queen.png',
-  hip_hop_glam:           'look-hip-hop-icon.png',
-  gulf_glam:              'look-khaleeji-goddess.png',
-  k_beauty_glass:         'look-kpop-muse.png',
-  latina_glam:            'look-reggaeton-reina.png',
-  caribbean_carnival:     'look-soca-spirit.png',
+  // Batch 1
+  afrobeats_concert:        'look-afrobeats-queen.png',
+  afropunk_edge:            'look-afropunk-rebel.png',
+  amapiano_beat:            'look-amapiano-babe.png',
+  bollywood_bridal:         'look-bollywood-diva.png',
+  dancehall_queen:          'look-dancehall-queen.png',
+  hip_hop_glam:             'look-hip-hop-icon.png',
+  gulf_glam:                'look-khaleeji-goddess.png',
+  k_beauty_glass:           'look-kpop-muse.png',
+  latina_glam:              'look-reggaeton-reina.png',
+  caribbean_carnival:       'look-soca-spirit.png',
+  // Batch 2
+  polynesian_warrior:       'look-polynesian-warrior.png',
+  persian_editorial:        'look-persian-queen.png',
+  j_beauty:                 'look-j-beauty-muse.png',
+  first_nations_powwow:     'look-indigenous-star.png',
+  ethiopian_jewel:          'look-ethiopian-icon.png',
+  desi_everyday_chic:       'look-desi-baddie.png',
+  brazilian_carnival:       'look-cumbia-corazon.png',
+  central_asian_steppe:     'look-silk-road-siren.png',
+  afrofuturist_editorial:   'look-afrofuturist.png',
+  haitian_vodou_editorial:  'look-haitian-roots.png',
 };
 
 function renderLookCard(look, score) {

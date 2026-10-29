@@ -3,13 +3,349 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="MIRRR — Your Taste. Your Looks. Your Style. Beauty discovery built for Black, South Asian, Arab, Latina, Caribbean, and East Asian women." />
+  <meta name="description" content="MIRRR — Your Taste. Your Looks. Your Style. Beauty discovery built for Black, South Asian, Arab, Latina, Caribbean, East Asian, East African, West African, South African women." />
   <title>MIRRR — Your Taste. Your Looks. Your Style.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── NEW SECTIONS ──────────────────────────────────────────── */
+
+    /* Community Spotlight Bar */
+    .community-bar {
+      background: #0a0a0a;
+      border-bottom: 1px solid #1e1e1e;
+      overflow: hidden;
+      padding: 0.5rem 0;
+    }
+    .community-bar-track {
+      display: flex;
+      gap: 2rem;
+      animation: scrollBar 30s linear infinite;
+      white-space: nowrap;
+    }
+    .community-bar-track:hover { animation-play-state: paused; }
+    @keyframes scrollBar {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .community-bar-item {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-shrink: 0;
+    }
+    .community-bar-item span { color: #c9a96e; }
+
+    /* Stats strip */
+    .stats-strip {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1.5rem, 4vw, 4rem);
+      padding: 2.5rem 1rem;
+      background: #080808;
+      border-bottom: 1px solid #1a1a1a;
+      flex-wrap: wrap;
+    }
+    .stat-block { text-align: center; }
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      color: #c9a96e;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #666;
+      margin-top: 0.25rem;
+    }
+
+    /* Ritual Pillars */
+    .pillars-section {
+      padding: clamp(3rem, 6vw, 5rem) 1rem;
+      background: #060606;
+    }
+    .pillars-section .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .pillars-section .section-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #c9a96e;
+      margin-bottom: 0.6rem;
+    }
+    .pillars-section .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 400;
+      color: #f0e8da;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .pillar-card {
+      background: #0e0e0e;
+      border: 1px solid #1c1c1c;
+      border-radius: 12px;
+      padding: 1.6rem;
+      transition: border-color 0.25s, transform 0.25s;
+      cursor: pointer;
+      text-align: left;
+    }
+    .pillar-card:hover {
+      border-color: #c9a96e44;
+      transform: translateY(-3px);
+    }
+    .pillar-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+    .pillar-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #e8dcc8;
+      margin-bottom: 0.4rem;
+    }
+    .pillar-desc {
+      font-size: 0.78rem;
+      color: #666;
+      line-height: 1.55;
+    }
+    .pillar-tag {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c9a96e;
+      border: 1px solid #c9a96e44;
+      border-radius: 99px;
+      padding: 0.15rem 0.6rem;
+    }
+
+    /* Community deep-dive */
+    .communities-section {
+      padding: clamp(3rem, 6vw, 5rem) 1rem;
+      background: #080808;
+    }
+    .communities-section .section-header { text-align: center; margin-bottom: 2.5rem; }
+    .communities-section .section-eyebrow { font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:#c9a96e; margin-bottom:0.6rem; }
+    .communities-section .section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(1.6rem,4vw,2.4rem); font-weight:400; color:#f0e8da; }
+
+    .communities-scroll {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .communities-scroll::-webkit-scrollbar { display: none; }
+    .community-chip-card {
+      flex: 0 0 200px;
+      background: #0e0e0e;
+      border: 1px solid #1c1c1c;
+      border-radius: 12px;
+      padding: 1.4rem 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .community-chip-card:hover { border-color: #c9a96e55; transform: translateY(-2px); }
+    .community-chip-card.active { border-color: #c9a96e; background: #c9a96e0a; }
+    .community-chip-flag { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+    .community-chip-name { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: #aaa; font-weight: 500; }
+    .community-chip-ritual { font-size: 0.65rem; color: #555; margin-top: 0.3rem; }
+
+    .community-detail-panel {
+      max-width: 700px;
+      margin: 2rem auto 0;
+      background: #0e0e0e;
+      border: 1px solid #c9a96e33;
+      border-radius: 16px;
+      padding: 2rem;
+      display: none;
+    }
+    .community-detail-panel.visible { display: block; }
+    .community-detail-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #e8dcc8;
+      margin-bottom: 1rem;
+    }
+    .community-ritual-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .ritual-item {
+      background: #141414;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      color: #aaa;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .ritual-item-icon { font-size: 1rem; flex-shrink: 0; }
+
+    /* Festival Looks */
+    .festivals-section {
+      padding: clamp(3rem, 6vw, 5rem) 1rem;
+      background: #050505;
+    }
+    .festivals-section .section-header { text-align: center; margin-bottom: 2.5rem; }
+    .festivals-section .section-eyebrow { font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:#c9a96e; margin-bottom:0.6rem; }
+    .festivals-section .section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(1.6rem,4vw,2.4rem); font-weight:400; color:#f0e8da; }
+
+    .festivals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .festival-card {
+      background: linear-gradient(160deg, #0e0e0e 60%, #1a1208);
+      border: 1px solid #221a08;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .festival-card:hover { border-color: #c9a96e55; transform: translateY(-2px); }
+    .festival-card-emoji { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+    .festival-card-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #e8dcc8;
+      margin-bottom: 0.3rem;
+    }
+    .festival-card-community { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: #c9a96e; margin-bottom: 0.5rem; }
+    .festival-card-look { font-size: 0.78rem; color: #777; line-height: 1.5; }
+
+    /* Ingredients spotlight */
+    .ingredients-section {
+      padding: clamp(3rem, 6vw, 5rem) 1rem;
+      background: #070707;
+    }
+    .ingredients-section .section-header { text-align: center; margin-bottom: 2.5rem; }
+    .ingredients-section .section-eyebrow { font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:#c9a96e; margin-bottom:0.6rem; }
+    .ingredients-section .section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(1.6rem,4vw,2.4rem); font-weight:400; color:#f0e8da; }
+    .ingredients-section .section-sub { font-size: 0.82rem; color: #555; margin-top: 0.4rem; }
+
+    .ingredients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .ingredient-card {
+      background: #0c0c0c;
+      border: 1px solid #1a1a1a;
+      border-radius: 10px;
+      padding: 1.2rem;
+      transition: border-color 0.25s;
+    }
+    .ingredient-card:hover { border-color: #c9a96e44; }
+    .ingredient-emoji { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
+    .ingredient-name { font-size: 0.85rem; font-weight: 600; color: #d4c4a8; margin-bottom: 0.3rem; }
+    .ingredient-origin { font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: #c9a96e; margin-bottom: 0.4rem; }
+    .ingredient-benefit { font-size: 0.75rem; color: #666; line-height: 1.5; }
+
+    /* Style match section */
+    .style-match-section {
+      padding: clamp(3rem, 6vw, 5rem) 1rem;
+      background: #060606;
+    }
+    .style-match-section .section-header { text-align: center; margin-bottom: 2rem; }
+    .style-match-section .section-eyebrow { font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:#c9a96e; margin-bottom:0.6rem; }
+    .style-match-section .section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(1.6rem,4vw,2.4rem); font-weight:400; color:#f0e8da; }
+    .style-match-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Manifesto */
+    .manifesto-section {
+      padding: clamp(4rem, 8vw, 7rem) 1rem;
+      background: #030303;
+      text-align: center;
+    }
+    .manifesto-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 4vw, 2.6rem);
+      font-weight: 300;
+      font-style: italic;
+      color: #c9a96e;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    .manifesto-attr {
+      margin-top: 1.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #444;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      .community-ritual-list { grid-template-columns: 1fr; }
+      .stats-strip { gap: 1.5rem; }
+    }
+  </style>
 </head>
 <body>
+  <!-- ─── COMMUNITY BAR ──────────────────────────────────────────────────── -->
+  <div class="community-bar" aria-hidden="true">
+    <div class="community-bar-track" id="communityBarTrack">
+      <span class="community-bar-item">🌍 <span>West African</span> · Orí Shea · Afrobeats · Durbar Festival</span>
+      <span class="community-bar-item">🌸 <span>South Asian</span> · Champi · Ubtan · Mehndi Bridal</span>
+      <span class="community-bar-item">🌙 <span>Arab</span> · Argan · Kohl · Eid Glam</span>
+      <span class="community-bar-item">🌺 <span>Caribbean</span> · Coconut · Carnival · Jamaican Castor</span>
+      <span class="community-bar-item">💃 <span>Latina</span> · Avocado · Cumbia · Día de los Muertos</span>
+      <span class="community-bar-item">✨ <span>East Asian</span> · Rice Water · K-Beauty · Lunar New Year</span>
+      <span class="community-bar-item">🦁 <span>East African</span> · Frankincense · Adumu · Timkat</span>
+      <span class="community-bar-item">🌿 <span>South African</span> · Rooibos · Marula · Heritage Day</span>
+      <span class="community-bar-item">👑 <span>Black American</span> · LOC Method · Vogue · Juneteenth</span>
+      <!-- duplicate for seamless loop -->
+      <span class="community-bar-item">🌍 <span>West African</span> · Orí Shea · Afrobeats · Durbar Festival</span>
+      <span class="community-bar-item">🌸 <span>South Asian</span> · Champi · Ubtan · Mehndi Bridal</span>
+      <span class="community-bar-item">🌙 <span>Arab</span> · Argan · Kohl · Eid Glam</span>
+      <span class="community-bar-item">🌺 <span>Caribbean</span> · Coconut · Carnival · Jamaican Castor</span>
+      <span class="community-bar-item">💃 <span>Latina</span> · Avocado · Cumbia · Día de los Muertos</span>
+      <span class="community-bar-item">✨ <span>East Asian</span> · Rice Water · K-Beauty · Lunar New Year</span>
+      <span class="community-bar-item">🦁 <span>East African</span> · Frankincense · Adumu · Timkat</span>
+      <span class="community-bar-item">🌿 <span>South African</span> · Rooibos · Marula · Heritage Day</span>
+      <span class="community-bar-item">👑 <span>Black American</span> · LOC Method · Vogue · Juneteenth</span>
+    </div>
+  </div>
+
   <!-- ─── NAV ─────────────────────────────────────────────────────────── -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
@@ -30,19 +366,43 @@
       <img src="hero-banner.png" alt="MIRRR — Most beauty apps were built for the West. MIRRR was built for the rest." class="hero-banner-img" />
     </div>
     <div class="hero-inner">
-      <p class="hero-eyebrow">🌍 Built for the Rest</p>
+      <p class="hero-eyebrow">🌍 9 Communities · 100,000+ Beauty Insights</p>
       <p class="hero-tagline">Your Taste. Your Looks. Your Style.</p>
       <p class="hero-sub">Most beauty apps were built for the West.<br>MIRRR was built for the rest.</p>
       <div class="hero-actions">
         <button class="btn btn-primary" id="heroQuizBtn">Take Your DNA Quiz</button>
         <button class="btn btn-secondary" id="heroTasteBtn">Explore by Taste</button>
       </div>
-      <p class="hero-communities">Celebrating Black · South Asian · Arab · Latina · Caribbean · East Asian beauty</p>
+      <p class="hero-communities">West African · South Asian · Arab · Latina · Caribbean · East Asian · East African · South African · Black American</p>
     </div>
     <div class="hero-mockup-wrap">
       <img src="mobile-mockup.png" alt="MIRRR app — Which artist speaks to your soul? Tiwa Savage, Nicki Minaj, Anitta, BLACKPINK" class="hero-mockup-img" />
     </div>
   </section>
+
+  <!-- ─── STATS STRIP ──────────────────────────────────────────────────── -->
+  <div class="stats-strip">
+    <div class="stat-block">
+      <div class="stat-number">9</div>
+      <div class="stat-label">Communities</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-number">100K+</div>
+      <div class="stat-label">Lines of Beauty Data</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-number">35+</div>
+      <div class="stat-label">Wig Styles</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-number">30</div>
+      <div class="stat-label">Foundation Shades</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-number">∞</div>
+      <div class="stat-label">Taste Combinations</div>
+    </div>
+  </div>
 
   <!-- ─── TRENDING NOW ───────────────────────────────────────────────────── -->
   <section id="trending-section" class="trending-section">
@@ -59,6 +419,279 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ─── RITUAL PILLARS ─────────────────────────────────────────────────── -->
+  <section class="pillars-section" id="pillars-section">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ The MIRRR Method</p>
+      <h2 class="section-title">Beauty Is a Ritual, Not a Routine</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card" onclick="document.querySelector('[data-view=quiz]').click()">
+        <span class="pillar-icon">🧬</span>
+        <div class="pillar-name">Cultural DNA Quiz</div>
+        <div class="pillar-desc">5 questions that map your beauty archetype to your heritage, taste, and vision.</div>
+        <span class="pillar-tag">Start Here</span>
+      </div>
+      <div class="pillar-card" onclick="document.querySelector('[data-view=taste]').click()">
+        <span class="pillar-icon">🎵</span>
+        <div class="pillar-name">Taste Intelligence</div>
+        <div class="pillar-desc">Your music, icons, and culture — decoded into looks. Powered by Qloo's global taste graph.</div>
+        <span class="pillar-tag">Qloo AI</span>
+      </div>
+      <div class="pillar-card" onclick="document.querySelector('[data-view=shade]').click()">
+        <span class="pillar-icon">🎨</span>
+        <div class="pillar-name">Shade Finder</div>
+        <div class="pillar-desc">30 shades spanning the full melanin spectrum. Deep, warm, cool, neutral — all represented.</div>
+        <span class="pillar-tag">30 Shades</span>
+      </div>
+      <div class="pillar-card" onclick="document.querySelector('[data-view=wig]').click()">
+        <span class="pillar-icon">👑</span>
+        <div class="pillar-name">Wig Matchmaker</div>
+        <div class="pillar-desc">Box braids to silk press, afro to bantu knots. 35 styles matched to your vibe and archetype.</div>
+        <span class="pillar-tag">35 Styles</span>
+      </div>
+      <div class="pillar-card" data-pillar="sleep">
+        <span class="pillar-icon">🌙</span>
+        <div class="pillar-name">Sleep Beauty Rituals</div>
+        <div class="pillar-desc">NREM growth hormone cycles, overnight skin repair, and nighttime rituals from 9 communities — satin bonnets to sleeping packs.</div>
+        <span class="pillar-tag">New</span>
+      </div>
+      <div class="pillar-card" data-pillar="exercise">
+        <span class="pillar-icon">💪</span>
+        <div class="pillar-name">Movement Beauty</div>
+        <div class="pillar-desc">Afrobeats dance skincare, yoga sweat rituals, Carnival prep, adumu jumping — beauty that moves with you.</div>
+        <span class="pillar-tag">New</span>
+      </div>
+      <div class="pillar-card" data-pillar="mental">
+        <span class="pillar-icon">🧘🏽‍♀️</span>
+        <div class="pillar-name">Mind-Skin Connection</div>
+        <div class="pillar-desc">Cortisol-skin cascade science, stress rituals, and parasympathetic beauty practices across cultures.</div>
+        <span class="pillar-tag">New</span>
+      </div>
+      <div class="pillar-card" data-pillar="eco">
+        <span class="pillar-icon">🌿</span>
+        <div class="pillar-name">Sustainable Beauty</div>
+        <div class="pillar-desc">Shea cooperatives, argan fair-trade, rooibos indigenous rights — beauty that gives back to the source.</div>
+        <span class="pillar-tag">New</span>
+      </div>
+      <div class="pillar-card" data-pillar="medicine">
+        <span class="pillar-icon">🌱</span>
+        <div class="pillar-name">Traditional Medicine</div>
+        <div class="pillar-desc">Ayurveda, TCM, Unani, Yoruba Ifá, Curanderismo, Ubuntu — 5,000 years of beauty wisdom, validated.</div>
+        <span class="pillar-tag">New</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── COMMUNITY DEEP DIVE ─────────────────────────────────────────────── -->
+  <section class="communities-section" id="communities-section">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ Your Community</p>
+      <h2 class="section-title">Rituals That Know Your Roots</h2>
+    </div>
+    <div class="communities-scroll" id="communitiesScroll">
+      <div class="community-chip-card" data-community="west-african">
+        <span class="community-chip-flag">🌍</span>
+        <div class="community-chip-name">West African</div>
+        <div class="community-chip-ritual">Orí · Shea · Durbar</div>
+      </div>
+      <div class="community-chip-card" data-community="south-asian">
+        <span class="community-chip-flag">🌸</span>
+        <div class="community-chip-name">South Asian</div>
+        <div class="community-chip-ritual">Champi · Ubtan · Mehndi</div>
+      </div>
+      <div class="community-chip-card" data-community="arab">
+        <span class="community-chip-flag">🌙</span>
+        <div class="community-chip-name">Arab</div>
+        <div class="community-chip-ritual">Argan · Kohl · Hammam</div>
+      </div>
+      <div class="community-chip-card" data-community="caribbean">
+        <span class="community-chip-flag">🌺</span>
+        <div class="community-chip-name">Caribbean</div>
+        <div class="community-chip-ritual">Coconut · Carnival · JBCO</div>
+      </div>
+      <div class="community-chip-card" data-community="latina">
+        <span class="community-chip-flag">💃</span>
+        <div class="community-chip-name">Latina</div>
+        <div class="community-chip-ritual">Avocado · Zumba · Día Muertos</div>
+      </div>
+      <div class="community-chip-card" data-community="east-asian">
+        <span class="community-chip-flag">✨</span>
+        <div class="community-chip-name">East Asian</div>
+        <div class="community-chip-ritual">Rice Water · Gua Sha · K-Beauty</div>
+      </div>
+      <div class="community-chip-card" data-community="east-african">
+        <span class="community-chip-flag">🦁</span>
+        <div class="community-chip-name">East African</div>
+        <div class="community-chip-ritual">Frankincense · Adumu · Timkat</div>
+      </div>
+      <div class="community-chip-card" data-community="south-african">
+        <span class="community-chip-flag">🌿</span>
+        <div class="community-chip-name">South African</div>
+        <div class="community-chip-ritual">Rooibos · Marula · Heritage Day</div>
+      </div>
+      <div class="community-chip-card" data-community="black-american">
+        <span class="community-chip-flag">👑</span>
+        <div class="community-chip-name">Black American</div>
+        <div class="community-chip-ritual">LOC Method · Vogue · Juneteenth</div>
+      </div>
+    </div>
+    <div id="communityDetailPanel" class="community-detail-panel"></div>
+  </section>
+
+  <!-- ─── FESTIVAL LOOKS ─────────────────────────────────────────────────── -->
+  <section class="festivals-section" id="festivals-section">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ Occasion Beauty</p>
+      <h2 class="section-title">Festival & Celebration Looks</h2>
+    </div>
+    <div class="festivals-grid">
+      <div class="festival-card">
+        <span class="festival-card-emoji">🎪</span>
+        <div class="festival-card-name">Durbar Festival</div>
+        <div class="festival-card-community">West African</div>
+        <div class="festival-card-look">Glass skin glow, bold orange-coral lip, kente-inspired liner, luminous highlight</div>
+      </div>
+      <div class="festival-card">
+        <span class="festival-card-emoji">🎭</span>
+        <div class="festival-card-name">Carnival</div>
+        <div class="festival-card-community">Caribbean</div>
+        <div class="festival-card-look">Sweat-proof sequin liner, bold lip, full-coverage foundation, waterproof lash</div>
+      </div>
+      <div class="festival-card">
+        <span class="festival-card-emoji">🌙</span>
+        <div class="festival-card-name">Eid al-Fitr Glam</div>
+        <div class="festival-card-community">Arab</div>
+        <div class="festival-card-look">Deep kohl liner, jewel-tone eye, berry lip, hammam-glow skin prep</div>
+      </div>
+      <div class="festival-card">
+        <span class="festival-card-emoji">🕯️</span>
+        <div class="festival-card-name">Kwanzaa</div>
+        <div class="festival-card-community">Black American</div>
+        <div class="festival-card-look">Red, black & green editorial, bold sculpted brow, jewel lip, crown protective style</div>
+      </div>
+      <div class="festival-card">
+        <span class="festival-card-emoji">🧧</span>
+        <div class="festival-card-name">Lunar New Year</div>
+        <div class="festival-card-community">East Asian</div>
+        <div class="festival-card-look">Glass skin 12-step, gradient cherry lip, straight brow, dewy highlight</div>
+      </div>
+      <div class="festival-card">
+        <span class="festival-card-emoji">💀</span>
+        <div class="festival-card-name">Día de los Muertos</div>
+        <div class="festival-card-community">Latina</div>
+        <div class="festival-card-look">Sugar skull art, bold floral liner, marigold gold, deep berry lip</div>
+      </div>
+      <div class="festival-card">
+        <span class="festival-card-emoji">🎉</span>
+        <div class="festival-card-name">Heritage Day</div>
+        <div class="festival-card-community">South African</div>
+        <div class="festival-card-look">Rooibos-tinted skin, terracotta lip, earth-tone shadow, braided crown</div>
+      </div>
+      <div class="festival-card">
+        <span class="festival-card-emoji">✊🏿</span>
+        <div class="festival-card-name">Juneteenth</div>
+        <div class="festival-card-community">Black American</div>
+        <div class="festival-card-look">Red, black & green lip art, melanin-glow skin, afro crown, afrocentric liner</div>
+      </div>
+      <div class="festival-card">
+        <span class="festival-card-emoji">⛪</span>
+        <div class="festival-card-name">Timkat</div>
+        <div class="festival-card-community">East African</div>
+        <div class="festival-card-look">Frankincense-infused skin, bold kohl, white shama-inspired liner, bone jewelry glow</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HERO INGREDIENTS ────────────────────────────────────────────────── -->
+  <section class="ingredients-section" id="ingredients-section">
+    <div class="section-header">
+      <p class="section-eyebrow">✦ Ancient Wisdom · Modern Science</p>
+      <h2 class="section-title">Power Ingredients by Culture</h2>
+      <p class="section-sub">Every ingredient MIRRR recommends has roots in its community's tradition</p>
+    </div>
+    <div class="ingredients-grid">
+      <div class="ingredient-card">
+        <span class="ingredient-emoji">🥑</span>
+        <div class="ingredient-name">Orí (Shea Butter)</div>
+        <div class="ingredient-origin">West African</div>
+        <div class="ingredient-benefit">Unrefined shea contains triterpene alcohols that suppress skin inflammation by up to 40%. Sacred to Yoruba cosmology.</div>
+      </div>
+      <div class="ingredient-card">
+        <span class="ingredient-emoji">🌿</span>
+        <div class="ingredient-name">Jamaican Black Castor Oil</div>
+        <div class="ingredient-origin">Caribbean</div>
+        <div class="ingredient-benefit">Ash-roasted process raises pH to 8–9, opening cuticles for ricinoleic acid penetration. Clinical evidence for hair growth.</div>
+      </div>
+      <div class="ingredient-card">
+        <span class="ingredient-emoji">🌺</span>
+        <div class="ingredient-name">Argan Oil</div>
+        <div class="ingredient-origin">Moroccan / Arab</div>
+        <div class="ingredient-benefit">71% oleic acid, vitamin E tocopherols. Sourced ethically through Berber women's cooperatives. UNESCO heritage crop.</div>
+      </div>
+      <div class="ingredient-card">
+        <span class="ingredient-emoji">🍚</span>
+        <div class="ingredient-name">Rice Water (Sake Kasu)</div>
+        <div class="ingredient-origin">East Asian</div>
+        <div class="ingredient-benefit">Inositol penetrates hair shaft and repairs damage from inside. Ferulic acid UV protection. Used in Japan for 1,000+ years.</div>
+      </div>
+      <div class="ingredient-card">
+        <span class="ingredient-emoji">🌱</span>
+        <div class="ingredient-name">Frankincense (Boswellia)</div>
+        <div class="ingredient-origin">East African</div>
+        <div class="ingredient-benefit">Boswellic acids inhibit 5-LOX enzyme reducing skin inflammation. Anti-aging peptide activation. Sacred in Ethiopian rituals.</div>
+      </div>
+      <div class="ingredient-card">
+        <span class="ingredient-emoji">🍵</span>
+        <div class="ingredient-name">Rooibos</div>
+        <div class="ingredient-origin">South African</div>
+        <div class="ingredient-benefit">Aspalathin, unique to rooibos, blocks UV-induced oxidative stress. Indigenous Khoisan knowledge. Biodiversity hotspot crop.</div>
+      </div>
+      <div class="ingredient-card">
+        <span class="ingredient-emoji">🌿</span>
+        <div class="ingredient-name">Marula Oil</div>
+        <div class="ingredient-origin">South African</div>
+        <div class="ingredient-benefit">76% oleic acid — higher than argan. Phenolic antioxidant content exceptional for melanin-rich skin. San people's skin protector.</div>
+      </div>
+      <div class="ingredient-card">
+        <span class="ingredient-emoji">🌸</span>
+        <div class="ingredient-name">Ubtan (Turmeric Paste)</div>
+        <div class="ingredient-origin">South Asian</div>
+        <div class="ingredient-benefit">Curcumin inhibits melanin synthesis, reducing hyperpigmentation. Bridal skin-brightening paste used for 5,000 years.</div>
+      </div>
+      <div class="ingredient-card">
+        <span class="ingredient-emoji">🥥</span>
+        <div class="ingredient-name">Avocado Oil</div>
+        <div class="ingredient-origin">Latina</div>
+        <div class="ingredient-benefit">Sterolins penetrate dermis uniquely among plant oils. Aztec "Ahuacatl" beauty oil — pre-Columbian skin medicine.</div>
+      </div>
+      <div class="ingredient-card">
+        <span class="ingredient-emoji">⚫</span>
+        <div class="ingredient-name">Black Seed Oil (Habbatus Sauda)</div>
+        <div class="ingredient-origin">Arab</div>
+        <div class="ingredient-benefit">Thymoquinone: anti-inflammatory, antifungal, antioxidant. "Cure for everything except death" — Prophet Muhammad PBUH.</div>
+      </div>
+      <div class="ingredient-card">
+        <span class="ingredient-emoji">🪆</span>
+        <div class="ingredient-name">Castor Oil (Black)</div>
+        <div class="ingredient-origin">Black American</div>
+        <div class="ingredient-benefit">Ricinoleic acid 90% — anti-inflammatory, antimicrobial. The LOC method's seal — locks in moisture at the cuticle.</div>
+      </div>
+      <div class="ingredient-card">
+        <span class="ingredient-emoji">☕</span>
+        <div class="ingredient-name">Coffee Scrub</div>
+        <div class="ingredient-origin">East African</div>
+        <div class="ingredient-benefit">Ethiopian coffee ceremony skin ritual. Caffeine reduces cellulite appearance, boosts circulation for pre-ceremony glow.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MANIFESTO ────────────────────────────────────────────────────────── -->
+  <section class="manifesto-section" id="manifesto-section">
+    <p class="manifesto-quote">"Caring for myself is not self-indulgence. It is self-preservation, and that is an act of political warfare."</p>
+    <p class="manifesto-attr">— Audre Lorde · A Burst of Light · 1988</p>
   </section>
 
   <!-- ─── TRYON MODAL ───────────────────────────────────────────────────── -->
@@ -339,10 +972,150 @@
 
   <!-- ─── FOOTER ───────────────────────────────────────────────────────── -->
   <footer class="footer">
-    <p>🪞 MIRRR · Built for the Qloo Agentic Hackathon 2026</p>
-    <p class="footer-sub">Powered by <a href="https://qloo.com" target="_blank" rel="noopener">Qloo Taste AI</a> · Celebrating global beauty diversity</p>
+    <p>🪞 MIRRR · 9 Communities · 100,000+ Lines of Beauty Intelligence</p>
+    <p class="footer-sub">Powered by <a href="https://qloo.com" target="_blank" rel="noopener">Qloo Taste AI</a> · Built for the Qloo Agentic Hackathon 2026 · Celebrating global beauty diversity</p>
+    <p class="footer-sub" style="margin-top:0.25rem;font-size:0.6rem;color:#333">West African · South Asian · Arab · Caribbean · Latina · East Asian · East African · South African · Black American</p>
   </footer>
 
   <script type="module" src="app.js"></script>
+  <script>
+    // Community detail panel interactions
+    (function() {
+      const COMMUNITY_DATA = {
+        'west-african': {
+          name: '🌍 West African Beauty',
+          rituals: [
+            { icon: '🧴', text: 'Orí (raw shea butter) — sacred moisturiser, anti-inflammatory' },
+            { icon: '💆🏿‍♀️', text: 'Afrobeats dance as cardio — protects natural hair during movement' },
+            { icon: '🌙', text: 'Overnight shea + castor LOC seal — locks in moisture while sleeping' },
+            { icon: '🎪', text: 'Durbar Festival: glass skin, coral lip, kente-inspired liner' },
+            { icon: '🌿', text: 'Eco: Shea cooperatives — 16M women across Sahel supported' },
+            { icon: '🧘🏿‍♀️', text: 'Stress ritual: Ayan drumming + shea temple massage for cortisol relief' },
+          ]
+        },
+        'south-asian': {
+          name: '🌸 South Asian Beauty',
+          rituals: [
+            { icon: '💆🏽‍♀️', text: 'Champi (hot oil scalp massage) — Ayurvedic hair nourishment weekly' },
+            { icon: '✨', text: 'Ubtan paste — turmeric, rose water, chickpea flour bridal brightening' },
+            { icon: '🧘🏽‍♀️', text: 'Yoga & Bharatanatyam — movement that integrates skin care into practice' },
+            { icon: '💒', text: 'Mehndi Bride: jewel eyes, deep red lip, full bridal glam' },
+            { icon: '🌙', text: 'Amla oil overnight treatment — grows 3× more than control in trials' },
+            { icon: '🌿', text: 'Ayurveda: Vata/Pitta/Kapha dosha — personalised beauty system' },
+          ]
+        },
+        'arab': {
+          name: '🌙 Arab Beauty',
+          rituals: [
+            { icon: '🌺', text: 'Argan oil — "liquid gold" from Berber women\'s cooperatives' },
+            { icon: '👁️', text: 'Kohl (ithmid) — antimicrobial, anti-inflammatory eye protection' },
+            { icon: '🛁', text: 'Hammam ritual — steam, kessa scrub, black soap (beldi) full body' },
+            { icon: '⭐', text: 'Eid Glam: deep kohl, jewel-tone eye, berry lip, hammam glow' },
+            { icon: '⚫', text: 'Black seed (habbatus sauda) — thymoquinone anti-inflammatory' },
+            { icon: '💃', text: 'Belly dance (raqs sharqi) — modest athletics, core and hip strength' },
+          ]
+        },
+        'caribbean': {
+          name: '🌺 Caribbean Beauty',
+          rituals: [
+            { icon: '🥥', text: 'Jamaican Black Castor Oil (JBCO) — ash-roasted, pH 8-9 for penetration' },
+            { icon: '🎭', text: 'Carnival prep: sweat-proof full-coverage, waterproof lash, sequin liner' },
+            { icon: '🌴', text: 'Coconut oil — lauric acid penetrates hair shaft uniquely among plant oils' },
+            { icon: '🌿', text: 'Bush medicine — soursop, cerasee, aloe from Arawak traditions' },
+            { icon: '🏃🏾‍♀️', text: 'Jamaican track & field hair: cornrows + satin underneath helmet' },
+            { icon: '🌙', text: 'Coconut + aloe vera overnight moisture sandwich for 4C coils' },
+          ]
+        },
+        'latina': {
+          name: '💃 Latina Beauty',
+          rituals: [
+            { icon: '🥑', text: 'Avocado oil — sterolins penetrate dermis, Aztec "Ahuacatl" beauty oil' },
+            { icon: '💀', text: 'Día de los Muertos: sugar skull art, marigold gold, deep berry lip' },
+            { icon: '💃', text: 'Zumba / salsa — sweat management with mattifying primer, waterproof liner' },
+            { icon: '🌿', text: 'Curanderismo — ruda (rue), romero (rosemary), copal incense skin rituals' },
+            { icon: '🌙', text: 'Avocado + honey hair mask overnight — deep moisture for thick hair' },
+            { icon: '🌺', text: 'Rose hip oil — Chilean rose extraction, retinol precursor natural form' },
+          ]
+        },
+        'east-asian': {
+          name: '✨ East Asian Beauty',
+          rituals: [
+            { icon: '🍚', text: 'Rice water (sake kasu) — inositol repairs hair shaft from inside' },
+            { icon: '💆🏻‍♀️', text: 'Gua sha — lymphatic drainage, fascia release, TCM medicine tool' },
+            { icon: '🌸', text: 'Korean 12-step routine — essence, ampoule, sleeping pack at night' },
+            { icon: '🧧', text: 'Lunar New Year: 12-step glass skin, gradient cherry lip, straight brow' },
+            { icon: '🎵', text: 'K-pop dance skincare: micellar pre-cleanse, hyaluronic rehydration post' },
+            { icon: '🍵', text: 'Green tea catechins (EGCG) — antioxidant, anti-inflammatory topical' },
+          ]
+        },
+        'east-african': {
+          name: '🦁 East African Beauty',
+          rituals: [
+            { icon: '🌱', text: 'Frankincense — boswellic acids inhibit 5-LOX anti-inflammatory enzyme' },
+            { icon: '⛪', text: 'Timkat festival: bold kohl, white shama-inspired liner, bone jewellery' },
+            { icon: '🏃🏿‍♀️', text: 'Adumu jumping dance — marathon runner hair: braids under headscarf' },
+            { icon: '☕', text: 'Ethiopian coffee ceremony — caffeine scrub for pre-ceremony circulation glow' },
+            { icon: '🌿', text: 'Gesho, fenugreek, wild thyme — Ethiopian herb beauty traditions' },
+            { icon: '🧘🏿‍♀️', text: 'Eskista dance (shoulder rolls) — skin care for high-heat movement' },
+          ]
+        },
+        'south-african': {
+          name: '🌿 South African Beauty',
+          rituals: [
+            { icon: '🍵', text: 'Rooibos — aspalathin blocks UV oxidative stress, indigenous Khoisan tea' },
+            { icon: '🌳', text: 'Marula oil — 76% oleic acid, San people\'s traditional skin protector' },
+            { icon: '🎉', text: 'Heritage Day: rooibos-tinted skin, terracotta lip, earth tones, braided crown' },
+            { icon: '🏃🏿', text: 'Parkrun culture — sport-to-celebration skin transition rituals' },
+            { icon: '🌿', text: 'Ubuntu philosophy in beauty — "I am because we are" community self-care' },
+            { icon: '🌊', text: 'Cape surf culture — salt spray protection, reef-safe waterproof SPF' },
+          ]
+        },
+        'black-american': {
+          name: '👑 Black American Beauty',
+          rituals: [
+            { icon: '🪆', text: 'LOC method (Liquid, Oil, Cream) — moisture retention system for 4C-4B' },
+            { icon: '✊🏿', text: 'Juneteenth: red, black & green lip art, melanin-glow, afro crown' },
+            { icon: '💃', text: 'Vogue / ballroom — performance makeup: sweat-proof, theatrical precision' },
+            { icon: '🏀', text: 'Basketball hair: flat-twist under headband, edge control for edges' },
+            { icon: '🌙', text: 'Satin bonnet sleep ritual — protects curl pattern and moisture overnight' },
+            { icon: '📚', text: 'Hoodoo / Root Work — spiritual self-care as resistance (Audre Lorde)' },
+          ]
+        },
+      };
+
+      document.querySelectorAll('.community-chip-card').forEach(card => {
+        card.addEventListener('click', function() {
+          const community = this.dataset.community;
+          const data = COMMUNITY_DATA[community];
+          if (!data) return;
+
+          // Deactivate all
+          document.querySelectorAll('.community-chip-card').forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+
+          const panel = document.getElementById('communityDetailPanel');
+          panel.innerHTML = `
+            <div class="community-detail-name">${data.name}</div>
+            <div class="community-ritual-list">
+              ${data.rituals.map(r => `
+                <div class="ritual-item">
+                  <span class="ritual-item-icon">${r.icon}</span>
+                  <span>${r.text}</span>
+                </div>
+              `).join('')}
+            </div>
+          `;
+          panel.classList.add('visible');
+          panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+      });
+
+      // Auto-show first community
+      setTimeout(() => {
+        const first = document.querySelector('.community-chip-card');
+        if (first) first.click();
+      }, 500);
+    })();
+  </script>
 </body>
 </html>

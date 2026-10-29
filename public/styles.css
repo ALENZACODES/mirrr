@@ -1197,6 +1197,8 @@ body {
 }
 .shade-card:hover { transform: translateY(-2px); }
 .shade-swatch-lg { height: 80px; width: 100%; display: block; }
+.shade-swatch-img { height: 80px; overflow: hidden; }
+.shade-swatch-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
 .shade-info { padding: 1rem; }
 .shade-id { font-size: 0.75rem; letter-spacing: 0.12em; color: var(--clr-terracotta); text-transform: uppercase; margin-bottom: 0.15rem; }
 .shade-label { font-size: 0.95rem; color: var(--clr-ivory); margin-bottom: 0.35rem; }

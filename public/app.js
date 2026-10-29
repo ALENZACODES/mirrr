@@ -562,6 +562,78 @@ const LOOK_IMAGES = {
   wedding_guest_universal:  'look-wedding-guest-universal.png',
 };
 
+// Shade swatch images — mapped by shade ID
+const SHADE_IMAGES = {
+  // Fair
+  F01: 'shade-F01.png',
+  F02: 'shade-F02.png',
+  F03: 'shade-F03.png',
+  F04: 'shade-F04.png',
+  F05: 'shade-F05.png',
+  F06: 'shade-F06.png',
+  // Light
+  L07: 'shade-L07.png',
+  L08: 'shade-L08.png',
+  L09: 'shade-L09.png',
+  L10: 'shade-L10.png',
+  L11: 'shade-L11.png',
+  L12: 'shade-L12.png',
+  L13: 'shade-L13.png',
+  // Light-Medium
+  LM14: 'shade-LM14.png',
+  LM15: 'shade-LM15.png',
+  LM16: 'shade-LM16.png',
+  LM17: 'shade-LM17.png',
+  LM18: 'shade-LM18.png',
+  LM19: 'shade-LM19.png',
+  LM20: 'shade-LM20.png',
+  // Medium
+  M21: 'shade-M21.png',
+  M22: 'shade-M22.png',
+  M23: 'shade-M23.png',
+  M24: 'shade-M24.png',
+  M25: 'shade-M25.png',
+  M26: 'shade-M26.png',
+  M27: 'shade-M27.png',
+  M28: 'shade-M28.png',
+  // Medium-Deep
+  MD29: 'shade-MD29.png',
+  MD30: 'shade-MD30.png',
+  MD31: 'shade-MD31.png',
+  MD32: 'shade-MD32.png',
+  MD33: 'shade-MD33.png',
+  MD34: 'shade-MD34.png',
+  MD35: 'shade-MD35.png',
+  MD36: 'shade-MD36.png',
+  // Deep
+  D37: 'shade-D37.png',
+  D38: 'shade-D38.png',
+  D39: 'shade-D39.png',
+  D40: 'shade-D40.png',
+  D41: 'shade-D41.png',
+  D42: 'shade-D42.png',
+  D43: 'shade-D43.png',
+  D44: 'shade-D44.png',
+  D45: 'shade-D45.png',
+  // Rich Deep
+  RD46: 'shade-RD46.png',
+  RD47: 'shade-RD47.png',
+  RD48: 'shade-RD48.png',
+  RD49: 'shade-RD49.png',
+  RD50: 'shade-RD50.png',
+  // Mixed / Olive
+  MX51: 'shade-MX51.png',
+  MX52: 'shade-MX52.png',
+  MX53: 'shade-MX53.png',
+  MX54: 'shade-MX54.png',
+  MX55: 'shade-MX55.png',
+  MX56: 'shade-MX56.png',
+  MX57: 'shade-MX57.png',
+  MX58: 'shade-MX58.png',
+  MX59: 'shade-MX59.png',
+  MX60: 'shade-MX60.png',
+};
+
 // Wig portrait images — mapped by wig style ID
 const WIG_IMAGES = {
   kinky_coily_afro:    'wig-kinky_coily_afro.png',
@@ -596,6 +668,12 @@ const WIG_IMAGES = {
   peruvian_body_wave:  'wig-peruvian_body_wave.png',
   sleek_bob:           'wig-sleek_bob.png',
   ultra_silky_xl:      'wig-ultra_silky_xl.png',
+  // Batch 12
+  coloured_wig_silver: 'wig-coloured_wig_silver.png',
+  afro_editorial:      'wig-afro_editorial.png',
+  box_braids_updo:     'wig-box_braids_updo.png',
+  cornrow_sleek:       'wig-cornrow_sleek.png',
+  jewelled_updo:       'wig-jewelled_updo.png',
 };
 
 function renderLookCard(look, score) {
@@ -750,9 +828,14 @@ function renderShadeResults(shades) {
   cardsEl.innerHTML = `
     <h3 class="section-title">Your Shade Matches</h3>
     <div class="shade-cards-inner">
-      ${shades.map(({ shade, score, coverageNote }) => `
+      ${shades.map(({ shade, score, coverageNote }) => {
+        const swatchImg = SHADE_IMAGES[shade.id];
+        const swatchHtml = swatchImg
+          ? `<div class="shade-swatch-lg shade-swatch-img"><img src="${swatchImg}" alt="${shade.label}" loading="lazy" /></div>`
+          : `<div class="shade-swatch-lg" style="background:${shade.hex}"></div>`;
+        return `
         <div class="shade-card">
-          <div class="shade-swatch-lg" style="background:${shade.hex}"></div>
+          ${swatchHtml}
           <div class="shade-info">
             <strong class="shade-id">${shade.id}</strong>
             <span class="shade-label">${shade.label}</span>
@@ -766,7 +849,7 @@ function renderShadeResults(shades) {
             </div>
           </div>
         </div>
-      `).join('')}
+      `}).join('')}
     </div>
     <div class="shade-cta-row">
       <button class="btn btn-secondary" id="shadeToWigBtn">Now Match Your Wig →</button>

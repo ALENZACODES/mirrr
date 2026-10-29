@@ -834,7 +834,119 @@ function colourToHex(name) {
 }
 
 // ---------------------------------------------------------------------------
+// Trending Artists
+// ---------------------------------------------------------------------------
+
+const TRENDING_REGION_LABELS = {
+  west_african:   { label: 'West Africa', emoji: '🌍' },
+  east_african:   { label: 'East Africa', emoji: '🦁' },
+  black_american: { label: 'Black America', emoji: '✊🏾' },
+  caribbean:      { label: 'Caribbean', emoji: '🌴' },
+  south_asian:    { label: 'South Asian', emoji: '🌺' },
+  arab:           { label: 'Arab World', emoji: '🌙' },
+  latina:         { label: 'Latina', emoji: '🌹' },
+  east_asian:     { label: 'East Asian', emoji: '✨' },
+  south_african:  { label: 'South Africa', emoji: '🦅' },
+};
+
+let trendingData = null;
+let activeRegion = 'west_african';
+
+async function loadTrending() {
+  try {
+    const data = await api('/api/trending');
+    trendingData = data.trending;
+    renderTrendingTabs();
+    renderTrendingGrid(activeRegion);
+  } catch (err) {
+    const grid = document.getElementById('trendingGrid');
+    if (grid) grid.innerHTML = '<p class="trending-error">Could not load trending artists.</p>';
+  }
+}
+
+function renderTrendingTabs() {
+  const tabsEl = document.getElementById('trendingTabs');
+  if (!tabsEl || !trendingData) return;
+
+  const regions = Object.keys(trendingData);
+  tabsEl.innerHTML = regions.map(r => {
+    const meta = TRENDING_REGION_LABELS[r] ?? { label: r, emoji: '🌐' };
+    return `
+      <button class="trending-tab ${r === activeRegion ? 'trending-tab--active' : ''}"
+              data-region="${r}" aria-label="${meta.label}">
+        <span>${meta.emoji}</span>
+        <span class="trending-tab-label">${meta.label}</span>
+      </button>
+    `;
+  }).join('');
+
+  tabsEl.querySelectorAll('.trending-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeRegion = btn.dataset.region;
+      tabsEl.querySelectorAll('.trending-tab').forEach(b =>
+        b.classList.toggle('trending-tab--active', b.dataset.region === activeRegion)
+      );
+      renderTrendingGrid(activeRegion);
+    });
+  });
+}
+
+function renderTrendingGrid(regionKey) {
+  const grid = document.getElementById('trendingGrid');
+  if (!grid || !trendingData) return;
+
+  const region = trendingData[regionKey];
+  if (!region) { grid.innerHTML = '<p class="trending-error">No data for this region.</p>'; return; }
+
+  const { artists, qlooUsed, sourcesCount } = region;
+
+  grid.innerHTML = `
+    <div class="trending-meta">
+      <span class="trending-source-badge ${qlooUsed ? 'badge--qloo' : 'badge--curated'}">
+        ${qlooUsed ? '⚡ Qloo-Powered' : '📋 Curated'} · ${sourcesCount} source${sourcesCount > 1 ? 's' : ''} verified
+      </span>
+    </div>
+    <div class="trending-cards">
+      ${artists.map((artist, i) => `
+        <button class="trending-card ${artist.anchor ? 'trending-card--anchor' : ''}"
+                data-artist="${encodeURIComponent(artist.name)}"
+                aria-label="Add ${artist.name} to your taste profile">
+          <div class="trending-rank">${i + 1}</div>
+          <div class="trending-info">
+            <div class="trending-name">${artist.name}
+              ${artist.rising ? '<span class="rising-badge">↑ Rising</span>' : ''}
+              ${artist.anchor ? '<span class="anchor-badge">⭐</span>' : ''}
+            </div>
+            <div class="trending-genre">${artist.genre}</div>
+            <div class="trending-region-label">${artist.region}</div>
+          </div>
+          <div class="trending-add" title="Add to taste profile">+</div>
+        </button>
+      `).join('')}
+    </div>
+    <p class="trending-cta">Tap an artist to add to your taste profile →</p>
+  `;
+
+  grid.querySelectorAll('.trending-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const artistName = decodeURIComponent(card.dataset.artist);
+      addChip(artistName);
+      showView('taste');
+      toast(`Added ${artistName} to your taste profile ✓`, 'info');
+      card.classList.add('trending-card--added');
+      card.querySelector('.trending-add').textContent = '✓';
+    });
+  });
+}
+
+// ---------------------------------------------------------------------------
 // Start
 // ---------------------------------------------------------------------------
 
-document.addEventListener('DOMContentLoaded', boot);
+async function bootWithTrending() {
+  await boot();
+  // Load trending in background after boot
+  loadTrending();
+}
+
+document.addEventListener('DOMContentLoaded', bootWithTrending);

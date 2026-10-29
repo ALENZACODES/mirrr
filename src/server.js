@@ -19,6 +19,8 @@ import { findShades, getShadeSpectrum, getDepthLabels, getUndertoneOptions } fro
 import { matchWigs, getWigCatalogue, getWigLengths, getWigTextures } from './wig_matchmaker.js';
 import { getLookProducts, getAllFormulas, getProductCategories } from './product_engine.js';
 import { DEMO_PROFILES } from './demo_profiles.js';
+import { getTrendingArtists, getAllTrendingArtists, REGIONAL_ANCHORS } from './trending_artists.js';
+import { QlooClient } from './qloo.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT ?? 3000;
@@ -337,6 +339,38 @@ async function router(req, res) {
       console.error('[/api/agent/run]', err);
       return sendJSON(res, 500, { error: err.message ?? 'Agent error' });
     }
+  }
+
+  // GET /api/trending?community=west_african&limit=6
+  if (method === 'GET' && path === '/api/trending') {
+    const communityId = url.searchParams.get('community') ?? null;
+    const limit = Math.min(parseInt(url.searchParams.get('limit') ?? '6', 10), 12);
+    const qlooClient = process.env.QLOO_API_KEY
+      ? new QlooClient({ apiKey: process.env.QLOO_API_KEY })
+      : null;
+    try {
+      if (communityId) {
+        const result = await getTrendingArtists({ communityId, qlooClient, limit });
+        return sendJSON(res, 200, { trending: result, community: communityId });
+      } else {
+        const all = await getAllTrendingArtists({ qlooClient, limitPerRegion: limit });
+        return sendJSON(res, 200, { trending: all });
+      }
+    } catch (err) {
+      console.error('[/api/trending]', err);
+      return sendJSON(res, 500, { error: err.message ?? 'Trending error' });
+    }
+  }
+
+  // GET /api/trending/regions — list all available regions
+  if (method === 'GET' && path === '/api/trending/regions') {
+    return sendJSON(res, 200, {
+      regions: Object.keys(REGIONAL_ANCHORS).map(key => ({
+        id: key,
+        label: key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+        artistCount: REGIONAL_ANCHORS[key].length,
+      })),
+    });
   }
 
   // POST /api/agent/demo

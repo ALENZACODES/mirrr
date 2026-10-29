@@ -2048,7 +2048,7 @@ async function loadStyleMatchLooks() {
 
     container.className = 'sm-grid';
     container.innerHTML = looks.map(look => `
-      <div class="shade-card sm-card" style="cursor:pointer;" onclick="openStyleGuide('${look.id}')">
+      <div class="shade-card sm-card" style="cursor:pointer;" data-look-id="${look.id}">
         <div class="sm-photo">${look.image ? `<img src="${look.image}" alt="${look.name} — ${look.community.replace('-', ' ')} look" loading="lazy" decoding="async" onerror="this.remove()">` : ''}</div>
         <div class="shade-info">
           <div class="shade-name">${look.name}</div>
@@ -2057,7 +2057,7 @@ async function loadStyleMatchLooks() {
           <div style="margin-top:0.5rem;display:flex;gap:0.4rem;flex-wrap:wrap;">
             ${(look.vibe || []).map(v => `<span style="background:#2a1a2e;border:1px solid #4a2040;border-radius:999px;padding:0.15rem 0.5rem;font-size:0.68rem;color:#c9a96e;">${v}</span>`).join('')}
           </div>
-          <button class="btn btn-secondary" style="margin-top:0.75rem;font-size:0.78rem;padding:0.4rem 0.9rem;" onclick="event.stopPropagation();openStyleGuide('${look.id}')">Get My Guide →</button>
+          <button class="btn btn-secondary sm-guide-btn" style="margin-top:0.75rem;font-size:0.78rem;padding:0.4rem 0.9rem;" data-look-id="${look.id}">Get My Guide →</button>
         </div>
       </div>
     `).join('');
@@ -2343,13 +2343,13 @@ function renderPlan(plan) {
   const out = document.getElementById('plannerResult');
   if (!out) return;
   const look = plan.look;
-  const lookBody = look ? `<p><strong>${esc(flat(look))}</strong>${look.description ? ` &mdash; ${esc(look.description)}` : ''}</p>${look.why ? `<p>${esc(look.why)}</p>` : ''}` : '';
+  const lookBody = look ? `<p><strong>${esc(flat(look))}</strong>${look.description ? ` &mdash; ${esc(look.description)}` : ''}</p>${(look.whyChosen || look.why) ? `<p>${esc(look.whyChosen || look.why)}</p>` : ''}${look.image ? `<img class="plan-look-img" src="${esc(look.image)}" alt="${esc(look.name || '')}" style="width:100%;max-width:240px;border-radius:12px;margin:.5rem 0" onerror="this.remove()">` : ''}${look.alternatives?.length ? `<p class="plan-alt">Also consider: ${look.alternatives.map(a => esc(a.name)).join(', ')}</p>` : ''}` : '';
   const sh = plan.shade;
   const shadeBody = sh ? `<p><strong>${esc(flat(sh))}</strong>${sh.undertone ? ` &middot; ${esc(sh.undertone)} undertone` : ''}${sh.hex ? ` <span style="display:inline-block;width:1em;height:1em;border-radius:50%;background:${esc(sh.hex)};vertical-align:-0.15em"></span>` : ''}</p>${sh.note ? `<p>${esc(sh.note)}</p>` : ''}` : '';
   const wg = plan.wig;
-  const wigBody = wg ? `<p><strong>${esc(flat(wg))}</strong>${wg.description ? ` &mdash; ${esc(wg.description)}` : ''}</p>` : '';
-  const ritualItems = planList(plan.ritual?.steps ?? plan.ritual);
-  const ritualBody = ritualItems.length ? `${plan.ritual?.name ? `<p><strong>${esc(plan.ritual.name)}</strong></p>` : ''}<ul>${ritualItems.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : '';
+  const wigBody = wg ? `<p><strong>${esc(flat(wg))}</strong>${(wg.why || wg.description) ? ` &mdash; ${esc(wg.why || wg.description)}` : ''}</p>` : '';
+  const ritualItems = planList(plan.ritual?.rituals ?? plan.ritual?.steps ?? []).concat(plan.ritual?.skincareTip ? [plan.ritual.skincareTip] : []);
+  const ritualBody = ritualItems.length ? `${(plan.ritual?.festival || plan.ritual?.tradition) ? `<p><strong>${esc(plan.ritual.festival || plan.ritual.tradition)}</strong></p>` : ''}<ul>${ritualItems.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : '';
   const tl = Array.isArray(plan.timeline) ? plan.timeline : [];
   const tlBody = tl.length ? `<ul class="plan-timeline">${tl.map(t => `<li><span class="tl-when">${esc(t.when ?? t.time ?? '')}</span><span>${esc(t.step ?? t.text ?? flat(t))}</span></li>`).join('')}</ul>` : '';
   const cons = planList(plan.constraints);
@@ -2429,3 +2429,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   showReturnBanner();
 });
+
+
+// Style Match: delegated clicks (module scope can't be reached by inline onclick)
+document.addEventListener('click', (e) => {
+  const t = e.target.closest?.('[data-look-id]');
+  if (t && t.closest('#smResults')) { e.stopPropagation(); openStyleGuide(t.dataset.lookId); }
+  if (e.target.closest?.('#smGuideClose') || e.target.id === 'smGuideDrawer') {
+    document.getElementById('smGuideDrawer')?.classList.add('hidden');
+  }
+});
+window.openStyleGuide = (id) => openStyleGuide(id);

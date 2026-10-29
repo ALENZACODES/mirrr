@@ -182,6 +182,8 @@ const LOOK_FORMULAS = {
 // Product Engine API
 // ---------------------------------------------------------------------------
 
+import { LOOKS } from './look_engine.js';
+
 /**
  * Get product formula for a specific look and depth.
  *
@@ -189,12 +191,38 @@ const LOOK_FORMULAS = {
  * @param {string} depthId    - depth id from shade_finder.js DEPTH_LABELS
  * @returns {object|null}     - formula with depth-resolved products
  */
+const ARCHETYPE_FORMULA = {
+  afro_glam: 'afro_glam_editorial', amapiano_beat: 'afro_glam_editorial', hip_hop_glam: 'hip_hop_glam',
+  caribbean_carnival: 'caribbean_carnival', bollywood_bridal: 'desi_glam', gulf_glam: 'gulf_glam',
+  latina_glam: 'latina_glam', k_beauty: 'k_beauty_glass', clean_minimal: 'clean_minimal',
+};
+
+function describeProduct(p) {
+  const bits = [p.shade_range, p.shade, p.style, p.colour, p.placement, Array.isArray(p.tones) ? p.tones.join(' / ') : null].filter(Boolean);
+  return bits.join(', ') || p.finish || p.category;
+}
+
 export function getLookProducts(lookId, depthId = 'medium') {
-  const formula = LOOK_FORMULAS[lookId];
+  let formula = LOOK_FORMULAS[lookId];
+  let basis = formula ? 'curated' : null;
+  const look = LOOKS.find((l) => l.id === lookId);
+  if (!formula && look) {
+    const key = ARCHETYPE_FORMULA[look.archetype];
+    if (key && LOOK_FORMULAS[key]) { formula = LOOK_FORMULAS[key]; basis = 'archetype'; }
+  }
+  if (!formula && look?.products?.length) {
+    formula = {
+      label: look.name,
+      products: look.products.map((p) => ({ category: p.category, formula: describeProduct(p), finish: p.finish })),
+    };
+    basis = 'look-spec';
+  }
   if (!formula) return null;
 
   return {
     ...formula,
+    basis,
+    note: basis === 'curated' ? undefined : 'General formula guidance for this look style, not a named-product list.',
     products: formula.products.map(p => ({
       ...p,
       shade_guidance: p.depth_guidance?.[depthId] ?? null,

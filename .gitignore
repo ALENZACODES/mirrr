@@ -13,5 +13,3 @@ plumb_api/
 mypy.ini
 ruff.toml
 requirements*.txt
-jest.config.js
-test/

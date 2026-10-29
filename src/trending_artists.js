@@ -170,9 +170,10 @@ export function verifyArtists(qlooNames, regionKey) {
   }
 
   // Fill with anchor artists not yet included (source 2 only, but anchor=true = high confidence)
-  for (const [, artist] of anchorMap) {
+  for (const [key, artist] of anchorMap) {
     if (artist.anchor && verified.length < 6) {
       verified.push({ ...artist, sources: 1, verified: true });
+      anchorMap.delete(key);
     }
   }
 
@@ -183,7 +184,8 @@ export function verifyArtists(qlooNames, regionKey) {
     }
   }
 
-  return verified.slice(0, 6);
+  const seen = new Set();
+  return verified.filter(a => { const k = a.name.toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; }).slice(0, 6);
 }
 
 // ---------------------------------------------------------------------------

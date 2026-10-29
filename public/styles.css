@@ -2758,3 +2758,6 @@ body { padding-top: 58px; }
 .sm-card:hover { transform: translateY(-3px); border-color: rgba(212,168,71,0.5); }
 .sm-photo { aspect-ratio: 4/5; background: linear-gradient(135deg,#2a1a2e,#4a2040,#1a0a1e); overflow: hidden; }
 .sm-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; }
+
+.sm-drawer { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 900; display: flex; align-items: flex-end; justify-content: center; }
+.sm-drawer.hidden { display: none; }

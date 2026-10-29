@@ -45,9 +45,9 @@ User input (artists / brands / places)
         ▼
 AestheticVector   → intensity / warmth / boldness / texture / palette
         │
-        ├──► LookEngine     → 14 multicultural look archetypes, scored + ranked
-        ├──► ShadeFinder    → 30-point shade spectrum, community-calibrated
-        ├──► WigMatchmaker  → 14 wig styles matched to aesthetic + community
+        ├──► LookEngine     → 60 multicultural looks across 9 archetypes, scored + ranked
+        ├──► ShadeFinder    → 60-point shade spectrum, community-calibrated
+        ├──► WigMatchmaker  → 42 wig styles matched to aesthetic + community
         └──► TrendingArtists → Qloo-verified regional trending artists (9 regions)
 ```
 
@@ -62,10 +62,10 @@ AestheticVector   → intensity / warmth / boldness / texture / palette
 30-shade foundation spectrum calibrated for deeper and warmer skin tones (N10–N65). Community-aware: West African users get a different starting range than East Asian users, reflecting real dermographic distribution. Undertone-filtered (warm / cool / neutral / olive).
 
 ### 💇🏾 WigMatchmaker
-14 wig styles scored against the AestheticVector. Box Braids, Senegalese Twists, Goddess Locs, Bone-Straight, Kinky-Afro, Silk Press, and more — matched to the user's community, aesthetic intensity, and texture preference.
+42 wig styles scored against the AestheticVector. Box Braids, Senegalese Twists, Goddess Locs, Bone-Straight, Kinky-Afro, Silk Press, and more — matched to the user's community, aesthetic intensity, and texture preference.
 
 ### ✨ LookEngine
-14 complete multicultural beauty looks (makeup + wig combos): Afro-Glam Editorial, Gulf Glam, K-Beauty Glass Skin, Caribbean Carnival, Bollywood Bridal, and more. Each look includes formula-level product recommendations tuned to the user's skin depth.
+60 complete multicultural beauty looks (makeup + wig combos): Afro-Glam Editorial, Gulf Glam, K-Beauty Glass Skin, Caribbean Carnival, Bollywood Bridal, and more. Each look includes formula-level product recommendations tuned to the user's skin depth.
 
 ---
 

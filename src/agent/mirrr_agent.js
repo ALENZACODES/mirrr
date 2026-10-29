@@ -97,6 +97,7 @@ export class MirrrAgent {
     // ── Step 2: RESOLVE — Qloo entity resolution ──────────────────────
     let entities = [];
     let qlooTags = [];
+    let qlooError = null;
 
     if (this.qloo && inputs.length > 0) {
       emit('resolve', 'Resolving entities via Qloo taste graph…');
@@ -117,6 +118,8 @@ export class MirrrAgent {
           }
         }
       } catch (err) {
+        qlooError = err.message;
+        console.warn('[agent] Qloo resolve failed:', err.message);
         this._log('resolve', `Qloo resolve failed: ${err.message} — continuing`);
       }
     } else {
@@ -229,6 +232,7 @@ export class MirrrAgent {
         qloo_powered: this.qloo !== null && entities.length > 0,
         entities_resolved: entities.length,
         tags_from_qloo: qlooTags.length,
+        qloo_error: qlooError,
         community: communityId,
         trace,
       },

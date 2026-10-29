@@ -384,6 +384,22 @@ async function router(req, res) {
     });
   }
 
+  // GET /api/qloo/diag — raw boundary check: one live Qloo search, status + shape, no key exposed
+  if (method === 'GET' && path === '/api/qloo/diag') {
+    const key = process.env.QLOO_API_KEY;
+    if (!key) return sendJSON(res, 200, { key_set: false });
+    const q = new URL(req.url, 'http://x').searchParams.get('q') || 'Burna Boy';
+    try {
+      const base = process.env.QLOO_BASE_URL || 'https://hackathon.api.qloo.com';
+      const r = await fetch(`${base}/v2/search?query=${encodeURIComponent(q)}&limit=3`, { headers: { 'X-API-Key': key, Accept: 'application/json' } });
+      const text = await r.text();
+      let json = null; try { json = JSON.parse(text); } catch {}
+      return sendJSON(res, 200, { key_set: true, key_len: key.length, status: r.status, top_level_keys: json ? Object.keys(json) : null, sample: text.slice(0, 1500) });
+    } catch (err) {
+      return sendJSON(res, 200, { key_set: true, key_len: key.length, error: err.message });
+    }
+  }
+
   // POST /api/agent/refine — agentic multi-turn stylist refinement
   if (method === 'POST' && path === '/api/agent/refine') {
     const body = await readBody(req).catch(err => { sendJSON(res, 400, { error: err.message }); return null; });
@@ -404,11 +420,12 @@ async function router(req, res) {
       const signals = extractRefinementSignals(message, history);
 
       let looks = [];
+      let qlooPowered = false;
       let newAesthetic = currentAesthetic;
       let newCommunityId = communityId;
 
       // Use taste chips as entity inputs for Qloo if available
-      const qlooInputs = tasteChips.length > 0 ? tasteChips : signals.extractedKeywords;
+      const qlooInputs = tasteChips;
 
       if (apiKey && qlooInputs.length > 0) {
         const agent = new MirrrAgent({
@@ -421,6 +438,7 @@ async function router(req, res) {
           communityId,
         });
         looks = result.looks ?? [];
+        qlooPowered = !!result.meta?.qloo_powered;
         newAesthetic = result.aesthetic ?? currentAesthetic;
         newCommunityId = result.communityId ?? communityId;
       } else {
@@ -433,6 +451,7 @@ async function router(req, res) {
       return sendJSON(res, 200, {
         reply,
         looks: looks.slice(0, 6),
+        source: qlooPowered ? 'qloo' : 'template',
         aesthetic: newAesthetic,
         communityId: newCommunityId,
       });
@@ -477,8 +496,8 @@ async function router(req, res) {
     const vibe = url.searchParams.get('vibe');
 
     const LOOKS_CATALOGUE = {
-      desi_baddie: { id: 'desi_baddie', name: 'Desi Baddie', community: 'south-asian', description: 'Smoky kohl eyes, glossy nude-brown lip, glass skin glow', image: '/look-kohl-smoky.png', vibe: ['bold', 'sultry', 'editorial'], occasion: ['night-out', 'wedding-guest', 'photoshoot'], fitzpatrickRange: ['III', 'IV', 'V'], tags: ['kohl', 'smoky-eye', 'glass-skin', 'nude-lip'] },
-      persian_queen: { id: 'persian_queen', name: 'Persian Queen', community: 'arab', description: 'Thick winged liner, jewel-tone lid, bold brows, berry lip', image: '/look-kohl-smoky.png', vibe: ['regal', 'dramatic', 'jewel-toned'], occasion: ['evening', 'celebration', 'eid'], fitzpatrickRange: ['II', 'III', 'IV'], tags: ['winged-liner', 'jewel-tone', 'bold-brow', 'berry-lip'] },
+      desi_baddie: { id: 'desi_baddie', name: 'Desi Baddie', community: 'south-asian', description: 'Smoky kohl eyes, glossy nude-brown lip, glass skin glow', image: '/look-desi-baddie.png', vibe: ['bold', 'sultry', 'editorial'], occasion: ['night-out', 'wedding-guest', 'photoshoot'], fitzpatrickRange: ['III', 'IV', 'V'], tags: ['kohl', 'smoky-eye', 'glass-skin', 'nude-lip'] },
+      persian_queen: { id: 'persian_queen', name: 'Persian Queen', community: 'arab', description: 'Thick winged liner, jewel-tone lid, bold brows, berry lip', image: '/look-persian-queen.png', vibe: ['regal', 'dramatic', 'jewel-toned'], occasion: ['evening', 'celebration', 'eid'], fitzpatrickRange: ['II', 'III', 'IV'], tags: ['winged-liner', 'jewel-tone', 'bold-brow', 'berry-lip'] },
       west_african_glow: { id: 'west_african_glow', name: 'West African Glow', community: 'west-african', description: 'Luminous glass skin, bold orange-coral lip, natural glossy eye', image: '/look-west-african-skin.png', vibe: ['glowing', 'joyful', 'radiant'], occasion: ['daytime', 'brunch', 'owambe'], fitzpatrickRange: ['V', 'VI'], tags: ['glass-skin', 'coral-lip', 'glow', 'melanin'] },
       k_beauty_seoul: { id: 'k_beauty_seoul', name: 'K-Beauty Seoul', community: 'east-asian', description: 'Dewy glass skin, straight brows, gradient lip, puppy-eye liner', image: '/look-k-beauty-seoul.png', vibe: ['fresh', 'youthful', 'dewy'], occasion: ['everyday', 'daytime', 'casual-date'], fitzpatrickRange: ['I', 'II', 'III'], tags: ['glass-skin', 'gradient-lip', 'puppy-eye', 'k-beauty'] },
       hammam_goddess: { id: 'hammam_goddess', name: 'Hammam Goddess', community: 'arab', description: 'Luminous bronze skin, gold kohl, terracotta lip, no-makeup-makeup', image: '/look-hammam-glow.png', vibe: ['ethereal', 'golden', 'natural'], occasion: ['beach', 'daytime', 'travel', 'summer'], fitzpatrickRange: ['III', 'IV', 'V'], tags: ['bronze', 'gold-kohl', 'terracotta', 'natural'] },
@@ -677,7 +696,7 @@ function getRefinedLooksFallback(signals, communityId) {
  * @returns {string} Natural language reply from the AI stylist
  */
 function buildStylistReply(signals, looks, refinementCount) {
-  const lookNames = looks.map(l => l.name).join(', ');
+  const lookNames = looks.map(l => l.name ?? l.look?.name).filter(Boolean).join(', ');
   
   const openers = [
     "Got it — I'm reading what you're looking for.",
@@ -699,11 +718,11 @@ function buildStylistReply(signals, looks, refinementCount) {
   } else if (signals.wantsModern) {
     body = `Contemporary and current. These looks draw on cultural identity but read completely modern.`;
   } else {
-    body = `Based on what you've said — ${signals.extractedKeywords.slice(0, 3).join(', ')} — I've refined the direction for you.`;
+    body = `I've re-ranked the directions around what you described.`;
   }
 
-  const closer = looks.length > 0
-    ? `Here are ${looks.length} updated looks: ${lookNames}. Which direction resonates most?`
+  const closer = looks.length > 0 && lookNames
+    ? `Top picks now: ${lookNames}. Which direction resonates most?`
     : `Let me know if you'd like to refine further — I can keep narrowing this down.`;
 
   return `${opener} ${body} ${closer}`;

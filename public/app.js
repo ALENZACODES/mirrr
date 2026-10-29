@@ -1549,7 +1549,7 @@ async function sendStylistMessage() {
   sendBtn.disabled = true;
   sendBtn.textContent = '…';
 
-  appendStylistMessage('stylist', '🔍 Querying Qloo for your refined taste…');
+  appendStylistMessage('stylist', 'Refining your looks…');
 
   try {
     const result = await api('/api/agent/refine', 'POST', {
@@ -1579,7 +1579,7 @@ async function sendStylistMessage() {
     }
   } catch (err) {
     const msgs = document.getElementById('stylistMessages');
-    if (msgs.lastElementChild?.textContent?.includes('Querying Qloo')) {
+    if (msgs.lastElementChild?.textContent?.includes('Refining your looks')) {
       msgs.removeChild(msgs.lastElementChild);
     }
     // Graceful fallback with contextual response

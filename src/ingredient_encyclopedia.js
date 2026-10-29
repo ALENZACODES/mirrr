@@ -1,0 +1,849 @@
+/**
+ * ingredient_encyclopedia.js — Beauty ingredient database for MIRRR
+ * Comprehensive ethnic and globally-sourced beauty ingredients
+ */
+
+// ─── INGREDIENT CATEGORIES ────────────────────────────────────────────────────
+
+export const INGREDIENT_CATEGORIES = {
+  botanical:     { id: 'botanical',     label: 'Botanical Extract',      icon: '🌿' },
+  oil:           { id: 'oil',           label: 'Plant Oil',              icon: '💧' },
+  butter:        { id: 'butter',        label: 'Plant Butter',           icon: '🧈' },
+  acid:          { id: 'acid',          label: 'Acid / AHA / BHA',       icon: '⚗️'  },
+  vitamin:       { id: 'vitamin',       label: 'Vitamin',                icon: '💊' },
+  mineral:       { id: 'mineral',       label: 'Mineral',                icon: '💎' },
+  peptide:       { id: 'peptide',       label: 'Peptide / Protein',      icon: '🔬' },
+  traditional:   { id: 'traditional',  label: 'Traditional / Ritual',   icon: '🏺' },
+  spf:           { id: 'spf',           label: 'Sun Protection',         icon: '☀️'  },
+  fermented:     { id: 'fermented',     label: 'Fermented',              icon: '🫙'  },
+};
+
+// ─── INGREDIENT DATABASE ──────────────────────────────────────────────────────
+
+export const INGREDIENTS = {
+
+  // ── TRADITIONAL / RITUAL INGREDIENTS ────────────────────────────────────
+
+  shea_butter: {
+    id: 'shea_butter',
+    name: 'Shea Butter',
+    latinName: 'Butyrospermum parkii',
+    category: 'butter',
+    origin: 'West Africa (Ghana, Nigeria, Burkina Faso)',
+    communities: ['west-african', 'east-african', 'south-african', 'black-american', 'caribbean'],
+    description: 'A fatty butter extracted from the nut of the African shea tree. Deeply moisturising with natural SPF4.',
+    benefits: ['deep moisturisation', 'wound healing', 'anti-inflammatory', 'natural SPF', 'barrier repair'],
+    concerns: ['dry skin', 'eczema', 'hyperpigmentation (skin tone evening)', 'hair moisture'],
+    ethnicSkinNote: 'Cornerstone of West African and diasporic skincare. Especially effective for high-porosity hair types 3C-4C. Used on newborn skin in many West African communities.',
+    traditionalUse: 'Applied from birth across West Africa. Used as a protective skin barrier in harmattan season. Hair treatments, lip care, baby skin, and cooking.',
+    culturalContext: 'Women in the shea belt (Ghana to Burkina Faso) have produced shea butter for millennia. The "women\'s gold" — shea cooperatives provide economic independence.',
+    howToUse: 'Apply raw shea directly to damp skin after shower. Mix into conditioner for hair. Use as occlusif over serums.',
+    comedogenicRating: 0,
+    concentration: '5-100% (raw)',
+    pairsWith: ['aloe_vera', 'coconut_oil', 'argan_oil', 'vitamin_e'],
+    avoidWith: [],
+    keyCompounds: ['stearic acid (42-48%)', 'oleic acid (40-50%)', 'triterpenes', 'vitamin E', 'vitamin A'],
+    spfValue: 4,
+    alcoholFree: true,
+    veganFriendly: true,
+    certifications: ['COSMOS', 'Fair Trade', 'organic varieties'],
+  },
+
+  baobab_oil: {
+    id: 'baobab_oil',
+    name: 'Baobab Oil',
+    latinName: 'Adansonia digitata seed oil',
+    category: 'oil',
+    origin: 'Sub-Saharan Africa (Tanzania, Malawi, Zimbabwe)',
+    communities: ['east-african', 'south-african', 'west-african'],
+    description: 'Lightweight but deeply nutritious oil from the baobab "tree of life." Rich in omega 3, 6, and 9.',
+    benefits: ['fast absorption', 'omega 3/6/9 delivery', 'skin elasticity', 'hair shine', 'scalp health'],
+    concerns: ['dry skin', 'mature skin', 'brittle hair', 'split ends', 'scalp dryness'],
+    ethnicSkinNote: 'Particularly suited for hair types 4A-4C — adds shine without heaviness. Traditional remedy for skin conditions across southern Africa.',
+    traditionalUse: 'Traditional East African and southern African ingredient for skin hydration and hair conditioning.',
+    culturalContext: 'The baobab is called "tree of life" across Africa for its nutritional and medicinal properties. Communities live around these ancient trees for thousands of years.',
+    howToUse: 'Apply 2-3 drops to damp face. Use as hair serum on ends. Mix into body lotion.',
+    comedogenicRating: 2,
+    concentration: '1-100% (carrier)',
+    pairsWith: ['marula_oil', 'shea_butter', 'vitamin_c'],
+    avoidWith: [],
+    keyCompounds: ['oleic acid', 'linoleic acid', 'alpha-linolenic acid', 'palmitic acid', 'vitamin A', 'D', 'E', 'F'],
+    alcoholFree: true,
+    veganFriendly: true,
+    certifications: ['organic', 'fair trade'],
+  },
+
+  marula_oil: {
+    id: 'marula_oil',
+    name: 'Marula Oil',
+    latinName: 'Sclerocarya birrea kernel oil',
+    category: 'oil',
+    origin: 'Southern Africa (South Africa, Zimbabwe, Botswana)',
+    communities: ['south-african', 'east-african'],
+    description: 'Luxurious oil from the fruit of the marula tree. 70%+ oleic acid, fast-absorbing, deeply hydrating.',
+    benefits: ['intensive hydration', 'anti-ageing', 'wound healing', 'antioxidant', 'hair gloss'],
+    concerns: ['dehydrated skin', 'ageing concerns', 'dull skin', 'dry hair', 'frizz'],
+    ethnicSkinNote: 'Traditional skincare of southern African women — the Marula Foundation (South Africa) protects indigenous use. Phenomenal for melanin-rich skin.',
+    traditionalUse: 'Used by Tsonga, Venda, and Zulu women for centuries for skin and hair.',
+    culturalContext: 'Marula is sacred in southern African culture — the "Queen of Trees." Elephants are famously attracted to fermenting marula fruit.',
+    howToUse: '2-3 drops on damp skin morning and evening. Apply to ends of hair. Cuticle oil.',
+    comedogenicRating: 3,
+    concentration: '1-100% (carrier)',
+    pairsWith: ['baobab_oil', 'vitamin_c', 'hyaluronic_acid'],
+    avoidWith: [],
+    keyCompounds: ['oleic acid 70%+', 'palmitic acid', 'linoleic acid', 'stearic acid', 'tocopherols'],
+    alcoholFree: true,
+    veganFriendly: true,
+  },
+
+  argan_oil: {
+    id: 'argan_oil',
+    name: 'Argan Oil',
+    latinName: 'Argania spinosa kernel oil',
+    category: 'oil',
+    origin: 'Morocco (Southwest, Souss-Massa)',
+    communities: ['arab', 'east-african'],
+    description: 'The "liquid gold" of Morocco. Lightweight, non-greasy oil rich in vitamin E, fatty acids, and squalane.',
+    benefits: ['frizz control', 'shine', 'anti-ageing', 'UV protection', 'acne scar fading', 'nail strengthening'],
+    concerns: ['dry hair', 'frizzy hair', 'dry skin', 'fine lines', 'hyperpigmentation'],
+    ethnicSkinNote: 'Foundation of Moroccan and North African beauty rituals. Exceptional for wavy and curly hair.',
+    traditionalUse: 'Berber women have produced argan oil cooperatively for generations — for cooking, cosmetics, and medicinal use.',
+    culturalContext: 'Argan oil production is a key economic lifeline for Berber women in the Arganeraie biosphere reserve. UNESCO recognizes it as intangible cultural heritage.',
+    howToUse: 'Apply 2-4 drops to damp hair, focus on ends. For face: 2 drops pressed in palms, patted on.',
+    comedogenicRating: 0,
+    concentration: '1-100% (carrier)',
+    pairsWith: ['rosehip_oil', 'vitamin_e', 'jojoba'],
+    avoidWith: [],
+    keyCompounds: ['oleic acid 43-49%', 'linoleic acid 29-36%', 'tocopherols (vitamin E)', 'squalane', 'sterols'],
+    alcoholFree: true,
+    veganFriendly: true,
+    certifications: ['USDA Organic', 'Ecocert', 'fair trade cooperatives'],
+  },
+
+  rosehip_oil: {
+    id: 'rosehip_oil',
+    name: 'Rosehip Seed Oil',
+    latinName: 'Rosa canina / Rosa rubiginosa seed oil',
+    category: 'oil',
+    origin: 'Chile, Andes (but also grown globally)',
+    communities: ['latina', 'all'],
+    description: 'Vitamin C and vitamin A-rich oil pressed from dried rosehip seeds. Natural retinol (retinoic acid) source.',
+    benefits: ['hyperpigmentation reduction', 'scar fading', 'anti-ageing', 'brightening', 'hydration'],
+    concerns: ['PIH', 'acne scarring', 'uneven skin tone', 'fine lines', 'dull skin'],
+    ethnicSkinNote: 'Exceptional for Fitzpatrick IV-VI skin prone to post-inflammatory hyperpigmentation. Chile\'s Torres del Paine produces the most potent variety.',
+    traditionalUse: 'Used by Indigenous Andean communities for healing skin conditions and improving complexion.',
+    culturalContext: 'Central to Chilean and Andean folk medicine. Modern beauty discovery elevated it globally — though it had been used for generations.',
+    howToUse: '2-3 drops PM only (photosensitive). Avoid AM without SPF. Mix with moisturiser for lighter dose.',
+    comedogenicRating: 1,
+    concentration: '1-100%',
+    pairsWith: ['vitamin_c', 'niacinamide', 'hyaluronic_acid'],
+    avoidWith: ['retinol (both are vitamin A — overload risk)'],
+    keyCompounds: ['linoleic acid 44-50%', 'alpha-linolenic acid 28-33%', 'oleic acid', 'vitamin C', 'lycopene', 'beta-carotene'],
+    photosensitive: true,
+    alcoholFree: true,
+    veganFriendly: true,
+  },
+
+  amla_oil: {
+    id: 'amla_oil',
+    name: 'Amla Oil (Indian Gooseberry)',
+    latinName: 'Phyllanthus emblica / Emblica officinalis',
+    category: 'oil',
+    origin: 'India, South Asia',
+    communities: ['south-asian'],
+    description: 'Ayurvedic hair oil made from Indian gooseberry (amla). Highest natural vitamin C concentration of any plant. Promotes hair growth, prevents premature greying.',
+    benefits: ['hair growth', 'grey hair prevention', 'scalp nourishment', 'dandruff reduction', 'shine'],
+    concerns: ['hair thinning', 'premature grey', 'dandruff', 'dry scalp', 'hair breakage'],
+    ethnicSkinNote: 'Central to South Asian hair care across generations. Weekly champi (head massage) with amla oil is a generational ritual.',
+    traditionalUse: 'Ayurvedic hair and scalp treatment used for over 3,000 years. Applied as champi (oil massage), mixed with coconut oil.',
+    culturalContext: 'Amla (amalaki) is one of the most sacred plants in Ayurveda. The name means "nurse" in Sanskrit — it nurtures the body.',
+    howToUse: 'Warm 2 tbsp and massage into scalp weekly. Leave 30+ minutes, then shampoo. Mix with coconut for lighter feel.',
+    comedogenicRating: 2,
+    concentration: 'Extract/infused oil',
+    pairsWith: ['coconut_oil', 'brahmi', 'bhringraj', 'fenugreek'],
+    avoidWith: [],
+    keyCompounds: ['vitamin C (highest in any plant)', 'tannins', 'ellagic acid', 'phyllembelin', 'iron'],
+    alcoholFree: true,
+    veganFriendly: true,
+  },
+
+  coconut_oil: {
+    id: 'coconut_oil',
+    name: 'Coconut Oil',
+    latinName: 'Cocos nucifera oil',
+    category: 'oil',
+    origin: 'Tropical Asia, Pacific Islands, South America',
+    communities: ['south-asian', 'east-asian', 'caribbean', 'latina', 'east-african'],
+    description: 'Versatile saturated oil with antimicrobial lauric acid. Hair conditioning, skin moisturising, oil cleansing.',
+    benefits: ['deep hair conditioning', 'antimicrobial', 'oil cleansing', 'lip care', 'body moisturiser'],
+    concerns: ['dry hair', 'protein-deficient hair', 'makeup removal', 'chapped lips'],
+    ethnicSkinNote: 'Very comedogenic (5) — avoid as face moisturiser for acne-prone skin. Excellent for hair and body.',
+    traditionalUse: 'Used across South Asia (champi), Pacific Islands (monoi), Caribbean (hair and body) for centuries.',
+    culturalContext: 'One of the most culturally universal beauty ingredients — used in ayurveda, pacific island tradition, and Caribbean folk beauty.',
+    howToUse: 'Hair: pre-poo treatment 30min before wash. Body: post-shower on damp skin. Avoid face if acne-prone.',
+    comedogenicRating: 5,
+    concentration: '1-100%',
+    pairsWith: ['aloe_vera', 'shea_butter', 'essential_oils'],
+    avoidWith: ['acne-prone skin (as face product)'],
+    keyCompounds: ['lauric acid 49%', 'myristic acid', 'palmitic acid', 'caprylic acid'],
+    alcoholFree: true,
+    veganFriendly: true,
+  },
+
+  black_seed_oil: {
+    id: 'black_seed_oil',
+    name: 'Black Seed Oil (Nigella)',
+    latinName: 'Nigella sativa oil',
+    category: 'oil',
+    origin: 'Egypt, Middle East, South Asia',
+    communities: ['arab', 'south-asian', 'west-african', 'east-african'],
+    description: 'Thymoquinone-rich oil with potent anti-inflammatory and antimicrobial properties. Prophetic medicine in Islamic tradition.',
+    benefits: ['anti-inflammatory', 'acne treatment', 'eczema relief', 'hair growth', 'hyperpigmentation', 'scalp health'],
+    concerns: ['acne', 'eczema', 'psoriasis', 'thinning hair', 'dark spots'],
+    ethnicSkinNote: 'Particularly effective for inflammatory conditions common in melanin-rich skin. Thymoquinone inhibits melanin overproduction.',
+    traditionalUse: 'Cited in Islamic tradition as "a cure for everything except death." Used in Egyptian and Middle Eastern medicine for 3,000+ years.',
+    culturalContext: 'Found in Tutankhamun\'s tomb. Mentioned in Bible and Islamic hadith. Central to Arab and South Asian folk medicine.',
+    howToUse: '1-2 drops mixed with moisturiser for face. Apply directly to problem spots. Scalp massage 2x/week.',
+    comedogenicRating: 2,
+    concentration: '0.5-2% (potent, start low)',
+    pairsWith: ['aloe_vera', 'vitamin_c', 'niacinamide'],
+    avoidWith: ['blood-thinning medications (consult doctor)'],
+    keyCompounds: ['thymoquinone (TQ)', 'carvacrol', 'linoleic acid', 'oleic acid', 'palmitic acid'],
+    alcoholFree: true,
+    veganFriendly: true,
+  },
+
+  turmeric: {
+    id: 'turmeric',
+    name: 'Turmeric (Haldi)',
+    latinName: 'Curcuma longa',
+    category: 'botanical',
+    origin: 'South Asia, Southeast Asia',
+    communities: ['south-asian', 'east-asian', 'east-african'],
+    description: 'Bright yellow rhizome with potent curcumin compounds. Anti-inflammatory, brightening, antiseptic.',
+    benefits: ['brightening', 'anti-inflammatory', 'anti-bacterial', 'wound healing', 'hyperpigmentation reduction', 'anti-ageing'],
+    concerns: ['uneven skin tone', 'inflammation', 'dull skin', 'dark circles', 'acne'],
+    ethnicSkinNote: 'Central to South Asian bridal preparation (haldi ceremony). Can stain pale skin yellow — use consistently and wash off promptly.',
+    traditionalUse: 'Ubtan (turmeric paste for bridal glow), Haldi ceremony, Ayurvedic internal and topical medicine.',
+    culturalContext: 'The most sacred beauty ingredient in South Asia. No Indian wedding is complete without haldi. Also used in food, medicine, worship.',
+    howToUse: 'Mix pinch with yogurt/honey/gram flour for face mask. Use in cleanser. Avoid on light skin — can stain temporarily.',
+    comedogenicRating: 1,
+    concentration: '0.1-1% in products (staining risk higher)',
+    pairsWith: ['honey', 'aloe_vera', 'rose_water', 'gram_flour'],
+    avoidWith: ['white or very pale skin (staining)', 'open wounds'],
+    keyCompounds: ['curcumin', 'desmethoxycurcumin', 'bisdemethoxycurcumin', 'turmerone', 'zingiberene'],
+    staining: true,
+    alcoholFree: true,
+    veganFriendly: true,
+  },
+
+  rooibos: {
+    id: 'rooibos',
+    name: 'Rooibos Extract',
+    latinName: 'Aspalathus linearis',
+    category: 'botanical',
+    origin: 'South Africa (Western Cape, Cederberg)',
+    communities: ['south-african'],
+    description: 'South African "red bush" tea extract rich in antioxidants, polyphenols, and alpha hydroxy acids. Calming and brightening.',
+    benefits: ['antioxidant', 'anti-inflammatory', 'brightening', 'soothing', 'anti-ageing', 'natural AHA'],
+    concerns: ['sensitive skin', 'redness', 'hyperpigmentation', 'dull skin', 'oxidative stress'],
+    ethnicSkinNote: 'Uniquely South African ingredient gaining global attention. Quercetin and aspalathin are potent for melanin-rich skin.',
+    traditionalUse: 'Traditionally brewed as tea and applied topically for rashes and skin irritation in Khoisan and Cape communities.',
+    culturalContext: 'Rooibos is one of the most uniquely South African gifts to the world. Only grown in Cederberg. Major economic export.',
+    howToUse: 'Look for in serums and toners. DIY: brew strong tea, cool, use as toner mist. Clay mask addition.',
+    comedogenicRating: 0,
+    concentration: '0.5-5% extract',
+    pairsWith: ['vitamin_c', 'niacinamide', 'aloe_vera'],
+    avoidWith: [],
+    keyCompounds: ['aspalathin', 'quercetin', 'luteolin', 'orientin', 'nothofagin'],
+    alcoholFree: true,
+    veganFriendly: true,
+  },
+
+  moringa_oil: {
+    id: 'moringa_oil',
+    name: 'Moringa Oil (Ben Oil)',
+    latinName: 'Moringa oleifera seed oil',
+    category: 'oil',
+    origin: 'India, East Africa, West Africa',
+    communities: ['east-african', 'west-african', 'south-asian'],
+    description: 'The "miracle tree" oil. Ancient Egyptian beauty ingredient. Rich in behenic acid and zeatin — uniquely anti-ageing and cleansing.',
+    benefits: ['makeup removal', 'anti-ageing', 'moisturisation', 'antioxidant', 'skin brightening', 'wound healing'],
+    concerns: ['dull skin', 'mature skin', 'makeup removal', 'dry skin', 'oxidative damage'],
+    ethnicSkinNote: 'Egyptians used moringa oil as a base for perfumes and skin protectant against desert conditions. Known as "the oil of Ben" in antiquity.',
+    traditionalUse: 'Used in ancient Egypt (Cleopatra-era), East Africa, and South Asia. Perfume base, skin protectant, hair treatment.',
+    culturalContext: 'Called "the drumstick tree" in South Asia and "the miracle tree" in Africa. Every part of the tree is used.',
+    howToUse: 'Face oil — 2-3 drops PM. Makeup remover — apply with cotton pad. Hair tip oil.',
+    comedogenicRating: 3,
+    concentration: '1-100%',
+    pairsWith: ['vitamin_c', 'hyaluronic_acid', 'rose_water'],
+    avoidWith: [],
+    keyCompounds: ['behenic acid 6-8%', 'oleic acid 72-75%', 'zeatin', 'tocopherols', 'sterols'],
+    alcoholFree: true,
+    veganFriendly: true,
+  },
+
+  rice_water: {
+    id: 'rice_water',
+    name: 'Rice Water',
+    latinName: 'Oryza sativa water ferment',
+    category: 'fermented',
+    origin: 'East Asia (Japan, China, Korea), Southeast Asia',
+    communities: ['east-asian'],
+    description: 'Fermented water from soaked rice. Inositol, vitamins, and amino acids that strengthen hair and brighten skin.',
+    benefits: ['hair strengthening', 'hair growth', 'skin brightening', 'pore minimising', 'protein treatment'],
+    concerns: ['hair breakage', 'hair loss', 'dull skin', 'large pores', 'fine hair'],
+    ethnicSkinNote: 'The Yao women of Huangluo village, China, are known for their 6-foot-long hair, credited to rice water rinsing. Japanese Geisha used it (yuzu).',
+    traditionalUse: 'Japanese: rice water (Yu-su-ru) used by Heian court ladies for long hair. Chinese Yao tradition. Korean: fermented in makgeolli rice wine.',
+    culturalContext: 'One of Asia\'s most famous indigenous beauty secrets. The Yao tribe\'s village is in the Guinness World Records for average hair length.',
+    howToUse: 'After shampooing, pour rice water over hair, leave 20min, rinse. For face: cotton pad toner. Ferment for 1-3 days for potency.',
+    comedogenicRating: 0,
+    concentration: 'DIY diluted to 10-20%',
+    pairsWith: ['aloe_vera', 'camellia_oil', 'green_tea'],
+    avoidWith: ['protein-sensitive hair (can overload)'],
+    keyCompounds: ['inositol', 'B vitamins', 'amino acids', 'ferulic acid', 'allantoin', 'GABA (fermented)'],
+    alcoholFree: true,
+    veganFriendly: true,
+  },
+
+  camellia_oil: {
+    id: 'camellia_oil',
+    name: 'Camellia Oil (Tsubaki)',
+    latinName: 'Camellia japonica seed oil',
+    category: 'oil',
+    origin: 'Japan, China, Korea',
+    communities: ['east-asian'],
+    description: 'Japanese "tsubaki" oil — a centuries-old Japanese beauty ritual. Highly oleic, deeply penetrating, sublime hair gloss.',
+    benefits: ['hair shine', 'hair softening', 'skin anti-ageing', 'fast absorption', 'cuticle repair'],
+    concerns: ['dull hair', 'frizz', 'dry skin', 'cuticle damage', 'fine lines'],
+    ethnicSkinNote: 'Geisha-era beauty secret. Tsubaki oil gives hair the signature deep-lacquer Japanese gloss.',
+    traditionalUse: 'Japanese geisha hair oil, Meiji-era skin care, traditional Japanese beauty ritual.',
+    culturalContext: 'The camellia flower is a symbol of Japan — "tsubaki" appears in Japanese art, poetry, and temple gardens. Geisha have used it for centuries.',
+    howToUse: '1-2 drops on palm, press into ends of damp or dry hair. Cuticle oil. Face oil (PM).',
+    comedogenicRating: 1,
+    concentration: '1-100%',
+    pairsWith: ['jojoba', 'vitamin_e', 'argan_oil'],
+    avoidWith: [],
+    keyCompounds: ['oleic acid 78-85%', 'palmitic acid', 'stearic acid', 'linoleic acid', 'squalane', 'tocopherols'],
+    alcoholFree: true,
+    veganFriendly: true,
+  },
+
+  // ── BRIGHTENING / DEPIGMENTING ───────────────────────────────────────────
+
+  kojic_acid: {
+    id: 'kojic_acid',
+    name: 'Kojic Acid',
+    latinName: 'Kojic acid (fungal derivative)',
+    category: 'botanical',
+    origin: 'Japan (fermented saké byproduct)',
+    communities: ['east-asian', 'south-asian', 'west-african', 'black-american'],
+    description: 'Tyrosinase inhibitor derived from fermented Japanese rice. Reduces melanin production to fade dark spots.',
+    benefits: ['dark spot fading', 'hyperpigmentation', 'brightening', 'anti-ageing', 'antibacterial'],
+    concerns: ['PIH (post-inflammatory hyperpigmentation)', 'melasma', 'dark spots', 'uneven skin tone'],
+    ethnicSkinNote: 'Widely used across Asian beauty markets. For Fitzpatrick V-VI, use alongside niacinamide to brighten without irritation.',
+    traditionalUse: 'Discovered in Japan from saké and miso fermentation. Traditional Japanese women noticed hand-brightening from saké exposure.',
+    culturalContext: 'Staple in Asian and Korean brightening skincare. Exported globally as alternative to hydroquinone.',
+    howToUse: '1-2% concentration. Apply PM to clean skin, follow with SPF next morning. Introduce slowly for sensitive skin.',
+    comedogenicRating: 0,
+    concentration: '1-4% (2% standard)',
+    pairsWith: ['vitamin_c', 'niacinamide', 'alpha_arbutin', 'AHA'],
+    avoidWith: ['high-concentration AHAs (irritation risk)'],
+    keyCompounds: ['5-hydroxy-2-(hydroxymethyl)-4-pyranone'],
+    photosensitive: true,
+    suitableFor: ['PIH', 'melasma', 'dark spots'],
+  },
+
+  alpha_arbutin: {
+    id: 'alpha_arbutin',
+    name: 'Alpha Arbutin',
+    latinName: 'α-Arbutin (glycoside from bearberry)',
+    category: 'botanical',
+    origin: 'Bearberry plant (worldwide)',
+    communities: ['all'],
+    description: 'A gentle but potent tyrosinase inhibitor. More stable and less irritating than kojic acid or hydroquinone.',
+    benefits: ['hyperpigmentation fading', 'brightening', 'PIH reduction', 'safe for sensitive skin'],
+    concerns: ['dark spots', 'PIH', 'melasma', 'uneven skin tone', 'post-acne marks'],
+    ethnicSkinNote: 'One of the safest brightening agents for Fitzpatrick V-VI. Can be used consistently without the irritation risk of hydroquinone.',
+    traditionalUse: 'Synthetic ingredient — no traditional use, but derived from naturally occurring arbutin in plants.',
+    culturalContext: 'A modern skincare innovation that has transformed brightening routines, especially for people with melanin-rich skin.',
+    howToUse: '2% concentration AM or PM. Consistent use 4-12 weeks for noticeable results. Always use SPF.',
+    comedogenicRating: 0,
+    concentration: '1-4%',
+    pairsWith: ['niacinamide', 'vitamin_c', 'hyaluronic_acid'],
+    avoidWith: ['hydroquinone (redundant, over-inhibition)'],
+    keyCompounds: ['α-D-glucopyranoside hydroquinone'],
+    photosensitive: false,
+    suitableFor: ['PIH', 'dark spots', 'melasma', 'sensitive skin'],
+  },
+
+  niacinamide: {
+    id: 'niacinamide',
+    name: 'Niacinamide (Vitamin B3)',
+    latinName: 'Nicotinamide',
+    category: 'vitamin',
+    origin: 'Synthetic (from niacin)',
+    communities: ['all'],
+    description: 'Multitasking vitamin B3 derivative. Addresses pores, oil, redness, pigmentation, barrier — all at once.',
+    benefits: ['pore minimising', 'oil control', 'redness reduction', 'brightening', 'barrier repair', 'anti-ageing'],
+    concerns: ['large pores', 'oily skin', 'hyperpigmentation', 'redness', 'uneven skin tone', 'dehydration'],
+    ethnicSkinNote: 'Universally beneficial for all skin types. At 5-10%, one of the best single-ingredient investments for melanin-rich skin.',
+    traditionalUse: 'Modern ingredient — no traditional use.',
+    culturalContext: 'The one ingredient dermatologists across all backgrounds recommend. Became mainstream through The Ordinary\'s affordable 10% formula.',
+    howToUse: '5-10% concentration AM or PM or both. Layer under moisturiser. No flushing at 10% (the "niacinamide flush" myth is largely debunked).',
+    comedogenicRating: 0,
+    concentration: '2-20% (5-10% optimal)',
+    pairsWith: ['hyaluronic_acid', 'vitamin_c', 'alpha_arbutin', 'azelaic_acid'],
+    avoidWith: ['vitamin_c (at very high C concentrations — some instability claimed but largely debunked)'],
+    keyCompounds: ['nicotinamide', 'vitamin B3'],
+    photosensitive: false,
+    suitableFor: ['all skin types', 'acne', 'rosacea', 'PIH', 'ageing'],
+  },
+
+  vitamin_c: {
+    id: 'vitamin_c',
+    name: 'Vitamin C (L-Ascorbic Acid)',
+    latinName: 'L-ascorbic acid',
+    category: 'vitamin',
+    origin: 'Derived from natural or synthetic sources',
+    communities: ['all'],
+    description: 'Gold-standard antioxidant and brightening agent. Fights free radicals, boosts collagen, fades pigmentation.',
+    benefits: ['brightening', 'anti-ageing', 'collagen boost', 'antioxidant', 'SPF enhancement', 'hyperpigmentation'],
+    concerns: ['dull skin', 'dark spots', 'sun damage', 'fine lines', 'uneven tone'],
+    ethnicSkinNote: 'Highly effective for melanin-rich skin but requires SPF — vitamin C makes skin temporarily more photosensitive.',
+    traditionalUse: 'Derived from natural sources — amla (Indian gooseberry is the highest), rose hip, camu camu (Amazonian).',
+    culturalContext: 'Found in highest concentration in amla — connecting modern vitamin C serums back to South Asian Ayurveda.',
+    howToUse: '10-20% AM under SPF. pH must be below 3.5 for efficacy. Unstable — use freshly opened, amber bottle.',
+    comedogenicRating: 0,
+    concentration: '10-20%',
+    pairsWith: ['vitamin_e', 'ferulic_acid', 'SPF', 'hyaluronic_acid'],
+    avoidWith: ['retinol (PM vs AM)', 'benzoyl_peroxide', 'AHAs/BHAs (irritation at high concentrations)'],
+    keyCompounds: ['L-ascorbic acid'],
+    photosensitive: false,
+    requiresSPF: true,
+    suitableFor: ['all', 'PIH', 'melasma', 'dull skin', 'anti-ageing'],
+  },
+
+  azelaic_acid: {
+    id: 'azelaic_acid',
+    name: 'Azelaic Acid',
+    latinName: 'Azelaic acid (from grains)',
+    category: 'acid',
+    origin: 'Derived from rye, wheat, barley (Nonamedioic acid)',
+    communities: ['all'],
+    description: 'Multi-functional acid that addresses acne, rosacea, AND pigmentation without irritation. Gentlest of all actives.',
+    benefits: ['acne treatment', 'rosacea relief', 'brightening', 'anti-inflammatory', 'comedolytic', 'safe in pregnancy'],
+    concerns: ['acne', 'rosacea', 'PIH', 'sensitive skin', 'pregnancy-safe brightening'],
+    ethnicSkinNote: 'Uniquely suited for Fitzpatrick IV-VI — addresses pigmentation without irritation risk that can worsen PIH.',
+    traditionalUse: 'Occurs naturally in grains — no traditional standalone use.',
+    culturalContext: 'Celebrated by dermatologists as the "gentle giant" of actives. Often overlooked, hugely underrated.',
+    howToUse: '10-20% AM or PM. Slight tingle on application is normal. Safe long-term. Safe in pregnancy (confirm with doctor).',
+    comedogenicRating: 0,
+    concentration: '10-20%',
+    pairsWith: ['niacinamide', 'hyaluronic_acid', 'spf'],
+    avoidWith: [],
+    photosensitive: false,
+    pregnancySafe: true,
+    suitableFor: ['acne', 'rosacea', 'PIH', 'sensitive skin', 'pregnant skin'],
+  },
+
+  glycolic_acid: {
+    id: 'glycolic_acid',
+    name: 'Glycolic Acid',
+    latinName: 'Glycolic acid (sugarcane-derived)',
+    category: 'acid',
+    origin: 'Sugarcane (natural), also synthetic',
+    communities: ['all'],
+    description: 'The most potent AHA. Smallest molecule size for deepest penetration. Exfoliates, brightens, anti-ages.',
+    benefits: ['exfoliation', 'brightening', 'pore unclogging', 'anti-ageing', 'texture improvement', 'hyperpigmentation'],
+    concerns: ['dull skin', 'uneven texture', 'dark spots', 'anti-ageing', 'clogged pores'],
+    ethnicSkinNote: 'Caution for Fitzpatrick V-VI: excessive exfoliation can trigger PIH. Use 5-10% maximum, always follow with SPF.',
+    traditionalUse: 'Sugarcane-derived. Ancient Egyptians used sour milk (lactic acid) and wine (tartaric acid) — conceptual ancestors.',
+    culturalContext: 'The AHA category was advanced through Brazilian sugarcane research and popularised in the 1990s-2000s dermatology boom.',
+    howToUse: '5-10% for sensitive/dark skin tones. PM only. Always use SPF next morning. Start 2x/week.',
+    comedogenicRating: 0,
+    concentration: '5-15%',
+    pairsWith: ['hyaluronic_acid', 'vitamin_c', 'SPF'],
+    avoidWith: ['retinol (same night)', 'vitamin_c (same PM — irritation)', 'other AHAs/BHAs (too much acid)'],
+    photosensitive: true,
+    requiresSPF: true,
+    suitableFor: ['all except very sensitive', 'ageing', 'dull skin'],
+  },
+
+  hyaluronic_acid: {
+    id: 'hyaluronic_acid',
+    name: 'Hyaluronic Acid',
+    latinName: 'Sodium hyaluronate (stabilised form)',
+    category: 'botanical',
+    origin: 'Bacterial fermentation (vegan), or rooster comb (older)',
+    communities: ['all'],
+    description: 'The ultimate humectant — binds up to 1,000x its weight in water. Universal hydration booster.',
+    benefits: ['hydration', 'plumping', 'fine line reduction', 'barrier support', 'fast absorption'],
+    concerns: ['dehydration', 'fine lines', 'tight dry feeling', 'sensitive skin'],
+    ethnicSkinNote: 'Beneficial for all skin types. For very dry climates, seal HA with an oil or cream — otherwise it draws moisture from deep skin.',
+    traditionalUse: 'Modern ingredient discovered in rooster combs. Now lab-grown (fermented vegan).',
+    culturalContext: 'Korean beauty elevated HA to global consciousness through layered essence and serum routines.',
+    howToUse: 'Apply to damp skin, layer under cream or oil to seal. Look for multi-weight HA for all skin depths.',
+    comedogenicRating: 0,
+    concentration: '0.1-2%',
+    pairsWith: ['everything (universal pairing)'],
+    avoidWith: [],
+    photosensitive: false,
+    suitableFor: ['all skin types', 'all conditions'],
+  },
+
+  retinol: {
+    id: 'retinol',
+    name: 'Retinol (Vitamin A)',
+    latinName: 'Retinol',
+    category: 'vitamin',
+    origin: 'Synthetic or animal-derived',
+    communities: ['all'],
+    description: 'Gold-standard anti-ageing active. Speeds cell turnover, boosts collagen, reduces dark spots. Powerful but requires careful introduction.',
+    benefits: ['anti-ageing', 'hyperpigmentation', 'acne treatment', 'collagen boost', 'texture improvement'],
+    concerns: ['fine lines', 'ageing', 'acne', 'dark spots', 'uneven texture'],
+    ethnicSkinNote: 'For Fitzpatrick V-VI: start at 0.025%, use 1x/week, always with SPF. PIH risk from retinol irritation — go very slow.',
+    traditionalUse: 'Vitamin A-rich foods used across many cultures (carrot, sweet potato). Modern retinol is synthetic.',
+    culturalContext: 'Introduced by Retin-A prescription in 1971. Revolutionised anti-ageing skincare globally.',
+    howToUse: 'PM only. Sandwich method for sensitive skin: moisturiser → retinol → moisturiser. Start 0.025-0.05%, increase monthly.',
+    comedogenicRating: 0,
+    concentration: '0.025-1%',
+    pairsWith: ['hyaluronic_acid', 'niacinamide (buffer)', 'SPF (next AM)'],
+    avoidWith: ['AHAs same night', 'vitamin_c same night', 'benzoyl_peroxide', 'waxing (3-5 days before)'],
+    photosensitive: true,
+    requiresSPF: true,
+    pregnancySafe: false,
+    suitableFor: ['ageing skin', 'acne (prescription strength)', 'PIH (careful intro)'],
+  },
+
+  tranexamic_acid: {
+    id: 'tranexamic_acid',
+    name: 'Tranexamic Acid',
+    latinName: 'trans-4-(Aminomethyl)cyclohexanecarboxylic acid',
+    category: 'acid',
+    origin: 'Synthetic (developed in Japan)',
+    communities: ['east-asian', 'south-asian', 'west-african', 'black-american'],
+    description: 'Amino acid derivative originally used to treat melasma orally. Topically reduces melanin transfer and brightens stubborn pigmentation.',
+    benefits: ['melasma treatment', 'brightening', 'PIH reduction', 'safe alternative to hydroquinone', 'redness reduction'],
+    concerns: ['melasma', 'stubborn PIH', 'sun damage', 'hyperpigmentation', 'hormonal pigmentation'],
+    ethnicSkinNote: 'Particularly effective for hormonal melasma common in South Asian and Latina skin. Considered safer long-term than hydroquinone.',
+    traditionalUse: 'Modern pharmaceutical ingredient.',
+    culturalContext: 'Gained popularity in Asian beauty markets before reaching Western skincare. First used orally in Japan for pigmentation.',
+    howToUse: '2-5% AM and PM. Consistent use 8+ weeks. Pair with niacinamide and SPF.',
+    comedogenicRating: 0,
+    concentration: '2-5%',
+    pairsWith: ['niacinamide', 'alpha_arbutin', 'vitamin_c', 'SPF'],
+    avoidWith: [],
+    photosensitive: false,
+    suitableFor: ['melasma', 'PIH', 'hormonal pigmentation', 'sensitive skin'],
+  },
+
+  aloe_vera: {
+    id: 'aloe_vera',
+    name: 'Aloe Vera',
+    latinName: 'Aloe barbadensis leaf juice',
+    category: 'botanical',
+    origin: 'North Africa, Arabian Peninsula',
+    communities: ['all'],
+    description: 'The universal soothing gel. Anti-inflammatory, antimicrobial, hydrating, wound-healing.',
+    benefits: ['sunburn relief', 'anti-inflammatory', 'wound healing', 'hydration', 'acne calming', 'hair moisture'],
+    concerns: ['sunburn', 'irritated skin', 'redness', 'acne', 'dehydrated hair'],
+    ethnicSkinNote: 'Universal — one of the few ingredients with zero contraindications across skin types and tones.',
+    traditionalUse: 'Used across ancient Egypt, Greece, China, India, and indigenous Americas for wound healing and skin care.',
+    culturalContext: 'Called "the plant of immortality" by ancient Egyptians. Alexander the Great reportedly conquered an island for its aloe supply.',
+    howToUse: 'Apply pure gel directly to cleansed skin. Mix into hair mask. Post-sun soothe. DIY face mask base.',
+    comedogenicRating: 0,
+    concentration: '1-100%',
+    pairsWith: ['everything (universal base)'],
+    avoidWith: [],
+    photosensitive: false,
+    suitableFor: ['all skin types', 'all conditions', 'all ages'],
+  },
+
+  henna: {
+    id: 'henna',
+    name: 'Henna (Mehndi)',
+    latinName: 'Lawsonia inermis',
+    category: 'traditional',
+    origin: 'South Asia, Middle East, North Africa',
+    communities: ['south-asian', 'arab', 'west-african', 'east-african'],
+    description: 'Natural plant dye used for body art, hair colouring, and skin conditioning. Rich reddish-brown natural pigment.',
+    benefits: ['temporary body art', 'natural hair colour', 'cooling sensation', 'antimicrobial', 'hair conditioning'],
+    concerns: ['hair colour (cover greys naturally)', 'hair conditioning', 'spiritual/ceremonial body art'],
+    ethnicSkinNote: 'Sacred cultural art form across South Asia, Middle East, and North Africa. Lawsonite is the active colouring compound.',
+    traditionalUse: 'Mehndi ceremonies before South Asian and Arab weddings. Eid celebrations. Berber and West African traditions.',
+    culturalContext: 'One of the oldest cosmetic plants — 5,000-year history. Plays a role in nearly every major South Asian and Middle Eastern life event.',
+    howToUse: 'Mix dried henna with lemon juice and essential oil. Apply via cone, leave 4-8hrs, flake off. Deep stain develops over 24hrs.',
+    comedogenicRating: 0,
+    concentration: 'Traditional paste',
+    pairsWith: ['lemon juice', 'sugar (for paste)', 'essential oils (for scent)'],
+    avoidWith: ['PPD black henna (chemical burn risk)', 'open skin wounds'],
+    staining: true,
+    alcoholFree: true,
+    veganFriendly: true,
+    suitableFor: ['body art', 'hair colour', 'ritual use'],
+  },
+
+  kohl: {
+    id: 'kohl',
+    name: 'Kohl (Kajal / Tiro / Surma)',
+    latinName: 'Traditional: antimony/carbon-based; Modern: carbon black',
+    category: 'traditional',
+    origin: 'Ancient Egypt, Middle East, South Asia',
+    communities: ['south-asian', 'arab', 'west-african', 'east-african'],
+    description: 'Ancient eye pigment with 4,000+ year history. Traditional formula contains antimony sulphide; modern versions use carbon black.',
+    benefits: ['deep eye definition', 'cooling eye sensation', 'traditional protective use', 'long-wearing'],
+    concerns: ['eye definition', 'cultural ritual eye art'],
+    ethnicSkinNote: 'Avoid traditional lead-based kohl preparations — documented in some markets. Seek carbon-black modern kajal for safe use.',
+    traditionalUse: 'Eye protection from sun glare in desert climates. Applied to infants in some South Asian and Arab communities (medical risk — avoid). Wedding, festival, and daily use.',
+    culturalContext: 'Kohl appears in ancient Egyptian paintings, Islamic hadith (Prophet Muhammad recommended kohl), and South Asian vedic texts. One of the oldest cosmetics known.',
+    howToUse: 'Apply to inner waterline, smudge along lash line. Use a clean pencil or traditional kohl stick.',
+    comedogenicRating: 0,
+    concentration: 'Varies by traditional/modern formula',
+    pairsWith: ['eyeshadow', 'mascara'],
+    avoidWith: ['lead-containing traditional kohl', 'use on infants'],
+    traditionalRisk: 'Some traditional kohl contains lead — prefer certified modern kajal',
+    suitableFor: ['eye definition', 'cultural ritual'],
+  },
+
+  bakuchiol: {
+    id: 'bakuchiol',
+    name: 'Bakuchiol',
+    latinName: 'Bakuchiol (from Psoralea corylifolia)',
+    category: 'botanical',
+    origin: 'India (traditional Ayurvedic use of babchi seeds)',
+    communities: ['south-asian', 'all'],
+    description: 'Natural retinol alternative from babchi plant. Stimulates same skin pathways as retinol without photosensitivity.',
+    benefits: ['anti-ageing (retinol pathway)', 'brightening', 'safe in pregnancy', 'AM/PM use', 'sensitive skin compatible'],
+    concerns: ['anti-ageing', 'dark spots', 'sensitive skin', 'pregnancy-safe anti-ageing'],
+    ethnicSkinNote: 'Excellent retinol alternative for Fitzpatrick V-VI who want anti-ageing benefits without PIH risk of retinol irritation.',
+    traditionalUse: 'Babchi seeds (Psoralea corylifolia) used in Ayurveda for vitiligo and skin conditions for 3,000+ years.',
+    culturalContext: 'Ayurvedic ingredient now validated by clinical studies showing retinol-comparable results. Bridges ancient knowledge and modern formulation.',
+    howToUse: '0.5-1% AM or PM. Can be used during pregnancy (confirm with doctor). No photosensitivity. Layer with SPF anyway.',
+    comedogenicRating: 0,
+    concentration: '0.5-1%',
+    pairsWith: ['everything (ultra-gentle)'],
+    avoidWith: [],
+    photosensitive: false,
+    pregnancySafe: true,
+    suitableFor: ['sensitive skin', 'pregnant skin', 'PIH-prone skin', 'anti-ageing'],
+  },
+
+  ceramides: {
+    id: 'ceramides',
+    name: 'Ceramides',
+    latinName: 'Ceramide NP, AP, EOP, NS, AS',
+    category: 'peptide',
+    origin: 'Wheat-derived or synthetic (vegan)',
+    communities: ['all'],
+    description: 'Lipid molecules that make up 50% of the skin barrier. Essential for moisture retention and protection.',
+    benefits: ['barrier repair', 'hydration', 'eczema relief', 'sensitive skin support', 'anti-ageing'],
+    concerns: ['eczema', 'barrier damage', 'dry skin', 'sensitive skin', 'dehydration'],
+    ethnicSkinNote: 'CeraVe (ceramide brand) pioneered accessible ceramide skincare globally. Particularly important post-active use for Fitzpatrick V-VI.',
+    traditionalUse: 'Modern ingredient — no traditional use.',
+    culturalContext: 'Ceramide technology was developed by Elias and Feingold in the 1990s. CeraVe made it accessible globally in 2005.',
+    howToUse: 'Found in moisturisers and serums. Layer after actives as moisturiser/sealer. Can use AM and PM.',
+    comedogenicRating: 0,
+    concentration: '0.01-1%',
+    pairsWith: ['hyaluronic_acid', 'cholesterol', 'fatty_acids', 'niacinamide'],
+    avoidWith: [],
+    photosensitive: false,
+    suitableFor: ['all skin types', 'eczema', 'rosacea', 'barrier damage'],
+  },
+
+  spf_mineral: {
+    id: 'spf_mineral',
+    name: 'Mineral SPF (Zinc Oxide / Titanium Dioxide)',
+    latinName: 'Zinc oxide / Titanium dioxide',
+    category: 'spf',
+    origin: 'Mineral (zinc and titanium)',
+    communities: ['all'],
+    description: 'Physical/mineral UV blockers that reflect UV rays. Gentle, no chemical absorption, but can leave white cast on darker skin.',
+    benefits: ['broad spectrum UV protection', 'immediate protection', 'gentle', 'no chemical absorption'],
+    concerns: ['sun protection', 'sensitive skin', 'rosacea', 'pregnancy-safe SPF'],
+    ethnicSkinNote: 'White cast is a real issue on Fitzpatrick V-VI. Look for tinted mineral SPF, or hybrid formulas that minimise cast. Black Girl Sunscreen solved this for dark skin.',
+    traditionalUse: 'Zinc oxide has been used for centuries in ointments.',
+    culturalContext: 'Mineral SPF became the gold standard after chemical SPF controversies. For deep skin tones, tinted formulas were a major innovation.',
+    howToUse: 'Apply as last step of AM routine. 1/2 teaspoon for face and neck. Reapply every 2hrs outdoors.',
+    comedogenicRating: 1,
+    concentration: '15-25% zinc oxide',
+    pairsWith: ['all skincare'],
+    avoidWith: [],
+    photosensitive: false,
+    pregnancySafe: true,
+    suitableFor: ['all skin types', 'sensitive', 'rosacea', 'pregnancy'],
+    brands: ['Black Girl Sunscreen', 'Unsun Cosmetics', 'Fenty Skin', 'EltaMD', 'La Roche-Posay Anthelios'],
+  },
+
+};
+
+// ─── QUERY FUNCTIONS ─────────────────────────────────────────────────────────
+
+/**
+ * Get ingredient by ID
+ * @param {string} id
+ * @returns {Object|null}
+ */
+export function getIngredient(id) {
+  return INGREDIENTS[id] || null;
+}
+
+/**
+ * Get all ingredients for a community
+ * @param {string} communityId
+ * @returns {Object[]}
+ */
+export function getIngredientsForCommunity(communityId) {
+  return Object.values(INGREDIENTS).filter(ing =>
+    ing.communities.includes(communityId) || ing.communities.includes('all')
+  );
+}
+
+/**
+ * Search ingredients by concern
+ * @param {string} concern e.g. 'hyperpigmentation', 'acne', 'dryness'
+ * @returns {Object[]}
+ */
+export function searchIngredientsByConcern(concern) {
+  const norm = concern.toLowerCase();
+  return Object.values(INGREDIENTS).filter(ing =>
+    ing.concerns.some(c => c.toLowerCase().includes(norm)) ||
+    ing.benefits.some(b => b.toLowerCase().includes(norm))
+  );
+}
+
+/**
+ * Get traditional/ritual ingredients
+ * @returns {Object[]}
+ */
+export function getTraditionalIngredients() {
+  return Object.values(INGREDIENTS).filter(ing => ing.category === 'traditional');
+}
+
+/**
+ * Get pregnancy-safe ingredients
+ * @returns {Object[]}
+ */
+export function getPregnancySafeIngredients() {
+  return Object.values(INGREDIENTS).filter(ing => ing.pregnancySafe === true);
+}
+
+/**
+ * Get brightening/depigmenting ingredient stack
+ * @returns {Object[]}
+ */
+export function getBrighteningStack() {
+  return Object.values(INGREDIENTS).filter(ing =>
+    ing.benefits.some(b => b.includes('brightening') || b.includes('hyperpigmentation') || b.includes('PIH'))
+  );
+}
+
+/**
+ * Get ingredients by comedogenic rating
+ * @param {number} maxRating
+ * @returns {Object[]}
+ */
+export function getNonComedogenicIngredients(maxRating = 1) {
+  return Object.values(INGREDIENTS).filter(ing =>
+    typeof ing.comedogenicRating === 'number' && ing.comedogenicRating <= maxRating
+  );
+}
+
+/**
+ * Get ingredients that require SPF
+ * @returns {Object[]}
+ */
+export function getPhotosensitiveIngredients() {
+  return Object.values(INGREDIENTS).filter(ing => ing.photosensitive || ing.requiresSPF);
+}
+
+/**
+ * Check ingredient compatibility
+ * @param {string} id1
+ * @param {string} id2
+ * @returns {Object} { compatible: boolean, reason: string }
+ */
+export function checkIngredientCompatibility(id1, id2) {
+  const ing1 = INGREDIENTS[id1];
+  const ing2 = INGREDIENTS[id2];
+
+  if (!ing1 || !ing2) return { compatible: null, reason: 'Ingredient not found' };
+
+  const conflict1 = (ing1.avoidWith || []).some(a => a.toLowerCase().includes(id2.toLowerCase()) || id2.toLowerCase().includes(a.toLowerCase().split(' ')[0]));
+  const conflict2 = (ing2.avoidWith || []).some(a => a.toLowerCase().includes(id1.toLowerCase()) || id1.toLowerCase().includes(a.toLowerCase().split(' ')[0]));
+
+  if (conflict1 || conflict2) {
+    return { compatible: false, reason: `${ing1.name} and ${ing2.name} may conflict — check avoidWith notes.` };
+  }
+
+  const pairs1 = (ing1.pairsWith || []).some(p => p.toLowerCase().includes(id2.toLowerCase()) || id2.toLowerCase().includes(p.toLowerCase().split('_')[0]));
+  const pairs2 = (ing2.pairsWith || []).some(p => p.toLowerCase().includes(id1.toLowerCase()) || id1.toLowerCase().includes(p.toLowerCase().split('_')[0]));
+
+  if (pairs1 || pairs2) {
+    return { compatible: true, reason: `${ing1.name} and ${ing2.name} are actively recommended together.` };
+  }
+
+  return { compatible: true, reason: 'No known conflicts — generally safe to combine.' };
+}
+
+/**
+ * Build an ingredient stack for a concern
+ * @param {string} concern
+ * @param {string} fitzpatrick optional
+ * @returns {Object[]}
+ */
+export function buildIngredientStack(concern, fitzpatrick) {
+  const matches = searchIngredientsByConcern(concern);
+
+  // Safety filter for Fitzpatrick V-VI
+  if (fitzpatrick && ['V', 'VI'].includes(fitzpatrick)) {
+    // Flag photosensitive ingredients as use-with-care
+    return matches.map(ing => ({
+      ...ing,
+      cautionForDarkSkin: ing.photosensitive || (ing.avoidWith || []).some(a => a.toLowerCase().includes('dark')),
+    }));
+  }
+
+  return matches;
+}
+
+/**
+ * Get origin countries for an ingredient
+ * @param {string} id
+ * @returns {string}
+ */
+export function getIngredientOrigin(id) {
+  return INGREDIENTS[id]?.origin || '';
+}
+
+/**
+ * Get all ingredient names and IDs (for autocomplete)
+ * @returns {Object[]}
+ */
+export function getIngredientList() {
+  return Object.values(INGREDIENTS).map(ing => ({
+    id: ing.id,
+    name: ing.name,
+    category: ing.category,
+    communities: ing.communities,
+  }));
+}
+
+// ─── STATS ────────────────────────────────────────────────────────────────────
+
+export const INGREDIENT_STATS = {
+  total: Object.keys(INGREDIENTS).length,
+  byCategory: Object.values(INGREDIENTS).reduce((acc, ing) => {
+    acc[ing.category] = (acc[ing.category] || 0) + 1;
+    return acc;
+  }, {}),
+  traditionalIngredients: Object.values(INGREDIENTS).filter(i => i.category === 'traditional').length,
+  africanOriginIngredients: Object.values(INGREDIENTS).filter(i =>
+    (i.origin || '').toLowerCase().includes('africa') || (i.origin || '').toLowerCase().includes('west africa')
+  ).length,
+  pregnancySafeIngredients: Object.values(INGREDIENTS).filter(i => i.pregnancySafe).length,
+  brighteners: Object.values(INGREDIENTS).filter(i =>
+    (i.suitableFor || []).some(s => s.includes('PIH') || s.includes('brightening'))
+  ).length,
+};
+

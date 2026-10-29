@@ -1225,6 +1225,786 @@ async function bootWithTrending() {
   await boot();
   // Load trending in background after boot
   loadTrending();
+  // Wire up new feature modals
+  setupTryOn();
+  setupStylist();
+  setupShare();
+  setupStylistPage();
 }
+
+// ===========================================================================
+// FEATURE 1 — LOOK TRY-ON (camera / photo upload + canvas blend overlay)
+// ===========================================================================
+
+const tryonState = {
+  lookId: null,
+  lookName: null,
+  lookImg: null,
+  stream: null,
+  showingOriginal: false,
+  blendMode: 'multiply',
+};
+
+function setupTryOn() {
+  document.getElementById('tryonClose')?.addEventListener('click', closeTryOn);
+  document.getElementById('tryonModal')?.addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeTryOn();
+  });
+
+  document.getElementById('tryonUploadBtn')?.addEventListener('click', () => {
+    document.getElementById('tryonFileInput').click();
+  });
+
+  document.getElementById('tryonFileInput')?.addEventListener('change', e => {
+    const file = e.target.files?.[0];
+    if (file) loadTryOnPhoto(URL.createObjectURL(file));
+  });
+
+  document.getElementById('tryonCameraBtn')?.addEventListener('click', startCamera);
+  document.getElementById('tryonCaptureBtn')?.addEventListener('click', captureCamera);
+
+  document.getElementById('tryonOpacity')?.addEventListener('input', e => {
+    document.getElementById('tryonOpacityVal').textContent = e.target.value + '%';
+    applyOverlay();
+  });
+
+  document.querySelectorAll('.tryon-blend-btns .chip-btn')?.forEach(btn => {
+    btn?.addEventListener('click', () => {
+      document.querySelectorAll('.tryon-blend-btns .chip-btn').forEach(b =>
+        b.classList.remove('chip-btn--active'));
+      btn.classList.add('chip-btn--active');
+      tryonState.blendMode = btn.dataset.blend;
+      applyOverlay();
+    });
+  });
+
+  document.getElementById('tryonBeforeAfterBtn')?.addEventListener('click', toggleBeforeAfter);
+  document.getElementById('tryonSaveBtn')?.addEventListener('click', saveTryOnImage);
+  document.getElementById('tryonRetakeBtn')?.addEventListener('click', () => {
+    stopCamera();
+    document.getElementById('tryonPreviewStep').classList.add('hidden');
+    document.getElementById('tryonUploadStep').classList.remove('hidden');
+    document.getElementById('tryonFileInput').value = '';
+  });
+}
+
+function openTryOn(lookId, lookName) {
+  tryonState.lookId = lookId;
+  tryonState.lookName = lookName;
+  tryonState.lookImg = null;
+  tryonState.showingOriginal = false;
+
+  const modal = document.getElementById('tryonModal');
+  document.getElementById('tryonLookName').textContent = `Try On: ${lookName}`;
+  document.getElementById('tryonUploadStep').classList.remove('hidden');
+  document.getElementById('tryonPreviewStep').classList.add('hidden');
+  document.getElementById('tryonCameraWrap').classList.add('hidden');
+  document.getElementById('tryonFileInput').value = '';
+
+  modal.classList.remove('hidden');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeTryOn() {
+  stopCamera();
+  const modal = document.getElementById('tryonModal');
+  modal.classList.remove('open');
+  modal.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+async function startCamera() {
+  try {
+    tryonState.stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: 'user', width: { ideal: 640 }, height: { ideal: 480 } },
+    });
+    const video = document.getElementById('tryonVideo');
+    video.srcObject = tryonState.stream;
+    document.getElementById('tryonCameraWrap').classList.remove('hidden');
+    document.querySelector('.tryon-photo-options').classList.add('hidden');
+  } catch {
+    toast('Camera access denied — please upload a photo instead', 'warn');
+  }
+}
+
+function stopCamera() {
+  tryonState.stream?.getTracks().forEach(t => t.stop());
+  tryonState.stream = null;
+  const video = document.getElementById('tryonVideo');
+  if (video) video.srcObject = null;
+}
+
+function captureCamera() {
+  const video = document.getElementById('tryonVideo');
+  const canvas = document.createElement('canvas');
+  canvas.width = video.videoWidth || 640;
+  canvas.height = video.videoHeight || 480;
+  canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+  stopCamera();
+  loadTryOnPhoto(canvas.toDataURL('image/jpeg', 0.92));
+}
+
+function loadTryOnPhoto(src) {
+  const img = new Image();
+  img.onload = () => {
+    tryonState.userImg = img;
+    const canvas = document.getElementById('tryonCanvas');
+    const maxW = Math.min(500, window.innerWidth - 48);
+    const scale = maxW / img.width;
+    canvas.width = Math.round(img.width * scale);
+    canvas.height = Math.round(img.height * scale);
+    canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+
+    // Size overlay canvas to match
+    const overlay = document.getElementById('tryonOverlay');
+    overlay.width = canvas.width;
+    overlay.height = canvas.height;
+
+    document.getElementById('tryonUploadStep').classList.add('hidden');
+    document.getElementById('tryonCameraWrap').classList.add('hidden');
+    document.querySelector('.tryon-photo-options')?.classList.remove('hidden');
+    document.getElementById('tryonPreviewStep').classList.remove('hidden');
+
+    loadLookOverlay();
+  };
+  img.src = src;
+}
+
+function loadLookOverlay() {
+  const imgFile = LOOK_IMAGES[tryonState.lookId];
+  if (!imgFile) { applyOverlay(); return; }
+
+  const lookImg = new Image();
+  lookImg.onload = () => {
+    tryonState.lookImg = lookImg;
+    applyOverlay();
+  };
+  lookImg.onerror = () => applyOverlay();
+  lookImg.src = imgFile;
+}
+
+function applyOverlay() {
+  const canvas = document.getElementById('tryonCanvas');
+  const overlay = document.getElementById('tryonOverlay');
+  if (!canvas || !overlay || !tryonState.userImg) return;
+
+  const ctx = canvas.getContext('2d');
+  // Redraw base photo
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(tryonState.userImg, 0, 0, canvas.width, canvas.height);
+
+  if (tryonState.showingOriginal || !tryonState.lookImg) return;
+
+  const opacity = parseInt(document.getElementById('tryonOpacity')?.value ?? 40) / 100;
+
+  // Draw look overlay with blend mode on the overlay canvas
+  const octx = overlay.getContext('2d');
+  octx.clearRect(0, 0, overlay.width, overlay.height);
+  octx.globalAlpha = opacity;
+  octx.globalCompositeOperation = tryonState.blendMode === 'multiply' ? 'multiply' :
+    tryonState.blendMode === 'soft-light' ? 'soft-light' :
+    tryonState.blendMode === 'overlay' ? 'overlay' : 'screen';
+  octx.drawImage(tryonState.lookImg, 0, 0, overlay.width, overlay.height);
+}
+
+function toggleBeforeAfter() {
+  tryonState.showingOriginal = !tryonState.showingOriginal;
+  const btn = document.getElementById('tryonBeforeAfterBtn');
+  btn.textContent = tryonState.showingOriginal ? '✨ See With Look' : '⟷ Before / After';
+  applyOverlay();
+}
+
+function saveTryOnImage() {
+  // Composite canvas + overlay into one download
+  const base = document.getElementById('tryonCanvas');
+  const overlay = document.getElementById('tryonOverlay');
+  const out = document.createElement('canvas');
+  out.width = base.width;
+  out.height = base.height;
+  const ctx = out.getContext('2d');
+  ctx.drawImage(base, 0, 0);
+  ctx.drawImage(overlay, 0, 0);
+
+  // Add MIRRR watermark
+  ctx.font = `bold ${Math.round(base.width / 20)}px Inter, sans-serif`;
+  ctx.fillStyle = 'rgba(255,255,255,0.85)';
+  ctx.fillText('🪞 MIRRR', 12, base.height - 12);
+
+  const link = document.createElement('a');
+  link.download = `mirrr-${tryonState.lookId ?? 'look'}.jpg`;
+  link.href = out.toDataURL('image/jpeg', 0.92);
+  link.click();
+  toast('Look saved!', 'info');
+}
+
+// ===========================================================================
+// FEATURE 2 — BEFORE / AFTER on look cards (inline, no modal)
+// ===========================================================================
+// Wired via renderLookCard — each card gets a "Try On" button
+// The before/after toggle is handled inside the tryon modal (Feature 1)
+
+// ===========================================================================
+// FEATURE 3 — AGENTIC STYLIST MODAL (multi-turn conversational refinement)
+// ===========================================================================
+
+const stylistState = {
+  history: [],
+  currentProfile: null,
+  refinementCount: 0,
+};
+
+const STYLIST_OPENERS = [
+  "What occasion are you dressing for?",
+  "How bold do you want to go?",
+  "Any colours you love right now?",
+  "Should we lean more natural or editorial?",
+];
+
+const STYLIST_QUICK_PROMPTS = [
+  "Make it more dramatic",
+  "Show me something for a wedding",
+  "Go more natural",
+  "I want brighter colours",
+  "Something for everyday",
+  "More bold and editorial",
+];
+
+function setupStylist() {
+  document.getElementById('stylistClose')?.addEventListener('click', closeStylist);
+  document.getElementById('stylistModal')?.addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeStylist();
+  });
+  document.getElementById('stylistSendBtn')?.addEventListener('click', sendStylistMessage);
+  document.getElementById('stylistInput')?.addEventListener('keydown', e => {
+    if (e.key === 'Enter') sendStylistMessage();
+  });
+}
+
+function openStylist(profile) {
+  stylistState.history = [];
+  stylistState.refinementCount = 0;
+  stylistState.currentProfile = profile ?? state;
+
+  const modal = document.getElementById('stylistModal');
+  const msgsEl = document.getElementById('stylistMessages');
+  msgsEl.innerHTML = '';
+  document.getElementById('stylistInput').value = '';
+
+  // Opening message
+  const opener = STYLIST_OPENERS[Math.floor(Math.random() * STYLIST_OPENERS.length)];
+  appendStylistMessage('stylist', `Hi! I'm your MIRRR stylist, powered by Qloo taste data. I can see your current look profile — let me refine it.\n\n${opener}`);
+
+  // Quick prompt chips
+  renderStylistQuickChips();
+
+  modal.classList.remove('hidden');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeStylist() {
+  const modal = document.getElementById('stylistModal');
+  modal.classList.remove('open');
+  modal.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+function appendStylistMessage(role, text) {
+  const msgsEl = document.getElementById('stylistMessages');
+  const div = document.createElement('div');
+  div.className = `stylist-msg stylist-msg--${role}`;
+  div.innerHTML = `<span class="stylist-msg-text">${text.replace(/\n/g, '<br>')}</span>`;
+  msgsEl.appendChild(div);
+  msgsEl.scrollTop = msgsEl.scrollHeight;
+}
+
+function renderStylistQuickChips() {
+  const chipsEl = document.getElementById('stylistQuickChips');
+  if (!chipsEl) return;
+  chipsEl.innerHTML = STYLIST_QUICK_PROMPTS.map(p =>
+    `<button class="chip stylist-quick-chip" data-prompt="${p}">${p}</button>`
+  ).join('');
+  chipsEl.querySelectorAll('.stylist-quick-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.getElementById('stylistInput').value = btn.dataset.prompt;
+      sendStylistMessage();
+    });
+  });
+}
+
+async function sendStylistMessage() {
+  const input = document.getElementById('stylistInput');
+  const msg = input?.value?.trim();
+  if (!msg) return;
+  input.value = '';
+
+  appendStylistMessage('user', msg);
+  stylistState.history.push({ role: 'user', content: msg });
+  stylistState.refinementCount++;
+
+  const sendBtn = document.getElementById('stylistSendBtn');
+  sendBtn.disabled = true;
+  sendBtn.textContent = '…';
+
+  appendStylistMessage('stylist', '🔍 Querying Qloo for your refined taste…');
+
+  try {
+    const result = await api('/api/agent/refine', 'POST', {
+      message: msg,
+      history: stylistState.history.slice(-6),
+      currentAesthetic: state.aesthetic,
+      communityId: state.communityId,
+      tasteChips: state.tasteChips,
+      refinementCount: stylistState.refinementCount,
+    });
+
+    // Remove the "thinking…" bubble
+    const msgs = document.getElementById('stylistMessages');
+    msgs.removeChild(msgs.lastElementChild);
+
+    const reply = result.reply ?? "I've updated your look profile!";
+    appendStylistMessage('stylist', reply);
+    stylistState.history.push({ role: 'assistant', content: reply });
+
+    if (result.looks?.length) {
+      // Update the main results
+      state.aesthetic = result.aesthetic ?? state.aesthetic;
+      state.communityId = result.communityId ?? state.communityId;
+      renderTasteResults(result);
+
+      appendStylistMessage('stylist', `✨ I've refreshed your looks above — ${result.looks.length} new recommendations based on what you just told me.`);
+    }
+  } catch (err) {
+    const msgs = document.getElementById('stylistMessages');
+    if (msgs.lastElementChild?.textContent?.includes('Querying Qloo')) {
+      msgs.removeChild(msgs.lastElementChild);
+    }
+    // Graceful fallback with contextual response
+    const fallbackReply = generateStylistFallback(msg, stylistState.refinementCount);
+    appendStylistMessage('stylist', fallbackReply);
+    stylistState.history.push({ role: 'assistant', content: fallbackReply });
+  } finally {
+    sendBtn.disabled = false;
+    sendBtn.textContent = '→';
+  }
+}
+
+function generateStylistFallback(msg, turn) {
+  const lc = msg.toLowerCase();
+  if (lc.includes('wedding') || lc.includes('bridal'))
+    return `For a wedding, I'd point you toward our Bollywood Bridal, Mehndi Bridal, or Zulu Bridal looks — all stunning for a ceremony. Try those from the Taste Profile → then come back and I'll refine further.`;
+  if (lc.includes('dramatic') || lc.includes('bold'))
+    return `Bold it is! Add "Nicki Minaj" or "Cardi B" to your taste chips — that'll push the algorithm toward high-drama, editorial energy. Then hit Get My Looks.`;
+  if (lc.includes('natural') || lc.includes('everyday'))
+    return `For a natural everyday look, try adding "Lupita Nyong'o" or "Yara Shahidi" as taste signals — they anchor the algorithm toward clean, skin-forward aesthetics.`;
+  if (lc.includes('colour') || lc.includes('color') || lc.includes('bright'))
+    return `For colour-rich looks, try Diwali Festive, Brazilian Carnival, or Caribbean Carnival — they're built around maximalist pigment. Add "Anitta" or "Lizzo" as taste chips too.`;
+  if (turn === 1)
+    return `Great direction! To refine further, add 1-2 more taste signals in the Taste Profile — the Qloo engine picks up on combinations. Then tell me what else to tweak.`;
+  return `Noted — I've logged that preference (turn ${turn}). The more signals you give me, the sharper Qloo can tune your profile. What else?`;
+}
+
+// ===========================================================================
+// FEATURE 4 — AGENTIC STYLIST PAGE VIEW (full page multi-step refinement)
+// ===========================================================================
+
+function setupStylistPage() {
+  document.getElementById('stylistPageSendBtn')?.addEventListener('click', sendStylistPageMessage);
+  document.getElementById('stylistPageInput')?.addEventListener('keydown', e => {
+    if (e.key === 'Enter') sendStylistPageMessage();
+  });
+}
+
+function initStylistPage() {
+  const msgsEl = document.getElementById('stylistPageMessages');
+  if (msgsEl.dataset.init) return;
+  msgsEl.dataset.init = '1';
+
+  const hasTaste = state.aesthetic !== null || state.tasteChips.length > 0;
+  const opener = hasTaste
+    ? `Welcome back! I can see your current taste profile. Tell me what to refine — occasion, mood, colour direction, or anything else.`
+    : `Hi! I'm your MIRRR AI Stylist. I use Qloo cultural taste data to find looks tailored to you.\n\nLet's start: tell me about an artist, film, or cultural vibe you love, or describe an occasion you're dressing for.`;
+
+  appendStylistPageMessage('stylist', opener);
+  renderStylistPageQuickChips();
+}
+
+function appendStylistPageMessage(role, text) {
+  const msgsEl = document.getElementById('stylistPageMessages');
+  const div = document.createElement('div');
+  div.className = `stylist-msg stylist-msg--${role}`;
+  div.innerHTML = `<span class="stylist-msg-text">${text.replace(/\n/g, '<br>')}</span>`;
+  msgsEl.appendChild(div);
+  msgsEl.scrollTop = msgsEl.scrollHeight;
+}
+
+function renderStylistPageQuickChips() {
+  const pageChips = [
+    "I'm going to a wedding", "Give me something bold", "Natural everyday look",
+    "Festival / concert vibes", "Professional / office", "Date night glam",
+  ];
+  const existing = document.querySelector('.stylist-page-quick-chips');
+  if (existing) existing.remove();
+
+  const wrap = document.createElement('div');
+  wrap.className = 'stylist-page-quick-chips';
+  wrap.innerHTML = pageChips.map(p =>
+    `<button class="chip stylist-quick-chip" data-prompt="${p}">${p}</button>`
+  ).join('');
+  document.querySelector('.stylist-page-form')?.after(wrap);
+  wrap.querySelectorAll('.stylist-quick-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.getElementById('stylistPageInput').value = btn.dataset.prompt;
+      sendStylistPageMessage();
+    });
+  });
+}
+
+async function sendStylistPageMessage() {
+  const input = document.getElementById('stylistPageInput');
+  const msg = input?.value?.trim();
+  if (!msg) return;
+  input.value = '';
+
+  appendStylistPageMessage('user', msg);
+
+  const sendBtn = document.getElementById('stylistPageSendBtn');
+  sendBtn.disabled = true;
+  sendBtn.textContent = '…';
+  appendStylistPageMessage('stylist', '🔍 Checking Qloo for your refined profile…');
+
+  try {
+    const result = await api('/api/agent/refine', 'POST', {
+      message: msg,
+      currentAesthetic: state.aesthetic,
+      communityId: state.communityId,
+      tasteChips: state.tasteChips,
+    });
+
+    const msgs = document.getElementById('stylistPageMessages');
+    msgs.removeChild(msgs.lastElementChild);
+
+    appendStylistPageMessage('stylist', result.reply ?? "I've updated your profile!");
+
+    if (result.looks?.length) {
+      state.aesthetic = result.aesthetic ?? state.aesthetic;
+      state.communityId = result.communityId ?? state.communityId;
+
+      const resultsEl = document.getElementById('stylistPageResults');
+      resultsEl.classList.remove('hidden');
+      resultsEl.innerHTML = `
+        <h3 class="section-title">Your Refined Looks</h3>
+        <div class="looks-grid-inner">
+          ${result.looks.map(({ look, score }) => renderLookCard(look, score)).join('')}
+        </div>
+        <div class="stylist-page-cta">
+          <button class="btn btn-secondary" id="stylistToTasteBtn">See Full Profile →</button>
+          <button class="btn btn-ghost" id="stylistSharePageBtn">Share This Look 📤</button>
+        </div>
+      `;
+      resultsEl.querySelectorAll('.look-card').forEach(card => {
+        card.addEventListener('click', () => openLookModal(card.dataset.lookId));
+      });
+      document.getElementById('stylistToTasteBtn')?.addEventListener('click', () => showView('taste'));
+      document.getElementById('stylistSharePageBtn')?.addEventListener('click', () => openShare());
+    }
+  } catch {
+    const msgs = document.getElementById('stylistPageMessages');
+    if (msgs.lastElementChild?.textContent?.includes('Checking Qloo')) {
+      msgs.removeChild(msgs.lastElementChild);
+    }
+    appendStylistPageMessage('stylist', generateStylistFallback(msg, 1));
+  } finally {
+    sendBtn.disabled = false;
+    sendBtn.textContent = 'Refine →';
+  }
+}
+
+// ===========================================================================
+// FEATURE 5 — SHARE CARD GENERATOR (canvas-drawn result card)
+// ===========================================================================
+
+function setupShare() {
+  document.getElementById('shareClose')?.addEventListener('click', closeShare);
+  document.getElementById('shareModal')?.addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeShare();
+  });
+  document.getElementById('shareDownloadBtn')?.addEventListener('click', downloadShareCard);
+  document.getElementById('shareCopyBtn')?.addEventListener('click', copyShareLink);
+}
+
+function openShare(lookId) {
+  const modal = document.getElementById('shareModal');
+  modal.classList.remove('hidden');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  drawShareCard(lookId);
+}
+
+function closeShare() {
+  const modal = document.getElementById('shareModal');
+  modal.classList.remove('open');
+  modal.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+function drawShareCard(lookId) {
+  const canvas = document.getElementById('shareCanvas');
+  const ctx = canvas.getContext('2d');
+  const W = 540, H = 960;
+  canvas.width = W;
+  canvas.height = H;
+
+  // Background gradient
+  const grad = ctx.createLinearGradient(0, 0, W, H);
+  grad.addColorStop(0, '#1a0533');
+  grad.addColorStop(0.5, '#3d0f5e');
+  grad.addColorStop(1, '#0d1a3a');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, W, H);
+
+  // Gold accent strip
+  ctx.fillStyle = '#c9a227';
+  ctx.fillRect(0, 0, W, 4);
+  ctx.fillRect(0, H - 4, W, 4);
+
+  // MIRRR wordmark
+  ctx.font = 'bold 52px Inter, sans-serif';
+  ctx.fillStyle = '#c9a227';
+  ctx.textAlign = 'center';
+  ctx.fillText('🪞 MIRRR', W / 2, 72);
+
+  ctx.font = '16px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.6)';
+  ctx.fillText('Your Taste. Your Looks. Your Style.', W / 2, 98);
+
+  // Community badge
+  const com = state.communityId
+    ? state.communities.find(c => c.id === state.communityId)
+    : null;
+
+  if (com) {
+    ctx.fillStyle = 'rgba(201,162,39,0.15)';
+    roundRect(ctx, W / 2 - 110, 114, 220, 38, 19);
+    ctx.fill();
+    ctx.font = 'bold 18px Inter, sans-serif';
+    ctx.fillStyle = '#c9a227';
+    ctx.fillText(`${com.emoji} ${com.label}`, W / 2, 138);
+  }
+
+  // Look image
+  const effectiveLookId = lookId ?? (state.aesthetic ? getTopLookId() : null);
+  const imgFile = effectiveLookId ? LOOK_IMAGES[effectiveLookId] : null;
+
+  if (imgFile) {
+    const lookImg = new Image();
+    lookImg.onload = () => {
+      const imgY = 166, imgH = 380;
+      // Rounded rect clip
+      ctx.save();
+      roundRect(ctx, 40, imgY, W - 80, imgH, 20);
+      ctx.clip();
+      ctx.drawImage(lookImg, 40, imgY, W - 80, imgH);
+      ctx.restore();
+
+      // Glass border
+      ctx.strokeStyle = 'rgba(201,162,39,0.4)';
+      ctx.lineWidth = 2;
+      ctx.save();
+      roundRect(ctx, 40, imgY, W - 80, imgH, 20);
+      ctx.stroke();
+      ctx.restore();
+
+      drawShareCardText(ctx, W, imgY + imgH + 20, effectiveLookId);
+    };
+    lookImg.onerror = () => drawShareCardText(ctx, W, 200, null);
+    lookImg.src = imgFile;
+  } else {
+    drawShareCardText(ctx, W, 200, null);
+  }
+}
+
+function drawShareCardText(ctx, W, startY) {
+  // Aesthetic bars
+  const aes = state.aesthetic;
+  if (aes) {
+    ctx.font = 'bold 20px Inter, sans-serif';
+    ctx.fillStyle = '#fff';
+    ctx.textAlign = 'center';
+    ctx.fillText('Your Aesthetic DNA', W / 2, startY + 30);
+
+    const bars = [
+      { label: 'Intensity', val: aes.intensity ?? 0.5 },
+      { label: 'Warmth', val: aes.warmth ?? 0.5 },
+      { label: 'Boldness', val: aes.boldness ?? 0.5 },
+    ];
+    bars.forEach((b, i) => {
+      const y = startY + 60 + i * 42;
+      const barX = 80, barW = W - 160;
+
+      ctx.font = '14px Inter, sans-serif';
+      ctx.fillStyle = 'rgba(255,255,255,0.7)';
+      ctx.textAlign = 'left';
+      ctx.fillText(b.label, barX, y);
+
+      // Track
+      ctx.fillStyle = 'rgba(255,255,255,0.12)';
+      roundRect(ctx, barX, y + 8, barW, 10, 5);
+      ctx.fill();
+
+      // Fill
+      const fillGrad = ctx.createLinearGradient(barX, 0, barX + barW, 0);
+      fillGrad.addColorStop(0, '#c9a227');
+      fillGrad.addColorStop(1, '#e8c86a');
+      ctx.fillStyle = fillGrad;
+      roundRect(ctx, barX, y + 8, Math.round(barW * b.val), 10, 5);
+      ctx.fill();
+
+      // Pct
+      ctx.font = '13px Inter, sans-serif';
+      ctx.fillStyle = '#c9a227';
+      ctx.textAlign = 'right';
+      ctx.fillText(`${Math.round(b.val * 100)}%`, W - barX, y);
+    });
+
+    // Archetype tags
+    const archs = (aes.archetypes ?? []).slice(0, 3);
+    if (archs.length) {
+      const tagY = startY + 60 + 3 * 42 + 16;
+      ctx.textAlign = 'center';
+      let tagX = W / 2 - ((archs.length - 1) * 90) / 2;
+      archs.forEach(arch => {
+        ctx.fillStyle = 'rgba(201,162,39,0.18)';
+        roundRect(ctx, tagX - 60, tagY, 120, 26, 13);
+        ctx.fill();
+        ctx.font = '12px Inter, sans-serif';
+        ctx.fillStyle = '#c9a227';
+        ctx.fillText(arch.replace(/_/g, ' '), tagX, tagY + 17);
+        tagX += 130;
+      });
+    }
+  }
+
+  // Footer
+  const footY = 910;
+  ctx.font = '13px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.4)';
+  ctx.textAlign = 'center';
+  ctx.fillText('mirrr-upbn.onrender.com · Powered by Qloo Taste AI', W / 2, footY);
+}
+
+function getTopLookId() {
+  // Return first look in LOOK_IMAGES that matches current community
+  const comId = state.communityId;
+  if (!comId) return Object.keys(LOOK_IMAGES)[0];
+  const communityLookMap = {
+    'west-african': 'afrobeats_concert',
+    'black-american': 'hip_hop_glam',
+    'caribbean': 'caribbean_carnival',
+    'south-asian': 'bollywood_bridal',
+    'arab': 'gulf_glam',
+    'latina': 'latina_glam',
+    'east-asian': 'k_beauty_glass',
+    'east-african': 'ethiopian_jewel',
+    'south-african': 'zulu_bridal',
+  };
+  return communityLookMap[comId] ?? Object.keys(LOOK_IMAGES)[0];
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
+}
+
+function downloadShareCard() {
+  const canvas = document.getElementById('shareCanvas');
+  const link = document.createElement('a');
+  link.download = 'mirrr-look-profile.png';
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+  toast('Card saved!', 'info');
+}
+
+function copyShareLink() {
+  navigator.clipboard?.writeText('https://mirrr-upbn.onrender.com')
+    .then(() => toast('Link copied!', 'info'))
+    .catch(() => toast('https://mirrr-upbn.onrender.com', 'info'));
+}
+
+// ===========================================================================
+// Wire "Try On" + "Share" buttons into existing look cards
+// ===========================================================================
+
+// Override renderLookCard to include Try On + Share buttons
+const _origRenderLookCard = renderLookCard;
+// (already defined above — we patch renderTasteResults to add buttons after render)
+
+const _origRenderTasteResults = renderTasteResults;
+renderTasteResults = function(result) {
+  _origRenderTasteResults(result);
+
+  // Add "Refine with Stylist" and "Share" to looks-actions
+  const actionsEl = document.querySelector('.looks-actions');
+  if (actionsEl && !actionsEl.querySelector('#openStylistBtn')) {
+    const stylistBtn = document.createElement('button');
+    stylistBtn.className = 'btn btn-secondary';
+    stylistBtn.id = 'openStylistBtn';
+    stylistBtn.textContent = '🪞 Refine with AI Stylist';
+    stylistBtn.addEventListener('click', () => openStylist(state));
+    actionsEl.appendChild(stylistBtn);
+
+    const shareBtn = document.createElement('button');
+    shareBtn.className = 'btn btn-ghost';
+    shareBtn.id = 'openShareBtn';
+    shareBtn.textContent = '📤 Share My Look';
+    shareBtn.addEventListener('click', () => openShare());
+    actionsEl.appendChild(shareBtn);
+  }
+
+  // Add "Try On" button to each look card
+  document.querySelectorAll('.look-card').forEach(card => {
+    if (card.querySelector('.tryon-btn')) return; // already added
+    const lookId = card.dataset.lookId;
+    const lookName = card.querySelector('.look-name')?.textContent ?? 'this look';
+    const tryBtn = document.createElement('button');
+    tryBtn.className = 'btn btn-primary tryon-btn';
+    tryBtn.textContent = '📸 Try On';
+    tryBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      openTryOn(lookId, lookName);
+    });
+    card.appendChild(tryBtn);
+  });
+};
+
+// Wire blend mode buttons after DOM loads
+window.addEventListener('load', () => {
+  document.querySelectorAll('.tryon-blend-btns .chip-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tryon-blend-btns .chip-btn').forEach(b =>
+        b.classList.remove('chip-btn--active'));
+      btn.classList.add('chip-btn--active');
+      tryonState.blendMode = btn.dataset.blend;
+      applyOverlay();
+    });
+  });
+});
+
+// Patch showView to init stylist page when navigated to
+const _origShowView = showView;
+showView = function(viewId) {
+  _origShowView(viewId);
+  if (viewId === 'stylist') initStylistPage();
+};
 
 document.addEventListener('DOMContentLoaded', bootWithTrending);

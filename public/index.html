@@ -19,6 +19,7 @@
         <button class="nav-link" data-view="taste">Taste Profile</button>
         <button class="nav-link" data-view="shade">Shade Finder</button>
         <button class="nav-link" data-view="wig">Wig Match</button>
+        <button class="nav-link" data-view="stylist">AI Stylist</button>
       </div>
     </div>
   </nav>
@@ -59,6 +60,95 @@
       </div>
     </div>
   </section>
+
+  <!-- ─── TRYON MODAL ───────────────────────────────────────────────────── -->
+  <div id="tryonModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-label="Try On">
+    <div class="modal tryon-modal">
+      <button class="modal-close" id="tryonClose" aria-label="Close">✕</button>
+      <div class="tryon-inner">
+        <h2 class="tryon-title" id="tryonLookName">Try On</h2>
+
+        <!-- Step 1: Upload or Camera -->
+        <div id="tryonUploadStep" class="tryon-step">
+          <p class="tryon-hint">Upload a selfie or use your camera to see this look on you</p>
+          <div class="tryon-photo-options">
+            <button class="btn btn-primary" id="tryonUploadBtn">📁 Upload Photo</button>
+            <button class="btn btn-secondary" id="tryonCameraBtn">📷 Use Camera</button>
+          </div>
+          <input type="file" id="tryonFileInput" accept="image/*" class="hidden" />
+          <!-- Camera stream -->
+          <div id="tryonCameraWrap" class="tryon-camera-wrap hidden">
+            <video id="tryonVideo" class="tryon-video" autoplay playsinline muted></video>
+            <button class="btn btn-primary tryon-capture-btn" id="tryonCaptureBtn">📸 Capture</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Canvas overlay -->
+        <div id="tryonPreviewStep" class="tryon-step hidden">
+          <div class="tryon-canvas-wrap">
+            <canvas id="tryonCanvas" class="tryon-canvas"></canvas>
+            <canvas id="tryonOverlay" class="tryon-overlay"></canvas>
+          </div>
+          <div class="tryon-controls">
+            <div class="tryon-control-row">
+              <label class="tryon-label">Blend Intensity</label>
+              <input type="range" id="tryonOpacity" min="10" max="80" value="40" class="tryon-slider" />
+              <span id="tryonOpacityVal" class="tryon-val">40%</span>
+            </div>
+            <div class="tryon-control-row">
+              <label class="tryon-label">Blend Mode</label>
+              <div class="tryon-blend-btns">
+                <button class="chip-btn chip-btn--active" data-blend="multiply">Natural</button>
+                <button class="chip-btn" data-blend="soft-light">Soft</button>
+                <button class="chip-btn" data-blend="overlay">Bold</button>
+                <button class="chip-btn" data-blend="screen">Luminous</button>
+              </div>
+            </div>
+          </div>
+          <div class="tryon-before-after">
+            <button class="btn btn-ghost" id="tryonBeforeAfterBtn">⟷ Before / After</button>
+            <button class="btn btn-secondary" id="tryonSaveBtn">💾 Save Look</button>
+            <button class="btn btn-ghost" id="tryonRetakeBtn">🔄 New Photo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── STYLIST MODAL (Agentic refinement) ──────────────────────────────── -->
+  <div id="stylistModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-label="AI Stylist">
+    <div class="modal stylist-modal">
+      <button class="modal-close" id="stylistClose" aria-label="Close">✕</button>
+      <div class="stylist-inner">
+        <div class="stylist-header">
+          <span class="stylist-avatar">🪞</span>
+          <div>
+            <h2 class="stylist-title">Your MIRRR Stylist</h2>
+            <p class="stylist-sub">Powered by Qloo Taste AI · Refine your look</p>
+          </div>
+        </div>
+        <div id="stylistMessages" class="stylist-messages"></div>
+        <div class="stylist-input-row">
+          <input type="text" id="stylistInput" class="stylist-input" placeholder="Tell me what to change…" />
+          <button class="btn btn-primary stylist-send-btn" id="stylistSendBtn">→</button>
+        </div>
+        <div class="stylist-quick-chips" id="stylistQuickChips"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SHARE CARD MODAL ───────────────────────────────────────────────── -->
+  <div id="shareModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-label="Share Your Look">
+    <div class="modal share-modal">
+      <button class="modal-close" id="shareClose" aria-label="Close">✕</button>
+      <h2 class="share-modal-title">Your MIRRR Card</h2>
+      <canvas id="shareCanvas" class="share-canvas"></canvas>
+      <div class="share-actions">
+        <button class="btn btn-primary" id="shareDownloadBtn">⬇️ Save Image</button>
+        <button class="btn btn-ghost" id="shareCopyBtn">🔗 Copy Link</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ─── MAIN APP ─────────────────────────────────────────────────────── -->
   <main id="app">
@@ -136,6 +226,22 @@
         <div class="results-image-card share-card-wrap">
           <img src="result-share-card.png" alt="My MIRRR Profile — Your signature look, shade and wig style" class="share-card-img" />
         </div>
+      </div>
+    </section>
+
+    <!-- ── STYLIST VIEW ─────────────────────────────────────────────── -->
+    <section id="view-stylist" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">AI Stylist</h2>
+        <p class="view-sub">Multi-step refinement. Tell your stylist what to change.</p>
+      </div>
+      <div class="stylist-page-inner">
+        <div class="stylist-page-chat" id="stylistPageMessages"></div>
+        <div class="stylist-page-form">
+          <input type="text" id="stylistPageInput" class="chip-input" placeholder="e.g. Make it more dramatic… show me something for a wedding…" />
+          <button class="btn btn-primary" id="stylistPageSendBtn">Refine →</button>
+        </div>
+        <div id="stylistPageResults" class="hidden"></div>
       </div>
     </section>
 

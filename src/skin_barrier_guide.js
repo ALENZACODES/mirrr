@@ -1,285 +1,206 @@
 /**
- * MIRRR Skin Barrier Guide
- * Understanding and repairing the skin's moisture barrier
- * With special focus on how barrier function differs in melanin-rich skin
+ * MIRRR — Skin Barrier Guide
+ * Comprehensive guide to the skin barrier, damage, repair, and ethnic skin considerations.
  */
 
-// ─── SKIN BARRIER FUNDAMENTALS ───────────────────────────────────────────────
-
-export const SKIN_BARRIER_BASICS = {
-  whatIsIt: {
-    definition: 'The skin barrier — formally called the stratum corneum — is the outermost layer of skin. It consists of skin cells (corneocytes) held together by lipids (fats) in a structure often described as "bricks and mortar": cells are the bricks; lipid matrix is the mortar.',
-    functions: [
-      'Keeps water in (prevents transepidermal water loss — TEWL)',
-      'Keeps irritants, allergens, and bacteria out',
-      'Regulates what penetrates into deeper skin layers',
-      'Maintains skin\'s acid mantle (natural pH ~4.5–5.5)',
-    ],
-    composition: {
-      ceramides: 'Essential fatty acids that make up ~50% of the lipid matrix — the single most important barrier lipid',
-      cholesterol: '~25% of lipid matrix — helps maintain fluidity and permeability',
-      fatty_acids: '~15% of lipid matrix — especially oleic acid and linoleic acid',
-      naturalMoisturisers: 'NMF (Natural Moisturising Factors) — amino acids, urea, lactic acid, sodium PCA — attract water into the cells',
-    },
+export const SKIN_BARRIER_SCIENCE = {
+  title: 'Skin Barrier — Biology & Function',
+  whatItIs: {
+    definition: 'The skin barrier (stratum corneum) is the outermost layer of the skin — the final frontier between the external environment and the body\'s living tissue. It is composed of dead, flattened keratinocyte cells (corneocytes) embedded in a lipid matrix (ceramides, fatty acids, cholesterol). The analogy most often used is "bricks and mortar": the corneocytes are the bricks, the lipid matrix is the mortar holding them together.',
+    functions: ['TEWL prevention: Trans-Epidermal Water Loss — prevents the skin from losing moisture to the environment; a healthy barrier retains skin hydration', 'Pathogen barrier: prevents bacteria, viruses, and fungi from penetrating the skin', 'Environmental barrier: blocks UV radiation (partially), pollution particulates, allergens, and irritants', 'pH maintenance: keeps skin surface slightly acidic (pH 4.5-5.5) which supports healthy skin microbiome and barrier enzyme function']
   },
-  damageAndRepair: {
-    whatDamagesIt: [
-      'Over-cleansing with harsh sulfate detergents',
-      'Hot water — strips lipids from the skin surface',
-      'Over-exfoliating (physical scrubs or excessive acid use)',
-      'Very low or very high humidity environments',
-      'UV radiation — degrades lipids in the barrier',
-      'Alcohol-heavy toners (ethanol/isopropanol)',
-      'Fragrance in skincare — a leading cause of contact sensitisation',
-      'Retinol — can impair barrier short-term if introduced too fast',
-      'Stress — cortisol degrades barrier function',
-      'Poor sleep — barrier repair peaks at night; deprivation impairs it',
-    ],
-    signsOfDamage: {
-      immediate: ['Tightness after cleansing', 'Redness', 'Stinging when applying products', 'Burning sensation', 'Extreme sensitivity'],
-      developing: ['Dryness and flaking', 'Dullness', 'Itching', 'Rough texture', 'Uneven skin tone'],
-      chronic: ['Eczema flares', 'Perioral dermatitis', 'Rosacea', 'Increased acne (bacteria enter easier)', 'Psoriasis worsening'],
+  lipidComposition: {
+    ceramides: {
+      role: 'Ceramides make up approximately 50% of the lipid matrix of the stratum corneum; they are the most important component of the skin barrier; ceramides are sphingolipids that form the lamellar bodies (layered lipid structures) of the barrier',
+      ceramideTypes: 'There are at least 12 ceramide types (Cer EOS, Cer NS, Cer NP, etc.); Ceramide NP (Ceramide 3) is the most studied; different ceramides serve different structural roles',
+      ageAndCeramides: 'Ceramide content decreases with age — this is a primary reason for increased skin dryness, sensitivity, and barrier impairment in aging skin; adults over 50 may have 30-40% less ceramide than young adults',
+      ethnicVariation: 'Studies have found significant variation in ceramide levels between ethnic groups: Black/African American skin has been found to have higher overall ceramide content than white skin in some studies, which may partly explain why Black skin shows less clinical dryness despite having higher TEWL in some measurements; research is ongoing and the picture is complex'
     },
-    repairTimeline: {
-      mild: '2–4 weeks with correct barrier repair protocol',
-      moderate: '4–8 weeks',
-      severe: '8–12 weeks; may require dermatologist support (prescription barrier repair)',
+    fattyAcids: {
+      role: 'Free fatty acids (primarily linoleic acid, oleic acid, palmitic acid) make up approximately 15% of the stratum corneum lipid matrix; they contribute to the acidic pH and structural integrity of the barrier',
+      linoleicAcid: 'Linoleic acid (an omega-6 essential fatty acid) is particularly important for barrier integrity; deficiency of linoleic acid is associated with dry, scaly skin and barrier impairment; it cannot be synthesised by the body and must come from diet or topical application',
+      note: 'This is why facial oils rich in linoleic acid (rosehip, hemp seed, sea buckthorn) are beneficial for barrier support, while high-oleic oils (marula, argan, olive oil) are better for moisturisation than barrier repair'
     },
+    cholesterol: {
+      role: 'Cholesterol makes up approximately 25% of the stratum corneum lipid matrix; it regulates the fluidity and permeability of the lipid bilayers; without sufficient cholesterol, the barrier becomes too rigid or too permeable',
+      practical: 'This is why some barrier repair creams include cholesterol as an ingredient alongside ceramides; the ideal ratio for barrier repair is roughly ceramides:cholesterol:fatty acids = 3:1:1'
+    }
   },
+  naturalMoisturisingFactor: {
+    definition: 'NMF (Natural Moisturising Factor) is a collection of water-soluble compounds found within the corneocytes (skin cells) of the stratum corneum; NMF is hygroscopic — it draws water from the environment and from deeper skin layers to maintain skin hydration',
+    components: 'NMF includes amino acids (40%), PCA (pyrrolidone carboxylic acid, 12%), lactate (12%), urea (7%), and smaller amounts of sugars, ions, and other organic acids',
+    filaggrin: 'Filaggrin is a protein essential for NMF production; it breaks down into the amino acid components of NMF; mutations in the filaggrin gene are strongly associated with atopic dermatitis (eczema) and ichthyosis; approximately 10% of people of European descent carry a filaggrin mutation; filaggrin mutations are much rarer in East Asian and African populations (which may partly explain why atopic dermatitis, though still present, may present differently)',
+    importance: 'When NMF is depleted (through excessive cleansing, harsh surfactants, hot water, low humidity), the skin becomes dehydrated even if the structural barrier is intact; NMF is distinct from the lipid barrier — you can have good structural barrier but depleted NMF, or vice versa'
+  },
+  acidMantle: {
+    definition: 'The acid mantle is the slightly acidic surface of the skin (pH 4.5-5.5); it is maintained by a combination of sweat, sebum, and NMF components; the acidic pH inhibits pathogen growth, supports keratinocyte function, activates essential barrier enzymes (serine proteases), and maintains the skin microbiome',
+    disruption: 'Products with alkaline pH (harsh soaps, baking soda, many "natural" cleansers) disrupt the acid mantle, impairing barrier enzyme function and allowing pathogen overgrowth; the skin can restore its acid mantle within hours of a single disruption but repeated disruption causes cumulative impairment',
+    skinMicrobiome: 'The skin microbiome (the community of bacteria, fungi, and other microorganisms living on the skin surface) is closely linked to the acid mantle; Staphylococcus epidermidis is a beneficial skin commensal that helps maintain the acid mantle; in atopic dermatitis, Staphylococcus aureus overgrows due to microbiome disruption'
+  }
 };
 
-// ─── HOW BARRIER FUNCTION DIFFERS IN MELANIN-RICH SKIN ───────────────────────
-
-export const MELANIN_RICH_BARRIER = {
-  overview: 'Research comparing skin barrier function across Fitzpatrick types reveals important differences — the beauty industry has historically ignored these distinctions.',
-  differences: {
-    ceramide_levels: {
-      finding: 'Multiple studies show that Black/African-descent skin tends to have lower ceramide levels in the stratum corneum than white skin, despite being perceived as more "resilient" — a myth with serious implications.',
-      implication: 'Lower baseline ceramides = higher vulnerability to transepidermal water loss. More ceramide-rich products are needed, not fewer.',
-      source: 'Rawlings AV (2006). Ethnic skin types: are there differences in skin structure and function? Int J Cosmet Sci.',
-    },
-    tewl: {
-      finding: 'TEWL (transepidermal water loss) is measurably higher in Black skin in several studies — contradicting the stereotype that darker skin is naturally more moisturised.',
-      implication: 'Black skin may need MORE moisturisation, not less. The stereotype of "oily skin" among darker skin types should not translate to skipping moisturiser.',
-    },
-    inflammation: {
-      finding: 'Darker skin tones (Fitzpatrick IV-VI) have different inflammatory responses — they may not show visible redness even during active barrier disruption.',
-      implication: 'Damage can be occurring without the classic "red flags." Melanin-rich people should take barrier stinging or tightness VERY seriously even without visible redness.',
-    },
-    pih_link: {
-      finding: 'Compromised barrier function is directly linked to increased PIH (post-inflammatory hyperpigmentation) in darker skin tones. Any inflammation — including mild over-exfoliation — is far more likely to leave lasting dark marks.',
-      implication: 'Barrier repair should be the TOP priority for Fitzpatrick IV-VI before targeting pigmentation. A damaged barrier during a PIH treatment makes the PIH worse.',
-    },
+export const BARRIER_DAMAGE_SIGNS = {
+  title: 'Signs of Skin Barrier Damage',
+  symptoms: {
+    dehydration: 'Tight or "squeaky" feeling skin after cleansing; fine lines appear more pronounced; skin looks dull or grey; skincare products "sting" or burn that normally do not',
+    dryness: 'Flaking, scaling, or rough texture; visible dry patches; skin feels rough to the touch',
+    sensitisation: 'Previously tolerated products suddenly cause stinging, burning, or redness; skin reacts to alcohol, fragrance, acids at concentrations that were previously fine; new allergies seem to develop',
+    inflammation: 'Persistent redness; prolonged irritation after skincare application; "angry skin" that reacts to nearly everything',
+    TEWLIncrease: 'Skin that feels dry regardless of how much moisturiser is applied (product is going on but water is still escaping through a compromised barrier)',
+    patching: 'Pink or red patches; uneven skin tone; areas of extreme dryness next to normal skin'
   },
-  ethnicSpecificBarrierConcerns: {
-    west_african: ['Dehydration despite appearance of oily skin', 'PIH from barrier disruption', 'Ashy skin = severe transepidermal water loss visible through melanin'],
-    south_asian: ['Compromised barrier from turmeric diy overuse (too alkaline)', 'Barrier disruption from scrubbing (ubtan)', 'Olive/warm skin tones showing less visible inflammation'],
-    east_asian: ['Generally stronger barrier (multiple studies, but not universal)', 'Aquaporin-3 activity variations', 'Climate humidity differences (Korean humid summers vs Japanese coastal climate)'],
-    arab: ['Desert climate = low humidity stress on barrier', 'Heavy fragrance use can sensitise compromised barriers', 'Mineral-rich water in Gulf region can disrupt acid mantle'],
-    latina: ['Mixed Fitzpatrick variation means different barrier needs in the same family', 'High-humidity Latin American climates can support barrier'],
-  },
+  commonCauses: {
+    overCleansing: 'Cleansing more than twice daily; using harsh, stripping, high-surfactant cleansers (SLS, SLES); using very hot water; using physical scrubs too frequently',
+    overExfoliation: 'AHA/BHA acids used too frequently or at too high concentrations; using multiple exfoliating products; physical exfoliation combined with chemical',
+    environment: 'Very low humidity (winter heating, air conditioning); UV exposure; cold wind; pollution',
+    agingBarrier: 'Natural ceramide loss with age; reduced lipid production; slower cell turnover',
+    medication: 'Oral retinoids (isotretinoin); topical corticosteroids used long-term; some acne medications',
+    poorDiet: 'Essential fatty acid deficiency (particularly linoleic acid); dehydration; nutrient deficiencies'
+  }
 };
-
-// ─── THE BARRIER REPAIR PROTOCOL ─────────────────────────────────────────────
 
 export const BARRIER_REPAIR_PROTOCOL = {
-  phase1: {
-    name: 'Phase 1: Triage (Week 1–2)',
-    tagline: 'Stop the damage first',
-    actions: [
-      { do: 'Switch to a gentle, pH-balanced cleanser (4.5–5.5 pH)', why: 'Harsh cleansers strip the lipid layer' },
-      { do: 'Pause ALL actives: retinol, acids, Vitamin C serums, exfoliants', why: 'Active ingredients are inflammatory during barrier damage' },
-      { do: 'Wash face with lukewarm water only — never hot', why: 'Hot water melts the lipid mortar' },
-      { do: 'Pat — never rub — dry with a clean cloth', why: 'Friction damages corneum cells' },
-      { do: 'Apply moisturiser to slightly damp skin (within 60 seconds of patting dry)', why: 'Damp application seals in water before TEWL occurs' },
-      { do: 'Use a heavy occlusive at night (petroleum jelly/Vaseline, CeraVe Healing Ointment)', why: 'Occlusives prevent TEWL during barrier-repair sleep phase' },
-    ],
-    avoid: [
-      'Physical scrubs or exfoliating brushes',
-      'Alcohol-heavy toners',
-      'New products of any kind (patch test later)',
-      'Fragrance (known irritant when barrier is compromised)',
-      'Vitamin C (acidic — stings and irritates damaged barrier)',
-      'Over-washing (twice daily max; once if very dry)',
-    ],
-    cleansers: [
-      { name: 'CeraVe Hydrating Cleanser', price: '$15', why: 'pH 5.5, ceramides added, gentle' },
-      { name: 'La Roche-Posay Toleriane Hydrating Gentle Cleanser', price: '$18', why: 'Dermatologist-favourite, minimal ingredients' },
-      { name: 'Vanicream Gentle Facial Cleanser', price: '$10', why: 'Free of dyes, fragrances, formaldehyde-releasers' },
-      { name: 'African Black Soap (gentle formulation)', price: '$8', why: 'Traditional barrier-supportive wash for melanin-rich skin' },
-    ],
-  },
-  phase2: {
-    name: 'Phase 2: Rebuild (Week 2–6)',
-    tagline: 'Feed the barrier what it needs',
-    ingredients: {
-      ceramides: {
-        what: 'Lipid molecules that make up the mortar of the barrier. Types: Ceramide 1 (EOP), Ceramide 3 (NP), Ceramide 6-II (AP) are the most important.',
-        products: [
-          { name: 'CeraVe Moisturising Cream', price: '$20', note: '3 ceramides + MVE delivery technology' },
-          { name: 'Elizabeth Arden Advanced Ceramide Capsules', price: '$72', note: 'Luxury concentrated ceramide treatment' },
-          { name: 'Dr. Jart+ Ceramidin Cream', price: '$48', note: 'Korean beauty ceramide benchmark' },
-        ],
-      },
-      hyaluronic_acid: {
-        what: 'Humectant — draws water into the skin. Works best applied to damp skin then sealed with an occlusive/emollient.',
-        lowMolecularWeight: 'Penetrates deeper — more powerful but can cause irritation in damaged skin',
-        highMolecularWeight: 'Sits on surface — gentler, better for damaged barrier',
-        products: [
-          { name: 'The Ordinary Hyaluronic Acid 2% + B5', price: '$10' },
-          { name: 'Neutrogena Hydro Boost Water Gel', price: '$25', note: 'Cult favourite HA moisturiser' },
-          { name: 'Vichy Mineral 89 Hyaluronic Acid Serum', price: '$32' },
-        ],
-      },
-      niacinamide: {
-        what: 'Vitamin B3 — one of the most multi-functional barrier ingredients. Stimulates ceramide production, reduces TEWL, treats PIH, regulates sebum.',
-        idealConcentration: '5% for daily barrier support; 10%+ for PIH — start at 5% on damaged barrier',
-        products: [
-          { name: 'The Ordinary Niacinamide 10% + Zinc 1%', price: '$7' },
-          { name: 'Paula\'s Choice 10% Niacinamide Booster', price: '$44' },
-          { name: 'Good Molecules Niacinamide Serum', price: '$12' },
-        ],
-      },
-      panthenol: {
-        what: 'Vitamin B5 — converts to pantothenic acid in skin. Humectant and skin-repairing. Especially good for sensitive or compromised barriers.',
-        products: [
-          { name: 'Dr. Jart+ Cicapair Tiger Grass Serum', price: '$52' },
-          { name: 'La Roche-Posay Cicaplast Baume B5', price: '$19' },
-        ],
-      },
-      centella_asiatica: {
-        what: 'Cica / Tiger grass — a staple Korean and Asian traditional ingredient now in global skincare. Anti-inflammatory, wound healing, barrier supporting.',
-        compounds: 'Madecassoside and asiaticoside are the active compounds',
-        products: [
-          { name: 'COSRX Centella Blemish Cream', price: '$22' },
-          { name: 'Dr. Jart+ Cicapair Tiger Grass Cream', price: '$48' },
-          { name: 'Purito Centella Unscented Serum', price: '$22' },
-        ],
-      },
-      squalane: {
-        what: 'An emollient that mimics the skin\'s own sebum (squalene). Non-comedogenic, lightweight, barrier-compatible. Stable plant-based version is from sugarcane or olive.',
-        products: [
-          { name: 'Biossance 100% Squalane Oil', price: '$32' },
-          { name: 'The Ordinary 100% Plant-Derived Squalane', price: '$10' },
-        ],
-      },
+  title: 'Skin Barrier Repair — Step by Step',
+  immediateProtocol: {
+    step1Simplify: {
+      action: 'STOP all actives immediately',
+      details: 'Remove all AHAs, BHAs, retinoids, vitamin C, benzoyl peroxide, niacinamide (at high concentrations) from the routine temporarily; a compromised barrier cannot tolerate active ingredients — they penetrate too deeply, causing more inflammation and damage'
     },
-    amRoutine: [
-      '1. Gentle cleanser (lukewarm water)',
-      '2. Apply HA serum to damp skin',
-      '3. Moisturiser with ceramides',
-      '4. SPF 30–50 (mandatory even during barrier repair)',
-    ],
-    pmRoutine: [
-      '1. Oil cleanse if wearing SPF/makeup (jojoba or squalane based)',
-      '2. Gentle water cleanser',
-      '3. Niacinamide serum or cica serum',
-      '4. Rich ceramide cream',
-      '5. Occlusive (Vaseline, Aquaphor) on particularly dry or red areas',
-    ],
+    step2Cleanse: {
+      action: 'Switch to the gentlest possible cleanser',
+      details: 'A pH-balanced (5-6) milky, cream, or oil cleanser with no fragrance, no alcohol, no sulphates; examples: Vanicream Gentle Facial Cleanser, CeraVe Hydrating Cleanser, La Roche-Posay Toleriane; cleanse only once daily (evenings) if the barrier is severely compromised; skip morning cleanse and rinse with cool water only'
+    },
+    step3Humectant: {
+      action: 'Apply a fragrance-free humectant',
+      details: 'Hyaluronic acid serum or glycerin-water toner on damp skin; draws moisture into the skin from environment and from below; do not apply to very dry skin in a dry environment as this can actually pull moisture from the skin; always follow with an occlusive'
+    },
+    step4BarrierRepair: {
+      action: 'Apply a barrier-repair moisturiser',
+      details: 'Look for products containing ceramides, fatty acids, and cholesterol in combination; these are the molecules the skin barrier is made of and topical application helps accelerate repair; CeraVe, Cerave AM/PM, Avene Cicalfate, La Roche-Posay Cicaplast Baume B5 are well-researched options'
+    },
+    step5Occlusive: {
+      action: 'Seal with an occlusive at night',
+      details: 'Petroleum jelly (Vaseline), Aquaphor, squalane, or a dedicated occlusive cream over the barrier repair product; occlussives create a physical seal that prevents TEWL; the "slugging" trend (applying Vaseline as final step) directly addresses TEWL; use occlusives at night when the skin is in repair mode'
+    },
+    step6Patience: {
+      action: 'Wait 2-4 weeks before reintroducing actives',
+      details: 'Barrier repair takes time; the skin renewal cycle (from basal layer to surface shedding) is approximately 28 days in young adults, longer with age; allow at least one full cycle before reintroducing any active ingredient; reintroduce ONE active at a time, at a low frequency'
+    }
   },
-  phase3: {
-    name: 'Phase 3: Reintroduce Actives (Week 6–12)',
-    tagline: 'Carefully add back what your skin needs',
-    order: [
-      { week: '6–7', reintroduce: 'Niacinamide 5% daily (already introduced for barrier)', note: 'If tolerated, increase to 10%' },
-      { week: '7–8', reintroduce: 'Low % AHA (mandelic 5% or lactic 5%)', note: 'Once per week only, then build' },
-      { week: '8–10', reintroduce: 'Vitamin C (L-ascorbic acid 10% or gentler derivative)', note: 'AM only, follow with SPF' },
-      { week: '10–12', reintroduce: 'Retinol 0.025% or retinal 0.01%', note: 'Once per week only; buffer with moisturiser' },
-    ],
-    golden_rule: 'Never introduce two actives at the same time. Space new actives 2 weeks apart. If skin reacts — pull back and wait.',
+  longTermMaintenance: {
+    lessCleansing: 'Once daily cleansing is sufficient for most people; twice daily is appropriate only if heavy makeup or SPF is worn; over-cleansing is the most common route to barrier damage',
+    spfDaily: 'Daily SPF protects the barrier from UV damage; UV is the largest environmental cause of barrier damage and skin aging; SPF 30+ every morning',
+    ceramideRichMoisturiser: 'Using a ceramide-containing moisturiser regularly (not just when damaged) supports the baseline barrier',
+    humidity: 'A humidifier in dry spaces (during winter heating, in air-conditioned rooms) maintains the ambient humidity that the skin needs for hydration',
+    diet: 'Essential fatty acid intake (omega-3 from fish, flaxseed; omega-6 linoleic from seed oils) directly supports ceramide production; good hydration supports skin from inside'
+  }
+};
+
+export const SLUGGING_GUIDE = {
+  title: 'Slugging — The Vaseline Final Step',
+  whatItIs: 'Slugging is the practice of applying a thin layer of petroleum jelly (Vaseline) or another occlusive over your entire skincare routine as the final step; the name comes from the glistening, slug-like appearance of the face afterwards',
+  popularised: 'Popularised as a Korean skincare technique on Reddit and TikTok from 2020-2022; the term "slugging" was popularised by Reddit\'s r/SkincareAddiction community; the practice itself has been used by dermatologists for decades to treat barrier damage',
+  howItWorks: 'Petroleum jelly is a mixture of mineral oils and waxes; it does not penetrate the skin and does not add moisture; it is purely occlusive — it creates a physical seal on the surface that dramatically reduces TEWL; studies show petroleum jelly reduces TEWL by up to 98%; this keeps all the moisture applied underneath locked in',
+  benefits: ['Dramatically improves skin hydration overnight', 'Accelerates barrier repair', 'Reduces sensitivity by protecting the compromised barrier from environmental irritants', 'Reduces fine lines temporarily (by keeping skin hydrated)', 'Inexpensive and highly evidence-based'],
+  whoShouldSlug: ['People with dry or very dry skin', 'People with a compromised or recovering barrier', 'People in dry or cold climates', 'Aging skin with reduced lipid production'],
+  whoShouldAvoid: ['People prone to milia (small white cysts); petroleum jelly does not cause acne (it is non-comedogenic) but can cause milia in some people by trapping dead skin cells', 'Oily or acne-prone skin may find slugging too heavy', 'Anyone with a current active breakout'],
+  alternativesToVaseline: 'Aquaphor Healing Ointment (contains petrolatum plus lanolin and glycerin — slightly more emollient than pure Vaseline); Squalane oil (less occlusive but lighter feel); COSRX Advanced Snail All-in-One Cream'
+};
+
+export const ETHNIC_BARRIER_GUIDE = {
+  'west-african': {
+    skinCharacteristics: 'West African (Fitzpatrick V-VI) skin has higher sebum production and ceramide content compared to lighter skin tones in some studies; despite this, clinical dryness and ashy appearance are common concerns; the grey "ashy" look characteristic of dry dark skin is highly visible against the deep background skin tone',
+    ashySkin: 'The "ashy" appearance on dark skin is caused by the same dry, compromised barrier that causes flaking on light skin; the difference is visibility — visible dry skin fragments appear white/grey against dark skin, which is highly noticeable; the solution is the same: barrier repair and deep moisturisation, often with shea butter, oils, and ceramide creams',
+    ingredientsForBarrier: 'Raw shea butter is an excellent barrier-supporting ingredient for West African skin; it contains ceramide-like fatty acids and triterpenes that support the skin barrier; coconut oil can be added for deep moisturisation though it is comedogenic for some; black soap for cleansing must be patch-tested — traditional black soap is alkaline and can disrupt the acid mantle if used daily'
   },
-};
-
-// ─── THE SANDWICH METHOD FOR SENSITIVE SKIN ──────────────────────────────────
-
-export const SANDWICH_METHOD = {
-  name: 'The Sandwich / Buffering Method',
-  what: 'Applying actives between layers of moisturiser to reduce irritation and barrier disruption. Essential for introducing retinol or acids to sensitive or darker skin.',
-  why: 'Dilutes the active ingredient\'s contact with the skin surface; reduces penetration speed; cuts irritation significantly without eliminating the active\'s benefit',
-  method: [
-    '1. Apply moisturiser on clean skin',
-    '2. Wait 20–30 minutes (skin absorbs the moisturiser)',
-    '3. Apply active (retinol, acid) on top of the moisturiser',
-    '4. Wait 10 minutes',
-    '5. Apply second layer of moisturiser on top',
-  ],
-  bestFor: ['Introducing retinol for first time', 'Very sensitive or reactive skin', 'Fitzpatrick V-VI skin introducing strong acids', 'Any time active causes redness or peeling'],
-  note: 'Sandwich method reduces efficacy somewhat — this is the point for sensitive skin. As tolerance builds, transition to direct application.',
-};
-
-// ─── OILY SKIN AND THE BARRIER ────────────────────────────────────────────────
-
-export const OILY_SKIN_BARRIER_MYTH = {
-  myth: 'Oily skin doesn\'t need moisturiser.',
-  reality: 'Sebum production and hydration are completely separate systems. Oily skin can be simultaneously dehydrated — lacking WATER (not oil) in the stratum corneum.',
-  explanation: 'Sebaceous glands produce oil (sebum). The skin barrier holds WATER inside the skin cells. These are different processes. Stripping oil (with harsh cleansers) tells the skin to produce MORE sebum as a protective response — making oiliness worse. Proper hydration (humectants + lightweight moisturiser) actually helps regulate sebum over time.',
-  forMelaninRichOilySkin: [
-    'Use gel or water-gel moisturisers (lightweight, non-comedogenic)',
-    'Niacinamide regulates sebum AND supports barrier — a true hero for oily darker skin',
-    'Avoid skipping moisturiser — dehydrated oily skin overproduces sebum to compensate',
-    'Blot throughout the day instead of washing off oil — washing strips the barrier repeatedly',
-  ],
-  products: [
-    { name: 'Neutrogena Hydro Boost Water Gel', price: '$25', why: 'Lightweight HA gel; oil-free' },
-    { name: 'COSRX Oil-Free Ultra Moisturising Lotion', price: '$20', why: 'Lightweight, Korean formula' },
-    { name: 'The Inkey List Beta Hydroxy Acid', price: '$12', why: 'BHA serum — decongests pores while respecting barrier' },
-  ],
-};
-
-// ─── ECZEMA AND ETHNIC SKIN ───────────────────────────────────────────────────
-
-export const ECZEMA_ETHNIC_SKIN = {
-  prevalence: {
-    note: 'Eczema (atopic dermatitis) disproportionately affects Black children — studies show prevalence 1.7x higher than white children in the US. Despite this, clinical research has historically been conducted on lighter skin tones, making diagnosis and treatment harder for darker-skinned patients.',
-    presentation: 'In Black, brown, and Asian skin, eczema may present as purple, grey, or brown discoloration rather than classic red — leading to frequent misdiagnosis.',
+  'south-asian': {
+    skinCharacteristics: 'South Asian skin (Fitzpatrick III-V) has a warm olive undertone; barrier damage often presents as increased sensitivity and PIH (post-inflammatory hyperpigmentation) — any irritation leaves marks; this is a critical consideration when recommending barrier repair as barrier disruption on South Asian skin can lead to lasting darkening',
+    PIHRisk: 'For South Asian skin with a compromised barrier, the risk of PIH from any continued irritation is high; strict adherence to the "stop all actives" step in barrier repair is especially important; once barrier is restored, reintroduction of actives should be very gradual',
+    traditionalIngredients: 'Aloe vera (used extensively in South Asian tradition), turmeric (anti-inflammatory), coconut oil, sesame oil; turmeric can stain fabrics and should be patch-tested; coconut oil is comedogenic for some'
   },
-  managingEczemaOnDarkerSkin: [
-    'Use fragrance-free everything — fragrance is a top eczema trigger',
-    'Heavy ceramide cream (CeraVe or Aveeno) as daily moisturiser',
-    'Vaseline ("slugging") for flares — clinical evidence supports petroleum jelly for atopic dermatitis',
-    'Avoid hot showers — warm water only',
-    'Watch for grey/brown discolouration as eczema sign (not just red)',
-    'Post-eczema PIH is common — treat hyperpigmentation only AFTER flare fully resolved',
-    'Wet wrap therapy for severe flares (medical intervention)',
-  ],
-  resources: [
-    'National Eczema Association (nationaleczema.org)',
-    'Eczema Support for Patients of Color (Eczema Society)',
-  ],
+  caribbean: {
+    skinCharacteristics: 'Caribbean skin reflects enormous diversity; Afro-Caribbean skin similar to West African considerations; Indo-Caribbean skin similar to South Asian',
+    climateNote: 'Caribbean climates are humid, which naturally supports skin hydration and barrier function; however, travel from humid Caribbean environments to cold, dry, winter climates in North America or Europe causes dramatic barrier stress; Caribbean people living in New York, London, or Toronto winters often experience significant barrier disruption'
+  },
+  arab: {
+    skinCharacteristics: 'Arab skin varies; medium olive skin is common; the Middle East and North Africa have high UV and often extreme temperature variation between hot outdoors and air-conditioned interiors; this transition stresses the barrier',
+    dryClimate: 'Desert climates (Saudi Arabia, UAE, Egypt, Jordan) have very low humidity which is highly challenging for skin barrier; indoor air conditioning adds further drying effect; barrier repair in these environments requires strong occlusives',
+    traditionalIngredients: 'Argan oil (Morocco) — excellent for barrier support, high linoleic acid content; aloe vera; black seed (Nigella sativa) oil — has anti-inflammatory and antioxidant properties'
+  },
+  latina: {
+    skinCharacteristics: 'Wide diversity; warm olive skin common in many Latin American populations; humid tropical climates in Latin America generally support the skin barrier; immigration to drier or colder Northern climates creates barrier stress',
+    ingredients: 'Avocado oil (high oleic and linoleic acid — good for barrier); rosehip oil (linoleic acid — good for barrier repair); aloe vera (widely used throughout Latin America)'
+  },
+  'east-asian': {
+    skinCharacteristics: 'East Asian skin (Fitzpatrick II-III) typically has lower transepidermal water loss than European skin in some studies, suggesting a stronger barrier baseline; however, the K-beauty and J-beauty industries have driven enormous focus on barrier care, suggesting sensitivity and barrier concerns are very common',
+    layering: 'The K-beauty layering approach (toner, essence, serum, ampoule, moisturiser) can paradoxically lead to barrier disruption if some layers contain active ingredients or alcohol; the philosophy of layering moisture is correct but product choice matters',
+    doubleCleanseNote: 'The double cleanse (oil cleanser + water cleanser) standard in K-beauty can be barrier-disruptive if the second step uses a harsh cleanser; the first oil cleanse is very gentle; the second cleanse should be equally gentle (a low-surfactant milky cleanser rather than a foaming gel)'
+  },
+  'east-african': {
+    skinCharacteristics: 'Deep Fitzpatrick V-VI skin; similar to West African in terms of ceramide considerations; hot, often arid climates in East Africa (Ethiopia, Kenya, Somalia) are challenging for barrier function',
+    frankincense: 'Frankincense resin (Boswellia carterii, native to East Africa and the Arabian Peninsula) has boswellic acids with anti-inflammatory properties; frankincense oil has traditional use in skincare and some modern evidence for skin barrier support',
+    bodyOiling: 'The East African tradition of full-body oiling with fragranced oils (from Somalia, Ethiopia) is both culturally significant and beneficial for skin barrier; regular body oiling maintains the lipid layer on the skin surface'
+  },
+  'south-african': {
+    skinCharacteristics: 'Very diverse; the South African climate varies enormously from the humid coast to dry interior; Johannesburg at altitude has lower humidity and higher UV',
+    marula: 'Marula oil from the marula tree (Sclerocarya birrea) native to sub-Saharan Africa has high oleic acid (70%+) content and antioxidants; excellent for skin barrier moisturisation; the Drunk Elephant brand popularised marula oil globally though it has been used by South African and other sub-Saharan communities for generations',
+    rooibos: 'Rooibos (Aspalathus linearis) — indigenous to the Western Cape of South Africa — contains the unique antioxidant aspalathin; rooibos tea infusion and rooibos extract are used in South African skincare products; anti-inflammatory and antioxidant benefits for skin'
+  },
+  'black-american': {
+    skinCharacteristics: 'Fitzpatrick IV-VI primarily; higher melanin content provides some photoprotection but does not eliminate the need for SPF or barrier care; some studies show higher TEWL in Black skin despite higher ceramide content — an apparent paradox suggesting complex barrier dynamics',
+    ashySkinconcern: 'Ashy, dry-looking skin is a primary concern; the standard beauty product market historically did not prioritise products for this concern as effectively as for lighter skin tones; Black-owned beauty brands have pioneered heavy-duty moisturisers and barrier products',
+    shea: 'Shea butter (imported from West Africa or sourced from US Black-owned brands) is a cornerstone of Black American skin and hair care; used in its raw form or as an ingredient in countless skincare products',
+    skinIssues: 'Eczema (atopic dermatitis) disproportionately affects Black children in the US; research is ongoing on the causes; barrier repair approaches developed for eczema-prone skin are highly relevant for the Black American community'
+  }
 };
 
-// ─── API ──────────────────────────────────────────────────────────────────────
-
-export function getBarrierRepairProtocol() {
-  return BARRIER_REPAIR_PROTOCOL;
-}
-
-export function getBarrierIngredientsForCommunity(communityId) {
-  const concerns = MELANIN_RICH_BARRIER.ethnicSpecificBarrierConcerns[communityId.replace('-', '_')] ||
-    MELANIN_RICH_BARRIER.ethnicSpecificBarrierConcerns.west_african;
-  return {
-    community: communityId,
-    primaryConcerns: concerns,
-    universalIngredients: ['Ceramides', 'Niacinamide', 'Hyaluronic Acid', 'Squalane'],
-    protocol: BARRIER_REPAIR_PROTOCOL,
+export function getSkinBarrierScience(section) {
+  if (!section) return SKIN_BARRIER_SCIENCE;
+  const map = {
+    ceramides: SKIN_BARRIER_SCIENCE.lipidComposition.ceramides,
+    nmf: SKIN_BARRIER_SCIENCE.naturalMoisturisingFactor,
+    acidmantle: SKIN_BARRIER_SCIENCE.acidMantle,
+    lipids: SKIN_BARRIER_SCIENCE.lipidComposition,
+    structure: SKIN_BARRIER_SCIENCE.whatItIs
   };
+  return map[section] || SKIN_BARRIER_SCIENCE;
 }
 
-export function getSandwichMethodGuide() {
-  return SANDWICH_METHOD;
+export function getBarrierDamageSigns() {
+  return BARRIER_DAMAGE_SIGNS;
 }
 
-export function getOilySkinBarrierGuide() {
-  return OILY_SKIN_BARRIER_MYTH;
+export function getBarrierRepairProtocol(section) {
+  if (!section) return BARRIER_REPAIR_PROTOCOL;
+  return BARRIER_REPAIR_PROTOCOL[section] || BARRIER_REPAIR_PROTOCOL;
 }
 
-export function getBarrierBasics() {
-  return SKIN_BARRIER_BASICS;
+export function getEthnicBarrierGuide(communityId) {
+  const directMap = {
+    'west-african': ETHNIC_BARRIER_GUIDE['west-african'],
+    'south-asian': ETHNIC_BARRIER_GUIDE['south-asian'],
+    caribbean: ETHNIC_BARRIER_GUIDE.caribbean,
+    arab: ETHNIC_BARRIER_GUIDE.arab,
+    latina: ETHNIC_BARRIER_GUIDE.latina,
+    'east-asian': ETHNIC_BARRIER_GUIDE['east-asian'],
+    'east-african': ETHNIC_BARRIER_GUIDE['east-african'],
+    'south-african': ETHNIC_BARRIER_GUIDE['south-african'],
+    'black-american': ETHNIC_BARRIER_GUIDE['black-american']
+  };
+  return directMap[communityId] || null;
 }
 
-export const BARRIER_GUIDE_STATS = {
-  phases: Object.keys(BARRIER_REPAIR_PROTOCOL).length,
-  ingredientsProfiled: Object.keys(BARRIER_REPAIR_PROTOCOL.phase2.ingredients).length,
-  communitiesWithBarrierData: Object.keys(MELANIN_RICH_BARRIER.ethnicSpecificBarrierConcerns).length,
+export const SKIN_BARRIER_STATS = {
+  moduleId: 'skin_barrier_guide',
+  version: '1.0.0',
+  topics: ['skin barrier', 'stratum corneum', 'ceramides', 'TEWL', 'barrier repair', 'slugging', 'vaseline', 'acid mantle', 'NMF', 'filaggrin', 'linoleic acid', 'ashy skin', 'barrier damage', 'overexfoliation', 'dry skin', 'sensitive skin', 'eczema', 'atopic dermatitis', 'ceramide moisturiser'],
+  communitiesSupported: 9,
+  keyFacts: [
+    'The skin barrier lipid matrix has an ideal ratio of approximately ceramides:cholesterol:fatty acids = 3:1:1 — barrier repair moisturisers that include all three components are more effective than those with ceramides alone',
+    'Filaggrin gene mutations are found in approximately 10% of people of European descent and are strongly associated with atopic dermatitis; they are much rarer in East Asian and African populations, which may partly explain different presentations of eczema across ethnicities',
+    'Petroleum jelly (Vaseline) reduces TEWL by up to 98% — it is the most effective occlusive available and is non-comedogenic; the "slugging" trend makes this dermatological knowledge mainstream',
+    'The "ashy" appearance of dry dark skin is caused by the same barrier disruption that causes flaking on light skin — the difference is visibility; white skin fragments are highly visible against deeply pigmented skin',
+    'South Asian skin with a compromised barrier is at high PIH (post-inflammatory hyperpigmentation) risk from any continued irritation — this is why the "stop all actives" step in barrier repair is especially critical for this community',
+    'Marula oil from the marula tree native to sub-Saharan Africa has been used for skin care for generations before being popularised globally by brands like Drunk Elephant'
+  ]
 };

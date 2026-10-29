@@ -1,299 +1,222 @@
 /**
- * MIRRR Hair Porosity Guide
- * The science of hair porosity, low/medium/high porosity care,
- * porosity testing, product recommendations by porosity, and
- * ethnic hair porosity patterns
+ * MIRRR — Hair Porosity Deep Dive
+ * The most predictive factor in hair care product selection.
+ * Biology, testing, ethnic variation, product matching, and routines.
  */
 
-// ─── HAIR SCIENCE FUNDAMENTALS ────────────────────────────────────────────────
-
-export const HAIR_SCIENCE = {
-  hair_structure: {
-    cuticle: {
-      what: 'The outermost layer of each hair strand — composed of overlapping scales, like roof tiles or fish scales. The condition of the cuticle determines porosity, shine, and moisture retention.',
-      healthy_cuticle: 'Flat, smooth, overlapping tightly. Reflects light (shine). Resists moisture loss.',
-      damaged_cuticle: 'Raised, rough, missing sections. Allows moisture to escape rapidly. Hair appears dull.',
-    },
-    cortex: {
-      what: 'The middle layer — makes up the majority of the hair\'s mass. Contains the melanin (colour) and keratin proteins that give hair its strength and elasticity.',
-      damage_here: 'Bleaching, perming, relaxing damage the cortex. This damage cannot be repaired — only new growth is undamaged.',
-    },
-    medulla: {
-      what: 'The innermost layer — present in thick, coarse hair; absent in fine hair. Function not fully understood but may contribute to strength.',
-    },
+export const POROSITY_BIOLOGY = {
+  title: 'Hair Porosity — Biology & Science',
+  whatItIs: {
+    definition: 'Hair porosity refers to the hair\'s ability to absorb and retain moisture; specifically, it describes how open or closed the hair cuticle (the outermost protective layer of the hair shaft) is; porosity is widely considered a MORE important factor in hair product selection than curl type or hair type classification',
+    cuticleStructure: {
+      anatomy: 'The hair shaft has three layers: the medulla (innermost, hollow or semi-hollow), the cortex (main body of the hair, contains melanin and keratin fibrils), and the cuticle (outermost protective scales); the cuticle consists of overlapping cells (resembling fish scales or roof shingles) that can lie flat, slightly raised, or very raised',
+      lowPorosity: 'In low porosity hair, the cuticle scales lie very flat and tightly overlapping; this provides excellent protection for the inner cortex but makes it difficult for water and product to penetrate; the hair is naturally resistant to moisture absorption but also to moisture loss',
+      mediumPorosity: 'In medium/normal porosity hair, the cuticle scales lie moderately flat; moisture is absorbed at a reasonable rate and retained reasonably well; the easiest porosity to care for',
+      highPorosity: 'In high porosity hair, the cuticle scales are raised or damaged, creating gaps and holes; moisture is absorbed very quickly but is also lost very quickly; hair may feel perpetually dry even with product application because moisture escapes as fast as it enters'
+    }
   },
-
-  melanin_and_hair: {
-    eumelanin: 'Black and brown pigment — dominant in darker hair. Higher eumelanin = darker hair, more UV protection.',
-    pheomelanin: 'Red and yellow pigment — in red and blonde hair. Less UV protection than eumelanin.',
-    greying: 'Melanocytes (pigment-producing cells in follicle) stop producing melanin with age. Affected by genetics primarily. Stress acceleration is real but overstated — telogen effluvium from severe stress can cause hair to grow back differently.',
-    dark_skin_UV: 'Darker hair has more eumelanin, which absorbs UV radiation. Dark hair needs UV protection too, however — UV degrades keratin and discolours colour-treated hair.',
+  porosityVsCurlType: {
+    comparison: 'Andre Walker\'s hair type system (1A-4C, based on curl pattern) is widely known but is not the most useful predictive tool for product selection; two people with 3C curl pattern but different porosity will need completely different products and routines; porosity predicts product performance much better',
+    combinedApproach: 'The most accurate approach combines both: knowing that a hair is 4B AND high porosity gives very specific guidance; but if you had to choose one metric, porosity guides product choices more reliably',
+    geneticsVsDamage: 'IMPORTANT: Porosity has BOTH genetic and damage-related components; natural (virgin) hair has a genetically determined baseline porosity; chemical processing (colour, bleach, relaxer, perm), heat damage, UV damage, and mechanical damage (brushing, braiding too tightly) can permanently raise porosity beyond its natural level'
   },
-
-  hair_growth_cycle_basics: {
-    anagen: '2-7 years — active growth phase. Longer anagen = longer potential hair length.',
-    catagen: '2-3 weeks — transition, follicle prepares to shed.',
-    telogen: '3-4 months — resting phase. Hair is shed. 50-100 hairs shed daily is normal.',
-    exogen: 'Active shedding phase (some models separate this from telogen).',
-    ethnic_note: 'Afro-textured hair follicles are curved/helical — hair grows in a spiral rather than straight out of the follicle. This coiling means afro-textured hair naturally intertwines, appears shorter than its actual length (shrinkage), and is more prone to tangling.',
-  },
+  porosityTests: {
+    floatTest: {
+      method: 'Take 2-3 clean hairs (no product) and drop them into a glass of room-temperature water; watch for 2-4 minutes',
+      results: 'Hairs float for 3+ minutes = low porosity; hairs float briefly then sink slowly = medium porosity; hairs sink immediately = high porosity',
+      limitations: 'The float test is commonly taught but has significant limitations; product buildup, oils, or an unclean hair sample can skew results; the test also doesn\'t account for the full length of the hair (roots may differ from ends); consider it one data point among several'
+    },
+    slideTest: {
+      method: 'Take a single hair strand between two fingers and slide your fingers from tip to root (against the direction of the cuticle scales)',
+      results: 'Very smooth, no resistance = low porosity (scales very flat); slight texture and bumps = medium porosity; rough, catches easily, or hair seems to shred = high porosity (raised or damaged scales)',
+      note: 'More reliable than the float test for assessing cuticle condition'
+    },
+    sprayTest: {
+      method: 'Lightly spray clean hair with water; watch how the water behaves',
+      results: 'Water beads up and sits on the surface for 10+ seconds before absorbing = low porosity; water absorbs within a few seconds = medium porosity; water is absorbed almost immediately = high porosity'
+    },
+    dryingTime: {
+      observation: 'How quickly does your hair dry after washing? Very slow (4+ hours for curly/coily hair) = likely low porosity; moderate drying time = medium porosity; hair dries very quickly but feels dry = likely high porosity'
+    }
+  }
 };
 
-// ─── POROSITY SCIENCE ─────────────────────────────────────────────────────────
-
-export const POROSITY_SCIENCE = {
-  definition: 'Hair porosity is the hair\'s ability to absorb and retain moisture. It is determined by the state of the cuticle layer — how open or closed the cuticle scales are.',
-
-  factors_affecting_porosity: {
-    genetics: 'Natural baseline porosity is genetic. Some people naturally have more tightly packed cuticle scales; others have more open cuticles.',
-    hair_type: 'Afro-textured and curly hair tends toward higher natural porosity due to the curved follicle and coiled structure creating more points of cuticle disruption along each strand.',
-    damage: 'Chemical damage (bleach, relaxers, perms) permanently raises and damages the cuticle, increasing porosity.',
-    heat: 'Repeated heat styling raises the cuticle temporarily and permanently over time.',
-    pH: 'High pH (alkaline) raises the cuticle; low pH (acidic) closes it. This is why acidic rinses (diluted apple cider vinegar) temporarily flatten the cuticle.',
-    age: 'Hair porosity often increases with age as cuticle integrity diminishes.',
-  },
-
-  porosity_spectrum: {
-    note: 'Porosity is a spectrum, not three fixed categories. The low/medium/high framework is a useful simplification. Hair can also be different porosity in different sections (higher at ends, where damage accumulates; lower at roots where new growth emerges).',
-  },
-};
-
-// ─── LOW POROSITY ─────────────────────────────────────────────────────────────
-
-export const LOW_POROSITY = {
+export const LOW_POROSITY_GUIDE = {
+  title: 'Low Porosity Hair — Complete Guide',
   characteristics: {
-    cuticle: 'Tightly closed, flat, overlapping scales. Very resistant to moisture entry.',
-    appearance: 'Often shiny and healthy-looking — the tight cuticle reflects light well.',
-    behaviour: [
-      'Takes a long time to get wet in the shower',
-      'Products sit ON top of hair rather than absorbing in',
-      'Hair takes a very long time to dry',
-      'Product buildup is a major issue — products layer without being absorbed',
-      'Hair feels coated or greasy even with light products',
-      'May resist colour treatments (same closed cuticle resists dye entry)',
-    ],
+    appearance: 'Often shiny (flat cuticles reflect light well); tends to be healthy-looking; colour-treated: takes a long time to absorb colour and may need extra processing time or heat',
+    feelAndBehaviour: ['Water beads up on the hair surface; takes time to absorb water', 'Products sit on the hair rather than absorbing (product buildup is a major issue)', 'Hair takes a very long time to dry', 'Colour processing may require more time or developer', 'Hair feels fine or silky to the touch (flat scales)']
   },
-
-  how_to_tell: {
-    float_test: 'Take a clean strand of hair (wash out products first). Place in a glass of water at room temperature. Low porosity: floats for a long time (30+ minutes) before sinking, or never sinks. High porosity: sinks quickly (within 1-2 minutes). Note: this test is imprecise and affected by product buildup.',
-    water_test: 'Spray water on a section. Low porosity: water beads and sits on the hair surface. High porosity: water absorbs immediately.',
-    slide_test: 'Slide fingers from tip to root along a strand. Low porosity: smooth — the flat cuticle. High porosity: rough, bumpy feeling — raised cuticle scales.',
+  challenges: {
+    mainChallenge: 'Getting moisture IN is the primary challenge; the tightly closed cuticle resists water and product penetration; products tend to sit on the surface rather than enter the hair shaft',
+    buildupProblem: 'Because product absorbs so poorly, low porosity hair is extremely prone to buildup; product that doesn\'t absorb simply sits on the hair, attracting more product and creating a coating that makes the hair feel greasy, heavy, and limp; this buildup further prevents moisture from entering',
+    proteinSensitivity: 'Low porosity hair is often protein-sensitive: the already-tight cuticle with protein treatments (which coat and further close the cuticle) can create stiffness, brittleness, and breakage; low porosity hair generally benefits from moisture-focused products more than protein treatments'
   },
-
-  care_principles: {
-    heat_to_open_cuticle: 'Low porosity hair NEEDS heat to open the cuticle for product absorption. Use heat during conditioning treatments: hair dryer on low while deep conditioning (with a plastic cap), steam treatment, or hot oil treatment.',
-    lightweight_products: 'Heavy butters and thick oils sit on the surface without penetrating. Choose lightweight liquids and water-based products.',
-    humectants: 'Aloe vera, glycerin, panthenol attract moisture from air into the hair shaft.',
-    clarify_regularly: 'Product buildup accumulates easily on low porosity hair. Clarify (chelating shampoo or baking soda rinse) monthly to remove buildup.',
+  productGuidance: {
+    bestIngredients: ['Humectants: glycerin, hyaluronic acid, aloe vera — these are water-loving and work with low porosity hair\'s tendency to retain once moisture gets in', 'Lightweight oils: grapeseed oil, argan oil, sweet almond oil — penetrate before the cuticle closes again', 'Emollients: behentrimonium methosulfate (BTMS), cetearyl alcohol — condition without heavy coating'],
+    avoid: ['Heavy butters (shea, mango, cocoa) as primary products: these are too large to penetrate the cuticle and will sit on top, causing buildup; can be used in small amounts as sealants', 'Protein treatments: castor oil, egg, keratin treatments — risk of protein overload and brittleness', 'Heavy oils: castor oil, olive oil — too thick for easy penetration of low porosity hair'],
+    keyTechnique: 'HEAT IS THE KEY for low porosity hair: applying products to hair under a heated deep conditioning cap, warm towel, or in a warm bathroom opens the cuticle temporarily and allows product penetration; steamers (dedicated hair steamers or facial steamers used on hair) are a game changer for low porosity hair deep conditioning'
   },
-
-  best_products_types: {
-    conditioners: 'Protein-free conditioners (protein can make low porosity hair stiff — the cuticle is already tightly closed); humectant-rich',
-    oils: 'Lightweight oils that penetrate: argan oil, sweet almond oil, jojoba oil, avocado oil. NOT heavy butters.',
-    avoid: 'Heavy shea butter as a styler, thick creams, protein treatments (generally)',
+  washDayRoutine: {
+    steps: [
+      '1. Pre-poo with a lightweight oil (grapeseed, sweet almond) applied to dry hair before washing',
+      '2. Wash with a clarifying or lightweight sulphate-free shampoo to remove any buildup',
+      '3. Apply conditioner to wet hair — use a heat cap or warm towel turban for 20-30 minutes to open cuticle and allow penetration',
+      '4. Rinse with cool water to close the cuticle and seal in moisture',
+      '5. Apply lightweight leave-in conditioner while hair is very wet',
+      '6. Apply a humectant gel or cream (no heavy butters)',
+      '7. Seal with a TINY amount of lightweight oil',
+      '8. Diffuse, air dry, or hood dry (continued warmth keeps the cuticle slightly open for absorption while styling)'
+    ]
   },
-
-  ethnic_context: {
-    note: 'Low porosity hair can occur across all ethnicities. Within afro-textured hair, low porosity is somewhat less common than high porosity, but is a real pattern particularly in virgin (unprocessed) 4a-4c type hair.',
-    challenge: 'The combination of tight curl pattern and low porosity means water and product seem to repel. Heat is the key — warm water, warm conditioner, steam cap.',
-  },
+  clarifyingRoutine: {
+    frequency: 'Monthly or every 4-6 washes',
+    method: 'Use a clarifying shampoo (containing sodium lauryl sulphate or apple cider vinegar rinse) to strip all buildup from the hair; follow with deep conditioning treatment under heat; this reset allows hair to absorb moisture effectively for the next few weeks'
+  }
 };
 
-// ─── MEDIUM POROSITY ──────────────────────────────────────────────────────────
-
-export const MEDIUM_POROSITY = {
+export const HIGH_POROSITY_GUIDE = {
+  title: 'High Porosity Hair — Complete Guide',
   characteristics: {
-    cuticle: 'Slightly raised but not damaged — a balance between open and closed.',
-    behaviour: [
-      'Absorbs moisture at an even, moderate rate',
-      'Holds styles well',
-      'Takes colour predictably',
-      'Not prone to extreme dryness or extreme product buildup',
-    ],
-    ideal: 'Medium porosity is often described as the "ideal" — hair that behaves predictably and responds well to most products.',
+    appearance: 'May look frizzy, dull, or dry; tangles easily; often has split ends; may feel rough or course to the touch (raised cuticle edges create texture)',
+    feelAndBehaviour: ['Water is absorbed almost immediately — too fast', 'Products absorb quickly but moisture is lost quickly too', 'Frizz in humidity (raised cuticles absorb ambient moisture unevenly)', 'Colour-treated: absorbs colour very fast but also fades quickly', 'Hair feels rough or "sticky" when dry due to raised cuticle edges']
   },
-
-  care_principles: {
-    maintenance_focus: 'The goal is maintaining medium porosity — which means preventing damage that would increase porosity. Protecting from heat and chemical processes is primary.',
-    balanced_products: 'Medium porosity hair tolerates a range of products. Neither exclusively lightweight nor exclusively heavy.',
-    protein_moisture: 'A balanced protein-moisture regimen keeps medium porosity hair resilient.',
+  causes: {
+    genetic: 'Natural (genetic) high porosity is common in certain hair textures, particularly very coily (4A-4C) hair types; the tight coil means more bends in the hair shaft which creates natural areas of cuticle weakness; also common in fine hair',
+    acquired: ['Chemical damage: bleaching, colouring, relaxing, perming all permanently damage and raise the cuticle', 'Heat damage from flat irons and blow dryers (especially without heat protectant)', 'Mechanical damage from excessive brushing, tight braiding, and rubbing with rough towels', 'UV damage from prolonged sun exposure without UV protection', 'Chlorine damage from pool swimming without protection']
   },
-
-  maintaining: {
-    heat_protectant: 'Essential — heat raises cuticle, gradually moving hair toward high porosity.',
-    deep_condition: 'Weekly to bi-weekly, depending on styling habits.',
-    protein: 'Monthly protein treatment to maintain structure.',
+  challenges: {
+    mainChallenge: 'RETENTION is the primary challenge; water and product get in easily but leave just as easily; the raised or damaged cuticle cannot seal properly to keep moisture in',
+    frizz: 'Raised cuticles pick up moisture from humid air unevenly, causing the classic humidity frizz; even after moisturising, if humidity changes, frizz returns as the raised cuticle responds to ambient moisture',
+    proteinNeeds: 'High porosity hair often benefits from protein treatments; damaged cuticles have gaps and holes; protein temporarily fills these gaps and helps the hair retain moisture better; however, protein overload causes brittleness, so the protein-moisture balance must be monitored'
   },
+  productGuidance: {
+    bestIngredients: ['Heavy emollients and butters: shea butter, mango butter, cocoa butter — coat the hair shaft and prevent moisture loss', 'Heavy oils: castor oil (very thick, effective for sealing), avocado oil, olive oil — seal the raised cuticles', 'Proteins: hydrolysed proteins (hydrolysed keratin, silk protein, rice protein, wheat protein) — fill gaps in the damaged cuticle temporarily', 'Film-forming agents: flaxseed gel, aloe vera, marshmallow root — create a sealing film over the hair'],
+    LOCMethod: 'The LOC Method (Liquid-Oil-Cream) is especially important for high porosity hair: (L) Liquid/Leave-in conditioner — adds moisture; (O) Oil — seals in moisture before the heavy cream; (C) Cream/Butter — heavy emollient over everything to create an outer seal; some also use LCO (Liquid-Cream-Oil); experimenting to find which sealing order works best is common',
+    coolRinse: 'Always rinse with cool water — cold water helps close the cuticle and improves moisture retention in high porosity hair; avoid hot water'
+  },
+  deepConditioning: {
+    frequency: 'Weekly deep conditioning is standard for high porosity hair',
+    products: 'Heavy, protein-containing conditioners; mask products with ceramides, amino acids, hydrolysed proteins; shea butter masks',
+    method: 'Apply to damp hair; cover with plastic cap and allow to sit for 20-45 minutes; heat is optional (unlike low porosity, the cuticle is already open, so heat is not required but can enhance penetration)'
+  },
+  sealingTechniques: {
+    greenhouse: 'Greenhouse method: applying leave-in and heavy butter/oil to hair, covering with a plastic cap overnight, and sleeping in it; body heat creates a warm, humid environment that helps high porosity hair absorb and retain moisture',
+    baggyMethod: 'Baggy method: same concept but applied to just the hair ends, tucked into a plastic cap or bag, to target the most damaged and porous hair sections'
+  }
 };
 
-// ─── HIGH POROSITY ────────────────────────────────────────────────────────────
-
-export const HIGH_POROSITY = {
-  characteristics: {
-    cuticle: 'Raised, rough, damaged cuticle scales — may have gaps or missing sections.',
-    causes: ['Chemical damage (bleach, relaxer, perm)', 'Cumulative heat damage', 'Environmental damage (hard water, UV, chlorine)', 'Genetic (some naturally higher porosity)', 'Physical damage (rough towel drying, aggressive brushing on wet hair)'],
-    behaviour: [
-      'Absorbs water quickly (get wet fast in shower)',
-      'Loses moisture equally quickly — dries fast',
-      'Product absorbs quickly but doesn\'t hold',
-      'Frizzy — moisture from air enters and expands the hair shaft',
-      'Prone to tangling (raised cuticle catches on adjacent strands)',
-      'Breakage-prone due to damaged structure',
-      'May feel rough or coarse',
-      'Colour fades rapidly',
-    ],
+export const POROSITY_AND_ETHNICITY = {
+  title: 'Hair Porosity Patterns Across Ethnic Communities',
+  'west-african': {
+    typicalPorosity: 'West African hair is typically 4A-4C curl type; this tightly coiled texture has inherently more points of cuticle stress than straighter hair due to the number of bends in the hair shaft; natural (untreated) West African hair tends toward medium to high porosity',
+    damageHistory: 'Historical use of relaxers (chemical straightening) in West African and Black African communities has left many women with high porosity or bleached/colour-damaged sections alongside natural new growth; the line of demarcation between relaxed and natural hair is a common breakage point',
+    careApproach: 'LOC method with heavy butters; deep conditioning weekly; protective styles to minimise mechanical damage; JBCO for scalp and edges',
+    note: 'The natural hair movement has transformed the West African and diaspora hair care landscape; the shift from relaxers to natural texture care has driven enormous growth in products understanding and designed for high porosity coily hair'
   },
-
-  care_principles: {
-    goal: 'Close the cuticle as much as possible to trap moisture in. Layer products to seal moisture. Fill gaps in cuticle with protein.',
-    protein_fills_gaps: 'Protein treatments fill gaps in damaged cuticles — hydrolysed keratin, hydrolysed collagen, rice protein. This is where protein treatments are most important.',
-    seal_with_heavy_oils: 'Heavy oils (castor oil, jamaican black castor oil, shea butter, mango butter) create a sealant layer over the cuticle, slowing moisture loss.',
-    acidic_rinses: 'Apple cider vinegar rinse (diluted: 1 part ACV to 4 parts water) flattens the cuticle temporarily. Use as final rinse.',
-    cold_water_rinse: 'Cold water at end of shower contracts the cuticle temporarily — helps seal in conditioner.',
-    LOC_LCO_method: {
-      LOC: { sequence: 'Liquid → Oil → Cream', for: 'High porosity hair needing strong sealing (oil creates barrier, cream locks in)' },
-      LCO: { sequence: 'Liquid → Cream → Oil', for: 'Also effective; cream helps distribute; oil seals last' },
-    },
+  'south-asian': {
+    typicalPorosity: 'South Asian hair is typically 1C-2B (straight to wavy); naturally low to medium porosity; typically thick in diameter; the straight or gently wavy cuticle lies relatively flat naturally',
+    heatDamage: 'Heat styling (flat ironing the naturally straight-to-wavy hair for extreme sleekness) is common in South Asian beauty culture; this can raise porosity over time particularly at the ends',
+    careApproach: 'Oil pre-poo (champi) with coconut or almond oil; typically low porosity approach — lightweight products, adequate moisture, minimal protein',
+    oiling: 'South Asian hair benefits from traditional champi (head oil massage) with coconut oil; this is low-porosity-appropriate — coconut oil is a penetrating oil that enters the hair shaft without raising porosity'
   },
-
-  protein_moisture_balance: {
-    critical: 'High porosity hair needs BOTH protein AND moisture, but the balance matters. Too much protein without moisture = brittle, rigid hair that breaks. Too much moisture without protein = limp, overly soft hair that stretches and breaks.',
-    test: 'Take a wet strand and stretch gently. Breaks immediately without stretching → needs moisture. Stretches significantly but doesn\'t return to shape → needs protein. Stretches and bounces back → balanced.',
-  },
-
-  ethnic_context: {
-    afro_textured: 'Naturally high porosity is more common in afro-textured hair due to the coiled structure and more cuticle disruption points per inch. Chemical relaxers significantly increase porosity further. Transitioning from relaxer to natural often means managing very high porosity new-growth and lower-porosity relaxed ends simultaneously.',
-    bleached_hair: 'Any ethnic background — bleaching hair significantly increases porosity. Black hair bleached to platinum blonde has undergone massive cuticle disruption; products that fill and seal are essential.',
-  },
-};
-
-// ─── PRODUCT GUIDE BY POROSITY ────────────────────────────────────────────────
-
-export const PRODUCTS_BY_POROSITY = {
-  low_porosity: {
-    shampoos: ['Kinky Curly Come Clean (clarifying)', 'As I Am Curl Clarity Clarifying Shampoo', 'Malibu C Hard Water Weekly Demineralizer'],
-    conditioners: ['As I Am Coconut CoWash (lightweight)', 'Mielle Organics Babassu & Mint Deep Conditioner (heat optional)', 'Camille Rose Curl Love Moisture Milk'],
-    leave_in: ['Kinky Curly Knot Today (lightweight)', 'TGIN Miracle RepaiRx Curl Milk'],
-    oils: ['Jojoba oil (closely mimics sebum)', 'Argan oil', 'Sweet almond oil', 'Camellia (green tea seed) oil'],
-    avoid: ['Heavy shea butter as leave-in or styler', 'Castor oil as primary oil (too heavy)', 'Most DIY egg/protein treatments'],
-  },
-
-  medium_porosity: {
-    shampoos: ['Shea Moisture Jamaican Black Castor Oil Strengthen & Restore Shampoo', 'Mielle Organics Pomegranate & Honey Moisturising Shampoo'],
-    conditioners: ['SheaMoisture Jamaican Black Castor Oil Strengthen & Restore', 'Aussie Miracle Moist Conditioner (budget-friendly)'],
-    leave_in: ['Most leave-in conditioners work — experiment for preference'],
-    oils: ['Mix of weights — coconut, argan, and occasional castor oil'],
-    protein: 'Monthly protein treatment to maintain',
-  },
-
-  high_porosity: {
-    shampoos: ['Shea Moisture Manuka Honey & Mafura Oil Hydrating Shampoo', 'Aunt Jackie\'s Oh So Clean Moisturising & Softening Shampoo'],
-    conditioners: ['Protein-moisture balanced: Aphogee 2-Minute Keratin Reconstructor (protein treatment)', 'Olaplex No. 5 Bond Maintenance Conditioner', 'Briogeo Don\'t Despair Repair Deep Conditioning Mask'],
-    sealants: ['Jamaican Black Castor Oil (Tropic Isle, Sunny Isle)', 'Raw shea butter', 'Mango butter'],
-    acidic_rinse: 'Apple cider vinegar diluted rinse after washing',
-    LOC_method: 'Apply in Liquid → Oil → Cream sequence',
-    protein_treatments: ['Aphogee 2-Minute Reconstructor (light)', 'Aphogee Two-Step Protein Treatment (intense — monthly maximum)', 'Shea Moisture Jamaican Black Castor Oil Strengthen & Restore Treatment Masque'],
-  },
-};
-
-// ─── POROSITY BY COMMUNITY ────────────────────────────────────────────────────
-
-export const POROSITY_BY_COMMUNITY = {
-  black_american: {
-    patterns: 'Type 4 hair (4a, 4b, 4c) tends to medium-to-high natural porosity. Relaxed hair is typically high porosity. Natural hair transitioning from relaxer often has mixed porosity sections.',
-    priorities: ['Moisture retention', 'Sealing the cuticle', 'Protein-moisture balance', 'Scalp health for healthy new growth'],
-    products: 'Black-owned brands have developed the most innovative products for high-porosity natural hair — SheaMoisture, Mielle Organics, Camille Rose, Alikay Naturals, As I Am.',
-  },
-
-  south_asian: {
-    patterns: 'South Asian hair is typically straight to wavy (Type 1-2), often fine to medium in width, medium to low porosity when healthy. Hair is often very dark (high eumelanin) and can be strong.',
-    common_issues: 'Oiliness (seborrheic dermatitis is common — see scalp guide), scalp health, and managing thick/heavy hair.',
-    traditional_care: 'Champi (head oil massage) maintains the cuticle; coconut and amla oil application before washing coats cuticle protectively.',
-  },
-
-  east_asian: {
-    patterns: 'Type 1 straight hair with typically round follicle cross-section. Asian hair is often thicker in diameter than European or African hair but fewer strands per scalp. Generally low to medium porosity when healthy.',
-    challenges: 'Maintaining volume (individual strands are thicker but total density may be lower), managing shine without greasiness.',
-    note: 'Korean and Japanese beauty innovation has produced some of the best lightweight products for low-porosity straight hair.',
-  },
-
-  arab: {
-    patterns: 'Highly diverse — can range from Type 1 straight (Persian/Iranian) to Type 3-4 curly (some Arab regions, depending on geographic heritage). Medium to high porosity common.',
-    traditional: 'Argan oil (Moroccan argan is the original beauty oil), olive oil, black seed oil are traditional cuticle sealants.',
-  },
-
-  latina: {
-    patterns: 'Extremely diverse across Central American, South American, Caribbean, and Spanish heritages. Can range from straight Type 1 to coily Type 4. Often Type 2-3.',
-    traditional: 'Coconut oil, olive oil, rice water, avocado masks are traditional porosity management techniques across Latin cultures.',
-  },
-
   caribbean: {
-    patterns: 'Often Type 3-4, medium-to-high natural porosity.',
-    traditional: 'Coconut oil is the primary traditional sealant. Bay rum for scalp. Rum and honey hair masks.',
+    typicalPorosity: 'Extremely diverse; Afro-Caribbean hair (3C-4C) similar to West African considerations; mixed-heritage Caribbean communities have enormous variety',
+    damageHistory: 'Chemical relaxers have been common; transitioning from relaxed to natural is common; heat damage from hot combs (historically used by Caribbean communities) creates high porosity',
+    careApproach: 'High porosity approaches for Afro-Caribbean hair; JBCO (Jamaican Black Castor Oil) is culturally central and effective for sealing high porosity hair'
   },
-
-  west_african: {
-    patterns: 'Typically Type 4 afro-textured, often high porosity naturally due to coiled structure. Complex diversity across the continent.',
-    traditional: 'Shea butter application for sealing is deeply traditional. Black soap for cleansing.',
+  arab: {
+    typicalPorosity: 'Arab hair is typically 1C-3A; straight to wavy with some curly in the mix depending on heritage; naturally lower porosity; very thick in diameter in many Arab communities',
+    challenges: 'Thick, dense Arab hair can be slow to absorb product even at medium porosity because of diameter; argan oil as a conditioning treatment penetrates well; heavy products can weigh down thick Arab hair',
+    careApproach: 'Argan oil treatments; lightweight leave-in conditioners for medium porosity; deep conditioning for any heat-damaged sections; note that hair oiling traditions in Arab culture (often weekly) are well-suited to medium porosity maintenance'
   },
-
-  east_african: {
-    patterns: 'Highly diverse — Ethiopian and Somali hair often Type 4a-4c; coastal communities influenced by Arab and South Asian mixing may have different patterns.',
-    traditional: 'Butter (Ethiopian niter kibbeh — clarified spiced butter) historically used for hair; sesame oil; henna.',
+  latina: {
+    typicalPorosity: 'Enormous diversity; Afro-Latina hair similar to West African or Caribbean considerations; Mestiza Latina hair typically 2C-3B wavy to curly, often medium porosity; Indigenous-heritage Latinas often have very straight, low-medium porosity hair',
+    careApproach: 'Product selection should be guided by individual porosity test rather than assumed based on ethnicity due to the enormous genetic diversity within the Latina community'
   },
-
-  south_african: {
-    patterns: 'Diverse — Zulu, Xhosa, and many South African communities have Type 3-4 hair. Coloured South African community highly diverse.',
-    traditional: 'Amafutha (fat/oil for hair) — traditional fat-based preparations for moisture and shine.',
+  'east-asian': {
+    typicalPorosity: 'East Asian hair is typically 1A-1C; very straight; individual cuticle scales are arranged very flatly; typically low porosity; hair is often very shiny due to flat cuticle light reflection; thickest individual hair diameter of any ethnic group on average (approximately 80 micrometers vs 60-70 for European and 60-65 for African hair on average)',
+    thickDiameter: 'The thick individual hair diameter and flat cuticle mean East Asian hair is naturally very resilient and strong per strand; it does not absorb product or colour quickly; bleaching and colour processing require more time or stronger developer; this is why Asian hair can require double-bleaching for very light colour results',
+    chemicalDamage: 'Perming (to add wave or curl) and relaxing (some East Asian hair is relaxed for manageability) can significantly increase porosity in an otherwise low-porosity hair type; Korean straight perms and Japanese thermal reconditioning (rebonding) are designed to minimise damage compared to traditional perms and relaxers',
+    careApproach: 'Low-porosity care approach; lightweight camellia or argan oil; minimal protein; heat for deep conditioning penetration; clarifying routinely to prevent buildup'
   },
+  'east-african': {
+    typicalPorosity: 'East African hair (particularly Somali, Ethiopian, Eritrean hair) often has a distinct hair texture pattern — it can be 3C-4B; some East African hair textures are described as "wavy coily"; typically higher porosity due to curl pattern and potential heat and manipulation damage',
+    careApproach: 'High to medium porosity care approaches; protective styles; deep conditioning; sealing with oils and butters',
+    note: 'Research on East African hair specifically is limited; most hair care research has focused on West African, South Asian, and East Asian hair textures'
+  },
+  'south-african': {
+    typicalPorosity: 'Black South African hair is typically 4A-4C (similar to West African); similar porosity considerations; Indian South African hair similar to South Asian; Coloured (mixed-heritage) South African hair is extremely diverse in porosity',
+    careApproach: 'Similar to West African for Black South African hair; LOC method; heavy sealants; protective styles; marula and baobab oils are locally available and well-suited sealants'
+  },
+  'black-american': {
+    typicalPorosity: 'Reflects the enormous diversity of the Black American community; typically 3B-4C; porosity ranges from natural medium to chemically/heat damaged high; the natural hair movement has dramatically increased awareness of porosity concepts in this community',
+    naturalHairMovement: 'The 2000s-2010s natural hair movement (driven by bloggers and YouTubers including Naptural85, NaturallyNatasha, and others) created an enormous body of accessible knowledge about porosity, curl typing, and product selection specifically for Type 3-4 Black American hair; this community has been the primary driver of mainstream understanding of porosity in beauty culture',
+    careApproach: 'Highly porosity-specific; the Black American natural hair community has developed the most detailed and nuanced product recommendations for high-porosity coily hair of any community; the LOC method was popularised in this community'
+  }
 };
 
-// ─── API ──────────────────────────────────────────────────────────────────────
-
-export function getHairScience() {
-  return HAIR_SCIENCE;
+export function getPorosityBiology(section) {
+  if (!section) return POROSITY_BIOLOGY;
+  const map = {
+    tests: POROSITY_BIOLOGY.porosityTests,
+    float: POROSITY_BIOLOGY.porosityTests.floatTest,
+    slide: POROSITY_BIOLOGY.porosityTests.slideTest,
+    cuticle: POROSITY_BIOLOGY.whatItIs.cuticleStructure,
+    vstype: POROSITY_BIOLOGY.porosityVsCurlType
+  };
+  return map[section] || POROSITY_BIOLOGY;
 }
 
-export function getPorositySciece() {
-  return POROSITY_SCIENCE;
+export function getLowPorosityGuide(section) {
+  if (!section) return LOW_POROSITY_GUIDE;
+  const map = {
+    products: LOW_POROSITY_GUIDE.productGuidance,
+    challenges: LOW_POROSITY_GUIDE.challenges,
+    routine: LOW_POROSITY_GUIDE.washDayRoutine,
+    clarify: LOW_POROSITY_GUIDE.clarifyingRoutine
+  };
+  return map[section] || LOW_POROSITY_GUIDE;
 }
 
-export function getLowPorosityGuide() {
-  return LOW_POROSITY;
+export function getHighPorosityGuide(section) {
+  if (!section) return HIGH_POROSITY_GUIDE;
+  const map = {
+    products: HIGH_POROSITY_GUIDE.productGuidance,
+    challenges: HIGH_POROSITY_GUIDE.challenges,
+    LOC: HIGH_POROSITY_GUIDE.productGuidance.LOCMethod,
+    sealing: HIGH_POROSITY_GUIDE.sealingTechniques,
+    causes: HIGH_POROSITY_GUIDE.causes
+  };
+  return map[section] || HIGH_POROSITY_GUIDE;
 }
 
-export function getMediumPorosityGuide() {
-  return MEDIUM_POROSITY;
-}
-
-export function getHighPorosityGuide() {
-  return HIGH_POROSITY;
-}
-
-export function getProductsByPorosity(porosity) {
-  return PRODUCTS_BY_POROSITY[porosity] || null;
-}
-
-export function getPorosityForCommunity(communityId) {
-  return POROSITY_BY_COMMUNITY[communityId] || null;
-}
-
-export function diagnosePorosity(floatResult, waterBeadsResult, slideResult) {
-  let score = 0;
-  if (floatResult === 'floats') score--;
-  if (floatResult === 'sinks') score++;
-  if (waterBeadsResult === 'beads') score--;
-  if (waterBeadsResult === 'absorbs') score++;
-  if (slideResult === 'smooth') score--;
-  if (slideResult === 'rough') score++;
-
-  if (score <= -1) return { porosity: 'low', guide: getLowPorosityGuide() };
-  if (score >= 1) return { porosity: 'high', guide: getHighPorosityGuide() };
-  return { porosity: 'medium', guide: getMediumPorosityGuide() };
+export function getEthnicPorosityGuide(communityId) {
+  const directMap = {
+    'west-african': POROSITY_AND_ETHNICITY['west-african'],
+    'south-asian': POROSITY_AND_ETHNICITY['south-asian'],
+    caribbean: POROSITY_AND_ETHNICITY.caribbean,
+    arab: POROSITY_AND_ETHNICITY.arab,
+    latina: POROSITY_AND_ETHNICITY.latina,
+    'east-asian': POROSITY_AND_ETHNICITY['east-asian'],
+    'east-african': POROSITY_AND_ETHNICITY['east-african'],
+    'south-african': POROSITY_AND_ETHNICITY['south-african'],
+    'black-american': POROSITY_AND_ETHNICITY['black-american']
+  };
+  return directMap[communityId] || null;
 }
 
 export const HAIR_POROSITY_STATS = {
-  porosityLevels: 3,
-  communitiesCovered: Object.keys(POROSITY_BY_COMMUNITY).length,
-  testMethods: 3,
+  moduleId: 'hair_porosity_guide',
+  version: '1.0.0',
+  topics: ['hair porosity', 'low porosity hair', 'high porosity hair', 'hair cuticle', 'LOC method', 'LCO method', 'hair float test', 'heat for low porosity', 'protein sensitivity', 'protein moisture balance', 'JBCO', 'slugging hair', 'baggy method', 'greenhouse method', 'natural hair movement', 'curl type vs porosity', 'hair care by porosity', 'clarifying shampoo', 'hair buildup'],
+  communitiesSupported: 9,
+  keyFacts: [
+    'Hair porosity is more predictive of which products work than curl type (the Andre Walker 1A-4C system); two people with the same curl pattern but different porosity need completely different products',
+    'East Asian hair has the largest individual strand diameter of any ethnic group (approximately 80 micrometers) and typically the flattest cuticle, making it naturally low porosity and resistant to colour penetration',
+    'The LOC method (Liquid-Oil-Cream) for moisturising high porosity hair was popularised by the Black American natural hair community in the 2000s-2010s and is now the standard approach globally for coily hair moisture retention',
+    'Low porosity hair is often PROTEIN-SENSITIVE; protein treatments close the cuticle further, causing stiffness and brittleness; low porosity hair generally needs MORE moisture and LESS protein than high porosity hair',
+    'The natural hair community (particularly Black American YouTubers and bloggers from the 2000s-2010s) essentially created the mainstream understanding of hair porosity as a concept; it was not previously well-known outside haircare professional circles',
+    'Heat is the key tool for low porosity deep conditioning: applying a heat cap, warm towel, or steamer temporarily opens the tightly closed cuticle to allow product penetration'
+  ]
 };

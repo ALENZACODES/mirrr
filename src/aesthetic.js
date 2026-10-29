@@ -160,6 +160,14 @@ function normalise(tag) {
   return tag.toLowerCase().replace(/[_-]/g, ' ').trim();
 }
 
+/** Read a tag's affinity defensively; null when absent. */
+export function affinityOf(t) {
+  if (t == null || typeof t !== 'object') return null;
+  const a = t.affinity ?? t.score ?? t.query?.affinity ?? null;
+  const n = typeof a === 'number' ? a : Number(a);
+  return Number.isFinite(n) && a !== null && n >= 0 ? n : null;
+}
+
 /**
  * Check if any keyword appears in the normalised tag string.
  * @param {string} normTag
@@ -180,13 +188,14 @@ function anyMatch(normTag, keywords) {
  * @param {string} negativeKey
  * @returns {number}
  */
-function scoreDimension(normTags, spec, positiveKey, negativeKey) {
+function scoreDimension(normTags, spec, positiveKey, negativeKey, weights = null) {
   let pos = 0;
   let neg = 0;
-  for (const tag of normTags) {
-    if (spec[positiveKey] && anyMatch(tag, spec[positiveKey])) pos++;
-    if (spec[negativeKey] && anyMatch(tag, spec[negativeKey])) neg++;
-  }
+  normTags.forEach((tag, i) => {
+    const w = weights ? weights[i] : 1;
+    if (spec[positiveKey] && anyMatch(tag, spec[positiveKey])) pos += w;
+    if (spec[negativeKey] && anyMatch(tag, spec[negativeKey])) neg += w;
+  });
   const total = pos + neg;
   if (total === 0) return 0.5;
   return Math.min(1, Math.max(0, 0.3 + (pos / total) * 0.7));
@@ -197,16 +206,17 @@ function scoreDimension(normTags, spec, positiveKey, negativeKey) {
  * @param {string[]} normTags
  * @returns {number} 0=matte, 0.5=shimmer, 1=glass
  */
-function scoreTexture(normTags) {
+function scoreTexture(normTags, weights = null) {
   let glass = 0;
   let shimmer = 0;
   let matte = 0;
   const spec = TAG_SIGNALS.texture;
-  for (const tag of normTags) {
-    if (anyMatch(tag, spec.glass)) glass++;
-    if (anyMatch(tag, spec.shimmer)) shimmer++;
-    if (anyMatch(tag, spec.matte)) matte++;
-  }
+  normTags.forEach((tag, i) => {
+    const w = weights ? weights[i] : 1;
+    if (anyMatch(tag, spec.glass)) glass += w;
+    if (anyMatch(tag, spec.shimmer)) shimmer += w;
+    if (anyMatch(tag, spec.matte)) matte += w;
+  });
   const total = glass + shimmer + matte;
   if (total === 0) return 0.5;
   return (glass * 1.0 + shimmer * 0.5 + matte * 0.0) / total;
@@ -256,18 +266,36 @@ export function buildAestheticVector(qlooTags = [], { freeText = [] } = {}) {
       colour_palette: 'neutral',
       hair_vibe: 'natural',
       cultural_tags: [],
-      archetypes: [],
+      archetypes: ['clean_minimal'],
       trace,
     };
   }
 
   trace.push(`scoring ${normTags.length} tags`);
 
+  // Affinity weights: Qloo tags carry an affinity; normalise so mean weight = 1.
+  // Free-text signals and tags without affinity weigh 1. Identical to unweighted
+  // scoring when no tag carries an affinity (or all are equal).
+  const rawAff = [
+    ...qlooTags.map((t) => affinityOf(t)),
+    ...freeText.map(() => null),
+  ];
+  const known = rawAff.filter((a) => a != null);
+  let weights = null;
+  if (known.length > 0) {
+    const mean = known.reduce((a, b) => a + b, 0) / known.length;
+    if (mean > 0) {
+      weights = rawAff.map((a) => (a == null ? 1 : a / mean));
+      if (weights.every((w) => Math.abs(w - 1) < 1e-9)) weights = null;
+      else trace.push(`affinity-weighted (${known.length} tags)`);
+    }
+  }
+
   // dimensional scores
-  const intensity = scoreDimension(normTags, TAG_SIGNALS.intensity, 'high', 'low');
-  const warmth = scoreDimension(normTags, TAG_SIGNALS.warmth, 'warm', 'cool');
-  const boldness = scoreDimension(normTags, TAG_SIGNALS.boldness, 'high', 'low');
-  const texture = scoreTexture(normTags);
+  const intensity = scoreDimension(normTags, TAG_SIGNALS.intensity, 'high', 'low', weights);
+  const warmth = scoreDimension(normTags, TAG_SIGNALS.warmth, 'warm', 'cool', weights);
+  const boldness = scoreDimension(normTags, TAG_SIGNALS.boldness, 'high', 'low', weights);
+  const texture = scoreTexture(normTags, weights);
 
   trace.push(`intensity=${intensity.toFixed(2)} warmth=${warmth.toFixed(2)} boldness=${boldness.toFixed(2)} texture=${texture.toFixed(2)}`);
 

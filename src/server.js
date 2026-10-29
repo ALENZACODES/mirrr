@@ -21,6 +21,7 @@ import { getLookProducts, getAllFormulas, getProductCategories } from './product
 import { DEMO_PROFILES } from './demo_profiles.js';
 import { getTrendingArtists, getAllTrendingArtists, REGIONAL_ANCHORS } from './trending_artists.js';
 import { QlooClient, qlooClient } from './qloo.js';
+import { buildPlan } from './pipeline/plan.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT ?? 3000;
@@ -382,6 +383,25 @@ async function router(req, res) {
         artistCount: REGIONAL_ANCHORS[key].length,
       })),
     });
+  }
+
+  // POST /api/plan — occasion planner: look + shade + wig + ritual + timeline
+  if (method === 'POST' && path === '/api/plan') {
+    const body = await readBody(req).catch(err => { sendJSON(res, 400, { error: err.message }); return null; });
+    if (!body) return;
+    try {
+      const plan = await buildPlan({
+        occasion: String(body.occasion ?? '').slice(0, 500),
+        communityId: body.communityId,
+        fitzpatrick: body.fitzpatrick,
+        undertone: body.undertone,
+        tasteChips: Array.isArray(body.tasteChips) ? body.tasteChips.slice(0, 10) : [],
+      });
+      return sendJSON(res, 200, plan);
+    } catch (err) {
+      console.error('[/api/plan]', err);
+      return sendJSON(res, 500, { error: err.message ?? 'Plan error' });
+    }
   }
 
   // GET /api/qloo/diag — raw boundary check: one live Qloo search, status + shape, no key exposed

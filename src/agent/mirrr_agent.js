@@ -16,7 +16,7 @@
  */
 
 import { QlooClient } from '../qloo.js';
-import { buildAestheticVector, getArchetypes } from '../aesthetic.js';
+import { buildAestheticVector, getArchetypes, affinityOf } from '../aesthetic.js';
 import { recommendLooks } from '../look_engine.js';
 import { scoreDNA } from '../cultural_dna.js';
 import { findShades } from '../shade_finder.js';
@@ -98,6 +98,7 @@ export class MirrrAgent {
     let entities = [];
     let qlooTags = [];
     let qlooError = null;
+    let qlooEntities = [];
 
     if (this.qloo && inputs.length > 0) {
       emit('resolve', 'Resolving entities via Qloo taste graph…');
@@ -112,7 +113,11 @@ export class MirrrAgent {
           const tasteData = await this.qloo.tasteProfile(entityIds).catch(() => null);
           // Qloo tasteProfile returns { results: { entities: [...] } } — extract tags from entity names
           if (tasteData?.results?.entities?.length) {
-            qlooTags = tasteData.results.entities.map(e => e.name ?? e.id).filter(Boolean);
+            qlooEntities = tasteData.results.entities;
+            // keep affinity-bearing objects so the aesthetic vector can weight them
+            qlooTags = qlooEntities
+              .filter(e => e.name ?? e.id)
+              .map(e => ({ name: e.name ?? e.id, affinity: affinityOf(e) ?? undefined }));
           } else if (tasteData?.tags) {
             qlooTags = tasteData.tags;
           }
@@ -232,6 +237,11 @@ export class MirrrAgent {
         qloo_powered: this.qloo !== null && entities.length > 0,
         entities_resolved: entities.length,
         tags_from_qloo: qlooTags.length,
+        top_affinities: qlooTags
+          .filter(t => typeof t === 'object' && t.affinity != null)
+          .sort((a, b) => b.affinity - a.affinity)
+          .slice(0, 5)
+          .map(t => ({ name: t.name, affinity: t.affinity })),
         qloo_error: qlooError,
         community: communityId,
         trace,

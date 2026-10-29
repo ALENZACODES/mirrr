@@ -551,6 +551,17 @@ const LOOK_IMAGES = {
   hawaiian_aloha:           'look-hawaiian-aloha.png',
   indigenous_latina:        'look-indigenous-latina.png',
   japanese_gyaru:           'look-japanese-gyaru.png',
+  // Batch 8
+  blasian_editorial:        'look-blasian-editorial.png',
+  central_asian_steppe:     'look-central-asian-steppe.png',
+  clean_minimal:            'look-clean-minimal.png',
+  festival_glitter:         'look-festival-glitter.png',
+  first_nations_powwow:     'look-first-nations-powwow.png',
+  graduation_glow:          'look-graduation-glow.png',
+  indo_arabian_fusion:      'look-indo-arabian-fusion.png',
+  mixed_heritage_luminous:  'look-mixed-heritage-luminous.png',
+  office_power:             'look-office-power.png',
+  wedding_guest_universal:  'look-wedding-guest-universal.png',
 };
 
 function renderLookCard(look, score) {

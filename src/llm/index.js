@@ -26,6 +26,9 @@ const ARCHETYPE_INTROS = {
   desi_glam:
     'Your taste speaks Bollywood and South Asian festivities — '
     + 'jewel-toned, dramatic, and rooted in one of the richest beauty traditions anywhere.',
+  bollywood_bridal:
+    'Your taste speaks Bollywood and South Asian festivities — '
+    + 'jewel-toned, dramatic, and rooted in one of the richest beauty traditions anywhere.',
   gulf_glam:
     'Your taste is Gulf luxury — '
     + 'Khaleeji grace, Levantine finesse, Persian artistry. Understated power.',
@@ -35,9 +38,15 @@ const ARCHETYPE_INTROS = {
   k_beauty:
     'Your taste is glass-skin Seoul — '
     + 'K-beauty\'s porcelain precision and Hallyu cultural confidence.',
+  k_beauty_glass:
+    'Your taste is glass-skin Seoul — '
+    + 'K-beauty\'s porcelain precision and Hallyu cultural confidence.',
   clean_minimal:
     'Your taste is effortless and skin-first — '
     + 'the hardest aesthetic to pull off and the most universally beautiful.',
+  amapiano_beat:
+    'Your taste is rooted in Afrobeats culture — West African editorial energy, '
+    + 'Amapiano rhythms, and the kind of looks that command the dancefloor.',
 };
 
 const DEFAULT_INTRO =
@@ -60,7 +69,7 @@ function templateNarration(results) {
 
   const topLook = looks?.[0]?.look;
   const lookLine = topLook
-    ? `\n\nYour signature look is **${topLook.name}** — ${topLook.description}`
+    ? `\n\nYour signature look is ${topLook.name} — ${topLook.description}`
     : '';
 
   const wigLine =
@@ -74,7 +83,9 @@ function templateNarration(results) {
     .join(', ');
   const archLine = archLines ? `\n\nYour aesthetic archetypes: ${archLines}.` : '';
 
-  return `${intro}${entityLine}${lookLine}${wigLine}${archLine}`;
+  const raw = `${intro}${entityLine}${lookLine}${wigLine}${archLine}`;
+  // Strip any stray markdown bold/italic markers and lone numeric tokens
+  return raw.replace(/\*\*/g, '').replace(/\*/g, '').replace(/\b(0\.5|1)\b/g, '').trim();
 }
 
 // ---------------------------------------------------------------------------

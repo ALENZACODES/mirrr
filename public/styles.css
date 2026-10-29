@@ -190,9 +190,12 @@ body {
 .hero-mockup-wrap {
   margin: var(--space-md) auto 0;
   max-width: 280px;
+  max-height: 400px;
+  overflow: hidden;
   filter: drop-shadow(0 16px 48px rgba(0,0,0,0.7));
   animation: floatUp 3s ease-in-out infinite;
 }
+.hero-mockup-wrap:empty { display: none; }
 .hero-mockup-img {
   width: 100%;
   height: auto;
@@ -1142,7 +1145,8 @@ body {
 .look-desc { font-size: 0.88rem; line-height: 1.55; color: var(--text-muted); }
 .look-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
 .look-cta { margin-top: auto; }
-.looks-actions { display: flex; gap: 0.75rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap; }
+.looks-actions { display: flex; gap: 0.75rem; justify-content: center; align-items: center; margin-top: 1.5rem; flex-wrap: wrap; }
+.looks-actions .btn { width: auto; }
 
 /* ---------- Depth buttons ---------- */
 .depth-buttons { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
@@ -1287,6 +1291,7 @@ body {
   transition: opacity 0.25s;
 }
 .modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal-overlay.hidden { display: none; }
 .modal {
   background: var(--clr-charcoal);
   border: 1px solid var(--clr-graphite);

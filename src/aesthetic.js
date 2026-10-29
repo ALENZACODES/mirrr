@@ -291,12 +291,14 @@ export function buildAestheticVector(qlooTags = [], { freeText = [] } = {}) {
     }
   }
 
-  // archetypes (can match multiple)
-  const archetypes = [];
+  // archetypes (can match multiple) — sorted by match count so strongest is first
+  const archetypeScores = [];
   for (const arch of ARCHETYPE_MAP) {
     const score = normTags.filter((t) => anyMatch(t, arch.keywords)).length;
-    if (score > 0) archetypes.push(arch.id);
+    if (score > 0) archetypeScores.push({ id: arch.id, score });
   }
+  archetypeScores.sort((a, b) => b.score - a.score);
+  const archetypes = archetypeScores.map(a => a.id);
   if (archetypes.length === 0) archetypes.push('clean_minimal');
   trace.push(`archetypes=${archetypes.join(',')}`);
 

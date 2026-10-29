@@ -131,6 +131,10 @@ function setupHero() {
 }
 
 function showView(viewId) {
+  // Clear any lingering error/warn toasts so they don't bleed across views
+  const toastEl = document.getElementById('toast');
+  if (toastEl) toastEl.classList.add('hidden');
+
   // Hide all views + hero
   document.querySelectorAll('.view, #hero').forEach(el => el.classList.add('hidden'));
 
@@ -230,6 +234,9 @@ async function submitQuiz() {
     const result = await api('/api/dna/score', 'POST', { answers: state.dnaAnswers });
     state.dnaResult = result;
     state.communityId = result.topCommunity?.id ?? null;
+    // Reset button so it's ready if the user retakes the quiz
+    btn.disabled = false;
+    btn.textContent = 'Reveal My Beauty DNA →';
     renderQuizResult(result);
   } catch (err) {
     toast('Could not score quiz — ' + (err.message ?? 'Unknown error'), 'error');
@@ -347,14 +354,25 @@ function setupTasteForm() {
   fetchBtn?.addEventListener('click', fetchLooks);
 
   demoBtn?.addEventListener('click', () => {
+    // Toggle the preset selector visibility
     state.showDemoSelect = !state.showDemoSelect;
     demoSel.classList.toggle('hidden', !state.showDemoSelect);
     if (!state.showDemoSelect) {
+      // Hide = user dismissed; run whatever is selected
       runDemo(demoSel.value || 'afrobeats');
+    } else {
+      // Show the selector with a label
+      demoBtn.textContent = 'Run Demo →';
     }
   });
 
-  demoSel?.addEventListener('change', () => runDemo(demoSel.value));
+  demoSel?.addEventListener('change', () => {
+    // Run immediately on selection
+    runDemo(demoSel.value);
+    demoSel.classList.add('hidden');
+    state.showDemoSelect = false;
+    demoBtn.textContent = 'Try a Demo';
+  });
 }
 
 function addChip(text) {
@@ -393,6 +411,10 @@ async function fetchLooks() {
 
   showTasteLoader(true);
 
+  // 30-second timeout: if live Qloo path hangs, abort and fall back to demo
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 30_000);
+
   try {
     const communityId = document.getElementById('communitySelect')?.value || null;
     const result = await api('/api/agent/run', 'POST', {
@@ -403,14 +425,28 @@ async function fetchLooks() {
       undertone: state.undertone ?? undefined,
       lengthPref: state.lengthPref ?? undefined,
       texturePref: state.texturePref ?? undefined,
-    });
+    }, { signal: controller.signal });
 
     state.aesthetic = result.aesthetic;
     state.communityId = result.communityId;
     renderTasteResults(result);
   } catch (err) {
-    toast('Error: ' + (err.message ?? 'Something went wrong'), 'error');
+    if (err.name === 'AbortError') {
+      toast('Taking too long — loading demo results instead', 'warn');
+      const communityId = document.getElementById('communitySelect')?.value || 'afrobeats';
+      try {
+        const demo = await api('/api/agent/demo', 'POST', { profile: communityId || 'afrobeats' });
+        state.aesthetic = demo.aesthetic;
+        state.communityId = demo.communityId;
+        renderTasteResults(demo);
+      } catch (demoErr) {
+        toast('Demo error: ' + (demoErr.message ?? ''), 'error');
+      }
+    } else {
+      toast('Error: ' + (err.message ?? 'Something went wrong'), 'error');
+    }
   } finally {
+    clearTimeout(timeoutId);
     showTasteLoader(false);
   }
 }
@@ -742,6 +778,7 @@ async function openLookModal(lookId) {
 
   content.innerHTML = '<div class="modal-loading"><div class="spinner"></div></div>';
   modal.classList.remove('hidden');
+  modal.classList.add('open');
   document.body.style.overflow = 'hidden';
 
   try {
@@ -775,7 +812,11 @@ async function openLookModal(lookId) {
 }
 
 function closeModal() {
-  document.getElementById('lookModal')?.classList.add('hidden');
+  const modal = document.getElementById('lookModal');
+  if (modal) {
+    modal.classList.remove('open');
+    modal.classList.add('hidden');
+  }
   document.body.style.overflow = '';
 }
 
@@ -787,7 +828,7 @@ function renderDepthButtons() {
   const container = document.getElementById('depthButtons');
   if (!container) return;
   container.innerHTML = state.depths.map(d => `
-    <button class="depth-btn" data-depth="${d.id}" data-target="${d.depth_target}" title="${d.label}">
+    <button class="depth-btn" data-depth="${d.id}" data-target="${d.depth}" title="${d.label}">
       <span class="depth-swatch" style="background:${d.hex ?? '#888'}"></span>
       <span class="depth-label">${d.label}</span>
     </button>
@@ -901,10 +942,10 @@ function renderShadeResults(shades) {
 function renderWigLengthButtons() {
   const container = document.getElementById('wigLengthButtons');
   if (!container) return;
-  container.innerHTML = `<button class="chip-btn chip-btn--active" data-val="">Any Length</button>` +
-    (state.wigLengths ?? []).map(l => `
-      <button class="chip-btn" data-val="${l.id}">${l.label}</button>
-    `).join('');
+  // getWigLengths() already returns { id:'any', label:'Any length' } as first item — no hardcoded dupe
+  container.innerHTML = (state.wigLengths ?? []).map((l, i) => `
+    <button class="chip-btn${i === 0 ? ' chip-btn--active' : ''}" data-val="${l.id === 'any' ? '' : l.id}">${l.label}</button>
+  `).join('');
   container.addEventListener('click', e => {
     const btn = e.target.closest('.chip-btn');
     if (!btn) return;
@@ -917,10 +958,10 @@ function renderWigLengthButtons() {
 function renderWigTextureButtons() {
   const container = document.getElementById('wigTextureButtons');
   if (!container) return;
-  container.innerHTML = `<button class="chip-btn chip-btn--active" data-val="">Any Texture</button>` +
-    (state.wigTextures ?? []).map(t => `
-      <button class="chip-btn" data-val="${t.id}">${t.label}</button>
-    `).join('');
+  // getWigTextures() already returns { id:'any', label:'Any texture' } as first item — no hardcoded dupe
+  container.innerHTML = (state.wigTextures ?? []).map((t, i) => `
+    <button class="chip-btn${i === 0 ? ' chip-btn--active' : ''}" data-val="${t.id === 'any' ? '' : t.id}">${t.label}</button>
+  `).join('');
   container.addEventListener('click', e => {
     const btn = e.target.closest('.chip-btn');
     if (!btn) return;
@@ -1026,9 +1067,10 @@ function toast(msg, type = 'info') {
 // Helpers
 // ---------------------------------------------------------------------------
 
-async function api(path, method = 'GET', body) {
+async function api(path, method = 'GET', body, { signal } = {}) {
   const opts = { method, headers: { 'Content-Type': 'application/json' } };
   if (body) opts.body = JSON.stringify(body);
+  if (signal) opts.signal = signal;
   const res = await fetch(path, opts);
   const data = await res.json();
   if (!res.ok) throw new Error(data.error ?? `HTTP ${res.status}`);

@@ -579,17 +579,26 @@ export const WIG_CATALOGUE = [
 // Wig Matchmaker API
 // ---------------------------------------------------------------------------
 
-export function matchWigs({ aesthetic = {}, communityId = 'mixed', lengthPref = 'any', texturePref = 'any', topN = 6 }) {
+export function matchWigs({ aesthetic = {}, communityId = 'mixed', lengthPref = null, texturePref = null, topN = 6 }) {
   const hairVibe = aesthetic.hair_vibe ?? 'natural';
 
+  // Apply length and texture as hard filters when specified (not 'any' / empty)
+  const effectiveLength = lengthPref && lengthPref !== 'any' ? lengthPref : null;
+  const effectiveTexture = texturePref && texturePref !== 'any' ? texturePref : null;
+
   return WIG_CATALOGUE
+    .filter(wig => {
+      // Hard filter: only show wigs matching the selected length
+      if (effectiveLength && wig.length !== effectiveLength) return false;
+      // Hard filter: only show wigs matching the selected texture (substring match)
+      if (effectiveTexture && !wig.texture.includes(effectiveTexture)) return false;
+      return true;
+    })
     .map(wig => {
       let score = 0;
-      if (wig.hair_vibe_match.includes(hairVibe)) score += 0.40;
-      if (wig.communities.includes(communityId)) score += 0.25;
-      if (aesthetic.archetypes?.some(a => wig.archetype_fit.includes(a))) score += 0.20;
-      if (lengthPref !== 'any' && wig.length === lengthPref) score += 0.10;
-      if (texturePref !== 'any' && wig.texture.includes(texturePref)) score += 0.05;
+      if (wig.hair_vibe_match.includes(hairVibe)) score += 0.45;
+      if (wig.communities.includes(communityId)) score += 0.30;
+      if (aesthetic.archetypes?.some(a => wig.archetype_fit.includes(a))) score += 0.25;
 
       const reason = buildReason(wig, hairVibe, communityId, aesthetic);
       return { wig, score: Math.min(1, score), reason };

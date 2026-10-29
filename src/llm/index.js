@@ -92,13 +92,21 @@ function templateNarration(results) {
 // OpenAI narrator
 // ---------------------------------------------------------------------------
 
+const LLM_TIMEOUT_MS = 5_000; // 5s max per LLM call — judges won't wait longer
+
+function fetchWithTimeout(url, opts, timeoutMs = LLM_TIMEOUT_MS) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  return fetch(url, { ...opts, signal: controller.signal }).finally(() => clearTimeout(timer));
+}
+
 async function openaiNarration(results) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) throw new Error('no OPENAI_API_KEY');
 
   const prompt = buildPrompt(results);
 
-  const resp = await fetch('https://api.openai.com/v1/chat/completions', {
+  const resp = await fetchWithTimeout('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${apiKey}`,
@@ -137,7 +145,7 @@ async function geminiNarration(results) {
   const prompt = buildPrompt(results);
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
-  const resp = await fetch(url, {
+  const resp = await fetchWithTimeout(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

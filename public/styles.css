@@ -1688,3 +1688,574 @@ body {
   color: var(--clr-gold);
   letter-spacing: 0.04em;
 }
+
+/* ============================================================
+   MIRRR LUXURY OVERHAUL — Cinematic Warmth Edition
+   Matches the editorial portrait photography + gold/terracotta
+   design language of the generated images.
+   ============================================================ */
+
+/* ── Import Playfair Display for display headings ── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+
+/* ── Root enhancements ── */
+:root {
+  --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --clr-gold-light: #e8c96a;
+  --clr-gold-dim: rgba(212,168,71,0.18);
+  --clr-terra-dim: rgba(196,92,60,0.18);
+  --shadow-card: 0 8px 40px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4);
+  --shadow-glow-terra: 0 0 40px rgba(196,92,60,0.18), 0 4px 24px rgba(0,0,0,0.5);
+  --shadow-glow-gold: 0 0 32px rgba(212,168,71,0.15), 0 4px 24px rgba(0,0,0,0.5);
+  --border-gold: 1px solid rgba(212,168,71,0.28);
+  --border-terra: 1px solid rgba(196,92,60,0.35);
+}
+
+/* ── Body — richer black ── */
+body {
+  background: #060606;
+  letter-spacing: 0.01em;
+}
+
+/* ── Wordmark — editorial tracking ── */
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  font-size: clamp(3.5rem, 11vw, 7.5rem);
+  background: linear-gradient(135deg, #f5f0eb 0%, #d4a847 50%, #f5f0eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  filter: drop-shadow(0 0 24px rgba(212,168,71,0.2));
+}
+
+.hero-tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1rem, 2.8vw, 1.35rem);
+  letter-spacing: 0.12em;
+  color: var(--clr-gold-light);
+}
+
+/* ── Nav — warmer glass ── */
+.nav--scrolled {
+  background: rgba(6,6,6,0.94);
+  border-bottom: var(--border-gold);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.5);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #f5f0eb, #d4a847);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-link {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+}
+.nav-link--active {
+  color: var(--clr-gold);
+  background: rgba(212,168,71,0.1);
+}
+
+/* ── View titles ── */
+.view-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.14em;
+  background: linear-gradient(135deg, #f5f0eb 0%, var(--clr-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.6rem;
+}
+
+.view-sub {
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  color: var(--clr-mist);
+  text-transform: uppercase;
+}
+
+/* ── Cards — depth + warmth ── */
+.card {
+  background: linear-gradient(160deg, #181818 0%, #111 100%);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+}
+
+/* ── Buttons — elevated ── */
+.btn-primary {
+  background: linear-gradient(135deg, var(--clr-terracotta), #a84828);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 4px 24px rgba(196,92,60,0.35);
+  border-radius: 100px;
+  padding: 0.9rem 2.25rem;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #d96840, #c45c3c);
+  box-shadow: 0 8px 32px rgba(196,92,60,0.5);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  border: var(--border-gold);
+  color: var(--clr-gold);
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.btn-ghost:hover {
+  background: var(--clr-gold-dim);
+  box-shadow: var(--shadow-glow-gold);
+}
+
+/* ── Section titles ── */
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  letter-spacing: 0.1em;
+  color: var(--clr-ivory);
+  margin-bottom: 1.5rem;
+}
+
+/* ── Look cards — cinematic ── */
+.look-card {
+  background: linear-gradient(180deg, #141414 0%, #0e0e0e 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.look-card:hover {
+  border-color: rgba(196,92,60,0.45);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow-terra);
+}
+
+/* Square portrait fills the card top */
+.look-card-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  position: relative;
+}
+.look-card-img-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 40%;
+  background: linear-gradient(to top, #0e0e0e 0%, transparent 100%);
+  pointer-events: none;
+}
+.look-card-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.look-card:hover .look-card-img { transform: scale(1.05); }
+
+.look-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--clr-ivory);
+}
+.look-arch {
+  font-size: 0.68rem;
+  color: var(--clr-gold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.look-desc {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: #888;
+}
+
+/* ── Wig cards — same cinematic treatment ── */
+.wig-card {
+  background: linear-gradient(180deg, #141414 0%, #0e0e0e 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.wig-card:hover {
+  border-color: rgba(212,168,71,0.4);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow-gold);
+}
+.wig-card-img-wrap {
+  position: relative;
+  border-radius: 20px 20px 0 0;
+}
+.wig-card-img-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 35%;
+  background: linear-gradient(to top, #0e0e0e 0%, transparent 100%);
+  pointer-events: none;
+}
+.wig-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.07em;
+}
+
+/* ── DNA Quiz result ── */
+.dna-result {
+  background: linear-gradient(160deg, rgba(196,92,60,0.12) 0%, rgba(212,168,71,0.06) 50%, rgba(10,10,10,0) 100%);
+  border: var(--border-terra);
+  border-radius: 24px;
+  box-shadow: var(--shadow-glow-terra);
+  padding: 3rem 2.5rem;
+}
+.dna-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: 0.12em;
+  background: linear-gradient(135deg, #f5f0eb, var(--clr-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.dna-runner {
+  border: var(--border-gold);
+  background: var(--clr-gold-dim);
+  border-radius: 100px;
+  color: var(--clr-gold);
+  font-style: normal;
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.25rem;
+  margin: 0.75rem auto;
+}
+
+/* ── Aesthetic bars ── */
+.aesthetic-bars, .aesthetic-card {
+  background: linear-gradient(160deg, #181818, #111);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+.bars-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: 1rem;
+}
+.aes-bar-fill {
+  background: linear-gradient(90deg, var(--clr-terracotta) 0%, var(--clr-gold) 100%);
+  box-shadow: 0 0 8px rgba(212,168,71,0.2);
+}
+
+/* ── Narration ── */
+.narration-card, .narration {
+  background: linear-gradient(160deg, #181818, #111);
+  border-left: 3px solid var(--clr-terracotta);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
+}
+.narration-text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--clr-ivory);
+}
+
+/* ── Tags ── */
+.tag {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.65rem;
+  color: #888;
+}
+.tag--arch {
+  background: var(--clr-gold-dim);
+  border-color: rgba(212,168,71,0.3);
+  color: var(--clr-gold);
+}
+
+/* ── Quiz ── */
+.quiz-question {
+  background: linear-gradient(160deg, #181818, #111);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  padding: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+.quiz-q-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-terracotta);
+}
+.quiz-q-text {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--clr-ivory);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+.quiz-option {
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: #888;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  transition: all 0.2s;
+}
+.quiz-option:hover {
+  border-color: rgba(196,92,60,0.4);
+  color: var(--clr-ivory);
+  background: var(--clr-terra-dim);
+}
+.quiz-option--selected {
+  background: var(--clr-terra-dim);
+  border-color: var(--clr-terracotta);
+  color: var(--clr-ivory);
+  box-shadow: 0 0 16px rgba(196,92,60,0.18);
+}
+
+/* ── Community icons ── */
+.dna-community-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--clr-gold);
+  box-shadow: 0 0 28px rgba(212,168,71,0.35), 0 0 60px rgba(212,168,71,0.1);
+}
+
+/* ── Trending section ── */
+.trending-section {
+  background: linear-gradient(180deg, #0a0a0a, #060606);
+  border-top: var(--border-gold);
+  border-bottom: var(--border-gold);
+}
+.trending-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  background: linear-gradient(135deg, #f5f0eb, var(--clr-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.trending-card {
+  background: #0c0c0c;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 14px;
+  transition: all 0.25s;
+}
+.trending-card:hover {
+  border-color: rgba(196,92,60,0.4);
+  background: rgba(196,92,60,0.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  transform: translateX(2px);
+}
+.trending-tab {
+  border-radius: 100px;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.trending-tab--active {
+  background: var(--clr-gold-dim);
+  border-color: rgba(212,168,71,0.45);
+  box-shadow: 0 0 16px rgba(212,168,71,0.12);
+}
+.trending-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+/* ── Shade finder cards ── */
+.shade-card, .depth-btn {
+  background: linear-gradient(160deg, #181818, #111);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  transition: all 0.25s;
+}
+.shade-card:hover {
+  border-color: rgba(196,92,60,0.4);
+  box-shadow: var(--shadow-glow-terra);
+  transform: translateY(-3px);
+}
+.shade-name {
+  font-family: var(--font-display);
+  letter-spacing: 0.06em;
+}
+
+/* ── Modal — luxury panel ── */
+.modal {
+  background: linear-gradient(160deg, #1a1a1a, #101010);
+  border: var(--border-gold);
+  border-radius: 24px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.8), 0 0 40px rgba(212,168,71,0.08);
+}
+.modal-overlay { background: rgba(0,0,0,0.82); }
+
+/* ── Footer ── */
+.footer {
+  border-top: var(--border-gold);
+  background: #060606;
+}
+.footer-wordmark {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: 0.28em;
+  background: linear-gradient(90deg, #f5f0eb, var(--clr-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.footer-tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  letter-spacing: 0.1em;
+  color: var(--clr-gold);
+}
+
+/* ── Why cards ── */
+.why-card {
+  background: linear-gradient(160deg, #181818, #111);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.why-card:hover {
+  border-color: rgba(212,168,71,0.22);
+  box-shadow: var(--shadow-glow-gold);
+}
+.why-card h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  font-size: 1.2rem;
+}
+
+/* ── Taste form ── */
+.taste-form.card {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+.chip-input-wrap {
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+}
+.chip-input-wrap:focus-within {
+  border-color: rgba(196,92,60,0.45);
+  box-shadow: 0 0 20px rgba(196,92,60,0.12);
+}
+.select {
+  background-color: #141414;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  font-size: 0.88rem;
+}
+.select:focus {
+  border-color: rgba(196,92,60,0.45);
+  box-shadow: 0 0 16px rgba(196,92,60,0.12);
+}
+
+/* ── Loader ── */
+.loading-mirror-img {
+  filter: drop-shadow(0 0 32px rgba(212,168,71,0.25));
+}
+
+/* ── Hero sub ── */
+.hero-sub {
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  line-height: 1.8;
+  color: #777;
+}
+.hero-sub strong { color: var(--clr-ivory); }
+
+/* ── Results image wrappers ── */
+.results-image-card {
+  border: var(--border-gold);
+  box-shadow: var(--shadow-glow-gold);
+  border-radius: 20px;
+}
+
+/* ── Share / profile card ── */
+.share-card-wrap {
+  border: var(--border-gold);
+  box-shadow: 0 0 40px rgba(212,168,71,0.12), var(--shadow-card);
+  border-radius: 20px;
+}
+
+/* ── Quiz card banner ── */
+.quiz-style-card {
+  border: var(--border-terra);
+  box-shadow: var(--shadow-glow-terra);
+  border-radius: 20px;
+}
+
+/* ── Taste community label ── */
+.taste-com-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  color: var(--clr-gold-light);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .dna-result { padding: 1.75rem 1.25rem; }
+  .card { padding: 1.5rem; }
+  .modal { border-radius: 20px; }
+}
+

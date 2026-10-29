@@ -492,28 +492,65 @@ function renderTasteResults(result) {
 
 // Editorial look images — mapped by look ID
 const LOOK_IMAGES = {
-  // Batch 1
-  afrobeats_concert:        'look-afrobeats-queen.png',
-  afropunk_edge:            'look-afropunk-rebel.png',
-  amapiano_beat:            'look-amapiano-babe.png',
-  bollywood_bridal:         'look-bollywood-diva.png',
+  // Batch 1 — updated filenames
+  afrobeats_concert:        'look-afrobeats-concert.png',
+  afropunk_edge:            'look-afropunk-edge.png',
+  amapiano_beat:            'look-amapiano-beat.png',
+  bollywood_bridal:         'look-bollywood-bridal.png',
   dancehall_queen:          'look-dancehall-queen.png',
-  hip_hop_glam:             'look-hip-hop-icon.png',
-  gulf_glam:                'look-khaleeji-goddess.png',
-  k_beauty_glass:           'look-kpop-muse.png',
-  latina_glam:              'look-reggaeton-reina.png',
-  caribbean_carnival:       'look-soca-spirit.png',
-  // Batch 2
+  hip_hop_glam:             'look-hip-hop-glam.png',
+  gulf_glam:                'look-gulf-glam.png',
+  k_beauty_glass:           'look-k-beauty-glass.png',
+  latina_glam:              'look-latina-glam.png',
+  caribbean_carnival:       'look-caribbean-carnival.png',
+  // Batch 2 — updated filenames
   polynesian_warrior:       'look-polynesian-warrior.png',
-  persian_editorial:        'look-persian-queen.png',
-  j_beauty:                 'look-j-beauty-muse.png',
+  persian_editorial:        'look-persian-editorial.png',
+  j_beauty:                 'look-j-beauty.png',
   first_nations_powwow:     'look-indigenous-star.png',
-  ethiopian_jewel:          'look-ethiopian-icon.png',
-  desi_everyday_chic:       'look-desi-baddie.png',
-  brazilian_carnival:       'look-cumbia-corazon.png',
+  ethiopian_jewel:          'look-ethiopian-jewel.png',
+  desi_everyday_chic:       'look-desi-everyday-chic.png',
+  brazilian_carnival:       'look-brazilian-carnival.png',
   central_asian_steppe:     'look-silk-road-siren.png',
-  afrofuturist_editorial:   'look-afrofuturist.png',
-  haitian_vodou_editorial:  'look-haitian-roots.png',
+  afrofuturist_editorial:   'look-afrofuturist-editorial.png',
+  haitian_vodou_editorial:  'look-haitian-vodou-editorial.png',
+  // Batch 3
+  black_tie_gala:           'look-black-tie-gala.png',
+  chinese_new_year:         'look-chinese-new-year.png',
+  moroccan_soiree:          'look-moroccan-soiree.png',
+  nollywood_red_carpet:     'look-nollywood-red-carpet.png',
+  nubian_queen:             'look-nubian-queen.png',
+  owambe_glam:              'look-owambe-glam.png',
+  soft_glam:                'look-soft-glam.png',
+  southeast_asian_glow:     'look-southeast-asian-glow.png',
+  thai_celestial:           'look-thai-celestial.png',
+  zulu_bridal:              'look-zulu-bridal.png',
+  // Batch 4
+  date_night_drama:         'look-date-night-drama.png',
+  ghanaian_kente_glam:      'look-ghanaian-kente-glam.png',
+  xhosa_glam:               'look-xhosa-glam.png',
+  afro_glam_editorial:      'look-afro-glam-editorial.png',
+  congolese_sapeur:         'look-congolese-sapeur.png',
+  // Batch 5
+  amazigh_berber:           'look-amazigh-berber.png',
+  black_girl_natural:       'look-black-girl-natural.png',
+  hbcu_homecoming:          'look-hbcu-homecoming.png',
+  kenyan_nairobi_chic:      'look-kenyan-nairobi-chic.png',
+  somali_glam:              'look-somali-glam.png',
+  y2k_revival:              'look-y2k-revival.png',
+  // Batch 6
+  arab_chic:                'look-arab-chic.png',
+  diwali_festive:           'look-diwali-festive.png',
+  eid_glam:                 'look-eid-glam.png',
+  mehndi_bridal:            'look-mehndi-bridal.png',
+  tamil_classical:          'look-tamil-classical.png',
+  turkish_glam:             'look-turkish-glam.png',
+  // Batch 7
+  afro_latina:              'look-afro-latina.png',
+  filipina_glam:            'look-filipina-glam.png',
+  hawaiian_aloha:           'look-hawaiian-aloha.png',
+  indigenous_latina:        'look-indigenous-latina.png',
+  japanese_gyaru:           'look-japanese-gyaru.png',
 };
 
 function renderLookCard(look, score) {

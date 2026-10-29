@@ -1,346 +1,212 @@
 /**
- * MIRRR — Wellness & Beauty Guide
- * Ingestible beauty, supplements, sleep, stress, exercise, hydration,
- * and their effects on skin and hair. Ethnic wellness beauty traditions.
+ * MIRRR — Wellness and Beauty Guide
+ * The intersection of holistic wellness, nutrition, exercise,
+ * stress, and beauty across ethnic communities.
  */
 
-export const WELLNESS_BEAUTY_OVERVIEW = {
-  title: 'Wellness-Based Beauty: The Inside-Out Approach',
-  introduction: `Beauty is not merely topical. The most sophisticated skincare routine cannot fully compensate for chronic poor sleep, high stress, nutritional deficiencies, or dehydration. Conversely, optimising lifestyle factors creates a foundation of skin and hair health that no product can replicate. The most effective beauty approach combines intelligent topical care with evidence-based wellness practices.`,
-  keyPillars: ['Nutrition — the building blocks of skin and hair', 'Sleep — the primary repair period', 'Hydration — water and barrier maintenance', 'Exercise — circulation and detoxification', 'Stress management — cortisol regulation', 'Supplementation — targeted micronutrient support'],
-  disclaimer: 'This guide presents evidence-based wellness practices for skin and hair health. It is not medical advice. Consult healthcare providers before beginning supplements, especially if you have medical conditions or take medications.'
-};
-
-export const BEAUTY_NUTRITION_GUIDE = {
-  title: 'Nutrition for Skin and Hair',
-  introduction: `The skin is the largest organ and one of the last to receive nutrients (vital organs take priority). Hair grows approximately 1-1.5cm per month and is entirely built from nutrients consumed 1-3 months prior. Nutritional deficiencies show in skin and hair often before clinical symptoms emerge.`,
+export const NUTRITION_SKIN_SCIENCE = {
+  title: 'Nutrition and Skin Health — The Evidence',
+  overview: 'The skin is the body\'s largest organ and reflects internal health; nutritional status directly impacts skin appearance, barrier function, collagen synthesis, and inflammatory response; while topical skincare is important, internal nutrition is the foundation of healthy skin',
   macronutrients: {
     protein: {
-      role: 'Keratin (hair, nails) and collagen (skin) are proteins — adequate protein intake is non-negotiable for structural integrity',
-      target: '1.0-1.6g per kg body weight daily; higher end if active or over 50',
-      best_sources: ['Animal: lean meat, fish, eggs, dairy', 'Plant: legumes, tofu, tempeh, edamame, quinoa, seitan'],
-      deficiency_signs: ['Hair thinning and loss (protein is prioritised for vital organs over "non-essential" hair)', 'Brittle nails', 'Slow wound healing', 'Dull skin'],
-      note: 'Hair loss from protein deficiency (telogen effluvium) appears 3-6 months after the deficiency occurs due to the hair growth cycle'
+      role: 'Protein is the raw material for collagen and elastin synthesis; skin is approximately 75% collagen by dry weight; amino acids from dietary protein (particularly glycine, proline, hydroxyproline, and lysine) are direct building blocks of collagen; protein deficiency causes: poor wound healing, loss of skin firmness, thinning skin, brittle nails, hair loss',
+      sources: 'Complete proteins (all essential amino acids): meat, poultry, fish, eggs, dairy; plant-based complete proteins: quinoa, soy, hemp seeds, buckwheat; combining plant proteins (rice + legumes) also provides complete amino acid profiles',
+      collagen: 'Collagen supplements (hydrolysed collagen peptides): meta-analyses (2019 Nutrients; 2021 International Journal of Dermatology) show statistically significant improvements in skin elasticity and hydration from oral collagen supplementation (2.5-10g daily); the peptides are absorbed and stimulate fibroblast collagen production rather than being used as building blocks directly; evidence is promising but more large-scale studies needed'
     },
     fats: {
-      role: 'Essential fatty acids form the lipid bilayer of the skin barrier; ceramides are lipid-based; fat-soluble vitamins (A, D, E, K) require fat for absorption',
-      omega_3: {
-        importance: 'Anti-inflammatory; prevents TEWL (transepidermal water loss); maintains sebum quality; prevents dry scalp and brittle hair',
-        sources: 'Oily fish (salmon, mackerel, sardines, herring), chia seeds, flaxseed, walnuts, algae oil (vegan DHA)',
-        target: '250-500mg EPA+DHA daily from diet; supplement 1-3g if low fish intake'
+      omega3: {
+        role: 'Omega-3 fatty acids (EPA and DHA) are anti-inflammatory; reduce skin inflammation; maintain the lipid barrier; reduce transepidermal water loss; EPA specifically inhibits arachidonic acid-mediated inflammation pathways relevant to acne and inflammatory skin conditions',
+        sources: 'Fatty fish (salmon, mackerel, sardines, herring): highest EPA/DHA; algae oil (vegan DHA source); flaxseed, chia seeds, walnuts (ALA which partially converts to EPA/DHA); omega-3 supplement (fish oil or algae oil)',
+        evidence: '2012 study (Journal of the American Academy of Dermatology): omega-3 supplementation significantly reduced acne inflammatory lesions; multiple studies show benefits for eczema and psoriasis; anti-inflammatory mechanism is well-established'
       },
-      omega_6: {
-        note: 'Linoleic acid (omega-6) deficiency specifically causes dry, scaly skin and increased TEWL; but most Western diets have ample omega-6 and insufficient omega-3',
-        balance: 'Aim for omega-3:omega-6 ratio of 1:4 or better; Western diet is typically 1:20'
-      },
-      avoid: 'Trans fats increase inflammation; excess processed vegetable oils increase inflammatory omega-6 relative to omega-3'
+      omega6: 'Omega-6 fatty acids are pro-inflammatory in high amounts; Western diets often have imbalanced omega-6 to omega-3 ratios (often 15:1 or higher, while ideal is 4:1 or lower); high omega-6 diets (from processed seed oils: soybean, corn, sunflower) without balancing omega-3 can worsen inflammatory skin conditions',
+      transFats: 'Trans fats (from partially hydrogenated oils; industrial processed foods) increase systemic inflammation and are associated with worsened inflammatory skin conditions; largely eliminated from many food supplies but still present in some processed foods globally'
     },
     carbohydrates: {
-      glycaemic_impact: 'High-GI foods spike blood glucose → spikes insulin → spikes IGF-1 → stimulates androgen production → increases sebum → worsens acne. Multiple RCTs confirm low-GI diet reduces acne severity.',
-      best_sources: 'Low-GI carbohydrates: legumes, most non-starchy vegetables, whole grains, sweet potato',
-      worst: 'White bread, white rice, sugary drinks, candy, white pasta — high-GI, also trigger advanced glycation end products (AGEs) that cross-link collagen',
-      AGEs: 'Advanced glycation end products (AGEs) form when glucose reacts with proteins including skin collagen — makes collagen rigid and prone to breakage; a major driver of skin ageing; occurs via high-sugar diet and cooking methods (grilling, frying produce more AGEs than steaming/boiling)'
+      glycaemic: 'High glycaemic index foods (white bread, white rice, sugary drinks, processed snacks) cause rapid blood glucose spikes; these trigger insulin release, which stimulates IGF-1 (insulin-like growth factor 1); IGF-1 increases sebum production and can worsen acne in susceptible individuals',
+      acneLink: '2007 study (American Journal of Clinical Nutrition): low glycaemic load diet significantly reduced acne lesion count vs control diet in young men with acne; subsequent studies support the dietary glycaemic load-acne connection',
+      fibre: 'Dietary fibre feeds beneficial gut bacteria (prebiotics); the gut-skin axis: gut microbiome health is connected to skin health through inflammatory and immune pathways; fermented foods (kimchi, yoghurt, kefir, miso, tempeh, injera) provide probiotics that support gut health'
     }
   },
-  keyNutrients: {
+  micronutrients: {
     vitaminC: {
-      role: 'Essential cofactor for collagen synthesis (cross-linking); antioxidant protecting skin cells from UV damage; brightening (inhibits tyrosinase); enhances iron absorption',
-      sources: 'Bell peppers (highest), kiwi, strawberries, citrus, broccoli, guava (highest among fruits — ~230mg per 100g)',
-      target: '65-90mg/day RDA; skin needs higher — up to 500mg supplementation for collagen synthesis benefit',
-      note: 'Vitamin C is unstable; fresh sources better than highly processed; topical and dietary C both contribute to skin effects'
+      role: 'Vitamin C is essential for collagen synthesis (cofactor for prolyl hydroxylase enzyme); potent antioxidant protecting skin from UV-induced oxidative damage; the body cannot synthesise vitamin C and it must be obtained from diet',
+      sources: 'Bell peppers (especially red): very high; citrus fruits; kiwi; broccoli; strawberries; guava (very high)',
+      deficiency: 'Scurvy (severe vitamin C deficiency): skin symptoms include bleeding gums, poor wound healing, corkscrew hairs, perifolicular haemorrhages; rare in developed world but can occur in very restricted diets'
     },
     vitaminA: {
-      forms: 'Retinoids (preformed vitamin A from animals); carotenoids (beta-carotene from plants, converted in body)',
-      role: 'Regulates skin cell turnover; sebum production; wound healing; immune function in skin',
-      sources: 'Liver (richest), oily fish, dairy, eggs (preformed); sweet potato, carrots, leafy greens, mango (as beta-carotene)',
-      deficiency_signs: 'Dry rough skin (follicular hyperkeratosis — "chicken skin"); night blindness; dry eyes',
-      caution: 'Preformed vitamin A (retinol in supplements) is toxic at high doses; beta-carotene from food is safe (causes harmless yellow-orange skin at very high intake); pregnant: avoid liver and high-dose retinol supplements'
-    },
-    vitaminD: {
-      role: 'Immune regulation in skin; anti-inflammatory; regulates skin cell growth; deficiency linked to increased risk of atopic dermatitis, psoriasis, acne',
-      sources: 'Oily fish, egg yolks, fortified foods; primarily synthesised via UV-B exposure to skin',
-      synthesisBlock: 'Melanin reduces UV-B penetration — Fitzpatrick IV-VI people synthesise significantly less vitamin D from sun exposure; may need 3x the sun exposure of Fitzpatrick I-II for equivalent synthesis or require supplementation',
-      target: 'Most adults need 1500-2000 IU daily; optimal blood level 50-80 nmol/L (UK) / 40-60 ng/mL (US); deficiency common in darker-skinned people in northern latitudes',
-      supplement: '1000-4000 IU D3 daily with food (fat-soluble); vitamin K2 (100mcg MK-7) taken alongside for proper calcium and vitamin D metabolism'
-    },
-    vitaminE: {
-      role: 'Fat-soluble antioxidant protecting cell membranes; works synergistically with vitamin C (they regenerate each other); reduces UV damage; wound healing',
-      sources: 'Sunflower seeds, almonds, avocado, olive oil, spinach',
-      topical: 'Vitamin E oil commonly used for scars and wound healing — some evidence for improvement though vitamin C is more evidence-backed'
+      role: 'Vitamin A is required for normal skin cell turnover and differentiation; deficiency causes follicular hyperkeratosis ("toad skin" — rough, bumpy skin from follicle plugging)',
+      retinol: 'Retinol (animal-source vitamin A): liver, egg yolks, dairy, oily fish',
+      carotenoids: 'Beta-carotene and other carotenoids (plant-source pro-vitamin A): sweet potato, carrots, mango, papaya, leafy greens; high carotenoid intake can produce a healthy orange-yellow skin tint (carotenodermia — harmless and actually considered attractive in some studies where judges rated high-carotenoid skin as healthy-looking and attractive)'
     },
     zinc: {
-      role: 'Cofactor for 300+ enzymes including collagen-producing enzymes; anti-inflammatory (reduces IL-6, TNF-α); antimicrobial (reduces Cutibacterium acnes); wound healing; hormone regulation (reduces androgens)',
-      acne_evidence: 'Zinc 30-45mg daily has evidence comparable to tetracycline antibiotics for acne — with none of the antibiotic resistance or gut dysbiosis',
-      sources: 'Oysters (highest), red meat, pumpkin seeds, hemp seeds, lentils, chickpeas',
-      supplement: '15-30mg zinc picolinate or zinc glycinate (best absorbed forms); on empty stomach for absorption but take with food if causes nausea; note: zinc inhibits copper absorption at high doses, so copper 2mg alongside if supplementing zinc long-term',
-      deficiency: 'Hair loss (telogen effluvium), poor wound healing, acne, white nail spots'
+      role: 'Zinc is required for: collagen synthesis; wound healing; vitamin A metabolism; immune function; anti-inflammatory processes; zinc-dependent enzymes including superoxide dismutase (antioxidant)',
+      acne: 'Zinc deficiency is associated with acne; some studies support oral zinc supplementation for acne treatment (zinc gluconate 30mg equivalent to tetracycline 250mg in one study, though less effective than minocycline; zinc has significantly fewer side effects than oral antibiotics)',
+      sources: 'Oysters (the richest source); red meat; poultry; beans; nuts; fortified cereals; pumpkin seeds',
+      vegetarian: 'Phytates in whole grains and legumes reduce zinc absorption; vegetarian and vegan diets tend to provide less bioavailable zinc; this is particularly relevant for South Asian vegetarian communities where plant-based diets are common'
+    },
+    selenium: {
+      role: 'Selenium is a component of glutathione peroxidase (powerful antioxidant enzyme); anti-inflammatory; supports thyroid function (thyroid issues manifest in skin and hair)',
+      sources: 'Brazil nuts: by far the richest source (2 Brazil nuts provide the daily requirement); seafood; meat; eggs; whole grains (content depends on soil selenium levels)'
     },
     iron: {
-      role: 'Transports oxygen to skin and hair follicles; without adequate iron, follicles are starved of oxygen and shed early',
-      forms: 'Haem iron (from meat — absorbed 15-35%) vs non-haem iron (plants — absorbed 2-20%)',
-      sources: 'Red meat, liver, shellfish (haem); dark leafy greens, lentils, fortified cereals, pumpkin seeds (non-haem)',
-      absorption: 'Vitamin C dramatically increases non-haem iron absorption; tannins in tea/coffee and calcium reduce absorption; take iron and calcium supplements 2+ hours apart',
-      ferritin: 'Serum ferritin (iron stores) below 30-50 ng/mL is associated with hair loss even if haemoglobin is normal; ferritin target for hair: 70-100 ng/mL',
-      communityNote: 'Iron deficiency anaemia is more prevalent in South Asian, East African, Black American women; vegetarian/vegan diets common in South Asian communities reduce haem iron; heavy periods (PCOS) common in multiple communities increase iron loss'
+      role: 'Iron deficiency causes hair loss (telogen effluvium — diffuse shedding); pale, sallow skin; brittle nails; the inner corners of the eyelids appear pale (clinical sign of anaemia)',
+      sources: 'Haem iron (highly bioavailable): red meat, liver, oysters; Non-haem iron (less bioavailable): lentils, beans, tofu, leafy greens, fortified cereals',
+      absorption: 'Vitamin C dramatically increases non-haem iron absorption; coffee, tea, and calcium reduce iron absorption; important for vegetarian/vegan communities and women with heavy periods'
     },
     biotin: {
-      role: 'B7 vitamin; cofactor for carboxylase enzymes involved in fatty acid synthesis; nail and hair keratin synthesis',
-      evidence: 'Evidence for biotin supplementation is primarily in people with confirmed biotin deficiency; supplementation in people with adequate biotin may have little effect; however, very commonly supplemented for hair and nail health',
-      supplement: '2500-5000mcg daily for 3-6 months to assess effect',
-      caution: 'Biotin interferes with thyroid function tests, troponin tests, and several hormone tests — stop 48-72 hours before blood tests',
-      food_sources: 'Eggs (avidin in raw egg whites inhibits biotin absorption — cook eggs), liver, nuts, seeds, sweet potato'
-    },
-    silicon: {
-      role: 'Trace mineral supporting collagen and elastin cross-linking; found in bamboo, oat straw, horsetail',
-      research: 'Orthosilicic acid (form in supplements) shown to improve skin, hair, and nail quality in several clinical studies',
-      supplement: 'Bamboo extract or orthosilicic acid supplement; horsetail extract (high silicon content)',
-      food_sources: 'Oats, brown rice, banana, beer (from hops and barley), drinking water from silicon-rich areas'
+      role: 'Biotin (vitamin B7) is required for fatty acid synthesis and keratin production; biotin deficiency causes hair loss, brittle nails, and a characteristic rash; true biotin deficiency is rare',
+      supplement: 'Biotin supplements are very widely sold for hair and nail growth; the evidence for supplementation benefit is only demonstrated for diagnosed biotin deficiency; most people eating a varied diet have adequate biotin; high-dose biotin supplementation can interfere with thyroid and troponin lab tests (important to disclose before blood tests)',
+      sources: 'Liver; eggs (cooked — raw egg whites contain avidin which blocks biotin absorption); salmon; sunflower seeds; sweet potato'
     }
   },
-  skinFoods: {
-    title: 'Top Evidence-Based Skin Foods',
-    fatty_fish: 'Salmon, mackerel, sardines — omega-3, astaxanthin (antioxidant), vitamin D, protein',
-    avocado: 'Oleic acid (moisturising), vitamin E, biotin, antioxidants; dietary avocado shown to improve skin elasticity and firmness in studies',
-    sweet_potato: 'Beta-carotene (converts to vitamin A), vitamin C, biotin',
-    berries: 'Blueberries particularly — highest ORAC antioxidant value; ellagic acid, anthocyanins reduce UV damage and AGE formation',
-    dark_chocolate: '70%+ cacao — flavanols improve skin hydration, blood flow, UV protection; 20g dark chocolate daily shown to improve skin in clinical study',
-    green_tea: 'EGCG (epigallocatechin gallate) — anti-inflammatory, antioxidant, inhibits matrix metalloproteinases (enzymes that break down collagen); evidence for topical and oral benefit',
-    bone_broth: 'Hydrolysed collagen peptides; proline and glycine (amino acids for collagen); easily absorbed',
-    tomatoes: 'Lycopene — carotenoid antioxidant especially beneficial for UV protection; cooked tomatoes have higher bioavailable lycopene',
-    walnuts: 'Omega-3 (ALA), zinc, vitamin E, selenium',
-    sunflower_seeds: 'Vitamin E (highest in common foods), selenium, linoleic acid'
-  },
-  antiInflammatoryDiet: {
-    title: 'Anti-Inflammatory Diet for Skin',
-    basis: 'Chronic low-grade inflammation drives ageing, acne, rosacea, eczema, and psoriasis. Diet significantly influences systemic inflammatory markers (CRP, IL-6, TNF-α).',
-    increase: ['Omega-3 rich foods', 'Colourful vegetables (diverse phytonutrients)', 'Berries and cherries', 'Olive oil (oleocanthal — natural COX inhibitor similar to ibuprofen)', 'Turmeric with black pepper (curcumin bioavailability increases 2000% with piperine from pepper)', 'Ginger', 'Green tea', 'Fermented foods (gut microbiome support)'],
-    decrease: ['Ultra-processed foods', 'Refined sugars', 'Excess alcohol', 'Trans fats and oxidised oils', 'Excess omega-6 vegetable oils (corn, sunflower, soybean)', 'Low-fibre diet']
+  water: {
+    hydration: 'Adequate hydration maintains skin plumpness and turgor; even mild dehydration reduces skin elasticity and radiance; however, the popular claim that drinking large amounts of water produces noticeably hydrated skin is overstated for well-hydrated people — skin hydration is primarily maintained by the barrier function, not by water intake above adequate levels',
+    recommendation: '8 glasses (2L) per day is a commonly cited recommendation; actual needs vary by body size, climate, exercise, and diet; urine colour is a practical guide (pale yellow = well hydrated; dark yellow = drink more)'
   }
 };
 
-export const SLEEP_BEAUTY_GUIDE = {
-  title: 'Sleep and Skin: The Science of Beauty Sleep',
-  overview: `"Beauty sleep" is scientifically real. During deep sleep (stages 3-4) and REM: growth hormone peaks (stimulating cellular repair and collagen synthesis), cortisol drops to its lowest (reducing inflammation), blood flow to skin increases (delivering nutrients), and the skin's transepidermal water loss is lowest (maximising hydration). One poor night of sleep is measurable in skin appearance; chronic sleep deprivation accelerates ageing.`,
-  sleepAndSkin: {
-    growth_hormone: 'HGH (human growth hormone) releases primarily in first 2 hours of sleep; stimulates collagen synthesis and cellular repair; chronic sleep deprivation reduces HGH by 70%',
-    cortisol: 'Cortisol nadir occurs at midnight-2am; elevated cortisol from poor sleep increases sebum, collagen breakdown, inflammation, and skin barrier disruption',
-    blood_flow: 'Skin blood flow increases 20-40% during sleep — this is why skin appears plumper and clearer after good sleep',
-    immune_function: 'Immune surveillance in skin (NK cells, T cells) is highest during sleep; allows clearance of bacteria and cellular debris',
-    melatonin: 'Melatonin — the sleep hormone — is also a powerful antioxidant protecting skin cells from oxidative damage; produced in skin cells as well as the pineal gland; highest at 2-4am'
+export const EXERCISE_SKIN = {
+  title: 'Exercise and Skin Health',
+  benefits: {
+    circulation: 'Exercise increases blood circulation; increased blood flow delivers more oxygen and nutrients to skin cells; removes waste products more efficiently; produces the post-exercise glow (temporary; enhanced blood flow to skin)',
+    collagen: 'Exercise stimulates fibroblast activity and collagen production; higher-intensity exercise produces more IGF-1 (which drives collagen synthesis) than sedentary activity; consistent exercise is associated with slower skin ageing in studies',
+    stress: 'Exercise is the most evidence-backed intervention for reducing cortisol and stress; since chronic stress is a major driver of inflammatory skin conditions (acne, eczema flares, psoriasis), the cortisol-reducing effect of exercise directly benefits skin',
+    telomeres: '2008 study (Archives of Internal Medicine): regular exercise is associated with longer telomeres (the protective caps on chromosomes); shorter telomeres are a biological marker of ageing; this cellular anti-ageing effect extends to skin'
   },
-  sleepDeprivationEffects: {
-    immediate: ['Dark circles (blood pools due to poor drainage)', 'Puffy undereyes (cortisol disrupts fluid regulation)', 'Dull complexion (reduced blood flow)', 'Increased fine lines (skin dehydrates faster)', 'Redness and irritability (inflammation markers up)'],
-    chronic: ['Accelerated collagen loss', 'Impaired skin barrier function', 'Increased breakouts (cortisol-driven sebum)', 'More severe eczema, psoriasis, rosacea', 'Faster overall skin ageing — one study showed 6 hours vs 8 hours sleep measurably increased skin ageing markers in 4 weeks']
-  },
-  sleepQuality: {
-    duration_target: '7-9 hours for most adults; some people genetically need 8-10 (DEC2 gene variants)',
-    sleepHygiene: {
-      environment: ['Cool room (18-20°C / 64-68°F optimal)', 'Complete darkness (blackout curtains; eye mask)', 'White noise if ambient sound is disruptive', 'Comfortable mattress and pillow'],
-      preSleeRoutine: ['Consistent sleep/wake time including weekends', 'No screens 1 hour before bed (blue light suppresses melatonin)', 'Warm shower or bath 1-2 hours before bed (body temperature drop triggers sleep)', 'Dim lights evening', 'Magnesium glycinate 200-400mg 30 minutes before bed (promotes GABA-mediated relaxation)'],
-      avoid: ['Caffeine after 2pm (half-life 5-7 hours)', 'Alcohol (disrupts REM sleep and causes night-time cortisol spikes; worsens snoring and sleep apnoea)', 'Large meals within 3 hours of bed', 'Intense exercise within 2 hours of bed (raises cortisol)']
-    }
-  },
-  nighttimeSkincare: {
-    rationale: 'Skin absorbs active ingredients most effectively at night: higher cell turnover, reduced barrier tightness, and no UV to degrade actives. Night is when retinoids, heavy moisturisers, overnight masks, and repair serums work best.',
-    timing: 'Apply skincare immediately after showering or washing face in the evening — skin cells open to absorption when slightly warm and damp',
-    bestNightIngredients: ['Retinoids (only at night — UV sensitive)', 'AHAs (lightly exfoliate while you sleep)', 'Hyaluronic acid (draws moisture overnight)', 'Niacinamide (anti-inflammatory overnight)', 'Bakuchiol (retinol alternative for sensitive skin)', 'Ceramide and lipid-rich moisturisers (overnight barrier rebuild)', 'Face oil as final occlusive layer'],
-    sleepingPosition: {
-      concern: 'Side sleeping compresses facial skin into pillow for 6-8 hours, creating sleep lines. Chronic pressure in the same position can contribute to permanent wrinkles and collagen breakdown. Also compresses lymphatics causing facial puffiness.',
-      solutions: ['Sleep on back if possible', 'Silk or satin pillowcase (reduces friction significantly; gentler on skin and hair)', 'Anti-ageing pillows with cut-outs for face', 'Night splint/eye mask that keeps face lifted off pillow edge']
-    },
-    hairProtection: ['Silk or satin pillowcase to reduce friction and prevent tangles', 'Loose bun, braid, or pineapple for curly/coily hair to preserve curl pattern and reduce tangles', 'Apply hair oil to ends before protecting to seal moisture overnight', 'Silk bonnet or hair wrap — particularly important for 4C hair to prevent moisture loss and breakage']
+  challenges: {
+    sweat: 'Post-workout sweat can clog pores if left on the skin; washing the face promptly after exercise (within 30-60 minutes) or using a gentle cleansing wipe reduces post-workout acne risk; Malassezia folliculitis (fungal acne) can be triggered or worsened by exercise without prompt showering in hot, sweaty conditions',
+    chlorine: 'Swimming pool chlorine strips the skin barrier and causes significant dryness; a pre-swim barrier (coconut oil or body lotion) reduces chlorine penetration; showering immediately after swimming is essential; moisturiser applied immediately after showering is important for swimmer skin',
+    sunExposure: 'Outdoor exercise (running, cycling, outdoor yoga, swimming) involves significant UV exposure; SPF before outdoor exercise is critical; SPF products may sweat off — water-resistant SPF for exercise; reapplication after 80 minutes in water or heavy sweating is needed for adequate protection',
+    helmet: 'Bike helmets, headbands, and hats worn during exercise can cause acne mechanica (mechanical acne from friction and occlusion of follicles); cleaning the inside of helmets and headbands regularly; using moisture-wicking fabrics'
   }
 };
 
-export const EXERCISE_BEAUTY_GUIDE = {
-  title: 'Exercise and Skin/Hair Health',
-  overview: `Exercise is one of the most powerful anti-ageing and skin-health interventions available. Regular aerobic exercise improves skin structure at the cellular level, reduces inflammation, supports hair follicle health, and has been shown to actually reverse some aspects of skin ageing.`,
-  skinBenefits: {
-    circulation: 'Exercise increases heart rate and blood flow — skin receives more oxygen and nutrients; this is why skin glows post-workout and why regular exercisers have better skin tone',
-    mitochondria: 'A landmark 2014 McMaster University study: participants who took up exercise had skin composition of people 10-30 years younger by measures of dermis thickness and skin composition — even people who began exercise later in life had significant reversal',
-    collagen: 'Exercise increases IGF-1 (which stimulates collagen synthesis) and reduces cortisol (which breaks down collagen) — a dual benefit for collagen status',
-    anti_inflammatory: 'Regular exercise reduces chronic low-grade inflammation markers (CRP, IL-6) — this improves inflammatory skin conditions including acne, rosacea, eczema, and psoriasis',
-    sebum_regulation: 'Moderate regular exercise regulates hormones (reduces insulin, cortisol, androgens) — this can reduce sebum production over time in acne-prone skin'
+export const STRESS_SKIN = {
+  title: 'Stress, Mental Health, and Skin',
+  cortisol: {
+    mechanism: 'Chronic stress increases cortisol production; cortisol: breaks down collagen; increases sebum production (→ acne); disrupts the skin barrier (increases transepidermal water loss); suppresses the immune system\'s anti-inflammatory functions; triggers mast cell degranulation (releases histamine → inflammatory skin reactions)',
+    conditions: 'Stress significantly worsens: acne; eczema/atopic dermatitis; psoriasis; rosacea; seborrhoeic dermatitis; alopecia areata (patchy hair loss with strong stress-immune connection); chronic stress is a well-established trigger for all of these conditions'
   },
-  hairBenefits: {
-    circulation: 'Exercise increases scalp blood flow, delivering more nutrients to hair follicles and supporting the anagen (growth) phase',
-    DHT: 'High-intensity exercise can temporarily increase DHT (dihydrotestosterone) — the androgen that drives scalp hair loss in genetically susceptible individuals; moderate exercise is preferred if concerned about androgenetic alopecia',
-    stress_reduction: 'Exercise is one of the most effective cortisol regulators; since telogen effluvium (stress hair loss) is cortisol-mediated, regular exercise reduces stress-related hair shedding'
+  gutBrain: {
+    axis: 'The gut-brain-skin axis is an emerging area of research; stress affects gut microbiome composition; gut dysbiosis is associated with skin conditions including acne, eczema, and rosacea; probiotics that support gut health may indirectly benefit skin through reducing systemic inflammation from gut dysbiosis',
+    fermented: 'Fermented foods (kimchi, kefir, yoghurt, sauerkraut, miso, tempeh, injera) provide probiotics; prebiotics (inulin, FOS from onions, garlic, leeks, asparagus, bananas) feed beneficial gut bacteria'
   },
-  exerciseSkincare: {
-    preWorkout: ['Remove all makeup before exercise (sweat + makeup = blocked pores)', 'Apply SPF if exercising outdoors even in winter', 'Avoid acid actives immediately before high-intensity exercise (heat + acids + sweating = irritation)', 'A light hydrating mist is fine; no heavy cream that will drip'],
-    postWorkout: ['Cleanse within 30 minutes of finishing to remove sweat (salt, urea, lactic acid sit on skin and irritate if left)', 'Do not over-cleanse — once is enough', 'Reapply hydration and SPF if daytime', 'Bacne (back acne) common from sweating in tight workout clothes — shower promptly and use salicylic acid body wash']
-  },
-  exerciseTypes: {
-    cardio: 'Aerobic exercise (running, cycling, swimming) — best for circulation and anti-inflammatory benefits; 150+ minutes/week for skin benefit',
-    yoga_pilates: 'Reduces cortisol significantly; inverted poses improve facial blood flow; gua sha and face yoga techniques often combined',
-    resistance_training: 'Increases growth hormone (collagen stimulation); excellent for PCOS skin via insulin sensitisation; improves body composition which affects skin appearance',
-    sauna: 'Heat stress induces heat shock proteins that protect skin cells; improves circulation; deep pore cleansing via sweating; shown to improve skin hydration and barrier function. Finnish sauna culture: 80-100°C sessions 2-3x/week. Note: separate from skin activity — shower after sauna, rehydrate, apply moisturiser to slightly damp skin.'
+  mindfulness: {
+    evidence: 'Mindfulness-based stress reduction (MBSR) has been studied in dermatological conditions; a 1998 study by Kabat-Zinn found psoriasis patients listening to mindfulness tapes during phototherapy cleared approximately four times faster than those receiving phototherapy alone; meditation reduces cortisol measurably',
+    practical: 'Practical stress reduction: 10 minutes of daily meditation (apps: Headspace, Calm, Insight Timer); regular sleep; social connection; nature exposure; exercise; creative expression; therapy (CBT has strong evidence for anxiety and depression which co-occur with inflammatory skin conditions)'
   }
 };
 
-export const STRESS_BEAUTY_GUIDE = {
-  title: 'Stress, Cortisol, and Skin/Hair',
-  overview: `The gut-brain-skin axis is real: psychological stress triggers measurable skin responses within hours. The mechanism is primarily through cortisol and CRH (corticotropin-releasing hormone), which are produced both in the brain and locally in skin cells.`,
-  stressSkinMechanisms: {
-    cortisol_effects: ['Stimulates sebaceous glands — increased sebum → acne', 'Breaks down collagen and elastin — accelerated ageing', 'Impairs skin barrier (reduces ceramide production) — increased sensitivity, dryness, TEWL', 'Increases inflammatory cytokines — triggers or worsens eczema, psoriasis, rosacea', 'Reduces wound healing speed by 40-60%', 'Impairs immune surveillance — allows pathogen and yeast overgrowth (cold sores, seborrhoeic dermatitis)'],
-    hair_effects: ['Telogen effluvium: major stressor pushes large percentage of hairs into rest/shed phase simultaneously; shedding peaks 2-4 months after stressor', 'Alopecia areata: autoimmune hair loss triggered or worsened by stress', 'Neuropeptide release around follicles from stress disrupts hair growth cycle'],
-    mast_cells: 'Stress triggers mast cells in skin to release histamine and inflammatory mediators — causing immediate itch (pruritus), hives, and flush reactions'
-  },
-  stressManagement: {
-    clinical_evidence: {
-      mindfulness_meditation: 'MBSR (mindfulness-based stress reduction) proven to reduce psoriasis flares; improves atopic dermatitis outcomes; reduces cortisol; 8-week programs studied',
-      breathing: 'Slow diaphragmatic breathing (4-7-8 technique, box breathing) activates parasympathetic nervous system; reduces cortisol within 10 minutes; accessible and free',
-      yoga: 'Reduces cortisol, increases DHEA-S (anti-ageing hormone), improves gut microbiome; particularly studied for eczema',
-      exercise: 'See exercise section; most potent cortisol regulation tool',
-      sleep: 'Sleep deprivation dramatically increases cortisol; sleep hygiene is stress management'
-    },
-    adaptogens: {
-      ashwagandha: {
-        evidence: 'KSM-66 extract (branded form) shown to reduce cortisol by 27% in stressed adults in double-blind RCT; reduces anxiety; evidence for reducing cortisol-driven skin issues',
-        dose: '300-600mg KSM-66 extract daily; may take 4-8 weeks for full effect',
-        note: 'Avoid if autoimmune condition; consult doctor if thyroid issue (may increase T4 levels)'
-      },
-      rhodiola: {
-        evidence: 'Adaptogen with good evidence for stress resilience; reduces fatigue under stress; some cortisol reduction evidence',
-        dose: '200-400mg extract (3% rosavins, 1% salidroside) daily',
-        take: 'In morning (can be stimulating); not at night'
-      },
-      phosphatidylserine: {
-        evidence: 'Blunts cortisol response to exercise and psychological stress; also has cognitive benefits; good evidence base',
-        dose: '400-800mg daily from soy or sunflower lecithin source'
-      }
-    }
-  }
-};
-
-export const HYDRATION_BEAUTY_GUIDE = {
-  title: 'Hydration Inside and Out',
-  waterAndSkin: {
-    overview: 'The relationship between drinking water and skin hydration is often overstated. Severe dehydration impairs skin turgor and radiance, but drinking large amounts of water beyond adequate hydration does not measurably improve skin hydration in already hydrated people — because skin barrier function (not water intake) is the primary determinant of skin hydration.',
-    genuine_impact: ['Prevents the dullness and dry-feel associated with dehydration', 'Supports kidney function in detoxifying skin', 'Maintains mucosal barriers that affect skin microbiome', 'Optimal for skin when combined with low-sugar diet and adequate electrolytes'],
-    target: '2.0-2.5L total fluid daily (from food and drinks); more in heat or with exercise; individual variation large',
-    quality: 'Mineral water (containing calcium, magnesium, silica) may offer additional skin benefits over tap water; silica-rich waters (Volvic, Fiji) have trace evidence for skin benefit'
-  },
-  electrolytes: {
-    importance: 'Water retention in skin and hair cells requires proper electrolyte balance; dehydration is often electrolyte imbalance rather than pure water deficiency',
-    for_skin: ['Magnesium — involved in 300+ enzymatic reactions; deficiency causes skin irritation and inflammation', 'Potassium — cellular hydration; found in avocado, banana, potato', 'Sodium — avoid excess (increases skin puffiness via water retention) but total restriction not necessary'],
-    oral_rehydration: 'Post-exercise or in heat: water + electrolytes more hydrating than plain water; coconut water, or 1/4 tsp sea salt + lemon in water'
-  },
-  skinHydrationTopical: {
-    overview: 'Skin hydration is maintained by the skin barrier (primarily ceramides, fatty acids, and cholesterol in the stratum corneum) and by humectants that draw water into skin cells. External hydration is independent of water intake.',
-    humectants: ['Hyaluronic acid — draws up to 1000x its weight in water', 'Glycerin — most cost-effective humectant', 'Aloe vera', 'Panthenol (pro-vitamin B5)', 'Sodium PCA (naturally occurring in skin)', 'Honey', 'Urea (at 3-5%; double role as exfoliant at 10-40%)'],
-    occlusives: ['Petrolatum — most effective occlusive (reduces TEWL by up to 98%)', 'Squalane', 'Shea butter', 'Mineral oil', 'Lanolin', 'Dimethicone'],
-    emollients: ['Ceramides (restore barrier structure)', 'Fatty acids (linoleic, oleic)', 'Niacinamide (barrier repair and hydration)'],
-    layering: 'Apply humectant on slightly damp skin; top with emollient moisturiser; seal with occlusive if very dry skin (oil or balm)'
-  }
-};
-
-export const ETHNIC_WELLNESS_BEAUTY = {
+export const ETHNIC_WELLNESS_BEAUTY_GUIDES = {
   'west-african': {
-    traditionalWellness: 'Holistic beauty in West African tradition is inseparable from community and ritual. Baths infused with herbs (especially Yoruba and Igbo traditions) — moringa, African basil, hibiscus — for skin cleansing and spiritual cleansing simultaneously.',
-    nutritionHighlights: ['Moringa (miracle tree) — highest density of vitamin C, calcium, iron, and protein per weight of any plant; growing in popularity globally for its skin/hair supplement benefits', 'Baobab fruit — extraordinarily high vitamin C content; prebiotic fibre; popular as powder supplement', 'Hibiscus (zobo/sorrel) — high in AHA (citric, malic acid), antioxidants, and vitamin C; skin-brightening in teas'],
-    sleepCulture: 'Community-based sleeping arrangements historically common; stress buffering from social support reduces cortisol; Ubuntu philosophy (I am because we are) linked to wellbeing',
-    movementTradition: 'Dance central to West African culture across all traditions — Azonto, Afrobeats movement, traditional ceremonial dance; provides cardiovascular and mental health benefits'
+    nutrition: 'West African traditional diets are rich in anti-inflammatory ingredients: palm oil (rich in tocotrienols, a form of vitamin E; carotenoids giving its orange colour); moringa (exceptionally nutrient-dense: vitamin C, vitamin A, iron, calcium, protein — often called a superfood); egusi seeds (high in protein, zinc, vitamin E); leafy greens (bitter leaf, water leaf, uziza) packed with vitamins and minerals; fermented foods (ogi/akamu — fermented cereal porridge; locust beans/iru — fermented Parkia seeds used as seasoning) provide probiotics',
+    moringa: 'Moringa oleifera (drumstick tree) is one of the most nutrient-dense plants known; native to sub-Saharan Africa and South Asia; contains 7x more vitamin C than oranges; 4x more vitamin A than carrots; 4x more calcium than milk; high iron content; moringa leaf powder is increasingly used as a supplement; growing moringa is widespread in West Africa for both nutrition and income',
+    exercise: 'Traditional West African dance (as exercise) including highlife, afrobeats dancing, and various traditional dances provide high-intensity cardio; the rise of Afrobeats dance fitness globally reflects the joyful, community-oriented exercise culture of West Africa',
+    stress: 'Community and extended family (ubuntu/communalism) as stress buffers; oral tradition and storytelling as mental health practice; church and mosque communities provide significant stress support in West African culture; the importance of "keeping it together" culturally can make stress expression difficult — wellness culture is evolving to address this'
   },
   'south-asian': {
-    ayurvedaIntegration: 'Ayurveda — 5000-year-old Indian system of medicine — forms the foundation of South Asian wellness beauty. Dosha-based skin typing (Vata: dry/thin; Pitta: sensitive/inflammatory; Kapha: oily/prone to congestion) guides product and lifestyle choices.',
-    nutritionHighlights: ['Turmeric with black pepper — curcumin bioavailability increases 2000% with piperine from black pepper; take as "golden milk" (haldi doodh)', 'Amla (Indian gooseberry) — highest natural vitamin C content of any food (600-700mg per 100g); used fresh, dried, or as powder', 'Ashwagandha — Ayurvedic adaptogen with the strongest Western clinical evidence of any adaptogen', 'Shatavari — Ayurvedic herb with oestrogenic properties; used for hormonal balance and menopausal support'],
-    practiceHighlights: ['Abhyanga — daily full-body warm oil massage with sesame oil; reduces cortisol, improves skin hydration and barrier', 'Nasya — nasal oil application (sesame oil); traditional; some evidence for mucosal health', 'Yoga — founded in India; comprehensive stress, flexibility, and circulation benefits documented'],
-    sleepCulture: 'Ayurveda emphasises sleep in alignment with natural light cycles; recommend sleeping by 10pm; sleeping with head oriented north traditional'
+    nutrition: 'South Asian traditional diets feature anti-inflammatory spices: turmeric (curcumin — extensive research on anti-inflammatory properties); ginger (anti-inflammatory; digestive); fenugreek (blood glucose regulation; zinc-rich); cardamom; cinnamon; black pepper (piperine increases curcumin absorption by 2000%); these spices are used medicinally and culinarily',
+    ayurvedaWellness: {
+      triphala: 'Triphala (three fruits: amalaki/Indian gooseberry, bibhitaki, haritaki) is an Ayurvedic formulation used as a digestive tonic and antioxidant; amalaki (amla) is extremely high in vitamin C; used internally for "gut health" that Ayurveda associates with skin clarity',
+      ashwagandha: 'Ashwagandha (Withania somnifera) is an adaptogen (herb that modulates stress response); multiple RCT studies show ashwagandha supplementation significantly reduces cortisol; clinical evidence for reducing stress, anxiety, and improving sleep quality; relevant to skin through cortisol/stress pathway',
+      amla: 'Amla (Indian gooseberry) is one of the richest natural sources of vitamin C; the vitamin C is bound with tannins making it unusually heat-stable; used in South Asian medicine for centuries for skin health, hair health (amla oil), and immunity'
+    },
+    yoga: 'Yoga originated in ancient India; regular yoga practice reduces cortisol; improves circulation; supports lymphatic drainage; the global wellness movement has commodified yoga; within South Asian communities, yoga\'s origins are increasingly being reclaimed as a heritage practice rather than a Western wellness trend',
+    dairy: 'High dairy consumption in North Indian diet (ghee, milk, paneer, dahi/yoghurt, lassi) can worsen dairy-sensitive acne; IGF-1 from dairy is the proposed mechanism; dahi/yoghurt (probiotic) is generally considered more beneficial than other dairy forms for gut health'
   },
   caribbean: {
-    wellness_culture: 'Caribbean wellness integrates African, Indigenous Taíno/Arawak, Indian, and European influences. "Bush medicine" — herbal remedies from local plants — is a living tradition.',
-    nutritionHighlights: ['Sea moss / Irish moss (Gracilaria sp.) — contains 92 of the 102 minerals the human body needs according to traditional claims; genuine evidence for iodine (thyroid), potassium, and carrageenan (anti-inflammatory) content; popular as supplement gel', 'Soursop leaf tea — traditional immune and skin support; some antimicrobial evidence', 'Coconut water — natural electrolyte; genuinely excellent for hydration', 'Guava — very high vitamin C and lycopene; locally common Caribbean fruit'],
-    movementTradition: 'Dancehall, soca, reggae — music-driven movement tradition; swimming in the Caribbean sea (salt water has skin-beneficial minerals)'
+    nutrition: 'Caribbean traditional diets incorporate highly nutritious ingredients: dasheen (taro root: high fibre, potassium); breadfruit (high carbohydrate, good fibre); soursop/guanábana (vitamin C, antioxidants); papaya (papain enzyme, vitamin C, beta-carotene); ackee (national fruit of Jamaica: unique fatty acid profile); callaloo (leafy green, nutrient-dense: iron, folate, calcium); sea moss (Irish moss/Chondrus crispus): increasingly popular as a "superfood" supplement in Caribbean communities globally',
+    seaMoss: 'Sea moss (Chondrus crispus) has experienced a dramatic cultural revival in Caribbean communities globally, driven partly by holistic health advocates including Dr. Sebi (Alfredo Darrington Bowman); sea moss contains iodine (thyroid support), amino acids, and some minerals; the evidence for most claimed benefits is limited; as a source of carrageenan (a polysaccharide) it has thickening/gel properties; social media has amplified Caribbean sea moss culture significantly',
+    exercise: 'Caribbean dance forms (calypso, soca, dancehall, reggae, zouk, salsa, merengue) are high-intensity aerobic exercise in cultural clothing; the dance culture is a form of joyful movement with deeply cultural roots; cricket and football (soccer) are also culturally significant sports',
+    stress: 'The Caribbean concept of "liming" (relaxing, spending time with friends without a specific agenda) is a culturally important stress reduction practice; music (particularly Jamaican reggae and dancehall) as emotional processing; church communities; the concept of "vibes" (general positive atmosphere and energy) as a wellness orientation'
   },
   arab: {
-    traditionalWellness: 'Hammam (Arabic bath culture) — centuries-old bathing ritual combining steam, deep cleanse with kessa exfoliating glove, black soap (beldi), and ghassoul clay mask; deeply moisturising and exfoliating. Hamams still operational across Morocco, Tunisia, Turkey, and Jordan.',
-    nutritionHighlights: ['Dates — high natural sugars but also fibre, potassium, magnesium, and unique antioxidants; "break the fast" food in Ramadan; mineral-rich', 'Za\'atar (thyme, sumac, sesame blend) — antioxidant-rich spice blend; thymol from thyme has antimicrobial skin benefits', 'Black seed oil (Nigella sativa) — "a cure for everything except death" (hadith); thymoquinone has genuine anti-inflammatory, antimicrobial evidence'],
-    fastingPractice: 'Ramadan fasting (intermittent fasting pattern of 16-18 hours) has skin benefits: induces autophagy (cellular cleanup), reduces inflammation, may improve acne and skin clarity. Post-fast eating quality matters: nutrient-dense iftar preserves benefit.'
+    nutrition: 'The Mediterranean diet (extensively researched and associated with longevity and reduced inflammation) originated in the Arab/Mediterranean world; core components: olive oil (high monounsaturated fat, polyphenols with anti-inflammatory properties); legumes (lentils, chickpeas, foul/fava beans); vegetables; fish; moderate dairy; herbs and spices (thyme/zaatar, cumin, coriander, saffron)',
+    oliveoil: 'Extra virgin olive oil (EVOO) contains oleocanthal (a natural anti-inflammatory with mechanism similar to ibuprofen); hydroxytyrosol (powerful antioxidant); used both topically and internally in Mediterranean/Arab beauty traditions; olive oil soap (aleppo soap, savon de Marseille) is a traditional Middle Eastern cleaning product; internal EVOO consumption associated with reduced inflammatory skin conditions in some studies',
+    blackSeedInternal: 'Nigella sativa (black seed/black cumin) taken internally: significant evidence for anti-inflammatory effects; reduces inflammatory markers; relevant to inflammatory skin conditions; a traditional Islamic medicine practice with the Prophet Muhammad\'s endorsement adding cultural significance for Muslim communities across all Arab and non-Arab Muslim communities',
+    dates: 'Dates (Medjool, Deglet Nour) are culturally and nutritionally significant in Arab culture; high in potassium, fibre, and antioxidants; the traditional Ramadan meal begins with dates and water; date palm is a symbol of Arab identity',
+    stress: 'Islamic mindfulness practices (dhikr — remembrance of Allah; salah — the five daily prayers as structured mindfulness; Quranic recitation) have measurable stress-reducing effects; the ritual structure of Islamic practice provides psychological stability; Ramadan\'s spiritual focus functions as an annual intensive stress reduction and reflective period for many Muslim communities'
   },
   latina: {
-    wellness_tradition: 'Sobada (traditional massage), temazcal (Mexican sweat lodge), curandera/curandero healing traditions, and brujería herbalism are parts of the Latin American wellness-beauty continuum.',
-    nutritionHighlights: ['Avocado — oleic acid, biotin, vitamin E, potassium; Mexico grows 45% of world avocados; perhaps the original beauty food', 'Cacao — flavanols with proven cardiovascular and skin UV protection benefits; consumed traditionally as bitter drink with chili (xocolatl)', 'Chia seeds — omega-3 ALA, calcium, fibre; Aztec warrior food; excellent for inflammatory skin conditions', 'Chayote (vegetable pear) — traditional skin brightening vegetable in Latin America; high vitamin C and water content'],
-    temazcalTradition: 'Pre-Hispanic sweat lodge tradition: herbal steam (cedar, rosemary, copal), mud mask, cooling rinse; promotes deep pore cleansing, relaxation, and mineral absorption through skin. Contraindicated: pregnancy, cardiovascular conditions, hypertension.',
-    movementTradition: 'Salsa, bachata, cumbia, merengue — partner dance cultures; excellent cardiovascular exercise; strong mental health benefits from social dancing'
+    nutrition: 'Latin American diets are rich in skin-beneficial ingredients: avocado (monounsaturated fats, vitamin E, potassium; supports skin barrier and moisture); guava (5x more vitamin C than an orange — one of the highest food sources); papaya (vitamin C, beta-carotene, papain enzyme); hibiscus (agua de Jamaica: high in vitamin C, anthocyanins; anti-inflammatory); chilli peppers (vitamin C; capsaicin — anti-inflammatory); cacao (Mexican chocolate tradition: flavanols in cacao are vasodilatory and antioxidant)',
+    avocado: 'Avocado is a Mexican native fruit (domesticated in Mexico approximately 5000 years ago); one of the richest food sources of monounsaturated fat and vitamin E; the Mexican tradition of guacamole consumption ensures regular avocado intake; avocado consumption is associated with better skin elasticity and facial fat distribution in a 2023 UCLA study',
+    exercise: 'Latin dance forms (salsa, bachata, merengue, cumbia, tango, reggaeton) provide high-intensity cardio in a social, joyful context; the Zumba fitness phenomenon (created by Colombian dancer Alberto Pérez) globalised Latin dance as fitness; football (soccer) culture provides significant physical activity for many Latin American communities',
+    stress: 'Family (familia) as primary stress support; the concept of "familismo" — family centrality — provides a social safety net; Catholic traditions and practices (novenas, patron saint traditions) provide community stress support; curanderismo (traditional healing practices) including herbal remedies and spiritual practices manage stress in some communities'
   },
   'east-asian': {
-    wellnessTradition: 'Traditional Chinese Medicine (TCM) and Korean/Japanese traditional medicine (hanbang/kampo) view skin and hair as reflections of internal organ health — particularly the lung (skin), kidney (hair and ears), and spleen (complexion).',
-    nutritionHighlights: ['Goji berries (wolfberries) — extremely high antioxidant, zeaxanthin (eye and skin UV protection), polysaccharides (immune support)', 'Reishi mushroom — "mushroom of immortality"; polysaccharides with immune-modulating effects; adaptogens; trendy in Western supplement world', 'Green tea/matcha — highest EGCG content; anti-inflammatory, UV protective effects documented in both oral and topical use', 'Fermented soy (miso, natto, tempeh) — prebiotic and probiotic; natto particularly rich in vitamin K2 and nattokinase'],
-    ofuroBath: 'Japanese soaking bath culture (ofuro) — hot bath at 40-42°C for 10-15 minutes; more than cleaning, it is a meditative ritual; improves circulation, relaxes muscles, lowers cortisol. Onsen (hot spring) bathing with mineral-rich thermal water is a weekend wellness tradition.',
-    gua_sha: 'Traditional Chinese technique: scraping the skin with a smooth tool (jade, rose quartz, or buffalo horn) to move chi (energy) and release stagnant blood. Modern evidence: increases blood circulation in the area; reduces inflammation (anti-inflammatory cytokines increased post-gua sha); temporary marks are part of the process.',
-    kodoTraditional: 'Japanese kōdō ("Way of Fragrance") — appreciation of incense as contemplative practice; stress reduction through intentional scent; oud and agarwood central'
+    nutrition: 'Traditional East Asian diets are associated with some of the world\'s longest life expectancies (Japanese "Blue Zone" status, particularly Okinawa); core principles: fermented foods (kimchi, miso, soy sauce, natto, tempeh, doenjang — probiotic-rich; gut health benefits); green tea (catechins — EGCG — potent antioxidants; anti-inflammatory; some evidence for anti-ageing skin effects when applied topically and consumed internally); seaweed (iodine, vitamins, minerals; wakame, nori, kombu); minimal processed food in traditional forms',
+    greenTea: {
+      EGCG: 'Epigallocatechin gallate (EGCG) is the most bioactive catechin in green tea; potent antioxidant; inhibits UV-induced skin damage and inflammation; may inhibit metalloproteinases that break down collagen; studies show topical application reduces UV-induced erythema; drinking 3+ cups of green tea daily associated with better skin outcomes in observational studies in Japanese populations',
+      matcha: 'Matcha (powdered whole green tea leaf) provides significantly more EGCG per serving than regular steeped green tea; traditional Japanese tea ceremony (chado/chadō) elevates tea consumption to a mindfulness practice with cultural significance beyond nutrition'
+    },
+    fermented: 'Natto (Japanese fermented soybeans) contains vitamin K2 (rare in most diets; important for cardiovascular health and bone health; may support skin by reducing calcium deposition in elastin fibres); nattokinase; and the highest natural food source of vitamin K2',
+    exercise: 'Martial arts traditions (karate, taekwondo, judo, kendo, hapkido, kung fu, tai chi, qigong) are culturally embedded forms of exercise in East Asian communities; tai chi and qigong are specifically associated with stress reduction and are practised extensively among older East Asian populations globally',
+    stress: 'The concept of "ma" (negative space/silence) in Japanese aesthetics; wabi-sabi (finding beauty in imperfection and impermanence); ikigai (reason for being) as a life satisfaction framework; South Korean "nunchi" (emotional intelligence and social awareness); forest bathing (shinrin-yoku — practised walking in forests for health in Japan; measurably reduces cortisol and improves immune function in studies)'
   },
   'east-african': {
-    wellnessTradition: 'Coffee ceremony (in Ethiopian culture, buna/jabana) is a social wellness ritual — freshly roasted and ground coffee brewed in community; coffee ground residue (grounds) used for face masks and exfoliation; coffee chlorogenic acid and antioxidants have skin benefit.',
-    nutritionHighlights: ['Teff — Ethiopian staple grain; exceptionally high iron, calcium, protein; coeliac-safe; particularly important for East African women\'s beauty nutrition', 'Injera — fermented teff flatbread; probiotics from 3-day fermentation; high iron; combined with stews rich in turmeric and anti-inflammatory spices', 'Moringa — grows widely in East Africa; as in West Africa, one of the most nutrient-dense plants', 'Frankincense resin (boswellia) — chewed traditionally for oral health; oral boswellic acids have anti-inflammatory skin benefit'],
-    movementTradition: 'Ethiopian runners among the world\'s most successful distance runners — cultural environment normalising exercise; Oromo traditional dances ceremonial and social wellness'
+    nutrition: 'Ethiopian and East African diets feature: teff (very high iron, calcium, protein; the main grain in Ethiopian injera; naturally gluten-free; low glycaemic index — particularly beneficial for skin vs refined flour); coffee (Ethiopia is the birthplace of coffee; rich in chlorogenic acids and antioxidants; moderate consumption associated with anti-inflammatory effects); kale and other leafy greens; lentils (misir); Ethiopian berbere spice blend (fenugreek, coriander, chilli, and multiple other spices — anti-inflammatory compound)',
+    teff: 'Teff grain (Eragrostis tef) is native to Ethiopia; the most nutritionally complete grain widely consumed; gram for gram: more iron than other grains; high calcium; good protein with all essential amino acids; low glycaemic; the basis of injera (fermented teff flatbread) which is also probiotic due to fermentation',
+    coffee: 'Coffee originated in Ethiopia (in the Kaffa region, giving the plant its name); Ethiopian coffee ceremony (buna) is a elaborate social and spiritual ritual involving three rounds of coffee, frankincense incense burning, and community gathering; it is one of the most important social institutions in Ethiopian culture; the ceremony itself is a wellness practice beyond the nutritional properties of the coffee',
+    exercise: 'Ethiopian and East African runners are globally dominant in distance running; the combination of high altitude training (building aerobic capacity), cultural emphasis on distance walking (rural East Africa), and specific body composition contribute to East African distance running excellence; this athletic culture translates to high rates of physical activity in these communities'
   },
   'south-african': {
-    wellnessTradition: 'Ubuntu wellness philosophy — collective wellbeing as foundation of individual health. Medicinal plant traditions of Zulu, Xhosa, Sotho, and other peoples extremely rich in skin-beneficial botanicals.',
-    nutritionHighlights: ['Rooibos (Aspalathus linearis) — unique to the Cederberg region; caffeine-free; aspalathin antioxidant; anti-inflammatory; excellent for skin taken as tea or applied topically', 'Marula fruit — eaten by elephants in season; extremely high vitamin C; skin-beneficial oil from the nut; both edible and topical use traditional', 'Macadamia — native to Australia but grown extensively in South Africa; palmitoleic acid closely mirrors skin\'s sebum; excellent for mature and dry skin'],
-    umhlanga: 'Zulu Reed Dance (umhlanga) — annual celebration of young women; involves multi-day outdoor ceremony with communal activities; connection to nature and community as wellness',
-    isivunguvungu: 'Traditional Zulu steam treatment using medicinal plants in boiling water; akin to herbal steam facial — combination of antimicrobial plant compounds and steam opening pores'
+    nutrition: 'South African traditional diets (Zulu, Xhosa, Sotho, etc.) include: umqombothi (traditional sorghum beer — fermented; probiotic properties); morogo (wild indigenous leafy greens); amadumbe (taro root); inkomazi (fermented milk/amasi — South African kefir equivalent; rich in probiotics); maize (the staple; mealie meal/ugali); biltong (dried, cured meat — high protein; a traditional South African preservation method)',
+    rooibos: {
+      internal: 'Rooibos (Aspalathus linearis) is a uniquely South African plant (endemic to the Cederberg region); as a beverage: naturally caffeine-free; rich in antioxidants (aspalathin — a unique C-glucosyl dihydrochalcone not found in any other plant); anti-inflammatory; some evidence for anti-diabetic effects (relevant to skin health through blood glucose management); widely consumed as a daily wellness beverage in South Africa',
+      skin: 'Topical rooibos extract is anti-inflammatory; used in South African natural skincare; applied to eczema-prone or acne-prone skin; brands: Africology, African Botanics'
+    },
+    exercise: 'Rugby is a dominant sport in white South African (Afrikaner) culture; cricket and football in Black South African communities; parkrun (the global running movement) was invented in the UK but has extraordinary participation in South Africa — more parkrun events per capita than any country; walking, cycling, and mountain hiking (Table Mountain, Drakensberg) are popular wellness activities',
+    stress: 'Ubuntu (Nguni Bantu concept): "I am because we are" — communal wellness and mutual support; the concept of ubuntu is a fundamental cultural framework for community healing; traditional healing (sangomas — traditional healers who address spiritual and psychological aspects of health alongside physical); the Truth and Reconciliation Commission process was itself a community-level trauma healing practice with ongoing cultural significance'
   },
   'black-american': {
-    wellnessTradition: 'Black wellness culture integrates African heritage, Christian spiritual wellness practices, the civil rights self-care legacy, and modern mindfulness. "Treat yourself" culture has deep roots in historical denial of access to wellness practices.',
-    nutritionHighlights: ['Sweet potatoes — high in beta-carotene (vitamin A precursor), vitamin C; traditional soul food with beauty benefits', 'Black-eyed peas (cowpeas) — plant protein, folate, iron; traditional Southern cuisine; excellent for vegans building beauty nutrition', 'Collard greens — extremely high in calcium, vitamin K, vitamin C; cooked greens are a traditional beauty food', 'Watermelon — lycopene (UV protection), citrulline (supports circulation), vitamin C; deeply associated with Black American food culture'],
-    selfCareLegacy: 'Audre Lorde (Black feminist writer) wrote in 1988: "Caring for myself is not self-indulgence, it is self-preservation, and that is an act of political warfare." Self-care in the Black community carries political and spiritual significance beyond individual beauty.',
-    salonAsSanctuary: 'The Black hair salon is a community space, therapy session, and wellness ritual simultaneously. The ritual of hair appointment — including scalp massage, conditioning treatments — is wellness.',
-    movementTradition: 'Step dance (HBCUs), praise dance (Black church tradition), hip-hop dance, West African dance — all represent culturally rooted movement practices with cardiovascular wellness benefit'
+    nutrition: 'Soul food (traditional Black American cuisine) has been evolving in the wellness era; traditional soul food: collard greens (extremely nutrient-dense: vitamin K, vitamin C, folate, calcium); black-eyed peas and other legumes (fibre, protein, zinc); sweet potato (very high beta-carotene, vitamin C); the wellness movement has reclaimed vegetable-forward soul food elements while acknowledging the high-fat, high-sodium historical context (a legacy of cooking with what was available during slavery and Jim Crow segregation)',
+    plantBased: 'The plant-based food movement has significant traction in Black American wellness communities; a 2019 Gallup poll showed Black Americans are the fastest growing demographic adopting plant-based diets in the US; Black-owned plant-based restaurants and food brands have grown significantly; the connection to health equity (higher rates of hypertension, diabetes, and heart disease in Black communities) drives health-focused dietary changes',
+    exercise: 'Basketball and football are the most culturally prominent sports in Black American communities; however, the wellness movement has expanded to include: meditation and yoga (adoption growing in Black American communities, with Black-owned yoga studios and Black yoga instructors addressing historically exclusionary mainstream yoga spaces); hiking (organisations like Outdoor Afro and Black Girls RUN! were created specifically to welcome Black Americans into traditionally white outdoor recreation spaces); swimming (historical exclusion from pools during segregation created generational gaps in swimming ability in Black American communities — a current public health and safety issue)',
+    blackGirlsRun: 'Black Girls RUN! (founded 2009) addresses the intersection of health equity, community building, and physical wellness in Black American women\'s communities; similarly Black Men Run (founded 2012); these organisations address structural barriers to outdoor exercise for Black communities and have created millions of runners who otherwise might not have connected with the sport',
+    stress: {
+      racial: 'Racial trauma is a recognised form of chronic stress in Black American communities; the ongoing experience of systemic racism, discrimination, police violence, and microaggressions creates a form of chronic stress with documented physiological effects on skin, hair, and health; this is a public health issue, not a personal failing',
+      healing: 'Black American community healing practices: therapy (increasingly sought; Black therapist directories like Therapy for Black Girls, Therapy for Black Men have grown enormously); journaling; music (blues, gospel, hip-hop as emotional processing); community activism (as empowerment and cortisol regulation through agency); church communities; ancestral practice reclamation'
+    }
   }
 };
 
-export function getWellnessBeautyOverview() {
-  return WELLNESS_BEAUTY_OVERVIEW;
+export function getNutritionSkinGuide(section) {
+  const map = {
+    macros: NUTRITION_SKIN_SCIENCE.macronutrients,
+    micros: NUTRITION_SKIN_SCIENCE.micronutrients,
+    water: NUTRITION_SKIN_SCIENCE.water,
+    exercise: EXERCISE_SKIN,
+    stress: STRESS_SKIN
+  };
+  return map[section] || null;
 }
 
-export function getBeautyNutritionGuide(section = null) {
-  if (section === 'macros') return BEAUTY_NUTRITION_GUIDE.macronutrients;
-  if (section === 'nutrients') return BEAUTY_NUTRITION_GUIDE.keyNutrients;
-  if (section === 'foods') return BEAUTY_NUTRITION_GUIDE.skinFoods;
-  if (section === 'anti-inflammatory') return BEAUTY_NUTRITION_GUIDE.antiInflammatoryDiet;
-  return BEAUTY_NUTRITION_GUIDE;
-}
-
-export function getSleepBeautyGuide(section = null) {
-  if (section === 'science') return SLEEP_BEAUTY_GUIDE.sleepAndSkin;
-  if (section === 'effects') return SLEEP_BEAUTY_GUIDE.sleepDeprivationEffects;
-  if (section === 'routine') return SLEEP_BEAUTY_GUIDE.nighttimeSkincare;
-  return SLEEP_BEAUTY_GUIDE;
-}
-
-export function getExerciseBeautyGuide() {
-  return EXERCISE_BEAUTY_GUIDE;
-}
-
-export function getStressBeautyGuide() {
-  return STRESS_BEAUTY_GUIDE;
-}
-
-export function getHydrationBeautyGuide() {
-  return HYDRATION_BEAUTY_GUIDE;
-}
-
-export function getEthnicWellnessBeauty(communityId) {
-  const key = communityId.replace(/-/g, '_');
-  const id = communityId.includes('_') ? communityId.replace(/_/g, '-') : communityId;
-  return ETHNIC_WELLNESS_BEAUTY[id] || ETHNIC_WELLNESS_BEAUTY[communityId] || null;
+export function getEthnicWellnessBeautyGuide(communityId) {
+  const directMap = {
+    'west-african': ETHNIC_WELLNESS_BEAUTY_GUIDES['west-african'],
+    'south-asian': ETHNIC_WELLNESS_BEAUTY_GUIDES['south-asian'],
+    caribbean: ETHNIC_WELLNESS_BEAUTY_GUIDES.caribbean,
+    arab: ETHNIC_WELLNESS_BEAUTY_GUIDES.arab,
+    latina: ETHNIC_WELLNESS_BEAUTY_GUIDES.latina,
+    'east-asian': ETHNIC_WELLNESS_BEAUTY_GUIDES['east-asian'],
+    'east-african': ETHNIC_WELLNESS_BEAUTY_GUIDES['east-african'],
+    'south-african': ETHNIC_WELLNESS_BEAUTY_GUIDES['south-african'],
+    'black-american': ETHNIC_WELLNESS_BEAUTY_GUIDES['black-american']
+  };
+  return directMap[communityId] || null;
 }
 
 export const WELLNESS_BEAUTY_STATS = {
   moduleId: 'wellness_beauty_guide',
   version: '1.0.0',
-  topics: ['beauty nutrition', 'vitamins for skin', 'collagen nutrition', 'beauty sleep', 'exercise and skin', 'stress and skin', 'cortisol and beauty', 'hydration', 'adaptogens', 'ethnic wellness beauty traditions', 'ayurveda', 'hammam', 'ofuro', 'temazcal', 'abhyanga'],
+  topics: ['nutrition skin collagen protein omega-3 anti-inflammatory', 'glycaemic index acne IGF-1 sebum insulin', 'biotin supplement hair nail evidence caution', 'collagen peptides supplement evidence 2021', 'omega-3 acne study 2012 journal dermatology', 'cortisol stress skin collagen breakdown inflammatory', 'gut skin axis probiotics fermented kimchi kefir injera', 'moringa West African superfood nutrition skin', 'ashwagandha adaptogen cortisol reduction RCT', 'green tea EGCG catechins antioxidant skin UV', 'matcha Japanese tea ceremony mindfulness', 'shinrin-yoku forest bathing cortisol immune Japan', 'teff Ethiopian nutrition iron low glycaemic skin', 'rooibos internal antioxidant anti-diabetic South African', 'avocado vitamin E monounsaturated skin elasticity 2023', 'ubuntu communal wellness Black South African', 'racial trauma stress skin health Black American', 'Black Girls RUN Black Men Run health equity exercise', 'sea moss Caribbean wellness trend Dr Sebi'],
   communitiesSupported: 9,
   keyFacts: [
-    'Skin loses up to 30% collagen in the first 5 years of menopause; exercise and vitamin C nutrition support collagen synthesis',
-    'McMaster University 2014 study: exercise reversed skin ageing at cellular level even in people who began later in life',
-    'Telogen effluvium (stress hair loss) peaks 2-4 months after the stressor, not immediately',
-    'Moringa contains higher vitamin C, calcium, iron, and protein per weight than almost any other plant',
-    'Amla (Indian gooseberry) contains 600-700mg vitamin C per 100g — among the highest of any food',
-    'Turmeric curcumin bioavailability increases 2000% when combined with black pepper piperine',
-    'Sea moss contains significant levels of iodine, potassium, and carrageenan with documented anti-inflammatory properties'
+    'High glycaemic index diets (white rice, white bread, sugary drinks) trigger insulin and IGF-1 release which increases sebum production; a 2007 American Journal of Clinical Nutrition RCT found a low glycaemic load diet significantly reduced acne lesion count in young men compared to a control high-GI diet; this dietary connection is particularly relevant for communities consuming high-GI staples (white rice in East Asian, South Asian, and Caribbean communities; white bread in Arab communities)',
+    'Ashwagandha (Withania somnifera), the Ayurvedic adaptogen, has been studied in multiple randomised controlled trials that consistently show significant reductions in cortisol levels and perceived stress; since chronic cortisol elevation breaks down collagen, worsens acne, disrupts the skin barrier, and worsens inflammatory conditions, ashwagandha\'s cortisol-reducing effect has real relevance to skin health beyond wellness marketing',
+    'EGCG (epigallocatechin gallate) in green tea has significant antioxidant and anti-inflammatory properties with evidence both as a topical and as a dietary component for skin health; the Japanese practice of drinking 3+ cups of green tea daily (and the elevated matcha consumption in traditional Japanese culture) is associated with better skin outcomes in observational research and the tea ceremony (chado) itself represents a mindfulness practice with measurable cortisol-reducing effects',
+    'Racial trauma is a recognised form of chronic stress in Black American communities with documented physiological effects; the ongoing experience of systemic racism creates chronic cortisol elevation that affects skin health (worsens acne, PIH, and inflammatory conditions) — organisations like Black Girls RUN! and Therapy for Black Girls were created to address health equity gaps by building community access to physical activity and mental health care',
+    'Moringa oleifera (native to sub-Saharan Africa and South Asia) is one of the most nutrient-dense plants known — gram for gram containing 7x more vitamin C than oranges, 4x more vitamin A than carrots, and significant iron and calcium; moringa leaf powder is increasingly used in West African wellness practices and global supplement markets; its high vitamin C content supports collagen synthesis and its carotenoid content is skin-beneficial'
   ]
 };

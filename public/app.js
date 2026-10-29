@@ -490,10 +490,29 @@ function renderTasteResults(result) {
   document.getElementById('tasteResults')?.classList.remove('hidden');
 }
 
+// Editorial look images — mapped by look ID
+const LOOK_IMAGES = {
+  afrobeats_concert:      'look-afrobeats-queen.png',
+  afropunk_edge:          'look-afropunk-rebel.png',
+  amapiano_beat:          'look-amapiano-babe.png',
+  bollywood_bridal:       'look-bollywood-diva.png',
+  dancehall_queen:        'look-dancehall-queen.png',
+  hip_hop_glam:           'look-hip-hop-icon.png',
+  gulf_glam:              'look-khaleeji-goddess.png',
+  k_beauty_glass:         'look-kpop-muse.png',
+  latina_glam:            'look-reggaeton-reina.png',
+  caribbean_carnival:     'look-soca-spirit.png',
+};
+
 function renderLookCard(look, score) {
   const scoreBar = Math.round((score ?? 0) * 100);
+  const imgFile  = LOOK_IMAGES[look.id];
+  const imgHtml  = imgFile
+    ? `<div class="look-card-img-wrap"><img src="${imgFile}" alt="${look.name}" class="look-card-img" loading="lazy" /></div>`
+    : '';
   return `
     <div class="look-card" data-look-id="${look.id}" role="button" tabindex="0" aria-label="View ${look.name} look details">
+      ${imgHtml}
       <div class="look-card-header">
         <span class="look-emoji">${look.emoji ?? '✨'}</span>
         <div class="look-score-ring" title="${scoreBar}% match">

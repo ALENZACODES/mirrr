@@ -1,156 +1,426 @@
 /**
- * MIRRR — Scalp Health: Ethnic Focus
- * Scalp biology, dandruff, seborrheic dermatitis, scalp care, all 9 communities.
+ * MIRRR — Scalp Health Ethnic Guide
+ * Scalp microbiome, seborrheic dermatitis, scalp conditions, traction alopecia, hair loss by community
+ * Topics: scalp biology, dandruff, sebderm, alopecia, scalp care routines, community scalp traditions
  */
 
+// ============================================================
+// SCALP BIOLOGY
+// ============================================================
+
 export const SCALP_BIOLOGY = {
-  title: 'Scalp Biology and Physiology',
-  structure: {
-    uniqueness: 'The scalp is the most sebaceous (oil-producing) region of the entire body; sebaceous gland density on the scalp is approximately 900 glands/cm² compared to 100-200/cm² on the face; the scalp produces 100-400 mg of sebum per day; this high sebum environment creates unique conditions: it supports a specific microbial ecosystem; it provides natural conditioning to hair; and it creates the substrate for scalp conditions like seborrheic dermatitis',
-    microbiome: 'Scalp microbiome: the scalp hosts a distinct microbial ecosystem adapted to the high-sebum, moderately moist environment; key microorganisms: Malassezia species (lipophilic yeasts that digest sebum lipids and are present on virtually all human scalps; the metabolic byproducts of Malassezia digestion contribute to dandruff and seborrheic dermatitis when overgrowth or immune response occurs); Cutibacterium acnes (formerly Propionibacterium acnes; also present on scalp; involved in scalp acne/folliculitis); Staphylococcus epidermidis (generally commensal and protective); the scalp microbiome balance is influenced by hair care products, washing frequency, sebum production, and genetics',
-    pHLevel: 'Scalp pH: the healthy scalp pH is approximately 4.5-5.5 (slightly acidic); this acidic environment: supports the beneficial microbial balance; maintains the integrity of the hair cuticle; inhibits the growth of pathogenic organisms; many hair care products (especially conditioners with quaternary ammonium compounds — quats) have higher pH that disrupts this balance; shampoos with sulfates drop scalp pH but the acidic rinse of apple cider vinegar (pH approximately 3) restores it'
+  overview: `The scalp is the most unique skin environment on the body — a densely follicle-packed surface
+  producing the highest sebum output per cm² of any body area, continuously colonized by a specific
+  microbiome, and covered by hair that influences pH, humidity, and microbial access. Scalp health
+  directly determines hair health: the follicle is anchored in the scalp, and follicle environment
+  determines hair quality, growth rate, and longevity.`,
+
+  anatomy: {
+    follicles: {
+      density: 'Scalp has ~100,000-150,000 hair follicles; density varies by ethnicity',
+      structure: 'Each follicle: dermal papilla (growth center) + hair matrix (dividing cells) + sebaceous gland + arrector pili muscle',
+      cycle: {
+        anagen: 'Anagen (growth): 2-7 years; longer = longer potential hair length; Asian hair tends toward longer anagen',
+        catagen: 'Catagen (transition): 2-3 weeks; follicle shrinks; club hair forms',
+        telogen: 'Telogen (resting): 3 months; club hair rests; new hair begins pushing it out',
+        exogen: 'Exogen (shedding): club hair sheds; normal 50-100 hairs/day'
+      }
+    },
+
+    sebaceousGlands: {
+      function: 'Produce sebum (mixture of fatty acids, wax esters, squalene, triglycerides, cholesterol)',
+      scalp: 'Scalp sebaceous glands are largest and most active in body; explains scalp oiliness',
+      ethinicity: 'Sebum production varies: studies suggest East Asian scalps produce similar sebum to European; exact ethnic variation under-studied',
+      function2: 'Sebum coats hair shaft → lubricates → prevents dryness; BUT excess → oily roots + malassezia overgrowth'
+    },
+
+    microbiome: {
+      composition: 'Scalp microbiome: Malassezia (fungi, dominant), Staphylococcus (bacteria, second), Propionibacterium, Cutibacterium',
+      malassezia: {
+        normal: 'Malassezia (Pityrosporum): normal scalp inhabitant; lipid-dependent yeast; feeds on sebum',
+        excess: 'Malassezia overgrowth → irritation → dandruff (pityriasis capitis) or seborrheic dermatitis',
+        strains: 'M. globosa is primary dandruff-associated species; produces oleic acid from sebum → barrier disruption → flaking'
+      },
+      balance: 'Healthy scalp: balanced microbiome; disruption by overwashing, product overload, stress, hormones → scalp conditions'
+    },
+
+    pH: {
+      normal: 'Healthy scalp pH: 4.5-5.5 (slightly acidic)',
+      importance: 'Acidic pH inhibits Malassezia growth; maintains hair cuticle closure (raised = frizz)',
+      disruptors: ['Alkaline shampoos (pH 7+)', 'Baking soda rinses (popular but very alkaline)', 'Hard water (alkaline)'],
+      maintenance: ['Apple cider vinegar rinse (diluted 1:4): acidifying treatment', 'pH-balanced shampoos (pH 4.5-5.5)', 'Filtered water for rinse']
+    }
   },
-  hairGrowthCycle: {
-    overview: 'Scalp hair growth cycle: the scalp has approximately 100,000 hair follicles; each follicle cycles independently; anagen (growth phase): 2-6 years on average (the determinant of maximum hair length); catagen (transition): 2-3 weeks; telogen (resting): 3-4 months; exogen (shedding): the hair is released; normal daily shedding: 50-100 hairs/day; increased shedding (telogen effluvium) occurs when more follicles than normal enter telogen simultaneously',
-    follicleTypes: 'Follicle types and their care needs: round follicles produce straight hair (East Asian); slightly elliptical follicles produce wavy hair; highly elliptical follicles produce tightly coiled hair (West African, Black American); the shape of the follicle affects sebum distribution along the hair shaft — sebum travels down the hair shaft through physical contact; straight hair conducts sebum efficiently down the shaft; tightly coiled hair has many bends that interrupt sebum travel, meaning the scalp may be oily while the length of coily hair is dry'
+
+  commonConditions: {
+    dandruff: {
+      clinical: 'Pityriasis capitis: mild form; white-gray flakes; scalp may be mildly itchy',
+      prevalence: '50% of adult population affected at some point',
+      cause: 'Malassezia + individual scalp reactivity + sebum composition + stress + climate',
+      treatment: ['Zinc pyrithione shampoo (Head & Shoulders): reduces Malassezia', 'Selenium sulfide 1% (Selsun Blue): antifungal', 'Ketoconazole 1-2% (Nizoral): prescription-strength antifungal', 'Coal tar: reduces cell turnover, antifungal; messier option'],
+      use: 'Medicated shampoo: apply to scalp, leave 3-5 minutes, then rinse; 2-3x weekly until controlled, then 1x weekly maintenance'
+    },
+
+    seborrheicDermatitis: {
+      clinical: 'Sebderm: more severe than dandruff; yellowish, greasy flakes; red inflamed scalp; may extend to face (eyebrows, nose creases, ears)',
+      prevalence: '3-5% of population; more common in men; peak adolescence and 30-60 years',
+      cause: 'Malassezia + immune response + sebum + genetic predisposition + hormones + neurological association (higher in Parkinson\'s, HIV)',
+      treatment: ['Ketoconazole 2% shampoo (Rx or 1% OTC)', 'Ciclopirox shampoo (Rx)', 'Selenium sulfide 2.5% (Rx)', 'Topical corticosteroid foam for inflammation', 'Zinc pyrithione for maintenance'],
+      type4Challenge: 'Type 4 hair and sebderm: washing frequency conflict — sebderm needs frequent medicated wash; Type 4 hair dislikes frequent washing; solution: diluted medicated shampoo concentrated on scalp, hydrating conditioner on lengths'
+    },
+
+    tractionAlopecia: {
+      definition: 'Hair loss caused by persistent mechanical tension on hair follicles; cumulative damage leads to permanent hair loss',
+      highRisk: 'Black women: 17% affected; highest risk from tight braids, weaves, relaxer + tight style, repeated heat straightening',
+      mechanism: 'Prolonged tension → follicle inflammation → follicle miniaturization → permanent loss at edges, nape, temples',
+      earlySigns: 'Tenderness at hairline; small bumps or pimples at hairline after styling; fine baby hairs disappearing at edges',
+      prevention: ['Never braid or weave while hair is wet (wet hair is most fragile)', 'Request loose tension from braider — should not feel tight after installation', 'Take protective style breaks between installs (2-4 weeks minimum)', 'Oil edges daily; massage to maintain circulation'],
+      treatment: 'Early detection: remove tension immediately; topical minoxidil; steroid injections (dermatologist); late-stage loss is permanent'
+    },
+
+    alopeciaAreata: {
+      definition: 'Autoimmune condition: immune system attacks hair follicles; causes patchy circular hair loss',
+      prevalence: '2% lifetime risk regardless of ethnicity',
+      types: ['Alopecia areata: patchy', 'Alopecia totalis: complete scalp loss', 'Alopecia universalis: complete body hair loss'],
+      treatment: 'Dermatologist-supervised: topical corticosteroids; minoxidil; JAK inhibitors (new approval: baricitinib 2022); intralesional steroid injections'
+    },
+
+    CCCA: {
+      name: 'Central Centrifugal Cicatricial Alopecia',
+      definition: 'Scarring hair loss beginning at crown and expanding centrifugally; leads to permanent follicle destruction',
+      ethnicity: 'PREDOMINANTLY Black women; up to 5.6% prevalence; most underdiagnosed hair disorder in Black women',
+      causes: 'Multifactorial: genetics + chemical relaxers + tight hairstyles + inflammation + Demodex mites suggested in research',
+      symptoms: 'Scalp tenderness, burning, tingling at crown; hair thinning expanding from crown outward',
+      treatment: 'EARLY INTERVENTION CRITICAL: scarring is permanent; topical steroids; oral doxycycline; minoxidil; avoid chemical and heat'
+    }
   }
 };
 
-export const SCALP_CONDITIONS = {
-  dandruff: {
-    name: 'Dandruff (Pityriasis simplex capillitii)',
-    overview: 'Dandruff is the shedding of dead skin cells from the scalp in visible white/grey flakes; it affects approximately 50% of the global adult population; it is not caused by poor hygiene or dry scalp (a common misconception); dandruff is associated with Malassezia yeast and a scalp inflammatory response',
-    mechanism: 'Dandruff mechanism: Malassezia yeast metabolises scalp sebum; oleic acid produced as a byproduct penetrates the scalp epidermis; in susceptible individuals (approximately 50% of the population), this triggers an inflammatory immune response; the inflammation accelerates epidermal cell turnover, causing the visible clumping and shedding of skin cells as flakes',
-    treatment: 'Dandruff treatment: zinc pyrithione (ZPT): anti-fungal and antibacterial; the most commonly used active in OTC dandruff shampoos; ketoconazole (2%): prescription-strength antifungal; excellent evidence for moderate-severe dandruff; selenium sulfide: reduces Malassezia through anti-fungal and anti-proliferative mechanisms; coal tar: reduces cell proliferation and has anti-inflammatory properties; useful for scalp psoriasis overlap; salicylic acid: keratolytic — physically removes scale from the scalp; pyroctone olamine (OCT): gentler antifungal used in European scalp products',
-    ethnicVariation: 'Dandruff in different communities: dandruff appears different on dark hair and dark skin vs fair hair and light skin; on dark clothing and dark hair, white flakes are more visible; on the scalp, scaling appears different on dark skin (may appear grey rather than white); the same Malassezia mechanism operates across all ethnicities; sebum production differences (Black women typically have lower sebum production than East Asian or White women) may influence dandruff patterns'
+// ============================================================
+// SCALP CARE PROTOCOLS
+// ============================================================
+
+export const SCALP_CARE_PROTOCOLS = {
+  overview: 'Scalp care should be customized to scalp type (oily, dry, normal, sensitive, condition-affected) and hair type simultaneously',
+
+  assessment: {
+    oily: 'Scalp oily within 24 hours of washing; product buildup; may have dandruff; flakes are small and oily-appearing',
+    dry: 'Scalp tight, itchy; small white dry flakes; feels parched; more common in Type 4 hair wearers who extend wash days',
+    normal: 'Comfortable; no significant itching; no significant flaking; balanced sebum',
+    sensitive: 'Reacts to many products; stinging; redness; fragrance-free and minimal-ingredient products needed',
+    conditions: 'Sebderm: yellow greasy flakes, redness; AA: patchy smooth loss; TA: edge/temple recession'
   },
-  seborrheicDermatitis: {
-    name: 'Seborrheic Dermatitis',
-    description: 'Seborrheic dermatitis is a more inflammatory version of dandruff; it causes red, greasy, scaly patches not only on the scalp but also on the face (nasolabial folds, eyebrows, beard area, ears), chest, and other sebaceous areas; it is a chronic relapsing condition; the same Malassezia-mediated mechanism underlies both dandruff and seborrheic dermatitis, with seborrheic dermatitis representing a more intense immune response',
-    prevalence: 'Seborrheic dermatitis prevalence: 1-3% of the general population for the full condition; 11% in immunocompromised individuals; significantly more common in patients with HIV/AIDS and Parkinson\'s disease; genetics, immune function, and stress influence susceptibility',
-    treatment: 'Seborrheic dermatitis treatment: ketoconazole 2% shampoo and cream; ciclopirox olamine shampoo; low-potency topical corticosteroids (triamcinolone or betamethasone scalp solution) for flares — with caution against long-term use (skin thinning, hair loss); topical calcineurin inhibitors (tacrolimus, pimecrolimus) as steroid-sparing alternatives; coal tar for scalp psoriasis overlap'
+
+  scalpMassage: {
+    benefits: 'Increases blood circulation to follicles; 2019 study: 4 minutes daily scalp massage over 24 weeks increased hair thickness in participants',
+    technique: 'Fingertips (not nails) in circular motion; gentle pressure; move through scalp systematically; 4-5 minutes',
+    tools: 'Silicone scalp massager: increases circulation; helps distribute product; safe for all hair types',
+    oil: 'Scalp massage with oil: traditional across almost all ethnic beauty traditions; castor oil most studied for hair growth (ricinoleic acid receptor activity)'
   },
-  scalpAcne: {
-    name: 'Scalp Acne (Scalp Folliculitis)',
-    description: 'Scalp acne (folliculitis decalvans in severe cases; scalp acne in mild cases) occurs when hair follicles become inflamed, typically from bacteria (Staphylococcus aureus) or from product buildup trapping bacteria; small red, itchy bumps along the hairline and scalp; more common in individuals who use heavy products (grease, heavy oils, pomades) that occlude follicles; product buildup is a significant contributor in communities that use heavy hair products',
-    treatment: 'Scalp acne treatment: clarifying shampoo (removes product buildup); salicylic acid scalp treatment; tea tree oil shampoo (anti-bacterial/anti-fungal); for severe or persistent cases: topical antibiotics (clindamycin solution) or oral antibiotics prescribed by a dermatologist; avoid occlusive products on the scalp particularly near the hairline'
+
+  oilRituals: {
+    castor: {
+      evidence: 'Ricinoleic acid in castor oil: prostaglandin EP3 receptor activity = vasodilation = increased follicle blood flow',
+      use: 'Apply to scalp; massage; leave 30 min to overnight; heavy texture — mix 50/50 with lighter oil',
+      type4: 'Jamaican Black Castor Oil (JBCO): produced with ash; higher pH; opens cuticle for penetration; popular in Black American natural hair community'
+    },
+    brahmi: {
+      herb: 'Bacopa monnieri (brahmi): Ayurvedic herb infused in oil; studied for DHT inhibition (androgenic hair loss)',
+      use: 'Brahmi oil massage 1-2x weekly; South Asian traditional practice'
+    },
+    rosemary: {
+      evidence: '2023 Dermatology study: rosemary oil 1% = minoxidil 2% for hair growth; promoted via TikTok; evidence base growing',
+      use: '5-10 drops rosemary essential oil in carrier; scalp massage; leave on or wash out',
+      mechanism: 'Ursolic acid: promotes epidermal growth factor (EGF) on follicles; anti-inflammatory; anti-DHT'
+    }
   },
-  tractionAlopecia: {
-    name: 'Traction Alopecia',
-    description: 'See hair_growth_guide_ethnic.js for full coverage; brief summary: hair loss from chronic tension on the hair shaft and follicle from tight hairstyling (braids, weaves, extensions, high ponytails, tight buns); affects approximately 17% of Black women; follicle damage is reversible early (marginal temporal recession with follicular openings still visible); permanent scarring alopecia develops with prolonged traction; the temporal and marginal scalp are most affected',
-    scalp: 'Scalp health in traction: tight hairstyles also affect the scalp health directly; the tension on the scalp skin causes local inflammation; tight scalp tension contributes to headaches and scalp sensitivity; appropriate scalp care during protective styling periods: keep the scalp clean (dry shampoo or diluted shampoo applied with a spray bottle through the style); apply scalp oil (light oil such as jojoba, diluted tea tree) to the exposed scalp between braids; moisturise the scalp at the roots'
-  },
-  CCCA: {
-    name: 'Central Centrifugal Cicatricial Alopecia (CCCA)',
-    description: 'CCCA is a scarring alopecia most prevalent in Black women; it begins as hair loss and scalp tenderness at the crown and spreads centrifugally (outward); as it progresses, the follicles are destroyed and replaced by fibrous scar tissue; the genetic basis (PADI3 gene mutation) means it can occur without any particular hairstyling cause; it is associated with high-tension hairstyling but can occur in women who never use heat or tight styles; biopsy is required for definitive diagnosis; treatment must begin early to preserve remaining follicles; treatment includes topical or injected corticosteroids; doxycycline; topical minoxidil for any remaining follicles'
+
+  productBuildupRemoval: {
+    need: 'Silicones, waxes, and heavy butters build up on scalp; can clog follicles; inhibit product penetration',
+    clarifyingShampoo: 'Strong surfactant (sodium lauryl sulfate or ammonium lauryl sulfate): removes all buildup; harsh — use 1x monthly maximum',
+    chelating: 'Chelating shampoo (EDTA-containing): removes hard water mineral deposits; essential in hard water areas',
+    scalp: 'Scalp scrub (salicylic acid or sugar-based): physical + chemical exfoliation of scalp; 1x monthly',
+    ACV: 'Apple cider vinegar rinse (1:4 dilution): removes product, alkaline mineral deposits; pH balances scalp'
   }
 };
 
-export const SCALP_CARE_INGREDIENTS = {
-  overview: 'Key scalp care ingredients and their mechanisms',
-  antifungal: {
-    ketoconazole: 'Ketoconazole 2%: the gold standard antifungal for Malassezia-related dandruff and seborrheic dermatitis; inhibits the ergosterol synthesis pathway of fungal cells; available OTC at 1% and prescription at 2%; highly effective but should be used 2-3x weekly during treatment, then maintenance 1-2x monthly',
-    zinpyrithione: 'Zinc pyrithione (ZPT): anti-fungal and anti-bacterial; the most common active in OTC dandruff shampoos; Head & Shoulders and many others use ZPT; good maintenance option for mild-moderate dandruff',
-    seleniumSulfide: 'Selenium sulfide: reduces Malassezia growth; can cause discolouration of chemically lightened (bleached or highlighted) hair and should be avoided by those with such colour treatments; effective for severe dandruff'
-  },
-  antiInflammatory: {
-    coalTar: 'Coal tar: reduces skin cell proliferation (keratolytic) and has anti-inflammatory effects; particularly effective for scalp psoriasis and seborrheic dermatitis with scalp psoriasis overlap; has a strong odour; can discolour blonde or light-coloured hair',
-    salicylicAcid: 'Salicylic acid (scalp): keratolytic — breaks down and removes scalp scale physically; useful as an adjunct to anti-fungal shampoos; used alone, it treats the symptom (scaling) without the cause (Malassezia); combines well with zinc pyrithione or ketoconazole',
-    teaTree: 'Tea tree oil (Melaleuca alternifolia): has demonstrated anti-fungal and anti-bacterial properties in vitro; a 5% tea tree oil shampoo showed improvement in dandruff in a clinical trial; less well-studied than ketoconazole or ZPT but popular and generally well-tolerated; can irritate sensitive scalps at higher concentrations'
-  },
-  moisturising: {
-    scalpOils: 'Scalp oils for healthy scalp: jojoba oil (closely mimics sebum; non-greasy; suitable for all scalp types); argan oil (light; anti-inflammatory; for dry scalp); peppermint oil (stimulates blood flow to follicles; cooling sensation; 2019 study showed peppermint oil outperformed minoxidil for hair growth in mice — human evidence limited); rosemary oil (2015 RCT showed comparable results to 2% minoxidil for androgenetic alopecia at 6 months); neem oil (anti-fungal and anti-bacterial; useful for scalp conditions; strong odour)',
-    avc: 'Apple cider vinegar (ACV): pH approximately 3; diluted ACV (1:4 with water) as a scalp rinse restores acidic pH after alkaline shampoos; closes the hair cuticle; has weak anti-fungal properties; reduces scalp itch for some individuals; must be diluted to avoid scalp irritation; not a substitute for medical treatment of seborrheic dermatitis'
-  }
-};
+// ============================================================
+// 9 COMMUNITY SCALP HEALTH GUIDES
+// ============================================================
 
-export const ETHNIC_SCALP_GUIDES = {
+export const ETHNIC_SCALP_HEALTH_GUIDES = {
   'west-african': {
-    community: 'West African',
-    scalpCharacteristics: 'West African scalp characteristics: Type 4 (4A, 4B, 4C) tightly coiled hair creates specific scalp care challenges; sebum production in West African women is on average lower than in East Asian or White women (research by DeAngelis and others documents this); the tight coil of the hair inhibits natural sebum from distributing down the hair shaft from the scalp; the result is a scalp that may overproduce sebum (leading to scalp buildup) while the hair length remains dry and dull without additional moisturisation',
-    productBuildup: 'Product buildup: the West African and Black diaspora hair care tradition of using heavy products (shea butter, coconut oil, hair grease, edge control, heavy pomades) directly on the scalp creates product buildup that can clog follicles, create scalp acne, and create an environment for dandruff-causing yeast overgrowth; clarifying shampoo (once monthly or as needed) removes accumulated product; the scalp and length have different needs — heavy products belong on the length (or mid-shaft to ends), not the scalp',
-    washFrequency: 'Wash frequency and West African hair: the traditional advice to wash Type 4 hair infrequently (to preserve natural oils) has been revisited; infrequent washing allows scalp product and sebum buildup; a washday routine every 1-2 weeks for scalp and length, preceded by a scalp massage, is a reasonable approach; those with scalp conditions may need more frequent scalp attention',
-    oilingScalp: 'Scalp oiling tradition: the practice of oiling the scalp directly (grease, petroleum jelly, heavy oils) was historically widespread in Black hair care; this practice is now understood to occlude follicles and attract product buildup; light scalp oils (diluted in a dropper or applicator bottle) applied to the scalp partings are a better approach; jojoba, diluted rosemary oil, or diluted peppermint oil applied to the scalp (not heavy grease)',
-    recommendations: 'Monthly clarifying shampoo; light scalp oil between wash days; tea tree oil shampoo or ZPT shampoo for any dandruff; scalp massage before washday to loosen buildup and stimulate circulation; diluted ACV rinse for pH balance; avoid heavy products directly on scalp'
+    communityName: 'West African',
+    primaryConcerns: ['Dandruff under braids and protective styles', 'CCCA risk (though CCCA is more specific to Black American/diaspora)', 'Scalp oiling traditions'],
+
+    scalp: {
+      condition: 'Type 4 hair: scalp tends to be drier than sebum production would suggest; sebum has longer to travel down coiled shaft',
+      oiling: 'Daily or weekly scalp oiling with shea butter, coconut oil, or palm kernel oil: traditional West African scalp care',
+      braids: 'Under braids: scalp can develop product buildup and dandruff; diluted shampoo in spray bottle between installs'
+    },
+
+    traditions: {
+      shea: 'Shea butter massaged into scalp: traditional AND scientifically valid; anti-inflammatory, anti-fungal properties',
+      moringa: 'Moringa oil on scalp: high oleic and behenic acids; nourishing; traditional Nigerian use',
+      blackSoap: 'African black soap as scalp cleanser: saponins and ash create high-pH cleanser that cuts through buildup effectively'
+    },
+
+    advice: `West African scalp care is built on oiling — applied to the scalp as prevention and
+    treatment. Under protective styles (braids, weaves): scalp access is limited but necessary.
+    Dilute shampoo in a spray bottle and apply to scalp between style washes (every 1-2 weeks
+    minimum). Shea butter on scalp edges prevents tension-related loss. If wearing long-term
+    protective styles: check edges monthly for recession (traction alopecia early sign).
+    When scalp itches under braids: that is a sign of buildup or dry scalp — address it;
+    don't ignore because the style is inconvenient to remove.`
   },
+
   'south-asian': {
-    community: 'South Asian',
-    champi: 'Champi (hair and scalp massage): the South Asian tradition of scalp oiling and massage (champi) is both a beauty practice and a family bonding ritual; weekly or biweekly application of warm oil (coconut, sesame, amla, brahmi oil) to the scalp followed by massage and sometimes overnight steaming is documented in Indian beauty culture for centuries; the massage component has genuine benefit for scalp circulation; the oil itself conditions the scalp and pre-poo (pre-wash conditioning) protects the hair during washing',
-    dandruff: 'Dandruff prevalence in South Asian hair: dandruff is extremely common in South Asian communities; the causes may include the specific Malassezia strains present in the South Asian scalp microbiome, dietary factors, hard water (common in South Asian diaspora cities in the UK, particularly), and high product use; ketoconazole or ZPT shampoo as a treatment; cultural use of coconut or sesame oil on the scalp may actually slightly reduce Malassezia (medium-chain fatty acids in coconut oil have mild anti-fungal properties)',
-    hardWater: 'Hard water and South Asian scalp: the water supply in many cities with large South Asian diaspora populations (London, Birmingham, Houston, Toronto) has high mineral content (hard water); calcium and magnesium deposits accumulate on the scalp and hair shaft; this disrupts the hair cuticle, causes scalp irritation, and exacerbates dandruff; chelating shampoos (containing EDTA or phytic acid) remove mineral deposits; hard water filters for the shower are increasingly popular in South Asian communities',
-    recommendations: 'Weekly champi with warm oil; ketoconazole or ZPT shampoo for dandruff; chelating shampoo monthly for hard water mineral removal; scalp massage for circulation; amla oil traditionally for scalp health and hair growth'
+    communityName: 'South Asian',
+    primaryConcerns: ['Champi (scalp oil massage) tradition', 'PCOS-related hair loss', 'High stress environments → telogen effluvium'],
+
+    scalp: {
+      champi: 'Champi: traditional South Asian scalp oil massage; warm coconut, sesame, or bhringraj oil; grandmother to granddaughter tradition',
+      amla: 'Amla (Indian gooseberry): rich in vitamin C; traditionally believed to strengthen hair follicles; applied as oil or paste',
+      PCOS: 'PCOS affects 6-12% of women; South Asian prevalence 52% higher; androgenic hair loss (DHT pattern) common comorbidity'
+    },
+
+    traditions: {
+      coconut: 'Coconut oil champi: most traditional South Indian scalp treatment; saturated fat protects protein structure; applied warm, massaged, left overnight',
+      bhringraj: 'Bhringraj (Eclipta alba) oil: Ayurvedic "king of herbs for hair"; studied for hair regrowth (equal to minoxidil in some studies); reduces Malassezia',
+      brahmi: 'Brahmi oil: DHT inhibiting properties; traditional Ayurvedic scalp treatment for thinning hair',
+      neem: 'Neem oil: antifungal; anti-dandruff; anti-bacterial scalp treatment'
+    },
+
+    advice: `South Asian scalp care is among the world's most sophisticated — champi has been practiced
+    for centuries with a range of therapeutic oils. Bhringraj oil is the most evidence-backed
+    Ayurvedic hair growth treatment: ricinoleic and rosmarinic acid content; direct follicle
+    stimulation documented. For PCOS-related hair loss: this requires medical management
+    (anti-androgens, insulin sensitizers) alongside topical minoxidil and scalp care.
+    The champi ritual itself — 4-5 minutes of scalp massage — increases blood flow to follicles
+    regardless of the oil used; the ritual's mechanisms are validated even when specific oil
+    claims are less certain.`
   },
+
   caribbean: {
-    community: 'Caribbean',
-    seaWater: 'Caribbean scalp and salt water: Caribbean lifestyle involves significant sea water and salt water exposure; sea water is mildly clarifying for the scalp and hair (the salt has a mild antimicrobial effect) but also dehydrating for the hair length; post-beach hair care: rinse with fresh water promptly to remove salt; condition the length; the scalp generally tolerates sea water well',
-    coconut: 'Coconut oil scalp tradition: coconut oil is the central scalp and hair oil of Caribbean tradition; medium-chain fatty acids in coconut oil (particularly lauric acid) penetrate the hair shaft and have mild anti-fungal properties; applied warm to the scalp as a pre-wash treatment; the LOC method (Liquid-Oil-Cream) applied to the hair but not the scalp is the modern approach to preserving the benefits of coconut oil without the scalp buildup problems',
-    recommendations: 'Coconut oil as pre-wash scalp treatment (not for daily scalp application); fresh water rinse after sea water exposure; clarifying shampoo periodically for scalp buildup; ZPT or ketoconazole if dandruff develops; scalp massage; diluted ACV rinse for pH balance'
+    communityName: 'Caribbean',
+    primaryConcerns: ['Saltwater/pool scalp exposure', 'Dandruff in tropical humidity', 'Type 4 scalp care under protective styles'],
+
+    scalp: {
+      humidity: 'Tropical humidity: Malassezia growth accelerated; dandruff more common than in temperate climates',
+      salt: 'Ocean salt water on scalp: short exposure OK (some antimicrobial); chronic exposure = scalp dehydration',
+      chlorine: 'Pool chlorine: strips scalp of sebum; can cause dry scalp, irritation; wear swim cap or apply oil before swimming'
+    },
+
+    traditions: {
+      coconut: 'Coconut oil on scalp: Caribbean tradition; antibacterial and antifungal properties help control Malassezia',
+      aloe: 'Fresh aloe vera gel applied to scalp: soothing; anti-inflammatory; dandruff-reducing',
+      bay: 'Bay rum: traditional Caribbean hair tonic; bay leaves + rum; antibacterial scalp treatment'
+    },
+
+    advice: `Caribbean scalp care must account for the tropical environment: humidity and heat accelerate
+    fungal growth on the scalp. Dandruff is more prevalent in humid tropical climates — anti-dandruff
+    shampoo use is appropriate and responsible. After ocean swimming: rinse scalp thoroughly (salt
+    crystallizes and irritates); apply coconut oil to scalp to rehydrate. Before pool: apply oil to
+    scalp (coconut or olive) to block chlorine penetration. Bay rum is the quintessential Caribbean
+    scalp treatment — not just tradition, bay leaf contains eugenol (antifungal, antibacterial)
+    and the alcohol base is an effective antimicrobial.`
   },
+
   arab: {
-    community: 'Arab',
-    blackSeed: 'Black seed (Nigella sativa) for scalp: nigella sativa (black seed; habbatus sauda; "the seed of blessings") has significant Islamic documentation — the Prophet Muhammad (PBUH) is narrated to have said it is "a cure for everything except death"; black seed oil contains thymoquinone, a potent anti-inflammatory and anti-oxidant compound; for the scalp, black seed oil has been used in Arab traditional medicine for scalp health, dandruff, and hair growth; preliminary evidence supports anti-inflammatory and anti-fungal activity; applying black seed oil to the scalp has both religious-cultural significance and plausible biological benefit',
-    argan: 'Argan oil (Moroccan Oil): native to Morocco; the Argan tree (Argania spinosa) is grown almost exclusively in a specific region of southwest Morocco; Berber women of Morocco have used argan oil for scalp and hair health for centuries; argan oil is rich in oleic acid, linoleic acid, and vitamin E; it is light enough for scalp use without excessive occlusion; it is the base for many Middle Eastern and North African scalp and hair products',
-    henna: 'Henna and scalp health: henna (Lawsonia inermis) is used throughout Arab, South Asian, and North African communities both for hair colouring and for scalp health; henna has mild anti-fungal properties and is used traditionally for dandruff; applied as a paste to the scalp, henna cools the scalp and reduces inflammation; it also coats and slightly thickens the hair shaft; note: black henna (containing PPD) is a chemical and should NOT be used on scalp',
-    recommendations: 'Black seed (nigella sativa) oil for scalp — traditional, culturally significant, and plausibly beneficial; argan oil as a light scalp treatment; henna for scalp health and conditioning; ZPT or ketoconazole shampoo for dandruff; scalp massage'
+    communityName: 'Arab / Middle Eastern',
+    primaryConcerns: ['Black seed oil (habbatus sauda) scalp tradition', 'Dandruff management under hijab', 'Hair loss from stress'],
+
+    scalp: {
+      hijab: 'Hijab-wearing women: scalp perspires more under covering; increased humidity under hijab = Malassezia growth risk',
+      blackSeed: 'Nigella sativa (black seed/habbatus sauda): prophetic medicine; thymoquinone studied for hair growth and scalp health',
+      dandruff: 'Under-hijab dandruff: zinc pyrithione shampoo; applied to scalp, rinse; manage scalp health between washes with apple cider vinegar spray'
+    },
+
+    traditions: {
+      blackSeed: 'Black seed oil applied to scalp: traditional Islamic medicine; thymoquinone = antifungal + anti-inflammatory',
+      olive: 'Olive oil as scalp treatment: Levant tradition; monounsaturated fatty acids; leave-on treatment',
+      henna: 'Henna on scalp (for conditioning): Arabic tradition; reduces oiliness; adds body'
+    },
+
+    advice: `Arab scalp care is shaped by Islamic Hadith literature recommending black seed (Nigella sativa) —
+    "A remedy for every disease except death." Modern research validates thymoquinone in black seed
+    as genuinely antifungal, anti-inflammatory, and potentially hair-growth promoting. For hijab-wearing
+    women: scalp health requires conscious management because the covered scalp environment is warmer
+    and more humid. Strategy: wash scalp thoroughly 2-3x per week; apply antifungal shampoo (zinc
+    pyrithione or ketoconazole) if dandruff develops; between washes, scalp spray with diluted ACV
+    or rose water to balance pH.`
   },
+
   latina: {
-    community: 'Latina',
-    avocado: 'Avocado for scalp: the avocado (Persea americana; native to Mexico and Central America) is a Latin American beauty staple; avocado oil (or mashed avocado as a scalp mask) contains oleic acid (similar to sebum), vitamins B6, B9, vitamin E, and phytosterols; for the scalp, avocado oil provides a nutrient-rich conditioning treatment; avocado for scalp is traditional Latin American beauty medicine with plausible biological support',
-    rosemary: 'Rosemary (romero): rosemary oil is extensively used in Latin American hair and scalp tradition; rosemary is native to the Mediterranean and was introduced to the Americas by Spanish colonists; the folk use of rosemary (as a scalp rinse, in hot water, applied to the scalp) for hair growth and scalp health is documented throughout Latin America and the Caribbean; the 2015 RCT showing rosemary oil comparable to 2% minoxidil for hair growth provides scientific support for this folk tradition',
-    yerba: 'Yerba mate and scalp: yerba mate (Ilex paraguariensis; native to South America) is consumed as a tea throughout Argentina, Uruguay, Paraguay, and Brazil; yerba mate contains caffeine, polyphenols, and chlorogenic acids; caffeine has demonstrated inhibition of 5-alpha-reductase (the enzyme that converts testosterone to the hair-loss-driving DHT) in vitro and in small clinical studies; yerba mate applied topically may have mild hair-growth-supportive activity through this mechanism',
-    recommendations: 'Avocado oil as scalp treatment; rosemary oil diluted for scalp stimulation; ZPT shampoo for dandruff; scalp massage in the tradition of champi (also practiced in some Latin American communities); clarifying shampoo for product buildup removal'
+    communityName: 'Latina / Hispanic',
+    primaryConcerns: ['Olive oil scalp tradition', 'Hormonal hair loss postpartum', 'Scalp sensitivity to chemical treatments'],
+
+    scalp: {
+      oliveOil: 'Olive oil scalp treatment: Mediterranean-origin Latina tradition; anti-inflammatory; scalp nourishing',
+      postpartum: 'Telogen effluvium: postpartum hair loss peaks 3-4 months after birth; estrogen crash; very common in Latina mothers; temporary',
+      chemical: 'Brazilian blowout / keratin treatment on scalp: formaldehyde concerns; scalp absorption; avoid getting treatment on scalp directly'
+    },
+
+    traditions: {
+      aloe: 'Aloe vera gel on scalp: traditional Mexican and Caribbean folk remedy; anti-inflammatory scalp treatment',
+      chamomile: 'Chamomile tea rinse: scalp soothing; traditional remedy for sensitive scalp',
+      olive: 'Olive oil + egg yolk scalp mask: traditional protein + fatty acid treatment'
+    },
+
+    advice: `Latina scalp care traditions span from simple aloe vera from the garden (Central American tradition)
+    to chamomile rinse (Mexican grandmother advice) to olive oil mask (Spanish-heritage tradition).
+    All have genuine merit: aloe contains enzymes that reduce inflammation; chamomile has apigenin
+    (anti-inflammatory); olive oil's oleic acid nourishes. Postpartum Latina women: hair loss at
+    3-4 months postpartum is nearly universal and self-limiting (12-24 months to fully recover);
+    scalp massage + biotin + iron check is the appropriate response. For chemically treated hair:
+    protein treatments every 4-6 weeks rebuild structure; scalp repair after chemical damage
+    requires consistent moisture and protection.`
   },
+
   'east-asian': {
-    community: 'East Asian',
-    scalness: 'East Asian scalp sebum production: East Asian women (particularly Japanese and Korean) have among the highest sebum production rates among women of different ethnicities in comparative studies; the high sebum environment of East Asian scalps means dandruff and scalp greasiness are common concerns; the K-beauty and J-beauty approach to scalp care has become one of the most sophisticated globally in response',
-    scaleCare: 'Korean scalp care: Korea has a specific sub-industry of scalp care (두피 관리 — dupi gwanri); scalp clinics in Korea analyse the scalp under microscope and prescribe specific shampoos, serums, and treatments; the Korean approach treats the scalp as the "skin" for the hair — with the same care as facial skin; scalp essence (a lightweight tonic applied to the scalp between washes), scalp scrub (periodic physical exfoliation of scalp flakes), and scalp ampoule (concentrated treatment for specific concerns) are standard K-beauty scalp care products',
-    ginseng: 'Ginseng for scalp: Korean red ginseng (Panax ginseng) is extensively used in Korean scalp and hair products; ginsenosides (the active compounds in ginseng) have demonstrated effects on hair follicle cells in laboratory studies including promotion of anagen phase; Korean hair care brands formulate ginseng extensively into scalp serums, shampoos, and hair ampoules; ginseng has been used in Chinese medicine for scalp health for centuries',
-    recommendations: 'Scalp-specific care products (K-beauty scalp essence, scalp serum); ginseng-based scalp products; ZPT or ketoconazole shampoo for dandruff (dandruff is common in East Asian high-sebum scalps); regular scalp exfoliation with a scalp brush; consider scalp analysis at a Korean scalp clinic if accessible; infrequent conditioning ON the scalp (conditioner on the scalp increases greasiness); wash frequency 3-7 days depending on sebum production'
+    communityName: 'East Asian',
+    primaryConcerns: ['High sebum production under Type 1 hair', 'Ginseng root scalp tradition', 'Stress-related hair loss (academic pressure)'],
+
+    scalp: {
+      sebum: 'Type 1 straight hair: sebum travels quickly down straight shaft; scalp looks oily quickly; frequent washing appropriate',
+      ginseng: 'Panax ginseng: Korean/Chinese tradition for scalp health; ginsenosides promote hair follicle proliferation (studied)',
+      stress: 'East Asian students face disproportionate academic stress; cortisol elevation is directly correlated with hair loss (telogen effluvium trigger)'
+    },
+
+    traditions: {
+      ginseng: 'Ginseng root applied to scalp: Korean/Chinese traditional medicine; ginsenosides → follicle stem cell proliferation documented in studies',
+      camellia: 'Camellia oil (tsubaki oil) as scalp treatment: Japanese tradition; oleic acid dominant; scalp nourishing',
+      jade: 'Jade roller scalp massage: modern extension of Traditional Chinese Medicine stone therapy to scalp massage'
+    },
+
+    advice: `East Asian scalp care has extensive traditional pharmacopeia — ginseng being the crown jewel.
+    Ginsenosides (the active compounds in Korean/Chinese ginseng) have genuine human studies showing
+    improved hair follicle proliferation. Look for ginseng in scalp serums and scalp toners from
+    Korean beauty brands (Daeng Gi Meo Ri, La\'dor). Daily washing is appropriate for Type 1 East
+    Asian scalps — the hair type can handle it and often needs it. The scalp-hair growth connection
+    Korean beauty takes seriously: scalp serums are a major Korean beauty product category and
+    their formulations are among the most sophisticated globally.`
   },
+
   'east-african': {
-    community: 'East African',
-    scalpOils: 'East African scalp oils: Ethiopian, Eritrean, and Somali women traditionally use locally sourced plant oils for scalp and hair health; tej oil (from Ethiopian honey wine fermentation process — a honey-based conditioner) is traditional; castor oil (JBCO, or standard castor oil) for scalp and edge growth; frankincense oil (diluted) for scalp health and anti-inflammatory effect',
-    teff: 'Teff and hair health: teff (Eragrostis tef — the ancient East African grain) is the foundation of Ethiopian diet (injera bread) and contains iron, zinc, and B vitamins that are essential for hair follicle health; iron deficiency is among the most common nutritional causes of hair shedding (telogen effluvium); East African women who consume a teff-based diet have significant dietary iron; those in diaspora who move away from teff-heavy diets may benefit from ensuring adequate iron intake',
-    recommendations: 'Castor oil scalp massage for hair growth support; frankincense oil (diluted) as anti-inflammatory scalp treatment; ensure dietary iron (teff consumption in diaspora reduces risk of iron-deficiency hair loss); ZPT shampoo for dandruff; scalp massage for circulation'
+    communityName: 'East African',
+    primaryConcerns: ['Sesame oil scalp oiling tradition', 'Dense Type 4 scalp access challenge', 'Stress/displacement-related hair loss'],
+
+    scalp: {
+      oiling: 'Sesame oil or castor oil scalp oiling: Ethiopian and Somali traditional scalp care',
+      density: 'Type 4b-4c hair: most densely coiled; scalp access most difficult; strategic sectioning needed',
+      refugee: 'Stress-related telogen effluvium: displacement, trauma, immigration stress associated with hair loss; self-care including scalp care can be healing practice'
+    },
+
+    traditions: {
+      sesame: 'Sesame oil on scalp: Ethiopian tradition; rich in sesamol (antioxidant) and sesamin (anti-inflammatory); scalp nourishing',
+      frankincense: 'Boswellia resin: traditionally burned near hair; boswellic acids anti-inflammatory; modern interpretation: frankincense oil diluted in carrier for scalp',
+      castor: 'Castor oil as scalp treatment: Horn of Africa tradition; heavy but highly effective for scalp circulation'
+    },
+
+    advice: `East African scalp care requires strategic approach for dense Type 4b-4c hair: you cannot
+    effectively care for the scalp without intentional access. Section hair into 4 quadrants,
+    then into subsections; apply scalp oil or treatment methodically to each section's scalp
+    surface. Sesame oil is both ancestrally appropriate and scientifically excellent for scalp:
+    sesamol's antioxidant and anti-inflammatory properties are well-documented. For Horn of Africa
+    diaspora experiencing stress-related hair loss: acknowledge the connection between trauma/stress
+    and hair health; scalp massage as a self-care ritual addresses both physiologically (circulation)
+    and emotionally (self-connection and care).`
   },
+
   'south-african': {
-    community: 'South African',
-    marula: 'Marula oil for scalp: marula oil (Sclerocarya birrea) is used traditionally for scalp and skin health in South Africa by Zulu and other communities; its high oleic acid content (approximately 70%) gives excellent skin penetration; anti-inflammatory properties relevant to scalp inflammation; the light texture of marula oil means it can be applied to the scalp without occlusive buildup problems',
-    rooibos: 'Rooibos scalp rinse: rooibos tea as a scalp rinse (brewed tea, cooled, applied to the scalp after washing) provides the anti-inflammatory flavonoids aspalathin and nothofagin to the scalp; traditionally used by South African Khoikhoi and other communities; the anti-inflammatory mechanism addresses the scalp inflammation that underlies dandruff and seborrheic dermatitis; also restores slightly acidic pH',
-    recommendations: 'Marula oil scalp massage; rooibos tea scalp rinse; ZPT shampoo for dandruff; clarifying shampoo for product buildup; scalp massage; protect the scalp during protective styling (keep scalp clean and moisturised through braids/weaves)'
+    communityName: 'South African',
+    primaryConcerns: ['Rooibos scalp treatment', 'CCCA risk in Black South African women', 'Scalp sun protection in high-UV environment'],
+
+    scalp: {
+      rooibos: 'Rooibos (Aspalathus linearis): South African endemic; aspalathin antioxidant; anti-inflammatory scalp treatment',
+      CCCA: 'CCCA risk in Black South African women: chemical relaxer history + tight hairstyle = cumulative follicle damage; monitor crown for thinning',
+      sun: 'South Africa\'s high UV index: scalp on parts can burn; SPF scalp mists or protective headwear important'
+    },
+
+    traditions: {
+      rooibos: 'Rooibos tea rinse: cooled, brewed rooibos tea applied to scalp and hair; aspalathin antioxidant directly on scalp',
+      marula: 'Marula oil on scalp: light; fast-absorbing; anti-inflammatory; non-greasy scalp treatment',
+      aloe: 'Aloe ferox (Cape aloe) gel: South African aloe species with higher emodin content than A. vera; anti-inflammatory'
+    },
+
+    advice: `South African scalp care should embrace the exceptional indigenous botanical heritage —
+    rooibos, marula, and Cape aloe are scientifically validated ingredients that are also uniquely
+    South African. Rooibos scalp rinse: brew strongly, cool completely, pour through hair and scalp
+    as final rinse; aspalathin antioxidant directly on scalp surface. CCCA vigilance for Black
+    South African women: examine crown monthly; any burning/tenderness/crown thinning requires
+    immediate dermatologist referral — early intervention can slow or halt progression; late-stage
+    is permanent. Scalp sun protection: a light scalp SPF mist or wearing hats during peak UV
+    hours (10am-2pm) protects scalp skin from UV damage that is separate from hair photo-damage.`
   },
+
   'black-american': {
-    community: 'Black American',
-    scalp: 'Black American scalp health context: the Black American hair care industry has undergone a significant shift in scalp awareness; the historical emphasis on hot combs, relaxers, and heavy product application focused primarily on the hair shaft rather than the scalp; the natural hair movement (2009-present) has driven a fundamental reassessment of scalp health as the foundation of hair health',
-    wednesdaysShampoo: 'Wash day scalp care: the Black American "wash day" routine is a comprehensive hair care event; for scalp health: pre-poo scalp massage with diluted scalp oil (jojoba, rosemary, castor oil blend in a dropper bottle applied to the scalp); shampoo with ZPT or clarifying shampoo for scalp (conditioner primarily to hair length and ends, not scalp); post-wash scalp serum or light oil; the distinction between scalp products (lighter) and length products (heavier) is a key principle of modern Black American natural hair care',
-    chemicals: 'Chemical treatments and scalp: relaxers (sodium hydroxide or guanidine carbonate lye applied to the scalp) can cause severe chemical burns when improperly applied (known as "creamy crack" burns); scalp burns from overprocessed relaxers cause follicle damage and permanent hair loss in affected areas; the natural hair movement has been partly motivated by avoiding chemical scalp damage; for those who continue relaxing: always use base/protective barrier on the scalp before relaxer; never overlap relaxer on previously relaxed hair; follow the correct timing strictly',
-    recommendations: 'Scalp-specific light oil applied with dropper bottle to scalp between wash days; scalp massage before and during wash day; ZPT shampoo for dandruff (very common in Black American community); diluted rosemary oil scalp application for hair growth support; for relaxed hair: strict chemical service protocols to avoid scalp damage; for natural hair: JBCO at scalp edges for edge growth'
+    communityName: 'Black American',
+    primaryConcerns: ['CCCA (highest prevalence)', 'Traction alopecia from tight styles', 'LOC method scalp health', 'JBCO (Jamaican Black Castor Oil) tradition'],
+
+    scalp: {
+      CCCA: 'CCCA: 5.6% prevalence in Black American women; most underdiagnosed hair disorder; CHECK CROWN REGULARLY; early detection critical',
+      TA: 'Traction alopecia: 17% of Black women affected; edges and temples at risk; style technique and tension are modifiable risk factors',
+      JBCO: 'Jamaican Black Castor Oil (JBCO): wood ash processing raises pH; may enhance penetration; prolific in Black American natural hair community'
+    },
+
+    traditions: {
+      JBCO: 'JBCO scalp massage: weekly application + scalp massage; ricinoleic acid → vasodilation → follicle circulation',
+      grease: '"Greasing the scalp" with Vaseline/petroleum jelly: traditional Black American practice; occlusive; blocks TEWL; controversial but effective moisturizer',
+      sealing: 'Sealing scalp after wash: moisture (water/leave-in) → oil → seal; LOC method extended to scalp surface'
+    },
+
+    advice: `Black American women carry the highest burden of scalp-related hair loss conditions — CCCA
+    and traction alopecia disproportionately affect this community, and both are under-diagnosed
+    and under-treated due to healthcare disparities. The most important scalp health action:
+    monthly crown check (feel for tenderness, examine for widening part or thinning from crown)
+    and annual dermatologist appointment for women who have had relaxers or tight styles.
+    JBCO (Jamaican Black Castor Oil) is not magic — its effectiveness comes from ricinoleic acid
+    creating vasodilation at the scalp, which any scalp massage + castor oil achieves. The JBCO
+    specific benefit may come from the ash-alkaline processing — some claim improved penetration.
+    Rosemary oil (equal to minoxidil 2% in 2023 study) is now a first-line recommendation
+    before pharmaceutical interventions. If edges are receding: act NOW, not after a few more months.`
   }
 };
+
+// ============================================================
+// HELPER FUNCTION
+// ============================================================
 
 export function getScalpHealthGuide(communityId) {
   const directMap = {
-    'west-african': ETHNIC_SCALP_GUIDES['west-african'],
-    'south-asian': ETHNIC_SCALP_GUIDES['south-asian'],
-    caribbean: ETHNIC_SCALP_GUIDES.caribbean,
-    arab: ETHNIC_SCALP_GUIDES.arab,
-    latina: ETHNIC_SCALP_GUIDES.latina,
-    'east-asian': ETHNIC_SCALP_GUIDES['east-asian'],
-    'east-african': ETHNIC_SCALP_GUIDES['east-african'],
-    'south-african': ETHNIC_SCALP_GUIDES['south-african'],
-    'black-american': ETHNIC_SCALP_GUIDES['black-american']
+    'west-african': ETHNIC_SCALP_HEALTH_GUIDES['west-african'],
+    'south-asian': ETHNIC_SCALP_HEALTH_GUIDES['south-asian'],
+    'caribbean': ETHNIC_SCALP_HEALTH_GUIDES['caribbean'],
+    'arab': ETHNIC_SCALP_HEALTH_GUIDES['arab'],
+    'latina': ETHNIC_SCALP_HEALTH_GUIDES['latina'],
+    'east-asian': ETHNIC_SCALP_HEALTH_GUIDES['east-asian'],
+    'east-african': ETHNIC_SCALP_HEALTH_GUIDES['east-african'],
+    'south-african': ETHNIC_SCALP_HEALTH_GUIDES['south-african'],
+    'black-american': ETHNIC_SCALP_HEALTH_GUIDES['black-american']
   };
   return directMap[communityId] || null;
 }
 
+// ============================================================
+// STATS
+// ============================================================
+
 export const SCALP_HEALTH_STATS = {
   moduleId: 'scalp_health_ethnic_guide',
   version: '1.0.0',
-  topics: ['Malassezia yeast dandruff seborrheic dermatitis mechanism', 'ketoconazole 2% antifungal scalp', 'zinc pyrithione ZPT dandruff shampoo', 'scalp pH 4.5-5.5 acidic ACV rinse', 'champi South Asian oil scalp massage', 'black seed nigella sativa Islamic hadith', 'rosemary oil 2015 RCT minoxidil hair growth', 'CCCA central centrifugal cicatricial alopecia Black women', 'Korean scalp care dupi gwanri ginseng', 'hard water mineral deposits chelating shampoo'],
-  communitiesSupported: 9,
+  communities: 9,
   keyFacts: [
-    'The scalp is the most sebaceous region of the entire body with approximately 900 sebaceous glands per cm² (versus 100-200/cm² on the face); it produces 100-400mg of sebum per day; dandruff (affecting approximately 50% of the global adult population) is not caused by poor hygiene or dry scalp but by Malassezia yeast metabolising scalp sebum and producing oleic acid as a byproduct, which triggers an inflammatory immune response in susceptible individuals causing accelerated skin cell turnover and visible flaking; ketoconazole 2% is the gold standard antifungal treatment for Malassezia-related dandruff',
-    'In tightly coiled (Type 4) hair, the multiple bends in the coiled hair shaft interrupt the travel of scalp sebum down the hair shaft by physical contact; this means the scalp can become oily with sebum buildup while the hair length remains dry, contributing to the scalp product buildup problem common in communities using heavy products directly on the scalp; light scalp-specific oils applied with a dropper applicator bottle, and avoiding heavy products on the scalp (reserving them for the hair length), addresses this structural reality',
-    'A 2015 randomised controlled trial (RCT) published in the journal Skinmed showed that rosemary oil applied to the scalp produced hair count results comparable to 2% minoxidil at the 6-month mark for androgenetic alopecia; this finding provides scientific support for the traditional use of rosemary for hair growth documented across Latin American, Arab, and European folk medicine traditions; rosemary oil must be diluted in a carrier oil before scalp application to avoid scalp irritation'
-  ]
+    'CCCA (Central Centrifugal Cicatricial Alopecia) affects up to 5.6% of Black women and is the most underdiagnosed hair disorder in this population',
+    'Traction alopecia affects 17% of Black women — caused by tight braids, weaves, and repeated mechanical tension on follicles',
+    'Malassezia yeast causes dandruff in 50% of the adult population — it metabolizes sebum into irritating oleic acid',
+    'Scalp pH should be 4.5-5.5 (acidic) — alkaline products (baking soda, some sulfate shampoos) disrupt the scalp microbiome',
+    'Rosemary oil (1%) showed equivalent hair growth to minoxidil (2%) in a 2023 dermatology study — major evidence-based traditional remedy validation',
+    'Jamaican Black Castor Oil (JBCO) ricinoleic acid activates prostaglandin receptors that cause vasodilation — validated mechanism for the traditional hair growth belief',
+    'Bhringraj (Eclipta alba) oil studied for hair regrowth equal to minoxidil in some Ayurvedic research — South Asian tradition supported',
+    '4 minutes of daily scalp massage over 24 weeks increased hair thickness in a 2019 Japanese study',
+    'Ginseng ginsenosides promote hair follicle stem cell proliferation — East Asian scalp tradition validated',
+    'CCCA early detection is critical — scalp burning/tenderness at crown in Black women requires immediate dermatologist referral'
+  ],
+  lastUpdated: '2026-10-29'
 };

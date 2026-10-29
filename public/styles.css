@@ -2728,3 +2728,33 @@ body, p, li, .view-sub, .pillar-desc, .why-card p, .festival-card p, .ingredient
 
 /* .hidden must always win over inline display (fixes full-screen guide drawer blocking clicks) */
 .hidden { display: none !important; }
+
+/* Load polish: hero fades in, no flash of empty layout */
+.hero-banner-img { animation: mirrrFade 0.9s ease-out both; }
+.hero-inner > * { animation: mirrrRise 0.8s ease-out both; }
+.hero-inner > *:nth-child(2) { animation-delay: .12s; }
+.hero-inner > *:nth-child(3) { animation-delay: .24s; }
+.hero-inner > *:nth-child(4) { animation-delay: .36s; }
+@keyframes mirrrFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes mirrrRise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .hero-banner-img, .hero-inner > * { animation: none; } }
+
+/* Nav polish: always-legible bar, single-line links, content clears it */
+.nav { background: rgba(10,10,10,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(212,168,71,0.18); }
+.nav-inner { max-width: 1280px; padding: 0.6rem 1.25rem; align-items: center; }
+.nav-links { gap: 0.1rem; flex-wrap: nowrap; align-items: center; }
+.nav-link { white-space: nowrap; font-size: 0.68rem; letter-spacing: 0.08em; padding: 0.45rem 0.6rem; }
+.nav-logo { white-space: nowrap; display: flex; align-items: center; gap: 0.4rem; }
+body { padding-top: 58px; }
+.hero-communities { margin-top: 1.25rem; font-size: 0.8rem; color: var(--clr-gold, #d4a847); opacity: .85; letter-spacing: .04em; max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+.hero-sub { color: rgba(245,240,232,0.78); }
+@media (max-width: 900px) { .nav-links { overflow-x: auto; scrollbar-width: none; } }
+.hero-banner-wrap { max-height: none; }
+.hero-banner-img { display: block; width: 100%; height: auto; max-height: 440px; object-fit: cover; object-position: center 30%; }
+
+/* Style Match: editorial photo grid */
+.sm-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; padding: 1.25rem; max-width: 1200px; margin: 0 auto; }
+.sm-card { display: flex; flex-direction: column; overflow: hidden; border-radius: 14px; border: 1px solid rgba(212,168,71,0.18); transition: transform .25s, border-color .25s; }
+.sm-card:hover { transform: translateY(-3px); border-color: rgba(212,168,71,0.5); }
+.sm-photo { aspect-ratio: 4/5; background: linear-gradient(135deg,#2a1a2e,#4a2040,#1a0a1e); overflow: hidden; }
+.sm-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; }

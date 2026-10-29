@@ -1625,3 +1625,66 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+/* ── Quiz style picker card ── */
+.quiz-style-card {
+  max-width: 720px;
+  margin: 0 auto 1.75rem;
+}
+.quiz-card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── My MIRRR Profile share card ── */
+.share-card-wrap {
+  max-width: 480px;
+  margin: 2rem auto 1rem;
+}
+.share-card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Community icons in DNA result ── */
+.dna-community-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--clr-gold);
+  margin: 0 auto 0.75rem;
+  display: block;
+  box-shadow: 0 0 20px rgba(212,168,71,0.3);
+}
+.dna-runner-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+  margin-right: 0.25rem;
+  border: 1px solid var(--clr-gold);
+}
+
+/* ── Community icon in taste results ── */
+.taste-community-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.taste-com-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0;
+  flex-shrink: 0;
+}
+.taste-com-label {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--clr-gold);
+  letter-spacing: 0.04em;
+}

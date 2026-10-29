@@ -254,13 +254,21 @@ function renderQuizResult(result) {
 
   const seed = result.seedAesthetic ?? {};
 
+  const topComImg = topComId ? COMMUNITY_IMAGES[topComId] : null;
+  const runnerComImg = runnerUpId ? COMMUNITY_IMAGES[runnerUpId] : null;
+
   resultEl.innerHTML = `
     <div class="dna-result card">
       <div class="dna-hero">
-        <div class="dna-emoji">${topCom?.emoji ?? '🌍'}</div>
+        ${topComImg
+          ? `<img src="${topComImg}" alt="${topCom?.label ?? 'Community'}" class="dna-community-icon" />`
+          : `<div class="dna-emoji">${topCom?.emoji ?? '🌍'}</div>`}
         <h2 class="dna-title">${topCom?.label ?? 'Your Community'}</h2>
         ${topCom?.subLabel ? `<p class="dna-sub">${topCom.subLabel}</p>` : ''}
-        ${runnerCom ? `<p class="dna-runner">With a touch of ${runnerCom.emoji} ${runnerCom.label}</p>` : ''}
+        ${runnerCom ? `<p class="dna-runner">
+          ${runnerComImg ? `<img src="${runnerComImg}" alt="${runnerCom.label}" class="dna-runner-icon" />` : runnerCom.emoji}
+          With a touch of ${runnerCom.label}
+        </p>` : ''}
       </div>
 
       <div class="aesthetic-bars">
@@ -448,7 +456,13 @@ function renderTasteResults(result) {
   // Aesthetic bars
   const aesEl = document.getElementById('tasteAesthetic');
   if (aesEl && aesthetic) {
+    const tasteComImg = state.communityId ? COMMUNITY_IMAGES[state.communityId] : null;
+    const tasteComData = state.communities.find(c => c.id === state.communityId);
     aesEl.innerHTML = `
+      ${tasteComImg ? `<div class="taste-community-row">
+        <img src="${tasteComImg}" alt="${tasteComData?.label ?? 'Community'}" class="dna-community-icon taste-com-icon" />
+        <span class="taste-com-label">${tasteComData?.label ?? ''}</span>
+      </div>` : ''}
       <h3 class="bars-title">Your Aesthetic Profile</h3>
       ${renderAestheticBar('Intensity', aesthetic.intensity)}
       ${renderAestheticBar('Warmth', aesthetic.warmth)}
@@ -489,6 +503,25 @@ function renderTasteResults(result) {
 
   document.getElementById('tasteResults')?.classList.remove('hidden');
 }
+
+// Community portrait icons — mapped by community slug
+const COMMUNITY_IMAGES = {
+  'black-american':    'community-black-american.png',
+  'east-african':      'community-east-african.png',
+  'north-african':     'community-north-african.png',
+  'south-african':     'community-south-african.png',
+  'west-african':      'community-west-african.png',
+  'arab':              'community-arab.png',
+  'caribbean':         'community-caribbean.png',
+  'central-asian':     'community-central-asian.png',
+  'east-asian':        'community-east-asian.png',
+  'indigenous':        'community-indigenous.png',
+  'latina':            'community-latina.png',
+  'mixed':             'community-mixed.png',
+  'pacific-islander':  'community-pacific-islander.png',
+  'south-asian':       'community-south-asian.png',
+  'southeast-asian':   'community-southeast-asian.png',
+};
 
 // Editorial look images — mapped by look ID
 const LOOK_IMAGES = {

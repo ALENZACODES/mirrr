@@ -1,6 +1,29 @@
 // Studio photo plates present in public/studio/ (AI-generated photos; disclosed in the README).
 // Rebuilt whenever a batch lands; a studio with no entry keeps its drawing.
 window.STUDIO_PHOTOS = {
+ "body": {
+  "body-arms": {
+   "src": "/studio/body/body-arms.webp"
+  },
+  "body-face": {
+   "src": "/studio/body/body-face.webp"
+  },
+  "body-legs": {
+   "src": "/studio/body/body-legs.webp"
+  },
+  "body-underarms": {
+   "src": "/studio/body/body-underarms.webp"
+  },
+  "xsec-coily": {
+   "src": "/studio/body/xsec-coily.webp"
+  },
+  "xsec-curly": {
+   "src": "/studio/body/xsec-curly.webp"
+  },
+  "xsec-straight": {
+   "src": "/studio/body/xsec-straight.webp"
+  }
+ },
  "bridal": {
   "bantu-knot-out": {
    "src": "/studio/bridal/bantu-knot-out.webp"
@@ -80,6 +103,20 @@ window.STUDIO_PHOTOS = {
   },
   "t3": {
    "src": "/studio/bump/t3.webp"
+  }
+ },
+ "calm": {
+  "calm": {
+   "src": "/studio/calm/calm.webp"
+  },
+  "connection": {
+   "src": "/studio/calm/connection.webp"
+  },
+  "image": {
+   "src": "/studio/calm/image.webp"
+  },
+  "shedding": {
+   "src": "/studio/calm/shedding.webp"
   }
  },
  "face": {

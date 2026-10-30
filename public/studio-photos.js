@@ -158,8 +158,23 @@ window.STUDIO_PHOTOS = {
   "amapiano_silver": {
    "src": "/studio/hair/amapiano_silver.webp"
   },
+  "black_to_blue": {
+   "src": "/studio/hair/black_to_blue.webp"
+  },
+  "black_to_burgundy": {
+   "src": "/studio/hair/black_to_burgundy.webp"
+  },
+  "black_to_caramel": {
+   "src": "/studio/hair/black_to_caramel.webp"
+  },
   "blue_black": {
    "src": "/studio/hair/blue_black.webp"
+  },
+  "brown_to_honey": {
+   "src": "/studio/hair/brown_to_honey.webp"
+  },
+  "brown_to_red": {
+   "src": "/studio/hair/brown_to_red.webp"
   },
   "butterscotch": {
    "src": "/studio/hair/butterscotch.webp"
@@ -184,6 +199,9 @@ window.STUDIO_PHOTOS = {
   },
   "dark_chocolate": {
    "src": "/studio/hair/dark_chocolate.webp"
+  },
+  "dark_to_purple": {
+   "src": "/studio/hair/dark_to_purple.webp"
   },
   "diwali_gold": {
    "src": "/studio/hair/diwali_gold.webp"
@@ -212,14 +230,23 @@ window.STUDIO_PHOTOS = {
   "hazel_brown": {
    "src": "/studio/hair/hazel_brown.webp"
   },
+  "henna_red": {
+   "src": "/studio/hair/henna_red.webp"
+  },
   "honey_blonde": {
    "src": "/studio/hair/honey_blonde.webp"
   },
   "hot_pink": {
    "src": "/studio/hair/hot_pink.webp"
   },
+  "indigo_blue": {
+   "src": "/studio/hair/indigo_blue.webp"
+  },
   "jet_black": {
    "src": "/studio/hair/jet_black.webp"
+  },
+  "kente_gold": {
+   "src": "/studio/hair/kente_gold.webp"
   },
   "lavender": {
    "src": "/studio/hair/lavender.webp"
@@ -259,6 +286,9 @@ window.STUDIO_PHOTOS = {
   },
   "purple_plum": {
    "src": "/studio/hair/purple_plum.webp"
+  },
+  "saffron_yellow": {
+   "src": "/studio/hair/saffron_yellow.webp"
   },
   "silver_grey": {
    "src": "/studio/hair/silver_grey.webp"

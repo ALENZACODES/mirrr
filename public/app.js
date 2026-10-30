@@ -104,7 +104,7 @@ function populateCommunitySelects() {
     state.communities.forEach(c => {
       const opt = document.createElement('option');
       opt.value = c.id;
-      opt.textContent = c.label;
+      opt.textContent = String(c.label).replace(/^[^\p{L}\p{N}]+/u, '');
       sel.appendChild(opt);
     });
   });

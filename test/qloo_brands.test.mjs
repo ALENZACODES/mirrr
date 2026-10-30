@@ -33,3 +33,19 @@ test('brand filter does not pass cars, drinks or lifestyle tags as beauty', () =
   ]).map(b => b.name);
   assert.deepEqual(kept, ['MAC', 'SKIMS', 'Glossy Nails Bar']);
 });
+
+test('loose style tags on drinks, apps, electronics and clubs do not make them beauty brands (live Burna Boy case)', () => {
+  const kept = beautyBrands([
+    { name: 'Nike', tags: ['Nike', 'Fashion', 'Sportswear brands'] },
+    { name: 'Beats Electronics', tags: ['Headphones', 'Electronics', 'Streetwear Culture'] },
+    { name: 'Adidas', tags: ['Sneakers', 'Footwear', 'Fashion'] },
+    { name: 'Ebay', tags: ['E Commerce App', 'Retail', 'Fashion Apparel'] },
+    { name: 'Real Madrid CF', tags: ['Soccer', 'Sports Organization', 'streetwear'] },
+    { name: 'Instagram', tags: ['Mobile App', 'Software', 'Fashion-Forward Living'] },
+    { name: 'Sprite', tags: ['Food & Beverage', 'Carbonated', 'Streetwear'] },
+    { name: 'Fenty Beauty', tags: ['Music'] },
+  ]);
+  assert.deepEqual(kept.map(b => b.name), ['Nike', 'Adidas', 'Fenty Beauty']);
+  assert.equal(kept[0].why, 'Qloo tag: Fashion');
+  assert.equal(kept[2].why, 'brand name');
+});

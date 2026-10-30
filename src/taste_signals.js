@@ -36,9 +36,17 @@ const VOCAB_RE = VOCAB.map(k => [k, new RegExp(`(^|[^a-z0-9])${esc(k)}($|[^a-z0-
 /** Vocabulary words found in a tag as whole words ('supernatural' is not 'natural'). */
 export function vocabMatch(name) { const n = norm(name); return VOCAB_RE.filter(([, re]) => re.test(n)).map(([k]) => k); }
 
-/** Beauty and fashion words, matched against a brand's name and the tags Qloo gives it. */
-// Whole-word starts only, and no 'luxury', 'lifestyle' or 'accessories' (they also tag cars, hotels and phones).
-const BEAUTY_BRAND_RE = /(^|[^a-z])(beauty|cosmetic|make ?up|skin ?care|skincare|fragrance|perfume|parfum|lipstick|nail polish|nails|hair ?care|salon|fashion|apparel|clothing|jewel|footwear|sneaker|handbag|couture|lingerie|streetwear|designer clothing)/i;
+/**
+ * Qloo gives each brand many tags, some of them loose style words ('Streetwear Culture' on a football
+ * club, 'Fashion-Forward Living' on a social app). So a brand counts as beauty or fashion only when a
+ * whole tag is a beauty or fashion category, and no tag puts it in another industry (drinks, apps,
+ * electronics, sport clubs, shops). Seen live on Oct 30, 2026 for Burna Boy: Sprite, Instagram, eBay,
+ * Beats and Real Madrid passed a loose word match; this rule keeps Nike and Adidas and drops those.
+ */
+const BEAUTY_CATEGORY_RE = /^(health (&|and) beauty|beauty|beauty products?|cosmetics?|make ?up|skin ?care|perfumes?|fragrances?|hair ?care|hair products?|nail polish|nails|(nail |hair |beauty )?salons?|fashion|fashion apparel|apparel|clothing|footwear|shoes|sneakers|handbags|jewel(le)?ry|lingerie|luxury fashion|haute couture|streetwear|sportswear( brands)?|(clothing|cosmetics|fashion|apparel|footwear|jewelry|jewellery|perfume|personal care) (companies|brands)\b.*|.*\b(cosmetics|fashion|clothing|apparel|footwear|beauty|skincare|perfume) brands)$/i;
+const OTHER_INDUSTRY_RE = /(food (&|and) beverage|beverage|drinks?$|carbonated|soft drink|mobile app|software|social network|electronics|headphones|consumer electronics|soccer|football club|sports (organi[sz]ation|team|club)|e ?commerce|online marketplace|retail(er)?$|supermarket|automotive|car manufacturer|restaurant|fast food|airline|bank|video game|streaming|telecom|\bmen'?s grooming|barber|shaving)/i;
+/** Kept so name-only matches (no useful Qloo tags) still work for unmistakable beauty and fashion houses. */
+const BEAUTY_BRAND_RE = /(^|[^a-z])(beauty|cosmetics?|make ?up|skin ?care|fragrance|parfum|lipstick)/i;
 const KNOWN_BEAUTY = /(^|[^a-z])(fenty|savage x|rare beauty|huda|pat mcgrath|mac cosmetics|^mac$|sephora|ulta|glossier|nyx|maybelline|l'or[eé]al|lanc[oô]me|dior|chanel|gucci|prada|versace|balenciaga|louis vuitton|yves saint laurent|ysl|givenchy|valentino|fendi|burberry|tom ford|kylie|kkw|skims|charlotte tilbury|nars|benefit|clinique|est[eé]e lauder|bobbi brown|urban decay|too faced|anastasia|morphe|elf|e\.l\.f|uoma|danessa|juvia|bread beauty|pattern|mielle|shea moisture|sheamoisture|cantu|carol's daughter|sol de janeiro|laneige|innisfree|sulwhasoo|amorepacific|shiseido|kiko|zara|h&m|nike|adidas|puma|jordan|off-white|supreme|fashion nova|pretty little thing|shein|fila|reebok)($|[^a-z])/i;
 /** Keep only brands that are about beauty or fashion, by Qloo's own tags or by name. */
 export function beautyBrands(brands = []) {
@@ -46,8 +54,11 @@ export function beautyBrands(brands = []) {
   const out = [];
   for (const b of brands) {
     const k = norm(b.name); if (!k || seen.has(k) || isBlocked(k)) continue; seen.add(k);
-    const tag = (b.tags ?? []).find(t => BEAUTY_BRAND_RE.test(t));
-    const why = tag ? `Qloo tag: ${tag}` : (BEAUTY_BRAND_RE.test(b.name) || KNOWN_BEAUTY.test(b.name)) ? 'brand name' : null;
+    const tags = b.tags ?? [];
+    const byName = BEAUTY_BRAND_RE.test(b.name) || KNOWN_BEAUTY.test(b.name);
+    if (!byName && tags.some(t => OTHER_INDUSTRY_RE.test(t))) continue;
+    const tag = tags.find(t => BEAUTY_CATEGORY_RE.test(t.trim()));
+    const why = tag ? `Qloo tag: ${tag}` : byName ? 'brand name' : null;
     if (why) out.push({ ...b, why });
   }
   return out;

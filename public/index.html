@@ -370,6 +370,7 @@
             <button class="nav-link" data-view="ageing" role="menuitem">Ageing Studio</button>
             <button class="nav-link" data-view="hair-removal" role="menuitem">Hair Removal</button>
             <button class="nav-link" data-view="smile" role="menuitem">Smile &amp; Lip Care</button>
+            <button class="nav-link" data-view="night" role="menuitem">Night Routine</button>
             <button class="nav-link" data-view="style-match" role="menuitem">Style Match</button>
             <button class="nav-link" data-view="quiz" role="menuitem">DNA Quiz</button>
             <button class="nav-link" data-view="wig" role="menuitem">Wig Match</button>
@@ -1201,6 +1202,20 @@
       </div>
     </section>
 
+    <section id="view-night" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Night Routine</h2>
+        <p class="view-sub">Tonight's skincare in the right order, how to protect your hair while you sleep, what your sleep position and hours do to your skin, and the night traditions of your community.</p>
+      </div>
+      <div class="st-wrap">
+        <div id="ntControls" class="st-controls"></div>
+        <div id="ntPreview" class="sk-preview cx-preview" aria-live="polite"></div>
+        <div id="ntSummary" class="hl-summary"></div>
+        <div id="ntPlan" class="st-plan"></div>
+        <p class="lib-disclaimer">The sleeper is an illustration in the Monk Skin Tone Scale tone you pick (Ellis Monk / Google, CC BY 4.0), not your photo. General care, not medical advice: talk to a doctor about ongoing poor sleep, loud snoring or sleep supplements. Hair, skin type and Fitzpatrick type are yours to choose; nothing is assumed from your community.</p>
+      </div>
+    </section>
+
     <section id="view-help" class="view hidden">
       <div class="view-header">
         <h2 class="view-title">Help, Privacy &amp; About</h2>
@@ -1369,6 +1384,7 @@
   <script src="ageing.js" defer></script>
   <script src="hairremoval.js" defer></script>
   <script src="smile.js" defer></script>
+  <script src="night.js" defer></script>
   <script>
     // Community detail panel interactions
     (function() {

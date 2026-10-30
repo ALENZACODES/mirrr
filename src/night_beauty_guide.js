@@ -93,7 +93,7 @@ export const PM_SKINCARE_ROUTINE = {
 
 export const SLUGGING_GUIDE = {
   origin: 'Slugging gets its name from the slug-like shiny appearance of the skin after application of a thick occlusive. The technique was long practised in Black and Caribbean communities — applying Vaseline as an overnight treatment on the face and lips — before it went mainstream via Korean beauty influencers and Reddit skincare communities around 2020-2021.',
-  what_it_is: 'Applying a thin layer of petrolatum-based product (Vaseline/petroleum jelly, Aquaphor) as the very last step in your PM routine. Petrolatum is one of the most effective occlusives known — it reduces TEWL by up to 98%, essentially creating a seal over the skin surface.',
+  
   science: {
     petrolatum: 'Petroleum jelly (petrolatum) is an inert mixture of mineral oil and wax. It does NOT penetrate the skin or add water. What it does is create an impermeable barrier on the skin surface that prevents water from evaporating. Your own skin\'s moisture is locked in.',
     barrier_repair: 'Slugging is particularly beneficial for damaged or compromised skin barriers. When the barrier is impaired (ceramide depletion from over-exfoliation, harsh cleansers, retinoid irritation), slugging provides immediate protection while the skin rebuilds.',
@@ -221,7 +221,7 @@ export const ETHNIC_NIGHTTIME_BEAUTY = {
   },
   south_african: {
     community: 'South African',
-    traditions: 'Marula oil applied overnight. Traditional body oiling before sleep. Silk or satin bonnet traditions common to all Sub-Saharan African communities.',
+    traditions: 'Marula oil applied overnight. Traditional body oiling before sleep. Silk or satin bonnets are widely used.',
   },
   latina: {
     community: 'Latina',
@@ -246,9 +246,3 @@ export function getEthnicNighttimeBeauty(communityId) {
   return ETHNIC_NIGHTTIME_BEAUTY[key] || Object.values(ETHNIC_NIGHTTIME_BEAUTY);
 }
 
-export const NIGHT_BEAUTY_STATS = {
-  pmSteps: PM_SKINCARE_ROUTINE.steps.length,
-  overnightTreatments: Object.keys(OVERNIGHT_TREATMENTS).length,
-  ethnicCommunities: Object.keys(ETHNIC_NIGHTTIME_BEAUTY).length,
-  sleepPositions: Object.keys(SLEEP_POSITION_GUIDE).length,
-};

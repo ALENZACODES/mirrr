@@ -114,7 +114,7 @@ export const ETHNIC_SKIN_BARRIER_GUIDES = {
     ],
     barrierFoods: [
       { food: 'Coconut Water', benefit: 'Electrolytes for cellular hydration. Well-hydrated cells support barrier function.' },
-      { food: 'Sea Moss', benefit: 'The 92 minerals provide multiple cofactors for barrier enzyme activity, including zinc and magnesium.' },
+      { food: 'Sea Moss', benefit: 'Its minerals provide multiple cofactors for barrier enzyme activity, including zinc and magnesium.' },
       { food: 'Papaya', benefit: 'Beta-carotene (pro-vitamin A) for barrier gene expression. Vitamin C for collagen.' },
     ],
   },

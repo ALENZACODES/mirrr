@@ -9,7 +9,7 @@
 export const SKIN_AGING_SCIENCE = {
   intrinsic_aging: {
     term: 'Intrinsic Aging (Chronological)',
-    definition: 'Natural, genetically programmed aging that affects all skin regardless of environmental exposure. Begins in early 20s — collagen production decreases by approximately 1% per year from age 25.',
+    
     processes: [
       'Collagen production decreases — skin loses firmness and structure',
       'Elastin degrades — skin loses elasticity and "snap-back"',
@@ -35,7 +35,7 @@ export const SKIN_AGING_SCIENCE = {
   menopause_skin: {
     hormonal_changes: 'Oestrogen decline (perimenopause 40s → menopause typically 51 average) dramatically accelerates skin aging. Oestrogen is critical for collagen synthesis, skin hydration, and barrier function.',
     menopause_skin_changes: [
-      'Rapid collagen loss — 30% lost in first 5 years of menopause',
+      'Rapid collagen loss in the first years of menopause',
       'Dramatic dryness and loss of plumpness',
       'Increased sensitivity and redness',
       'Hot flashes affecting skin temperature and hydration',
@@ -46,7 +46,7 @@ export const SKIN_AGING_SCIENCE = {
     ethnic_menopausal: {
       darker_skin: 'Oestrogen loss can intensify hyperpigmentation and melasma in Fitzpatrick III-VI. Paradoxically, many dark-skinned women find hyperpigmentation WORSENS in perimenopause/menopause.',
       south_asian: 'Vitamin D3 supplementation important — darker skin produces less vitamin D from UV; postmenopausal bone health (collagen and bone matrix both estrogen-dependent).',
-      black_american: 'Research shows Black American women on average enter menopause 8.5 months earlier than white women; hot flashes more frequent; should discuss this with physicians.',
+      
     },
   },
 };
@@ -231,7 +231,7 @@ export const NON_SURGICAL_TREATMENTS = {
       superficial: 'Glycolic acid 10-30% or lactic acid peels. Safe for most skin tones with correct protocol. Brightening; texture improvement.',
       medium: 'TCA (trichloroacetic acid) 20-35%. Significant downtime. Moderate PIH risk for Fitzpatrick III-VI — must be done by expert in ethnic skin.',
       deep: 'Phenol peels. HIGHEST PIH risk; permanently lightens skin; not recommended for Fitzpatrick III-VI.',
-      ethnic_note: 'For darker skin tones: superficial peels only unless working with an expert in ethnic skin chemistry. Preparation with hydroquinone or azelaic acid for 4-6 weeks before peeling reduces PIH risk.',
+      
     },
     microdermabrasion: {
       name: 'Microdermabrasion',
@@ -245,55 +245,46 @@ export const NON_SURGICAL_TREATMENTS = {
 
 export const ETHNIC_AGING_PATTERNS = {
   west_african: {
-    aging_strengths: 'High melanin concentration provides UV protection; wrinkles appear significantly later. Often appear 10-15 years younger than chronological age through 40s-50s.',
     unique_concerns: 'PIH remains primary concern at any age; eczema and keloid tendency continues with age; hairline recession in women (traction alopecia from lifetime of styling).',
     traditional_anti_aging: 'Shea butter as primary facial moisturiser (excellent ceramide-like composition); palm kernel oil; African black soap for cleansing.',
     recommended: 'Niacinamide for longstanding PIH; vitamin C; SPF 30 even for darker skin; moisturising routine becomes richer with age.',
   },
   south_asian: {
-    aging_strengths: 'Fitzpatrick III-IV tends to age later than Fitzpatrick I-II. Traditional Ayurvedic practices (oil massage, turmeric, neem) have legitimate skin benefits.',
-    unique_concerns: 'Melasma particularly prevalent in South Asian women (oestrogen sensitivity + UV); PIH from any skin trauma; facial hair (hirsutism) common in perimenopause.',
+    unique_concerns: 'Melasma (hormones + UV) is common on medium-to-deep skin; PIH from any skin trauma; facial hair (hirsutism) common in perimenopause.',
     traditional_anti_aging: 'Turmeric face packs (haldi); sandalwood powder (chandan); rose water; sesame oil massage; bakuchiol (from bakuchi plant — natural retinol alternative).',
     recommended: 'Azelaic acid and tranexamic acid for melasma; rigorous SPF; gentle retinol or bakuchiol; vitamin C morning.',
   },
   caribbean: {
-    aging_strengths: 'Diverse skin tones; those with higher melanin benefit from photoprotection. Caribbean beauty traditions emphasise hydration and natural products.',
     unique_concerns: 'PIH in darker skin tones; possible sun-damaged lighter skin tones; hair porosity challenges with age.',
     traditional_anti_aging: 'Coconut oil (body); aloe vera (cooling, healing); castor oil (hair and eyebrows); black pepper and turmeric in cooking for anti-inflammatory benefits.',
     recommended: 'Consistent SPF 30-50; hyaluronic acid + ceramide moisturiser; retinoid as tolerated; eye cream with peptides.',
   },
   arab: {
-    aging_strengths: 'Olive skin tones (Fitzpatrick II-IV) often age gracefully with less wrinkling than very fair skin.',
-    unique_concerns: 'Melasma common (common in Mediterranean/Middle Eastern skin); sun damage in very sunny climates; facial hair; undereye pigmentation.',
+    unique_concerns: 'Melasma on medium skin; sun damage in very sunny climates; facial hair; undereye pigmentation.',
     traditional_anti_aging: 'Argan oil (Moroccan "liquid gold") — excellent anti-aging oil; rose water toning; kohl/kajal eye tradition (antimicrobial properties claimed); hammam exfoliation.',
     recommended: 'Argan oil as face oil at night; tranexamic acid for melasma; niacinamide; retinol; vitamin C.',
   },
   latina: {
-    aging_strengths: 'Wide range of Fitzpatrick types across Latina communities — mestizo complexions (Fitzpatrick III-IV) often maintain youthful appearance into 50s+.',
     unique_concerns: 'Melasma ("mask of pregnancy" and hormonal melasma); PIH in darker skin; uneven skin tone accumulated from UV exposure.',
     traditional_anti_aging: 'Aloe vera (sábila); avocado oil; jojoba; chamomile (manzanilla) for sensitive skin; rice water (agua de arroz).',
     recommended: 'Tranexamic acid + niacinamide combo for melasma; ceramide moisturiser; retinol; SPF 50.',
   },
   east_asian: {
-    aging_strengths: 'Japanese women consistently rank among the longest-lived and often most youthful-looking women globally. Glass skin philosophy encompasses lifestyle as well as skincare.',
     unique_concerns: 'Hyperpigmentation (liver spots/age spots); sagging due to rounder face shape losing scaffolding (particularly in Korean women who may choose buccal fat pad removal — worth reconsidering at 40+ as it causes premature hollowing with age).',
     traditional_anti_aging: 'Fermented skincare (sake yeast, fermented soybean/doenjang); camellia oil; rice bran; green tea extract; seaweed; Kobido facial massage.',
     recommended: 'Galactomyces (Pitera); fermented ingredients; 10-step Korean skincare with essence step; retinol; SPF obsession; facial massage.',
   },
   east_african: {
-    aging_strengths: 'Deep melanin provides significant UV protection; Fitzpatrick V-VI rarely shows wrinkles in 40s.',
     unique_concerns: 'Keloid scarring tendency; PIH; hair fragility with age; traditional practices like scarification and skin lightening (highly discouraged).',
-    traditional_anti_aging: 'Frankincense oil (boswellia) — proven anti-inflammatory, wound healing; myrrh; shea butter; Ethiopian honey (tested for antimicrobial properties).',
+    traditional_anti_aging: 'Frankincense oil (boswellia) — traditionally used for inflammation and wound care; myrrh; shea butter; Ethiopian honey (tested for antimicrobial properties).',
     recommended: 'Frankincense oil at night; shea butter; niacinamide; azelaic acid for PIH; SPF (especially higher elevations in East Africa have intense UV).',
   },
   south_african: {
-    aging_strengths: 'Diverse nation — Zulu, Xhosa, Cape Malay, Afrikaner, and many more. Darker skinned communities share UV advantages of high melanin.',
     unique_concerns: 'PIH; harsh beauty product legacy (traditional skin lightening products with illegal mercury were common — health crisis); transitioning to safe products.',
     traditional_anti_aging: 'Rooibos (red bush) tea — powerful antioxidant; applied topically or consumed; marula oil — beauty secret; baobab oil.',
     recommended: 'Marula oil as primary face oil (South African origin!); rooibos extract; niacinamide; SPF; gentle retinol.',
   },
   black_american: {
-    aging_strengths: '"Black don\'t crack" — high melanin concentration in Fitzpatrick V-VI provides natural UV protection; wrinkles appear 10-20 years later than in fair skin.',
     unique_concerns: 'PIH remains primary concern at all ages; moisturising hair routinely throughout life; protective style legacy maintaining hair health; dermatology access disparities.',
     traditional_anti_aging: 'Vaseline as occlusive (hugely culturally embedded — and scientifically sound); castor oil for hair; coconut oil for body.',
     recommended: 'Ceramide and niacinamide; SPF 30 (minimal — the argument that dark skin doesn\'t need it is FALSE); retinol; vitamin C for brightening; dermatologist check for skin cancer despite belief it\'s not a risk.',
@@ -332,15 +323,15 @@ export const MATURE_HAIR_GUIDE = {
       spironolactone: 'Spironolactone — anti-androgen; often prescribed for female pattern hair loss; requires prescription.',
       nutrition: 'Iron (ferritin > 70), vitamin D, biotin (if actually deficient), omega-3s. Blood test before supplementing.',
     },
-    ethnic_note: 'Traction alopecia from lifetime of tight hairstyling is particularly common in Black and African hair communities. The hairline recession is often irreversible once follicles are permanently damaged. Protective styles need to be truly protective (not tight) to prevent this.',
   },
 };
 
 // ─── API ──────────────────────────────────────────────────────────────────────
 
 export function getDecadeGuide(decade) {
-  const guides = { 40: FORTIES_GUIDE, 50: FIFTIES_GUIDE, 60: SIXTIES_PLUS_GUIDE };
-  return guides[parseInt(decade)] || null;
+  const named = { forties: FORTIES_GUIDE, fifties: FIFTIES_GUIDE, sixties: SIXTIES_PLUS_GUIDE };
+  const byNumber = { 40: FORTIES_GUIDE, 50: FIFTIES_GUIDE, 60: SIXTIES_PLUS_GUIDE };
+  return named[decade] || byNumber[parseInt(decade)] || null;
 }
 
 export function getSkinAgingScience() { return SKIN_AGING_SCIENCE; }
@@ -352,8 +343,3 @@ export function getEthnicAgingGuide(communityId) {
   return ETHNIC_AGING_PATTERNS[key] || Object.values(ETHNIC_AGING_PATTERNS);
 }
 
-export const MATURE_BEAUTY_STATS = {
-  decadeGuides: 3,
-  ethnicCommunities: 9,
-  treatmentCategories: Object.keys(NON_SURGICAL_TREATMENTS).length,
-};

@@ -103,6 +103,13 @@ import * as fragranceAtlas from '../fragrance_atlas.js';
 import * as fragranceCommunitiesGuide from '../fragrance_communities_guide.js';
 import * as fragranceEthnicGuide from '../fragrance_ethnic_guide.js';
 import * as fragranceGuideEthnic from '../fragrance_guide_ethnic.js';
+import * as agingSkinEthnicGuide from '../aging_skin_ethnic_guide.js';
+import * as agingGracefullyEthnicGuide from '../aging_gracefully_ethnic_guide.js';
+import * as antiAgingEthnic from '../anti_aging_ethnic.js';
+import * as matureBeautyGuide from '../mature_beauty_guide.js';
+import * as skincareRoutinesByAge from '../skincare_routines_by_age.js';
+import * as collagenGuide from '../collagen_guide.js';
+import * as menopauseBeauty from '../menopause_beauty.js';
 
 export const SHELVES = [
   { id: 'rituals', title: 'Rituals & Heritage', blurb: 'Haldi, hammam, shea, mehndi, bathhouse and festival traditions, with the steps to do them at home.' },
@@ -113,6 +120,7 @@ export const SHELVES = [
   { id: 'complexion', title: 'Makeup: Correct, Base & Sculpt', blurb: 'Colour correcting for your depth, foundation formulas and finishes, primer and powder without flashback, contour, blush and highlight, tools and removal.' },
   { id: 'colour', title: 'Colour & Lips', blurb: 'Undertones and colour formulas, lip colour for your depth and undertone, finishes, liner and ombre, lip care for dryness and darkening, and the brands and traditions behind them.' },
   { id: 'nails', title: 'Nails & Fragrance', blurb: 'Nail colour for your depth and undertone, shapes, finishes, gel, acrylic and press-ons with safe removal, dark streaks to watch, and fragrance families, concentrations, layering, attar and oud.' },
+  { id: 'ageing', title: 'Ageing, Collagen & Menopause', blurb: 'What changes in each decade, retinoids at a pace your depth can take, collagen habits, in-clinic treatments that are safe for deeper skin, perimenopause and menopause care, and ageing traditions.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -217,4 +225,11 @@ export const GUIDES = [
   ['fragrance_communities_guide', 'nails', 'Attar, Oud, Rose, Sandalwood and Musk', fragranceCommunitiesGuide],
   ['fragrance_ethnic_guide', 'nails', 'Fragrance by Community', fragranceEthnicGuide],
   ['fragrance_guide_ethnic', 'nails', 'Fragrance Science and Traditional Scents', fragranceGuideEthnic],
+  ['aging_skin_ethnic_guide', 'ageing', 'Skin Ageing: Science, Decades and Traditions', agingSkinEthnicGuide],
+  ['aging_gracefully_ethnic_guide', 'ageing', 'Ageing Gracefully: Attitudes and Routines', agingGracefullyEthnicGuide],
+  ['anti_aging_ethnic', 'ageing', 'Longevity Protocols and Ingredients', antiAgingEthnic],
+  ['mature_beauty_guide', 'ageing', 'Beauty in Your 40s, 50s and 60s+', matureBeautyGuide],
+  ['skincare_routines_by_age', 'ageing', 'Skincare Routines from Teens to 50s+', skincareRoutinesByAge],
+  ['collagen_guide', 'ageing', 'Collagen: Types, Loss, Topicals and Supplements', collagenGuide],
+  ['menopause_beauty', 'ageing', 'Menopause: Skin, Hair and Hormone Therapy', menopauseBeauty],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

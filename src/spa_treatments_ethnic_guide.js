@@ -168,7 +168,7 @@ const CARIBBEAN_SPA = {
       name: 'Sea Moss Wrap',
       origin: 'Jamaica, Trinidad, Barbados',
       duration: '45 minutes',
-      description: `Irish moss (Gracilaria or Chondrus crispus) — known as sea moss in the Caribbean — grows in tide pools along the rocky Caribbean coastline. Harvested, sun-dried, and rehydrated, sea moss creates a viscous gel containing 92 of the 102 minerals that compose the human body. When applied as a body wrap, the gel is spread over the entire body, which is then wrapped in warm linen. The carrageenan compounds in the gel form a film over the skin that draws out toxins while depositing minerals. Sea moss is particularly rich in iodine (thyroid function), potassium chloride (respiratory support), and zinc (immune function). The wrap is left on for 30 minutes; as the wrap is removed, the skin feels silky and visibly clearer.`,
+      description: `Irish moss (Gracilaria or Chondrus crispus) — known as sea moss in the Caribbean — grows in tide pools along the rocky Caribbean coastline. Harvested, sun-dried, and rehydrated, sea moss creates a viscous gel that contains minerals such as iodine and potassium. When applied as a body wrap, the gel is spread over the entire body, which is then wrapped in warm linen. The carrageenan compounds in the gel form a film over the skin that holds in moisture. Sea moss is particularly rich in iodine (thyroid function), potassium chloride (respiratory support), and zinc (immune function). The wrap is left on for 30 minutes; as the wrap is removed, the skin feels silky and visibly clearer.`,
       keyIngredients: ['rehydrated sea moss gel', 'lime juice', 'aloe vera', 'warm linen wraps'],
       benefits: ['Mineral supplementation via skin', 'Skin smoothing', 'Thyroid support', 'Anti-inflammatory'],
       culturalNote: `In Jamaica, sea moss drink (sea moss blended with milk, cinnamon, and vanilla) is a traditional health tonic. The phrase "drink your sea moss" is the Caribbean grandmother's answer to nearly every complaint of weakness, immunity issues, or sexual dysfunction. Dr. Sebi, the Honduran herbalist beloved in Caribbean and Black American communities, popularized sea moss as a universal healing agent.`
@@ -1040,7 +1040,7 @@ export const INGREDIENT_GLOSSARY = {
   seaMoss: {
     botanicalName: 'Gracilaria debilis / Chondrus crispus',
     origin: 'Caribbean coasts (Gracilaria), North Atlantic (Chondrus)',
-    keyCompounds: ['carrageenan', 'zinc', 'iodine', 'iron', 'potassium', '92 minerals total'],
+    keyCompounds: ['carrageenan', 'zinc', 'iodine', 'iron', 'potassium'],
     skinBenefits: 'Mineral infusion, hydration, skin smoothing, anti-bacterial',
     hairBenefits: 'Scalp minerals, hair thickening, moisture retention, growth environment',
     usedIn: ['caribbean']

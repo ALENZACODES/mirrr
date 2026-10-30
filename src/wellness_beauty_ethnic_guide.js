@@ -229,7 +229,7 @@ export const ETHNIC_WELLNESS_BEAUTY_GUIDES = {
       { food: 'Papaya (Pawpaw)', benefit: 'Papain enzyme in papaya gently exfoliates skin, reduces hyperpigmentation. Vitamin C and vitamin A for skin health.', use: 'Eat regularly. Apply fresh papaya pulp to skin as a mask for 15 minutes.' },
       { food: 'Coconut Water', benefit: 'Natural electrolytes for hydration. Well-hydrated skin is more resilient and plump.', use: 'Drink fresh from the coconut. 1–2 coconuts per day in traditional Caribbean wellness.' },
       { food: 'Mango', benefit: 'Extremely high beta-carotene (pro-vitamin A) and vitamin C. Regular consumption improves skin texture and glow.', use: 'Eat fresh. Apply mango pulp as a face mask (high vitamin A content = gentle skin renewal).' },
-      { food: 'Sea Moss (Irish Moss)', benefit: '92 minerals essential to the human body. Contains collagen-supporting nutrients. Traditionally used in Caribbean wellness for overall vitality.', use: 'Sea moss gel blended into smoothies. Sea moss and milk punch.', trend: 'Sea moss has become a global superfood trend, driven significantly by Caribbean diaspora communities.' },
+      { food: 'Sea Moss (Irish Moss)', benefit: 'A source of minerals. Contains collagen-supporting nutrients. Traditionally used in Caribbean wellness for overall vitality.', use: 'Sea moss gel blended into smoothies. Sea moss and milk punch.', trend: 'Sea moss has become a global superfood trend, driven significantly by Caribbean diaspora communities.' },
       { food: 'Pineapple', benefit: 'Bromelain enzyme (like papain) gently exfoliates. Vitamin C for collagen. Anti-inflammatory.', use: 'Eat fresh. Pineapple face mask for brightening (enzyme action on skin).' },
     ],
     oceanWellness: {

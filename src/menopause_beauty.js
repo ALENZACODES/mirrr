@@ -14,17 +14,17 @@ export const MENOPAUSE_OVERVIEW = {
     },
     menopause: {
       what: 'Defined as 12 consecutive months without a menstrual period. Average age 51 in Western populations.',
-      hormonal_change: 'Oestrogen drops approximately 65% in the year following menopause. Progesterone also falls sharply. Androgens (testosterone) decline more gradually — meaning androgen dominance relative to oestrogen increases.',
+      
     },
     postmenopause: {
       what: 'All years after the 12-month menopause marker',
-      skin_note: 'Skin aging accelerates most rapidly in the first 5 years after menopause — studies show up to 30% collagen loss in this period alone.',
+      
     },
   },
 
   ethnic_differences_in_timing: {
-    research: 'Research has found that Black and Latina women in the US reach menopause approximately 1-2 years earlier on average than white or Japanese-American women. South Asian women\'s timing is similar to white women. This has implications for perimenopause preparation.',
-    vasomotor_symptoms: 'Black women report more severe and more frequent hot flushes and night sweats than white women on average. Japanese-American women report the fewest. Cultural reporting differences and biological differences are both factors.',
+    
+    vasomotor_symptoms: 'In the US SWAN study, Black women reported more severe and more frequent hot flushes and night sweats than white women on average. Japanese-American women reported the fewest. Cultural reporting differences and biological differences are both factors.',
     bone_health: 'Black women have higher bone density at baseline but still experience menopausal bone loss — and are at higher risk for osteoporosis-related fractures than previously believed. Vitamin D (often lower in dark-skinned individuals in low-sun climates) is critical.',
   },
 };
@@ -33,7 +33,7 @@ export const MENOPAUSE_OVERVIEW = {
 
 export const MENOPAUSAL_SKIN_CHANGES = {
   collagen_loss: {
-    what: 'Oestrogen directly stimulates collagen production in skin. As oestrogen falls, collagen synthesis drops dramatically. Studies show approximately 2% collagen loss per year after menopause — with 30% lost in the first 5 years.',
+    
     appearance: 'Skin appears thinner, more crepe-like, less firm. Fine lines deepen. Loss of facial volume (fat and bone also change under hormonal influence).',
     for_ethnic_skin: {
       good_news: 'Higher baseline collagen density and melanin content in Fitzpatrick IV-VI skin means these changes may appear more slowly — the observation that "Black don\'t crack" has some biological basis in collagen density differences, though this advantage does not eliminate the changes.',
@@ -94,11 +94,11 @@ export const MENOPAUSAL_HAIR_CHANGES = {
     pattern: 'In women, hair thinning typically presents as widening part, overall thinning at the crown, and reduced density throughout. Less commonly the receding hairline pattern seen in men.',
     for_ethnic_communities: {
       black_women: 'CCCA (Central Centrifugal Cicatricial Alopecia) may worsen or become more apparent during menopause. Traction alopecia consequences also accumulate. See a dermatologist early if crown thinning develops.',
-      south_asian: 'Androgenetic alopecia is common in South Asian women. The hair thinning that begins in perimenopause may be confused with or compounded by stress-related telogen effluvium.',
+      south_asian: 'The hair thinning that begins in perimenopause may be confused with or compounded by stress-related telogen effluvium.',
       east_asian: 'Generally lower androgen sensitivity in hair follicles, but hormonal hair loss still occurs with menopause.',
     },
     treatment: [
-      'Minoxidil 5% (foam or solution) — FDA-approved, clinically proven, first-line treatment',
+      
       'Spironolactone (oral androgen blocker — prescription)',
       'Finasteride/dutasteride (off-label use in women — pregnancy contraindication)',
       'PRP (Platelet Rich Plasma) injections into scalp — evidence for hair thickness improvement',
@@ -131,11 +131,11 @@ export const MENOPAUSAL_BEAUTY_BY_COMMUNITY = {
   south_asian: {
     traditional_approach: {
       ashwagandha: 'Adaptogenic herb used in Ayurveda — some evidence for cortisol reduction and possible mild hormonal support. Available as supplement or tea.',
-      shatavari: 'An Ayurvedic herb (Asparagus racemosus) traditionally used for female reproductive support through all life phases. Some research suggests mild phytoestrogen activity.',
+      
       sesame_oil: 'Sesame oil for body massage (abhyanga) is traditional Ayurvedic self-care — supports skin during hormonal transitions with its rich linoleic acid and sesamin content.',
       turmeric: 'Anti-inflammatory support — relevant because menopausal changes are inflammatory. The curcumin in turmeric has anti-inflammatory properties, best absorbed with black pepper (piperine).',
     },
-    skin_priorities: 'South Asian skin tends to have significant melasma burden by menopause — vigilant SPF, tranexamic acid, and niacinamide become even more critical.',
+    skin_priorities: 'If melasma has built up by menopause, vigilant SPF, tranexamic acid, and niacinamide become even more critical.',
     hair: 'Brahmi and bhringraj oils continue to be beneficial for menopausal hair thinning — particularly combined with scalp massage to support circulation.',
   },
 
@@ -145,7 +145,7 @@ export const MENOPAUSAL_BEAUTY_BY_COMMUNITY = {
       rose_water: 'Rose water (used for centuries in Arab beauty) has mild cooling and anti-inflammatory properties — useful for menopausal flushing and skin sensitivity.',
       hammam: 'The hammam ritual — steam, kessa exfoliation, and oil treatment — is beneficial maintenance for menopausal skin. Steam improves circulation, kessa removes dry dead skin, ghassoul clay treats sebum changes.',
     },
-    skin_priorities: 'Olive skin tones (common in Arab women) can develop olive-tinted discolouration with menopausal pigmentation changes. Azelaic acid and niacinamide help.',
+    skin_priorities: 'Olive skin tones can develop olive-tinted discolouration with menopausal pigmentation changes. Azelaic acid and niacinamide help.',
   },
 
   west_african_black_american: {
@@ -166,7 +166,7 @@ export const MENOPAUSAL_BEAUTY_BY_COMMUNITY = {
       collagen_food: 'Eating collagen-rich foods (bone broth, certain fish preparations) is a traditional East Asian approach — while dietary collagen\'s direct skin benefit is debated, the tradition continues',
       camellia_oil: 'Tsubaki (camellia) oil for skin and hair — excellent for menopausal dryness in both',
     },
-    research_note: 'Japanese women\'s relatively low incidence of severe menopausal symptoms has been attributed partly to dietary isoflavones (phytoestrogens) from soy. Tofu, miso, edamame consumption may offer mild hormonal support.',
+    
   },
 };
 
@@ -215,7 +215,7 @@ export const HRT_SKIN_EFFECTS = {
   what_hrt_is: 'Oestrogen therapy (with or without progesterone) prescribed to replace declining hormones during menopause. Available as patches, gels, pills, sprays, and other formats.',
 
   skin_benefits_of_hrt: [
-    'Increased skin thickness and collagen — studies show 30%+ improvement in skin collagen content',
+    
     'Improved skin hydration',
     'Reduction of fine lines and wrinkles',
     'Reduced skin dryness',
@@ -248,8 +248,3 @@ export function getHairLossTreatments() {
   return MENOPAUSAL_HAIR_CHANGES.androgenetic_alopecia.treatment;
 }
 
-export const MENOPAUSE_GUIDE_STATS = {
-  communitiesWithTraditions: Object.keys(MENOPAUSAL_BEAUTY_BY_COMMUNITY).length,
-  skinChangesDocumented: Object.keys(MENOPAUSAL_SKIN_CHANGES).length,
-  routineIngredients: MENOPAUSE_SKINCARE_ROUTINE.ingredients_to_add.length,
-};

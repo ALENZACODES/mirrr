@@ -24,9 +24,9 @@ export const UNIVERSAL_SKIN_AGING = {
   intrinsicAging: {
     definition: 'Chronological aging driven by genetics and time; universal across all ethnicities',
     collagenDecline: {
-      rate: 'Collagen production decreases approximately 1% per year after age 25',
-      cumulative: 'By age 50, skin has approximately 25% less collagen than at 25',
-      menopausalAcceleration: 'Estrogen decline at menopause causes 30% additional collagen loss in the first 5 years post-menopause',
+      
+      
+      menopausalAcceleration: 'Estrogen decline at menopause speeds up collagen loss, especially in the first years after',
       mechanism: 'Fibroblasts reduce Type I and Type III collagen synthesis; matrix metalloproteinases (MMPs) simultaneously increase collagen degradation',
       glycation: 'Advanced glycation end products (AGEs) from dietary sugars crosslink collagen fibers — creating stiff, yellowed, less elastic matrix',
     },
@@ -62,7 +62,7 @@ export const UNIVERSAL_SKIN_AGING = {
     UV: {
       mechanism: 'UVB (290-320nm): primarily epidermal damage, sunburn, DNA mutation; UVA (320-400nm): penetrates dermis, degrades collagen and elastin, causes photoaging',
       photoaging: 'Cumulative UV damage causes photoaging: deep wrinkles, irregular pigmentation, leathery texture, telangiectasias — distinct from and additive to chronological aging',
-      melaninProtection: 'Melanin (eumelanin specifically) in darker skin absorbs and scatters UV; estimated natural SPF of melanin-rich skin: SPF 13.4 vs. SPF 3.4 in lighter skin',
+      melaninProtection: 'Melanin (eumelanin specifically) in darker skin absorbs and scatters UV; it gives meaningful but incomplete protection',
       darkSkinMisconception: 'Melanin provides meaningful but not complete UV protection; photoaging occurs in dark skin, appears later and as pigmentation changes rather than early wrinkling',
       prevention: 'Daily SPF 30-50 broad-spectrum: the single most evidence-backed anti-aging intervention for any skin tone',
     },
@@ -98,7 +98,7 @@ export const UNIVERSAL_SKIN_AGING = {
     typeV_VI: {
       description: 'Deep skin tones (Fitzpatrick V-VI): melanin provides significant photoprotection; wrinkles appear later — often a decade or more later',
       aging: 'Wrinkles delayed; primary visible aging = hyperpigmentation, uneven tone, loss of subcutaneous fat, loss of elasticity in lower face/neck',
-      blackDontCrack: '"Black don\'t crack" is real science: higher melanin genuinely delays photoaging wrinkles. But it creates a clinical blind spot — practitioners less trained in recognizing aging signs in dark skin',
+      blackDontCrack: '"Black don\'t crack" has a basis: higher melanin delays sun-driven wrinkles. But it creates a clinical blind spot — practitioners less trained in recognizing aging signs in dark skin',
       focus: 'Anti-aging focus: hyperpigmentation prevention/treatment, barrier health, peptides for elasticity, SPF (always — melanin helps but doesn\'t replace SPF)',
     },
   },
@@ -108,32 +108,32 @@ export const UNIVERSAL_SKIN_AGING = {
     tierOne: {
       label: 'Tier 1 — Strong clinical evidence (RCTs, dermatology consensus)',
       ingredients: [
-        { name: 'Broad-spectrum SPF 30-50', evidence: 'Definitive: prevents photoaging, most impactful anti-aging intervention for any skin tone' },
-        { name: 'Retinoids (retinol, tretinoin, adapalene)', evidence: 'Gold standard: increases collagen synthesis, accelerates cell turnover, reduces wrinkles and pigmentation' },
-        { name: 'Vitamin C (L-ascorbic acid, 10-20%)', evidence: 'Strong: antioxidant, stimulates collagen synthesis, reduces melanin production, photoprotective synergy with SPF' },
-        { name: 'Niacinamide (3-10%)', evidence: 'Strong: reduces hyperpigmentation, strengthens barrier, anti-inflammatory, reduces fine lines via NAD+ pathway' },
-        { name: 'Peptides (Matrixyl 3000, copper peptides, argireline)', evidence: 'Moderate to strong: signal collagen and elastin synthesis; best combined with retinoids' },
-        { name: 'AHAs (glycolic, lactic acid)', evidence: 'Strong: exfoliation, cell turnover, collagen stimulation at higher concentrations' },
-        { name: 'Hyaluronic acid (topical)', evidence: 'Strong for hydration; moderate for anti-aging — plumping effect reduces appearance of fine lines' },
+        { name: 'Broad-spectrum SPF 30-50' },
+        { name: 'Retinoids (retinol, tretinoin, adapalene)' },
+        { name: 'Vitamin C (L-ascorbic acid, 10-20%)' },
+        { name: 'Niacinamide (3-10%)' },
+        { name: 'Peptides (Matrixyl 3000, copper peptides, argireline)' },
+        { name: 'AHAs (glycolic, lactic acid)' },
+        { name: 'Hyaluronic acid (topical)' },
       ],
     },
     tierTwo: {
       label: 'Tier 2 — Promising but less definitive evidence',
       ingredients: [
-        { name: 'Bakuchiol', evidence: 'Retinol-like results in small RCTs; good option for retinol-intolerant or pregnant skin' },
-        { name: 'Resveratrol', evidence: 'Antioxidant, sirtuin activation in vitro; limited clinical data topically' },
-        { name: 'CoQ10 (ubiquinone)', evidence: 'Antioxidant, mitochondrial support; some evidence for fine line reduction' },
-        { name: 'Growth factors (EGF, TGF-β)', evidence: 'Mechanistically sound; clinical trial quality variable; absorption questions remain' },
-        { name: 'Ceramides', evidence: 'Strong for barrier repair; indirect anti-aging by protecting moisture barrier' },
+        { name: 'Bakuchiol' },
+        { name: 'Resveratrol' },
+        { name: 'CoQ10 (ubiquinone)' },
+        { name: 'Growth factors (EGF, TGF-β)' },
+        { name: 'Ceramides' },
       ],
     },
     tierThree: {
       label: 'Tier 3 — Insufficient or only in vitro evidence (use cautiously)',
       ingredients: [
-        { name: 'Most "natural" botanicals at typical retail concentrations', evidence: 'Often well-evidenced in vitro or traditionally; insufficient clinical trials at cosmetic doses' },
-        { name: 'Gold and precious metals in cosmetics', evidence: 'No clinical anti-aging evidence; primarily cosmetic effect' },
-        { name: 'Collagen supplements (oral)', evidence: 'Growing evidence — recent meta-analyses show modest improvement in skin elasticity and hydration' },
-        { name: 'Stem cell extracts (plant-derived)', evidence: 'Mechanistically plausible; clinical evidence limited; no human cells in product' },
+        { name: 'Most "natural" botanicals at typical retail concentrations' },
+        { name: 'Gold and precious metals in cosmetics' },
+        { name: 'Collagen supplements (oral)' },
+        { name: 'Stem cell extracts (plant-derived)' },
       ],
     },
   },
@@ -183,47 +183,6 @@ export const UNIVERSAL_SKIN_AGING = {
 // AGING SKIN STATISTICS
 // ============================================================
 
-export const AGING_SKIN_STATS = {
-  collagen: {
-    annualLoss: '~1% collagen production decrease per year after age 25',
-    menopausalLoss: '~30% collagen loss in first 5 years of menopause',
-    cumulative50: 'By age 50, approximately 25% less skin collagen than at age 25',
-    supplement: 'Oral collagen peptide studies: 2.5-10g/day for 12 weeks shows measurable improvement in skin elasticity in meta-analyses',
-  },
-  melaninProtection: {
-    naturalSPF: 'Estimated SPF equivalent of melanin-rich skin (Fitzpatrick VI): approximately SPF 13.4',
-    lightSkinSPF: 'Estimated SPF equivalent of very fair skin (Fitzpatrick I): approximately SPF 3.4',
-    wrinkleDelay: 'Studies show dark skin tones develop noticeable wrinkles approximately 10-20 years later than equivalent light-skin counterparts',
-    hyperpigmentationAge: 'Hyperpigmentation (PIH, melasma, uneven tone) typically appears in dark skin by ages 30-40 as a primary aging sign',
-  },
-  retinoids: {
-    efficacy: 'Tretinoin 0.05% at 24 weeks: measurably reduces fine wrinkles in RCTs across all Fitzpatrick types',
-    collagenIncrease: 'Topical retinoids increase Type I procollagen synthesis by 80% in one study at 12-month mark',
-    PIHrisk: 'Post-inflammatory hyperpigmentation from retinoid irritation: significantly more common in Fitzpatrick V-VI; requires lower concentration and slower titration',
-  },
-  longevityPopulations: {
-    okinawa: 'Okinawan women: world\'s longest-lived population; life expectancy historically 90+; low-calorie, vegetable-rich, antioxidant-dense diet',
-    sardinia: 'Sardinian men: world\'s longest-lived men; Mediterranean diet, moderate wine, mountain lifestyle',
-    seventhDay: 'Seventh-day Adventists in Loma Linda, CA: plant-rich diet, no smoking/alcohol; 7-10 years longer than US average',
-    ethiopia: 'Ethiopian highlands: studies show centenarians; injera fermentation, teff, traditional legume diet',
-  },
-  vitaminC: {
-    skinConcentration: 'Skin concentrates vitamin C 20-30x above plasma levels; UV exposure rapidly depletes skin vitamin C',
-    collagenRole: 'Vitamin C is an essential cofactor for prolyl and lysyl hydroxylase — enzymes required for collagen crosslinking and stability; without it, collagen is structurally defective',
-    topical: 'L-ascorbic acid at 15-20% pH <3.5: significantly increases skin vitamin C and collagen synthesis in studies',
-  },
-  greenTea: {
-    EGCG: 'Epigallocatechin gallate (EGCG) in green tea: potent MMP inhibitor; reduces collagen degradation by up to 40% in some in vitro studies',
-    oral: 'Oral green tea consumption in epidemiological studies: associated with measurably improved skin elasticity in Japanese women',
-    topical: '1% topical EGCG: reduces UVB-induced erythema and oxidative damage in human studies',
-  },
-  omega3: {
-    mechanism: 'Omega-3 fatty acids (EPA, DHA) reduce prostaglandin E2 and inflammatory cytokines; reduce inflammaging',
-    skinStudy: 'EPA supplementation (4g/day) for 3 months: measurably reduced UVB-induced sunburn cell formation (photoprotective)',
-    topical: 'Topical omega-3 in formulations: improves barrier function, reduces TEWL, anti-inflammatory in eczema and aging studies',
-  },
-};
-
 // ============================================================
 // ETHNIC AGING SKIN GUIDES — 9 COMMUNITIES
 // ============================================================
@@ -235,13 +194,11 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
   // ============================================================
   'west-african': {
     community: 'West African',
-    fitzpatrickRange: 'V-VI (predominantly)',
-    melaninType: 'Eumelanin-dominant; highest melanin density in the epidermis of any group',
     ageingProfile: {
-      overview: `"Black don't crack" is rooted in science. West African and sub-Saharan skin
+      overview: `"Black don't crack" has a basis. West African and sub-Saharan skin
       carries the highest density of epidermal melanin, providing the most substantial
       natural photoprotection of any skin type. Deep wrinkles from UV exposure — the dominant
-      aging sign in lighter skin — are genuinely delayed by 10-20 years in melanin-rich skin.
+      aging sign in lighter skin — tend to appear later in melanin-rich skin.
       However, this creates a clinically significant challenge: practitioners are less trained
       to recognize aging in dark skin, and the primary aging concerns (hyperpigmentation, loss
       of elasticity in the lower face and neck, subcutaneous fat redistribution) are different
@@ -253,20 +210,20 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
         'Ashy or dry appearance from dehydration and transepidermal water loss',
         'Dermatosis papulosa nigra (DPN) — benign but cosmetically concerning dark papules',
       ],
-      lateOnset: 'Wrinkles typically appear 1-2 decades later than in equivalent light-skin counterparts; this is a genuine biological advantage, not cosmetic',
+      lateOnset: 'Sun-driven wrinkles tend to appear later than on light skin; pigment changes are the earlier sign',
       hyperpigmentationAsAging: 'Uneven tone — rather than wrinkles — is the primary visual marker of skin aging in West African skin; this is a key distinction for treatment planning',
-      subcutaneousFat: 'West African skin tends to retain subcutaneous facial fat volume longer, which also contributes to the younger appearance; however, loss of this fat after 50-60 can cause more dramatic facial change',
+      subcutaneousFat: 'however, loss of this fat after 50-60 can cause more dramatic facial change',
     },
     melaninScience: {
       type: 'Melanin in dark skin is predominantly eumelanin (vs. pheomelanin in lighter skin); eumelanin is a more effective UV absorber',
       distribution: 'In Fitzpatrick VI skin, melanin is present in all epidermal layers including the stratum corneum; in light skin, it is mostly in the basal layer',
-      SPFEquivalent: 'Melanin-rich skin provides approximately SPF 13 equivalent; enough to delay photoaging substantially but not enough to skip sunscreen',
+      SPFEquivalent: 'Melanin-rich skin has some built-in UV protection; enough to delay photoaging substantially but not enough to skip sunscreen',
       antioxidant: 'Melanin is itself an antioxidant — absorbs free radicals; however, UV-induced reactive oxygen species (ROS) still accumulate and cause oxidative damage',
       paradox: 'Melanin production is the skin\'s protective response to UV stress; but in dark skin, melanocytes are hyperreactive — meaning any inflammation or UV triggers excess pigment production (PIH)',
     },
     traditionalIngredients: {
       sheaButter: {
-        source: 'Shea tree (Vitellaria paradoxa), indigenous to West African savanna',
+        
         antiAgingScience: 'Rich in vitamin E (tocopherols) — a potent lipid-soluble antioxidant that protects cell membranes from oxidative damage and UV-induced free radicals',
         oleanolicAcid: 'Contains oleanolic acid — inhibits tyrosinase enzyme (reduces hyperpigmentation) and has anti-inflammatory activity',
         lupeol: 'Lupeol in shea: anti-inflammatory triterpene; inhibits 5-alpha reductase; may reduce sebaceous activity that drives post-acne PIH',
@@ -275,7 +232,7 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
         traditional: 'Used by Yoruba, Igbo, Akan, and Fulani women across generations as a universal skin and body moisturizer, lip balm, and scalp treatment',
       },
       moringa: {
-        source: 'Moringa oleifera — "miracle tree"; indigenous to Nigeria, Ghana, Senegal, Burkina Faso',
+        
         ORAC: 'One of the highest antioxidant scores (ORAC) of any plant; zeatin (cytokinin) content may slow cellular aging',
         behenic: 'Moringa oil is 70% behenic acid — extremely stable, resistant to oxidation; acts as emollient without going rancid (anti-aging for the product itself)',
         vitaminC: 'Moringa leaf: 7x the vitamin C of oranges; vitamin C is essential for collagen synthesis and as antioxidant',
@@ -283,15 +240,15 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
         traditional: 'Yoruba traditional medicine uses moringa leaf paste for skin brightening and wound healing; seeds used as water purifier — now recognized as anti-inflammatory',
       },
       baobab: {
-        source: 'Adansonia digitata — "tree of life"; lifespan 1000-3000 years; fruit native to sub-Saharan Africa',
+        
         vitaminC: 'Baobab fruit: highest vitamin C content of any fruit tested (approximately 6x the vitamin C of oranges)',
         omega: 'Baobab oil: high in omega-3, 6, and 9 fatty acids; supports skin barrier and reduces TEWL',
         triterpenes: 'Triterpene content: anti-inflammatory; potentially useful for PIH prevention',
         traditional: 'Used across West Africa for skin hydration; eaten as part of diet (anti-inflammatory internal effect); baobab powder in skin masks by Wolof and Hausa communities',
       },
       palmOil: {
-        source: 'Elaeis guineensis — palm oil; historically central to West African cuisines and beauty',
-        tocotrienols: 'Red palm oil contains tocotrienols — the most potent form of vitamin E (40-60x more potent than tocopherol as antioxidant)',
+        
+        
         carotenoids: 'Beta-carotene and lycopene content: powerful antioxidants converted to vitamin A in the body (internal retinol precursor)',
         controversy: 'Environmental concerns around palm oil; red (unrefined) palm oil retains the most nutrients; used in traditional cooking as anti-aging food ingredient',
         antiAging: 'Tocotrienols have been shown to reduce oxidative stress markers and may help prevent UV-induced skin damage when consumed',
@@ -308,7 +265,7 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
         antiAging: 'Regular exfoliation via traditional soap maintains cell turnover as it slows with age; cocoa polyphenols provide antioxidant benefit',
       },
       longLivingCommunities: {
-        igbo: 'Igbo women in southeastern Nigeria traditionally known for excellent skin well into old age; diet rich in palm oil (tocotrienols), leafy greens, ugwu (pumpkin leaves — high in vitamins A and C)',
+        igbo: 'Igbo food traditions in southeastern Nigeria: a diet rich in palm oil (tocotrienols), leafy greens, ugwu (pumpkin leaves — high in vitamins A and C)',
         ghanaian: 'Ghanaian longevity diet: kenkey, kontomire stew, palm nut soup — high in fiber, antioxidants, and anti-inflammatory compounds',
         senegalese: 'Thieboudienne (Senegalese fish and rice): omega-3-rich diet from fish; anti-inflammatory; omega-3s support collagen and reduce photoaging',
       },
@@ -328,23 +285,18 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
   // ============================================================
   'south-asian': {
     community: 'South Asian',
-    fitzpatrickRange: 'III-V (wide range from lighter North Indian to darker South Indian skin)',
-    melaninType: 'Mixed eumelanin and pheomelanin; varies significantly by region of origin',
     ageingProfile: {
       overview: `South Asian skin is defined by significant heterogeneity — the subcontinent spans
       from fair-skinned Kashmiris (Fitzpatrick III) to very dark-skinned Tamilians and Sri Lankans
-      (Fitzpatrick V-VI). Despite this variation, a consistent pattern emerges: South Asian skin
-      is particularly susceptible to hyperpigmentation-driven aging rather than wrinkle-driven aging.
-      Melasma (hormonally driven hyperpigmentation) affects South Asian women at very high rates,
-      and sun-induced dark spots can appear earlier than wrinkles even in medium-toned skin.`,
+      (Fitzpatrick V-VI). On medium-to-deep skin, pigment changes often show before wrinkles:
+      melasma (hormonally driven hyperpigmentation) is common, and sun-induced dark spots can appear earlier than wrinkles even in medium-toned skin.`,
       primaryConcerns: [
-        'Melasma — hormonally triggered, UV-worsened hyperpigmentation; particularly prevalent',
+        'Melasma — hormonally triggered, UV-worsened hyperpigmentation',
         'Post-inflammatory hyperpigmentation (PIH) from acne, inflammation, or injury',
         'Uneven skin tone (facial hyperpigmentation vs. body skin tone differences)',
-        'Fine lines around eyes earlier than expected (genetic variation in periorbital skin)',
         'Hyperpigmentation-based "aging" appearing before wrinkle-based aging',
       ],
-      collagenTimeline: 'South Asian skin tends to maintain collagen levels well; wrinkles are often less prominent until 50s-60s, but uneven tone may be apparent from the 30s',
+      collagenTimeline: 'wrinkles are often less prominent until 50s-60s, but uneven tone may be apparent from the 30s',
     },
     ayurvedicAntiAging: {
       rasayana: {
@@ -358,7 +310,7 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
         botanical: 'Withania somnifera',
         withanolides: 'Withanolides — steroidal lactones — are the primary bioactive compounds; structurally resemble human steroid hormones',
         cortisol: 'Ashwagandha reduces serum cortisol by 25-30% in RCTs; cortisol breaks down collagen; reducing it has direct anti-aging skin implications',
-        collagen: 'Withanolides stimulate fibroblasts to produce procollagen; one study showed topical ashwagandha extract increased skin collagen density',
+        
         adaptogen: 'Classified as an adaptogen: reduces chronic stress response; stress-driven skin aging mechanism (inflammaging) is reduced',
         traditional: 'Charaka Samhita prescribes ashwagandha root milk (ashwagandha ksheera) for vata-driven aging — dryness, wrinkling, weakness',
       },
@@ -367,12 +319,12 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
         immunomodulation: 'Potent immunomodulator; reduces systemic inflammation — the inflammaging driver of skin aging',
         tinosporin: 'Tinosporin and berberine content: anti-inflammatory and antioxidant; reduce oxidative stress in skin cells',
         traditional: 'Charaka Samhita lists guduchi as a rasayana herb; used in pancha karma (Ayurvedic detox) to support skin renewal',
-        modern: 'Modern studies show guduchi extract reduces MMP activity (matrix metalloproteinases) — the collagen-degrading enzymes upregulated in aging skin',
+        
       },
       brahmi: {
         botanical: 'Bacopa monnieri',
         triterpeneSaponins: 'Bacosides A and B: primary bioactives; neuroprotective and anti-inflammatory',
-        antiAging: 'Antioxidant activity; reduces lipid peroxidation in skin cells; in vitro studies show increased fibroblast proliferation',
+        
         traditional: 'Used in Ayurvedic formulations for scalp and skin health; brahmi oil (brahmi in sesame or coconut oil) applied to scalp and hair for anti-aging',
         skincare: 'Topical brahmi extracts in Ayurvedic face packs: modern formulations use it for brightening and anti-aging serums',
       },
@@ -387,7 +339,7 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
         botanical: 'Emblica officinalis (Indian Gooseberry)',
         vitaminC: 'Amla has among the highest measured vitamin C content of any plant: 600-700mg per 100g fresh weight (citrus: ~50mg/100g)',
         tannins: 'Emblicanin A and B: unique tannins that are powerful antioxidants; more stable than vitamin C at heat; chelate free metals',
-        collagen: 'Vitamin C content supports collagen synthesis; clinical studies show amla extract increases pro-collagen expression in fibroblasts',
+        
         melanin: 'Inhibits tyrosinase; reduces melanin production; particularly relevant for melasma-prone South Asian skin',
         traditional: 'Central to Ayurvedic anti-aging — prescribed in Chyawanprash (amla-based tonic) for longevity; amla oil for scalp and hair anti-aging',
       },
@@ -396,13 +348,11 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
         piperine: 'Piperine (black pepper) increases curcumin bioavailability by 2000%; traditional pairing of turmeric and black pepper has pharmacokinetic basis',
         topical: 'Topical curcumin: anti-inflammatory, antioxidant, reduces hyperpigmentation; bioavailability in skin better than oral',
         traditional: 'Ubtan (traditional South Asian wedding paste): turmeric, chickpea flour, sandalwood, rosewater; removes dead skin, anti-inflammatory, anti-aging skin prep ritual',
-        science: 'Modern studies confirm curcumin increases skin moisture, reduces wrinkles, and improves elasticity in 8-week topical RCT',
+        
       },
     },
     agingPattern: {
       mismatch: 'A key South Asian aging pattern: skin may look young (few wrinkles) but appear aged due to uneven tone and hyperpigmentation — this mismatch is important for treatment',
-      vataAging: 'Ayurvedic vata-type aging (thin, dry, lined skin) correlates with North Indian skin types that tend toward lighter, drier skin',
-      pittaInflammation: 'Pitta-type skin (medium tone, sensitivity, redness) ages with inflammation-driven hyperpigmentation — the most common South Asian aging pattern',
       diet: 'Traditional South Asian diet: anti-inflammatory spices (turmeric, ginger, fenugreek), legumes, fermented foods (yogurt, idli, dosa) support gut-skin axis and reduce inflammaging',
     },
     modernAntiAging: {
@@ -419,8 +369,6 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
   // ============================================================
   'caribbean': {
     community: 'Caribbean',
-    fitzpatrickRange: 'III-VI (highly diverse — Afro-Caribbean, Indo-Caribbean, mixed heritage)',
-    melaninType: 'Varies by ancestry: Afro-Caribbean skin (V-VI, eumelanin-dominant); Indo-Caribbean (III-V, mixed); mixed heritage (broad range)',
     ageingProfile: {
       overview: `Caribbean skin aging reflects the profound genetic diversity of the islands — indigenous
       Taino, West African, South Asian, European, and Chinese ancestries create one of the most
@@ -435,8 +383,8 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
     traditionalIngredients: {
       seaMoss: {
         botanical: 'Chondrus crispus and Gracilaria species (Irish moss, sea moss)',
-        minerals: 'Contains 92 of the 102 essential minerals including zinc, magnesium, selenium, iodine — all essential for skin function',
-        collagenSupport: 'Sea moss is rich in carrageenan, a sulfated polysaccharide; in vitro studies show it supports collagen synthesis and reduces degradation — a marine collagen pathway',
+        minerals: 'Contains minerals including zinc, magnesium, selenium, iodine — all essential for skin function',
+        
         vitaminC: 'Contains vitamin C and B vitamins; also citrulline, which converts to arginine and supports collagen proline content',
         iodine: 'Iodine in sea moss: essential for thyroid function; thyroid hormones regulate skin cell turnover and hydration; thyroid decline with age is a hidden driver of dry, thin, aging-appearing skin',
         traditional: 'Jamaican, Trinidadian, Barbadian tradition: blended with milk, cinnamon, vanilla — drunk as a health and vitality tonic; sea moss gel used topically as skin mask',
@@ -453,7 +401,7 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
       aloeVera: {
         botanical: 'Aloe barbadensis miller; grows prolifically across Caribbean islands',
         acemannan: 'Acemannan (polysaccharide): the key bioactive; stimulates fibroblasts to produce collagen and hyaluronic acid; immunomodulatory',
-        clinical: 'Clinical studies: topical aloe vera at 0.5% increases collagen and reduces wrinkle depth in postmenopausal women in RCT',
+        clinical: 'Aloe may support collagen; the evidence is limited',
         anthraquinones: 'Anthraquinones in aloe: anti-inflammatory and have mild sun-protective properties',
         hyaluronic: 'Aloe stimulates skin hyaluronic acid production — indirect anti-aging through improved hydration',
         traditional: 'Caribbean traditional: fresh aloe fillet applied directly to skin after sun exposure; internal use (aloe juice) for digestion and general health',
@@ -497,8 +445,6 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
   // ============================================================
   'arab': {
     community: 'Arab',
-    fitzpatrickRange: 'III-V (wide range from Levantine III-IV to Gulf and Yemeni V)',
-    melaninType: 'Mixed; significant UV exposure through history has selected for moderate melanin; significant variation between North African, Levantine, Gulf, and Arabian Peninsula populations',
     ageingProfile: {
       overview: `Arab skin aging presents a distinctive pattern shaped by desert climate and desert
       UV. Unlike coastal populations, desert-dwelling Arab populations historically faced extreme UV
@@ -508,7 +454,7 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
       anti-aging science.`,
       primaryConcerns: [
         'Dehydration-driven aging — fine lines from moisture loss rather than structural collagen degradation',
-        'Solar hyperpigmentation and melasma — common in III-IV Fitzpatrick Arab skin',
+        'Solar hyperpigmentation and melasma — common on medium (Fitzpatrick III-IV) skin',
         'Extrinsic photoaging from intense UV at lower latitudes',
         'Periorbital aging (under-eye darkness, common genetic trait)',
         'Combination or oil-prone skin that complicates retinoid tolerance',
@@ -520,8 +466,8 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
       blackSeed: {
         botanical: 'Nigella sativa (habbatus sauda, black cumin)',
         thymoquinone: 'Thymoquinone (TQ): the primary bioactive; potent antioxidant, anti-inflammatory, immunomodulatory',
-        antiAging: 'TQ inhibits NF-kB (master inflammatory switch driving inflammaging); reduces oxidative stress; in vitro studies show fibroblast stimulation',
-        collagen: 'Black seed oil application: in vivo study shows wound healing acceleration via collagen stimulation — anti-aging wound-repair pathway',
+        
+        
         topical: 'Topical black seed oil: anti-inflammatory, antioxidant barrier support; traditionally applied to face and scalp',
         traditional: 'Hadith reference: "Black seed is a cure for everything except death"; widely used across Arab world for skin health',
       },
@@ -531,19 +477,18 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
         antioxidants: 'Polyphenol content (varies by floral source): antioxidant; wound healing; anti-inflammatory',
         humectant: 'Honey is a potent humectant (draws water to skin); historically used as moisturizing face mask',
         clinical: 'Clinical evidence: honey accelerates wound healing in RCTs; anti-aging wound-repair pathways activated; reduces scar formation',
-        traditional: 'Pan-Arab tradition of honey face masks, honey in diet; Quranic reference to honey as healing; used for centuries as topical medicine',
       },
       oliveOil: {
         oleocanthal: 'Oleocanthal: phenolic compound with ibuprofen-like anti-inflammatory activity; key bioactive in extra-virgin olive oil',
         squalene: 'Olive oil naturally contains squalene — a lipid also produced by human skin sebum; excellent emollient and antioxidant',
-        polyphenols: 'Hydroxytyrosol and oleuropein: potent antioxidants; laboratory studies show inhibition of UV-induced oxidative damage in skin cells',
+        
         oleicAcid: 'High oleic acid content: reinforces skin barrier; reduces TEWL; repairs barrier damage from desert conditions',
         clinical: 'Olive oil in Mediterranean diet studies: consistently associated with better skin health scores and reduced photoaging in epidemiological data',
         traditional: 'Olive oil is deeply embedded in Levantine and North African Arab beauty traditions — face oil, hair treatment, bath oil after hammam; Prophet Muhammad reportedly used olive oil',
       },
       pomegranate: {
         botanical: 'Punica granatum; native to Iran, now widespread across Arab world',
-        punicalagins: 'Punicalagins and punicalins: unique antioxidants found only in pomegranate; extremely potent (3x more antioxidant than red wine or green tea)',
+        
         collagenMechanism: 'Pomegranate extract increases pro-collagen synthesis in fibroblasts in vitro; inhibits MMP enzymes that degrade collagen',
         ellagicAcid: 'Ellagic acid (from ellagitannins): inhibits tyrosinase (reduces hyperpigmentation); anti-inflammatory; antioxidant',
         clinical: 'Oral pomegranate extract (210mg/day, 12 weeks): significantly increased forearm skin elasticity and reduced erythema in Japanese clinical study',
@@ -564,12 +509,12 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
       },
     },
     arganOil: {
-      source: 'Argania spinosa; endemic to southern Morocco; UNESCO-recognized agroforestry system',
+      
       vitaminE: 'Among the highest tocopherol (vitamin E) content of any plant oil: 620mg tocopherol per kg oil; protects lipid membranes from oxidative damage',
       phenolicAcids: 'Ferulic acid, caffeic acid, vanillic acid: antioxidant phenolics that protect against UV-induced free radicals',
       sterolContent: 'Schottenol and spinasterol: phytosterols unique to argan; anti-inflammatory; skin barrier-reinforcing',
       squalene: 'Squalene content: emollient and antioxidant; similar to skin\'s own squalene production (which declines with age)',
-      antiAging: 'Clinical studies: argan oil application 2x daily for 60 days improved skin elasticity by 17% in postmenopausal women; RCT with measurable outcomes',
+      antiAging: 'Small studies in postmenopausal women suggest argan oil may improve skin elasticity',
       traditional: 'Berber women have used argan oil on face, body, and hair for centuries; preparation traditionally done by women\'s cooperatives — an intergenerational anti-aging tradition',
     },
     goldTreatments: {
@@ -591,8 +536,6 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
   // ============================================================
   'latina': {
     community: 'Latina',
-    fitzpatrickRange: 'III-VI (highly diverse — mestizo, indigenous, Afro-Latina, European heritage creates huge variation)',
-    melaninType: 'Highly variable; indigenous heritage adds genetic protection; wide Fitzpatrick range',
     ageingProfile: {
       overview: `Latina skin aging reflects extraordinary genetic diversity — Mexico, Central America,
       and South America carry indigenous, African, European, and Asian ancestries in varying combinations.
@@ -607,7 +550,7 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
         'For lighter Latina skin: earlier photoaging wrinkles',
         'Dehydration from hot climates',
       ],
-      melasmaBurden: 'Melasma has disproportionately high prevalence in Latina women (studies show 1.5-2x the rate vs. non-Hispanic white women); hormonal contraceptives and pregnancy are common triggers; UV the activator',
+      
     },
     traditionalIngredients: {
       avocado: {
@@ -625,14 +568,14 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
         omega3: 'Chia seeds are among the richest plant sources of ALA (alpha-linolenic acid), an omega-3 precursor; converts partially to EPA/DHA',
         EPA_DHA: 'EPA and DHA reduce prostaglandin E2 and pro-inflammatory cytokines (IL-1β, TNF-α) — the inflammaging pathway in skin; omega-3s are diet-based anti-aging',
         cellular: 'Omega-3 fatty acids incorporate into cell membranes, improving fluidity; membrane rigidity increases with aging and drives cellular dysfunction',
-        collagen: 'Omega-3s reduce collagenase (collagen-degrading enzyme) activity; dietary omega-3 supplementation in studies shows improved skin elasticity and moisture',
+        
         traditional: 'Aztec warriors consumed chia for endurance; now global superfood; anti-aging benefit is primarily oral via omega-3 and antioxidant content',
       },
       cacao: {
         botanical: 'Theobroma cacao; Mesoamerican origin',
         flavanols: 'Cocoa flavanols (epicatechin, catechin): potent antioxidants; RCT evidence for skin benefits',
         clinical: 'High-flavanol cocoa (329mg/day) for 12 weeks: significantly improved skin elasticity, skin density, and photoprotection (MED increase) vs. low-flavanol control — a genuine RCT result',
-        circulation: 'Flavanols improve dermal blood flow by 25% (measured by laser Doppler in studies); improved circulation = better nutrient delivery and cellular waste removal in aging skin',
+        circulation: 'Flavanols may improve blood flow to the skin; improved circulation = better nutrient delivery and cellular waste removal in aging skin',
         UV: 'Cocoa flavanols measurably increase UV tolerance (MED); not a sunscreen replacement but a dietary supplement that genuinely improves photoprotection',
         traditional: 'Cacao was a sacred Aztec beverage; xocolatl drinks consumed daily; now: dark chocolate 70%+ is the evidence-backed form; cacao face masks in traditional and modern Mexican beauty',
         topical: 'Cocoa butter (theobroma oil): high in oleic and stearic acid; excellent emollient; limited anti-aging evidence beyond moisturization despite widespread belief',
@@ -647,7 +590,7 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
       avocadoOil: {
         topical: 'Avocado oil: penetrates deeper than many plant oils due to oleic acid content and small fatty acid chains',
         betaSitosterol: 'Beta-sitosterol (phytosterol): anti-inflammatory; may promote collagen synthesis via fibroblast stimulation',
-        antiAging: 'Several studies show topical avocado perseose extract increases epidermal density (thickens aging-thinned skin)',
+        
       },
     },
     facialMassage: {
@@ -659,7 +602,7 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
     andesanLongevity: {
       quinoa: 'Quinoa: complete protein with all essential amino acids including lysine and proline — amino acids that are rate-limiting in collagen synthesis',
       maca: 'Maca (Lepidium meyenii): Andean adaptogen; benzylglucosinolates and flavonoids; anti-inflammatory; limited clinical anti-aging data but strong traditional use for vitality and hormonal balance',
-      cat_sClaw: 'Cat\'s claw (Uncaria tomentosa): alkaloids and oxindoles with anti-inflammatory and immunomodulatory properties; studies show reduced inflammation and anti-aging DNA damage protection',
+      
       highAltitude: 'Andean highlands: lower oxygen levels at altitude are hypothesized to activate hypoxia-inducible pathways that have anti-aging effects; Bolivian, Ecuadorian, Peruvian highland communities with notable longevity',
     },
     modernAntiAging: {
@@ -675,22 +618,15 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
   // ============================================================
   'east-asian': {
     community: 'East Asian',
-    fitzpatrickRange: 'II-IV (Korean, Japanese, Chinese, Vietnamese — lighter than South Asian; some variation)',
-    melaninType: 'Moderate eumelanin; phototype intermediate; more UV-sensitive than Indian or African skin but more protected than European fair skin',
     ageingProfile: {
-      overview: `East Asian skin aging is globally famous for appearing youthful for longer — and this
-      reputation is grounded in both biology and practice. The East Asian beauty philosophy emphasizes
-      prevention over correction, layering of lightweight protective products, internal health, and
-      consistent SPF use from youth. The combination of moderate melanin (which provides some delay
-      in wrinkle formation), disciplined preventive skincare, anti-aging diets, and the profound
-      epidemiological advantage of Japanese centenarian populations creates the strongest collective
-      anti-aging picture of any ethnic group.`,
+      overview: `East Asian beauty culture emphasises prevention over correction: layering of
+      lightweight protective products, internal health, and consistent SPF use from youth.`,
       primaryConcerns: [
-        'Hyperpigmentation (age spots, solar lentigines) — more common than severe wrinkles',
+        'Hyperpigmentation (age spots, solar lentigines)',
         'Loss of firmness in the mid-face from fat redistribution',
-        'Periorbital darkness and fine lines (common genetic tendency)',
+        'Periorbital darkness and fine lines',
         'Uneven texture from slowing cell turnover',
-        'PIH from acne in more melanin-rich East Asian skin',
+        'PIH from acne on deeper skin tones',
       ],
       preventionCulture: 'East Asian beauty culture is structurally different: 10-step skincare for prevention, SPF from childhood, antioxidant-rich diet as part of health culture; this structural difference in habit is a major part of the anti-aging advantage',
     },
@@ -702,11 +638,11 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
       modern: 'Fermented rice products in modern K-beauty (SK-II, many Korean brands): one of the most commercially successful and evidence-backed traditional-to-modern ingredient translations',
     },
     greenTea: {
-      EGCG: 'Epigallocatechin gallate (EGCG): most potent catechin in green tea; inhibits matrix metalloproteinases (collagen-degrading enzymes) by up to 40% in vitro',
+      
       sirtuin: 'EGCG activates SIRT1 (sirtuin-1): a NAD+-dependent deacetylase that regulates cellular aging and DNA repair',
       clinical: 'Green tea consumption in epidemiological study of Japanese women: significantly associated with improved skin elasticity and reduced UV-induced damage',
       topical: 'Topical green tea extract (1% EGCG): reduces UV-induced erythema and oxidative damage; measurable photoprotective effect',
-      photoprotection: 'Oral green tea catechins (1402mg/day, 12 weeks): 25% increase in minimal erythema dose (MED) vs. placebo — genuine dietary photoprotection in RCT',
+      
       internalDose: 'Japanese green tea consumption: 2-5 cups/day provides approximately 200-400mg EGCG; the anti-aging dose range in studies',
     },
     ginseng: {
@@ -720,8 +656,8 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
       traditional: 'Korean ginseng cultivation and use spans 2,000+ years; samgye-tang (ginseng chicken soup) is the traditional anti-aging food; daily ginseng extract shots common across East Asian populations',
     },
     okinawanDiet: {
-      overview: 'Okinawa, Japan was the world\'s most famous Blue Zone — population with exceptional longevity and the longest-lived women ever recorded',
-      longevity: 'Traditional Okinawan women had life expectancy above 90, dementia rates 75% lower than US, and preserved physical function into very old age',
+      
+      
       caloric: 'Hara hachi bu (eating to 80% full): Okinawan practice that is effectively caloric restriction; caloric restriction is the most replicated anti-aging intervention in animal models',
       purple_sweet_potato: 'Imo (purple sweet potato): high in anthocyanins (anti-inflammatory, antioxidant); the staple carbohydrate of traditional Okinawan diet',
       bitterMelon: 'Goya (bitter melon): momordicin and charantin; anti-inflammatory; blood glucose stabilizing (reducing glycation-driven aging)',
@@ -739,9 +675,9 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
     },
     SPFculture: {
       practice: 'SPF application from childhood is culturally embedded across East Asia; UV parasols, SPF-infused makeup, SPF reapplication through the day are norms',
-      evidence: 'SPF is universally the most evidence-backed anti-aging intervention; consistent lifetime SPF use measurably reduces photoaging in epidemiological studies',
+      
       formulation: 'East Asian SPF innovation: light-weight essence SPFs, cushion foundation SPFs, tinted SPFs — formulations optimized for daily wear and compliance',
-      japanesePA: 'Japan developed the PA+++ (UVA protection) system before international SPF ratings caught up; East Asian SPF products often have superior UVA protection',
+      japanesePA: 'Japan developed the PA+++ (UVA protection) system before international SPF ratings caught up.',
     },
     modernAntiAging: {
       coreProtocol: 'The East Asian anti-aging protocol: morning antioxidant + SPF 50+ PA++++; evening: retinoid or retinol, peptide serum, ceramide moisturizer',
@@ -756,8 +692,6 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
   // ============================================================
   'east-african': {
     community: 'East African',
-    fitzpatrickRange: 'IV-VI (Ethiopian, Somali, Kenyan, Tanzanian, Eritrean — predominantly deep skin tones with exceptions in highland Ethiopians)',
-    melaninType: 'Predominantly eumelanin; some of the most melanin-rich skin in the world in the Horn of Africa',
     ageingProfile: {
       overview: `East African skin shares the melanin-protective advantage of other high-melanin
       populations, with wrinkles genuinely delayed. Ethiopia, in particular, has well-documented
@@ -772,7 +706,7 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
         'Dry skin and dehydration (both hot/dry climates and highland cold)',
         'Keloid and hypertrophic scarring tendency (affects anti-aging intervention choices)',
       ],
-      kheloidRisk: 'East African skin tends toward keloid formation more than other groups; any anti-aging intervention causing inflammation (aggressive peels, laser) requires careful selection; retinoids preferred over ablative treatments',
+      kheloidRisk: 'any anti-aging intervention causing inflammation (aggressive peels, laser) requires careful selection; retinoids preferred over ablative treatments',
     },
     frankincense: {
       botanical: 'Boswellia serrata (Indian), Boswellia sacra (Omani/Somali), Boswellia papyrifera (Ethiopian)',
@@ -788,8 +722,8 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
       vitaminC: '10x the vitamin C of cow milk in some samples; as collagen synthesis cofactor, vitamin C content is anti-aging',
       growthFactors: 'IGF-1 and insulin-like peptides in camel milk: stimulate skin fibroblasts (collagen-producing cells) in vitro; anti-aging fibroblast activation mechanism',
       lactoferrin: 'Lactoferrin: iron-binding protein; anti-inflammatory, antimicrobial; reduces skin inflammation that drives hyperpigmentation',
-      antiAging: 'Camel milk soap and topical preparations: increasing evidence for skin anti-aging benefits; clinical pilot studies show improved skin hydration and reduced wrinkle appearance',
-      traditional: 'Consumed across the Horn of Africa and Arabian peninsula for thousands of years; known for skin-whitening and smoothing effects (IGF-1 may contribute); now exported as a premium anti-aging product globally',
+      
+      
       topical: 'Camel milk face masks and soaps: traditional in Somali and Ethiopian nomadic cultures; now artisanally produced and sold in Western markets',
     },
     honey: {
@@ -830,8 +764,6 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
   // ============================================================
   'south-african': {
     community: 'South African',
-    fitzpatrickRange: 'IV-VI for Black South African (Zulu, Xhosa, Sotho populations); I-III for Afrikaner/White South African; III-V for Cape Coloured and South Asian South African',
-    melaninType: 'Varies dramatically by community; Cape Biodiversity Hotspot has provided the world\'s richest medicinal plant flora relative to area — a unique anti-aging botanical resource',
     ageingProfile: {
       overview: `South Africa is biologically extraordinary for anti-aging research because the Cape
       Floristic Region is the world's smallest and richest biodiversity hotspot — with over 9,000 plant
@@ -843,13 +775,13 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
       capeBiodiversity: 'The Cape Floristic Region contributes indigenous ingredients to global skincare at an accelerating rate; many of the most novel anti-aging botanicals in premium global skincare originate here',
     },
     rooibos: {
-      botanical: 'Aspalathus linearis; endemic to the Western Cape, South Africa; now one of the world\'s most popular herbal teas',
+      
       aspalathin: 'Aspalathin: a dihydrochalcone flavonoid found ONLY in rooibos; not present in any other plant; potent antioxidant',
       nothofagin: 'Nothofagin: another unique rooibos flavonoid with antioxidant properties',
       UV: 'Aspalathin specifically reduces UV-B-induced reactive oxygen species (ROS) in skin cells; measurable photoprotective antioxidant effect',
-      antiGlycation: 'Rooibos extract inhibits advanced glycation end product (AGE) formation by up to 50% in some studies; AGEs are a primary driver of skin stiffening and yellowing in aging skin',
+      
       MMP: 'Rooibos polyphenols inhibit matrix metalloproteinases (MMP-1, MMP-3): the collagen-degrading enzymes that increase with aging and UV exposure',
-      clinical: 'Topical rooibos extract (1% AspalFresh): clinical studies show reduced redness, improved skin elasticity, and anti-aging benefit in 4-week human application study',
+      
       quercetin: 'Quercetin in rooibos: broad anti-inflammatory; also slightly inhibits tyrosinase (hyperpigmentation) — relevant for PIH-prone dark South African skin',
       traditional: 'Khoikhoi and San (Khoi-San) people used rooibos tea long before European settlers documented it; now a daily beverage for all South Africans; anti-aging benefit from both oral and topical use',
     },
@@ -872,11 +804,9 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
       modern: 'Buchu extract increasingly used in premium natural skincare; anti-inflammatory and antioxidant positioning; Cape Town-based beauty companies building indigenous ingredient ranges',
     },
     aloeFerox: {
-      botanical: 'Aloe ferox (Cape aloe or bitter aloe); larger, more potent species than Aloe vera; grows wild across South Africa',
-      compounds: '36+ bioactive compounds vs. approximately 20 in Aloe vera; higher antioxidant capacity per gram',
-      aloecin: 'Aloecin and aloesone: unique to A. ferox; more potent anti-inflammatory activity than equivalent aloe vera compounds',
-      collagen: 'Studies: A. ferox gel increases Type I procollagen synthesis more effectively than A. vera at equivalent concentrations',
-      wound: 'Superior wound healing to A. vera in comparative studies; clinical wound healing evidence extends to anti-aging tissue repair',
+      botanical: 'Aloe ferox (Cape aloe or bitter aloe); grows wild across South Africa',
+      collagen: 'A. ferox gel may support collagen in lab work; human evidence is limited',
+      wound: 'Traditionally used on wounds; evidence for anti-ageing use is early',
       anti_hyperpig: 'Aloin (anthraquinone): inhibits tyrosinase; mild skin-brightening effect; traditional use for "skin clearing"',
       traditional: 'Historically used by all South African communities for skin burns, wounds, and sun damage; Cape aloe bitters (internal use) for digestion and systemic health',
     },
@@ -894,7 +824,6 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
     modernAntiAging: {
       rooibosTopical: 'Rooibos extract in serum (0.5-1%): antioxidant + UV protection + anti-glycation; unique multi-mechanism anti-aging action; combine with SPF 50+',
       marulaRoutine: 'Marula oil as finishing oil: 2-3 drops AM under SPF; PM after retinol treatment; locks in moisture and delivers procyanidin antioxidants',
-      aloeFerox: 'Aloe ferox gel for calming inflammation post-retinoid; superior to aloe vera; reduces PIH risk from retinoid-induced irritation in darker South African skin',
       SPF: 'South African UV is intense at southern latitudes + high-altitude cities (Johannesburg at 1,750m); SPF 50+ daily non-negotiable for any skin tone',
       protocol: 'Morning: rooibos antioxidant serum + SPF 50+; Evening: retinol (low, slow) + marula oil; Weekly: aloe ferox hydrating mask; Ongoing: amasi or probiotic supplement for gut-skin axis',
     },
@@ -905,8 +834,6 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
   // ============================================================
   'black-american': {
     community: 'Black American',
-    fitzpatrickRange: 'IV-VI (predominantly; significant variation from lighter-skinned Black Americans to deepest skin tones)',
-    melaninType: 'Eumelanin-dominant; same biological advantage as West African skin (shared ancestry) but environmental and cultural context differs significantly',
     ageingProfile: {
       overview: `Black American skin shares the West African melanin biology — the genuine delay in
       wrinkle formation that "Black don't crack" describes — but Black American cultural context
@@ -917,7 +844,7 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
       K-beauty and dermatology are converging on understanding what actives work best for very dark
       skin — and how to use them without triggering PIH.`,
       weatheringHypothesis: 'The weathering hypothesis (Dr. Arline Geronimus): chronic exposure to racism and systemic disadvantage causes accelerated biological aging (higher allostatic load, shorter telomeres); this is a skin-relevant finding; chronic stress → elevated cortisol → collagen degradation → premature aging',
-      blackDontCrackScience: '"Black don\'t crack" is both scientifically validated (melanin photoprotection, delayed wrinkles) and a cultural touchstone; the nuance is that hyperpigmentation and elasticity loss occur — just not wrinkles first',
+      blackDontCrackScience: '"Black don\'t crack" is a cultural touchstone with a basis (melanin delays sun-driven wrinkles); the nuance is that hyperpigmentation and elasticity loss occur — just not wrinkles first',
     },
     melaninScience: {
       eumelanin: 'Eumelanin provides the UV photoprotection; melanin in Black skin acts as both UV absorber and free radical scavenger',
@@ -937,7 +864,6 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
     restAsResistance: {
       tricia: 'Tricia Hersey ("The Nap Bishop") and The Nap Ministry reframe rest as resistance against capitalist overwork culture; connects specifically to Black American lived experience',
       skinScience: 'Sleep deprivation: elevates cortisol (collagen breakdown signal), reduces growth hormone peak (skin repair signal), impairs circadian skin barrier repair, reduces melatonin (nocturnal antioxidant)',
-      culturalContext: 'Black American women disproportionately affected by overwork, caretaking burdens, and sleep deprivation due to systemic inequity; the anti-aging case for rest has particular resonance',
       melatonin: 'Melatonin produced during deep darkness is a potent antioxidant for skin; even phone screen exposure before sleep disrupts melatonin and reduces the overnight antioxidant repair cycle',
       cortisol: 'Chronic sleep debt = chronic cortisol elevation; cortisol breaks down collagen via MMP upregulation; chronic stress-driven premature aging is measurable in biomarker studies',
       circadian: 'Key collagen synthesis occurs 11pm-4am during deep sleep stages; skin cell proliferation peaks at night; missing sleep disrupts this repair window',
@@ -1052,19 +978,6 @@ export function getRetinoidProtocol(fitzpatrickCategory) {
   return directMap[fitzpatrickCategory] || null;
 }
 
-export function getAgingSkinStat(statCategory) {
-  const directMap = {
-    'collagen': AGING_SKIN_STATS.collagen,
-    'melanin': AGING_SKIN_STATS.melaninProtection,
-    'retinoids': AGING_SKIN_STATS.retinoids,
-    'longevity': AGING_SKIN_STATS.longevityPopulations,
-    'vitamin-c': AGING_SKIN_STATS.vitaminC,
-    'green-tea': AGING_SKIN_STATS.greenTea,
-    'omega-3': AGING_SKIN_STATS.omega3,
-  };
-  return directMap[statCategory] || null;
-}
-
 export function getTraditionalIngredient(ingredientKey) {
   const directMap = {
     'shea-butter': TRADITIONAL_ANTI_AGING_INGREDIENT_DATABASE.sheaButter,
@@ -1107,39 +1020,6 @@ export function getMythsByRelevance(communityId) {
     myth => myth.relevantCommunities.includes(communityId) || myth.relevantCommunities.includes('all')
   );
 }
-
-export const MODULE_METADATA = {
-  name: 'aging_skin_ethnic_guide',
-  version: '1.0.0',
-  description: 'Science of skin aging across 9 ethnic communities: biology, anti-aging ingredients, traditional longevity practices, and evidence-based protocols. Differentiated from aging_gracefully_ethnic_guide.js by focus on biochemistry, ingredient science, and clinical evidence rather than cultural attitudes and philosophy.',
-  differentiatedFrom: 'aging_gracefully_ethnic_guide.js — that module covers cultural attitudes and the philosophy of graceful aging; this module covers the biochemistry of why skin ages differently across skin types, the evidence hierarchy for anti-aging ingredients, and the science behind traditional longevity ingredients',
-  communities: ['west-african', 'south-asian', 'caribbean', 'arab', 'latina', 'east-asian', 'east-african', 'south-african', 'black-american'],
-  primaryExports: {
-    ETHNIC_AGING_SKIN_GUIDES: 'Core community data — Fitzpatrick type, aging profile, traditional ingredients, modern protocols for all 9 communities',
-    UNIVERSAL_SKIN_AGING: 'Universal aging science — intrinsic/extrinsic mechanisms, Fitzpatrick and aging, evidence hierarchy, retinoid protocols by skin type, sleep science',
-    AGING_SKIN_STATS: 'Key statistics — collagen loss rates, melanin protection data, retinoid efficacy data, longevity population data',
-    COLLAGEN_SCIENCE_DEEP: 'Deep dive into collagen types, MMP degradation biology, synthesis pathway, oral supplementation evidence',
-    ANTI_AGING_INGREDIENT_SCIENCE: 'Mechanism-level science for retinoids, vitamin C, niacinamide, peptides, AHAs, SPF',
-    TRADITIONAL_ANTI_AGING_INGREDIENT_DATABASE: '15 traditional ingredients with full bioactive profile, anti-aging mechanisms, and evidence level',
-    TRADITIONAL_LONGEVITY_SCIENCE: 'Adaptogens, Blue Zone commonalities, fermented foods science, fasting and autophagy',
-    PROFESSIONAL_TREATMENTS_BY_SKIN_TYPE: 'Lasers, peels, microneedling, injectables — appropriateness by Fitzpatrick type',
-    GUT_SKIN_AGING_AXIS: 'Gut microbiome aging, gut-skin axis, probiotic and prebiotic anti-aging evidence',
-    HORMONES_AND_SKIN_AGING: 'Estrogen, testosterone, cortisol, growth hormone, melatonin and their skin aging roles',
-    DIET_AND_SKIN_AGING_SCIENCE: 'Glycation, oxidative load, protein/collagen nutrition, anti-inflammatory diets, key micronutrients',
-    ANTI_AGING_SKINCARE_ROUTINES_BY_COMMUNITY: 'Morning and evening step-by-step routines for west-african, south-asian, east-asian, black-american',
-    SKIN_AGING_BY_DECADE: 'Decade-by-decade skin changes, priorities, and dark skin notes from 20s through 60s+',
-    SKIN_AGING_MYTHS_AND_FACTS: '12 common skin aging myths corrected with evidence',
-  },
-  primaryGetters: {
-    getAgingSkinGuide: 'getAgingSkinGuide(communityId) → community guide object or null',
-    getRetinoidProtocol: 'getRetinoidProtocol(fitzpatrickCategory) → retinoid protocol for light/medium/dark or I-VI',
-    getTraditionalIngredient: 'getTraditionalIngredient(key) → ingredient science object from the database',
-    getCommunityRoutine: 'getCommunityRoutine(communityId) → AM/PM routine for community',
-    getDecadeGuidance: 'getDecadeGuidance(decade) → aging guidance for 20s/30s/40s/50s/60s',
-    getLongevityFoods: 'getLongevityFoods(communityId) → array of top longevity foods for community',
-    getMythsByRelevance: 'getMythsByRelevance(communityId) → filtered myths relevant to that community',
-  },
-};
 
 export function getAntiAgingMythFact(index) {
   const myths = SKIN_AGING_MYTHS_AND_FACTS.myths;
@@ -1196,7 +1076,7 @@ export function getLongevityFoods(communityId) {
 export const COLLAGEN_SCIENCE_DEEP = {
   types: {
     typeI: {
-      location: 'Dermis, tendons, bone; accounts for 80% of skin collagen',
+      
       function: 'Provides tensile strength and resistance to stretching; main structural scaffold of skin',
       aging: 'Type I collagen decreases most dramatically with UV exposure and chronological aging; loss is responsible for wrinkle formation',
       synthesis: 'Synthesized by dermal fibroblasts; requires vitamin C as cofactor for post-translational hydroxylation of proline and lysine residues',
@@ -1243,7 +1123,7 @@ export const COLLAGEN_SCIENCE_DEEP = {
     hydrolyzed: {
       form: 'Hydrolyzed collagen peptides (molecular weight 1-20 kDa): small enough to be absorbed intact from gut',
       mechanism: 'Absorbed collagen peptides (Pro-Hyp, Gly-Pro-Hyp dipeptides and tripeptides): act as signals to fibroblasts to increase endogenous collagen synthesis; not incorporated directly',
-      clinical: 'Meta-analysis of 19 RCTs: hydrolyzed collagen 2.5-10g/day for 8-24 weeks significantly improved skin elasticity (effect size 0.48) and hydration vs. placebo',
+      
       dose: '2.5-10g/day shows efficacy range; most RCTs use 5-10g; marine collagen and bovine collagen both effective',
       timing: 'Oral collagen + vitamin C combined: most effective; vitamin C required for endogenous collagen synthesis that the collagen peptides stimulate',
     },
@@ -1264,8 +1144,8 @@ export const ANTI_AGING_INGREDIENT_SCIENCE = {
       pigmentation: 'Retinoids reduce tyrosinase expression and melanin transfer; effective against hyperpigmentation — the primary aging concern in dark skin',
     },
     forms: {
-      retinol: 'Retinol: must be converted to retinaldehyde then to retinoic acid (tretinoin) by skin enzymes; 10-20x less potent than tretinoin per unit; available OTC',
-      retinaldehyde: 'Retinaldehyde (retinal): one conversion step from retinoic acid; 10-20x more potent than retinol; less irritating than tretinoin; available OTC in EU/Canada',
+      
+      
       tretinoin: 'Tretinoin (all-trans retinoic acid): prescription; directly active; most studied; strongest evidence; most irritating',
       adapalene: 'Adapalene 0.1-0.3%: synthetic retinoid; selective RAR-beta and gamma agonist; less irritating than tretinoin; prescription for acne, OTC 0.1% in US/Canada',
       bakuchiol: 'Bakuchiol: non-retinoid from Psoralea corylifolia; activates retinoid receptors via different mechanism; RCT evidence comparable to 0.5% retinol; safe in pregnancy',
@@ -1289,7 +1169,7 @@ export const ANTI_AGING_INGREDIENT_SCIENCE = {
   },
   niacinamide: {
     mechanism: {
-      NAD: 'Niacinamide (nicotinamide) is a precursor to NAD+ and NADP+; these coenzymes power cellular energy production and DNA repair; NAD+ declines ~50% by age 60; supplementing niacinamide partially compensates',
+      NAD: 'Niacinamide (nicotinamide) is a precursor to NAD+ and NADP+; these coenzymes power cellular energy production and DNA repair; NAD+ declines with age',
       sirtuins: 'NAD+-dependent sirtuins (SIRT1-7) regulate cellular aging, DNA repair, and metabolic homeostasis; niacinamide increases cellular NAD+ and thereby sirtuin activity',
       melanin: 'Inhibits melanosome transfer from melanocytes to keratinocytes at a concentration of 5%; does not inhibit tyrosinase directly; targets the transfer step',
       barrier: 'Increases ceramide synthesis in keratinocytes: ceramides are the lipid matrix of the stratum corneum; stronger barrier = less TEWL, less environmental damage, less PIH-triggering inflammation',
@@ -1302,7 +1182,7 @@ export const ANTI_AGING_INGREDIENT_SCIENCE = {
     signaling: 'Signal peptides (Matrixyl, Argireline): mimic collagen fragments that signal fibroblasts to produce more collagen; the broken collagen fragment signals repair — peptides replicate this signal without the breakdown',
     carrier: 'Carrier peptides (GHK-Cu, GQPR): deliver trace minerals (copper, manganese) to specific enzymes; GHK-Cu directly activates lysyl oxidase (collagen crosslinking enzyme) and MMP inhibition',
     neurotransmitter: 'Neurotransmitter-inhibiting peptides (Argireline, Leuphasyl): reduce acetylcholine release at neuromuscular junction; relax expression-line muscles; topical effect is modest but measurable',
-    evidence: 'Peptide evidence hierarchy: copper peptides GHK-Cu have strongest evidence (multiple RCTs); Matrixyl 3000 has two well-cited clinical studies; most others have in vitro or in-house data only',
+    
     darkerSkin: 'Peptides are an excellent choice for Fitzpatrick V-VI skin as they produce anti-aging collagen stimulation without the PIH-triggering inflammatory mechanism of retinoids; particularly valuable for cautious anti-aging in Black and Brown skin',
   },
   AHAs: {
@@ -1323,16 +1203,16 @@ export const ANTI_AGING_INGREDIENT_SCIENCE = {
     broadSpectrum: 'Broad-spectrum: covers both UVA and UVB; critical for preventing photoaging, melasma, and PIH even if dark skin is less prone to sunburn',
     mineralVsChemical: 'Mineral (zinc oxide, titanium dioxide): physical UV deflectors; stable; suitable for all skin tones; zinc oxide is broad-spectrum alone; some leave white cast on dark skin (concern for compliance). Chemical filters: absorb UV and convert to heat; no white cast; some reef concern; more options for cosmetically acceptable formulas on dark skin',
     darkSkinCompliance: 'SPF compliance is a real issue for dark skin: white cast from mineral SPFs, belief that dark skin doesn\'t need SPF, cultural messages. Tinted mineral SPFs, lightweight fluid chemical SPFs, and SPF-infused moisturizers improve compliance — formulary matters for habit formation',
-    reapplication: 'Reapplication is as important as initial application: every 2 hours in direct sun; after swimming; sunscreen quantity matters (2mg/cm2 is the test standard; most people apply 25-50% of this)',
+    
   },
 };
 
 export const TRADITIONAL_LONGEVITY_SCIENCE = {
   adaptogens: {
-    definition: 'Adaptogens: herbs that help the body adapt to stress by modulating the hypothalamic-pituitary-adrenal (HPA) axis and reducing maladaptive stress responses; the concept originates from Soviet pharmacology (1940s) and parallels Ayurvedic rasayana',
+    
     antiAgingMechanism: 'Chronic stress → elevated cortisol → collagen degradation, inflammaging, premature aging; adaptogens reduce the cortisol spike and improve stress resilience; indirect but significant anti-aging mechanism',
     validated: [
-      { name: 'Ashwagandha (Withania somnifera)', mechanism: 'Reduces cortisol 25-30% in RCTs; withanolides stimulate collagen production; reduces stress-driven skin aging' },
+      { name: 'Ashwagandha (Withania somnifera)', mechanism: 'Small trials suggest it may lower stress hormones; may reduce stress-driven skin aging' },
       { name: 'Rhodiola rosea', mechanism: 'Salidroside and rosavins; reduces cortisol; activates AMPK (cellular energy sensor with anti-aging properties); Siberian adaptogen used across Central Asia' },
       { name: 'Panax ginseng', mechanism: 'Ginsenosides; SIRT1 activation; collagen stimulation; 2000+ year history in East Asian anti-aging' },
       { name: 'Holy basil (Ocimum tenuiflorum, tulsi)', mechanism: 'Eugenol, ursolic acid; anti-inflammatory; cortisol modulation; Ayurvedic adaptogen with skin anti-aging evidence' },
@@ -1362,7 +1242,7 @@ export const TRADITIONAL_LONGEVITY_SCIENCE = {
     topical: 'Topical microbiome also ages: skin microbiome diversity decreases with age; maintaining skin microbiome diversity (avoiding excessive antibacterial products) may be an underrecognized anti-aging strategy',
     examples: {
       kimchi: 'Lactobacillus plantarum W1 from kimchi: RCT shows improved skin hydration, elasticity, and reduced TEWL at 12 weeks',
-      kefir: 'Kefir (fermented dairy): diverse Lactobacillus and Bifidobacterium strains; meta-analysis: improved skin hydration and barrier function',
+      
       miso: 'Miso (fermented soybean): isoflavones (phytoestrogens) + probiotic strains; Japanese miso consumption negatively associated with wrinkle depth in epidemiological data',
       injera: 'Injera (Ethiopian teff ferment): probiotic + prebiotic fiber; gut-skin axis benefit; unique to Ethiopian food culture but equivalent benefit to other fermented starches',
       yogurt: 'Yogurt consumption (South Asian, Mediterranean, East African traditions): Lactobacillus acidophilus and L. bulgaricus; anti-inflammatory skin effects via IL-10 upregulation',
@@ -1396,7 +1276,7 @@ export const PROFESSIONAL_TREATMENTS_BY_SKIN_TYPE = {
     nonAblative: {
       description: 'Non-ablative fractional lasers (1540nm, 1927nm): heat dermis without removing epidermis; less dramatic but safer across more skin tones',
       suitability: 'Fitzpatrick I-IV: suitable; V-VI: possible with very conservative settings and experienced practitioner; less PIH risk than ablative',
-      evidence: 'Non-ablative fractional laser: improves wrinkles, texture, mild pigmentation; requires multiple sessions; cumulative improvement',
+      
     },
     pico: {
       description: 'Picosecond lasers (PicoWay, PicoSure): ultra-short pulses; less thermal injury; good for pigmentation treatment across more skin tones',
@@ -1418,7 +1298,7 @@ export const PROFESSIONAL_TREATMENTS_BY_SKIN_TYPE = {
     medium: {
       description: 'Medium depth peels: 35-50% TCA, combination Jessner\'s + TCA; penetrate to papillary dermis',
       suitability: 'Fitzpatrick I-III: suitable; IV: high risk for PIH; V-VI: contraindicated by most guidelines',
-      evidence: 'Medium peels: significant collagen remodeling; wrinkle and texture improvement; suitable for patients who cannot tolerate ablative laser',
+      
     },
     darkSkinSafe: {
       options: 'Safer chemical peels for dark skin: salicylic acid 20-30% (beta hydroxy, less irritating), mandelic acid (larger molecule, slower penetration), lactic acid 50%+ (by trained professional)',
@@ -1430,7 +1310,7 @@ export const PROFESSIONAL_TREATMENTS_BY_SKIN_TYPE = {
     description: 'Microneedling (collagen induction therapy): fine needles create controlled micro-injuries; triggers wound healing cascade → collagen and elastin synthesis',
     suitability: 'Fitzpatrick I-VI: one of the few anti-aging treatments safe across all skin tones; does not generate UV-absorbing thermal energy; PIH risk is low with proper technique and depth',
     mechanism: 'Needle punctures trigger platelet degranulation, growth factor release (TGF-β, PDGF, VEGF), fibroblast activation → Type I and III collagen synthesis',
-    evidence: 'Multiple RCTs: microneedling improves wrinkle depth, skin texture, scar appearance, and skin firmness across Fitzpatrick I-VI',
+    
     RF: 'Radiofrequency microneedling (RF microneedling / Morpheus8): adds RF energy delivered through insulated needles; heats dermis below epidermis; collagen remodeling without epidermal thermal damage; appropriate for Fitzpatrick I-VI with care',
     PRP: 'PRP (platelet-rich plasma) combined with microneedling: centrifuged patient blood applied during/after treatment; growth factor delivery directly into micro-channels; popular; clinical evidence variable but growing',
   },
@@ -1455,10 +1335,7 @@ export const PROFESSIONAL_TREATMENTS_BY_SKIN_TYPE = {
 };
 
 export const DIET_AND_SKIN_AGING_SCIENCE = {
-  overview: `Diet is underutilized in anti-aging skincare strategy. Multiple well-designed studies show
-  that what people eat significantly and measurably affects skin aging outcomes — sometimes more than
-  topical ingredients. The communities in this guide each have traditional diets that, when eaten in
-  traditional rather than Westernized form, are consistently anti-inflammatory and anti-aging.`,
+  
 
   glycation: {
     definition: 'Glycation: non-enzymatic reaction between sugars (glucose, fructose) and proteins or lipids; forms advanced glycation end products (AGEs)',
@@ -1467,7 +1344,7 @@ export const DIET_AND_SKIN_AGING_SCIENCE = {
     antiGlycation: {
       dietary: 'Reduce added sugar and refined carbohydrates; low-glycemic diet in studies associates with fewer wrinkles; every 100g/day increase in carbohydrates associated with increased photoaging score in epidemiological data',
       cooking: 'High-heat, dry cooking methods (grilling, frying) produce dietary AGEs that can be absorbed; lower-heat, moist cooking (boiling, steaming, stewing) produces fewer dietary AGEs; traditional stewing methods (Ethiopian wot, Caribbean stews, South Asian curries) are AGE-appropriate cooking methods',
-      ingredients: 'Rooibos extract (50% reduction in AGE formation in vitro); carnosine (oral supplement); aminoguanidine; benfotiamine; these are anti-glycation interventions',
+      
     },
   },
 
@@ -1493,13 +1370,13 @@ export const DIET_AND_SKIN_AGING_SCIENCE = {
   antiInflammatoryDiets: {
     principle: 'Inflammaging (chronic low-grade inflammation driving skin aging) is significantly modulated by diet; anti-inflammatory diets reduce systemic inflammatory markers (CRP, IL-6) that drive MMP upregulation and collagen breakdown',
     Mediterranean: {
-      evidence: 'Mediterranean diet has the most evidence: associated with longer telomeres, lower CRP, improved skin elasticity; RCT evidence for reduced systemic inflammation',
+      
       components: 'Olive oil (oleocanthal anti-inflammatory), fish (omega-3), legumes, whole grains, vegetables, fruits, moderate wine (resveratrol); limited red meat and processed food',
       skinStudy: 'Study of 1264 people: high adherence to Mediterranean diet associated with significantly fewer actinic keratoses (precancerous UV-damaged skin) vs. low adherence',
     },
     omega3Balance: {
       ratio: 'Western diet omega-6:omega-3 ratio approximately 15:1 (target 4:1 or lower for anti-inflammatory); this ratio imbalance drives systemic inflammation',
-      sources: 'Omega-3 sources across communities: West African (oily fish, palm oil tocotrienols), South Asian (flaxseed, walnuts, fish), Caribbean (flying fish, tuna, snapper), Arab (sardines, mackerel), Latina (chia seeds, walnuts, salmon), East Asian (mackerel, sardines, salmon, chia), East African (Nile perch, tilapia), South African (sardines, anchovies, mackerel), Black American (salmon, trout, mackerel)',
+      
     },
     sugar: {
       refined: 'Added sugar and refined carbohydrates: drive glycation, gut dysbiosis, insulin spikes (insulin-driven growth factors that can worsen PIH in dark skin), and systemic inflammation',
@@ -1511,20 +1388,20 @@ export const DIET_AND_SKIN_AGING_SCIENCE = {
     vitaminA: {
       dietary: 'Dietary vitamin A (retinol from animal sources; beta-carotene from plants → converted to retinol in body): essential for skin cell differentiation, cornification, and sebum production',
       deficiency: 'Vitamin A deficiency causes hyperkeratosis (rough, bumpy skin), impaired wound healing, and Bitot\'s spots; severe deficiency affects skin aging rate',
-      sources: 'Retinol: liver, egg yolks, dairy; Beta-carotene: sweet potato (okinawan imo, Caribbean), red palm oil (West Africa), morinda, mango, papaya, carrots',
+      
       topical: 'Topical retinoids (vitamin A derivatives) are the most evidence-backed anti-aging topical; dietary vitamin A supports but does not replace topical retinoids',
     },
     vitaminD: {
       function: 'Vitamin D (calcitriol) regulates keratinocyte proliferation and differentiation; anti-inflammatory; modulates immune response in skin',
-      deficiency: 'Vitamin D deficiency significantly more common in high-melanin populations: melanin reduces UV-driven vitamin D synthesis by up to 99% in Fitzpatrick VI skin at northern latitudes',
+      
       skinEffect: 'Deficiency: impaired barrier function, increased skin inflammation, worsened atopic dermatitis, reduced wound healing speed',
-      sources: 'Few dietary sources (fatty fish, egg yolks, fortified foods); sun exposure (limited by melanin in dark skin and SPF in all skin); supplementation (1000-2000 IU/day) recommended for those at risk of deficiency',
+      
       antiAging: 'Adequate vitamin D: anti-inflammatory (reduces IL-6, TNF-α); some evidence for improved skin barrier function and reduced age-related skin inflammation',
     },
     zinc: {
       function: 'Zinc: cofactor for 300+ enzymes; essential for collagen crosslinking (lysyl oxidase), DNA repair, immune function, wound healing, and sebum regulation',
       aging: 'Zinc absorption decreases with aging; elderly populations frequently zinc-insufficient; zinc insufficiency impairs wound healing (anti-aging tissue repair)',
-      sources: 'Oysters (highest zinc food), red meat, pumpkin seeds, legumes, mopane worms (traditional Southern African — high zinc), cashews, dark chocolate',
+      
       topical: 'Topical zinc (zinc oxide, zinc pyrithione): anti-inflammatory, antimicrobial; reduces post-acne PIH by reducing acne-driven inflammation',
     },
     selenium: {
@@ -1541,7 +1418,7 @@ export const SKIN_AGING_MYTHS_AND_FACTS = {
   myths: [
     {
       myth: '"Black skin doesn\'t need sunscreen"',
-      fact: 'Melanin provides approximately SPF 13 equivalent — meaningful protection but far from complete. SPF 30 provides 97% UVB blockage. Dark skin still experiences photoaging, hyperpigmentation from UV exposure, and elevated melanoma risk on acral (palm, sole) and mucosal areas. Sunscreen is recommended for all Fitzpatrick types.',
+      fact: 'Melanin gives meaningful protection but far from complete. SPF 30 provides 97% UVB blockage. Dark skin still experiences photoaging, hyperpigmentation from UV exposure, and elevated melanoma risk on acral (palm, sole) and mucosal areas. Sunscreen is recommended for all Fitzpatrick types.',
       relevantCommunities: ['west-african', 'black-american', 'east-african', 'south-african'],
     },
     {
@@ -1551,7 +1428,7 @@ export const SKIN_AGING_MYTHS_AND_FACTS = {
     },
     {
       myth: '"More expensive skincare means more effective anti-aging"',
-      fact: 'Price correlates with marketing, packaging, and fragrance — not with anti-aging efficacy. Generic tretinoin (prescription) costs $20 and has 40 years of RCT evidence. Luxury creams at $500 with "stem cell extract" have no definitive clinical data. SPF 30 from a pharmacy works as well as SPF 30 from a luxury brand.',
+      
       relevantCommunities: ['all'],
     },
     {
@@ -1613,7 +1490,7 @@ export const ANTI_AGING_SKINCARE_ROUTINES_BY_COMMUNITY = {
       { step: 2, product: 'Vitamin C serum', detail: 'Sodium ascorbyl phosphate 10% or L-ascorbic acid 15% (more stable form for dark skin; oxidized vitamin C can worsen hyperpigmentation)' },
       { step: 3, product: 'Niacinamide', detail: '5-10% niacinamide for hyperpigmentation prevention and barrier support; the anti-PIH priority ingredient' },
       { step: 4, product: 'Moisturizer', detail: 'Lightweight ceramide moisturizer or shea-butter enriched cream (traditional and evidence-backed); hyaluronic acid for dehydration' },
-      { step: 5, product: 'SPF', detail: 'SPF 50+ broad-spectrum; tinted mineral SPF for even tone; "Black don\'t crack" does NOT mean skip SPF — melanin = SPF ~13, not protection' },
+      { step: 5, product: 'SPF', detail: 'SPF 50+ broad-spectrum; tinted mineral SPF for even tone; "Black don\'t crack" does NOT mean skip SPF — melanin is not enough protection on its own' },
     ],
     eveningRoutine: [
       { step: 1, product: 'Oil cleanser', detail: 'Moringa oil or baobab oil as first cleanse; dissolves sunscreen and makeup; delivers antioxidants' },
@@ -1677,7 +1554,7 @@ export const ANTI_AGING_SKINCARE_ROUTINES_BY_COMMUNITY = {
       { step: 4, product: 'Peptide serum (alternating)', detail: 'On non-retinol nights: GHK-Cu copper peptides or Matrixyl 3000; collagen stimulation without irritation risk; ideal for the 5 nights/week not doing retinol' },
       { step: 5, product: 'Rich moisturizer', detail: 'Ceramide cream + JBCO for scalp (if applying to hairline/scalp as anti-aging scalp treatment); thick shea for occlusion if needed' },
     ],
-    supplementProtocol: ['Oral collagen 5-10g + vitamin C 500mg', 'Omega-3 (EPA+DHA) 2g/day (anti-inflammatory)', 'Niacinamide oral 500mg (systemic NAD+ support — separate from topical)', 'Probiotic 20-50 billion CFU', 'Vitamin D3 (Black Americans are disproportionately deficient; vitamin D affects skin cell function)'],
+    supplementProtocol: ['Oral collagen 5-10g + vitamin C 500mg', 'Omega-3 (EPA+DHA) 2g/day (anti-inflammatory)', 'Niacinamide oral 500mg (systemic NAD+ support — separate from topical)',  'Vitamin D3 (Black Americans are disproportionately deficient; vitamin D affects skin cell function)'],
     restProtocol: {
       minimumSleep: '7-9h in a darkened room; phone outside bedroom or blue-light blocked after 9pm',
       trackerNote: 'Track sleep quality (app or wearable): slow-wave sleep quality is the anti-aging variable, not just duration',
@@ -1728,11 +1605,11 @@ export const GUT_SKIN_AGING_AXIS = {
         longum: 'B. longum: reduces skin sensitivity and reactivity; anti-inflammatory via reducing TNF-α; RCT shows reduced transient skin redness and sensitivity',
         breve: 'B. breve: improves skin hydration; studied in skin aging context; measurably reduces TEWL',
       },
-      dosing: '10-50 billion CFU/day: typical effective dose range in skin RCTs; multiple strain products generally outperform single strain',
+      
     },
     prebiotics: {
       inulin: 'Inulin and FOS (fructooligosaccharides): preferentially feed Bifidobacterium; measurably increase fecal Bifidobacterium counts and SCFA production',
-      sources: 'Dietary prebiotic sources: chicory root, Jerusalem artichoke, garlic, onion, banana, asparagus, oats; jicama (traditional Aztec); teff (Ethiopian); breadfruit (Caribbean)',
+      
     },
   },
 };
@@ -1786,7 +1663,7 @@ export const TRADITIONAL_ANTI_AGING_INGREDIENT_DATABASE = {
     origin: 'Iran/Middle East (Punica granatum); now pan-Mediterranean and global',
     communities: ['arab', 'south-asian', 'east-african'],
     bioactives: ['Punicalagins (largest polyphenol MW in plant world)', 'Punicalins', 'Ellagic acid', 'Punicic acid (conjugated linolenic acid)', 'Anthocyanins', 'Hydroxycinnamic acids'],
-    antiAgingMechanisms: ['Punicalagins: 3x more antioxidant activity than green tea or red wine per weight; inhibit MMP enzymes; pro-collagen stimulation in fibroblasts', 'Ellagic acid: tyrosinase inhibition (brightening); anti-inflammatory', 'Punicic acid in seed oil: anti-inflammatory omega-5; cell proliferation support', 'Urolithin A (gut metabolite from punicalagins): mTOR inhibition → autophagy → cellular anti-aging; produced from pomegranate by gut bacteria'],
+    antiAgingMechanisms: [ 'Ellagic acid: tyrosinase inhibition (brightening); anti-inflammatory', 'Punicic acid in seed oil: anti-inflammatory omega-5; cell proliferation support', 'Urolithin A (gut metabolite from punicalagins): mTOR inhibition → autophagy → cellular anti-aging; produced from pomegranate by gut bacteria'],
     evidenceLevel: 'Strong: multiple human RCTs (oral pomegranate extract improves skin elasticity and reduces UV-induced damage); clinical evidence among the best for any traditional botanical',
     traditionalUse: 'Ancient Persia, Arab world, Indian Ayurveda, Jewish tradition (40 seeds in circumference); peel powder used topically in North African and Middle Eastern beauty',
     modernFormulations: 'Pomegranate seed oil in premium anti-aging serums; pomegranate extract in oral supplements; Urolithin A now available as isolated supplement',
@@ -1796,7 +1673,7 @@ export const TRADITIONAL_ANTI_AGING_INGREDIENT_DATABASE = {
     origin: 'China, Japan, Korea (Camellia sinensis)',
     communities: ['east-asian'],
     bioactives: ['Epigallocatechin gallate (EGCG)', 'Epicatechin gallate (ECG)', 'Epicatechin (EC)', 'L-theanine', 'Caffeine', 'Theogallin', 'Gallic acid'],
-    antiAgingMechanisms: ['EGCG: MMP-1 and MMP-9 inhibition (reduces collagen degradation by 40% in vitro)', 'EGCG: SIRT1 activation; NAD+ pathway support', 'EGCG: reduces AP-1 transcription factor (same target as retinoids, but gentler mechanism)', 'Photoprotection: oral EGCG measurably increases MED (minimal erythema dose) — dietary photoprotection', 'L-theanine: reduces cortisol response to stress; indirect anti-aging via stress axis'],
+    antiAgingMechanisms: ['EGCG: MMP-1 and MMP-9 inhibition (slows collagen breakdown in lab studies)', 'EGCG: SIRT1 activation; NAD+ pathway support', 'EGCG: reduces AP-1 transcription factor (same target as retinoids, but gentler mechanism)', 'Photoprotection: oral EGCG measurably increases MED (minimal erythema dose) — dietary photoprotection', 'L-theanine: reduces cortisol response to stress; indirect anti-aging via stress axis'],
     evidenceLevel: 'Strong: multiple human studies for oral and topical; epidemiological data from Japan; RCT evidence for photoprotection and skin elasticity',
     traditionalUse: 'Daily beverage in Japan, Korea, China for 2000+ years; Japanese chado (tea ceremony) as cultural practice; topical green tea preparations in traditional East Asian medicine',
     modernFormulations: 'Green tea extract in K-beauty and J-beauty serums; standardized EGCG supplements; green tea SPF serums for layering under sunscreen',
@@ -1826,8 +1703,8 @@ export const TRADITIONAL_ANTI_AGING_INGREDIENT_DATABASE = {
     origin: 'Western Cape, South Africa — endemic (Aspalathus linearis)',
     communities: ['south-african'],
     bioactives: ['Aspalathin (unique — found only in rooibos)', 'Nothofagin', 'Quercetin', 'Luteolin', 'Orientin', 'Vitexin', 'Isorientin', 'Chrysoeriol'],
-    antiAgingMechanisms: ['Aspalathin: scavenges superoxide and reduces UV-induced ROS in keratinocytes (unique mechanism not replicated by other antioxidants)', 'Rooibos polyphenols: inhibit MMP-1 and MMP-3; preserves collagen matrix', 'AGE inhibition: rooibos extract reduces advanced glycation end product formation by up to 50%', 'Quercetin: anti-inflammatory, mild tyrosinase inhibition; supports aspalathin\'s anti-aging action'],
-    evidenceLevel: 'Moderate-strong: in vitro mechanistic evidence excellent; clinical study (1% AspalFresh topical) shows reduced skin redness and improved elasticity; distinctive mechanism from other plant antioxidants',
+    antiAgingMechanisms: ['Aspalathin: scavenges superoxide and reduces UV-induced ROS in keratinocytes (unique mechanism not replicated by other antioxidants)', 'Rooibos polyphenols: inhibit MMP-1 and MMP-3; preserves collagen matrix',  'Quercetin: anti-inflammatory, mild tyrosinase inhibition; supports aspalathin\'s anti-aging action'],
+    evidenceLevel: 'Early: mostly lab evidence; distinctive mechanism from other plant antioxidants',
     traditionalUse: 'Khoikhoi and San people: traditional use predates European contact; became nationally important beverage in 20th century; South African cultural symbol; skin applications emerging from beauty industry interest',
     modernFormulations: 'Rooibos extract in South African skincare brands (Liz Earle rooibos products, African Extracts); AspalFresh standardized extract; rooibos tea bags as DIY toner',
   },
@@ -1847,7 +1724,7 @@ export const TRADITIONAL_ANTI_AGING_INGREDIENT_DATABASE = {
     communities: ['caribbean', 'south-african', 'west-african', 'arab'],
     bioactives: ['Acemannan (polysaccharide)', 'Aloin (anthraquinone)', 'Emodin', 'Aloecin (A. ferox specific)', 'Chrysophanol', 'Vitamin C, B1, B2, B6', 'Folic acid', 'Choline'],
     antiAgingMechanisms: ['Acemannan: stimulates fibroblast proliferation; increases collagen and HA synthesis; immunomodulatory', 'Aloin: inhibits tyrosinase (mild brightening effect)', 'Anti-inflammatory: reduces IL-1, IL-6, TNF-alpha; reduces inflammaging in dermis', 'Wound healing: extensive clinical evidence; anti-aging wound repair pathways shared with anti-aging mechanisms'],
-    evidenceLevel: 'Strong (for wound healing and anti-inflammatory); moderate (for anti-aging specifically); RCT at 0.5% in postmenopausal women shows collagen increase and wrinkle reduction',
+    evidenceLevel: 'Strong (for wound healing and anti-inflammatory); moderate (for anti-aging specifically); limited human data',
     traditionalUse: 'Caribbean: fresh aloe fillet on skin after sun; pan-African use for burns and skin conditions; Arab world: Quranic herb, widely used; pan-Asian: traditional burn treatment; truly global traditional herb',
     modernFormulations: 'Aloe vera gel as standalone product; base in almost every moisturizer; A. ferox gel from South African brands premium priced; inner leaf gel vs. whole leaf (aloin removed for topical safety)',
   },
@@ -1896,7 +1773,7 @@ export const TRADITIONAL_ANTI_AGING_INGREDIENT_DATABASE = {
 export const HORMONES_AND_SKIN_AGING = {
   estrogen: {
     skinRole: 'Estrogen maintains skin thickness, collagen density, moisture, and elasticity via estrogen receptor alpha and beta on keratinocytes, fibroblasts, and melanocytes',
-    decline: 'Menopause: serum estradiol drops from ~200 pg/mL to <20 pg/mL; this magnitude of change drives 30% collagen loss in 5 years — the most dramatic skin change event in a woman\'s life',
+    decline: 'Menopause: estradiol falls sharply, and collagen loss speeds up in the following years',
     skinEffects: [
       'Skin thinning: epidermal and dermal thickness decreases measurably within 1-2 years of menopause',
       'Dryness: reduced sebum and hyaluronic acid production',
@@ -1905,9 +1782,9 @@ export const HORMONES_AND_SKIN_AGING = {
       'Pigmentation changes: estrogen-sensitive melanocytes become less regulated; may increase melasma or decrease in unpredictable pattern',
     ],
     HRT: {
-      evidence: 'HRT (systemic estrogen ± progestogen): most evidence-backed intervention for menopausal skin aging; studies show preservation of skin collagen, thickness, and elasticity',
+      
       topicalEstrogen: 'Topical vaginal estrogen: used for urogenital atrophy; some evidence for local skin anti-aging effect; lower systemic exposure than oral',
-      phytoestrogens: 'Phytoestrogens (soy isoflavones, flaxseed lignans, red clover): weak estrogen receptor agonists; studies show modest skin benefit in menopause; safe alternative for those who cannot use HRT',
+      
       risk: 'HRT benefits must be weighed against individual risks (breast cancer, thrombosis); medical decision with physician',
     },
   },
@@ -1923,7 +1800,7 @@ export const HORMONES_AND_SKIN_AGING = {
   },
   growthHormone: {
     peak: 'Growth hormone (GH) peaks during deep sleep (slow-wave sleep); drives collagen synthesis, cell proliferation, and skin repair',
-    decline: 'GH secretion declines approximately 14% per decade after 25; contributing to the slowdown in overnight skin repair with aging',
+    
     sleep: 'Sleep quality improvement: the most accessible intervention to optimize GH pulsatility; deep sleep is when GH does its anti-aging work in skin',
     IGF1: 'IGF-1 (insulin-like growth factor 1): downstream mediator of GH effects; stimulates fibroblasts; found in camel milk at notable concentrations; declines with aging',
   },
@@ -1931,7 +1808,7 @@ export const HORMONES_AND_SKIN_AGING = {
     mechanism: 'Cortisol (the stress hormone): upregulates MMP-1, -3, -9 expression → collagen degradation; suppresses collagen synthesis via fibroblast downregulation',
     chronicStress: 'Chronic elevation of cortisol from psychological stress, sleep deprivation, or chronic illness causes measurable skin collagen degradation; a primary mechanism of stress-driven aging',
     measurement: 'Cortisol can be measured in saliva, blood, or hair (chronic cortisol exposure); diurnal cortisol pattern (morning peak, evening trough) flattens with chronic stress',
-    interventions: ['7-9h quality sleep (most impactful for cortisol normalization)', 'Regular exercise (reduces stress cortisol, though acute cortisol spike during exercise is normal)', 'Mindfulness meditation (documented cortisol reduction in RCTs)', 'Adaptogens (ashwagandha reduces cortisol 25-30% in RCTs)', 'Social connection (reduces baseline cortisol)'],
+    interventions: ['7-9h quality sleep (most impactful for cortisol normalization)', 'Regular exercise (reduces stress cortisol, though acute cortisol spike during exercise is normal)', 'Mindfulness meditation (documented cortisol reduction in RCTs)', 'Adaptogens such as ashwagandha (small trials; ask your doctor)', 'Social connection (reduces baseline cortisol)'],
     weathering: 'The weathering hypothesis: chronic psychosocial stress from systemic disadvantage causes chronically elevated allostatic load → elevated cortisol → accelerated biological aging including skin aging; documented primarily in Black American women but broadly applicable to any chronically stressed population',
   },
   melatonin: {
@@ -1948,7 +1825,7 @@ export const SKIN_AGING_BY_DECADE = {
   twenties: {
     overview: 'Intrinsic aging is minimal and largely invisible; this is the prevention decade',
     keyChanges: [
-      'Collagen production begins its 1%/year decline — invisible at this stage but establishing the cumulative trajectory',
+      'Collagen production begins its gradual decline — invisible at this stage but establishing the cumulative trajectory',
       'Cell turnover starting to slow from childhood peak',
       'Cumulative UV damage accumulating invisibly (may not be visible for 2-3 decades)',
       'This is the decade when consistent SPF has the greatest lifetime impact',
@@ -1981,7 +1858,7 @@ export const SKIN_AGING_BY_DECADE = {
     collagenFocus: 'Oral collagen supplementation (5-10g/day hydrolyzed with vitamin C) now has meaningful clinical evidence; from 40s onward, the cumulative collagen deficit makes supplementation more impactful',
   },
   fifties: {
-    overview: 'Menopause is a watershed for most women; 30% additional collagen loss in first 5 years; rapid visible change; the decade that most demands comprehensive anti-aging strategy',
+    overview: 'Menopause is a watershed for most women; faster collagen loss in the first years; rapid visible change; the decade that most demands comprehensive anti-aging strategy',
     keyChanges: [
       'Menopausal collagen loss: skin noticeably thinner, drier, more fragile',
       'Significant facial volume loss; jowls and neck skin changes prominent',
@@ -1996,7 +1873,7 @@ export const SKIN_AGING_BY_DECADE = {
     overview: 'Compounding of all previous aging processes; management over reversal; quality of life and skin health focus',
     keyChanges: [
       'Skin is significantly thinner, more fragile, heals more slowly',
-      'Collagen is now 40-50% reduced from peak; structural changes significant across all skin tones',
+      'Collagen is now well below its peak; structural changes significant across all skin tones',
       'Barrier function reduced: increased sensitivity and reactivity',
       'Wound healing impaired: the fibroblast and keratinocyte responses slow dramatically',
     ],

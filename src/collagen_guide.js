@@ -15,7 +15,7 @@ export const COLLAGEN_SCIENCE_OVERVIEW = {
   },
   collagen_in_skin: {
     layer: 'Collagen is produced by fibroblasts in the DERMIS — the middle layer of skin, beneath the epidermis.',
-    proportion: 'Collagen makes up approximately 70-80% of the dry weight of the dermis.',
+    
     function: 'Collagen provides firmness and structure to skin. Elastin (a different protein) provides the spring/bounce. Hyaluronic acid provides the cushioning and hydration. Together they give skin its plump, youthful appearance.',
   },
   production: 'Fibroblasts (specialist dermal cells) continuously synthesise collagen. Vitamin C is an essential cofactor — collagen cannot be synthesised without it. Copper is also required. Production peaks in the late teens/early twenties.',
@@ -26,7 +26,7 @@ export const COLLAGEN_SCIENCE_OVERVIEW = {
 export const COLLAGEN_TYPES = {
   type_1: {
     type: 'Type I',
-    abundance: 'Most abundant — makes up 80-90% of skin collagen',
+    
     function: 'Tensile strength, structure, and firmness. The collagen of scars, tendons, and bones. Gives skin its taughtness.',
     in_beauty: 'Most collagen supplements and topical products target Type I collagen.',
   },
@@ -60,8 +60,8 @@ export const COLLAGEN_TYPES = {
 
 export const COLLAGEN_LOSS = {
   natural_aging: {
-    rate: 'From approximately age 25, the body produces approximately 1-1.5% less collagen per year.',
-    menopause: 'In the first 5 years post-menopause, women lose approximately 30% of skin collagen due to declining oestrogen. Oestrogen receptors in fibroblasts directly regulate collagen synthesis.',
+    
+    
     visible_signs: 'Fine lines and wrinkles (loss of structural support), skin laxity (loss of firmness), hollowing under the eyes and cheeks (loss of collagen scaffold), thinning skin.',
   },
   accelerated_loss: {
@@ -72,7 +72,7 @@ export const COLLAGEN_LOSS = {
     pollution: 'Particulate matter and ozone damage collagen via free radical generation. Urban skin ages faster.',
     sleep_deprivation: 'During deep sleep, growth hormone is released — a key collagen synthesis signal. Poor sleep reduces growth hormone and elevates cortisol (which breaks down collagen).',
   },
-  fitzpatrick_note: 'Fitzpatrick V-VI skin has a thicker dermis, higher natural melanin (which blocks some UV), and lower incidence of photoaging compared to Fitzpatrick I-II. However, this does NOT mean darker skin is immune to collagen loss — UV protection, smoking cessation, and anti-inflammatory habits are important across all skin tones.',
+  
 };
 
 // ─── TOPICAL COLLAGEN ─────────────────────────────────────────────────────────
@@ -88,7 +88,7 @@ export const TOPICAL_COLLAGEN_GUIDE = {
     retinoids: {
       ingredient: 'Retinoids (Retinol, Tretinoin, Retinaldehyde)',
       mechanism: 'Retinoids bind to nuclear receptors in fibroblasts, directly upregulating collagen gene transcription. Also reduce MMP activity, slowing collagen breakdown. The most evidence-backed topical collagen stimulants.',
-      evidence: 'Tretinoin (prescription) has the most clinical evidence — measurable increases in collagen density within 3-6 months of consistent use.',
+      
       start: 'Start with retinol 0.025-0.1% (OTC), 2-3x per week. Tretinoin requires a prescription.',
       caution: 'Irritating initially. Not for use during pregnancy. PIH risk in Fitzpatrick IV-VI with initial irritation — introduce very slowly.',
     },
@@ -101,14 +101,14 @@ export const TOPICAL_COLLAGEN_GUIDE = {
     copper_peptides: {
       ingredient: 'Copper Peptides (GHK-Cu)',
       mechanism: 'Copper is a required mineral cofactor for lysyl oxidase — the enzyme that cross-links collagen and elastin fibres. GHK-Cu tripeptide has been shown in studies to stimulate collagen I, III, and IV synthesis and reduce MMP activity.',
-      evidence: 'Growing clinical evidence. Less studied than retinoids but very promising.',
+      
       texture: 'Often slightly blue-green in colour due to copper. Look for GHK-Cu on the ingredient list.',
     },
     growth_factors: {
       ingredient: 'Growth Factors (EGF, TGF-β)',
       mechanism: 'Epidermal Growth Factor and Transforming Growth Factor signal fibroblasts to produce collagen. Found in advanced serums.',
-      source: 'Often derived from plant stem cells or lab-synthesised peptides (since human growth factors cannot be ethically sourced at scale).',
-      evidence: 'Some evidence for topical benefit in wound healing; cosmetic collagen benefits still being studied.',
+      
+      
     },
     peptides: {
       ingredient: 'Collagen Peptides (topical)',
@@ -119,7 +119,7 @@ export const TOPICAL_COLLAGEN_GUIDE = {
       ingredient: 'Bakuchiol',
       mechanism: 'Plant-derived compound from the seeds of Psoralea corylifolia. Activates similar receptors to retinol, stimulating collagen production, with significantly less irritation.',
       best_for: 'Pregnancy-safe retinol alternative. Sensitive skin. Fitzpatrick IV-VI who experience irritation from retinol.',
-      evidence: 'Several clinical studies show comparable benefits to retinol at 0.5% for fine lines and hyperpigmentation with fewer side effects.',
+      
     },
     niacinamide: {
       ingredient: 'Niacinamide (Vitamin B3)',
@@ -143,11 +143,7 @@ export const COLLAGEN_SUPPLEMENTS = {
     peptides: 'Hydrolysed collagen supplements are collagen that has been partially digested already (enzymatically broken into shorter peptides). These shorter peptides (di- and tripeptides containing hydroxyproline) are small enough to be absorbed into the bloodstream.',
     signalling: 'The theory: these hydroxyproline-containing peptides circulate in the blood and signal fibroblasts — "more collagen is being broken down, time to make more." Some research supports this signalling mechanism.',
   },
-  evidence: {
-    positive: 'Multiple randomised controlled trials (RCTs) have shown that 2.5-10g of hydrolysed collagen peptides daily for 8-12 weeks significantly improves skin hydration, elasticity, and measurably increases dermal collagen density versus placebo.',
-    caveats: 'Many studies are industry-funded. Collagen is not a "complete" protein (low in tryptophan). The exact mechanism is still debated. Eating adequate total protein and ensuring sufficient vitamin C intake may achieve similar results.',
-    bottom_line: 'Evidence is more positive than sceptics claim, but not as definitive as marketers claim. Supplementing 2.5-10g of hydrolysed collagen daily with vitamin C appears to offer meaningful skin benefits with minimal risk.',
-  },
+  
   types_of_supplements: {
     bovine: {
       type: 'Bovine (beef/cattle) collagen',
@@ -171,7 +167,7 @@ export const COLLAGEN_SUPPLEMENTS = {
       type: 'Plant-based "collagen"',
       what_it_is: 'No plant produces collagen — these are "collagen builders" or "collagen boosters" containing vitamin C, zinc, copper, and plant antioxidants that support the body\'s own collagen production.',
       for_whom: 'Vegans and vegetarians who cannot use animal-derived collagen.',
-      evidence: 'Less direct evidence than hydrolysed collagen peptides, but ingredients like vitamin C are proven collagen synthesis cofactors.',
+      
     },
   },
   how_to_take: {
@@ -216,7 +212,7 @@ export const ETHNIC_COLLAGEN_NOTES = {
   south_asian: {
     community: 'South Asian',
     notes: 'Turmeric (curcumin) is a powerful anti-inflammatory antioxidant used in traditional South Asian diet and skincare — it may protect collagen from inflammatory breakdown. Dals (lentils) are rich in plant protein and zinc. Traditional bone-based curries and stocks are collagen-containing foods.',
-    concern: 'Medium Fitzpatrick III-IV skin ages visibly earlier than Fitzpatrick V-VI but benefits from moderate melanin protection compared to Fitzpatrick I-II. Sun protection is important, especially given high UV index in South Asia.',
+    concern: 'South Asian skin ranges from light to deep, so protection needs vary. Sun protection is important, especially given high UV index in South Asia.',
   },
   caribbean: {
     community: 'Caribbean',
@@ -229,7 +225,7 @@ export const ETHNIC_COLLAGEN_NOTES = {
   },
   east_asian: {
     community: 'East Asian',
-    notes: 'Korean and Japanese collagen supplement cultures are among the most developed in the world — collagen drinks, gummies, and powders are mainstream beauty products across East Asia. Bone-based broths (Korean gomtang, tonkotsu ramen broth, Chinese pig trotter collagen soup) are traditional collagen foods. Green tea is a powerful antioxidant protecting collagen from oxidative damage.',
+    
     unique: 'The "collagen drink" trend originated in Japan and Korea. Marine collagen from fish skin is especially popular in coastal East Asian cultures.',
   },
   black_american: {
@@ -271,10 +267,3 @@ export function getEthnicCollagenNotes(communityId) {
   return ETHNIC_COLLAGEN_NOTES[key] || Object.values(ETHNIC_COLLAGEN_NOTES);
 }
 
-export const COLLAGEN_STATS = {
-  collagenTypes: Object.keys(COLLAGEN_TYPES).length,
-  topicalIngredients: Object.keys(TOPICAL_COLLAGEN_GUIDE.effective_topical_ingredients).length,
-  supplementTypes: Object.keys(COLLAGEN_SUPPLEMENTS.types_of_supplements).length,
-  ethnicEntries: Object.keys(ETHNIC_COLLAGEN_NOTES).length,
-  lifestyleFactors: Object.keys(COLLAGEN_LIFESTYLE.diet).length,
-};

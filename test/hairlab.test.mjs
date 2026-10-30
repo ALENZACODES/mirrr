@@ -170,6 +170,22 @@ test('nails and scent studio routes over HTTP', async () => {
   assert.equal(lib.shelves.find(s => s.id === 'nails').guides.length, 14);
 });
 
+test('ageing studio routes over HTTP', async () => {
+  const B = `http://127.0.0.1:${PORT}`;
+  const h = { 'x-forwarded-for': '10.6.6.11' };
+  const o = await (await fetch(`${B}/api/ageing/options`, { headers: h })).json();
+  assert.equal(o.decades.length, 5); assert.equal(o.tones.length, 10);
+  const r = await fetch(`${B}/api/ageing/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ decade: '50s', fitzpatrick: 'VI', stage: 'menopause', community: 'south_asian' }) });
+  assert.equal(r.status, 200);
+  const p = await r.json();
+  assert.equal(p.choices.decade, '50s'); assert.equal(p.community.id, 'south_asian'); assert.match(p.retinoid.frequency, /Once weekly/); assert.ok(p.hormones.hrt);
+  assert.equal((await fetch(`${B}/api/ageing/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  const html = await (await fetch(`${B}/`, { headers: h })).text();
+  assert.ok(html.includes('data-view="ageing"') && html.includes('src="ageing.js"'));
+  const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
+  assert.equal(lib.shelves.find(s => s.id === 'ageing').guides.length, 7);
+});
+
 test('colour and lip studio routes over HTTP', async () => {
   const B = `http://127.0.0.1:${PORT}`;
   const h = { 'x-forwarded-for': '10.6.6.9' };

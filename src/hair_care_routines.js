@@ -226,7 +226,7 @@ export const HAIR_ROUTINES = {
       },
     },
     heroIngredients: [
-      { name: 'Sea moss (Irish moss)', benefit: '92 of the 102 minerals the body needs. Deep moisturising gel. Caribbean superfood used in hair.' },
+      { name: 'Sea moss (Irish moss)', benefit: 'A source of minerals. Deep moisturising gel. Caribbean superfood used in hair.' },
       { name: 'Coconut oil', benefit: 'Central to Caribbean hair tradition — penetrates shaft, prevents protein loss' },
       { name: 'Aloe vera', benefit: 'Tropical plant — Barbados aloe vera is particularly famed. Seals, moisturises, adds shine.' },
       { name: 'Castor oil (JBCO)', benefit: 'Caribbean-processed black castor oil — growth, thickening, scalp treatment' },

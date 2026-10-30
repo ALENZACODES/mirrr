@@ -267,7 +267,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
     },
 
     prenatalBeautyFoods: [
-      { food: 'Sea moss (Irish moss)', benefit: 'Contains 92 of the 102 minerals the body needs; supports collagen matrix, thyroid function, and skin hydration', note: 'Use in culinary amounts; high iodine content means moderation is key' },
+      { food: 'Sea moss (Irish moss)', benefit: 'Contains minerals such as iodine and zinc; supports collagen matrix, thyroid function, and skin hydration', note: 'Use in culinary amounts; high iodine content means moderation is key' },
       { food: 'Callaloo (amaranth greens)', benefit: 'High in folate, iron, and calcium; iron supports healthy color and glow in the skin' },
       { food: 'Green banana (boiled)', benefit: 'Resistant starch supports gut health; B vitamins contribute to skin cell turnover' },
       { food: 'Plantain', benefit: 'Vitamin B6, potassium; helps reduce leg swelling and skin water retention' },

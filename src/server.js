@@ -30,6 +30,7 @@ import { handleSkinClinic } from './skin/routes.js';
 import { handleComplexion } from './makeup/routes.js';
 import { handleColour } from './colour/routes.js';
 import { handleNails } from './nails/routes.js';
+import { handleAgeing } from './ageing/routes.js';
 import { createRateLimiter } from './ratelimit.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -755,6 +756,7 @@ async function router(req, res) {
   if (await handleComplexion(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handleColour(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handleNails(method, path, url, req, res, { sendJSON, readBody })) return;
+  if (await handleAgeing(method, path, url, req, res, { sendJSON, readBody })) return;
 
   // 404
   return sendJSON(res, 404, { error: 'Not found' });

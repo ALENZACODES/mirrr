@@ -304,10 +304,10 @@ export const ETHNIC_NUTRITION_BEAUTY_GUIDES = {
         consumption: 'Callaloo soup; sautéed; with saltfish; central to Trinidadian and Jamaican cuisine'
       },
       seaMoss: {
-        description: 'Chondrus crispus (Irish moss) or Gracilaria (sea moss); 92 of 102 essential minerals',
+        description: 'Chondrus crispus (Irish moss) or Gracilaria (sea moss); a source of minerals.',
         beauty: 'Collagen protein support; minerals for skin; iodine for thyroid (skin connection); Caribbean traditional',
         trend: 'Sea moss gel viral in Black wellness community; traditional Caribbean use predates trend',
-        evidence: 'Mineral content real; 92-mineral claim overstated but nutritionally rich'
+        evidence: 'Mineral content real but varies by harvest; iodine can be high, so do not overdo it'
       }
     },
 

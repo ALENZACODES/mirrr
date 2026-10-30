@@ -77,7 +77,7 @@ export const ETHNIC_TRADITIONAL_MEDICINE_BEAUTY_GUIDES = {
       SeaMoss: {
         botanicalName: 'Chondrus crispus / Gracilaria spp.',
         tradition: 'Sea moss (Irish moss in Jamaica, seamoss in Trinidad) has been used in Caribbean medicine for centuries. It was used by enslaved Africans as a food security crop — harvested from rocks, nutritionally dense, freely available.',
-        nutrients: '92 of 102 minerals the human body requires. Iodine, zinc, magnesium, potassium, iron, calcium. Vitamins A, C, E, K, B12.',
+        nutrients: 'A source of minerals. Iodine, zinc, magnesium, potassium, iron, calcium. Vitamins A, C, E, K, B12.',
         beautyUse: 'Sea moss gel (boiled and blended sea moss) applied as face mask: hydrating (carrageenan — the mucilaginous compound — creates a film that holds moisture), mildly exfoliating (natural enzymes), skin brightening. Internal: sea moss smoothies for skin health, thyroid support (iodine), immune function.',
       },
       AloeVera: {

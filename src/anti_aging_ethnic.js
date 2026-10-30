@@ -8,8 +8,8 @@
 
 export const ETHNIC_AGING_FACTS = {
   melaninAdvantage: {
-    fact: 'Higher melanin content provides natural SPF (approximately SPF 13) and reduces UV-driven collagen breakdown',
-    result: 'Melanin-rich skin (Fitzpatrick IV-VI) develops visible wrinkles on average 10–20 years later than fair skin',
+    fact: 'Higher melanin content gives some natural UV protection and reduces UV-driven collagen breakdown, though not enough to skip sunscreen',
+    result: 'Melanin-rich skin (Fitzpatrick IV-VI) tends to show sun-driven wrinkles later than fair skin',
     tradeoff: 'BUT melanin-rich skin is far more prone to hyperpigmentation, dark spots, and uneven tone as its primary aging concern',
     implication: 'For ethnic skin, anti-aging = anti-hyperpigmentation + evenness, not wrinkles primarily',
   },
@@ -17,17 +17,6 @@ export const ETHNIC_AGING_FACTS = {
     fitzpatrick_I_II: ['wrinkles', 'sun-damage', 'age-spots (lighter)', 'redness', 'loss-of-firmness', 'volume-loss'],
     fitzpatrick_III_IV: ['hyperpigmentation', 'dark-spots', 'melasma', 'some-wrinkles', 'pore-changes'],
     fitzpatrick_V_VI: ['hyperpigmentation', 'pih-scarring', 'dark-spots', 'ashiness', 'keloid-risk-from-procedures'],
-  },
-  communitySpecificPatterns: {
-    'south-asian': 'Melasma (hormonally triggered) is the #1 aging concern. Sun damage shows as darkening not wrinkling.',
-    'west-african': 'Deep even skin tone that ages gracefully in texture. PIH and spot evenness are the primary concerns.',
-    'east-asian': 'Skin thins and shows dehydration lines early, then stays wrinkle-free longer. "Bamboo aging" — stays young then ages fast.',
-    'arab': 'Olive skin resists wrinkles but accumulates sun damage as patchy darkness. Nasolabial folds deepen.',
-    'latina': 'Melasma risk high (especially post-pregnancy). Warmth of skin tone is the primary beauty asset to protect.',
-    'caribbean': 'Excellent wrinkle resistance. Main concern: sun damage = uneven patches, not lines.',
-    'east-african': 'Beautiful even aging. Dryness-related fine lines are more common than sun-damage lines.',
-    'south-african': 'Huge variation by Fitzpatrick type. White-South-African skin: full sun damage concern. Black-South-African: like west-african.',
-    'black-american': 'Significantly delayed wrinkling. Primary concerns: PIH, keloid prevention, maintaining moisture for glow.',
   },
 };
 
@@ -66,15 +55,12 @@ export const LONGEVITY_PROTOCOLS = {
     },
     keyIngredients: ['SPF 50', 'Vitamin C', 'Hyaluronic Acid', 'Niacinamide'],
     skip: ['Retinol (unless treating acne — can introduce gently)'],
-    productsTier: {
-      budget: ['The Ordinary Vitamin C Suspension ($12)', 'Neutrogena Ultra Sheer SPF 100 ($18)', 'CeraVe PM Moisturiser ($18)'],
-      mid: ['Maelove Glow Maker Vitamin C ($30)', 'EltaMD UV Clear SPF 46 ($39)', 'Tatcha The Water Cream ($68)'],
-    },
+    
   },
   '30s': {
     decade: 'Your 30s',
     focus: 'Address what\'s appearing; amplify what\'s working',
-    skinChanges: 'Cell turnover slows. Collagen production begins declining (~1% per year). Dark spots accumulated in 20s become visible. For melanin-rich skin: PIH from 20s acne is peaking.',
+    skinChanges: 'Cell turnover slows. Collagen production begins slowly declining. Dark spots accumulated in 20s become visible. For melanin-rich skin: PIH from 20s acne is peaking.',
     priorities: [
       'Introduce retinol/retinoid — now is the ideal time',
       'Peptides to support collagen',
@@ -89,11 +75,7 @@ export const LONGEVITY_PROTOCOLS = {
     },
     keyIngredients: ['Retinol (0.025–0.05%)', 'Peptides', 'Niacinamide', 'Azelaic Acid', 'SPF'],
     newAdditions: ['Peptide serum (CollaGEN or Buffet)', 'Richer eye cream', 'Neck cream (often forgotten)'],
-    productsTier: {
-      budget: ['Differin Adapalene 0.1% ($30)', 'The Ordinary Multi-Peptide + HA Serum ($25)', 'RoC Retinol Correxion Eye Cream ($25)'],
-      mid: ['Paula\'s Choice Clinical 1% Retinol ($62)', 'The Inkey List Peptide Moisturiser ($17)', 'Olay Regenerist Micro-Sculpting Serum ($30)'],
-      luxury: ['SkinCeuticals C E Ferulic ($220)', 'Tatcha The Dewy Skin Cream ($89)', 'La Mer Crème de la Mer ($200)'],
-    },
+    
   },
   '40s': {
     decade: 'Your 40s',
@@ -118,11 +100,7 @@ export const LONGEVITY_PROTOCOLS = {
       { treatment: 'Ablative CO2 Laser', safeFor: 'Fitzpatrick I-III only', risks: 'SEVERE PIH risk for Fitzpatrick IV-VI. Life-altering damage possible.', recommended: 'NOT recommended for deeper skin tones without extreme caution' },
     ],
     keyIngredients: ['Retinol 0.1%+', 'Growth Factors (EGF)', 'Ceramides', 'Peptides', 'SPF (unwavering)'],
-    productsTier: {
-      budget: ['Neutrogena Rapid Wrinkle Repair Retinol Cream ($30)', 'CeraVe Moisturising Cream with Ceramides ($18)', 'Olay Total Effects 7-in-1 ($25)'],
-      mid: ['SkinMedica TNS Advanced+ Serum ($125)', 'Roc Retinol Correxion Max Daily Hydration ($40)'],
-      luxury: ['La Mer The Eye Concentrate ($300)', 'SkinCeuticals Tripeptide-R Neck Repair ($130)', 'Augustinus Bader The Rich Cream ($325)'],
-    },
+    
   },
   '50s_plus': {
     decade: 'Your 50s+',
@@ -136,14 +114,11 @@ export const LONGEVITY_PROTOCOLS = {
       'Facial massage and gua sha for circulation and lymphatic drainage',
     ],
     ethnicFocus: {
-      melaninRich: 'You likely look 15-20 years younger than your fair-skinned peers. Embrace it. Focus: maintaining glow, addressing any spots, staying hydrated.',
+      melaninRich: 'Focus: maintaining glow, addressing any spots, staying hydrated.',
       allTypes: 'Invest in the neck and hands — they reveal age more than the face on darker skin tones.',
     },
     glow_maintenance: ['Rosehip oil as serum', 'Facial gua sha daily', 'Vitamin C + SPF morning non-negotiables', 'Sheet mask weekly'],
-    productsTier: {
-      budget: ['The Ordinary Squalane ($10 — pure, excellent face oil)', 'Bakuchiol Serum by Herbivore ($54)', 'CeraVe PM Facial Moisturising Lotion ($18)'],
-      luxury: ['Augustinus Bader The Rich Cream ($325)', 'La Mer The Treatment Lotion ($230)', 'Tatcha The Essence ($105)'],
-    },
+    
   },
 };
 
@@ -169,21 +144,21 @@ export const LONGEVITY_INGREDIENTS = {
     types: ['Matrixyl (collagen stimulating)', 'Argireline (Botox-mimicking)', 'Copper Peptides (skin repair)', 'EGF (Epidermal Growth Factor)'],
     why: 'Signal skin to produce more collagen and repair faster. Gentle — suitable for all Fitzpatrick types without irritation or PIH risk.',
     ethnicConsideration: 'Excellent for melanin-rich skin — effective without risk of irritation-driven PIH. Pair with retinol to amplify results.',
-    recommendation: 'The Ordinary Multi-Peptide + HA Serum ($25) — best value peptide product available',
+    
   },
   bakuchiol: {
     name: 'Bakuchiol',
     origin: 'Psoralea corylifolia plant — used in Ayurvedic medicine for centuries',
-    why: 'Plant-based retinol alternative. Clinical studies show similar efficacy to retinol for fine lines and texture, without the irritation.',
+    
     ethnicConsideration: 'EXCELLENT for melanin-rich skin — all the collagen-stimulating benefits of retinol without the PIH risk from irritation. Pregnancy-safe alternative.',
-    recommendation: 'Herbivore Bakuchiol Serum ($54) / Inkey List Bakuchiol Moisturiser ($15)',
+    
   },
   growth_factors: {
     name: 'Growth Factors (EGF)',
     why: 'Proteins that signal cell repair and regeneration. EGF (Epidermal Growth Factor) stimulates new cell production.',
     where: 'Popular in K-beauty (fermented versions) and luxury clinical skincare',
     ethnicConsideration: 'No PIH risk — works at cellular level. Excellent for deep skin tones in their 40s+.',
-    recommendation: 'SkinMedica TNS Advanced+ Serum ($295) / Some By Mi AHA BHA PHA 30 Days Miracle Toner (contains fermented EGF, $23)',
+    
   },
   ceramides: {
     name: 'Ceramides',
@@ -225,9 +200,9 @@ export function getLongevityProtocol(decade) {
   return LONGEVITY_PROTOCOLS[map[key] || decade] || null;
 }
 
-export function getAgingFacts(communityId) {
+/** Ageing concerns by depth (Fitzpatrick), not by community: depth varies widely inside every community. */
+export function getAgingFacts() {
   return {
-    communityPattern: ETHNIC_AGING_FACTS.communitySpecificPatterns[communityId] || 'Pattern not yet indexed',
     primaryConcernsByFitzpatrick: ETHNIC_AGING_FACTS.primaryAgingConcerns,
     melaninAdvantage: ETHNIC_AGING_FACTS.melaninAdvantage,
   };
@@ -245,9 +220,3 @@ export function getAllProtocols() {
   return Object.values(LONGEVITY_PROTOCOLS);
 }
 
-export const ANTI_AGING_STATS = {
-  decadesCovered: Object.keys(LONGEVITY_PROTOCOLS).length,
-  ingredientsProfiled: Object.keys(LONGEVITY_INGREDIENTS).length,
-  communitiesWithPatterns: Object.keys(ETHNIC_AGING_FACTS.communitySpecificPatterns).length,
-  professionalTreatments: LONGEVITY_PROTOCOLS['40s'].professionalTreatmentsForMelaninSkin.length,
-};

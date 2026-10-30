@@ -17,7 +17,7 @@ export const SKIN_AGING_SCIENCE = {
 
   intrinsicAging: {
     collagen: {
-      loss: 'Collagen production decreases ~1% per year after age 20; accelerates in menopause (30% loss in first 5 years)',
+      loss: 'Collagen production slowly decreases from the twenties and drops faster in the years after menopause',
       synthesis: 'Fibroblasts slow collagen I and III production; existing collagen degrades faster',
       crosslinking: 'AGEs (advanced glycation end products) from sugar crosslink collagen → stiff, yellowed, less elastic'
     },
@@ -27,7 +27,7 @@ export const SKIN_AGING_SCIENCE = {
       prevention: 'No ingredient replaces lost elastin; prevention (SPF, no smoking) critical'
     },
     hyaluronicAcid: {
-      natural: 'Skin contains 50% of body\'s total hyaluronic acid (HA); major dermal volume component',
+      
       aging: 'HA naturally decreases with age → skin loses plumpness, depth; injectable HA fillers partially compensate',
       topical: 'Topical HA: superficial plumping effect; cannot replace dermal HA loss; but valuable for surface hydration'
     },
@@ -37,7 +37,7 @@ export const SKIN_AGING_SCIENCE = {
       solution: 'AHAs, retinoids: accelerate turnover; restore more youthful rate'
     },
     hormonal: {
-      menopause: 'Estrogen crash at menopause: 30% collagen loss in first 5 years; significant skin thinning and drying',
+      menopause: 'Estrogen falls at menopause and collagen loss speeds up; significant skin thinning and drying',
       testosterone: 'Men\'s slower estrogen decline: skin tends to age more slowly initially; accelerates after 60',
       solutions: 'HRT (hormone replacement therapy): most effective for menopausal skin aging but systemic risk/benefit consideration'
     }
@@ -59,27 +59,25 @@ export const SKIN_AGING_SCIENCE = {
       smoking: 'Smoking: accelerates skin aging dramatically; reduces circulation; causes characteristic perioral lines; damages collagen via free radicals',
       alcohol: 'Alcohol: dehydrates; disrupts sleep; increases cortisol; chronic use accelerates aging',
       diet: 'Sugar: glycates collagen (AGEs); Mediterranean diet rich in antioxidants documented to reduce skin aging markers',
-      sleep: 'Poor sleep: growth hormone (70-80% released during deep sleep) drives collagen repair; sleep deprivation = accelerated aging'
+      sleep: 'Poor sleep: growth hormone released in deep sleep supports repair; sleep deprivation = accelerated aging'
     }
   },
 
   antiAgingIngredients: {
     retinoids: {
       mechanism: 'Retinoic acid binds nuclear receptors → gene expression changes → increased collagen production, improved cell turnover, faded pigmentation',
-      hierarchy: ['Retinoic acid (prescription, Tretinoin): strongest, most evidence', 'Retinaldehyde (retinal): 11x more potent than retinol; OTC', 'Retinol: OTC; must be converted to retinoic acid by skin', 'Retinyl palmitate/acetate: weakest; most stable'],
+      hierarchy: ['Retinoic acid (prescription, Tretinoin): strongest, most evidence',  'Retinol: OTC; must be converted to retinoic acid by skin', 'Retinyl palmitate/acetate: weakest; most stable'],
       ethnic: 'Deeper skin tones: start LOW and slow with retinoids (0.025% tretinoin or 0.025% retinol); purging and irritation cause PIH',
       use: 'Nighttime only; over moisturizer (sandwich method) for sensitive skin; SPF next morning ALWAYS'
     },
     vitaminC: {
       mechanism: 'Antioxidant; co-factor in collagen synthesis; inhibits melanogenesis; photoprotection',
       bestForms: 'L-ascorbic acid 10-20% (most studied); sodium ascorbyl phosphate (more stable); ascorbyl glucoside',
-      storage: 'Unstable; oxidizes quickly; store in dark cool place; if yellow-orange, has degraded',
-      combo: 'Vitamin C + E + ferulic acid: synergistic combination; 4x more potent than C alone'
+      storage: 'Unstable; oxidizes quickly; store in dark cool place; if yellow-orange, has degraded'
     },
     peptides: {
       mechanism: 'Short amino acid chains signal collagen production; some block acetylcholine (Argireline = topical "Botox"); some fill gaps',
-      types: ['Signal peptides: collagen synthesis stimulation (Matrixyl/palmitoyl tripeptide-1)', 'Carrier peptides: delivery of copper to skin', 'Neurotransmitter inhibitors: Argireline (acetyl hexapeptide-3)', 'Enzyme inhibitor peptides: block collagen breakdown enzymes'],
-      evidence: 'Peptides: promising in vitro evidence; limited large-scale human trials; generally well-tolerated'
+      types: ['Signal peptides: collagen synthesis stimulation (Matrixyl/palmitoyl tripeptide-1)', 'Carrier peptides: delivery of copper to skin', 'Neurotransmitter inhibitors: Argireline (acetyl hexapeptide-3)', 'Enzyme inhibitor peptides: block collagen breakdown enzymes']
     },
     AHAs: {
       types: 'Glycolic acid (smallest, deepest penetration), lactic acid (gentler, more moisturizing), mandelic acid (largest, gentlest)',
@@ -88,7 +86,7 @@ export const SKIN_AGING_SCIENCE = {
       ethnic: 'Mandelic acid preferred for darker skin tones — largest molecule = slower penetration = less irritation/PIH risk'
     },
     niacinamide: {
-      antiAging: 'Niacinamide (vitamin B3) anti-aging: increases ceramide production; reduces fine lines (2019 study); improves skin barrier; reduces blotchiness',
+      
       concentration: '5% for most benefits; 10% adds oil reduction',
       compatible: 'One of the most compatible ingredients — pairs with almost everything; no sensitization'
     }
@@ -103,7 +101,7 @@ export const CULTURAL_AGING_ATTITUDES = {
   overview: 'Different cultures hold profoundly different views on aging that influence beauty practices and psychological experience of aging',
 
   westernAntiAging: {
-    paradigm: 'Mainstream Western beauty culture: aging = decline; "anti-aging" industry = $67 billion (2024); wrinkles to be erased; "looking your age" is a negative',
+    
     critique: 'This paradigm is both ageist and often ineffective; no product reverses aging; prevention and graceful management are realistic goals',
     industry: 'Anti-aging industry marketing often exploits fear of aging; "defying age" language reinforces ageism'
   },
@@ -141,16 +139,14 @@ export const ETHNIC_AGING_GUIDES = {
   'west-african': {
     communityName: 'West African',
     agingProfile: {
-      advantage: 'Higher melanin content = significant UV protection = delayed photoaging; wrinkles typically appear 10-20 years later in deep skin vs. fair',
       darkSkin: 'Black skin visually shows less fine wrinkles but more hyperpigmentation and uneven tone with age',
-      melanin: 'Fitzpatrick V-VI: natural SPF ~13 equivalent built into skin; lifetime of UV protection built in',
       challenge: 'PIH from any inflammatory insult becomes more visible and persistent with age; skin discoloration management key'
     },
 
     culturalView: {
       philosophy: 'West African elder beauty is power — gray-haired grandmothers are often the most revered family members',
       graying: 'Gray hair: cultural meaning varies; some West African traditions revere gray; Westernized diaspora often feel pressure to color',
-      youthful: '"Black don\'t crack" is real: melanin-rich skin genuinely ages more slowly; this is biological fact, not just cultural affirmation'
+      youthful: '"Black don\'t crack": melanin delays sun-driven wrinkles, though skin still ages'
     },
 
     antiAgingRoutine: {
@@ -161,7 +157,7 @@ export const ETHNIC_AGING_GUIDES = {
     },
 
     advice: `West African aging is characterized by delayed wrinkle appearance but increasing skin
-    discoloration. The community saying "Black don\'t crack" is biologically accurate — melanin
+    discoloration. The saying "Black don\'t crack" has a basis — melanin
     provides genuine UV protection and delays collagen photoaging. But with age, hyperpigmentation
     and uneven skin tone become more significant concerns than wrinkles. Anti-aging priority:
     morning vitamin C + SPF, evening niacinamide + gradual retinol introduction. Morula oil
@@ -172,10 +168,9 @@ export const ETHNIC_AGING_GUIDES = {
   'south-asian': {
     communityName: 'South Asian',
     agingProfile: {
-      advantage: 'Olive-to-brown skin (Fitzpatrick III-V): delayed photoaging compared to fair skin; good intrinsic collagen maintenance through 50s typically',
-      challenge: 'Melasma: common in South Asian women particularly during pregnancy and perimenopause; UV worsens dramatically',
+      challenge: 'Melasma: common on medium-to-deep skin, particularly during pregnancy and perimenopause; UV worsens it',
       PCOS: 'PCOS-related premature aging: androgens can accelerate certain aging signs; insulin resistance linked to skin changes',
-      eyes: 'Dark circles under eyes: genetic predisposition in South Asian population; thin under-eye skin + high melanin + vascularity'
+      eyes: 'Dark circles under eyes: often pigment plus thin under-eye skin and visible vessels; can run in families'
     },
 
     culturalView: {
@@ -188,17 +183,8 @@ export const ETHNIC_AGING_GUIDES = {
       morning: 'Vitamin C + SPF 50 PA++++ (melasma risk); mineral SPF preferred for melasma-prone skin',
       evening: 'Retinol/retinaldehyde + tranexamic acid (for melasma); or bakuchiol for gentler option',
       key: 'Melasma management is the priority anti-aging concern for many South Asian women — SPF every single day',
-      ayurvedic: ['Bakuchiol (babchi): plant retinol; Ayurvedic; as effective as retinol 0.5% in trials; gentler', 'Manjistha: Rubia cordifolia; lymph-clearing; traditional anti-aging herb', 'Saffron (kesar): anti-inflammatory; brightening; expensive but genuine evidence base']
-    },
-
-    advice: `South Asian aging skin faces a specific challenge: melasma. This hormonally-triggered
-    hyperpigmentation affects 33-56% of South Asian women and becomes increasingly difficult to
-    treat as it deepens over time. SPF is the absolute priority — even brief, repeated UV
-    exposure deepens melasma significantly. Treat melasma topically: tranexamic acid + vitamin C +
-    azelaic acid triple threat. The Ayurvedic tradition offers bakuchiol — studied against retinol
-    and found equivalent for fine lines and pigmentation — with significantly less irritation
-    and PIH risk. Turmeric (haldi) remains valid: curcumin is a genuine antioxidant with
-    anti-inflammatory evidence even if not a standalone anti-aging treatment.`
+      ayurvedic: ['Bakuchiol (babchi): plant retinol; Ayurvedic; compared well with retinol in a small trial; gentler', 'Manjistha: Rubia cordifolia; lymph-clearing; traditional anti-aging herb', 'Saffron (kesar): anti-inflammatory; brightening; expensive but genuine evidence base']
+    }
   },
 
   caribbean: {
@@ -250,24 +236,15 @@ export const ETHNIC_AGING_GUIDES = {
       morning: 'Rose water toner + vitamin C + SPF (higher UV in Middle East/Mediterranean)',
       evening: 'Argan oil (high oleic acid; anti-aging fatty acids) + retinol or peptide complex',
       key: 'Argan oil + vitamin E: Arab aging skin staple; antioxidant richness of argan exceptional for aging prevention',
-      traditional: ['Argan oil: 80% oleic + linoleic acids; vitamin E; antioxidant; anti-aging Moroccan heritage', 'Black seed oil (thymoquinone): anti-inflammatory; anti-aging; Islamic medicine tradition', 'Rose water: anti-inflammatory; toning; daily ritual']
-    },
-
-    advice: `Arab aging skin benefits from one of the world's most powerful anti-aging ingredients:
-    argan oil. The Moroccan liquid gold is 80% unsaturated fatty acids, rich in tocopherols (vitamin E),
-    and has significant antioxidant capacity documented in aging research. A 2015 study found
-    postmenopausal women using argan oil daily showed significant improvement in skin elasticity
-    over 60 days. The Arab hammam tradition is also anti-aging in effect: regular exfoliation
-    with kese mitt removes dead skin cells; steam increases circulation; the ritual's lymphatic
-    drainage effects are real. Combine ancestral (argan, black seed, hammam) with modern
-    (retinol, SPF 50) for comprehensive aging protocol.`
+      traditional: ['Argan oil: rich in oleic and linoleic acids; vitamin E; antioxidant; anti-aging Moroccan heritage', 'Black seed oil (thymoquinone): anti-inflammatory; anti-aging; Islamic medicine tradition', 'Rose water: anti-inflammatory; toning; daily ritual']
+    }
   },
 
   latina: {
     communityName: 'Latina / Hispanic',
     agingProfile: {
       range: 'Widest aging diversity of any ethnic group: light Latina fair-skinned aging challenges to deep Afro-Latina aging profile',
-      melasma: 'Melasma very common in medium-warm Latina skin; pregnancy particularly triggers; called "mask of pregnancy"',
+      melasma: 'Melasma is common on medium, warm skin; pregnancy particularly triggers; called "mask of pregnancy"',
       Mediterranean: 'Mediterranean/Iberian heritage Latin women: olive skin + Mediterranean diet = favorable aging profile'
     },
 
@@ -297,7 +274,6 @@ export const ETHNIC_AGING_GUIDES = {
   'east-asian': {
     communityName: 'East Asian',
     agingProfile: {
-      advantage: 'Type I skin with yellow undertones: lower photoaging tendency than pink-undertoned fair skin; some epidemiological evidence for delayed wrinkle appearance',
       ceramides: 'East Asian skin (particularly Japanese): higher ceramide content in epidermis = stronger barrier = better water retention = slower transepidermal water loss related aging',
       diet: 'Traditional East Asian diet (green tea, soy, fish, fermented foods): documented anti-aging dietary pattern',
       collagen: 'Japanese and Korean collagen peptide supplementation culture: marine collagen supplements widely consumed; some evidence for skin benefit'
@@ -314,23 +290,12 @@ export const ETHNIC_AGING_GUIDES = {
       evening: 'Retinol (East Asian skin tolerates well at moderate pace) + hyaluronic acid layers + ceramide cream',
       key: 'Multi-step routine philosophy is genuinely anti-aging: layered hydration keeps barrier healthy',
       traditional: ['Ginseng: ginsenosides promote fibroblast proliferation; collagen stimulation documented', 'Rice bran (sake kasu): galactomyces ferment; SK-II Pitera connection; brightening + anti-aging', 'Pearl powder: amino acids; anti-inflammatory; Ming dynasty beauty tradition with modern research']
-    },
-
-    advice: `East Asian aging skin benefits from one of the world's most sophisticated skincare cultures —
-    K-beauty and J-beauty have produced extensive innovation in anti-aging, backed by the Korean
-    and Japanese beauty markets' demand for effective products. The traditional fermentation tradition
-    (galactomyces ferment filtrate = SK-II Pitera) is backed by science: B vitamins, minerals,
-    and amino acids from fermentation genuinely improve skin texture and reduce age spots. Green tea
-    (EGCG — epigallocatechin gallate) is one of the most studied anti-aging ingredients: topical and
-    dietary consumption both studied. Marine collagen supplement habit in Japan has some clinical
-    support for dermal thickness improvement. The multi-step K-beauty routine, far from being
-    excessive, is demonstrably skin-health-supporting.`
+    }
   },
 
   'east-african': {
     communityName: 'East African',
     agingProfile: {
-      advantage: 'Very deep skin (Fitzpatrick V-VI): most melanin protection; latest photoaging onset; "Black don\'t crack" applies strongly',
       frankincense: 'Boswellic acids in frankincense: anti-inflammatory; used for millennia for skin health including aging prevention',
       challenge: 'Hyperpigmentation with age: common concern; dark spots, uneven tone on aging deep skin'
     },
@@ -377,26 +342,15 @@ export const ETHNIC_AGING_GUIDES = {
       evening: 'Retinol (matched to skin depth) + marula oil (omega-9 + antioxidants; anti-aging deep moisturizer)',
       key: 'SPF 50 EVERY DAY in South Africa: the high UV index makes sun protection the single most important anti-aging intervention',
       traditional: ['Marula oil: oleic acid + antioxidants; Tsonga aging skin tradition', 'Rooibos: aspalathin; zinc; anti-inflammatory; anti-aging South African unique ingredient', 'Baobab oil: omega 3, 6, and 9; vitamins A, D, E, F; deep aging skin nourishment']
-    },
-
-    advice: `South African aging skin faces a paradox: the highest UV radiation in the world meets skin
-    tones ranging from very fair to very deep. For every South African skin tone, SPF 50 every day
-    is the most impactful anti-aging investment — the latitude provides no forgiveness. Rooibos is
-    South Africa's unique gift to anti-aging skincare: aspalathin is found ONLY in rooibos, and
-    its antioxidant capacity rivals that of green tea (EGCG). Applied as a cooled tea rinse,
-    mixed into DIY face mist, or found in South African beauty brand formulas. Marula oil as the
-    evening finishing treatment for aging South African skin: its antioxidant and omega fatty acid
-    profile provides overnight restoration. Baobab oil (the "tree of life") provides the richest
-    fatty acid profile of any African oil — appropriate for drier aging skin.`
+    }
   },
 
   'black-american': {
     communityName: 'Black American',
     agingProfile: {
-      advantage: '"Black don\'t crack": more than cultural affirmation — Fitzpatrick III-VI skin has 13x natural SPF equivalent; wrinkles genuinely delayed 10-20 years',
-      science: 'Studies confirm: Black skin has higher collagen density; larger fibroblasts producing more collagen; thicker dermis; more compact collagen fibers than white skin',
+      
       challenge: 'Hyperpigmentation, uneven skin tone, and skin discoloration are the primary aging concerns for Black skin (vs. wrinkles for lighter skin)',
-      menopause: 'Menopausal collagen loss (30% in 5 years) hits Black women too; less visible in wrinkles but felt in skin quality'
+      menopause: 'Menopausal collagen loss happens on deep skin too; less visible in wrinkles but felt in skin quality'
     },
 
     culturalView: {
@@ -409,7 +363,7 @@ export const ETHNIC_AGING_GUIDES = {
       morning: 'Vitamin C 15% (collagen + PIH management) + SPF 50 (PIH darkens without UV protection)',
       evening: 'Retinol (start 0.025%; advance slowly; deep skin PIH risk) + niacinamide 10% + petrolatum or shea butter',
       key: 'Hyperpigmentation management IS the anti-aging priority for Black women: bright, even skin tone reads as youth',
-      petrolatum: 'Petrolatum "greasing": 99% TEWL reduction; ancestral and scientifically superior moisturizer for aging Black skin',
+      petrolatum: 'Petrolatum "greasing": one of the most effective occlusives for stopping water loss; a long-standing tradition worth keeping',
       ingredients: ['Niacinamide 10%: reduces hyperpigmentation; strengthens ceramide barrier; oil control', 'Azelaic acid 15-20%: anti-inflammatory + anti-pigmentation; two-birds-one-stone for aging Black skin', 'Tranexamic acid: inhibits melanosome transfer; brightening without irritation']
     },
 
@@ -420,8 +374,8 @@ export const ETHNIC_AGING_GUIDES = {
     every ingrown hair, every inflammation leaves a dark mark that accumulates over decades.
     The anti-aging protocol for Black women targets this: morning SPF (non-negotiable; PIH without
     UV protection deepens), vitamin C serum, and evening niacinamide + slow retinol introduction.
-    The ancestral "greasing" tradition (petrolatum on skin) is scientifically the most effective
-    barrier seal available — 99% TEWL reduction — keeping moisture locked in aging skin that
+    The ancestral "greasing" tradition (petrolatum on skin) is one of the most effective
+    barrier seals available, keeping moisture locked in aging skin that
     produces less sebum. Reclaim this practice without shame.`
   }
 };
@@ -449,21 +403,3 @@ export function getAgingGuide(communityId) {
 // STATS
 // ============================================================
 
-export const AGING_STATS = {
-  moduleId: 'aging_gracefully_ethnic_guide',
-  version: '1.0.0',
-  communities: 9,
-  keyFacts: [
-    '"Black don\'t crack" is biological fact: Black skin has 13x natural SPF equivalent; wrinkles appear 10-20 years later than fair skin',
-    'Collagen decreases ~1% per year after age 20; menopause causes 30% loss in first 5 years for all ethnicities',
-    'Bakuchiol (plant retinol) showed equivalent efficacy to retinol 0.5% in clinical trials with less irritation — ideal for dark skin tones with PIH risk',
-    'Argan oil improved skin elasticity in postmenopausal women in a 2015 clinical trial (60 days of daily use)',
-    'Aspalathin in rooibos is found ONLY in Rooibos (Aspalathus linearis), native to South Africa\'s Cederberg Mountains — unique anti-aging antioxidant',
-    'Bhingraj (Eclipta alba) studied for hair regrowth comparable to minoxidil — South Asian aging hair loss has ancestral solution',
-    'Vitamin C + E + ferulic acid combination is 4x more potent than vitamin C alone as antioxidant',
-    'South African UV index regularly exceeds 10-11 (extreme) — highest environmental aging risk for South African skin',
-    'Ginseng ginsenosides promote fibroblast proliferation — East Asian collagen tradition validated by modern research',
-    'Boswellic acids in frankincense are anti-inflammatory and protect against AGE (advanced glycation end products) — East African anti-aging heritage'
-  ],
-  lastUpdated: '2026-10-29'
-};

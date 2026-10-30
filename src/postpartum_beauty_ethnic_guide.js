@@ -136,7 +136,7 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
     caribbeanPostpartumFoods: [
       { food: 'Mannish Water (Jamaica)', description: 'A soup made from goat head and feet with scotch bonnet peppers, cho cho, and herbs. Considered one of the most powerful postpartum recovery foods.', benefit: 'Collagen from bones and cartilage (bone broth effect), high protein, galactagogue properties attributed in folk medicine.' },
       { food: 'Carrot Juice', benefit: 'Beta-carotene (pro-vitamin A) for skin repair. Antioxidant. Natural source of energy.' },
-      { food: 'Sea Moss Drink', benefit: 'Mineral-dense (92 minerals). Supports gut health. Traditional Caribbean postpartum supplement. Iodine for thyroid (which fluctuates postpartum).' },
+      { food: 'Sea Moss Drink', benefit: 'Mineral-rich. Supports gut health. Traditional Caribbean postpartum supplement. Iodine for thyroid (which fluctuates postpartum).' },
       { food: 'Brown Stew Chicken with Root Vegetables', benefit: 'Protein, iron, and warming spices. Provides substantial nutrition for breastfeeding.' },
       { food: 'Pepperpot Soup', benefit: 'Warming, iron-rich, protein-dense. Traditional communal Caribbean healing food.' },
     ],

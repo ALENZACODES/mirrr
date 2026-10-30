@@ -86,7 +86,7 @@ export const ETHNIC_HAIR_GROWTH_GUIDES = {
     },
     caribbeanGrowthWisdom: [
       { practice: 'Castor Oil (Caribbean Black Castor)', tradition: 'Jamaican Black Castor Oil became globally famous partly because of Caribbean women\'s success with it. Castor oil applied to the scalp and hair has been a Caribbean beauty staple for generations.', how: 'Apply JBCO or regular castor oil to scalp and edges. Massage in. Leave minimum overnight. Wash out.' },
-      { practice: 'Sea Moss for Internal Hair Health', tradition: 'Sea moss (Irish moss, Chondrus crispus) is eaten throughout the Caribbean as a health tonic.', why: 'Contains iodine (for thyroid function, which regulates hair growth), zinc, and 92 minerals. Thyroid dysfunction is a leading cause of hair shedding.' },
+      { practice: 'Sea Moss for Internal Hair Health', tradition: 'Sea moss (Irish moss, Chondrus crispus) is eaten throughout the Caribbean as a health tonic.', why: 'Contains iodine (for thyroid function, which regulates hair growth) and zinc. Thyroid dysfunction is a leading cause of hair shedding.' },
       { practice: 'Coconut Oil Hair Treatment', tradition: 'Coconut oil is the universal Caribbean hair treatment — used before washing, as leave-in, as styling product.', science: 'Coconut oil uniquely can penetrate the hair shaft (due to lauric acid\'s low molecular weight). Reduces protein loss during washing. Pre-wash coconut oil treatment is one of the best-studied natural hair treatments.' },
       { practice: 'Avocado Deep Conditioner', tradition: 'Mashed ripe avocado as a hair mask is a traditional Caribbean beauty treatment.', science: 'Oleic acid in avocado coats the hair shaft. Natural protein from the avocado feeds the hair. Biotin content.' },
     ],

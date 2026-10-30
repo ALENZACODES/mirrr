@@ -96,7 +96,7 @@ export const ETHNIC_WATER_BEAUTY_GUIDES = {
       tradition: 'Sea moss (Chondrus crispus, Irish moss, or Gracilaria) grows abundantly in Caribbean waters. Traditionally eaten and applied topically. Sea moss gel prepared from soaked dried sea moss.',
       preparation: 'Rinse dried sea moss. Soak in clean water 4-24 hours (expands significantly). Blend soaked moss with fresh water until smooth gel forms. Store in refrigerator up to 3 weeks.',
       beautyUse: 'Face mask: apply sea moss gel directly to face 15-20 min. Leave on. Rinse. Hair mask: apply sea moss gel to clean hair and scalp. Cover with plastic cap. Leave 30-60 min. Rinse. Body: mix sea moss gel into body lotion for added slip and minerals.',
-      science: 'Sea moss contains 92 minerals including iodine, magnesium, calcium, potassium. Its natural carrageenan provides intense film-forming hydration. The colloidal structure of sea moss gel plumps skin temporarily by holding moisture at the surface.',
+      science: 'Sea moss contains minerals including iodine, magnesium, calcium, potassium. Its natural carrageenan provides intense film-forming hydration. The colloidal structure of sea moss gel plumps skin temporarily by holding moisture at the surface.',
     },
     rainWaterUse: {
       tradition: 'On many Caribbean islands, rooftop rainwater collection (cistern) is common — both for practical water use and historically for beauty purposes. "Rainwater rinse" for hair is a recognized Caribbean beauty tradition.',

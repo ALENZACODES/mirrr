@@ -101,6 +101,7 @@ function renderShelves() {
       ${shelf.id === 'bump' ? '<button type="button" class="btn btn-secondary lib-open" data-open-bump>Open the Pregnancy &amp; Postpartum planner</button>' : ''}
       ${shelf.id === 'ingredients' ? '<button type="button" class="btn btn-secondary lib-open" data-open-mix>Open the Ingredient Checker</button>' : ''}
       ${shelf.id === 'eco' ? '<button type="button" class="btn btn-secondary lib-open" data-open-eco>Open the Eco Beauty planner</button>' : ''}
+      ${shelf.id === 'mind' ? '<button type="button" class="btn btn-secondary lib-open" data-open-calm>Open the Calm &amp; Self-Image studio</button>' : ''}
       ${shelf.id === 'bridal' ? '<button type="button" class="btn btn-secondary lib-open" data-open-bridal>Open the Bridal Countdown</button>' : ''}
       <div class="lib-guides">${shelf.guides.map(g => `
         <button type="button" class="lib-guide${g.id === lib.openGuide ? ' lib-guide--open' : ''}" data-lib-guide="${g.id}">

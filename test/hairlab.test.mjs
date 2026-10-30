@@ -326,3 +326,21 @@ test('eco beauty routes over HTTP', async () => {
   const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
   assert.equal(lib.shelves.find(s => s.id === 'eco').guides.length, 4);
 });
+
+test('calm and self-image routes over HTTP', async () => {
+  const B = `http://127.0.0.1:${PORT}`;
+  const h = { 'x-forwarded-for': '10.6.6.18' };
+  const o = await (await fetch(`${B}/api/calm/options`, { headers: h })).json();
+  assert.equal(o.communities.length, 9); assert.equal(o.regions.length, 6); assert.equal(o.tones.length, 10);
+  const r = await fetch(`${B}/api/calm/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ community: 'south_asian', ritual: '1', minutes: '10', focus: 'shedding', region: 'south-africa' }) });
+  assert.equal(r.status, 200);
+  const p = await r.json();
+  assert.match(p.ritual.name, /Champi/); assert.equal(p.session.steps.length, 3); assert.match(p.support.lines[0].contact, /0800 567 567/);
+  assert.equal((await fetch(`${B}/api/calm/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  const sr = await (await fetch(`${B}/api/calm/search?q=henna`, { headers: h })).json();
+  assert.ok(sr.results.length >= 2);
+  const html = await (await fetch(`${B}/`, { headers: h })).text();
+  assert.ok(html.includes('data-view="calm"') && html.includes('src="calm.js"'));
+  const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
+  assert.equal(lib.shelves.find(s => s.id === 'mind').guides.length, 2);
+});

@@ -38,6 +38,7 @@ import { handleBump } from './pregnancy/routes.js';
 import { handleBridal } from './bridal/routes.js';
 import { handleMix } from './ingredients/routes.js';
 import { handleEco } from './eco/routes.js';
+import { handleCalm } from './calm/routes.js';
 import { createRateLimiter, clientAddress, hopShape } from './ratelimit.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -775,6 +776,7 @@ async function router(req, res) {
   if (await handleBridal(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handleMix(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handleEco(method, path, url, req, res, { sendJSON, readBody })) return;
+  if (await handleCalm(method, path, url, req, res, { sendJSON, readBody })) return;
 
   // 404
   return sendJSON(res, 404, { error: 'Not found' });

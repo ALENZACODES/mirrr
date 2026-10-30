@@ -123,6 +123,8 @@ import * as bridalBeautyGuide from '../bridal_beauty_guide.js';
 import * as ingredientEncyclopedia from '../ingredient_encyclopedia.js';
 import * as skincareIngredientsEncyclopedia from '../skincare_ingredients_encyclopedia.js';
 import * as ecoBeautyGuide from '../eco_beauty_guide.js';
+import * as mentalHealthBeautyGuide from '../mental_health_beauty_guide.js';
+import * as mentalHealthBeautyEthnicGuide from '../mental_health_beauty_ethnic_guide.js';
 import * as ecoSustainableBeauty from '../eco_sustainable_beauty.js';
 import * as ecoSustainableBeautyEthnicGuide from '../eco_sustainable_beauty_ethnic_guide.js';
 import * as waterlessBeautyEthnicGuide from '../waterless_beauty_ethnic_guide.js';
@@ -146,6 +148,7 @@ export const SHELVES = [
   { id: 'bridal', title: 'Bridal Beauty', blurb: 'A countdown from twelve months to the wedding day, skincare for your skin type, wedding hair for natural and extended styles, touch-up kits, choosing a makeup artist, and bridal traditions and scents.' },
   { id: 'ingredients', title: 'Ingredients & Science', blurb: 'What each skincare ingredient does and how to use it, which ones to keep apart and which work together, pH and layering order, morning and night routines, traditional ingredients and where they come from, and a glossary of skin science terms.' },
   { id: 'eco', title: 'Eco Beauty', blurb: 'Plastic-free swaps, refills and certifications, where shea, argan, marula and other ingredients come from and who benefits, climate threats to beauty crops, waterless and low-waste routines, and each community\'s eco starter kit.' },
+  { id: 'mind', title: 'Mind & Self-Image', blurb: 'Beauty rituals as comfort: braiding circles, champi, the hammam, sea bathing, the salon and other community rituals, stress recovery routines, what stress does to skin and hair, scent and season, self-image, and support lines.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -275,4 +278,6 @@ export const GUIDES = [
   ['eco_beauty_guide', 'eco', 'Clean Beauty Myths, Packaging and Certifications', ecoBeautyGuide],
   ['eco_sustainable_beauty', 'eco', 'Ingredient Sourcing Ethics', ecoSustainableBeauty],
   ['waterless_beauty_ethnic_guide', 'eco', 'Waterless and Low-Waste Beauty', waterlessBeautyEthnicGuide],
+  ['mental_health_beauty_ethnic_guide', 'mind', 'Beauty Rituals and Mental Wellbeing by Community', mentalHealthBeautyEthnicGuide],
+  ['mental_health_beauty_guide', 'mind', 'Self-Care Science and Community Rituals', mentalHealthBeautyGuide],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

@@ -119,6 +119,13 @@ export class QlooClient {
     const hit = this._cache.get(cacheKey);
     if (hit !== undefined) return hit;
 
+    // Hard daily ceiling on real upstream calls so usage can never run away.
+    const day = new Date().toISOString().slice(0, 10);
+    if (this._capDay !== day) { this._capDay = day; this._capCount = 0; }
+    const cap = Number(process.env.QLOO_DAILY_CAP ?? 1500);
+    if (this._capCount >= cap) throw new QlooError(`Qloo daily call cap (${cap}) reached`, { path });
+    this._capCount += 1;
+
     let url = `${this._base}${path}`;
     if (params) {
       const qs = new URLSearchParams(

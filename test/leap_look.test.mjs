@@ -30,9 +30,10 @@ test('an unknown look id is ignored and the plan falls back to the chosen profil
 test('Taste and Style Match cards carry the button; Style Match ids leap from their plan look', () => {
   const app = fs.readFileSync('public/app.js', 'utf8');
   const card = app.slice(app.indexOf('function renderLookCard'), app.indexOf('function renderLookCard') + 4000);
-  assert.match(card, /data-leap-look="\$\{look\.id\}"[^>]*>Leap this look</);
+  assert.match(card, /data-leap-look="\$\{look\.id\}"[^>]*>Leap this look: see it in three other cultures/);
   const sm = app.slice(app.indexOf('sm-photo'), app.indexOf('sm-photo') + 3000);
-  assert.match(sm, /data-leap-look="\$\{look\.id\}"[^>]*>Leap this look</);
+  assert.match(sm, /data-leap-look="\$\{look\.id\}"[^>]*>Leap this look: see it in three other cultures/);
+  assert.equal((app.match(/class="leap-line"/g) ?? []).length, 4, 'Taste, Style Match, DNA result and Transform picker cards');
   assert.match(app, /const lookId = STYLE_MATCH_PLAN_LOOK\[id\] \?\? id;/);
   assert.match(app, /new CustomEvent\('mirrr:leap-look'/);
   const leap = fs.readFileSync('public/leap.js', 'utf8');

@@ -835,7 +835,7 @@ function renderLookCard(look, score, row = {}) {
       </div>
       <span class="look-cta">View Products →</span>
       <button class="become-btn" type="button" data-become="${look.id}">Become this look</button>
-      <button class="become-btn become-btn--leap" type="button" data-leap-look="${look.id}" data-leap-name="${esc(look.name)}">Leap this look</button>
+      <button class="leap-line" type="button" data-leap-look="${look.id}" data-leap-name="${esc(look.name)}">Leap this look: see it in three other cultures →</button>
     </div>
   `;
 }
@@ -2326,7 +2326,7 @@ async function loadStyleMatchLooks() {
           </div>
           <button class="btn btn-secondary sm-guide-btn" style="margin-top:0.75rem;font-size:0.78rem;padding:0.4rem 0.9rem;" data-look-id="${look.id}">Get My Guide →</button>
           <button class="become-btn" type="button" data-become="${look.id}" data-community="${look.community}">Become this look</button>
-          <button class="become-btn become-btn--leap" type="button" data-leap-look="${look.id}" data-leap-name="${esc(look.name)}">Leap this look</button>
+          <button class="leap-line" type="button" data-leap-look="${look.id}" data-leap-name="${esc(look.name)}">Leap this look: see it in three other cultures →</button>
         </div>
       </div>
     `).join('');
@@ -2778,6 +2778,7 @@ async function loadDnaLooks(communityId) {
           <span class="dna-look-name">${l.name}</span>
         </button>
         <button class="become-btn" type="button" data-become="${l.id}">Become this look</button>
+        <button class="leap-line" type="button" data-leap-look="${l.id}" data-leap-name="${esc(l.name)}">Leap this look: see it in three other cultures →</button>
       </div>`).join('');
     grid.querySelectorAll('.dna-look-card').forEach(b => b.addEventListener('click', () => {
       const sel = document.getElementById('communitySelect'); if (sel && communityId) sel.value = communityId;
@@ -3151,6 +3152,7 @@ async function renderLookPicker(host, face) {
         <img src="${esc(LOOK_IMAGES[l.id])}" alt="${esc(l.name)}" loading="lazy" decoding="async">
         <div class="tf-pick-name">${esc(l.name)}</div>
         <button class="become-btn" type="button" data-become="${esc(l.id)}">Become this look</button>
+        <button class="leap-line" type="button" data-leap-look="${esc(l.id)}" data-leap-name="${esc(l.name)}">Leap this look: see it in three other cultures →</button>
       </div>`).join('');
   } catch { document.getElementById('tfPicker').innerHTML = '<p class="photo-note">Could not load looks. Check your connection and reopen this page.</p>'; }
 }

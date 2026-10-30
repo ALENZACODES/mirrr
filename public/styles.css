@@ -3142,7 +3142,8 @@ body { padding-top: 58px; }
 /* Photo placeholders (photo-placeholders.js): palette colour shows in a fixed box until the photo decodes. */
 .sm-photo img.ph-loaded { opacity: 1; }
 .look-card-img-wrap, .lp-photo--portrait, .dna-hero-figure, .studio-photo { background-color: #6b4c3a; }
-.become-btn--leap { margin-left: .4rem; }
+.leap-line { display: block; background: none; border: 0; padding: .35rem 0 0; color: var(--clr-gold); font: inherit; font-size: .78rem; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; text-align: left; }
+.leap-line:hover { color: var(--clr-ivory); }
 .lp-fromlook { width: 100%; font-size: .85rem; margin: 0 0 .6rem; }
 .lp-fromlook .btn { padding: .25rem .7rem; font-size: .75rem; margin-left: .3rem; }
 

@@ -17,7 +17,6 @@
   }
   const hexRgb = h => { const s = String(h).replace('#', ''); return [0, 2, 4].map(i => parseInt(s.slice(i, i + 2), 16)); };
   const lum = h => { const [r, g, b] = hexRgb(h).map(v => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
-  const shade = (h, t) => { const c = hexRgb(h).map(v => Math.max(0, Math.min(255, Math.round(t < 0 ? v * (1 + t) : v + (255 - v) * t)))); return `#${c.map(v => v.toString(16).padStart(2, '0')).join('')}`; };
   const clip = (s, n) => (String(s).length > n ? String(s).slice(0, n - 1) + '…' : String(s));
   const DIM_COL = { intensity: '#e63946', warmth: '#f4a261', boldness: '#9b5de5', texture: '#4cc9f0' };
 
@@ -41,51 +40,64 @@
   }
 
   // ---- Panels 2-4: the same face in each city ------------------------------------------------------
+  // A real photographic model face (generated sample photo, nearest to the tone picked above) wearing
+  // each city's palette, laid on by the same on-device photo engine as the try-on.
   function facePanel(p, L, i) {
-    const pal = L.palette; const skin = p.tone.hex; const id = `lpLid${i}`; const lids = pal.lid.length ? pal.lid : [{ hex: shade(skin, -0.3) }];
-    const lip = pal.lip.hex ?? shade(skin, -0.25); const hl = pal.highlight.hex;
-    const grad = `<linearGradient id="${id}" x1="0" x2="1">${lids.map((c, k) => `<stop offset="${lids.length === 1 ? 0 : k / (lids.length - 1)}" stop-color="${c.hex}"/>`).join('')}</linearGradient>`;
-    const graphic = /graphic|geometric|art/i.test(pal.liner ?? ''); const wing = /wing|cat|flick/i.test(pal.liner ?? '');
-    const lashL = 3 + 6 * pal.drama;
-    const eye = (cx, s) => {
-      const X = d => (cx + s * d).toFixed(1); const cy = 112;
-      return `<path d="M${X(-17)},${cy} Q${cx},${cy - 22} ${X(19)},${cy - 2} Q${cx},${cy - 9} ${X(-17)},${cy} Z" fill="url(#${id})"/>
-        <path d="M${X(-15)},${cy} Q${cx},${cy - 8} ${X(17)},${cy - 1} Q${cx},${cy + 7} ${X(-15)},${cy} Z" fill="#fbf7f2"/><circle cx="${X(1)}" cy="${cy - 1}" r="4.6" fill="#3b2418"/>
-        <path d="M${X(-15)},${cy} Q${cx},${cy - 8} ${X(17)},${cy - 1}${wing || graphic ? ` L${X(graphic ? 31 : 26)},${cy - (graphic ? 12 : 8)}` : ''}" stroke="#111" stroke-width="${graphic ? 2.6 : 2}" fill="none"/>
-        ${graphic ? `<path d="M${X(-12)},${cy - 15} Q${cx},${cy - 27} ${X(22)},${cy - 11}" stroke="#111" stroke-width="1.4" fill="none"/>` : ''}
-        ${[0.2, 0.45, 0.7, 0.95].map(t => `<path d="M${(cx + s * (-12 + 28 * t)).toFixed(1)},${cy - 6} l${s * 2},-${lashL.toFixed(1)}" stroke="#111" stroke-width="1.1"/>`).join('')}`;
-    };
-    const shine = pal.finish === 'glass' ? `<ellipse cx="96" cy="142" rx="10" ry="4" fill="#fff" opacity="0.45"/><ellipse cx="144" cy="142" rx="10" ry="4" fill="#fff" opacity="0.45"/><path d="M110,181 Q120,184 130,181" stroke="#fff" stroke-width="2.4" opacity="0.7" fill="none" stroke-linecap="round"/>`
-      : pal.finish === 'shimmer' ? [0, 1, 2, 3].map(k => `<circle cx="${84 + k * 24}" cy="${101 + (k % 2) * 3}" r="1.3" fill="#fff"/>`).join('') : '';
-    const bars = L.dims.map((d, k) => `<rect x="${30 + k * 48}" y="${262 - 28 * d.you}" width="9" height="${(28 * d.you).toFixed(1)}" fill="#6c757d"/><rect x="${40 + k * 48}" y="${262 - 28 * d.leap}" width="9" height="${(28 * d.leap).toFixed(1)}" fill="${DIM_COL[d.id]}"/><text x="${40 + k * 48}" y="272" text-anchor="middle" font-size="6.5" fill="#c9c9c9">${d.label.slice(0, 5)}</text>`).join('');
+    const bars = L.dims.map((d, k) => `<rect x="${30 + k * 48}" y="${40 - 28 * d.you}" width="9" height="${(28 * d.you).toFixed(1)}" fill="#6c757d"/><rect x="${40 + k * 48}" y="${40 - 28 * d.leap}" width="9" height="${(28 * d.leap).toFixed(1)}" fill="${DIM_COL[d.id]}"/><text x="${40 + k * 48}" y="50" text-anchor="middle" font-size="6.5" fill="#c9c9c9">${d.label.slice(0, 5)}</text>`).join('');
     const on = Number(p.choices.focus) === i;
-    return `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="${esc(L.destination.label)} version">
-      <defs>${grad}<radialGradient id="lpBl${i}"><stop offset="0" stop-color="${lip}" stop-opacity="${(0.25 + 0.4 * pal.drama).toFixed(2)}"/><stop offset="1" stop-color="${lip}" stop-opacity="0"/></radialGradient></defs>
-      <rect width="240" height="300" rx="14" fill="#1b1b2f" stroke="${on ? '#ffd166' : 'none'}" stroke-width="3"/>
-      <text x="120" y="22" text-anchor="middle" font-size="11" font-weight="700" fill="#fefae0">${esc(L.destination.label)}</text>
-      <path d="M92,190 L92,226 Q120,236 148,226 L148,190 Z" fill="${skin}"/>
-      <path d="M52,74 Q120,8 188,74 L196,150 Q190,74 120,56 Q50,74 44,150 Z" fill="#2b1b14"/>
-      <ellipse cx="120" cy="134" rx="62" ry="80" fill="${skin}"/>
-      <ellipse cx="86" cy="150" rx="18" ry="12" fill="url(#lpBl${i})"/><ellipse cx="154" cy="150" rx="18" ry="12" fill="url(#lpBl${i})"/>
-      <path d="M78,132 q8,-4 16,0 M146,132 q8,-4 16,0" stroke="${hl}" stroke-width="3" opacity="0.75" fill="none" stroke-linecap="round"/>
-      <path d="M75,96 Q92,86 111,93 M165,96 Q148,86 129,93" stroke="#2b1b14" stroke-width="${(2.5 + 2.5 * L.vector.boldness).toFixed(1)}" fill="none" stroke-linecap="round"/>
-      ${eye(96, 1)}${eye(144, -1)}
-      <path d="M100,178 Q110,170 120,174 Q130,170 140,178 Q130,192 120,192 Q110,192 100,178 Z" fill="${lip}"/>${shine}
-      <text x="120" y="230" text-anchor="middle" font-size="8.5" font-weight="700" fill="#fefae0">${esc(clip(L.look.name, 34))}</text>
-      ${bars}
-      <text x="120" y="290" text-anchor="middle" font-size="7" fill="#c9c9c9">grey = you · colour = your ${esc(L.destination.label)} leap</text></svg>
+    return `<figure class="hl-panel cx-panel"><div class="lp-photo" style="outline:${on ? '3px solid #ffd166' : 'none'}">
+      <canvas data-lp-face="${i}" width="300" height="400" role="img" aria-label="${esc(L.destination.label)} version of ${esc(L.look.name)} on a model face"></canvas>
+      <span class="lp-city">${esc(L.destination.label)}</span></div>
+      <svg class="lp-bars" viewBox="0 0 240 70" role="img" aria-label="Your dimensions and the ${esc(L.destination.label)} leap">
+      <rect width="240" height="70" rx="10" fill="#1b1b2f"/>${bars}
+      <text x="120" y="64" text-anchor="middle" font-size="7" fill="#c9c9c9">grey = you · colour = your ${esc(L.destination.label)} leap</text></svg>
       <figcaption><strong>${esc(L.destination.label)}: ${esc(L.look.name)}</strong><span>${esc(clip(L.because[0] ?? 'Your taste is neutral here, so the city leads.', 120))}</span></figcaption></figure>`;
+  }
+  const pictureOf = pal => ({ lip: pal.lip.hex, lipFinish: pal.lip.finish ?? (pal.finish === 'glass' ? 'gloss' : pal.finish), lid: pal.lid.map(c => c.hex), liner: pal.liner ?? '', linerColour: '#111111', highlight: pal.highlight.hex, baseFinish: pal.base ?? '', intensity: pal.drama });
+  const faceCache = new Map();
+  async function modelFace(engine, mf) {
+    if (faceCache.has(mf.id)) return faceCache.get(mf.id);
+    const job = new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = rej; im.src = mf.src; }).then(im => {
+      const c = document.createElement('canvas'); c.width = 300; c.height = 400;
+      const x = c.getContext('2d', { willReadFrequently: true }); x.drawImage(im, 0, 0, 300, 400);
+      const base = x.getImageData(0, 0, 300, 400);
+      return { base, face: engine.findFace(base) };
+    });
+    faceCache.set(mf.id, job);
+    return job;
+  }
+  async function paintFaces(p, seq) {
+    try {
+      const [engine, faces] = await Promise.all([import('./photo-engine.js'), import('./model-faces.js')]);
+      const [toneL] = engine.hexToLab(p.tone.hex);
+      const mf = faces.nearestModelFace(toneL);
+      const { base, face } = await modelFace(engine, mf);
+      const palettes = await Promise.all(p.leaps.map(L => api('/api/photo/palette', { picture: pictureOf(L.palette) }).catch(() => null)));
+      if (seq !== lp.seq) return;
+      p.leaps.forEach((L, i) => {
+        const cv = document.querySelector(`canvas[data-lp-face="${i}"]`);
+        if (!cv) return;
+        const out = new ImageData(new Uint8ClampedArray(base.data), base.width, base.height);
+        if (face.ok && palettes[i]) engine.applyLook(out, face, palettes[i], { strength: 0.75, finish: 'natural' });
+        cv.getContext('2d').putImageData(out, 0, 0);
+        cv.dataset.modelFace = mf.id;
+        cv.dataset.painted = face.ok && palettes[i] ? 'look' : 'plain';
+      });
+      const note = document.getElementById('lpFaceNote');
+      if (note) note.textContent = `Faces: the ${mf.label} model face, nearest to the tone you picked. ${faces.MODEL_FACE_NOTE}`;
+    } catch { /* faces stay blank; the palette details below still read */ }
   }
 
   const card = (title, body, cls = '') => (body ? `<article class="st-card${cls}"><h4>${esc(title)}</h4>${body}</article>` : '');
   function renderPlan() {
     const p = lp.plan; const t = p.taste; const F = p.focus;
-    $('lpPreview').innerHTML = pathPanel(p) + p.leaps.map((L, i) => facePanel(p, L, i)).join('') + '<p class="photo-try"><button type="button" class="btn btn-primary photo-try-btn" id="lpPhotoTry">Try it on my photo</button><span>Laid on your own face, on this device. Nothing is uploaded.</span></p>';
+    $('lpPreview').innerHTML = pathPanel(p) + p.leaps.map((L, i) => facePanel(p, L, i)).join('') + '<p class="lib-note" id="lpFaceNote"></p><p class="photo-try"><button type="button" class="btn btn-primary photo-try-btn" id="lpPhotoTry">Try it on my photo or a model face</button><span>Upload, camera, or pick a model face. Your photo stays on this device.</span></p>';
+    paintFaces(p, lp.seq);
     $('lpPhotoTry').addEventListener('click', () => {
       const L = p.leaps[Number(p.choices.focus) || 0] ?? p.leaps[0]; const pal = L.palette;
       window.dispatchEvent(new CustomEvent('mirrr:tryon', { detail: {
         name: `${L.destination.label}: ${L.look.name}`,
-        picture: { lip: pal.lip.hex, lipFinish: pal.lip.finish ?? (pal.finish === 'glass' ? 'gloss' : pal.finish), lid: pal.lid.map(c => c.hex), liner: pal.liner ?? '', linerColour: '#111111', highlight: pal.highlight.hex, baseFinish: pal.base ?? '', intensity: pal.drama },
+        picture: pictureOf(pal),
       } }));
     });
     $('lpSummary').innerHTML = `<p class="hl-big">${esc(p.leaps.map(L => L.destination.label).join(' · '))}</p><p>${esc(t.label)} · ${esc(STR[p.strength.id] ?? p.strength.id)} · ${esc(p.tone.label)}</p>`;
@@ -111,7 +123,7 @@
       ${select('lpProfile', 'Taste', o.profiles, c.profile)}
       ${select('lpDest1', 'City 1', d, c.dest1)}${select('lpDest2', 'City 2', d, c.dest2)}${select('lpDest3', 'City 3', d, c.dest3)}
       ${select('lpStrength', 'How far to leap', o.strengths, c.strength)}
-      ${select('lpTone', 'Skin tone for the faces', o.tones, c.tone)}
+      ${select('lpTone', 'Skin tone (picks the model face)', o.tones, c.tone)}
       ${select('lpFocus', 'Details for', names.map((n, i) => ({ id: String(i), label: n })), c.focus)}`;
   }
   function myInputs() {

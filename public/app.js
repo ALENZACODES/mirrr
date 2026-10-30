@@ -5,6 +5,7 @@
 import { findFace, applyLook, recolourHair, scaleFace, labToRgb } from './photo-engine.js';
 import { detectPlatform, canvasToPhotoFile, savePhotoFile, MAX_CANVAS_PIXELS } from './photo-save.js';
 import { measureSkin } from './skin-sample.js';
+import { MODEL_FACES } from './model-faces.js';
 
 // ---------------------------------------------------------------------------
 // State
@@ -1315,6 +1316,17 @@ function setupTryOn() {
     const file = e.target.files?.[0];
     if (file) loadTryOnPhoto(URL.createObjectURL(file), file);
   });
+
+  // Model faces: the try-on works with no upload. Each face is a same-origin sample photo.
+  const grid = document.getElementById('tryonModelFaces');
+  if (grid) {
+    grid.innerHTML = MODEL_FACES.map(f => `<button type="button" class="tryon-model" data-model-face="${f.id}" aria-label="Try on the ${esc(f.label)} model face"><img src="${f.src}" alt="${esc(f.label)} model face (generated sample photo)" loading="lazy" decoding="async" width="72" height="96"><span>${esc(f.label)}</span></button>`).join('');
+    grid.addEventListener('click', e => {
+      const b = e.target.closest('[data-model-face]');
+      const f = b && MODEL_FACES.find(x => x.id === b.dataset.modelFace);
+      if (f) { stopCamera(); loadTryOnPhoto(f.src, null); }
+    });
+  }
 
   document.getElementById('tryonCameraBtn')?.addEventListener('click', startCamera);
   document.getElementById('tryonCaptureBtn')?.addEventListener('click', captureCamera);

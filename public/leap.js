@@ -130,7 +130,9 @@
   function renderControls() {
     const o = lp.options; const c = lp.choices; const d = o.destinations.map(x => ({ id: x.id, label: `${x.label} (${x.culture})` }));
     const names = [c.dest1, c.dest2, c.dest3].map(id => o.destinations.find(x => x.id === id)?.label ?? id);
+    const fromLook = c.lookId && lp.plan?.choices?.lookId === c.lookId ? lp.plan.home : null;
     $('lpControls').innerHTML = `
+      ${c.lookId ? `<p class="lp-fromlook" data-lp-fromlook="${esc(c.lookId)}">Leaping <strong>${esc(fromLook?.name ?? 'the look you picked')}</strong>${c.fromName ? ` (${esc(c.fromName)} builds on it)` : ''} · <button type="button" class="btn btn-ghost" id="lpUseTaste">Use my taste instead</button></p>` : ''}
       ${select('lpProfile', 'Taste', o.profiles, c.profile)}
       ${select('lpDest1', 'City 1', d, c.dest1)}${select('lpDest2', 'City 2', d, c.dest2)}${select('lpDest3', 'City 3', d, c.dest3)}
       ${select('lpStrength', 'How far to leap', o.strengths, c.strength)}
@@ -147,6 +149,7 @@
       const plan = await api('/api/leap/plan', body);
       if (seq !== lp.seq) return;
       lp.plan = plan;
+      if (lp.choices.lookId) renderControls();
       renderPlan();
     } catch (e) {
       $('lpPlan').innerHTML = `<p class="lib-note">Could not build the leap (${esc(e.message)}).</p>`;
@@ -161,6 +164,7 @@
         const tone = pr.face?.hex ? lp.options.tones.reduce((best, t) => (Math.abs(lum(t.hex) - lum(pr.face.hex)) < Math.abs(lum(best.hex) - lum(pr.face.hex)) ? t : best)) : lp.options.tones[6];
         lp.choices = { profile: Array.isArray(pr.chips) && pr.chips.length ? 'mine' : 'afrobeats', dest1: 'lagos', dest2: 'seoul', dest3: 'dubai', strength: 'half', tone: tone.id, focus: '0' };
       }
+      if (lp.pendingLook) { Object.assign(lp.choices, lp.pendingLook); lp.pendingLook = null; }
       renderControls();
       await replan();
     } catch (e) {
@@ -172,10 +176,18 @@
     const k = FIELD[e.target.id];
     if (!k || !lp.choices) return;
     lp.choices[k] = e.target.value;
+    if (k === 'profile') { delete lp.choices.lookId; delete lp.choices.fromName; renderControls(); }
     if (k.startsWith('dest')) renderControls();
     replan();
   });
+  window.addEventListener('mirrr:leap-look', async e => {
+    const d = e.detail || {};
+    if (!d.lookId) return;
+    lp.pendingLook = { lookId: d.lookId, fromName: d.fromName || null };
+    openStudio();
+  });
   document.addEventListener('click', e => {
+    if (e.target.closest('#lpUseTaste')) { delete lp.choices.lookId; delete lp.choices.fromName; renderControls(); replan(); return; }
     const t = e.target.closest('[data-view="leap"], [data-open-leap]');
     if (!t) return;
     if (t.dataset.openLeap !== undefined) { document.querySelector('.nav-link[data-view="leap"]')?.click(); return; }

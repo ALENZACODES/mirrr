@@ -158,14 +158,21 @@ export async function buildLeapPlan(input = {}, { pipeline = runPipeline } = {})
     tone: pick(raw.tone, MONK_TONES.map(t => t.id), DEFAULTS.tone),
     focus: pick(raw.focus, ['0', '1', '2'], DEFAULTS.focus),
   };
-  let taste = await tasteFor(c, raw.inputs, pipeline);
+  // "Leap this look": start from one library look's own four weights instead of a taste run.
+  const fromLook = typeof raw.lookId === 'string' ? LOOKS.find(l => l.id === raw.lookId) ?? null : null;
+  if (fromLook) c.lookId = fromLook.id;
+  let taste = fromLook
+    ? { source: 'look', label: `Starting from ${fromLook.name}`, inputs: [fromLook.name], tags: [], freeText: [], cached: false }
+    : await tasteFor(c, raw.inputs, pipeline);
   let note = null;
   if (!taste) { taste = await tasteFor({ ...c, profile: DEFAULTS.profile }, null, pipeline); note = 'You have not added any taste yet, so this uses the Afrobeats demo profile. Add artists, films or places on the Taste page.'; }
-  const user = buildAestheticVector(taste.tags, { freeText: taste.freeText });
+  const user = fromLook
+    ? { ...buildAestheticVector([]), ...fromLook.weights, colour_palette: null, archetypes: [fromLook.archetype], cultural_tags: [...fromLook.cultural_affinity] }
+    : buildAestheticVector(taste.tags, { freeText: taste.freeText });
   const path = tastePath(taste.tags, taste.freeText);
   // Same ranking as the Taste page: with live Qloo tags, half vector fit and half Qloo evidence.
   const evidence = taste.source === 'qloo' && taste.tags?.length ? taste.tags : null;
-  const home = recommendLooks(user, { topN: 1, evidence, archetypeKeywords: evidence ? ARCHETYPE_KEYWORDS : null })[0];
+  const home = fromLook ? { look: fromLook, score: r2(scoreLook(fromLook, user)) } : recommendLooks(user, { topN: 1, evidence, archetypeKeywords: evidence ? ARCHETYPE_KEYWORDS : null })[0];
   const s = STRENGTHS.find(x => x.id === c.strength).s;
   const leaps = [c.dest1, c.dest2, c.dest3].map(id => leap(DESTINATIONS.find(d => d.id === id), user, s, path, user.cultural_tags));
   return {
@@ -173,12 +180,12 @@ export async function buildLeapPlan(input = {}, { pipeline = runPipeline } = {})
     tone: MONK_TONES.find(t => t.id === c.tone),
     taste: {
       source: taste.source, label: taste.label, inputs: taste.inputs, cached: taste.cached, qlooError: taste.qlooError ?? null,
-      badge: { demo: 'Demo profile (curated tags, not live Qloo data)', qloo: 'Live Qloo taste graph', local_artist_map: 'Built-in artist map (Qloo returned nothing)', none: 'No taste signal found: neutral defaults' }[taste.source],
+      badge: { look: 'Starting from this look (its own weights, no taste run)', demo: 'Demo profile (curated tags, not live Qloo data)', qloo: 'Live Qloo taste graph', local_artist_map: 'Built-in artist map (Qloo returned nothing)', none: 'No taste signal found: neutral defaults' }[taste.source],
       tags: taste.tags.slice(0, 12).map(t => ({ name: String(t.name ?? t), affinity: affinityOf(t) })),
       vector: Object.fromEntries(DIMS.map(({ id }) => [id, r2(user[id])])), palette: user.colour_palette, archetypes: user.archetypes,
       path: path.slice(0, 10),
     },
-    home: home ? { id: home.look.id, name: home.look.name, score: home.score, basis: evidence ? 'taste vector + Qloo evidence (same as Taste page)' : 'taste vector', palette: paletteFor(home.look, user) } : null,
+    home: home ? { id: home.look.id, name: home.look.name, score: home.score, basis: fromLook ? 'the look you chose to leap' : evidence ? 'taste vector + Qloo evidence (same as Taste page)' : 'taste vector', palette: paletteFor(home.look, user) } : null,
     strength: { id: c.strength, s },
     leaps,
     focus: leaps[Number(c.focus)],

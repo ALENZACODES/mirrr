@@ -835,6 +835,7 @@ function renderLookCard(look, score, row = {}) {
       </div>
       <span class="look-cta">View Products →</span>
       <button class="become-btn" type="button" data-become="${look.id}">Become this look</button>
+      <button class="become-btn become-btn--leap" type="button" data-leap-look="${look.id}" data-leap-name="${esc(look.name)}">Leap this look</button>
     </div>
   `;
 }
@@ -2315,6 +2316,7 @@ async function loadStyleMatchLooks() {
           </div>
           <button class="btn btn-secondary sm-guide-btn" style="margin-top:0.75rem;font-size:0.78rem;padding:0.4rem 0.9rem;" data-look-id="${look.id}">Get My Guide →</button>
           <button class="become-btn" type="button" data-become="${look.id}" data-community="${look.community}">Become this look</button>
+          <button class="become-btn become-btn--leap" type="button" data-leap-look="${look.id}" data-leap-name="${esc(look.name)}">Leap this look</button>
         </div>
       </div>
     `).join('');
@@ -2931,6 +2933,19 @@ async function becomeThisLook(lookId, community, { tasteChips, fromName } = {}) 
   if (mappedNote) toast(mappedNote, 'info');
   showView('transform');
 }
+
+// "Leap this look": Taste Leap starts from the look itself (its own four weights). Style Match looks
+// leap from the library look their plan builds on (STYLE_MATCH_PLAN_LOOK), named in the Leap view.
+document.addEventListener('click', (e) => {
+  const b = e.target.closest?.('[data-leap-look]');
+  if (!b) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const id = b.dataset.leapLook;
+  const lookId = STYLE_MATCH_PLAN_LOOK[id] ?? id;
+  window.dispatchEvent(new CustomEvent('mirrr:leap-look', { detail: { lookId, fromName: lookId !== id ? b.dataset.leapName : null } }));
+  showView('leap');
+}, true);
 
 // Capture phase so the card's own click handler (open products) does not also fire.
 document.addEventListener('click', (e) => {

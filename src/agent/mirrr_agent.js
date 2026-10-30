@@ -110,17 +110,9 @@ export class MirrrAgent {
         // Fetch taste profile for resolved entities
         if (entities.length > 0) {
           const entityIds = entities.map(e => e.id).filter(Boolean);
-          const tasteData = await this.qloo.tasteProfile(entityIds).catch(() => null);
-          // Qloo tasteProfile returns { results: { entities: [...] } } — extract tags from entity names
-          if (tasteData?.results?.entities?.length) {
-            qlooEntities = tasteData.results.entities;
-            // keep affinity-bearing objects so the aesthetic vector can weight them
-            qlooTags = qlooEntities
-              .filter(e => e.name ?? e.id)
-              .map(e => ({ name: e.name ?? e.id, affinity: affinityOf(e) ?? undefined }));
-          } else if (tasteData?.tags) {
-            qlooTags = tasteData.tags;
-          }
+          // Cultural tags with affinity (observed live shape: results.tags[])
+          const tags = await this.qloo.insightTags(entityIds, 40).catch((e) => { qlooError = e.message; return []; });
+          qlooTags = tags;
         }
       } catch (err) {
         qlooError = err.message;

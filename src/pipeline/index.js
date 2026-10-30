@@ -35,13 +35,19 @@ export async function runPipeline({ inputs = [], freeText = [], topLooks = 3, cl
   const { resolved, failed, entities } = await resolveInputs(inputs, client);
 
   let tags = [];
+  let qlooError = null;
   let tasteSource = resolved.length > 0 ? 'qloo' : 'none';
   let aesthetic;
   let looks;
 
   if (resolved.length > 0) {
     // 2. Get aesthetic/tag inference from Qloo
-    tags = await client.insightTags(resolved, 50);
+    try {
+      tags = await client.insightTags(resolved, 50);
+    } catch (err) {
+      qlooError = err.message;
+      tags = [];
+    }
 
     // 3. Build aesthetic vector
     aesthetic = buildAestheticVector(tags, { freeText });
@@ -68,6 +74,8 @@ export async function runPipeline({ inputs = [], freeText = [], topLooks = 3, cl
       inputs_resolved: resolved.length,
       inputs_failed: failed,
       taste_source: tasteSource,
+      qloo_powered: resolved.length > 0 && tags.length > 0 && tasteSource === 'qloo',
+      qloo_error: qlooError,
       latency_ms: Date.now() - start,
     },
   };

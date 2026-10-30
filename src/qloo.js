@@ -196,32 +196,43 @@ export class QlooClient {
    * @param {number} [options.limit]
    * @returns {Promise<object>} raw Qloo taste response
    */
-  async tasteProfile(entityIds, { outputType, limit = 20 } = {}) {
-    return this._request('POST', '/v2/taste', {
-      body: {
-        signal: { entities: entityIds },
-        limit,
-        ...(outputType ? { output_type: outputType } : {}),
+  async tasteProfile(entityIds, { outputType = 'urn:entity:artist', limit = 20 } = {}) {
+    // Observed live: GET /v2/insights returns { results: { entities: [...] } } for entity output types.
+    return this._request('GET', '/v2/insights', {
+      params: {
+        'filter.type': outputType,
+        'signal.interests.entities': entityIds.join(','),
+        take: limit,
       },
     });
   }
 
   /**
    * Get aesthetic/vibe tags for a set of entities.
+   * Observed live: GET /v2/insights with filter.type=urn:tag returns
+   * { results: { tags: [ { tag_id, name, subtype, popularity, query: { affinity } } ] } }.
    *
    * @param {string[]} entityIds
    * @param {number} [limit]
    * @returns {Promise<Array<{id: string, name: string, affinity: number}>>}
    */
   async insightTags(entityIds, limit = 40) {
-    const data = await this._request('POST', '/v2/taste', {
-      body: {
-        signal: { entities: entityIds },
-        output_type: 'urn:entity:tag',
-        limit,
+    const data = await this._request('GET', '/v2/insights', {
+      params: {
+        'filter.type': 'urn:tag',
+        // Cultural tags (genres, themes, keywords) — not hotel ratings or credit-card tags
+        'filter.tag.types': 'urn:tag:genre:media,urn:tag:keyword:media',
+        'signal.interests.entities': entityIds.join(','),
+        take: limit,
       },
     });
-    return data?.results?.entities ?? [];
+    const tags = data?.results?.tags ?? data?.results?.entities ?? [];
+    return tags.map((t) => ({
+      id: t.tag_id ?? t.id ?? null,
+      name: t.name ?? null,
+      affinity: t.query?.affinity ?? t.affinity ?? 1,
+      popularity: t.popularity ?? null,
+    })).filter((t) => t.name);
   }
 
   /**
@@ -248,13 +259,13 @@ export class QlooClient {
    * @param {number} [concurrency]
    * @returns {Promise<Array<object|null>>}
    */
-  async resolveMany(names, concurrency = 5) {
+  async resolveMany(names, concurrency = 5, preferredTypes = ['urn:entity:artist', 'urn:entity:person', 'urn:entity:brand', 'urn:entity:movie', 'urn:entity:tv_show']) {
     const results = [];
     for (let i = 0; i < names.length; i += concurrency) {
       const chunk = names.slice(i, i + concurrency);
       const resolved = await Promise.all(
         chunk.map((name) =>
-          this.resolveName(name).catch((err) => {
+          this.resolveName(name, preferredTypes).catch((err) => {
             console.warn(`[qloo] resolve failed for ${JSON.stringify(name)}:`, err.message);
             return null;
           })

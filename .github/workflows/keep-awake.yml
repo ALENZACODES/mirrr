@@ -1,0 +1,28 @@
+# Keeps the free Render demo awake during judging.
+# Render's free plan sleeps after ~15 minutes with no visits, so this
+# opens the live site every 4 minutes. GitHub starts the job every hour;
+# each run pings for ~65 minutes so runs overlap and there is no gap.
+name: Keep demo awake
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+    - cron: "30 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: keep-awake
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - name: Ping https://mirrr-upbn.onrender.com every 4 minutes
+        run: |
+          for i in $(seq 1 17); do
+            code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 90 https://mirrr-upbn.onrender.com/ || echo "fail")
+            echo "$(date -u +%H:%M:%S) ping $i -> $code"
+            sleep 240
+          done

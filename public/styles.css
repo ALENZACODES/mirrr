@@ -3145,3 +3145,13 @@ body { padding-top: 58px; }
 .become-btn--leap { margin-left: .4rem; }
 .lp-fromlook { width: 100%; font-size: .85rem; margin: 0 0 .6rem; }
 .lp-fromlook .btn { padding: .25rem .7rem; font-size: .75rem; margin-left: .3rem; }
+
+/* Studio photo plates (studio-photo.js) */
+.studio-photo canvas { width: 100%; height: auto; display: block; border-radius: 14px; background: #6b4c3a; }
+.studio-photo figcaption .sp-gen { display: block; position: static; margin-top: .25rem; font-size: .62rem; }
+.st-photo-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .6rem; }
+/* Ingredient macro photos (homepage Power Ingredients, Ingredient Checker, Eco Beauty) */
+.ing-photo { display: block; object-fit: cover; border-radius: 10px; background: #6b4c3a; }
+.ing-photo--card { width: 100%; height: auto; aspect-ratio: 1 / 1; margin-bottom: .6rem; }
+.ing-photo--thumb { display: inline-block; width: 40px; height: 40px; vertical-align: middle; margin-right: .5rem; border-radius: 8px; }
+.ing-photo--wide { width: 100%; max-width: 260px; height: auto; aspect-ratio: 1 / 1; margin-bottom: .6rem; }

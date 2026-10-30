@@ -2,7 +2,8 @@
  * Skin Clinic view. Pick a concern, your Fitzpatrick type, community and a skin tone; the server
  * builds the plan from the skin guides and this view draws an illustrated skin patch in that
  * Monk skin tone showing how the concern tends to look on it, and how it changes at the guide's
- * checkpoints. No photo is used.
+ * checkpoints. With photographic macro plates (studio-photo.js), each panel shows the same skin area
+ * at that stage of the concern (now / weeks / months); with no plate, the drawn patch renders.
  */
 (() => {
   const PROFILE_KEY = 'mirrr.profile.v1';
@@ -51,14 +52,20 @@
     }).join('');
     return `<figure class="hl-panel"><svg viewBox="0 0 200 160" role="img" aria-label="${esc(title)}"><defs><filter id="skBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"/></filter><filter id="skSoft"><feGaussianBlur stdDeviation="0.8"/></filter></defs><rect width="200" height="160" rx="14" fill="${skin}"/>${shapes}</svg><figcaption><strong>${esc(title)}</strong>${note ? `<span>${esc(note)}</span>` : ''}</figcaption></figure>`;
   }
+  // Panel stage -> photo plate id (`<concern>-now|weeks|months`); the drawn patch is the fallback.
+  function photoPatch(stage, title, note, skin, concern, strength) {
+    const drawn = patch(title, note, skin, concern, strength);
+    if (!window.StudioPhoto) return drawn;
+    return window.StudioPhoto.panel({ studio: 'skin', id: `${concern}-${stage}`, fallback: drawn, w: 720, h: 720, alt: `${title}: ${concern.replace(/_/g, ' ')} skin close-up`, caption: `<strong>${esc(title)}</strong><span>${esc(note)}</span>` });
+  }
   function drawPreview(p) {
     const skin = p.tone.hex;
     const c = p.choices.concern;
     const pts = p.timeline.points;
-    const panels = [patch('Now', p.tone.label, skin, c, 1)];
+    const panels = [photoPatch('now', 'Now', p.tone.label, skin, c, 1)];
     // Fade only where the guide gives checkpoints; the strengths are illustrative, not measured.
-    pts.slice(0, 2).forEach((pt, i) => panels.push(patch(`After ${pt.text}`, i === 0 ? 'First improvement' : 'Most of the change', skin, c, i === 0 ? 0.6 : 0.25)));
-    if (!pts.length) panels.push(patch('With the routine', 'The guide gives no timeline for this', skin, c, 0.6));
+    pts.slice(0, 2).forEach((pt, i) => panels.push(photoPatch(i === 0 ? 'weeks' : 'months', `After ${pt.text}`, i === 0 ? 'First improvement' : 'Most of the change', skin, c, i === 0 ? 0.6 : 0.25)));
+    if (!pts.length) panels.push(photoPatch('weeks', 'With the routine', 'The guide gives no timeline for this', skin, c, 0.6));
     $('skPreview').innerHTML = panels.join('');
   }
 

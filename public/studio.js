@@ -1,7 +1,9 @@
 /**
  * Brow & Kohl Studio view. Pick face shape, eye shape, brow density, a brow architecture and an
  * eye look; the server builds the technique plan from the guides, and this view draws the result
- * on a brow-and-eye diagram (in your saved skin shade when you have one). No photo is used.
+ * on a brow-and-eye diagram (in your saved skin shade when you have one). With photographic plates
+ * (studio-photo.js), the slot shows the chosen eye look on a real eye beside the chosen brow
+ * architecture on the same eye; with no plate, the diagram renders.
  */
 
 const PROFILE_KEY = 'mirrr.profile.v1';
@@ -123,6 +125,15 @@ function drawDiagram(plan, skin) {
 
 // ---- Panels --------------------------------------------------------------------------------
 
+// One slot: the eye-look plate and the brow-architecture plate of the same eye, side by side.
+function photoSlot(p, drawing) {
+  const SP = window.StudioPhoto;
+  if (!SP || !SP.photoFor('brow', `eye-${p.eye.look}`)) return drawing;
+  const eye = SP.panel({ studio: 'brow', id: `eye-${p.eye.look}`, fallback: drawing, w: 1152, h: 648, alt: `${p.eye.label} on a real eye`, caption: `<strong>${esc(p.eye.label)}</strong>` });
+  const brow = SP.panel({ studio: 'brow', id: `brow-${p.brow.style}`, fallback: '', w: 1152, h: 648, alt: `${p.brow.label} brow`, caption: `<strong>${esc(p.brow.label)}</strong>` });
+  return `<div class="st-photo-pair">${eye}${brow}</div>`;
+}
+
 function select(id, label, values, current, allowAuto) {
   return `<label class="st-field"><span>${esc(label)}</span><select id="${id}">
     ${allowAuto ? `<option value="">Recommended for me</option>` : ''}
@@ -147,7 +158,7 @@ function renderPlan() {
   const TONE_SWATCH = { light: '#e3bf9f', 'medium-olive': '#c09062', 'medium-deep': '#8a5638', deep: '#4c2c1c' };
   const savedHex = profile().face?.hex;
   const skin = savedHex && st.choices.shadeId && !st.toneChanged ? savedHex : TONE_SWATCH[p.choices.skinTone];
-  $('stDiagram').innerHTML = drawDiagram(p, skin);
+  $('stDiagram').innerHTML = photoSlot(p, drawDiagram(p, skin));
   $('stLooks').innerHTML = p.ranking.map(l => `
     <button type="button" class="st-look${l.id === p.eye.look ? ' st-look--on' : ''}" data-st-look="${l.id}" aria-pressed="${l.id === p.eye.look}">
       <span class="st-look-name">${esc(l.label)}</span>

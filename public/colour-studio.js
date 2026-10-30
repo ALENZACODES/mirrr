@@ -3,7 +3,8 @@
  * finish, liner technique, lip-care concern, community and a skin tone; the server plans the palette
  * and the lips from the colour and lip guides, and this view draws them: lips in the chosen shade,
  * finish and liner technique on the Monk tone you pick, and the palette as swatches against it.
- * No photo is used.
+ * With a photographic plate for the chosen lip look (studio-photo.js), the planned shade is laid into
+ * the plate's lip mask and the finish becomes a sheen layer; with no plate, the drawn lips render.
  */
 (() => {
   const PROFILE_KEY = 'mirrr.profile.v1';
@@ -48,7 +49,7 @@
     const cornerShade = p.choices.liner === 'ombre_liner'
       ? `<g filter="url(#clSoft)" opacity="0.7"><ellipse cx="${120 - 62 * scale}" cy="152" rx="12" ry="8" fill="${mix(shade, '#000', 0.45)}"/><ellipse cx="${120 + 62 * scale}" cy="152" rx="12" ry="8" fill="${mix(shade, '#000', 0.45)}"/></g>` : '';
     const clean = p.choices.liner === 'concealer_clean_up' ? `<path d="${upper}" fill="none" stroke="${mix(skin, '#ffffff', 0.35)}" stroke-width="5" opacity="0.6"/><path d="${lower}" fill="none" stroke="${mix(skin, '#ffffff', 0.35)}" stroke-width="5" opacity="0.6"/>` : '';
-    return `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Lips">
+    const drawing = `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Lips">
       <defs><radialGradient id="clOmbre" cx="50%" cy="55%" r="60%"><stop offset="0%" stop-color="${centre ?? shade}"/><stop offset="20%" stop-color="${centre ?? shade}"/><stop offset="70%" stop-color="${shade}"/></radialGradient>
       <filter id="clSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
       <rect width="240" height="300" rx="14" fill="${skin}"/>
@@ -60,6 +61,13 @@
       <path d="M58,151 C90,156 150,156 182,151" fill="none" stroke="${mix(shade, '#000', 0.55)}" stroke-width="1.2"/>
       <text x="120" y="240" text-anchor="middle" font-size="12" fill="${lum(skin) > 0.3 ? '#1a1a1a' : '#f5f5f5'}">${esc(p.lips.shade.colour.word)}${centre ? ` → ${esc(p.lips.shade.centre.word)}` : ''} · ${esc(p.finish.finish)}</text></svg>
       <figcaption><strong>${esc(p.lips.look.name)}</strong><span>${esc(p.liner.technique)}</span></figcaption></figure>`;
+    if (!window.StudioPhoto) return drawing;
+    return window.StudioPhoto.panel({
+      studio: 'lips', id: p.choices.look, fallback: drawing, w: 960, h: 720,
+      alt: `Lips in ${p.lips.shade.colour.word}, ${p.finish.finish} finish`,
+      caption: `<strong>${esc(p.lips.look.name)}</strong><span>${esc(p.lips.shade.colour.word)}${centre ? ` → ${esc(p.lips.shade.centre.word)}` : ''} · ${esc(p.finish.finish)} · ${esc(p.liner.technique)}</span>`,
+      paint: { colour: shade, mode: 'color', opacity: 0.8, sheen: sheen * 1.2, matte: fin === 'matte' ? 1 : 0 },
+    });
   }
   function palettePanel(p) {
     const skin = p.tone.hex; const cs = p.palette.colours;

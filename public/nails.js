@@ -1,8 +1,10 @@
 /**
  * Nails & Scent Studio view. Pick depth, undertone, nail shape, finish, how you wear your nails,
  * a nail-art occasion, a fragrance family, scent occasion, climate, community and a skin tone; the
- * server plans both from the nail and fragrance guides and this view draws a hand with the polish
- * in that shape and finish, and the fragrance pyramid with your family's notes. No photo is used.
+ * server plans both from the nail and fragrance guides and this view shows a hand with the polish
+ * in that shape and finish, and the fragrance pyramid with your family's notes. The hand is a
+ * photographic plate per nail shape (studio-photo.js) with the polish multiplied into its nail mask
+ * and the finish laid on as sheen, glitter or duochrome; with no plate, the drawn hand renders.
  */
 (() => {
   const PROFILE_KEY = 'mirrr.profile.v1';
@@ -55,12 +57,19 @@
         ${sheen ? `<rect x="${x - 4}" y="${top + 10 - len}" width="3" height="${18 + len * 0.6}" rx="1.5" fill="#fff" opacity="${sheen}"/>` : ''}
 `;
     }).join('');
-    return `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Hand">
+    const drawing = `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Hand">
       <defs><linearGradient id="nsDuo" x1="0" x2="1"><stop offset="0" stop-color="#5ad1c8"/><stop offset="1" stop-color="#b05ad1"/></linearGradient></defs>
       <rect width="240" height="300" rx="14" fill="#141414"/>
       <path d="M30,300 L30,200 Q30,180 50,180 L210,180 Q222,190 214,214 L200,300 Z" fill="${skin}" stroke="${line}" stroke-width="1"/>${fingers}
       <text x="120" y="290" text-anchor="middle" font-size="12" fill="#f5f5f5">${esc(polish.word)} · ${esc(n.finish.name)}</text></svg>
       <figcaption><strong>${esc(n.shape.name)}</strong><span>${esc(n.wear.label)}</span></figcaption></figure>`;
+    if (!window.StudioPhoto) return drawing;
+    return window.StudioPhoto.panel({
+      studio: 'nails', id: n.shape.id, fallback: drawing, w: 960, h: 720,
+      alt: `Hand with ${polish.word} ${n.shape.name} nails, ${n.finish.name} finish`,
+      caption: `<strong>${esc(n.shape.name)}</strong><span>${esc(polish.word)} · ${esc(n.finish.name)} · ${esc(n.wear.label)}</span>`,
+      paint: { colour: polish.hex, mode: 'multiply', opacity: op === 1 ? 0.95 : 0.7, lift: 0.45, sheen, glitter: fin === 'glitter', duochrome: fin === 'duochrome', matte: fin === 'matte' ? 1 : 0 },
+    });
   }
   function pyramidPanel(p) {
     const s = p.scent;

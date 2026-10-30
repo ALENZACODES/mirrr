@@ -884,7 +884,7 @@ async function openLookModal(lookId) {
       </div>
     `;
     document.getElementById('modalNamedBtn')?.addEventListener('click', () => loadNamedGuide(products.namedGuide, products.label));
-    window.MirrrMoney?.fillShop(document.getElementById('modalShop'), lookId);
+    try { globalThis.MirrrMoney?.fillShop(document.getElementById('modalShop'), lookId); } catch { /* dialog stays as rendered */ }
   } catch {
     content.innerHTML = '<p class="modal-error">Could not load product details.</p>';
   }
@@ -2393,8 +2393,10 @@ async function openStyleGuide(lookId) {
     if (data.shoppingEstimate) {
       tipsEl.innerHTML += `<div style="margin-top:0.75rem;font-size:0.8rem;color:#888;">Estimated budget: ${data.shoppingEstimate.currency} $${data.shoppingEstimate.low}–$${data.shoppingEstimate.high}</div>`;
     }
-    tipsEl.insertAdjacentHTML('beforeend', '<div class="shop-block" id="smShop"></div>');
-    window.MirrrMoney?.fillShop(document.getElementById('smShop'), lookId);
+    // Named products for this look; kept apart so a problem here can never blank the guide.
+    try {
+      if (globalThis.MirrrMoney) { tipsEl.insertAdjacentHTML('beforeend', '<div class="shop-block" id="smShop"></div>'); globalThis.MirrrMoney.fillShop(document.getElementById('smShop'), lookId); }
+    } catch { /* guide stays as rendered */ }
 
   } catch (err) {
     stepsEl.innerHTML = `<p style="color:#e05;">Guide unavailable — ${err.message}</p>`;

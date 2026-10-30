@@ -2492,3 +2492,89 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.querySelectorAll('.hero-try-chip').forEach(b => b.addEventListener('click', () => heroTry(b.dataset.try)));
 });
+
+
+// ===========================================================================
+// PHOTO MATCH — sample skin tone from the user's own photo (all in-browser),
+// then match shades on the server by colour distance.
+// ===========================================================================
+
+function sampleSkin(img) {
+  const W = 240, scale = W / img.width, H = Math.max(1, Math.round(img.height * scale));
+  const c = document.createElement('canvas'); c.width = W; c.height = H;
+  const ctx = c.getContext('2d', { willReadFrequently: true });
+  ctx.drawImage(img, 0, 0, W, H);
+  // Central face area: cheeks/forehead zone of a centred portrait (x 32-68%, y 32-62%)
+  const x0 = Math.round(W * 0.32), x1 = Math.round(W * 0.68), y0 = Math.round(H * 0.32), y1 = Math.round(H * 0.62);
+  const data = ctx.getImageData(x0, y0, x1 - x0, y1 - y0).data;
+  const px = [];
+  for (let i = 0; i < data.length; i += 4) {
+    const r = data[i], g = data[i + 1], b = data[i + 2];
+    const l = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    if (l < 25 || l > 245) continue;           // drop deep shadow and blown highlights
+    if (!(r > g && g > b * 0.8)) continue;       // keep skin-like hues only
+    px.push([r, g, b, l]);
+  }
+  if (px.length < 200) return null;
+  px.sort((p, q) => p[3] - q[3]);
+  const mid = px.slice(Math.floor(px.length * 0.2), Math.ceil(px.length * 0.8)); // trimmed middle 60%
+  const avg = (k) => Math.round(mid.reduce((a, p) => a + p[k], 0) / mid.length);
+  return { r: avg(0), g: avg(1), b: avg(2) };
+}
+
+async function analyzePhoto(file) {
+  const out = document.getElementById('photoResult');
+  if (!out || !file) return;
+  out.classList.remove('hidden');
+  out.innerHTML = '<p class="photo-note">Reading your skin tone…</p>';
+  const url = URL.createObjectURL(file);
+  try {
+    const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = url; });
+    const rgb = sampleSkin(img);
+    if (!rgb) { out.innerHTML = '<p class="photo-note">Could not find enough skin in the centre of the photo. Try a front-facing selfie in daylight with your face centred.</p>'; return; }
+    const data = await api('/api/shades/match-color', 'POST', { ...rgb, topN: 4 });
+    const best = data.matches[0];
+    state.undertone = data.undertone;
+    state.photoUrl = url;
+    out.innerHTML = `
+      <div class="photo-row">
+        <img class="photo-thumb" src="${url}" alt="Your photo">
+        <div class="photo-swatches">
+          <div class="photo-sw"><span style="background:rgb(${rgb.r},${rgb.g},${rgb.b})"></span>Your skin (sampled)</div>
+          <div class="photo-sw"><span style="background:${best.hex}"></span>Best match: <strong>${best.name}</strong></div>
+        </div>
+      </div>
+      <p><strong>${esc(best.name)}</strong> &middot; ${esc(data.undertone)} undertone. Also close: ${data.matches.slice(1).map(m => `${esc(m.name)}`).join(', ')}.</p>
+      <p class="photo-note">This is an estimate from your photo. Light, camera and filters change colour, so confirm in daylight or against a swatch. Nothing was uploaded.</p>
+      <div class="photo-actions">
+        <button class="btn btn-primary" id="photoTryBtn" type="button">Try a look on this photo</button>
+        <button class="btn btn-ghost" id="photoShadesBtn" type="button">See all my shade matches</button>
+      </div>`;
+    document.getElementById('photoTryBtn').addEventListener('click', async () => {
+      try {
+        const { looks } = await api('/api/looks');
+        const pick = state.tasteResult?.looks?.[0]?.look ?? looks[0];
+        openTryOn(pick.id, pick.name);
+        loadTryOnPhoto(url);
+      } catch { toast('Could not open try-on', 'error'); }
+    });
+    document.getElementById('photoShadesBtn').addEventListener('click', () => {
+      renderShadeResults(data.matches.map(m => ({ shade: m.shade, score: Math.max(0, 1 - m.distance / 40), coverageNote: `${data.undertone} undertone from your photo`, name: m.name, code: m.code, hex: m.hex })));
+      showView('shade');
+    });
+  } catch (err) {
+    out.innerHTML = `<p class="photo-note">Could not read that photo — ${esc(err.message ?? 'try another')}</p>`;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('photoBtn')?.addEventListener('click', () => document.getElementById('photoInput')?.click());
+  document.getElementById('photoInput')?.addEventListener('change', (e) => analyzePhoto(e.target.files?.[0]));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('heroPhotoBtn')?.addEventListener('click', () => {
+    showView('taste');
+    setTimeout(() => document.getElementById('photoMatch')?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 150);
+  });
+});

@@ -15,7 +15,7 @@ import { getArchetypes } from './aesthetic.js';
 import { LOOKS } from './look_engine.js';
 import { scoreDNA, getCommunities, QUIZ_QUESTIONS } from './cultural_dna.js';
 import { MirrrAgent } from './agent/mirrr_agent.js';
-import { findShades, getShadeSpectrum, getDepthLabels, getUndertoneOptions } from './shade_finder.js';
+import { matchShadeByColor, findShades, getShadeSpectrum, getDepthLabels, getUndertoneOptions } from './shade_finder.js';
 import { matchWigs, getWigCatalogue, getWigLengths, getWigTextures } from './wig_matchmaker.js';
 import { getLookProducts, getAllFormulas, getProductCategories } from './product_engine.js';
 import { DEMO_PROFILES } from './demo_profiles.js';
@@ -220,6 +220,15 @@ async function router(req, res) {
       depth_labels: getDepthLabels(),
       undertone_options: getUndertoneOptions(),
     });
+  }
+
+  // POST /api/shades/match-color — nearest shades to a skin colour sampled in the browser from the user's photo
+  if (method === 'POST' && path === '/api/shades/match-color') {
+    const body = await readBody(req).catch(err => { sendJSON(res, 400, { error: err.message }); return null; });
+    if (!body) return;
+    const { r, g, b, undertone, topN = 5 } = body;
+    if (![r, g, b].every(v => Number.isFinite(v) && v >= 0 && v <= 255)) return sendJSON(res, 400, { error: 'r, g, b (0-255) are required' });
+    return sendJSON(res, 200, matchShadeByColor({ r, g, b }, { topN: Math.min(Number(topN) || 5, 10), undertone }));
   }
 
   // POST /api/shades/find

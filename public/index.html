@@ -391,6 +391,7 @@
       </div>
       <div class="hero-actions">
         <button class="btn btn-secondary" id="heroQuizBtn">Or take the 2-minute DNA quiz</button>
+        <button class="btn btn-ghost" id="heroPhotoBtn" type="button">Match my skin tone from a selfie</button>
         <button class="btn btn-ghost" id="heroTasteBtn" hidden>Explore by Taste</button>
       </div>
       <p class="hero-communities">West African · South Asian · Arab · Latina · Caribbean · East Asian · East African · South African · Black American</p>
@@ -854,6 +855,15 @@
           <option value="latina">Latina Glam</option>
           <option value="kbeauty">K-Beauty Glass Skin</option>
         </select>
+      </div>
+
+      <!-- Photo match: skin tone from the user's own photo, processed in the browser -->
+      <div class="photo-match card" id="photoMatch">
+        <h3 class="photo-match-title">Match from your photo</h3>
+        <p class="photo-match-sub">Add a selfie in daylight. MIRRR reads your skin tone and undertone, matches foundation shades, and lets you try looks on your own face. Your photo stays on your device.</p>
+        <input type="file" id="photoInput" accept="image/*" capture="user" hidden />
+        <button class="btn btn-secondary" id="photoBtn" type="button">Upload or take a selfie</button>
+        <div id="photoResult" class="photo-result hidden"></div>
       </div>
 
       <!-- Loader -->

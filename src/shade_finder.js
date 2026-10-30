@@ -477,3 +477,48 @@ function buildCoverageNote(shade, undertone, communityId) {
 export function getShadeSpectrum() { return SHADE_SPECTRUM; }
 export function getDepthLabels()   { return DEPTH_LABELS; }
 export function getUndertoneOptions() { return UNDERTONE_OPTIONS; }
+
+
+// ---------------------------------------------------------------------------
+// Photo matching: nearest shade to a sampled skin colour (CIELAB distance)
+// ---------------------------------------------------------------------------
+
+function srgbToLab(r, g, b) {
+  const lin = (c) => { c /= 255; return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; };
+  const R = lin(r), G = lin(g), B = lin(b);
+  const X = (0.4124 * R + 0.3576 * G + 0.1805 * B) / 0.95047;
+  const Y = 0.2126 * R + 0.7152 * G + 0.0722 * B;
+  const Z = (0.0193 * R + 0.1192 * G + 0.9505 * B) / 1.08883;
+  const f = (t) => (t > 0.008856 ? Math.cbrt(t) : 7.787 * t + 16 / 116);
+  return { L: 116 * f(Y) - 16, a: 500 * (f(X) - f(Y)), b: 200 * (f(Y) - f(Z)) };
+}
+
+function hexToRgb(hex) {
+  const n = parseInt(hex.slice(1), 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+
+/**
+ * Classify undertone from a skin sample (Lab hue angle (a and b axes)).
+ */
+export function undertoneFromRgb({ r, g, b }) {
+  const { a, b: bb } = srgbToLab(r, g, b);
+  const hue = (Math.atan2(bb, a) * 180) / Math.PI; // ~45 pink-red .. ~75 yellow
+  if (hue < 52) return 'cool';
+  if (hue > 68 && a < 14) return 'olive';
+  if (hue > 62) return 'warm';
+  return 'neutral';
+}
+
+export function matchShadeByColor({ r, g, b }, { topN = 5, undertone } = {}) {
+  const ut = undertone ?? undertoneFromRgb({ r, g, b });
+  const sample = srgbToLab(r, g, b);
+  const ranked = SHADE_SPECTRUM.map((shade) => {
+    const [sr, sg, sb] = hexToRgb(shade.hex);
+    const lab = srgbToLab(sr, sg, sb);
+    const dE = Math.hypot(sample.L - lab.L, (sample.a - lab.a) * 0.6, (sample.b - lab.b) * 0.6);
+    const penalty = shade.undertones.includes(ut) ? 0 : 3;
+    return { shade, distance: dE + penalty, name: shade.name, code: shade.id, hex: shade.hex };
+  }).sort((x, y) => x.distance - y.distance);
+  return { undertone: ut, sampleLightness: Math.round(sample.L), matches: ranked.slice(0, topN) };
+}

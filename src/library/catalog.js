@@ -112,6 +112,7 @@ import * as collagenGuide from '../collagen_guide.js';
 import * as menopauseBeauty from '../menopause_beauty.js';
 import * as bodyHairEthnicGuide from '../body_hair_ethnic_guide.js';
 import * as bodyHairGuideEthnic from '../body_hair_guide_ethnic.js';
+import * as oralBeautyEthnicGuide from '../oral_beauty_ethnic_guide.js';
 
 export const SHELVES = [
   { id: 'rituals', title: 'Rituals & Heritage', blurb: 'Haldi, hammam, shea, mehndi, bathhouse and festival traditions, with the steps to do them at home.' },
@@ -124,6 +125,7 @@ export const SHELVES = [
   { id: 'nails', title: 'Nails & Fragrance', blurb: 'Nail colour for your depth and undertone, shapes, finishes, gel, acrylic and press-ons with safe removal, dark streaks to watch, and fragrance families, concentrations, layering, attar and oud.' },
   { id: 'ageing', title: 'Ageing, Collagen & Menopause', blurb: 'What changes in each decade, retinoids at a pace your depth can take, collagen habits, in-clinic treatments that are safe for deeper skin, perimenopause and menopause care, and ageing traditions.' },
   { id: 'bodyhair', title: 'Body Hair & Hair Removal', blurb: 'Shaving, waxing, sugaring, threading, laser and electrolysis compared, which lasers are safe for deeper skin, razor bumps, ingrown hairs and dark marks, timing before an event, and hair removal traditions.' },
+  { id: 'smile', title: 'Smile & Oral Care', blurb: 'Chewing sticks, oil pulling, tongue cleaning, salt and tea rinses, charcoal and what it can and cannot do, lip care, and the oral care rituals and smile traditions behind them.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -237,4 +239,5 @@ export const GUIDES = [
   ['menopause_beauty', 'ageing', 'Menopause: Skin, Hair and Hormone Therapy', menopauseBeauty],
   ['body_hair_ethnic_guide', 'bodyhair', 'Hair Removal: Methods, Lasers and Traditions', bodyHairEthnicGuide],
   ['body_hair_guide_ethnic', 'bodyhair', 'Shaving, Waxing, Ingrown Hairs and Electrolysis', bodyHairGuideEthnic],
+  ['oral_beauty_ethnic_guide', 'smile', 'Oral Care Traditions, Rituals and Ingredients', oralBeautyEthnicGuide],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

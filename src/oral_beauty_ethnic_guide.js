@@ -17,35 +17,6 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
       In Yoruba culture, a brilliant smile — ẹrin — signals warmth, trustworthiness,
       and social standing. Teeth are noticed. They are talked about. They matter.`,
     sections: {
-      chewingSticks: {
-        title: 'Chewing Sticks — The Original Toothbrush',
-        body: `Across West Africa the chewing stick predates the bristle toothbrush by
-          millennia. The most widely used species are Azadirachta indica (neem),
-          Garcinia kola (bitter kola), Distemonanthus benthamianus (ayan), and
-          Salvadora persica (miswak/sewak), the last being shared with Arab and
-          East African traditions. A fresh twig is cut each morning, one end chewed
-          until it splays into a soft brush. The user scrubs the tooth surfaces,
-          the gum line, and the tongue dorsum with the frayed end.
-          Clinical studies published in the Journal of Ethnopharmacology have confirmed
-          that Azadirachta indica chewing sticks carry azadirachtin, nimbidin, and
-          triterpenoids with proven antibacterial activity against Streptococcus mutans
-          and Porphyromonas gingivalis — two of the primary pathogens in dental caries
-          and periodontal disease.
-          Bitter kola (Garcinia kola) sticks are favoured in southern Nigeria and among
-          Igbo communities. The bitter resin acts as an astringent, tightening gum
-          tissue and reducing bleeding. Chewing bitter kola is also believed to
-          stimulate salivary flow, which mechanically clears food debris and buffers
-          oral pH.
-          In Hausa communities in the north, sticks from the Arak tree (Salvadora
-          persica) are the preferred choice, overlapping with the Islamic miswak
-          tradition. Men carry a fresh arak stick tucked behind the ear as a matter
-          of daily routine. Women prepare their own in the morning before prayer.
-          The stick is not merely functional — it is a visible signal of personal
-          cleanliness and religious observance.
-          Urban West Africans often combine chewing-stick use in the morning with a
-          commercial fluoride toothpaste brush in the evening, viewing both as
-          complementary rather than competing tools.`,
-      },
       charcoalCleaning: {
         title: 'Charcoal Teeth Cleaning',
         body: `Activated and unactivated charcoal have been used as tooth polishes across
@@ -59,9 +30,7 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           sennu jàpp — literally "to seize the teeth" — meaning to take hold of
           dental health with intention.
           Modern concerns centre on the abrasivity of charcoal powders on enamel.
-          Dentists in Lagos and Accra increasingly advise patients to use charcoal
-          preparations no more than twice weekly to prevent enamel erosion, and to
-          follow charcoal use with a fluoride rinse to re-mineralise the surface.
+          Charcoal is abrasive, so dentists advise using it sparingly, if at all, and brushing with fluoride toothpaste as usual.
           The global beauty industry's adoption of the aesthetic — black charcoal
           toothpaste in chic packaging — has been received with some irony by West
           Africans who have practised the same technique for generations.`,
@@ -72,8 +41,7 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           cosmetic fat in West Africa. Shea butter is applied to the lips as a
           daily emollient across Burkina Faso, Mali, Ghana, and northern Nigeria.
           The unsaponifiable fraction of shea butter — rich in lupeol, alpha-amyrin,
-          and cinnamic acid esters — delivers anti-inflammatory and UV-filtering
-          activity that commercial petroleum jelly lacks.
+          and cinnamic acid esters — is soothing, but it is not a sunscreen.
           In Fulani and Dioula communities, the shade of the lips is considered a
           marker of beauty; shea butter application is begun in childhood and
           maintained throughout life to prevent the hyperpigmentation around the
@@ -118,8 +86,7 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           The widespread investment in dental work among Nigerians in the diaspora —
           particularly veneer placement — reflects how central teeth are to the
           West African beauty ideal even when transplanted to a new cultural context.
-          Diaspora Nigerian and Ghanaian communities in London, Houston, and Toronto
-          show high rates of elective cosmetic dentistry.`,
+          `,
       },
       modernAdaptations: {
         title: 'Modern Oral Care Adaptations',
@@ -129,12 +96,7 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           Macleans, and locally produced Oral Fresh. Rural areas show higher
           continued reliance on chewing sticks as the primary dental tool.
           There is growing interest among Nigerian and Ghanaian dentists in
-          documenting and standardising traditional practices. Research at the
-          University of Lagos dental school has examined the antimicrobial
-          profiles of local chewing stick species, and the results consistently
-          support their continued use as adjuncts to brushing — not as replacements,
-          but as supplements whose bioactive compounds may outperform some
-          commercial mouthwash ingredients in bacterial inhibition assays.`,
+          documenting and standardising traditional practices. Dentists encourage chewing sticks as a supplement to brushing with fluoride toothpaste, not a replacement.`,
       },
     },
   },
@@ -151,59 +113,8 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
       chapters to dinacharya (daily hygiene routine) in which oral care holds a
       central position. These texts describe not just techniques but the philosophy
       behind them: the mouth is the gateway to the body, and its health determines
-      the health of the whole. Modern research continues to validate Ayurvedic oral
-      practices at a biochemical level with striking regularity.`,
+      the health of the whole. Some of these practices, such as tongue cleaning and neem sticks, sit comfortably beside modern dental advice; others, such as paan, harm the mouth.`,
     sections: {
-      oilPulling: {
-        title: 'Oil Pulling — Kavala and Gandusha',
-        body: `Ayurveda distinguishes two oil-based oral practices: gandusha, in which the
-          mouth is filled completely with oil and held without movement for several
-          minutes; and kavala, in which a smaller amount of oil is swished vigorously
-          for 15–20 minutes before spitting. Both are described in the Charaka
-          Samhita as treatments for bad breath, bleeding gums, tooth sensitivity,
-          and chapped lips.
-          Sesame oil is the classical choice. Coconut oil is the modern adaptation,
-          especially popular in Kerala and among the South Asian diaspora. A 2009
-          study in the Indian Journal of Dental Research found kavala with sesame
-          oil reduced Streptococcus mutans counts in plaque and saliva comparably
-          to chlorhexidine mouthwash over a two-week period.
-          The mechanism proposed by researchers is saponification: as the oil is
-          swished, it emulsifies with saliva and the lipopolysaccharide membranes
-          of bacteria are disrupted. The viscous oil also physically pulls debris
-          from interdental spaces and gingival sulci that brushing misses.
-          Oil pulling is performed first thing in the morning, before eating or
-          drinking, on an empty stomach. The oil is spat into the bin — never the
-          sink or toilet, as it solidifies in pipes — and the mouth is rinsed with
-          warm salt water. Many practitioners brush teeth after pulling.
-          In Tamil Nadu and Karnataka, the practice is taught to children by their
-          grandmothers as part of the morning routine alongside yoga and prayer.
-          It is considered not merely hygienic but spiritually preparatory — the
-          mouth is cleared before mantras or prayer are spoken.`,
-      },
-      tongueScraping: {
-        title: 'Tongue Scraping — Jihwa Prakshalana',
-        body: `The tongue scraper (jihwa nirlekhana or jihwa prakshalana) is described in
-          Ayurvedic texts as a curved tool made of gold, silver, copper, tin, or brass.
-          Modern versions are commonly stainless steel or copper. The tongue is extended,
-          the scraper placed at the back of the tongue surface, and drawn forward with
-          gentle pressure five to seven times to remove the coating (ama) that accumulates
-          overnight.
-          In Ayurveda, the colour and thickness of tongue coating is a diagnostic tool.
-          A thick white coat indicates excess kapha (mucus) accumulation; a yellow coat
-          suggests pitta imbalance; a thin coat is considered healthy. Removing the coat
-          not only improves breath but is believed to stimulate the reflex zones on the
-          tongue surface that correspond to internal organs — a concept that overlaps
-          with reflexology.
-          Modern research supports tongue scraping on narrower grounds: the anaerobic
-          bacteria responsible for volatile sulphur compounds (VSCs) — the primary cause
-          of halitosis — concentrate on the tongue dorsum. A 2004 randomised controlled
-          trial in the Journal of Periodontology found tongue scraping reduced VSC levels
-          significantly more than tooth brushing alone.
-          Copper tongue scrapers are preferred by Ayurvedic practitioners because copper
-          has demonstrated oligodynamic antimicrobial effects; copper ions are released in
-          contact with moisture and inhibit bacterial growth on the tongue surface between
-          scrapings.`,
-      },
       neemSticks: {
         title: 'Neem Chewing Sticks',
         body: `Azadirachta indica — neem — is considered the most important medicinal
@@ -213,9 +124,7 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           the tip chewed until it forms bristles, and the exposed wood used to clean
           teeth and massage gums.
           Neem's active compounds include azadirachtin, nimbidin, nimbolide, and
-          quercetin. Studies at the School of Dental Sciences, Manipal, have shown
-          that neem extract inhibits adhesion of S. mutans to tooth surfaces and
-          reduces gingivitis indices when used as a mouthwash or in toothpaste.
+          quercetin. Neem extract is antibacterial in laboratory tests and is sold in toothpastes and mouthwashes.
           Neem datun use is highest in rural North India, Bangladesh, and Pakistan.
           Urban South Asians increasingly use neem-extract toothpastes as a
           compromise — brands like Dabur Red and Vicco Vajradanti have built large
@@ -224,24 +133,6 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           astringent — is an acquired taste that Western markets have struggled to
           accept, but it is deeply familiar to South Asian consumers as the taste
           of proper oral hygiene.`,
-      },
-      turmeric: {
-        title: 'Turmeric for Gum Health',
-        body: `Curcuma longa — turmeric — is applied to inflamed gums as a paste
-          (haldi ka lep) throughout the Indian subcontinent. The preparation is simple:
-          a pinch of turmeric powder mixed with a few drops of mustard oil or coconut
-          oil to form a paste, then rubbed onto the gum line and left for 10 minutes
-          before rinsing. Some preparations add a pinch of salt.
-          Curcumin, the primary bioactive polyphenol in turmeric, has well-documented
-          anti-inflammatory activity via NF-κB pathway inhibition and antioxidant
-          activity via free-radical scavenging. A 2012 randomised trial published in
-          the Journal of Indian Society of Periodontology found turmeric mouthwash
-          as effective as chlorhexidine in reducing plaque and gingivitis scores over
-          21 days, without chlorhexidine's side effect of tooth staining.
-          The paradox of using a yellow pigment on teeth is acknowledged in folk
-          knowledge: traditional users apply the paste only to gums, not tooth
-          surfaces, and rinse thoroughly. The anti-inflammatory benefit is considered
-          worth the risk of minor temporary staining.`,
       },
       cardamomBreath: {
         title: 'Cardamom Breath Freshening',
@@ -252,7 +143,7 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           and Pakistan alongside fennel seeds (saunf) and sugar-coated anise as a
           post-meal ritual called mukhwas.
           Saunf (fennel seeds), sometimes dry-roasted and mixed with sesame and
-          coconut strips, is chewed by virtually all South Asians after eating. The
+          coconut strips, is widely chewed after meals. The
           volatile oils in fennel — primarily anethole and fenchone — are antimicrobial
           and carminative, reducing both halitosis and digestive discomfort.
           Misri (rock sugar) is sometimes added to mukhwas; it buffers oral pH.
@@ -318,23 +209,6 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
       materials. A bright smile is a Caribbean beauty staple; gold teeth carry
       their own aesthetic currency in many islands.`,
     sections: {
-      coconutOilPulling: {
-        title: 'Coconut Oil Pulling',
-        body: `Coconut oil pulling arrived in the Caribbean both through South Asian
-          indentured labourers who brought Ayurvedic practices to Trinidad, Guyana,
-          and Suriname, and through the region's independent tradition of using
-          coconut oil as an all-purpose body treatment. In Trinidad, coconut oil
-          pulling (locally called "oil swishing") is practised predominantly
-          in Indo-Caribbean households, while in Jamaica it has been adopted
-          more recently as part of the natural health movement.
-          Virgin coconut oil has documented antimicrobial activity from lauric acid,
-          which constitutes roughly 50% of coconut fat. Lauric acid is converted by
-          oral bacteria to monolaurin, a monoglyceride that disrupts bacterial cell
-          membranes. Caribbean practitioners pull for 15–20 minutes in the morning
-          before breakfast, spitting into the bin and rinsing with warm salt water.
-          The practice is often shared intergenerationally — grandmothers in Trinidad
-          teach it alongside turmeric milk and bush medicine.`,
-      },
       charcoalWhitening: {
         title: 'Charcoal Whitening',
         body: `Across Jamaica, Barbados, and Trinidad, burning coconut shells to produce
@@ -350,24 +224,6 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           The market vendor who sells the charcoal will often describe its uses
           for teeth, skin, and detoxification in the same breath — reflecting an
           integrated body-care philosophy.`,
-      },
-      aloeVera: {
-        title: 'Aloe Vera for Gum Health',
-        body: `Aloe barbadensis miller — aloe vera — is the Caribbean's most versatile
-          medicinal plant, grown in nearly every yard across the islands. Its gel
-          is applied directly to swollen or bleeding gums by rubbing the cut end
-          of a fresh leaf along the gum line. The gel is also mixed with water
-          as a mouth rinse for ulcers, sores, and after tooth extractions.
-          Acemannan, a polysaccharide in aloe gel, has documented immunomodulatory
-          and wound-healing properties. A 2011 study in the Ethiopian Journal of
-          Health Sciences found aloe vera gel as effective as commercial fluoride
-          toothpaste in controlling plaque and gingivitis over 30 days, without
-          the taste aversion that some patients experience with conventional products.
-          In Barbados — which gave aloe its early European botanical name and was
-          a major exporter of aloe products — folk knowledge about the plant's
-          oral applications is detailed and specific. Elderly Barbadians distinguish
-          between using the clear inner gel (better for gum inflammation) and the
-          bitter yellow exudate near the leaf skin (used for different conditions).`,
       },
       rumAntiseptic: {
         title: 'Overproof Rum as Traditional Antiseptic Mouthwash',
@@ -398,9 +254,7 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           stains, producing a short-term brightening effect.
           The risk is also acid: repeated lime juice application removes
           enamel in the same way that frequent vomiting or excessive lemon
-          water consumption does. Caribbean oral health campaigns have
-          specifically targeted this practice as a cause of the dental
-          erosion patterns dentists observe in the region.
+          water consumption does. Dentists advise against it.
           Traditionally, lime juice is brushed on with a finger, left for
           one minute, then rinsed. In Jamaica the practice may be combined
           with baking soda (bicarbonate of soda) — the acid-base reaction
@@ -430,9 +284,7 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
         body: `Caribbean oral health faces structural challenges: dental care
           access in many island nations is limited; rural communities
           depend on folk remedies not merely by preference but by necessity.
-          The oral health data from CARICOM nations show higher rates of
-          untreated dental caries and edentulism (complete tooth loss) than
-          comparator populations in North America or Europe.
+          
           Diaspora Caribbean communities bring these traditions and sometimes
           these access challenges with them. Community health workers in
           Caribbean diaspora communities in the UK and Canada report that
@@ -452,46 +304,11 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
     communityId: 'arab',
     communityLabel: 'Arab',
     overview: `Arab oral beauty traditions are built on a foundation that is simultaneously
-      religious, medicinal, and social. The Prophet Muhammad's endorsement of the
-      miswak (chewing stick from Salvadora persica) is among the most scientifically
-      validated traditional oral health recommendations in the world. Arab social
+      religious, medicinal, and social. The Prophet Muhammad's recommendation of the miswak (chewing stick from Salvadora persica) has made it a daily practice for many Muslims. Arab social
       culture places high value on personal cleanliness and pleasant breath,
       particularly in contexts of hospitality. Cardamom-scented coffee and dates
       mark guest greetings; the mouth that receives them must be worthy of the company.`,
     sections: {
-      miswak: {
-        title: 'Miswak — The Most Validated Traditional Oral Care Tool',
-        body: `Salvadora persica — the arak or peelu tree — produces the chewing stick
-          universally known in the Islamic world as miswak or siwak. The Prophet
-          Muhammad (PBUH) reportedly said: "Were it not that I might overburden the
-          believers, I would have ordered them to use the miswak for every prayer."
-          This hadith, recorded in Sahih al-Bukhari and Sahih Muslim, has made the
-          miswak one of the most studied traditional oral health tools in scientific
-          literature. The research record is exceptional in its consistency.
-          The chemical composition of fresh Salvadora persica wood includes:
-          benzyl isothiocyanate (antibacterial and antifungal), trimethylamine
-          (basic, pH-raising), fluoride compounds at naturally occurring concentrations,
-          silica (gentle abrasive), sodium bicarbonate (polishing agent), calcium,
-          phosphorus, and tannins (astringent, protein-precipitating).
-          A 2003 review in the Journal of Agricultural and Food Chemistry catalogued
-          over 67 identified chemical compounds in miswak with documented biological
-          activity. Clinical studies have found miswak use reduces plaque indices,
-          gingivitis scores, and caries prevalence compared to toothbrush use alone,
-          particularly when used correctly — at least 3–5 times per day as Islamic
-          practice recommends.
-          The miswak is prepared fresh by cutting a twig of approximately 15–20 cm,
-          peeling 1 cm of bark from the chewing end, and softening the tip by
-          chewing until bristles form. The stick is held at a 45-degree angle to
-          the gum — precisely the angle that most dentists now recommend for manual
-          toothbrushing. After use the bristled end is cut away fresh for the next
-          session.
-          In Saudi Arabia, the UAE, and across the Gulf, high-quality packaged
-          miswak sticks are sold in pharmacies and supermarkets alongside conventional
-          toothbrushes. Miswak-extract toothpastes (Dabur Miswak, Siwak-F) command
-          significant market share in MENA and South Asian markets. WHO has formally
-          recommended miswak as an effective oral hygiene tool in countries where
-          access to toothbrushes is limited.`,
-      },
       cardamomClove: {
         title: 'Cardamom and Clove Breath Freshening',
         body: `Arab hospitality culture centres on the qahwa (Arabic coffee) service,
@@ -531,32 +348,7 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           This religious grounding gives dental aesthetics a spiritual dimension
           that motivates oral hygiene practice beyond simple vanity.
           Teeth whitening and cosmetic dentistry have seen remarkable growth in
-          Gulf Arab markets. Saudi Arabia and the UAE now have some of the highest
-          per-capita rates of cosmetic dental procedures in the world. The market
-          for ceramic veneers, teeth whitening, and Invisalign-type aligners in
-          Riyadh, Dubai, and Abu Dhabi is dominated by patients in their 20s and
-          30s seeking the bright, even smile that media culture presents as
-          modern and successful.`,
-      },
-      personalCleanliness: {
-        title: 'Oral Hygiene in Islamic Personal Cleanliness (Tahara)',
-        body: `Islamic concepts of ritual purity (tahara) and physical cleanliness
-          (nazafa) intersect with oral care in ways that make dental hygiene
-          religiously motivated for observant Muslims. The miswak is recommended
-          before wudu (ablution before prayer), before sleeping, upon waking,
-          before reading the Quran, and before entering a mosque.
-          This frequency of use — potentially five or more times daily aligned
-          with the prayer schedule — provides an oral hygiene regimen more
-          intensive than the twice-daily brushing recommended by most Western
-          dental associations. Epidemiological studies in Saudi Arabia and
-          Kuwait comparing miswak users to non-users have found lower plaque
-          scores and gingivitis prevalence in regular users, even controlling
-          for other hygiene behaviours.
-          The intersection of religious practice and oral health is a public
-          health opportunity: dental education delivered through mosque imams
-          and Islamic health classes in Gulf and diaspora contexts reaches
-          audiences who respond to the religious framing more readily than
-          to clinical messaging.`,
+          Gulf Arab markets. Ceramic veneers, whitening and clear aligners are widely offered in Riyadh, Dubai and Abu Dhabi.`,
       },
       modernAdaptations: {
         title: 'Modern Oral Care Adaptations',
@@ -593,8 +385,7 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
     sections: {
       lemonBakingSoda: {
         title: 'Lemon and Baking Soda Whitening',
-        body: `The most widely practiced home whitening treatment in Mexican and broader
-          Latina oral beauty tradition is a paste of bicarbonato de sodio (baking
+        body: `A familiar home whitening treatment in Mexican and wider Latin American homes is a paste of bicarbonato de sodio (baking
           soda) with limón (typically Mexican lime, Citrus aurantifolia). The
           preparation: half a teaspoon of baking soda in a small dish, squeezed
           with enough lime juice to form a paste, applied to teeth with a finger
@@ -641,38 +432,11 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           parallel to the plantain-ash traditions in West Africa and the
           coconut-shell ash practices in the Caribbean.
           The commercial activated charcoal products sold in Mexican pharmacies
-          and via Instagram influencers prompted the Mexican Dental Association
-          (AMIO) to issue guidance cautioning that products marketed without
-          controlled abrasivity data risked enamel damage. The guidance echoed
-          similar statements from the American Dental Association (ADA), which
-          has not approved activated charcoal toothpaste.
+          and via Instagram influencers raise the same concern dentists have everywhere: abrasive powders without tested abrasivity can wear enamel. The American Dental Association has not given its Seal of Acceptance to any charcoal toothpaste.
           Traditional charcoal ash preparations with very fine particle size
           (from careful burning and straining) are likely lower in abrasivity
           than some commercial activated charcoal powders, which may be ground
           to varying particle sizes.`,
-      },
-      currandera: {
-        title: 'Curandera Oral Remedies',
-        body: `The curandera (traditional healer) tradition in Mexico and among Mexican-
-          American communities encompasses oral health remedies as part of a broader
-          plant-based pharmacopoeia. Specific oral applications include:
-          Hierba santa (Piper auritum): leaves bruised and rubbed on gums
-          for pain and inflammation. The plant contains safrole, a mild
-          local anaesthetic.
-          Guayaba leaves (Psidium guajava): boiled to make a mouth rinse for
-          canker sores and gum infections. Research has confirmed guava leaf
-          extract inhibits oral pathogens including S. mutans.
-          Yerba buena (spearmint, Mentha spicata): steeped and used as a
-          rinse for fresh breath and mild gum inflammation.
-          Propóleo (propolis): bee propolis tincture diluted in water used
-          as an antimicrobial mouth rinse. Propolis is a complex resin
-          collected by bees with documented broad-spectrum antimicrobial
-          activity; its oral health applications are now the subject of
-          clinical research.
-          These remedies are transmitted through oral tradition in families
-          and persist in Mexican-American communities as a first response
-          to oral pain and infection, often preceding or replacing dental
-          care visits due to cost and access barriers.`,
       },
       goldTeeth: {
         title: 'Mexican Dental Gold and Gold Teeth as Adornment',
@@ -722,9 +486,7 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
     overview: `East Asian oral beauty traditions are shaped by Traditional Chinese Medicine
       (TCM), Japanese aesthetic philosophy, and Korean wellness culture, as well as
       deep practical knowledge of the region's botanical resources. Green tea,
-      salt, licorice root, and bamboo charcoal form a natural pharmacopoeia with
-      extraordinary scientific backing. Japanese cultural attitudes toward the smile
-      add a sociological dimension found nowhere else in global oral beauty culture.`,
+      salt, licorice root, and bamboo charcoal form a natural pharmacopoeia. Japanese attitudes toward the smile add their own etiquette.`,
     sections: {
       greenTea: {
         title: 'Green Tea for Oral Health — Catechins Against S. mutans',
@@ -738,12 +500,9 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           the enzyme that enables the bacteria to produce the sticky glucan polymer
           that forms dental plaque. Without glucan, bacteria cannot adhere to
           enamel surfaces.
-          A 2009 Japanese study tracking 25,000 individuals found that drinking
-          green tea daily was associated with significantly lower rates of
-          tooth loss in adults over 40, after controlling for confounders.
+          
           Green tea also contains fluoride at naturally occurring concentrations
-          (0.1–0.6 ppm in brewed tea, varying by leaf grade and brewing time)
-          that contribute to remineralisation.
+          (varying by leaf grade and brewing time).
           In Japan, matcha — powdered whole green tea leaf — delivers the same
           catechins at higher concentration than steeped tea. Matcha-flavoured
           products including gum and toothpaste have entered the Japanese oral
@@ -778,26 +537,6 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           the tactile experience — black paste turning grey as it mixes with
           saliva, rinsing clear — creates a compelling use experience.`,
       },
-      licoriceRoot: {
-        title: 'Licorice Root — Glycyrrhiza uralensis',
-        body: `Chinese licorice root (Glycyrrhiza uralensis) is the East Asian species
-          used in TCM oral care. It differs somewhat from the European licorice
-          (G. glabra) in its phytochemical profile, but both share glycyrrhizin
-          and glabridin as primary active compounds.
-          Two compounds isolated from G. uralensis — licoricidin and licorisoflavan A —
-          have been found in research from the University of Southern California
-          (2012) to inhibit S. mutans and S. sobrinus more effectively than
-          commercial antiseptic compounds at equivalent concentrations. The
-          research attracted significant attention because licorice extract
-          achieves this without the alcohol or chlorhexidine that carries
-          side effects.
-          In TCM oral practice, licorice root pieces are chewed as a breath
-          freshener and digestive; the slightly sweet, complex taste is
-          familiar to Chinese consumers from its extensive culinary use.
-          Licorice-root toothpaste and mouth rinse products are available
-          across East Asia and increasingly in natural food stores in North
-          America catering to Asian diaspora communities.`,
-      },
       saltWater: {
         title: 'Salt Water Rinse Tradition',
         body: `Salt water rinsing (yan shui) after meals and before sleep is one of the
@@ -816,8 +555,7 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
       },
       japaneseSmile: {
         title: 'Japanese Smile Culture — Covering the Mouth',
-        body: `Japanese smile culture is among the most studied and discussed in the
-          cross-cultural psychology of nonverbal communication. The practice of
+        body: `Japanese smile culture has its own etiquette. The practice of
           covering the mouth when laughing (te de kuchi wo kakusu) is associated
           primarily with women and reflects Japanese aesthetic values around
           restraint, propriety, and the concept of tsutsushimi — the discipline
@@ -835,26 +573,9 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           the willingness of Japanese consumers to embrace a dental aesthetic
           that would be corrected in other cultures reflects a distinctly local
           beauty philosophy.
-          South Korea's beauty culture takes the opposite position: Korean
-          dental aesthetics are among the most demanding in Asia, with high rates
-          of orthodontia, whitening, and the so-called "celebrity smile" (the
+          South Korea's beauty culture takes the opposite position: Korean beauty culture puts a premium on orthodontics, whitening, and the so-called "celebrity smile" (the
           aligned, slightly squared dental arch associated with K-pop aesthetics)
           pursued by young consumers.`,
-      },
-      modernAdaptations: {
-        title: 'Modern Oral Care Adaptations',
-        body: `East Asian oral care markets are among the most innovative in the world.
-          Japan's oral care industry is particularly notable for product sophistication:
-          electric toothbrushes were adopted earlier and at higher rates in Japan than
-          anywhere else; interdental brush use is standard; and the range of
-          specialised toothpaste formulations — for whitening, sensitivity, dry mouth,
-          morning breath (enzymes), tea-stain removal, and children — is greater than
-          in any Western market.
-          Korean beauty (K-beauty) has exported East Asian oral care aesthetics globally.
-          The intense focus on skin clarity and the "glass skin" aesthetic is now
-          paralleled by a "glass teeth" concept — smooth, reflective, nearly translucent
-          tooth surfaces achieved by professional cleaning and whitening — that has
-          entered oral care marketing in Korea, China, and their diaspora markets.`,
       },
     },
   },
@@ -869,10 +590,7 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
       diversity: Ethiopian highlands, Somali pastoral culture, Kenyan coastal
       Swahili civilisation, and the Great Rift Valley communities each carry
       distinct oral health practices. The region's oral beauty landscape is
-      shaped by frankincense trade routes, coffee ceremony culture, and the
-      contested tradition of khat chewing. It also includes practices — like
-      ritual teeth filing — that are specific to particular ethnic groups
-      and carry deep aesthetic meaning.`,
+      shaped by frankincense trade routes and coffee ceremony culture.`,
     sections: {
       coffeeGrounds: {
         title: 'Coffee Grounds as Teeth Cleaner',
@@ -896,89 +614,10 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           brown staining in the population, and a natural oral beauty priority
           in Ethiopia includes managing this staining through abrasive cleaning.`,
       },
-      khat: {
-        title: 'Khat Chewing — Catha edulis and Dental Effects',
-        body: `Khat (Catha edulis) — known in Ethiopia as chat, in Somalia and Yemen
-          as qat or khat — is a plant whose leaves and shoots are chewed for
-          their stimulant content (cathinone and cathine, amphetamine-related
-          compounds). Khat is legal in Ethiopia, Somalia, Djibouti, and Yemen;
-          it is a Schedule I controlled substance in the US and illegal in Canada
-          and the UK, though its use persists in East African and Yemeni diaspora
-          communities.
-          The oral health consequences of chronic khat chewing are well documented
-          and significant:
-          Periodontal effects: Khat chewing is associated with increased gingival
-          recession, periodontal pocket formation, and alveolar bone loss on the
-          side of the mouth used for chewing. A 2017 systematic review in PLOS One
-          found consistent associations between khat use and periodontal disease
-          across 14 studies.
-          Caries: Khat users frequently mix the bolus with sugar to offset the
-          bitter taste, and the prolonged oral exposure to sugars promotes caries.
-          Mucosal changes: Chronic khat use is associated with oral mucosal
-          thickening, whitish patches, and in some studies with increased
-          premalignant lesion rates, though establishing causality is complicated
-          by concurrent tobacco and alcohol use in study populations.
-          Tooth staining: Khat produces characteristic brown-green staining on
-          the teeth — sometimes called "khat stain" — that is particularly heavy
-          on the lingual (tongue-facing) surfaces of the front teeth.
-          Despite these documented harms, khat is deeply embedded in social
-          life in parts of Ethiopia (particularly Harari and Oromo regions),
-          Somalia, and among diaspora communities. Khat chewing sessions are
-          social events. Community health workers in East African diaspora
-          communities in Seattle, Minneapolis, and London work with this reality,
-          providing harm-reduction guidance rather than purely prohibitionist
-          messaging.`,
-      },
-      honeyOralHealth: {
-        title: 'Ethiopian Organic Honey for Oral Health',
-        body: `Ethiopia is one of the world's largest honey producers and has a long
-          tradition of using honey (mar) in traditional medicine, including oral
-          applications. Raw honey is applied to mouth ulcers and canker sores,
-          to healing sockets after tooth extraction, and as a throat treatment
-          that also affects the posterior oral cavity.
-          The antimicrobial properties of honey derive from multiple mechanisms:
-          hydrogen peroxide generation from glucose oxidase activity, low water
-          activity that inhibits bacterial growth, defensin-1 (a bee protein),
-          and for Ethiopian forest honey specifically, propolis content and
-          botanical-specific phenolics from the diverse highland flora.
-          Manuka honey (from New Zealand) has received the most research attention
-          in oral health applications, but Ethiopian raw honey — particularly
-          the prized Ethiopian highland forest honey — shares many of the same
-          properties. A 2012 Ethiopian study found local raw honey inhibited
-          S. mutans and Lactobacillus acidophilus comparably to chlorhexidine
-          in laboratory assays.
-          In Ethiopian traditional medicine, honey mixed with ghee and spices
-          is a standard wound-healing preparation. Application to post-extraction
-          sockets aligns with the honey's documented ability to maintain moist
-          wound environments and reduce bacterial colonisation.`,
-      },
-      teethFiling: {
-        title: 'Traditional Teeth Filing — Cultural Beauty Practice',
-        body: `Among certain communities in the Great Rift Valley region — including
-          some Nilotic peoples in South Sudan, Uganda, and northern Kenya — ritual
-          modification of the teeth has historically been a cultural beauty and
-          identity practice. The most common form is filing or chipping of the
-          lower incisors to create pointed or gap-modified forms.
-          In some communities, removal of the lower incisors (tooth avulsion)
-          is performed as an initiation rite. The practice has been associated
-          with the belief that opening a gap in the lower jaw allows treatment
-          of tetanus (lockjaw) when jaw trismus (spasm) prevents mouth opening —
-          a folk-medicine rationale that, while medically incorrect as a
-          prophylactic, arose from genuine observation of tetanus mortality.
-          The WHO and UNICEF have worked with communities to shift tooth avulsion
-          practices through culturally sensitive engagement, arguing that
-          alternative initiation rituals can carry the same identity and social
-          significance without irreversible dental modification.
-          Among Mursi and Surma communities in southern Ethiopia, lip plates
-          (dhebi a tugoin) extend the mouth's beauty domain into dramatic body
-          art — a sign of beauty and marriageability that younger generations
-          increasingly opt out of.`,
-      },
       frankincense: {
         title: 'Frankincense as Gum Treatment',
         body: `Boswellia sacra (frankincense) has been traded from the Horn of Africa
-          and Arabia for over 5,000 years. Somalia and Ethiopia are the world's
-          primary sources. In traditional East African and Arab medicine,
+          and Arabia for thousands of years. Somalia, Ethiopia, Oman and Yemen are major sources. In traditional East African and Arab medicine,
           frankincense resin (luban) is chewed as a gum treatment, breath
           freshener, and anti-inflammatory agent.
           Boswellic acids — the primary active compounds in frankincense resin —
@@ -1024,9 +663,7 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
       biodiversity and the oral health knowledge of its Indigenous peoples —
       the Zulu, Xhosa, Sotho, Tswana, San, and Khoikhoi — alongside Cape
       Malay traditions brought by enslaved people from the Indonesian archipelago,
-      and the botanical medicine developed in the Cape Floral Kingdom (the
-      Cape Floristic Region, a global biodiversity hotspot with 9,600 endemic
-      plant species). Rooibos tea, buchu, and indigenous chewing sticks form
+      and the botanical medicine developed in the Cape Floral Kingdom (the Cape Floristic Region, a global biodiversity hotspot). Rooibos tea, buchu, and indigenous chewing sticks form
       the core of a distinctive oral health pharmacopoeia.`,
     sections: {
       rooibosTea: {
@@ -1041,9 +678,7 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           bags steeped for 10 minutes to produce a concentrated, deep-red liquid —
           is cooled to warm temperature and held in the mouth for 30 seconds,
           swished gently, and spat out.
-          Research at Stellenbosch University and the South African Medical
-          Research Council has found rooibos extracts inhibit the pro-inflammatory
-          cytokines TNF-alpha and IL-6, which are elevated in periodontal disease.
+          In laboratory tests rooibos extracts reduce inflammatory signals linked to gum disease.
           The aspalathin content has also shown antibacterial activity against
           S. mutans in vitro at concentrations achievable through normal tea
           consumption.
@@ -1075,16 +710,12 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
         body: `Zulu oral health traditions include the use of umhlonyane (Artemisia
           afra — African wormwood) as a gum treatment and antiseptic rinse.
           The plant is prepared as a strong infusion, cooled, and used as
-          a mouth rinse. Artemisia afra is one of the most widely used
-          medicinal plants in South Africa, used by Zulu, Xhosa, Sotho,
+          a mouth rinse. Artemisia afra is a widely used medicinal plant in South Africa, used by Zulu, Xhosa, Sotho,
           and Tswana healers for respiratory, digestive, and oral conditions.
-          Its antimicrobial activity against oral pathogens has been confirmed
-          in laboratory studies at the University of Pretoria.
+          It shows antimicrobial activity in laboratory tests.
           Xhosa traditional practices include the use of ndwandwe
           (Sutherlandia frutescens, cancer bush) as a general immune tonic
-          that is consumed as a tea. While not directly an oral health agent,
-          improved immune function affects susceptibility to periodontal disease,
-          creating an indirect oral health benefit.
+          that is consumed as a tea. It is not an oral care agent.
           The traditional healer (isangoma or inyanga) addresses oral conditions
           with plant preparations specifically prepared for oral use — toothache,
           swollen gums, mouth sores — distinct from preparations for other systems.
@@ -1104,33 +735,11 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           across the highveld and bushveld. The sticks are hard, requiring
           more preparation time but releasing more active compounds.
           Balanites maughamii (thorn tree species): used in KwaZulu-Natal
-          coastal regions. The bark's antimicrobial activity has been
-          documented by researchers at the University of KwaZulu-Natal.
+          coastal regions. The bark shows antimicrobial activity in laboratory tests.
           As across the continent, urban South Africans have largely
           transitioned to commercial toothbrushes and toothpaste, while
           rural communities in Limpopo, KwaZulu-Natal, and the Eastern Cape
           continue chewing stick use, sometimes alongside commercial products.`,
-      },
-      smileCulture: {
-        title: 'Smile and Oral Aesthetics in South African Culture',
-        body: `South Africa's beauty culture is as plural as its population of 60 million
-          people across 11 official language groups and multiple ethnic and
-          racial communities. The dominant commercial oral care marketing reflects
-          a globalised ideal of white, even teeth that is aspirational across
-          communities.
-          Among Black South Africans, the smile (umamatheka in Zulu, ukuncuma
-          in Xhosa) is a deeply social gesture of warmth and ubuntu — the
-          philosophical concept of human interconnectedness. A warm, open smile
-          is not a performance but an expression of relationship. Oral aesthetics
-          within this framework emphasise health and natural appearance rather
-          than the engineered perfection of veneer-driven cosmetic dentistry,
-          though commercial whitening products have strong market penetration
-          among younger urban consumers.
-          Tooth loss in older rural populations remains a significant oral health
-          challenge, and edentulous (toothless) elderly people in some communities
-          face social stigma that their urban counterparts with access to dentures
-          do not. This uneven access to dental care shapes oral aesthetic
-          experience across economic lines.`,
       },
       modernAdaptations: {
         title: 'Modern Oral Care Adaptations',
@@ -1139,13 +748,7 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           service with long waiting times and limited resources. The oral health
           disparities between the private and public systems remain one of the
           country's most visible health inequities.
-          The University of the Western Cape's Oral Health Centre is one of
-          Africa's leading research institutions in indigenous oral care
-          practices, ethnobotany, and community oral health. Research there
-          has systematically documented the antimicrobial and anti-inflammatory
-          properties of South African medicinal plants used in oral care,
-          contributing to a growing evidence base that could inform affordable,
-          locally sourced oral care solutions for underserved communities.`,
+          `,
       },
     },
   },
@@ -1247,66 +850,12 @@ export const ETHNIC_ORAL_BEAUTY_GUIDES = {
           sleeping. Permanent grillz require significant tooth preparation and
           professional maintenance like any crown.`,
       },
-      lipGlossCulture: {
-        title: 'Lip Gloss Culture — Heavy Lip Product as Beauty Signature',
-        body: `Lip product culture in Black American beauty is a distinctive aesthetic
-          domain that has influenced global beauty far beyond Black communities.
-          The high-shine, generously applied lip gloss of the 1990s and early 2000s —
-          associated with artists including Lil' Kim, Missy Elliott, Aaliyah, and
-          Foxy Brown — established a visual vocabulary of moisturised, glossy lips
-          as a signature of Black feminine glamour.
-          Brands like MAC (particularly MAC Viva Glam, whose proceeds fund HIV/AIDS
-          programs and was marketed prominently in Black communities) and later NYX,
-          Fenty Beauty, and UOMA Beauty built their lip product ranges around the
-          understanding that Black women invest heavily in lip colour and texture.
-          Rihanna's Fenty Beauty launch in 2017 — with 40 foundation shades at launch
-          addressing the longstanding exclusion of deep skin tones in mainstream
-          cosmetics — explicitly included lip products designed for the full range of
-          natural lip pigmentation, from very light to very dark, that characterises
-          Black lip tones.
-          The extreme matte lip trend (2014–2016), driven by Kylie Jenner's
-          lip products and social media, was adopted extensively in Black beauty
-          spaces but also critiqued from within those spaces: the "nude" lip shade
-          that anchored the matte lip trend was based on light-skin nude tones,
-          and the expansion of nude ranges to serve dark skin tones was an
-          ongoing advocacy project within the Black beauty community.
-          Lip care — balm, oil, treatment — is also significant. Hyperpigmentation
-          around the lip border and on the lip itself is a concern for many Black
-          women; darker pigmentation at the lip corners (labial melanosis) is a
-          common natural variation that some women seek to address with lip
-          lightening products, while others celebrate as natural.`,
-      },
-      smileDisparities: {
-        title: 'Smile Confidence and Orthodontia Access Disparities',
-        body: `NIDCR data consistently show Black Americans experience higher rates of
-          untreated caries and complete tooth loss (edentulism) in older adults,
-          lower orthodontic treatment rates, and dental care deserts concentrated
-          in predominantly Black neighbourhoods — at every income level.
-          These structural realities shape oral beauty culture. Gap teeth (diastema)
-          in Black beauty culture have been framed as alluring and distinctive
-          rather than as flaws requiring correction.
-          The rise of direct-to-consumer aligner companies (SmileDirectClub,
-          Byte, Candid) was partly driven by Black consumers who saw the $4,000–
-          8,000 cost of traditional orthodontia as prohibitive and embraced
-          the $2,000 DTC alternative. The business model targeted exactly the
-          underserved orthodontic market that traditional clinical dentistry
-          had failed to reach.`,
-      },
       oralHealthAdvocacy: {
         title: 'Black Oral Health Advocacy and Community Traditions',
         body: `The National Dental Association (NDA) — the professional association
-          of Black dentists in the United States, founded in 1913 when the
-          American Dental Association excluded Black dentists from membership —
-          has led advocacy for oral health equity for over a century. Howard
-          University College of Dentistry has trained the majority of Black
-          dentists in the US and has a specific research focus on oral health
-          disparities in Black and underserved populations.
+          of Black dentists in the United States, which traces its roots to 1913, when Black dentists were shut out of many dental societies — has long advocated for oral health equity. Howard University and Meharry Medical College dental schools have trained generations of Black dentists.
           Black dental professionals on social media have become important
-          voices in oral health education for Black communities. Dentists
-          including Dr. Catrise Austin (celebrity dentist and author of
-          "5 Steps to the Perfect Smile") and Dr. Rhonda Kalasho have built
-          social media followings by addressing oral health in culturally
-          specific ways — including discussing grillz care, activated charcoal
+          voices in oral health education for Black communities. They address oral health in culturally specific ways, including discussing grillz care, activated charcoal
           risks, and the specific concerns of darker lip pigmentation in
           clinical contexts.
           Community dental clinics operating in predominantly Black neighbourhoods,
@@ -1393,11 +942,6 @@ export function getSectionTitles(communityId) {
   }));
 }
 
-export function getSection(communityId, sectionKey) {
-  const guide = getOralBeautyGuide(communityId);
-  if (!guide) return null;
-  return guide.sections[sectionKey] || null;
-}
 
 export function getOverview(communityId) {
   const guide = getOralBeautyGuide(communityId);
@@ -1433,7 +977,7 @@ export function searchOralBeautyGuides(keyword) {
 
 // ─────────────────────────────────────────────────────────────────────────────
 // CROSS-COMMUNITY REFERENCE DATA
-// Scientific evidence ratings and cross-community practice mapping.
+// Cross-community practice mapping.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const CROSS_COMMUNITY_PRACTICES = {
@@ -1445,13 +989,8 @@ export const CROSS_COMMUNITY_PRACTICES = {
       'Azadirachta indica (neem)': ['south-asian', 'west-african'],
       'Garcinia kola': ['west-african'],
       'Euclea undulata': ['south-african'],
-      'Catha edulis': ['east-african'],
     },
-    evidenceLevel: 'HIGH',
-    clinicalNotes: `Miswak has the strongest evidence base of any traditional oral tool —
-      over 200 peer-reviewed studies; WHO-endorsed. Neem has the second-strongest
-      base, with RCTs confirming plaque and gingivitis control comparable to a
-      standard toothbrush when used correctly.`,
+    
   },
   oilPulling: {
     label: 'Oil Pulling (Kavala / Gandusha)',
@@ -1460,10 +999,7 @@ export const CROSS_COMMUNITY_PRACTICES = {
       'Sesame oil': ['south-asian'],
       'Coconut oil': ['south-asian', 'caribbean', 'black-american'],
     },
-    evidenceLevel: 'MODERATE',
-    clinicalNotes: `RCTs support sesame and coconut oil pulling for plaque and gingivitis
-      reduction. Sesame oil has the largest evidence base. Evidence does not support
-      systemic detoxification claims beyond oral antimicrobial and mechanical effects.`,
+    clinicalNotes: `Oil pulling may reduce plaque a little. It is a complement to brushing and flossing, not a replacement, and it does not detoxify the body.`,
   },
   charcoalWhitening: {
     label: 'Charcoal Tooth Powder / Paste',
@@ -1473,7 +1009,6 @@ export const CROSS_COMMUNITY_PRACTICES = {
       'Bamboo charcoal powder': ['east-asian'],
       'Activated charcoal (commercial)': ['black-american', 'latina', 'caribbean'],
     },
-    evidenceLevel: 'LOW-MODERATE',
     clinicalNotes: `Traditional plant ash polishes extrinsic stains modestly. Commercial
       activated charcoal products vary widely in RDA; some exceed the safe 250 limit.
       No evidence of intrinsic whitening. ADA does not endorse charcoal toothpastes.`,
@@ -1481,27 +1016,21 @@ export const CROSS_COMMUNITY_PRACTICES = {
   greenTea: {
     label: 'Green Tea for Oral Health',
     communities: ['east-asian'],
-    evidenceLevel: 'HIGH',
     clinicalNotes: `EGCG inhibits S. mutans glucosyltransferase, blocking plaque adhesion.
-      Japanese epidemiological data link daily consumption to lower tooth loss rates.
-      Green tea is a well-evidenced oral health adjunct when consumed regularly.`,
+      
+      Unsweetened green tea is a tooth-friendly drink; it does not replace brushing.`,
   },
   tongueScraping: {
     label: 'Tongue Scraping',
     communities: ['south-asian'],
-    evidenceLevel: 'HIGH',
-    clinicalNotes: `RCTs consistently show tongue scraping reduces VSC levels more than
-      brushing alone. Anaerobic VSC-producing bacteria concentrate on the tongue
-      dorsum, inaccessible to brushing. Copper scrapers add oligodynamic antimicrobial
-      benefit between sessions.`,
+    clinicalNotes: `Cleaning the tongue reduces the sulphur compounds behind morning breath, though the effect is short-lived. Anaerobic VSC-producing bacteria concentrate on the tongue
+      dorsum, inaccessible to brushing. Any clean scraper or a toothbrush works.`,
   },
   saltWaterRinse: {
     label: 'Salt Water Rinse',
     communities: ['east-asian', 'caribbean', 'arab'],
-    evidenceLevel: 'HIGH',
-    clinicalNotes: `Endorsed by all major dental bodies for post-extraction healing,
-      gingivitis, and canker sores. Osmotic mechanism draws fluid from inflamed tissue
-      and inhibits bacteria. Optimal: 0.9–3% NaCl in warm water.`,
+    clinicalNotes: `Commonly advised by dentists after an extraction and for mouth sores. Osmotic mechanism draws fluid from inflamed tissue
+      and inhibits bacteria. About half a teaspoon of salt in a cup of warm water.`,
   },
   naturalBreathFresheners: {
     label: 'Botanical Breath Fresheners',
@@ -1513,7 +1042,6 @@ export const CROSS_COMMUNITY_PRACTICES = {
       'Frankincense resin': ['east-african', 'arab'],
       'Kola nut': ['west-african'],
     },
-    evidenceLevel: 'MODERATE',
     clinicalNotes: `Cardamom, clove, and fennel essential oils have antimicrobial activity
       against oral pathogens. Eugenol (clove) is used clinically as a dental
       analgesic and antimicrobial. Breath-freshening is primarily aromatic masking
@@ -1522,11 +1050,9 @@ export const CROSS_COMMUNITY_PRACTICES = {
   honeyOralCare: {
     label: 'Honey for Oral Wound Healing',
     communities: ['east-african', 'caribbean', 'south-african'],
-    evidenceLevel: 'MODERATE-HIGH',
-    clinicalNotes: `Medical-grade Manuka honey is used clinically for oral wound care.
+    clinicalNotes: `Medical-grade honey is used in wound dressings.
       Traditional raw honeys (Ethiopian forest, Caribbean) have variable antimicrobial
-      activity by botanical source and H2O2 content. Raw honey is biologically
-      active with genuine wound-healing benefit; clinical standardisation is limited.`,
+      activity by botanical source and H2O2 content. Honey is still sugar, so it should not sit on teeth.`,
   },
 };
 
@@ -1550,9 +1076,7 @@ export const ORAL_INGREDIENT_GLOSSARY = {
       'Tannins',
       'Saponins',
     ],
-    evidenceSummary: `Most studied traditional oral hygiene tool in scientific literature.
-      WHO-endorsed. Proven efficacy for plaque and gingivitis control comparable
-      to standard toothbrush use when used with correct technique and frequency.`,
+    evidenceSummary: `The World Health Organization has encouraged chewing-stick use for oral hygiene. Cleans plaque mechanically when used with correct technique; use fluoride toothpaste as well.`,
   },
   neem: {
     commonName: 'Neem / Datun stick',
@@ -1566,9 +1090,7 @@ export const ORAL_INGREDIENT_GLOSSARY = {
       'Quercetin',
       'Triterpenoids',
     ],
-    evidenceSummary: `Antibacterial against S. mutans and P. gingivalis confirmed in
-      multiple RCTs. Neem extract toothpastes outperform fluoride-only formulations
-      on some gingivitis metrics in clinical trials.`,
+    evidenceSummary: `Antibacterial in laboratory tests and sold in toothpastes and mouthwashes. Choose one that also contains fluoride.`,
   },
   egcg: {
     commonName: 'Green tea catechins (EGCG)',
@@ -1581,10 +1103,7 @@ export const ORAL_INGREDIENT_GLOSSARY = {
       'Epigallocatechin (EGC)',
       'Natural fluoride',
     ],
-    evidenceSummary: `EGCG inhibits S. mutans glucosyltransferase, blocking plaque
-      adhesion. Epidemiological data link daily tea consumption to lower tooth
-      loss rates. Laboratory evidence for activity against multiple periodontal
-      pathogens. One of the strongest-evidenced natural oral health interventions.`,
+    evidenceSummary: `In laboratory tests EGCG blocks the enzyme plaque bacteria use to stick to teeth. Drink it unsweetened; it does not replace brushing.`,
   },
   turmeric: {
     commonName: 'Turmeric / Haldi',
@@ -1596,19 +1115,15 @@ export const ORAL_INGREDIENT_GLOSSARY = {
       'Demethoxycurcumin',
       'Bisdemethoxycurcumin',
     ],
-    evidenceSummary: `Anti-inflammatory via NF-κB inhibition. RCT: turmeric mouthwash
-      equivalent to chlorhexidine for plaque/gingivitis at 21 days, without
-      chlorhexidine's staining side effect.`,
+    evidenceSummary: `Anti-inflammatory in laboratory tests. It can stain, and it does not replace brushing or a dentist for gums that bleed.`,
   },
   clove: {
     commonName: 'Clove',
     latinName: 'Syzygium aromaticum',
     communities: ['west-african', 'south-asian', 'arab', 'caribbean'],
     primaryUse: 'Toothache analgesia; breath freshening; antimicrobial',
-    activeCompounds: ['Eugenol (70-90% of essential oil)', 'Beta-caryophyllene'],
-    evidenceSummary: `Eugenol is a pharmaceutical dental analgesic (ZOE cement component).
-      Genuine local anaesthesia for toothache pain plus antimicrobial activity
-      against oral pathogens — one of the strongest-evidenced traditional remedies.`,
+    activeCompounds: [ 'Beta-caryophyllene'],
+    evidenceSummary: `Eugenol numbs pain and is part of zinc oxide eugenol, a temporary filling material dentists use. Neat clove oil can burn the gums: use a tiny amount on cotton and see a dentist.`,
   },
   coconutOil: {
     commonName: 'Coconut oil',
@@ -1616,9 +1131,7 @@ export const ORAL_INGREDIENT_GLOSSARY = {
     communities: ['south-asian', 'caribbean', 'black-american'],
     primaryUse: 'Oil pulling; lip care; antimicrobial rinse',
     activeCompounds: ['Lauric acid (50%)', 'Monolaurin (metabolite)'],
-    evidenceSummary: `Lauric acid / monolaurin disrupts bacterial membranes. Small RCTs
-      support coconut oil pulling for plaque and gingivitis reduction, comparable
-      to sesame oil. Not superior to fluoride toothpaste for caries prevention.`,
+    evidenceSummary: `Oil pulling is a complement to brushing and flossing, not a replacement, and does not prevent cavities the way fluoride toothpaste does.`,
   },
   rooibos: {
     commonName: 'Rooibos / Red bush tea',
@@ -1631,9 +1144,7 @@ export const ORAL_INGREDIENT_GLOSSARY = {
       'Quercetin',
       'Rutin',
     ],
-    evidenceSummary: `Inhibits TNF-alpha and IL-6; antibacterial against S. mutans in vitro.
-      Human oral clinical trials limited but preliminary evidence positive.
-      Caffeine-free and very low tannin — non-staining, a practical advantage.`,
+    evidenceSummary: `Caffeine-free and low in tannin, so it stains less than black tea. Its antibacterial activity has been seen in laboratory tests only.`,
   },
   frankincense: {
     commonName: 'Frankincense / Luban / Olibanum',
@@ -1645,9 +1156,7 @@ export const ORAL_INGREDIENT_GLOSSARY = {
       'Alpha-pinene',
       'Limonene',
     ],
-    evidenceSummary: `Boswellic acids inhibit 5-lipoxygenase — documented anti-inflammatory
-      effect validated in joint-condition RCTs, applicable to gingival inflammation.
-      Oral-specific clinical data are limited but mechanistically consistent.`,
+    evidenceSummary: `Anti-inflammatory in laboratory tests; there is little research on its use in the mouth.`,
   },
   aloeVera: {
     commonName: 'Aloe vera',
@@ -1660,9 +1169,7 @@ export const ORAL_INGREDIENT_GLOSSARY = {
       'Barbaloin',
       'Vitamins C and E',
     ],
-    evidenceSummary: `Acemannan: immunomodulatory and wound-healing effects documented.
-      RCT: aloe vera toothpaste equivalent to fluoride for plaque/gingivitis at 30
-      days. Well-supported for oral wound healing and aphthous ulcer management.`,
+    evidenceSummary: `Soothing on mouth sores and gums. Aloe toothpastes exist; use one that also contains fluoride.`,
   },
 };
 
@@ -1675,30 +1182,28 @@ export const ORAL_CONCERNS_MAP = {
   whitening: {
     label: 'Teeth Whitening',
     practices: [
-      { community: 'west-african', method: 'Charcoal ash polishing', evidence: 'LOW-MODERATE' },
-      { community: 'south-asian', method: 'Turmeric gum paste (indirect)', evidence: 'LOW' },
-      { community: 'caribbean', method: 'Lime juice + baking soda', evidence: 'LOW (erosion risk)' },
-      { community: 'latina', method: 'Lemon + bicarbonate paste', evidence: 'LOW (erosion risk)' },
-      { community: 'latina', method: 'Papaya enzyme rub', evidence: 'LOW-MODERATE' },
-      { community: 'east-asian', method: 'Bamboo charcoal powder', evidence: 'LOW-MODERATE' },
-      { community: 'black-american', method: 'Activated charcoal', evidence: 'LOW-MODERATE' },
+      { community: 'west-african', method: 'Charcoal ash polishing' },
+      { community: 'south-asian', method: 'Turmeric gum paste (indirect)' },
+      { community: 'caribbean', method: 'Lime juice + baking soda' },
+      { community: 'latina', method: 'Lemon + bicarbonate paste' },
+      { community: 'latina', method: 'Papaya enzyme rub' },
+      { community: 'east-asian', method: 'Bamboo charcoal powder' },
+      { community: 'black-american', method: 'Activated charcoal' },
     ],
-    clinicalNote: `Traditional methods work on extrinsic stains only. Acid-based methods
-      (lime, lemon) carry enamel erosion risk; use at most weekly. Enzyme methods
-      (papaya, pineapple) are gentle and may be used more frequently. None achieve
+    clinicalNote: `Traditional methods work on extrinsic stains only. Acid-based methods (lime, lemon) erode enamel; dentists advise against them. Enzyme methods (papaya, pineapple) are gentler than acids. None achieve
       intrinsic whitening comparable to peroxide-based professional treatments.`,
   },
   halitosis: {
     label: 'Bad Breath / Halitosis',
     practices: [
-      { community: 'south-asian', method: 'Tongue scraping (jihwa prakshalana)', evidence: 'HIGH' },
-      { community: 'south-asian', method: 'Cardamom and fennel mukhwas', evidence: 'MODERATE' },
-      { community: 'arab', method: 'Cardamom in coffee; clove chewing', evidence: 'MODERATE' },
-      { community: 'west-african', method: 'Clove chewing', evidence: 'MODERATE' },
-      { community: 'east-african', method: 'Frankincense gum chewing', evidence: 'LOW-MODERATE' },
-      { community: 'east-asian', method: 'Green tea gargle', evidence: 'MODERATE' },
+      { community: 'south-asian', method: 'Tongue scraping (jihwa prakshalana)' },
+      { community: 'south-asian', method: 'Cardamom and fennel mukhwas' },
+      { community: 'arab', method: 'Cardamom in coffee; clove chewing' },
+      { community: 'west-african', method: 'Clove chewing' },
+      { community: 'east-african', method: 'Frankincense gum chewing' },
+      { community: 'east-asian', method: 'Green tea gargle' },
     ],
-    clinicalNote: `Tongue scraping has the strongest evidence for VSC reduction.
+    clinicalNote: `Tongue cleaning targets where most breath odour starts.
       Botanical fresheners work via aromatic masking and secondary antimicrobial
       activity. Chronic halitosis from periodontal disease or dry mouth requires
       professional evaluation.`,
@@ -1706,42 +1211,38 @@ export const ORAL_CONCERNS_MAP = {
   gumHealth: {
     label: 'Gum Health / Gingivitis',
     practices: [
-      { community: 'arab', method: 'Miswak use 3-5x daily', evidence: 'HIGH' },
-      { community: 'south-asian', method: 'Turmeric gum paste', evidence: 'HIGH' },
-      { community: 'south-asian', method: 'Neem chewing stick', evidence: 'HIGH' },
-      { community: 'south-african', method: 'Rooibos tea gargle', evidence: 'MODERATE' },
-      { community: 'caribbean', method: 'Aloe vera gel application', evidence: 'MODERATE-HIGH' },
-      { community: 'east-african', method: 'Frankincense resin chewing', evidence: 'LOW-MODERATE' },
+      { community: 'arab', method: 'Miswak use 3-5x daily' },
+      { community: 'south-asian', method: 'Turmeric gum paste' },
+      { community: 'south-asian', method: 'Neem chewing stick' },
+      { community: 'south-african', method: 'Rooibos tea gargle' },
+      { community: 'caribbean', method: 'Aloe vera gel application' },
+      { community: 'east-african', method: 'Frankincense resin chewing' },
     ],
-    clinicalNote: `Miswak, turmeric, and neem have the strongest evidence — all
-      supported by randomised controlled trials. Rooibos and aloe vera show good
-      preliminary evidence. Professional scaling remains the standard for established
-      periodontal disease; traditional practices are best as prevention and adjuncts.`,
+    
   },
   lipCare: {
     label: 'Lip Care and Lip Hyperpigmentation',
     practices: [
-      { community: 'west-african', method: 'Shea butter daily emollient', evidence: 'MODERATE-HIGH' },
-      { community: 'south-asian', method: 'Coconut oil lip care', evidence: 'MODERATE' },
-      { community: 'black-american', method: 'Lip gloss / occlusive lip products', evidence: 'MODERATE' },
-      { community: 'east-asian', method: 'Korean lip care routines (lip masks)', evidence: 'MODERATE' },
+      { community: 'west-african', method: 'Shea butter daily emollient' },
+      { community: 'south-asian', method: 'Coconut oil lip care' },
+      { community: 'black-american', method: 'Lip gloss / occlusive lip products' },
+      { community: 'east-asian', method: 'Korean lip care routines (lip masks)' },
     ],
-    clinicalNote: `Shea butter has the strongest evidence for lip emolliency with
-      anti-inflammatory and mild UV-filtering properties. For hyperpigmentation,
+    clinicalNote: `Any plain occlusive (shea butter, petroleum jelly) seals moisture into the lips; shea butter is far too weak a UV filter to count as sun protection. For hyperpigmentation,
       SPF lip balm is the primary prevention; topical vitamin C has limited evidence
       in lip applications.`,
   },
   toothache: {
     label: 'Toothache / Dental Pain (Traditional First Aid)',
     practices: [
-      { community: 'arab', method: 'Clove oil (eugenol) applied to tooth', evidence: 'HIGH' },
-      { community: 'west-african', method: 'Clove chewing', evidence: 'MODERATE' },
-      { community: 'caribbean', method: 'Rum-soaked cotton in cavity', evidence: 'MODERATE' },
-      { community: 'latina', method: 'Hierba santa / guava leaf paste', evidence: 'LOW-MODERATE' },
-      { community: 'east-african', method: 'Raw honey on exposed site', evidence: 'MODERATE' },
+      { community: 'arab', method: 'Clove oil (eugenol) applied to tooth' },
+      { community: 'west-african', method: 'Clove chewing' },
+      { community: 'caribbean', method: 'Rum-soaked cotton in cavity' },
+      { community: 'latina', method: 'Hierba santa / guava leaf paste' },
+      { community: 'east-african', method: 'Raw honey on exposed site' },
     ],
     clinicalNote: `Eugenol (clove oil) is used in pharmaceutical ZOE dental cement —
-      the only traditional remedy with high clinical evidence. All are temporary
+      a material dentists use. All are temporary
       measures. Toothache from caries, pulpitis, or abscess requires professional
       treatment; delays risk systemic infection.`,
   },
@@ -1785,23 +1286,14 @@ export function getCommunitiesForIngredient(ingredientKey) {
   }));
 }
 
-export function getHighEvidencePractices() {
-  const high = [];
-  for (const [key, practice] of Object.entries(CROSS_COMMUNITY_PRACTICES)) {
-    if (practice.evidenceLevel === 'HIGH') {
-      high.push({ practiceKey: key, ...practice });
-    }
-  }
-  return high;
-}
 
 export function getPracticesByCommunity(communityId) {
   // Returns all cross-community practices that include the given communityId,
-  // with practice key, label and evidence level for display in the MIRRR app.
+  // with practice key and label for display in the MIRRR app.
   const practices = [];
   for (const [key, practice] of Object.entries(CROSS_COMMUNITY_PRACTICES)) {
     if (practice.communities.includes(communityId)) {
-      practices.push({ practiceKey: key, label: practice.label, evidenceLevel: practice.evidenceLevel });
+      practices.push({ practiceKey: key, label: practice.label });
     }
   }
   return practices;
@@ -1871,7 +1363,7 @@ export const ORAL_BEAUTY_RITUAL_TEMPLATES = {
       'Warm salt water rinse',
     ],
     weeklyTreatment: [
-      'Clove oil gum massage for sensitivity',
+      'Clove oil only as a stopgap for a sore tooth: a drop on cotton, never neat on the gums, then see a dentist',
     ],
   },
   'latina': {
@@ -1884,7 +1376,7 @@ export const ORAL_BEAUTY_RITUAL_TEMPLATES = {
       'Warm salt water or guava leaf tea rinse if soreness present',
     ],
     weeklyTreatment: [
-      'Baking soda + lime paste: once weekly, 1 minute, rinse thoroughly',
+      'Skip lime or lemon on teeth (acid wears enamel); for surface stains ask a dentist about a whitening toothpaste or a professional clean',
     ],
   },
   'east-asian': {
@@ -1941,13 +1433,13 @@ export const ORAL_BEAUTY_RITUAL_TEMPLATES = {
     ],
     weeklyTreatment: [
       'Activated charcoal polish (maximum once weekly; follow with fluoride toothpaste)',
-      'Professional cleaning recommended every 6 months',
+      'Check-ups and cleaning as often as your dentist advises',
     ],
     grillzCare: [
       'Remove grillz before eating and before sleeping',
       'Clean grillz daily with jewelry cleaner and soft brush',
       'Brush and floss natural teeth before replacing grillz',
-      'Professional dental cleaning every 6 months; inform dentist of grillz use',
+      'Check-ups and cleaning as often as your dentist advises; tell the dentist you wear grillz',
     ],
   },
 };
@@ -1967,34 +1459,3 @@ export function getAllRituals() {
 // MODULE METADATA
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const MODULE_METADATA = {
-  name: 'oral_beauty_ethnic_guide',
-  version: '1.0.0',
-  description: 'Oral beauty and smile health traditions across 9 ethnic communities for the MIRRR app',
-  communities: SUPPORTED_COMMUNITIES,
-  totalCommunities: 9,
-  dataCategories: [
-    'Traditional teeth whitening practices',
-    'Gum health traditions',
-    'Tongue health and scraping',
-    'Lip care by community',
-    'Breath freshening traditions',
-    'Cultural attitudes toward smile',
-    'Traditional dental practices',
-    'Modern oral care adaptations',
-  ],
-  keyIngredients: Object.keys(ORAL_INGREDIENT_GLOSSARY),
-  crossCommunityPractices: Object.keys(CROSS_COMMUNITY_PRACTICES),
-  oralConcerns: Object.keys(ORAL_CONCERNS_MAP),
-  sources: [
-    'Journal of Ethnopharmacology',
-    'Indian Journal of Dental Research',
-    'Journal of Periodontology',
-    'Ethiopian Journal of Health Sciences',
-    'PLOS One',
-    'WHO Traditional Medicine reports',
-    'NIDCR (National Institute of Dental and Craniofacial Research)',
-  ],
-  lastUpdated: '2026-10-29',
-  platform: 'MIRRR — Ethnic Beauty Discovery',
-};

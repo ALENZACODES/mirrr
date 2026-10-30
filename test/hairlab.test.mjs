@@ -202,6 +202,22 @@ test('hair removal planner routes over HTTP', async () => {
   assert.equal(lib.shelves.find(s => s.id === 'bodyhair').guides.length, 2);
 });
 
+test('smile and lip care routes over HTTP', async () => {
+  const B = `http://127.0.0.1:${PORT}`;
+  const h = { 'x-forwarded-for': '10.6.6.13' };
+  const o = await (await fetch(`${B}/api/smile/options`, { headers: h })).json();
+  assert.equal(o.practices.length, 8); assert.equal(o.tones.length, 10);
+  const r = await fetch(`${B}/api/smile/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ concern: 'halitosis', practice: 'tongueScraping', teeth: 'bleeding', community: 'south_asian' }) });
+  assert.equal(r.status, 200);
+  const p = await r.json();
+  assert.equal(p.choices.concern, 'halitosis'); assert.equal(p.community.id, 'south_asian'); assert.ok(p.practice.targets); assert.ok(p.routine.forTeeth.length > 0);
+  assert.equal((await fetch(`${B}/api/smile/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  const html = await (await fetch(`${B}/`, { headers: h })).text();
+  assert.ok(html.includes('data-view="smile"') && html.includes('src="smile.js"'));
+  const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
+  assert.equal(lib.shelves.find(s => s.id === 'smile').guides.length, 1);
+});
+
 test('colour and lip studio routes over HTTP', async () => {
   const B = `http://127.0.0.1:${PORT}`;
   const h = { 'x-forwarded-for': '10.6.6.9' };

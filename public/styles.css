@@ -3022,3 +3022,4 @@ body { padding-top: 58px; }
 .hr-compare { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.35rem; }
 .hr-compare li { display: flex; align-items: center; gap: 0.5rem; }
 .hr-dot { width: 0.8rem; height: 0.8rem; border-radius: 50%; flex: none; }
+.hr-flag { color: #e9c46a; }

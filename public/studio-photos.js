@@ -155,11 +155,17 @@ window.STUDIO_PHOTOS = {
   }
  },
  "hair": {
+  "amapiano_silver": {
+   "src": "/studio/hair/amapiano_silver.webp"
+  },
   "blue_black": {
    "src": "/studio/hair/blue_black.webp"
   },
   "butterscotch": {
    "src": "/studio/hair/butterscotch.webp"
+  },
+  "carnival_red": {
+   "src": "/studio/hair/carnival_red.webp"
   },
   "chestnut": {
    "src": "/studio/hair/chestnut.webp"
@@ -178,6 +184,9 @@ window.STUDIO_PHOTOS = {
   },
   "dark_chocolate": {
    "src": "/studio/hair/dark_chocolate.webp"
+  },
+  "diwali_gold": {
+   "src": "/studio/hair/diwali_gold.webp"
   },
   "electric_blue": {
    "src": "/studio/hair/electric_blue.webp"
@@ -215,8 +224,29 @@ window.STUDIO_PHOTOS = {
   "lavender": {
    "src": "/studio/hair/lavender.webp"
   },
+  "level1": {
+   "src": "/studio/hair/level1.webp"
+  },
+  "level2": {
+   "src": "/studio/hair/level2.webp"
+  },
+  "level3": {
+   "src": "/studio/hair/level3.webp"
+  },
+  "level4": {
+   "src": "/studio/hair/level4.webp"
+  },
+  "level5": {
+   "src": "/studio/hair/level5.webp"
+  },
+  "level6": {
+   "src": "/studio/hair/level6.webp"
+  },
   "mahogany": {
    "src": "/studio/hair/mahogany.webp"
+  },
+  "mehndi_orange": {
+   "src": "/studio/hair/mehndi_orange.webp"
   },
   "neon_green": {
    "src": "/studio/hair/neon_green.webp"

@@ -838,8 +838,8 @@ async function openLookModal(lookId) {
         <h2 id="modalTitle">${esc(products.label)}</h2>
         <p class="modal-depth-note">Products tuned for: <strong>${depthLabel.replace(/_/g, ' ')}</strong> depth</p>
         <p class="modal-basis" data-basis="${esc(products.basis ?? '')}">${basisText}</p>
-        ${products.products.some(p => PRODUCT_PHOTOS[p.category]) ? `<p class="modal-basis product-photo-note">${PRODUCT_PHOTO_NOTE}</p>` : ''}
       </div>
+      ${products.products.some(p => PRODUCT_PHOTOS[p.category]) ? `<p class="modal-basis product-photo-note">${PRODUCT_PHOTO_NOTE}</p>` : ''}
       ${products.namedGuide ? `<div class="modal-named" id="modalNamed"><button class="btn btn-secondary" type="button" id="modalNamedBtn">Named brands &amp; prices: ${esc(products.namedGuide.name)} guide</button></div>` : ''}
       <div class="product-list">
         ${products.products.map(p => `
@@ -1085,10 +1085,17 @@ function wigLabel(kind, id) {
   const list = kind === 'length' ? state.wigLengths : state.wigTextures;
   return (list ?? []).find(x => x.id === id)?.label ?? id;
 }
+// Style portraits for the top wig styles (generated sample photos, the hairstyle is the subject).
+const WIG_PORTRAITS = new Set(['knotless_box_braids', 'senegalese_twists', 'faux_locs', 'kinky_coily_afro', 'silk_press_natural', 'sleek_bob', 'blunt_lob', 'twist_out_natural', 'cornrow_sleek', 'butterfly_locs', 'jewelled_updo', 'big_chop_fro']);
+function wigPortrait(wig) {
+  if (!WIG_PORTRAITS.has(wig.id)) return '';
+  return `<figure class="wig-portrait"><img src="/wigs/${esc(wig.id)}.webp" alt="${esc(wig.name)} — hairstyle portrait" width="480" height="600" loading="lazy" decoding="async" data-wig-portrait="${esc(wig.id)}" onerror="this.parentElement.remove()"><figcaption>Generated photo, not a real person</figcaption></figure>`;
+}
 function wigItemHTML({ wig, criteria = {}, reason }) {
   const pts = Object.entries(WIG_POINTS).reduce((n, [k, p]) => n + (criteria[k] ? p : 0), 0);
   const checks = Object.keys(WIG_POINTS).map(k => `${WIG_CHECK_LABEL[k]} ${criteria[k] ? 'yes' : 'no'} (${criteria[k] ? WIG_POINTS[k] : 0} of ${WIG_POINTS[k]})`).join(' · ');
-  return `<li class="wig-item">
+  const pic = wigPortrait(wig);
+  return `<li class="wig-item${pic ? ' wig-item--photo' : ''}">${pic}
     <div class="wig-item-head"><strong class="wig-name">${esc(wig.name)}</strong>
       <span class="wig-item-meta">${esc(wig.texture)} · ${esc(wig.length)} · ${esc(wig.finish ?? '')}</span></div>
     ${wig.description ? `<p class="wig-desc">${esc(wig.description)}</p>` : ''}

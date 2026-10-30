@@ -3080,3 +3080,10 @@ body { padding-top: 58px; }
 .product-item--photo { display: grid; grid-template-columns: 76px 1fr; column-gap: .75rem; align-items: start; }
 .product-item--photo > :not(.product-thumb) { grid-column: 2; }
 .product-thumb { grid-column: 1; grid-row: 1 / span 6; width: 76px; height: 76px; object-fit: cover; border-radius: 10px; display: block; }
+/* Wig Match: style portraits beside each listed wig */
+.wig-item--photo { display: grid; grid-template-columns: 96px 1fr; column-gap: .9rem; }
+.wig-item--photo > :not(.wig-portrait) { grid-column: 2; }
+.wig-portrait { grid-column: 1; grid-row: 1 / span 6; margin: 0; }
+.wig-portrait img { width: 96px; height: 120px; object-fit: cover; border-radius: 10px; display: block; }
+.wig-portrait figcaption { font-size: .55rem; color: #9a9a9a; margin-top: .2rem; line-height: 1.2; }
+.product-photo-note { margin: .25rem 0 .75rem; font-size: .78rem; }

@@ -8,6 +8,7 @@
  * Output: { aesthetic, looks, tags, entities, meta }
  */
 
+import { localTagsForInputs } from '../local_taste.js';
 import { QlooClient, qlooClient as _sharedClient } from '../qloo.js';
 import { resolveInputs } from './resolve.js';
 import { buildAestheticVector } from '../aesthetic.js';
@@ -34,6 +35,7 @@ export async function runPipeline({ inputs = [], freeText = [], topLooks = 3, cl
   const { resolved, failed, entities } = await resolveInputs(inputs, client);
 
   let tags = [];
+  let tasteSource = resolved.length > 0 ? 'qloo' : 'none';
   let aesthetic;
   let looks;
 
@@ -48,9 +50,12 @@ export async function runPipeline({ inputs = [], freeText = [], topLooks = 3, cl
     looks = recommendLooks(aesthetic, { topN: topLooks });
   } else {
     // No entities resolved — use free-text signals only
-    aesthetic = buildAestheticVector([], { freeText });
+    // Fallback: built-in artist map (clearly labelled), then free text
+    const localTags = localTagsForInputs(inputs);
+    if (localTags.length) tasteSource = 'local_artist_map';
+    aesthetic = buildAestheticVector(localTags, { freeText });
     looks = recommendLooks(aesthetic, { topN: topLooks });
-    tags = [];
+    tags = localTags;
   }
 
   return {
@@ -62,6 +67,7 @@ export async function runPipeline({ inputs = [], freeText = [], topLooks = 3, cl
       inputs_given: inputs.length,
       inputs_resolved: resolved.length,
       inputs_failed: failed,
+      taste_source: tasteSource,
       latency_ms: Date.now() - start,
     },
   };

@@ -14,6 +14,7 @@ import { narrate } from './llm/index.js';
 import { getArchetypes } from './aesthetic.js';
 import { LOOKS } from './look_engine.js';
 import { scoreDNA, getCommunities, QUIZ_QUESTIONS } from './cultural_dna.js';
+import { buildTransform } from './pipeline/transform.js';
 import { MirrrAgent } from './agent/mirrr_agent.js';
 import { matchShadeByColor, findShades, getShadeSpectrum, getDepthLabels, getUndertoneOptions } from './shade_finder.js';
 import { matchWigs, getWigCatalogue, getWigLengths, getWigTextures } from './wig_matchmaker.js';
@@ -411,6 +412,20 @@ async function router(req, res) {
     } catch (err) {
       console.error('[/api/plan]', err);
       return sendJSON(res, 500, { error: err.message ?? 'Plan error' });
+    }
+  }
+
+  // POST /api/transform — staged transformation plan: face profile + target look -> today / this week / full look
+  if (method === 'POST' && path === '/api/transform') {
+    const body = await readBody(req).catch(err => { sendJSON(res, 400, { error: err.message }); return null; });
+    if (!body) return;
+    try {
+      const plan = await buildTransform({ face: body.face, targetLookId: body.targetLookId, tasteChips: body.tasteChips });
+      return sendJSON(res, 200, plan);
+    } catch (err) {
+      if (err?.status === 400) return sendJSON(res, 400, { error: err.message });
+      console.error('[/api/transform]', err);
+      return sendJSON(res, 500, { error: 'Transform error' });
     }
   }
 

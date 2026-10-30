@@ -38,6 +38,10 @@
     arrow: '<path d="M4 12h16M14 6l6 6-6 6"/>',
     check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
     close: '<path d="M6 6l12 12M18 6L6 18"/>',
+    user: '<circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c1-4 4-6 7.5-6s6.5 2 7.5 6"/>',
+    target: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/>',
+    checklist: '<path d="M4 6.5l1.8 1.8L9 5M4 12.5l1.8 1.8L9 11M4 18.5l1.8 1.8L9 17"/><path d="M12 7h8M12 13h8M12 19h8"/>',
+    download: '<path d="M12 4v11M7 11l5 5 5-5"/><path d="M4 18v1.5A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5V18"/>',
     taste: '<path d="M3 12c2-4 5-6 9-6s7 2 9 6c-2 4-5 6-9 6s-7-2-9-6z"/><path d="M9 12h6M12 9v6"/>',
   };
 
@@ -46,15 +50,15 @@
     '🌍': 'globe', '🌐': 'globe', '🌎': 'globe', '🌏': 'globe',
     '🌸': 'flower', '🌺': 'flower', '🌹': 'flower', '🌼': 'flower',
     '🌙': 'moon', '🌑': 'moon',
-    '🌿': 'leaf', '🌱': 'leaf', '🌳': 'leaf', '🌴': 'leaf', '🥑': 'leaf', '🥥': 'leaf', '🍚': 'leaf',
+    '🌿': 'leaf', '🌱': 'leaf', '🌳': 'leaf', '🌴': 'leaf',
     '🍵': 'cup', '☕': 'cup',
     '🔥': 'flame', '🕯': 'flame',
     '👑': 'crown',
     '💃': 'music', '🎵': 'music', '🎶': 'music',
-    '🎪': 'calendar', '🎭': 'calendar', '🎉': 'calendar', '🧧': 'calendar', '💀': 'calendar', '⛪': 'calendar', '📅': 'calendar',
+    '🎉': 'calendar', '📅': 'calendar',
     '🧬': 'helix',
     '🎨': 'drop', '🧴': 'drop', '🛁': 'drop', '🌊': 'drop', '💧': 'drop',
-    '💪': 'activity', '🏃': 'activity', '🏀': 'activity', '🧘': 'activity', '💆': 'activity',
+    '💪': 'activity', '🏃': 'activity', '🧘': 'activity', '💆': 'activity',
     '🪞': 'mirror',
     '📁': 'upload', '📤': 'upload',
     '📷': 'camera', '📸': 'camera',
@@ -65,16 +69,15 @@
     '💇': 'wig',
     '💋': 'lips',
     '👁': 'eye',
-    '💒': 'heart', '✊': 'heart', '❤': 'heart',
+    '❤': 'heart',
     '⚡': 'bolt',
-    '⚫': 'circle', '🪆': 'circle',
+    
     '📚': 'book', '🖋': 'book',
     '📋': 'quiz',
     '💬': 'chat',
     '✓': 'check', '✔': 'check',
     '✕': 'close',
     '✨': 'sparkle', '🌟': 'sparkle', '⭐': 'sparkle', '✦': 'sparkle', '💡': 'sparkle',
-    '🦁': 'sparkle', '🦅': 'sparkle', '🦋': 'sparkle',
   };
 
   // pictographic emoji + its modifiers/ZWJ tails, plus a few dingbats we treat as icons
@@ -89,7 +92,7 @@
 
   function nameFor(seq) {
     const base = Array.from(seq)[0].replace(/️/g, '');
-    return MAP[base] || 'sparkle';
+    return MAP[base] || null; // no faithful glyph: drop the emoji, leave the text honest
   }
 
   function strip(str) { return String(str == null ? '' : str).replace(RE, '').replace(/\s{2,}/g, ' ').trim(); }
@@ -117,10 +120,13 @@
       let m;
       while ((m = RE.exec(text))) {
         if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
-        const span = document.createElement('span');
-        span.className = 'mi-wrap';
-        span.innerHTML = svg(nameFor(m[0]));
-        frag.appendChild(span);
+        const nm = nameFor(m[0]);
+        if (nm) {
+          const span = document.createElement('span');
+          span.className = 'mi-wrap';
+          span.innerHTML = svg(nm);
+          frag.appendChild(span);
+        }
         last = m.index + m[0].length;
       }
       if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));

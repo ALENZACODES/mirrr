@@ -776,6 +776,7 @@ function renderLookCard(look, score) {
         ${(look.tags ?? []).slice(0, 4).map(t => `<span class="tag">${t}</span>`).join('')}
       </div>
       <span class="look-cta">View Products →</span>
+      <button class="become-btn" type="button" data-become="${look.id}">Become this look</button>
     </div>
   `;
 }
@@ -2063,6 +2064,7 @@ async function loadStyleMatchLooks() {
             ${(look.vibe || []).map(v => `<span style="background:#2a1a2e;border:1px solid #4a2040;border-radius:999px;padding:0.15rem 0.5rem;font-size:0.68rem;color:#c9a96e;">${v}</span>`).join('')}
           </div>
           <button class="btn btn-secondary sm-guide-btn" style="margin-top:0.75rem;font-size:0.78rem;padding:0.4rem 0.9rem;" data-look-id="${look.id}">Get My Guide →</button>
+          <button class="become-btn" type="button" data-become="${look.id}" data-community="${look.community}">Become this look</button>
         </div>
       </div>
     `).join('');
@@ -2206,6 +2208,9 @@ function persist(extra = {}) {
       lastTaste: _lastTaste ?? prev.lastTaste ?? null,
       shades: _lastShades ?? prev.shades ?? null,
       savedLooks: prev.savedLooks ?? [],
+      face: prev.face ?? null,
+      target: prev.target ?? null,
+      plan: prev.plan ?? null,
       ...extra,
     };
     localStorage.setItem(STORE_KEY, JSON.stringify(data));
@@ -2215,7 +2220,7 @@ function clearProfile() {
   try { localStorage.removeItem(STORE_KEY); } catch { /* ignore */ }
 }
 function profileIsEmpty(p) {
-  return !p || (!(p.chips && p.chips.length) && !p.aesthetic && !(p.savedLooks && p.savedLooks.length) && !p.shades);
+  return !p || (!(p.chips && p.chips.length) && !p.aesthetic && !(p.savedLooks && p.savedLooks.length) && !p.shades && !p.face && !p.target && !p.plan);
 }
 function archetypeLabel(aes) {
   const a = aes?.archetypes?.[0];
@@ -2463,10 +2468,13 @@ async function loadDnaLooks(communityId) {
     const picks = looks.filter(l => archs.includes(l.archetype) && LOOK_IMAGES[l.id]).slice(0, 6);
     if (!picks.length) { grid.innerHTML = ''; return; }
     grid.innerHTML = picks.map(l => `
-      <button class="dna-look-card" data-look="${l.id}">
-        <img src="${LOOK_IMAGES[l.id]}" alt="${l.name}" loading="lazy" decoding="async">
-        <span class="dna-look-name">${l.name}</span>
-      </button>`).join('');
+      <div class="dna-look-item">
+        <button class="dna-look-card" data-look="${l.id}">
+          <img src="${LOOK_IMAGES[l.id]}" alt="${l.name}" loading="lazy" decoding="async">
+          <span class="dna-look-name">${l.name}</span>
+        </button>
+        <button class="become-btn" type="button" data-become="${l.id}">Become this look</button>
+      </div>`).join('');
     grid.querySelectorAll('.dna-look-card').forEach(b => b.addEventListener('click', () => {
       const sel = document.getElementById('communitySelect'); if (sel && communityId) sel.value = communityId;
       showView('taste');
@@ -2578,3 +2586,429 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => document.getElementById('photoMatch')?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 150);
   });
 });
+
+
+// ===========================================================================
+// PURPOSE FLOW — My Face -> Become This Look -> Transform (staged plan)
+// ===========================================================================
+
+const faceState = { photoUrl: null, spectrum: null, draft: {}, wired: false };
+const faceOf = () => (loadProfile() || {}).face || null;
+const targetOf = () => (loadProfile() || {}).target || null;
+const planOf = () => (loadProfile() || {}).plan || null;
+const normImg = (f) => (f ? String(f).replace(/^\//, '') : '');
+
+// ---- nav "More" menu: close after choosing / clicking away -------------------
+document.addEventListener('click', (e) => {
+  const more = document.getElementById('navMore');
+  if (!more || !more.open) return;
+  if (e.target.closest('.nav-more-menu .nav-link') || !e.target.closest('#navMore')) more.open = false;
+});
+
+// ---- entry points -------------------------------------------------------------
+function startTransformFlow() {
+  showView(faceOf()?.shadeId ? 'transform' : 'face');
+}
+
+async function becomeThisLook(lookId, community) {
+  if (!lookId) return;
+  // Style Match "signature looks" use their own ids; the transform engine works on the 60 library looks.
+  try {
+    if (!(await allLooks()).some(l => l.id === lookId)) {
+      const mapped = await lookForArtist(lookId, String(community || '').replace(/-/g, '_'));
+      if (mapped) lookId = mapped.id;
+    }
+  } catch { /* keep the id; the plan view will report a clear error */ }
+  persist({ target: { lookId, at: new Date().toISOString() }, plan: null });
+  if (!faceOf()?.shadeId) {
+    toast('First, tell MIRRR your shade. Then your plan builds automatically.', 'info');
+    showView('face');
+    return;
+  }
+  showView('transform');
+}
+
+// Capture phase so the card's own click handler (open products) does not also fire.
+document.addEventListener('click', (e) => {
+  const b = e.target.closest?.('[data-become]');
+  if (!b) return;
+  e.preventDefault();
+  e.stopPropagation();
+  becomeThisLook(b.dataset.become, b.dataset.community);
+}, true);
+
+// Trending artists: add a "Become this look" per artist, mapped to a look in their region's style.
+const REGION_ARCH = {
+  west_african: ['afro_glam', 'amapiano_beat'], east_african: ['afro_glam'], black_american: ['hip_hop_glam', 'afro_glam'],
+  caribbean: ['caribbean_carnival'], south_asian: ['bollywood_bridal'], arab: ['gulf_glam'], latina: ['latina_glam'],
+  east_asian: ['k_beauty'], south_african: ['amapiano_beat', 'afro_glam'],
+};
+let _allLooksCache = null;
+async function allLooks() {
+  if (!_allLooksCache) _allLooksCache = (await api('/api/looks')).looks || [];
+  return _allLooksCache;
+}
+async function lookForArtist(name, regionKey) {
+  const looks = (await allLooks()).filter(l => LOOK_IMAGES[l.id]);
+  const archs = REGION_ARCH[regionKey] || ['clean_minimal'];
+  const pool = looks.filter(l => archs.includes(l.archetype));
+  const list = pool.length ? pool : looks;
+  let h = 0; for (const ch of String(name)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  return list[h % list.length];
+}
+function decorateTrending() {
+  document.querySelectorAll('.trending-card').forEach((card) => {
+    if (card.parentElement?.classList.contains('trending-item')) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'trending-item';
+    card.parentNode.insertBefore(wrap, card);
+    wrap.appendChild(card);
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'become-btn become-btn--trend';
+    btn.textContent = 'Become this look';
+    btn.setAttribute('aria-label', `Become the look that matches ${decodeURIComponent(card.dataset.artist || '')}`);
+    btn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      try {
+        const look = await lookForArtist(decodeURIComponent(card.dataset.artist || ''), activeRegion);
+        if (look) becomeThisLook(look.id);
+      } catch { toast('Could not load looks. Try again.', 'error'); }
+    });
+    wrap.appendChild(btn);
+  });
+}
+new MutationObserver(() => { if (document.querySelector('.trending-card:not(.trending-item .trending-card)')) decorateTrending(); })
+  .observe(document.documentElement, { childList: true, subtree: true });
+
+// ---- MY FACE ------------------------------------------------------------------
+async function initFaceView() {
+  if (!faceState.wired) {
+    faceState.wired = true;
+    document.getElementById('facePhotoBtn')?.addEventListener('click', () => document.getElementById('facePhotoInput')?.click());
+    document.getElementById('facePhotoInput')?.addEventListener('change', (e) => analyzeFacePhoto(e.target.files?.[0]));
+    document.getElementById('faceSaveBtn')?.addEventListener('click', saveFace);
+    document.getElementById('faceClearBtn')?.addEventListener('click', () => {
+      persist({ face: null, plan: null });
+      faceState.draft = {};
+      fillFaceForm();
+      toast('Face profile cleared', 'info');
+    });
+    const fc = document.getElementById('faceCommunity');
+    if (fc) state.communities.forEach(c => {
+      const o = document.createElement('option'); o.value = c.id; o.textContent = String(c.label).replace(/^[^\p{L}\p{N}]+/u, ''); fc.appendChild(o);
+    });
+    try {
+      const data = await api('/api/shades/spectrum');
+      faceState.spectrum = data.spectrum || [];
+    } catch { faceState.spectrum = []; toast('Could not load the shade list', 'error'); }
+    const box = document.getElementById('faceSpectrum');
+    if (box) {
+      box.innerHTML = faceState.spectrum.map(sh => `<button type="button" class="face-sw" role="radio" aria-checked="false" data-shade="${esc(sh.id)}" title="${esc(sh.name)}" aria-label="${esc(sh.name)}" style="background:${esc(sh.hex)}"></button>`).join('');
+      box.addEventListener('click', (e) => {
+        const b = e.target.closest('.face-sw'); if (!b) return;
+        faceState.draft.shadeId = b.dataset.shade; refreshFaceShade();
+      });
+    }
+  }
+  faceState.draft = { ...(faceOf() || {}) };
+  fillFaceForm();
+}
+
+function shadeById(id) { return (faceState.spectrum || []).find(s => s.id === id) || null; }
+
+function refreshFaceShade() {
+  const sh = shadeById(faceState.draft.shadeId);
+  document.querySelectorAll('.face-sw').forEach(b => {
+    const on = sh && b.dataset.shade === sh.id;
+    b.classList.toggle('face-sw--on', !!on);
+    b.setAttribute('aria-checked', on ? 'true' : 'false');
+  });
+  const out = document.getElementById('faceChosen');
+  if (out) out.innerHTML = sh
+    ? `<span class="face-chip" style="background:${esc(sh.hex)}"></span> <strong>${esc(sh.name)}</strong> &middot; ${esc((sh.undertones || []).join(', '))} undertones`
+    : 'No shade chosen yet.';
+}
+
+function fillFaceForm() {
+  const d = faceState.draft || {};
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.value = v || ''; };
+  set('faceUndertone', d.undertone); set('faceHairTexture', d.hairTexture); set('faceHairLength', d.hairLength); set('faceCommunity', d.communityId);
+  refreshFaceShade();
+  const box = document.getElementById('facePhotoBox');
+  if (box) box.innerHTML = faceState.photoUrl ? `<img src="${esc(faceState.photoUrl)}" alt="Your photo">` : '<span class="face-photo-empty">Your photo (optional)</span>';
+}
+
+async function analyzeFacePhoto(file) {
+  const msg = document.getElementById('facePhotoMsg');
+  if (!file) return;
+  if (msg) msg.textContent = 'Reading your skin tone…';
+  const url = URL.createObjectURL(file);
+  try {
+    const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = url; });
+    faceState.photoUrl = url;
+    const rgb = sampleSkin(img);
+    fillFaceForm();
+    if (!rgb) { if (msg) msg.textContent = 'Could not find enough skin in the middle of the photo. Use a front-facing selfie in daylight, or pick your shade below.'; return; }
+    const data = await api('/api/shades/match-color', 'POST', { ...rgb, topN: 3 });
+    const best = data.matches[0];
+    faceState.draft.shadeId = best.code;
+    if (data.undertone) faceState.draft.undertone = data.undertone;
+    fillFaceForm();
+    if (msg) msg.textContent = `Suggested: ${best.name}, ${data.undertone} undertone. This is an estimate, so adjust it if it does not look like you.`;
+  } catch (err) {
+    if (msg) msg.textContent = 'Could not read that photo. Pick your shade below instead.';
+  }
+}
+
+function saveFace() {
+  const sh = shadeById(faceState.draft.shadeId);
+  if (!sh) { toast('Pick your shade first', 'warn'); return; }
+  const val = (id) => document.getElementById(id)?.value || '';
+  const face = {
+    shadeId: sh.id, shadeName: sh.name, hex: sh.hex, depth: sh.depth,
+    undertone: val('faceUndertone') || (sh.undertones || [])[0] || '',
+    hairTexture: val('faceHairTexture'), hairLength: val('faceHairLength'), communityId: val('faceCommunity'),
+  };
+  persist({ face });
+  if (face.undertone) state.undertone = face.undertone;
+  if (face.communityId) state.communityId = face.communityId;
+  toast('Face profile saved in this browser', 'info');
+  showView('transform');
+}
+
+// ---- TRANSFORM ----------------------------------------------------------------
+const transformCache = {};
+
+async function renderTransform() {
+  const host = document.getElementById('transformBody');
+  if (!host) return;
+  const face = faceOf();
+  const target = targetOf();
+  if (!face?.shadeId) {
+    host.innerHTML = `<div class="tf-start card"><h3>Step 1: My Face</h3><p>Tell MIRRR your shade and hair so each step is in your colours.</p><button class="btn btn-primary" id="tfToFace" type="button">Set up my face</button></div>`;
+    document.getElementById('tfToFace')?.addEventListener('click', () => showView('face'));
+    return;
+  }
+  if (!target?.lookId) { await renderLookPicker(host, face); return; }
+  await runTransform(host, face, target.lookId);
+}
+
+function faceSummaryHtml(face) {
+  return `<span class="face-chip" style="background:${esc(face.hex || '#888')}"></span> <strong>${esc(face.shadeName || face.shadeId)}</strong>${face.undertone ? ` &middot; ${esc(face.undertone)} undertone` : ''}${face.hairTexture ? ` &middot; ${esc(face.hairTexture)} hair` : ''}${face.hairLength ? `, ${esc(face.hairLength)}` : ''}`;
+}
+
+async function renderLookPicker(host, face) {
+  host.innerHTML = `<div class="tf-face-line">${faceSummaryHtml(face)} <button class="btn btn-ghost tf-link" id="tfEditFace" type="button">Edit</button></div>
+    <h3 class="tf-h">Step 2: pick a look you love</h3><div class="tf-picker" id="tfPicker"><p class="photo-note">Loading looks…</p></div>`;
+  document.getElementById('tfEditFace')?.addEventListener('click', () => showView('face'));
+  try {
+    const looks = (await allLooks()).filter(l => LOOK_IMAGES[l.id]);
+    document.getElementById('tfPicker').innerHTML = looks.map(l => `
+      <div class="tf-pick">
+        <img src="${esc(LOOK_IMAGES[l.id])}" alt="${esc(l.name)}" loading="lazy" decoding="async">
+        <div class="tf-pick-name">${esc(l.name)}</div>
+        <button class="become-btn" type="button" data-become="${esc(l.id)}">Become this look</button>
+      </div>`).join('');
+  } catch { document.getElementById('tfPicker').innerHTML = '<p class="photo-note">Could not load looks. Check your connection and reopen this page.</p>'; }
+}
+
+async function runTransform(host, face, lookId) {
+  host.innerHTML = '<div class="modal-loading"><div class="spinner"></div></div><p class="photo-note" style="text-align:center">Building your plan…</p>';
+  const key = `${lookId}|${face.shadeId}|${face.undertone}|${face.hairTexture}|${face.hairLength}|${state.tasteChips.join(',')}`;
+  let data = transformCache[key];
+  if (!data) {
+    try {
+      data = await api('/api/transform', 'POST', {
+        face: { shadeId: face.shadeId, depth: face.depth, undertone: face.undertone || undefined, hairTexture: face.hairTexture || undefined, hairLength: face.hairLength || undefined, communityId: face.communityId || undefined },
+        targetLookId: lookId,
+        tasteChips: state.tasteChips,
+      });
+      transformCache[key] = data;
+    } catch (err) {
+      host.innerHTML = `<div class="tf-start card"><h3>Could not build your plan</h3><p>${esc(err.message || 'Something went wrong.')}</p>
+        <div class="form-actions"><button class="btn btn-primary" id="tfRetry" type="button">Try again</button><button class="btn btn-ghost" id="tfPickOther" type="button">Pick a different look</button></div></div>`;
+      document.getElementById('tfRetry')?.addEventListener('click', () => renderTransform());
+      document.getElementById('tfPickOther')?.addEventListener('click', () => { persist({ target: null, plan: null }); renderTransform(); });
+      return;
+    }
+  }
+  renderPlanResult(host, face, data, lookId);
+}
+
+function stepKey(stage, i) { return `${stage.id ?? stage.title}:${i}`; }
+
+function renderPlanResult(host, face, data, lookId) {
+  const t = data.target || { id: lookId, name: 'Your look' };
+  const img = normImg(t.image || LOOK_IMAGES[t.id]);
+  const plan = planOf();
+  const checked = (plan && plan.targetLookId === lookId && plan.checked) || {};
+  const stages = Array.isArray(data.stages) ? data.stages : [];
+  const total = stages.reduce((n, st) => n + (st.steps?.length || 0), 0);
+  const because = Array.isArray(data.because) ? data.because.filter(Boolean) : [];
+
+  host.innerHTML = `
+    <div class="tf-head card">
+      ${img ? `<img class="tf-target-img" src="${esc(img)}" alt="${esc(t.name)}">` : ''}
+      <div class="tf-head-body">
+        <p class="dna-kicker">Your transformation</p>
+        <h3 class="tf-title">${esc(t.name)}</h3>
+        ${t.description ? `<p class="tf-desc">${esc(t.description)}</p>` : ''}
+        ${because.length ? `<p class="tf-because">${because.map(esc).join(' ')}</p>` : ''}
+        <p class="tf-face-line">${faceSummaryHtml(face)}</p>
+        <div class="tf-actions">
+          ${faceState.photoUrl ? '<button class="btn btn-secondary" id="tfTryOn" type="button">Try on my photo</button>' : ''}
+          <button class="btn btn-secondary" id="tfShare" type="button">${ico('download')} Save plan card</button>
+          <button class="btn btn-ghost" id="tfChange" type="button">Change look</button>
+          <button class="btn btn-ghost" id="tfEdit" type="button">Edit my face</button>
+        </div>
+      </div>
+    </div>
+    <div class="tf-progress" role="progressbar" aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="0" aria-label="Steps done"><span class="tf-progress-bar" id="tfBar"></span><span class="tf-progress-text" id="tfBarText"></span></div>
+    ${stages.map((st) => `
+      <section class="tf-stage card">
+        <h3 class="tf-stage-title">${esc(st.title || '')}</h3>
+        ${st.subtitle ? `<p class="tf-stage-sub">${esc(st.subtitle)}</p>` : ''}
+        <ul class="tf-steps">
+          ${(st.steps || []).map((step, i) => {
+            const k = stepKey(st, i);
+            const sh = step.shade;
+            return `<li class="tf-step">
+              <label>
+                <input type="checkbox" data-key="${esc(k)}" ${checked[k] ? 'checked' : ''}>
+                <span class="tf-step-body">
+                  <span class="tf-area">${esc(step.area || '')}</span>
+                  <strong>${esc(step.title || '')}</strong>
+                  ${step.technique ? `<span class="tf-tech">${esc(step.technique)}</span>` : ''}
+                  ${sh ? `<span class="tf-shade"><span class="face-chip" style="background:${esc(sh.hex || '#888')}"></span>${esc(sh.name || '')}${sh.code ? ` (${esc(sh.code)})` : ''}</span>` : ''}
+                  ${step.wig?.name ? `<span class="tf-shade">Wig: ${esc(step.wig.name)}${step.wig.why ? ` &mdash; ${esc(step.wig.why)}` : ''}</span>` : ''}
+                  ${step.product ? `<span class="tf-prod">${esc(typeof step.product === 'string' ? step.product : (step.product.name || step.product.formula || ''))}</span>` : ''}
+                  ${step.why ? `<span class="tf-why">${esc(step.why)}</span>` : ''}
+                </span>
+              </label>
+            </li>`;
+          }).join('')}
+        </ul>
+      </section>`).join('')}
+    ${stages.length ? '' : '<div class="tf-start card"><p>No steps came back for this look. Try another look.</p></div>'}`;
+
+  const updateBar = () => {
+    const done = host.querySelectorAll('.tf-steps input:checked').length;
+    const bar = document.getElementById('tfBar'), txt = document.getElementById('tfBarText');
+    if (bar) bar.style.width = total ? `${Math.round((done / total) * 100)}%` : '0%';
+    if (txt) txt.textContent = `${done} of ${total} steps done`;
+    host.querySelector('.tf-progress')?.setAttribute('aria-valuenow', String(done));
+  };
+  updateBar();
+  host.querySelectorAll('.tf-steps input').forEach(cb => cb.addEventListener('change', () => {
+    const map = {};
+    host.querySelectorAll('.tf-steps input:checked').forEach(c => { map[c.dataset.key] = true; });
+    persist({ plan: { targetLookId: lookId, checked: map, savedAt: new Date().toISOString() } });
+    updateBar();
+  }));
+  if (!plan || plan.targetLookId !== lookId) persist({ plan: { targetLookId: lookId, checked: {}, savedAt: new Date().toISOString() } });
+
+  document.getElementById('tfChange')?.addEventListener('click', () => { persist({ target: null, plan: null }); renderTransform(); });
+  document.getElementById('tfEdit')?.addEventListener('click', () => showView('face'));
+  document.getElementById('tfTryOn')?.addEventListener('click', () => { openTryOn(t.id, t.name); loadTryOnPhoto(faceState.photoUrl); });
+  document.getElementById('tfShare')?.addEventListener('click', () => sharePlanCard(face, data, img));
+}
+
+// ---- SHARE CARD (canvas) --------------------------------------------------------
+function wrapLines(ctx, text, maxW) {
+  const words = String(text).split(/\s+/); const lines = []; let line = '';
+  for (const w of words) { const t = line ? `${line} ${w}` : w; if (ctx.measureText(t).width > maxW && line) { lines.push(line); line = w; } else line = t; }
+  if (line) lines.push(line); return lines;
+}
+
+async function sharePlanCard(face, data, imgSrc) {
+  const W = 1080, H = 1350;
+  const c = document.createElement('canvas'); c.width = W; c.height = H;
+  const x = c.getContext('2d');
+  x.fillStyle = '#0b0b0b'; x.fillRect(0, 0, W, H);
+  x.strokeStyle = 'rgba(212,168,71,.6)'; x.lineWidth = 3; x.strokeRect(24, 24, W - 48, H - 48);
+  let img = null;
+  if (imgSrc) img = await new Promise(res => { const i = new Image(); i.onload = () => res(i); i.onerror = () => res(null); i.src = imgSrc; });
+  const IW = 460, IH = 575, IX = 70, IY = 130;
+  if (img) {
+    const r = Math.max(IW / img.width, IH / img.height); const sw = IW / r, sh = IH / r;
+    x.drawImage(img, (img.width - sw) / 2, Math.max(0, (img.height - sh) * 0.2), sw, sh, IX, IY, IW, IH);
+  } else { x.fillStyle = '#1b1b1b'; x.fillRect(IX, IY, IW, IH); }
+  x.fillStyle = '#d4a847'; x.font = '600 28px Georgia, serif'; x.fillText('MIRRR', 70, 90);
+  x.font = '22px sans-serif'; x.fillStyle = '#bbb'; x.fillText('MY TRANSFORMATION', 70 + 150, 88);
+  x.fillStyle = '#f5f0e8'; x.font = '700 54px Georgia, serif';
+  let y = 170; for (const ln of wrapLines(x, data.target?.name || 'My look', 440)) { x.fillText(ln, 580, y); y += 62; }
+  x.font = '24px sans-serif'; x.fillStyle = '#bbb'; x.fillText('My base shade', 580, y + 20);
+  x.fillStyle = face.hex || '#888'; x.beginPath(); x.arc(610, y + 75, 32, 0, Math.PI * 2); x.fill();
+  x.strokeStyle = 'rgba(255,255,255,.4)'; x.lineWidth = 2; x.stroke();
+  x.fillStyle = '#f5f0e8'; x.font = '600 30px sans-serif'; x.fillText(face.shadeName || face.shadeId, 660, y + 85);
+  const stage1 = data.stages?.[0];
+  let ty = 790;
+  x.fillStyle = '#d4a847'; x.font = '600 34px Georgia, serif'; x.fillText(stage1?.title || 'Stage 1', 70, ty); ty += 50;
+  x.fillStyle = '#f5f0e8'; x.font = '27px sans-serif';
+  for (const [i, st] of (stage1?.steps || []).slice(0, 6).entries()) {
+    const lines = wrapLines(x, `${i + 1}. ${st.title || ''}`, W - 140);
+    for (const ln of lines.slice(0, 2)) { x.fillText(ln, 70, ty); ty += 38; }
+    ty += 10;
+  }
+  x.fillStyle = '#d4a847'; x.font = '24px sans-serif'; x.fillText('Your face. A look you love. Step by step.', 70, H - 70);
+  const blob = await new Promise(res => c.toBlob(res, 'image/png'));
+  if (!blob) { toast('Could not create the card', 'error'); return; }
+  const file = new File([blob], 'mirrr-transformation.png', { type: 'image/png' });
+  try {
+    if (navigator.canShare?.({ files: [file] })) { await navigator.share({ files: [file], title: 'My MIRRR transformation' }); return; }
+  } catch { /* user cancelled or unsupported: fall through to download */ }
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'mirrr-transformation.png';
+  document.body.appendChild(a); a.click(); a.remove();
+  toast('Plan card saved', 'info');
+}
+
+// ---- wiring: views, hero, banner, profile panel ---------------------------------
+const _showView3 = showView;
+showView = function (viewId) {
+  _showView3(viewId);
+  if (viewId === 'face') initFaceView();
+  if (viewId === 'transform') renderTransform();
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('heroTransformBtn')?.addEventListener('click', startTransformFlow);
+});
+
+// Resume banner + profile panel additions (override the earlier versions)
+showReturnBanner = function () {
+  const p = loadProfile();
+  const banner = document.getElementById('returnBanner');
+  if (!banner || profileIsEmpty(p)) return;
+  const arch = archetypeLabel(p.aesthetic);
+  const chips = (p.chips || []).slice(0, 3).map(esc).join(', ');
+  const resume = p.plan?.targetLookId && p.face?.shadeId;
+  banner.innerHTML = `<span>Welcome back${p.face?.shadeName ? ` &mdash; your shade is <strong>${esc(p.face.shadeName)}</strong>` : (arch ? ` &mdash; your saved aesthetic is <strong>${esc(arch)}</strong>` : '')}${chips ? ` (${chips})` : ''}.</span>
+    ${resume ? '<button class="btn btn-primary" id="rbResume">Resume your transformation</button>' : ''}
+    <button class="btn ${resume ? 'btn-secondary' : 'btn-primary'}" id="rbContinue">Continue</button>
+    <button class="btn btn-ghost" id="rbReset">Start over</button>`;
+  banner.classList.remove('hidden');
+  document.getElementById('rbResume')?.addEventListener('click', () => { restoreProfile(p); persist({ target: { lookId: p.plan.targetLookId, at: new Date().toISOString() } }); banner.classList.add('hidden'); showView('transform'); });
+  document.getElementById('rbContinue').addEventListener('click', () => { restoreProfile(p); banner.classList.add('hidden'); });
+  document.getElementById('rbReset').addEventListener('click', resetEverything);
+};
+
+const _toggleProfilePanel = toggleProfilePanel;
+toggleProfilePanel = function () {
+  _toggleProfilePanel();
+  const panel = document.getElementById('profilePanel');
+  const p = loadProfile();
+  if (!panel || panel.classList.contains('hidden') || !p || profileIsEmpty(p)) return;
+  const f = p.face;
+  const rows = `<div class="pp-row"><strong>My Face</strong>${f ? `<span class="face-chip" style="background:${esc(f.hex || '#888')}"></span> ${esc(f.shadeName || f.shadeId)}${f.undertone ? `, ${esc(f.undertone)}` : ''}${f.hairTexture ? `, ${esc(f.hairTexture)} hair` : ''}${f.hairLength ? ` (${esc(f.hairLength)})` : ''}` : 'not set'}</div>
+    <div class="pp-row"><strong>Target look</strong>${p.target?.lookId ? esc(String(p.target.lookId).replace(/_/g, ' ')) : 'none'}</div>
+    <div class="pp-row"><strong>Transformation</strong>${p.plan ? `${Object.keys(p.plan.checked || {}).length} steps done` : 'none'}</div>`;
+  const first = panel.querySelector('.pp-row');
+  if (first) first.insertAdjacentHTML('beforebegin', rows);
+  const actions = panel.querySelector('.pp-actions');
+  if (actions) {
+    actions.insertAdjacentHTML('afterbegin', '<button class="btn btn-secondary" id="ppEditFace" type="button">Edit face</button><button class="btn btn-ghost" id="ppClearFace" type="button">Clear face</button>');
+    document.getElementById('ppEditFace')?.addEventListener('click', () => { panel.classList.add('hidden'); showView('face'); });
+    document.getElementById('ppClearFace')?.addEventListener('click', () => { persist({ face: null, plan: null }); panel.classList.add('hidden'); toast('Face profile cleared', 'info'); });
+  }
+};

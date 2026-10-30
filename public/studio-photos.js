@@ -395,5 +395,37 @@ window.STUDIO_PHOTOS = {
   "sun_damage-weeks": {
    "src": "/studio/skin/sun_damage-weeks.webp"
   }
+ },
+ "smile": {
+  "practice-charcoalWhitening": {
+   "src": "/studio/smile/practice-charcoalWhitening.webp"
+  },
+  "practice-chewingSticks": {
+   "src": "/studio/smile/practice-chewingSticks.webp"
+  },
+  "practice-greenTea": {
+   "src": "/studio/smile/practice-greenTea.webp"
+  },
+  "practice-oilPulling": {
+   "src": "/studio/smile/practice-oilPulling.webp"
+  },
+  "smile-gums_healthy": {
+   "src": "/studio/smile/smile-gums_healthy.webp"
+  },
+  "smile-gums_inflamed": {
+   "src": "/studio/smile/smile-gums_inflamed.webp"
+  },
+  "smile-healthy": {
+   "src": "/studio/smile/smile-healthy.webp"
+  },
+  "smile-lips_care": {
+   "src": "/studio/smile/smile-lips_care.webp"
+  },
+  "smile-stained": {
+   "src": "/studio/smile/smile-stained.webp"
+  },
+  "smile-whitened": {
+   "src": "/studio/smile/smile-whitened.webp"
+  }
  }
 };

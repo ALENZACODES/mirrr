@@ -838,11 +838,13 @@ async function openLookModal(lookId) {
         <h2 id="modalTitle">${esc(products.label)}</h2>
         <p class="modal-depth-note">Products tuned for: <strong>${depthLabel.replace(/_/g, ' ')}</strong> depth</p>
         <p class="modal-basis" data-basis="${esc(products.basis ?? '')}">${basisText}</p>
+        ${products.products.some(p => PRODUCT_PHOTOS[p.category]) ? `<p class="modal-basis product-photo-note">${PRODUCT_PHOTO_NOTE}</p>` : ''}
       </div>
       ${products.namedGuide ? `<div class="modal-named" id="modalNamed"><button class="btn btn-secondary" type="button" id="modalNamedBtn">Named brands &amp; prices: ${esc(products.namedGuide.name)} guide</button></div>` : ''}
       <div class="product-list">
         ${products.products.map(p => `
-          <div class="product-item">
+          <div class="product-item${productPhoto(p.category) ? ' product-item--photo' : ''}">
+            ${productPhoto(p.category)}
             <div class="product-cat">
               <span class="product-cat-emoji">${getCategoryEmoji(p.category)}</span>
               <strong>${capitalise(p.category)}</strong>
@@ -1156,6 +1158,18 @@ async function api(path, method = 'GET', body, { signal } = {}) {
 
 function capitalise(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+// One unbranded photo per product type (blank packaging, no logos). It illustrates the category
+// only; the list beside it keeps its own basis label (curated / archetype / look-spec).
+const PRODUCT_PHOTOS = {
+  foundation: 'foundation', concealer: 'concealer', eyeshadow: 'eyeshadow', lip: 'lip', mascara: 'mascara',
+  lash: 'lash', blush: 'blush', highlight: 'highlight', liner: 'liner', setting: 'setting', brow: 'brow', skincare_base: 'serum',
+};
+const PRODUCT_PHOTO_NOTE = 'Photos show each product type in blank packaging. They are generated pictures, not any brand\'s product.';
+function productPhoto(cat) {
+  const f = PRODUCT_PHOTOS[cat];
+  return f ? `<img class="product-thumb" src="/products/${f}.webp" alt="${esc(capitalise(String(cat).replace(/_/g, ' ')))}: unbranded product type, blank packaging" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">` : '';
 }
 
 function getCategoryEmoji(cat) {

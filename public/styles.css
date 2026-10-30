@@ -3076,3 +3076,7 @@ body { padding-top: 58px; }
 /* Signature look portraits: generated-photo label */
 .look-card-img-wrap, .sm-photo { position: relative; }
 .gen-badge { position: absolute; bottom: .4rem; right: .5rem; font-size: .6rem; color: #fefae0; background: rgba(0,0,0,.5); padding: .1rem .45rem; border-radius: 999px; pointer-events: none; }
+/* Product dialog: unbranded category photos */
+.product-item--photo { display: grid; grid-template-columns: 76px 1fr; column-gap: .75rem; align-items: start; }
+.product-item--photo > :not(.product-thumb) { grid-column: 2; }
+.product-thumb { grid-column: 1; grid-row: 1 / span 6; width: 76px; height: 76px; object-fit: cover; border-radius: 10px; display: block; }

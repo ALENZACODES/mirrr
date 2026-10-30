@@ -59,7 +59,7 @@ AestheticVector   → intensity / warmth / boldness / texture / palette
 ## The Three Engines
 
 ### 🎨 ShadeFinder
-30-shade foundation spectrum calibrated for deeper and warmer skin tones (N10–N65). Community-aware: West African users get a different starting range than East Asian users, reflecting real dermographic distribution. Undertone-filtered (warm / cool / neutral / olive).
+60-shade foundation spectrum from very light to very deep skin (CIELAB L* 15–94), checked against the Monk Skin Tone scale, with 13 shades for the deepest tones. Photo matches report CIEDE2000 distance in bands (≤3 match, 3–6 close, >6 outside the range) and say so when nothing fits. Community-aware starting range; undertone-filtered (warm / cool / neutral / olive).
 
 ### 💇🏾 WigMatchmaker
 42 wig styles scored against the AestheticVector. Box Braids, Senegalese Twists, Goddess Locs, Bone-Straight, Kinky-Afro, Silk Press, and more — matched to the user's community, aesthetic intensity, and texture preference.

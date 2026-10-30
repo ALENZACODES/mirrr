@@ -42,6 +42,41 @@ window.STUDIO_PHOTOS = {
    "src": "/studio/brow/eye-tightline.webp"
   }
  },
+ "face": {
+  "age-20s": {
+   "src": "/studio/face/age-20s.webp"
+  },
+  "age-30s": {
+   "src": "/studio/face/age-30s.webp"
+  },
+  "age-40s": {
+   "src": "/studio/face/age-40s.webp"
+  },
+  "age-50s": {
+   "src": "/studio/face/age-50s.webp"
+  },
+  "age-60s": {
+   "src": "/studio/face/age-60s.webp"
+  },
+  "face-diamond": {
+   "src": "/studio/face/face-diamond.webp"
+  },
+  "face-heart": {
+   "src": "/studio/face/face-heart.webp"
+  },
+  "face-long": {
+   "src": "/studio/face/face-long.webp"
+  },
+  "face-oval": {
+   "src": "/studio/face/face-oval.webp"
+  },
+  "face-round": {
+   "src": "/studio/face/face-round.webp"
+  },
+  "face-square": {
+   "src": "/studio/face/face-square.webp"
+  }
+ },
  "ingredients": {
   "aloe_vera": {
    "src": "/studio/ingredients/aloe_vera.webp"
@@ -406,8 +441,20 @@ window.STUDIO_PHOTOS = {
   "practice-greenTea": {
    "src": "/studio/smile/practice-greenTea.webp"
   },
+  "practice-honeyOralCare": {
+   "src": "/studio/smile/practice-honeyOralCare.webp"
+  },
+  "practice-naturalBreathFresheners": {
+   "src": "/studio/smile/practice-naturalBreathFresheners.webp"
+  },
   "practice-oilPulling": {
    "src": "/studio/smile/practice-oilPulling.webp"
+  },
+  "practice-saltWaterRinse": {
+   "src": "/studio/smile/practice-saltWaterRinse.webp"
+  },
+  "practice-tongueScraping": {
+   "src": "/studio/smile/practice-tongueScraping.webp"
   },
   "smile-gums_healthy": {
    "src": "/studio/smile/smile-gums_healthy.webp"

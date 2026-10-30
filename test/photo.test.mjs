@@ -167,6 +167,68 @@ test('hair dye keeps the depth between strands (shadows lift less than lit hair)
   assert.ok(Math.abs(gap1) > Math.abs(gap0) * 0.8, `strand contrast kept: ${(gap1 / gap0).toFixed(2)}`);
 });
 
+// ---- round 2: every layer reads as real at the default strength on light, medium and deep -------
+const labAt = (im, x, y) => { const o = (Math.round(y) * im.width + Math.round(x)) * 4; return rgbToLab(im.data[o], im.data[o + 1], im.data[o + 2]); };
+for (const [tone, hex] of Object.entries(TONES)) {
+  test(`highlight is a clear change on the cheekbones at default strength on ${tone} skin, freckles kept`, () => {
+    const img = portrait(hex), f = findFace(img), out = copy(img), { d, eyes } = img.truth;
+    applyLook(out, f, { highlight: '#e8cfa0' });
+    const ox = (eyes[0][0] + eyes[1][0]) / 2, oy = eyes[0][1];
+    let dl = 0, n = 0;
+    for (const s of [-1, 1]) for (let dy = -3; dy <= 3; dy++) for (let dx = -6; dx <= 6; dx++) { const x = ox + s * 0.6 * d + dx, y = oy + 0.36 * d + dy; dl += labAt(out, x, y)[0] - labAt(img, x, y)[0]; n++; }
+    assert.ok(dl / n > 3, `cheekbone lift ${(dl / n).toFixed(2)} L* (faint counts as failing)`);
+    assert.ok(dl / n < 12, `cheekbone lift ${(dl / n).toFixed(2)} L* is not a painted patch`);
+    const fr = freckled(hex), fo = copy(fr.img); applyLook(fo, findFace(fr.img), { highlight: '#e8cfa0' });
+    let b0 = 0, b1 = 0; for (const p of fr.spots) { b0 += contrastAt(fr.img, p)[0]; b1 += contrastAt(fo, p)[0]; }
+    assert.ok(b1 > b0 * 0.85, `freckles kept under highlight: ${(b1 / b0).toFixed(2)}`);
+  });
+
+  test(`eyeshadow stays on the lid and crease, off the brow bone, on ${tone} skin`, () => {
+    const img = portrait(hex), f = findFace(img), out = copy(img), { d, eyes } = img.truth;
+    applyLook(out, f, { lid: ['#c9a26b'] });
+    const [ex, ey] = eyes[0], lash = ey - 0.08 * d, browLow = ey - 0.34 * d + 0.045 * d;
+    let top = null;
+    for (let y = Math.round(browLow); y < ey && top === null; y++) { let m = 0; for (let dx = -8; dx <= 8; dx++) m = Math.max(m, deltaE2000(labAt(out, ex + dx, y), labAt(img, ex + dx, y))); if (m > 3) top = y; }
+    assert.ok(top !== null, 'shadow applied');
+    const frac = (lash - top) / (lash - browLow);
+    assert.ok(frac < 0.75, `shadow reaches ${(frac * 100).toFixed(0)}% of the way from lash to brow`);
+  });
+
+  test(`the liner wing is clearly darker than the skin on ${tone} skin`, () => {
+    const img = portrait(hex), f = findFace(img), out = copy(img), { d, eyes } = img.truth;
+    applyLook(out, f, { liner: '#111111', linerStyle: 'wing' });
+    const outer = eyes[0][0] - 0.2 * d, oy = eyes[0][1]; let dark = 0;
+    for (let x = outer - 0.12 * d; x < outer - 0.02 * d; x++) for (let y = oy - 0.2 * d; y < oy; y++) dark = Math.max(dark, labAt(img, x, y)[0] - labAt(out, x, y)[0]);
+    const skinL = hexToLab(hex)[0];
+    assert.ok(dark > skinL * 0.4, `wing darkens ${dark.toFixed(1)} of skin L ${skinL.toFixed(1)}`);
+  });
+
+  test(`hair dye keeps the person's own relative strand depth on ${tone} hair`, () => {
+    const img = portrait(hex), w = img.width;
+    for (let y = 20; y < img.height * 0.3; y++) for (let x = 0; x < w; x++) if ((x >> 2) % 2) { const o = (y * w + x) * 4; const c = rgbToLab(img.data[o], img.data[o + 1], img.data[o + 2]); if (c[0] < 20) { const q = labToRgb(6, 1, 1); img.data[o] = q[0]; img.data[o + 1] = q[1]; img.data[o + 2] = q[2]; } }
+    const out = copy(img); recolourHair(out, findFace(img), '#b5562a');
+    const y = Math.round(img.height * 0.2); let r0 = 0, r1 = 0;
+    for (let x = w / 2 - 40; x < w / 2 + 40; x += 8) { const a = labAt(img, x, y)[0], b = labAt(img, x + 4, y)[0], A = labAt(out, x, y)[0], B = labAt(out, x + 4, y)[0]; r0 += (a - b) / ((a + b) / 2); r1 += (A - B) / ((A + B) / 2); }
+    assert.ok(r1 / r0 > 0.9, `relative strand contrast ${(r1 / r0).toFixed(2)} (uniform colour is fake)`);
+  });
+}
+
+test('a pale gloss on deep lips is a shade, not a bright patch', () => {
+  const img = portrait(TONES.deep), f = findFace(img), out = copy(img), { d, mouthY } = img.truth, cx = img.width / 2;
+  applyLook(out, f, { lip: '#e8a090', lipFinish: 'gloss' });
+  let l0 = 0, l1 = 0, n = 0; for (let x = cx - 0.15 * d; x < cx + 0.15 * d; x++) { l0 += labAt(img, x, mouthY + 0.07 * d)[0]; l1 += labAt(out, x, mouthY + 0.07 * d)[0]; n++; }
+  const lift = (l1 - l0) / n;
+  assert.ok(lift > 10, `shade shows: +${lift.toFixed(1)} L*`); assert.ok(lift < 28, `not over-bright: +${lift.toFixed(1)} L*`);
+});
+
+test('red lipstick has a crisp upper edge on light skin', () => {
+  const img = portrait(TONES.light), f = findFace(img), out = copy(img), { d, mouthY } = img.truth, cx = img.width / 2;
+  applyLook(out, f, { lip: '#b3262e', lipFinish: 'satin' });
+  const col = []; for (let y = Math.round(mouthY - 0.25 * d); y < mouthY; y++) col.push(deltaE2000(labAt(out, cx, y), labAt(img, cx, y)));
+  const mx = Math.max(...col), w = col.findIndex(v => v > 0.9 * mx) - col.findIndex(v => v > 0.1 * mx);
+  assert.ok(w <= 3, `upper edge ramps over ${w}px`);
+});
+
 test('the face found on a preview scales to the full-size photo', () => {
   const f = findFace(portrait(TONES.light)), g = scaleFace(f, 4);
   assert.equal(g.width, f.width * 4); assert.equal(g.frame.d, f.frame.d * 4); assert.deepEqual(g.mouth, f.mouth);

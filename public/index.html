@@ -5,6 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="MIRRR — Your Taste. Your Looks. Your Style. Beauty discovery built for Black, South Asian, Arab, Latina, Caribbean, East Asian, East African, West African, South African women." />
   <title>MIRRR — Your Taste. Your Looks. Your Style.</title>
+  <script>
+  // Taps made while the app is still loading are kept and replayed once it is ready, so the first
+  // tap on a cold load is never lost. Only the last navigation tap is replayed; try-on requests
+  // from the studios are all kept in order.
+  (function () {
+    var nav = [], tryon = [], root = document.documentElement;
+    window.__mirrrReady = false;
+    document.addEventListener('click', function (e) {
+      if (window.__mirrrReady || !e.target || !e.target.closest) return;
+      var el = e.target.closest('.nav-link[data-view], #heroQuizBtn, #heroTasteBtn');
+      if (!el) return;
+      e.preventDefault(); e.stopImmediatePropagation();
+      nav.length = 0; nav.push(el); root.classList.add('mirrr-booting');
+    }, true);
+    window.addEventListener('mirrr:tryon', function (e) {
+      if (window.__mirrrReady) return;
+      e.stopImmediatePropagation(); tryon.push(e.detail); root.classList.add('mirrr-booting');
+    }, true);
+    window.__mirrrBootReady = function () {
+      if (window.__mirrrReady) return;
+      window.__mirrrReady = true; root.classList.remove('mirrr-booting');
+      nav.splice(0).forEach(function (el) { el.click(); });
+      tryon.splice(0).forEach(function (d) { window.dispatchEvent(new CustomEvent('mirrr:tryon', { detail: d })); });
+    };
+  })();
+  </script>
+  <style>.mirrr-booting, .mirrr-booting * { cursor: progress !important; }</style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />

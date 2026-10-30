@@ -459,7 +459,7 @@ export function applyLook(img, face, palette, { strength = 0.7, finish = 'natura
       for (const sx of [-1, 1]) { const du = u - sx * 0.6, dv = v - 0.62; const ru = du * Math.cos(0.35 * sx) + dv * Math.sin(0.35 * sx), rv = -du * Math.sin(0.35 * sx) + dv * Math.cos(0.35 * sx); g = Math.max(g, Math.exp(-((ru / 0.27) ** 2 + (rv / 0.16) ** 2) * 1.6)); }
       m[k] = g * skinSoft[k] * (1 - eyeOpening(face, u, v, 1.6));
     }
-    const a0 = Math.min(0.6, 0.32 * s * deepBoost), [Al, Bl] = lowAB();
+    const a0 = Math.min(0.45, 0.32 * s * Math.min(1.4, deepBoost)), [Al, Bl] = lowAB();
     for (let k = 0; k < n; k++) {
       const a = m[k] * a0; if (a < 0.002) continue;
       const shade = Math.min(1.15, Math.max(0.5, Llow[k] / face.skin.L));
@@ -470,16 +470,21 @@ export function applyLook(img, face, palette, { strength = 0.7, finish = 'natura
 
   // 3. Highlight: lift on the cheekbones and down the nose, as light catching, not paint.
   if (palette.highlight) {
-    const T = hexToLab(palette.highlight), lift = (finish === 'luminous' ? 0.3 : 0.2) * s;
+    // Highlighter is extra sheen where the face already catches light: the photo's own shine is
+    // strengthened (its own pores and grain stay in it) and the high points lift and take the
+    // product's tint. Where the face is in shadow it catches less, as a real highlighter does.
+    const T = hexToLab(palette.highlight), amt = (finish === 'luminous' ? 1.0 : 0.75) * s, [Al, Bl] = lowAB();
+    const Lsheen = blur(P.L, P.w, P.h, Math.max(1, d * 0.01));
     for (let k = 0; k < n; k++) {
       const u = uv[2 * k], v = uv[2 * k + 1];
       let g = 0;
-      for (const sx of [-1, 1]) g = Math.max(g, Math.exp(-(((u - sx * 0.62) / 0.2) ** 2 + ((v - 0.38) / 0.07) ** 2) * 1.5));
-      g = Math.max(g, Math.exp(-((u / 0.05) ** 2 + ((v - 0.45) / 0.22) ** 2) * 1.5) * 0.7);
-      const a = g * skinSoft[k] * lift; if (a < 0.002) continue;
-      const base = Llow[k], room = 100 - base;
-      P.L[k] += room * 0.35 * a * Math.min(1, base / 25 + 0.4);
-      P.A[k] += (T[1] * 0.4 - P.A[k]) * a * 0.3; P.B[k] += (T[2] * 0.4 - P.B[k]) * a * 0.3;
+      for (const sx of [-1, 1]) { const du = u - sx * 0.6, dv = v - 0.36; const ru = du * Math.cos(0.3 * sx) + dv * Math.sin(0.3 * sx), rv = -du * Math.sin(0.3 * sx) + dv * Math.cos(0.3 * sx); g = Math.max(g, Math.exp(-((ru / 0.22) ** 2 + (rv / 0.075) ** 2) * 1.4)); }
+      g = Math.max(g, Math.exp(-((u / 0.045) ** 2 + ((v - 0.42) / 0.2) ** 2) * 1.4) * 0.75);
+      const lit = 0.55 + 0.45 * smooth(0.85, 1.15, Llow[k] / face.skin.L);
+      const a = g * skinSoft[k] * amt * lit * (1 - eyeOpening(face, u, v, 1.5)); if (a < 0.002) continue;
+      const room = 100 - Llow[k], sheen = Lsheen[k] - Llow[k];
+      P.L[k] += a * (14 + 0.1 * room) + (sheen > 0 ? sheen * 0.8 * a : 0);
+      P.A[k] += (T[1] * 0.6 - Al[k]) * a * 0.3; P.B[k] += (T[2] * 0.6 - Bl[k]) * a * 0.3;
     }
   }
 
@@ -491,10 +496,13 @@ export function applyLook(img, face, palette, { strength = 0.7, finish = 'natura
       let best = 0, tt = 0;
       face.eyes.forEach((e, i) => {
         const side = i === 0 ? -1 : 1, b = face.brows[i];
-        const top = Math.min(e.v - e.rh * 0.6, b.v + b.rh * 0.6), cv = (e.v - e.rh * 0.2 + top) / 2;
-        const rv = Math.max(0.06, (e.v - e.rh * 0.2 - top) / 2 + 0.03), ru = e.rw * 1.35;
-        const g = 1 - smooth(0.55, 1.25, ellipse(u, v, e.u + side * e.rw * 0.15, cv, ru, rv));
-        const nearLash = 0.4 + 0.6 * smooth(top, e.v, v);
+        // Lid and crease: from the lash line up to just past the crease (a little over half way to the
+        // brow), fading out above it, so the brow bone keeps the person's own skin.
+        const lash = e.v - e.rh * 0.2, browLow = b.v + Math.max(b.rh, 0.05) * 0.8;
+        const top = lash - Math.max(0.07, (lash - browLow) * 0.6), cv = (lash + top) / 2;
+        const rv = Math.max(0.05, (lash - top) / 2 + 0.02), ru = e.rw * 1.35;
+        const g = 1 - smooth(0.55, 1.2, ellipse(u, v, e.u + side * e.rw * 0.15, cv, rv > 0 ? ru : ru, rv));
+        const nearLash = 0.35 + 0.65 * smooth(top - 0.01, lash - 0.03, v);
         const val = g * nearLash;
         if (val > best) { best = val; tt = Math.min(1, Math.max(0, ((u - e.u) * side + ru) / (2 * ru))); }
       });
@@ -502,7 +510,7 @@ export function applyLook(img, face, palette, { strength = 0.7, finish = 'natura
       const brow = Math.max(...face.brows.map(b => 1 - smooth(0.8, 1.25, ellipse(u, v, b.u, b.v, b.rw * 1.1, Math.max(b.rh, 0.05) * 1.3))));
       m[k] = best * (1 - eyeOpening(face, u, v, 1.0)) * (1 - brow); t[k] = tt;
     }
-    const M = feather(m, 0.025), a0 = Math.min(0.95, 0.8 * s * Math.min(1.3, deepBoost)), [Al, Bl] = lowAB();
+    const M = feather(m, 0.025), a0 = Math.min(0.95, 1.2 * s * Math.min(1.3, deepBoost)), [Al, Bl] = lowAB();
     for (let k = 0; k < n; k++) {
       const a = M[k] * a0; if (a < 0.002) continue;
       const pos = t[k] * (T.length - 1), i0 = Math.floor(pos), i1 = Math.min(T.length - 1, i0 + 1), f = pos - i0;
@@ -519,7 +527,11 @@ export function applyLook(img, face, palette, { strength = 0.7, finish = 'natura
   if (palette.liner) {
     const T = hexToLab(palette.liner), m = new Float32Array(n), wing = /wing|cat|graphic/.test(palette.linerStyle ?? '') ? 1 : 0;
     const smudge = /smudge|kohl/.test(palette.linerStyle ?? '');
-    const th = palette.linerStyle === 'thin' ? 0.011 : smudge ? 0.03 : 0.015;
+    // Deep skin gives a black line less contrast, so the line is drawn a little bolder, as artists do.
+    const deepness = smooth(0, 1, (58 - face.skin.L) / 30);
+    const th = (palette.linerStyle === 'thin' ? 0.011 : smudge ? 0.03 : 0.015) * (1 + 0.4 * deepness);
+    // Both eyes are the same size: use their mean width, never less than a typical eye.
+    const rwL = Math.max(0.17, (face.eyes[0].rw + face.eyes[1].rw) / 2);
     // A drawn line has a crisp edge; only kohl is smudged. Thin at the inner corner, fuller outside.
     const profile = dist => (smudge ? Math.exp(-dist * dist * 2) : 1 - smooth(0.65, 1.05, dist));
     // The photo's own upper lash line: in each column across the eye, the darkest row near the eye's
@@ -530,7 +542,7 @@ export function applyLook(img, face, palette, { strength = 0.7, finish = 'natura
       for (let i = 0; i < NC; i++) {
         const du = -1.05 + 2.1 * i / (NC - 1), pred = e.v - e.rh * Math.sqrt(Math.max(0, 1 - Math.min(1, du * du))) * 0.95;
         let bv = pred, bl = Infinity;
-        for (let v = pred - 0.04; v <= pred + 0.05; v += 0.003) { const l = at(Ls, e.u + du * e.rw, v); if (l < bl) { bl = l; bv = v; } }
+        for (let v = pred - 0.04; v <= pred + 0.05; v += 0.003) { const l = at(Ls, e.u + du * Math.max(0.17, (face.eyes[0].rw + face.eyes[1].rw) / 2), v); if (l < bl) { bl = l; bv = v; } }
         rows.push(bv);
       }
       return rows.map((_, i) => { const w = rows.slice(Math.max(0, i - 3), i + 4).sort((a, b) => a - b); return w[w.length >> 1]; });
@@ -540,7 +552,7 @@ export function applyLook(img, face, palette, { strength = 0.7, finish = 'natura
       const u = uv[2 * k], v = uv[2 * k + 1];
       let g = 0;
       face.eyes.forEach((e, i) => {
-        const side = i === 0 ? -1 : 1, du = (u - e.u) / e.rw;
+        const side = i === 0 ? -1 : 1, du = (u - e.u) / rwL;
         if (Math.abs(du) <= 1.05) {
           const lashV = lashAt(i, du);
           const thk = th * (0.55 + 0.45 * Math.min(1, Math.max(0, (du * side + 1) / 2)));
@@ -548,8 +560,8 @@ export function applyLook(img, face, palette, { strength = 0.7, finish = 'natura
           g = Math.max(g, profile(dist) * smooth(1.08, 0.75, Math.abs(du)));
         }
         if (wing) {
-          const x0 = e.u + side * e.rw, y0 = lashAt(i, side * 1.0) - th * 0.2, len = e.rw * 0.55, wx = (u - x0) * side;
-          if (wx >= 0 && wx <= len) { const vy = y0 - wx * 0.45, w2 = th * (1 - wx / len) + 0.003; const dist = Math.abs(v - vy) / w2; g = Math.max(g, profile(dist)); }
+          const x0 = e.u + side * rwL, y0 = lashAt(i, side * 1.0) - th * 0.2, len = rwL * 0.7, wx = (u - x0) * side;
+          if (wx >= 0 && wx <= len) { const vy = y0 - wx * 0.45, w2 = th * 1.15 * (1 - wx / len) + 0.003; const dist = Math.abs(v - vy) / w2; g = Math.max(g, profile(dist)); }
         }
       });
       m[k] = g;
@@ -558,7 +570,7 @@ export function applyLook(img, face, palette, { strength = 0.7, finish = 'natura
     for (let k = 0; k < n; k++) {
       const a = M[k] * a0; if (a < 0.002) continue;
       const det = P.L[k] - Llow[k];
-      P.L[k] += (Math.min(P.L[k], T[0] + 2 + det * 0.2) - P.L[k]) * a;
+      P.L[k] += (Math.min(P.L[k], T[0] + 2 + det * (det < 0 ? 0.2 : 0.1)) - P.L[k]) * a;
       P.A[k] += (T[1] - P.A[k]) * a; P.B[k] += (T[2] - P.B[k]) * a;
     }
   }
@@ -568,29 +580,35 @@ export function applyLook(img, face, palette, { strength = 0.7, finish = 'natura
   // own light, texture and lip lines kept, gloss as a lift of the lip's existing highlights.
   if (palette.lip) {
     const T = hexToLab(palette.lip), M0 = lipMask(face, P, Llow, uv), CT = Math.hypot(T[1], T[2]), hT = Math.atan2(T[2], T[1]);
-    const M = feather(M0, 0.004);
+    // The traced outline is used as is (its own edge is ~1.5 px wide), so the edge stays as crisp as a
+    // lipstick edge; no extra blur that would read as a soft halo.
+    const M = M0;
     let sw = 0, sL = 0; for (let k = 0; k < n; k++) { sw += M[k]; sL += M[k] * Llow[k]; }
     const lipL = sw > 0 ? sL / sw : face.skin.L;
     const sheer = palette.lipSheer ? 0.55 : 0.92;
     const gloss = palette.lipFinish === 'gloss' ? 1.6 : palette.lipFinish === 'shine' ? 2.2 : palette.lipFinish === 'satin' ? 1.0 : 0.7;
     const a0 = Math.min(1, sheer * (0.75 + 0.3 * s)), [Al, Bl] = lowAB();
+    // Dark lips: a lighter shade shows less lift and less of a lit hot spot than on pale lips.
+    const lipDeep = smooth(0, 1, (45 - lipL) / 25), cover = 0.8 - 0.3 * lipDeep, roll = 0.7 * (1 - 0.5 * lipDeep);
     for (let k = 0; k < n; k++) {
       const a = M[k] * a0; if (a < 0.002) continue;
       const light = Math.min(1.45, Math.max(0.45, Llow[k] / lipL));
       const det = P.L[k] - Llow[k];
       // Shadows follow the lip's own shading; highlights roll off gently so pale shades on deep lips
       // don't turn chalky or white where the lip catches light.
-      let Lt = Math.min(98, T[0] * (light <= 1 ? light ** 1.4 : 1 + (light ** 0.9 - 1) * 0.7));
+      let Lt = Math.min(98, T[0] * (light <= 1 ? light ** 1.4 : 1 + (light ** 0.9 - 1) * roll));
       // A shade lighter than the lip never fully covers it: some of the lip's own depth shows through.
-      if (Lt > Llow[k]) Lt = Llow[k] + (Lt - Llow[k]) * 0.8;
+      if (Lt > Llow[k]) Lt = Llow[k] + (Lt - Llow[k]) * cover;
       P.L[k] = Llow[k] + (Lt - Llow[k]) * a + (det > 0 ? Math.min(det * (1.1 + (gloss - 1) * a), det + 8) : det * 1.1);
       // Lit areas lose a little chroma (light reflecting off the surface), shadows keep it, so the
       // lower lip reads lit red, not orange. Hue moves along the shortest way round (no detour via brown).
       const cs = light <= 1 ? Math.max(0.55, light) : Math.max(0.75, 1 / Math.sqrt(light));
       const C0 = Math.hypot(Al[k], Bl[k]), h0 = Math.atan2(Bl[k], Al[k]);
       let dh = hT - h0; if (dh > Math.PI) dh -= 2 * Math.PI; if (dh < -Math.PI) dh += 2 * Math.PI;
-      const h = h0 + dh * Math.min(1, a * 1.25), C = C0 + (CT * cs - C0) * a, keep = 1 - 0.35 * a;
-      P.A[k] = C * Math.cos(h) + (P.A[k] - Al[k]) * keep; P.B[k] = C * Math.sin(h) + (P.B[k] - Bl[k]) * keep;
+      // The colour is worked out at full coverage, then blended in by the outline's alpha in a/b, so the
+      // edge fades straight from lip to lipstick with no rainbow fringe through other hues.
+      const h = h0 + dh * Math.min(1, a0 * 1.25), C = C0 + (CT * cs - C0) * a0, keep = 1 - 0.35 * a, m = M[k];
+      P.A[k] = Al[k] + (C * Math.cos(h) - Al[k]) * m + (P.A[k] - Al[k]) * keep; P.B[k] = Bl[k] + (C * Math.sin(h) - Bl[k]) * m + (P.B[k] - Bl[k]) * keep;
     }
   }
 
@@ -659,12 +677,22 @@ export function recolourHair(img, face, hex, { strength = 0.7 } = {}) {
     // Where a pixel is much brighter than the hair it is mostly skin or sky between strands: dye only the strand share.
     alpha *= Math.max(0, Math.min(1, 1 - (Llow[k] - (hairL + 18)) / 22));
     const a = alpha * s; if (a < 0.01) continue;
-    const det = P.L[k] - Llow[k];
-    // Dye scales the hair's own lightness: deep gaps between coils lift less than lit strands.
-    const rel = Math.max(0.35, Math.min(1, Llow[k] / Math.max(4, hairL)));
-    P.L[k] = Llow[k] + lift * 0.75 * a * rel + det * (1 + 0.25 * a);
-    const cs = Math.min(1, 0.45 + 0.55 * rel);
-    P.A[k] += (tA * cs - P.A[k]) * a; P.B[k] += (tB * cs - P.B[k]) * a;
+    // Dye changes how much light each strand reflects, so it scales the hair's own lightness pixel by
+    // pixel (L* follows reflectance to the 1/3 power, so a reflectance ratio is close to an L* ratio):
+    // lit coil tops lift most, the gaps between coils stay deep, and the strand pattern is the
+    // person's own at every scale. Chroma follows the new lightness, so shadows hold less colour.
+    // Pixels much lighter than the hair are mostly skin or background seen between strands at the
+    // hairline: they take only a share of the dye and never more than the hair's own lift.
+    const edge = 1 - smooth(hairL + 10, hairL + 32, Llow[k]), ae = a * edge;
+    const ratio = LtHair / Math.max(4, hairL), r = 1 + (ratio - 1) * ae;
+    // Shading and strand detail scale together, so strand contrast relative to the hair's lightness is
+    // the person's own. Only pixels lighter than the hair (skin or sky between strands) are capped.
+    const Lold = P.L[k];
+    const cap = Llow[k] > hairL + 4 ? Lold + Math.abs(lift) * 0.75 * 1.3 * ae : 97;
+    const Lnew = Math.max(0, Math.min(97, Lold * r, cap));
+    P.L[k] = Lnew;
+    const cs = Math.min(1, Math.max(0.15, Lnew / Math.max(4, LtHair)) ** 0.8);
+    P.A[k] += (tA * cs - P.A[k]) * ae; P.B[k] += (tB * cs - P.B[k]) * ae;
   }
   writeLab(img, P, L0, A0, B0);
   let changed = 0; for (let k = 0; k < n; k++) if (Math.abs(P.L[k] - L0[k]) + Math.abs(P.A[k] - A0[k]) + Math.abs(P.B[k] - B0[k]) >= 0.05) changed++;

@@ -1232,14 +1232,19 @@ function renderTrendingGrid(regionKey) {
 // ---------------------------------------------------------------------------
 
 async function bootWithTrending() {
-  await boot();
-  // Load trending in background after boot
-  loadTrending();
-  // Wire up new feature modals
-  setupTryOn();
-  setupStylist();
-  setupShare();
-  setupStylistPage();
+  try {
+    await boot();
+    // Load trending in background after boot
+    loadTrending();
+    // Wire up new feature modals
+    setupTryOn();
+    setupStylist();
+    setupShare();
+    setupStylistPage();
+  } finally {
+    // Replay any taps made while loading (see the head of index.html).
+    window.__mirrrBootReady?.();
+  }
 }
 
 // ===========================================================================

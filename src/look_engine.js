@@ -369,7 +369,7 @@ export const LOOKS = [
 
   {
     id: 'amazigh_berber',
-    name: 'Amazigh (Berber) Bridal',
+    name: 'Amazigh Bridal',
     archetype: 'gulf_glam',
     description: 'Kohl-defined eyes with blue-tinted liner (evil eye protection), silver and amber jewel accents, warm nude lip, henna-pattern details. Moroccan, Algerian, Libyan Amazigh heritage beauty.',
     products: [
@@ -1084,13 +1084,13 @@ export const LOOKS = [
 
   {
     id: 'polynesian_warrior',
-    name: 'Polynesian Warrior',
+    name: 'Polynesian Glow',
     archetype: 'caribbean_carnival',
-    description: 'Bold graphic liner inspired by tā moko/pe\'a tattoo patterns, sun-bronzed glowing skin, deep coral or berry lip. Māori, Samoan, Tongan, Hawaiian, Fijian strength and beauty made visible.',
+    description: 'Bold graphic winged liner, sun-bronzed glowing skin, deep coral or berry lip. Celebrates Māori, Samoan, Tongan, Hawaiian and Fijian beauty. Tā moko and pe\'a are sacred, earned and personal, so this look uses its own graphic liner and never copies them.',
     products: [
       { category: 'foundation', shade_range: 'W20–N45', finish: 'luminous', coverage: 'full' },
       { category: 'eyeshadow', tones: ['deep brown', 'bronze', 'terracotta', 'black'] },
-      { category: 'liner', style: 'geometric tribal-inspired graphic', colour: 'black' },
+      { category: 'liner', style: 'bold geometric graphic wing', colour: 'black' },
       { category: 'lash', style: 'full drama' },
       { category: 'lip', shade: 'deep coral or berry', finish: 'satin' },
       { category: 'bronzer', placement: 'sun-kissed all over' },
@@ -1102,14 +1102,14 @@ export const LOOKS = [
     ],
     weights: { intensity: 0.85, warmth: 0.85, boldness: 0.90, texture: 0.62 },
     cultural_affinity: ['polynesian', 'maori', 'samoan', 'tongan', 'hawaiian', 'fijian', 'pacific islander'],
-    tags: ['graphic', 'tribal-inspired', 'bold', 'cultural'],
+    tags: ['graphic', 'bold', 'cultural', 'glow'],
   },
 
   {
     id: 'hawaiian_aloha',
     name: 'Hawaiian Aloha',
     archetype: 'caribbean_carnival',
-    description: 'Sun-kissed bronzed glow, tropical warm coral eye, hibiscus-pink lip, natural flower accessory. Hawaii — lei, hula, aloha spirit in your makeup.',
+    description: 'Sun-kissed bronzed glow, tropical warm coral eye, hibiscus-pink lip, natural flower accessory. Inspired by the flowers and warmth of Hawaiʻi, worn with respect for Kanaka Maoli (Native Hawaiian) culture.',
     products: [
       { category: 'foundation', shade_range: 'W15–N40', finish: 'dewy', coverage: 'medium' },
       { category: 'eyeshadow', tones: ['coral', 'warm peach', 'champagne', 'bronze'] },
@@ -1135,16 +1135,16 @@ export const LOOKS = [
 
   {
     id: 'first_nations_powwow',
-    name: 'First Nations Powwow',
+    name: 'First Nations Beadwork Glam',
     archetype: 'caribbean_carnival',
-    description: 'Earth-tone eyeshadow in ochre, sienna and deep brown, defined warm brow, deep plum or berry lip, beaded accessories. Indigenous beauty honouring land and ceremony — Cree, Anishinaabe, Lakota, Navajo.',
+    description: 'Earth-tone eyeshadow in ochre, sienna and deep brown, defined warm brow, deep plum or berry lip, beaded earrings. Celebrates contemporary Indigenous beauty and the art of Indigenous beadwork (Cree, Anishinaabe, Lakota, Diné and many more Nations). Powwow regalia and ceremonial items are not costume, so this is an everyday and evening look, not regalia; buy beadwork from Indigenous artists.',
     products: [
       { category: 'foundation', shade_range: 'W20–N50', finish: 'satin', coverage: 'full' },
       { category: 'eyeshadow', tones: ['ochre', 'sienna', 'deep earth brown', 'copper'] },
       { category: 'liner', style: 'defined warm', colour: 'deep brown' },
       { category: 'lash', style: 'full natural' },
       { category: 'lip', shade: 'deep plum or berry', finish: 'satin' },
-      { category: 'accessories', beading: 'beaded earrings/headband' },
+      { category: 'accessories', beading: 'beaded earrings by Indigenous artists' },
     ],
     wig_styles: [
       { id: 'bone_straight_long', name: 'Bone Straight' },
@@ -1153,7 +1153,7 @@ export const LOOKS = [
     ],
     weights: { intensity: 0.75, warmth: 0.88, boldness: 0.70, texture: 0.62 },
     cultural_affinity: ['indigenous', 'first nations', 'native american', 'cree', 'anishinaabe', 'lakota', 'navajo', 'powwow'],
-    tags: ['ceremony', 'earth-tones', 'cultural', 'warm'],
+    tags: ['beadwork', 'earth-tones', 'cultural', 'warm'],
   },
 
   // ═══════════════════════════════════════════════════════════════════════════

@@ -1,7 +1,7 @@
 /**
  * MIRRR Hair Extensions Guide
  * Clip-in, tape-in, fusion/bond, sew-in weave, micro-ring/bead,
- * halo, glue-in, care, and ethnic extension traditions
+ * halo, glue-in, care, and multicultural extension traditions
  */
 
 // ─── OVERVIEW ─────────────────────────────────────────────────────────────────
@@ -28,7 +28,7 @@ export const EXTENSIONS_OVERVIEW = {
       heat_resistant_synthetic: 'Heat-resistant synthetic extensions exist and can withstand some heat styling up to ~180°C. Read product specifications carefully.',
     },
     ethnic_textures: {
-      type: 'Textured/Ethnic Hair Extensions',
+      type: 'Textured/Textured Hair Extensions',
       description: 'Extensions in Type 3 and Type 4 textures (curly, coily). Historically difficult to find; growing market.',
       materials: 'Kinky straight, Afro kinky, coily, loose curl, deep wave, water wave human hair extensions designed to blend with textured natural hair.',
       brands: 'Mayvenn, Luvme Hair, Outre, BHF (Black Hair Federation certified suppliers)',

@@ -1,6 +1,6 @@
 /**
  * MIRRR — Extended Contouring Guide V2
- * Ethnic face shapes, nose contour, jawline sculpting,
+ * Heritage face shapes, nose contour, jawline sculpting,
  * highlighting theory, colour-correcting shadows for deeper skin tones.
  */
 
@@ -73,7 +73,7 @@ export const ETHNIC_FACE_SHAPES_EXTENDED = {
     fitzpatrick: 'On deep skin use only warm-toned products; cool grey or taupe contours turn ashy'
   },
   'south-african': {
-    contourGoals: 'Highly personalised to the individual given the diversity; technique follows the individual\'s face shape and skin tone rather than a single ethnic aesthetic',
+    contourGoals: 'Highly personalised to the individual given the diversity; technique follows the individual\'s face shape and skin tone rather than a single multicultural aesthetic',
     deepSkin: 'For deep skin: warm bronze contour and a golden highlight',
     fitzpatrick: 'Choose by your own Fitzpatrick type and undertone'
   },

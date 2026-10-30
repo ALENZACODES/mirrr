@@ -1,5 +1,5 @@
 /**
- * MIRRR Hair Colouring Guide for Ethnic Hair
+ * MIRRR Hair Colouring Guide for Textured Hair
  * Bleaching, dyeing, toning, and colour care for all hair types and textures
  * Special focus on Type 3-4 hair, dark hair, and protective colouring practices
  */
@@ -33,7 +33,7 @@ export const HAIR_COLOUR_SCIENCE = {
   how_hair_dye_works: {
     temporary: 'Coat the outside of the hair shaft — no chemical reaction. Wash out in 1-2 shampoos. No ammonia, no developer.',
     semi_permanent: 'Penetrate slightly into the hair shaft via small molecules. No developer (usually). Fade over 6-12 shampoos. Contain some longer-lasting colour molecules.',
-    demi_permanent: 'Penetrate into the hair shaft with a low-volume developer (6-10 volume). Deposit colour only — cannot lift. Last 12-20+ shampoos. Excellent for tone correction on ethnic hair.',
+    demi_permanent: 'Penetrate into the hair shaft with a low-volume developer (6-10 volume). Deposit colour only — cannot lift. Last 12-20+ shampoos. Excellent for tone correction on textured hair.',
     permanent: 'Open the hair cuticle (ammonia or its alternatives), deposit colour molecules that react with peroxide (developer) and oxidise into permanent colour molecules inside the cortex. Lasts until grown out or removed.',
     bleach: 'Oxidative agent (hydrogen peroxide + powder bleach) that oxidises and removes melanin from inside the hair shaft. Creates lightening WITHOUT depositing colour. Must be followed by toner for desired colour.',
   },
@@ -223,7 +223,7 @@ export const TONING_GUIDE = {
 // ─── COLOUR CARE FOR ETHNIC HAIR ─────────────────────────────────────────────
 
 export const COLOUR_CARE = {
-  the_double_challenge: 'Coloured ethnic hair — especially Type 3-4 — must address BOTH the inherent moisture needs of the hair texture AND the damage introduced by the colouring process. This requires more intensive care than coloured straight hair.',
+  the_double_challenge: 'Coloured textured hair — especially Type 3-4 — must address BOTH the inherent moisture needs of the hair texture AND the damage introduced by the colouring process. This requires more intensive care than coloured straight hair.',
 
   routine_adjustments: {
     shampoo: 'Use a sulphate-free, colour-safe shampoo. Sulphates strip colour faster. Co-wash between shampoos to maintain moisture.',

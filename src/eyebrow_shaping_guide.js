@@ -1,7 +1,7 @@
 /**
- * MIRRR — Eyebrow Shaping Guide (Ethnic Perspectives)
+ * MIRRR — Eyebrow Shaping Guide (Multicultural Perspectives)
  * Complete eyebrow anatomy, shaping techniques, brow mapping,
- * and ethnic eyebrow traditions and care across all 9 communities.
+ * and multicultural eyebrow traditions and care across all 9 communities.
  */
 
 export const EYEBROW_ANATOMY = {

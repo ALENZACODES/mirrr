@@ -1,6 +1,6 @@
 /**
- * MIRRR — Professional Skin Treatments for Ethnic Skin
- * Chemical peels, lasers, microneedling, injectables — ethnic skin safety.
+ * MIRRR — Professional Skin Treatments for Skin of Colour
+ * Chemical peels, lasers, microneedling, injectables — skin-of-colour safety.
  */
 
 export const PROFESSIONAL_TREATMENTS_OVERVIEW = {
@@ -9,7 +9,7 @@ export const PROFESSIONAL_TREATMENTS_OVERVIEW = {
     pih: 'Post-Inflammatory Hyperpigmentation (PIH): the most significant risk in professional treatments for darker skin (Fitzpatrick IV-VI); any inflammation or injury to the skin triggers melanocyte overactivation → melanin overproduction → darkening of the treated area; treatment outcome: the procedure that was supposed to improve skin causes the very problem it aimed to address',
     keloidRisk: 'Keloid and hypertrophic scar risk: increased in Fitzpatrick IV-VI skin; keloids (pathological scar tissue that grows beyond the wound margin) are 3-19× more common in darker-skinned individuals than in Fitzpatrick I-III skin; this affects decisions about microneedling depth, laser settings, and any procedure that breaches the skin barrier',
     fibroblastActivity: 'Darker skin has more active fibroblasts (cells that produce collagen); this means both greater wound-healing ability AND greater risk of excessive scar formation; the fine balance between benefit (collagen induction in microneedling, laser resurfacing) and risk (keloid, hypertrophic scar) must be managed with appropriate settings',
-    testPatch: 'The test patch (test spot) is non-negotiable for all ethnic skin types (especially Fitzpatrick IV-VI) for any energy-based device or chemical peel; a small test area is treated and observed for 4-6 weeks before full treatment; this allows assessment of PIH tendency, healing response, and appropriate settings'
+    testPatch: 'The test patch (test spot) is non-negotiable for all melanin-rich skin types (especially Fitzpatrick IV-VI) for any energy-based device or chemical peel; a small test area is treated and observed for 4-6 weeks before full treatment; this allows assessment of PIH tendency, healing response, and appropriate settings'
   }
 };
 
@@ -18,7 +18,7 @@ export const CHEMICAL_PEELS_ETHNIC = {
   peelTypes: {
     alphaHydroxyAcids: {
       name: 'Alpha-Hydroxy Acid Peels (AHA)',
-      acids: 'Glycolic acid (from sugarcane — 20-70% in professional settings; the most researched AHA for ethnic skin); lactic acid (from milk — gentler than glycolic; better for sensitive skin; naturally occurring in some fermented African skincare traditions); mandelic acid (from bitter almonds — the largest AHA molecule; slowest penetration; most gentle; excellent for dark skin types; antibacterial properties for acne)',
+      acids: 'Glycolic acid (from sugarcane — 20-70% in professional settings; the most researched AHA for skin of colour); lactic acid (from milk — gentler than glycolic; better for sensitive skin; naturally occurring in some fermented African skincare traditions); mandelic acid (from bitter almonds — the largest AHA molecule; slowest penetration; most gentle; excellent for dark skin types; antibacterial properties for acne)',
       depth: 'Superficial peel — exfoliates the stratum corneum (outermost epidermis)',
       ethnicSafety: 'Generally safe for all Fitzpatrick types when correctly selected; mandelic acid is considered the safest AHA for Fitzpatrick IV-VI; glycolic acid at lower concentrations (20-35%) is widely used and effective for PIH in dark skin; proper preparation with retinoids and hydroquinone for 4-6 weeks before peeling reduces PIH risk',
       uses: 'Mild hyperpigmentation; acne; texture improvement; dull skin; mild melasma'
@@ -34,14 +34,14 @@ export const CHEMICAL_PEELS_ETHNIC = {
       name: 'Jessner\'s Solution',
       composition: '14% salicylic acid + 14% lactic acid + 14% resorcinol in ethanol',
       depth: 'Superficial to medium depth depending on number of coats applied',
-      ethnicSafety: 'Modified Jessner\'s (replacing resorcinol with citric acid) is considered safer for darker skin; original Jessner\'s may cause temporary darkening; used in ethnic skin by experienced practitioners with careful monitoring',
+      ethnicSafety: 'Modified Jessner\'s (replacing resorcinol with citric acid) is considered safer for darker skin; original Jessner\'s may cause temporary darkening; used in skin of colour by experienced practitioners with careful monitoring',
       uses: 'Acne; mild-moderate hyperpigmentation; texture; fine lines'
     },
     trichloroaceticAcid: {
       name: 'Trichloroacetic Acid (TCA) Peels',
       concentrations: '10-35% (superficial to medium depth); above 35% is considered deep',
       depth: 'Low concentration TCA (10-20%): superficial; medium TCA (25-35%): medium depth reaching papillary dermis',
-      ethnicSafety: 'TCA requires skill and careful selection for darker skin; low-concentration TCA (10-15%) is used safely for Fitzpatrick IV-VI; medium-depth TCA at 25-35% requires significant caution and is typically only performed by experienced practitioners in ethnic skin; the "CROSS technique" (Chemical Reconstruction of Skin Scars — focal application of 50-100% TCA into individual acne scars) is used for ice-pick scar treatment in carefully selected patients',
+      ethnicSafety: 'TCA requires skill and careful selection for darker skin; low-concentration TCA (10-15%) is used safely for Fitzpatrick IV-VI; medium-depth TCA at 25-35% requires significant caution and is typically only performed by experienced practitioners in skin of colour; the "CROSS technique" (Chemical Reconstruction of Skin Scars — focal application of 50-100% TCA into individual acne scars) is used for ice-pick scar treatment in carefully selected patients',
       ethnicBenefit: 'Medium-depth TCA peels have been shown to be effective for melasma, PIH, and acne scars in darker skin types when performed by experienced practitioners with appropriate pre-and post-treatment protocols',
       uses: 'Melasma (requires careful management); PIH; acne scars (CROSS technique); moderate hyperpigmentation'
     },
@@ -49,11 +49,11 @@ export const CHEMICAL_PEELS_ETHNIC = {
       name: 'Phenol / Baker-Gordon Peels',
       depth: 'Deep peel — penetrates to mid-reticular dermis',
       ethnicSafety: 'GENERALLY CONTRAINDICATED IN FITZPATRICK IV-VI SKIN; risk of permanent hypopigmentation (skin bleaching) in darker skin types; high risk of PIH; significant cardiac risk (phenol is cardiotoxic; cardiac monitoring required); the dramatic resurfacing achieved in fair skin comes at unacceptable risk in darker skin types',
-      uses: 'In appropriate patients (Fitzpatrick I-III): severe photodamage, deep wrinkles, actinic keratoses; NOT for ethnic skin'
+      uses: 'In appropriate patients (Fitzpatrick I-III): severe photodamage, deep wrinkles, actinic keratoses; NOT for skin of colour'
     }
   },
   pretreatmentProtocol: {
-    name: 'Pre-treatment Protocol for Ethnic Skin',
+    name: 'Pre-treatment Protocol for Skin of Colour',
     duration: '4-6 weeks minimum before any chemical peel in Fitzpatrick IV-VI skin',
     components: 'Broad-spectrum SPF 30+ daily use; topical retinoid (tretinoin 0.025-0.05% — turns over stratum corneum, improves peel penetration, reduces PIH risk); hydroquinone 4% (melanocyte inhibition — reduces PIH risk; discontinued 1-2 weeks before peel); azelaic acid (alternative/adjunct melanocyte inhibitor); vitamin C serum (antioxidant; melanocyte modulation)',
     importance: 'Pre-treatment "primes" the skin by turning over the epidermis (retinoid), reducing melanocyte reactivity (hydroquinone, azelaic acid), and establishing a rigorous sun protection habit; without pre-treatment, PIH risk after peels in dark skin is substantially higher'
@@ -61,7 +61,7 @@ export const CHEMICAL_PEELS_ETHNIC = {
 };
 
 export const LASER_ETHNIC_SKIN = {
-  overview: 'Laser treatment of ethnic skin requires specific knowledge of laser-tissue interaction in melanin-rich skin; incorrect laser selection causes PIH, hypopigmentation, burns, and scarring; all lasers carry higher risk in darker skin types, but many are safely used by experienced practitioners with appropriate settings, wavelengths, and cooling',
+  overview: 'Laser treatment of skin of colour requires specific knowledge of laser-tissue interaction in melanin-rich skin; incorrect laser selection causes PIH, hypopigmentation, burns, and scarring; all lasers carry higher risk in darker skin types, but many are safely used by experienced practitioners with appropriate settings, wavelengths, and cooling',
   laserPhysics: 'Lasers work by selective photothermolysis: the laser targets a chromophore (melanin, haemoglobin, water, tattoo ink) that preferentially absorbs the laser wavelength; heat is generated in the target and causes controlled damage; in darker skin, epidermal melanin is an unintended chromophore that competes with the target, absorbing energy meant for the target and causing thermal injury to the epidermis',
   safeLasers: {
     ndYag: {
@@ -141,8 +141,8 @@ export const INJECTABLES_ETHNIC = {
       caha: 'Calcium hydroxyapatite (Radiesse): longer-lasting (12-18 months); biostimulator (stimulates collagen production in addition to providing volume)',
       plla: 'Poly-L-lactic acid (Sculptra): biostimulator only; no immediate volume; stimulates own collagen production gradually over 3-4 months; results last 2+ years; particularly popular for body areas and volume restoration'
     },
-    ethnicConsiderations: 'Volume loss patterns differ by ethnicity: East Asian faces maintain volume longer but experience specific deflation in mid-face and temporal hollowing; South Asian faces experience early jowling and tear trough hollowing; Black and Afro-Caribbean faces retain youthfulness longer overall but experience specific deflation patterns in the lateral cheeks and temples; Latina faces may experience early nasolabial fold deepening; fillers must be placed understanding ethnic facial anatomy to look natural and avoid the "overfilled" appearance from applying a single aesthetic ideal across all ethnic groups',
-    vascularComplications: 'The most serious filler complication is vascular occlusion (blocking blood vessels → tissue necrosis); danger areas: glabella (supratrochlear artery), nose (dorsal nasal artery), nasolabial fold (angular artery); blindness is the most feared complication from filler migration to the ophthalmic artery; ethnic anatomical variation means arterial positions vary between populations; injectors must understand the anatomical variation in ethnic faces; hyaluronidase emergency reversal kit must be available for all HA filler procedures'
+    ethnicConsiderations: 'Volume loss patterns differ by ethnicity: East Asian faces maintain volume longer but experience specific deflation in mid-face and temporal hollowing; South Asian faces experience early jowling and tear trough hollowing; Black and Afro-Caribbean faces retain youthfulness longer overall but experience specific deflation patterns in the lateral cheeks and temples; Latina faces may experience early nasolabial fold deepening; fillers must be placed understanding heritage facial anatomy to look natural and avoid the "overfilled" appearance from applying a single aesthetic ideal across all ethnic groups',
+    vascularComplications: 'The most serious filler complication is vascular occlusion (blocking blood vessels → tissue necrosis); danger areas: glabella (supratrochlear artery), nose (dorsal nasal artery), nasolabial fold (angular artery); blindness is the most feared complication from filler migration to the ophthalmic artery; anatomical variation between people means arterial positions vary between populations; injectors must understand the anatomical variation in heritage faces; hyaluronidase emergency reversal kit must be available for all HA filler procedures'
   }
 };
 
@@ -169,7 +169,7 @@ export const ETHNIC_TREATMENT_GUIDES = {
     fitzpatrickRange: 'Wide range from Fitzpatrick II-III (lighter-skinned communities) to V-VI (Afro-Caribbean)',
     priorityConcerns: 'Significant diversity by heritage; Afro-Caribbean: PIH, acne scars, traction alopecia, CCCA; mixed-heritage Caribbean: melasma, sun damage, PIH; European-heritage Caribbean: photoageing, sun damage (high UV exposure throughout life)',
     recommendedTreatments: 'For Afro-Caribbean (Fitzpatrick V-VI): same as West African recommendations; for mixed-heritage (Fitzpatrick III-IV): carefully selected peels (glycolic, mandelic, TCA 15-20%); Q-switched or picosecond Nd:YAG; RF microneedling for scars; for European-heritage Caribbean (Fitzpatrick I-III): wider range of laser and peel options',
-    avoidOrCaution: 'Afro-Caribbean: same contraindications as West African above; avoid practitioners without specific experience in ethnic skin',
+    avoidOrCaution: 'Afro-Caribbean: same contraindications as West African above; avoid practitioners without specific experience in skin of colour',
     culturalNote: 'Caribbean communities span all Fitzpatrick types due to the region\'s diverse genetic heritage (indigenous Taino and Carib; West African from the Trans-Atlantic slave trade; European colonial heritage; South and East Asian from indentured labour); treatments must be tailored to the individual\'s actual Fitzpatrick type, not their cultural background alone'
   },
   arab: {
@@ -241,7 +241,7 @@ export function getProfessionalTreatmentGuide(communityId) {
 export const PROFESSIONAL_TREATMENTS_STATS = {
   moduleId: 'professional_treatments_ethnic',
   version: '1.0.0',
-  topics: ['chemical peels ethnic skin', 'laser ethnic skin Nd:YAG 1064nm', 'microneedling RF Morpheus8 dark skin', 'PIH post-inflammatory hyperpigmentation', 'keloid scar darker skin', 'melasma tranexamic acid South Asian Latina', 'Fitzpatrick scale skin types', 'CCCA central centrifugal cicatricial alopecia', 'pseudofolliculitis barbae razor bumps Black men', 'picosecond laser pigmentation', 'botulinum toxin masseter East Asian', 'traction alopecia professional treatment'],
+  topics: ['chemical peels skin of colour', 'laser skin-of-colour Nd:YAG 1064nm', 'microneedling RF Morpheus8 dark skin', 'PIH post-inflammatory hyperpigmentation', 'keloid scar darker skin', 'melasma tranexamic acid South Asian Latina', 'Fitzpatrick scale skin types', 'CCCA central centrifugal cicatricial alopecia', 'pseudofolliculitis barbae razor bumps Black men', 'picosecond laser pigmentation', 'botulinum toxin masseter East Asian', 'traction alopecia professional treatment'],
   communitiesSupported: 9,
   keyFacts: [
     'The Nd:YAG 1064nm laser is the safest laser for dark skin types (Fitzpatrick IV-VI) because at 1064nm, melanin absorption is significantly lower than at shorter wavelengths (e.g. 532nm alexandrite, 694nm ruby), minimising the risk of the laser\'s energy being absorbed by epidermal melanin rather than the intended target; it is the gold standard for laser hair removal in all dark skin types including Fitzpatrick VI',

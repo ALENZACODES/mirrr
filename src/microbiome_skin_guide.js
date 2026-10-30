@@ -1,6 +1,6 @@
 /**
- * MIRRR — Skin Microbiome Guide (Ethnic Focus)
- * The gut-skin axis, skin bacteria, probiotics, prebiotics, and ethnic considerations.
+ * MIRRR — Skin Microbiome Guide (Multicultural Focus)
+ * The gut-skin axis, skin bacteria, probiotics, prebiotics, and multicultural considerations.
  */
 
 export const SKIN_MICROBIOME_SCIENCE = {

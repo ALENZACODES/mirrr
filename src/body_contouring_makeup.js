@@ -1,7 +1,7 @@
 /**
  * MIRRR Body Contouring Makeup Guide
  * Self-tanning, body bronzer, body makeup for events,
- * body highlight, body contouring techniques, and ethnic body beauty
+ * body highlight, body contouring techniques, and multicultural body beauty
  */
 
 // ─── OVERVIEW ─────────────────────────────────────────────────────────────────

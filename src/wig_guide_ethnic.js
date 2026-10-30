@@ -1,7 +1,7 @@
 /**
  * MIRRR Wig & Hair Extensions Guide
  * Comprehensive guide to wigs, lace fronts, full lace, HD lace,
- * wig construction types, installation, care, and ethnic wig traditions
+ * wig construction types, installation, care, and multicultural wig traditions
  * across all 9 MIRRR communities
  */
 

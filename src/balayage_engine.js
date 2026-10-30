@@ -1,6 +1,6 @@
 /**
  * balayage_engine.js — Hair colour technique database for MIRRR
- * Balayage, ombre, highlights, traditional ethnic techniques
+ * Balayage, ombre, highlights, traditional multicultural techniques
  */
 
 // ─── COLOUR TECHNIQUE CATEGORIES ─────────────────────────────────────────────
@@ -13,7 +13,7 @@ export const TECHNIQUE_CATEGORIES = {
   full_colour: { id: 'full_colour', label: 'Full Colour', description: 'All-over permanent colour' },
   toning: { id: 'toning', label: 'Toning', description: 'Colour correction and neutralising' },
   gloss: { id: 'gloss', label: 'Gloss', description: 'Semi-permanent shine treatment' },
-  traditional: { id: 'traditional', label: 'Traditional', description: 'Cultural/ethnic dyeing techniques' },
+  traditional: { id: 'traditional', label: 'Traditional', description: 'Cultural/multicultural dyeing techniques' },
   natural: { id: 'natural', label: 'Natural Dye', description: 'Plant-based and natural colourants' },
 };
 

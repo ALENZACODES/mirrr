@@ -447,7 +447,7 @@ export function getMakeupTips(communityId) {
 export const CELEBRITY_LOOKS_STATS = {
   moduleId: 'celebrity_looks_guide',
   version: '1.0.0',
-  topics: ['celebrity beauty looks', 'iconic style recreation', 'Bollywood makeup', 'K-pop beauty', 'Arab eye makeup', 'J.Lo glow', 'Fenty beauty', 'West African glam', 'natural hair beauty', 'ethnic beauty icons'],
+  topics: ['celebrity beauty looks', 'iconic style recreation', 'Bollywood makeup', 'K-pop beauty', 'Arab eye makeup', 'J.Lo glow', 'Fenty beauty', 'West African glam', 'natural hair beauty', 'multicultural beauty icons'],
   communitiesSupported: 9,
   iconsTotal: 24,
   keyFacts: [

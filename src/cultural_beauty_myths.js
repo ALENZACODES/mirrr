@@ -1,6 +1,6 @@
 /**
  * MIRRR Cultural Beauty Myths Debunked
- * Separating fact from fiction across ethnic beauty communities
+ * Separating fact from fiction across multicultural beauty communities
  * Science-backed responses to widespread misinformation
  */
 

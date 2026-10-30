@@ -1,7 +1,7 @@
 /**
  * MIRRR — Face Yoga & Facial Exercise Guide
  * Facial muscle anatomy, evidence-based techniques, anti-aging science,
- * ethnic considerations and traditional practices.
+ * multicultural considerations and traditional practices.
  */
 
 export const FACIAL_MUSCLE_ANATOMY = {

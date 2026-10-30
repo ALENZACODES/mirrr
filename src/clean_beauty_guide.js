@@ -1,5 +1,5 @@
 /**
- * MIRRR — Clean Beauty Guide (Ethnic Skin Focus)
+ * MIRRR — Clean Beauty Guide (Skin-of-Colour Focus)
  * Ingredient safety, greenwashing, clean beauty for ethnic communities.
  */
 
@@ -185,7 +185,7 @@ export const ETHNIC_CLEAN_BEAUTY_GUIDES = {
     guide: {
       frankincenseTradition: 'East Africa is one of the primary sources of Boswellia (frankincense) — particularly Boswellia papyrifera in Ethiopia and Boswellia neglecta; frankincense has been used in Ethiopian and Somali traditional beauty practices for centuries; the anti-inflammatory boswellic acid evidence is genuine; traditional frankincense smoking (the incense fumigation of hair and body in Somali and Ethiopian tradition) has antimicrobial and aromatic properties; modern clean beauty brands are incorporating Boswellia extracts with appropriate standardisation',
       nilosseCoconutOil: 'Niloticus oil (from the Nile crocodile — traditional East African) is not a mainstream clean beauty ingredient; more relevantly, coconut oil is widely used in East African communities; coconut oil is comedogenic for many people (rated 4/5 on comedogenicity scales); for acne-prone East African or diaspora skin, coconut oil on the face may trigger breakouts; as a pre-shampoo hair treatment it is beneficial for damaged hair',
-      diaspora: 'East African diaspora communities (Ethiopian, Somali, Eritrean, Kenyan) in the US, UK, and Scandinavia face significant product availability challenges; hair texture (3C-4B range for many) is served by natural hair products but ethnic-specific products remain limited; diaspora brands are emerging: Habesha Beauty, ASOS Roots'
+      diaspora: 'East African diaspora communities (Ethiopian, Somali, Eritrean, Kenyan) in the US, UK, and Scandinavia face significant product availability challenges; hair texture (3C-4B range for many) is served by natural hair products but culture-specific products remain limited; diaspora brands are emerging: Habesha Beauty, ASOS Roots'
     }
   },
   'south-african': {

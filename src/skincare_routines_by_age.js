@@ -1,6 +1,6 @@
 /**
- * MIRRR — Skincare Routines by Age (Ethnic Skin Focus)
- * Teen through 50s+, with ethnic-specific considerations across all communities.
+ * MIRRR — Skincare Routines by Age (Skin-of-Colour Focus)
+ * Teen through 50s+, with culture-specific considerations across all communities.
  */
 
 export const SKIN_AGEING_SCIENCE = {

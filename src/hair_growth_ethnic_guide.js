@@ -1,5 +1,5 @@
 /**
- * MIRRR — Hair Growth Ethnic Guide
+ * MIRRR — Hair Growth Multicultural Guide
  * The science and cultural traditions of hair growth, retention, and
  * length across all 9 ethnic communities. Hair growth is a universal
  * desire with deeply community-specific practices, ingredients, and

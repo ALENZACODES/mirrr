@@ -1,7 +1,7 @@
 /**
- * MIRRR — Travel Beauty Guide (Ethnic Skin Focus)
+ * MIRRR — Travel Beauty Guide (Skin-of-Colour Focus)
  * Climate adaptation, TSA rules, skincare for travel,
- * finding products globally, ethnic hair while travelling.
+ * finding products globally, textured hair while travelling.
  */
 
 export const TRAVEL_SKIN_SCIENCE = {
@@ -52,18 +52,18 @@ export const TSA_BEAUTY_RULES = {
 };
 
 export const FINDING_PRODUCTS_GLOBALLY = {
-  title: 'Finding Ethnic Beauty Products While Travelling',
+  title: 'Finding Multicultural Beauty Products While Travelling',
   strategies: {
-    research: 'Research before travel: identify major beauty retailers in the destination; look up whether international beauty brands are available; check if there are local ethnic beauty brands worth trying; for textured hair especially, research whether the destination market has appropriate products',
+    research: 'Research before travel: identify major beauty retailers in the destination; look up whether international beauty brands are available; check if there are local multicultural beauty brands worth trying; for textured hair especially, research whether the destination market has appropriate products',
     international: {
-      sephora: 'Sephora operates in 35+ countries; the product range varies significantly by country; major markets (US, France, Italy, Germany, UAE) have the broadest range; smaller market locations may not stock ethnic-specific brands or foundation shade extensions',
+      sephora: 'Sephora operates in 35+ countries; the product range varies significantly by country; major markets (US, France, Italy, Germany, UAE) have the broadest range; smaller market locations may not stock culture-specific brands or foundation shade extensions',
       ulta: 'Ulta Beauty is US-only; not available internationally',
-      douglas: 'Douglas is the dominant European beauty retailer; stocks many ethnic-specific brands in larger city stores',
-      lookfantastic: 'LookFantastic delivers globally and is the easiest way to receive UK-available ethnic beauty brands internationally; stocks Fenty, Pat McGrath, and others'
+      douglas: 'Douglas is the dominant European beauty retailer; stocks many culture-specific brands in larger city stores',
+      lookfantastic: 'LookFantastic delivers globally and is the easiest way to receive UK-available multicultural beauty brands internationally; stocks Fenty, Pat McGrath, and others'
     },
     ethnic: {
-      uk: 'London has exceptional ethnic beauty retail: Pak\'s Cosmetics in Brixton (Black British beauty hub); Liberty London (high-end with ethnic brands); Asian supermarkets stock South Asian beauty staples; African grocery stores stock West African beauty products including black soap, shea butter',
-      us: 'US ethnic beauty: Sally Beauty (professional hair products); BSS (Beauty Supply Stores — widespread Black American beauty retail chain); Korean beauty stores (H Mart beauty sections; Lotte Beauty; Korean-owned BSS)',
+      uk: 'London has exceptional multicultural beauty retail: Pak\'s Cosmetics in Brixton (Black British beauty hub); Liberty London (high-end with multicultural brands); Asian supermarkets stock South Asian beauty staples; African grocery stores stock West African beauty products including black soap, shea butter',
+      us: 'US multicultural beauty: Sally Beauty (professional hair products); BSS (Beauty Supply Stores — widespread Black American beauty retail chain); Korean beauty stores (H Mart beauty sections; Lotte Beauty; Korean-owned BSS)',
       france: 'Paris has significant West African and Afro-Caribbean beauty availability: Château Rouge neighbourhood in the 18th arrondissement is Paris\'s "Little Africa" — African and Caribbean beauty products widely available',
       uae: 'Dubai has excellent Middle Eastern beauty availability (Arab fragrances, luxury oud) and South Asian beauty (significant South Asian expatriate population); Dubai Mall has all major international beauty retailers'
     }
@@ -109,7 +109,7 @@ export const ETHNIC_TRAVEL_GUIDES = {
       convenience: 'Japanese convenience stores (konbini) are famous for having surprisingly good skincare at low prices; budget finds: Hada Labo products, Curél, Biore UV sunscreen at a fraction of international prices; the Matsumoto Kiyoshi and Tsuruha drugstore chains are the best beauty pharmacy options',
       sunscreen: 'Japanese and Korean sunscreens are available at source for significantly lower prices than importing; the superior UV filters available in Asia (Tinosorb S and M; Uvinul A Plus; not FDA-approved in the US) make purchasing East Asian sunscreens in Japan or Korea valuable'
     },
-    texuredHairChallenge: 'East Asian countries have very limited availability of products for textured/afro hair; afro-textured hair travellers visiting Japan, South Korea, or China should bring sufficient hair care products for the entire trip; no major equivalents of Black ethnic beauty stores exist in most East Asian cities; Japanese "damage care" products are formulated for fine, straight hair and will not provide sufficient moisture for afro hair'
+    texuredHairChallenge: 'East Asian countries have very limited availability of products for textured/afro hair; afro-textured hair travellers visiting Japan, South Korea, or China should bring sufficient hair care products for the entire trip; no major equivalents of Black multicultural beauty stores exist in most East Asian cities; Japanese "damage care" products are formulated for fine, straight hair and will not provide sufficient moisture for afro hair'
   },
   'east-african': {
     homeTravel: 'Ethiopia: Addis Ababa sits at 2355m elevation — significant UV intensity despite the cool climate; one of the most UV-intense major cities in the world due to altitude + equatorial location; SPF is absolutely critical; Ethiopian beauty products are increasingly available locally including natural Boswellia-based skin products; Kaldi\'s Coffee (the Ethiopian specialty coffee chain) often stocks local beauty products',

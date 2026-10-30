@@ -1,7 +1,7 @@
 /**
  * MIRRR — Hair Care Routines by Hair Type
  * Complete type 1–4 system with subcategories, porosity overlays,
- * product formulation science, and ethnic hair care traditions.
+ * product formulation science, and textured hair care traditions.
  */
 
 export const HAIR_TYPE_SYSTEM = {

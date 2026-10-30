@@ -1,12 +1,12 @@
 /**
  * MIRRR — Makeup Artist Career Guide
  * From building a kit to building a brand: the complete guide to makeup artistry
- * as a profession, with a focus on ethnic beauty expertise as a specialisation.
+ * as a profession, with a focus on multicultural beauty expertise as a specialisation.
  */
 
 export const MUA_CAREER_OVERVIEW = {
   title: 'Makeup Artist Career Overview',
-  summary: 'Makeup artistry is a skilled trade with multiple specialisations, from bridal to editorial to film and TV; it combines technical skill with interpersonal skill, business acumen, and increasingly, digital content expertise. The makeup artist profession is one of the few beauty careers where deep knowledge of ethnic skin tones and diverse hair textures represents a genuine and significant market differentiator.',
+  summary: 'Makeup artistry is a skilled trade with multiple specialisations, from bridal to editorial to film and TV; it combines technical skill with interpersonal skill, business acumen, and increasingly, digital content expertise. The makeup artist profession is one of the few beauty careers where deep knowledge of melanin-rich skin tones and diverse hair textures represents a genuine and significant market differentiator.',
   specialisations: {
     bridal: {
       description: 'Wedding makeup for brides, wedding parties, and related events; the largest and most stable segment of the freelance makeup market; high ticket value per client; requires consultation skills and the ability to create lasting, photograph-well makeup',
@@ -26,7 +26,7 @@ export const MUA_CAREER_OVERVIEW = {
     },
     contentCreator: {
       description: 'Social media content creation, YouTube tutorials, brand partnerships, online courses; increasingly intertwined with traditional MUA work; requires camera-ready skills AND content production skills (filming, editing, presenting)',
-      ethnicSpecialisation: 'Some of the most successful makeup artist content creators built their audiences specifically by serving communities underserved by mainstream beauty content — natural hair and dark skin makeup tutorials for Black American women, South Asian bridal techniques, West African beauty content; ethnic specialisation has built large and loyal audiences in this space'
+      ethnicSpecialisation: 'Some of the most successful makeup artist content creators built their audiences specifically by serving communities underserved by mainstream beauty content — natural hair and dark skin makeup tutorials for Black American women, South Asian bridal techniques, West African beauty content; multicultural specialisation has built large and loyal audiences in this space'
     },
     specialEffects: {
       description: 'Prosthetics, injury simulation, aging, creature effects; specialised training required (prosthetics making, silicone application, dental acrylic); film and television focused',
@@ -85,31 +85,31 @@ export const BUILDING_A_MUA_BRAND = {
   niche: {
     importance: 'The most successful independent makeup artists have a clearly defined niche or specialisation; a generic "all makeup" positioning competes against everyone; a specific specialisation builds authority and attracts the ideal client',
     ethnicSpecialisation: {
-      opportunity: 'Deep expertise in ethnic beauty represents a genuine and significant market opportunity: South Asian bridal makeup requires specific knowledge that many Western-trained artists lack; West African and Nigerian-American wedding makeup is an underserved niche; natural hair and dark skin makeup tutorial content reaches underserved audiences; expertise in Fitzpatrick V-VI skin is valued in editorial and commercial work',
+      opportunity: 'Deep expertise in multicultural beauty represents a genuine and significant market opportunity: South Asian bridal makeup requires specific knowledge that many Western-trained artists lack; West African and Nigerian-American wedding makeup is an underserved niche; natural hair and dark skin makeup tutorial content reaches underserved audiences; expertise in Fitzpatrick V-VI skin is valued in editorial and commercial work',
       authenticity: 'Artists from within an ethnic community have authentic knowledge and cultural fluency that outside artists must work harder to develop; this lived experience is a genuine business asset, not just a talking point'
     }
   },
   portfolio: {
     importance: 'The portfolio is the primary marketing material for a makeup artist; a portfolio that shows authentic skill across diverse skin tones demonstrates range; a portfolio showing only one skin tone limits perceived expertise',
-    documentation: ['Always photograph finished looks in good light (natural light near a window or a ring light specifically for beauty photography)', 'Include before photos (with client permission) to show the transformation work', 'For ethnic beauty specialisation: a portfolio showing exceptional work on Fitzpatrick V-VI skin, or showing culturally specific looks (South Asian bridal, West African traditional), communicates the specialisation immediately'],
+    documentation: ['Always photograph finished looks in good light (natural light near a window or a ring light specifically for beauty photography)', 'Include before photos (with client permission) to show the transformation work', 'For multicultural beauty specialisation: a portfolio showing exceptional work on Fitzpatrick V-VI skin, or showing culturally specific looks (South Asian bridal, West African traditional), communicates the specialisation immediately'],
     digital: 'Digital portfolio is essential; Instagram, TikTok, and a website or Squarespace portfolio site; a dedicated beauty photography session to build the initial portfolio is a worthwhile investment'
   },
   clientAcquisition: {
-    initialPhase: ['Build on personal network: friends and family as first models; photography students as collaborators for portfolio shoots; trade photography collaborations', 'Bridal shows and vendor fairs are effective for bridal artists', 'Ethnic beauty specialisations: partnership with South Asian wedding vendors, African bridal vendors; presence at culturally specific events'],
+    initialPhase: ['Build on personal network: friends and family as first models; photography students as collaborators for portfolio shoots; trade photography collaborations', 'Bridal shows and vendor fairs are effective for bridal artists', 'Multicultural beauty specialisations: partnership with South Asian wedding vendors, African bridal vendors; presence at culturally specific events'],
     ongoingClients: 'Referrals are the primary ongoing source of clients for established makeup artists; every client is a potential referral source; follow-up after the job and asking satisfied clients for referrals or reviews is standard practice',
     social: 'Social media is both portfolio and marketing; consistency of posting matters more than frequency; quality over quantity; behind-the-scenes content (process and technique videos) generates engagement; tutorial content builds authority'
   },
   pricing: {
     structure: ['Flat rate per service (bridal makeup: single rate; airbrush additional)', 'Hourly rate (editorial and commercial)', 'Day rate (film and TV; usually negotiated as 8-hour day rate)'],
-    ethnic: 'Ethnic beauty specialisation often commands a premium rate; South Asian bridal makeup is priced significantly higher than standard bridal makeup due to the complexity and duration of bridal looks across multiple events; there is an argument that deep dark skin expertise should be priced commensurately with its rarity',
+    ethnic: 'Multicultural beauty specialisation often commands a premium rate; South Asian bridal makeup is priced significantly higher than standard bridal makeup due to the complexity and duration of bridal looks across multiple events; there is an argument that deep dark skin expertise should be priced commensurately with its rarity',
     travelFees: 'Makeup artists typically charge travel time and transport beyond a base radius; any wedding or editorial job outside the local area includes a day-of or advance travel fee'
   }
 };
 
 export const ETHNIC_MUA_SPECIALISATION = {
-  title: 'Ethnic Beauty Specialisations in Makeup Artistry',
+  title: 'Multicultural Beauty Specialisations in Makeup Artistry',
   southAsianBridal: {
-    overview: 'South Asian bridal makeup is one of the most technically demanding and economically valuable ethnic bridal specialisations; South Asian weddings often involve multiple events (mehendi, sangeet, nikkah/baraat, reception) each requiring different makeup looks; the bridal market in the UK South Asian community alone is estimated at over £1 billion annually',
+    overview: 'South Asian bridal makeup is one of the most technically demanding and economically valuable multicultural bridal specialisations; South Asian weddings often involve multiple events (mehendi, sangeet, nikkah/baraat, reception) each requiring different makeup looks; the bridal market in the UK South Asian community alone is estimated at over £1 billion annually',
     keyTechniques: ['Cut crease for Indian bridal (sharp-edged crease in deep rich tones: rust, burgundy, gold)', 'Contouring South Asian Fitzpatrick III-V skin to enhance bone structure under photography lighting', 'Dupatta pinning and hair integration skills', 'Knowledge of sindoor, maangtikka, and other traditional adornments and how they interact with makeup', 'Bindi placement and different bindi styles across Hindu, Sikh, and regional traditions'],
     productKnowledge: ['Kohl/kajal for waterline (traditional and functional)', 'Hindi and Urdu cosmetic brand knowledge (Lakme, Kay Beauty, Sugar Cosmetics) for South Asian community authenticity', 'Knowledge of traditional mehendi and how to work around henna application on the hands for the bridal party'],
     marketStrategy: 'South Asian bridal makeup artists market through South Asian wedding expos (in the UK, US, Canada, Australia), South Asian wedding publications and blogs, and Instagram with South Asian bridal hashtags'
@@ -143,7 +143,7 @@ export const PROFESSIONAL_DEVELOPMENT = {
   },
   continuousLearning: {
     masterclasses: 'Online and in-person masterclasses from established artists are widely available; brands (Charlotte Tilbury, NARS, MAC) offer professional masterclasses; independent artists teach privately',
-    darkSkinTraining: 'There is a significant lack of dark skin training in mainstream makeup artistry schools; artists seeking to specialise in ethnic beauty or darker skin tones often have to actively seek additional training beyond standard curriculum; seek out educators who specialise specifically in dark skin techniques (Dr. Rendi, Danessa Myricks, Sam Fine are well-known black makeup artist educators in the US)',
+    darkSkinTraining: 'There is a significant lack of dark skin training in mainstream makeup artistry schools; artists seeking to specialise in multicultural beauty or darker skin tones often have to actively seek additional training beyond standard curriculum; seek out educators who specialise specifically in dark skin techniques (Dr. Rendi, Danessa Myricks, Sam Fine are well-known black makeup artist educators in the US)',
     brandEducation: 'Major professional makeup brands (MAC, NARS, Kryolan) offer education programs for professional makeup artists including application techniques and product knowledge'
   },
   businessSkills: {
@@ -154,15 +154,15 @@ export const PROFESSIONAL_DEVELOPMENT = {
 };
 
 export const ETHNIC_INDUSTRY_LANDSCAPE = {
-  title: 'The Ethnic Beauty Industry Landscape',
-  marketSize: 'The ethnic beauty market is a significant and growing segment of the global beauty industry; Nielsen reported that Black American consumers spend approximately 9 times more on beauty products as a percentage of income than white consumers; the US Black hair and beauty market alone is estimated at $2.7-3 billion annually; global ethnic beauty markets including South Asian, East Asian diaspora, and African markets represent a multi-billion dollar opportunity',
+  title: 'The Multicultural Beauty Industry Landscape',
+  marketSize: 'The multicultural beauty market is a significant and growing segment of the global beauty industry; Nielsen reported that Black American consumers spend approximately 9 times more on beauty products as a percentage of income than white consumers; the US Black hair and beauty market alone is estimated at $2.7-3 billion annually; global multicultural beauty markets including South Asian, East Asian diaspora, and African markets represent a multi-billion dollar opportunity',
   representation: {
-    historical: 'Mainstream beauty has historically underserved and underrepresented ethnic consumers; foundation shades did not extend to Fitzpatrick V-VI until Fenty Beauty\'s 2017 launch made the "40-shade range" a new industry standard; this market gap has driven the success of brands that prioritised diverse shade ranges from the beginning',
+    historical: 'Mainstream beauty has historically underserved and underrepresented multicultural consumers; foundation shades did not extend to Fitzpatrick V-VI until Fenty Beauty\'s 2017 launch made the "40-shade range" a new industry standard; this market gap has driven the success of brands that prioritised diverse shade ranges from the beginning',
     currentState: 'Since the "Fenty effect" (2017), most major mainstream brands have expanded their shade ranges; however, genuine expertise in formulating for and serving diverse skin tones remains rarer than shade expansion alone; the beauty professional market has been slower to catch up than the consumer product market',
-    opportunity: 'Makeup artists with genuine, deep expertise in ethnic beauty occupy a market position that is both underserved and growing; the demand for skilled artists who can authentically serve diverse skin tones across bridal, editorial, and personal beauty far exceeds the supply'
+    opportunity: 'Makeup artists with genuine, deep expertise in multicultural beauty occupy a market position that is both underserved and growing; the demand for skilled artists who can authentically serve diverse skin tones across bridal, editorial, and personal beauty far exceeds the supply'
   },
   notableArtists: {
-    context: 'The makeup artistry field has a significant number of ethnic beauty pioneers who built careers partly through their expertise and visibility in serving communities that mainstream beauty overlooked',
+    context: 'The makeup artistry field has a significant number of multicultural beauty pioneers who built careers partly through their expertise and visibility in serving communities that mainstream beauty overlooked',
     educators: 'Sam Fine (pioneering Black American beauty artist and author), Reggie Wells (Oprah\'s makeup artist for 20 years), Pat McGrath (British-born Black makeup artist who became one of the most influential in the world), Pablo Rodriguez (worked with Beyoncé, developed techniques for deep dark skin)'
   }
 };
@@ -216,7 +216,7 @@ export function getEthnicIndustryLandscape() {
 export const MAKEUP_ARTIST_CAREER_STATS = {
   moduleId: 'makeup_artist_career_guide',
   version: '1.0.0',
-  topics: ['makeup artist career', 'MUA kit building', 'professional makeup kit', 'ethnic beauty specialisation', 'South Asian bridal makeup', 'West African wedding makeup', 'Black American beauty industry', 'Arab beauty market', 'RCMA No-Color Powder', 'bridal makeup artist', 'editorial makeup', 'film TV makeup', 'makeup artistry training', 'MUA brand building', 'ethnic beauty market', 'Fenty effect shade range', 'makeup kit sanitation', 'MUA pricing', 'orange colour corrector dark skin', 'Sam Fine Pat McGrath'],
+  topics: ['makeup artist career', 'MUA kit building', 'professional makeup kit', 'multicultural beauty specialisation', 'South Asian bridal makeup', 'West African wedding makeup', 'Black American beauty industry', 'Arab beauty market', 'RCMA No-Color Powder', 'bridal makeup artist', 'editorial makeup', 'film TV makeup', 'makeup artistry training', 'MUA brand building', 'multicultural beauty market', 'Fenty effect shade range', 'makeup kit sanitation', 'MUA pricing', 'orange colour corrector dark skin', 'Sam Fine Pat McGrath'],
   communitiesSupported: 9,
   keyFacts: [
     'Nielsen reported that Black American consumers spend approximately 9 times more on beauty products as a percentage of income than white consumers; the US Black hair and beauty market is estimated at $2.7-3 billion annually — a massive market historically underserved by mainstream professional beauty',

@@ -1,5 +1,5 @@
 /**
- * MIRRR — Body Hair Guide (Ethnic Perspectives)
+ * MIRRR — Body Hair Guide (Multicultural Perspectives)
  * The complete guide to body hair removal methods, ingrown hair prevention,
  * cultural contexts, and hair removal for all 9 ethnic communities.
  */

@@ -1235,7 +1235,7 @@ export const SPA_PAIRINGS_BY_CONCERN = {
         frequency: 'Daily (Ayurveda prescribes daily self-abhyanga for everyone)'
       }
     ],
-    lifestyleNote: 'The "Soak and Seal" method — bathing in warm (not hot) water, then immediately applying occlusive or emollient oils within 3 minutes — is the most evidence-based approach to dry skin management and forms the foundation of most ethnic wellness traditions\'s moisturizing practices.'
+    lifestyleNote: 'The "Soak and Seal" method — bathing in warm (not hot) water, then immediately applying occlusive or emollient oils within 3 minutes — is the most evidence-based approach to dry skin management and forms the foundation of most multicultural wellness traditions\'s moisturizing practices.'
   },
   stressAndAnxiety: {
     concern: 'Chronic Stress, Anxiety, and Nervous System Dysregulation',
@@ -1763,7 +1763,7 @@ export const SKIN_TYPE_GUIDE = {
       { community: 'south-asian', treatment: 'Abhyanga with warm sesame oil', reason: 'Sesame oil is the Ayurvedic first choice for Vata (dry, sensitive) skin types; penetrates all tissue layers' }
     ],
     avoid: 'Any treatment with high AHA content (black soap left on too long, strong chemical exfoliants), mechanical exfoliation more than once weekly, hot water (use warm), fragrant essential oils without patch-testing first.',
-    tip: 'The "Soak and Seal" protocol — soaking in warm water then immediately applying an occlusive oil within 3 minutes — is the evidence-based gold standard for dry skin. The water provides moisture; the oil traps it. Every ethnic tradition addresses this principle, arriving at the same conclusion from different starting points.'
+    tip: 'The "Soak and Seal" protocol — soaking in warm water then immediately applying an occlusive oil within 3 minutes — is the evidence-based gold standard for dry skin. The water provides moisture; the oil traps it. Every multicultural tradition addresses this principle, arriving at the same conclusion from different starting points.'
   },
   matureSkin: {
     bestCommunityApproaches: ['south-asian', 'arab', 'east-asian', 'south-african'],

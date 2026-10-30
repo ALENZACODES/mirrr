@@ -1,6 +1,6 @@
 /**
- * MIRRR — Eco-Conscious and Sustainable Beauty (Ethnic Focus)
- * Sustainability, ingredient sourcing, ethical supply chains, and ethnic beauty communities.
+ * MIRRR — Eco-Conscious and Sustainable Beauty (Multicultural Focus)
+ * Sustainability, ingredient sourcing, ethical supply chains, and multicultural beauty communities.
  */
 
 export const SUSTAINABLE_BEAUTY_OVERVIEW = { title: 'Eco-Conscious Beauty: Science, Ethics, and Global Perspectives' };

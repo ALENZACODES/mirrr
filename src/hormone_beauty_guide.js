@@ -2,7 +2,7 @@
  * MIRRR — Hormone and Beauty Guide
  * How hormones affect skin and hair across life stages,
  * menstrual cycles, pregnancy, perimenopause, and menopause.
- * Ethnic skin considerations throughout.
+ * Skin-of-colour considerations throughout.
  */
 
 export const HORMONE_SKIN_SCIENCE = {

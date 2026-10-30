@@ -1,7 +1,7 @@
 /**
  * MIRRR Hair Damage Guide
  * Types of hair damage, bond repair science, protein treatments,
- * recovery protocols, and ethnic hair damage considerations
+ * recovery protocols, and textured hair damage considerations
  */
 
 // ─── HAIR STRUCTURE ───────────────────────────────────────────────────────────

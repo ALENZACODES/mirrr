@@ -1,7 +1,7 @@
 /**
  * MIRRR — Seasonal Beauty Guide
  * Adapting skincare, haircare, and makeup routines for all four seasons,
- * climate zone variations, and ethnic skin seasonal challenges.
+ * climate zone variations, and skin-of-colour seasonal challenges.
  */
 
 export const SEASONAL_SKIN_SCIENCE = {

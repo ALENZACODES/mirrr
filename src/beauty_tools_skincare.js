@@ -1,7 +1,7 @@
 /**
  * MIRRR Beauty Tools for Skincare
  * Gua sha, jade roller, ice roller, dermaplaning, microcurrent,
- * facial massage, LED therapy — evidence, technique, and ethnic skin safety
+ * facial massage, LED therapy — evidence, technique, and skin-of-colour safety
  */
 
 // ─── GUA SHA ──────────────────────────────────────────────────────────────────

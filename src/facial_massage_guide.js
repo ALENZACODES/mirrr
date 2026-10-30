@@ -2,7 +2,7 @@
  * MIRRR Facial Massage Guide
  * Lymphatic drainage, face yoga, depuffing techniques, gua sha,
  * jade roller, kansa wand, buccal massage, and tool guides
- * with ethnic skin specific safety notes
+ * with skin-of-colour specific safety notes
  */
 
 // ─── FACIAL MASSAGE SCIENCE ───────────────────────────────────────────────────

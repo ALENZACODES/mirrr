@@ -1,5 +1,5 @@
 /**
- * festival_calendar.js — Ethnic beauty calendar for MIRRR
+ * festival_calendar.js — Multicultural beauty calendar for MIRRR
  * Major festivals, cultural moments, and beauty traditions for all 9 communities
  */
 
@@ -647,7 +647,7 @@ export const FESTIVALS = {
     skincareTip: 'Outdoor braai = sun + smoke. SPF + setting spray combo.',
     significance: 'Celebration of South Africa\'s 11 official languages and rainbow nation heritage',
     beautyRituals: [
-      'Traditional ethnic dress selection',
+      'Traditional multicultural dress selection',
       'SPF application for outdoor day',
       'Cultural hair adornment (doek, isicholo, or headband)',
       'Relaxed but polished makeup for braai',

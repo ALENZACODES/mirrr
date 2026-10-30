@@ -1,5 +1,5 @@
 /**
- * MIRRR — Budget Beauty Ethnic Guide
+ * MIRRR — Budget Beauty Multicultural Guide
  * Affordable, accessible, and culturally-rooted beauty across all 9 communities.
  * Budget beauty isn't about compromise — it's about rooting beauty in the kitchen,
  * the market, and ancestral wisdom. The most effective beauty ingredients in the world

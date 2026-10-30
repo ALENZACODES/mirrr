@@ -1,5 +1,5 @@
 /**
- * look_styles.js — Comprehensive ethnic beauty look style database for MIRRR
+ * look_styles.js — Comprehensive multicultural beauty look style database for MIRRR
  * 38 looks across 9 communities, plus 4 for everyone; every look can be worn on any skin
  */
 
@@ -807,7 +807,7 @@ export const LOOK_STYLES = {
     community: 'all',
     category: 'natural',
     description: 'The classic "I woke up like this" elevated look. Concealer, mascara, tinted balm—universal across all communities.',
-    culturalContext: 'No-makeup makeup has become a global standard across cultures. Adapted for ethnic skin, it centres skincare, colour-matching, and natural texture.',
+    culturalContext: 'No-makeup makeup has become a global standard across cultures. Adapted for skin of colour, it centres skincare, colour-matching, and natural texture.',
     tags: ['no-makeup', 'natural', 'minimal', 'everyday', 'universal', 'skincare-first'],
     fitzpatrickFit: ['I', 'II', 'III', 'IV', 'V', 'VI'],
     undertones: ['all'],

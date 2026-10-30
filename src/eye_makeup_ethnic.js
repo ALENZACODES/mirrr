@@ -1,5 +1,5 @@
 /**
- * MIRRR Eye Makeup Guide for Ethnic Eye Shapes & Skin Tones
+ * MIRRR Eye Makeup Guide for Multicultural Eye Shapes & Skin Tones
  * Eyeshadow colour theory, eye shape techniques, monolid guide,
  * cut crease for different eye shapes, and community traditions
  */

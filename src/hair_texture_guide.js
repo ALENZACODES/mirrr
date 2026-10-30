@@ -146,7 +146,7 @@ export const CURLY_GIRL_METHOD = {
 // ─── TEXTURE POLITICS ─────────────────────────────────────────────────────────
 
 export const HAIR_TEXTURE_POLITICS = {
-  overview: 'Hair texture has been, and continues to be, a site of cultural, racial, and political significance — particularly for Black communities globally. Understanding this context is essential for any discussion of hair in ethnic beauty spaces.',
+  overview: 'Hair texture has been, and continues to be, a site of cultural, racial, and political significance — particularly for Black communities globally. Understanding this context is essential for any discussion of hair in multicultural beauty spaces.',
 
   relaxer_history: {
     what: 'Chemical hair relaxers (lye or no-lye sodium hydroxide / calcium hydroxide) permanently straighten afro-textured hair by breaking disulfide bonds.',

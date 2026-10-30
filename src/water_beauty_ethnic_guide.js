@@ -1,5 +1,5 @@
 /**
- * MIRRR — Water Beauty Ethnic Guide
+ * MIRRR — Water Beauty Multicultural Guide
  * How water quality, type, and ritual use affects skin and hair across
  * ethnic communities. Hard water, soft water, ocean water, mineral water,
  * spring water, rain water, rice water — and how each community has

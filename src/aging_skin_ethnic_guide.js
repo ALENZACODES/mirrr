@@ -1,6 +1,6 @@
 /**
- * MIRRR — Aging Skin Ethnic Science Guide
- * Science of skin aging by Fitzpatrick type, ethnic skin biology, anti-aging ingredients,
+ * MIRRR — Aging Skin Multicultural Science Guide
+ * Science of skin aging by Fitzpatrick type, skin-of-colour biology, anti-aging ingredients,
  * traditional longevity beauty practices across 9 ethnic communities.
  *
  * DIFFERENTIATED from aging_gracefully_ethnic_guide.js:

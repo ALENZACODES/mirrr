@@ -1,5 +1,5 @@
 /**
- * MIRRR — Waterless & Minimal Beauty Ethnic Guide
+ * MIRRR — Waterless & Minimal Beauty Multicultural Guide
  * Water-free formulations, dry cleansing, minimal waste beauty by community
  * Topics: micellar water, dry shampoo, solid formulas, waterless skincare, conservation beauty
  */

@@ -1,5 +1,5 @@
 /**
- * MIRRR — Bridal Beauty Ethnic Guide
+ * MIRRR — Bridal Beauty Multicultural Guide
  * Comprehensive wedding beauty traditions, rituals, and preparation guides
  * for all 9 ethnic communities. Covers pre-wedding rituals, day-of makeup,
  * hair traditions, attire beauty coordination, and cultural beauty symbolism.
@@ -791,7 +791,7 @@ export const BRIDAL_PREP_TIMELINES = {
         style: 'Elaborate Braid Updo',
         description: 'Complex braided updo incorporating extensions for length and volume. Adorned with jewelry, beads, or floral accessories.',
         significance: 'Elegance, celebration',
-        stylingTip: 'Have a trusted stylist experienced with ethnic hair updo techniques.',
+        stylingTip: 'Have a trusted stylist experienced with textured hair updo techniques.',
       },
     ],
   },

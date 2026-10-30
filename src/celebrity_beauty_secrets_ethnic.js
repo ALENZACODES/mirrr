@@ -1,12 +1,12 @@
 /**
- * MIRRR — Ethnic Beauty Icons: Routines, Products, and Style Inspiration
- * Beauty routines and philosophy of iconic ethnic beauty figures.
+ * MIRRR — Multicultural Beauty Icons: Routines, Products, and Style Inspiration
+ * Beauty routines and philosophy of iconic multicultural beauty figures.
  */
 
 export const CELEBRITY_BEAUTY_OVERVIEW = {
-  title: 'Ethnic Beauty Icons: Inspiration, Routines, and Wisdom',
+  title: 'Multicultural Beauty Icons: Inspiration, Routines, and Wisdom',
   introduction: 'Beauty icons from diverse ethnic communities demonstrate that beauty is not a single standard but a vast spectrum of possibility; each icon brings specific insights from their ethnic heritage, skin type, lifestyle, and philosophy that are directly applicable to other members of their community; this module celebrates beauty wisdom from icons across all nine communities while providing practical takeaways',
-  philosophy: 'Representation matters in beauty: seeing your skin tone, hair texture, and facial features reflected in aspirational beauty imagery is not vanity — it is a documented contributor to self-esteem, self-acceptance, and willingness to invest in self-care; the explosion of diverse beauty icons on social media has transformed what "beautiful" means globally and created communities of practice around ethnic beauty routines'
+  philosophy: 'Representation matters in beauty: seeing your skin tone, hair texture, and facial features reflected in aspirational beauty imagery is not vanity — it is a documented contributor to self-esteem, self-acceptance, and willingness to invest in self-care; the explosion of diverse beauty icons on social media has transformed what "beautiful" means globally and created communities of practice around multicultural beauty routines'
 };
 
 export const WEST_AFRICAN_BEAUTY_ICONS = {
@@ -331,7 +331,7 @@ export const CELEBRITY_BEAUTY_STATS = {
   topics: ['Lupita Nyong\'o dark skin celebration shea butter', 'Naomi Campbell travel skincare silk pillowcase', 'Deepika Padukone vitamin C SPF rose water champi', 'Priyanka Chopra golden undertone foundation', 'Rihanna Fenty Beauty 40 shades inclusive beauty revolution', 'Jennie Kim K-beauty glass skin multi-step routine', 'Huda Kattan Arab beauty kohl eye oud fragrance', 'Jennifer Lopez JLo glow SPF olive oil sleep', 'Iman IMAN Cosmetics 1994 inclusive cosmetics pioneer', 'Tracee Ellis Ross Pattern Beauty 4C hair moisture', 'Issa Rae vitamin C hyperpigmentation SPF Black skin', 'Fan Bingbing daily sheet mask pearl powder TCM'],
   communitiesSupported: 9,
   keyFacts: [
-    'Rihanna\'s Fenty Beauty launch in September 2017 with 40 foundation shades represents one of the most significant disruptions in beauty industry history: the immediate commercial success (sold out in most shades within days) and overwhelming response from consumers of colour who had been systematically underserved by the beauty industry proved the demand for inclusive products; the "Fenty effect" — the rapid expansion of foundation shade ranges across virtually all major beauty brands in the months following the launch — demonstrates how one ethnic beauty icon using her platform to serve her community can transform an entire global industry',
+    'Rihanna\'s Fenty Beauty launch in September 2017 with 40 foundation shades represents one of the most significant disruptions in beauty industry history: the immediate commercial success (sold out in most shades within days) and overwhelming response from consumers of colour who had been systematically underserved by the beauty industry proved the demand for inclusive products; the "Fenty effect" — the rapid expansion of foundation shade ranges across virtually all major beauty brands in the months following the launch — demonstrates how one multicultural beauty icon using her platform to serve her community can transform an entire global industry',
     'Iman founded IMAN Cosmetics in 1994 — 23 years before the Fenty effect — specifically because she could not find cosmetics that worked for her Somali-born deep complexion; the brand created foundations with warm, golden, and red undertones rather than the pink-grey undertones that read wrong on dark skin; she pioneered the inclusive beauty conversation when there was zero commercial interest from the mainstream industry; her legacy is the direct intellectual ancestor of every inclusive beauty brand that followed',
     'The K-beauty "glass skin" philosophy (championed by icons like Jennie Kim and Fan Bingbing) is based on the principle that skin should be so fundamentally healthy that it becomes luminous and translucent without filter or heavy coverage; this is the opposite of the cover-up approach and requires genuine investment in skin health through multi-step layered hydration, daily SPF, double cleansing, and consistent routine adherence; the practical takeaway is that the East Asian approach to beauty invests in the skin rather than in products to cover the skin, producing results (retained elasticity, clarity, and luminosity into middle age) that are documented across populations that adopt these practices'
   ]

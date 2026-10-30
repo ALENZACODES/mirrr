@@ -1,9 +1,9 @@
 /**
- * MIRRR — Climate and Environment Beauty Ethnic Guide
+ * MIRRR — Climate and Environment Beauty Multicultural Guide
  * How different climates affect skin, hair, and beauty needs — and how
  * the traditional beauty wisdom of each of the 9 communities evolved in
  * response to their specific environmental context. Climate is the original
- * reason every ethnic beauty tradition is different.
+ * reason every multicultural beauty tradition is different.
  */
 
 export const ETHNIC_CLIMATE_BEAUTY_GUIDES = {

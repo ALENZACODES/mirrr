@@ -1,6 +1,6 @@
 /**
  * MIRRR Fragrance Communities Guide
- * Ethnic fragrance traditions, oud deep dive, rose traditions,
+ * Multicultural fragrance traditions, oud deep dive, rose traditions,
  * sandalwood, attar culture, incense beauty, and fragrance across communities
  */
 

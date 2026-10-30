@@ -1,7 +1,7 @@
 /**
  * MIRRR Cheek Makeup Guide
  * Blush, bronzer, highlighter, contour — placement by face shape,
- * skin tone considerations, formulas, and ethnic cheek beauty traditions
+ * skin tone considerations, formulas, and multicultural cheek beauty traditions
  */
 
 // ─── THE CHEEK TRIO ───────────────────────────────────────────────────────────

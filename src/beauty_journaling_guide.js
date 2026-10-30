@@ -1,7 +1,7 @@
 /**
  * MIRRR — Beauty Journaling Guide
  * Tracking skincare progress, building personalised routines through documentation,
- * and the science of beauty journaling for ethnic skin.
+ * and the science of beauty journaling for skin of colour.
  */
 
 export const BEAUTY_JOURNALING_BASICS = {
@@ -112,7 +112,7 @@ export const MAKEUP_JOURNAL = {
   productTracking: {
     openedDates: 'Documenting the date a product was opened matters for preserving product safety — most makeup has a PAO (Period After Opening) symbol (an open jar with a number like "12M" meaning 12 months); opened-date tracking prevents using expired products',
     performance: 'Rate each makeup product on: wear time (in real conditions), colour match (was the shade right?), finish (did it look how expected?), skin effect (did it cause breakouts or dryness?), value',
-    shadeMatching: 'For foundations, BB creams, and tinted SPF: journal the exact shade purchased, the undertone, and whether it was a match; foundation shade matching is notoriously difficult for deep and medium-deep ethnic skin tones, and a shade journal prevents repeating mistakes'
+    shadeMatching: 'For foundations, BB creams, and tinted SPF: journal the exact shade purchased, the undertone, and whether it was a match; foundation shade matching is notoriously difficult for deep and medium-deep melanin-rich skin tones, and a shade journal prevents repeating mistakes'
   },
   lookDocumentation: {
     method: 'After completing a successful makeup look: photograph in daylight and indoor light, list every product used (brand, shade, finish) and the application technique (fingers, brush type, sponge)',

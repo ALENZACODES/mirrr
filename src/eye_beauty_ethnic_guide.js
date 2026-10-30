@@ -1,6 +1,6 @@
 /**
  * MIRRR — Eye Beauty Guide for Ethnic Communities
- * Eye shape, eye makeup, dark circles, and ethnic eye beauty traditions.
+ * Eye shape, eye makeup, dark circles, and multicultural eye beauty traditions.
  */
 
 export const EYE_ANATOMY_BEAUTY = {

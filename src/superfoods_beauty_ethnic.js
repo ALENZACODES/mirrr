@@ -1,6 +1,6 @@
 /**
- * MIRRR — Superfoods and Beauty Guide (Ethnic Focus)
- * Nutrition for skin and hair, ethnic superfoods, evidence-based claims.
+ * MIRRR — Superfoods and Beauty Guide (Multicultural Focus)
+ * Nutrition for skin and hair, multicultural superfoods, evidence-based claims.
  */
 
 export const SUPERFOOD_SCIENCE = {

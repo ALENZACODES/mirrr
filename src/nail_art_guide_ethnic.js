@@ -1,5 +1,5 @@
 /**
- * MIRRR — Nail Art & Care Guide (Ethnic Traditions)
+ * MIRRR — Nail Art & Care Guide (Multicultural Traditions)
  * Nail biology, care, art techniques, cultural traditions,
  * press-on vs gel vs acrylic, and community-specific styles.
  */

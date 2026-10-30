@@ -1,5 +1,5 @@
 /**
- * MIRRR — Nutrition & Beauty From Within — Ethnic Guide
+ * MIRRR — Nutrition & Beauty From Within — Multicultural Guide
  * The science of skin nutrition and traditional dietary beauty practices
  * Topics: collagen synthesis, antioxidants, hydration, gut-skin axis, community diets
  */

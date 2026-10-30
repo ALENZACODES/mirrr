@@ -1,6 +1,6 @@
 /**
- * MIRRR — Menstrual Cycle Beauty and Skin Guide (Ethnic Focus)
- * Cycle-syncing beauty routines, hormonal skin changes, and ethnic considerations.
+ * MIRRR — Menstrual Cycle Beauty and Skin Guide (Multicultural Focus)
+ * Cycle-syncing beauty routines, hormonal skin changes, and multicultural considerations.
  */
 
 export const CYCLE_BEAUTY_OVERVIEW = {

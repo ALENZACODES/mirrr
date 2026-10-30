@@ -1,6 +1,6 @@
 /**
  * MIRRR Beauty Routines by Budget
- * Drugstore to luxury alternatives for ethnic beauty routines
+ * Drugstore to luxury alternatives for multicultural beauty routines
  * Best affordable dupes, splurge-worthy investments, and free DIY alternatives
  */
 

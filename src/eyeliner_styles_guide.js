@@ -1,6 +1,6 @@
 /**
  * MIRRR Eyeliner Styles Guide
- * Kohl, kajal, graphic liner, ethnic liner traditions
+ * Kohl, kajal, graphic liner, multicultural liner traditions
  * Techniques for all eye shapes and ethnic communities
  */
 
@@ -110,7 +110,7 @@ export const LINER_PRODUCTS = {
 
   coloured_liner: {
     what: 'Liner in any colour other than black or brown — the maximalist approach',
-    ethnic_context: 'Vibrant coloured liner is traditional in many ethnic aesthetics — cobalt blue kohl in Moroccan and Egyptian contexts, deep green traditional in some Arab communities, bright colour for festival occasions globally.',
+    ethnic_context: 'Vibrant coloured liner is traditional in many multicultural aesthetics — cobalt blue kohl in Moroccan and Egyptian contexts, deep green traditional in some Arab communities, bright colour for festival occasions globally.',
     for_deep_skin: {
       recommendation: 'Bright, saturated colours (cobalt, emerald, violet, hot pink) show beautifully against deep skin. Subtle colours (light taupe, grey, pastels) may not show well.',
       suggestion: 'Deep skin can carry BOLDER colour choices than fair skin — embrace this.',

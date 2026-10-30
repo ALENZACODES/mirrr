@@ -1,5 +1,5 @@
 /**
- * MIRRR — Color Theory for Ethnic Skin Tones
+ * MIRRR — Color Theory for Melanin-Rich Skin Tones
  * Understanding which makeup shades, clothing colors, and beauty palette choices
  * work best for different skin tones across all 9 communities. Color theory is
  * universal physics applied to the infinite variety of human skin, hair, and eyes.

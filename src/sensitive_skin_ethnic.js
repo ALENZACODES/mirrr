@@ -1,6 +1,6 @@
 /**
- * MIRRR — Sensitive Skin and Reactive Skin (Ethnic Focus)
- * Rosacea, eczema, contact dermatitis, barrier dysfunction, and ethnic skin reactivity.
+ * MIRRR — Sensitive Skin and Reactive Skin (Multicultural Focus)
+ * Rosacea, eczema, contact dermatitis, barrier dysfunction, and skin-of-colour reactivity.
  */
 
 export const SENSITIVE_SKIN_SCIENCE = {
@@ -19,7 +19,7 @@ export const SENSITIVE_SKIN_SCIENCE = {
 };
 
 export const ECZEMA_ETHNIC = {
-  title: 'Atopic Dermatitis (Eczema) in Ethnic Skin',
+  title: 'Atopic Dermatitis (Eczema) in Skin of Colour',
   
   presentation: {
     darkSkin: 'Eczema presentation in Fitzpatrick IV-VI skin: redness (erythema) may be difficult to detect against melanin-rich skin — the inflammation appears as ashy grey, purple, or dark brown patches rather than the classic red patches described in textbooks (which were written for Fitzpatrick I-III skin); this leads to systematic underdiagnosis and later diagnosis in darker-skinned children; the itch-scratch cycle causes PIH (hyperpigmentation at eczema sites that persists long after the active eczema resolves); follicular eczema (small bumps around hair follicles — more common in dark skin) is a distinct pattern not always recognised by practitioners unfamiliar with dark skin presentations',
@@ -40,7 +40,7 @@ export const ECZEMA_ETHNIC = {
 };
 
 export const ROSACEA_ETHNIC = {
-  title: 'Rosacea in Ethnic Skin',
+  title: 'Rosacea in Skin of Colour',
   
   subtypes: {
     erythematotelangiectatic: 'ETR (Subtype 1): Persistent facial redness; flushing; telangiectasia (visible broken capillaries); burning and stinging; sun and heat triggers; in dark skin: the redness/erythema is difficult to see; the flushing is felt rather than seen; persistent discomfort, burning, and stinging are the primary symptoms leading to consultation',
@@ -55,7 +55,7 @@ export const ROSACEA_ETHNIC = {
 };
 
 export const CONTACT_DERMATITIS_ETHNIC = {
-  title: 'Contact Dermatitis in Ethnic Skin',
+  title: 'Contact Dermatitis in Skin of Colour',
   types: {
     irritant: 'Irritant Contact Dermatitis (ICD): by far the most common form; caused by direct cytotoxic damage from a chemical (not immune-mediated); anyone can develop ICD with sufficient concentration/time of exposure; common beauty-product ICD triggers: sodium lauryl sulphate (SLS) in cleansers; retinoids (especially first weeks of use); glycolic acid; high-percentage vitamin C; propylene glycol; fragrances at high concentration; preservatives',
     allergic: 'Allergic Contact Dermatitis (ACD): immune-mediated (Type IV T-cell hypersensitivity); requires prior sensitisation; the most important ACD allergens in beauty products: fragrance (the #1 cause of cosmetic ACD globally — fragrance mix I and II; hydroxyisohexyl 3-cyclohexene carboxaldehyde (HICC) — now banned in EU/UK); preservatives (methylisothiazolinone and methylchloroisothiazolinone (MI/MCI) — banned in leave-on cosmetics in EU; formaldehyde releasers: DMDM hydantoin, diazolidinyl urea, imidazolidinyl urea, quaternium-15; parabens — rarely cause ACD despite being commonly suspected); hair dye PPD (paraphenylenediamine — the most common cause of hair dye ACD; can cause severe reactions including facial oedema, anaphylaxis; PPD cross-reacts with certain sunscreen agents, local anaesthetics, sulfa drugs); nickel in jewellery and some metallic accessories'
@@ -69,7 +69,7 @@ export const CONTACT_DERMATITIS_ETHNIC = {
 };
 
 export const SKIN_BARRIER_REPAIR = {
-  title: 'Skin Barrier Repair for Sensitive Ethnic Skin',
+  title: 'Skin Barrier Repair for Sensitive Skin of Colour',
   
   niacinamide: 'Niacinamide (vitamin B3): multiple mechanisms relevant to sensitive skin: supports ceramide synthesis (boosts the skin\'s own ceramide production); reduces TEWL; anti-inflammatory (reduces inflammatory cytokines); reduces PIH (inhibits melanosome transfer from melanocyte to keratinocyte — key step in pigmentation); reduces pore appearance; well-tolerated at 2-10%; safe for Fitzpatrick IV-VI; essentially no sensitisation risk',
   moisturisers: {
@@ -84,7 +84,7 @@ export const ETHNIC_SENSITIVE_SKIN_GUIDES = {
     community: 'West African',
     
     barrierCare: 'Barrier repair is critical in West African skin: the traditional use of shea butter and natural oils reflects long-standing knowledge of sealing in moisture; unrefined shea butter is an occlusive and contains anti-inflammatory triterpene alcohols; layer approach: humectant (water, aloe, glycerin), then emollient (rosehip or squalane), then occlusive (shea butter or petrolatum) is a sound routine for barrier-compromised skin',
-    triggerIdentification: 'Common irritant triggers in West African communities: lye relaxers (chemical burns); tight braids (mechanical inflammation); heavy synthetic fragrance in popular ethnic hair and skin care products; skin-lightening products containing mercury, steroids, or hydroquinone at high concentrations (mercury is a public health emergency in West African and diaspora communities — banned but still in circulation; contact dermatitis and systemic toxicity risk)',
+    triggerIdentification: 'Common irritant triggers in West African communities: lye relaxers (chemical burns); tight braids (mechanical inflammation); heavy synthetic fragrance in popular textured hair and skin care products; skin-lightening products containing mercury, steroids, or hydroquinone at high concentrations (mercury is a public health emergency in West African and diaspora communities — banned but still in circulation; contact dermatitis and systemic toxicity risk)',
     routineForSensitiveWestAfrican: 'Sensitive skin routine: gentle sulfate-free cleanser (or cleansing oil); niacinamide serum; ceramide moisturiser; unrefined shea butter as occlusive if needed; broad-spectrum SPF 30+ (chemical formula to avoid white cast); fragrance-free throughout'
   },
   'south-asian': {

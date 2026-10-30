@@ -1,7 +1,7 @@
 /**
  * MIRRR Minimalist Beauty Guide
  * Skinimalism, capsule makeup, 5-minute routines, no-makeup makeup,
- * skincare-first philosophy, and ethnic minimalist traditions
+ * skincare-first philosophy, and multicultural minimalist traditions
  */
 
 // ─── OVERVIEW ─────────────────────────────────────────────────────────────────

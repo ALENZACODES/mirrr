@@ -1,5 +1,5 @@
 /**
- * MIRRR — Colour Theory for Ethnic Skin Tones
+ * MIRRR — Colour Theory for Melanin-Rich Skin Tones
  * Undertones, colour matching, makeup colour theory, all 9 communities.
  */
 

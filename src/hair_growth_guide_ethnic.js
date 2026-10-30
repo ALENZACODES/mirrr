@@ -1,6 +1,6 @@
 /**
- * MIRRR — Hair Growth and Hair Loss Guide (Ethnic Focus)
- * Alopecia, telogen effluvium, traction alopecia, and growth for ethnic hair.
+ * MIRRR — Hair Growth and Hair Loss Guide (Multicultural Focus)
+ * Alopecia, telogen effluvium, traction alopecia, and growth for textured hair.
  */
 
 export const HAIR_GROWTH_SCIENCE = {
@@ -147,7 +147,7 @@ export const ETHNIC_HAIR_GROWTH_GUIDES = {
   },
   'black-american': {
     community: 'Black American',
-    hairType: 'Predominantly Type 4 (4A, 4B, 4C) with representation across all curl types due to the African American diaspora\'s diverse genetic heritage; Black American hair is the most researched ethnic hair type in the cosmetic science and dermatology literature',
+    hairType: 'Predominantly Type 4 (4A, 4B, 4C) with representation across all curl types due to the African American diaspora\'s diverse genetic heritage; Black American hair is the most researched textured hair type in the cosmetic science and dermatology literature',
     naturalHairMovement: 'The Black American natural hair movement has a rich political history: the Afro of the 1960s-70s Black Power era; the chemical relaxer era of the 1980s-2000s; the post-2009 "good hair" documentary (Chris Rock; following a conversation with his daughter about "good hair" — straight European-type hair — vs natural Black hair) and YouTube natural hair creators sparking the modern natural hair movement; the acceptance of natural hair in professional settings (CROWN Act — Creating a Respectful and Open World for Natural Hair — passed in California 2019, now passed in 24 states) remains an ongoing civil rights issue',
     crownAct: 'The CROWN Act: prohibits discrimination based on hair texture and protective hairstyles (locs, twists, braids, Bantu knots, Afros) in workplaces and schools; has passed in 24 US states as of 2024; still pending at the federal level; represents the intersection of hair, race, and civil rights',
     relaxerAndHealth: 'Chemical relaxers (sodium or potassium hydroxide — "lye"; guanidine hydroxide — "no-lye"): permanently straighten hair by breaking the S-S disulfide bonds in the hair\'s protein structure; a 2022 NIH (NIEHS Sister Study) analysis linked frequent use of hair straighteners to a higher risk of uterine cancer; the relaxer transition (transitioning from relaxed to natural hair) requires managing the line of demarcation (where natural meets relaxed — the weakest point) and protecting hair during the process'

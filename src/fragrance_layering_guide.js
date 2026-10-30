@@ -1,6 +1,6 @@
 /**
  * MIRRR Fragrance Layering Guide
- * The art of building signature scents from ethnic fragrance traditions
+ * The art of building signature scents from multicultural fragrance traditions
  * Oud, rose, jasmine, musk, sandalwood, and beyond
  */
 

@@ -1,5 +1,5 @@
 /**
- * nail_artistry.js — Ethnic nail art and nail beauty database for MIRRR
+ * nail_artistry.js — Multicultural nail art and nail beauty database for MIRRR
  * Traditional nail art, community trends, techniques, and colour guides
  */
 

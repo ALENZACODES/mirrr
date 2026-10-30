@@ -1,7 +1,7 @@
 /**
  * MIRRR Hair Growth Science
  * Hair growth cycle, DHT and androgenetic alopecia,
- * scalp health, growth-promoting ingredients, ethnic hair growth patterns
+ * scalp health, growth-promoting ingredients, textured hair growth patterns
  */
 
 // ─── HAIR GROWTH CYCLE ────────────────────────────────────────────────────────
@@ -110,7 +110,7 @@ export const ANDROGENETIC_ALOPECIA = {
       name: 'Hair Transplant (FUE, FUT)',
       FUE: 'Follicular Unit Extraction — individual follicle units extracted and transplanted. Most common modern technique. Minimally scarring.',
       FUT: 'Follicular Unit Transplantation — strip of scalp removed; individual follicles dissected and transplanted. Leaves linear scar at donor site.',
-      ethnic_note: 'Hair transplant in Type 3-4 hair: requires a surgeon experienced in ethnic hair. Coily follicles are curved under the scalp — extraction technique must account for this to avoid follicle transection.',
+      ethnic_note: 'Hair transplant in Type 3-4 hair: requires a surgeon experienced in textured hair. Coily follicles are curved under the scalp — extraction technique must account for this to avoid follicle transection.',
     },
     LLLT: {
       name: 'LLLT (Low-Level Laser Therapy)',

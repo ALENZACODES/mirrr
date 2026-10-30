@@ -27,7 +27,7 @@ export const INGREDIENTS_TO_AVOID = {
     concern: 'Mercury is a neurotoxin. Causes kidney damage, neurological damage, skin damage, and can harm unborn children and breastfed infants.',
     regulatoryStatus: {
       worldwide: 'BANNED in cosmetics in most regulated markets',
-      reality: 'Still present in unregulated products sold in grey markets, ethnic beauty shops, and online',
+      reality: 'Still present in unregulated products sold in grey markets, multicultural beauty shops, and online',
     },
     risk: 'SEVERE — neurotoxic and nephrotoxic at low concentrations',
     identification: 'Appears on labels as: Mercury, Mercurous chloride, Calomel, Mercuric, Mercurio',

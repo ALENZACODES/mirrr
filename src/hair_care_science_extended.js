@@ -1,7 +1,7 @@
 /**
  * MIRRR Hair Care Science Extended
  * Protein treatments, bond repair, porosity deep dive,
- * hair biology, chemical damage science, and ethnic hair science
+ * hair biology, chemical damage science, and textured hair science
  */
 
 // ─── HAIR BIOLOGY ─────────────────────────────────────────────────────────────

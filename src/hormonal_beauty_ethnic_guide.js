@@ -1,7 +1,7 @@
 /**
- * MIRRR — Hormonal Beauty Ethnic Guide
+ * MIRRR — Hormonal Beauty Multicultural Guide
  * Hormones and skin/hair from puberty through menopause, by community
- * Topics: estrogen, progesterone, androgens, thyroid, cortisol, insulin, ethnic patterns
+ * Topics: estrogen, progesterone, androgens, thyroid, cortisol, insulin, multicultural patterns
  */
 
 // ============================================================

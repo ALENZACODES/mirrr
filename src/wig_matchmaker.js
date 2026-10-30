@@ -167,8 +167,8 @@ export const WIG_CATALOGUE = [
     archetype_fit: ['afro_glam', 'clean_minimal'],
     communities: ['west_african'],
     hair_vibe_match: ['natural-afro', 'braided'],
-    tags: ['cultural', 'traditional', 'tribal', 'statement'],
-    description: 'Traditional Fulani braids with centre part and accessories — heritage beauty.',
+    tags: ['cultural', 'traditional', 'heritage', 'statement'],
+    description: 'Fulani braids, named for the Fulani (Fulɓe) people of West Africa and the Sahel: a centre part, braids framing the face, and beads or cowries. A proud heritage style.',
   },
   {
     id: 'goddess_braids',

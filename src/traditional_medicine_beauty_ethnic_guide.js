@@ -1,5 +1,5 @@
 /**
- * MIRRR — Traditional Medicine & Beauty Ethnic Guide
+ * MIRRR — Traditional Medicine & Beauty Multicultural Guide
  * How ancient healing systems across ethnic communities
  * intersect with beauty: Ayurveda, TCM, Unani, Yoruba Ifa,
  * Ethiopian traditional medicine, and more.

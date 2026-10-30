@@ -1,5 +1,5 @@
 /**
- * MIRRR — Sleep Beauty Ethnic Guide
+ * MIRRR — Sleep Beauty Multicultural Guide
  * The science of beauty sleep and repair, protective nighttime practices by community
  * Topics: circadian rhythm, growth hormone, silk bonnets, satin pillowcases, nighttime routines,
  *         overnight treatments, hair protection, pre-sleep skincare, sleep deprivation effects

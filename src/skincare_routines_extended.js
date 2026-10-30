@@ -149,7 +149,7 @@ export const ACTIVE_INGREDIENTS = {
       AHA: ['dull skin', 'dark spots', 'rough texture', 'anti-aging'],
       BHA: ['oily skin', 'acne', 'blackheads', 'clogged pores'],
     },
-    ethnicNote: 'For melanin-rich skin: mandelic acid (AHA) is gentlest for beginners — larger molecule, slower absorption, less irritation. Salicylic acid is safe and excellent for ethnic acne-prone skin.',
+    ethnicNote: 'For melanin-rich skin: mandelic acid (AHA) is gentlest for beginners — larger molecule, slower absorption, less irritation. Salicylic acid is safe and excellent for multicultural acne-prone skin.',
     productPick: {
       AHA_budget: 'The Ordinary AHA 30% + BHA 2% Peeling Solution ($12 — once weekly max)',
       AHA_mid: 'Paula\'s Choice 8% AHA Gel Exfoliant ($32)',
@@ -164,7 +164,7 @@ export const ACTIVE_INGREDIENTS = {
     bestFor: ['sensitive skin', 'post-treatment recovery', 'eczema', 'rosacea', 'acne-healing'],
     pairsWell: ['everything — centella is a peacemaker ingredient'],
     productPick: { budget: 'Purito Centella Green Level Unscented Serum ($22)', mid: 'Dr. Jart+ Cicapair Tiger Grass Serum ($52)', luxury: 'La Mer Concentrate ($195)' },
-    ethnicNote: 'A STAPLE for all ethnic skin types. K-beauty popularised it but it\'s been used in Ayurveda (as Gotu Kola) and African traditional medicine for centuries.',
+    ethnicNote: 'A STAPLE for all melanin-rich skin types. K-beauty popularised it but it\'s been used in Ayurveda (as Gotu Kola) and African traditional medicine for centuries.',
   },
   spf: {
     name: 'Sunscreen',

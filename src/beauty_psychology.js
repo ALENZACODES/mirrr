@@ -191,7 +191,7 @@ export const CONFIDENCE_AND_BEAUTY = {
   },
 
   cultural_affirmation: {
-    ethnic_beauty_affirmation: 'For people whose ethnic features have been devalued by mainstream beauty standards, consciously affirming the beauty of ethnic-specific features (coily hair, dark skin, monolid eyes, full lips, strong nose bridges) is more than aesthetic — it is psychological resistance to harmful narratives.',
+    ethnic_beauty_affirmation: 'For people whose heritage features have been devalued by mainstream beauty standards, consciously affirming the beauty of culture-specific features (coily hair, dark skin, monolid eyes, full lips, strong nose bridges) is more than aesthetic — it is psychological resistance to harmful narratives.',
     representation: 'Seeing people who look like you represented as beautiful in media, art, and advertising has measurable positive effects on self-image. Seeking out representation — following creators, consuming media that reflects your ethnicity — actively supports this.',
   },
 };

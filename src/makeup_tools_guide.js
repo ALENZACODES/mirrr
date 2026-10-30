@@ -1,6 +1,6 @@
 /**
  * MIRRR Makeup Tools Guide
- * Brushes, sponges, applicators — and how to use them for ethnic skin
+ * Brushes, sponges, applicators — and how to use them for skin of colour
  * Includes tool care and budget vs. investment breakdown
  */
 

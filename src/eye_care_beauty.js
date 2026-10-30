@@ -1,7 +1,7 @@
 /**
  * MIRRR Eye Care Beauty Guide
  * Dark circles causes and treatments, puffiness, undereye skincare,
- * eye creams, milia, and ethnic undereye considerations
+ * eye creams, milia, and multicultural undereye considerations
  */
 
 // ─── EYE AREA OVERVIEW ───────────────────────────────────────────────────────

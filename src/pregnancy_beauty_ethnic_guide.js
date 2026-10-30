@@ -1,5 +1,5 @@
 // pregnancy_beauty_ethnic_guide.js
-// Ethnic pregnancy beauty guides covering 9 communities + universal section
+// Multicultural pregnancy beauty guides covering 9 communities + universal section
 // All content is for informational purposes only — always consult a healthcare provider
 
 export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {

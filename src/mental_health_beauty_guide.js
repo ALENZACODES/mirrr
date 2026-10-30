@@ -1,5 +1,5 @@
 /**
- * MIRRR — Mental Health and Beauty Rituals (Ethnic Focus)
+ * MIRRR — Mental Health and Beauty Rituals (Multicultural Focus)
  * Self-care, wellbeing, beauty as therapy, and ethnic community mental health.
  */
 

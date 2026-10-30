@@ -1,7 +1,7 @@
 /**
  * MIRRR Mature Beauty Guide
  * Skin changes at 40+, 50+, 60+; effective anti-aging ingredients;
- * non-surgical treatments; ethnic aging patterns; mature hair care
+ * non-surgical treatments; multicultural aging patterns; mature hair care
  */
 
 // ─── UNDERSTANDING SKIN AGING ─────────────────────────────────────────────────
@@ -191,7 +191,7 @@ export const NON_SURGICAL_TREATMENTS = {
         Radiesse: 'Calcium hydroxylapatite — stimulates collagen; not reversible. Hands and jawline.',
         Sculptra: 'Poly-L-lactic acid — collagen biostimulator; results build over months; longevity 2+ years.',
       },
-      ethnic_note: 'Filler placement needs to respect ethnic facial proportions. A skilled injector experienced with ethnic faces (East Asian, South Asian, Black, Latina) is essential — inappropriate filler placement can westernise or flatten naturally beautiful ethnic features.',
+      ethnic_note: 'Filler placement needs to respect heritage facial proportions. A skilled injector experienced with heritage faces (East Asian, South Asian, Black, Latina) is essential — inappropriate filler placement can westernise or flatten naturally beautiful heritage features.',
       risks: 'Vascular occlusion (injection into blood vessel) is the most serious risk — can cause skin necrosis or blindness if ophthalmic artery affected. Always choose board-certified practitioners.',
     },
   },
@@ -229,7 +229,7 @@ export const NON_SURGICAL_TREATMENTS = {
   professional_treatments: {
     chemical_peels: {
       superficial: 'Glycolic acid 10-30% or lactic acid peels. Safe for most skin tones with correct protocol. Brightening; texture improvement.',
-      medium: 'TCA (trichloroacetic acid) 20-35%. Significant downtime. Moderate PIH risk for Fitzpatrick III-VI — must be done by expert in ethnic skin.',
+      medium: 'TCA (trichloroacetic acid) 20-35%. Significant downtime. Moderate PIH risk for Fitzpatrick III-VI — must be done by expert in skin of colour.',
       deep: 'Phenol peels. HIGHEST PIH risk; permanently lightens skin; not recommended for Fitzpatrick III-VI.',
       
     },

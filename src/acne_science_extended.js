@@ -1,7 +1,7 @@
 /**
  * MIRRR Acne Science Extended
  * Types of acne, comedones, cystic, hormonal, treatment ladders,
- * ethnic skin acne differences, and PIH prevention
+ * skin-of-colour acne differences, and PIH prevention
  */
 
 // ─── ACNE OVERVIEW ────────────────────────────────────────────────────────────

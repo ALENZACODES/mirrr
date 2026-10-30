@@ -1,5 +1,5 @@
 /**
- * MIRRR — Fragrance Guide (Ethnic Perspectives)
+ * MIRRR — Fragrance Guide (Multicultural Perspectives)
  * The complete guide to fragrance, perfumery, traditional scents,
  * and fragrance culture across all 9 ethnic communities.
  */

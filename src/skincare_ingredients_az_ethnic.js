@@ -1,6 +1,6 @@
 /**
- * MIRRR — Skincare Ingredients A-Z: Ethnic Skin Focus
- * Comprehensive ingredient reference with ethnic skin considerations.
+ * MIRRR — Skincare Ingredients A-Z: Skin-of-Colour Focus
+ * Comprehensive ingredient reference with skin-of-colour considerations.
  */
 
 export const INGREDIENTS_A_TO_E = {

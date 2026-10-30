@@ -1,7 +1,7 @@
 /**
  * MIRRR — Skincare Ingredients Encyclopedia
  * Comprehensive A-Z guide to skincare active ingredients, mechanisms,
- * evidence, safety for ethnic skin types, and ethnic community applications.
+ * evidence, safety for melanin-rich skin types, and ethnic community applications.
  */
 
 export const VITAMIN_C_GUIDE = {
@@ -233,7 +233,7 @@ export const HYDROQUINONE_GUIDE = {
 };
 
 export const SUNSCREEN_ACTIVE_INGREDIENTS = {
-  title: 'Sunscreen Active Ingredients for Ethnic Skin',
+  title: 'Sunscreen Active Ingredients for Skin of Colour',
   mineral: {
     zinc: {
       name: 'Zinc Oxide',

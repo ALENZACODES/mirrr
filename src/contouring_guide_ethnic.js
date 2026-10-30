@@ -136,8 +136,8 @@ export const NOSE_CONTOURING = {
   overview: 'Nose contouring is highly personal and culturally complex. It can make noses appear slimmer, wider, shorter, or longer. Before diving into techniques, a note on cultural context.',
 
   cultural_context: {
-    note: 'Nose contouring for "slimming" or Europeanising the nose shape has been controversial in ethnic beauty spaces. Many South Asian, African, Arab, and Latina women have been made to feel their natural nose shapes are undesirable — this is rooted in colonialism and Eurocentric beauty standards.',
-    empowerment: 'The goal of nose contouring should be to ENHANCE your features the way you want to — not to make an ethnic nose look less ethnic. A wide, rounded nose is beautiful. A prominent bridge is beautiful. A flat bridge is beautiful.',
+    note: 'Nose contouring for "slimming" or Europeanising the nose shape has been controversial in multicultural beauty spaces. Many South Asian, African, Arab, and Latina women have been made to feel their natural nose shapes are undesirable — this is rooted in colonialism and Eurocentric beauty standards.',
+    empowerment: 'The goal of nose contouring should be to ENHANCE your features the way you want to — not to make an heritage nose look less ethnic. A wide, rounded nose is beautiful. A prominent bridge is beautiful. A flat bridge is beautiful.',
     equally_valid: 'Contouring to slim the nose is equally valid as leaving it alone or contouring to add definition. The choice belongs to the person.',
   },
 

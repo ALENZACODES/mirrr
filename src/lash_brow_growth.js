@@ -1,7 +1,7 @@
 /**
  * MIRRR — Lash & Brow Growth Guide
  * Serum science, castor oil tradition, lash extensions, threading,
- * brow shaping for ethnic face shapes, and growth cycle biology.
+ * brow shaping for heritage face shapes, and growth cycle biology.
  */
 
 export const LASH_BROW_BIOLOGY = {
@@ -68,7 +68,7 @@ export const LASH_GROWTH_SERUMS = {
 };
 
 export const BROW_SHAPING_GUIDE = {
-  title: 'Brow Shaping: Methods, Techniques & Ethnic Face Shapes',
+  title: 'Brow Shaping: Methods, Techniques & Heritage Face Shapes',
   shapingMethods: {
     threading: {
       description: 'Cotton thread twisted and rolled over skin to trap and pull multiple hairs simultaneously',

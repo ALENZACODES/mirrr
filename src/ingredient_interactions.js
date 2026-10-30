@@ -2,7 +2,7 @@
  * MIRRR Ingredient Interactions Guide
  * What skincare ingredients to combine, what to separate,
  * layering order, AM vs PM routines, and the science behind
- * ingredient compatibility — critical for ethnic skin safety
+ * ingredient compatibility — critical for skin-of-colour safety
  */
 
 // ─── WHY INTERACTIONS MATTER ──────────────────────────────────────────────────

@@ -1,6 +1,6 @@
 /**
  * MIRRR Colour Theory for Makeup
- * Complete colour science applied to ethnic beauty
+ * Complete colour science applied to multicultural beauty
  * Colour correction, colour theory, seasonal palettes for melanin-rich skin
  */
 
@@ -13,7 +13,7 @@ export const COLOUR_WHEEL = {
     blue: { hex: '#0000FF', makeup_role: 'Correction for extreme redness on fair skin' },
   },
   secondary: {
-    orange: { hex: '#FF8000', makeup_role: 'CRITICAL for ethnic skin — corrects blue-black dark circles and deep hyperpigmentation; peach on medium skin, deep orange/red-orange on deep skin' },
+    orange: { hex: '#FF8000', makeup_role: 'CRITICAL for skin of colour — corrects blue-black dark circles and deep hyperpigmentation; peach on medium skin, deep orange/red-orange on deep skin' },
     green: { hex: '#00FF00', makeup_role: 'Corrects redness, erythema, PIH redness on lighter skin tones' },
     purple_violet: { hex: '#8000FF', makeup_role: 'Corrects yellow-sallowness in complexion; also used to "cancel" yellow undertones in orange tan' },
   },
@@ -59,7 +59,7 @@ export const COMPLEMENTARY_PAIRS = {
 // ─── COLOUR CORRECTION BY SKIN TONE ──────────────────────────────────────────
 
 export const COLOUR_CORRECTION_BY_FITZPATRICK = {
-  principle: 'The key insight for ethnic skin: the same colour concern (dark circles, PIH) looks different on different skin tones and therefore requires DIFFERENT correctors. A peach corrector that works perfectly on medium skin will be invisible on dark skin.',
+  principle: 'The key insight for skin of colour: the same colour concern (dark circles, PIH) looks different on different skin tones and therefore requires DIFFERENT correctors. A peach corrector that works perfectly on medium skin will be invisible on dark skin.',
 
   fitzpatrick_i_ii: {
     label: 'Fitzpatrick I-II — Fair to Light',
@@ -301,7 +301,7 @@ export const COLOUR_FOR_SKIN_TONE = {
 // ─── SEASONAL COLOUR ANALYSIS FOR ETHNIC SKIN ─────────────────────────────────
 
 export const SEASONAL_COLOUR_ANALYSIS = {
-  overview: 'Seasonal colour analysis (SCA) was developed for primarily European skin tones. The original "Spring/Summer/Autumn/Winter" categories assume fair to medium skin. Modern SCA has been expanded to include all skin tones but needs thoughtful application for ethnic skin.',
+  overview: 'Seasonal colour analysis (SCA) was developed for primarily European skin tones. The original "Spring/Summer/Autumn/Winter" categories assume fair to medium skin. Modern SCA has been expanded to include all skin tones but needs thoughtful application for skin of colour.',
 
   criticism: 'Traditional seasonal colour analysis was built mostly around lighter, Northern European colouring, so it is less directly applicable to very deep skin tones, though the principles of contrast (high vs low) and undertone (warm vs cool) remain relevant.',
 

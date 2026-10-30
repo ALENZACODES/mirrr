@@ -1,7 +1,7 @@
 /**
  * MIRRR K-Beauty Extended Guide
  * Korean skincare philosophy, 10-step routine, essence/ampoule/serum science,
- * sheet masks, glass skin technique, and K-Beauty influence on global ethnic beauty
+ * sheet masks, glass skin technique, and K-Beauty influence on global multicultural beauty
  */
 
 // ─── K-BEAUTY PHILOSOPHY ─────────────────────────────────────────────────────

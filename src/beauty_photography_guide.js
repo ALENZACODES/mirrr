@@ -1,7 +1,7 @@
 /**
  * MIRRR — Beauty Photography & Content Creation Guide
  * Makeup for photos and video, lighting theory, camera-ready skin,
- * content creator tips, ethnic skin photography.
+ * content creator tips, skin-of-colour photography.
  */
 
 export const PHOTOGRAPHY_FUNDAMENTALS = {

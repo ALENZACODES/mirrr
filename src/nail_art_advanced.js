@@ -1,7 +1,7 @@
 /**
  * MIRRR Advanced Nail Art & Nail Care Guide
  * Gel nails, acrylics, nail art techniques, nail health,
- * ethnic nail traditions, and community-specific practices
+ * multicultural nail traditions, and community-specific practices
  */
 
 // ─── NAIL ANATOMY ─────────────────────────────────────────────────────────────

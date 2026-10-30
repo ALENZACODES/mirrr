@@ -1,5 +1,5 @@
 /**
- * MIRRR Anti-Aging for Ethnic Skin
+ * MIRRR Anti-Aging for Skin of Colour
  * Age-positive, ethnicity-aware approach to skincare longevity
  * Celebrating the unique aging patterns of melanin-rich skin
  */
@@ -11,7 +11,7 @@ export const ETHNIC_AGING_FACTS = {
     fact: 'Higher melanin content gives some natural UV protection and reduces UV-driven collagen breakdown, though not enough to skip sunscreen',
     result: 'Melanin-rich skin (Fitzpatrick IV-VI) tends to show sun-driven wrinkles later than fair skin',
     tradeoff: 'BUT melanin-rich skin is far more prone to hyperpigmentation, dark spots, and uneven tone as its primary aging concern',
-    implication: 'For ethnic skin, anti-aging = anti-hyperpigmentation + evenness, not wrinkles primarily',
+    implication: 'For skin of colour, anti-aging = anti-hyperpigmentation + evenness, not wrinkles primarily',
   },
   primaryAgingConcerns: {
     fitzpatrick_I_II: ['wrinkles', 'sun-damage', 'age-spots (lighter)', 'redness', 'loss-of-firmness', 'volume-loss'],
@@ -94,8 +94,8 @@ export const LONGEVITY_PROTOCOLS = {
       allEthnicities: 'This decade, professional relationships with a dermatologist who understands your ethnicity\'s skin are worth investment.',
     },
     professionalTreatmentsForMelaninSkin: [
-      { treatment: 'Chemical Peels', safeFor: 'All Fitzpatrick types IF provider has ethnic skin experience', risks: 'PIH if wrong concentration or downtime not followed', recommended: 'Mandelic or lactic acid peels for Fitzpatrick IV-VI' },
-      { treatment: 'Microneedling', safeFor: 'Fitzpatrick I-VI with proper aftercare', risks: 'PIH if skin not properly prepped (use hydroquinone/retinoid for weeks before)', recommended: 'Yes — collagen induction is particularly effective for aging ethnic skin' },
+      { treatment: 'Chemical Peels', safeFor: 'All Fitzpatrick types IF provider has skin-of-colour experience', risks: 'PIH if wrong concentration or downtime not followed', recommended: 'Mandelic or lactic acid peels for Fitzpatrick IV-VI' },
+      { treatment: 'Microneedling', safeFor: 'Fitzpatrick I-VI with proper aftercare', risks: 'PIH if skin not properly prepped (use hydroquinone/retinoid for weeks before)', recommended: 'Yes — collagen induction is particularly effective for aging skin of colour' },
       { treatment: 'Nd:YAG Laser', safeFor: 'Fitzpatrick IV-VI specifically', risks: 'Low risk compared to ablative lasers', recommended: 'For dark spots and hair removal on deeper skin tones' },
       { treatment: 'Ablative CO2 Laser', safeFor: 'Fitzpatrick I-III only', risks: 'SEVERE PIH risk for Fitzpatrick IV-VI. Life-altering damage possible.', recommended: 'NOT recommended for deeper skin tones without extreme caution' },
     ],

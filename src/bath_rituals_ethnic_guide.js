@@ -1,5 +1,5 @@
 /**
- * MIRRR — Bath & Bathing Rituals Ethnic Guide
+ * MIRRR — Bath & Bathing Rituals Multicultural Guide
  * Global bathing traditions, their science, and cultural significance
  * Topics: hammam, onsen, jjimjilbang, sauna, steam, milk baths, ritual bathing
  */

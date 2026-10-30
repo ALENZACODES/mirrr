@@ -1,5 +1,5 @@
 /**
- * skin_rituals.js — Traditional ethnic skincare rituals database for MIRRR
+ * skin_rituals.js — Traditional skin of colourcare rituals database for MIRRR
  * Ancient rituals, modern adaptations, community-specific routines
  */
 

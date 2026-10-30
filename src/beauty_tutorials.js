@@ -1,5 +1,5 @@
 /**
- * beauty_tutorials.js — Step-by-step ethnic beauty tutorials for MIRRR
+ * beauty_tutorials.js — Step-by-step multicultural beauty tutorials for MIRRR
  * Detailed guides for looks, techniques, and traditional rituals
  */
 

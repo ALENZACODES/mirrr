@@ -1,5 +1,5 @@
 /**
- * MIRRR — Wellness & Beauty Ethnic Guide
+ * MIRRR — Wellness & Beauty Multicultural Guide
  * Holistic wellness practices that directly impact beauty outcomes
  * across all 9 ethnic communities. Covers Ayurveda, TCM (Traditional
  * Chinese Medicine), African healing traditions, Caribbean folk medicine,

@@ -110,7 +110,7 @@ export const BODY_OILING_TRADITIONS = {
 };
 
 export const DEODORANT_GUIDE = {
-  title: 'Deodorant, Antiperspirant & Ethnic Skin',
+  title: 'Deodorant, Antiperspirant & Skin of Colour',
   antiperspirantVsDeodorant: {
     antiperspirant: 'Antiperspirants contain aluminium salts (aluminium chlorohydrate, aluminium zirconium) that temporarily block sweat ducts, reducing sweating; they are regulated as over-the-counter drug products in the US because they affect a body function (perspiration)',
     deodorant: 'Deodorants do not reduce sweating; they work by masking or neutralising odour through fragrance, baking soda (which neutralises acidic sweat), or antimicrobial ingredients that reduce odour-causing bacteria; they are cosmetic products',

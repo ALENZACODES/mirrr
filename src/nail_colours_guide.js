@@ -1,7 +1,7 @@
 /**
  * MIRRR Nail Colours Guide
  * Colour theory for nails, shades by skin tone, seasonal palettes,
- * finish types, nail shape guide, and ethnic nail colour traditions
+ * finish types, nail shape guide, and multicultural nail colour traditions
  */
 
 // ─── NAIL COLOUR THEORY ───────────────────────────────────────────────────────

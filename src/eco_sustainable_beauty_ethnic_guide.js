@@ -1,5 +1,5 @@
 /**
- * Eco Sustainable Beauty Ethnic Guide
+ * Eco Sustainable Beauty Multicultural Guide
  * A comprehensive guide to sustainable and eco-conscious beauty practices
  * rooted in traditional knowledge across nine cultural communities.
  *

@@ -1,5 +1,5 @@
 /**
- * MIRRR — Lip Care Ethnic Guide
+ * MIRRR — Lip Care Multicultural Guide
  * Comprehensive lip health, beauty, and care traditions for all 9 ethnic communities.
  * Covers lip hyperpigmentation, traditional balms, color theory for deep skin tones,
  * and culturally specific lip beauty practices.

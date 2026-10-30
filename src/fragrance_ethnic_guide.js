@@ -1,5 +1,5 @@
 /**
- * MIRRR — Fragrance & Scent Ethnic Guide
+ * MIRRR — Fragrance & Scent Multicultural Guide
  * Perfumery science, oud and attars, cultural scent traditions, fragrance notes by community
  * Topics: fragrance chemistry, longevity on different skin, cultural olfactory traditions, 9 communities
  */

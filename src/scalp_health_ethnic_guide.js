@@ -1,5 +1,5 @@
 /**
- * MIRRR — Scalp Health Ethnic Guide
+ * MIRRR — Scalp Health Multicultural Guide
  * Scalp microbiome, seborrheic dermatitis, scalp conditions, traction alopecia, hair loss by community
  * Topics: scalp biology, dandruff, sebderm, alopecia, scalp care routines, community scalp traditions
  */
@@ -114,7 +114,7 @@ export const SCALP_CARE_PROTOCOLS = {
     
     technique: 'Fingertips (not nails) in circular motion; gentle pressure; move through scalp systematically; 4-5 minutes',
     tools: 'Silicone scalp massager: increases circulation; helps distribute product; safe for all hair types',
-    oil: 'Scalp massage with oil: traditional across almost all ethnic beauty traditions; castor oil most studied for hair growth (ricinoleic acid receptor activity)'
+    oil: 'Scalp massage with oil: traditional across almost all multicultural beauty traditions; castor oil most studied for hair growth (ricinoleic acid receptor activity)'
   },
 
   oilRituals: {

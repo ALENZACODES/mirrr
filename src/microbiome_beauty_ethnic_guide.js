@@ -1,5 +1,5 @@
 /**
- * MIRRR — Skin Microbiome Beauty Ethnic Guide
+ * MIRRR — Skin Microbiome Beauty Multicultural Guide
  * The science of the skin microbiome — the trillions of bacteria, fungi,
  * and other microorganisms that live on our skin — and how different
  * ethnic communities' traditional practices have unknowingly (and knowingly)

@@ -1,7 +1,7 @@
 /**
  * MIRRR — Teen & Young Adult Beauty Guide
  * Age-appropriate first beauty routines, puberty skin changes,
- * ethnic acne patterns, and gentle guidance for Fitzpatrick I–VI teens.
+ * multicultural acne patterns, and gentle guidance for Fitzpatrick I–VI teens.
  */
 
 export const TEEN_BEAUTY_OVERVIEW = {

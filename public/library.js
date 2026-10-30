@@ -21,7 +21,8 @@ const lib = {
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const humanize = k => String(k).replace(/([a-z])([A-Z])/g, '$1 $2').replace(/[_-]+/g, ' ').trim().toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+const humanize = k => String(k).replace(/([a-z])([A-Z])/g, '$1 $2').replace(/[_-]+/g, ' ').trim().toLowerCase().replace(/\b\w/g, c => c.toUpperCase())
+  .replace(/\bEthnic Skin\b/g, 'Skin Of Colour').replace(/\bEthnic Hair\b/g, 'Textured Hair').replace(/\bEthnic\b/g, 'Cultural').replace(/\bEthnicity\b/g, 'Heritage');
 
 function savedCommunity() {
   try { return JSON.parse(localStorage.getItem(PROFILE_KEY) || 'null')?.communityId ?? null; } catch { return null; }

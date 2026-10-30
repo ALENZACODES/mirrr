@@ -1,5 +1,5 @@
 /**
- * MIRRR — Exercise & Movement Beauty Ethnic Guide
+ * MIRRR — Exercise & Movement Beauty Multicultural Guide
  * The intersection of physical activity and beauty across ethnic communities.
  * Sweat science, post-workout skincare, active hairstyles, sport-specific
  * beauty routines, and how movement traditions from each community support

@@ -1,7 +1,7 @@
 /**
- * MIRRR — Scalp Care Guide (Ethnic Perspectives)
+ * MIRRR — Scalp Care Guide (Multicultural Perspectives)
  * Complete scalp anatomy, conditions, care routines, scalp treatments,
- * and ethnic scalp care across all 9 communities.
+ * and multicultural scalp care across all 9 communities.
  */
 
 export const SCALP_ANATOMY = {

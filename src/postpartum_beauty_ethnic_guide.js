@@ -1,5 +1,5 @@
 /**
- * MIRRR — Postpartum Beauty Ethnic Guide
+ * MIRRR — Postpartum Beauty Multicultural Guide
  * Beauty, wellness, and self-care practices during the postpartum period
  * across all 9 ethnic communities. The "fourth trimester" is one of the most
  * culturally rich and culturally distinct periods in a woman's beauty journey.

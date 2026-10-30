@@ -1,5 +1,5 @@
 /**
- * MIRRR — Hair Color Ethnic Guide
+ * MIRRR — Hair Color Multicultural Guide
  * Comprehensive guidance on hair coloring, dyeing, bleaching, henna,
  * natural tints, and color theory across all 9 ethnic communities.
  * Covers cultural significance of hair color, protection for natural

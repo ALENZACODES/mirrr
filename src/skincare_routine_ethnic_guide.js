@@ -1,5 +1,5 @@
 /**
- * MIRRR — Complete Skincare Routine Ethnic Guide
+ * MIRRR — Complete Skincare Routine Multicultural Guide
  * Step-by-step AM and PM skincare routines tailored to each ethnic community's
  * skin characteristics, available ingredients, and cultural context. This is
  * the practical "what to actually do" guide — morning and evening routines

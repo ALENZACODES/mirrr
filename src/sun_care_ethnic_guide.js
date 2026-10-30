@@ -1,5 +1,5 @@
 /**
- * MIRRR — Sun Care Ethnic Guide
+ * MIRRR — Sun Care Multicultural Guide
  * Sun protection, UV damage treatment, and sunscreen guidance tailored to
  * all 9 ethnic communities. Addresses the unique SPF needs of melanin-rich skin
  * and counters the harmful myth that "Black people don't need sunscreen."

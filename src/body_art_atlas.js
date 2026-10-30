@@ -1,5 +1,5 @@
 /**
- * body_art_atlas.js — Ethnic body art and adornment database for MIRRR
+ * body_art_atlas.js — Multicultural body art and adornment database for MIRRR
  * Henna, scarification, body paint, jewellery, cultural adornment
  */
 

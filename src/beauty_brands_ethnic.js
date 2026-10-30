@@ -1,5 +1,5 @@
 /**
- * beauty_brands_ethnic.js — Full ethnic beauty brand landscape for MIRRR
+ * beauty_brands_ethnic.js — Full multicultural beauty brand landscape for MIRRR
  * Hair care, skincare, and wellness brands with ethnic community focus
  */
 
@@ -94,7 +94,7 @@ export const HAIR_CARE_BRANDS = {
     heroProducts: ['Jamaican Black Castor Oil Strengthen & Restore Shampoo', '100% Pure Jamaican Black Castor Oil', 'Coconut & Hibiscus Curl Enhancing Smoothie'],
     priceRange: '$',
     availability: 'Walmart, Target, CVS, Walgreens, everywhere',
-    story: 'Family recipe from Sierra Leone passed down from grandmother Sofi Tucker. Richelieu started selling at Harlem markets. Now the most accessible ethnic hair brand in America.',
+    story: 'Family recipe from Sierra Leone passed down from grandmother Sofi Tucker. Richelieu started selling at Harlem markets. Now the most accessible textured hair brand in America.',
     notes: 'The JBCO (Jamaican Black Castor Oil) line remains the brand\'s most culturally important product line.',
     tags: ['shea', 'west-african', 'sierra-leone', 'mass-market', 'heritage', 'accessible'],
   },
@@ -284,7 +284,7 @@ export const REGIONAL_BRAND_TRADITIONS = {
     keyIngredients: ['Teff (Ethiopian grain)', 'Tej (honey)', 'Khat (leaf)', 'Shea (regional variation)', 'Njeba (sesame)', 'Rose hip oil'],
     keyBrands: ['Msaidizi (Swahili beauty)', 'Hana naturals'],
     philosophy: 'Ancient agricultural ingredients applied to beauty. Fermented foods and honey traditions.',
-    culturalNotes: 'Ethiopian and Kenyan beauty traditions are some of the least-represented in mainstream ethnic beauty — one of the biggest gaps in the market.',
+    culturalNotes: 'Ethiopian and Kenyan beauty traditions are some of the least-represented in mainstream multicultural beauty — one of the biggest gaps in the market.',
   },
 
 };

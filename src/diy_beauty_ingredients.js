@@ -1,7 +1,7 @@
 /**
  * MIRRR DIY Beauty Ingredients
  * What works (aloe vera, honey, oat, rosehip), what doesn't,
- * what's actively dangerous, and ethnic kitchen beauty wisdom
+ * what's actively dangerous, and multicultural kitchen beauty wisdom
  */
 
 // ─── PHILOSOPHY ────────────────────────────────────────────────────────────────

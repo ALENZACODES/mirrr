@@ -1,12 +1,12 @@
 /**
- * MIRRR — Beauty Tools and Devices Guide (Ethnic Focus)
+ * MIRRR — Beauty Tools and Devices Guide (Multicultural Focus)
  * LED masks, gua sha, jade rollers, facial massagers, dermaplaning, and more.
  */
 
 export const BEAUTY_TOOLS_OVERVIEW = {
   title: 'At-Home Beauty Tools and Devices',
-  marketContext: 'The at-home beauty device market exceeded USD 40 billion globally in 2023 and is the fastest-growing segment of the beauty industry; devices range from evidence-based tools with clinical backing (FDA-cleared LED devices, microneedling rollers) to items with limited scientific support (jade rollers for "toxin removal", crystal facial tools); this module evaluates each tool against the available evidence and provides specific guidance for ethnic skin types',
-  evidenceStandard: 'We evaluate tools against: (1) mechanism of action — is the proposed mechanism biologically plausible? (2) clinical evidence — RCTs, controlled studies, FDA clearance; (3) safety for ethnic skin — specific considerations for Fitzpatrick III-VI; (4) cultural context — traditional uses and their scientific re-evaluation'
+  marketContext: 'The at-home beauty device market exceeded USD 40 billion globally in 2023 and is the fastest-growing segment of the beauty industry; devices range from evidence-based tools with clinical backing (FDA-cleared LED devices, microneedling rollers) to items with limited scientific support (jade rollers for "toxin removal", crystal facial tools); this module evaluates each tool against the available evidence and provides specific guidance for melanin-rich skin types',
+  evidenceStandard: 'We evaluate tools against: (1) mechanism of action — is the proposed mechanism biologically plausible? (2) clinical evidence — RCTs, controlled studies, FDA clearance; (3) safety for skin of colour — specific considerations for Fitzpatrick III-VI; (4) cultural context — traditional uses and their scientific re-evaluation'
 };
 
 export const LED_THERAPY_SCIENCE = {
@@ -18,7 +18,7 @@ export const LED_THERAPY_SCIENCE = {
       primaryTarget: 'Fibroblasts; mitochondria',
       effects: 'Stimulates collagen and elastin production; increases fibroblast proliferation; promotes wound healing; anti-inflammatory effects; 633nm is the most studied wavelength for anti-ageing',
       evidence: 'Wunsch & Matuschka (2014) RCT: red LED improved skin complexion, skin feeling, and collagen density measured by ultrasonography vs placebo; multiple case series and small RCTs demonstrate benefit for fine lines, skin texture, and wound healing',
-      ethnicSafety: 'Safe for all skin types including Fitzpatrick V-VI; no thermal mechanism means no PIH risk; suitable for ethnic skin'
+      ethnicSafety: 'Safe for all skin types including Fitzpatrick V-VI; no thermal mechanism means no PIH risk; suitable for skin of colour'
     },
     nearInfrared: {
       wavelength: '800-1100nm (near-infrared, NIR)',
@@ -53,7 +53,7 @@ export const LED_THERAPY_SCIENCE = {
   devices: {
     professionalVsHome: 'Professional in-clinic LED panels (e.g. Dermalux, LightStim Pro) deliver significantly higher irradiance than home devices; home devices are effective but require more frequent use; key specifications: wavelength accuracy (nm), irradiance (mW/cm²), treatment time',
     topHomeDevices: 'FDA-cleared devices include: CurrentBody Skin LED Light Therapy Mask (633nm red + 830nm NIR; £399 — well-evidenced, CE marked, FDA cleared); Omnilux Contour Face (633nm + 830nm; FDA cleared; published clinical studies); Dr Dennis Gross Spectralite FaceWare Pro (red + blue; FDA cleared); Foreo UFO 3 (combined red + blue + thermoelectric)',
-    ethnicConsiderations: 'LED therapy is genuinely one of the most skin-type-inclusive at-home technologies; the absence of a thermal mechanism makes it appropriate for all Fitzpatrick types; for ethnic skin specifically, the collagen-stimulating benefits of red light are valuable (dark skin loses elasticity through structural ageing even when photoageing is less prominent); the acne-targeting benefits of blue light are significant given the PIH risk of acne in darker skin'
+    ethnicConsiderations: 'LED therapy is genuinely one of the most skin-type-inclusive at-home technologies; the absence of a thermal mechanism makes it appropriate for all Fitzpatrick types; for skin of colour specifically, the collagen-stimulating benefits of red light are valuable (dark skin loses elasticity through structural ageing even when photoageing is less prominent); the acne-targeting benefits of blue light are significant given the PIH risk of acne in darker skin'
   }
 };
 
@@ -87,7 +87,7 @@ export const DERMAPLANING_HOME = {
   mechanism: 'Dermaplaning uses a sterile surgical scalpel (professional) or a single-edge razor (home dermaplaning tools, "butterfly knives") held at a 45-degree angle to the skin to physically exfoliate the stratum corneum and remove vellus hair (peach fuzz); leaves skin extremely smooth; allows better product penetration and makeup application',
   evidenceAndBenefits: 'The exfoliation effect of dermaplaning is real and immediate; removes the layer of dead cells and vellus hair that can cause makeup to sit unevenly; not the same as deep exfoliation — it exfoliates the very surface; products penetrate slightly better on dermaplaned skin because there is less physical barrier',
   ethnicConsiderations: {
-    pihRisk: 'SIGNIFICANT CAUTION for Fitzpatrick IV-VI: dermaplaning creates micro-abrasions in the skin surface; in darker skin types, any skin injury can trigger PIH; professional dermaplaning by experienced practitioners in ethnic skin is possible with proper technique and post-care (sun protection is mandatory immediately after); HOME dermaplaning carries higher risk for darker skin types because technique is less controlled',
+    pihRisk: 'SIGNIFICANT CAUTION for Fitzpatrick IV-VI: dermaplaning creates micro-abrasions in the skin surface; in darker skin types, any skin injury can trigger PIH; professional dermaplaning by experienced practitioners in skin of colour is possible with proper technique and post-care (sun protection is mandatory immediately after); HOME dermaplaning carries higher risk for darker skin types because technique is less controlled',
     hairGrowth: 'The myth that dermaplaning causes hair to grow back thicker, darker, or faster is FALSE; vellus hair (peach fuzz) does not have the same hormonal regulation as terminal hair; cutting or shaving vellus hair does not change the follicle or its hormonal sensitivity; the "stubble" appearance comes from the blunt end of the cut hair — not from any physiological change',
     contraindications: 'Contraindicated over active acne (spreads bacteria), eczema or psoriasis plaques, open wounds, very sensitive or reactive skin'
   }
@@ -119,7 +119,7 @@ export const SKIN_CARE_TOOLS_ANALYSIS = {
     name: 'Facial Steamers',
     mechanism: 'Steam hydrates the stratum corneum, temporarily increases skin temperature, and opens follicular ostia (pore openings); steam increases skin hydration and softens the surface debris in pores, making it easier to extract comedones; steam also increases blood flow through vasodilation',
     evidence: 'Facial steaming before extraction (either professional or gentle home extraction) is part of standard aesthetician practice; the softening and hydrating effects are real; "opening pores" is a simplified description — pores do not have muscles and do not open and close, but steam softens the debris within them making extraction easier',
-    ethnicConsiderations: 'Safe for all skin types; the humidity and hydration of facial steaming is particularly beneficial for dry skin types; caution with active rosacea or very sensitive skin (the heat can exacerbate redness); for ethnic skin, facial steaming before applying a mask or treatment helps enhance penetration'
+    ethnicConsiderations: 'Safe for all skin types; the humidity and hydration of facial steaming is particularly beneficial for dry skin types; caution with active rosacea or very sensitive skin (the heat can exacerbate redness); for skin of colour, facial steaming before applying a mask or treatment helps enhance penetration'
   }
 };
 
@@ -228,7 +228,7 @@ export function getBeautyToolsGuide(communityId) {
 export const BEAUTY_TOOLS_STATS = {
   moduleId: 'beauty_tools_devices_guide',
   version: '1.0.0',
-  topics: ['LED therapy photobiomodulation red blue light', 'jade roller gua sha lymphatic drainage TCM', 'microcurrent NuFace facial toning', 'dermaplaning vellus hair ethnic skin PIH risk', 'sonic facial cleanser Foreo', 'ice rolling anti-inflammatory', 'at-home beauty devices ethnic skin Fitzpatrick', 'LED therapy melanin safe all skin types', 'facial steamer pre-mask treatment'],
+  topics: ['LED therapy photobiomodulation red blue light', 'jade roller gua sha lymphatic drainage TCM', 'microcurrent NuFace facial toning', 'dermaplaning vellus hair skin-of-colour PIH risk', 'sonic facial cleanser Foreo', 'ice rolling anti-inflammatory', 'at-home beauty devices skin-of-colour Fitzpatrick', 'LED therapy melanin safe all skin types', 'facial steamer pre-mask treatment'],
   communitiesSupported: 9,
   keyFacts: [
     'LED therapy (photobiomodulation) is one of the most skin-type-inclusive at-home beauty technologies because it works through a non-thermal, non-melanin-targeting biological mechanism (stimulating cytochrome c oxidase in mitochondria); the absence of thermal damage means there is no risk of PIH from LED exposure for Fitzpatrick IV-VI skin; this makes it one of the rare categories of at-home devices that is equally appropriate for all skin types including very dark skin',

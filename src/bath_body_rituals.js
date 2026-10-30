@@ -1,7 +1,7 @@
 /**
  * MIRRR Bath & Body Rituals Guide
  * Bath salts, body oils, shower rituals, body scrubs,
- * steam treatments, and ethnic bathing traditions
+ * steam treatments, and multicultural bathing traditions
  */
 
 // ─── OVERVIEW ─────────────────────────────────────────────────────────────────
@@ -133,7 +133,7 @@ export const BODY_OIL_GUIDE = {
       best_for: 'Events, evenings, photography. Deep skin tones with warm gold shimmer oils look extraordinary.',
     },
     ethnic_traditional: {
-      name: 'Traditional Ethnic Body Oils',
+      name: 'Traditional Multicultural Body Oils',
       examples: {
         african: 'West African shea butter (traditionally extracted in villages by women — seed cracked, roasted, ground, boiled, hand-churned)',
         south_african: 'Marula oil (Sclerocarya birrea seed oil — indigenous to Sub-Saharan Africa)',

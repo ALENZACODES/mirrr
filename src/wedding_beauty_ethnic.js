@@ -1,5 +1,5 @@
 /**
- * MIRRR — Wedding and Bridal Beauty Guide (Ethnic Focus)
+ * MIRRR — Wedding and Bridal Beauty Guide (Multicultural Focus)
  * Bridal beauty across all 9 ethnic communities.
  * Pre-wedding timelines, cultural makeup traditions, hair.
  */

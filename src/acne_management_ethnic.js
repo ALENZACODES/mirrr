@@ -1,5 +1,5 @@
 /**
- * MIRRR — Acne Management for Ethnic Skin
+ * MIRRR — Acne Management for Skin of Colour
  * Acne types, causes, treatments, PIH, and ethnic community
  * specific acne care across all 9 communities.
  */

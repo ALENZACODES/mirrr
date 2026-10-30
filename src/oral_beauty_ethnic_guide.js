@@ -1,6 +1,6 @@
 // oral_beauty_ethnic_guide.js
 // Oral beauty and smile health traditions across 9 ethnic communities.
-// All entries are educational reference data for the MIRRR ethnic beauty discovery platform.
+// All entries are educational reference data for the MIRRR multicultural beauty discovery platform.
 
 export const ETHNIC_ORAL_BEAUTY_GUIDES = {
 

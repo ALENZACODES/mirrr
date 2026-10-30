@@ -1683,7 +1683,7 @@ extensive real-world testing of accessible products.`,
       ],
       black_dermatologist_resources: [
         'Skin of Color Society (skinofcolorsociety.org)',
-        'Dr. Crystal Aguh — Johns Hopkins; author of "Fundamentals of Ethnic Hair"',
+        'Dr. Crystal Aguh — Johns Hopkins; author of "Fundamentals of Textured Hair"',
         'Dr. Adeline Kikam (@brownskinderm on Instagram)',
         'Dr. Corey L. Hartman — Skin Wellness Dermatology',
         'Dr. Raewyn Quigley',

@@ -1,6 +1,6 @@
 /**
  * MIRRR Sensitive Skin & Skin Conditions Guide
- * Eczema, rosacea, psoriasis, perioral dermatitis in ethnic skin
+ * Eczema, rosacea, psoriasis, perioral dermatitis in skin of colour
  * Gentle routines, trigger management, and community-specific considerations
  */
 

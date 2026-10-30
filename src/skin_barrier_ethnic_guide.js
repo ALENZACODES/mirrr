@@ -1,5 +1,5 @@
 /**
- * MIRRR — Skin Barrier Ethnic Guide
+ * MIRRR — Skin Barrier Multicultural Guide
  * The science and cultural context of skin barrier function across
  * all 9 ethnic communities. The skin barrier is the foundational
  * layer that determines moisture retention, sensitivity, and resilience.

@@ -1,5 +1,5 @@
 /**
- * MIRRR — Eye Care Ethnic Guide
+ * MIRRR — Eye Care Multicultural Guide
  * Comprehensive eye health, beauty, and care traditions for all 9 ethnic communities.
  * Covers eye shape enhancement, under-eye care, lash traditions, kohl heritage,
  * and culturally specific eye beauty practices.

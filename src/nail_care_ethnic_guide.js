@@ -1,6 +1,6 @@
 /**
  * MIRRR — Nail Care Guide for Ethnic Communities
- * Nail health, nail art traditions, and ethnic-specific nail care considerations.
+ * Nail health, nail art traditions, and culture-specific nail care considerations.
  */
 
 export const NAIL_CARE_SCIENCE = {

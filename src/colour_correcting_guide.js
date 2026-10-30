@@ -1,7 +1,7 @@
 /**
  * MIRRR Colour Correcting Guide
  * The science and art of colour correction for all skin tones
- * covering the colour wheel, corrector shades, and ethnic applications
+ * covering the colour wheel, corrector shades, and multicultural applications
  */
 
 // ─── COLOUR CORRECTION OVERVIEW ───────────────────────────────────────────────

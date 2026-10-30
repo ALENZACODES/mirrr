@@ -1,6 +1,6 @@
 /**
  * MIRRR Extended Sun Protection Guide
- * SPF education, white cast solutions, UV damage in ethnic skin,
+ * SPF education, white cast solutions, UV damage in skin of colour,
  * sunscreen ingredients, and photoprotection strategies for all communities
  */
 

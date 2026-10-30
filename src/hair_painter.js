@@ -1,15 +1,15 @@
 /**
  * MIRRR — Hair Painter & Colour Visualizer
- * Comprehensive ethnic hair colour, texture, and style database
+ * Comprehensive textured hair colour, texture, and style database
  * Your Taste. Your Looks. Your Style.
  */
 
 // ===========================================================================
-// HAIR COLOURS — 80 entries covering the full spectrum of ethnic hair beauty
+// HAIR COLOURS — 80 entries covering the full spectrum of textured hair beauty
 // ===========================================================================
 
 export const HAIR_COLOURS = {
-  // ── Natural Blacks & Browns ──
+  // ── Natural black and brown shades ──
   jet_black: {
     id: 'jet_black', label: 'Jet Black', hexCode: '#0a0a0a',
     rgbBase: [10, 10, 10], category: 'natural', culturalContext: 'The foundational hair colour across South Asian, East Asian, Arab, and East African communities. Associated with youth, vitality, and traditional beauty.',
@@ -665,7 +665,7 @@ export const PROTECTIVE_STYLES = {
     communities: ['west-african','black-american','caribbean','east-african','south-african'],
     maintenanceWeeks: 4, suitableTextures: ['type_3c','type_4a','type_4b','type_4c'],
     culturalOrigin: 'West Africa — carved in sculptures from Yoruba and Wolof cultures 3000+ BCE',
-    modernVariants: ['Freestyle cornrows','Tribal braids','Pop smoke braids','Lemonade braids'],
+    modernVariants: ['Freestyle cornrows','Geometric-part braids','Pop smoke braids','Lemonade braids'],
   },
   senegalese_twists: {
     id: 'senegalese_twists', label: 'Senegalese Twists', description: 'Sleek rope twists using kanekalon or marley hair.',
@@ -728,7 +728,7 @@ export const PROTECTIVE_STYLES = {
     communities: ['west-african','black-american','caribbean'],
     maintenanceWeeks: 6, suitableTextures: ['type_3c','type_4a','type_4b','type_4c'],
     culturalOrigin: 'Fula/Fulani people of West Africa',
-    modernVariants: ['Tribal Fulani with beads','Fulani bob','Side swept Fulani','Pop smoke x Fulani'],
+    modernVariants: ['Fulani braids with beads','Fulani bob','Side swept Fulani','Pop smoke x Fulani'],
   },
   twists: {
     id: 'twists', label: 'Two-Strand Twists', description: 'Two sections of hair twisted around each other. Easy, low manipulation.',

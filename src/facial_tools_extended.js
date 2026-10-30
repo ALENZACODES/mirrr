@@ -1,7 +1,7 @@
 /**
  * MIRRR — Facial Tools Extended Guide
  * Deep dive into gua sha, jade rollers, facial massage, microcurrent devices,
- * LED therapy, derma rollers, and high-tech at-home devices for ethnic skin.
+ * LED therapy, derma rollers, and high-tech at-home devices for skin of colour.
  */
 
 export const GUA_SHA_GUIDE = {
@@ -77,7 +77,7 @@ export const MICROCURRENT_DEVICES = {
   },
   protocol: 'Used with conductive gel (NuFace sells their own, or aloe vera gel works); clean dry skin for best conductivity; 5-minute daily protocol is typical for maintenance; 20-minute protocol for treatment mode',
   contraindications: ['Pacemaker or any implanted electrical device — electrical current can interfere', 'Pregnancy', 'Metal plates in the face or jaw', 'Epilepsy', 'Active acne or skin conditions in the treatment area', 'Cancer (in or near the treatment area)', 'Always consult a physician if in doubt'],
-  ethnicConsiderations: 'Microcurrent is safe across all Fitzpatrick skin types; the electrical current does not interact with melanin; no special precautions for ethnic skin beyond the standard contraindications'
+  ethnicConsiderations: 'Microcurrent is safe across all Fitzpatrick skin types; the electrical current does not interact with melanin; no special precautions for skin of colour beyond the standard contraindications'
 };
 
 export const LED_THERAPY = {
@@ -121,7 +121,7 @@ export const LED_THERAPY = {
   safetyForEthnicSkin: {
     fitzpatrickIVVI: 'LED therapy is generally considered safe for all Fitzpatrick types including V and VI; however, some studies use very limited darker skin type samples and clinical data specific to Fitzpatrick V-VI is limited',
     blueLight: 'Blue LED at high irradiances can theoretically stimulate melanogenesis (melanin production) in some darker skin types; if using blue LED for acne on Fitzpatrick V-VI skin, start with shorter sessions and monitor; if any darkening occurs, reduce frequency or switch to red-only',
-    greenLight: 'Green LED targeting melanin may be too stimulating for already-hyperpigmented skin in some individuals; consult a dermatologist experienced with ethnic skin before using green LED on Fitzpatrick V-VI'
+    greenLight: 'Green LED targeting melanin may be too stimulating for already-hyperpigmented skin in some individuals; consult a dermatologist experienced with skin of colour before using green LED on Fitzpatrick V-VI'
   },
   protocol: 'Use on clean, dry skin (or with a clear serum if stated by the device manufacturer); typical sessions are 10-20 minutes; 3-5 times per week for treatment phase; 1-2 times per week for maintenance; results accumulate over weeks and months'
 };
@@ -145,7 +145,7 @@ export const DERMROLLER_GUIDE = {
   },
   ethnicSkinCaution: {
     PIHRisk: 'THIS IS THE MOST IMPORTANT CONSIDERATION FOR ETHNIC SKIN: Fitzpatrick IV-VI skin has a significantly higher risk of post-inflammatory hyperpigmentation (PIH) from microneedling; any inflammation or micro-injury to melanin-rich skin can trigger an increase in melanin production as a defence response',
-    recommendations: ['For Fitzpatrick IV-VI: start with very shallow depths (0.25-0.3mm maximum at home)', 'For professional microneedling on Fitzpatrick IV-VI: ALWAYS choose a professional experienced specifically with ethnic skin; there are documented cases of PIH after professional microneedling on darker skin tones with inexperienced practitioners', 'Never microneedle over active hyperpigmentation, active acne, or inflamed skin', 'Pre-treat with a tyrosinase inhibitor (niacinamide, vitamin C, kojic acid) for several weeks before microneedling to reduce PIH risk', 'Post-treatment: immediately apply hyaluronic acid or a growth factor serum; avoid vitamin C or retinoids for 48-72 hours post-treatment; meticulous SPF use'],
+    recommendations: ['For Fitzpatrick IV-VI: start with very shallow depths (0.25-0.3mm maximum at home)', 'For professional microneedling on Fitzpatrick IV-VI: ALWAYS choose a professional experienced specifically with skin of colour; there are documented cases of PIH after professional microneedling on darker skin tones with inexperienced practitioners', 'Never microneedle over active hyperpigmentation, active acne, or inflamed skin', 'Pre-treat with a tyrosinase inhibitor (niacinamide, vitamin C, kojic acid) for several weeks before microneedling to reduce PIH risk', 'Post-treatment: immediately apply hyaluronic acid or a growth factor serum; avoid vitamin C or retinoids for 48-72 hours post-treatment; meticulous SPF use'],
     darkSkinSuccess: 'When done correctly with appropriate technique by an experienced practitioner, microneedling is effective and safe for Fitzpatrick IV-VI skin; the key is professional selection and the pre/post-treatment protocol'
   }
 };
@@ -286,7 +286,7 @@ export function getEthnicFacialToolsGuide(communityId) {
 export const FACIAL_TOOLS_STATS = {
   moduleId: 'facial_tools_extended',
   version: '1.0.0',
-  topics: ['gua sha', 'jade roller', 'microcurrent', 'NuFace', 'LED therapy', 'photobiomodulation', 'derma roller', 'microneedling', 'collagen induction', 'PIH risk microneedling', 'buccal massage', 'lymphatic facial massage', 'LED wavelengths', 'kansa wand', 'facial tools ethnic skin', 'Fitzpatrick IV-VI microneedling', 'red light therapy', 'blue light acne', 'jade vs rose quartz', 'ice roller'],
+  topics: ['gua sha', 'jade roller', 'microcurrent', 'NuFace', 'LED therapy', 'photobiomodulation', 'derma roller', 'microneedling', 'collagen induction', 'PIH risk microneedling', 'buccal massage', 'lymphatic facial massage', 'LED wavelengths', 'kansa wand', 'facial tools skin of colour', 'Fitzpatrick IV-VI microneedling', 'red light therapy', 'blue light acne', 'jade vs rose quartz', 'ice roller'],
   communitiesSupported: 9,
   keyFacts: [
     'Modern facial gua sha is completely different from traditional body gua sha: body gua sha intentionally causes petechiae (red marks) as part of the therapeutic mechanism; facial gua sha is gentle and should never cause any red marks on the face — if marks appear, pressure is too heavy',

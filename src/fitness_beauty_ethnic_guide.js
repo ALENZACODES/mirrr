@@ -1,5 +1,5 @@
 /**
- * MIRRR — Fitness & Beauty Ethnic Guide
+ * MIRRR — Fitness & Beauty Multicultural Guide
  * Exercise effects on skin and hair, sweat care, athletic beauty by community
  * Topics: exercise physiology, sweat, hair management, post-workout care, athlete skin
  */

@@ -1,7 +1,7 @@
 /**
  * MIRRR Spa & Wellness Treatments Guide
  * Global spa traditions, hammam, abhyanga, gua sha, facial treatments,
- * steam therapies, and ethnic beauty wellness rituals
+ * steam therapies, and multicultural beauty wellness rituals
  */
 
 // ─── GLOBAL SPA TRADITIONS ────────────────────────────────────────────────────

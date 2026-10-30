@@ -1,7 +1,7 @@
 /**
  * MIRRR Sun Damage Guide
  * UV science, photodamage types, prevention, reversal,
- * and ethnic-specific considerations for SPF and UV
+ * and culture-specific considerations for SPF and UV
  */
 
 // ─── UV SCIENCE ───────────────────────────────────────────────────────────────

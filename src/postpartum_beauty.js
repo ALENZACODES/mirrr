@@ -1,7 +1,7 @@
 /**
  * MIRRR — Postpartum Beauty Guide
  * Hair loss, skin changes, safe products while breastfeeding,
- * recovery timelines, and ethnic postpartum beauty traditions.
+ * recovery timelines, and multicultural postpartum beauty traditions.
  */
 
 export const POSTPARTUM_OVERVIEW = {

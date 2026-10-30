@@ -46,7 +46,7 @@ export const HAIR_GROWTH_SCIENCE = {
   },
 
   retention_vs_growth: {
-    critical_insight: 'The most important insight in ethnic hair: the difference is not how fast hair GROWS but how much length is RETAINED. Coily and kinky hair has more curves where it can break. Length retention requires preventing breakage, not growing faster.',
+    critical_insight: 'The most important insight in textured hair: the difference is not how fast hair GROWS but how much length is RETAINED. Coily and kinky hair has more curves where it can break. Length retention requires preventing breakage, not growing faster.',
     retention_killers: [
       'Mechanical manipulation (combing, brushing, tight styles)',
       'Heat damage (weakens the keratin structure)',

@@ -1,6 +1,6 @@
 /**
- * MIRRR — Eyebrow Shaping and Care (Ethnic Focus)
- * Brow anatomy, shaping techniques, threading, and ethnic brow aesthetics.
+ * MIRRR — Eyebrow Shaping and Care (Multicultural Focus)
+ * Brow anatomy, shaping techniques, threading, and multicultural brow aesthetics.
  */
 
 export const BROW_ANATOMY = {

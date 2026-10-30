@@ -1,5 +1,5 @@
 /**
- * bridal_beauty_planner.js — Ethnic bridal beauty planning guide for MIRRR
+ * bridal_beauty_planner.js — Multicultural bridal beauty planning guide for MIRRR
  * Timelines, rituals, products, and looks for 9 ethnic communities
  */
 

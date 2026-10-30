@@ -11,14 +11,16 @@ import { withoutMensContent } from '../women_only.js';
 
 const BY_ID = new Map(GUIDES.map(g => [g.id, g]));
 
-/** 'ETHNIC_BATH_RITUAL_GUIDES' -> 'Ethnic Bath Ritual Guides'; 'culturalContext' -> 'Cultural Context'. */
+/** 'ETHNIC_BATH_RITUAL_GUIDES' -> 'Multicultural Bath Ritual Guides'; 'culturalContext' -> 'Cultural Context'. */
 export function humanize(key) {
   return String(key)
     .replace(/([a-z])([A-Z])/g, '$1 $2')
     .replace(/[_-]+/g, ' ')
     .trim()
     .toLowerCase()
-    .replace(/\b\w/g, c => c.toUpperCase());
+    .replace(/\b\w/g, c => c.toUpperCase())
+    // Respectful labels: 'ethnic' is not a catch-all for people of colour.
+    .replace(/\bEthnic Skin\b/g, 'Skin Of Colour').replace(/\bEthnic Hair\b/g, 'Textured Hair').replace(/\bEthnic\b/g, 'Cultural').replace(/\bEthnicity\b/g, 'Heritage');
 }
 
 // Each guide's data with men's-grooming passages left out (MIRRR is for women), computed once.

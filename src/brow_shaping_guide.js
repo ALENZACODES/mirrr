@@ -27,7 +27,7 @@ export const BROW_MAPPING = {
     head: {
       what: 'Where the brow begins (inner corner)',
       how_to_find: 'Hold a straight pencil vertically against the side of the nose. Where it crosses the brow is the start point. Hairs between the brows that fall inside this point are typically removed (though bushy unibrows are a personal/cultural choice).',
-      note: 'For South Asian and Arab women especially: the natural brow start may be significantly thicker and more inner than mainstream advice suggests. Do NOT over-remove the inner brow — this is where natural thickness and ethnic brow character lives.',
+      note: 'For South Asian and Arab women especially: the natural brow start may be significantly thicker and more inner than mainstream advice suggests. Do NOT over-remove the inner brow — this is where natural thickness and multicultural brow character lives.',
     },
     arch: {
       what: 'The highest point of the brow',
@@ -156,7 +156,7 @@ export const BROW_SHAPING_METHODS = {
       'Tweeze after shower when pores are open and skin is softer — less pull',
       'Tweeze in good light near a mirror (not a magnifying mirror — creates optical illusion making you pluck too much)',
     ],
-    ethnic_warning: 'AVOID over-tweezing thick ethnic brows — once the follicle is repeatedly damaged, hair may not grow back. The 90s over-tweezing trend left permanent sparse brows on a generation of South Asian and Arab women who over-plucked.',
+    ethnic_warning: 'AVOID over-tweezing thick multicultural brows — once the follicle is repeatedly damaged, hair may not grow back. The 90s over-tweezing trend left permanent sparse brows on a generation of South Asian and Arab women who over-plucked.',
   },
 
   tinting: {

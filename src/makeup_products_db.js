@@ -150,7 +150,7 @@ export const ETHNIC_BRANDS = {
     founded: 1991,
     country: 'USA',
     community: 'west-african',
-    mission: 'Community commerce beauty — authentic ethnic ingredients (shea, coconut, African black soap) for curly, coily, and textured hair and skin.',
+    mission: 'Community commerce beauty — authentic multicultural ingredients (shea, coconut, African black soap) for curly, coily, and textured hair and skin.',
     heroProducts: ['100% Extra Virgin Coconut Oil', 'Jamaican Black Castor Oil Treatment', 'African Black Soap Face Wash'],
     
     skinToneRange: 'All — ingredient focus not shade focus',
@@ -297,7 +297,7 @@ export const HALL_OF_FAME = {
 // ─── QUERY FUNCTIONS ─────────────────────────────────────────────────────────
 
 /**
- * Get ethnic brand by ID
+ * Get multicultural brand by ID
  * @param {string} id
  * @returns {Object|null}
  */
@@ -306,7 +306,7 @@ export function getEthnicBrand(id) {
 }
 
 /**
- * Get all ethnic brands
+ * Get all multicultural brands
  * @returns {Object[]}
  */
 export function getAllEthnicBrands() {
@@ -314,7 +314,7 @@ export function getAllEthnicBrands() {
 }
 
 /**
- * Get ethnic brands for community
+ * Get multicultural brands for community
  * @param {string} communityId
  * @returns {Object[]}
  */

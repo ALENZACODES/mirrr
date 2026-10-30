@@ -1,6 +1,6 @@
 /**
  * MIRRR — Skin Barrier Guide
- * Comprehensive guide to the skin barrier, damage, repair, and ethnic skin considerations.
+ * Comprehensive guide to the skin barrier, damage, repair, and skin-of-colour considerations.
  */
 
 export const SKIN_BARRIER_SCIENCE = {

@@ -1,5 +1,5 @@
 /**
- * MIRRR — Teen & Adolescent Beauty Ethnic Guide
+ * MIRRR — Teen & Adolescent Beauty Multicultural Guide
  * Puberty skincare, acne management, teen hair, self-esteem and beauty identity by community
  * Topics: sebum increase, hormonal acne, teen hair care, minimal routines, cultural beauty identity
  */

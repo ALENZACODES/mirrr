@@ -2,7 +2,7 @@
  * MIRRR — Hormonal Beauty Guide
  * Skin and hair changes through menstrual cycle, pregnancy, postpartum,
  * perimenopause, menopause, PCOS, and thyroid conditions.
- * Ethnic-specific notes for all 9 communities.
+ * Culture-specific notes for all 9 communities.
  */
 
 export const HORMONAL_BEAUTY_OVERVIEW = {
@@ -427,7 +427,7 @@ export function getEthnicHormonalBeauty(communityId) {
 export const HORMONAL_BEAUTY_STATS = {
   moduleId: 'hormonal_beauty_guide',
   version: '1.0.0',
-  topics: ['menstrual cycle skincare', 'hormonal acne', 'pregnancy beauty safety', 'melasma', 'stretch marks', 'postpartum hair shedding', 'menopause skin changes', 'PCOS beauty', 'thyroid and beauty', 'ethnic hormonal concerns'],
+  topics: ['menstrual cycle skincare', 'hormonal acne', 'pregnancy beauty safety', 'melasma', 'stretch marks', 'postpartum hair shedding', 'menopause skin changes', 'PCOS beauty', 'thyroid and beauty', 'multicultural hormonal concerns'],
   communitiesSupported: 9,
   keyFacts: [
     'Skin loses up to 30% collagen in first 5 years of menopause',

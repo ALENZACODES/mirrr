@@ -1,6 +1,6 @@
 /**
- * MIRRR SPF Guide for Ethnic Skin
- * The most important skincare step — with full ethnic skin context
+ * MIRRR SPF Guide for Skin of Colour
+ * The most important skincare step — with full skin-of-colour context
  * White cast solutions, PA rating explainers, reapplication strategies
  */
 
@@ -30,14 +30,14 @@ export const MELANIN_SPF_SCIENCE = {
 export const SPF_NUMBERS_EXPLAINED = {
   spf15: { percentBlocked: 93, meaningForEthnicSkin: 'Absolute minimum — not recommended as daily sun protection for melanin-rich skin' },
   spf30: { percentBlocked: 97, meaningForEthnicSkin: 'Minimum recommended. 3% UV still getting through — acceptable for daily urban life' },
-  spf50: { percentBlocked: 98, meaningForEthnicSkin: 'Recommended for ethnic skin. 2% UV blocked is meaningful difference for PIH prevention' },
+  spf50: { percentBlocked: 98, meaningForEthnicSkin: 'Recommended for skin of colour. 2% UV blocked is meaningful difference for PIH prevention' },
   spf100: { percentBlocked: 99, meaningForEthnicSkin: 'Marginal real-world benefit over SPF 50 unless reapplied perfectly — application amount matters more than SPF number' },
   
   paRating: {
     PA_plus: 'Low UVA protection',
     PA_plus_plus: 'Moderate UVA protection',
     PA_plus_plus_plus: 'High UVA protection',
-    PA_plus_plus_plus_plus: 'Extremely high UVA protection — the target for ethnic skin',
+    PA_plus_plus_plus_plus: 'Extremely high UVA protection — the target for skin of colour',
     note: 'PA++++ is a Japanese/Korean standard. European standard: UVA circle logo. US: "broad spectrum" label.',
   },
 };
@@ -103,7 +103,7 @@ export const SPF_PRODUCTS = {
       
       whiteCast: 'None',
       texture: 'Thin serum-like, no residue',
-      why: 'The K-beauty sunscreen every ethnic skin type can use. SPF50 PA++++, zero white cast, zero grease, zero grey finish. Cult status for good reason.',
+      why: 'The K-beauty sunscreen every melanin-rich skin type can use. SPF50 PA++++, zero white cast, zero grease, zero grey finish. Cult status for good reason.',
       bestFor: ['All Fitzpatrick types III-VI', 'Oily skin', 'Under makeup'],
       coverage: 'SPF 50 PA++++',
       website: 'Available on Amazon/Soko Glam',

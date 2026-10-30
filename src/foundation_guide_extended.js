@@ -1,7 +1,7 @@
 /**
  * MIRRR Foundation Guide Extended
  * Formulas, finishes, shade matching, undertones,
- * application techniques, and ethnic skin considerations
+ * application techniques, and skin-of-colour considerations
  */
 
 // ─── FOUNDATION FORMULAS ──────────────────────────────────────────────────────

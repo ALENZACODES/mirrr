@@ -1,5 +1,5 @@
 /**
- * MIRRR — Body Contouring and Body Confidence Guide (Ethnic Focus)
+ * MIRRR — Body Contouring and Body Confidence Guide (Multicultural Focus)
  * Non-surgical contouring, makeup contouring, body confidence across cultures.
  */
 
@@ -16,7 +16,7 @@ export const FACE_CONTOURING_SCIENCE = {
     contour: {
       what: 'A product 2-3 shades darker than your skin tone; applied to areas to make them "recede" visually',
       formula: 'Powder contour: easiest to blend; most forgiving; best for oily skin or warm climates; cream contour: more blendable; longer-lasting with setting powder; best for dry skin or full-coverage looks; stick contour: portable and precise; buildable',
-      undertone: 'CRITICAL for ethnic skin: contour shades should have the same undertone as your skin, only darker; for warm/olive skin (common in South Asian, Caribbean, Latina, Arab, East Asian communities) use a warm brown contour — not grey or taupe which creates an ashy, muddy look on warm skin tones; for neutral-cool dark skin (common in West African, East African, Black American, South African communities) neutral-cool brown contours work better'
+      undertone: 'CRITICAL for skin of colour: contour shades should have the same undertone as your skin, only darker; for warm/olive skin (common in South Asian, Caribbean, Latina, Arab, East Asian communities) use a warm brown contour — not grey or taupe which creates an ashy, muddy look on warm skin tones; for neutral-cool dark skin (common in West African, East African, Black American, South African communities) neutral-cool brown contours work better'
     },
     highlight: {
       what: 'A product lighter than skin tone, or with shimmer/glow; applied to areas to make them "advance" visually',
@@ -43,7 +43,7 @@ export const ETHNIC_FACE_SHAPES = {
 };
 
 export const NOSE_CONTOURING_ETHNIC = {
-  title: 'Nose Contouring — Ethnic Considerations',
+  title: 'Nose Contouring — Multicultural Considerations',
   important: 'The nose is one of the most ethnically specific facial features; nose contouring is also one of the most politically complex beauty topics — techniques that "slim" the nose reflect Western beauty standards that have historically devalued broader, flatter, or wider nose shapes found in African, Asian, Pacific Islander, and many Latin American communities; present this information neutrally — these are techniques that exist for those who want to use them, not suggestions that any nose shape needs to be changed',
   techniques: {
     narrowing: 'To create the visual impression of a narrower nose: apply contour shadow along the sides of the nose bridge; blend carefully; apply highlight down the centre bridge',
@@ -51,7 +51,7 @@ export const NOSE_CONTOURING_ETHNIC = {
     shortening: 'To create the impression of a shorter nose tip: apply contour under the tip of the nose',
     widening: 'To create the impression of a wider nose (counter-conventional but appropriate for those who want this): highlight along the nose sides; minimise centre bridge highlight'
   },
-  noContourApproach: 'Many people — particularly those who have reclaimed pride in their ethnic features — choose not to contour the nose at all; the movement away from "slimming" the nose is particularly strong in Black and Asian beauty communities; contouring the eyes, lips, and cheekbones while leaving the nose natural is a completely valid approach'
+  noContourApproach: 'Many people — particularly those who have reclaimed pride in their heritage features — choose not to contour the nose at all; the movement away from "slimming" the nose is particularly strong in Black and Asian beauty communities; contouring the eyes, lips, and cheekbones while leaving the nose natural is a completely valid approach'
 };
 
 export const WEST_AFRICAN_BODY_CONTOURING = {
@@ -229,7 +229,7 @@ export const BODY_CONTOURING_STATS = {
   topics: ['face contouring light shadow principle', 'warm brown contour dark skin undertone', 'deep gold bronze highlighter Fitzpatrick V VI', 'PIH fragrance contact dermatitis dark skin', 'hammam exfoliation Arab body tradition', 'K-beauty glass skin hydration layering', 'Zulu umabo beadwork body tradition', 'Fenty Beauty 40 shades industry change', 'kohl kohl lining East African Arab tradition', 'shea butter Black American body care', 'colourism West Africa South Africa South Asian', 'natural hair movement Black American body image', 'monolid makeup East Asian single eyelid technique'],
   communitiesSupported: 9,
   keyFacts: [
-    'The most important technical principle for ethnic skin contouring is undertone matching: contour shades must have the same undertone as the skin, only darker; warm/olive skin (South Asian, Latina, Arab, East Asian) needs warm brown contours — not grey or cool taupe which creates a muddy, ashy appearance; deep cool-neutral skin (many West African, East African, Black American complexions) needs neutral-cool brown contours; the wrong undertone is more noticeable than the wrong depth',
+    'The most important technical principle for skin-of-colour contouring is undertone matching: contour shades must have the same undertone as the skin, only darker; warm/olive skin (South Asian, Latina, Arab, East Asian) needs warm brown contours — not grey or cool taupe which creates a muddy, ashy appearance; deep cool-neutral skin (many West African, East African, Black American complexions) needs neutral-cool brown contours; the wrong undertone is more noticeable than the wrong depth',
     'Gold, bronze, and warm copper highlighters look dramatically more luminous on Fitzpatrick IV-VI skin than silver, pearl, or champagne highlighters; silver highlights can appear grey or chalky against very dark skin; the warmth of gold-toned highlighters creates a "lit from within" glow that silver cannot produce; this is one of the most practically important colour rules for deep-skin makeup',
     'The body positive movement has deep roots in Black feminist thought (Audre Lorde, bell hooks, Sojourner Truth) long before it became a mainstream commercial movement; similarly, West African, Caribbean, and Latin American beauty cultures have traditionally celebrated fuller-figured bodies with hips, buttocks, and curves as beautiful long before the mainstream "curvy" aesthetic trend of the 2010s — the mainstream adoption of these standards without attribution is a form of cultural appropriation of beauty ideals',
     'The global beauty industry has historically failed consumers with deeper skin tones: until Fenty Beauty launched with 40 shades in 2017, the darkest shade in most foundation ranges was equivalent to a medium-dark complexion; darker skin tones were an afterthought; Fenty\'s approach (launching the entire shade range simultaneously; prioritising undertone diversity within deep shades) has prompted significant industry-wide change and demonstrates that melanin-rich consumers represent a massive underserved market'

@@ -1,7 +1,7 @@
 /**
  * MIRRR Setting Products Guide
  * Setting powders, setting sprays, primers, baking technique,
- * transfer-proofing, flashback prevention, and ethnic setting traditions
+ * transfer-proofing, flashback prevention, and multicultural setting traditions
  */
 
 // ─── WHY SETTING MATTERS ──────────────────────────────────────────────────────

@@ -2,7 +2,7 @@
  * MIRRR Pregnancy Beauty Guide
  * Safe and unsafe ingredients during pregnancy, skin changes, hair changes,
  * chloasma (melasma of pregnancy), safe alternatives, postpartum recovery,
- * with ethnic skin-specific guidance
+ * with skin of colour-specific guidance
  */
 
 // ─── PREGNANCY SKIN CHANGES ───────────────────────────────────────────────────

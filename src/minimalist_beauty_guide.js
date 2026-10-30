@@ -1,7 +1,7 @@
 /**
  * MIRRR — Minimalist Beauty Guide
  * Skinimalism, multi-use products, 1-3 step routines,
- * ingredient-focused approach, and ethnic minimalist traditions.
+ * ingredient-focused approach, and multicultural minimalist traditions.
  */
 
 export const MINIMALISM_PHILOSOPHY = {

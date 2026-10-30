@@ -2,7 +2,7 @@
  * MIRRR Night Beauty Guide
  * Circadian chrono-beauty, slugging, overnight treatments,
  * PM skincare routines, sleep position, silk pillowcase science,
- * and ethnic nighttime beauty traditions
+ * and multicultural nighttime beauty traditions
  */
 
 // ─── CHRONO-BEAUTY OVERVIEW ──────────────────────────────────────────────────

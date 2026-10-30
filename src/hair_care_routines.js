@@ -1,5 +1,5 @@
 /**
- * hair_care_routines.js — Complete ethnic hair care routine guides for MIRRR
+ * hair_care_routines.js — Complete textured hair care routine guides for MIRRR
  * Routines for all 9 communities with products, techniques, and schedules
  */
 

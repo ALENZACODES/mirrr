@@ -1505,7 +1505,7 @@ export const UNIVERSAL_EYE_MAKEUP = {
     },
 
     techniques: {
-      threading: 'Traditional Indian and Middle Eastern method using twisted cotton thread to remove hair at root level; very precise; pulls hair, not skin; excellent for ethnic hair types',
+      threading: 'Traditional Indian and Middle Eastern method using twisted cotton thread to remove hair at root level; very precise; pulls hair, not skin; excellent for textured hair types',
       waxing: 'Quick; removes large areas; risk of skin lift (especially with retinoid use or aging skin)',
       tweezing: 'Precise for shaping and maintenance; best for individual stray hairs',
       microblading: 'Semi-permanent tattooing of individual hair strokes; lasts 1–3 years; popular across all communities',

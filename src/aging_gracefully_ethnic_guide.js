@@ -1,5 +1,5 @@
 /**
- * MIRRR — Aging Gracefully Ethnic Guide
+ * MIRRR — Aging Gracefully Multicultural Guide
  * Skin aging biology, anti-aging science, graceful aging by community, cultural attitudes to aging
  * Topics: collagen loss, photoaging, retinoids, peptides, cultural beauty aging philosophy
  */

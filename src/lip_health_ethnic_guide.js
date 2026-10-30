@@ -1,5 +1,5 @@
 /**
- * MIRRR — Lip Health, Lip Pigmentation, and Lip Beauty (Ethnic Focus)
+ * MIRRR — Lip Health, Lip Pigmentation, and Lip Beauty (Multicultural Focus)
  * Lip anatomy, hyperpigmentation, care traditions, and community-specific guidance.
  */
 
@@ -36,7 +36,7 @@ export const LIP_HYPERPIGMENTATION = {
       sunscreen: 'SPF lip balm: the most important prevention; prevents new UV-induced pigmentation; use SPF 30+ specifically formulated lip balm; reapply throughout the day'
     },
     procedures: {
-      laser: 'Q-switched Nd:YAG 1064nm or 532nm: effective for lip pigmentation; lower risk than shorter wavelengths for darker skin tones; requires specialist with experience treating ethnic skin',
+      laser: 'Q-switched Nd:YAG 1064nm or 532nm: effective for lip pigmentation; lower risk than shorter wavelengths for darker skin tones; requires specialist with experience treating skin of colour',
       glycolicPeel: 'Superficial glycolic acid peels to the lip: performed by aesthetician or dermatologist; gradual improvement over a series of sessions'
     }
   }

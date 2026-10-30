@@ -1,5 +1,5 @@
 /**
- * MIRRR — Body Care Ethnic Guide
+ * MIRRR — Body Care Multicultural Guide
  * Comprehensive body care science and rituals for 9 ethnic communities
  * Topics: moisturisation, body oils, scrubs, stretch marks, cellulite, body hyperpigmentation
  */

@@ -1,7 +1,7 @@
 /**
  * MIRRR Dewy Skin Guide
  * Achieving and maintaining a dewy, glass-skin, glazed-donut glow;
- * layers of luminosity; product stacking; ethnic glow traditions
+ * layers of luminosity; product stacking; multicultural glow traditions
  */
 
 // ─── DEWY SKIN OVERVIEW ───────────────────────────────────────────────────────

@@ -1,6 +1,6 @@
 /**
- * MIRRR — Lip Care Guide (Ethnic Skin Focus)
- * Lip anatomy, hyperpigmentation, lip products, ethnic care.
+ * MIRRR — Lip Care Guide (Skin-of-Colour Focus)
+ * Lip anatomy, hyperpigmentation, lip products, multicultural care.
  */
 
 export const LIP_ANATOMY = {

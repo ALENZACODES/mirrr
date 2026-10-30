@@ -1,6 +1,6 @@
 /**
  * MIRRR Extended Fragrance Guide
- * Perfume families, skin chemistry, layering, ethnic fragrance traditions,
+ * Perfume families, skin chemistry, layering, multicultural fragrance traditions,
  * oud guide, attar, note pyramids, and affordable alternatives
  */
 

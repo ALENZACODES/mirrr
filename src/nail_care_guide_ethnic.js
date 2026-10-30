@@ -1,7 +1,7 @@
 /**
- * MIRRR — Nail Care Guide (Ethnic Perspectives)
+ * MIRRR — Nail Care Guide (Multicultural Perspectives)
  * Complete nail anatomy, health, care techniques, nail art traditions,
- * and ethnic nail care specifics across all 9 communities.
+ * and multicultural nail care specifics across all 9 communities.
  */
 
 export const NAIL_ANATOMY = {

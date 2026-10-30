@@ -1,5 +1,5 @@
 /**
- * MIRRR — Makeup & Color Cosmetics Ethnic Guide
+ * MIRRR — Makeup & Color Cosmetics Multicultural Guide
  * Foundation matching for all skin tones, cultural makeup traditions, color theory for diverse skin
  * Topics: undertones, Fitzpatrick matching, cultural beauty looks, eye/lip techniques by community
  */

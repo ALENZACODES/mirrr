@@ -1,7 +1,7 @@
 /**
- * MIRRR — Colour Theory for Beauty (Ethnic Perspectives)
+ * MIRRR — Colour Theory for Beauty (Multicultural Perspectives)
  * Comprehensive colour theory fundamentals applied to makeup,
- * hair colour, clothing, and ethnic beauty aesthetics.
+ * hair colour, clothing, and multicultural beauty aesthetics.
  */
 
 export const COLOUR_THEORY_FUNDAMENTALS = {

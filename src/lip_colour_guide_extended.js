@@ -1,7 +1,7 @@
 /**
  * MIRRR — Extended Lip Colour Guide
  * Colour theory for all skin tones, lip liner techniques, formulation science,
- * lip trends by culture, ethnic lip care traditions.
+ * lip trends by culture, multicultural lip care traditions.
  */
 
 export const LIP_COLOUR_THEORY = {

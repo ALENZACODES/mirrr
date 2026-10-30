@@ -1,5 +1,5 @@
 /**
- * cultural_beauty_history.js — History of ethnic beauty traditions for MIRRR
+ * cultural_beauty_history.js — History of multicultural beauty traditions for MIRRR
  * From ancient civilisations to modern movements
  */
 
@@ -161,7 +161,7 @@ Genuine ose dudu is still made by hand in Nigeria — it smells earthy, is soft,
     
     
     
-    significance: 'Understanding the colonial roots of global beauty standards is essential to understanding the ethnic beauty movement as political, not just aesthetic.',
+    significance: 'Understanding the colonial roots of global beauty standards is essential to understanding the multicultural beauty movement as political, not just aesthetic.',
     tags: ['colonialism', 'decolonial', 'beauty-standards', 'history', 'political'],
   },
 

@@ -1,7 +1,7 @@
 /**
  * MIRRR Skin Typing Guide
  * Baumann Skin Type System, Fitzpatrick Scale, Glogau photoaging,
- * seasonal skin changes, and ethnic skin typing traditions
+ * seasonal skin changes, and skin-of-colour typing traditions
  */
 
 // ─── FITZPATRICK SCALE ───────────────────────────────────────────────────────
@@ -44,7 +44,7 @@ export const FITZPATRICK_SCALE = {
       ethnicity: 'Mediterranean, Middle Eastern, South Asian (lighter tones), East Asian, Latin American (mestizo)',
       UV_risk: 'Lower than I-III but still significant. SPF 30+ recommended. PIH risk from UV.',
       common_concerns: ['PIH', 'Melasma', 'Dark spots from acne or injury', 'Keloid tendency begins here'],
-      special_note: 'Begins the range where many cosmetic procedures (laser, chemical peels) require ethnic modification. Standard peel strengths and most laser types (IPL, ablative CO2) can cause PIH or hypopigmentation.',
+      special_note: 'Begins the range where many cosmetic procedures (laser, chemical peels) need adjusting for deeper skin. Standard peel strengths and most laser types (IPL, ablative CO2) can cause PIH or hypopigmentation.',
     },
     V: {
       scale: 'Fitzpatrick V',

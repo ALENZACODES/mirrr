@@ -1,7 +1,7 @@
 /**
  * MIRRR — Comprehensive Lip Care Guide
  * Lip skin anatomy, hyperpigmentation, care routines, exfoliation,
- * lip augmentation, ethnic lip diversity, and cultural practices.
+ * lip augmentation, multicultural lip diversity, and cultural practices.
  */
 
 export const LIP_ANATOMY = {

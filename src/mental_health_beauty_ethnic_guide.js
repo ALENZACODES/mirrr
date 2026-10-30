@@ -74,7 +74,7 @@ export const CORTISOL_SKIN_SCIENCE = {
 
 export const UNIVERSAL_BEAUTY_MENTAL_HEALTH = {
   beauty_dysmorphia: {
-    title: 'Body Dysmorphic Disorder and Ethnic Beauty',
+    title: 'Body Dysmorphic Disorder and Multicultural Beauty',
     description: 'Body Dysmorphic Disorder (BDD) involves intense preoccupation with perceived appearance flaws — often invisible or minor to others. BDD affects people of every background, and the focus of the worry often reflects the beauty ideals a person grew up with. If the signs below sound familiar, it is worth talking to a doctor or therapist; a therapist who understands your culture can help.',
     warning_signs: ['Spending more than one hour per day thinking about an appearance concern', 'Avoiding mirrors or conversely checking compulsively', 'Repeatedly seeking reassurance about appearance', 'Avoiding social situations due to appearance anxiety', 'Multiple consultations for cosmetic procedures without satisfaction'],
     culturally_safe_support: 'Seek therapists with cultural competency training or shared ethnic background. Many communities have specific organisations offering culturally grounded mental health support.',
@@ -408,7 +408,7 @@ export const ETHNIC_MENTAL_HEALTH_BEAUTY_GUIDES = {
     heroText: 'South African beauty is inseparable from South African political history. The forced ugliness of apartheid — the racial classification of bodies, the pencil test that used hair to classify people by race, the systematic assault on Black South African identity — means that beauty as self-determination is not an abstract idea here. It is a lived political act. Ubuntu, the Nguni philosophy of "I am because we are," provides a communal ethic for beauty practice: your beauty is held and affirmed by your community, not judged against an external standard.',
     mental_health_context: {
       dominant_stressors: ['Intergenerational trauma from apartheid, including race-based beauty standard oppression that persists in post-apartheid commercial and workplace culture', 'Coloured community-specific colorism and identity complexity: navigating mixed-heritage identity in a society that has historically required racial categorisation', 'Economic precarity for the majority Black South African population, limiting access to both mental health care and beauty resources'],
-      protective_cultural_factors: ['Ubuntu philosophy providing a deeply embedded communal identity framework', 'South African women\'s activism traditions providing models of resistance and collective action', 'Rich ethnic beauty traditions (Ndebele beadwork, Xhosa traditional dress and beauty, Zulu ceremonial beauty) as identity anchors', 'The "Born Free" generation\'s explicit reclamation of Black beauty and natural aesthetics'],
+      protective_cultural_factors: ['Ubuntu philosophy providing a deeply embedded communal identity framework', 'South African women\'s activism traditions providing models of resistance and collective action', 'Rich multicultural beauty traditions (Ndebele beadwork, Xhosa traditional dress and beauty, Zulu ceremonial beauty) as identity anchors', 'The "Born Free" generation\'s explicit reclamation of Black beauty and natural aesthetics'],
     },
     signature_rituals: [
       {
@@ -839,7 +839,7 @@ export const MENTAL_HEALTH_CRISIS_RESOURCES = {
 
 export const HAIR_MENTAL_HEALTH_SCIENCE = {
   telogen_effluvium: {
-    title: 'Stress Hair Loss: A Guide for Ethnic Hair Types',
+    title: 'Stress Hair Loss: A Guide for Textured Hair Types',
     overview: 'Telogen effluvium (TE) is the medical name for stress-related hair shedding. After a major physical or emotional stress, more follicles than usual move from the growth phase (anagen) to the resting/shedding phase (telogen). Shedding usually shows up about two to three months after the triggering event, which can make the connection confusing. TE is usually temporary: once the stressor passes, regrowth typically follows over the next several months.',
     by_hair_type: [
       {

@@ -1,6 +1,6 @@
 /**
- * MIRRR — Sun Care and UV Protection Guide (Ethnic Skin Focus)
- * Sunscreens, UV science, vitamin D, and ethnic considerations.
+ * MIRRR — Sun Care and UV Protection Guide (Skin-of-Colour Focus)
+ * Sunscreens, UV science, vitamin D, and multicultural considerations.
  */
 
 export const UV_SCIENCE = {
@@ -89,7 +89,7 @@ export const WHITE_CAST_SOLUTIONS = {
 };
 
 export const VITAMIN_D_CONSIDERATIONS = {
-  title: 'Vitamin D, Sunscreen, and Ethnic Skin',
+  title: 'Vitamin D, Sunscreen, and Skin of Colour',
   vitaminDSynthesis: 'Vitamin D3 (cholecalciferol) is produced in the skin when UVB radiation converts 7-dehydrocholesterol to previtamin D3; this is then converted in the liver and kidney to the active form 1,25(OH)2D3 (calcitriol); vitamin D is the only micronutrient that the body makes from sunlight exposure',
   melaninAndVitaminD: 'Higher melanin content in darker skin significantly reduces UVB penetration to the stratum basale where vitamin D synthesis occurs; darker-skinned individuals require 3-5× more sun exposure to produce the same amount of vitamin D as lighter-skinned individuals; this has significant implications for vitamin D deficiency risk',
   deficiencyRisk: {

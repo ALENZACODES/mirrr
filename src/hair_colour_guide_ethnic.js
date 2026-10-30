@@ -1,5 +1,5 @@
 /**
- * MIRRR — Hair Colour Guide for Ethnic Hair
+ * MIRRR — Hair Colour Guide for Textured Hair
  * Comprehensive guide to hair colouring, bleaching, toning, and
  * colour care across all 9 ethnic communities.
  */
@@ -47,7 +47,7 @@ export const HAIR_COLOUR_TYPES = {
   temporary: {
     what: 'Temporary colour (colour rinses, colour shampoos, colour sprays) deposits colour molecules on the outside of the hair shaft only; removed with 1-2 shampoos; no developer used; no lift; cannot lighten hair; some penetration into porous or damaged hair may make it last slightly longer',
     bestFor: 'Trying a colour without commitment; special events; fashion colour on already-bleached hair (vivid temporary colours); grey coverage for a day or two',
-    darkHair: 'Temporary colour does not show up on unbleached dark hair (most ethnic hair is Level 1-3); any colour deposited on very dark hair will only be visible in bright light or on bleached sections'
+    darkHair: 'Temporary colour does not show up on unbleached dark hair (most textured hair is Level 1-3); any colour deposited on very dark hair will only be visible in bright light or on bleached sections'
   },
   semi: {
     what: 'Semi-permanent colour (no developer, small molecules, some penetrate slightly into the cortex); lasts 4-12 shampoos; no lift capability; fades gradually; not suitable for significant grey coverage (some provide partial coverage)',
@@ -68,7 +68,7 @@ export const HAIR_COLOUR_TYPES = {
   directDye: {
     what: 'Direct dyes (fashion/vivid colours: neons, pastels, vivid blues, greens, pinks, purples) are pre-mixed colour formulas with no developer; deposit onto hair surface; require a pale blonde base (usually bleached to Level 9-10) to show vibrancy on dark hair; some dark direct dyes (black, dark blues, dark purples) can show on unbleached dark hair',
     brands: 'Arctic Fox; Manic Panic; Punky Colour; Joico Color Intensity; Pravana Vivids; Pulp Riot (professional)',
-    darkHair: 'Vivid fashion colours will not appear on dark unbleached ethnic hair; dark hair must be bleached to achieve fashion colours; pastel fashion colours require Level 10 bleach (the palest blonde, nearly white) to appear as intended',
+    darkHair: 'Vivid fashion colours will not appear on dark unbleached textured hair; dark hair must be bleached to achieve fashion colours; pastel fashion colours require Level 10 bleach (the palest blonde, nearly white) to appear as intended',
     fade: 'Direct dyes fade faster than permanent colour; may leave a faint colour shadow on porous bleached hair that resists complete removal; fading process can create beautiful colour gradients (deliberate "fading" is used as a styling technique)'
   }
 };

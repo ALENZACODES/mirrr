@@ -1,5 +1,5 @@
 /**
- * MIRRR — Nail Beauty Ethnic Guide
+ * MIRRR — Nail Beauty Multicultural Guide
  * Nail anatomy, nail care, cultural nail traditions, nail art by community
  * Topics: nail biology, nail health, cultural nail art traditions, nail care protocols, 9 communities
  */

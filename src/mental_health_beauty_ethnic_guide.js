@@ -67,7 +67,7 @@ export const CORTISOL_SKIN_SCIENCE = {
   political_dimension: {
     title: 'Beauty Standards as a Mental Health Issue',
     overview: 'For ethnic communities, beauty is not a neutral personal concern. Dominant beauty standards rooted in Eurocentric aesthetics have been systematically weaponised — through media, hiring practices, school dress codes, and partner selection — to communicate that certain bodies, hair textures, skin tones, and facial features are inferior. The chronic stress of navigating these standards is a documented mental health burden.',
-    research_points: ['Studies have linked internalised racism and colourism to depression, anxiety and disordered eating.', 'Natural hair discrimination has been linked to workplace disadvantage and distress for Black women — prompting CROWN Act laws in many US states.', 'For Arab and Muslim women, the politics of veiling — navigated between community expectation, Western hostility, and personal agency — creates a beauty-as-identity pressure unique to religious ethnic identity.'],
+    research_points: ['Studies have linked internalised racism and colourism to depression, anxiety and disordered eating.', 'Natural hair discrimination has been linked to workplace disadvantage and distress for Black women — prompting CROWN Act laws in many US states.'],
     affirming_frame: 'The beauty rituals documented in this guide are, in many cases, active resistance to those standards. Hair braiding, traditional dress, communal beauty care, and pride in ancestral ingredients are political acts of self-determination — and as such, they carry additional mental health benefit beyond the physiological.',
   },
 };
@@ -93,7 +93,7 @@ export const ETHNIC_MENTAL_HEALTH_BEAUTY_GUIDES = {
   'west-african': {
     communityId: 'west-african',
     communityName: 'West African',
-    heroText: 'In West African tradition, beauty is never individual vanity — it is community testimony. To look after your hair, your skin, and your body is to honour your lineage, show respect for those around you, and announce your belonging. That framework carries real comfort and belonging.',
+    heroText: 'In West African tradition, beauty is often understood not as individual vanity but as community testimony. To look after your hair, your skin, and your body is to honour your lineage, show respect for those around you, and announce your belonging. That framework carries real comfort and belonging.',
     mental_health_context: {
       dominant_stressors: ['Migration and diaspora grief — the loss of extended family proximity and communal support structures', 'Colorism within communities, with pressure toward lighter skin tones reflecting internalized colonial beauty hierarchies', 'Code-switching between community beauty norms (natural hair, traditional dress) and workplace expectations'],
       protective_cultural_factors: ['Strong communal identity and social embeddedness providing belonging and buffering isolation', 'Spiritual frameworks (across Christianity, Islam, and traditional beliefs) that embed self-care in devotional practice', 'Intergenerational beauty knowledge passed woman-to-woman as an act of love and connection', 'Community celebration and event dressing (owambe culture) as mood-elevating ritual'],
@@ -135,7 +135,7 @@ export const ETHNIC_MENTAL_HEALTH_BEAUTY_GUIDES = {
     communityName: 'South Asian',
     heroText: 'The Ayurvedic tradition treats the skin, the nervous system and the mind as connected. South Asian beauty rituals form a rich self-care system in which care for the body is also care for the mind.',
     mental_health_context: {
-      dominant_stressors: ['Colorism: the centuries-deep association of light skin with purity, status, and marriageability across South Asian cultures causes documented psychological harm, particularly for darker-skinned individuals', 'Model-minority stress in diaspora contexts: the burden of representing the community through achievement and "acceptable" appearance', 'Hair texture stigma: kinky, wavy, or coarse hair textures pathologised within communities that prize smooth "silky" hair'],
+      dominant_stressors: ['Colorism: the centuries-deep association of light skin with purity, status, and marriageability across South Asian cultures causes documented psychological harm, particularly for darker-skinned individuals', 'Hair texture stigma: kinky, wavy, or coarse hair textures pathologised within communities that prize smooth "silky" hair'],
       protective_cultural_factors: ['Ayurvedic tradition embedding self-care in wellness philosophy rather than vanity', 'Communal beauty practices (mehendi, pre-wedding champi, household recipe-sharing) sustaining social bonds', 'Religious ritual beauty practices (cleanliness for prayer, sindoor, bindi, bangles) giving beauty an elevated moral-spiritual status', 'Intergenerational transmission of beauty knowledge as an act of care and belonging'],
     },
     signature_rituals: [
@@ -228,7 +228,7 @@ export const ETHNIC_MENTAL_HEALTH_BEAUTY_GUIDES = {
     communityName: 'Arab',
     heroText: 'Arab beauty philosophy weaves together the spiritual and the sensory. Cleanliness in Islam is half of faith (taharah as ibadah); beauty is inseparable from devotion, from hospitality, from the preparation of the self for prayer and for others. The hammam, the oud, the rosewater — these are not luxuries. They are architecture for the soul.',
     mental_health_context: {
-      dominant_stressors: ['Islamophobia and anti-Arab racism producing a specific form of minority stress in Western contexts — the pressure to manage appearance as a political statement (particularly for veiled women)', 'Navigating between community beauty norms and Western beauty expectations', 'Trauma from conflict, displacement, and the specific refugee experience for Arab communities affected by regional instability'],
+      dominant_stressors: ['Islamophobia and anti-Arab racism producing a specific form of minority stress in Western contexts — the pressure to manage appearance as a political statement (particularly for veiled women)', 'Navigating between community beauty norms and Western beauty expectations'],
       protective_cultural_factors: ['The hammam tradition providing a dedicated, non-judgmental physical and social space for self-care', 'Aromatherapy culture (oud, rose, musk, amber) providing potent olfactory anchors for emotional regulation', 'Islamic spiritual practice embedding daily cleanliness and self-care as devotional acts', 'Communal gatherings (particularly women-only spaces) offering social support under the shared umbrella of beauty preparation'],
     },
     signature_rituals: [
@@ -273,8 +273,8 @@ export const ETHNIC_MENTAL_HEALTH_BEAUTY_GUIDES = {
     communityId: 'latina',
     communityName: 'Latina',
     mental_health_context: {
-      dominant_stressors: ['Colorism within communities — the complex hierarchies of tez (skin tone) that map onto class, Indigenous heritage, and anti-Blackness inherited from colonial systems', 'Immigration stress and documentation anxiety, with the specific psychological weight of uncertainty and family separation', 'Acculturation stress: the pressure to assimilate aesthetically (straighten hair, lighten skin, lose accent) while preserving cultural identity'],
-      protective_cultural_factors: ['Abundant plant-medicine knowledge (hierbas, remedios caseros) providing accessible self-care tools', 'Celebration culture — cumbia, salsa, the dance floor, the fiesta — as legitimate communal joy infrastructure', 'El salón as a community mental health space that does not require pathologising one\'s experience to access'],
+      dominant_stressors: ['Colorism within communities — the complex hierarchies of tez (skin tone) that map onto class, Indigenous heritage, and anti-Blackness inherited from colonial systems', 'Immigration stress and documentation anxiety, with the specific psychological weight of uncertainty and family separation'],
+      protective_cultural_factors: ['Celebration culture — cumbia, salsa, the dance floor, the fiesta — as legitimate communal joy infrastructure', 'El salón as a community mental health space that does not require pathologising one\'s experience to access'],
     },
     signature_rituals: [
       {
@@ -316,7 +316,7 @@ export const ETHNIC_MENTAL_HEALTH_BEAUTY_GUIDES = {
     communityName: 'East Asian',
     heroText: 'East Asian beauty culture — particularly the Korean, Japanese, and Chinese traditions — has developed deliberate, layered skincare systems. At its best, it is not about chasing a standard but about the practice itself: the slow, layered, attentive ritual of caring for skin as an act of present-moment focus. This is beauty as meditation.',
     mental_health_context: {
-      dominant_stressors: ['Model minority stress: the expectation of academic and professional excellence that suppresses disclosure of mental health struggle', 'Anti-Asian racism, particularly post-pandemic, producing a specific trauma burden in diaspora communities'],
+      dominant_stressors: ['Model minority stress: the expectation of academic and professional excellence that suppresses disclosure of mental health struggle'],
       protective_cultural_factors: ['Structured daily self-care practice (skincare routines) as existing normalised mindfulness infrastructure', 'Tea culture and ceremony as embedded sensory-grounding practice', 'Communal beauty practices (group face masks, spa days, jimjilbang bathhouses) providing social connection', 'Traditional medicine frameworks (Traditional Chinese Medicine, Korean Hanbang, Japanese Kampo) providing holistic body–mind frameworks'],
     },
     signature_rituals: [
@@ -405,7 +405,7 @@ export const ETHNIC_MENTAL_HEALTH_BEAUTY_GUIDES = {
   'south-african': {
     communityId: 'south-african',
     communityName: 'South African',
-    heroText: 'South African beauty is inseparable from South African political history. The forced ugliness of apartheid — the racial classification of bodies, the criminalisation of natural hair in workplaces, the systematic assault on Black South African identity — means that beauty as self-determination is not an abstract idea here. It is a lived political act. Ubuntu, the Nguni philosophy of "I am because we are," provides a communal ethic for beauty practice: your beauty is held and affirmed by your community, not judged against an external standard.',
+    heroText: 'South African beauty is inseparable from South African political history. The forced ugliness of apartheid — the racial classification of bodies, the pencil test that used hair to classify people by race, the systematic assault on Black South African identity — means that beauty as self-determination is not an abstract idea here. It is a lived political act. Ubuntu, the Nguni philosophy of "I am because we are," provides a communal ethic for beauty practice: your beauty is held and affirmed by your community, not judged against an external standard.',
     mental_health_context: {
       dominant_stressors: ['Intergenerational trauma from apartheid, including race-based beauty standard oppression that persists in post-apartheid commercial and workplace culture', 'Coloured community-specific colorism and identity complexity: navigating mixed-heritage identity in a society that has historically required racial categorisation', 'Economic precarity for the majority Black South African population, limiting access to both mental health care and beauty resources'],
       protective_cultural_factors: ['Ubuntu philosophy providing a deeply embedded communal identity framework', 'South African women\'s activism traditions providing models of resistance and collective action', 'Rich ethnic beauty traditions (Ndebele beadwork, Xhosa traditional dress and beauty, Zulu ceremonial beauty) as identity anchors', 'The "Born Free" generation\'s explicit reclamation of Black beauty and natural aesthetics'],
@@ -443,7 +443,7 @@ export const ETHNIC_MENTAL_HEALTH_BEAUTY_GUIDES = {
   'black-american': {
     communityId: 'black-american',
     communityName: 'Black American',
-    heroText: 'The Black American beauty salon is one of the great unrecognised mental health institutions of the 20th and 21st centuries. In a country that has systematically devalued, brutalised, and legislated against Black bodies, the act of adorning, celebrating, and caring for that body is not trivial. It is survival. It is resistance. It is, in the truest sense, self-determination.',
+    heroText: 'The Black American beauty salon has long been an informal place of support as well as a place for hair. In a country that has systematically devalued, brutalised, and legislated against Black bodies, the act of adorning, celebrating, and caring for that body is not trivial. It is survival. It is resistance. It is, in the truest sense, self-determination.',
     mental_health_context: {
       dominant_stressors: ['Racial trauma: the accumulation of microaggressions, systemic racism, police violence, and cultural devaluation produces a specific chronic stress burden documented across Black American health outcomes', 'Hair discrimination: Black hair has been penalised in schools and workplaces for generations — the CROWN Act (Creating a Respectful and Open World for Natural Hair) is a legislative response to documented harm', 'Colorism within the community: the persistent valuation of lighter skin and straighter hair as more beautiful, more professional, and more worthy', 'The specific burden of navigating American beauty standards designed around white Western aesthetics while maintaining community identity'],
       protective_cultural_factors: ['The Black beauty salon as a unique social institution — a safe space, a community mental health resource, and a site of cultural transmission that has no precise equivalent in other communities', 'The natural hair movement providing an affirming counter-narrative to dominant beauty standards', 'Rich artistic and expressive beauty traditions — from elaborate nail art to protective styling — as creative self-expression', 'Intergenerational beauty knowledge and the specific intimacy of hair care as an act of love'],
@@ -633,7 +633,7 @@ export const EXTENDED_RITUAL_GUIDES = {
         origin: 'Ayurvedic and South Asian home tradition',
         mental_health_function: 'Slow breathing, skin cleansing, meditative pause',
         description: 'Herbal facial steaming — boiling water with neem leaves, turmeric, rose petals, or tulsi (holy basil) and tenting the face over the bowl — is a traditional preparation for other treatments (masks, oiling) but also stands alone as a grounding practice. The steam forces slow, deep breathing. The medicinal herbs add their specific properties: neem is traditionally used as antimicrobial; tulsi is a traditional calming herb; rose is calming. The 10 minutes of enforced gentle breathing over a bowl of fragrant steam is a complete mindfulness protocol in disguise.',
-        recipe: 'Boil 1 litre of water. Add 5 neem leaves, 1 tsp turmeric, 10 rose petals, and a sprig of fresh tulsi if available. Steep 3 minutes off heat. Tent face over bowl with a towel, eyes closed, breathing deeply for 8–10 minutes. Keep a comfortable distance from the water to avoid steam burns.',
+        recipe: 'Boil 1 litre of water. Add 5 neem leaves, 1 tsp turmeric, 10 rose petals, and a sprig of fresh tulsi if available. Steep 3 minutes off heat. Tent face over bowl with a towel, eyes closed, breathing deeply for 8–10 minutes. Keep a comfortable distance from the water to avoid steam burns. Keep a comfortable distance from the water to avoid steam burns.',
       },
       {
         name: 'Ayurvedic Colour Therapy in Beauty',

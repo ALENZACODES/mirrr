@@ -344,3 +344,23 @@ test('calm and self-image routes over HTTP', async () => {
   const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
   assert.equal(lib.shelves.find(s => s.id === 'mind').guides.length, 2);
 });
+
+test('look book routes over HTTP', async () => {
+  const B = `http://127.0.0.1:${PORT}`;
+  const h = { 'x-forwarded-for': '10.6.6.19' };
+  const o = await (await fetch(`${B}/api/looks/options`, { headers: h })).json();
+  assert.equal(o.communities.length, 9); assert.equal(o.looks.length, 38); assert.equal(o.tones.length, 10);
+  const r = await fetch(`${B}/api/looks/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ community: 'south_asian', category: 'bridal' }) });
+  assert.equal(r.status, 200);
+  const p = await r.json();
+  assert.equal(p.look.id, 'bollywood_bridal'); assert.ok(p.related.some(x => x.id === 'kohl_eye_tutorial')); assert.ok(p.safety.some(s => s.id === 'kohl'));
+  assert.equal((await fetch(`${B}/api/looks/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  const sr = await (await fetch(`${B}/api/looks/search?q=eid`, { headers: h })).json();
+  assert.ok(sr.results.some(x => x.id === 'eid_festive'));
+  const old = await fetch(`${B}/api/looks`, { headers: h });
+  assert.notEqual(old.status, 404);
+  const html = await (await fetch(`${B}/`, { headers: h })).text();
+  assert.ok(html.includes('data-view="looks"') && html.includes('src="looks.js"'));
+  const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
+  assert.equal(lib.shelves.find(s => s.id === 'looks').guides.length, 2);
+});

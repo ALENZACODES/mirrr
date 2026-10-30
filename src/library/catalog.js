@@ -124,6 +124,8 @@ import * as ingredientEncyclopedia from '../ingredient_encyclopedia.js';
 import * as skincareIngredientsEncyclopedia from '../skincare_ingredients_encyclopedia.js';
 import * as ecoBeautyGuide from '../eco_beauty_guide.js';
 import * as mentalHealthBeautyGuide from '../mental_health_beauty_guide.js';
+import * as lookStyles from '../look_styles.js';
+import * as beautyTutorials from '../beauty_tutorials.js';
 import * as mentalHealthBeautyEthnicGuide from '../mental_health_beauty_ethnic_guide.js';
 import * as ecoSustainableBeauty from '../eco_sustainable_beauty.js';
 import * as ecoSustainableBeautyEthnicGuide from '../eco_sustainable_beauty_ethnic_guide.js';
@@ -149,6 +151,7 @@ export const SHELVES = [
   { id: 'ingredients', title: 'Ingredients & Science', blurb: 'What each skincare ingredient does and how to use it, which ones to keep apart and which work together, pH and layering order, morning and night routines, traditional ingredients and where they come from, and a glossary of skin science terms.' },
   { id: 'eco', title: 'Eco Beauty', blurb: 'Plastic-free swaps, refills and certifications, where shea, argan, marula and other ingredients come from and who benefits, climate threats to beauty crops, waterless and low-waste routines, and each community\'s eco starter kit.' },
   { id: 'mind', title: 'Mind & Self-Image', blurb: 'Beauty rituals as comfort: braiding circles, champi, the hammam, sea bathing, the salon and other community rituals, stress recovery routines, what stress does to skin and hair, scent and season, self-image, and support lines.' },
+  { id: 'looks', title: 'Looks & Tutorials', blurb: 'Full makeup looks from every community and for everyone, by category, time, level and season, with eye, face and lip details, and step-by-step tutorials: cut crease, kohl, bold lips, brows, foundation for deep skin, ubtan, black soap, champi, starter locs and mehndi.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -280,4 +283,6 @@ export const GUIDES = [
   ['waterless_beauty_ethnic_guide', 'eco', 'Waterless and Low-Waste Beauty', waterlessBeautyEthnicGuide],
   ['mental_health_beauty_ethnic_guide', 'mind', 'Beauty Rituals and Mental Wellbeing by Community', mentalHealthBeautyEthnicGuide],
   ['mental_health_beauty_guide', 'mind', 'Self-Care Science and Community Rituals', mentalHealthBeautyGuide],
+  ['look_styles', 'looks', 'Look Book: Looks by Community, Occasion and Level', lookStyles],
+  ['beauty_tutorials', 'looks', 'Step-by-Step Tutorials', beautyTutorials],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

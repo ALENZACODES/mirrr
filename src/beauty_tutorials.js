@@ -3,24 +3,15 @@
  * Detailed guides for looks, techniques, and traditional rituals
  */
 
-// ─── TUTORIAL DIFFICULTY LEVELS ──────────────────────────────────────────────
-
 export const DIFFICULTY_LEVELS = {
-  1: { id: 1, label: 'Beginner',      description: 'No prior experience needed', icon: '⭐' },
-  2: { id: 2, label: 'Easy',          description: 'Basic makeup experience helpful', icon: '⭐⭐' },
-  3: { id: 3, label: 'Intermediate',  description: 'Comfortable with most techniques', icon: '⭐⭐⭐' },
-  4: { id: 4, label: 'Advanced',      description: 'Experience with multiple techniques', icon: '⭐⭐⭐⭐' },
-  5: { id: 5, label: 'Pro',           description: 'Professional-level skills', icon: '⭐⭐⭐⭐⭐' },
+  '1': { id: 1, label: 'Beginner', description: 'No prior experience needed', icon: '⭐' },
+  '2': { id: 2, label: 'Easy', description: 'Basic makeup experience helpful', icon: '⭐⭐' },
+  '3': { id: 3, label: 'Intermediate', description: 'Comfortable with most techniques', icon: '⭐⭐⭐' },
+  '4': { id: 4, label: 'Advanced', description: 'Experience with multiple techniques', icon: '⭐⭐⭐⭐' },
+  '5': { id: 5, label: 'Pro', description: 'Professional-level skills', icon: '⭐⭐⭐⭐⭐' },
 };
 
-// ─── TUTORIAL DATABASE ────────────────────────────────────────────────────────
-
 export const TUTORIALS = {
-
-  // ═══════════════════════════════════════════════════════════════════════════
-  // SKIN PREP TUTORIALS
-  // ═══════════════════════════════════════════════════════════════════════════
-
   ubtan_face_mask: {
     id: 'ubtan_face_mask',
     title: 'Ubtan (Bridal Glow Mask)',
@@ -28,9 +19,9 @@ export const TUTORIALS = {
     category: 'skincare',
     difficulty: 1,
     timeMinutes: 30,
-    description: 'The original South Asian bridal glow recipe. Turmeric, gram flour, and rose water for luminous skin.',
-    culturalContext: 'Ubtan has been applied to brides (and grooms) before weddings in South Asia for over 3,000 years. The haldi (turmeric) ceremony traces directly from this ritual.',
-    benefits: ['brightening', 'exfoliation', 'anti-inflammatory', 'even skin tone'],
+    description: 'A traditional South Asian bridal glow mask: turmeric, gram flour and rose water.',
+    culturalContext: 'Ubtan has been applied to brides (and grooms) before South Asian weddings for generations, and the haldi (turmeric) ceremony is closely tied to it.',
+    benefits: ['gentle exfoliation', 'radiance', 'softness'],
     tools: ['small bowl', 'mixing spoon', 'brush or hands'],
     ingredients: [
       { name: 'Gram flour (besan)', amount: '2 tablespoons' },
@@ -44,28 +35,28 @@ export const TUTORIALS = {
         step: 1,
         title: 'Mix the dry ingredients',
         instruction: 'Combine gram flour and turmeric in a small bowl. Mix well to evenly distribute the turmeric.',
-        tip: 'Use a tiny amount of turmeric — it stains. 1/4 tsp is enough for glow without yellow tint on pale skin.',
+        tip: 'Use a tiny amount of turmeric: it stains. A quarter teaspoon is enough without a yellow tint on lighter skin.',
         duration: '2 minutes',
       },
       {
         step: 2,
         title: 'Add rose water gradually',
         instruction: 'Add rose water spoonful by spoonful, mixing as you go, until a smooth paste forms. Consistency should be like thick yogurt — not runny.',
-        tip: 'Add milk or yogurt instead of some water for extra moisturising. Saffron milk adds an extra layer of brightening.',
+        tip: 'Use milk or yogurt instead of some of the rose water for a creamier paste. Saffron is traditional and optional.',
         duration: '2 minutes',
       },
       {
         step: 3,
         title: 'Cleanse your face',
         instruction: 'Double-cleanse first — oil cleanser then gentle foam. Pat dry.',
-        tip: 'Never apply ubtan to dirty skin — the exfoliation will push impurities in.',
+        tip: 'Start on clean skin so the paste spreads and rinses evenly.',
         duration: '3 minutes',
       },
       {
         step: 4,
         title: 'Apply the ubtan',
         instruction: 'Apply mask in gentle circular motions. Cover face and neck evenly, avoiding eye area. Leave on for 15-20 minutes.',
-        tip: 'Do not leave on too long — gram flour can be drying. 15 minutes is optimal.',
+        tip: 'Do not leave it on too long: gram flour can be drying. Fifteen minutes is enough.',
         duration: '2 minutes',
       },
       {
@@ -79,16 +70,15 @@ export const TUTORIALS = {
         step: 6,
         title: 'Moisturise and tone',
         instruction: 'Pat skin dry, apply rose water toner with a cotton pad, then seal with a moisturiser. Your skin should glow.',
-        tip: 'For bridal prep: do this mask every day for the 2 weeks before the wedding.',
+        tip: 'For bridal prep, use it two or three times a week in the weeks before the wedding, and stop if your skin feels tight or irritated.',
         duration: '3 minutes',
       },
     ],
     frequency: 'Weekly or pre-event',
     skinTypes: ['all', 'sensitive (adjust turmeric to pinch)'],
-    warnings: ['May temporarily tint very pale skin yellow — do 24hrs before event', 'Do not apply to open wounds'],
-    tags: ['ubtan', 'haldi', 'bridal', 'south-asian', 'turmeric', 'DIY', 'brightening'],
+    warnings: ['Patch-test on your inner arm first (turmeric, milk and saffron can all irritate)', 'May tint lighter skin yellow for a day: do it at least 24 hours before an event', 'Do not apply to open wounds'],
+    tags: ['ubtan', 'haldi', 'bridal', 'south-asian', 'turmeric', 'DIY', 'radiance'],
   },
-
   black_soap_ritual: {
     id: 'black_soap_ritual',
     title: 'West African Black Soap Cleanse',
@@ -96,14 +86,13 @@ export const TUTORIALS = {
     category: 'skincare',
     difficulty: 1,
     timeMinutes: 15,
-    description: 'Authentic West African black soap (ose dudu / alata samina) cleansing ritual for acne and even skin tone.',
+    description: 'West African black soap (ose dudu / alata samina): a traditional deep cleanse for oily skin.',
     culturalContext: 'African black soap has been made by Yoruba and Akan women for centuries. Originally made from ash of plantain skin, cocoa pods, palm oil and shea — a complex artisanal process.',
-    benefits: ['acne treatment', 'anti-bacterial', 'deep cleanse', 'hyperpigmentation', 'eczema relief'],
+    benefits: ['deep cleanse', 'traditional cleanse for oily skin'],
     tools: ['raw black soap', 'bowl of water', 'fingertips or soft cloth', 'moisturiser'],
     ingredients: [
       { name: 'Raw African black soap', amount: 'Piece the size of a grape' },
       { name: 'Warm water', amount: 'Enough to lather' },
-      { name: 'Optional: lavender essential oil (2 drops)', amount: 'For fragrance and antibacterial boost' },
     ],
     steps: [
       {
@@ -137,14 +126,9 @@ export const TUTORIALS = {
     ],
     frequency: 'Once daily or every other day (start slow)',
     skinTypes: ['oily', 'acne-prone', 'combination', 'not recommended for very dry or sensitive skin initially'],
-    warnings: ['Start with 2-3 times per week', 'Always moisturise after', 'Can cause purging (breakouts) in first 2 weeks'],
-    tags: ['black-soap', 'ose-dudu', 'alata-samina', 'west-african', 'acne', 'cleanse', 'DIY'],
+    warnings: ['Start with 2-3 times per week', 'Always moisturise after', 'It can be drying: stop if it causes dryness, stinging or new breakouts'],
+    tags: ['black-soap', 'ose-dudu', 'alata-samina', 'west-african', 'oily-skin', 'cleanse', 'DIY'],
   },
-
-  // ═══════════════════════════════════════════════════════════════════════════
-  // EYE TUTORIALS
-  // ═══════════════════════════════════════════════════════════════════════════
-
   kohl_eye_tutorial: {
     id: 'kohl_eye_tutorial',
     title: 'Traditional Kohl Eye Tutorial',
@@ -153,7 +137,7 @@ export const TUTORIALS = {
     difficulty: 2,
     timeMinutes: 10,
     description: 'Master the Arabic kohl eye — dramatic waterline kohl, smoky smudge, and extended lower lash line.',
-    culturalContext: 'Kohl has been used to line eyes for 4,000+ years across Egypt, Arabia, and South Asia. Originally protective as well as cosmetic — reduced sun glare and protected from flies.',
+    culturalContext: 'Kohl has lined eyes since ancient Egypt, and across Arabia and South Asia. Many people believe it protects the eyes; that is not proven.',
     benefits: ['deep eye definition', 'smoky effect', 'elongating'],
     tools: ['kohl pencil or kajal pencil', 'smudge brush', 'eyeshadow for blending', 'Q-tip'],
     ingredients: [
@@ -207,10 +191,9 @@ export const TUTORIALS = {
     ],
     frequency: 'Per use',
     skinTypes: ['all'],
-    warnings: ['Avoid if you have eye infections', 'Check traditional kohl for lead content'],
+    warnings: ['Avoid if you have an eye infection', 'Traditional kohl, kajal and surma can contain lead: use a cosmetic pencil sold for the waterline', 'Never put kohl on babies or children'],
     tags: ['kohl', 'kajal', 'arab', 'south-asian', 'smoky', 'waterline', 'eye'],
   },
-
   cut_crease_tutorial: {
     id: 'cut_crease_tutorial',
     title: 'Cut-Crease Eye Tutorial',
@@ -219,7 +202,7 @@ export const TUTORIALS = {
     difficulty: 4,
     timeMinutes: 30,
     description: 'Master the dramatic cut-crease technique that defines the eye crease with sharp contrast for elongated, lifted eyes.',
-    culturalContext: 'The cut crease became globally iconic through Afrobeats and Nigerian beauty influencers who adapted it for deep hooded eyes with melanin-rich lids.',
+    culturalContext: 'The cut crease is a staple of Nigerian party and bridal glam, including aso-ebi looks, and works on hooded eyes when the cut line sits higher.',
     benefits: ['eye lifting', 'dramatic definition', 'hooded eye opener'],
     tools: ['flat shader brush', 'blending brush', 'liner brush', 'concealer brush', 'primer', 'setting powder'],
     ingredients: [
@@ -228,7 +211,7 @@ export const TUTORIALS = {
       { name: 'Dark matte shade (deep brown/black)', amount: 'For crease' },
       { name: 'Lid highlight shade (champagne/gold)', amount: 'For lid' },
       { name: 'Concealer (1 shade lighter than skin)', amount: 'For cut' },
-      { name: 'Setting powder (banana/translucent)', amount: 'To set the cut' },
+      { name: 'Setting powder (banana on light to medium skin; peach, orange-toned or translucent on deep skin)', amount: 'To set the cut' },
       { name: 'Black gel liner', amount: 'For wing' },
     ],
     steps: [
@@ -271,7 +254,7 @@ export const TUTORIALS = {
         step: 6,
         title: 'Set the cut',
         instruction: 'Using a small flat brush, lightly set the concealer cut with a matching setting powder to prevent creasing.',
-        tip: 'Banana powder works on lighter skin. For deeper skin tones, use a translucent or skin-toned setting powder.',
+        tip: 'Banana powder suits light and medium skin. On deep skin it can look ashy: use a peach or orange-toned powder deep enough for your skin, or a translucent one.',
         duration: '2 minutes',
       },
       {
@@ -294,11 +277,6 @@ export const TUTORIALS = {
     warnings: ['Practice makes perfect — this technique takes multiple attempts', 'For hooded eyes, adjust cut line higher'],
     tags: ['cut-crease', 'advanced', 'eye', 'hooded-eyes', 'glam', 'technique'],
   },
-
-  // ═══════════════════════════════════════════════════════════════════════════
-  // HAIR TUTORIALS
-  // ═══════════════════════════════════════════════════════════════════════════
-
   champi_hair_massage: {
     id: 'champi_hair_massage',
     title: 'Champi Oil Head Massage',
@@ -306,9 +284,9 @@ export const TUTORIALS = {
     category: 'hair',
     difficulty: 1,
     timeMinutes: 40,
-    description: 'Traditional South Asian head massage with warm hair oil. Promotes scalp health, hair growth, and deep relaxation.',
-    culturalContext: 'Champi (champissage) is a 4,000-year-old Ayurvedic practice. The word "shampoo" derives from the Hindi "champo" (champi/massage). Traditional Indian barbers are masters of this art.',
-    benefits: ['scalp stimulation', 'hair growth', 'relaxation', 'hair conditioning', 'dandruff reduction'],
+    description: 'Traditional South Asian head massage with warm oil: relaxing, and good for the scalp\'s comfort.',
+    culturalContext: 'Champi is a traditional Indian head massage, long offered by barbers. The English word "shampoo" comes from the Hindi chāmpo, "press" or "knead".',
+    benefits: ['relaxation', 'scalp massage', 'hair conditioning'],
     tools: ['oil heating bowl or microwave-safe bowl', 'towel', 'shower cap'],
     ingredients: [
       { name: 'Coconut oil or sesame oil', amount: '3-4 tablespoons' },
@@ -341,14 +319,14 @@ export const TUTORIALS = {
         step: 4,
         title: 'Massage with fingertips',
         instruction: 'Using the pads of your fingertips (not nails), massage the scalp in small circular motions. Work from the front hairline back, then down to the nape. Apply medium-firm pressure.',
-        tip: 'Move the scalp, not just the hair. You should feel the scalp shift slightly — this increases blood circulation.',
+        tip: 'Move the scalp, not just the hair: you should feel it shift slightly.',
         duration: '15 minutes',
       },
       {
         step: 5,
         title: 'Heat cap treatment',
         instruction: 'Twist or bun hair, cover with a shower cap, then wrap in a warm towel (heated in dryer for 5 minutes). Leave for 20-30 minutes.',
-        tip: 'The heat opens the hair cuticle to allow oil penetration.',
+        tip: 'Gentle warmth helps the oil spread and makes the treatment more relaxing.',
         duration: '20 minutes',
       },
       {
@@ -362,9 +340,8 @@ export const TUTORIALS = {
     frequency: 'Weekly',
     skinTypes: ['all hair types (adjust oil for type)'],
     warnings: ['Do not do if you have active scalp conditions without consulting a dermatologist'],
-    tags: ['champi', 'head-massage', 'amla', 'coconut-oil', 'south-asian', 'hair-growth', 'ayurveda'],
+    tags: ['champi', 'head-massage', 'amla', 'coconut-oil', 'south-asian', 'scalp-massage', 'ayurveda'],
   },
-
   loc_starter_tutorial: {
     id: 'loc_starter_tutorial',
     title: 'Starter Locs — Two-Strand Twist Method',
@@ -373,11 +350,11 @@ export const TUTORIALS = {
     difficulty: 3,
     timeMinutes: 120,
     description: 'How to start your loc journey using two-strand twists. The most common method for natural coily hair.',
-    culturalContext: 'Dreadlocs have roots in many cultures — ancient Indian sadhus, Rastafarian faith, ancient Egypt. For Black Americans, locs are a powerful statement of natural identity and spiritual connection.',
-    benefits: ['low manipulation', 'protective style', 'identity expression', 'hair growth protection'],
+    culturalContext: 'Locs have roots in many cultures, from Indian sadhus to Rastafari. For many Black Americans, locs are a statement of natural identity, and for some a spiritual one.',
+    benefits: ['low manipulation', 'protective style', 'identity expression', 'less breakage from daily styling'],
     tools: ['fine-tooth comb', 'sectioning clips', 'spray bottle with water', 'rattail comb', 'hair ties (optional)'],
     ingredients: [
-      { name: 'Loc gel or wax (light hold)', amount: 'As needed' },
+      { name: 'Loc gel (light hold, wax-free)', amount: 'As needed' },
       { name: 'Leave-in conditioner', amount: '1 pump per section' },
       { name: 'Light oil (jojoba or argan)', amount: 'Light coat on scalp' },
     ],
@@ -386,7 +363,7 @@ export const TUTORIALS = {
         step: 1,
         title: 'Cleanse and detangle',
         instruction: 'Wash hair with a clarifying or residue-free shampoo. Do NOT use a conditioner on this wash — residue prevents locking. Detangle while wet.',
-        tip: 'No conditioner on the day you start locs. Conditioner prevents the hair matrix from locking together.',
+        tip: 'No conditioner on the day you start: it leaves hair slippery, which slows locking.',
         duration: '20 minutes',
       },
       {
@@ -415,7 +392,7 @@ export const TUTORIALS = {
         title: 'Repeat across entire head',
         instruction: 'Repeat steps 3-4 for every section until all hair is twisted.',
         tip: 'Expect this to take 2-4 hours. Put on a podcast or movie. Consistency in section size matters more than speed.',
-        duration: '60-90 minutes total',
+        duration: '2-4 hours total',
       },
       {
         step: 6,
@@ -437,11 +414,6 @@ export const TUTORIALS = {
     warnings: ['Research fully before starting — locs are a long-term commitment', 'Do not over-apply wax or gel — causes buildup', 'Avoid wax-based products (hard to remove)'],
     tags: ['locs', 'dreadlocs', 'two-strand-twist', 'starter-locs', 'black-american', 'natural-hair', 'type4'],
   },
-
-  // ═══════════════════════════════════════════════════════════════════════════
-  // LIP TUTORIALS
-  // ═══════════════════════════════════════════════════════════════════════════
-
   dark_skin_bold_lip: {
     id: 'dark_skin_bold_lip',
     title: 'Bold Lip for Melanin-Rich Skin',
@@ -450,7 +422,7 @@ export const TUTORIALS = {
     difficulty: 2,
     timeMinutes: 10,
     description: 'How to apply and choose a bold lip that pops beautifully on deep skin tones. From prep to perfect definition.',
-    culturalContext: 'Bold, pigmented lip colours on melanin-rich skin tones is one of the most stunning beauty combinations. The key is knowing which shades and prep techniques create the most impact.',
+    culturalContext: 'Bold, pigmented lip colours look striking on deep skin. Shade choice and prep make the difference.',
     benefits: ['drama', 'colour payoff', 'longevity'],
     tools: ['lip liner', 'lipstick (matte or satin)', 'lip brush', 'Q-tip', 'concealer'],
     ingredients: [
@@ -505,14 +477,9 @@ export const TUTORIALS = {
     ],
     frequency: 'Per use',
     skinTypes: ['all'],
-    warnings: ['Avoid very cool-toned shades if you want warmth — they can look grey on deep skin'],
+    warnings: ['Very pale or grey-based nudes can look ashy on deep skin; deep berries, plums and true reds do not'],
     tags: ['bold-lip', 'deep-skin', 'melanin', 'red-lip', 'lip-application', 'technique'],
   },
-
-  // ═══════════════════════════════════════════════════════════════════════════
-  // BROW TUTORIALS
-  // ═══════════════════════════════════════════════════════════════════════════
-
   south_asian_brow: {
     id: 'south_asian_brow',
     title: 'South Asian Bold Brow',
@@ -520,8 +487,7 @@ export const TUTORIALS = {
     category: 'brows',
     difficulty: 2,
     timeMinutes: 10,
-    description: 'Define and shape the naturally full South Asian brow for the bold, defined look that is a cultural signature.',
-    culturalContext: 'Full, defined brows have always been a beauty ideal in South Asian culture — no threading, filling, or defining needed to achieve the ideal was ever as straightforward as it is now.',
+    culturalContext: 'Full, defined brows are a popular look in South Asia, and threading is the traditional way to shape them.',
     benefits: ['frame the face', 'defined arch', 'filled and full'],
     tools: ['brow pencil or pomade', 'angled brow brush', 'spoolie', 'setting gel'],
     ingredients: [
@@ -555,7 +521,7 @@ export const TUTORIALS = {
         step: 4,
         title: 'Define the arch',
         instruction: 'The arch should peak above the outer edge of the iris (looking straight ahead). Use a slightly darker shade or more pressure at the arch peak to define it.',
-        tip: 'For South Asian brows, the arch is naturally defined. You may only need to clean up the area just below the arch with threading.',
+        tip: 'If your arch is already defined, you may only need to tidy the area just below it with threading.',
         duration: '1 minute',
       },
       {
@@ -578,11 +544,6 @@ export const TUTORIALS = {
     warnings: ['Avoid threading directly before events — skin can be red/irritated'],
     tags: ['brows', 'south-asian', 'defined-brow', 'bold-brow', 'arch', 'filling'],
   },
-
-  // ═══════════════════════════════════════════════════════════════════════════
-  // FOUNDATION / BASE TUTORIALS
-  // ═══════════════════════════════════════════════════════════════════════════
-
   foundation_deep_skin: {
     id: 'foundation_deep_skin',
     title: 'Foundation for Deep Skin Tones',
@@ -599,14 +560,14 @@ export const TUTORIALS = {
       { name: 'Primer', amount: '1 pump (silicone or water-based to match foundation)' },
       { name: 'Foundation (correct shade for deep skin)', amount: '1-2 pumps' },
       { name: 'Concealer (1 shade lighter)', amount: 'To brighten under eyes' },
-      { name: 'Setting powder (banana or translucent)', amount: 'For baking' },
+      { name: 'Setting powder (peach or orange-toned, deep enough for your skin, or translucent)', amount: 'For baking' },
     ],
     steps: [
       {
         step: 1,
         title: 'Shade selection for deep skin',
         instruction: 'Choose a foundation with a warm, golden, or neutral undertone (never grey or ashy). Test on your jawline — not wrist. Deep skin with cool undertones should look for red-warm bases, not pink.',
-        tip: 'The biggest mistake for Fitzpatrick V-VI: choosing a shade too light. Match exactly or go 1 shade darker — ashiness comes from going lighter than your skin.',
+        tip: 'The most common mistake for Fitzpatrick V-VI is a shade that is too light: ashiness usually comes from going lighter than your skin. Match exactly.',
         duration: '(shopping step)',
       },
       {
@@ -633,8 +594,8 @@ export const TUTORIALS = {
       {
         step: 5,
         title: 'Concealer and baking under eyes',
-        instruction: 'Apply concealer 1-2 shades lighter under eyes in a triangle shape. Blend edges. Dust banana powder liberally over the concealer area and leave (baking) for 5-10 minutes.',
-        tip: 'Baking (leaving powder on for 5-10 min) sets the base and brightens the under-eye area on deep skin without ashy-ness when using banana/peach setting powder.',
+        instruction: 'Apply concealer 1-2 shades lighter under the eyes in a triangle shape. Blend the edges. Dust a peach or orange-toned setting powder, deep enough for your skin, over the concealer and leave it (baking) for 5-10 minutes.',
+        tip: 'Baking sets the base and brightens the under-eye area. On deep skin, a pale banana powder can look ashy; a peach or orange-toned one deep enough for your skin does not.',
         duration: '12 minutes',
       },
       {
@@ -650,11 +611,6 @@ export const TUTORIALS = {
     warnings: ['Avoid shades with obvious grey or pink undertones for Fitzpatrick V-VI', 'Always test shade on jawline not wrist'],
     tags: ['foundation', 'deep-skin', 'fitzpatrick-V', 'fitzpatrick-VI', 'baking', 'base', 'concealer'],
   },
-
-  // ═══════════════════════════════════════════════════════════════════════════
-  // HENNA / BODY ART TUTORIALS
-  // ═══════════════════════════════════════════════════════════════════════════
-
   mehndi_basic_tutorial: {
     id: 'mehndi_basic_tutorial',
     title: 'Basic Mehndi (Henna) Application',
@@ -663,13 +619,13 @@ export const TUTORIALS = {
     difficulty: 3,
     timeMinutes: 60,
     description: 'Introduction to applying henna mehndi for beginners — basic floral patterns and fill techniques.',
-    culturalContext: 'Mehndi is applied at virtually every major South Asian life event: weddings, Eid, Diwali, Teej, Karwa Chauth. The art form is passed through generations of women.',
+    culturalContext: 'Mehndi is applied at many major South Asian life events: weddings, Eid, Diwali, Teej and Karwa Chauth. The art is passed down through generations of women.',
     benefits: ['cultural connection', 'body art', 'celebratory beauty'],
     tools: ['henna cone', 'paper towel', 'eucalyptus oil', 'lemon juice', 'cotton ball'],
     ingredients: [
       { name: 'Ready-made henna cone', amount: '1' },
       { name: 'Lemon juice + sugar mixture (aftercare)', amount: '1 tablespoon each mixed' },
-      { name: 'Eucalyptus oil (for final seal)', amount: 'A few drops' },
+      { name: 'Eucalyptus oil (for the final seal; patch-test first)', amount: 'A few drops' },
     ],
     steps: [
       {
@@ -704,21 +660,21 @@ export const TUTORIALS = {
         step: 5,
         title: 'Leave to dry',
         instruction: 'Leave henna on for 4-8 hours (overnight is best). Do NOT let it crack and fall before the full time.',
-        tip: 'Apply lemon-sugar mixture to keep henna moist and prevent cracking — this improves stain depth dramatically.',
+        tip: 'Dab the lemon-sugar mix on to keep the paste moist and stuck to the skin, which helps it stain.',
         duration: '4-8 hours',
       },
       {
         step: 6,
         title: 'Remove the paste',
         instruction: 'Scrape off (do not wash off) dried henna paste with a knife edge or card. The stain beneath will be orange initially.',
-        tip: 'NEVER wash off with water for 24 hours after removal. Water stops the oxidation process.',
+        tip: 'Keep the stain away from water for as long as you can after removal; it darkens as it oxidises.',
         duration: '5 minutes',
       },
       {
         step: 7,
         title: 'Oil and protect',
         instruction: 'Apply a few drops of eucalyptus oil and rub in. The stain will deepen from orange to red-brown over 24-48 hours.',
-        tip: 'Keep hands warm and away from water for 24 hours for deepest stain. Dark rooms and heat deepen the colour.',
+        tip: 'Keep your hands warm and dry; warmth helps the colour deepen.',
         duration: '2 minutes',
       },
     ],
@@ -727,120 +683,50 @@ export const TUTORIALS = {
     warnings: ['Avoid "black henna" — contains PPD which causes chemical burns', 'Use 100% natural henna only', 'Test for allergy on a small area first'],
     tags: ['mehndi', 'henna', 'south-asian', 'body-art', 'beginner', 'diy', 'bridal'],
   },
-
 };
 
-// ─── QUERY FUNCTIONS ─────────────────────────────────────────────────────────
-
-/**
- * Get tutorial by ID
- * @param {string} id
- * @returns {Object|null}
- */
 export function getTutorial(id) {
   return TUTORIALS[id] || null;
 }
 
-/**
- * Get tutorials for a community
- * @param {string} communityId
- * @returns {Object[]}
- */
 export function getTutorialsForCommunity(communityId) {
   return Object.values(TUTORIALS).filter(t =>
     t.community === communityId || t.community === 'all'
   );
 }
 
-/**
- * Get tutorials by category
- * @param {string} category 'skincare'|'eyes'|'hair'|'lips'|'brows'|'base'|'bodyart'
- * @returns {Object[]}
- */
 export function getTutorialsByCategory(category) {
   return Object.values(TUTORIALS).filter(t => t.category === category);
 }
 
-/**
- * Get tutorials by difficulty
- * @param {number} maxDifficulty
- * @returns {Object[]}
- */
 export function getTutorialsByDifficulty(maxDifficulty) {
   return Object.values(TUTORIALS).filter(t => t.difficulty <= maxDifficulty);
 }
 
-/**
- * Get beginner-friendly tutorials
- * @returns {Object[]}
- */
 export function getBeginnerTutorials() {
   return Object.values(TUTORIALS).filter(t => t.difficulty <= 2);
 }
 
-/**
- * Get quick tutorials (under 20 minutes)
- * @returns {Object[]}
- */
 export function getQuickTutorials() {
   return Object.values(TUTORIALS).filter(t => t.timeMinutes <= 20);
 }
 
-/**
- * Get traditional/ritual tutorials
- * @returns {Object[]}
- */
 export function getTraditionalTutorials() {
   const traditionalIds = ['ubtan_face_mask', 'black_soap_ritual', 'champi_hair_massage', 'mehndi_basic_tutorial', 'kohl_eye_tutorial'];
   return traditionalIds.map(id => TUTORIALS[id]).filter(Boolean);
 }
 
-/**
- * Get tutorial steps count
- * @param {string} id
- * @returns {number}
- */
 export function getTutorialStepCount(id) {
   return TUTORIALS[id]?.steps?.length || 0;
 }
 
-/**
- * Get step-by-step for a tutorial
- * @param {string} id
- * @returns {Object[]}
- */
 export function getTutorialSteps(id) {
   return TUTORIALS[id]?.steps || [];
 }
 
-/**
- * Search tutorials by tag
- * @param {string} tag
- * @returns {Object[]}
- */
 export function searchTutorialsByTag(tag) {
   const norm = tag.toLowerCase();
   return Object.values(TUTORIALS).filter(t =>
     (t.tags || []).some(tag => tag.includes(norm) || norm.includes(tag))
   );
 }
-
-// ─── TUTORIAL STATS ───────────────────────────────────────────────────────────
-
-export const TUTORIAL_STATS = {
-  total: Object.keys(TUTORIALS).length,
-  categories: [...new Set(Object.values(TUTORIALS).map(t => t.category))],
-  communities: [...new Set(Object.values(TUTORIALS).map(t => t.community))],
-  traditionalTutorials: Object.values(TUTORIALS).filter(t =>
-    ['ubtan_face_mask', 'black_soap_ritual', 'champi_hair_massage', 'mehndi_basic_tutorial', 'kohl_eye_tutorial'].includes(t.id)
-  ).length,
-  averageDifficulty: (
-    Object.values(TUTORIALS).reduce((sum, t) => sum + t.difficulty, 0) /
-    Object.keys(TUTORIALS).length
-  ).toFixed(1),
-  averageTime: Math.round(
-    Object.values(TUTORIALS).reduce((sum, t) => sum + t.timeMinutes, 0) /
-    Object.keys(TUTORIALS).length
-  ),
-};
-

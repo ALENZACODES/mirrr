@@ -376,6 +376,7 @@
             <button class="nav-link" data-view="mix" role="menuitem">Ingredient Checker</button>
             <button class="nav-link" data-view="eco" role="menuitem">Eco Beauty</button>
             <button class="nav-link" data-view="calm" role="menuitem">Calm &amp; Self-Image</button>
+            <button class="nav-link" data-view="looks" role="menuitem">Look Book</button>
             <button class="nav-link" data-view="style-match" role="menuitem">Style Match</button>
             <button class="nav-link" data-view="quiz" role="menuitem">DNA Quiz</button>
             <button class="nav-link" data-view="wig" role="menuitem">Wig Match</button>
@@ -1263,6 +1264,20 @@
       </div>
     </section>
 
+    <section id="view-looks" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Look Book</h2>
+        <p class="view-sub">Find a full makeup look from your community, or one for everyone, that fits the time you have, your level and the season. See it on a face in your tone, the order to apply it, the lip colour you pick, shade and safety notes, and a step-by-step tutorial to practise.</p>
+      </div>
+      <div class="st-wrap">
+        <div id="lbControls" class="st-controls"></div>
+        <div id="lbPreview" class="sk-preview cx-preview" aria-live="polite"></div>
+        <div id="lbSummary" class="hl-summary"></div>
+        <div id="lbPlan" class="st-plan"></div>
+        <p class="lib-disclaimer">Every look can be worn on any skin; looks are never filtered by skin type. The face is an illustration in the Monk Skin Tone Scale tone you pick (Ellis Monk / Google, CC BY 4.0), not your photo, and the swatches are approximate colours for the shade names in the guide. Everything here quotes the guides on the Looks &amp; Tutorials shelf, checked before wiring.</p>
+      </div>
+    </section>
+
     <section id="view-bump" class="view hidden">
       <div class="view-header">
         <h2 class="view-title">Pregnancy &amp; Postpartum</h2>
@@ -1465,6 +1480,7 @@
   <script src="mix.js" defer></script>
   <script src="eco.js" defer></script>
   <script src="calm.js" defer></script>
+  <script src="looks.js" defer></script>
   <script>
     // Community detail panel interactions
     (function() {

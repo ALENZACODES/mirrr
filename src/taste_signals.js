@@ -36,6 +36,19 @@ const VOCAB_RE = VOCAB.map(k => [k, new RegExp(`(^|[^a-z0-9])${esc(k)}($|[^a-z0-
 /** Vocabulary words found in a tag as whole words ('supernatural' is not 'natural'). */
 export function vocabMatch(name) { const n = norm(name); return VOCAB_RE.filter(([, re]) => re.test(n)).map(([k]) => k); }
 
+/** Beauty and fashion words, matched against a brand's name and the tags Qloo gives it. */
+// Whole-word starts only, and no 'luxury', 'lifestyle' or 'accessories' (they also tag cars, hotels and phones).
+const BEAUTY_BRAND_RE = /(^|[^a-z])(beauty|cosmetic|make ?up|skin ?care|skincare|fragrance|perfume|parfum|lipstick|nail polish|nails|hair ?care|salon|fashion|apparel|clothing|jewel|footwear|sneaker|handbag|couture|lingerie|streetwear|designer clothing)/i;
+const KNOWN_BEAUTY = /(^|[^a-z])(fenty|savage x|rare beauty|huda|pat mcgrath|mac cosmetics|^mac$|sephora|ulta|glossier|nyx|maybelline|l'or[eé]al|lanc[oô]me|dior|chanel|gucci|prada|versace|balenciaga|louis vuitton|yves saint laurent|ysl|givenchy|valentino|fendi|burberry|tom ford|kylie|kkw|skims|charlotte tilbury|nars|benefit|clinique|est[eé]e lauder|bobbi brown|urban decay|too faced|anastasia|morphe|elf|e\.l\.f|uoma|danessa|juvia|bread beauty|pattern|mielle|shea moisture|sheamoisture|cantu|carol's daughter|sol de janeiro|laneige|innisfree|sulwhasoo|amorepacific|shiseido|kiko|zara|h&m|nike|adidas|puma|jordan|off-white|supreme|fashion nova|pretty little thing|shein|fila|reebok)($|[^a-z])/i;
+/** Keep only brands that are about beauty or fashion, by Qloo's own tags or by name. */
+export function beautyBrands(brands = []) {
+  const seen = new Set();
+  return brands.filter((b) => {
+    const k = norm(b.name); if (!k || seen.has(k) || isBlocked(k)) return false; seen.add(k);
+    return BEAUTY_BRAND_RE.test(b.tags.join(' ')) || BEAUTY_BRAND_RE.test(b.name) || KNOWN_BEAUTY.test(b.name);
+  });
+}
+
 /** Split tags into kept (safe and load-bearing) and dropped, de-duplicated by normalised name. */
 export function filterTags(tags) {
   const kept = [], seen = new Set(); let blocked = 0, irrelevant = 0, dupes = 0;
@@ -61,7 +74,7 @@ export function filterTags(tags) {
 export async function qlooTaste(inputs = [], { client = sharedClient } = {}) {
   const t0 = Date.now();
   const names = [...new Set(inputs.map(s => String(s ?? '').trim()).filter(Boolean))].slice(0, 10);
-  const out = { inputs: names, entities: [], failed: [], received: { music: 0, media: 0 }, kept: [], dropped: { blocked: 0, irrelevant: 0, duplicates: 0 }, calls: 0, errors: [], qloo_powered: false, unreachable: false, key_set: Boolean(client?._apiKey) };
+  const out = { inputs: names, entities: [], failed: [], received: { music: 0, media: 0, brands: 0 }, brands: [], kept: [], dropped: { blocked: 0, irrelevant: 0, duplicates: 0 }, calls: 0, errors: [], qloo_powered: false, unreachable: false, key_set: Boolean(client?._apiKey) };
   if (!names.length) return { ...out, latency_ms: 0 };
   if (!out.key_set) return { ...out, unreachable: true, errors: ['Qloo API key is not configured on this server'], latency_ms: 0 };
   await Promise.all(names.map(async (input) => {
@@ -73,10 +86,17 @@ export async function qlooTaste(inputs = [], { client = sharedClient } = {}) {
   }));
   if (out.entities.length) {
     const ids = out.entities.map(e => e.id);
+    // The 4th call, run alongside the two tag calls: brands Qloo links to the same taste,
+    // kept only if they are beauty or fashion brands.
+    const brandCall = typeof client.insightBrands === 'function'
+      ? (async () => { try { out.calls++; return await client.insightBrands(ids, 50); } catch (err) { out.errors.push(why(err)); return null; } })()
+      : Promise.resolve(null);
     const [music, media] = await Promise.all(Object.entries(TAG_TYPES).map(async ([k, type]) => {
       try { out.calls++; return await client.insightTagsOfType(ids, type, 25); } catch (err) { out.errors.push(why(err)); return []; }
     }));
-    out.received = { music: music.length, media: media.length };
+    out.received = { music: music.length, media: media.length, brands: 0 };
+    const b = await brandCall;
+    if (b) { out.received.brands = b.length; out.brands = beautyBrands(b).slice(0, 8); }
     const f = filterTags([...music.map(t => ({ ...t, kind: 'music genre' })), ...media.map(t => ({ ...t, kind: 'media theme' }))]);
     out.kept = f.kept.sort((a, b) => (b.affinity ?? 0) - (a.affinity ?? 0));
     out.dropped = f.dropped;
@@ -96,6 +116,8 @@ export function provenance(q) {
     unresolved: q.failed,
     tags_received: q.received.music + q.received.media, received: q.received,
     tags_used: q.kept.length, dropped: q.dropped,
+    brands_received: q.received.brands ?? 0,
+    brands: (q.brands ?? []).map(b => ({ name: b.name, affinity: b.affinity == null ? null : Math.round(b.affinity * 100) / 100 })),
     used: q.kept.slice(0, 12).map(t => ({ name: t.name, kind: t.kind, affinity: t.affinity == null ? null : Math.round(t.affinity * 100) / 100 })),
     calls: q.calls, latency_ms: q.latency_ms, error: q.errors[0] ?? null,
   };

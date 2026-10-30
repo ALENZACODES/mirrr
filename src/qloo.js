@@ -254,6 +254,26 @@ export class QlooClient {
   }
 
   /**
+   * Brands with taste affinity to a set of entities (GET /v2/insights, filter.type=urn:entity:brand).
+   * Each brand keeps the names of the tags Qloo attaches to it, so callers can tell beauty and
+   * fashion brands from the rest.
+   * @returns {Promise<Array<{id, name, affinity, popularity, tags: string[]}>>}
+   */
+  async insightBrands(entityIds, limit = 50) {
+    const data = await this._request('GET', '/v2/insights', {
+      params: { 'filter.type': 'urn:entity:brand', 'signal.interests.entities': entityIds.join(','), take: limit },
+    });
+    const ents = data?.results?.entities ?? [];
+    return ents.map((e) => ({
+      id: e.entity_id ?? e.id ?? null,
+      name: String(e.name ?? '').trim() || null,
+      affinity: e.query?.affinity ?? e.affinity ?? null,
+      popularity: e.popularity ?? null,
+      tags: (e.tags ?? []).map((t) => String(t?.name ?? t ?? '').trim()).filter(Boolean),
+    })).filter((b) => b.name);
+  }
+
+  /**
    * Resolve a single name to a Qloo entity (returns best match or null).
    *
    * @param {string} name

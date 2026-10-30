@@ -12,6 +12,14 @@
 
 ---
 
+## Who MIRRR is for
+
+**MIRRR is made for women — and a woman is anyone who identifies as one. Trans women are welcome here, always.**
+
+MIRRR celebrates women of every culture, community, skin depth, hair texture, body, age and ability. Guides that apply only to some bodies (pregnancy, postpartum, hair removal, cycle care) are written as "if this applies to you", never as a definition of what a woman is.
+
+---
+
 ## What is MIRRR?
 
 MIRRR stands for **Multicultural Intelligence for Real-time Recommendation and Reflection**.

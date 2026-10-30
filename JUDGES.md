@@ -8,6 +8,8 @@
 
 ## 1. What MIRRR does
 
+> **Who it is for:** MIRRR is made for women — and a woman is anyone who identifies as one. Trans women are welcome here, always.
+
 MIRRR is a beauty agent for women of colour that starts from culture, not from a face scan. She names one song, artist or show she loves; MIRRR asks Qloo's taste graph what that taste means, turns the answer into ranked makeup and hair looks from her own and neighbouring cultures, and finishes on a named foundation shade, a step-by-step plan and a before-and-after on a face. Every number on screen says where it came from, and when MIRRR is not sure (no Qloo answer, no honest shade match) it says so instead of guessing.
 
 ### 60-second walkthrough (exact clicks on the live site)

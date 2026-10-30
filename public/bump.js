@@ -2,7 +2,8 @@
  * Pregnancy & Postpartum view. Pick your stage, a concern, an ingredient or treatment to check,
  * Fitzpatrick type, community and a tone; the server answers from the pregnancy and postpartum
  * guides and this view draws a figure at your stage with the concern marked, and a verdict
- * light for the ingredient at every stage. No photo is used.
+ * light for the ingredient at every stage. The figure is a clothed photographic portrait per stage
+ * (studio-photo.js); with no plate, the drawing renders.
  */
 (() => {
   const PROFILE_KEY = 'mirrr.profile.v1';
@@ -39,7 +40,7 @@
       itch: `<g stroke="${ink}" stroke-width="1.6">${[0, 1, 2, 3, 4, 5].map(i => `<path d="M${bx - 12 + (i % 3) * 10},${by - 8 + Math.floor(i / 3) * 14} l4,-4 M${bx - 10 + (i % 3) * 10},${by - 6 + Math.floor(i / 3) * 14} l4,-4"/>`).join('')}</g>`,
     }[c.concern];
     const baby = c.stage === 'bf' ? `<ellipse cx="146" cy="138" rx="16" ry="12" fill="#f3e5f5" stroke="${ink}" stroke-width="1"/><circle cx="156" cy="132" r="8" fill="${mix(skin, '#ffffff', 0.15)}" stroke="${ink}" stroke-width="1"/>` : '';
-    return `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Figure at your stage">
+    const drawing = `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Figure at your stage">
       <rect width="240" height="300" rx="14" fill="#141a26"/>
       <path d="M${thick ? 86 : 92},70 Q${thick ? 84 : 90},${thick ? 20 : 26} 120,${thick ? 20 : 26} Q${thick ? 156 : 150},${thick ? 20 : 26} ${thick ? 154 : 148},70 L${thick ? 160 : 152},${thick ? 120 : 104} L${thick ? 80 : 88},${thick ? 120 : 104} Z" fill="${hair}"/>
       <ellipse cx="119" cy="64" rx="26" ry="31" fill="${skin}" stroke="${ink}" stroke-width="1.2"/>
@@ -49,6 +50,8 @@
       <ellipse cx="${bx}" cy="${by}" rx="${rx}" ry="${ry}" fill="${bare ? skin : mix(dress, '#ffffff', 0.12)}" stroke="${bare ? ink : '#c5cae9'}" stroke-width="1.2"/>
       ${baby}${marks}</svg>
       <figcaption><strong>${esc(p.stage.label)}</strong><span>${esc(p.concern.title)} · Type ${esc(p.melasma.type)}</span></figcaption></figure>`;
+    if (!window.StudioPhoto) return drawing;
+    return window.StudioPhoto.panel({ studio: 'bump', id: p.choices.stage, fallback: drawing, w: 720, h: 960, alt: `${p.stage.label}: portrait`, caption: `<strong>${esc(p.stage.label)}</strong><span>${esc(p.concern.title)} · Type ${esc(p.melasma.type)}</span>` });
   }
 
   // ---- Verdict light for the ingredient, at every stage ------------------------------------------

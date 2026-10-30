@@ -2,7 +2,8 @@
  * Night Routine view. Pick your hair, how you protect it, skin type, tonight's active, sleep
  * position and hours, Fitzpatrick type, community and a tone; the server builds the plan from the sleep
  * guides and this view draws a sleeper on a pillow with the hair protection, position and hours,
- * and tonight's skincare layers. No photo is used.
+ * and tonight's skincare layers. The sleeper is a photographic plate per hair protection
+ * (studio-photo.js); with no plate, the drawing renders.
  */
 (() => {
   const PROFILE_KEY = 'mirrr.profile.v1';
@@ -43,13 +44,15 @@
       : `<ellipse cx="${hx}" cy="${hy + 10}" rx="40" ry="44" fill="${skin}" stroke="${ink}" stroke-width="1.2"/><path d="M${hx - 18},${hy + 8} q6,4 12,0 M${hx + 6},${hy + 8} q6,4 12,0" stroke="${ink}" stroke-width="2" fill="none"/><path d="M${hx - 10},${hy + 34} q10,5 20,0" stroke="${ink}" stroke-width="2" fill="none"/>`;
     const filled = Math.min(9, c.hours);
     const bar = [...Array(9)].map((_, i) => `<rect x="${42 + i * 18}" y="252" width="14" height="14" rx="3" fill="${i < filled ? (c.hours >= 7 ? '#2a9d8f' : '#e9c46a') : '#333'}"/>`).join('');
-    return `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Sleeper">
+    const drawing = `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Sleeper">
       <rect width="240" height="300" rx="14" fill="#101425"/>
       <circle cx="200" cy="40" r="14" fill="#f1e3a0"/><circle cx="206" cy="35" r="12" fill="#101425"/>
       <rect x="22" y="${hy + 36}" width="196" height="54" rx="22" fill="${pillow}"/>${silk ? `<path d="M40,${hy + 50} q80,-14 160,0" stroke="#fff" stroke-width="3" opacity="0.6" fill="none"/>` : ''}
       ${face}${hairDraw}${creases}
       ${bar}<text x="120" y="286" text-anchor="middle" font-size="11" fill="#f5f5f5">${esc(c.hours)} hours · ${esc(p.positionLabel)}</text></svg>
       <figcaption><strong>${esc(p.hairProtection.method.name)}</strong><span>${esc(p.hairProtection.suited ? 'Suits your hair' : 'Not the best match for your hair')}</span></figcaption></figure>`;
+    if (!window.StudioPhoto) return drawing;
+    return window.StudioPhoto.panel({ studio: 'night', id: p.choices.method, fallback: drawing, w: 960, h: 720, alt: `Asleep with a ${p.hairProtection.method.name}`, caption: `<strong>${esc(p.hairProtection.method.name)}</strong><span>${esc(p.hairProtection.suited ? 'Suits your hair' : 'Not the best match for your hair')}</span>` });
   }
 
   // ---- Tonight's layers ---------------------------------------------------------------------------

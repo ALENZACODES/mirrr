@@ -79,3 +79,29 @@ test('every manifest entry is a real WebP within its size budget', () => {
   const html = read('index.html');
   assert.ok(html.indexOf('studio-photos.js') < html.indexOf('studio-photo.js"') && html.indexOf('studio-photo.js"') < html.indexOf('nails.js'));
 });
+
+test('smile, hair colour, complexion, ageing, night, pregnancy, bridal, calm and hair removal slots are wired with fallbacks', () => {
+  const smile = read('smile.js');
+  assert.match(smile, /studio: 'smile', id: `smile-\$\{id\}`, fallback: drawing/);
+  assert.match(smile, /studio: 'smile', id: `practice-\$\{p\.choices\.practice\}`, fallback: drawing/);
+  const hair = read('hairlab.js');
+  assert.match(hair, /photoPanel\(lvl, null, 0, 'Now'/);
+  assert.match(hair, /mode: 'color', opacity: alpha, whole: true/);
+  assert.match(hair, /if \(!SP\?\.photoFor\('hair', photoId\)\) return drawn;/);
+  const cx = read('complexion.js');
+  assert.match(cx, /studio: 'face', id: `face-\$\{p\.choices\.faceShape\}`, fallback: drawing/);
+  assert.match(cx, /\$\{layers\(g, skin\)\}<\/g><\/svg>`;/); // the same corrector / sculpt zones go over the photo
+  for (const [f, re] of [['ageing.js', /studio: 'face', id: `age-\$\{p\.choices\.decade\}`/], ['night.js', /studio: 'night', id: p\.choices\.method/],
+    ['bump.js', /studio: 'bump', id: p\.choices\.stage/], ['bridal.js', /studio: 'bridal', id: p\.choices\.style/], ['calm.js', /studio: 'calm', id: p\.focus\.id/],
+    ['hairremoval.js', /studio: 'body', id: `body-\$\{p\.choices\.area\}`/], ['hairremoval.js', /studio: 'body', id: `xsec-\$\{tex\}`/]]) {
+    const src = read(f);
+    assert.match(src, re, f);
+    assert.match(src, /if \(!window\.StudioPhoto\) return drawing;/, f);
+  }
+  assert.match(read('calm.js'), /Need to talk to someone now\? \$\{esc\(line\.name\)\}/); // the support line stays on the photo slot
+});
+
+test('the svg zone overlay maps onto the plate face box and is revoked after drawing', () => {
+  assert.match(helper, /const \[bx, by, bw, bh\] = ph\.face \?\? \[/);
+  assert.match(helper, /URL\.revokeObjectURL\(url\)/);
+});

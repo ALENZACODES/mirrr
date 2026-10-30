@@ -1,7 +1,8 @@
 /**
  * Smile & Lip Care view. Pick a concern, a traditional practice, how your teeth and gums feel, a
  * community and a skin tone; the server builds the routine from the oral care guide and this view
- * draws a smile showing the concern and the practice. No photo is used.
+ * shows a smile with the concern and the practice: photographic plates (studio-photo.js) for the
+ * smile state and a still-life of the practice; with no plate, the drawing renders.
  */
 (() => {
   const PROFILE_KEY = 'mirrr.profile.v1';
@@ -38,7 +39,7 @@
     if (c.concern === 'lipCare') marks.push(`<path d="M80,124 l4,8 M100,121 l3,9 M140,121 l-3,9 M160,124 l-4,8 M92,196 l3,-8 M120,199 l0,-9 M148,196 l-3,-8" stroke="${ink}" stroke-width="1.8"/><ellipse cx="54" cy="168" rx="9" ry="14" fill="${mix(lip, '#000000', 0.35)}" stroke="${ink}" stroke-width="1.4" stroke-dasharray="3 2"/><ellipse cx="186" cy="168" rx="9" ry="14" fill="${mix(lip, '#000000', 0.35)}" stroke="${ink}" stroke-width="1.4" stroke-dasharray="3 2"/>`);
     if (c.teeth === 'sensitive') marks.push(`<path d="M${66 + 18 + 8},148 l-4,-8 l6,0 l-4,-8" stroke="#4fc3f7" stroke-width="2" fill="none"/>`);
     const word = { whitening: polished ? 'Surface stains polished' : 'Surface stains', halitosis: p.practice.targets ? 'Fresher breath' : 'Breath odour', gumHealth: 'Gum line', lipCare: 'Dry, darker lip corners', toothache: 'Sore tooth' }[c.concern];
-    return `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Smile">
+    const drawing = `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Smile">
       <rect width="240" height="300" rx="14" fill="${skin}"/>
       <path d="M40,168 Q120,96 200,168 Q120,236 40,168 Z" fill="${lip}" stroke="${ink}" stroke-width="1.2"/>
       <path d="M58,168 Q120,132 182,168 Q120,206 58,168 Z" fill="#2a1416"/>
@@ -47,6 +48,14 @@
       ${marks.join('')}
       <text x="120" y="272" text-anchor="middle" font-size="12" fill="${ink}">${esc(word)}</text></svg>
       <figcaption><strong>${esc(p.concern.label)}</strong><span>${esc(p.teethLabel)}</span></figcaption></figure>`;
+    if (!window.StudioPhoto) return drawing;
+    // Photo plate per state of the smile; whitening shows the stained and whitened plates together.
+    const SP = window.StudioPhoto; const cc = p.choices.concern; const t = p.choices.teeth;
+    const id = cc === 'lipCare' ? 'lips_care' : cc === 'gumHealth' || t === 'bleeding' ? (t === 'bleeding' ? 'gums_inflamed' : 'gums_healthy') : cc === 'whitening' ? 'stained' : 'healthy';
+    const cap = `<strong>${esc(p.concern.label)}</strong><span>${esc(p.teethLabel)}</span>`;
+    const one = SP.panel({ studio: 'smile', id: `smile-${id}`, fallback: drawing, w: 960, h: 720, alt: `${p.concern.label}: smile close-up`, caption: cap });
+    if (cc !== 'whitening' || !SP.photoFor('smile', 'smile-whitened')) return one;
+    return one + SP.panel({ studio: 'smile', id: 'smile-whitened', fallback: '', w: 960, h: 720, alt: 'The same smile after whitening', caption: '<strong>After whitening</strong><span>Brighter, still natural</span>' });
   }
 
   // ---- The practice, with a verdict colour --------------------------------------------------------
@@ -64,12 +73,14 @@
     const ok = !!p.practice.targets; const warn = p.practice.warnings.length > 0;
     const col = !ok ? '#8d8d8d' : (warn ? '#e9c46a' : '#2a9d8f');
     const word = ok ? (warn ? 'Helps, with care' : 'Helps') : 'Not for this concern';
-    return `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Practice">
+    const drawing = `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Practice">
       <rect width="240" height="300" rx="14" fill="#141414"/>
       <g opacity="${ok ? 1 : 0.45}">${ICONS[p.practice.id]}</g>
       <rect x="40" y="226" width="160" height="30" rx="15" fill="${col}"/>
       <text x="120" y="246" text-anchor="middle" font-size="13" fill="#141414">${esc(word)}</text></svg>
       <figcaption><strong>${esc(p.practice.label)}</strong><span>${esc(p.practice.targets ?? 'Pick a practice that targets this concern')}</span></figcaption></figure>`;
+    if (!window.StudioPhoto) return drawing;
+    return window.StudioPhoto.panel({ studio: 'smile', id: `practice-${p.choices.practice}`, fallback: drawing, w: 960, h: 720, alt: `${p.practice.label}: still life`, caption: `<strong>${esc(p.practice.label)}</strong><span>${esc(p.practice.targets ?? 'Pick a practice that targets this concern')}</span>` });
   }
 
   // ---- Controls ---------------------------------------------------------------------------------

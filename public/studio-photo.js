@@ -6,7 +6,8 @@
  * load, the studio's old drawing renders instead, unchanged.
  *
  * Photos are generated sample photos of women, not real people; the caption says so.
- * Manifest: window.STUDIO_PHOTOS[studio][id] = { src, mask? } (paths under /studio/).
+ * Manifest: window.STUDIO_PHOTOS[studio][id] = { src, mask?, face? } (paths under /studio/; face is
+ * the [x, y, w, h] box, as fractions, that a studio's 240x300 face drawing maps onto).
  */
 (() => {
   const PHOTOS = (window.STUDIO_PHOTOS ??= {});
@@ -76,6 +77,15 @@
       if (paint.glitter && mask) {
         const gl = maskedLayer(cv, mask, (g, L) => { let r = 7; const rnd = () => ((r = (r * 9301 + 49297) % 233280) / 233280); for (let i = 0; i < 900; i++) { g.fillStyle = `rgba(255,255,255,${0.5 + rnd() * 0.5})`; g.beginPath(); g.arc(rnd() * L.width, rnd() * L.height, 0.8 + rnd() * 1.6, 0, 7); g.fill(); } });
         ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.drawImage(gl, 0, 0); ctx.restore();
+      }
+      if (paint.svg) { // the studio's own zone layer (an SVG in its 240x300 face space) drawn over the face box
+        const [bx, by, bw, bh] = ph.face ?? [0.18, 0.1, 0.64, 0.8];
+        const url = URL.createObjectURL(new Blob([paint.svg], { type: 'image/svg+xml' }));
+        try {
+          const o = await load(url);
+          ctx.save(); ctx.globalAlpha = paint.svgAlpha ?? 0.85; ctx.globalCompositeOperation = paint.svgMode ?? 'source-over';
+          ctx.drawImage(o, bx * cv.width, by * cv.height, bw * cv.width, bh * cv.height); ctx.restore();
+        } finally { URL.revokeObjectURL(url); cache.delete(url); }
       }
       for (const o of paint.overlays ?? []) { // soft round marks drawn on the photo (correctors, sculpt, blush)
         ctx.save(); ctx.globalAlpha = o.alpha ?? 0.35; ctx.globalCompositeOperation = o.mode ?? 'soft-light';

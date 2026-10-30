@@ -83,7 +83,7 @@
   }
   function portraitPanel(p) {
     const skin = p.tone.hex; const hair = '#2b2118'; const fc = FOCUS_COL[p.focus.id]; const line = p.support.lines[0] ?? p.support.global[0];
-    return `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Portrait and support">
+    const drawing = `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Portrait and support">
       <rect width="240" height="300" rx="14" fill="#14213d"/>${hairShape(p.hair.id, hair)}
       <rect x="104" y="138" width="32" height="26" fill="${skin}"/>
       <ellipse cx="120" cy="104" rx="38" ry="46" fill="${skin}"/>
@@ -97,6 +97,8 @@
       <text x="120" y="266" text-anchor="middle" font-size="9" font-weight="700" fill="#9d0208">${esc(clip(line.contact ?? line.url.replace(/^https?:\/\//, '').replace(/\/.*$/, ''), 44))}</text>
       <text x="120" y="279" text-anchor="middle" font-size="7" fill="#495057">Type ${esc(p.skin.type)} · ${esc(p.tone.label)} · ${esc(short(p.hair.label, 22))}</text></svg>
       <figcaption><strong>Support in ${esc(p.support.label)}</strong><span>${esc(line.name)}${line.contact ? ` · ${esc(line.contact)}` : ''}</span></figcaption></figure>`;
+    if (!window.StudioPhoto) return drawing;
+    return window.StudioPhoto.panel({ studio: 'calm', id: p.focus.id, fallback: drawing, w: 720, h: 960, alt: `Portrait: ${p.focus.label}`, caption: `<strong>${esc(p.focus.label)}</strong><span>Need to talk to someone now? ${esc(line.name)} · ${esc(p.support.label)}${line.contact ? ` · ${esc(line.contact)}` : ''}</span>` });
   }
 
   // ---- Plan cards ------------------------------------------------------------------------------

@@ -3,7 +3,8 @@
  * face shape, occasion, community and a skin tone; the server plans correct, base, set and sculpt
  * from the makeup guides and this view draws an illustrated face in that Monk skin tone: one panel
  * with the corrector where the guide puts it, one with contour, highlight and blush placed where
- * the guide says for that face shape. No photo is used.
+ * the guide says for that face shape. With a photographic plate per face shape (studio-photo.js), the
+ * same corrector and sculpt zones are drawn over the photo; with no plate, the drawn face renders.
  */
 (() => {
   const PROFILE_KEY = 'mirrr.profile.v1';
@@ -80,10 +81,14 @@
   function face(title, note, p, layers) {
     const g = outline(p.choices.faceShape);
     const skin = p.tone.hex;
-    return `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="${esc(title)}"><defs><filter id="cxBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter><clipPath id="cxClip-${title.toLowerCase()}"><path d="${g.d}"/></clipPath></defs>
+    const drawing = `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="${esc(title)}"><defs><filter id="cxBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter><clipPath id="cxClip-${title.toLowerCase()}"><path d="${g.d}"/></clipPath></defs>
       <rect width="240" height="300" rx="14" fill="#141414"/><path d="${g.d}" fill="${skin}" stroke="${mix(skin, '#ffffff', 0.25)}" stroke-width="1.2"/>
       <g clip-path="url(#cxClip-${title.toLowerCase()})" filter="url(#cxBlur)">${layers(g, skin)}</g>${features(skin)}</svg>
       <figcaption><strong>${esc(title)}</strong>${note ? `<span>${esc(note)}</span>` : ''}</figcaption></figure>`;
+    if (!window.StudioPhoto) return drawing;
+    // On the photo plate for this face shape, the same corrector / sculpt zones are drawn over the face.
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" width="240" height="300"><defs><filter id="b" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter></defs><g filter="url(#b)">${layers(g, skin)}</g></svg>`;
+    return window.StudioPhoto.panel({ studio: 'face', id: `face-${p.choices.faceShape}`, fallback: drawing, w: 720, h: 960, alt: `${title}: ${p.choices.faceShape} face`, caption: `<strong>${esc(title)}</strong>${note ? `<span>${esc(note)}</span>` : ''}`, paint: { svg, svgAlpha: 0.8 } });
   }
   function contourColour(p) {
     // The guides: contour is a shadow in your own undertone; cool grey reads ashy on medium-deep skin.

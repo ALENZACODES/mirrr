@@ -2,7 +2,8 @@
  * Hair Colour Lab view. Pick your texture, porosity, starting level, history and a target
  * colour; the server works out the lift, sessions, technique and warnings from the hair guides,
  * and this view draws the result on illustrated strands: now, after the first session, the goal,
- * and how the colour fades for your porosity. No photo is used.
+ * and how the colour fades for your porosity. With photographic hair plates (studio-photo.js) the
+ * panels are real hair photos, tinted for the in-between and faded stages; otherwise strands are drawn.
  */
 (() => {
   const PROFILE_KEY = 'mirrr.profile.v1';
@@ -70,17 +71,31 @@
     return `<figure class="hl-panel"><svg viewBox="0 0 140 170" role="img" aria-label="${esc(title)}"><rect width="140" height="170" rx="12" fill="#f4ede6"/><rect x="8" y="6" width="124" height="10" rx="5" fill="#d9c7b8"/>${parts.join('')}</svg><figcaption><strong>${esc(title)}</strong>${note ? `<span>${esc(note)}</span>` : ''}</figcaption></figure>`;
   }
 
+  // Photographic hair plates (studio-photo.js): a level photo for "now", the target colour's macro for
+  // the goal, and the same photos tinted (colour blend) for the in-between and faded stages. The
+  // drawn strands are the fallback when a plate is missing.
+  function photoPanel(photoId, tint, alpha, title, note, drawn) {
+    const SP = window.StudioPhoto;
+    if (!SP?.photoFor('hair', photoId)) return drawn;
+    return SP.panel({ studio: 'hair', id: photoId, fallback: drawn, w: 400, h: 400, alt: `${title}: ${note}`, caption: `<strong>${esc(title)}</strong><span>${esc(note)}</span>`,
+      paint: tint ? { colour: tint, mode: 'color', opacity: alpha, whole: true } : {} });
+  }
   const FADE = { low: 0.15, medium: 0.3, high: 0.5 };
   function drawPreview(p) {
     const m = p.choices.texture.match(/type_(\d)([abc])/);
     const curl = Number(m?.[1] ?? 4); const sub = 'abc'.indexOf(m?.[2] ?? 'a');
     const pattern = p.technique.pattern;
     const goal = p.plantDye && p.chemicalLift > 0 ? mix(p.start.hex, p.target.hex, 0.35) : p.target.hex;
-    const panels = [panel('hlNow', 'Now', p.start.hex, null, pattern, curl, p.start.label, sub)];
-    if (p.sessions > 1) panels.push(panel('hlS1', 'After session 1', p.start.hex, p.path[0].swatch, pattern, curl, `Underlying ${p.path[0].underlying.toLowerCase()}`, sub));
-    panels.push(panel('hlGoal', p.sessions > 1 ? `Goal (${p.sessions} sessions)` : 'Goal', p.start.hex, goal, pattern, curl, p.plantDye && p.chemicalLift > 0 ? 'Shows as a tint' : p.target.label, sub));
-    const fadeTo = p.stage ? p.stage.swatch : p.start.hex;
-    panels.push(panel('hlFade', 'Weeks later', p.start.hex, mix(goal, fadeTo, FADE[p.choices.porosity]), pattern, curl, `${nice(p.choices.porosity)} porosity fades ${p.fade}`, sub));
+    const lvl = `level${p.choices.startLevel}`; const tgt = p.choices.target;
+    const tinted = p.plantDye && p.chemicalLift > 0; // goal shows as a tint over the starting colour
+    const goalId = tinted || !window.StudioPhoto?.photoFor('hair', tgt) ? lvl : tgt;
+    const panels = [photoPanel(lvl, null, 0, 'Now', p.start.label, panel('hlNow', 'Now', p.start.hex, null, pattern, curl, p.start.label, sub))];
+    if (p.sessions > 1) panels.push(photoPanel(lvl, p.path[0].swatch, 0.55, 'After session 1', `Underlying ${p.path[0].underlying.toLowerCase()}`, panel('hlS1', 'After session 1', p.start.hex, p.path[0].swatch, pattern, curl, `Underlying ${p.path[0].underlying.toLowerCase()}`, sub)));
+    const goalTitle = p.sessions > 1 ? `Goal (${p.sessions} sessions)` : 'Goal'; const goalNote = tinted ? 'Shows as a tint' : p.target.label;
+    panels.push(photoPanel(goalId, goalId === tgt ? null : goal, 0.7, goalTitle, goalNote, panel('hlGoal', goalTitle, p.start.hex, goal, pattern, curl, goalNote, sub)));
+    const fadeTo = p.stage ? p.stage.swatch : p.start.hex; const faded = mix(goal, fadeTo, FADE[p.choices.porosity]);
+    const fadeNote = `${nice(p.choices.porosity)} porosity fades ${p.fade}`;
+    panels.push(photoPanel(goalId, faded, goalId === tgt ? FADE[p.choices.porosity] : 0.7, 'Weeks later', fadeNote, panel('hlFade', 'Weeks later', p.start.hex, faded, pattern, curl, fadeNote, sub)));
     $('hlPreview').innerHTML = panels.join('') + '<p class="photo-try"><button type="button" class="btn btn-primary photo-try-btn" id="hlPhotoTry">Try it on my photo</button><span>Laid on your own face, on this device. Nothing is uploaded.</span></p>';
     $('hlPhotoTry').addEventListener('click', () => window.dispatchEvent(new CustomEvent('mirrr:tryon', { detail: { name: p.target.label, hair: goal } })));
   }

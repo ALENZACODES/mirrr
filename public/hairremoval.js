@@ -2,7 +2,8 @@
  * Hair Removal Planner view. Pick the area, your hair texture and colour, skin type, a method, an
  * event, community and a skin tone; the server judges the method from the hair removal guides and
  * this view draws the body with the area marked, a cross-section of the hair in the skin showing
- * what the method does, and the plan. No photo is used.
+ * what the method does, and the plan. Areas and the hair-in-skin section use photographic plates
+ * where present (studio-photo.js); otherwise the drawings render.
  */
 (() => {
   const PROFILE_KEY = 'mirrr.profile.v1';
@@ -43,7 +44,7 @@
   function bodyPanel(p) {
     const skin = p.tone.hex; const deep = lum(skin) < 0.18; const line = deep ? mix(skin, '#ffffff', 0.35) : mix(skin, '#000000', 0.35);
     const [col, word] = LEVEL[p.verdict.level];
-    return `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Body">
+    const drawing = `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Body">
       <rect width="240" height="300" rx="14" fill="#141414"/>
       <g fill="${skin}" stroke="${line}"><ellipse cx="120" cy="46" rx="18" ry="22"/><rect x="113" y="66" width="14" height="12"/>
         <path d="M92,80 Q120,72 148,80 L150,168 L90,168 Z"/><rect x="70" y="84" width="14" height="96" rx="7"/><rect x="156" y="84" width="14" height="96" rx="7"/>
@@ -51,6 +52,8 @@
       <g fill="${col}" fill-opacity="0.55" stroke="${col}" stroke-width="2">${ZONES[p.choices.area]}</g>
       <text x="120" y="296" text-anchor="middle" font-size="11" fill="${col}">${esc(word)}: ${esc(p.method.name)}</text></svg>
       <figcaption><strong>${esc(p.areaLabel)}</strong><span>${esc(p.method.name)} · Type ${esc(p.choices.fitzpatrick)}</span></figcaption></figure>`;
+    if (!window.StudioPhoto) return drawing;
+    return window.StudioPhoto.panel({ studio: 'body', id: `body-${p.choices.area}`, fallback: drawing, w: 960, h: 720, alt: `${p.areaLabel}: skin close-up`, caption: `<strong>${esc(p.areaLabel)}</strong><span>${esc(p.method.name)} · Type ${esc(p.choices.fitzpatrick)}</span>` });
   }
 
   // ---- Cross-section: what the method does to the hair ------------------------------------------
@@ -86,13 +89,16 @@
       hairSvg = `${strand(hairPath(x, c.hair, surface - 30, root - 20))}<path d="M${x + 4},${surface - 40} L${x + 2},${root - 16}" stroke="#cfd8dc" stroke-width="2"/><circle cx="${x + 2}" cy="${root - 14}" r="7" fill="#4fc3f7" opacity="0.6"/>`;
       note = 'A probe destroys the root, one hair at a time';
     }
-    return `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Hair in the skin">
+    const drawing = `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Hair in the skin">
       <rect width="240" height="300" rx="14" fill="#141414"/>
       <rect x="20" y="${surface}" width="200" height="140" fill="${skin}"/><rect x="20" y="${surface}" width="200" height="10" fill="${mix(skin, '#000000', 0.2)}"/>
       <ellipse cx="${x}" cy="${root - 12}" rx="10" ry="16" fill="${mix(skin, '#7a3b2e', 0.4)}" opacity="0.7"/>
       ${hairSvg}
       <text x="120" y="280" text-anchor="middle" font-size="11" fill="#f5f5f5">${esc(note)}</text></svg>
       <figcaption><strong>${esc(p.hairLabel)}</strong><span>${esc(p.colourLabel)}</span></figcaption></figure>`;
+    if (!window.StudioPhoto) return drawing;
+    const tex = { fine: 'straight', wavy: 'curly', coily: 'coily' }[p.choices.hair] ?? 'coily';
+    return window.StudioPhoto.panel({ studio: 'body', id: `xsec-${tex}`, fallback: drawing, w: 960, h: 720, alt: `Hair in the skin: ${p.hairLabel}`, caption: `<strong>${esc(p.hairLabel)}</strong><span>${esc(p.colourLabel)}</span>` });
   }
 
   // ---- Controls ---------------------------------------------------------------------------------

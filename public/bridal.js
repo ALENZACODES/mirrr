@@ -2,7 +2,8 @@
  * Bridal Countdown view. Pick the time left, Fitzpatrick type, hair type and wedding hair style,
  * community and a tone; the server builds the plan from the bridal guides and this view draws
  * the countdown with where you are, and a bride with your hair type and style and a three-stripe
- * foundation test on the jaw (too light, match, too dark). No photo is used.
+ * foundation test on the jaw (too light, match, too dark). The bride is a photographic plate per
+ * wedding hairstyle (studio-photo.js); with no plate, the drawing renders.
  */
 (() => {
   const PROFILE_KEY = 'mirrr.profile.v1';
@@ -57,7 +58,7 @@
         : `<path d="M80,${long ? 200 : 150} Q72,40 120,36 Q168,40 160,${long ? 200 : 150} Z" fill="${hairCol}"/>${coil ? [0, 1, 2, 3].map(i => `<path d="M${84 + i * 2},${70 + i * 30} q${coil},8 0,16 M${156 - i * 2},${70 + i * 30} q${-coil},8 0,16" stroke="${halo}" stroke-width="0.8" fill="none" opacity="0.7"/>`).join('') : ''}`;
     const stripes = [['too light', mix(skin, '#ffffff', 0.25)], ['match', skin], ['too dark', mix(skin, '#000000', 0.3)]]
       .map(([, col], i) => `<rect x="${131 + i * 7}" y="${100 + i * 2}" width="6" height="20" rx="2" fill="${col}" stroke="${ink}" stroke-width="1"/>`).join('');
-    return `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Bride">
+    const drawing = `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Bride">
       <rect width="240" height="300" rx="14" fill="#3a3346"/>
       ${mass}
       <ellipse cx="120" cy="96" rx="34" ry="42" fill="${skin}" stroke="${ink}" stroke-width="1.2"/>
@@ -66,6 +67,8 @@
       <rect x="108" y="136" width="24" height="20" fill="${skin}"/><path d="M60,300 Q60,170 120,160 Q180,170 180,300 Z" fill="#f4efe6"/>
       ${stripes}</svg>
       <figcaption><strong>${esc(h.style)}</strong><span>${esc(h.type === 'straight' ? 'Straight' : `Type ${h.type}`)} hair · ${esc(h.suited ? 'suits it' : 'not named for it')} · skin Type ${esc(p.skin.type)} · jaw test: the middle stripe matches</span></figcaption></figure>`;
+    if (!window.StudioPhoto) return drawing;
+    return window.StudioPhoto.panel({ studio: 'bridal', id: p.choices.style, fallback: drawing, w: 720, h: 960, alt: `Bride wearing ${h.style}`, caption: `<strong>${esc(h.style)}</strong><span>${esc(h.type === 'straight' ? 'Straight' : `Type ${h.type}`)} hair · ${esc(h.suited ? 'suits it' : 'not named for it')}</span>` });
   }
 
   function select(id, text, values, current) {

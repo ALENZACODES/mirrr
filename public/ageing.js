@@ -2,7 +2,7 @@
  * Ageing Studio view. Pick your decade, Fitzpatrick type, main concern, hormone stage, community
  * and a skin tone; the server plans a morning and evening routine from the ageing guides and this
  * view draws a face showing the concern being treated, a decade timeline, and the routine.
- * No photo is used.
+ * With a photographic plate per decade (studio-photo.js) the face is a photo; otherwise it is drawn.
  */
 (() => {
   const PROFILE_KEY = 'mirrr.profile.v1';
@@ -51,7 +51,7 @@
       dryness: [[84, 120], [156, 124], [92, 176], [150, 178], [120, 76], [108, 196]].map(([x, y]) => `<path d="M${x},${y} l6,2 l-4,3" stroke="${ink}" fill="none" stroke-width="1.4" opacity="0.85"/>`).join(''),
       texture: Array.from({ length: 18 }, (_, i) => `<circle cx="${100 + (i % 6) * 8}" cy="${150 + Math.floor(i / 6) * 8}" r="1.4" fill="${deep ? ink : mark}" opacity="${deep ? 0.7 : 1}"/>`).join(''),
     }[c] ?? '';
-    return `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Face">
+    const drawing = `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Face">
       <rect width="240" height="300" rx="14" fill="#141414"/>
       <path d="M120,40 C174,40 184,90 182,140 C180,${jaw - 20} 160,${jaw} 120,${jaw + 6} C80,${jaw} 60,${jaw - 20} 58,140 C56,90 66,40 120,40 Z" fill="${skin}" stroke="${line}"/>
       <ellipse cx="96" cy="128" rx="11" ry="5" fill="#f3efe9"/><ellipse cx="144" cy="128" rx="11" ry="5" fill="#f3efe9"/><circle cx="96" cy="128" r="4" fill="#2b1d16"/><circle cx="144" cy="128" r="4" fill="#2b1d16"/>
@@ -59,6 +59,8 @@
       ${overlay}
       <text x="120" y="288" text-anchor="middle" font-size="12" fill="#f5f5f5">${esc(p.concernLabel)}</text></svg>
       <figcaption><strong>${esc(p.concernLabel)}</strong><span>Type ${esc(p.choices.fitzpatrick)} · ${esc(p.tone.label)}</span></figcaption></figure>`;
+    if (!window.StudioPhoto) return drawing;
+    return window.StudioPhoto.panel({ studio: 'face', id: `age-${p.choices.decade}`, fallback: drawing, w: 720, h: 960, alt: `A woman in her ${p.decadeLabel}`, caption: `<strong>${esc(p.decadeLabel)}</strong><span>${esc(p.concernLabel)} · Type ${esc(p.choices.fitzpatrick)}</span>` });
   }
   function timelinePanel(p) {
     const segs = p.ages.map((d, i) => {

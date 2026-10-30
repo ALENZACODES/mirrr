@@ -2,7 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
-import { createRateLimiter, tierFor, TIERS } from '../src/ratelimit.js';
+import { createRateLimiter, tierFor, TIERS, clientAddress, isTrustedHop, hopShape } from '../src/ratelimit.js';
 
 test('routes that can reach Qloo or the narrator are the upstream tier; the labs are local', () => {
   for (const p of ['/api/taste/profile', '/api/agent/run', '/api/trending', '/api/trending/regions', '/api/plan', '/api/transform', '/api/qloo/diag']) assert.equal(tierFor(p), 'upstream', p);
@@ -58,4 +58,38 @@ test('a long lab session from one address over HTTP never sees a 429, and a floo
     const r = flood.indexOf(429) >= 0 && await fetch(`${B}/api/health`, { headers: { 'x-forwarded-for': '10.7.7.3' } });
     assert.equal(r.status, 429); assert.ok(Number(r.headers.get('retry-after')) >= 1);
   } finally { server.kill(); }
+});
+
+const req = (peer, xff, extra = {}) => ({ socket: { remoteAddress: peer }, headers: { ...(xff === undefined ? {} : { 'x-forwarded-for': xff }), ...extra } });
+
+test('private, loopback and Cloudflare hops are trusted proxies; public addresses and junk are not', () => {
+  for (const ip of ['10.1.2.3', '172.16.0.1', '172.31.255.255', '192.168.1.1', '127.0.0.1', '::1', '::ffff:10.0.0.1', '162.158.10.1', '104.16.0.1', '2606:4700::6810:1', 'fd00::1']) assert.ok(isTrustedHop(ip), ip);
+  for (const ip of ['172.32.0.1', '8.8.8.8', '81.2.69.160', '2001:db8::1', '999.1.1.1', 'garbage', '']) assert.ok(!isTrustedHop(ip), ip);
+});
+
+test('behind the proxy, the visitor is the right-most hop that is not a proxy; a typed X-Forwarded-For is ignored', () => {
+  // Render: the visitor typed "1.2.3.4"; Cloudflare appended the real address, then the edge and Render's own hops.
+  assert.equal(clientAddress(req('10.0.0.5', '1.2.3.4, 81.2.69.160, 162.158.1.1, 10.1.1.1')), '81.2.69.160');
+  assert.equal(clientAddress(req('10.0.0.5', '81.2.69.160')), '81.2.69.160');
+  // a different made-up value on every request still lands in the same bucket
+  const seen = new Set(['5.5.5.5', '6.6.6.6', '7.7.7.7'].map(f => clientAddress(req('10.0.0.5', `${f}, 81.2.69.160, 10.1.1.1`))));
+  assert.deepEqual([...seen], ['81.2.69.160']);
+  // several X-Forwarded-For headers are read as one list
+  assert.equal(clientAddress(req('10.0.0.5', ['6.6.6.6', '81.2.69.160, 10.2.2.2'])), '81.2.69.160');
+});
+
+test('a direct connection is its own address whatever it claims', () => {
+  assert.equal(clientAddress(req('81.2.69.160', '1.1.1.1')), '81.2.69.160');
+  assert.equal(clientAddress(req('81.2.69.160')), '81.2.69.160');
+});
+
+test('local tools behind loopback keep their own private test addresses', () => {
+  assert.equal(clientAddress(req('127.0.0.1', '10.7.7.2')), '10.7.7.2');
+  assert.equal(clientAddress(req('::1')), '::1');
+});
+
+test('the logged chain shape carries no addresses', () => {
+  const shape = hopShape(req('10.0.0.5', '1.2.3.4, 81.2.69.160, 162.158.1.1, 10.1.1.1', { 'cf-connecting-ip': '81.2.69.160' }));
+  assert.equal(shape, 'xff=xxcp peer=trusted cf-connecting-ip=same-as-picked');
+  assert.doesNotMatch(shape, /\d+\.\d+\.\d+/);
 });

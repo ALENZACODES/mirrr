@@ -31,7 +31,7 @@ import { handleComplexion } from './makeup/routes.js';
 import { handleColour } from './colour/routes.js';
 import { handleNails } from './nails/routes.js';
 import { handleAgeing } from './ageing/routes.js';
-import { createRateLimiter } from './ratelimit.js';
+import { createRateLimiter, clientAddress, hopShape } from './ratelimit.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT ?? 3000;
@@ -66,8 +66,12 @@ const takeToken = createRateLimiter();
 // Helper utilities
 // ---------------------------------------------------------------------------
 
+// The first few requests after start log the forwarding chain's shape (no addresses) so the
+// proxy setup the rate limiter relies on can be checked in the service logs.
+let shapesLogged = 0;
 function getIP(req) {
-  return req.headers['x-forwarded-for']?.split(',')[0]?.trim() ?? req.socket?.remoteAddress ?? 'unknown';
+  if (shapesLogged < 3 && req.headers['x-forwarded-for']) { shapesLogged++; console.log(`client-ip: ${hopShape(req)}`); }
+  return clientAddress(req);
 }
 
 function setCORS(res) {

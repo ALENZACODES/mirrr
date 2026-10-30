@@ -3073,3 +3073,6 @@ body { padding-top: 58px; }
 .lp-ontone { display: flex; gap: .5rem; align-items: center; margin-top: .4rem; }
 .lp-ontone canvas { width: 34%; height: auto; aspect-ratio: 3 / 4; border-radius: 10px; display: block; background: #1b1b2f; }
 .lp-ontone span { font-size: .72rem; color: #c9c9c9; line-height: 1.3; }
+/* Signature look portraits: generated-photo label */
+.look-card-img-wrap, .sm-photo { position: relative; }
+.gen-badge { position: absolute; bottom: .4rem; right: .5rem; font-size: .6rem; color: #fefae0; background: rgba(0,0,0,.5); padding: .1rem .45rem; border-radius: 999px; pointer-events: none; }

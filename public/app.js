@@ -595,12 +595,12 @@ const COMMUNITY_IMAGES = {
 // Editorial look images — mapped by look ID
 const LOOK_IMAGES = {
   // Batch 1 — updated filenames
-  afrobeats_concert:        'look-afrobeats-concert.webp',
+  afrobeats_concert:        'looks/afrobeats_concert.webp',
   afropunk_edge:            'look-afropunk-edge.webp',
   amapiano_beat:            'look-amapiano-beat.webp',
   bollywood_bridal:         'look-bollywood-bridal.webp',
   dancehall_queen:          'look-dancehall-queen.webp',
-  hip_hop_glam:             'look-hip-hop-glam.webp',
+  hip_hop_glam:             'looks/hip_hop_glam.webp',
   gulf_glam:                'look-gulf-glam.webp',
   k_beauty_glass:           'look-k-beauty-glass.webp',
   latina_glam:              'look-latina-glam.webp',
@@ -629,12 +629,12 @@ const LOOK_IMAGES = {
   date_night_drama:         'look-date-night-drama.webp',
   ghanaian_kente_glam:      'look-ghanaian-kente-glam.webp',
   xhosa_glam:               'look-xhosa-glam.webp',
-  afro_glam_editorial:      'look-afro-glam-editorial.webp',
+  afro_glam_editorial:      'looks/afro_glam_editorial.webp',
   congolese_sapeur:         'look-congolese-sapeur.webp',
   // Batch 5
   amazigh_berber:           'look-amazigh-berber.webp',
   black_girl_natural:       'look-black-girl-natural.webp',
-  hbcu_homecoming:          'look-hbcu-homecoming.webp',
+  hbcu_homecoming:          'looks/hbcu_homecoming.webp',
   kenyan_nairobi_chic:      'look-kenyan-nairobi-chic.webp',
   somali_glam:              'look-somali-glam.webp',
   y2k_revival:              'look-y2k-revival.webp',
@@ -778,6 +778,11 @@ const WIG_IMAGES = {
   jewelled_updo:       'wig-jewelled_updo.webp',
 };
 
+// Signature look portraits (public/looks/) are generated sample photos; say so on the card.
+function genBadge(src) {
+  return /(^|\/)looks\//.test(String(src ?? '')) ? '<span class="gen-badge">Generated photo, not a real person</span>' : '';
+}
+
 function renderLookCard(look, score, row = {}) {
   (state.lookNames ??= {})[look.id] = look.name;
   const scoreBar = Math.round((score ?? 0) * 100);
@@ -786,7 +791,7 @@ function renderLookCard(look, score, row = {}) {
     : `Fit ${scoreBar}: taste-vector fit only (no Qloo evidence for this result)`;
   const imgFile  = LOOK_IMAGES[look.id];
   const imgHtml  = imgFile
-    ? `<div class="look-card-img-wrap"><img src="${imgFile}" alt="${look.name}" class="look-card-img" loading="lazy" /></div>`
+    ? `<div class="look-card-img-wrap"><img src="${imgFile}" alt="${esc(look.name)}" class="look-card-img" loading="lazy" onerror="this.parentElement.remove()" />${genBadge(imgFile)}</div>`
     : '';
   return `
     <div class="look-card" data-look-id="${look.id}" role="button" tabindex="0" aria-label="View ${look.name} look details">
@@ -2239,7 +2244,7 @@ async function loadStyleMatchLooks() {
     container.className = 'sm-grid';
     container.innerHTML = looks.map(look => `
       <div class="shade-card sm-card" style="cursor:pointer;" data-look-id="${look.id}">
-        <div class="sm-photo${look.image ? '' : ' sm-photo--none'}">${look.image ? `<img src="${look.image}" alt="${look.name} — ${look.community.replace('-', ' ')} look" loading="lazy" decoding="async" onload="this.classList.add('is-loaded')" onerror="this.parentElement.classList.add('sm-photo--none');this.remove()">` : ''}</div>
+        <div class="sm-photo${look.image ? '' : ' sm-photo--none'}">${look.image ? `<img src="${look.image}" alt="${look.name} — ${look.community.replace('-', ' ')} look" loading="lazy" decoding="async" onload="this.classList.add('is-loaded')" onerror="this.parentElement.classList.add('sm-photo--none');this.remove()">${genBadge(look.image)}` : ''}</div>
         <div class="shade-info">
           <div class="shade-name">${look.name}</div>
           <div class="shade-community" style="font-size:0.72rem;color:#c9a96e;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem;">${look.community.replace('-', ' ')}</div>

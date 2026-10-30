@@ -158,6 +158,9 @@ window.STUDIO_PHOTOS = {
   "amapiano_silver": {
    "src": "/studio/hair/amapiano_silver.webp"
   },
+  "ash_brown": {
+   "src": "/studio/hair/ash_brown.webp"
+  },
   "black_to_blue": {
    "src": "/studio/hair/black_to_blue.webp"
   },
@@ -184,6 +187,9 @@ window.STUDIO_PHOTOS = {
   },
   "butterscotch": {
    "src": "/studio/hair/butterscotch.webp"
+  },
+  "caramel": {
+   "src": "/studio/hair/caramel.webp"
   },
   "carnival_red": {
    "src": "/studio/hair/carnival_red.webp"

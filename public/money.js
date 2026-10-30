@@ -187,7 +187,7 @@
       const url = typeof input === 'string' ? input : input?.url || '';
       const method = (init?.method || 'GET').toUpperCase();
       if (res.ok && method === 'POST') {
-        if (/\/api\/taste\/looks(\?|$)/.test(url)) count('taste_run');
+        if (/\/api\/(agent\/run|agent\/demo|taste\/demo|taste\/looks)(\?|$)/.test(url)) count('taste_run');
         else if (/\/api\/leap\/plan(\?|$)/.test(url)) window.dispatchEvent(new CustomEvent('mirrr:moment', { detail: { kind: 'leap' } }));
       }
     } catch { /* never break the app */ }

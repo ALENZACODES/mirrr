@@ -865,6 +865,7 @@ async function openLookModal(lookId) {
         <p class="modal-basis" data-basis="${esc(products.basis ?? '')}">${basisText}</p>
       </div>
       ${products.products.some(p => PRODUCT_PHOTOS[p.category]) ? `<p class="modal-basis product-photo-note">${PRODUCT_PHOTO_NOTE}</p>` : ''}
+      <div class="shop-block" id="modalShop"></div>
       ${products.namedGuide ? `<div class="modal-named" id="modalNamed"><button class="btn btn-secondary" type="button" id="modalNamedBtn">Named brands &amp; prices: ${esc(products.namedGuide.name)} guide</button></div>` : ''}
       <div class="product-list">
         ${products.products.map(p => `
@@ -883,6 +884,7 @@ async function openLookModal(lookId) {
       </div>
     `;
     document.getElementById('modalNamedBtn')?.addEventListener('click', () => loadNamedGuide(products.namedGuide, products.label));
+    window.MirrrMoney?.fillShop(document.getElementById('modalShop'), lookId);
   } catch {
     content.innerHTML = '<p class="modal-error">Could not load product details.</p>';
   }
@@ -1574,6 +1576,7 @@ async function loadTryOnPhoto(src, file = null) {
   if (seq !== tryonState.seq) return;
   tryonStatus('');
   applyOverlay();
+  window.dispatchEvent(new CustomEvent('mirrr:moment', { detail: { kind: 'tryon' } }));
 }
 
 function editPixels(imageData, face) {
@@ -1978,7 +1981,10 @@ function setupShare() {
   document.getElementById('shareCopyBtn')?.addEventListener('click', copyShareLink);
 }
 
+let _shareLookId = null;
 function openShare(lookId) {
+  _shareLookId = lookId || getTopLookId();
+  window.MirrrMoney?.count('share');
   const modal = document.getElementById('shareModal');
   modal.classList.remove('hidden');
   modal.classList.add('open');
@@ -2145,6 +2151,9 @@ function drawShareCardText(ctx, W, startY, lookId) {
   ctx.fillStyle = 'rgba(255,255,255,0.4)';
   ctx.textAlign = 'center';
   ctx.fillText(_lastTaste?.meta?.qloo_powered ? 'mirrr-upbn.onrender.com · Powered by Qloo Taste AI' : 'mirrr-upbn.onrender.com · demo data, not from Qloo', W / 2, footY);
+  // Referral code: names the card and look that were shared, not the person.
+  const refCode = window.MirrrMoney?.refCode('card', lookId || _shareLookId);
+  if (refCode) ctx.fillText(`Code ${refCode.toUpperCase()} · open mirrr-upbn.onrender.com/?ref=${refCode}`, W / 2, footY + 20);
 }
 
 function getTopLookId(ids = state.currentLookIds) {
@@ -2191,9 +2200,10 @@ function downloadShareCard() {
 }
 
 function copyShareLink() {
-  navigator.clipboard?.writeText('https://mirrr-upbn.onrender.com')
+  const link = window.MirrrMoney?.shareUrl('card', _shareLookId) || 'https://mirrr-upbn.onrender.com';
+  navigator.clipboard?.writeText(link)
     .then(() => toast('Link copied!', 'info'))
-    .catch(() => toast('https://mirrr-upbn.onrender.com', 'info'));
+    .catch(() => toast(link, 'info'));
 }
 
 // ===========================================================================
@@ -2383,6 +2393,8 @@ async function openStyleGuide(lookId) {
     if (data.shoppingEstimate) {
       tipsEl.innerHTML += `<div style="margin-top:0.75rem;font-size:0.8rem;color:#888;">Estimated budget: ${data.shoppingEstimate.currency} $${data.shoppingEstimate.low}–$${data.shoppingEstimate.high}</div>`;
     }
+    tipsEl.insertAdjacentHTML('beforeend', '<div class="shop-block" id="smShop"></div>');
+    window.MirrrMoney?.fillShop(document.getElementById('smShop'), lookId);
 
   } catch (err) {
     stepsEl.innerHTML = `<p style="color:#e05;">Guide unavailable — ${err.message}</p>`;
@@ -2549,6 +2561,7 @@ openLookModal = async function (lookId) {
     btn.disabled = true;
     btn.innerHTML = `${ico('check')} Saved`;
     toast('Look saved in this browser', 'info');
+    window.dispatchEvent(new CustomEvent('mirrr:moment', { detail: { kind: 'plan_save' } }));
   });
   content.appendChild(btn);
 };
@@ -3242,7 +3255,10 @@ function renderPlanResult(host, face, data, lookId) {
     persist({ plan: { targetLookId: lookId, checked: map, savedAt: new Date().toISOString() } });
     updateBar();
   }));
-  if (!plan || plan.targetLookId !== lookId) persist({ plan: { targetLookId: lookId, checked: {}, savedAt: new Date().toISOString() } });
+  if (!plan || plan.targetLookId !== lookId) {
+    persist({ plan: { targetLookId: lookId, checked: {}, savedAt: new Date().toISOString() } });
+    window.dispatchEvent(new CustomEvent('mirrr:moment', { detail: { kind: 'plan_save' } }));
+  }
 
   document.getElementById('tfChange')?.addEventListener('click', () => { persist({ target: null, plan: null }); renderTransform(); });
   document.getElementById('tfEdit')?.addEventListener('click', () => showView('face'));

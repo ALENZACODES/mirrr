@@ -74,7 +74,7 @@ function templateNarration(results) {
 
   const wigLine =
     looks?.[0]?.wigStyle
-      ? `\n\nCompletely this look: ${looks[0].wigStyle.name} wig.`
+      ? `\n\nComplete this look: ${looks[0].wigStyle.name} wig.`
       : '';
 
   const archLines = (aesthetic?.archetypes ?? [])
@@ -83,9 +83,22 @@ function templateNarration(results) {
     .join(', ');
   const archLine = archLines ? `\n\nYour aesthetic archetypes: ${archLines}.` : '';
 
-  const raw = `${intro}${entityLine}${lookLine}${wigLine}${archLine}`;
-  // Strip any stray markdown bold/italic markers and lone numeric tokens
-  return raw.replace(/\*\*/g, '').replace(/\*/g, '').replace(/\b(0\.5|1)\b/g, '').trim();
+  // What Qloo actually contributed, in plain words, so the narration changes with the taste input.
+  const q = results.qloo;
+  let qlooLine = '';
+  if (q?.qloo_powered) {
+    const top = (q.used ?? []).slice(0, 4).map(t => (t.affinity != null ? `${t.name} (${t.affinity.toFixed(2)})` : t.name)).join(', ');
+    const names = (q.entities ?? []).map(e => e.name).join(', ');
+    qlooLine = `\n\nQloo's taste graph linked ${names} to ${q.tags_received} tags; ${q.tags_used} fit beauty, led by ${top}.`;
+    const ev = looks?.[0]?.evidenceTags ?? [];
+    if (topLook && ev.length) qlooLine += ` ${topLook.name} ranks first because Qloo tied you to ${ev.slice(0, 3).join(', ')}.`;
+  } else if (meta?.demo || q) {
+    qlooLine = q?.unreachable ? `\n\nQloo could not be reached (${q.error ?? 'no response'}), so this is demo data, not your taste graph.` : '\n\nThis is demo data, not from Qloo.';
+  }
+  // Strip any stray markdown bold/italic markers and lone numeric tokens from the catalogue text
+  // (not from the Qloo line, whose numbers are real affinities).
+  const clean = t => t.replace(/\*\*/g, '').replace(/\*/g, '').replace(/\b(0\.5|1)\b/g, '');
+  return `${clean(intro)}${qlooLine}${clean(`${entityLine}${lookLine}${wigLine}${archLine}`)}`.trim();
 }
 
 // ---------------------------------------------------------------------------

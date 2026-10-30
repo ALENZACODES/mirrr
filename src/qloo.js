@@ -89,7 +89,7 @@ export class QlooClient {
    */
   constructor({
     apiKey = process.env.QLOO_API_KEY,
-    baseUrl = process.env.QLOO_BASE_URL || DEFAULT_BASE,
+    baseUrl = process.env.QLOO_BASE_URL || process.env.QLOO_API_URL || DEFAULT_BASE,
     timeoutMs = DEFAULT_TIMEOUT_MS,
     cache = new TtlCache(),
     fetchImpl = globalThis.fetch,
@@ -232,6 +232,24 @@ export class QlooClient {
       name: t.name ?? null,
       affinity: t.query?.affinity ?? t.affinity ?? 1,
       popularity: t.popularity ?? null,
+    })).filter((t) => t.name);
+  }
+
+  /**
+   * Tags of one Qloo tag type (e.g. 'urn:tag:genre:music') for a set of entities, with affinity.
+   * @returns {Promise<Array<{id, name, affinity, popularity, kind}>>}
+   */
+  async insightTagsOfType(entityIds, tagTypes, limit = 25) {
+    const data = await this._request('GET', '/v2/insights', {
+      params: { 'filter.type': 'urn:tag', 'filter.tag.types': tagTypes, 'signal.interests.entities': entityIds.join(','), take: limit },
+    });
+    const tags = data?.results?.tags ?? data?.results?.entities ?? [];
+    return tags.map((t) => ({
+      id: t.tag_id ?? t.id ?? null,
+      name: String(t.name ?? '').trim() || null,
+      affinity: t.query?.affinity ?? t.affinity ?? null,
+      popularity: t.popularity ?? null,
+      kind: tagTypes,
     })).filter((t) => t.name);
   }
 

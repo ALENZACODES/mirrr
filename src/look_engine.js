@@ -1461,17 +1461,54 @@ export function scoreLook(look, vec) {
   return Math.min(1, base + archetypeBonus + culturalBonus);
 }
 
-export function recommendLooks(vec, { topN = 5, minScore = 0.2 } = {}) {
-  const scored = LOOKS
-    .map(look => ({ look, score: scoreLook(look, vec) }))
+const ARCH_ALIAS = { amapiano_beat: ['afro_glam'], bollywood_bridal: ['desi_glam'] };
+const wordRe = k => new RegExp(`(^|[^a-z0-9])${k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}($|[^a-z0-9])`);
+const normTag = s => String(s ?? '').toLowerCase().replace(/[_-]/g, ' ').replace(/\s+/g, ' ').trim();
+
+/**
+ * Qloo tags that speak for a look: tags matching its own cultural words count double, tags matching
+ * only its archetype's keywords count once. Returns tags with their evidence weight.
+ */
+export function lookEvidence(look, tags, archetypeKeywords) {
+  const archWords = [...(archetypeKeywords[look.archetype] ?? []), ...(ARCH_ALIAS[look.archetype] ?? []).flatMap(a => archetypeKeywords[a] ?? [])].map(normTag);
+  const own = [...(look.cultural_affinity ?? []), ...(look.tags ?? [])].map(normTag).filter(w => w.length > 2 && !['all', 'everyday', 'celebration', 'milestone', 'graduation', 'glam', 'bold', 'natural', 'soft'].includes(w));
+  const archRe = [...new Set(archWords)].map(wordRe), ownRe = [...new Set(own)].map(wordRe);
+  const out = [];
+  for (const t of tags) {
+    const n = normTag(t.name), base = t.weight ?? t.affinity ?? 1;
+    const o = ownRe.some(re => re.test(n)), a = archRe.some(re => re.test(n));
+    if (o || a) out.push({ ...t, ev: base * (o ? 2 : 1) });
+  }
+  return out.sort((x, y) => y.ev - x.ev);
+}
+
+/**
+ * Rank looks. Without evidence: by taste-vector fit alone (1 - mean distance on four dimensions).
+ * With Qloo evidence (kept tags with affinity): half vector fit, half the share of Qloo's affinity
+ * that points at the look. No clamping, no bonuses: the score is what was computed.
+ */
+export function recommendLooks(vec, { topN = 5, minScore = 0.2, evidence = null, archetypeKeywords = null } = {}) {
+  const useEv = Array.isArray(evidence) && evidence.length > 0 && archetypeKeywords;
+  const totalAff = useEv ? 2 * evidence.reduce((a, t) => a + (t.weight ?? t.affinity ?? 1), 0) : 0;
+  const scored = LOOKS.map(look => {
+    const w = look.weights;
+    const fit = 1 - (Math.abs(vec.intensity - w.intensity) + Math.abs(vec.warmth - w.warmth) + Math.abs(vec.boldness - w.boldness) + Math.abs(vec.texture - w.texture)) / 4;
+    if (!useEv) return { look, score: fit, fit, qlooEvidence: null, evidenceTags: [] };
+    const ev = lookEvidence(look, evidence, archetypeKeywords);
+    const share = ev.reduce((a, t) => a + t.ev, 0) / totalAff;
+    return { look, score: 0.5 * fit + 0.5 * share, fit, qlooEvidence: share, evidenceTags: ev.slice(0, 5).map(t => t.name) };
+  })
     .filter(r => r.score >= minScore)
-    .sort((a, b) => b.score - a.score)
+    .sort((a, b) => b.score - a.score || b.fit - a.fit)
     .slice(0, topN);
 
-  return scored.map(({ look, score }) => ({
-    look,
-    score: Math.round(score * 100) / 100,
-    wigStyle: pickWig(look, vec),
+  return scored.map(r => ({
+    look: r.look,
+    score: Math.round(r.score * 100) / 100,
+    fit: Math.round(r.fit * 100) / 100,
+    qlooEvidence: r.qlooEvidence == null ? null : Math.round(r.qlooEvidence * 100) / 100,
+    evidenceTags: r.evidenceTags,
+    wigStyle: pickWig(r.look, vec),
   }));
 }
 

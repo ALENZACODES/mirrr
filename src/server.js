@@ -532,8 +532,10 @@ async function router(req, res) {
     const { profile = 'afrobeats', depthTarget, undertone, lengthPref, texturePref } = body;
     const seed = DEMO_PROFILES[profile] ?? DEMO_PROFILES.afrobeats;
     try {
+      // Sample profiles run the same live Qloo pipeline on their seed names; only when Qloo gives
+      // nothing is the result demo data (and labelled so).
       const agent = new MirrrAgent({
-        qlooApiKey: null,
+        qlooApiKey: process.env.QLOO_API_KEY,
         options: { topLooks: 3, topShades: 6, topWigs: 5 },
       });
       const result = await agent.run({
@@ -546,7 +548,7 @@ async function router(req, res) {
         lengthPref: lengthPref ?? seed.lengthPref,
         texturePref: texturePref ?? seed.texturePref,
       });
-      return sendJSON(res, 200, { ...result, meta: { ...result.meta, demo: true, profile } });
+      return sendJSON(res, 200, { ...result, meta: { ...result.meta, demo: !result.meta?.qloo_powered, sample_profile: profile } });
     } catch (err) {
       console.error('[/api/agent/demo]', err);
       return sendJSON(res, 500, { error: err.message ?? 'Demo agent error' });

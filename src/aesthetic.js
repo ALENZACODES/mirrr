@@ -18,11 +18,12 @@ export const TAG_SIGNALS = {
       'rap', 'trap', 'carnival', 'soca', 'reggaeton', 'amapiano', 'gqom',
       'nollywood', 'lagos', 'naija', 'streetwear', 'urban', 'ghetto fab',
       'baddie', 'glam', 'editorial', 'avant-garde', 'bold',
+      'edm', 'electropop', 'dance pop', 'club', 'girl group', 'glam rock', 'diva',
     ],
     low: [
       'minimalist', 'clean', 'natural', 'bare', 'soft', 'subtle',
       'j-pop', 'indie', 'folk', 'acoustic', 'classical', 'ambient',
-      'hygge', 'cottagecore', 'normcore',
+      'hygge', 'cottagecore', 'normcore', 'ballad', 'jazz', 'lo fi', 'singer songwriter', 'soul',
     ],
   },
 
@@ -108,37 +109,37 @@ const ARCHETYPE_MAP = [
   {
     id: 'afro_glam',
     label: 'Afro-Glam',
-    keywords: ['afrobeats', 'afropop', 'afro-fusion', 'naija', 'ghana', 'lagos', 'accra', 'nollywood', 'west africa', 'ankara', 'kente', 'amapiano', 'south africa'],
+    keywords: ['afrobeats', 'afropop', 'afro-fusion', 'naija', 'ghana', 'lagos', 'accra', 'nollywood', 'west africa', 'ankara', 'kente', 'amapiano', 'south africa', 'africa', 'afro pop', 'highlife', 'nigeria', 'gqom'],
   },
   {
     id: 'hip_hop_glam',
     label: 'Hip Hop Glam',
-    keywords: ['hip-hop', 'hip hop', 'rap', 'trap', 'r&b', 'rnb', 'urban', 'streetwear', 'drip', 'baddie', 'ghetto fab', 'lil kim', 'cardi b'],
+    keywords: ['hip-hop', 'hip hop', 'rap', 'trap', 'r&b', 'rnb', 'rhythm & blues', 'rhythm and blues', 'neo soul', 'urban', 'streetwear', 'drip', 'baddie', 'ghetto fab', 'lil kim', 'cardi b', 'grime', 'drill'],
   },
   {
     id: 'caribbean_carnival',
     label: 'Caribbean Carnival',
-    keywords: ['caribbean', 'jamaican', 'dancehall', 'reggae', 'soca', 'carnival', 'trinidadian', 'bajan', 'haitian', 'calypso', 'patois'],
+    keywords: ['caribbean', 'jamaican', 'jamaica', 'dancehall', 'reggae', 'soca', 'carnival', 'trinidadian', 'trinidad', 'bajan', 'haitian', 'calypso', 'patois', 'kompa', 'zouk'],
   },
   {
     id: 'desi_glam',
     label: 'Desi Glam',
-    keywords: ['bollywood', 'desi', 'south asian', 'indian', 'bengali', 'pakistani', 'punjabi', 'tamil', 'telugu', 'gujarati', 'nepali', 'sri lankan', 'bhangra'],
+    keywords: ['bollywood', 'desi', 'south asian', 'indian', 'india', 'bengali', 'pakistani', 'punjabi', 'tamil', 'telugu', 'gujarati', 'nepali', 'sri lankan', 'bhangra', 'filmi', 'qawwali'],
   },
   {
     id: 'gulf_glam',
     label: 'Gulf Glam',
-    keywords: ['middle east', 'arab', 'gulf', 'khaleeji', 'persian', 'arabic', 'dubai', 'riyadh', 'mena', 'levantine', 'turkish', 'iranian', 'egyptian'],
+    keywords: ['middle east', 'arab', 'gulf', 'khaleeji', 'persian', 'arabic', 'dubai', 'riyadh', 'mena', 'levantine', 'turkish', 'iranian', 'egyptian', 'rai', 'lebanese'],
   },
   {
     id: 'latina_glam',
     label: 'Latina Glam',
-    keywords: ['latin', 'latina', 'reggaeton', 'salsa', 'cumbia', 'telenovela', 'mexican', 'colombian', 'brazilian', 'puerto rican', 'dominican', 'cuban', 'afro-latina'],
+    keywords: ['latin', 'latina', 'reggaeton', 'salsa', 'cumbia', 'bachata', 'telenovela', 'mexican', 'mexico', 'colombian', 'colombia', 'brazilian', 'brazil', 'puerto rican', 'dominican', 'cuban', 'afro-latina', 'brega', 'samba', 'bossa nova'],
   },
   {
     id: 'k_beauty',
     label: 'K-Beauty',
-    keywords: ['k-pop', 'k-beauty', 'korean', 'seoul', 'idol', 'hallyu', 'kpop', 'bts', 'blackpink', 'glass skin'],
+    keywords: ['k-pop', 'k-beauty', 'korean', 'korea', 'kdrama', 'k drama', 'seoul', 'idol', 'hallyu', 'kpop', 'bts', 'blackpink', 'glass skin', 'girl group'],
   },
   {
     id: 'clean_minimal',
@@ -349,3 +350,6 @@ export function buildAestheticVector(qlooTags = [], { freeText = [] } = {}) {
 export function getArchetypes() {
   return ARCHETYPE_MAP.map(({ id, label, keywords }) => ({ id, label, keywords }));
 }
+
+/** Archetype id → its keywords (for the Qloo tag allowlist and look evidence). */
+export const ARCHETYPE_KEYWORDS = Object.fromEntries(ARCHETYPE_MAP.map(a => [a.id, a.keywords]));

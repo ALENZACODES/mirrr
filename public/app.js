@@ -443,10 +443,11 @@ async function fetchLooks() {
     renderTasteResults(result);
   } catch (err) {
     if (err.name === 'AbortError') {
-      toast('Taking too long — loading demo results instead', 'warn');
-      const communityId = document.getElementById('communitySelect')?.value || 'afrobeats';
+      toast('Qloo took longer than 30 s, so this is demo data', 'warn');
       try {
-        const demo = await api('/api/agent/demo', 'POST', { profile: communityId || 'afrobeats' });
+        // Built-in sample data only (no Qloo call), shown under the demo-data banner.
+        const demo = await api('/api/taste/demo', 'POST', { profile: 'afrobeats' });
+        demo.meta = { ...(demo.meta ?? {}), qloo_powered: false, qloo_unreachable: true, qloo_error: 'no answer within 30 seconds' };
         state.aesthetic = demo.aesthetic;
         state.communityId = demo.communityId;
         renderTasteResults(demo);
@@ -529,7 +530,7 @@ function renderTasteResults(result) {
     looksEl.innerHTML = `
       <h2 class="section-title">Your Looks</h2>
       <div class="looks-grid-inner">
-        ${looks.map(({ look, score }) => renderLookCard(look, score)).join('')}
+        ${looks.map(r => renderLookCard(r.look, r.score, r)).join('')}
       </div>
       <div class="looks-actions">
         <button class="btn btn-secondary" id="toLooksWigBtn">Match Wigs for These Looks →</button>
@@ -756,8 +757,11 @@ const WIG_IMAGES = {
   jewelled_updo:       'wig-jewelled_updo.webp',
 };
 
-function renderLookCard(look, score) {
+function renderLookCard(look, score, row = {}) {
   const scoreBar = Math.round((score ?? 0) * 100);
+  const why = row.qlooEvidence != null
+    ? `Fit ${scoreBar}: half taste-vector fit (${Math.round((row.fit ?? 0) * 100)}), half Qloo evidence (${Math.round(row.qlooEvidence * 100)}% of Qloo's tag affinity points here)`
+    : `Fit ${scoreBar}: taste-vector fit only (no Qloo evidence for this result)`;
   const imgFile  = LOOK_IMAGES[look.id];
   const imgHtml  = imgFile
     ? `<div class="look-card-img-wrap"><img src="${imgFile}" alt="${look.name}" class="look-card-img" loading="lazy" /></div>`
@@ -767,11 +771,12 @@ function renderLookCard(look, score) {
       ${imgHtml}
       <div class="look-card-header">
         <span class="look-emoji">${look.emoji ?? '✨'}</span>
-        <div class="look-score-ring" title="${scoreBar}% match">
-          <span class="look-score-num">${scoreBar}%</span>
+        <div class="look-score-ring" title="${esc(why)}">
+          <span class="look-score-num">${scoreBar}</span>
         </div>
       </div>
       <h3 class="look-name">${look.name}</h3>
+      ${row.evidenceTags?.length ? `<p class="look-qloo" data-qloo-evidence>${ico('bolt')} Qloo: ${row.evidenceTags.slice(0, 3).map(esc).join(', ')}</p>` : ''}
       <p class="look-arch">${look.archetype?.replace(/_/g, ' ') ?? ''}</p>
       <p class="look-desc">${look.description ?? ''}</p>
       <div class="look-tags">
@@ -1723,7 +1728,7 @@ function initStylistPage() {
   const hasTaste = state.aesthetic !== null || state.tasteChips.length > 0;
   const opener = hasTaste
     ? `Welcome back! I can see your current taste profile. Tell me what to refine — occasion, mood, colour direction, or anything else.`
-    : `Hi! I'm your MIRRR AI Stylist. I use Qloo cultural taste data to find looks tailored to you.\n\nLet's start: tell me about an artist, film, or cultural vibe you love, or describe an occasion you're dressing for.`;
+    : `Hi! I'm your MIRRR stylist. I re-rank looks with live Qloo taste data; my replies are written from templates, not a language model to find looks tailored to you.\n\nLet's start: tell me about an artist, film, or cultural vibe you love, or describe an occasion you're dressing for.`;
 
   appendStylistPageMessage('stylist', opener);
   renderStylistPageQuickChips();
@@ -1795,7 +1800,7 @@ async function sendStylistPageMessage() {
       resultsEl.innerHTML = `
         <h3 class="section-title">Your Refined Looks</h3>
         <div class="looks-grid-inner">
-          ${result.looks.map(({ look, score }) => renderLookCard(look, score)).join('')}
+          ${result.looks.map(r => renderLookCard(r.look, r.score, r)).join('')}
         </div>
         <div class="stylist-page-cta">
           <button class="btn btn-secondary" id="stylistToTasteBtn">See Full Profile →</button>
@@ -1934,11 +1939,11 @@ function drawShareCardText(ctx, W, startY) {
     ctx.fillText('Your Aesthetic DNA', W / 2, startY + 30);
 
     const bars = [
-      { label: 'Intensity', val: aes.intensity ?? 0.5 },
-      { label: 'Warmth', val: aes.warmth ?? 0.5 },
-      { label: 'Boldness', val: aes.boldness ?? 0.5 },
+      { label: 'Intensity', val: aes.intensity },
+      { label: 'Warmth', val: aes.warmth },
+      { label: 'Boldness', val: aes.boldness },
     ];
-    bars.forEach((b, i) => {
+    bars.filter(b => Number.isFinite(b.val)).forEach((b, i) => {
       const y = startY + 60 + i * 42;
       const barX = 80, barW = W - 160;
 
@@ -1990,7 +1995,7 @@ function drawShareCardText(ctx, W, startY) {
   ctx.font = '13px Inter, sans-serif';
   ctx.fillStyle = 'rgba(255,255,255,0.4)';
   ctx.textAlign = 'center';
-  ctx.fillText('mirrr-upbn.onrender.com · Powered by Qloo Taste AI', W / 2, footY);
+  ctx.fillText(_lastTaste?.meta?.qloo_powered ? 'mirrr-upbn.onrender.com · Powered by Qloo Taste AI' : 'mirrr-upbn.onrender.com · demo data, not from Qloo', W / 2, footY);
 }
 
 function getTopLookId() {
@@ -2058,7 +2063,7 @@ renderTasteResults = function(result) {
     const stylistBtn = document.createElement('button');
     stylistBtn.className = 'btn btn-secondary';
     stylistBtn.id = 'openStylistBtn';
-    stylistBtn.textContent = '🪞 Refine with AI Stylist';
+    stylistBtn.textContent = '🪞 Refine with the Stylist';
     stylistBtn.addEventListener('click', () => openStylist(state));
     actionsEl.appendChild(stylistBtn);
 
@@ -2240,14 +2245,26 @@ function esc(v) {
 }
 const ico = (name, cls) => (window.MirrrIcons ? window.MirrrIcons.svg(name, cls) : '');
 
-/** "Powered by Qloo" only when Qloo actually returned data for this result. */
+/**
+ * Provenance for one result: "Powered by Qloo" only when Qloo actually returned data, with the real
+ * counts of what it sent and what MIRRR used; otherwise an unmistakable demo-data banner saying why.
+ */
 function sourceBadgeHtml(meta, narrationSource) {
-  const live = meta?.qloo_powered === true;
-  const via = narrationSource ? ` · narration: ${esc(narrationSource)}` : '';
-  const err = meta?.qloo_error ? `<p class="src-error">Qloo error: ${esc(meta.qloo_error)}</p>` : '';
-  return live
-    ? `<p class="src-badge src-badge--live">${ico('bolt')} Powered by Qloo · live${via}</p>${err}`
-    : `<p class="src-badge src-badge--template">${ico('sparkle')} Template mode · Qloo not used for this result${via}</p>${err}`;
+  const p = meta?.provenance;
+  const narr = narrationSource === 'template' ? 'narration: written by a template from these signals (no language model)' : narrationSource ? `narration: ${esc(narrationSource)}` : '';
+  if (meta?.qloo_powered === true) {
+    const ents = (p?.entities ?? []).map(e => esc(e.name)).join(', ');
+    const d = p?.dropped ?? {};
+    const used = (p?.used ?? []).map(t => `<span class="tag" title="${esc(t.kind ?? '')}">${esc(t.name)}${t.affinity != null ? ` · ${t.affinity.toFixed(2)}` : ''}</span>`).join('');
+    const unres = p?.unresolved?.length ? ` · not on Qloo: ${p.unresolved.map(esc).join(', ')}` : '';
+    return `<div class="src-badge src-badge--live" data-qloo="live">${ico('bolt')} <strong>Powered by Qloo · live</strong>${p ? ` · ${ents} → ${p.tags_received} taste tags received (${p.received?.music ?? 0} music genres, ${p.received?.media ?? 0} media themes), <strong>${p.tags_used} used</strong>, ${(d.blocked ?? 0) + (d.irrelevant ?? 0) + (d.duplicates ?? 0)} filtered out (${d.blocked ?? 0} unsafe, ${d.irrelevant ?? 0} not about beauty, ${d.duplicates ?? 0} repeats) · ${p.calls} Qloo calls, ${p.latency_ms} ms${unres}` : ''}${narr ? ` · ${narr}` : ''}
+      ${used ? `<div class="entity-chips" aria-label="Qloo tags that shaped this result">${used}</div>` : ''}</div>`;
+  }
+  if (meta?.no_taste_input) return `<p class="src-badge src-badge--template">${ico('sparkle')} Catalogue only: no artists, films or brands given, so Qloo was not used. Add some to steer this with Qloo.</p>`;
+  const why = meta?.qloo_unreachable || meta?.qloo_error
+    ? `Qloo could not be reached${meta?.qloo_error ? ` (${esc(meta.qloo_error)})` : ''}.`
+    : p?.unresolved?.length && !p?.entities?.length ? `Qloo did not recognise ${p.unresolved.map(esc).join(', ')}.` : 'Qloo returned no taste data for this request.';
+  return `<div class="demo-banner" role="status" data-qloo="demo" style="background:#7a1f1f;color:#fff;border-radius:10px;padding:.7rem 1rem;margin:.5rem 0;font-weight:600">DEMO DATA, not from Qloo. ${why} The looks below come from MIRRR's built-in sample data${narr ? `; ${narr}` : ''}.</div>`;
 }
 
 // ---- Trace ("How MIRRR got this") -----------------------------------------
@@ -2284,7 +2301,7 @@ function renderTrace(result) {
       const v = Number(a.affinity ?? a.score ?? 0);
       return `<div class="aff-row"><span>${esc(a.name ?? a.id)}</span><div class="aff-bar"><div class="aff-fill" style="width:${Math.round((v / maxA) * 100)}%"></div></div><span>${v <= 1 ? Math.round(v * 100) + '%' : v.toFixed(1)}</span></div>`;
     }).join('')}</div>` : '';
-  const summary = `Resolved ${meta.entities_resolved ?? 0} entities · ${meta.tags_from_qloo ?? 0} Qloo signals`;
+  const summary = meta.provenance ? `Resolved ${meta.provenance.entities.length} entities · ${meta.provenance.tags_received} Qloo tags received · ${meta.provenance.tags_used} used` : `Resolved ${meta.entities_resolved ?? 0} entities · ${meta.tags_from_qloo ?? 0} Qloo signals`;
   const box = document.createElement('details');
   box.className = 'trace-box';
   box.innerHTML = `<summary>${ico('search')} How MIRRR got this <span style="opacity:.7">· ${esc(summary)}</span></summary><div class="trace-body">${stepsHtml}${affHtml}</div>`;

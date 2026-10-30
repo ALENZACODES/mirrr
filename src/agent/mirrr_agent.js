@@ -15,8 +15,9 @@
  * a generic LLM cannot do steps 2–4 without Qloo.
  */
 
-import { QlooClient } from '../qloo.js';
-import { buildAestheticVector, getArchetypes, affinityOf } from '../aesthetic.js';
+import { QlooClient, qlooClient as sharedQloo } from '../qloo.js';
+import { buildAestheticVector, getArchetypes, affinityOf, ARCHETYPE_KEYWORDS } from '../aesthetic.js';
+import { qlooTaste, provenance } from '../taste_signals.js';
 import { recommendLooks } from '../look_engine.js';
 import { scoreDNA } from '../cultural_dna.js';
 import { findShades } from '../shade_finder.js';
@@ -40,7 +41,7 @@ export const AGENT_STEPS = [
 export class MirrrAgent {
   constructor({ qlooApiKey, options = {} } = {}) {
     this.qloo = qlooApiKey
-      ? new QlooClient({ apiKey: qlooApiKey })
+      ? (qlooApiKey === process.env.QLOO_API_KEY ? sharedQloo : new QlooClient({ apiKey: qlooApiKey }))
       : null;
     this.options = {
       topLooks: options.topLooks ?? 3,
@@ -100,27 +101,16 @@ export class MirrrAgent {
     let qlooError = null;
     let qlooEntities = [];
 
-    if (this.qloo && inputs.length > 0) {
+    let qloo = null;
+    if (inputs.length > 0) {
       emit('resolve', 'Resolving entities via Qloo taste graph…');
-      try {
-        const resolved = await this.qloo.resolveMany(inputs);
-        entities = resolved.filter(Boolean);
-        this._log('resolve', `Resolved ${entities.length}/${inputs.length} entities`);
-
-        // Fetch taste profile for resolved entities
-        if (entities.length > 0) {
-          const entityIds = entities.map(e => e.id).filter(Boolean);
-          // Cultural tags with affinity (observed live shape: results.tags[])
-          const tags = await this.qloo.insightTags(entityIds, 40).catch((e) => { qlooError = e.message; return []; });
-          qlooTags = tags;
-        }
-      } catch (err) {
-        qlooError = err.message;
-        console.warn('[agent] Qloo resolve failed:', err.message);
-        this._log('resolve', `Qloo resolve failed: ${err.message} — continuing`);
-      }
+      qloo = await qlooTaste(inputs, this.qloo ? { client: this.qloo } : {});
+      entities = qloo.entities;
+      qlooTags = qloo.kept;
+      qlooError = qloo.errors[0] ?? null;
+      this._log('resolve', `Resolved ${entities.length}/${inputs.length}; ${qloo.kept.length} of ${qloo.received.music + qloo.received.media} Qloo tags kept`);
     } else {
-      this._log('resolve', 'No Qloo key or no inputs — skipping entity resolution');
+      this._log('resolve', 'No inputs — skipping entity resolution');
     }
 
     trace.push({ step: 'resolve', at: timestamp(), entities_found: entities.length, tags_found: qlooTags.length });
@@ -155,6 +145,8 @@ export class MirrrAgent {
     // ── Step 5: RECOMMEND — looks, shades, wigs, products ──────────────
     const looks = recommendLooks(aesthetic, {
       topN: this.options.topLooks,
+      evidence: qlooTags,
+      archetypeKeywords: ARCHETYPE_KEYWORDS,
       communityId,
     });
 
@@ -199,7 +191,8 @@ export class MirrrAgent {
       looks,
       tags: allTags,
       entities,
-      meta: { communityId, dnaResult, demo: !this.qloo },
+      meta: { communityId, dnaResult, demo: !qloo?.qloo_powered },
+      qloo: qloo ? provenance(qloo) : null,
     });
 
     trace.push({ step: 'narrate', at: timestamp(), source: narration_source });
@@ -226,7 +219,9 @@ export class MirrrAgent {
 
       // Agent meta
       meta: {
-        qloo_powered: this.qloo !== null && entities.length > 0,
+        qloo_powered: Boolean(qloo?.qloo_powered),
+        qloo_unreachable: Boolean(qloo?.unreachable),
+        provenance: qloo ? provenance(qloo) : null,
         entities_resolved: entities.length,
         tags_from_qloo: qlooTags.length,
         top_affinities: qlooTags

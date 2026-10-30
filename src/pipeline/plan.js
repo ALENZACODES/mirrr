@@ -8,7 +8,9 @@
 import { INSPIRATION_LOOKS, getPersonalisedLook } from '../style_match_engine.js';
 import { findShades } from '../shade_finder.js';
 import { matchWigs } from '../wig_matchmaker.js';
-import { buildAestheticVector } from '../aesthetic.js';
+import { buildAestheticVector, ARCHETYPE_KEYWORDS } from '../aesthetic.js';
+import { qlooTaste, provenance } from '../taste_signals.js';
+import { lookEvidence } from '../look_engine.js';
 
 const FITZ_DEPTH = { I: 4, II: 8, III: 14, IV: 22, V: 34, VI: 46 };
 const COMMUNITIES = ['west-african', 'south-asian', 'caribbean', 'arab', 'latina', 'east-asian', 'east-african', 'south-african', 'black-american'];
@@ -38,10 +40,15 @@ export function parseOccasion(text = '') {
 function normCommunityHyphen(id) { return id ? String(id).replace(/_/g, '-') : null; }
 function normCommunityUnder(id) { return id ? String(id).replace(/-/g, '_') : 'mixed'; }
 
-function pickLook(parsed, communityId, fitz) {
+/** Archetype each planner community belongs to, so Qloo's tags can speak for a community's looks. */
+const COMMUNITY_ARCH = { 'west-african': 'afro_glam', 'south-african': 'afro_glam', 'east-african': 'afro_glam', 'black-american': 'hip_hop_glam', caribbean: 'caribbean_carnival', 'south-asian': 'desi_glam', arab: 'gulf_glam', latina: 'latina_glam', 'east-asian': 'k_beauty' };
+
+function pickLook(parsed, communityId, fitz, kept = []) {
   const all = Object.values(INSPIRATION_LOOKS);
+  const totalAff = 2 * kept.reduce((a, t) => a + (t.weight ?? t.affinity ?? 1), 0);
+  const qShare = (l) => { if (!totalAff) return { share: 0, tags: [] }; const ev = lookEvidence({ archetype: COMMUNITY_ARCH[l.community], cultural_affinity: [...(l.vibe ?? []), ...(l.tags ?? [])] }, kept, ARCHETYPE_KEYWORDS); return { share: ev.reduce((a, t) => a + t.ev, 0) / totalAff, tags: ev.map(t => t.name) }; };
   const score = (l) => {
-    let s = 0;
+    let s = 6 * qShare(l).share;
     if (communityId && l.community === communityId) s += 4;
     const occHits = (l.occasion ?? []).filter(o => parsed.tags.includes(o)).length;
     s += occHits * 2;
@@ -53,7 +60,7 @@ function pickLook(parsed, communityId, fitz) {
     return s;
   };
   const ranked = all.map(l => ({ l, s: score(l) })).sort((a, b) => b.s - a.s);
-  return { look: ranked[0].l, reason: ranked[0].s, alternatives: ranked.slice(1, 3).map(r => r.l) };
+  return { look: ranked[0].l, reason: ranked[0].s, qloo: qShare(ranked[0].l), alternatives: ranked.slice(1, 3).map(r => r.l) };
 }
 
 async function ritualFor(communityId, parsed) {
@@ -103,7 +110,10 @@ export async function buildPlan({ occasion = '', communityId, fitzpatrick, under
   const fitz = FITZ_DEPTH[fitzpatrick] ? fitzpatrick : null;
   const tone = undertone || 'neutral';
 
-  const { look, reason, alternatives } = pickLook(parsed, community, fitz);
+  // Live Qloo taste for the user's taste chips (artists, films, brands): its tags steer the look.
+  const q = tasteChips.length ? await qlooTaste(tasteChips) : null;
+  const kept = q?.kept ?? [];
+  const { look, reason, alternatives, qloo: lookQloo } = pickLook(parsed, community, fitz, kept);
   const lookCommunity = community ?? look.community;
   const personalised = getPersonalisedLook(look.id, fitz ?? 'IV', tone);
 
@@ -111,7 +121,7 @@ export async function buildPlan({ occasion = '', communityId, fitzpatrick, under
   const shades = findShades({ communityId: normCommunityUnder(lookCommunity), depthTarget, undertone: tone, topN: 3 });
   const shade = shades[0] ? { name: shades[0].name, code: shades[0].code, hex: shades[0].hex, undertone: tone, score: Number(shades[0].score.toFixed(2)), note: shades[0].coverageNote } : null;
 
-  const aesthetic = buildAestheticVector(tasteChips, { freeText: [occasion, ...(look.tags ?? [])] });
+  const aesthetic = buildAestheticVector(kept, { freeText: [occasion, ...(look.tags ?? [])] });
   const wigs = matchWigs({ aesthetic, communityId: normCommunityUnder(lookCommunity), topN: 1 });
   const wig = wigs[0] ? { name: wigs[0].wig?.name, texture: wigs[0].wig?.texture, length: wigs[0].wig?.length, why: wigs[0].wig?.description ?? null } : null;
 
@@ -126,12 +136,13 @@ export async function buildPlan({ occasion = '', communityId, fitzpatrick, under
 
   return {
     occasion: { text: occasion, detected: parsed.keys, outdoor: parsed.outdoor, evening: parsed.evening },
-    look: { id: look.id, name: look.name, community: look.community, description: look.description, image: look.image, whyChosen: reason > 0 ? `matched ${parsed.keys.join(', ') || 'your community'}` : 'closest overall match', alternatives: alternatives.map(a => ({ id: a.id, name: a.name })) },
+    look: { id: look.id, name: look.name, community: look.community, description: look.description, image: look.image, whyChosen: [parsed.keys.length ? `matched ${parsed.keys.join(', ')}` : null, lookQloo?.tags?.length ? `Qloo tied your taste to ${lookQloo.tags.slice(0, 3).join(', ')}` : null].filter(Boolean).join('; ') || (reason > 0 ? 'matched your community' : 'closest overall match'), qlooEvidence: lookQloo?.tags?.length ? Math.round(lookQloo.share * 100) / 100 : null, alternatives: alternatives.map(a => ({ id: a.id, name: a.name })) },
     shade,
     wig,
     ritual,
     timeline: buildTimeline(look, personalised, parsed, ritual),
     constraints,
-    source: tasteChips.length ? 'taste+catalogue' : 'catalogue',
+    source: q?.qloo_powered ? 'qloo+catalogue' : 'catalogue',
+    meta: q ? { qloo_powered: q.qloo_powered, qloo_unreachable: q.unreachable, qloo_error: q.errors[0] ?? null, provenance: provenance(q), demo: !q.qloo_powered } : { qloo_powered: false, no_taste_input: true },
   };
 }

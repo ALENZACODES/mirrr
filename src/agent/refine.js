@@ -20,8 +20,8 @@ export function messageDeltas(message = '') {
   if (/\b(subtle(r)?|soft(er)?|natural|lighter|less|minimal|understated|toned? down|simpler)\b/.test(m)) { d.intensity -= STEP; d.boldness -= STEP; why.push('softer'); }
   if (/\b(warm(er)?|golden|bronze|terracotta|sunset)\b/.test(m)) { d.warmth += STEP; why.push('warmer'); }
   if (/\b(cool(er)?|icy|silver|berry|plum|blue)\b/.test(m)) { d.warmth -= STEP; why.push('cooler'); }
-  if (/\b(glossy|dewy|shine|shiny|glow(y)?|glass skin|luminous)\b/.test(m)) { d.texture += STEP; why.push('glossier'); }
-  if (/\b(matte|velvet|powder(y)?|flat)\b/.test(m)) { d.texture -= STEP; why.push('more matte'); }
+  if (/\b(gloss(y|ier)?|dew(y|ier)|shine|shin(y|ier)|glow(y|ier)?|glass skin|luminous)\b/.test(m)) { d.texture += STEP; why.push('glossier'); }
+  if (/\b(matte|velvet(y)?|powder(y)?|flat(ter)?)\b/.test(m)) { d.texture -= STEP; why.push('more matte'); }
   return { d, why };
 }
 
@@ -43,7 +43,9 @@ export function refineLooks({ vec, message = '', evidence = null, previousLookId
   // An occasion, once asked for, carries into later turns until another one is named.
   const asked = OCCASIONS.find(o => o.ask.test(String(message).toLowerCase())) ?? null;
   const occasion = asked ?? OCCASIONS.find(o => o.id === vec?.occasion) ?? null;
-  const newVec = { ...vec, ...after, occasion: occasion?.id ?? null };
+  // Remember which dimensions the stylist has set, so the UI can show them as set rather than default.
+  const stylistSet = [...new Set([...(Array.isArray(vec?.stylistSet) ? vec.stylistSet : []), ...DIMS.filter(k => d[k] !== 0)])];
+  const newVec = { ...vec, ...after, occasion: occasion?.id ?? null, stylistSet };
   // Rank every look, then lift those that fit the asked-for occasion by a fixed, stated amount.
   const OCC = 0.15;
   let ranked = recommendLooks(newVec, { topN: 200, minScore: 0, evidence, archetypeKeywords: evidence?.length ? ARCHETYPE_KEYWORDS : null });

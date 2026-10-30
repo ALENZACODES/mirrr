@@ -330,8 +330,15 @@ function renderQuizResult(result) {
   });
 }
 
-function renderAestheticBar(label, value) {
+// A dimension no taste tag touched sits at the neutral 0.5 default: say so instead of showing "50%".
+function renderAestheticBar(label, value, aes = null, key = null) {
   if (value === undefined || value === null) return '';
+  const unset = aes && key && aes.signals && aes.signals[key] === 0 && Math.abs(value - 0.5) < 1e-6 && !(aes.stylistSet ?? []).includes(key);
+  if (unset) return `
+    <div class="aes-bar-row aes-bar-row--unset" title="None of your taste tags carry a ${label.toLowerCase()} signal, so this stays neutral and does not affect ranking direction.">
+      <span class="aes-bar-label">${label}</span>
+      <span class="aes-bar-val muted">no signal in your taste (neutral)</span>
+    </div>`;
   const pct = Math.round((value ?? 0) * 100);
   return `
     <div class="aes-bar-row">
@@ -514,11 +521,11 @@ function renderTasteResults(result) {
         <span class="taste-com-label">${tasteComData?.label ?? ''}</span>
       </div>` : ''}
       <h3 class="bars-title">Your Aesthetic Profile</h3>
-      ${renderAestheticBar('Intensity', aesthetic.intensity)}
-      ${renderAestheticBar('Warmth', aesthetic.warmth)}
-      ${renderAestheticBar('Boldness', aesthetic.boldness)}
+      ${renderAestheticBar('Intensity', aesthetic.intensity, aesthetic, 'intensity')}
+      ${renderAestheticBar('Warmth', aesthetic.warmth, aesthetic, 'warmth')}
+      ${renderAestheticBar('Boldness', aesthetic.boldness, aesthetic, 'boldness')}
+      ${renderAestheticBar('Shine (matte → glass)', aesthetic.texture, aesthetic, 'texture')}
       <div class="aesthetic-tags">
-        ${aesthetic.texture ? `<span class="tag">${aesthetic.texture}</span>` : ''}
         ${aesthetic.colour_palette ? `<span class="tag">${aesthetic.colour_palette}</span>` : ''}
         ${aesthetic.hair_vibe ? `<span class="tag">${aesthetic.hair_vibe}</span>` : ''}
         ${(aesthetic.archetypes ?? []).map(a => `<span class="tag tag--arch">${a.replace(/_/g, ' ')}</span>`).join('')}

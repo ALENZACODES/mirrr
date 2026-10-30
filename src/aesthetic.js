@@ -269,6 +269,7 @@ export function buildAestheticVector(qlooTags = [], { freeText = [] } = {}) {
       hair_vibe: 'natural',
       cultural_tags: [],
       archetypes: ['clean_minimal'],
+      signals: { intensity: 0, warmth: 0, boldness: 0, texture: 0 },
       trace,
     };
   }
@@ -341,7 +342,15 @@ export function buildAestheticVector(qlooTags = [], { freeText = [] } = {}) {
     })
     .slice(0, 15);
 
-  return { intensity, warmth, boldness, texture, colour_palette, hair_vibe, cultural_tags, archetypes, trace };
+  // How many tags actually moved each dimension (0 = the value is the neutral default, not a reading).
+  const signals = {
+    intensity: normTags.filter((t) => anyMatch(t, TAG_SIGNALS.intensity.high) || anyMatch(t, TAG_SIGNALS.intensity.low)).length,
+    warmth: normTags.filter((t) => anyMatch(t, TAG_SIGNALS.warmth.warm) || anyMatch(t, TAG_SIGNALS.warmth.cool)).length,
+    boldness: normTags.filter((t) => anyMatch(t, TAG_SIGNALS.boldness.high) || anyMatch(t, TAG_SIGNALS.boldness.low)).length,
+    texture: normTags.filter((t) => anyMatch(t, TAG_SIGNALS.texture.glass) || anyMatch(t, TAG_SIGNALS.texture.shimmer) || anyMatch(t, TAG_SIGNALS.texture.matte)).length,
+  };
+
+  return { intensity, warmth, boldness, texture, colour_palette, hair_vibe, cultural_tags, archetypes, signals, trace };
 }
 
 /**

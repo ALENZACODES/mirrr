@@ -38,3 +38,12 @@ test('direction words', () => {
   assert.equal(messageDeltas('more matte').d.texture, -0.15);
   assert.equal(messageDeltas('warmer').d.warmth, 0.15);
 });
+
+test('the vector says which dimensions no tag touched, and the stylist marks what it set', async () => {
+  const { buildAestheticVector } = await import('../src/aesthetic.js');
+  const v = buildAestheticVector(['afrobeats', 'glam']);
+  assert.equal(v.signals.boldness, 0); assert.ok(v.signals.intensity > 0);
+  const r = refineLooks({ vec: v, message: 'bolder' });
+  assert.deepEqual(r.vec.stylistSet.sort(), ['boldness', 'intensity']);
+  assert.deepEqual(refineLooks({ vec: r.vec, message: 'glossier' }).vec.stylistSet.sort(), ['boldness', 'intensity', 'texture']);
+});

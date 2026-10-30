@@ -576,7 +576,7 @@ export const SKINCARE_INGREDIENTS = {
     id: 'spf_for_dark_skin',
     name: 'Sunscreen on Deeper Skin: Notes',
     category: 'sunscreen',
-    benefit: 'UV protection is still important for all skin tones. Melanin provides some natural protection (estimated SPF 13 in Type VI skin) but NOT full protection.',
+    benefit: 'UV protection is still important for all skin tones. Melanin gives some built-in UVB protection, but not enough on its own, and little against UVA.',
     concentrationRange: 'SPF 30 or higher, broad spectrum',
     pHRange: 'NA',
     origin: 'Formulation notes.',

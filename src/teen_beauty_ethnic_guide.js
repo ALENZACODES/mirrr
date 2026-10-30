@@ -196,7 +196,7 @@ export const ETHNIC_TEEN_BEAUTY_GUIDES = {
       tradition: 'West African beauty traditions for teens: shea butter from grandmother, black soap for acne-prone skin, moringa oil as first facial oil'
     },
 
-    advice: `West African teen skin is designed for its environment — it has more melanin, more natural SPF,
+    advice: `West African teen skin is designed for its environment — it has more melanin, which gives some UVB protection but not enough on its own,
     and more resilience than lighter skin tones. Acne is the challenge, and dark spots (PIH) are the
     secondary challenge. Simple routine: gentle gel cleanser + niacinamide 5-10% serum + light moisturizer +
     broad-spectrum SPF. Black soap for cleansing is a valid and effective ancestral option. Black soap +

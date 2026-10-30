@@ -84,7 +84,7 @@ export const WHITE_CAST_SOLUTIONS = {
     blackGirlSunscreen: 'Black Girl Sunscreen Make It Glow SPF 30 (SPF 30, chemical, specifically developed by a Black woman for dark skin tones; no white cast; leaves a subtle glow)',
     tintedOptions: 'Tinted mineral sunscreens with iron oxide pigments; the tint counteracts the white cast; the iron oxides also provide additional protection against visible light (relevant for melasma); EltaMD UV Elements Tinted; Colorescience Sunforgettable (powder SPF for reapplication over makeup)',
     bronzingFormulas: 'Sunscreens with light-diffusing or bronzing properties: Supergoop Glowscreen SPF 40',
-    layering: 'Applying tinted moisturiser or foundation over mineral sunscreen to cover the white cast — this is valid and effective; the makeup does not reduce SPF significantly if it is applied on top'
+    layering: 'Applying tinted moisturiser or foundation over mineral sunscreen to cover the white cast — this is valid; let the sunscreen set for a few minutes and press (do not rub) the makeup on, because rubbing can move the sunscreen film and lower protection'
   }
 };
 

@@ -16,6 +16,7 @@ import { DEMO_PROFILES } from '../demo_profiles.js';
 import { MONK_TONES } from '../skin/clinic.js';
 import { coloursIn } from '../looks/studio.js';
 import { runPipeline } from '../pipeline/index.js';
+import { portraitFor } from './portraits.js';
 
 const pick = (v, list, d) => (list.includes(String(v)) ? String(v) : d);
 const r2 = n => Math.round(n * 100) / 100;
@@ -39,6 +40,10 @@ export const DESTINATIONS = [
   { id: 'tokyo', label: 'Tokyo', culture: 'Japanese', match: ['japanese', 'tokyo'] },
   { id: 'mexico_city', label: 'Mexico City', culture: 'Mexican and Latin American', match: ['mexican', 'latin american', 'latina'] },
   { id: 'rio', label: 'Rio de Janeiro', culture: 'Brazilian', match: ['brazilian', 'rio'] },
+  { id: 'marrakech', label: 'Marrakech', culture: 'Moroccan and Amazigh', match: ['moroccan', 'amazigh', 'berber', 'imazighen', 'marrakech'] },
+  { id: 'istanbul', label: 'Istanbul', culture: 'Turkish', match: ['turkish', 'turkey', 'istanbul', 'ottoman'] },
+  { id: 'bangkok', label: 'Bangkok', culture: 'Thai', match: ['thai', 'thailand', 'bangkok'] },
+  { id: 'addis_ababa', label: 'Addis Ababa', culture: 'Ethiopian', match: ['ethiopian', 'habesha', 'eritrean', 'addis ababa'] },
 ].map(d => {
   const looks = LOOKS.filter(l => l.cultural_affinity.some(c => d.match.includes(c.toLowerCase())));
   const vector = Object.fromEntries(DIMS.map(({ id }) => [id, r2(looks.reduce((s, l) => s + l.weights[id], 0) / looks.length)]));
@@ -131,7 +136,7 @@ function leap(dest, user, s, path, culturalTags) {
   });
   const shared = (culturalTags ?? []).filter(t => top.cultural_affinity.some(c => t.toLowerCase().includes(c.toLowerCase()) || c.toLowerCase().includes(t.toLowerCase())));
   return {
-    destination: { id: dest.id, label: dest.label, culture: dest.culture },
+    destination: { id: dest.id, label: dest.label, culture: dest.culture, portrait: portraitFor(dest.id) },
     look: { id: top.id, name: top.name, description: top.description, score: ranked[0].score, archetype: top.archetype },
     alternatives: ranked.slice(1, 3).map(x => ({ id: x.l.id, name: x.l.name, score: x.score })),
     vector: blend, dims, palette: paletteFor(top, vec), sharedCulture: shared,
@@ -140,7 +145,7 @@ function leap(dest, user, s, path, culturalTags) {
 }
 
 export function leapOptions() {
-  return { profiles: PROFILES, destinations: DESTINATIONS.map(d => ({ id: d.id, label: d.label, culture: d.culture, looks: d.looks.length })), strengths: STRENGTHS.map(({ id, label }) => ({ id, label })), tones: MONK_TONES, dims: DIMS };
+  return { profiles: PROFILES, destinations: DESTINATIONS.map(d => ({ id: d.id, label: d.label, culture: d.culture, looks: d.looks.length, portrait: portraitFor(d.id) })), strengths: STRENGTHS.map(({ id, label }) => ({ id, label })), tones: MONK_TONES, dims: DIMS };
 }
 
 export async function buildLeapPlan(input = {}, { pipeline = runPipeline } = {}) {

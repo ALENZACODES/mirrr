@@ -3067,3 +3067,9 @@ body { padding-top: 58px; }
 .lp-photo canvas { width: 100%; height: auto; display: block; aspect-ratio: 3 / 4; }
 .lp-photo .lp-city { position: absolute; top: .5rem; left: 0; right: 0; text-align: center; font-weight: 700; font-size: .85rem; color: #fefae0; text-shadow: 0 1px 3px rgba(0,0,0,.7); }
 .lp-bars { width: 100%; height: auto; display: block; }
+/* Taste Leap city portraits */
+.lp-photo--portrait img.lp-portrait { width: 100%; height: auto; display: block; aspect-ratio: 3 / 4; object-fit: cover; }
+.lp-photo .lp-gen { position: absolute; bottom: .4rem; right: .5rem; font-size: .62rem; color: #fefae0; background: rgba(0,0,0,.45); padding: .1rem .4rem; border-radius: 999px; }
+.lp-ontone { display: flex; gap: .5rem; align-items: center; margin-top: .4rem; }
+.lp-ontone canvas { width: 34%; height: auto; aspect-ratio: 3 / 4; border-radius: 10px; display: block; background: #1b1b2f; }
+.lp-ontone span { font-size: .72rem; color: #c9c9c9; line-height: 1.3; }

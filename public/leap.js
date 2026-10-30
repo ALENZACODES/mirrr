@@ -45,9 +45,19 @@
   function facePanel(p, L, i) {
     const bars = L.dims.map((d, k) => `<rect x="${30 + k * 48}" y="${40 - 28 * d.you}" width="9" height="${(28 * d.you).toFixed(1)}" fill="#6c757d"/><rect x="${40 + k * 48}" y="${40 - 28 * d.leap}" width="9" height="${(28 * d.leap).toFixed(1)}" fill="${DIM_COL[d.id]}"/><text x="${40 + k * 48}" y="50" text-anchor="middle" font-size="6.5" fill="#c9c9c9">${d.label.slice(0, 5)}</text>`).join('');
     const on = Number(p.choices.focus) === i;
-    return `<figure class="hl-panel cx-panel"><div class="lp-photo" style="outline:${on ? '3px solid #ffd166' : 'none'}">
-      <canvas data-lp-face="${i}" width="300" height="400" role="img" aria-label="${esc(L.destination.label)} version of ${esc(L.look.name)} on a model face"></canvas>
-      <span class="lp-city">${esc(L.destination.label)}</span></div>
+    const pt = L.destination.portrait;
+    const canvas = `<canvas data-lp-face="${i}" width="300" height="400" role="img" aria-label="${esc(L.destination.label)} version of ${esc(L.look.name)} on the model face nearest your tone"></canvas>`;
+    // With a city portrait: the portrait leads, and the model face in your tone wearing this city's
+    // palette sits beside it. Without one: the model face alone, as before.
+    const photo = pt
+      ? `<div class="lp-photo lp-photo--portrait" style="outline:${on ? '3px solid #ffd166' : 'none'}">
+      <img class="lp-portrait" src="${esc(pt.src)}" alt="${esc(L.destination.label)}: ${esc(pt.shows)} — portrait" width="600" height="800" loading="lazy" decoding="async" data-lp-portrait="${esc(L.destination.id)}">
+      <span class="lp-city">${esc(L.destination.label)}</span><span class="lp-gen">Generated photo, not a real person</span></div>
+      <div class="lp-ontone">${canvas}<span>On the model face nearest your tone, in the ${esc(L.destination.label)} palette</span></div>`
+      : `<div class="lp-photo" style="outline:${on ? '3px solid #ffd166' : 'none'}">
+      ${canvas}
+      <span class="lp-city">${esc(L.destination.label)}</span></div>`;
+    return `<figure class="hl-panel cx-panel">${photo}
       <svg class="lp-bars" viewBox="0 0 240 70" role="img" aria-label="Your dimensions and the ${esc(L.destination.label)} leap">
       <rect width="240" height="70" rx="10" fill="#1b1b2f"/>${bars}
       <text x="120" y="64" text-anchor="middle" font-size="7" fill="#c9c9c9">grey = you · colour = your ${esc(L.destination.label)} leap</text></svg>
@@ -84,7 +94,8 @@
         cv.dataset.painted = face.ok && palettes[i] ? 'look' : 'plain';
       });
       const note = document.getElementById('lpFaceNote');
-      if (note) note.textContent = `Faces: the ${mf.label} model face, nearest to the tone you picked. ${faces.MODEL_FACE_NOTE}`;
+      const city = p.leaps.some(L => L.destination.portrait) ? ' City portraits are generated sample photos of women, not real people.' : '';
+      if (note) note.textContent = `Faces: the ${mf.label} model face, nearest to the tone you picked. ${faces.MODEL_FACE_NOTE}${city}`;
     } catch { /* faces stay blank; the palette details below still read */ }
   }
 

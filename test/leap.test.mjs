@@ -8,10 +8,10 @@ const shown = p => { const { choices, ...rest } = p; return JSON.stringify(rest)
 const DEFAULTS = { profile: 'afrobeats', dest1: 'lagos', dest2: 'seoul', dest3: 'dubai', strength: 'half', tone: 'mst7', focus: '0' };
 const noQloo = () => { throw new Error('pipeline must not be called'); };
 
-test('options: demo profiles plus your own taste, twelve cities with looks, three strengths, ten tones', () => {
+test('options: demo profiles plus your own taste, sixteen cities with looks, three strengths, ten tones', () => {
   const o = leapOptions();
   assert.equal(o.profiles.length, 8); assert.ok(o.profiles.some(p => p.id === 'mine'));
-  assert.equal(o.destinations.length, 12); for (const d of o.destinations) assert.ok(d.looks >= 1, d.id);
+  assert.equal(o.destinations.length, 16); for (const d of o.destinations) assert.ok(d.looks >= 1, d.id);
   assert.equal(o.strengths.length, 3); assert.equal(o.tones.length, 10);
 });
 

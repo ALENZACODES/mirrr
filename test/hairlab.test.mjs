@@ -369,7 +369,7 @@ test('taste leap routes over HTTP (demo path, no Qloo call)', async () => {
   const B = `http://127.0.0.1:${PORT}`;
   const h = { 'x-forwarded-for': '10.6.6.20' };
   const o = await (await fetch(`${B}/api/leap/options`, { headers: h })).json();
-  assert.equal(o.destinations.length, 12); assert.equal(o.profiles.length, 8);
+  assert.equal(o.destinations.length, 16); assert.equal(o.profiles.length, 8);
   const r = await fetch(`${B}/api/leap/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ profile: 'kbeauty', dest1: 'lagos', dest2: 'seoul', dest3: 'dubai' }) });
   assert.equal(r.status, 200);
   const p = await r.json();

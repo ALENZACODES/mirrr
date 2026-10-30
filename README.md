@@ -85,7 +85,7 @@ AestheticVector   → intensity / warmth / boldness / texture / palette
 
 MIRRR's Trending Now panel surfaces regionally trending artists across 9 cultural regions:
 
-- **West Africa** · **East Africa** · **Black America** · **Caribbean** · **South Asian** · **Arab World** · **Latina** · **East Asian** · **South Africa**
+- **West Africa** · **East Africa** · **Black America** · **Caribbean** · **South Asia** · **Arab World** · **Latin America** · **East Asia** · **South Africa**
 
 **How it works:**
 1. **Qloo:** each region's anchor artists are resolved with `GET /v2/search`, then `GET /v2/insights` with `filter.type=urn:entity:music:artist` returns artists with taste affinity to them.

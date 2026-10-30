@@ -9,7 +9,7 @@
 export const HISTORICAL_BEAUTY_OVERVIEW = {
   why_it_matters: 'Modern beauty exists in a historical context. Many "trends" are rediscoveries of ancient practices. Understanding origins gives deeper appreciation and debunks the myth that beauty knowledge began with Western cosmetics companies.',
   key_theme: 'Every culture developed sophisticated beauty practices adapted to their environment, available ingredients, and cultural values. These systems were empirical — developed over centuries of practical observation — and often contain significant scientific validity.',
-  colonialism_note: 'Many indigenous beauty practices were suppressed, appropriated, or destroyed by colonialism. Recognising this history is important in celebrating their modern resurgence.',
+  colonialism_note: 'Many Indigenous beauty practices were suppressed, appropriated, or destroyed by colonialism. Recognising this history is important in celebrating their modern resurgence.',
 };
 
 // ─── ANCIENT EGYPT ────────────────────────────────────────────────────────────

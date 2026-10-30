@@ -10,7 +10,7 @@ export const SKIN_TEXTURE_OVERVIEW = {
   definition: 'Skin texture refers to the surface characteristics of the skin: smoothness, pore size, bumpiness, roughness, and overall evenness. "Texture" in the beauty context usually refers to skin that feels or looks rough, uneven, bumpy, or has visible pores.',
   types: {
     pores: 'Enlarged or visible pores — small openings in the skin through which sebaceous glands secrete sebum.',
-    closed_comedones: 'Tiny flesh-coloured or white bumps from clogged follicles — a form of non-inflammatory acne.',
+    closed_comedones: 'Tiny skin-coloured or white bumps from clogged follicles — a form of non-inflammatory acne.',
     kp: 'Keratosis pilaris — rough, sandpaper-like bumps typically on the arms, thighs, and buttocks.',
     rough: 'General surface roughness — often from dead cell buildup, dehydration, or barrier damage.',
     bumpy: 'Any form of raised irregularities on the skin surface.',

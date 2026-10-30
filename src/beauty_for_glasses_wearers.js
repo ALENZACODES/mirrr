@@ -48,7 +48,7 @@ export const EYE_MAKEUP_FOR_GLASSES = {
   shortsighted: {
     prescription: 'Shortsighted (myopic) — lenses reduce; eyes appear smaller through the frame',
     approach: 'Eye makeup needs to be bigger and bolder to compensate for the visual reduction; this is one of the few prescriptions where more eye makeup is consistently recommended; dramatic liner and mascara are your friends',
-    techniques: ['Tight-line the upper and lower waterline with a nude/flesh-tone pencil on the lower waterline — this opens the eye visually', 'White or champagne inner corner highlight in the inner corner of the eye is essential for opening the eye', 'Thicker liner on upper lid; the reduction means a thick upper liner reads as a normal liner through the lens', 'Very lengthening and volumising mascara — both coats', 'Lash curling is especially important; straight lashes get optically shortened even more by the concave lens'],
+    techniques: ['Tight-line the upper and lower waterline with a your-nude (skin-toned) pencil on the lower waterline — this opens the eye visually', 'White or champagne inner corner highlight in the inner corner of the eye is essential for opening the eye', 'Thicker liner on upper lid; the reduction means a thick upper liner reads as a normal liner through the lens', 'Very lengthening and volumising mascara — both coats', 'Lash curling is especially important; straight lashes get optically shortened even more by the concave lens'],
     colours: 'Lighter, reflective colours in the lid and inner corner; darker shades used for depth in the crease where they add definition that compensates for the reduction'
   },
   eyeBrows: {

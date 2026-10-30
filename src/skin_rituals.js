@@ -519,7 +519,7 @@ export const SKIN_RITUALS = {
     community: 'east-african',
     category: 'mask',
     origin: 'Ethiopia',
-    description: 'Ethiopian beauty ritual using teff flour and wild honey for deep nourishment and brightening. Ethiopia is the origin of teff — the ancient grain.',
+    description: 'Ethiopian beauty ritual using teff flour and wild honey for deep nourishment and radiance. Ethiopia is the origin of teff — the ancient grain.',
     culturalContext: 'Ethiopian women have used natural grain and honey masks for centuries. Ethiopia produces some of the finest raw honey in the world — used both medicinally and for beauty.',
     timing: 'Weekly, evening',
     skinBenefits: ['brightening', 'anti-bacterial', 'nourishing', 'gentle exfoliation', 'soothing'],

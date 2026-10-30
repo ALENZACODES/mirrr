@@ -830,7 +830,7 @@ export const ETHNIC_SLEEP_BEAUTY_GUIDES = {
     communities — has its own extraordinary botanical heritage rooted in the fynbos biome (the Cape
     Floristic Region, one of the world's six plant kingdoms) and the sub-Saharan savanna. Marula oil
     (from the fruit of the marula tree, Sclerocarya birrea) is the quintessential South African beauty
-    oil — used by indigenous communities for centuries to condition skin and protect against the
+    oil — used by Indigenous communities for centuries to condition skin and protect against the
     harsh southern African sun and dry season. Rooibos (Aspalathus linearis), native only to the
     Cederberg region of the Western Cape, provides a uniquely South African antioxidant complex that
     is only now gaining global recognition in skincare.`,

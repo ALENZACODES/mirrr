@@ -41,7 +41,7 @@ export const ACNE_TYPES = {
   closed_comedone: {
     name: 'Closed Comedone (Whitehead)',
     visible: true,
-    description: 'A whitehead. The follicle is plugged and the surface is CLOSED. A small, white or flesh-coloured bump. Non-inflammatory (no redness). The plug cannot oxidise because it is not exposed to air, so it remains white.',
+    description: 'A whitehead. The follicle is plugged and the surface is CLOSED. A small, white or skin-coloured bump. Non-inflammatory (no redness). The plug cannot oxidise because it is not exposed to air, so it remains white.',
     treatment: 'Retinoids (most effective). BHA. Gentle exfoliation (AHA). Do not pick — whiteheads do not have a large opening and picking causes trauma.',
     common_locations: 'Chin, forehead, sides of cheeks.',
   },

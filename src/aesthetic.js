@@ -16,7 +16,7 @@ export const TAG_SIGNALS = {
     high: [
       'afrobeats', 'afropop', 'afro-fusion', 'dancehall', 'hip-hop', 'hip hop',
       'rap', 'trap', 'carnival', 'soca', 'reggaeton', 'amapiano', 'gqom',
-      'nollywood', 'lagos', 'naija', 'streetwear', 'urban', 'ghetto fab',
+      'nollywood', 'lagos', 'naija', 'streetwear', 'urban',
       'baddie', 'glam', 'editorial', 'avant-garde', 'bold',
       'edm', 'electropop', 'dance pop', 'club', 'girl group', 'glam rock', 'diva',
     ],
@@ -93,7 +93,7 @@ const COLOUR_PALETTE_MAP = [
 
 const HAIR_VIBE_MAP = [
   { keywords: ['afrobeats', 'afro', 'natural hair', 'locs', 'dreadlocks', 'braids', 'ghana braids', 'cornrows', 'naija', 'west africa', 'coily', 'kinky', 'textured'], vibe: 'natural-afro' },
-  { keywords: ['hip-hop', 'hip hop', 'urban', 'trap', 'rap', 'streetwear', 'baddie', 'ratchet'], vibe: 'long-sleek-wig' },
+  { keywords: ['hip-hop', 'hip hop', 'urban', 'trap', 'rap', 'streetwear', 'baddie'], vibe: 'long-sleek-wig' },
   { keywords: ['k-pop', 'k-beauty', 'korean', 'idol', 'anime', 'j-pop', 'kawaii'], vibe: 'straight-sleek' },
   { keywords: ['bollywood', 'desi', 'south asian', 'indian', 'bengali', 'pakistani'], vibe: 'long-wavy-indian' },
   { keywords: ['caribbean', 'jamaican', 'dancehall', 'reggae', 'soca', 'trinidadian'], vibe: 'curly-ombre' },
@@ -114,7 +114,7 @@ const ARCHETYPE_MAP = [
   {
     id: 'hip_hop_glam',
     label: 'Hip Hop Glam',
-    keywords: ['hip-hop', 'hip hop', 'rap', 'trap', 'r&b', 'rnb', 'rhythm & blues', 'rhythm and blues', 'neo soul', 'urban', 'streetwear', 'drip', 'baddie', 'ghetto fab', 'lil kim', 'cardi b', 'grime', 'drill'],
+    keywords: ['hip-hop', 'hip hop', 'rap', 'trap', 'r&b', 'rnb', 'rhythm & blues', 'rhythm and blues', 'neo soul', 'urban', 'streetwear', 'drip', 'baddie', 'lil kim', 'cardi b', 'grime', 'drill'],
   },
   {
     id: 'caribbean_carnival',

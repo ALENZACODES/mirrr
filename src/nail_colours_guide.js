@@ -19,7 +19,7 @@ export const NAIL_COLOUR_THEORY = {
     fair_nude: 'Sheer pink, peachy pink, warm ivory, pale beige',
     medium_nude: 'Beige-pink, warm rose, sandy taupe',
     tan_nude: 'Warm caramel beige, tan-nude, warm taupe',
-    deep_nude: 'Warm caramel, tawny brown, mocha, butterscotch — NOT grey-beige which will look corpse-like',
+    deep_nude: 'Warm caramel, tawny brown, mocha, butterscotch — NOT grey-beige which will look grey and washed-out',
   },
 };
 
@@ -275,7 +275,7 @@ export const ETHNIC_NAIL_TRADITIONS = {
   },
   black_american: {
     community: 'Black American',
-    traditions: 'Long nails as a beauty statement have been part of Black American beauty culture for decades before becoming a global trend. Acrylic nails, gel nails, and elaborate nail art were popularised significantly by Black American women and nail technicians. The "ghetto nail" (pejorative term for long, vivid nails) has been reclaimed as culturally significant Black beauty expression.',
+    traditions: 'Long nails as a beauty statement have been part of Black American beauty culture for decades before becoming a global trend. Acrylic nails, gel nails, and elaborate nail art were popularised significantly by Black American women and nail technicians. Long, vivid nails were once mocked with classist and racist labels; today they are rightly celebrated as Black beauty expression and artistry.',
     icons: 'Cardi B (elaborate long nails), Lizzo, and countless others have celebrated long, bold nails as Black cultural expression.',
     nail_techs: 'Black nail technicians played a massive role in building the acrylic and gel nail industry in America, particularly in the 1980s-90s.',
   },

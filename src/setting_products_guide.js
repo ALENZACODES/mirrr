@@ -170,7 +170,7 @@ export const SETTING_SPRAY_GUIDE = {
   ethnic_note: 'Setting sprays are particularly useful for dark skin tones because they can prevent foundation from oxidising (darkening or turning orange) during the day. A good setting spray locks the formulation as-applied.',
 };
 
-// ─── OXIDATION — THE DARK SKIN PROBLEM ───────────────────────────────────────
+// ─── OXIDATION — WHY IT SHOWS MOST ON WARM AND DEEP SHADES ───────────────────────────────────────
 
 export const OXIDATION_GUIDE = {
   what_is_oxidation: 'Foundation oxidation is when the formula reacts with your skin\'s natural oils, heat, and oxygen in the air to change colour after application — often darkening or turning orange or ash.',

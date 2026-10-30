@@ -460,7 +460,7 @@ export const ETHNIC_TRADITIONAL_MEDICINE_GUIDES = {
     advice: `Curanderismo and Amazonian plant medicine contain some of the most biodiversity-rich beauty
     ingredients on earth. The Amazon rainforest is the most pharmaceutically rich ecosystem in existence —
     and Amazonian plant beauty (cupuaçu, pracaxi, murumuru, açaí, patauá) is only beginning to be
-    formally studied. What indigenous communities have known for generations is being confirmed:
+    formally studied. What Indigenous communities have known for generations is being confirmed:
     these are genuinely high-performance beauty ingredients. Cupuaçu butter in particular is emerging
     as superior to shea butter for curl definition and moisture in Type 3-4 hair.`
   },

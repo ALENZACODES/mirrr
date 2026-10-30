@@ -93,7 +93,7 @@ export const ETHNIC_EXERCISE_BEAUTY_GUIDES = {
       fitnessRegimen: 'Carnival masquerade (playing mas) involves hours of outdoor dancing in elaborate, minimal costumes. The traditional standard: the body must be worthy of the costume. Caribbean women traditionally have a Carnival fitness regimen — structured exercise beginning 3-4 months before Carnival.',
       skinPrep: {
         months3to2: 'Body exfoliation 2-3x weekly. Begin gradual sun tanning if desired (strategic). Intense hydration regimen (shea butter, coconut oil). Address any hyperpigmentation concerns.',
-        months1: 'Weekly full-body exfoliation. Skin brightening treatments. Glycolic acid body lotion for even tone. Begin hair prep (protective style fitting, twist-out practice).',
+        months1: 'Weekly full-body exfoliation. Glow treatments for any dark marks you want to fade (optional). Glycolic acid body lotion for even tone. Begin hair prep (protective style fitting, twist-out practice).',
         week1: 'Sugaring or waxing for hair removal (book in advance). Full body polishing treatment. Hydrating mask. Manicure/pedicure. Perfume oil layering.',
         carnavalDay: 'Costume makeup is dramatic and heat/sweat-resistant — mix products with setting spray or glycerin before application. Body shimmer applied after body oil. Comfortable shoe choices to dance hours without blisters.',
       },

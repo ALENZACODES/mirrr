@@ -594,9 +594,9 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
       },
     },
     facialMassage: {
-      gua_sha: 'Gua sha adapted into modern Latin beauty; traditional facial massage practices exist in many indigenous communities (Mayan, Aztec facial rituals)',
+      gua_sha: 'Gua sha adapted into modern Latin beauty; traditional facial massage practices exist in many Indigenous communities (Mayan, Aztec facial rituals)',
       lymphatic: 'Facial massage stimulates lymphatic drainage; reduces puffiness; improves blood flow; evidence for temporary improvements in skin tone and firmness',
-      cobblestone: 'Obsidian or jade roller practices in indigenous communities predate modern gua sha; volcanic obsidian used in Aztec beauty',
+      cobblestone: 'Obsidian or jade roller practices in Indigenous communities predate modern gua sha; volcanic obsidian used in Aztec beauty',
       tradition: 'Sobadora (traditional healer/massager) practices include facial massage for skin health; continuing anti-aging tradition',
     },
     andesanLongevity: {

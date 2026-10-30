@@ -754,7 +754,7 @@ export const ETHNIC_EYE_MAKEUP_GUIDES = {
           the most dramatic Japanese eye technique, notable for its intense lower lash emphasis.`,
           elements: [
             'Individual lower lashes applied to the lower lid (often 20+ individual lashes for a cluster effect)',
-            'White or flesh-colored liner on lower waterline (opens and enlarges eye)',
+            'White or skin-coloured liner on lower waterline (opens and enlarges eye)',
             'Dark shadow on upper lid blended into socket',
             'Very thick upper falsies',
             'Heavy lower lash mascara or individual lower lash clusters',

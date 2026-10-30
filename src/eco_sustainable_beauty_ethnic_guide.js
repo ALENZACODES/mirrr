@@ -656,7 +656,7 @@ export const ETHNIC_ECO_BEAUTY_GUIDES = {
     title: 'South African Eco Sustainable Beauty',
     historicalContext: {
       preColonialSustainability: 'Southern Africa hosts one of the world\'s six floral kingdoms — the Cape Floral Kingdom (fynbos biome) — in a fraction of the area of other kingdoms, yet contains more plant species per square kilometer than the Amazon. Indigenous San, Khoikhoi, Zulu, Xhosa, Sotho, and other peoples developed intricate knowledge of these plants for food, medicine, and beauty over tens of thousands of years. Rooibos, buchu, marula, mongongo, and fynbos plants are all part of these traditions.',
-      colonialDisruption: 'Apartheid\'s land dispossession removed indigenous communities from their ancestral plants and disrupted oral knowledge transmission. The commercialization of South African indigenous plants in the 20th century frequently benefited commercial interests without acknowledging or compensating the communities that held the knowledge. The rooibos ABS (Access and Benefit Sharing) agreement of 2019 was a landmark case of correcting this imbalance.',
+      colonialDisruption: 'Apartheid\'s land dispossession removed Indigenous communities from their ancestral plants and disrupted oral knowledge transmission. The commercialization of South African indigenous plants in the 20th century frequently benefited commercial interests without acknowledging or compensating the communities that held the knowledge. The rooibos ABS (Access and Benefit Sharing) agreement of 2019 was a landmark case of correcting this imbalance.',
       rooibosAgreement: 'In 2019, South Africa implemented a landmark Access and Benefit Sharing (ABS) agreement for rooibos — the first of its kind for a plant under the Nagoya Protocol. It provides that Khoikhoi and San communities receive a share of revenue from rooibos exports, acknowledging their role in identifying and developing the plant\'s uses. This is a model for how sustainable beauty can respect Indigenous knowledge rights.',
     },
     keyIngredients: [
@@ -1553,7 +1553,7 @@ export const COMMUNITY_BEAUTY_ECONOMIES = {
         lesson: 'International patent systems remain biased against traditional knowledge holders; ongoing vigilance and legal challenges are necessary.',
       },
     ],
-    consumerResponsibility: ['Research whether brands using indigenous plant ingredients have community benefit-sharing agreements', 'Support brands that partner directly with indigenous communities', 'Advocate for international implementation of the Nagoya Protocol', 'Challenge brands that appropriate traditional beauty knowledge in marketing without acknowledging communities of origin'],
+    consumerResponsibility: ['Research whether brands using indigenous plant ingredients have community benefit-sharing agreements', 'Support brands that partner directly with Indigenous communities', 'Advocate for international implementation of the Nagoya Protocol', 'Challenge brands that appropriate traditional beauty knowledge in marketing without acknowledging communities of origin'],
   },
 };
 

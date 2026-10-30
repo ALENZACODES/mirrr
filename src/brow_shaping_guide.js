@@ -259,7 +259,7 @@ export const BROW_FILLING_GUIDE = {
 
 export const UNIBROW_GUIDE = {
   cultural_context: 'The unibrow (monobrow, synophrys, or وصل الحاجبين in Arabic) has complex cultural history. In ancient Greek and Persian culture, the unibrow was considered beautiful. Frida Kahlo famously kept and drew attention to her unibrow as a statement. In contemporary Arab and South Asian communities, the space between the brows is typically threaded to create two separate brows — but this is a personal choice.',
-  frida_kahlo: 'The most globally famous unibrow — Frida Kahlo\'s bold, ungroomed brow was an act of political resistance against European beauty standards applied to Mexican/indigenous women.',
+  frida_kahlo: 'The most globally famous unibrow — Frida Kahlo\'s bold, ungroomed brow was an act of political resistance against European beauty standards applied to Mexican/Indigenous women.',
   current_trend: 'The "unibrow" is experiencing a cultural moment — particularly among South Asian, Arab, and Latina women who are choosing to leave their natural brows unthreaded as a rejection of Eurocentric beauty norms.',
   management: 'If you want to manage a unibrow, threading or waxing the connecting hairs between the brows is standard. The amount removed is entirely a personal choice — from a clean separation to leaving a slight closeness between the brows.',
 };

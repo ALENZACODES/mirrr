@@ -286,7 +286,7 @@ export const ETHNIC_MICROBIOME_BEAUTY_GUIDES = {
       {
         practice: 'Aloe ferox (Cape Aloe)',
         microbiomeScience: 'Aloe ferox (Cape Aloe, native to South Africa) is a different species from Aloe vera with distinct compounds — particularly aloin and barbaloin (anthraquinone compounds). Topically, Cape aloe has anti-inflammatory, anti-pathogenic, and potentially prebiotic effects similar to Aloe vera but with a distinct active compound profile.',
-        traditional: 'South African indigenous communities have used Cape Aloe medicinally for thousands of years. The bitter sap (aloe bitters) was traditionally used as a digestive aid and applied to skin for wounds, rashes, and sun damage.',
+        traditional: 'South African Indigenous communities have used Cape Aloe medicinally for thousands of years. The bitter sap (aloe bitters) was traditionally used as a digestive aid and applied to skin for wounds, rashes, and sun damage.',
       },
       {
         practice: 'Marula Oil',

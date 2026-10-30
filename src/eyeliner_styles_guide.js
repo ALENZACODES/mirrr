@@ -283,7 +283,7 @@ export const WATERLINE_GUIDE = {
 
   looks: {
     black_waterline: 'Dramatic, traditional look — defines and deepens the eye. The iconic Arab and South Asian kohl look.',
-    nude_waterline: 'Flesh-toned or white pencil on the lower waterline — makes the eye appear LARGER and more awake.',
+    nude_waterline: 'Skin-toned or white pencil on the lower waterline — makes the eye appear LARGER and more awake.',
     white_waterline: 'Very bright and opens eyes dramatically — popular in Korean beauty',
     coloured_waterline: 'Cobalt blue, violet, or green on the waterline — a vibrant statement look',
   },

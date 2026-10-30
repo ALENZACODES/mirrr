@@ -192,7 +192,7 @@ export const EYESHADOW_TECHNIQUES = {
   cut_crease: {
     what: 'A defined, crisp line between a colour on the lid and a lighter or contrasting colour above, creating a graphic separation. More defined than a blended crease look.',
     steps: [
-      '1. Apply concealer or white/flesh-toned eyeshadow to the lid — this creates a blank canvas',
+      '1. Apply concealer or white/skin-toned eyeshadow to the lid — this creates a blank canvas',
       '2. Using a flat shadow brush, pack lid colour from lashline to where you want the cut',
       '3. Using a small, stiff pencil or concealer brush, create the crisp cut line — usually with concealer',
       '4. Clean up the line with a thin brush and concealer',
@@ -306,13 +306,13 @@ export const EYE_PRIMER_GUIDE = {
   why: 'Eye primer creates a sticky base that shadow adheres to, prevents creasing, intensifies pigment payoff (particularly important for getting true colours on deeper skin), and dramatically increases wear time.',
 
   types: [
-    { type: 'Flesh/nude primers', note: 'Covers lid discolouration for true shadow colour representation. Best for bright, vivid colours.', example: 'Urban Decay EDEN, Too Faced Shadow Insurance' },
+    { type: 'Skin-toned (your nude) primers', note: 'Covers lid discolouration for true shadow colour representation. Best for bright, vivid colours.', example: 'Urban Decay EDEN, Too Faced Shadow Insurance' },
     { type: 'White/light primers', note: 'Maximum pigment pop. Shades appear exactly as in the pan.', example: 'Milani Eyeshadow Primer, NYX HD Eye Shadow Base (White)' },
     { type: 'Tinted primers', note: 'Add warmth or tone while preparing lid.', example: 'Urban Decay Urbane' },
     { type: 'Clear primers', note: 'For natural lids, grips shadow, less colour-altering.', example: 'e.l.f. Eyeshadow Primer' },
   ],
 
-  for_deep_skin: 'A flesh-toned or medium-toned primer corrects the natural undertone of the eyelid (often slightly darker than surrounding skin) and allows colours to appear true to pan. White primers maximise pop of vivid colours.',
+  for_deep_skin: 'A skin-toned or medium-toned primer corrects the natural undertone of the eyelid (often slightly darker than surrounding skin) and allows colours to appear true to pan. White primers maximise pop of vivid colours.',
 
   setting: 'After primer, setting with a translucent powder before shadow application creates an ultra-smooth base. Particularly useful with cream or liquid shadows.',
 };

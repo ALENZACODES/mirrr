@@ -52,7 +52,7 @@ export const PRESCRIPTION_MAKEUP_GUIDE = {
     ],
 
     liner: [
-      'White, nude, or flesh-toned waterline liner — brightens and enlarges the eye dramatically',
+      'White, nude, or skin-toned waterline liner — brightens and enlarges the eye dramatically',
       'Black waterline liner makes eyes appear smaller — use sparingly or avoid',
       'Apply liner as close to the lashes as possible — a thick gap of lid between lashes and liner makes eyes look smaller',
       'Tightlining (applying liner underneath the upper lashline from the inside) adds definition without appearing to shrink the eye',
@@ -222,7 +222,7 @@ export const GLASSES_GLAM_ROUTINE = {
   for_myopia: {
     prep: 'Eye primer — helps shadow last all day (hot face + glasses wear = easier smudging under lens rims).',
     steps: [
-      '1. Prime eyelids with flesh-toned or white primer for maximum pigment pop',
+      '1. Prime eyelids with skin-toned or white primer for maximum pigment pop',
       '2. Apply champagne or light nude shimmer across inner half of lid',
       '3. Place medium shade at outer corner and blended into crease',
       '4. Curl lashes',

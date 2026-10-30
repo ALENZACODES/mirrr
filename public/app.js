@@ -1250,13 +1250,13 @@ function colourToHex(name) {
 
 const TRENDING_REGION_LABELS = {
   west_african:   { label: 'West Africa', emoji: '🌍' },
-  east_african:   { label: 'East Africa', emoji: '🦁' },
-  black_american: { label: 'Black America', emoji: '✊🏾' },
+  east_african:   { label: 'East Africa', emoji: '🌄' },
+  black_american: { label: 'Black America', emoji: '👑' },
   caribbean:      { label: 'Caribbean', emoji: '🌴' },
-  south_asian:    { label: 'South Asian', emoji: '🌺' },
+  south_asian:    { label: 'South Asia', emoji: '🌺' },
   arab:           { label: 'Arab World', emoji: '🌙' },
-  latina:         { label: 'Latina', emoji: '🌹' },
-  east_asian:     { label: 'East Asian', emoji: '✨' },
+  latina:         { label: 'Latin America', emoji: '🌹' },
+  east_asian:     { label: 'East Asia', emoji: '✨' },
   south_african:  { label: 'South Africa', emoji: '🦅' },
 };
 

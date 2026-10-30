@@ -27,7 +27,7 @@ export const ETHNIC_COLOR_THEORY_GUIDES = {
         culturalColors: ['Gold: the color of Yoruba royalty (ose ibeji, gold beads)', 'Purple/violet: associated with Ashanti royalty in Ghana', 'Red: celebratory across West African cultures', 'White: ceremonial and spiritual across many traditions'],
       },
       lipColors: {
-        mostFlattering: ['Deep berries and plums (gorgeous on dark skin)', 'True reds (classic)', 'Bright corals and oranges (unexpected but stunning)', 'Nude: must be warm/brown-based for deep skin. Cool-toned nudes read grey/corpse. Rule: nude should be 1-2 shades lighter than your actual lip color.'],
+        mostFlattering: ['Deep berries and plums (gorgeous on dark skin)', 'True reds (classic)', 'Bright corals and oranges (unexpected but stunning)', 'Nude: must be warm/brown-based for deep skin. Cool-toned nudes read grey. Rule: nude should be 1-2 shades lighter than your actual lip color.'],
         toAvoid: ['Cold-toned nude/pink that reads grey on deep skin', 'Very light pinks that look ashy'],
       },
       blush: {

@@ -213,7 +213,7 @@ export const EYESHADOW_COLOUR_THEORY = {
     principle: 'Light and shimmer advance (appear to come forward). Dark and matte recede (appear to go back). Use this to sculpt the eye area.',
     techniques: {
       inner_corner_highlight: 'A light shimmery shade in the inner corner of the eyes opens them up — one of the most impactful techniques for small eyes',
-      waterline: 'Nude or flesh-toned pencil on the lower waterline makes eyes appear larger (dark kohl on the waterline makes them appear smaller and more dramatic)',
+      waterline: 'Your-nude (skin-toned) pencil on the lower waterline makes eyes appear larger (dark kohl on the waterline makes them appear smaller and more dramatic)',
       under_brow_highlight: 'A light shimmer or matte shade just under the brow bone adds lift',
     },
   },

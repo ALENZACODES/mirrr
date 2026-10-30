@@ -107,7 +107,7 @@ export const COLOR_THEORY_DIVERSE_SKIN = {
       nudes: 'Nude lips on deep skin: need specific deep nude (often mislabeled "nude" when actually light pink that reads pale on deep skin)',
       reds: 'Red lips on deep skin: all reds work; warm reds (tomato, brick, orange-red) particularly stunning; blue-reds pop',
       darks: 'Dark lips (plum, wine, black): stunning on deep skin; bold and beautiful',
-      avoid: 'Very light pinks and nudes designed for light skin — can look ashy or corpse-like on deep skin'
+      avoid: 'Very light pinks and nudes designed for light skin — can look ashy or grey on deep skin'
     },
     mediumSkin: {
       versatile: 'Medium skin is most versatile for lip color; nearly all shades translate well',

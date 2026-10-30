@@ -187,7 +187,7 @@ export const STATEMENT_LIP_LOOKS = {
       deep_medium: 'Brick browns, warm mocha, tawny',
       deep: 'Rich mocha, deep caramel, warm chocolate (NOT grey-brown — will look ashy)',
     },
-    tip: 'The Most Common Nude Lip Mistake: wearing a "nude" designed for a lighter skin tone that appears grey, washed-out, or "corpse-like" on deeper skin. Your nude has warmth — brown, bronze, caramel, not pink-beige.',
+    tip: 'The Most Common Nude Lip Mistake: wearing a "nude" designed for a lighter skin tone that appears grey, washed-out on deeper skin. Your nude has warmth — brown, bronze, caramel, not pink-beige.',
   },
   dark_lip: {
     look: 'Dark / Deep Lip',

@@ -85,7 +85,7 @@ export const VIDEO_AND_CONTENT_CREATOR = {
 
 export const ETHNIC_SKIN_PHOTOGRAPHY = {
   'west-african': {
-    challenge: 'Fitzpatrick V-VI skin with deep tones and warm undertones historically underexposed on camera; black skin tones absorb more light, requiring additional exposure to capture detail',
+    challenge: 'Fitzpatrick V-VI skin with deep tones and warm undertones historically underexposed on camera; deeper skin tones reflect light differently, requiring additional exposure to capture detail',
     solutions: ['Add positive exposure compensation (+1 to +2 stops in auto mode)', 'Use a white or silver reflector to bounce fill light onto the face', 'Avoid harsh backlighting which creates silhouette — use front or side lighting', 'Flash can flatten deep skin — use off-camera flash at an angle for dimension'],
     makeupTips: 'Gold and warm bronze highlighters are particularly stunning on deep dark skin in photography; cool silver or champagne highlights can look grey or flat; warm colours photograph more vibrantly on deep skin than they appear in person',
     foundation: 'HD foundation in the correct warm-brown to deep-mahogany shade; ensure the shade is truly warm-toned not neutral-cool; deep skin with neutral-cool foundation photographs with a grey or ashy quality under flash'

@@ -29,7 +29,7 @@ export const COMMUNITIES = [
     id: 'east_african',
     label: 'East African',
     subLabel: 'Ethiopian, Somali, Kenyan, Ugandan…',
-    emoji: '🦁',
+    emoji: '🌄',
     seeds: {
       intensity: 0.75, warmth: 0.78, boldness: 0.80, texture: 'glass',
       colour_palette: 'jewel-tones', hair_vibe: 'natural-afro',
@@ -41,7 +41,7 @@ export const COMMUNITIES = [
     id: 'black_american',
     label: 'Black American',
     subLabel: 'African-American, Southern, HBCU culture…',
-    emoji: '✊🏾',
+    emoji: '👑',
     seeds: {
       intensity: 0.85, warmth: 0.77, boldness: 0.88, texture: 'shimmer',
       colour_palette: 'warm-vibrant', hair_vibe: 'long-sleek-wig',

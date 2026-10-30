@@ -1341,6 +1341,181 @@
    "shades_or_variants_in_stock": 1,
    "checked_at": "2026-10-30T16:01:00-04:00",
    "ownership": null
+  },
+  "reinarebelde-bronze-gold-neutral-shimmer-eyeshadow-palette-a": {
+   "id": "reinarebelde-bronze-gold-neutral-shimmer-eyeshadow-palette-a",
+   "brand": "Reina Rebelde",
+   "name": "Azteca",
+   "category": "eyeshadow",
+   "retailer": "Reina Rebelde (brand's own store, reinarebelde.com)",
+   "url": "https://reinarebelde.com/products/bronze-gold-neutral-shimmer-eyeshadow-palette-azteca",
+   "source_url": "https://reinarebelde.com/products/bronze-gold-neutral-shimmer-eyeshadow-palette-azteca",
+   "price_source_url": "https://reinarebelde.com/products/bronze-gold-neutral-shimmer-eyeshadow-palette-azteca.js",
+   "price_min": 24.0,
+   "price_max": 24.0,
+   "currency": "USD",
+   "price_text": "$24.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:24:00-04:00",
+   "ownership": {
+    "label": "Latina-owned",
+    "detail": "Its own site: \"proud to be a Latina-owned and operated business\" (founder Regina Merson).",
+    "sources": [
+     "https://reinarebelde.com/pages/about-us"
+    ]
+   }
+  },
+  "reinarebelde-matte-black-liquid-eyeliner-exagerada": {
+   "id": "reinarebelde-matte-black-liquid-eyeliner-exagerada",
+   "brand": "Reina Rebelde",
+   "name": "Exagerada",
+   "category": "liner",
+   "retailer": "Reina Rebelde (brand's own store, reinarebelde.com)",
+   "url": "https://reinarebelde.com/products/matte-black-liquid-eyeliner-exagerada",
+   "source_url": "https://reinarebelde.com/products/matte-black-liquid-eyeliner-exagerada",
+   "price_source_url": "https://reinarebelde.com/products/matte-black-liquid-eyeliner-exagerada.js",
+   "price_min": 19.0,
+   "price_max": 19.0,
+   "currency": "USD",
+   "price_text": "$19.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:24:00-04:00",
+   "ownership": {
+    "label": "Latina-owned",
+    "detail": "Its own site: \"proud to be a Latina-owned and operated business\" (founder Regina Merson).",
+    "sources": [
+     "https://reinarebelde.com/pages/about-us"
+    ]
+   }
+  },
+  "reinarebelde-coqueta-medium-tone-bronzer-blush-trio": {
+   "id": "reinarebelde-coqueta-medium-tone-bronzer-blush-trio",
+   "brand": "Reina Rebelde",
+   "name": "Coqueta",
+   "category": "blush",
+   "retailer": "Reina Rebelde (brand's own store, reinarebelde.com)",
+   "url": "https://reinarebelde.com/products/coqueta-medium-tone-bronzer-blush-trio",
+   "source_url": "https://reinarebelde.com/products/coqueta-medium-tone-bronzer-blush-trio",
+   "price_source_url": "https://reinarebelde.com/products/coqueta-medium-tone-bronzer-blush-trio.js",
+   "price_min": 24.0,
+   "price_max": 24.0,
+   "currency": "USD",
+   "price_text": "$24.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:24:00-04:00",
+   "ownership": {
+    "label": "Latina-owned",
+    "detail": "Its own site: \"proud to be a Latina-owned and operated business\" (founder Regina Merson).",
+    "sources": [
+     "https://reinarebelde.com/pages/about-us"
+    ]
+   }
+  },
+  "reinarebelde-highlighter-radiance-stick-warm-tone-tesoro": {
+   "id": "reinarebelde-highlighter-radiance-stick-warm-tone-tesoro",
+   "brand": "Reina Rebelde",
+   "name": "Tesoro",
+   "category": "highlight",
+   "retailer": "Reina Rebelde (brand's own store, reinarebelde.com)",
+   "url": "https://reinarebelde.com/products/highlighter-radiance-stick-warm-tone-tesoro",
+   "source_url": "https://reinarebelde.com/products/highlighter-radiance-stick-warm-tone-tesoro",
+   "price_source_url": "https://reinarebelde.com/products/highlighter-radiance-stick-warm-tone-tesoro.js",
+   "price_min": 23.0,
+   "price_max": 23.0,
+   "currency": "USD",
+   "price_text": "$23.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:24:00-04:00",
+   "ownership": {
+    "label": "Latina-owned",
+    "detail": "Its own site: \"proud to be a Latina-owned and operated business\" (founder Regina Merson).",
+    "sources": [
+     "https://reinarebelde.com/pages/about-us"
+    ]
+   }
+  },
+  "reinarebelde-universal-red-lipstick-brava": {
+   "id": "reinarebelde-universal-red-lipstick-brava",
+   "brand": "Reina Rebelde",
+   "name": "Brava",
+   "category": "lip",
+   "retailer": "Reina Rebelde (brand's own store, reinarebelde.com)",
+   "url": "https://reinarebelde.com/products/universal-red-lipstick-brava",
+   "source_url": "https://reinarebelde.com/products/universal-red-lipstick-brava",
+   "price_source_url": "https://reinarebelde.com/products/universal-red-lipstick-brava.js",
+   "price_min": 21.0,
+   "price_max": 21.0,
+   "currency": "USD",
+   "price_text": "$21.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:24:00-04:00",
+   "ownership": {
+    "label": "Latina-owned",
+    "detail": "Its own site: \"proud to be a Latina-owned and operated business\" (founder Regina Merson).",
+    "sources": [
+     "https://reinarebelde.com/pages/about-us"
+    ]
+   }
+  },
+  "reinarebelde-chocolate-brown-lipstick-mami-chula": {
+   "id": "reinarebelde-chocolate-brown-lipstick-mami-chula",
+   "brand": "Reina Rebelde",
+   "name": "Mami Chula",
+   "category": "lip",
+   "retailer": "Reina Rebelde (brand's own store, reinarebelde.com)",
+   "url": "https://reinarebelde.com/products/chocolate-brown-lipstick-mami-chula",
+   "source_url": "https://reinarebelde.com/products/chocolate-brown-lipstick-mami-chula",
+   "price_source_url": "https://reinarebelde.com/products/chocolate-brown-lipstick-mami-chula.js",
+   "price_min": 21.0,
+   "price_max": 21.0,
+   "currency": "USD",
+   "price_text": "$21.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:24:00-04:00",
+   "ownership": {
+    "label": "Latina-owned",
+    "detail": "Its own site: \"proud to be a Latina-owned and operated business\" (founder Regina Merson).",
+    "sources": [
+     "https://reinarebelde.com/pages/about-us"
+    ]
+   }
+  },
+  "reinarebelde-cafecito-deep-medium-hydrating-finishing-powder": {
+   "id": "reinarebelde-cafecito-deep-medium-hydrating-finishing-powder",
+   "brand": "Reina Rebelde",
+   "name": "Cafecito",
+   "category": "setting",
+   "retailer": "Reina Rebelde (brand's own store, reinarebelde.com)",
+   "url": "https://reinarebelde.com/products/cafecito-deep-medium-hydrating-finishing-powder",
+   "source_url": "https://reinarebelde.com/products/cafecito-deep-medium-hydrating-finishing-powder",
+   "price_source_url": "https://reinarebelde.com/products/cafecito-deep-medium-hydrating-finishing-powder.js",
+   "price_min": 25.0,
+   "price_max": 25.0,
+   "currency": "USD",
+   "price_text": "$25.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:24:00-04:00",
+   "ownership": {
+    "label": "Latina-owned",
+    "detail": "Its own site: \"proud to be a Latina-owned and operated business\" (founder Regina Merson).",
+    "sources": [
+     "https://reinarebelde.com/pages/about-us"
+    ]
+   }
   }
  },
  "sets": {
@@ -1474,6 +1649,30 @@
     "thelipbar-next-to-skin-setting-spray"
    ]
   },
+  "latina": {
+   "name": "Latina glam",
+   "products": [
+    "reinarebelde-bronze-gold-neutral-shimmer-eyeshadow-palette-a",
+    "reinarebelde-matte-black-liquid-eyeliner-exagerada",
+    "reinarebelde-coqueta-medium-tone-bronzer-blush-trio",
+    "reinarebelde-highlighter-radiance-stick-warm-tone-tesoro",
+    "reinarebelde-universal-red-lipstick-brava",
+    "reinarebelde-chocolate-brown-lipstick-mami-chula",
+    "reinarebelde-cafecito-deep-medium-hydrating-finishing-powder"
+   ]
+  },
+  "east_african": {
+   "name": "East African glow",
+   "products": [
+    "danessamyricksbeauty-yummy-skin-serum-skin-tint",
+    "uomabeauty-stay-woke-concealer",
+    "juviasplace-egyptian-pencil-eyeliner",
+    "mentedcosmetics-everyday-eyeshadow-palette",
+    "juviasplace-blushed-cream-blush",
+    "patmcgrath-legendary-longwear-lip-liner",
+    "mentedcosmetics-better-setter-setting-spray"
+   ]
+  },
   "indigenous": {
    "name": "Indigenous-made colour",
    "products": [
@@ -1533,6 +1732,16 @@
   "graduation_glow": "natural",
   "office_power": "natural",
   "first_nations_powwow": "indigenous",
-  "indigenous_latina": "indigenous"
+  "indigenous_latina": "indigenous",
+  "latina_glam": "latina",
+  "afro_latina": "latina",
+  "ethiopian_jewel": "east_african",
+  "somali_glam": "east_african",
+  "kenyan_nairobi_chic": "east_african",
+  "nubian_queen": "east_african",
+  "wedding_guest_universal": "glam",
+  "y2k_revival": "glam",
+  "mixed_heritage_luminous": "natural",
+  "blasian_editorial": "editorial"
  }
 }

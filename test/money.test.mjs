@@ -28,7 +28,7 @@ test('every product carries its source page, price as shown, currency and checke
 });
 
 test('ownership labels stay within what the sources say', () => {
-  const allowed = new Set(['Black-owned', 'Black-founded', 'Owned by women of colour', 'Indigenous-owned, Canadian', 'South Asian-founded']);
+  const allowed = new Set(['Black-owned', 'Black-founded', 'Owned by women of colour', 'Indigenous-owned, Canadian', 'South Asian-founded', 'Latina-owned']);
   for (const p of Object.values(D.products)) if (p.ownership) assert.ok(allowed.has(p.ownership.label), p.ownership.label);
 });
 

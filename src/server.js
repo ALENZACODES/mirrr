@@ -45,6 +45,7 @@ import { handleLooks } from './looks/routes.js';
 import { handleLeap } from './leap/routes.js';
 import { handleRoutine } from './routine/routes.js';
 import { handlePhoto } from './photo/routes.js';
+import { handleMoney, store as moneyStore } from './money/routes.js';
 import { createRateLimiter, clientAddress, hopShape } from './ratelimit.js';
 
 // Diagnostics endpoints (/api/qloo/diag, key presence in /api/health) are off unless MIRRR_DIAG=1.
@@ -179,6 +180,8 @@ async function router(req, res) {
   // -------------------------------------------------------------------------
 
   if (!path.startsWith('/api/')) {
+    // A shared link (?ref=code) adds one to that code's aggregate count. Nothing about the visitor is kept.
+    if (path === '/' && method === 'GET' && url.searchParams.has('ref')) moneyStore.countRef(url.searchParams.get('ref'));
     const filePath = join(PUBLIC_DIR, path === '/' ? 'index.html' : path);
     if (existsSync(filePath) && statSync(filePath).isFile()) {
       return serveStatic(res, filePath);
@@ -775,6 +778,7 @@ async function router(req, res) {
   if (await handleLeap(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handleRoutine(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handlePhoto(method, path, url, req, res, { sendJSON, readBody })) return;
+  if (await handleMoney(method, path, url, req, res, { sendJSON, readBody, address: getIP(req) })) return;
 
   // 404
   return sendJSON(res, 404, { error: 'Not found' });

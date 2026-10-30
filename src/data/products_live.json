@@ -1,0 +1,1538 @@
+{
+ "checked_at": "2026-10-30T16:01:00-04:00",
+ "note": "Every product, price and link below was read from the brand's own product page on the date in checked_at. Prices change; the app shows 'price as of' this date. Shades are chosen on the brand's page. No affiliate relationship: links carry UTM tags only.",
+ "utm": {
+  "utm_source": "mirrr",
+  "utm_medium": "app",
+  "utm_campaign": "qloo2026"
+ },
+ "products": {
+  "juviasplace-i-am-my-skin-foundation-sticks": {
+   "id": "juviasplace-i-am-my-skin-foundation-sticks",
+   "brand": "Juvia's Place",
+   "name": "I Am My Skin Hydra-Tint Foundation Stick",
+   "category": "foundation",
+   "retailer": "Juvia's Place (brand's own store, juviasplace.com)",
+   "url": "https://juviasplace.com/products/i-am-my-skin-foundation-sticks",
+   "source_url": "https://juviasplace.com/products/i-am-my-skin-foundation-sticks",
+   "price_source_url": "https://juviasplace.com/products/i-am-my-skin-foundation-sticks.js",
+   "price_min": 20.0,
+   "price_max": 20.0,
+   "currency": "USD",
+   "price_text": "$20.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 26,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-owned",
+    "detail": "Founder Chichi Eburu calls it a Black-owned cosmetic brand.",
+    "sources": [
+     "https://www.juviasplace.com/blogs/tribe-talk/black-owned-and-beautiful"
+    ]
+   }
+  },
+  "juviasplace-i-am-magic-full-coverage-concealer": {
+   "id": "juviasplace-i-am-magic-full-coverage-concealer",
+   "brand": "Juvia's Place",
+   "name": "I Am Magic Concealer",
+   "category": "concealer",
+   "retailer": "Juvia's Place (brand's own store, juviasplace.com)",
+   "url": "https://juviasplace.com/products/i-am-magic-full-coverage-concealer",
+   "source_url": "https://juviasplace.com/products/i-am-magic-full-coverage-concealer",
+   "price_source_url": "https://juviasplace.com/products/i-am-magic-full-coverage-concealer.js",
+   "price_min": 16.0,
+   "price_max": 16.0,
+   "currency": "USD",
+   "price_text": "$16.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 24,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-owned",
+    "detail": "Founder Chichi Eburu calls it a Black-owned cosmetic brand.",
+    "sources": [
+     "https://www.juviasplace.com/blogs/tribe-talk/black-owned-and-beautiful"
+    ]
+   }
+  },
+  "juviasplace-egyptian-pencil-eyeliner": {
+   "id": "juviasplace-egyptian-pencil-eyeliner",
+   "brand": "Juvia's Place",
+   "name": "The Egyptian Pencil Liner",
+   "category": "liner",
+   "retailer": "Juvia's Place (brand's own store, juviasplace.com)",
+   "url": "https://juviasplace.com/products/egyptian-pencil-eyeliner",
+   "source_url": "https://juviasplace.com/products/egyptian-pencil-eyeliner",
+   "price_source_url": "https://juviasplace.com/products/egyptian-pencil-eyeliner.js",
+   "price_min": 12.0,
+   "price_max": 12.0,
+   "currency": "USD",
+   "price_text": "$12.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 3,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-owned",
+    "detail": "Founder Chichi Eburu calls it a Black-owned cosmetic brand.",
+    "sources": [
+     "https://www.juviasplace.com/blogs/tribe-talk/black-owned-and-beautiful"
+    ]
+   }
+  },
+  "juviasplace-egyptian-pen-eyeliner": {
+   "id": "juviasplace-egyptian-pen-eyeliner",
+   "brand": "Juvia's Place",
+   "name": "The Egyptian Pen Liner",
+   "category": "liner",
+   "retailer": "Juvia's Place (brand's own store, juviasplace.com)",
+   "url": "https://juviasplace.com/products/egyptian-pen-eyeliner",
+   "source_url": "https://juviasplace.com/products/egyptian-pen-eyeliner",
+   "price_source_url": "https://juviasplace.com/products/egyptian-pen-eyeliner.js",
+   "price_min": 15.0,
+   "price_max": 15.0,
+   "currency": "USD",
+   "price_text": "$15.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 2,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-owned",
+    "detail": "Founder Chichi Eburu calls it a Black-owned cosmetic brand.",
+    "sources": [
+     "https://www.juviasplace.com/blogs/tribe-talk/black-owned-and-beautiful"
+    ]
+   }
+  },
+  "juviasplace-velvety-matte-mousse-lip-cream": {
+   "id": "juviasplace-velvety-matte-mousse-lip-cream",
+   "brand": "Juvia's Place",
+   "name": "Velvety Matte Mousse Lip Cream",
+   "category": "lip",
+   "retailer": "Juvia's Place (brand's own store, juviasplace.com)",
+   "url": "https://juviasplace.com/products/velvety-matte-mousse-lip-cream",
+   "source_url": "https://juviasplace.com/products/velvety-matte-mousse-lip-cream",
+   "price_source_url": "https://juviasplace.com/products/velvety-matte-mousse-lip-cream.js",
+   "price_min": 12.0,
+   "price_max": 12.0,
+   "currency": "USD",
+   "price_text": "$12.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 9,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-owned",
+    "detail": "Founder Chichi Eburu calls it a Black-owned cosmetic brand.",
+    "sources": [
+     "https://www.juviasplace.com/blogs/tribe-talk/black-owned-and-beautiful"
+    ]
+   }
+  },
+  "juviasplace-culture-single-pigments-and-eyeshadow": {
+   "id": "juviasplace-culture-single-pigments-and-eyeshadow",
+   "brand": "Juvia's Place",
+   "name": "Culture Multichrome Shadow",
+   "category": "eyeshadow",
+   "retailer": "Juvia's Place (brand's own store, juviasplace.com)",
+   "url": "https://juviasplace.com/products/culture-single-pigments-and-eyeshadow",
+   "source_url": "https://juviasplace.com/products/culture-single-pigments-and-eyeshadow",
+   "price_source_url": "https://juviasplace.com/products/culture-single-pigments-and-eyeshadow.js",
+   "price_min": 15.0,
+   "price_max": 15.0,
+   "currency": "USD",
+   "price_text": "$15.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 4,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-owned",
+    "detail": "Founder Chichi Eburu calls it a Black-owned cosmetic brand.",
+    "sources": [
+     "https://www.juviasplace.com/blogs/tribe-talk/black-owned-and-beautiful"
+    ]
+   }
+  },
+  "juviasplace-blushed-cream-blush": {
+   "id": "juviasplace-blushed-cream-blush",
+   "brand": "Juvia's Place",
+   "name": "Blushed Cream Blush",
+   "category": "blush",
+   "retailer": "Juvia's Place (brand's own store, juviasplace.com)",
+   "url": "https://juviasplace.com/products/blushed-cream-blush",
+   "source_url": "https://juviasplace.com/products/blushed-cream-blush",
+   "price_source_url": "https://juviasplace.com/products/blushed-cream-blush.js",
+   "price_min": 17.0,
+   "price_max": 17.0,
+   "currency": "USD",
+   "price_text": "$17.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 8,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-owned",
+    "detail": "Founder Chichi Eburu calls it a Black-owned cosmetic brand.",
+    "sources": [
+     "https://www.juviasplace.com/blogs/tribe-talk/black-owned-and-beautiful"
+    ]
+   }
+  },
+  "danessamyricksbeauty-yummy-skin-serum-skin-tint": {
+   "id": "danessamyricksbeauty-yummy-skin-serum-skin-tint",
+   "brand": "Danessa Myricks Beauty",
+   "name": "Yummy Skin Serum Skin Tint Foundation with Peptides + Ceramide",
+   "category": "foundation",
+   "retailer": "Danessa Myricks Beauty (brand's own store, danessamyricksbeauty.com)",
+   "url": "https://danessamyricksbeauty.com/products/yummy-skin-serum-skin-tint",
+   "source_url": "https://danessamyricksbeauty.com/products/yummy-skin-serum-skin-tint",
+   "price_source_url": "https://danessamyricksbeauty.com/products/yummy-skin-serum-skin-tint.js",
+   "price_min": 39.0,
+   "price_max": 39.0,
+   "currency": "USD",
+   "price_text": "$39.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 15,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-owned",
+    "detail": "Founder Danessa Myricks: \"one of the few Black-owned brands available in all Sephora doors\" (BeautyMatter, 2025).",
+    "sources": [
+     "https://beautymatter.com/articles/future50-2025-danessa-myricks-beauty"
+    ]
+   }
+  },
+  "danessamyricksbeauty-yummy-skin-lift-flex-concealer": {
+   "id": "danessamyricksbeauty-yummy-skin-lift-flex-concealer",
+   "brand": "Danessa Myricks Beauty",
+   "name": "Yummy Skin Lift & Flex Concealer",
+   "category": "concealer",
+   "retailer": "Danessa Myricks Beauty (brand's own store, danessamyricksbeauty.com)",
+   "url": "https://danessamyricksbeauty.com/products/yummy-skin-lift-flex-concealer",
+   "source_url": "https://danessamyricksbeauty.com/products/yummy-skin-lift-flex-concealer",
+   "price_source_url": "https://danessamyricksbeauty.com/products/yummy-skin-lift-flex-concealer.js",
+   "price_min": 33.0,
+   "price_max": 33.0,
+   "currency": "USD",
+   "price_text": "$33.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 20,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-owned",
+    "detail": "Founder Danessa Myricks: \"one of the few Black-owned brands available in all Sephora doors\" (BeautyMatter, 2025).",
+    "sources": [
+     "https://beautymatter.com/articles/future50-2025-danessa-myricks-beauty"
+    ]
+   }
+  },
+  "danessamyricksbeauty-vision-flush-glow": {
+   "id": "danessamyricksbeauty-vision-flush-glow",
+   "brand": "Danessa Myricks Beauty",
+   "name": "Vision Flush Glow",
+   "category": "blush",
+   "retailer": "Danessa Myricks Beauty (brand's own store, danessamyricksbeauty.com)",
+   "url": "https://danessamyricksbeauty.com/products/vision-flush-glow",
+   "source_url": "https://danessamyricksbeauty.com/products/vision-flush-glow",
+   "price_source_url": "https://danessamyricksbeauty.com/products/vision-flush-glow.js",
+   "price_min": 22.0,
+   "price_max": 22.0,
+   "currency": "USD",
+   "price_text": "$22.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 6,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-owned",
+    "detail": "Founder Danessa Myricks: \"one of the few Black-owned brands available in all Sephora doors\" (BeautyMatter, 2025).",
+    "sources": [
+     "https://beautymatter.com/articles/future50-2025-danessa-myricks-beauty"
+    ]
+   }
+  },
+  "danessamyricksbeauty-glosswork-4d-ultra-shine-plumping-gloss": {
+   "id": "danessamyricksbeauty-glosswork-4d-ultra-shine-plumping-gloss",
+   "brand": "Danessa Myricks Beauty",
+   "name": "Glosswork 4D Ultra Shine Plumping Gloss",
+   "category": "lip",
+   "retailer": "Danessa Myricks Beauty (brand's own store, danessamyricksbeauty.com)",
+   "url": "https://danessamyricksbeauty.com/products/glosswork-4d-ultra-shine-plumping-gloss",
+   "source_url": "https://danessamyricksbeauty.com/products/glosswork-4d-ultra-shine-plumping-gloss",
+   "price_source_url": "https://danessamyricksbeauty.com/products/glosswork-4d-ultra-shine-plumping-gloss.js",
+   "price_min": 26.0,
+   "price_max": 26.0,
+   "currency": "USD",
+   "price_text": "$26.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 9,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-owned",
+    "detail": "Founder Danessa Myricks: \"one of the few Black-owned brands available in all Sephora doors\" (BeautyMatter, 2025).",
+    "sources": [
+     "https://beautymatter.com/articles/future50-2025-danessa-myricks-beauty"
+    ]
+   }
+  },
+  "danessamyricksbeauty-colorfix-foils-1": {
+   "id": "danessamyricksbeauty-colorfix-foils-1",
+   "brand": "Danessa Myricks Beauty",
+   "name": "Colorfix Foils",
+   "category": "eyeshadow",
+   "retailer": "Danessa Myricks Beauty (brand's own store, danessamyricksbeauty.com)",
+   "url": "https://danessamyricksbeauty.com/products/colorfix-foils-1",
+   "source_url": "https://danessamyricksbeauty.com/products/colorfix-foils-1",
+   "price_source_url": "https://danessamyricksbeauty.com/products/colorfix-foils-1.js",
+   "price_min": 22.0,
+   "price_max": 22.0,
+   "currency": "USD",
+   "price_text": "$22.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 8,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-owned",
+    "detail": "Founder Danessa Myricks: \"one of the few Black-owned brands available in all Sephora doors\" (BeautyMatter, 2025).",
+    "sources": [
+     "https://beautymatter.com/articles/future50-2025-danessa-myricks-beauty"
+    ]
+   }
+  },
+  "danessamyricksbeauty-evolution-powder": {
+   "id": "danessamyricksbeauty-evolution-powder",
+   "brand": "Danessa Myricks Beauty",
+   "name": "Evolution Powder",
+   "category": "setting",
+   "retailer": "Danessa Myricks Beauty (brand's own store, danessamyricksbeauty.com)",
+   "url": "https://danessamyricksbeauty.com/products/evolution-powder",
+   "source_url": "https://danessamyricksbeauty.com/products/evolution-powder",
+   "price_source_url": "https://danessamyricksbeauty.com/products/evolution-powder.js",
+   "price_min": 27.0,
+   "price_max": 27.0,
+   "currency": "USD",
+   "price_text": "$27.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 10,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-owned",
+    "detail": "Founder Danessa Myricks: \"one of the few Black-owned brands available in all Sephora doors\" (BeautyMatter, 2025).",
+    "sources": [
+     "https://beautymatter.com/articles/future50-2025-danessa-myricks-beauty"
+    ]
+   }
+  },
+  "mentedcosmetics-cloud-cream-skin-tint": {
+   "id": "mentedcosmetics-cloud-cream-skin-tint",
+   "brand": "Mented Cosmetics",
+   "name": "Cloud Cream Skin Tint",
+   "category": "foundation",
+   "retailer": "Mented Cosmetics (brand's own store, mentedcosmetics.com)",
+   "url": "https://mentedcosmetics.com/products/cloud-cream-skin-tint",
+   "source_url": "https://mentedcosmetics.com/products/cloud-cream-skin-tint",
+   "price_source_url": "https://mentedcosmetics.com/products/cloud-cream-skin-tint.js",
+   "price_min": 25.0,
+   "price_max": 25.0,
+   "currency": "USD",
+   "price_text": "$25.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 10,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-founded",
+    "detail": "Its own site calls it a Black-owned makeup company; acquired by West Lane Capital Partners in 2024 (Beauty Independent).",
+    "sources": [
+     "https://mentedcosmetics.com/pages/about",
+     "https://www.beautyindependent.com/west-lane-capital-partners-breathes-new-life-into-beauty-bakerie-with-acquisition/"
+    ]
+   }
+  },
+  "mentedcosmetics-lush-lip-liner": {
+   "id": "mentedcosmetics-lush-lip-liner",
+   "brand": "Mented Cosmetics",
+   "name": "Lush Lip Liner",
+   "category": "lip",
+   "retailer": "Mented Cosmetics (brand's own store, mentedcosmetics.com)",
+   "url": "https://mentedcosmetics.com/products/lush-lip-liner",
+   "source_url": "https://mentedcosmetics.com/products/lush-lip-liner",
+   "price_source_url": "https://mentedcosmetics.com/products/lush-lip-liner.js",
+   "price_min": 12.0,
+   "price_max": 12.0,
+   "currency": "USD",
+   "price_text": "$12.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-founded",
+    "detail": "Its own site calls it a Black-owned makeup company; acquired by West Lane Capital Partners in 2024 (Beauty Independent).",
+    "sources": [
+     "https://mentedcosmetics.com/pages/about",
+     "https://www.beautyindependent.com/west-lane-capital-partners-breathes-new-life-into-beauty-bakerie-with-acquisition/"
+    ]
+   }
+  },
+  "mentedcosmetics-everyday-eyeshadow-palette": {
+   "id": "mentedcosmetics-everyday-eyeshadow-palette",
+   "brand": "Mented Cosmetics",
+   "name": "Everyday Eyeshadow Palette",
+   "category": "eyeshadow",
+   "retailer": "Mented Cosmetics (brand's own store, mentedcosmetics.com)",
+   "url": "https://mentedcosmetics.com/products/everyday-eyeshadow-palette",
+   "source_url": "https://mentedcosmetics.com/products/everyday-eyeshadow-palette",
+   "price_source_url": "https://mentedcosmetics.com/products/everyday-eyeshadow-palette.js",
+   "price_min": 28.0,
+   "price_max": 28.0,
+   "currency": "USD",
+   "price_text": "$28.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-founded",
+    "detail": "Its own site calls it a Black-owned makeup company; acquired by West Lane Capital Partners in 2024 (Beauty Independent).",
+    "sources": [
+     "https://mentedcosmetics.com/pages/about",
+     "https://www.beautyindependent.com/west-lane-capital-partners-breathes-new-life-into-beauty-bakerie-with-acquisition/"
+    ]
+   }
+  },
+  "mentedcosmetics-everynight-eyeshadow-palette": {
+   "id": "mentedcosmetics-everynight-eyeshadow-palette",
+   "brand": "Mented Cosmetics",
+   "name": "Every Night Eyeshadow Palette",
+   "category": "eyeshadow",
+   "retailer": "Mented Cosmetics (brand's own store, mentedcosmetics.com)",
+   "url": "https://mentedcosmetics.com/products/everynight-eyeshadow-palette",
+   "source_url": "https://mentedcosmetics.com/products/everynight-eyeshadow-palette",
+   "price_source_url": "https://mentedcosmetics.com/products/everynight-eyeshadow-palette.js",
+   "price_min": 30.0,
+   "price_max": 30.0,
+   "currency": "USD",
+   "price_text": "$30.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-founded",
+    "detail": "Its own site calls it a Black-owned makeup company; acquired by West Lane Capital Partners in 2024 (Beauty Independent).",
+    "sources": [
+     "https://mentedcosmetics.com/pages/about",
+     "https://www.beautyindependent.com/west-lane-capital-partners-breathes-new-life-into-beauty-bakerie-with-acquisition/"
+    ]
+   }
+  },
+  "mentedcosmetics-better-setter-setting-spray": {
+   "id": "mentedcosmetics-better-setter-setting-spray",
+   "brand": "Mented Cosmetics",
+   "name": "Better Setter Setting Spray",
+   "category": "setting",
+   "retailer": "Mented Cosmetics (brand's own store, mentedcosmetics.com)",
+   "url": "https://mentedcosmetics.com/products/better-setter-setting-spray",
+   "source_url": "https://mentedcosmetics.com/products/better-setter-setting-spray",
+   "price_source_url": "https://mentedcosmetics.com/products/better-setter-setting-spray.js",
+   "price_min": 28.0,
+   "price_max": 28.0,
+   "currency": "USD",
+   "price_text": "$28.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-founded",
+    "detail": "Its own site calls it a Black-owned makeup company; acquired by West Lane Capital Partners in 2024 (Beauty Independent).",
+    "sources": [
+     "https://mentedcosmetics.com/pages/about",
+     "https://www.beautyindependent.com/west-lane-capital-partners-breathes-new-life-into-beauty-bakerie-with-acquisition/"
+    ]
+   }
+  },
+  "mentedcosmetics-bronzer": {
+   "id": "mentedcosmetics-bronzer",
+   "brand": "Mented Cosmetics",
+   "name": "Bronzer",
+   "category": "contour",
+   "retailer": "Mented Cosmetics (brand's own store, mentedcosmetics.com)",
+   "url": "https://mentedcosmetics.com/products/bronzer",
+   "source_url": "https://mentedcosmetics.com/products/bronzer",
+   "price_source_url": "https://mentedcosmetics.com/products/bronzer.js",
+   "price_min": 22.0,
+   "price_max": 22.0,
+   "currency": "USD",
+   "price_text": "$22.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 4,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-founded",
+    "detail": "Its own site calls it a Black-owned makeup company; acquired by West Lane Capital Partners in 2024 (Beauty Independent).",
+    "sources": [
+     "https://mentedcosmetics.com/pages/about",
+     "https://www.beautyindependent.com/west-lane-capital-partners-breathes-new-life-into-beauty-bakerie-with-acquisition/"
+    ]
+   }
+  },
+  "mentedcosmetics-blush": {
+   "id": "mentedcosmetics-blush",
+   "brand": "Mented Cosmetics",
+   "name": "Blush",
+   "category": "blush",
+   "retailer": "Mented Cosmetics (brand's own store, mentedcosmetics.com)",
+   "url": "https://mentedcosmetics.com/products/blush",
+   "source_url": "https://mentedcosmetics.com/products/blush",
+   "price_source_url": "https://mentedcosmetics.com/products/blush.js",
+   "price_min": 22.0,
+   "price_max": 22.0,
+   "currency": "USD",
+   "price_text": "$22.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 3,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-founded",
+    "detail": "Its own site calls it a Black-owned makeup company; acquired by West Lane Capital Partners in 2024 (Beauty Independent).",
+    "sources": [
+     "https://mentedcosmetics.com/pages/about",
+     "https://www.beautyindependent.com/west-lane-capital-partners-breathes-new-life-into-beauty-bakerie-with-acquisition/"
+    ]
+   }
+  },
+  "mentedcosmetics-brow-pencil-collection": {
+   "id": "mentedcosmetics-brow-pencil-collection",
+   "brand": "Mented Cosmetics",
+   "name": "High Brow Pencil",
+   "category": "brow",
+   "retailer": "Mented Cosmetics (brand's own store, mentedcosmetics.com)",
+   "url": "https://mentedcosmetics.com/products/brow-pencil-collection",
+   "source_url": "https://mentedcosmetics.com/products/brow-pencil-collection",
+   "price_source_url": "https://mentedcosmetics.com/products/brow-pencil-collection.js",
+   "price_min": 15.0,
+   "price_max": 15.0,
+   "currency": "USD",
+   "price_text": "$15.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 3,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-founded",
+    "detail": "Its own site calls it a Black-owned makeup company; acquired by West Lane Capital Partners in 2024 (Beauty Independent).",
+    "sources": [
+     "https://mentedcosmetics.com/pages/about",
+     "https://www.beautyindependent.com/west-lane-capital-partners-breathes-new-life-into-beauty-bakerie-with-acquisition/"
+    ]
+   }
+  },
+  "thelipbar-just-a-tint-3-in-1-tinted-skin-conditioner": {
+   "id": "thelipbar-just-a-tint-3-in-1-tinted-skin-conditioner",
+   "brand": "The Lip Bar",
+   "name": "Just a Tint 3-in-1 Tinted Skin Moisturizer",
+   "category": "foundation",
+   "retailer": "The Lip Bar (brand's own store, thelipbar.com)",
+   "url": "https://thelipbar.com/products/just-a-tint-3-in-1-tinted-skin-conditioner",
+   "source_url": "https://thelipbar.com/products/just-a-tint-3-in-1-tinted-skin-conditioner",
+   "price_source_url": "https://thelipbar.com/products/just-a-tint-3-in-1-tinted-skin-conditioner.js",
+   "price_min": 17.0,
+   "price_max": 17.0,
+   "currency": "USD",
+   "price_text": "$17.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 12,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Owned by women of colour",
+    "detail": "Its own site: \"Founded and owned by Women of Color.\"",
+    "sources": [
+     "https://thelipbar.com/pages/our-story"
+    ]
+   }
+  },
+  "thelipbar-big-timer": {
+   "id": "thelipbar-big-timer",
+   "brand": "The Lip Bar",
+   "name": "Big Timer Volumizing Mascara",
+   "category": "lash",
+   "retailer": "The Lip Bar (brand's own store, thelipbar.com)",
+   "url": "https://thelipbar.com/products/big-timer",
+   "source_url": "https://thelipbar.com/products/big-timer",
+   "price_source_url": "https://thelipbar.com/products/big-timer.js",
+   "price_min": 8.0,
+   "price_max": 16.0,
+   "currency": "USD",
+   "price_text": "$8.00–$16.00 USD",
+   "price_note": "Price range covers sizes or variants.",
+   "on_sale": true,
+   "shades_or_variants_in_stock": 2,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Owned by women of colour",
+    "detail": "Its own site: \"Founded and owned by Women of Color.\"",
+    "sources": [
+     "https://thelipbar.com/pages/our-story"
+    ]
+   }
+  },
+  "thelipbar-fresh-glow-dream-blush": {
+   "id": "thelipbar-fresh-glow-dream-blush",
+   "brand": "The Lip Bar",
+   "name": "Fresh Glow Dream Blush",
+   "category": "blush",
+   "retailer": "The Lip Bar (brand's own store, thelipbar.com)",
+   "url": "https://thelipbar.com/products/fresh-glow-dream-blush",
+   "source_url": "https://thelipbar.com/products/fresh-glow-dream-blush",
+   "price_source_url": "https://thelipbar.com/products/fresh-glow-dream-blush.js",
+   "price_min": 15.0,
+   "price_max": 15.0,
+   "currency": "USD",
+   "price_text": "$15.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 3,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Owned by women of colour",
+    "detail": "Its own site: \"Founded and owned by Women of Color.\"",
+    "sources": [
+     "https://thelipbar.com/pages/our-story"
+    ]
+   }
+  },
+  "thelipbar-exact-arch-micro-brow-pencil": {
+   "id": "thelipbar-exact-arch-micro-brow-pencil",
+   "brand": "The Lip Bar",
+   "name": "Exact Arch Micro Brow Pencil",
+   "category": "brow",
+   "retailer": "The Lip Bar (brand's own store, thelipbar.com)",
+   "url": "https://thelipbar.com/products/exact-arch-micro-brow-pencil",
+   "source_url": "https://thelipbar.com/products/exact-arch-micro-brow-pencil",
+   "price_source_url": "https://thelipbar.com/products/exact-arch-micro-brow-pencil.js",
+   "price_min": 12.0,
+   "price_max": 12.0,
+   "currency": "USD",
+   "price_text": "$12.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 3,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Owned by women of colour",
+    "detail": "Its own site: \"Founded and owned by Women of Color.\"",
+    "sources": [
+     "https://thelipbar.com/pages/our-story"
+    ]
+   }
+  },
+  "thelipbar-next-to-skin-setting-spray": {
+   "id": "thelipbar-next-to-skin-setting-spray",
+   "brand": "The Lip Bar",
+   "name": "Next To Skin Setting Spray",
+   "category": "setting",
+   "retailer": "The Lip Bar (brand's own store, thelipbar.com)",
+   "url": "https://thelipbar.com/products/next-to-skin-setting-spray",
+   "source_url": "https://thelipbar.com/products/next-to-skin-setting-spray",
+   "price_source_url": "https://thelipbar.com/products/next-to-skin-setting-spray.js",
+   "price_min": 18.0,
+   "price_max": 18.0,
+   "currency": "USD",
+   "price_text": "$18.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Owned by women of colour",
+    "detail": "Its own site: \"Founded and owned by Women of Color.\"",
+    "sources": [
+     "https://thelipbar.com/pages/our-story"
+    ]
+   }
+  },
+  "uomabeauty-say-what-foundation": {
+   "id": "uomabeauty-say-what-foundation",
+   "brand": "UOMA Beauty",
+   "name": "Say What?! Foundation",
+   "category": "foundation",
+   "retailer": "UOMA Beauty (brand's own store, uomabeauty.com)",
+   "url": "https://uomabeauty.com/products/say-what-foundation",
+   "source_url": "https://uomabeauty.com/products/say-what-foundation",
+   "price_source_url": "https://uomabeauty.com/products/say-what-foundation.js",
+   "price_min": 39.0,
+   "price_max": 39.0,
+   "currency": "USD",
+   "price_text": "$39.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 20,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-founded",
+    "detail": "Founded by Nigerian-born Sharon Chuter; owned by MacArthur Beauty since December 2023 (Allure).",
+    "sources": [
+     "https://uomabeauty.com/pages/about-sharon-c",
+     "https://www.allure.com/story/uoma-beauty-hiatus-comeback-lawsuit"
+    ]
+   }
+  },
+  "uomabeauty-stay-woke-concealer": {
+   "id": "uomabeauty-stay-woke-concealer",
+   "brand": "UOMA Beauty",
+   "name": "Stay Woke Concealer",
+   "category": "concealer",
+   "retailer": "UOMA Beauty (brand's own store, uomabeauty.com)",
+   "url": "https://uomabeauty.com/products/stay-woke-concealer",
+   "source_url": "https://uomabeauty.com/products/stay-woke-concealer",
+   "price_source_url": "https://uomabeauty.com/products/stay-woke-concealer.js",
+   "price_min": 25.0,
+   "price_max": 25.0,
+   "currency": "USD",
+   "price_text": "$25.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 18,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-founded",
+    "detail": "Founded by Nigerian-born Sharon Chuter; owned by MacArthur Beauty since December 2023 (Allure).",
+    "sources": [
+     "https://uomabeauty.com/pages/about-sharon-c",
+     "https://www.allure.com/story/uoma-beauty-hiatus-comeback-lawsuit"
+    ]
+   }
+  },
+  "uomabeauty-black-magic-carnival-face-body-bronzing-highlight": {
+   "id": "uomabeauty-black-magic-carnival-face-body-bronzing-highlight",
+   "brand": "UOMA Beauty",
+   "name": "Carnival Bronzing Highlighter",
+   "category": "highlight",
+   "retailer": "UOMA Beauty (brand's own store, uomabeauty.com)",
+   "url": "https://uomabeauty.com/products/black-magic-carnival-face-body-bronzing-highlighter",
+   "source_url": "https://uomabeauty.com/products/black-magic-carnival-face-body-bronzing-highlighter",
+   "price_source_url": "https://uomabeauty.com/products/black-magic-carnival-face-body-bronzing-highlighter.js",
+   "price_min": 35.0,
+   "price_max": 35.0,
+   "currency": "USD",
+   "price_text": "$35.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 2,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-founded",
+    "detail": "Founded by Nigerian-born Sharon Chuter; owned by MacArthur Beauty since December 2023 (Allure).",
+    "sources": [
+     "https://uomabeauty.com/pages/about-sharon-c",
+     "https://www.allure.com/story/uoma-beauty-hiatus-comeback-lawsuit"
+    ]
+   }
+  },
+  "beautybakerie-mon-cheri-lip-whip": {
+   "id": "beautybakerie-mon-cheri-lip-whip",
+   "brand": "Beauty Bakerie",
+   "name": "Mon Chéri Matte Lip Whip",
+   "category": "lip",
+   "retailer": "Beauty Bakerie (brand's own store, beautybakerie.com)",
+   "url": "https://beautybakerie.com/products/mon-cheri-lip-whip",
+   "source_url": "https://beautybakerie.com/products/mon-cheri-lip-whip",
+   "price_source_url": "https://beautybakerie.com/products/mon-cheri-lip-whip.js",
+   "price_min": 17.6,
+   "price_max": 17.6,
+   "currency": "USD",
+   "price_text": "$17.60 USD",
+   "price_note": null,
+   "on_sale": true,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Black-founded",
+    "detail": "Founded by Cashmere Nicole (Allure: \"a black-owned cosmetics company\"); acquired by West Lane Capital Partners in July 2024 (Beauty Independent).",
+    "sources": [
+     "https://www.allure.com/story/beauty-bakerie-cashmere-nicole-interview-inclusivity-makeup-mission",
+     "https://www.beautyindependent.com/west-lane-capital-partners-breathes-new-life-into-beauty-bakerie-with-acquisition/"
+    ]
+   }
+  },
+  "livetinted-skin-tint-spf-50-mineral-sunscreen-broad-spectrum": {
+   "id": "livetinted-skin-tint-spf-50-mineral-sunscreen-broad-spectrum",
+   "brand": "Live Tinted",
+   "name": "HUEGUARD® Skin Tint SPF 50 Mineral Sunscreen Broad Spectrum",
+   "category": "foundation",
+   "retailer": "Live Tinted (brand's own store, livetinted.com)",
+   "url": "https://livetinted.com/products/skin-tint-spf-50-mineral-sunscreen-broad-spectrum",
+   "source_url": "https://livetinted.com/products/skin-tint-spf-50-mineral-sunscreen-broad-spectrum",
+   "price_source_url": "https://livetinted.com/products/skin-tint-spf-50-mineral-sunscreen-broad-spectrum.js",
+   "price_min": 19.0,
+   "price_max": 42.0,
+   "currency": "USD",
+   "price_text": "$19.00–$42.00 USD",
+   "price_note": "Price range covers sizes or variants.",
+   "on_sale": false,
+   "shades_or_variants_in_stock": 19,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "South Asian-founded",
+    "detail": "Founder Deepica Mutyala, described on its own site as a South-Asian beauty entrepreneur.",
+    "sources": [
+     "https://livetinted.com/pages/about"
+    ]
+   }
+  },
+  "livetinted-hydrating-serum-concealer": {
+   "id": "livetinted-hydrating-serum-concealer",
+   "brand": "Live Tinted",
+   "name": "HUESKIN Serum Concealer",
+   "category": "concealer",
+   "retailer": "Live Tinted (brand's own store, livetinted.com)",
+   "url": "https://livetinted.com/products/hydrating-serum-concealer",
+   "source_url": "https://livetinted.com/products/hydrating-serum-concealer",
+   "price_source_url": "https://livetinted.com/products/hydrating-serum-concealer.js",
+   "price_min": 29.0,
+   "price_max": 29.0,
+   "currency": "USD",
+   "price_text": "$29.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 23,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "South Asian-founded",
+    "detail": "Founder Deepica Mutyala, described on its own site as a South-Asian beauty entrepreneur.",
+    "sources": [
+     "https://livetinted.com/pages/about"
+    ]
+   }
+  },
+  "livetinted-hueliner-longwearing-kajal-pencil-liner": {
+   "id": "livetinted-hueliner-longwearing-kajal-pencil-liner",
+   "brand": "Live Tinted",
+   "name": "HUELINER Longwearing Pencil Liner",
+   "category": "liner",
+   "retailer": "Live Tinted (brand's own store, livetinted.com)",
+   "url": "https://livetinted.com/products/hueliner-longwearing-kajal-pencil-liner",
+   "source_url": "https://livetinted.com/products/hueliner-longwearing-kajal-pencil-liner",
+   "price_source_url": "https://livetinted.com/products/hueliner-longwearing-kajal-pencil-liner.js",
+   "price_min": 20.0,
+   "price_max": 20.0,
+   "currency": "USD",
+   "price_text": "$20.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 2,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "South Asian-founded",
+    "detail": "Founder Deepica Mutyala, described on its own site as a South-Asian beauty entrepreneur.",
+    "sources": [
+     "https://livetinted.com/pages/about"
+    ]
+   }
+  },
+  "livetinted-liquid-liner": {
+   "id": "livetinted-liquid-liner",
+   "brand": "Live Tinted",
+   "name": "LEGACY Liner Liquid Kajal",
+   "category": "liner",
+   "retailer": "Live Tinted (brand's own store, livetinted.com)",
+   "url": "https://livetinted.com/products/liquid-liner",
+   "source_url": "https://livetinted.com/products/liquid-liner",
+   "price_source_url": "https://livetinted.com/products/liquid-liner.js",
+   "price_min": 22.0,
+   "price_max": 22.0,
+   "currency": "USD",
+   "price_text": "$22.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "South Asian-founded",
+    "detail": "Founder Deepica Mutyala, described on its own site as a South-Asian beauty entrepreneur.",
+    "sources": [
+     "https://livetinted.com/pages/about"
+    ]
+   }
+  },
+  "livetinted-legacy-lash-volumizing-mascara": {
+   "id": "livetinted-legacy-lash-volumizing-mascara",
+   "brand": "Live Tinted",
+   "name": "LEGACY Lash Volumizing & Lengthening Mascara",
+   "category": "lash",
+   "retailer": "Live Tinted (brand's own store, livetinted.com)",
+   "url": "https://livetinted.com/products/legacy-lash-volumizing-mascara",
+   "source_url": "https://livetinted.com/products/legacy-lash-volumizing-mascara",
+   "price_source_url": "https://livetinted.com/products/legacy-lash-volumizing-mascara.js",
+   "price_min": 16.0,
+   "price_max": 28.0,
+   "currency": "USD",
+   "price_text": "$16.00–$28.00 USD",
+   "price_note": "Price range covers sizes or variants.",
+   "on_sale": false,
+   "shades_or_variants_in_stock": 2,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "South Asian-founded",
+    "detail": "Founder Deepica Mutyala, described on its own site as a South-Asian beauty entrepreneur.",
+    "sources": [
+     "https://livetinted.com/pages/about"
+    ]
+   }
+  },
+  "livetinted-huebeam-r-gradient-blushing-bronzer": {
+   "id": "livetinted-huebeam-r-gradient-blushing-bronzer",
+   "brand": "Live Tinted",
+   "name": "HUEBEAM® Blushing Bronzer",
+   "category": "blush",
+   "retailer": "Live Tinted (brand's own store, livetinted.com)",
+   "url": "https://livetinted.com/products/huebeam-r-gradient-blushing-bronzer",
+   "source_url": "https://livetinted.com/products/huebeam-r-gradient-blushing-bronzer",
+   "price_source_url": "https://livetinted.com/products/huebeam-r-gradient-blushing-bronzer.js",
+   "price_min": 36.0,
+   "price_max": 42.0,
+   "currency": "USD",
+   "price_text": "$36.00–$42.00 USD",
+   "price_note": "Price range covers sizes or variants.",
+   "on_sale": false,
+   "shades_or_variants_in_stock": 4,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "South Asian-founded",
+    "detail": "Founder Deepica Mutyala, described on its own site as a South-Asian beauty entrepreneur.",
+    "sources": [
+     "https://livetinted.com/pages/about"
+    ]
+   }
+  },
+  "kulfibeauty-underlined-kajal-eyeliner": {
+   "id": "kulfibeauty-underlined-kajal-eyeliner",
+   "brand": "Kulfi Beauty",
+   "name": "Underlined Kajal Eyeliner",
+   "category": "liner",
+   "retailer": "Kulfi Beauty (brand's own store, kulfibeauty.com)",
+   "url": "https://kulfibeauty.com/products/underlined-kajal-eyeliner",
+   "source_url": "https://kulfibeauty.com/products/underlined-kajal-eyeliner",
+   "price_source_url": "https://kulfibeauty.com/products/underlined-kajal-eyeliner.js",
+   "price_min": 20.0,
+   "price_max": 20.0,
+   "currency": "USD",
+   "price_text": "$20.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 6,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  },
+  "kulfibeauty-main-match-concealer": {
+   "id": "kulfibeauty-main-match-concealer",
+   "brand": "Kulfi Beauty",
+   "name": "Main Match Concealer",
+   "category": "concealer",
+   "retailer": "Kulfi Beauty (brand's own store, kulfibeauty.com)",
+   "url": "https://kulfibeauty.com/products/main-match-concealer",
+   "source_url": "https://kulfibeauty.com/products/main-match-concealer",
+   "price_source_url": "https://kulfibeauty.com/products/main-match-concealer.js",
+   "price_min": 26.0,
+   "price_max": 26.0,
+   "currency": "USD",
+   "price_text": "$26.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 21,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  },
+  "kulfibeauty-lassi-lips-matte-blur-lip-stain": {
+   "id": "kulfibeauty-lassi-lips-matte-blur-lip-stain",
+   "brand": "Kulfi Beauty",
+   "name": "Lassi Lips Matte Blur Lip Stain",
+   "category": "lip",
+   "retailer": "Kulfi Beauty (brand's own store, kulfibeauty.com)",
+   "url": "https://kulfibeauty.com/products/lassi-lips-matte-blur-lip-stain",
+   "source_url": "https://kulfibeauty.com/products/lassi-lips-matte-blur-lip-stain",
+   "price_source_url": "https://kulfibeauty.com/products/lassi-lips-matte-blur-lip-stain.js",
+   "price_min": 24.0,
+   "price_max": 24.0,
+   "currency": "USD",
+   "price_text": "$24.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 6,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  },
+  "kulfibeauty-zari-eyes-eyeshadow": {
+   "id": "kulfibeauty-zari-eyes-eyeshadow",
+   "brand": "Kulfi Beauty",
+   "name": "Zari Eyes Eyeshadow",
+   "category": "eyeshadow",
+   "retailer": "Kulfi Beauty (brand's own store, kulfibeauty.com)",
+   "url": "https://kulfibeauty.com/products/zari-eyes-eyeshadow",
+   "source_url": "https://kulfibeauty.com/products/zari-eyes-eyeshadow",
+   "price_source_url": "https://kulfibeauty.com/products/zari-eyes-eyeshadow.js",
+   "price_min": 30.0,
+   "price_max": 30.0,
+   "currency": "USD",
+   "price_text": "$30.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 7,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  },
+  "kulfibeauty-free-the-brow": {
+   "id": "kulfibeauty-free-the-brow",
+   "brand": "Kulfi Beauty",
+   "name": "Free The Brow Gel",
+   "category": "brow",
+   "retailer": "Kulfi Beauty (brand's own store, kulfibeauty.com)",
+   "url": "https://kulfibeauty.com/products/free-the-brow",
+   "source_url": "https://kulfibeauty.com/products/free-the-brow",
+   "price_source_url": "https://kulfibeauty.com/products/free-the-brow.js",
+   "price_min": 26.0,
+   "price_max": 26.0,
+   "currency": "USD",
+   "price_text": "$26.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  },
+  "cheekbonebeauty-perfectly-imperfect-horizon-lip-pencil": {
+   "id": "cheekbonebeauty-perfectly-imperfect-horizon-lip-pencil",
+   "brand": "Cheekbone Beauty",
+   "name": "Perfectly Imperfect Horizon Lip Pencil",
+   "category": "lip",
+   "retailer": "Cheekbone Beauty (brand's own store, cheekbonebeauty.ca)",
+   "url": "https://cheekbonebeauty.ca/products/perfectly-imperfect-horizon-lip-pencil",
+   "source_url": "https://cheekbonebeauty.ca/products/perfectly-imperfect-horizon-lip-pencil",
+   "price_source_url": "https://cheekbonebeauty.ca/products/perfectly-imperfect-horizon-lip-pencil.js",
+   "price_min": 11.0,
+   "price_max": 11.0,
+   "currency": "CAD",
+   "price_text": "$11.00 CAD",
+   "price_note": null,
+   "on_sale": true,
+   "shades_or_variants_in_stock": 2,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Indigenous-owned, Canadian",
+    "detail": "Its own site: \"one of the first Canadian Indigenous-owned and founded cosmetics companies.\"",
+    "sources": [
+     "https://cheekbonebeauty.ca/pages/about"
+    ]
+   }
+  },
+  "cheekbonebeauty-courage-cream-highlighter": {
+   "id": "cheekbonebeauty-courage-cream-highlighter",
+   "brand": "Cheekbone Beauty",
+   "name": "Courage Cream Highlighter",
+   "category": "highlight",
+   "retailer": "Cheekbone Beauty (brand's own store, cheekbonebeauty.ca)",
+   "url": "https://cheekbonebeauty.ca/products/courage-cream-highlighter",
+   "source_url": "https://cheekbonebeauty.ca/products/courage-cream-highlighter",
+   "price_source_url": "https://cheekbonebeauty.ca/products/courage-cream-highlighter.js",
+   "price_min": 27.0,
+   "price_max": 27.0,
+   "currency": "CAD",
+   "price_text": "$27.00 CAD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 3,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Indigenous-owned, Canadian",
+    "detail": "Its own site: \"one of the first Canadian Indigenous-owned and founded cosmetics companies.\"",
+    "sources": [
+     "https://cheekbonebeauty.ca/pages/about"
+    ]
+   }
+  },
+  "cheekbonebeauty-empower-eyeliner": {
+   "id": "cheekbonebeauty-empower-eyeliner",
+   "brand": "Cheekbone Beauty",
+   "name": "Empower Eyeliner",
+   "category": "liner",
+   "retailer": "Cheekbone Beauty (brand's own store, cheekbonebeauty.ca)",
+   "url": "https://cheekbonebeauty.ca/products/empower-eyeliner",
+   "source_url": "https://cheekbonebeauty.ca/products/empower-eyeliner",
+   "price_source_url": "https://cheekbonebeauty.ca/products/empower-eyeliner.js",
+   "price_min": 22.0,
+   "price_max": 22.0,
+   "currency": "CAD",
+   "price_text": "$22.00 CAD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 2,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Indigenous-owned, Canadian",
+    "detail": "Its own site: \"one of the first Canadian Indigenous-owned and founded cosmetics companies.\"",
+    "sources": [
+     "https://cheekbonebeauty.ca/pages/about"
+    ]
+   }
+  },
+  "cheekbonebeauty-perfectly-imperfect-fearless-eyeshadow-unbox": {
+   "id": "cheekbonebeauty-perfectly-imperfect-fearless-eyeshadow-unbox",
+   "brand": "Cheekbone Beauty",
+   "name": "Perfectly Imperfect Fearless Eyeshadow",
+   "category": "eyeshadow",
+   "retailer": "Cheekbone Beauty (brand's own store, cheekbonebeauty.ca)",
+   "url": "https://cheekbonebeauty.ca/products/perfectly-imperfect-fearless-eyeshadow-unboxed",
+   "source_url": "https://cheekbonebeauty.ca/products/perfectly-imperfect-fearless-eyeshadow-unboxed",
+   "price_source_url": "https://cheekbonebeauty.ca/products/perfectly-imperfect-fearless-eyeshadow-unboxed.js",
+   "price_min": 12.0,
+   "price_max": 12.0,
+   "currency": "CAD",
+   "price_text": "$12.00 CAD",
+   "price_note": null,
+   "on_sale": true,
+   "shades_or_variants_in_stock": 2,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": {
+    "label": "Indigenous-owned, Canadian",
+    "detail": "Its own site: \"one of the first Canadian Indigenous-owned and founded cosmetics companies.\"",
+    "sources": [
+     "https://cheekbonebeauty.ca/pages/about"
+    ]
+   }
+  },
+  "patmcgrath-foundation": {
+   "id": "patmcgrath-foundation",
+   "brand": "Pat McGrath Labs",
+   "name": "Skin Fetish: Sublime Perfection Foundation",
+   "category": "foundation",
+   "retailer": "Pat McGrath Labs (brand's own store, patmcgrath.com)",
+   "url": "https://patmcgrath.com/products/foundation",
+   "source_url": "https://patmcgrath.com/products/foundation",
+   "price_source_url": "https://patmcgrath.com/products/foundation.js",
+   "price_min": 69.0,
+   "price_max": 69.0,
+   "currency": "USD",
+   "price_text": "$69.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 31,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  },
+  "patmcgrath-concealer": {
+   "id": "patmcgrath-concealer",
+   "brand": "Pat McGrath Labs",
+   "name": "Skin Fetish: Sublime Perfection Concealer",
+   "category": "concealer",
+   "retailer": "Pat McGrath Labs (brand's own store, patmcgrath.com)",
+   "url": "https://patmcgrath.com/products/concealer",
+   "source_url": "https://patmcgrath.com/products/concealer",
+   "price_source_url": "https://patmcgrath.com/products/concealer.js",
+   "price_min": 34.0,
+   "price_max": 34.0,
+   "currency": "USD",
+   "price_text": "$34.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 27,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  },
+  "patmcgrath-dark-star-mascara": {
+   "id": "patmcgrath-dark-star-mascara",
+   "brand": "Pat McGrath Labs",
+   "name": "DARK STAR Volumising Mascara",
+   "category": "lash",
+   "retailer": "Pat McGrath Labs (brand's own store, patmcgrath.com)",
+   "url": "https://patmcgrath.com/products/dark-star-mascara",
+   "source_url": "https://patmcgrath.com/products/dark-star-mascara",
+   "price_source_url": "https://patmcgrath.com/products/dark-star-mascara.js",
+   "price_min": 34.0,
+   "price_max": 34.0,
+   "currency": "USD",
+   "price_text": "$34.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  },
+  "patmcgrath-legendary-longwear-lip-liner": {
+   "id": "patmcgrath-legendary-longwear-lip-liner",
+   "brand": "Pat McGrath Labs",
+   "name": "Legendary Longwear Lip Liner",
+   "category": "lip",
+   "retailer": "Pat McGrath Labs (brand's own store, patmcgrath.com)",
+   "url": "https://patmcgrath.com/products/legendary-longwear-lip-liner",
+   "source_url": "https://patmcgrath.com/products/legendary-longwear-lip-liner",
+   "price_source_url": "https://patmcgrath.com/products/legendary-longwear-lip-liner.js",
+   "price_min": 29.0,
+   "price_max": 29.0,
+   "currency": "USD",
+   "price_text": "$29.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 21,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  },
+  "patmcgrath-dramatique-mega-lip-pencil": {
+   "id": "patmcgrath-dramatique-mega-lip-pencil",
+   "brand": "Pat McGrath Labs",
+   "name": "Dramatique Mega Lip Pencil",
+   "category": "lip",
+   "retailer": "Pat McGrath Labs (brand's own store, patmcgrath.com)",
+   "url": "https://patmcgrath.com/products/dramatique-mega-lip-pencil",
+   "source_url": "https://patmcgrath.com/products/dramatique-mega-lip-pencil",
+   "price_source_url": "https://patmcgrath.com/products/dramatique-mega-lip-pencil.js",
+   "price_min": 22.0,
+   "price_max": 29.0,
+   "currency": "USD",
+   "price_text": "$22.00–$29.00 USD",
+   "price_note": "Price range covers sizes or variants.",
+   "on_sale": true,
+   "shades_or_variants_in_stock": 12,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  },
+  "patmcgrath-gilded-nirvana-mega-eye-shadow-palette": {
+   "id": "patmcgrath-gilded-nirvana-mega-eye-shadow-palette",
+   "brand": "Pat McGrath Labs",
+   "name": "Gilded Nirvana: Mega Eye Shadow Palette",
+   "category": "eyeshadow",
+   "retailer": "Pat McGrath Labs (brand's own store, patmcgrath.com)",
+   "url": "https://patmcgrath.com/products/gilded-nirvana-mega-eye-shadow-palette",
+   "source_url": "https://patmcgrath.com/products/gilded-nirvana-mega-eye-shadow-palette",
+   "price_source_url": "https://patmcgrath.com/products/gilded-nirvana-mega-eye-shadow-palette.js",
+   "price_min": 72.0,
+   "price_max": 72.0,
+   "currency": "USD",
+   "price_text": "$72.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  },
+  "patmcgrath-skin-fetish-sublime-perfection-longwear-blurring": {
+   "id": "patmcgrath-skin-fetish-sublime-perfection-longwear-blurring",
+   "brand": "Pat McGrath Labs",
+   "name": "Skin Fetish: Sublime Perfection Longwear Blurring Setting Spray",
+   "category": "setting",
+   "retailer": "Pat McGrath Labs (brand's own store, patmcgrath.com)",
+   "url": "https://patmcgrath.com/products/skin-fetish-sublime-perfection-longwear-blurring-setting-spray",
+   "source_url": "https://patmcgrath.com/products/skin-fetish-sublime-perfection-longwear-blurring-setting-spray",
+   "price_source_url": "https://patmcgrath.com/products/skin-fetish-sublime-perfection-longwear-blurring-setting-spray.js",
+   "price_min": 38.0,
+   "price_max": 38.0,
+   "currency": "USD",
+   "price_text": "$38.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  },
+  "beautyofjoseon-glow-deep-serum-rice-alpha-arbutin": {
+   "id": "beautyofjoseon-glow-deep-serum-rice-alpha-arbutin",
+   "brand": "Beauty of Joseon",
+   "name": "Glow Deep Serum : Rice + Alpha-Arbutin",
+   "category": "prep",
+   "retailer": "Beauty of Joseon (brand's own store, beautyofjoseon.com)",
+   "url": "https://beautyofjoseon.com/products/glow-deep-serum-rice-alpha-arbutin",
+   "source_url": "https://beautyofjoseon.com/products/glow-deep-serum-rice-alpha-arbutin",
+   "price_source_url": "https://beautyofjoseon.com/products/glow-deep-serum-rice-alpha-arbutin.js",
+   "price_min": 17.0,
+   "price_max": 27.2,
+   "currency": "USD",
+   "price_text": "$17.00–$27.20 USD",
+   "price_note": "Price range covers sizes or variants.",
+   "on_sale": true,
+   "shades_or_variants_in_stock": 2,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  },
+  "beautyofjoseon-day-dew-sunscreen": {
+   "id": "beautyofjoseon-day-dew-sunscreen",
+   "brand": "Beauty of Joseon",
+   "name": "Day Dew Sunscreen",
+   "category": "prep",
+   "retailer": "Beauty of Joseon (brand's own store, beautyofjoseon.com)",
+   "url": "https://beautyofjoseon.com/products/day-dew-sunscreen",
+   "source_url": "https://beautyofjoseon.com/products/day-dew-sunscreen",
+   "price_source_url": "https://beautyofjoseon.com/products/day-dew-sunscreen.js",
+   "price_min": 16.2,
+   "price_max": 27.0,
+   "currency": "USD",
+   "price_text": "$16.20–$27.00 USD",
+   "price_note": "Price range covers sizes or variants.",
+   "on_sale": true,
+   "shades_or_variants_in_stock": 2,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  },
+  "beautyofjoseon-tinted-mineral-dayscreen-spf-30-us": {
+   "id": "beautyofjoseon-tinted-mineral-dayscreen-spf-30-us",
+   "brand": "Beauty of Joseon",
+   "name": "Tinted Mineral Dayscreen SPF 30",
+   "category": "foundation",
+   "retailer": "Beauty of Joseon (brand's own store, beautyofjoseon.com)",
+   "url": "https://beautyofjoseon.com/products/tinted-mineral-dayscreen-spf-30-us",
+   "source_url": "https://beautyofjoseon.com/products/tinted-mineral-dayscreen-spf-30-us",
+   "price_source_url": "https://beautyofjoseon.com/products/tinted-mineral-dayscreen-spf-30-us.js",
+   "price_min": 20.0,
+   "price_max": 20.0,
+   "currency": "USD",
+   "price_text": "$20.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 15,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  },
+  "glowrecipe-glass-balm-lip-treatment": {
+   "id": "glowrecipe-glass-balm-lip-treatment",
+   "brand": "Glow Recipe",
+   "name": "Glass Balm Lip Treatment",
+   "category": "lip",
+   "retailer": "Glow Recipe (brand's own store, glowrecipe.com)",
+   "url": "https://glowrecipe.com/products/glass-balm-lip-treatment",
+   "source_url": "https://glowrecipe.com/products/glass-balm-lip-treatment",
+   "price_source_url": "https://glowrecipe.com/products/glass-balm-lip-treatment.js",
+   "price_min": 22.0,
+   "price_max": 22.0,
+   "currency": "USD",
+   "price_text": "$22.00 USD",
+   "price_note": null,
+   "on_sale": false,
+   "shades_or_variants_in_stock": 7,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  },
+  "kahinagivingbeauty-lip-and-face-balm": {
+   "id": "kahinagivingbeauty-lip-and-face-balm",
+   "brand": "Kahina Giving Beauty",
+   "name": "Lip and Face Balm",
+   "category": "lip",
+   "retailer": "Kahina Giving Beauty (brand's own store, kahinagivingbeauty.com)",
+   "url": "https://kahinagivingbeauty.com/products/lip-and-face-balm",
+   "source_url": "https://kahinagivingbeauty.com/products/lip-and-face-balm",
+   "price_source_url": "https://kahinagivingbeauty.com/products/lip-and-face-balm.js",
+   "price_min": 35.2,
+   "price_max": 35.2,
+   "currency": "USD",
+   "price_text": "$35.20 USD",
+   "price_note": null,
+   "on_sale": true,
+   "shades_or_variants_in_stock": 1,
+   "checked_at": "2026-10-30T16:01:00-04:00",
+   "ownership": null
+  }
+ },
+ "sets": {
+  "west_african": {
+   "name": "West African glam",
+   "products": [
+    "juviasplace-i-am-my-skin-foundation-sticks",
+    "juviasplace-i-am-magic-full-coverage-concealer",
+    "juviasplace-egyptian-pencil-eyeliner",
+    "juviasplace-culture-single-pigments-and-eyeshadow",
+    "juviasplace-blushed-cream-blush",
+    "juviasplace-velvety-matte-mousse-lip-cream",
+    "danessamyricksbeauty-vision-flush-glow",
+    "mentedcosmetics-better-setter-setting-spray"
+   ]
+  },
+  "south_african": {
+   "name": "Southern African warm glow",
+   "products": [
+    "danessamyricksbeauty-yummy-skin-serum-skin-tint",
+    "danessamyricksbeauty-yummy-skin-lift-flex-concealer",
+    "mentedcosmetics-everyday-eyeshadow-palette",
+    "thelipbar-exact-arch-micro-brow-pencil",
+    "beautybakerie-mon-cheri-lip-whip",
+    "thelipbar-fresh-glow-dream-blush",
+    "thelipbar-next-to-skin-setting-spray"
+   ]
+  },
+  "mehndi": {
+   "name": "South Asian bridal",
+   "products": [
+    "patmcgrath-foundation",
+    "kulfibeauty-main-match-concealer",
+    "kulfibeauty-zari-eyes-eyeshadow",
+    "livetinted-hueliner-longwearing-kajal-pencil-liner",
+    "patmcgrath-dark-star-mascara",
+    "kulfibeauty-free-the-brow",
+    "patmcgrath-legendary-longwear-lip-liner",
+    "patmcgrath-skin-fetish-sublime-perfection-longwear-blurring"
+   ]
+  },
+  "desi": {
+   "name": "South Asian everyday and festive",
+   "products": [
+    "livetinted-skin-tint-spf-50-mineral-sunscreen-broad-spectrum",
+    "livetinted-hydrating-serum-concealer",
+    "kulfibeauty-underlined-kajal-eyeliner",
+    "livetinted-legacy-lash-volumizing-mascara",
+    "kulfibeauty-free-the-brow",
+    "kulfibeauty-lassi-lips-matte-blur-lip-stain",
+    "livetinted-huebeam-r-gradient-blushing-bronzer"
+   ]
+  },
+  "persian": {
+   "name": "Gulf, Arab and Persian glam",
+   "products": [
+    "patmcgrath-foundation",
+    "patmcgrath-concealer",
+    "patmcgrath-gilded-nirvana-mega-eye-shadow-palette",
+    "livetinted-liquid-liner",
+    "mentedcosmetics-brow-pencil-collection",
+    "patmcgrath-dramatique-mega-lip-pencil",
+    "patmcgrath-skin-fetish-sublime-perfection-longwear-blurring"
+   ]
+  },
+  "hammam": {
+   "name": "North African sun-warmed glow",
+   "products": [
+    "danessamyricksbeauty-yummy-skin-serum-skin-tint",
+    "mentedcosmetics-bronzer",
+    "livetinted-hueliner-longwearing-kajal-pencil-liner",
+    "cheekbonebeauty-courage-cream-highlighter",
+    "danessamyricksbeauty-vision-flush-glow",
+    "kahinagivingbeauty-lip-and-face-balm"
+   ]
+  },
+  "kbeauty": {
+   "name": "K-beauty glass skin",
+   "products": [
+    "beautyofjoseon-glow-deep-serum-rice-alpha-arbutin",
+    "beautyofjoseon-day-dew-sunscreen",
+    "beautyofjoseon-tinted-mineral-dayscreen-spf-30-us",
+    "mentedcosmetics-brow-pencil-collection",
+    "glowrecipe-glass-balm-lip-treatment",
+    "mentedcosmetics-blush"
+   ]
+  },
+  "editorial": {
+   "name": "Bold editorial",
+   "products": [
+    "uomabeauty-say-what-foundation",
+    "uomabeauty-stay-woke-concealer",
+    "mentedcosmetics-brow-pencil-collection",
+    "mentedcosmetics-everynight-eyeshadow-palette",
+    "patmcgrath-dramatique-mega-lip-pencil",
+    "mentedcosmetics-bronzer",
+    "danessamyricksbeauty-evolution-powder"
+   ]
+  },
+  "glam": {
+   "name": "Full glam",
+   "products": [
+    "uomabeauty-say-what-foundation",
+    "danessamyricksbeauty-yummy-skin-lift-flex-concealer",
+    "juviasplace-egyptian-pen-eyeliner",
+    "patmcgrath-dark-star-mascara",
+    "mentedcosmetics-bronzer",
+    "danessamyricksbeauty-glosswork-4d-ultra-shine-plumping-gloss",
+    "patmcgrath-skin-fetish-sublime-perfection-longwear-blurring"
+   ]
+  },
+  "carnival": {
+   "name": "Carnival and festival colour",
+   "products": [
+    "juviasplace-i-am-my-skin-foundation-sticks",
+    "juviasplace-culture-single-pigments-and-eyeshadow",
+    "danessamyricksbeauty-colorfix-foils-1",
+    "uomabeauty-black-magic-carnival-face-body-bronzing-highlight",
+    "danessamyricksbeauty-glosswork-4d-ultra-shine-plumping-gloss",
+    "mentedcosmetics-better-setter-setting-spray"
+   ]
+  },
+  "natural": {
+   "name": "Soft, natural everyday",
+   "products": [
+    "thelipbar-just-a-tint-3-in-1-tinted-skin-conditioner",
+    "thelipbar-big-timer",
+    "thelipbar-exact-arch-micro-brow-pencil",
+    "thelipbar-fresh-glow-dream-blush",
+    "mentedcosmetics-lush-lip-liner",
+    "thelipbar-next-to-skin-setting-spray"
+   ]
+  },
+  "indigenous": {
+   "name": "Indigenous-made colour",
+   "products": [
+    "mentedcosmetics-cloud-cream-skin-tint",
+    "cheekbonebeauty-empower-eyeliner",
+    "cheekbonebeauty-perfectly-imperfect-fearless-eyeshadow-unbox",
+    "cheekbonebeauty-courage-cream-highlighter",
+    "cheekbonebeauty-perfectly-imperfect-horizon-lip-pencil"
+   ]
+  }
+ },
+ "looks": {
+  "west_african_glow": "west_african",
+  "afro_glam_editorial": "west_african",
+  "owambe_glam": "west_african",
+  "nollywood_red_carpet": "west_african",
+  "afrobeats_concert": "west_african",
+  "ghanaian_kente_glam": "west_african",
+  "congolese_sapeur": "west_african",
+  "afrofuturist_editorial": "west_african",
+  "rooibos_glow": "south_african",
+  "amapiano_beat": "south_african",
+  "zulu_bridal": "south_african",
+  "xhosa_glam": "south_african",
+  "mehndi_bride": "mehndi",
+  "mehndi_bridal": "mehndi",
+  "bollywood_bridal": "mehndi",
+  "desi_baddie": "desi",
+  "desi_everyday_chic": "desi",
+  "diwali_festive": "desi",
+  "tamil_classical": "desi",
+  "indo_arabian_fusion": "desi",
+  "persian_queen": "persian",
+  "persian_editorial": "persian",
+  "gulf_glam": "persian",
+  "arab_chic": "persian",
+  "eid_glam": "persian",
+  "turkish_glam": "persian",
+  "hammam_goddess": "hammam",
+  "moroccan_soiree": "hammam",
+  "amazigh_berber": "hammam",
+  "k_beauty_seoul": "kbeauty",
+  "k_beauty_glass": "kbeauty",
+  "loc_journey": "editorial",
+  "afropunk_edge": "editorial",
+  "black_tie_gala": "editorial",
+  "hip_hop_glam": "glam",
+  "hbcu_homecoming": "glam",
+  "date_night_drama": "glam",
+  "caribbean_carnival": "carnival",
+  "dancehall_queen": "carnival",
+  "brazilian_carnival": "carnival",
+  "festival_glitter": "carnival",
+  "black_girl_natural": "natural",
+  "clean_minimal": "natural",
+  "soft_glam": "natural",
+  "graduation_glow": "natural",
+  "office_power": "natural",
+  "first_nations_powwow": "indigenous",
+  "indigenous_latina": "indigenous"
+ }
+}

@@ -429,6 +429,24 @@ async function router(req, res) {
     }
   }
 
+  // GET /api/qloo/probe?p=/v2/...&k=v — read-only passthrough to Qloo for verifying response shapes (key stays server-side)
+  if (method === 'GET' && path === '/api/qloo/probe') {
+    const key = process.env.QLOO_API_KEY;
+    if (!key) return sendJSON(res, 200, { key_set: false });
+    const sp = new URL(req.url, 'http://x').searchParams;
+    const target = sp.get('p') || '';
+    if (!/^\/v2\/[a-z/_-]*$/i.test(target)) return sendJSON(res, 400, { error: 'p must be a /v2/ path' });
+    sp.delete('p');
+    try {
+      const base = process.env.QLOO_BASE_URL || 'https://hackathon.api.qloo.com';
+      const r = await fetch(`${base}${target}?${sp.toString()}`, { headers: { 'X-API-Key': key, Accept: 'application/json' } });
+      const text = await r.text();
+      return sendJSON(res, 200, { status: r.status, body: text.slice(0, 3000) });
+    } catch (err) {
+      return sendJSON(res, 200, { error: err.message });
+    }
+  }
+
   // GET /api/qloo/diag — raw boundary check: one live Qloo search, status + shape, no key exposed
   if (method === 'GET' && path === '/api/qloo/diag') {
     const key = process.env.QLOO_API_KEY;

@@ -13,6 +13,7 @@ import { QlooClient, qlooClient as _sharedClient } from '../qloo.js';
  */
 const PREFERRED_TYPES = [
   'urn:entity:artist',
+  'urn:entity:person',
   'urn:entity:movie',
   'urn:entity:tv_show',
   'urn:entity:brand',

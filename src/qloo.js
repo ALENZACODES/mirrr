@@ -60,6 +60,20 @@ export class QlooError extends Error {
   }
 }
 
+/**
+ * Qloo returns entity_id and a generic `type` with the specific kind in `subtype`.
+ * Normalise to { id, name, type, ... } so the rest of the app has one shape.
+ */
+export function normalizeEntity(e = {}) {
+  return {
+    ...e,
+    id: e.id ?? e.entity_id ?? null,
+    entity_id: e.entity_id ?? e.id ?? null,
+    name: e.name ?? null,
+    type: e.subtype ?? e.type ?? null,
+  };
+}
+
 // ---------------------------------------------------------------------------
 // Client
 // ---------------------------------------------------------------------------
@@ -161,7 +175,9 @@ export class QlooClient {
     const data = await this._request('GET', '/v2/search', {
       params: { query, limit, ...(type ? { type } : {}) },
     });
-    return data?.results?.entities ?? [];
+    // Observed live: { results: [ { entity_id, name, type: 'urn:entity', subtype: 'urn:entity:person', popularity, ... } ] }
+    const raw = Array.isArray(data?.results) ? data.results : (data?.results?.entities ?? []);
+    return raw.map(normalizeEntity).filter((e) => e.id);
   }
 
   /**

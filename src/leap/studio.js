@@ -10,7 +10,7 @@
  * Qloo is called through the existing pipeline only when you send your own inputs, and each set of
  * inputs is cached here for six hours, so changing the other controls never calls Qloo again.
  */
-import { buildAestheticVector, affinityOf, TAG_SIGNALS } from '../aesthetic.js';
+import { buildAestheticVector, affinityOf, TAG_SIGNALS, ARCHETYPE_KEYWORDS } from '../aesthetic.js';
 import { LOOKS, recommendLooks, scoreLook } from '../look_engine.js';
 import { DEMO_PROFILES } from '../demo_profiles.js';
 import { MONK_TONES } from '../skin/clinic.js';
@@ -158,7 +158,9 @@ export async function buildLeapPlan(input = {}, { pipeline = runPipeline } = {})
   if (!taste) { taste = await tasteFor({ ...c, profile: DEFAULTS.profile }, null, pipeline); note = 'You have not added any taste yet, so this uses the Afrobeats demo profile. Add artists, films or places on the Taste page.'; }
   const user = buildAestheticVector(taste.tags, { freeText: taste.freeText });
   const path = tastePath(taste.tags, taste.freeText);
-  const home = recommendLooks(user, { topN: 1 })[0];
+  // Same ranking as the Taste page: with live Qloo tags, half vector fit and half Qloo evidence.
+  const evidence = taste.source === 'qloo' && taste.tags?.length ? taste.tags : null;
+  const home = recommendLooks(user, { topN: 1, evidence, archetypeKeywords: evidence ? ARCHETYPE_KEYWORDS : null })[0];
   const s = STRENGTHS.find(x => x.id === c.strength).s;
   const leaps = [c.dest1, c.dest2, c.dest3].map(id => leap(DESTINATIONS.find(d => d.id === id), user, s, path, user.cultural_tags));
   return {
@@ -171,7 +173,7 @@ export async function buildLeapPlan(input = {}, { pipeline = runPipeline } = {})
       vector: Object.fromEntries(DIMS.map(({ id }) => [id, r2(user[id])])), palette: user.colour_palette, archetypes: user.archetypes,
       path: path.slice(0, 10),
     },
-    home: home ? { id: home.look.id, name: home.look.name, score: home.score, palette: paletteFor(home.look, user) } : null,
+    home: home ? { id: home.look.id, name: home.look.name, score: home.score, basis: evidence ? 'taste vector + Qloo evidence (same as Taste page)' : 'taste vector', palette: paletteFor(home.look, user) } : null,
     strength: { id: c.strength, s },
     leaps,
     focus: leaps[Number(c.focus)],

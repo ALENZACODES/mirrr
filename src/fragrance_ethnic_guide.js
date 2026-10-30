@@ -57,7 +57,7 @@ export const FRAGRANCE_SCIENCE = {
     oriental: {
       description: 'Warm, rich, sensual; amber, vanilla, musk, incense, spices; heavy base; excellent longevity',
       classic: 'Shalimar (Guerlain), Opium (YSL), Obsession (Calvin Klein), Ambre Nuit (Dior)',
-      communities: 'Arab, South Asian, East African: natural cultural alignment with oriental fragrance family'
+      communities: 'Arab, South Asian, East African: natural cultural alignment with amber fragrance family'
     },
     woody: {
       description: 'Cedar, sandalwood, oud, vetiver, patchouli; earthy, sophisticated; excellent longevity',
@@ -164,7 +164,7 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
     },
 
     fragrancePairs: {
-      perfect: ['Oud-based orientals: Tom Ford Oud Wood', 'Vanilla amber: By Kilian Voulez-Vous, Maison Margiela Replica Flower Market', 'Shea butter note: Jo Malone Myrrh & Tonka, Zara Rich Warm Addictive'],
+      perfect: ['Oud-based amber fragrances: Tom Ford Oud Wood', 'Vanilla amber: By Kilian Voulez-Vous, Maison Margiela Replica Flower Market', 'Shea butter note: Jo Malone Myrrh & Tonka, Zara Rich Warm Addictive'],
       avoid: 'Very light, aquatic, ozonic fragrances can disappear quickly on oily warm skin; needs body'
     },
 
@@ -175,17 +175,17 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
 
     advice: `West African fragrance sensibility leans toward the warm, rich, and deeply aromatic —
     the scent tradition that brought oud, frankincense, and shea butter to the world. On oily
-    warm skin, oriental and woody fragrances bloom and last beautifully for 8-12 hours without
+    warm skin, amber and woody fragrances bloom and last beautifully for 8-12 hours without
     heavy application. The shea butter tradition is both fragrance and skincare: infused with
     botanicals, it delivers a skin-close intimate scent that is culturally authentic. For modern
-    fragrance: Kayali (Mona Kattan's brand, known for oud and oriental notes) or Maison Francis
+    fragrance: Kayali (Mona Kattan's brand, known for oud and amber notes) or Maison Francis
     Kurkdjian Baccarat Rouge 540 (warm, ambery). Diaspora recommendation: keep a small bottle of
     frankincense essential oil (diluted in carrier) for moments of spiritual and ancestral connection.`
   },
 
   'south-asian': {
     communityName: 'South Asian',
-    fragranceProfile: 'Rich attar tradition; jasmine and rose in daily life; warm oily skin amplifies orientals; sandalwood as sacred base',
+    fragranceProfile: 'Rich attar tradition; jasmine and rose in daily life; warm oily skin amplifies amber fragrances; sandalwood as sacred base',
 
     traditions: {
       attar: 'Attar tradition: Kannauj, UP is the fragrance capital; rose, hina, kewda, mitti attars; alcohol-free',
@@ -212,7 +212,7 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
 
     fragrancePairs: {
       perfect: ['Tropical/island: Tocca Florence, Kilian Good Girl Gone Bad', 'Coconut: Sol de Janeiro Cheirosa 62 (Brazilian brand), Kai perfume oil', 'Vanilla-tropical: Tom Ford Soleil Neige, Escada Sorbetto Rosso'],
-      avoid: 'Very heavy oriental-only with no freshness can feel oppressive in Caribbean heat'
+      avoid: 'Very heavy amber-only with no freshness can feel oppressive in Caribbean heat'
     },
 
     advice: `Caribbean fragrance is island life in a bottle: tropical florals, coconut, citrus, warm vanilla.
@@ -244,7 +244,7 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
 
   latina: {
     communityName: 'Latina / Hispanic',
-    fragranceProfile: 'Vibrant and sensual; floral-oriental tradition; warm tropical notes; Cuba/Colombia/Brazil fragrance cultures specific',
+    fragranceProfile: 'Vibrant and sensual; floral-amber tradition; warm tropical notes; Cuba/Colombia/Brazil fragrance cultures specific',
 
     traditions: {
       flowers: 'Latin American women: flowers in hair and as room fragrance; marigold (cempasúchil/Day of the Dead), jasmine',
@@ -254,16 +254,16 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
     },
 
     fragrancePairs: {
-      classic: ['Flowerbomb (Viktor & Rolf): iconic in Latina community; floral-oriental', 'Carolina Herrera Good Girl: jasmine-cocoa; very popular', 'Valentino Donna Born in Roma (Yellow Dream): pink pepper + ylang ylang + vanilla'],
+      classic: ['Flowerbomb (Viktor & Rolf): iconic in Latina community; floral-amber', 'Carolina Herrera Good Girl: jasmine-cocoa; very popular', 'Valentino Donna Born in Roma (Yellow Dream): pink pepper + ylang ylang + vanilla'],
       warm: 'Sol de Janeiro Cheirosa 71 (hibiscus + tropical musk): contemporary Latina fragrance hit'
     },
 
     advice: `Latina fragrance sensibility spans the extraordinary diversity of Latin America — from
     the marigold ceremonies of Día de los Muertos to the jasmine traditions of the Caribbean,
     to the rose devotions of Catholic Latin cultures. Flowerbomb (Viktor & Rolf) has an
-    almost iconic status in Latina communities: its floral-oriental warmth performs beautifully
+    almost iconic status in Latina communities: its floral-amber warmth performs beautifully
     on warm Latina skin and has become a generational fragrance. The warm oily skin of many
-    Latinas means oriental fragrances bloom and project magnificently — wear less than you
+    Latinas means amber fragrances bloom and project magnificently — wear less than you
     think you need. Sol de Janeiro's Brazilian-origin fragrances have become cultural touchstones
     for many Latin American communities with their warm, tropical, optimistic sillage.`
   },
@@ -321,7 +321,7 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
     home scent; wear oud oil on pulse points for occasions. The combination of frankincense
     and coffee smoke is the East African home scent equivalent that no perfume fully replicates.
     For commercial fragrances that capture the warmth: Tom Ford Tobacco Oud, or any oud-balsamic
-    oriental, perform beautifully on East African deep warm skin.`
+    amber, perform beautifully on East African deep warm skin.`
   },
 
   'south-african': {
@@ -343,7 +343,7 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
 
   'black-american': {
     communityName: 'Black American',
-    fragranceProfile: 'Bold, lasting, often vanilla-oriental; Pink Fridays and designer colognes as cultural touchstones; church perfume tradition',
+    fragranceProfile: 'Bold, lasting, often vanilla-amber; Pink Fridays and designer colognes as cultural touchstones; church perfume tradition',
 
     traditions: {
       church: 'Church fragrance: Black American church culture has specific fragrance aesthetics; "Sunday best" includes fragrance; Elizabeth Taylor White Diamonds as classic example',
@@ -353,7 +353,7 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
     },
 
     fragrancePairs: {
-      classic: ['Baccarat Rouge 540 (Maison Francis Kurkdjian): amber-woody, sweet and airy', 'Flowerbomb (Viktor & Rolf): warm floral-oriental; long-lasting on warm skin', 'YSL Black Opium: coffee-vanilla'],
+      classic: ['Baccarat Rouge 540 (Maison Francis Kurkdjian): amber-woody, sweet and airy', 'Flowerbomb (Viktor & Rolf): warm floral-amber; long-lasting on warm skin', 'YSL Black Opium: coffee-vanilla'],
       value: 'Black community beauty supply fragrance oils: impressionist versions of luxury fragrances; often excellent performance; significantly affordable',
       power: 'Deep warm Black American skin: Baccarat Rouge 540 EDP performs up to 12-14 hours; legendary longevity combination'
     },

@@ -65,11 +65,11 @@ export const FRAGRANCE_FAMILIES = {
   oriental_amber: {
     description: 'Warm, rich, sensual — amber, vanilla, musks, resins, spices. Often heavy and long-lasting.',
     sub_families: {
-      soft_oriental: 'Lighter orientals — jasmine, iris, incense. Guerlain Shalimar Souffle.',
-      floral_oriental: 'Florals in an oriental base — Lancome La Nuit Tresor.',
+      soft_oriental: 'Lighter amber fragrances — jasmine, iris, incense. Guerlain Shalimar Souffle.',
+      floral_oriental: 'Florals in an amber base — Lancome La Nuit Tresor.',
       spicy_oriental: 'Rich spice and wood — Tom Ford Tobacco Vanille.',
     },
-    cultural_connection: 'Oriental/amber fragrances have deep roots in Middle Eastern, South Asian, and East African fragrance traditions — frankincense, myrrh, oud, amber, rose are all pillars of these traditions. The commercial perfume industry absorbed these ingredients.',
+    cultural_connection: 'Amber/amber fragrances have deep roots in Middle Eastern, South Asian, and East African fragrance traditions — frankincense, myrrh, oud, amber, rose are all pillars of these traditions. The commercial perfume industry absorbed these ingredients.',
   },
 
   woody: {
@@ -116,7 +116,7 @@ export const OUD_GUIDE = {
   types_of_oud: {
     arabic_oud: {
       character: 'Rich, warm, animalic, smoky, leathery, incense-heavy. Traditional distillation from Arabian Peninsula producers.',
-      for_who: 'Those who love intense, traditional, long-lasting Oriental fragrances.',
+      for_who: 'Those who love intense, traditional, long-lasting Amber fragrances.',
     },
     hindi_oud: {
       character: 'Barnyard, animalic, deep, medicinal — more extreme and intensely funky than Arabic oud. Beloved by connoisseurs.',
@@ -249,7 +249,7 @@ export const FRAGRANCE_LAYERING_GUIDE = {
   recommended_combinations: [
     { a: 'Oud or amber oil', b: 'Fresh citrus spray', result: 'Warm-rich with bright top — a dynamic combination popular in Middle Eastern fragrance style' },
     { a: 'Sandalwood lotion', b: 'Rose EDT', result: 'Intensified rose with creamy depth' },
-    { a: 'Vanilla/amber body spray', b: 'Jasmine EDP', result: 'Rich oriental-floral' },
+    { a: 'Vanilla/amber body spray', b: 'Jasmine EDP', result: 'Rich amber-floral' },
     { a: 'Scentless body oil', b: 'Any EDP', result: 'Extended wear without fragrance interference' },
   ],
 };
@@ -287,7 +287,7 @@ export const FRAGRANCE_ALTERNATIVES = {
   ],
 
   budget_brands_with_quality: [
-    { brand: 'Lattafa', region: 'UAE', note: 'Middle Eastern house with excellent affordable orientals and oud' },
+    { brand: 'Lattafa', region: 'UAE', note: 'Middle Eastern house with excellent affordable amber fragrances and oud' },
     { brand: 'Rasasi', region: 'Dubai', note: 'Quality Arabic-style fragrances at accessible prices' },
     { brand: 'Armaf', region: 'India/UAE', note: 'Club de Nuit series offers impressive quality' },
     { brand: 'Zara', region: 'Spain', note: 'Zara\'s fragrance line has some exceptional offerings — developed in collaboration with major fragrance houses' },

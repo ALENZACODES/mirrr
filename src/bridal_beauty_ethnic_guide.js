@@ -1456,7 +1456,7 @@ export const BRIDAL_PERFUME_GUIDE = {
   'west-african': {
     communityId: 'west-african',
     traditionalScents: ['Oud', 'Shea blossom', 'Hibiscus', 'Kola', 'Palm wine note'],
-    recommendedFamilies: ['Warm oriental', 'Floral oriental', 'Ambery floral'],
+    recommendedFamilies: ['Warm amber', 'Floral amber', 'Ambery floral'],
     applicationTips: 'Apply to pulse points: wrists, neck, behind ears, inner elbows. Avoid spraying directly on aso-oke fabric. Apply 30 minutes before dressing for skin absorption.',
     longevityTips: 'Layer with matching body oil from the same house for maximum sillage. Moisturize skin before applying — fragrance lasts longer on hydrated skin.',
     considerations: 'Long West African ceremonies in warm climates can intensify fragrance. Choose moderate sillage for indoor ceremonies and stronger for outdoor.',
@@ -1464,7 +1464,7 @@ export const BRIDAL_PERFUME_GUIDE = {
   'south-asian': {
     communityId: 'south-asian',
     traditionalScents: ['Rose attar', 'Jasmine (mogra)', 'Sandalwood', 'Oud', 'Saffron', 'Kewra'],
-    recommendedFamilies: ['Floral oriental', 'Attars', 'Warm spicy florals'],
+    recommendedFamilies: ['Floral amber', 'Attars', 'Warm spicy florals'],
     applicationTips: 'Traditional Indian brides may use rose or jasmine attar applied directly to skin. For longer-lasting scent, layer with matching body lotion. Fresh flowers in hair provide natural scent.',
     
     considerations: 'The mogra (jasmine) gajra in hair provides natural fragrance throughout the ceremony — a beautifully traditional choice that requires no additional perfume at the hair.',
@@ -1480,7 +1480,7 @@ export const BRIDAL_PERFUME_GUIDE = {
   'arab': {
     communityId: 'arab',
     traditionalScents: ['Oud', 'Rose', 'Amber', 'Musk', 'Saffron', 'Frankincense', 'Neroli'],
-    recommendedFamilies: ['Oriental', 'Amber oriental', 'Floral oriental', 'Musky oriental'],
+    recommendedFamilies: ['Amber', 'Rich amber', 'Floral amber', 'Musky amber'],
     applicationTips: 'Arabic perfume tradition is of generous sillage — the bride should leave a beautiful scent memory. Apply oud oil to pulse points, spray eau de parfum as a finishing touch. Never spray directly on fabric.',
     longevityTips: 'Pure oud oil applied to wrists, neck, and behind knees lasts for many hours. Layer with a matching spray for room-filling projection.',
     considerations: 'Gulf brides often receive gifted oud-based perfumes. Oud is a wedding fragrance — it carries cultural weight and should be chosen carefully.',
@@ -1488,21 +1488,21 @@ export const BRIDAL_PERFUME_GUIDE = {
   'latina': {
     communityId: 'latina',
     traditionalScents: ['Gardenia', 'Tuberose', 'White floral', 'Warm amber', 'Vanilla musk'],
-    recommendedFamilies: ['White floral', 'Warm floral oriental', 'Floral amber'],
+    recommendedFamilies: ['White floral', 'Warm floral amber', 'Floral amber'],
     applicationTips: 'Apply to pulse points only, for a scent that is noticeable but not overwhelming. Reapply after the ceremony if needed.',
     longevityTips: 'Moisturize skin before spraying. Layer with matching body lotion for 8+ hour wear.',
   },
   'east-asian': {
     communityId: 'east-asian',
     traditionalScents: ['Osmanthus', 'Peony', 'Cherry blossom', 'Yuzu', 'White tea', 'Jasmine'],
-    recommendedFamilies: ['Light floral', 'Aquatic', 'Soft oriental', 'Clean floral'],
+    recommendedFamilies: ['Light floral', 'Aquatic', 'Soft amber', 'Clean floral'],
     applicationTips: 'East Asian bridal tradition leans toward delicate, close-to-skin fragrance rather than large sillage. Apply lightly to wrists and neck.',
     longevityTips: 'Japanese and Korean fragrance culture prizes subtle radiance — a trail that people notice when close. Choose an EDP for longer wear without projecting too strongly.',
   },
   'east-african': {
     communityId: 'east-african',
     traditionalScents: ['Oud', 'Myrrh', 'Frankincense', 'Rose', 'Sandalwood', 'Amber'],
-    recommendedFamilies: ['Oriental', 'Woody oriental', 'Floral oriental'],
+    recommendedFamilies: ['Amber', 'Woody amber', 'Floral amber'],
     applicationTips: 'East African bridal fragrance follows a similar tradition to Arabic perfumery. Oud oil and incense resins are traditional. Apply oud oil directly to pulse points.',
     longevityTips: 'Burn incense (oud or bukhoor) near clothing during prep for fabric fragrance tradition.',
   },
@@ -1516,8 +1516,8 @@ export const BRIDAL_PERFUME_GUIDE = {
   'black-american': {
     communityId: 'black-american',
     traditionalScents: ['Rose', 'Amber', 'Vanilla', 'Jasmine', 'Musk', 'Oud'],
-    recommendedFamilies: ['Floral oriental', 'Warm amber', 'Musky floral', 'Soft oriental'],
-    applicationTips: 'Bold, beautiful fragrance that fills the room. Apply to pulse points generously. Classic American bridal fragrance choices include iconic white florals and warm orientals.',
+    recommendedFamilies: ['Floral amber', 'Warm amber', 'Musky floral', 'Soft amber'],
+    applicationTips: 'Bold, beautiful fragrance that fills the room. Apply to pulse points generously. Classic American bridal fragrance choices include iconic white florals and warm amber fragrances.',
     longevityTips: 'Layer fragrance with matching lotion and body wash for layered, long-lasting scent profile.',
   },
 };

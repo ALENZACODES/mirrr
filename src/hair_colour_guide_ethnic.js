@@ -141,7 +141,7 @@ export const ETHNIC_HAIR_COLOUR_GUIDES = {
     
     kuwaitiBlonde: 'The "Kuwaiti blonde" — warm golden blonde colour achieved by lightening naturally dark brown hair — has been a long-standing trend in Gulf Arab beauty; achieved through balayage or full bleach and tone to warm golden levels',
     culturalContext: 'Hair colouring is generally practised within cultural norms; for hijabi women, hair colour is private (visible only to family and women) but is still very popular — hair colouring is as important, sometimes more so, as a personal beauty ritual for women who cover; vibrant fashion colours are popular in private settings',
-    oud: 'Oud and oriental-inspired hair perfumes (hair mists, hair oils with fragrance) are increasingly popular in Arab beauty culture; fragrancing the hair is traditional'
+    oud: 'Oud and amber-inspired hair perfumes (hair mists, hair oils with fragrance) are increasingly popular in Arab beauty culture; fragrancing the hair is traditional'
   },
   latina: {
     naturalHair: 'Latina hair spans the full spectrum from Type 1 (straight) to Type 4 (coily) depending on heritage; colour ranges from Level 1 (black) to Level 5-6 (medium brown) predominantly; a wide diversity of textures and colours within the community',

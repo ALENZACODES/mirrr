@@ -8,7 +8,7 @@
 
 export const FRAGRANCE_FAMILIES = {
   oriental: {
-    name: 'Oriental / Amber',
+    name: 'Amber (once called "Oriental")',
     characteristics: 'Warm, rich, sensual, long-lasting. Dominant in Middle Eastern, South Asian, and East African traditions.',
     keyNotes: ['Oud', 'Amber', 'Musk', 'Sandalwood', 'Vanilla', 'Incense', 'Benzoin'],
     bestFor: 'Evening wear, cooler weather, intimate occasions, making a statement',
@@ -21,7 +21,7 @@ export const FRAGRANCE_FAMILIES = {
     keyNotes: ['Rose', 'Jasmine', 'Tuberose', 'Ylang-ylang', 'Neroli', 'Magnolia', 'Gardenia'],
     bestFor: 'Day wear, spring/summer, weddings, gift-giving',
     layeringTip: 'Rose and musk together = classic Middle Eastern attar. Jasmine + sandalwood = South Asian tradition.',
-    longevity: '4–8 hours; more ephemeral than oriental',
+    longevity: '4–8 hours; more ephemeral than amber',
     culturalNote: 'Rose is sacred across many cultures — the Prophet Muhammad wore rose attar; it is in Christian holy water; it bridges perfumery traditions from Morocco to India to Iran',
   },
   woody: {
@@ -101,7 +101,7 @@ export const ETHNIC_FRAGRANCE_TRADITIONS = {
   south_asian: {
     community: 'South Asian (India, Pakistan, Bangladesh)',
     overview: 'Rich in floral (jasmine, rose, marigold) and earthy (sandalwood, vetiver) traditions. Influenced by Mughal court perfumery and Ayurvedic medicine.',
-    signature: 'Floral-oriental. Jasmine and rose are dominant. Heavy use of sandalwood and incense. Jasmine garlands (gajra) worn in hair are the most iconic fragrance tradition.',
+    signature: 'Floral-amber. Jasmine and rose are dominant. Heavy use of sandalwood and incense. Jasmine garlands (gajra) worn in hair are the most iconic fragrance tradition.',
     traditions: {
       gajra: {
         name: 'Gajra (Jasmine Hair Garlands)',
@@ -143,7 +143,7 @@ export const ETHNIC_FRAGRANCE_TRADITIONS = {
     },
     layeringSystem: {
       step1: 'Unscented or lightly scented shea butter all over body',
-      step2: 'Oud oil or woody oriental perfume on pulse points',
+      step2: 'Oud oil or woody amber perfume on pulse points',
       step3: 'Musk body spray for light lingering trail',
     },
   },
@@ -234,7 +234,7 @@ export const LAYERING_TECHNIQUES = {
         'Example: White musk lotion + green tea body spray = East Asian signature',
       ],
       dontMix: [
-        'Two powerful orientals at once (overwhelming)',
+        'Two powerful amber fragrances at once (overwhelming)',
         'Floral + gourmand on skin (can smell like a bakery or too sweet)',
         'Fresh/aquatic + heavy oud (they fight each other)',
       ],

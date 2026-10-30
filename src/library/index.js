@@ -20,7 +20,7 @@ export function humanize(key) {
     .toLowerCase()
     .replace(/\b\w/g, c => c.toUpperCase())
     // Respectful labels: 'ethnic' is not a catch-all for people of colour.
-    .replace(/\bEthnic Skin\b/g, 'Skin Of Colour').replace(/\bEthnic Hair\b/g, 'Textured Hair').replace(/\bEthnic\b/g, 'Cultural').replace(/\bEthnicity\b/g, 'Heritage');
+    .replace(/\bEthnic Skin\b/g, 'Skin Of Colour').replace(/\bEthnic Hair\b/g, 'Textured Hair').replace(/\bEthnic\b/g, 'Cultural').replace(/\bEthnicity\b/g, 'Heritage').replace(/\bOriental\b/g, 'Amber').replace(/\bAmber Amber\b/g, 'Amber');
 }
 
 // Each guide's data with men's-grooming passages left out (MIRRR is for women), computed once.

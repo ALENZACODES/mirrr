@@ -804,7 +804,7 @@ elaborate dress. It is a rite of passage marked in beauty as much as ceremony.`,
       'Skin prep matters: ubtan-equivalents exist in Latin botánica tradition (aloe vera, papaya masks)',
       'Hair accessories are statement pieces: flowers, pins, crowns, ribbons',
       'Festival makeup often requires theatrical-grade products for longevity',
-      'Fragrance: floral and warm — jasmine, gardenia, and warm amber orientals',
+      'Fragrance: floral and warm — jasmine, gardenia, and warm amber fragrances',
     ],
     diyRecipes: [
       {

@@ -165,7 +165,7 @@ export const ETHNIC_TRADITIONAL_MEDICINE_BEAUTY_GUIDES = {
   'east-asian': {
     communityId: 'east-asian',
     communityName: 'East Asian',
-    healingSystem: 'Traditional Chinese Medicine (TCM) / Korean Oriental Medicine (KOM) / Kampo (Japanese)',
+    healingSystem: 'Traditional Chinese Medicine (TCM) / Korean Medicine (KM) / Kampo (Japanese)',
     beautyPhilosophy: 'TCM frames beauty as the external manifestation of internal harmony — when Qi (vital energy) flows freely, Blood is abundant, and the internal organs are balanced, the skin glows, hair is lustrous, and eyes are bright. Beauty treatments in TCM are designed to correct internal imbalances that express as skin conditions, hair loss, or premature aging.',
     qiBloodAndSkin: {
       QiDeficiency: 'Pale, lusterless skin, easily bruising, weak hair growth. Treatment: qi-building herbs (ginseng, astragalus, codonopsis), qi-building foods (dates, rice, yams), regular exercise.',

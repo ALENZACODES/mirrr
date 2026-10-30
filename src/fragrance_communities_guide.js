@@ -197,11 +197,11 @@ export const ETHNIC_FRAGRANCE_TRADITIONS = {
   },
   arab: {
     community: 'Arab',
-    traditions: 'The richest fragrance culture in the world for many people. Oud is the prestige ingredient. Bakhoor in every home. Rose water on the face and hair daily. Khamrah/mukhallat (layered oriental blends) applied to the body. Fragrance gifting as a primary luxury gift. The Gulf Arab fragrance aesthetic — heavy, warm, oud-rose-amber — has influenced global perfumery profoundly.',
+    traditions: 'The richest fragrance culture in the world for many people. Oud is the prestige ingredient. Bakhoor in every home. Rose water on the face and hair daily. Khamrah/mukhallat (layered amber blends) applied to the body. Fragrance gifting as a primary luxury gift. The Gulf Arab fragrance aesthetic — heavy, warm, oud-rose-amber — has influenced global perfumery profoundly.',
   },
   latina: {
     community: 'Latina',
-    traditions: 'Fresh floral and fruity fragrance preferred in many Latin American communities. The classic Latin American fragrance house — Yanbal, Unique, L\'Bel — produce very popular floral-oriental fragrances. Perfume culture is strong — wearing fragrance daily is a norm. Incense (copal and palo santo) important in indigenous-influenced traditions.',
+    traditions: 'Fresh floral and fruity fragrance preferred in many Latin American communities. The classic Latin American fragrance house — Yanbal, Unique, L\'Bel — produce very popular floral-amber fragrances. Perfume culture is strong — wearing fragrance daily is a norm. Incense (copal and palo santo) important in indigenous-influenced traditions.',
     copal: 'Copal is a resin from Latin American trees used as incense in Mesoamerican ritual and today in Día de los Muertos and other ceremonies. It has a fresh, slightly citrus-resinous scent.',
     palo_santo: 'Palo Santo (Bursera graveolens — holy wood) — burned as incense in South America for purification and healing. Smells of mint, citrus, and pine. Increasingly popular globally.',
   },
@@ -219,7 +219,7 @@ export const ETHNIC_FRAGRANCE_TRADITIONS = {
   },
   black_american: {
     community: 'Black American',
-    traditions: 'The Black American fragrance aesthetic has been enormously influential. Heavy, sweet, warm fragrances — orientals, musks, amber blends — have historically been associated with Black American fragrance culture. The fragrance oil market (concentrated oil perfumes sold without alcohol, cheaper than spray fragrances) has a large Black American consumer base. The influence of Islamic cultural practices in some Black American Muslim communities has also grown attar and oil perfume culture. Fragrance dupes culture — finding affordable alternatives to luxury fragrances — has been significantly driven by Black fragrance content creators on TikTok and YouTube.',
+    traditions: 'The Black American fragrance aesthetic has been enormously influential. Heavy, sweet, warm fragrances — amber fragrances, musks, amber blends — have historically been associated with Black American fragrance culture. The fragrance oil market (concentrated oil perfumes sold without alcohol, cheaper than spray fragrances) has a large Black American consumer base. The influence of Islamic cultural practices in some Black American Muslim communities has also grown attar and oil perfume culture. Fragrance dupes culture — finding affordable alternatives to luxury fragrances — has been significantly driven by Black fragrance content creators on TikTok and YouTube.',
   },
 };
 

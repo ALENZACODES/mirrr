@@ -71,7 +71,7 @@ export const FRAGRANCE_FAMILIES = {
   oriental: {
     
     culturalNote: 'The fragrance industry\'s "Oriental" category was named by Western perfumers for ingredients and aesthetics they associated with the "Orient"; many fragrance professionals now use "Amber" or "Resinous" as a replacement term to avoid the Orientalist implications',
-    subFamilies: ['Amber/Resinous: benzoin, labdanum, vanilla, ambergris-inspired synthetics — warm, sweet, balsamic (Shalimar, Angel)', 'Spicy Oriental: cinnamon, cardamom, pepper, cloves in a warm base (Opium, Youth Dew)', 'Gourmand: edible-smelling sweet fragrances inspired by food — caramel, chocolate, pastry (Angel, Hypnotic Poison)'],
+    subFamilies: ['Amber/Resinous: benzoin, labdanum, vanilla, ambergris-inspired synthetics — warm, sweet, balsamic (Shalimar, Angel)', 'Spicy Amber: cinnamon, cardamom, pepper, cloves in a warm base (Opium, Youth Dew)', 'Gourmand: edible-smelling sweet fragrances inspired by food — caramel, chocolate, pastry (Angel, Hypnotic Poison)'],
     ethnicContext: 'What Western perfumery calls "Oriental" fragrance is actually deeply rooted in the real fragrance traditions of the Arab world, South Asia, and East Africa; the cultural origin should be acknowledged, not exoticised'
   },
   fresh: {

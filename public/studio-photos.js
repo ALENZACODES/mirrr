@@ -76,6 +76,9 @@ window.STUDIO_PHOTOS = {
   "black_soap": {
    "src": "/studio/ingredients/black_soap.webp"
   },
+  "buchu": {
+   "src": "/studio/ingredients/buchu.webp"
+  },
   "cacao": {
    "src": "/studio/ingredients/cacao.webp"
   },
@@ -162,6 +165,9 @@ window.STUDIO_PHOTOS = {
   },
   "rosehip": {
    "src": "/studio/ingredients/rosehip.webp"
+  },
+  "sake_kasu": {
+   "src": "/studio/ingredients/sake_kasu.webp"
   },
   "salicylic_acid": {
    "src": "/studio/ingredients/salicylic_acid.webp"
@@ -329,8 +335,32 @@ window.STUDIO_PHOTOS = {
   }
  },
  "skin": {
+  "acne-months": {
+   "src": "/studio/skin/acne-months.webp"
+  },
   "acne-now": {
    "src": "/studio/skin/acne-now.webp"
+  },
+  "acne-weeks": {
+   "src": "/studio/skin/acne-weeks.webp"
+  },
+  "barrier-months": {
+   "src": "/studio/skin/barrier-months.webp"
+  },
+  "barrier-now": {
+   "src": "/studio/skin/barrier-now.webp"
+  },
+  "barrier-weeks": {
+   "src": "/studio/skin/barrier-weeks.webp"
+  },
+  "eczema-months": {
+   "src": "/studio/skin/eczema-months.webp"
+  },
+  "eczema-now": {
+   "src": "/studio/skin/eczema-now.webp"
+  },
+  "eczema-weeks": {
+   "src": "/studio/skin/eczema-weeks.webp"
   },
   "marks-months": {
    "src": "/studio/skin/marks-months.webp"
@@ -349,6 +379,12 @@ window.STUDIO_PHOTOS = {
   },
   "melasma-weeks": {
    "src": "/studio/skin/melasma-weeks.webp"
+  },
+  "rosacea-now": {
+   "src": "/studio/skin/rosacea-now.webp"
+  },
+  "rosacea-weeks": {
+   "src": "/studio/skin/rosacea-weeks.webp"
   },
   "sun_damage-months": {
    "src": "/studio/skin/sun_damage-months.webp"

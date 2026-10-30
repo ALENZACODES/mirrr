@@ -1451,14 +1451,9 @@ export function scoreLook(look, vec) {
     boldness:  1 - Math.abs(vec.boldness  - w.boldness),
     texture:   1 - Math.abs(vec.texture   - w.texture),
   };
-  const base = (dims.intensity + dims.warmth + dims.boldness + dims.texture) / 4;
-  const archetypeBonus = vec.archetypes?.includes(look.archetype) ? 0.15 : 0;
-  const normCulture = look.cultural_affinity.map(s => s.toLowerCase());
-  const culturalMatches = (vec.cultural_tags ?? []).filter(t =>
-    normCulture.some(c => t.toLowerCase().includes(c) || c.includes(t.toLowerCase()))
-  ).length;
-  const culturalBonus = Math.min(0.10, culturalMatches * 0.03);
-  return Math.min(1, base + archetypeBonus + culturalBonus);
+  // Plain similarity of the four taste dimensions (0-1). No bonuses and no clamp, so it never shows a
+  // made-up 1.00; Qloo evidence is added separately by recommendLooks.
+  return (dims.intensity + dims.warmth + dims.boldness + dims.texture) / 4;
 }
 
 const ARCH_ALIAS = { amapiano_beat: ['afro_glam'], bollywood_bridal: ['desi_glam'] };

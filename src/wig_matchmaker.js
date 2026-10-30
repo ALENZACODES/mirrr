@@ -595,13 +595,16 @@ export function matchWigs({ aesthetic = {}, communityId = 'mixed', lengthPref = 
       return true;
     })
     .map(wig => {
-      let score = 0;
-      if (wig.hair_vibe_match.includes(hairVibe)) score += 0.45;
-      if (wig.communities.includes(communityId)) score += 0.30;
-      if (aesthetic.archetypes?.some(a => wig.archetype_fit.includes(a))) score += 0.25;
-
+      // Three yes/no checks, ranked hair vibe first, then community, then look style. The result
+      // says which matched; it is not a percentage.
+      const criteria = {
+        hairVibe: wig.hair_vibe_match.includes(hairVibe),
+        community: wig.communities.includes(communityId),
+        lookStyle: !!aesthetic.archetypes?.some(a => wig.archetype_fit.includes(a)),
+      };
+      const score = (criteria.hairVibe ? 4 : 0) + (criteria.community ? 2 : 0) + (criteria.lookStyle ? 1 : 0);
       const reason = buildReason(wig, hairVibe, communityId, aesthetic);
-      return { wig, score: Math.min(1, score), reason };
+      return { wig, score, rank: score, criteria, matched: Object.values(criteria).filter(Boolean).length, of: 3, reason };
     })
     .sort((a, b) => b.score - a.score)
     .slice(0, topN);

@@ -1018,7 +1018,7 @@ function renderWigResults(wigs) {
   cardsEl.innerHTML = `
     <h3 class="section-title">Your Wig Matches</h3>
     <div class="wig-cards-inner">
-      ${wigs.map(({ wig, score, reason }) => {
+      ${wigs.map(({ wig, criteria, matched, of, reason }) => {
         const wigImgFile = WIG_IMAGES[wig.id];
         const wigImgHtml = wigImgFile
           ? `<div class="wig-card-img-wrap"><img src="${wigImgFile}" alt="${wig.name}" class="wig-card-img" loading="lazy" /></div>`
@@ -1028,7 +1028,7 @@ function renderWigResults(wigs) {
           ${wigImgHtml}
           <div class="wig-card-top">
             <span class="wig-emoji">💇🏾</span>
-            <div class="wig-match-pct">${Math.round(score * 100)}%</div>
+            <div class="wig-match-pct" title="${esc(criteria ? [criteria.hairVibe ? 'hair vibe' : null, criteria.community ? 'community' : null, criteria.lookStyle ? 'look style' : null].filter(Boolean).join(', ') || 'no criteria matched' : '')}">${matched ?? 0} of ${of ?? 3} match</div>
           </div>
           <h3 class="wig-name">${wig.name}</h3>
           <p class="wig-desc">${wig.description ?? ''}</p>

@@ -19,7 +19,7 @@ export const BRIDAL_PREP_TIMELINES = {
         label: '6 Months Before',
         tasks: [
           'Schedule bridal glow consultation with aesthetician',
-          'Begin kojic acid / vitamin C brightening regimen for even tone',
+          'Begin a vitamin C and niacinamide routine to fade dark marks (patch-test kojic acid if you use it)',
           'Start scalp nourishment treatments for protective style health',
           'Research gele tying styles — decide on one vs. two-change',
           'Begin shea butter and marula oil body regimen for luminous skin',
@@ -173,7 +173,6 @@ export const BRIDAL_PREP_TIMELINES = {
           'Monthly brightening facials begin (vitamin C, kojic)',
           'Waxing schedule set (full body if desired)',
           'Trial makeup appointment — bring outfit fabric swatches',
-          'Begin body bleach or de-tan treatments if desired',
           'Nail consultation and nail care plan',
           'Start sleeping with hair oiled for deeper conditioning',
           'Practice wearing heavy dupatta/veil — build neck muscle endurance',
@@ -211,7 +210,7 @@ export const BRIDAL_PREP_TIMELINES = {
       {
         name: 'Haldi Ceremony',
         tradition: 'Hindu / Pan-South Asian',
-        description: 'Application of turmeric paste (haldi) mixed with rose water, sandalwood powder, and sometimes chickpea flour to the bride\'s face, neck, arms, and legs. Applied by family and friends, this pre-wedding ritual is believed to bless and beautify. The turmeric\'s natural antiseptic and glow-enhancing properties make skin luminous.',
+        description: 'Application of turmeric paste (haldi) mixed with rose water, sandalwood powder, and sometimes chickpea flour to the bride\'s face, neck, arms, and legs. Applied by family and friends, this pre-wedding ritual is believed to bless and beautify. Turmeric can leave a temporary yellow tint, so patch-test the paste first.',
         timing: '1–2 days before wedding',
         products: ['Fresh turmeric powder', 'Rose water', 'Sandalwood powder', 'Chickpea flour (besan)', 'Raw honey', 'Milk'],
         beautyBenefits: ['Natural brightening', 'Anti-inflammatory', 'Evening skin tone', 'Antimicrobial', 'Soft glow'],
@@ -342,10 +341,10 @@ export const BRIDAL_PREP_TIMELINES = {
       {
         name: 'Aloe and Lime Skin Treatment',
         tradition: 'Jamaica and Eastern Caribbean',
-        description: 'Fresh aloe vera gel mixed with a few drops of lime juice applied to face and body for a natural brightening and tightening treatment. Traditional and inexpensive, with documented results.',
+        description: 'Fresh aloe vera gel applied to face and body to soothe and hydrate. Traditionally mixed with lime juice, which this guide leaves out: lime on skin can burn and leave dark marks when it meets sunlight.',
         timing: '2–3 times in the week before',
-        products: ['Fresh aloe vera (cut from plant)', 'Fresh lime juice', 'Warm water rinse'],
-        caution: 'Lime juice makes skin photosensitive — apply only at night and rinse fully.',
+        products: ['Fresh aloe vera (cut from plant)', 'Warm water rinse'],
+        caution: 'Patch-test fresh aloe first; some people react to the yellow sap under the skin of the leaf.',
       },
     ],
     makeupPhilosophy: 'Caribbean bridal beauty celebrates joy and vibrancy. The look can range from natural beachy glow to full glam depending on wedding style. For outdoor beach or garden weddings, humidity-proof formulas are essential. Skin must look luminous (not oily) even in heat. Bold tropical-inspired color on lips or eyes, or a sun-kissed glow look with bronzed and dewy skin — both are perfectly Caribbean.',
@@ -407,7 +406,7 @@ export const BRIDAL_PREP_TIMELINES = {
           'Test waterproof eye makeup for longevity',
           'Kohl eyeliner selection and technique confirmation',
           'Hair extensions consultation if adding length',
-          'Body lightening / brightening treatment plan',
+          'Body care plan for dark marks on elbows, knees and underarms (no bleaching creams)',
           'Confirm perfume — oud-based perfume or rose',
         ],
       },
@@ -470,7 +469,7 @@ export const BRIDAL_PREP_TIMELINES = {
     hairTraditions: [
       {
         style: 'Voluminous Blowout',
-        description: 'Full body blowout with deep waves or curls. Arabic brides are known for spectacular voluminous hair — a signature style across Levant, Gulf, and Egypt.',
+        description: 'Full body blowout with deep waves or curls. A signature bridal style across the Levant, Gulf, and Egypt.',
         significance: 'Beauty, luxury, feminine glamour',
         stylingTip: 'Use a volumizing mousse at roots, blow dry upside down, and set with large-barrel curling iron for longevity.',
       },
@@ -601,7 +600,7 @@ export const BRIDAL_PREP_TIMELINES = {
           'Begin double-cleanse skin care ritual for glass skin',
           'Research Hanbok, Cheongsam, or Shiromuku and their color meanings',
           'Book traditional headdress rental or purchase',
-          'Begin collagen-rich diet and supplement',
+          'Plan regular meals and sleep for the final months',
           'Nail art planning — intricate Korean nail art needs advance booking',
           'Research K-beauty bridal trends vs. traditional looks',
           'Begin jade roller and gua sha morning ritual',
@@ -659,7 +658,7 @@ export const BRIDAL_PREP_TIMELINES = {
       {
         name: 'Rice Water and Pearl Powder Mask',
         tradition: 'Chinese / Japanese',
-        description: 'Ancient beauty ritual using fermented rice water and pearl powder (natural brightener) as a face mask. Said to have been used by court ladies for centuries for porcelain skin.',
+        description: 'Ancient beauty ritual using fermented rice water and pearl powder as a face mask. Said to have been used by court ladies for centuries for porcelain skin.',
         timing: '1–2 weeks before',
         products: ['Fermented rice water', 'Pearl powder', 'Honey', 'Optional: Royal jelly'],
       },
@@ -846,14 +845,14 @@ export const BRIDAL_PREP_TIMELINES = {
       {
         name: 'Amasi (Sour Milk) Skin Treatment',
         tradition: 'Zulu / Xhosa',
-        description: 'Application of amasi (fermented/sour milk) to face and body. The lactic acid naturally exfoliates and brightens skin. A traditional Nguni beauty secret used for generations.',
+        description: 'Application of amasi (fermented/sour milk) to face and body. Its lactic acid gently exfoliates. A traditional Nguni beauty secret used for generations.',
         timing: '1 week before, 2–3 times',
         products: ['Amasi (traditional fermented milk)', 'Warm water rinse', 'Shea butter finish'],
       },
       {
         name: 'Rooibos and Honeybush Steam',
         tradition: 'South African (Cape)',
-        description: 'Facial steam using rooibos and honeybush tea — both indigenous South African plants with powerful antioxidant properties. Deeply cleanses and brightens skin. A Cape beauty tradition.',
+        description: 'Facial steam using rooibos and honeybush tea — both indigenous South African plants rich in antioxidants. Deeply cleanses and brightens skin. A Cape beauty tradition.',
         timing: '2 days before',
         products: ['Rooibos tea bags', 'Honeybush tea', 'Steam bowl', 'Cool water splash'],
       },
@@ -1007,7 +1006,6 @@ export const BRIDAL_SKINCARE_BY_TONE = {
   deepEbonyToDeepBrown: {
     toneRange: 'Deep Ebony to Deep Brown',
     fitzpatrickRange: 'V–VI',
-    communities: ['west-african', 'east-african', 'south-african', 'black-american', 'caribbean'],
     challenges: [
       'Hyperpigmentation from post-inflammatory marks',
       'Ashy appearance in flash photography if not properly moisturized',
@@ -1018,14 +1016,14 @@ export const BRIDAL_SKINCARE_BY_TONE = {
     bridalSkincarePlan: {
       months6to3: {
         am: ['Gentle cleanser', 'Vitamin C serum (L-ascorbic acid 10–15%)', 'Niacinamide 10% for PIH', 'SPF 50+ mineral (avoid white cast formulas)'],
-        pm: ['Oil cleanser + water cleanser double cleanse', 'AHA exfoliant 2–3x per week (10–15% glycolic or lactic)', 'Retinol 0.3% (work up gradually)', 'Shea butter or natural oil moisturizer'],
+        pm: ['Oil cleanser + water cleanser double cleanse', 'AHA exfoliant 1–2x per week (lactic or mandelic; start low to avoid dark marks)', 'Retinol 0.3% (work up gradually)', 'Shea butter or natural oil moisturizer'],
         weekly: ['Clay mask for congestion control', 'Brightening sheet mask', 'Lymphatic drainage massage'],
       },
       months3to1: {
         am: ['Gentle barrier-supporting cleanser', 'Antioxidant serum', 'Hydrating moisturizer', 'SPF 50+'],
         pm: ['Double cleanse', 'Retinol (maintained)', 'Ceramide moisturizer', 'Facial oil (rosehip or squalane)'],
         weekly: ['Enzyme mask', 'Gua sha or facial massage', 'Professional facial'],
-        monthlyPro: ['Brightening chemical peel (mild)', 'Microcurrent facial', 'LED red light therapy'],
+        monthlyPro: ['Mild peel only with a dermatologist experienced with deep skin', 'Microcurrent facial', 'LED red light therapy'],
       },
       finalMonth: {
         am: ['Familiar cleanser', 'Hyaluronic serum', 'Barrier cream', 'SPF'],
@@ -1047,7 +1045,6 @@ export const BRIDAL_SKINCARE_BY_TONE = {
   warmMediumToBrown: {
     toneRange: 'Warm Medium to Brown',
     fitzpatrickRange: 'IV–V',
-    communities: ['south-asian', 'latina', 'arab', 'east-african'],
     challenges: [
       'Tan lines visible in strapless or backless gowns',
       'Hyperpigmentation around mouth, eyes, elbows',
@@ -1058,13 +1055,13 @@ export const BRIDAL_SKINCARE_BY_TONE = {
     bridalSkincarePlan: {
       months6to3: {
         am: ['Brightening cleanser', 'Vitamin C + E serum', 'Niacinamide 5%', 'SPF 50 (tinted if preferred)'],
-        pm: ['Micellar cleanse + gentle wash', 'AHA 2x weekly (12% glycolic)', 'Retinol 0.25–0.5%', 'Hydrating moisturizer + oil'],
+        pm: ['Micellar cleanse + gentle wash', 'AHA 1–2x weekly (lactic, or a low-strength glycolic)', 'Retinol 0.25–0.5%', 'Hydrating moisturizer + oil'],
         weekly: ['Brightening enzyme mask', 'Jade roller lymphatic massage', 'Body scrub 2x (sugar + oil)'],
       },
       months3to1: {
         am: ['Calming cleanser', 'Fermented essence toner', 'Brightening serum', 'SPF'],
         pm: ['Oil cleanser', 'Retinol (maintained)', 'Hyaluronic acid serum', 'Ceramide cream'],
-        monthlyPro: ['Brightening peel', 'Oxygen facial', 'IPL (if derm recommends, allow healing time)'],
+        monthlyPro: ['Mild peel only with a dermatologist experienced with your skin tone', 'Oxygen facial'],
       },
       finalMonth: {
         am: ['Gentle cleanser', 'Essence', 'SPF'],
@@ -1077,15 +1074,14 @@ export const BRIDAL_SKINCARE_BY_TONE = {
       'Test under different lights — warm-toned skin can appear different in natural vs. artificial light',
       'Warm golden undertones need a yellow-base foundation (not pink/red)',
       'Check that foundation doesn\'t turn orange on skin by end of day (oil interaction)',
-      'Full-coverage options: Charlotte Tilbury Flawless Finish, Armani Luminous Silk, Fenty Soft Matte',
-      'Airbrushing provides the most flawless result for Indian and Arab bridal looks',
+      'Full-coverage options: Charlotte Tilbury Airbrush Flawless, Armani Luminous Silk, Fenty Beauty Pro Filt\'r Soft Matte',
+      'Airbrush application is an option for long-wear coverage',
     ],
   },
 
   fairToOlive: {
     toneRange: 'Fair to Olive',
     fitzpatrickRange: 'II–IV',
-    communities: ['arab', 'south-asian (lighter)', 'east-asian', 'latina (lighter)'],
     challenges: [
       'Redness, flushing, or rosiness',
       'Olive undertone can look gray in wrong foundation',
@@ -1119,7 +1115,6 @@ export const BRIDAL_SKINCARE_BY_TONE = {
 export const BRIDAL_HAIR_GUIDE = {
   naturalHairBrides: {
     title: 'Natural Hair Bridal Guide',
-    applicableCommunities: ['west-african', 'east-african', 'south-african', 'black-american', 'caribbean'],
     prepTimeline: [
       {
         timing: '3 Months Before',
@@ -1127,7 +1122,7 @@ export const BRIDAL_HAIR_GUIDE = {
           'Identify hair type and porosity for proper product selection',
           'Begin protein-moisture balance routine',
           'Trim any damaged ends',
-          'Start scalp massage ritual 3x weekly with growth oil',
+          'Start a gentle scalp massage ritual with a light oil, if you enjoy it',
           'Identify and test bridal hair style options',
         ],
       },
@@ -1195,7 +1190,6 @@ export const BRIDAL_HAIR_GUIDE = {
 
   extensions: {
     title: 'Extension and Weave Guide for Brides',
-    applicableCommunities: ['west-african', 'east-african', 'south-african', 'black-american', 'caribbean', 'south-asian'],
     types: [
       {
         type: 'Sew-In Weave',
@@ -1308,7 +1302,7 @@ export const BRIDAL_TOUCHUP_KITS = {
   'latina': {
     communityId: 'latina',
     essential: [
-      'Bold lip backup (the Latina signature)',
+      'Bold lip backup',
       'Compact bronzer',
       'Setting spray',
       'Blotting paper',
@@ -1472,7 +1466,7 @@ export const BRIDAL_PERFUME_GUIDE = {
     traditionalScents: ['Rose attar', 'Jasmine (mogra)', 'Sandalwood', 'Oud', 'Saffron', 'Kewra'],
     recommendedFamilies: ['Floral oriental', 'Attars', 'Warm spicy florals'],
     applicationTips: 'Traditional Indian brides may use rose or jasmine attar applied directly to skin. For longer-lasting scent, layer with matching body lotion. Fresh flowers in hair provide natural scent.',
-    longevityTips: 'Attar (concentrated perfume oil) lasts longer than spray on Indian brides because skin chemistry varies. Apply attar to wrists and neck.',
+    
     considerations: 'The mogra (jasmine) gajra in hair provides natural fragrance throughout the ceremony — a beautifully traditional choice that requires no additional perfume at the hair.',
   },
   'caribbean': {
@@ -1488,14 +1482,14 @@ export const BRIDAL_PERFUME_GUIDE = {
     traditionalScents: ['Oud', 'Rose', 'Amber', 'Musk', 'Saffron', 'Frankincense', 'Neroli'],
     recommendedFamilies: ['Oriental', 'Amber oriental', 'Floral oriental', 'Musky oriental'],
     applicationTips: 'Arabic perfume tradition is of generous sillage — the bride should leave a beautiful scent memory. Apply oud oil to pulse points, spray eau de parfum as a finishing touch. Never spray directly on fabric.',
-    longevityTips: 'Pure oud oil applied to wrists, neck, and behind knees lasts 8–12 hours. Layer with a matching spray for room-filling projection.',
+    longevityTips: 'Pure oud oil applied to wrists, neck, and behind knees lasts for many hours. Layer with a matching spray for room-filling projection.',
     considerations: 'Gulf brides often receive gifted oud-based perfumes. Oud is a wedding fragrance — it carries cultural weight and should be chosen carefully.',
   },
   'latina': {
     communityId: 'latina',
     traditionalScents: ['Gardenia', 'Tuberose', 'White floral', 'Warm amber', 'Vanilla musk'],
     recommendedFamilies: ['White floral', 'Warm floral oriental', 'Floral amber'],
-    applicationTips: 'Apply to pulse points only. Latin American brides tend to prefer noticeable but not overwhelming sillage. Reapply after the ceremony if needed.',
+    applicationTips: 'Apply to pulse points only, for a scent that is noticeable but not overwhelming. Reapply after the ceremony if needed.',
     longevityTips: 'Moisturize skin before spraying. Layer with matching body lotion for 8+ hour wear.',
   },
   'east-asian': {
@@ -1584,15 +1578,3 @@ export function getMUAGuide(communityId) {
   };
 }
 
-export const BRIDAL_BEAUTY_STATS = {
-  moduleId: 'bridal_beauty_ethnic_guide',
-  communitiesCovered: 9,
-  weddingStylesCovered: 42,
-  preWeddingRitualsCovered: 28,
-  hairStylesCovered: 24,
-  touchUpKitsProvided: 9,
-  fragranceGuidesCovered: 9,
-  skincarePlansCovered: 3,
-  totalDataPoints: 'comprehensive',
-  version: '1.0.0',
-};

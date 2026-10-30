@@ -234,6 +234,22 @@ test('pregnancy and postpartum routes over HTTP', async () => {
   assert.equal(lib.shelves.find(s => s.id === 'bump').guides.length, 3);
 });
 
+test('bridal countdown routes over HTTP', async () => {
+  const B = `http://127.0.0.1:${PORT}`;
+  const h = { 'x-forwarded-for': '10.6.6.15' };
+  const o = await (await fetch(`${B}/api/bridal/options`, { headers: h })).json();
+  assert.equal(o.time.length, 7); assert.equal(o.styles.length, 8); assert.equal(o.tones.length, 10);
+  const r = await fetch(`${B}/api/bridal/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ time: '1m', fitzpatrick: 'VI', hairType: '4C', style: 'wash-and-go', community: 'arab' }) });
+  assert.equal(r.status, 200);
+  const p = await r.json();
+  assert.equal(p.community.id, 'arab'); assert.ok(p.countdown.tooLate.length > 0); assert.equal(p.hair.suited, false); assert.ok(p.skin.noActives);
+  assert.equal((await fetch(`${B}/api/bridal/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  const html = await (await fetch(`${B}/`, { headers: h })).text();
+  assert.ok(html.includes('data-view="bridal"') && html.includes('src="bridal.js"'));
+  const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
+  assert.equal(lib.shelves.find(s => s.id === 'bridal').guides.length, 2);
+});
+
 test('colour and lip studio routes over HTTP', async () => {
   const B = `http://127.0.0.1:${PORT}`;
   const h = { 'x-forwarded-for': '10.6.6.9' };

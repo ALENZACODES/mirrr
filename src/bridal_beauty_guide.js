@@ -14,9 +14,8 @@ export const BRIDAL_FUNDAMENTALS = {
         'Start a consistent skincare routine — results take months to show',
         'Begin seeing a dermatologist if you have PIH, acne, melasma, or other concerns',
         'Note: most prescription treatments (tretinoin, hydroquinone) need 6+ months to show results',
-        'Start protecting against future sun damage with daily SPF — skin gains from treating past damage are wiped out by new damage',
-        'Begin hair health routine — Ayurvedic oils, biotin, protein treatments depending on hair type',
-        'Start taking hair, skin, and nail supplements if desired (collagen, biotin, vitamin E)',
+        'Start protecting against future sun damage with daily SPF — new sun damage undoes gains from treating past damage',
+        'Begin hair health routine — oils, deep conditioning and protein treatments depending on hair type',
       ],
     },
     '9_months': {
@@ -157,9 +156,9 @@ export const SOUTH_ASIAN_BRIDAL = {
   south_asian_bridal_products: {
     foundation: {
       recommendations: [
-        { name: 'Kay Beauty Hydrating Foundation', note: 'Deepika Padukone\'s brand; made for South Asian skin tones', price: '$15', buy_from: 'Nykaa' },
-        { name: 'Huda Beauty #FauxFilter Foundation', note: 'Wide shade range, long-wear', price: '$42' },
-        { name: 'Make Up For Ever Ultra HD Foundation', note: 'Used by South Asian MUAs for photography-proof finish', price: '$45' },
+        { name: 'Kay Beauty Hydrating Foundation', note: 'Katrina Kaif\'s brand, with shades for South Asian skin tones',  buy_from: 'Nykaa' },
+        { name: 'Huda Beauty #FauxFilter Foundation', note: 'Wide shade range, long-wear' },
+        { name: 'Make Up For Ever Ultra HD Foundation', note: 'Used by South Asian MUAs for photography-proof finish' },
       ],
     },
     bindi: {
@@ -218,7 +217,7 @@ export const ARAB_BRIDAL = {
     fragrance: 'Oud is essential — layered with bakhoor on the dress and attar on pulse points',
   },
   arab_bridal_mua_culture: {
-    note: 'The Arab beauty industry has some of the world\'s most skilled makeup artists — Lebanese MUAs especially (Beirut was known as the Paris of the Middle East in terms of beauty and fashion). Social media stars Huda Kattan and Jouda Ali have brought this aesthetic globally.',
+    
     characteristics_of_arab_mua_style: [
       'Extremely precise, editorial technique',
       'Heavy but flawless-looking base',
@@ -256,7 +255,7 @@ export const WEST_AFRICAN_BRIDAL = {
       },
       yoruba: {
         name: 'Yoruba Traditional Wedding',
-        what: 'Elaborate aso-oke coordinated outfits. Gele tying is an art. Loud celebration.',
+        
         look: 'Heavy gele, matching jewellery, bold makeup',
       },
       ghanaian: {
@@ -288,8 +287,8 @@ export const WEST_AFRICAN_BRIDAL = {
       'Glossy lip popular (glass skin era influence)',
     ],
     recommended_brands: [
-      { name: 'Juvia\'s Place I Am Magic palette', note: 'Designed FOR melanin-rich brides' },
-      { name: 'Fenty Beauty Pro Filt\'r Foundation', note: 'Widest shade range in accessible luxury' },
+      { name: 'Juvia\'s Place eyeshadow palettes', note: 'Pigmented shades that show up on deep skin' },
+      { name: 'Fenty Beauty Pro Filt\'r Foundation', note: 'A wide shade range, including deep shades' },
       { name: 'Pat McGrath MatteTrance Lipstick', note: 'Deep shades for melanin-rich lips' },
       { name: 'Make Up For Ever Ultra HD Foundation', note: 'Flash photography tested' },
     ],
@@ -322,7 +321,7 @@ export const EAST_ASIAN_BRIDAL = {
         'Hair: elegant updo or soft waves',
         'VERY different from Western bridal — subtlety is the goal',
       ],
-      trend: 'Korean brides are specifically rejecting heavy Western bridal glam in favour of their own "no makeup" fresh aesthetic — a cultural statement about Korean beauty identity',
+      trend: 'Many Korean bridal looks favour a fresh, light "no makeup" finish over heavy glam',
     },
     japanese: {
       name: 'Japanese Shinto Wedding',
@@ -419,8 +418,3 @@ export function getBridalTraditions(communityId) {
   return guides[communityId] || null;
 }
 
-export const BRIDAL_GUIDE_STATS = {
-  communitiesWithBridalGuide: 5,
-  bridalTimelineSteps: Object.keys(BRIDAL_FUNDAMENTALS.timeline).length,
-  touchUpKitItems: BRIDAL_TOUCH_UP_KIT.essentials.length,
-};

@@ -118,6 +118,8 @@ import * as nightBeautyGuide from '../night_beauty_guide.js';
 import * as pregnancyBeautyEthnicGuide from '../pregnancy_beauty_ethnic_guide.js';
 import * as pregnancyBeautyGuide from '../pregnancy_beauty_guide.js';
 import * as postpartumBeautyEthnicGuide from '../postpartum_beauty_ethnic_guide.js';
+import * as bridalBeautyEthnicGuide from '../bridal_beauty_ethnic_guide.js';
+import * as bridalBeautyGuide from '../bridal_beauty_guide.js';
 
 export const SHELVES = [
   { id: 'rituals', title: 'Rituals & Heritage', blurb: 'Haldi, hammam, shea, mehndi, bathhouse and festival traditions, with the steps to do them at home.' },
@@ -133,6 +135,7 @@ export const SHELVES = [
   { id: 'smile', title: 'Smile & Oral Care', blurb: 'Chewing sticks, oil pulling, tongue cleaning, salt and tea rinses, charcoal and what it can and cannot do, lip care, and the oral care rituals and smile traditions behind them.' },
   { id: 'night', title: 'Sleep & Night Routines', blurb: 'What happens to skin overnight, the evening routine in order, slugging, sleeping masks, silk and satin, bonnets, wraps and pineapples, sleep position, wind-down rituals and night traditions.' },
   { id: 'bump', title: 'Pregnancy & Postpartum', blurb: 'What is safe at each stage of pregnancy and while breastfeeding, melasma, breakouts, stretch marks, pregnancy hair and postpartum shedding, and pregnancy and postpartum traditions.' },
+  { id: 'bridal', title: 'Bridal Beauty', blurb: 'A countdown from twelve months to the wedding day, skincare for your skin type, wedding hair for natural and extended styles, touch-up kits, choosing a makeup artist, and bridal traditions and scents.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -252,4 +255,6 @@ export const GUIDES = [
   ['pregnancy_beauty_ethnic_guide', 'bump', 'Pregnancy Beauty: Trimesters, Safe Ingredients and Traditions', pregnancyBeautyEthnicGuide],
   ['pregnancy_beauty_guide', 'bump', 'Pregnancy Skin, Melasma, Hair and Ingredient Safety', pregnancyBeautyGuide],
   ['postpartum_beauty_ethnic_guide', 'bump', 'Postpartum Recovery: Shedding, Skin and Traditions', postpartumBeautyEthnicGuide],
+  ['bridal_beauty_ethnic_guide', 'bridal', 'Bridal Prep: Timelines, Skin, Hair, Kits and Scent', bridalBeautyEthnicGuide],
+  ['bridal_beauty_guide', 'bridal', 'The Bridal Year and Wedding Traditions', bridalBeautyGuide],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

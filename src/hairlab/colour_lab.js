@@ -275,7 +275,7 @@ export function buildColourPlan(input = {}) {
     colourType: typeInfo ? { id: colourType, ...typeInfo } : null,
     steps,
     warnings: warningsFor({ history, curlClass, porosity, lift, family: fam.family }),
-    withoutBleach: lift > 0 ? COLOUR_OPTIONS_DARK_HAIR.without_bleaching.options.map(o => ({ technique: o.technique, result: o.result })) : [],
+    withoutBleach: lift > 0 ? COLOUR_OPTIONS_DARK_HAIR.without_bleaching.options.map(o => ({ technique: o.technique, result: o.result ?? null, description: o.description ?? null })) : [],
     care: {
       texture: { label: texture.label, description: HAIR_TEXTURES[texture.id].description, tips: HAIR_TEXTURES[texture.id].care_tips ?? [] },
       routineTitle: routine?.title ?? null,

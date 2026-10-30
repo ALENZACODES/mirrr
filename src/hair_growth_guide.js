@@ -18,13 +18,13 @@ export const HAIR_GROWTH_SCIENCE = {
       name: 'Catagen (Transition Phase)',
       duration: '10-20 days',
       what_happens: 'The follicle shrinks and detaches from the dermal papilla (blood supply). Hair growth stops.',
-      percentage: 'Only 1-3% of hairs are in this phase at any time',
+      
     },
     telogen: {
       name: 'Telogen (Resting Phase)',
       duration: '3 months',
       what_happens: 'The hair rests, no growth. The old hair is still in the follicle but loosely attached.',
-      percentage: '10-15% of hairs in this phase normally',
+      
       shed: 'At the end of telogen, the hair sheds and a new anagen hair replaces it. Normal shedding is 50-100 hairs per day.',
     },
     exogen: {
@@ -38,8 +38,8 @@ export const HAIR_GROWTH_SCIENCE = {
     scalp_hair: 'Scalp hair grows approximately 0.5 inches (1.27cm) per MONTH, or 6 inches (15cm) per year on average',
     variation: 'Growth rate varies by: genetics, nutritional status, age, hormonal status, health',
     ethnic_variation: {
-      asian_hair: 'Studies show Asian hair generally grows the fastest (approximately 1.3cm/month)',
-      african_hair: 'Type 4 (coily) hair grows at a similar rate to other types but RETAINS less length due to shrinkage (up to 75%) and breakage',
+      
+      
       european_hair: 'Average growth rate',
       note: 'Differences in RETENTION rather than growth rate explain apparent differences in length across ethnic groups',
     },
@@ -75,7 +75,7 @@ export const SCALP_HEALTH = {
     seborrheic_dermatitis: {
       what: 'Dandruff\'s more severe cousin — flaky, oily, sometimes itchy scalp with yellowish scales',
       cause: 'Overgrowth of Malassezia yeast (normal scalp resident) + inflammatory response',
-      common_in: 'All ethnicities but may be more common in Black individuals (studies show higher rates)',
+      
       treatment: [
         'Ketoconazole shampoo (Nizoral) — antifungal, very effective',
         'Selenium sulfide shampoo (Head & Shoulders Itchy Scalp)',
@@ -91,17 +91,17 @@ export const SCALP_HEALTH = {
     },
     psoriasis: {
       what: 'Autoimmune condition causing thick, red, silvery-scaled patches on scalp (and elsewhere)',
-      common_in: 'All ethnicities, but scalp psoriasis presentation may differ on dark skin — may appear more violet or dark-toned rather than red-pink',
+      
       treatment: 'Requires dermatologist — coal tar, salicylic acid, corticosteroid treatments, biologic medications for severe cases',
     },
     alopecia_areata: {
       what: 'Autoimmune condition causing patchy hair loss — round patches of complete baldness',
-      common_in: 'ALL ethnicities — it is one of the most common autoimmune conditions globally',
+      
       treatment: 'Dermatologist — steroid injections, topical immunotherapy, JAK inhibitors (newer biologics showing promising results)',
     },
     traction_alopecia: {
       what: 'Hair loss caused by CHRONIC TENSION on the hair follicle — from tight hairstyles. The follicles are literally pulled out over time.',
-      common_in: 'Extremely common in Black women, South Asian women, and anyone who wears tight ponytails, braids, extensions, or relaxed hair styles regularly. Also in Sikh men who wear very tight turbans.',
+      
       signs: [
         'Hair loss at the hairline (temples, edges, front)',
         'Breakage at the hairline',
@@ -145,7 +145,7 @@ export const SCALP_HEALTH = {
       ],
       dermaroller_scalp: {
         what: 'A rolling device with tiny needles (0.25-0.5mm for home use) used on the scalp — creates micro-stimulation that may support hair growth',
-        evidence: 'Growing evidence base — studies show increase in hair density when used consistently. Most effective for androgenic alopecia and alopecia areata.',
+        
         how_to_use: 'Roll over each scalp section several passes. Use 1-2x per week. Follow with growth serum (minoxidil or peptide-based).',
         important: 'Do not use if scalp is irritated, inflamed, or if you have open wounds. Keep the device clean (alcohol-clean between uses).',
       },
@@ -153,9 +153,9 @@ export const SCALP_HEALTH = {
     scalp_treatments: {
       scalp_serums: [
         { ingredient: 'Minoxidil (2% or 5%)', type: 'Only FDA-approved topical for hair growth. Proven to extend anagen phase and improve follicle size. Available OTC.', how: 'Apply to dry scalp 2x daily. Takes 4-6 months to see results. Must be used indefinitely — hair loss returns if stopped.' },
-        { ingredient: 'Caffeine', type: 'Shows promise in studies — blocks DHT pathway locally, stimulates follicles', products: 'Alpecin caffeine shampoo' },
-        { ingredient: 'Rosemary oil', type: 'A randomised controlled trial showed 2% rosemary oil as effective as 2% minoxidil for hair growth over 6 months. Zero side effects.', how: 'Mix several drops in carrier oil (jojoba), massage into scalp, leave overnight or 30+ minutes before washing.' },
-        { ingredient: 'Peppermint oil', type: 'Some evidence for hair growth stimulation — increases IGF-1 (growth factor) in follicles', how: 'Dilute heavily (a few drops in carrier oil) — peppermint is VERY concentrated and can burn undiluted.' },
+        { ingredient: 'Caffeine', type: 'In lab tests on follicles, caffeine countered the effect of testosterone; evidence in people is limited', products: 'Alpecin caffeine shampoo' },
+        { ingredient: 'Rosemary oil',  how: 'Mix several drops in carrier oil (jojoba), massage into scalp, leave overnight or 30+ minutes before washing.' },
+        { ingredient: 'Peppermint oil', type: 'A study in mice found growth effects; evidence in people is limited', how: 'Dilute heavily (a few drops in carrier oil) — peppermint is VERY concentrated and can burn undiluted.' },
       ],
     },
   },
@@ -167,7 +167,7 @@ export const ETHNIC_HAIR_GROWTH_TRADITIONS = {
 
   ayurvedic_hair_growth: {
     community: 'South Asian',
-    overview: 'Ayurvedic hair care is a thousands-year-old system for hair health that has produced some of the most globally-influential hair care practices.',
+    overview: 'Ayurvedic hair care is a centuries-old system whose oiling and herbal rinses are now used far beyond South Asia.',
 
     oiling: {
       what: 'Applying warm oil to the scalp and hair — massaged in and left for an extended period (champi)',
@@ -191,7 +191,7 @@ export const ETHNIC_HAIR_GROWTH_TRADITIONS = {
     },
 
     ayurvedic_herbs: {
-      bhringraj: { benefit: 'Hair growth, reducing hair fall. Contains follicle-stimulating compounds. Used as oil, powder in hair masks, or taken as supplement.', evidence: 'Animal studies and clinical evidence show efficacy. One small trial showed similar results to minoxidil.' },
+      bhringraj: { benefit: 'Traditionally used against hair fall; evidence in people is limited. Used as oil or powder in hair masks.' },
       amla: { benefit: 'Rich in vitamin C and antioxidants. Supports scalp health, conditions hair, may slow greying (traditional use).', forms: 'Oil, powder in hair masks, fresh fruit, supplement' },
       brahmi: { benefit: 'Traditional for hair growth and thickness. Adaptogenic — reduces stress which is a hair loss trigger.', forms: 'Oil, powder, supplement (bacopa extract)' },
       neem: { benefit: 'Antifungal and antibacterial — excellent for scalp conditions including dandruff and folliculitis. Anti-inflammatory.', forms: 'Oil, powder (added to hair masks), commercial shampoos' },
@@ -220,7 +220,7 @@ export const ETHNIC_HAIR_GROWTH_TRADITIONS = {
       rice_water_rinse: {
         what: 'Fermented rice water used as a hair rinse — an ancient Chinese and Japanese practice that has been scientifically studied',
         origin: 'Yao women of Huangluo, China, were recorded in the Guinness Book of World Records for the longest hair — they attribute it to rice water rinses',
-        science: 'Rice water contains inositol, amino acids, vitamins B, C, E, and minerals. Research shows inositol in particular can reduce surface friction and improve hair elasticity.',
+        
         how_to: [
           'Rinse uncooked rice until water runs clear',
           'Fill bowl with fresh water, add rice, and soak 15-30 minutes',
@@ -241,7 +241,7 @@ export const ETHNIC_HAIR_GROWTH_TRADITIONS = {
     practices: {
       black_seed_oil: {
         what: 'Nigella sativa (black seed, Habatus sauda, كلنجير) oil — one of the most-studied natural remedies. Called "cure for everything except death" in Hadith.',
-        science: 'Contains thymoquinone — shown in clinical trials to reduce hair loss and improve hair density. One clinical trial showed significant improvement in hair loss with topical application.',
+        
         how_to: 'Apply directly to scalp, massage in, leave 30+ minutes or overnight, wash out.',
       },
       argan_oil: 'Moroccan argan oil on hair — rich in vitamin E and oleic acid, deeply conditioning, reduces breakage.',
@@ -258,7 +258,7 @@ export const HAIR_SUPPLEMENTS = {
   evidence_based: {
     iron: {
       when: 'When you are IRON DEFICIENT. Iron deficiency is one of the most common and most overlooked causes of hair loss — especially in women of reproductive age, vegetarians, and those with heavy periods.',
-      test: 'Get ferritin levels tested (not just haemoglobin — ferritin reflects iron stores). Optimal ferritin for hair health: ideally above 40 ng/mL, possibly higher (some researchers suggest 70+).',
+      
       who_most_at_risk: 'Vegetarian/vegan South Asian, West African women. Women with heavy periods across all communities.',
       note: 'Iron supplementation will ONLY help if you are actually deficient. Do not supplement iron without testing — excess iron is harmful.',
     },
@@ -270,12 +270,12 @@ export const HAIR_SUPPLEMENTS = {
     protein: {
       what: 'Hair is made of keratin — a protein. Without adequate dietary protein, hair growth suffers.',
       recommendation: '0.8g-1.2g protein per kg of body weight daily',
-      sources: 'Eggs (complete amino acid profile), lentils, chickpeas (South Asian staple), fish, chicken, dairy',
+      
       note: 'Vegetarians and vegans need to be intentional about protein variety to get all essential amino acids.',
     },
     zinc: {
       when: 'When zinc deficient. Zinc is involved in hair tissue growth and repair.',
-      risk_group: 'Those eating a low-meat diet (zinc is most bioavailable from animal sources). Vegetarians need 50% more zinc intake than omnivores.',
+      
     },
   },
 
@@ -292,7 +292,7 @@ export const HAIR_SUPPLEMENTS = {
     },
     saw_palmetto: {
       note: 'A DHT blocker (same mechanism as finasteride, the prescription hair loss drug). May slow androgen-related hair loss (androgenic alopecia).',
-      evidence: 'Some clinical evidence. Most studied in men. Women should be cautious during pregnancy.',
+      
     },
   },
 
@@ -342,8 +342,3 @@ export function getRetentionGuide() {
   return HAIR_GROWTH_SCIENCE.retention_vs_growth;
 }
 
-export const HAIR_GROWTH_STATS = {
-  scalpConditionsCovered: Object.keys(SCALP_HEALTH.scalp_conditions).length,
-  communitiesWithTraditions: Object.keys(ETHNIC_HAIR_GROWTH_TRADITIONS).length,
-  evidenceBasedSupplements: Object.keys(HAIR_SUPPLEMENTS.evidence_based).length,
-};

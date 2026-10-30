@@ -30,7 +30,7 @@ export const SCALP_BIOLOGY = {
     sebaceousGlands: {
       function: 'Produce sebum (mixture of fatty acids, wax esters, squalene, triglycerides, cholesterol)',
       scalp: 'Scalp sebaceous glands are largest and most active in body; explains scalp oiliness',
-      ethinicity: 'Sebum production varies: studies suggest East Asian scalps produce similar sebum to European; exact ethnic variation under-studied',
+      
       function2: 'Sebum coats hair shaft → lubricates → prevents dryness; BUT excess → oily roots + malassezia overgrowth'
     },
 
@@ -55,7 +55,7 @@ export const SCALP_BIOLOGY = {
   commonConditions: {
     dandruff: {
       clinical: 'Pityriasis capitis: mild form; white-gray flakes; scalp may be mildly itchy',
-      prevalence: '50% of adult population affected at some point',
+      
       cause: 'Malassezia + individual scalp reactivity + sebum composition + stress + climate',
       treatment: ['Zinc pyrithione shampoo (Head & Shoulders): reduces Malassezia', 'Selenium sulfide 1% (Selsun Blue): antifungal', 'Ketoconazole 1-2% (Nizoral): prescription-strength antifungal', 'Coal tar: reduces cell turnover, antifungal; messier option'],
       use: 'Medicated shampoo: apply to scalp, leave 3-5 minutes, then rinse; 2-3x weekly until controlled, then 1x weekly maintenance'
@@ -63,7 +63,7 @@ export const SCALP_BIOLOGY = {
 
     seborrheicDermatitis: {
       clinical: 'Sebderm: more severe than dandruff; yellowish, greasy flakes; red inflamed scalp; may extend to face (eyebrows, nose creases, ears)',
-      prevalence: '3-5% of population; more common in men; peak adolescence and 30-60 years',
+      
       cause: 'Malassezia + immune response + sebum + genetic predisposition + hormones + neurological association (higher in Parkinson\'s, HIV)',
       treatment: ['Ketoconazole 2% shampoo (Rx or 1% OTC)', 'Ciclopirox shampoo (Rx)', 'Selenium sulfide 2.5% (Rx)', 'Topical corticosteroid foam for inflammation', 'Zinc pyrithione for maintenance'],
       type4Challenge: 'Type 4 hair and sebderm: washing frequency conflict — sebderm needs frequent medicated wash; Type 4 hair dislikes frequent washing; solution: diluted medicated shampoo concentrated on scalp, hydrating conditioner on lengths'
@@ -71,7 +71,7 @@ export const SCALP_BIOLOGY = {
 
     tractionAlopecia: {
       definition: 'Hair loss caused by persistent mechanical tension on hair follicles; cumulative damage leads to permanent hair loss',
-      highRisk: 'Black women: 17% affected; highest risk from tight braids, weaves, relaxer + tight style, repeated heat straightening',
+      highRisk: 'Highest risk from tight braids, weaves, relaxer + tight style, repeated heat straightening',
       mechanism: 'Prolonged tension → follicle inflammation → follicle miniaturization → permanent loss at edges, nape, temples',
       earlySigns: 'Tenderness at hairline; small bumps or pimples at hairline after styling; fine baby hairs disappearing at edges',
       prevention: ['Never braid or weave while hair is wet (wet hair is most fragile)', 'Request loose tension from braider — should not feel tight after installation', 'Take protective style breaks between installs (2-4 weeks minimum)', 'Oil edges daily; massage to maintain circulation'],
@@ -80,15 +80,14 @@ export const SCALP_BIOLOGY = {
 
     alopeciaAreata: {
       definition: 'Autoimmune condition: immune system attacks hair follicles; causes patchy circular hair loss',
-      prevalence: '2% lifetime risk regardless of ethnicity',
-      types: ['Alopecia areata: patchy', 'Alopecia totalis: complete scalp loss', 'Alopecia universalis: complete body hair loss'],
-      treatment: 'Dermatologist-supervised: topical corticosteroids; minoxidil; JAK inhibitors (new approval: baricitinib 2022); intralesional steroid injections'
+      
+      types: ['Alopecia areata: patchy', 'Alopecia totalis: complete scalp loss', 'Alopecia universalis: complete body hair loss']
     },
 
     CCCA: {
       name: 'Central Centrifugal Cicatricial Alopecia',
       definition: 'Scarring hair loss beginning at crown and expanding centrifugally; leads to permanent follicle destruction',
-      ethnicity: 'PREDOMINANTLY Black women; up to 5.6% prevalence; most underdiagnosed hair disorder in Black women',
+      
       causes: 'Multifactorial: genetics + chemical relaxers + tight hairstyles + inflammation + Demodex mites suggested in research',
       symptoms: 'Scalp tenderness, burning, tingling at crown; hair thinning expanding from crown outward',
       treatment: 'EARLY INTERVENTION CRITICAL: scarring is permanent; topical steroids; oral doxycycline; minoxidil; avoid chemical and heat'
@@ -112,7 +111,7 @@ export const SCALP_CARE_PROTOCOLS = {
   },
 
   scalpMassage: {
-    benefits: 'Increases blood circulation to follicles; 2019 study: 4 minutes daily scalp massage over 24 weeks increased hair thickness in participants',
+    
     technique: 'Fingertips (not nails) in circular motion; gentle pressure; move through scalp systematically; 4-5 minutes',
     tools: 'Silicone scalp massager: increases circulation; helps distribute product; safe for all hair types',
     oil: 'Scalp massage with oil: traditional across almost all ethnic beauty traditions; castor oil most studied for hair growth (ricinoleic acid receptor activity)'
@@ -120,7 +119,7 @@ export const SCALP_CARE_PROTOCOLS = {
 
   oilRituals: {
     castor: {
-      evidence: 'Ricinoleic acid in castor oil: prostaglandin EP3 receptor activity = vasodilation = increased follicle blood flow',
+      
       use: 'Apply to scalp; massage; leave 30 min to overnight; heavy texture — mix 50/50 with lighter oil',
       type4: 'Jamaican Black Castor Oil (JBCO): produced with ash; higher pH; opens cuticle for penetration; popular in Black American natural hair community'
     },
@@ -129,7 +128,7 @@ export const SCALP_CARE_PROTOCOLS = {
       use: 'Brahmi oil massage 1-2x weekly; South Asian traditional practice'
     },
     rosemary: {
-      evidence: '2023 Dermatology study: rosemary oil 1% = minoxidil 2% for hair growth; promoted via TikTok; evidence base growing',
+      
       use: '5-10 drops rosemary essential oil in carrier; scalp massage; leave on or wash out',
       mechanism: 'Ursolic acid: promotes epidermal growth factor (EGF) on follicles; anti-inflammatory; anti-DHT'
     }
@@ -160,7 +159,7 @@ export const ETHNIC_SCALP_HEALTH_GUIDES = {
     },
 
     traditions: {
-      shea: 'Shea butter massaged into scalp: traditional AND scientifically valid; anti-inflammatory, anti-fungal properties',
+      shea: 'Shea butter massaged into scalp: a traditional moisturiser; it contains anti-inflammatory compounds, but heavy butters can worsen dandruff for some',
       moringa: 'Moringa oil on scalp: high oleic and behenic acids; nourishing; traditional Nigerian use',
       blackSoap: 'African black soap as scalp cleanser: saponins and ash create high-pH cleanser that cuts through buildup effectively'
     },
@@ -180,8 +179,7 @@ export const ETHNIC_SCALP_HEALTH_GUIDES = {
 
     scalp: {
       champi: 'Champi: traditional South Asian scalp oil massage; warm coconut, sesame, or bhringraj oil; grandmother to granddaughter tradition',
-      amla: 'Amla (Indian gooseberry): rich in vitamin C; traditionally believed to strengthen hair follicles; applied as oil or paste',
-      PCOS: 'PCOS affects 6-12% of women; South Asian prevalence 52% higher; androgenic hair loss (DHT pattern) common comorbidity'
+      amla: 'Amla (Indian gooseberry): rich in vitamin C; traditionally believed to strengthen hair follicles; applied as oil or paste'
     },
 
     traditions: {
@@ -189,16 +187,7 @@ export const ETHNIC_SCALP_HEALTH_GUIDES = {
       bhringraj: 'Bhringraj (Eclipta alba) oil: Ayurvedic "king of herbs for hair"; studied for hair regrowth (equal to minoxidil in some studies); reduces Malassezia',
       brahmi: 'Brahmi oil: DHT inhibiting properties; traditional Ayurvedic scalp treatment for thinning hair',
       neem: 'Neem oil: antifungal; anti-dandruff; anti-bacterial scalp treatment'
-    },
-
-    advice: `South Asian scalp care is among the world's most sophisticated — champi has been practiced
-    for centuries with a range of therapeutic oils. Bhringraj oil is the most evidence-backed
-    Ayurvedic hair growth treatment: ricinoleic and rosmarinic acid content; direct follicle
-    stimulation documented. For PCOS-related hair loss: this requires medical management
-    (anti-androgens, insulin sensitizers) alongside topical minoxidil and scalp care.
-    The champi ritual itself — 4-5 minutes of scalp massage — increases blood flow to follicles
-    regardless of the oil used; the ritual's mechanisms are validated even when specific oil
-    claims are less certain.`
+    }
   },
 
   caribbean: {
@@ -356,11 +345,11 @@ export const ETHNIC_SCALP_HEALTH_GUIDES = {
 
   'black-american': {
     communityName: 'Black American',
-    primaryConcerns: ['CCCA (highest prevalence)', 'Traction alopecia from tight styles', 'LOC method scalp health', 'JBCO (Jamaican Black Castor Oil) tradition'],
+    primaryConcerns: [ 'Traction alopecia from tight styles', 'LOC method scalp health', 'JBCO (Jamaican Black Castor Oil) tradition'],
 
     scalp: {
-      CCCA: 'CCCA: 5.6% prevalence in Black American women; most underdiagnosed hair disorder; CHECK CROWN REGULARLY; early detection critical',
-      TA: 'Traction alopecia: 17% of Black women affected; edges and temples at risk; style technique and tension are modifiable risk factors',
+      
+      
       JBCO: 'Jamaican Black Castor Oil (JBCO): wood ash processing raises pH; may enhance penetration; prolific in Black American natural hair community'
     },
 
@@ -368,18 +357,7 @@ export const ETHNIC_SCALP_HEALTH_GUIDES = {
       JBCO: 'JBCO scalp massage: weekly application + scalp massage; ricinoleic acid → vasodilation → follicle circulation',
       grease: '"Greasing the scalp" with Vaseline/petroleum jelly: traditional Black American practice; occlusive; blocks TEWL; controversial but effective moisturizer',
       sealing: 'Sealing scalp after wash: moisture (water/leave-in) → oil → seal; LOC method extended to scalp surface'
-    },
-
-    advice: `Black American women carry the highest burden of scalp-related hair loss conditions — CCCA
-    and traction alopecia disproportionately affect this community, and both are under-diagnosed
-    and under-treated due to healthcare disparities. The most important scalp health action:
-    monthly crown check (feel for tenderness, examine for widening part or thinning from crown)
-    and annual dermatologist appointment for women who have had relaxers or tight styles.
-    JBCO (Jamaican Black Castor Oil) is not magic — its effectiveness comes from ricinoleic acid
-    creating vasodilation at the scalp, which any scalp massage + castor oil achieves. The JBCO
-    specific benefit may come from the ash-alkaline processing — some claim improved penetration.
-    Rosemary oil (equal to minoxidil 2% in 2023 study) is now a first-line recommendation
-    before pharmaceutical interventions. If edges are receding: act NOW, not after a few more months.`
+    }
   }
 };
 
@@ -406,21 +384,3 @@ export function getScalpHealthGuide(communityId) {
 // STATS
 // ============================================================
 
-export const SCALP_HEALTH_STATS = {
-  moduleId: 'scalp_health_ethnic_guide',
-  version: '1.0.0',
-  communities: 9,
-  keyFacts: [
-    'CCCA (Central Centrifugal Cicatricial Alopecia) affects up to 5.6% of Black women and is the most underdiagnosed hair disorder in this population',
-    'Traction alopecia affects 17% of Black women — caused by tight braids, weaves, and repeated mechanical tension on follicles',
-    'Malassezia yeast causes dandruff in 50% of the adult population — it metabolizes sebum into irritating oleic acid',
-    'Scalp pH should be 4.5-5.5 (acidic) — alkaline products (baking soda, some sulfate shampoos) disrupt the scalp microbiome',
-    'Rosemary oil (1%) showed equivalent hair growth to minoxidil (2%) in a 2023 dermatology study — major evidence-based traditional remedy validation',
-    'Jamaican Black Castor Oil (JBCO) ricinoleic acid activates prostaglandin receptors that cause vasodilation — validated mechanism for the traditional hair growth belief',
-    'Bhringraj (Eclipta alba) oil studied for hair regrowth equal to minoxidil in some Ayurvedic research — South Asian tradition supported',
-    '4 minutes of daily scalp massage over 24 weeks increased hair thickness in a 2019 Japanese study',
-    'Ginseng ginsenosides promote hair follicle stem cell proliferation — East Asian scalp tradition validated',
-    'CCCA early detection is critical — scalp burning/tenderness at crown in Black women requires immediate dermatologist referral'
-  ],
-  lastUpdated: '2026-10-29'
-};

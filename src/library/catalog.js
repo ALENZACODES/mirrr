@@ -45,11 +45,21 @@ import * as hairCareRoutinesByType from '../hair_care_routines_by_type.js';
 import * as hairDamageGuide from '../hair_damage_guide.js';
 import * as protectiveStylesExtended from '../protective_styles_extended.js';
 import * as wigGuideEthnic from '../wig_guide_ethnic.js';
+import * as hairGrowthEthnicGuide from '../hair_growth_ethnic_guide.js';
+import * as hairGrowthGuide from '../hair_growth_guide.js';
+import * as hairGrowthGuideEthnic from '../hair_growth_guide_ethnic.js';
+import * as hairGrowthScience from '../hair_growth_science.js';
+import * as scalpCareGuide from '../scalp_care_guide.js';
+import * as scalpConditionsGuide from '../scalp_conditions_guide.js';
+import * as scalpHealthEthnicGuide from '../scalp_health_ethnic_guide.js';
+import * as hairCareScienceExtended from '../hair_care_science_extended.js';
+import * as hairExtensionsGuide from '../hair_extensions_guide.js';
 
 export const SHELVES = [
   { id: 'rituals', title: 'Rituals & Heritage', blurb: 'Haldi, hammam, shea, mehndi, bathhouse and festival traditions, with the steps to do them at home.' },
   { id: 'eyes', title: 'Eyes, Brows & Kohl', blurb: 'Kohl and kajal traditions, brow threading and architecture, lashes, eye care, and makeup with glasses.' },
   { id: 'hair', title: 'Hair, Colour & Texture', blurb: 'Colour and lightening for dark and coily hair, henna and indigo, porosity, curl types, protective styles and wigs.' },
+  { id: 'growth', title: 'Hair Growth & Scalp', blurb: 'How hair grows, why length breaks off, edges and traction, heat, scalp conditions and extensions.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -96,4 +106,13 @@ export const GUIDES = [
   ['hair_damage_guide', 'hair', 'Hair Damage and Bond Repair', hairDamageGuide],
   ['protective_styles_extended', 'hair', 'Protective Styles: Braids, Twists and Locs', protectiveStylesExtended],
   ['wig_guide_ethnic', 'hair', 'Wigs: Construction, Install and Care', wigGuideEthnic],
+  ['hair_growth_guide', 'growth', 'Growth, Retention and Edges', hairGrowthGuide],
+  ['hair_growth_science', 'growth', 'The Hair Growth Cycle', hairGrowthScience],
+  ['hair_growth_ethnic_guide', 'growth', 'Hair Growth by Community', hairGrowthEthnicGuide],
+  ['hair_growth_guide_ethnic', 'growth', 'Growth Traditions and Ingredients', hairGrowthGuideEthnic],
+  ['hair_care_science_extended', 'growth', 'Heat, Protein and Moisture: the Science', hairCareScienceExtended],
+  ['scalp_care_guide', 'growth', 'Scalp Care', scalpCareGuide],
+  ['scalp_conditions_guide', 'growth', 'Scalp Conditions: Dandruff to Tinea', scalpConditionsGuide],
+  ['scalp_health_ethnic_guide', 'growth', 'Scalp Health by Community', scalpHealthEthnicGuide],
+  ['hair_extensions_guide', 'growth', 'Extensions and Added Hair', hairExtensionsGuide],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

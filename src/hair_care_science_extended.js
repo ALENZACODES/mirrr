@@ -23,7 +23,7 @@ export const HAIR_BIOLOGY = {
   melanin: {
     eumelanin: 'Brown-to-black pigment. More eumelanin = darker hair. People with high eumelanin: Black, East Asian, South Asian, Middle Eastern, Mediterranean.',
     phaeomelanin: 'Yellow-to-red pigment. More phaeomelanin = red or strawberry blonde hair.',
-    grey_hair: 'Melanocytes (pigment-producing cells) in the follicle stop producing melanin. The age of onset is largely genetic. Stress-accelerated greying is debated — some evidence suggests acute stress may trigger premature greying in some individuals via oxidative damage to melanocyte stem cells.',
+    
   },
 };
 
@@ -38,7 +38,7 @@ export const HAIR_POROSITY = {
       characteristics: ['Products sit on top of hair rather than absorbing', 'Hair takes a long time to get fully wet', 'Hair takes a long time to dry', 'Product buildup is common', 'Water beads on the surface'],
       what_works: ['Heat opens the cuticle — use a steamer, warm water, or heated deep conditioning cap', 'Lightweight products (water-based, liquid moisturisers)', 'Humectants work well when environmental humidity is adequate', 'Clarifying shampoo regularly to clear buildup', 'Protein treatments are usually NOT needed — the structure is intact'],
       what_to_avoid: ['Heavy butters and oils that sit on top', 'Overly thick creams', 'Protein-heavy products — low porosity hair is usually protein-sensitive'],
-      common_in: 'Often associated with healthy, chemically unprocessed hair. Common in Asian hair textures and healthy Afro-textured hair.',
+      
     },
     medium: {
       name: 'Medium / Normal Porosity',
@@ -105,7 +105,7 @@ export const PROTEIN_SCIENCE = {
       protein: 'Hair feels hard, straw-like, snaps when stretched with almost no elasticity. Finish is dull. Breaks easily.',
       moisture: 'Hair feels mushy, soft, limp, spongy when wet. Stretches excessively when pulled and doesn\'t spring back. High hygral fatigue risk with naturally porous hair.',
     },
-    the_strand_test: 'Take a single strand from your head. Wet it. Gently stretch it. Healthy hair stretches 30-50% before breaking then returns to shape. Snaps immediately = needs moisture. Stretches too far and doesn\'t return = needs protein.',
+    the_strand_test: 'Take a single strand from your head. Wet it. Gently stretch it. Healthy hair stretches noticeably before breaking, then returns to shape. Snaps immediately = needs moisture. Stretches too far and doesn\'t return = needs protein.',
   },
   how_to_use: {
     frequency: 'Most hair needs a protein treatment every 4-6 weeks, or after any chemical process. Low porosity hair: 1-2x per year or less. High porosity / damaged hair: monthly.',
@@ -176,7 +176,7 @@ export const ETHNIC_HAIR_SCIENCE = {
     porosity_tendency: 'Afro-textured hair has naturally occurring "windows" (gaps) in the cuticle where the curls bend most sharply — creating naturally higher porosity at these points. This is NOT damage — it is structural.',
     sebum_distribution: 'Sebum from the scalp travels down the hair shaft with difficulty on tightly coiled hair — the curls impede the downward flow. This is why 4C hair can feel driest at the ends despite having a healthy scalp. Finger detangling and techniques that allow sebum to travel down the shaft are important.',
     breakage_risk: 'The "stress points" at the tightest bends in 4C hair are where breakage most commonly occurs. Tension from styling, heat, or rough handling concentrated at these points.',
-    growth_retention: 'Shrinkage (hair coiling up from its full length when dry) can be 50-75% of actual length in type 4 hair. Protective styles retain length by reducing manipulation and protecting ends.',
+    
   },
   asian_hair: {
     community: 'East Asian',
@@ -223,9 +223,3 @@ export function getEthnicHairScience(communityId) {
   return ETHNIC_HAIR_SCIENCE[key] || Object.values(ETHNIC_HAIR_SCIENCE);
 }
 
-export const HAIR_CARE_SCIENCE_STATS = {
-  porosityTypes: Object.keys(HAIR_POROSITY.types).length,
-  proteinTypes: Object.keys(PROTEIN_SCIENCE.types).length,
-  bondRepairProducts: Object.keys(BOND_REPAIR_SCIENCE.bond_repair_ingredients).length,
-  ethnicCommunities: Object.keys(ETHNIC_HAIR_SCIENCE).length,
-};

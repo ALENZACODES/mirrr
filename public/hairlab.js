@@ -110,11 +110,11 @@
       <p>${esc(p.start.label)} → ${esc(p.target.label)}${p.stage ? ` (needs hair lightened to <em>${esc(p.stage.underlying.toLowerCase())}</em>, about level ${p.stage.level}: ${esc(p.stage.achievable)})` : ''}</p>
       <p><strong>${esc(t.name)}</strong>${t.why ? ` · ${esc(t.why)}` : ''}</p>
       ${t.fitNote ? `<p class="st-avoid">${esc(t.fitNote)}</p>` : ''}
-      ${p.developer ? `<p><strong>Developer:</strong> ${esc(p.developer.volume)} (${esc(p.developer.lifts)} per application)${p.developer.note ? ` · ${esc(p.developer.note)}` : ''}</p>` : ''}`;
+      ${p.developer ? `<p><strong>Developer:</strong> ${esc(p.developer.volume)}${p.developer.note ? ` · ${esc(p.developer.note)}` : ''}</p>` : ''}`;
     $('hlPlan').innerHTML = `
       <article class="st-card"><h4>Steps</h4><ol>${p.steps.map(li).join('')}</ol></article>
       ${p.warnings.length ? `<article class="st-card hl-warn"><h4>Before you start</h4><ul>${p.warnings.map(w => `<li><strong>${esc(w.why)}:</strong> ${esc(w.text)}</li>`).join('')}</ul></article>` : ''}
-      ${p.withoutBleach.length ? `<article class="st-card"><h4>Without bleach</h4><ul>${p.withoutBleach.map(o => `<li><strong>${esc(o.technique)}:</strong> ${esc(o.result)}</li>`).join('')}</ul></article>` : ''}
+      ${p.withoutBleach.length ? `<article class="st-card"><h4>Without bleach</h4><ul>${p.withoutBleach.map(o => `<li><strong>${esc(o.technique)}:</strong> ${esc(o.result || o.description || '')}</li>`).join('')}</ul></article>` : ''}
       ${p.tryOnWig ? `<article class="st-card"><h4>Try it on a wig first</h4><p>${esc(p.tryOnWig.why)}</p><button type="button" class="btn btn-secondary" data-hl-wig>Open Wig Match</button></article>` : ''}
       <article class="st-card"><h4>Aftercare${p.care.routineTitle ? ` · ${esc(p.care.routineTitle)}` : ''}</h4>
         <p><strong>${esc(p.care.texture.label)}:</strong> ${esc(p.care.texture.description)}</p>

@@ -162,7 +162,7 @@ export const ETHNIC_HAIR_ROUTINES = {
   'west-african': {
     hairTypes: 'Predominantly Type 4 (4A-4C); some 3C especially in people of mixed West African and other heritage; high diversity across the region',
     traditions: 'Shea butter (karité) application has been a West African hair tradition for centuries; palm kernel oil (PKO) used on scalp; threading (African threading) to stretch natural hair before western exposure',
-    modernRoutine: 'Natural hair movement is strong in West African cities (Lagos, Accra, Nairobi); co-washing, LOC method, protective styles, natural oil treatments; Cantu, Shea Moisture, and African Pride are popular brands',
+    modernRoutine: 'Natural hair movement is strong in West African cities (Lagos, Accra, Dakar); co-washing, LOC method, protective styles, natural oil treatments; Cantu, Shea Moisture, and African Pride are popular brands',
     culturalNote: 'Hair has deep cultural meaning in West African communities — braiding patterns historically conveyed social information; natural hair activism is linked to cultural identity affirmation'
   },
   'south-asian': {

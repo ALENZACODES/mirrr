@@ -17,23 +17,23 @@ export const HAIR_GROWTH_CYCLE = {
   anagen: {
     phase: 'Anagen (Growth Phase)',
     duration: '2-7 years (average 3-5 years). The longer the anagen phase, the longer the maximum potential hair length.',
-    what_happens: 'Hair actively grows. Cells in the follicle root divide rapidly, pushing the hair shaft upward. Approx. 85-90% of scalp hairs are in anagen at any time.',
+    
     ethnic_variation: {
       caucasian: 'Anagen typically 3-5 years.',
-      asian: 'Anagen tends to be longer (up to 7 years) — explains why East Asian hair often grows very long naturally.',
+      asian: 'Anagen length varies from person to person, and a longer anagen phase allows longer maximum length.',
       african: 'Anagen phase similar duration but slower growth rate due to helical (coiled) structure of Type 4 hair shaft — growth is technically occurring but hair doesn\'t "appear" to grow as fast because of shrinkage.',
     },
-    growth_rate: 'Hair grows approximately 1.25 cm (half an inch) per month on average. Type 4 hair shrinks to 25-75% of its actual length, giving the impression of slow growth.',
+    
   },
   catagen: {
     phase: 'Catagen (Transition Phase)',
     duration: '2-3 weeks',
-    what_happens: 'Hair growth stops. The follicle shrinks to about 1/6 its normal size. The root detaches from its blood supply (papilla). Approximately 1-3% of hairs in catagen at any time.',
+    
   },
   telogen: {
     phase: 'Telogen (Resting Phase)',
     duration: '3-4 months',
-    what_happens: 'Hair rests. The follicle is dormant. The old hair is "club hair" — held in the follicle loosely but not growing. Approximately 10-15% of hairs in telogen at any time.',
+    
     shedding: 'At the end of telogen, hair sheds when new anagen hair pushes it out, or from mechanical action (brushing, washing).',
   },
   exogen: {
@@ -44,8 +44,8 @@ export const HAIR_GROWTH_CYCLE = {
   telogen_effluvium: {
     condition: 'Telogen Effluvium (TE)',
     definition: 'A form of diffuse hair shedding caused by a significant physical or emotional stressor that pushes a large proportion of hairs simultaneously from anagen into telogen phase. The mass shedding occurs 3-4 months AFTER the triggering event (the telogen phase delay).',
-    triggers: ['Childbirth (postpartum TE affects 40-50% of new mothers)', 'Major surgery', 'Serious illness (including COVID-19)', 'Extreme crash dieting', 'Thyroid dysfunction', 'Iron deficiency anaemia', 'Severe chronic stress', 'Starting or stopping hormonal contraception', 'Rapid significant weight loss'],
-    appearance: 'Diffuse shedding from the entire scalp (not patterned). Very alarming — can lose 30-50% of hair density temporarily.',
+    triggers: [ 'Major surgery', 'Serious illness (including COVID-19)', 'Extreme crash dieting', 'Thyroid dysfunction', 'Iron deficiency anaemia', 'Severe chronic stress', 'Starting or stopping hormonal contraception', 'Rapid significant weight loss'],
+    
     prognosis: 'Almost always completely reversible within 6-12 months once the trigger is resolved. Do not do anything aggressive (aggressive treatments, chemical processing) during TE — the hair is already stressed.',
     ethnic_note: 'Postpartum TE is universal across all ethnicities. South Asian women sometimes experience severe TE postpartum on top of traditional postpartum hair oiling practices — must wait until shedding stabilises before heavy oiling.',
   },
@@ -62,7 +62,7 @@ export const ANDROGENETIC_ALOPECIA = {
     pattern_in_women: 'Women do not typically bald in the same pattern as men. Female AGA (female pattern hair loss — FPHL) typically presents as diffuse thinning at the crown with preserved frontal hairline. Ludwig scale I-III.',
   },
   female_hair_loss: {
-    prevalence: 'FPHL affects approximately 40% of women by age 50.',
+    
     diagnosis: 'Clinical diagnosis. Blood tests to rule out thyroid disease, iron deficiency, hormonal imbalance. Trichoscopy (scalp magnification).',
     causes: {
       FPHL: 'Female pattern hair loss (androgenetic component). Diffuse crown thinning.',
@@ -74,7 +74,7 @@ export const ANDROGENETIC_ALOPECIA = {
     ethnic_note: {
       CCCA: 'Central Centrifugal Cicatricial Alopecia (CCCA) is a scarring alopecia that disproportionately affects Black women (most common form of permanent hair loss in Black American women). Begins at the crown; spreads outward. Causes include chemical processing, heat, and possibly genetic predisposition. Early recognition and cessation of damaging practices essential — scarring is permanent.',
       traction_alopecia: 'Traction alopecia from tight braids, weaves, and extensions is the leading preventable cause of hair loss in Black American, West African, and Caribbean women.',
-      frontal_fibrosing: 'Frontal fibrosing alopecia (FFA) appears to be increasing in prevalence across all ethnic groups; may have a sunscreen ingredient link (oxybenzone — still under investigation).',
+      
     },
   },
   treatments: {
@@ -82,14 +82,14 @@ export const ANDROGENETIC_ALOPECIA = {
       name: 'Minoxidil (Rogaine)',
       mechanism: 'Vasodilator that prolongs anagen phase; increases follicle size. Mechanism not fully understood.',
       forms: 'Topical 2% (for women; also 5% with same efficacy but potentially more systemic side effects); topical 5% (men; increasingly women); oral minoxidil (low dose 0.25-2.5mg for women — emerging as more effective).',
-      efficacy: 'Approximately 60% of users see significant improvement. Works only while used — cessation = shedding returns.',
+      
       side_effects: 'Initial "shedding phase" 1-3 months after starting (telogen hairs pushed out by new anagen); facial hypertrichosis (body hair) with higher doses; scalp irritation.',
     },
     finasteride: {
       name: 'Finasteride (Propecia)',
       mechanism: '5-alpha reductase inhibitor — reduces DHT levels at the scalp.',
       forms: 'Oral 1mg (men); topical finasteride (emerging; lower systemic effect). Not for women of childbearing age (causes birth defects).',
-      efficacy: '80-90% of men stabilise or improve. Significant efficacy.',
+      
     },
     spironolactone: {
       name: 'Spironolactone',
@@ -128,7 +128,7 @@ export const SCALP_HEALTH_GROWTH = {
     key_factors: ['Clean: free of sebum build-up, dead skin, and product residue', 'Balanced microbiome', 'Well-oxygenated: good blood circulation', 'Appropriately moisturised (not too dry, not too oily)', 'Low inflammation'],
   },
   scalp_massage: {
-    mechanism: 'Stimulates blood flow (vasodilation) to follicles; delivers more nutrients and oxygen to follicle cells. A 2016 study in Japan (Koyama) showed 4 min daily standardised scalp massage increased hair thickness after 24 weeks.',
+    
     how_to: 'Use pads of fingers (not nails). Apply moderate pressure in small circular motions. Move systematically over entire scalp. 5-10 minutes daily. Can be done dry or with scalp serum/oil.',
     tools: 'Scalp massager silicone brush — provides consistent pressure; easier on wrists; distributes product.',
     oil_massage: 'Warm oil scalp massage improves blood circulation AND moisturises scalp. However: oils cannot penetrate the follicle to directly stimulate growth — the mechanism is circulation and relaxation.',
@@ -161,48 +161,48 @@ export const GROWTH_INGREDIENTS = {
   evidence_based: {
     minoxidil: {
       ingredient: 'Minoxidil',
-      evidence: 'Highest evidence. FDA-approved. The gold standard topical for hair loss.',
+      
       note: 'A drug, not a supplement. Prescription required for oral form; OTC topical available.',
     },
     ketoconazole: {
       ingredient: 'Ketoconazole (Nizoral Shampoo)',
-      evidence: 'Multiple RCTs show 1-2% ketoconazole shampoo increases hair density. Reduces Malassezia; reduces scalp DHT. Widely recommended as adjunct therapy by dermatologists.',
+      
       use: 'Use 2-3x per week or leave on 3-5 min before rinsing.',
     },
     caffeine: {
       ingredient: 'Caffeine (Topical)',
-      evidence: 'In vitro studies show caffeine stimulates hair follicle growth and counteracts some DHT effects. Limited human clinical data, but promising.',
+      
       products: 'Alpecin Caffeine Shampoo; many serums.',
     },
     rosemary_oil: {
       ingredient: 'Rosemary Essential Oil (Rosmarinus officinalis)',
-      evidence: 'A 2015 RCT (Panahi) compared 2% minoxidil to rosemary oil — equivalent efficacy at 6 months. Mechanism: improves scalp circulation; inhibits 5-alpha reductase.',
+      
       use: 'Dilute in carrier oil (3-5 drops per tablespoon); massage into scalp; leave in or rinse out. Never apply undiluted essential oil to skin.',
     },
     pumpkin_seed_oil: {
       ingredient: 'Pumpkin Seed Oil',
-      evidence: 'A 2014 RCT showed significant hair count increase vs placebo in men with AGA. May inhibit 5-alpha reductase.',
+      
     },
   },
   moderate_evidence: {
     biotin: {
       ingredient: 'Biotin (Vitamin B7)',
-      evidence: 'Effective for biotin deficiency (rare). No evidence for hair growth in biotin-sufficient individuals. DANGER: high-dose biotin interferes with thyroid and cardiac lab tests. Tell your doctor.',
+      
     },
     iron: {
       ingredient: 'Iron / Ferritin',
-      evidence: 'Strong evidence that iron deficiency (low ferritin) causes hair loss. Correcting iron deficiency resolves the hair loss. Target ferritin >70 for optimal hair growth.',
+      
       ethnic_note: 'Iron deficiency is more common in South Asian and Black communities. Black vegetarians especially at risk. Annual ferritin check recommended for women with hair loss.',
     },
     vitamin_d: {
       ingredient: 'Vitamin D',
-      evidence: 'Vitamin D receptors are present in follicle cells. Deficiency is associated with alopecia areata and telogen effluvium. Supplementation (if deficient) may help.',
+      
     },
   },
   traditional_and_emerging: {
     castor_oil: {
       ingredient: 'Castor Oil (Ricinus communis)',
-      evidence: 'No clinical evidence for hair growth. Very thick (high viscosity) oil — creates significant protein and product build-up over time.',
+      
       cultural_note: 'Deeply embedded in Black American, Caribbean, and South Asian hair care traditions. The anecdotal following is massive. Mechanism may be improved scalp massage benefit and moisture, rather than growth-specific compounds.',
       use: 'If using: mix with a lighter carrier (jojoba, argan) as it is too thick alone; use sparingly on scalp; clarify monthly.',
     },
@@ -212,15 +212,15 @@ export const GROWTH_INGREDIENTS = {
     },
     onion_juice: {
       ingredient: 'Onion Juice',
-      evidence: 'A 2002 small RCT showed onion juice effective for alopecia areata. Active compound may be sulphur (which is present in keratin). Very high compliance challenge due to smell.',
+      
     },
     saw_palmetto: {
       ingredient: 'Saw Palmetto (Serenoa repens)',
-      evidence: 'A 2020 meta-analysis found saw palmetto may reduce DHT at the follicle. Some effect in AGA. Available as supplement and topical serum.',
+      
     },
     bhringraj: {
       ingredient: 'Bhringraj (Eclipta alba)',
-      description: 'Ayurvedic herb used for centuries in South Asian hair care. Some small studies suggest stimulates follicle growth. Used as hair oil or supplement.',
+      
     },
     amla: {
       ingredient: 'Amla (Indian Gooseberry, Phyllanthus emblica)',
@@ -233,7 +233,7 @@ export const GROWTH_INGREDIENTS = {
 
 export const ETHNIC_HAIR_GROWTH = {
   west_african: {
-    growth_characteristics: 'Type 4A-4C coily hair. Grows at same rate as other types but high shrinkage factor (up to 75%) makes length difficult to retain.',
+    
     retention_is_key: 'For Type 4 hair, the challenge is not growth but RETENTION — preventing breakage. Every inch grown must be protected to see length gains.',
     traditional_practices: 'Protective styles (braids, twists, cornrows); overnight oil treatments; co-washing; LOC method (liquid, oil, cream) for moisture retention.',
     recommended: 'Consistent protective styling; scalp massage with rosemary or castor oil; deep conditioning weekly; gentle detangling on wet hair only; silk bonnet sleeping.',
@@ -300,9 +300,3 @@ export function getEthnicGrowthGuide(communityId) {
   return ETHNIC_HAIR_GROWTH[key] || Object.values(ETHNIC_HAIR_GROWTH);
 }
 
-export const HAIR_GROWTH_STATS = {
-  cyclePhases: 4,
-  growthIngredientCategories: 3,
-  ethnicCommunities: 9,
-  treatmentOptions: Object.keys(ANDROGENETIC_ALOPECIA.treatments).length,
-};

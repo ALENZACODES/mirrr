@@ -52,7 +52,7 @@ export const HAIR_COLOUR_TYPES = {
   semi: {
     what: 'Semi-permanent colour (no developer, small molecules, some penetrate slightly into the cortex); lasts 4-12 shampoos; no lift capability; fades gradually; not suitable for significant grey coverage (some provide partial coverage)',
     bestFor: 'Glossing; adding shine; refreshing existing colour; subtle darkening; toning bleached hair; low-commitment colour change on already light hair',
-    examples: 'Joico Color Butter; Schwarzkopf Color Mask; Ion Color Brilliance semi-permanent'
+    examples: 'Ion Color Brilliance semi-permanent; Manic Panic; Arctic Fox'
   },
   demiPermanent: {
     

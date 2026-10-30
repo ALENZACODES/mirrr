@@ -3003,3 +3003,8 @@ body { padding-top: 58px; }
 .hl-summary p { margin: 6px 0; }
 .hl-big { font-size: 1.25rem; font-weight: 600; color: #f6efe7; }
 .hl-warn { border-color: #6b3a2a; }
+.hl-tabs { display: flex; gap: 8px; max-width: 1040px; margin: 0 auto 16px; padding: 0 1.25rem; }
+.hl-tab { background: #141414; color: #cfc6bd; border: 1px solid #2a2a2a; border-radius: 999px; padding: 8px 16px; cursor: pointer; font: inherit; }
+.hl-tab.active { background: #c8a24a; color: #111; border-color: #c8a24a; font-weight: 600; }
+.hj-timeline { background: #141414; border: 1px solid #2a2a2a; border-radius: 14px; padding: 12px; margin: 18px 0; }
+.hj-timeline svg { width: 100%; height: auto; display: block; }

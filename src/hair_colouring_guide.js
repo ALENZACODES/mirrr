@@ -78,7 +78,6 @@ export const BLEACHING_GUIDE = {
     recommendations: [
       { product: 'Schwarzkopf BlondMe Bleach', note: 'Salon lightener sold with a built-in bond-protecting technology' },
       { product: 'Olaplex No. 1 Bond Multiplier', note: 'Bond-building additive mixed into the lightener; widely used by colourists lightening Type 3-4 hair' },
-      { product: 'Kenra Platinum Silkening Bleach', note: 'Contains conditioning agents, lower dust, gentler formula' },
     ],
     bond_building: 'Many colourists who work with Type 3-4 hair add a bond-building treatment such as Olaplex to the lightener, which the brands say protects disulfide bonds during lightening.',
   },

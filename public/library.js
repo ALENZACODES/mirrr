@@ -89,6 +89,7 @@ function renderShelves() {
       <p class="lib-shelf-blurb">${esc(shelf.blurb)}</p>
       ${shelf.id === 'eyes' ? '<button type="button" class="btn btn-secondary lib-open" data-open-studio>Open the Brow &amp; Kohl Studio</button>' : ''}
       ${shelf.id === 'hair' ? '<button type="button" class="btn btn-secondary lib-open" data-open-hairlab>Open the Hair Colour Lab</button>' : ''}
+      ${shelf.id === 'growth' ? '<button type="button" class="btn btn-secondary lib-open" data-open-journeys>Plan a Natural Hair Journey</button>' : ''}
       <div class="lib-guides">${shelf.guides.map(g => `
         <button type="button" class="lib-guide${g.id === lib.openGuide ? ' lib-guide--open' : ''}" data-lib-guide="${g.id}">
           <span class="lib-guide-title">${esc(g.title)}</span>

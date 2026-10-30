@@ -309,7 +309,8 @@ export function getStylesByInstallTime(maxHours) {
 
 export function getLocsStageByMonth(months) {
   return LOCS_GUIDE.stages.find(stage => {
-    const [start, end] = stage.months.split('–').map(s => parseInt(s) || 999);
+    // parseInt('0') is 0, so a missing bound (not a zero) is what falls back to 999.
+    const [start, end = 999] = stage.months.split('–').map(s => (Number.isNaN(parseInt(s)) ? 999 : parseInt(s)));
     return months >= start && months <= end;
   }) || LOCS_GUIDE.stages[LOCS_GUIDE.stages.length - 1];
 }

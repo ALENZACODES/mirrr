@@ -7,7 +7,7 @@
 // ─── SCALP ANATOMY ─────────────────────────────────────────────────────────────
 
 export const SCALP_ANATOMY = {
-  structure: 'The scalp is a unique area — highly vascularised (excellent blood supply) with the highest concentration of hair follicles and sebaceous glands in the body. It produces 5-10x more sebum than the face.',
+  
 
   unique_challenges: [
     'High sebum production creates the ideal environment for Malassezia yeast',
@@ -39,10 +39,7 @@ export const DANDRUFF_SEBB_DERM_GUIDE = {
     relationship: 'Dandruff and seborrheic dermatitis exist on the same spectrum — dandruff is the mild, non-inflammatory form, seborrheic dermatitis is moderate-severe with inflammation.',
   },
 
-  prevalence: {
-    global: 'Dandruff affects 50% of the global adult population at some point. Seborrheic dermatitis: 3-5%.',
-    ethnic_variation: 'Prevalence varies but the condition affects all ethnicities. In textured hair communities, washing frequency is typically lower (protective styling, time-intensive wash days) — less frequent washing can allow Malassezia to proliferate. Additionally, heavy oil application to scalp (a common traditional practice) feeds the yeast.',
-  },
+  
 
   appearance_in_different_skin_tones: {
     light_skin: 'Classic red/pink inflamed scalp with yellow-white oily flakes or white dry flakes.',
@@ -141,10 +138,7 @@ export const SCALP_PSORIASIS_GUIDE = {
 export const TINEA_CAPITIS_GUIDE = {
   what: 'Tinea capitis is a fungal infection of the scalp and hair shaft — caused by dermatophyte fungi (Trichophyton and Microsporum species). Commonly called "ringworm of the scalp" — nothing to do with worms.',
 
-  prevalence: {
-    children: 'Most common in children ages 3-14. Rare in adults (except immunocompromised).',
-    ethnic_pattern: 'Trichophyton tonsurans is the dominant cause in North America (particularly prevalent in Black and Hispanic communities). Microsporum canis is more common in Europe and some other regions.',
-  },
+  
 
   appearance: {
     black_dot: 'Black dot pattern — hair breaks off at the scalp level, leaving characteristic black dots. Common with T. tonsurans infections. More prevalent in African American children.',
@@ -185,7 +179,7 @@ export const ALOPECIA_AREATA_GUIDE = {
   ],
 
   in_ethnic_communities: {
-    prevalence: 'Alopecia areata affects all ethnicities equally (~2% lifetime prevalence). However, in the Black community, the visibility and emotional impact is particularly significant given cultural connections to hair and hair loss stigma.',
+    
     black_community: {
       emotional_impact: 'Hair has deep cultural, racial, and spiritual significance in Black communities — alopecia areata can therefore carry profound emotional weight beyond its physical effects.',
       support: 'The National Alopecia Areata Foundation (NAAF) and community groups specifically for Black and POC individuals with alopecia offer important support and community.',
@@ -335,8 +329,3 @@ export function getScalpConditionGuide(condition) {
   return map[condition] || null;
 }
 
-export const SCALP_CONDITIONS_STATS = {
-  conditionsCovered: 5,
-  communitiesCovered: Object.keys(SCALP_CARE_BY_COMMUNITY).length,
-  treatmentOptions: true,
-};

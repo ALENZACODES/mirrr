@@ -206,7 +206,7 @@ export const PROTEIN_TREATMENTS = {
   },
   popular_treatments: {
     aphogee_two_step: 'ApHogee 2-Step Protein Treatment — strongest OTC protein treatment. For severely damaged, over-processed hair. Hardens the hair temporarily while drying — must not manipulate or it will break. Followed by the balancing moisturiser.',
-    hask_keratin: 'Hask Keratin Smoothing Conditioner — lighter, daily-use protein maintenance.',
+    hask_keratin: 'HASK Keratin Protein Smoothing Conditioner — lighter, daily-use protein maintenance.',
     giovanni_nutrafix: 'Giovanni Nutrafix — affordable light protein treatment.',
   },
 };

@@ -204,11 +204,11 @@ export const ETHNIC_EXTENSION_TRADITIONS = {
   west_african: {
     community: 'West African',
     traditions: 'Extensions and added hair are deeply embedded in West African beauty culture. Braiding with extensions (Senegalese twists, box braids, Ghana braids) has been practiced for centuries. The practice of using added hair is not "inauthentic" — it is ancient tradition. Nigerian, Ghanaian, and Senegalese women have always used plant fibres, cotton, and hair extensions in elaborate styles.',
-    modern: 'Box braids with Kanekalon synthetic hair are iconic. The "Tribal braids" (fulani braids with accessories) are globally trending styles rooted in West African tradition.',
+    modern: 'Box braids with Kanekalon synthetic hair are iconic. Fulani braids (often finished with beads and cuffs) are popular worldwide and rooted in Fulani and wider West African tradition.',
   },
   south_asian: {
     community: 'South Asian',
-    traditions: 'The use of clip-in bun extensions and length pieces for traditional styles is common. Hair pieces (tikkas) for bridal styles. South Asian temples are a major source of human hair for the global extension industry — donated hair from religious ceremonies (Tirumala Tirupati Devasthanams in India produces some of the world\'s most sought-after virgin hair).',
+    
     modern: 'Tape-in and fusion extensions increasingly popular among South Asian women in diaspora communities for length and volume.',
   },
   caribbean: {
@@ -262,8 +262,3 @@ export function getEthnicExtensionTradition(communityId) {
   return ETHNIC_EXTENSION_TRADITIONS[key] || Object.values(ETHNIC_EXTENSION_TRADITIONS);
 }
 
-export const HAIR_EXTENSIONS_STATS = {
-  methods: 7,
-  hairTypes: Object.keys(EXTENSIONS_OVERVIEW.hair_types).length,
-  ethnicCommunities: 9,
-};

@@ -480,9 +480,9 @@ export const HAIR_TEXTURES = {
     protective_styles: ['Loc bun','Loc ponytail','Half-up loc style','Loc crown'],
   },
   silk_straight: {
-    id: 'silk_straight', label: 'Silk Press', description: 'Chemically natural hair straightened with heat for a temporary silk-straight look. Popular in Black American salons.',
+    id: 'silk_straight', label: 'Silk Press', description: 'Natural (unrelaxed) hair straightened with heat for a temporary silk-straight look. Popular in Black American salons.',
     curl_pattern: 'straightened', communities: ['black-american','west-african','caribbean','south-african'],
-    care_tips: ['Avoid humidity','Wrap at night','Do maximum 2x per year to prevent heat damage'],
+    care_tips: ['Avoid humidity','Wrap at night','Space presses well apart to limit heat damage'],
     product_recommendations: ['CHI Silk Infusion','Keracare Silken Seal','Blow dry brush'],
     protective_styles: ['Silk wrap','Sleek ponytail','Pin curls'],
   },

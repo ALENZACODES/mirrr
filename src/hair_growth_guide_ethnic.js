@@ -6,24 +6,24 @@
 export const HAIR_GROWTH_SCIENCE = {
   title: 'The Biology of Hair Growth',
   hairFollicle: {
-    anatomy: 'Each hair follicle is an independent mini-organ; a full-term human has approximately 5 million hair follicles, of which approximately 100,000 are on the scalp; follicles are formed in utero and no new follicles are created after birth; follicle density decreases as the scalp grows throughout childhood and adulthood — you don\'t lose follicles, they become more spread out',
+    
     structure: 'The follicle consists of: bulb (the deepest part; contains the dermal papilla and hair matrix cells); matrix (rapidly dividing cells that produce hair); inner root sheath; outer root sheath; sebaceous gland (opens into the follicular canal); arrector pili muscle (makes hair stand up in cold or fear — goosebumps)',
     papilla: 'The dermal papilla is the control centre of the follicle; it is richly vascularised and innervated; it signals to the matrix cells when to grow, stop, and shed; the papilla contains androgen receptors (sensitivity to DHT drives hair loss in androgenetic alopecia); the size and metabolic activity of the dermal papilla determines hair thickness'
   },
   hairCycle: {
     anagen: {
       name: 'Anagen (Active Growth Phase)',
-      duration: '2-6 years for scalp hair (longer in Asian hair types — up to 7+ years, which explains the potential for very long Asian hair); approximately 85-90% of scalp hairs are in anagen at any time; the longer the anagen phase, the longer the terminal hair length can grow',
+      
       mechanism: 'Rapid mitotic division of matrix cells in the bulb; cells push upward, differentiate, and keratinise to form the hair shaft; growth rate approximately 0.35mm per day (approximately 6 inches or 15cm per year on average)'
     },
     catagen: {
       name: 'Catagen (Regression Phase)',
-      duration: 'Approximately 2-3 weeks; approximately 1% of hairs at any time',
+      
       mechanism: 'Programmed cell death (apoptosis) in the follicle; the lower follicle involutes; the hair shaft is no longer being produced; the hair club forms (a mass at the base of the hair)'
     },
     telogen: {
       name: 'Telogen (Resting Phase)',
-      duration: 'Approximately 3 months; approximately 10-15% of scalp hairs at any time',
+      
       mechanism: 'The follicle is at rest; the club hair (dead hair) remains anchored in the follicle but is ready to shed; normal daily shedding of 50-100 hairs represents telogen hairs being pushed out by the new anagen hair growing beneath them'
     },
     exogen: {
@@ -38,18 +38,18 @@ export const HAIR_GROWTH_SCIENCE = {
 export const HAIR_LOSS_TYPES = {
   androgenetic: {
     name: 'Androgenetic Alopecia (AGA) — Pattern Hair Loss',
-    prevalence: 'Most common cause of hair loss; affects approximately 50% of men by age 50 and approximately 25-30% of women by age 50; in women, prevalence and severity increase significantly post-menopause',
+    
     mechanism: 'DHT (dihydrotestosterone — converted from testosterone by 5α-reductase enzyme in hair follicles) binds to androgen receptors in the dermal papilla; in genetically susceptible follicles, DHT signalling causes progressive miniaturisation of the follicle; each anagen cycle produces a shorter, finer, lighter hair (vellus); eventually the follicle stops producing terminal hair',
     pattern: {
       male: 'Male pattern: typically begins with bitemporal recession (receding hairline at the temples); progresses to vertex thinning; Hamilton-Norwood scale grades severity I-VII',
       female: 'Female pattern: diffuse thinning over the crown maintaining the frontal hairline (Ludwig scale I-III); less commonly, frontal recession (which looks more like male pattern — may indicate higher androgen levels/PCOS)'
     },
-    ethnicVariation: 'East Asian men have lower 5α-reductase activity and lower DHT levels than European men → lower incidence and later onset of AGA; Black men have higher rates of AGA than some other groups; West African men have intermediate rates; PCOS-associated AGA is most common in South Asian and Latina women (PCOS 20-25% South Asian prevalence)',
+    
     treatment: 'FDA-approved treatments: Minoxidil (topical 2% women, 5% men; OTC; mechanism unclear — likely prolongs anagen; may increase follicle size; also available as oral 0.25-2.5mg/day — off-label but widely used); Finasteride (5α-reductase inhibitor oral; FDA-approved for men only; evidence in post-menopausal women off-label; absolutely contraindicated in pregnancy — causes male foetal genital abnormalities); Spironolactone (anti-androgen; widely used off-label in women for AGA and hormonal acne); PRP (platelet-rich plasma injections — evidence growing); hair transplant'
   },
   telogenEffluvium: {
     name: 'Telogen Effluvium (TE)',
-    prevalence: 'Common; acute TE is one of the most frequent causes of hair loss seen by dermatologists and GPs',
+    
     mechanism: 'A disruption to the hair cycle causing a proportion of anagen follicles to prematurely enter telogen; approximately 3 months later, those follicles shed their resting hair simultaneously → visibly excessive hair shedding; the trigger is usually 3 months before the shedding begins — this is why the timing seems puzzling',
     triggers: 'Major triggers of TE: significant physiological stress (surgery, major illness, significant fever, COVID-19); significant nutritional deficiency (iron deficiency anaemia — the most common; zinc deficiency; protein deficiency in crash dieting); thyroid dysfunction (both hyper- and hypothyroidism); significant hormonal change (childbirth — postpartum TE typically begins 2-4 months postpartum and peaks at 3-6 months; stopping combined oral contraceptive pill; starting or stopping certain medications); very significant psychological stress',
     course: 'Acute TE: resolves when the trigger resolves; most cases of postpartum TE resolve completely by 12 months postpartum; chronic TE (>6 months): may indicate ongoing subclinical trigger',
@@ -58,15 +58,14 @@ export const HAIR_LOSS_TYPES = {
   alopeciaAreata: {
     name: 'Alopecia Areata (AA)',
     mechanism: 'An autoimmune condition where T-lymphocytes attack the hair follicle; the follicle is damaged but not destroyed — potential for regrowth when inflammation resolves; classified as: alopecia areata (patchy); alopecia totalis (complete scalp loss); alopecia universalis (total body hair loss)',
-    prevalence: 'Affects approximately 2% of the global population at some point in their lifetime; can occur at any age; no strong ethnic predisposition though some studies show associations with specific HLA types',
-    ethnicNotes: 'Alopecia areata in darker skin types: exclamation mark hairs (tapered at the root — a diagnostic sign) and black dots may be less visible on dark scalps; dermoscopy by an experienced dermatologist is important for diagnosis; the autoimmune connection means it occurs alongside other autoimmune conditions (thyroid disease, vitiligo, rheumatoid arthritis)',
-    treatment: 'Corticosteroid injections into patches (most effective for small patches); topical minoxidil; topical or oral corticosteroids; JAK inhibitors (baricitinib — FDA-approved in 2022 for severe AA; ritlecitinib — FDA-approved 2023) represent significant advances in treatment; contact immunotherapy (diphenylcyclopropenone — DPCP) for extensive disease'
+    
+    ethnicNotes: 'Alopecia areata in darker skin types: exclamation mark hairs (tapered at the root — a diagnostic sign) and black dots may be less visible on dark scalps; dermoscopy by an experienced dermatologist is important for diagnosis; the autoimmune connection means it occurs alongside other autoimmune conditions (thyroid disease, vitiligo, rheumatoid arthritis)'
   },
   tractionAlopecia: {
     name: 'Traction Alopecia (TA)',
     mechanism: 'Hair loss caused by chronic tension on the hair follicles from tight hairstyles; repeated mechanical stress on follicle → inflammation around follicle → damage to follicle → miniaturisation → eventual permanent scarring alopecia if continued long-term',
     pattern: 'Predominantly affects the frontal and temporal hairline (where hair is pulled tightest in braids, weaves, and tight ponytails); fringe sign — small "baby hairs" at the affected hairline that survive because they are too short to be included in the style',
-    ethnicHighRisk: 'Traction alopecia disproportionately affects: Black women (particularly those who wear tight braids, cornrows, weaves, and wigs regularly — estimated 17% prevalence in Black women in the US); Sikh men (tight turban styles); female athletes who wear tight high ponytails; South Asian women with long tight braids',
+    
     earlyVsLate: {
       early: 'Early TA: reversible; the follicle is damaged but not scarred; removing the tension allows recovery; signs: papules (bumps) at the hairline; small pustules; breakage; scaling',
       late: 'Late TA: irreversible; follicles are replaced by scar tissue; the hairline permanently recedes; treatment options are limited; surgical hair restoration is possible'
@@ -75,7 +74,7 @@ export const HAIR_LOSS_TYPES = {
   },
   ccia: {
     name: 'Central Centrifugal Cicatricial Alopecia (CCCA)',
-    prevalence: 'CCCA is the most common form of scarring alopecia in Black women; estimated prevalence 2.7-5.6% of Black women; it is a form of permanent hair loss',
+    
     mechanism: 'Premature desquamation (peeling) of the inner root sheath of the hair follicle; inflammation around the follicle; eventual scarring and permanent follicle destruction; starts at the crown and spreads centrifugally outward',
     causes: 'The exact cause is debated; associations with: hair relaxers (sodium hydroxide causes direct cellular damage); hot combs; bacterial infections; possibly genetic susceptibility; some research implicates PADI3 gene mutations; the condition is seen in women who have never used chemical processes, suggesting genetics plays a role beyond just hairstyling practices',
     symptoms: 'Begins with itching, burning, or tenderness at the crown; hair breakage at the crown; progressive thinning that starts at the crown and spreads outward; if seen under dermoscopy: peripilar casts; hair shaft irregularities; fibrosis',
@@ -91,17 +90,15 @@ export const ETHNIC_HAIR_GROWTH_GUIDES = {
     growthMythDebunking: 'Type 4 hair grows at the same rate as other hair types (approximately 6 inches per year on average); the appearance of "not growing" is usually breakage from the ends losing length at the same rate as new growth emerges; length retention is the goal, not growing faster',
     lengthRetention: 'Key length retention practices for West African hair: LOC method (Liquid, Oil, Cream — layer moisture then seal); low manipulation styling; protective styles with tension monitoring (avoid tight braids); regular trims (counterintuitive but removes split ends before they travel up the shaft); satin/silk pillowcase or bonnet at night (cotton absorbs moisture and causes friction); deep conditioning weekly',
     commonConditions: 'Scalp concerns: seborrhoeic dermatitis; tinea capitis (fungal — requires oral antifungal); folliculitis; central centrifugal cicatricial alopecia (CCCA) in women; traction alopecia from tight styles',
-    oilsForGrowth: 'Castor oil (jamaican black castor oil — widely used in West African hair community; high ricinoleic acid content; anecdotal and some research for hair growth stimulation; prostaglandin effect on follicles proposed); peppermint oil (RCT 2014 showed significant hair growth in a mouse model; diluted in carrier oil as scalp treatment); rosemary oil (2015 RCT showed similar efficacy to minoxidil 2% for AGA at 6 months — diluted in carrier oil as scalp treatment)',
-    rosemaryEvidence: 'The 2015 Panahi et al. RCT is significant: rosemary oil (Salvia rosmarinus) diluted 1mg/mL in jojoba oil applied to the scalp twice daily for 6 months showed hair count increase at 6 months comparable to minoxidil 2%; the proposed mechanism is improved scalp circulation and possible 5α-reductase inhibition from carnosic acid in rosemary; this is credible evidence for a widely accessible natural option'
+    oilsForGrowth: 'Castor oil (jamaican black castor oil — widely used in West African hair community; high ricinoleic acid content; anecdotal and some research for hair growth stimulation; prostaglandin effect on follicles proposed); peppermint oil (RCT 2014 showed significant hair growth in a mouse model; diluted in carrier oil as scalp treatment); rosemary oil (2015 RCT showed similar efficacy to minoxidil 2% for AGA at 6 months — diluted in carrier oil as scalp treatment)'
   },
   'south-asian': {
     community: 'South Asian',
-    hairType: 'Predominantly Type 1 (straight) to Type 2 (wavy); some Type 3 curl in South Indian and Sri Lankan communities; South Asian hair is typically very thick with high density per follicle and large follicle calibre',
-    strengthAndLength: 'South Asian hair is structurally strong (round cross-section, intact cuticular layers, natural hydrophilicity); the tradition of oiling and massage contributes to length retention; South Asian hair typically grows very long without the significant breakage experienced by curlier hair types',
+    hairType: 'Predominantly Type 1 (straight) to Type 2 (wavy); some Type 3 curl in South Indian and Sri Lankan communities; South Asian hair is often very thick with high density per follicle and large follicle calibre',
+    strengthAndLength: 'South Asian hair is structurally strong (round cross-section, intact cuticular layers, natural hydrophilicity); the tradition of oiling and massage contributes to length retention; South Asian hair often grows very long without the significant breakage experienced by curlier hair types',
     ayurvedicHairOils: 'Ayurvedic hair oils are among the most culturally embedded hair traditions globally: amla oil (Indian gooseberry — vitamin C, antioxidants; evidence for reducing premature greying through antioxidant protection of melanocytes; DHT-inhibiting effects proposed); bhringraj oil (Eclipta alba — "king of herbs" in Ayurveda; evidence from rat studies for hair growth; mechanistic evidence for prolonging anagen phase); neem oil (antimicrobial; anti-dandruff; reduces scalp inflammation); brahmi oil (Bacopa monnieri — Ayurvedic nerve tonic; scalp circulation improvement proposed)',
-    bhringrajEvidence: 'Bhringraj (Eclipta alba) has been studied in animal models: a 2009 study found an ethanol extract of Eclipta alba promoted hair growth in mice at least as effectively as minoxidil 2%; the mechanism appears to involve elongation of the dermal papilla and prolongation of the anagen phase; while human RCT data is limited, the mechanistic studies and Ayurvedic 3000-year tradition provide a credible basis',
-    hairOilMassage: 'Head oil massage (champi): mechanical stimulation of the scalp through massage; a 2016 study (Koyama et al.) found standardised scalp massage increases hair thickness; proposed mechanisms: increased dermal papilla cell gene expression promoting hair growth; improved scalp circulation; stress reduction (cortisol reduction)',
-    commonConditions: 'PCOS-related diffuse hair thinning (affects 20-25% of South Asian women); postpartum telogen effluvium (very common after pregnancy); iron deficiency alopecia (vegetarian/vegan diet increases iron deficiency risk); premature greying (earlier onset in South Asian populations may have genetic and oxidative stress components)'
+    
+    
   },
   caribbean: {
     community: 'Caribbean',
@@ -112,7 +109,7 @@ export const ETHNIC_HAIR_GROWTH_GUIDES = {
   },
   arab: {
     community: 'Arab',
-    hairType: 'Predominantly Type 1 (straight) to Type 2 (wavy); some Type 3 in North African Arab communities with Berber or Sub-Saharan heritage; Gulf Arab hair is typically very thick and dark with strong tensile strength',
+    hairType: 'Predominantly Type 1 (straight) to Type 2 (wavy); some Type 3 in North African Arab communities with Berber or Sub-Saharan heritage; Gulf Arab hair is often very thick and dark with strong tensile strength',
     arganOilHair: 'Argan oil is the most culturally embedded Arab (particularly Moroccan) hair oil; produced from the fruit of the endemic Argania spinosa tree; high in oleic acid, linoleic acid, and vitamin E; penetrates the hair shaft; reduces protein loss from chemical and thermal damage; reduces frizz; widely regarded as one of the best natural hair oils for normal-to-curly hair',
     blackSeedForHair: 'Black seed oil (Nigella sativa) is used both internally (immune-modulating; anti-inflammatory) and topically for hair in Arab communities; the thymoquinone in black seed oil may have antifungal activity (relevant to seborrhoeic dermatitis) and some evidence for hair growth stimulation; applied as scalp treatment mixed with a carrier oil',
     hammamHairCare: 'Traditional Arab hammam includes hair care: steaming the hair and scalp (opens cuticle for treatment absorption; softens build-up); applying argan or olive oil hair mask; rinsing with warm water; wrapping in a hot towel; scalp massage during the hammam; this traditional treatment is essentially a hot oil deep conditioning treatment validated by modern hair science',
@@ -123,16 +120,14 @@ export const ETHNIC_HAIR_GROWTH_GUIDES = {
     hairType: 'Enormous diversity: Type 1 straight (Mexican and Andean indigenous; European descent Argentine); Type 2 wavy; Type 3 curly (Caribbean Latina; Afro-Latina); Type 4 (Afro-Brazilian, Afro-Dominican; Afro-Puerto Rican); the "curly girl method" has strong adoption among Latina communities with wavy/curly hair',
     telogenEffluvium: 'Postpartum telogen effluvium is extremely common (affects most women); begins 2-4 months postpartum; peaks 3-6 months; typically resolves by 12 months; cultural awareness: "el pelo que se cae despues del parto" is well-known in Latina communities; iron supplementation, protein-rich diet, gentle hair handling, and time are the main management approaches',
     stressHairLoss: 'Stress-related telogen effluvium in Latina immigrant communities: immigration stress, acculturation stress, and discrimination are documented causes of elevated cortisol; cortisol chronically disrupts the hair cycle; stress-related diffuse hair loss is a real and underappreciated dimension of hair health in immigrant Latina communities',
-    caseitAAloe: 'Traditional Latina hair remedies: aloe vera (raw aloe gel applied to scalp and hair — anti-inflammatory, scalp soothing, mild proteolytic enzyme papain in some aloe preparations); rosemary rinse (rosemary tea rinsed through hair — see rosemary evidence under West African section); eggs as protein treatment (whole egg protein and fatty acids — a traditional hair mask); onion juice (some evidence for hair growth in alopecia areata from a small study); mayonnaise mask (egg yolk + oil — provides protein and fatty acids; traditional Latina hair treatment)',
-    commonConditions: 'PCOS-related hair thinning (South American Latina women have above-average PCOS prevalence); stress-induced telogen effluvium; heat damage from flat iron overuse; chemical damage from bleaching (particularly in communities with darker natural hair seeking lighter colours)'
+    caseitAAloe: 'Traditional Latina hair remedies: aloe vera (raw aloe gel applied to scalp and hair — anti-inflammatory, scalp soothing, mild proteolytic enzyme papain in some aloe preparations); rosemary rinse (rosemary tea rinsed through hair — see rosemary evidence under West African section); eggs as protein treatment (whole egg protein and fatty acids — a traditional hair mask); onion juice (some evidence for hair growth in alopecia areata from a small study); mayonnaise mask (egg yolk + oil — provides protein and fatty acids; traditional Latina hair treatment)'
   },
   'east-asian': {
     community: 'East Asian',
     hairType: 'Predominantly Type 1 straight to 1C very slightly wavy; East Asian hair has the largest hair shaft diameter of any hair type (80-100μm vs ~60μm for Black hair and ~70μm for European hair); the large shaft and round cross-section make East Asian hair extremely strong; East Asian hair also has the highest natural tensile strength',
     longestHair: 'The Guinness World Record for longest hair is held by Xie Qiuping (China) at 5.627m (18ft 5.5 in); many East Asian women grow extremely long hair due to: long anagen phase (up to 7+ years — longer than most other populations); round strong hair shaft; traditional cultural practices emphasising hair care and length',
     ricewaterTraditional: 'Fermented rice water for hair growth is a tradition traced to the Yao women of Huangluo Village, Guangxi, China — famous for hair that averages 1.4-2m in length; the rice water treatment (soaking rice, fermenting, applying to hair) provides: inositol — a carbohydrate that penetrates the hair shaft and remains after rinsing, reducing surface friction and improving elasticity; ferulic acid; B vitamins; amino acids; the inositol residual effect on hair shaft is documented and explains part of the benefit',
-    dandruffPrevention: 'Scalp health maintenance in East Asian hair care: frequent shampooing (daily is common in Japan and Korea — appropriate for straight oily hair types); anti-dandruff actives (zinc pyrithione, selenium sulfide, ketoconazole) for seborrhoeic dermatitis; scalp scalers (exfoliating scalp serums popular in K-beauty market); the Korean "glass scalp" trend mirrors the glass skin trend — a clean, healthy, visible scalp through the hair',
-    commonConditions: 'Androgenetic alopecia (lower prevalence and later onset than Western men in East Asian men due to lower 5α-reductase activity — but still common); telogen effluvium from strict dieting (extreme caloric restriction for weight loss is more prevalent in East Asian communities with weight stigma — triggers hair loss); alopecia areata (no ethnic predisposition but coexists with autoimmune thyroid conditions prevalent in some East Asian communities)'
+    dandruffPrevention: 'Scalp health maintenance in East Asian hair care: frequent shampooing (daily is common in Japan and Korea — appropriate for straight oily hair types); anti-dandruff actives (zinc pyrithione, selenium sulfide, ketoconazole) for seborrhoeic dermatitis; scalp scalers (exfoliating scalp serums popular in K-beauty market); the Korean "glass scalp" trend mirrors the glass skin trend — a clean, healthy, visible scalp through the hair'
   },
   'east-african': {
     community: 'East African',
@@ -155,8 +150,7 @@ export const ETHNIC_HAIR_GROWTH_GUIDES = {
     hairType: 'Predominantly Type 4 (4A, 4B, 4C) with representation across all curl types due to the African American diaspora\'s diverse genetic heritage; Black American hair is the most researched ethnic hair type in the cosmetic science and dermatology literature',
     naturalHairMovement: 'The Black American natural hair movement has a rich political history: the Afro of the 1960s-70s Black Power era; the chemical relaxer era of the 1980s-2000s; the post-2009 "good hair" documentary (Chris Rock; following a conversation with his daughter about "good hair" — straight European-type hair — vs natural Black hair) and YouTube natural hair creators sparking the modern natural hair movement; the acceptance of natural hair in professional settings (CROWN Act — Creating a Respectful and Open World for Natural Hair — passed in California 2019, now passed in 24 states) remains an ongoing civil rights issue',
     crownAct: 'The CROWN Act: prohibits discrimination based on hair texture and protective hairstyles (locs, twists, braids, Bantu knots, Afros) in workplaces and schools; has passed in 24 US states as of 2024; still pending at the federal level; represents the intersection of hair, race, and civil rights',
-    relaxerAndHealth: 'Chemical relaxers (sodium or potassium hydroxide — "lye"; guanidine hydroxide — "no-lye"): permanently straighten hair by breaking the S-S disulfide bonds in the hair\'s protein structure; 2022 NIEHS study linked hair relaxer use to increased risk of uterine fibroids; the relaxer transition (transitioning from relaxed to natural hair) requires managing the line of demarcation (where natural meets relaxed — the weakest point) and protecting hair during the process',
-    commonConditions: 'Traction alopecia (estimated 17% prevalence in Black women); CCCA (primary cause of scarring alopecia); seborrhoeic dermatitis; pseudofolliculitis barbae (razor bumps) in men; telogen effluvium post-partum or from nutritional issues; breakage from low-moisture management'
+    relaxerAndHealth: 'Chemical relaxers (sodium or potassium hydroxide — "lye"; guanidine hydroxide — "no-lye"): permanently straighten hair by breaking the S-S disulfide bonds in the hair\'s protein structure; a 2022 NIH (NIEHS Sister Study) analysis linked frequent use of hair straighteners to a higher risk of uterine cancer; the relaxer transition (transitioning from relaxed to natural hair) requires managing the line of demarcation (where natural meets relaxed — the weakest point) and protecting hair during the process'
   }
 };
 
@@ -175,15 +169,3 @@ export function getHairGrowthGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const HAIR_GROWTH_STATS = {
-  moduleId: 'hair_growth_guide_ethnic',
-  version: '1.0.0',
-  topics: ['hair growth 6 inches per year 0.35mm per day', 'anagen catagen telogen phases', 'androgenetic alopecia DHT 5-alpha-reductase', 'telogen effluvium iron deficiency 3 months', 'traction alopecia Black women 17%', 'CCCA scarring alopecia Black women PADI3', 'rosemary oil minoxidil 2% RCT 2015', 'rice water inositol Yao women Huangluo', 'CROWN Act natural hair discrimination', 'bhringraj Eclipta alba anagen Ayurvedic', 'alopecia areata JAK inhibitor baricitinib 2022', 'postpartum telogen effluvium 2-4 months', 'JBCO Jamaican black castor oil ricinoleic acid'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'Rosemary oil (diluted 1mg/mL applied to the scalp twice daily) was shown in a 2015 RCT to increase hair count at 6 months comparably to minoxidil 2% — both treatments produced significantly more hair growth than the placebo baseline; the proposed mechanism is improved scalp circulation and possible 5α-reductase inhibition from carnosic acid; this is a credible, accessible alternative for people seeking a non-pharmaceutical option for early androgenetic alopecia',
-    'Fermented rice water for hair care, practised by the Yao women of Huangluo Village, China (who are famous for hair averaging 1.4-2m in length) contains inositol — a carbohydrate that penetrates the hair shaft and notably REMAINS in the hair after rinsing; this residual inositol reduces surface friction and improves hair elasticity and strength; this is one of the most scientifically substantiated traditional hair care practices',
-    'Traction alopecia — hair loss from chronic tension — affects an estimated 17% of Black women in the US due to culturally common tight braiding, weaving, and cornrowing styles; the condition progresses from reversible (inflammatory stage) to irreversible (scarring stage) if tension continues; varying hairstyles, avoiding styles tight enough to feel pain or cause bumps at the hairline, and giving follicles rest periods between installation of tight styles are the primary preventive measures',
-    'The CROWN Act (Creating a Respectful and Open World for Natural Hair) prohibits discrimination based on hair texture and protective hairstyles in workplaces and schools; it has passed in 24 US states as of 2024 but not at the federal level; the Act directly addresses a dimension of anti-Black racism that has for decades forced Black Americans to chemically alter their natural hair to conform to Eurocentric workplace standards, contributing to health concerns including the 2022 NIEHS study linking hair relaxer use to increased uterine fibroid risk'
-  ]
-};

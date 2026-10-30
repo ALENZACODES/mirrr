@@ -136,4 +136,12 @@ test('hair lab routes over HTTP', async () => {
   assert.ok(html.includes('data-view="hairlab"') && html.includes('src="hairlab.js"'));
   const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
   assert.equal(lib.shelves.find(s => s.id === 'hair').guides.length, 12);
+  assert.equal(lib.shelves.find(s => s.id === 'growth').guides.length, 9);
+  const jo = await (await fetch(`${B}/api/hairlab/journey-options`, { headers: h })).json();
+  assert.equal(jo.journeys.length, 5); assert.equal(jo.cmPerMonth, 1.27); assert.equal(jo.minBreakWeeks, 2);
+  const jr = await fetch(`${B}/api/hairlab/journey`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ journey: 'transition', relaxedCm: 15, months: 6 }) });
+  assert.equal(jr.status, 200);
+  assert.equal((await jr.json()).remainingMonths, 6);
+  assert.equal((await fetch(`${B}/api/hairlab/journey`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  assert.ok(html.includes('data-hl-tab="journeys"') && html.includes('src="journeys.js"'));
 });

@@ -122,7 +122,7 @@ export const HAIR_ROUTINES = {
       wash_day: {
         day: 'Wash Day (once weekly or fortnightly)',
         tasks: ['Pre-poo with shea butter or oil', 'Shampoo (sulphate-free)', 'Deep condition (30-60 minutes)', 'Rinse, apply leave-in', 'Style and go'],
-        products: ['SheaMoisture Raw Shea Butter Detangling Conditioner', 'As I Am Coconut CoWash', 'Shea butter or JBCO for sealing'],
+        products: ['SheaMoisture Raw Shea Butter Deep Moisturizing Detangler', 'As I Am Coconut CoWash', 'Shea butter or JBCO for sealing'],
         technique: 'Pre-poo (pre-shampoo oil treatment) prevents the shampoo from stripping too much moisture. Apply before wetting hair.',
       },
       protective_weeks: {
@@ -169,7 +169,7 @@ export const HAIR_ROUTINES = {
           'Style: twist-out, braid-out, or wash-n-go',
         ],
         products: {
-          liquid: 'Water or watery leave-in conditioner (e.g. SheaMoisture Curl & Shine Leave-In)',
+          liquid: 'Water or watery leave-in conditioner (e.g. SheaMoisture Coconut & Hibiscus Curl & Style Milk)',
           oil: 'Sealing oil: JBCO, castor oil, avocado oil, olive oil',
           cream: 'Curl cream or butter: Camille Rose Curl Maker, As I Am Twist Defining Cream',
         },

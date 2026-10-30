@@ -36,7 +36,7 @@ export const SCALP_ANATOMY = {
 export const SCALP_CONDITIONS = {
   title: 'Common Scalp Conditions',
   dandruff: {
-    definition: 'A common, non-contagious chronic condition causing flaking of dead scalp skin; affects approximately 50% of adults to some degree globally; caused by Malassezia yeast overgrowth triggering accelerated skin cell turnover',
+    
     symptoms: 'White or yellowish flakes shed from the scalp and visible on hair and clothing; itching; occasional mild redness; generally no significant scalp inflammation or scaling',
     treatment: {
       zincPyrithione: 'Zinc pyrithione (found in Head & Shoulders and many anti-dandruff shampoos) reduces Malassezia populations; the most widely available anti-dandruff ingredient; gentle enough for frequent use; effective for mild to moderate dandruff',
@@ -60,8 +60,7 @@ export const SCALP_CONDITIONS = {
   scalp: {
     tinea: {
       definition: 'Tinea capitis (scalp ringworm) — a fungal infection of the scalp caused by dermatophyte fungi (Trichophyton and Microsporum species); not actually caused by a worm despite the name; requires oral antifungal medication (topical antifungals alone are insufficient to penetrate the hair follicle)',
-      symptoms: 'Patchy hair loss with scaling; inflamed, boggy mass called a kerion can develop; may fluoresce under UV light (Wood\'s lamp) depending on the dermatophyte species',
-      demographic: 'Most common in children; higher rates in African, African-American, and Caribbean children; the higher prevalence in Black children is thought to be related to specific dermatophyte species (T. tonsurans) that predominate in these communities'
+      symptoms: 'Patchy hair loss with scaling; inflamed, boggy mass called a kerion can develop; may fluoresce under UV light (Wood\'s lamp) depending on the dermatophyte species'
     },
     folliculitis: {
       definition: 'Inflammation or infection of hair follicles on the scalp; can be bacterial (most commonly Staphylococcus aureus), fungal, or caused by other factors; creates pustules or pimples at the base of hair follicles',
@@ -93,7 +92,7 @@ export const SCALP_CARE_ROUTINES = {
     }
   },
   scalpMassage: {
-    benefits: 'Scalp massage increases local blood circulation, which may modestly support hair follicle function; a small Japanese study found that scalp massage performed daily for 24 weeks increased hair shaft thickness; scalp massage also reduces scalp tension and promotes stress relief (the scalp is tightly connected to the frontalis and occipitalis muscles)',
+    
     technique: 'Use fingertip pads, a silicone scalp massager tool, or a scalp brush; apply gentle but firm circular or kneading pressure; move systematically across the scalp; 4-5 minutes daily; can be performed on dry scalp or during shampoo or oil application',
     oils: 'Applying a small amount of oil (castor, peppermint-diluted, rosemary-infused) during scalp massage may enhance benefits; see scalp oil section'
   },
@@ -105,17 +104,17 @@ export const SCALP_CARE_ROUTINES = {
   },
   scalpOils: {
     rosemaryOil: {
-      evidence: 'A 2023 study published in Skinmed journal found rosemary oil to be as effective as 2% minoxidil for androgenetic hair loss; rosemary oil contains carnosic acid which is thought to stimulate nerve growth factor in hair follicle cells; the study used rosemary leaf extract applied topically twice daily',
+      
       application: 'Must be diluted in a carrier oil (jojoba, grapeseed, argan) to 2-5% concentration; direct application of essential oils to the scalp causes irritation and chemical burns; massage into the scalp 3-5 times per week',
       note: 'Rosemary oil (and minoxidil) effects require at least 6 months of consistent use to evaluate; hair loss has many causes and rosemary oil is not effective for all types'
     },
     peppermintOil: {
-      what: 'Peppermint oil (diluted to 3% in carrier oil) has preliminary evidence supporting scalp stimulation for hair growth; the menthol component creates a cooling vasodilatory effect on the scalp; a small Korean study found peppermint oil superior to saline and comparable to minoxidil for hair growth stimulation in the study period',
+      
       application: 'Dilute 3-5 drops in 1 tablespoon of carrier oil; massage into scalp; leave for at least 30 minutes or overnight; shampoo out'
     },
     castorOil: {
       what: 'Castor oil (Ricinus communis) is used extensively in hair and scalp care, particularly in Black American and Caribbean communities; very thick, viscous oil high in ricinoleic acid; widely used to "seal in" moisture at the scalp and hair shaft',
-      evidence: 'Limited clinical evidence for hair growth claims; the oil is highly viscous and can cause significant buildup if overused; may be diluted with lighter oils for easier application and removal',
+      
       jamaicaBlack: 'Jamaican Black Castor Oil (JBCO) is roasted castor oil with a distinctive dark colour and smoky scent; the roasting process adds ash content that some claim makes it more alkaline and better for lifting the hair cuticle; a beloved staple in many Black and Caribbean hair care communities'
     }
   }
@@ -138,7 +137,7 @@ export const ETHNIC_SCALP_GUIDES = {
     commonConcerns: ['Premature greying is more common in South Asian populations than European populations (possibly related to vitamin B12 deficiency in vegetarian/vegan diets); amla oil and B12 supplementation are traditional and modern approaches respectively', 'Dandruff: extremely common; anti-dandruff shampoos with ketoconazole or zinc pyrithione are widely used in South Asian communities', 'Hair fall after major life events (illness, post-partum, stress) — often temporary telogen effluvium which resolves with time']
   },
   caribbean: {
-    hairType: 'Predominantly Type 3-4 across Caribbean communities; Afro-Caribbean hair is typically Type 4; Indo-Caribbean hair Type 2-3; mixed heritage encompasses wide variation',
+    hairType: 'Predominantly Type 3-4 across Caribbean communities; Afro-Caribbean hair is often Type 4; Indo-Caribbean hair Type 2-3; mixed heritage encompasses wide variation',
     traditions: 'Caribbean hair oiling traditions: coconut oil is central to Caribbean hair culture; bay rum (the traditional Caribbean fragrance distilled from bay leaves) has scalp toning and antiseptic properties and is used as a traditional hair and scalp tonic; Jamaican Black Castor Oil is a Caribbean product adopted globally',
     commonConcerns: ['Dryness and moisture retention in textured hair', 'Scalp care under protective styles', 'Scalp sensitivity from chemical relaxers (still used in some Caribbean communities)', 'Humid tropical climate scalp considerations when in the Caribbean versus dry diaspora climates'],
     JBCO: 'Jamaican Black Castor Oil (JBCO) originated as a Caribbean hair care product and became one of the most globally exported Caribbean beauty innovations; the roasting process gives JBCO its characteristic dark colour and scent'
@@ -185,12 +184,12 @@ export const ETHNIC_SCALP_GUIDES = {
       what: 'Marula oil is extracted from the kernel of the marula fruit (Sclerocarya birrea); indigenous to Southern Africa; very lightweight, non-greasy oil with very high oleic acid content (70%+); absorbs quickly; excellent for scalp and hair without heaviness; the Oprah-featured Africas Best and internationally sold Marula Oil by Lulu & Georgia products brought marula to global attention',
       application: 'Applied to dry or damp scalp before styling; also excellent as a hair finishing oil for shine and frizz control; very well-tolerated by most scalp types including oily scalps due to its lightness'
     },
-    commonConcerns: ['Same Type 4 hair concerns as other African communities: dryness, traction alopecia, product buildup', 'For European-heritage South Africans: sun damage to scalp skin (South Africa\'s UV index is among the highest in the world due to altitude and proximity to the ozone hole over Antarctica)']
+    commonConcerns: ['Same Type 4 hair concerns as other African communities: dryness, traction alopecia, product buildup']
   },
   'black-american': {
     hairType: 'Predominantly Type 3-4 across Black American community; enormous variation from 3A loose curls to 4C very tightly coiled; textured hair',
     naturalHairMovement: {
-      what: 'The natural hair movement — Black Americans embracing their natural hair texture rather than chemical straightening (relaxers) — transformed Black American hair and scalp care in the 2000s-2010s; relaxer sales declined dramatically; natural hair care product lines, YouTube tutorials, and community knowledge sharing exploded; figures like Chris Rock\'s documentary "Good Hair" (2009) brought mainstream awareness to the significance of Black hair',
+      
       scalp: 'The return to natural hair required a return to scalp care practices appropriate for highly textured hair; the relaxer era\'s scalp care advice was entirely different from natural hair care; scalp health resources specifically for textured natural hair grew enormously in this period'
     },
     edges: {
@@ -248,16 +247,3 @@ export function getEthnicScalpGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const SCALP_CARE_STATS = {
-  moduleId: 'scalp_care_guide',
-  version: '1.0.0',
-  topics: ['scalp anatomy SCALP layers', 'Malassezia dandruff fungus', 'seborrhoeic dermatitis', 'scalp psoriasis', 'tinea capitis children', 'traction alopecia protective styles', 'champi South Asian head massage', 'rosemary oil hair growth evidence', 'Jamaican Black Castor Oil', 'Korean scalp care K-beauty', 'tsubaki camellia oil Japan', 'ginseng scalp care', 'marula oil South Africa', 'edges Black American hairline', 'LOC method textured hair', 'hijab scalp care', 'black seed oil Islamic tradition', 'wash frequency Type 4 hair'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'A 2023 study found rosemary oil to be as effective as 2% minoxidil for androgenetic hair loss over a 24-week period; rosemary oil must be properly diluted in a carrier oil to 2-5% concentration before scalp application to avoid irritation or chemical burns from the undiluted essential oil',
-    'Traction alopecia — hair loss from repeated tension on hair follicles from tight hairstyles — is one of the most common causes of hair loss in Black women; early traction alopecia is reversible but late-stage scarring traction alopecia is permanent; the "edges" (hairline temples) are the most commonly affected area',
-    'Champi (Indian head massage with oil) is a traditional South Asian hair care practice with thousands of years of history; coconut oil is the most traditional champi oil and has demonstrated ability to penetrate the hair shaft and reduce protein loss, making it unique among common hair oils',
-    'Women who wear hijab face specific scalp care challenges: the covered environment reduces air circulation, increases warmth and perspiration, and can promote fungal scalp conditions; cotton hijab underlining breathes better than synthetic fabrics; more frequent scalp cleansing may be necessary',
-    'The natural hair movement of the 2000s-2010s transformed Black American hair care from a relaxer-dominated industry to a natural textured hair industry; relaxer sales declined dramatically while natural hair care products, tutorials, and community knowledge sharing resources expanded enormously'
-  ]
-};

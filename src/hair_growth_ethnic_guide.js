@@ -14,7 +14,7 @@ export const ETHNIC_HAIR_GROWTH_GUIDES = {
     hairGrowthProfile: {
       description: 'West African hair (type 4A-4C in natural hair typing) grows at the same rate as any other hair: approximately 1.25cm (half an inch) per month. The challenge for length retention isn\'t growth rate — it\'s breakage. Type 4 coily hair has structural characteristics (tight helical curl pattern, irregular distribution of the cuticle layer) that make it inherently more vulnerable to breakage, moisture loss, and mechanical damage than straighter hair textures.',
       growthRate: 'Approximately 6 inches per year (same as all hair). Type 4 hair may appear to grow slower because significant shrinkage (40-80%) makes length gains invisible until the hair is stretched.',
-      shrinkage: 'Type 4C hair can have 75-80% shrinkage — hair that is 12 inches long appears to be 2-3 inches when dry and coiled. This is a normal, healthy characteristic of the hair — not a sign of no growth.',
+      shrinkage: 'Type 4C hair can shrink by up to about 75% — hair that is 12 inches long can look about 3 inches long when dry and coiled. This is a normal, healthy characteristic of the hair — not a sign of no growth.',
       breakagePrevention: 'The primary goal for West African hair length retention is reducing breakage, not accelerating growth. Growth is consistent. Retention is the variable.',
     },
     rootsOfGrowthWisdom: {
@@ -51,8 +51,8 @@ export const ETHNIC_HAIR_GROWTH_GUIDES = {
     communityId: 'south-asian',
     communityName: 'South Asian',
     hairGrowthProfile: {
-      description: 'South Asian hair is typically type 1C-2B (straight to wavy), with some variation including type 3A in some South Indian and Sri Lankan communities. The hair shaft tends to be thick and dense. This hair type is generally more resistant to breakage than type 4, but has its own growth challenges including high density that can lead to buildup, oiliness at the roots, and damage from excessive heat styling.',
-      growthRate: 'South Asian hair reportedly grows faster than average in some studies (up to 1.5cm/month vs the average 1.25cm), though this varies individually.',
+      description: 'South Asian hair is often type 1C-2B (straight to wavy), with some variation including type 3A in some South Indian and Sri Lankan communities. The hair shaft tends to be thick and dense. This hair type is generally more resistant to breakage than type 4, but has its own growth challenges including high density that can lead to buildup, oiliness at the roots, and damage from excessive heat styling.',
+      growthRate: 'Growth rate varies from person to person; length retention matters more than speed.',
       density: 'South Asian hair is often very dense — many follicles per square centimeter. This can cause the hair to appear fuller but also means the scalp microbiome is more affected by sebum accumulation.',
     },
     ayurvedicHairGrowth: {
@@ -60,7 +60,7 @@ export const ETHNIC_HAIR_GROWTH_GUIDES = {
       philosophy: 'In Ayurveda, healthy hair growth is a function of balanced doshas, strong agni (digestive fire), and adequate ojas (vital essence). Hair is considered a byproduct (upadhatu) of the bone tissue (asthi dhatu) — meaning bone health and hair health are connected. The practice of daily scalp oiling (shiro abhyanga) directly addresses the vata imbalance that causes hair loss and poor growth.',
       practices: [
         { practice: 'Shiro Abhyanga (Head Oil Massage)', method: 'Warm sesame or coconut oil. Part hair in sections. Apply to scalp. Massage gently in circular motions for 15-20 minutes. Leave for minimum 30 minutes (ideally overnight). Wash out.', frequency: '1-3 times per week', benefit: 'Increases circulation (demonstrated benefit), nourishes the scalp, reduces vata aggravation that Ayurveda links to hair loss.' },
-        { practice: 'Bhringraj (Eclipta prostrata) Oil', method: 'Oil made by simmering bhringraj herb in sesame or coconut oil. Apply as scalp treatment.', evidence: 'Bhringraj has been studied for hair growth effects — some evidence for stimulating anagen (growth) phase. Traditional Ayurvedic rasayana for hair.' },
+        { practice: 'Bhringraj (Eclipta prostrata) Oil', method: 'Oil made by simmering bhringraj herb in sesame or coconut oil. Apply as scalp treatment.' },
         { practice: 'Amla (Indian Gooseberry) Hair Treatment', method: 'Amla oil or fresh amla paste applied to hair.', why: 'Amla is the highest plant source of vitamin C. Antioxidant protection for follicles. Contains tannins that may support hair shaft integrity.' },
       ],
       herbs: [
@@ -96,11 +96,11 @@ export const ETHNIC_HAIR_GROWTH_GUIDES = {
     communityId: 'arab',
     communityName: 'Arab Middle Eastern',
     hairGrowthProfile: {
-      description: 'Arab hair typically ranges from type 1C (straight) to type 3A (loose curly), with North African Arab communities showing more type 3 and some type 4 variation (particularly in communities with Sub-Saharan African ancestry). Gulf Arab women\'s hair tends to be type 1C-2A — straight to slightly wavy, dense, and thick. Hair length is deeply valued in Arab culture — the tradition of long, thick, glossy hair as a beauty ideal has driven sophisticated hair care traditions.',
+      description: 'Arab hair often ranges from type 1C (straight) to type 3A (loose curly), with North African Arab communities showing more type 3 and some type 4 variation (particularly in communities with Sub-Saharan African ancestry). Gulf Arab women\'s hair tends to be type 1C-2A — straight to slightly wavy, dense, and thick. Hair length is deeply valued in Arab culture — the tradition of long, thick, glossy hair as a beauty ideal has driven sophisticated hair care traditions.',
     },
     arabHairGrowthTraditions: [
       { practice: 'Argan Oil as Hair Treatment', tradition: 'Moroccan Berber women have applied argan oil to their hair for centuries. Argan oil was their hair product before it became a global beauty industry ingredient.', how: 'Apply a small amount of pure argan oil to ends after washing. Can be used as a pre-wash scalp treatment.', science: 'Tocopherols in argan oil protect against oxidative damage to hair. Oleic acid coats the cuticle for smoothness and shine.' },
-      { practice: 'Black Seed Oil (Habbatus Sauda) Scalp Treatment', tradition: 'The Prophet Mohammed (PBUH) said that black seed is a cure for every disease except death. Black seed oil has been used on scalp in the Arab world for centuries.', evidence: 'Thymoquinone in nigella sativa has anti-inflammatory properties. A small study showed nigella sativa oil improved hair loss. More study needed.', how: 'Apply 2-4 drops to scalp sections. Massage. Leave 30 min to overnight. Wash out.' },
+      { practice: 'Black Seed Oil (Habbatus Sauda) Scalp Treatment', tradition: 'The Prophet Mohammed (PBUH) said that black seed is a cure for every disease except death. Black seed oil has been used on scalp in the Arab world for centuries.',  how: 'Apply 2-4 drops to scalp sections. Massage. Leave 30 min to overnight. Wash out.' },
       { practice: 'Henna as Hair Treatment', tradition: 'Henna is used across the Arab world not just for coloring but as a conditioning treatment.', science: 'Lawsone (henna\'s active molecule) bonds to the keratin protein in hair, coating and strengthening the shaft. This temporarily adds thickness and reduces breakage.' },
       { practice: 'Olive Oil Hot Oil Treatment', how: 'Warm pure extra virgin olive oil. Apply to hair. Wrap in warm towel. Leave 30-60 min. Wash out.', why: 'Squalene in olive oil mimics the natural oils produced by sebaceous glands. Antioxidants protect hair from oxidative damage.' },
     ],
@@ -118,14 +118,14 @@ export const ETHNIC_HAIR_GROWTH_GUIDES = {
       description: 'Latina hair spans the full spectrum from straight (type 1, common in Mexican-Indigenous and Southern Cone communities) to tightly coiled (type 4, common in Afro-Latina communities). The most common Latina hair type is type 2C-3B — wavy to curly, with a tendency toward frizz and dryness. This diversity means growth protocols must be customized. What works for a Mexican woman with straight type 1B hair is completely different from what works for an Afro-Dominican woman with type 4B hair.',
     },
     latinaGrowthTraditions: [
-      { practice: 'Rosemary (Romero)', tradition: 'Rosemary is used across Latin American cultures as a hair growth and darkening herb. Rosemary water rinses, rosemary oil, and rosemary in shampoo are all traditional practices.', science: 'A 2023 study found rosemary oil as effective as 2% minoxidil for hair growth promotion over 6 months. Rosmarinic acid is the active compound. This is one of the strongest-evidence natural hair growth ingredients.', how: 'Steep fresh rosemary in boiling water. Cool. Use as a final rinse after shampooing. Or: apply diluted rosemary essential oil (2% in carrier oil) to scalp 2-3x per week.' },
+      { practice: 'Rosemary (Romero)', tradition: 'Rosemary is used across Latin American cultures as a hair growth and darkening herb. Rosemary water rinses, rosemary oil, and rosemary in shampoo are all traditional practices.',  how: 'Steep fresh rosemary in boiling water. Cool. Use as a final rinse after shampooing. Or: apply diluted rosemary essential oil (2% in carrier oil) to scalp 2-3x per week.' },
       { practice: 'Coconut Oil', tradition: 'Universal Latin American hair treatment, particularly strong in tropical regions.', how: 'Pre-wash treatment: apply to dry hair 30 min before washing. Or: use as sealant after leave-in.' },
       { practice: 'Egg Mask', tradition: 'The egg hair mask is a grandmother\'s beauty secret across Latin America.', science: 'Eggs provide protein (including all essential amino acids for keratin synthesis) and biotin. Egg yolk specifically contains cholesterol and fat that coat and condition hair.', how: '2 eggs applied to dry hair. Leave 20-30 min. Rinse with cool water. Shampoo once to remove.' },
       { practice: 'Beer Rinse', tradition: 'Beer as a final hair rinse for shine and volume is a widely shared Latin American tradition.', why: 'Beer contains hops and malt that coat hair and add temporary body. The carbonation can flatten the cuticle, increasing shine.' },
     ],
     rosemaryOilProtocol: {
       title: 'The Rosemary Oil Growth Protocol — Backed by Science',
-      evidence: 'This is one of the best-evidenced natural hair growth interventions. The 2023 clinical trial compared rosemary oil to 2% minoxidil and found comparable results at 6 months.',
+      
       how: 'Dilute rosemary essential oil in jojoba, coconut, or olive oil (1% to 2% — roughly 5-10 drops per 50ml carrier oil). Apply to scalp in sections. Massage gently. Leave for 30+ minutes (or overnight). Wash out. Repeat 2-3x per week.',
       timeline: 'Allow 4-6 months of consistent use before judging effectiveness — hair growth cycles are long.',
     },
@@ -135,12 +135,12 @@ export const ETHNIC_HAIR_GROWTH_GUIDES = {
     communityId: 'east-asian',
     communityName: 'East Asian',
     hairGrowthProfile: {
-      description: 'East Asian hair is typically type 1 (straight) and is among the thickest hair strands by diameter of any hair type. A single strand of Asian hair is often 70% wider than a strand of Caucasian hair and nearly twice the diameter of Black hair strands, though there are far fewer strands per square centimeter. This makes East Asian hair naturally strong and resistant to breakage, but also means it responds differently to chemicals and heat.',
+      description: 'East Asian hair is often type 1 (straight) and is among the thickest hair strands by diameter of any hair type. East Asian strands are generally thicker in diameter than other hair types, though there are fewer strands per square centimeter. This makes East Asian hair naturally strong and resistant to breakage, but also means it responds differently to chemicals and heat.',
     },
     eastAsianGrowthTraditions: [
-      { practice: 'Rice Water Rinse', tradition: 'The Yao women of Huangluo, China (the "long hair village") are famous for their hair that can reach 1.7 meters in length. They credit fermented rice water for their extraordinary hair growth and retention.', science: 'Rice water contains inositol (a carbohydrate that can penetrate the hair shaft and repair damage from the inside out), amino acids, and antioxidants. Fermented rice water has slightly lower pH, which may help close the cuticle.', how: 'Soak rice in water 15-30 min (fresh water) or leave at room temperature 24-48 hours (fermented). Pour off the milky water. Apply to hair as a rinse after shampooing. Leave 5-20 min. Rinse with clean water.' },
-      { practice: 'Camellia Oil (Tsubaki)', tradition: 'Camellia oil has been used for hair in Japan for centuries — particularly by geisha for the high-gloss black hair of traditional Japanese styling.', science: 'The oil is 85-90% oleic acid, which has excellent hair penetration. Creates extraordinary shine and smoothness on straight hair.' },
-      { practice: 'Ginseng Scalp Treatment', tradition: 'Ginseng is used in both Korean and Chinese traditional medicine for hair growth.', science: 'Ginsenosides (the active compounds in ginseng) have been studied for effects on hair follicles. Some in vitro evidence for promoting the anagen (growth) phase. Topical ginseng in a 2012 study showed increased hair growth.', how: 'Ginseng-infused tonic massaged into scalp.' },
+      { practice: 'Rice Water Rinse', tradition: 'The Yao women of Huangluo, China (the "long hair village") are famous for hair that often reaches well over a metre in length. They credit fermented rice water for their extraordinary hair growth and retention.', science: 'Rice water contains inositol (a carbohydrate that can penetrate the hair shaft and repair damage from the inside out), amino acids, and antioxidants. Fermented rice water has slightly lower pH, which may help close the cuticle.', how: 'Soak rice in water 15-30 min (fresh water) or leave at room temperature 24-48 hours (fermented). Pour off the milky water. Apply to hair as a rinse after shampooing. Leave 5-20 min. Rinse with clean water.' },
+      { practice: 'Camellia Oil (Tsubaki)', tradition: 'Camellia oil has been used for hair in Japan for centuries — particularly by geisha for the high-gloss black hair of traditional Japanese styling.', science: 'The oil is mostly oleic acid, a fatty acid that penetrates hair well. Creates extraordinary shine and smoothness on straight hair.' },
+      { practice: 'Ginseng Scalp Treatment', tradition: 'Ginseng is used in both Korean and Chinese traditional medicine for hair growth.',  how: 'Ginseng-infused tonic massaged into scalp.' },
     ],
     japaneseHairCare: {
       title: 'Japanese Hair Care Philosophy',
@@ -156,7 +156,7 @@ export const ETHNIC_HAIR_GROWTH_GUIDES = {
       description: 'East African hair is predominantly type 4 (coily), similar to West African hair in growth challenges. However, there is notable variety: the horn of Africa has a distinct hair texture in Somali and Ethiopian Cushitic communities that is often type 4A-4B with a unique texture and coil pattern. Nilotic communities (South Sudan, parts of Kenya and Uganda) have extremely tight type 4C coils. The region has its own traditional hair care practices developed over millennia.',
     },
     growthTraditions: [
-      { practice: 'Frankincense Oil Scalp Treatment', tradition: 'Somalia is the world\'s largest producer of frankincense. Frankincense oil has been used for hair and scalp in the region for thousands of years.', science: 'Boswellic acids are anti-inflammatory — reducing scalp inflammation that can impair follicle function. Some evidence for wound healing and skin repair that may extend to follicle health.', how: 'Dilute 1-2% frankincense essential oil in jojoba. Massage into scalp. Leave 30 min to overnight.' },
+      { practice: 'Frankincense Oil Scalp Treatment',  science: 'Boswellic acids are anti-inflammatory — reducing scalp inflammation that can impair follicle function. Some evidence for wound healing and skin repair that may extend to follicle health.', how: 'Dilute 1-2% frankincense essential oil in jojoba. Massage into scalp. Leave 30 min to overnight.' },
       { practice: 'Camel Milk for Hair', tradition: 'Camel milk is used internally and topically in Somalia and other East African communities for skin and hair.', science: 'Camel milk contains vitamins B1, B2, C, and lactoferrin (anti-inflammatory protein). May contribute to scalp health when applied topically.' },
       { practice: 'Ethiopian Honey Treatment', tradition: 'Ethiopia produces some of the world\'s best honey (from the extraordinary botanical diversity of Ethiopian forests). Used both as food and as hair/scalp treatment.', how: 'Apply raw honey to scalp and hair. Leave 20-30 min. Rinse. Can mix with a few drops of oil for easier application.' },
     ],
@@ -178,17 +178,15 @@ export const ETHNIC_HAIR_GROWTH_GUIDES = {
   'black-american': {
     communityId: 'black-american',
     communityName: 'Black American',
-    hairGrowthProfile: {
-      description: 'Black American hair (type 3C-4C for most naturals) shares the growth biology of West African hair but has been shaped by an additional 200+ years of American history: chemical relaxers (starting with early lye-based processes in the 1900s and reaching peak relaxer culture in the 1970s-1990s), heat damage from flat irons, traction alopecia from tight braids/weaves, and the natural hair renaissance that began in the 2000s-2010s.',
-    },
+    
     naturalHairMovementGrowth: {
       description: 'The modern natural hair movement (approximately 2010s onward, catalyzed by YouTube, Instagram, and a cultural shift) drove an explosion of knowledge about type 4 hair growth, moisture retention, and protective styling that has directly contributed to Black American women achieving lengths previously thought impossible.',
       keyDiscoveries: ['The LOC method (Liquid-Oil-Cream) for moisture retention', 'Protective styling (braids, twists, wigs) for length retention', 'Low porosity vs. high porosity hair types and their different needs', 'The Curly Girl Method adapted for type 4', 'Gentle detangling techniques (fingers, wide-tooth comb) instead of brush'],
     },
     growthIngredients: [
       { ingredient: 'JBCO (Jamaican Black Castor Oil)', why: 'The #1 hair growth product in Black American natural hair culture. Ricinoleic acid. Scalp massage medium. Edge growth.', how: 'Apply to edges and scalp. Massage 5 min daily or every other day. Protective style edges afterward.' },
-      { ingredient: 'Peppermint Oil', science: 'A 2014 study found peppermint oil more effective than minoxidil for hair growth in an animal model. Menthol increases blood circulation to the scalp.', how: '3-5 drops in 1 tbsp carrier oil. Massage into scalp. Leave 30 min. Rinse. Note: can be irritating — test first.' },
-      { ingredient: 'Rosemary Oil', science: 'As per Latina section — strongest natural evidence for hair growth promotion. Equal to 2% minoxidil in clinical study.', how: '2% dilution in carrier oil. Scalp massage. Leave overnight.' },
+      { ingredient: 'Peppermint Oil',  how: '3-5 drops in 1 tbsp carrier oil. Massage into scalp. Leave 30 min. Rinse. Note: can be irritating — test first.' },
+      { ingredient: 'Rosemary Oil', science: 'One small 2015 trial found rosemary oil comparable to 2% minoxidil for pattern hair loss after six months; more research is needed.', how: '2% dilution in carrier oil. Scalp massage. Leave overnight.' },
       { ingredient: 'Biotin (Internal)', science: 'Biotin deficiency causes hair loss. Most people aren\'t deficient — biotin supplementation helps if deficient, unclear benefit if not. But widely used.', note: 'Can cause acne in some people. Can interfere with lab tests (tell your doctor if taking biotin before bloodwork).' },
     ],
     lengthRetentionFocus: {
@@ -210,9 +208,9 @@ export const UNIVERSAL_HAIR_GROWTH = {
   hairGrowthCycle: {
     description: 'Every hair on your head is independently cycling through a growth pattern. Understanding this cycle explains both why hair growth seems slow and why treatments take months to work.',
     phases: [
-      { phase: 'Anagen (Growth)', duration: '2-7 years', percentage: '85-90% of hairs at any time', description: 'The active growth phase. Hair cells divide rapidly in the follicle bulb. The length of your anagen phase determines your maximum hair length potential. This is genetic.' },
-      { phase: 'Catagen (Transition)', duration: '2-3 weeks', percentage: '1-2% of hairs', description: 'Growth stops. The follicle shrinks. The hair separates from the blood supply.' },
-      { phase: 'Telogen (Resting)', duration: '3-4 months', percentage: '10-15% of hairs', description: 'The hair rests. A new anagen hair begins forming beneath it. At the end of telogen, the old hair sheds.' },
+      { phase: 'Anagen (Growth)', duration: '2-7 years',  description: 'The active growth phase. Hair cells divide rapidly in the follicle bulb. The length of your anagen phase determines your maximum hair length potential. This is genetic.' },
+      { phase: 'Catagen (Transition)', duration: '2-3 weeks',  description: 'Growth stops. The follicle shrinks. The hair separates from the blood supply.' },
+      { phase: 'Telogen (Resting)', duration: '3-4 months',  description: 'The hair rests. A new anagen hair begins forming beneath it. At the end of telogen, the old hair sheds.' },
       { phase: 'Exogen (Shedding)', duration: 'Part of telogen', description: 'The old hair falls. Normally 50-100 hairs per day is healthy shedding.' },
     ],
     implication: 'If you start a hair growth treatment today, you won\'t see results for 3-4 months — the time for the follicle to complete a telogen phase and begin a new anagen cycle.',
@@ -220,10 +218,10 @@ export const UNIVERSAL_HAIR_GROWTH = {
 
   hairGrowthNutrients: {
     critical: [
-      { nutrient: 'Iron', role: 'Ferritin (iron storage protein) is essential for hair follicle matrix cell division. Low iron is one of the most common causes of hair shedding in women of reproductive age.', sources: 'Red meat, lentils, spinach, pumpkin seeds, fortified cereals' },
-      { nutrient: 'Zinc', role: 'Required for DNA and RNA polymerase activity in rapidly dividing hair follicle cells. Zinc deficiency causes diffuse hair shedding.', sources: 'Oysters, pumpkin seeds, beef, chickpeas' },
-      { nutrient: 'Protein', role: 'Hair is 95% keratin protein. Inadequate dietary protein directly impairs hair growth.', requirement: '0.8g per kg body weight minimum; higher if physically active', sources: 'All animal proteins (complete); plant: combine legumes + grains' },
-      { nutrient: 'Biotin (B7)', role: 'Required for keratin synthesis. Deficiency causes hair loss and nail brittleness. Deficiency is uncommon except in raw egg white consumption (avidin blocks biotin absorption) or inflammatory bowel disease.', sources: 'Eggs, sweet potato, salmon, almonds, avocado' },
+      { nutrient: 'Iron', role: 'Ferritin (iron storage protein) is essential for hair follicle matrix cell division. Low iron is one of the most common causes of hair shedding in women of reproductive age.' },
+      { nutrient: 'Zinc', role: 'Required for DNA and RNA polymerase activity in rapidly dividing hair follicle cells. Zinc deficiency causes diffuse hair shedding.' },
+      { nutrient: 'Protein', role: 'Hair is 95% keratin protein. Inadequate dietary protein directly impairs hair growth.', requirement: '0.8g per kg body weight minimum; higher if physically active' },
+      { nutrient: 'Biotin (B7)', role: 'Required for keratin synthesis. Deficiency causes hair loss and nail brittleness. Deficiency is uncommon except in raw egg white consumption (avidin blocks biotin absorption) or inflammatory bowel disease.' },
       { nutrient: 'Vitamin D', role: 'Vitamin D receptors in hair follicles are required for normal follicle cycling. Deficiency (extremely common globally) is associated with hair loss.', testing: 'Get a 25-OH Vitamin D blood test if experiencing hair loss', target: '50-80 ng/mL is optimal for hair' },
     ],
   },
@@ -236,11 +234,11 @@ export const UNIVERSAL_HAIR_GROWTH = {
   },
 
   topGrowthIngredients: [
-    { ingredient: 'Rosemary Oil (2%)', evidence: 'Clinical trial evidence equal to 2% minoxidil', how: 'Dilute to 2% in carrier oil. Scalp massage 2-3x weekly.' },
-    { ingredient: 'Minoxidil (2% or 5%)', evidence: 'FDA-approved for hair loss. Strong evidence.', note: 'Works only while using — hair loss returns if stopped. 2% for women, 5% (or oral low-dose) for men.' },
-    { ingredient: 'Peppermint Oil', evidence: 'Strong animal study evidence. Human studies limited.', how: 'Dilute to 3% in carrier oil. Scalp massage.' },
-    { ingredient: 'Castor Oil (JBCO)', evidence: 'Limited direct growth evidence but proven to coat and strengthen hair, reducing breakage. Strong traditional use.', how: 'Scalp massage and hair application. Mix with lighter oils for manageability.' },
-    { ingredient: 'Scalp Massage (Tool or Hands)', evidence: 'A 2016 study found 4 minutes of daily standardized scalp massage increased hair thickness after 24 weeks.', how: '4-10 minutes of scalp massage daily, with or without oil.' },
+    { ingredient: 'Rosemary Oil (2%)',  how: 'Dilute to 2% in carrier oil. Scalp massage 2-3x weekly.' },
+    { ingredient: 'Minoxidil (2% or 5%)',  note: 'Works only while using — hair loss returns if stopped. 2% for women, 5% (or oral low-dose) for men.' },
+    { ingredient: 'Peppermint Oil',  how: 'Dilute to 3% in carrier oil. Scalp massage.' },
+    { ingredient: 'Castor Oil (JBCO)',  how: 'Scalp massage and hair application. Mix with lighter oils for manageability.' },
+    { ingredient: 'Scalp Massage (Tool or Hands)',  how: '4-10 minutes of scalp massage daily, with or without oil.' },
   ],
 };
 
@@ -263,10 +261,3 @@ export function getHairGrowthGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const HAIR_GROWTH_STATS = {
-  moduleId: 'hair_growth_ethnic_guide',
-  communitiesCovered: 9,
-  growthIngredientsCovered: 15,
-  hairLossTypesCovered: 4,
-  version: '1.0.0',
-};

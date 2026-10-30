@@ -19,7 +19,7 @@ import { scoreDNA, getCommunities, QUIZ_QUESTIONS } from './cultural_dna.js';
 import { buildTransform } from './pipeline/transform.js';
 import { MirrrAgent } from './agent/mirrr_agent.js';
 import { matchShadeByColor, findShades, getShadeSpectrum, getDepthLabels, getUndertoneOptions } from './shade_finder.js';
-import { matchWigs, getWigCatalogue, getWigLengths, getWigTextures } from './wig_matchmaker.js';
+import { matchWigs, matchWigsForFilters, getWigCatalogue, getWigLengths, getWigTextures } from './wig_matchmaker.js';
 import { getLookProducts, getAllFormulas, getProductCategories } from './product_engine.js';
 import { DEMO_PROFILES } from './demo_profiles.js';
 import { getTrendingArtists, getAllTrendingArtists, REGIONAL_ANCHORS } from './trending_artists.js';
@@ -280,7 +280,7 @@ async function router(req, res) {
     if (!body) return;
     const { aesthetic, communityId, lengthPref, texturePref, topN = 5 } = body;
     if (!aesthetic) return sendJSON(res, 400, { error: 'aesthetic object is required' });
-    return sendJSON(res, 200, { wigs: matchWigs({ aesthetic, communityId, lengthPref, texturePref, topN }) });
+    return sendJSON(res, 200, matchWigsForFilters({ aesthetic, communityId, lengthPref, texturePref, topN }));
   }
 
   // GET /api/products/categories

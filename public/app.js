@@ -1033,51 +1033,47 @@ async function matchWigs() {
       texturePref: state.texturePref ?? undefined,
       topN: 5,
     });
-    renderWigResults(data.wigs, { length: state.lengthPref, texture: state.texturePref });
+    renderWigResults(data);
   } catch (err) {
     toast('Wig match error: ' + (err.message ?? ''), 'error');
   }
 }
 
-function renderWigResults(wigs, filters = {}) {
-  const f = [filters.length && filters.length !== 'any' ? filters.length : null, filters.texture && filters.texture !== 'any' ? filters.texture : null].filter(Boolean);
-  const filtersNote = f.length ? ` · ✓ your filter${f.length > 1 ? 's' : ''}: ${f.map(esc).join(', ')}` : '';
+// Wig Match results: a text list of individual wigs, every one inside the selected filters, each
+// with its ranking checks spelled out. No composite picture (its labels did not match the styles).
+const WIG_POINTS = { hairVibe: 4, community: 2, lookStyle: 1 };
+const WIG_CHECK_LABEL = { hairVibe: 'hair vibe', community: 'community', lookStyle: 'look style' };
+function wigLabel(kind, id) {
+  const list = kind === 'length' ? state.wigLengths : state.wigTextures;
+  return (list ?? []).find(x => x.id === id)?.label ?? id;
+}
+function wigItemHTML({ wig, criteria = {}, reason }) {
+  const pts = Object.entries(WIG_POINTS).reduce((n, [k, p]) => n + (criteria[k] ? p : 0), 0);
+  const checks = Object.keys(WIG_POINTS).map(k => `${criteria[k] ? '✓' : '✗'} ${WIG_CHECK_LABEL[k]} (${WIG_POINTS[k]})`).join(' · ');
+  return `<li class="wig-item">
+    <div class="wig-item-head"><strong class="wig-name">${esc(wig.name)}</strong>
+      <span class="wig-item-meta">${esc(wig.texture)} · ${esc(wig.length)} · ${esc(wig.finish ?? '')}</span></div>
+    ${wig.description ? `<p class="wig-desc">${esc(wig.description)}</p>` : ''}
+    <p class="wig-checks">Rank score ${pts} of 7 = ${checks}</p>
+    ${reason ? `<p class="wig-reason">${esc(reason)}</p>` : ''}
+  </li>`;
+}
+function renderWigResults(data = {}) {
+  const wigs = data.wigs ?? [];
+  const fl = data.filters ?? {};
   const resultsEl = document.getElementById('wigResults');
   const cardsEl = document.getElementById('wigCards');
-
-  cardsEl.innerHTML = `
-    <h3 class="section-title">Your Wig Matches</h3>
-    <div class="wig-cards-inner">
-      ${wigs.map(({ wig, criteria, matched, of, reason }) => {
-        const wigImgFile = WIG_IMAGES[wig.id];
-        const wigImgHtml = wigImgFile
-          ? `<div class="wig-card-img-wrap"><img src="${wigImgFile}" alt="${wig.name}" class="wig-card-img" loading="lazy" /></div>`
-          : '';
-        return `
-        <div class="wig-card">
-          ${wigImgHtml}
-          <div class="wig-card-top">
-            <span class="wig-emoji">💇🏾</span>
-            <div class="wig-match-pct" title="Your length and texture filters are applied first. These three checks rank what is left: hair vibe (4 points), community (2), look style (1).">${matched ?? 0} of ${of ?? 3} ranking checks</div>
-          </div>
-          <h3 class="wig-name">${wig.name}</h3>
-          <p class="wig-desc">${wig.description ?? ''}</p>
-          <div class="wig-meta">
-            <span class="tag">${wig.texture}</span>
-            <span class="tag">${wig.length}</span>
-            <span class="tag">${wig.finish}</span>
-          </div>
-          ${criteria ? `<p class="wig-checks">${[['hairVibe', 'hair vibe'], ['community', 'community'], ['lookStyle', 'look style']].map(([k, l]) => `${criteria[k] ? '✓' : '✗'} ${l}`).join(' · ')}${filtersNote}</p>` : ''}
-          <p class="wig-reason">✨ ${reason}</p>
-          <div class="wig-colours">
-            ${(wig.colours ?? []).map(c => `<span class="colour-dot" title="${c}" style="background:${colourToHex(c)}"></span>`).join('')}
-          </div>
-        </div>
-      `;
-      }).join('')}
-    </div>
-  `;
-
+  const chosen = [fl.length ? `length: ${wigLabel('length', fl.length)}` : null, fl.texture ? `texture: ${wigLabel('texture', fl.texture)}` : null].filter(Boolean);
+  const filterLine = chosen.length ? `Every wig below is ${chosen.join(' and ')}.` : 'No length or texture filter set, so all styles are ranked.';
+  const how = 'Your length and texture filters are applied first. The rest are ranked by three checks: hair vibe (4 points), community (2), look style (1).';
+  let body;
+  if (wigs.length) {
+    body = `<p class="wig-filter-line">${esc(filterLine)}</p><ol class="wig-list">${wigs.map(wigItemHTML).join('')}</ol>`;
+  } else {
+    const near = (data.nearest ?? []).map(g => `<h4 class="wig-near-title">Keeps your ${esc(g.kept)} (${esc(wigLabel(g.kept, fl[g.kept]))}), not your ${esc(g.dropped)}</h4><ol class="wig-list">${g.wigs.map(wigItemHTML).join('')}</ol>`).join('');
+    body = `<p class="wig-filter-line">None of our ${esc(String(data.total ?? 42))} styles is ${esc(chosen.join(' and '))}. ${near ? 'The closest options each keep one of your filters:' : 'Try a different length or texture.'}</p>${near}`;
+  }
+  cardsEl.innerHTML = `<h3 class="section-title">Your Wig Matches</h3><p class="wig-how">${esc(how)}</p>${body}`;
   resultsEl.classList.remove('hidden');
 }
 
@@ -1807,11 +1803,14 @@ async function sendStylistPageMessage() {
   appendStylistPageMessage('stylist', '🔍 Checking Qloo for your refined profile…');
 
   try {
+    // Send the looks on screen so each typed turn compounds on the last and the reply can say
+    // plainly when the ranking did not change.
     const result = await api('/api/agent/refine', 'POST', {
       message: msg,
       currentAesthetic: state.aesthetic,
       communityId: state.communityId,
       tasteChips: state.tasteChips,
+      previousLookIds: state.stylistPageLookIds ?? state.currentLookIds ?? [],
     });
 
     const msgs = document.getElementById('stylistPageMessages');
@@ -1822,6 +1821,7 @@ async function sendStylistPageMessage() {
     if (result.looks?.length) {
       state.aesthetic = result.aesthetic ?? state.aesthetic;
       state.communityId = result.communityId ?? state.communityId;
+      state.stylistPageLookIds = result.looks.map(r => r.look?.id).filter(Boolean);
 
       const resultsEl = document.getElementById('stylistPageResults');
       resultsEl.classList.remove('hidden');

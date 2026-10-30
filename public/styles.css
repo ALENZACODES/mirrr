@@ -3045,3 +3045,12 @@ body { padding-top: 58px; }
 .finish-opt-label { font-weight: 600; font-size: .9rem; }
 .finish-opt-note { font-size: .72rem; color: #9a8f80; }
 .finish-done { margin-top: .9rem; color: #c9a96e; }
+
+/* Wig Match: text list of individual wigs */
+.wig-how, .wig-filter-line { color: #aaa; font-size: .85rem; max-width: 820px; margin: .25rem auto .75rem; }
+.wig-filter-line { color: #c9a96e; }
+.wig-list { list-style: decimal; max-width: 820px; margin: 0 auto 1rem; padding-left: 1.5rem; display: grid; gap: .75rem; }
+.wig-item { padding: .8rem 1rem; border: 1px solid rgba(212,168,71,0.2); border-radius: 10px; background: rgba(255,255,255,0.02); }
+.wig-item-head { display: flex; flex-wrap: wrap; gap: .5rem; align-items: baseline; justify-content: space-between; }
+.wig-item-meta { font-size: .75rem; color: #9a8f80; text-transform: uppercase; letter-spacing: .06em; }
+.wig-near-title { max-width: 820px; margin: 1rem auto .5rem; color: #f0e8da; font-size: .95rem; }

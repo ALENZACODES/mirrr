@@ -610,6 +610,30 @@ export function matchWigs({ aesthetic = {}, communityId = 'mixed', lengthPref = 
     .slice(0, topN);
 }
 
+/** Points per ranking check (shown to the user so the order is explainable). */
+export const WIG_CHECK_POINTS = { hairVibe: 4, community: 2, lookStyle: 1 };
+
+/**
+ * Wig Match for the UI: every returned wig satisfies every selected filter. When no wig in the
+ * catalogue fits all of them, `wigs` is empty and `nearest` lists wigs that keep one filter and
+ * drop the other, each group labelled with what was kept, so nothing is passed off as a match.
+ */
+export function matchWigsForFilters({ aesthetic = {}, communityId = 'mixed', lengthPref = null, texturePref = null, topN = 6 } = {}) {
+  const len = lengthPref && lengthPref !== 'any' ? lengthPref : null;
+  const tex = texturePref && texturePref !== 'any' ? texturePref : null;
+  const wigs = matchWigs({ aesthetic, communityId, lengthPref: len, texturePref: tex, topN });
+  const total = WIG_CATALOGUE.length;
+  if (wigs.length || (!len && !tex)) return { wigs, filters: { length: len, texture: tex }, total, nearest: [] };
+  const nearest = [];
+  if (len && tex) {
+    const keepTex = matchWigs({ aesthetic, communityId, texturePref: tex, topN: 3 });
+    const keepLen = matchWigs({ aesthetic, communityId, lengthPref: len, topN: 3 });
+    if (keepTex.length) nearest.push({ kept: 'texture', dropped: 'length', wigs: keepTex });
+    if (keepLen.length) nearest.push({ kept: 'length', dropped: 'texture', wigs: keepLen });
+  }
+  return { wigs: [], filters: { length: len, texture: tex }, total, nearest };
+}
+
 function buildReason(wig, hairVibe, communityId, aesthetic) {
   const parts = [];
   if (wig.hair_vibe_match.includes(hairVibe)) parts.push(`matches your ${hairVibe.replace(/-/g, ' ')} vibe`);

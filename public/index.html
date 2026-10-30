@@ -371,6 +371,7 @@
             <button class="nav-link" data-view="hair-removal" role="menuitem">Hair Removal</button>
             <button class="nav-link" data-view="smile" role="menuitem">Smile &amp; Lip Care</button>
             <button class="nav-link" data-view="night" role="menuitem">Night Routine</button>
+            <button class="nav-link" data-view="bump" role="menuitem">Pregnancy &amp; Postpartum</button>
             <button class="nav-link" data-view="style-match" role="menuitem">Style Match</button>
             <button class="nav-link" data-view="quiz" role="menuitem">DNA Quiz</button>
             <button class="nav-link" data-view="wig" role="menuitem">Wig Match</button>
@@ -1202,6 +1203,20 @@
       </div>
     </section>
 
+    <section id="view-bump" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Pregnancy &amp; Postpartum</h2>
+        <p class="view-sub">Check whether an ingredient or treatment is OK at your stage, what to do about melasma, breakouts, stretch marks, hair or itch right now, what to expect, and your community's pregnancy and postpartum traditions.</p>
+      </div>
+      <div class="st-wrap">
+        <div id="bpControls" class="st-controls"></div>
+        <div id="bpPreview" class="sk-preview cx-preview" aria-live="polite"></div>
+        <div id="bpSummary" class="hl-summary"></div>
+        <div id="bpPlan" class="st-plan"></div>
+        <p class="lib-disclaimer">The figure is an illustration in the Monk Skin Tone Scale tone you pick (Ellis Monk / Google, CC BY 4.0), not your photo. Verdicts come only from the guides on the Library shelf; where they give no rule for your stage, the planner says so. General information, not medical advice: check every product with your doctor, midwife or pharmacist.</p>
+      </div>
+    </section>
+
     <section id="view-night" class="view hidden">
       <div class="view-header">
         <h2 class="view-title">Night Routine</h2>
@@ -1385,6 +1400,7 @@
   <script src="hairremoval.js" defer></script>
   <script src="smile.js" defer></script>
   <script src="night.js" defer></script>
+  <script src="bump.js" defer></script>
   <script>
     // Community detail panel interactions
     (function() {
@@ -1407,7 +1423,7 @@
             { icon: '✨', text: 'Ubtan paste — turmeric, rose water, chickpea flour bridal brightening' },
             { icon: '🧘🏽‍♀️', text: 'Yoga & Bharatanatyam — movement that integrates skin care into practice' },
             { icon: '💒', text: 'Mehndi Bride: jewel eyes, deep red lip, full bridal glam' },
-            { icon: '🌙', text: 'Amla oil overnight treatment — grows 3× more than control in trials' },
+            { icon: '🌙', text: 'Amla oil overnight treatment — a traditional scalp oil left on overnight' },
             { icon: '🌿', text: 'Ayurveda: Vata/Pitta/Kapha dosha — personalised beauty system' },
           ]
         },
@@ -1470,7 +1486,7 @@
           name: '🌿 South African Beauty',
           rituals: [
             { icon: '🍵', text: 'Rooibos — aspalathin blocks UV oxidative stress, indigenous Khoisan tea' },
-            { icon: '🌳', text: 'Marula oil — 76% oleic acid, San people\'s traditional skin protector' },
+            { icon: '🌳', text: 'Marula oil — rich in oleic acid, a traditional skin oil in southern Africa' },
             { icon: '🎉', text: 'Heritage Day: rooibos-tinted skin, terracotta lip, earth tones, braided crown' },
             { icon: '🏃🏿', text: 'Parkrun culture — sport-to-celebration skin transition rituals' },
             { icon: '🌿', text: 'Ubuntu philosophy in beauty — "I am because we are" community self-care' },

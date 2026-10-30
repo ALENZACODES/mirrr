@@ -18,15 +18,15 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
     },
     steamingPractice: {
       name: 'Postpartum Steam Bath',
-      description: 'Hot herbal steam baths are a universal West African postpartum practice. Steam baths may be full-body (sitting over a pot of herbal steam) or vaginal (for perineal healing, under careful traditional guidance).',
+      description: 'Herbal steam baths are a long-standing West African postpartum practice, taken as a full-body steam. Doctors advise against vaginal steaming: steam can burn the healing perineum and there is no evidence it helps it heal.',
       herbs: ['Eucalyptus', 'Lemongrass', 'Neem leaves', 'Bitter leaf (Vernonia amygdalina)', 'Uziza leaves'],
-      beautyBenefit: 'Opens pores, promotes skin rejuvenation, releases tension in the body that manifests as dull skin.',
+      beautyBenefit: 'Warmth and relaxation; keep the steam warm, not scalding, and stay hydrated.',
     },
     bodyWrapping: {
       name: 'Kanga/Wrapper Belly Binding',
       description: 'Wrapping the abdomen after birth is a universal West African postpartum practice. A long strip of fabric (kanga, ankara fabric, or a traditional cloth) is wrapped firmly around the belly.',
       beautyBenefit: 'Supports abdominal muscles as they recover. Creates a feeling of being "held together" that many mothers describe as profoundly comforting.',
-      modernEquivalent: 'Postpartum belly wraps/binders. Traditional fabric binding is just as effective and culturally meaningful.',
+      modernEquivalent: 'Postpartum belly wraps or binders; wrap firmly but not tightly, and ask your midwife after a caesarean.',
     },
     postpartumMassage: {
       name: 'Full-body Postpartum Massage',
@@ -43,14 +43,14 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
         'Traditional black soap (dudu osun) scalp washes to maintain a clean, healthy scalp',
         'Moringa supplementation for hair-supporting nutrients',
       ],
-      culturalNote: 'Some communities shave the head of the new mother as a symbolic "fresh start" — Yoruba and some other traditions. This is voluntary, and hair grows back healthier. The head shave is followed by scalp treatments.',
+      culturalNote: 'Some communities shave the head of the new mother as a symbolic "fresh start" — Yoruba and some other traditions. This is voluntary, and the hair grows back. The head shave is followed by scalp treatments.',
     },
     beautyFoods: [
       { food: 'Ofe Akwu / Banga Soup (Palm Nut Soup)', benefit: 'Carotenoids and vitamin E in palm oil for skin healing. Iron-rich for replenishing blood after birth. Traditional postpartum food across the Niger Delta.' },
       { food: 'Pepper Soup (Catfish or Goat)', benefit: 'One of the most important West African postpartum foods. The warming spices (uziza, uda, utazi) are believed to promote healing and "close the womb." Protein from meat for tissue repair.' },
       { food: 'Eba and Egusi Soup', benefit: 'Zinc in egusi melon seeds for wound healing and milk production. Hearty caloric base to support breastfeeding mothers.' },
       { food: 'Zobo (Hibiscus Drink)', benefit: 'Rich in iron and vitamin C. Anti-inflammatory. Helps replenish iron lost in birth.' },
-      { food: 'Tiger Nut Milk (Kunu Aya)', benefit: 'Galactagogue (promotes breast milk production). Nutrient-dense. Prebiotic fiber for gut health.' },
+      { food: 'Tiger Nut Milk (Kunu Aya)', benefit: 'Traditionally given to support milk supply. A filling, fibre-rich drink.' },
     ],
     skincarePostpartum: {
       mainConcerns: ['Postpartum mask (melasma worse after pregnancy)', 'Stretch marks (striae gravidarum)', 'Dry, dull skin from sleep deprivation', 'Acne from hormonal fluctuation'],
@@ -82,9 +82,9 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
       ],
     },
     postpartumHerbs: [
-      { herb: 'Shatavari (Asparagus racemosus)', benefit: 'The premier Ayurvedic herb for postpartum women. Supports milk production, hormone balancing, uterine recovery, and overall vitality. Also used for skin radiance.', use: 'Shatavari powder in warm milk (shatavari kalpa — traditional recipe). Shatavari supplements.' },
+      { herb: 'Shatavari (Asparagus racemosus)', benefit: 'An Ayurvedic herb traditionally given to new mothers to support milk supply and recovery. Check any herbal supplement with your provider while breastfeeding.', use: 'Shatavari powder in warm milk (shatavari kalpa — traditional recipe). Shatavari supplements.' },
       { herb: 'Moringa (Drumstick / Shevaga)', benefit: 'Extremely high iron for blood replenishment. Calcium and complete protein for tissue repair and milk production.', use: 'Drumstick soup (saag). Moringa powder supplement.' },
-      { herb: 'Ajwain (Carom Seeds)', benefit: 'Carminative — reduces gas and bloating (which is significant after cesarean or vaginal birth). Warming. Promotes uterine contraction.', use: 'Ajwain in dal and soups. Ajwain water (ajwain boiled in water) as a postpartum drink.' },
+      { herb: 'Ajwain (Carom Seeds)', benefit: 'Carminative — reduces gas and bloating (which is significant after cesarean or vaginal birth). Warming.', use: 'Ajwain in dal and soups. Ajwain water (ajwain boiled in water) as a postpartum drink.' },
       { herb: 'Fenugreek (Methi)', benefit: 'Major galactagogue (increases breast milk supply). Iron. Diosgenin in fenugreek has estrogen-like activity that may support postpartum hormonal balance.', use: 'Methi dal. Methi ladoo (traditional postpartum sweet eaten by new mothers).' },
       { herb: 'Dink (Edible Gum / Gondh)', benefit: 'High in calcium and iron. Traditional postpartum food for bone strengthening after birth (which depletes calcium).', use: 'Gondh ladoo — traditional Marathi/Punjabi postpartum sweet made from edible gum, ghee, and wheat flour.' },
     ],
@@ -99,7 +99,7 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
         'Gentle detangling, no harsh pulling',
         'Loose braiding during confinement',
         'Avoid shampoo for first few weeks (traditional) — dry clean or co-wash only',
-        'Amla supplementation (high vitamin C supports collagen and hair follicle health)',
+        'Amla (Indian gooseberry), rich in vitamin C, in food or chutney',
         'Iron supplementation if blood loss was significant at birth (common cause of postpartum hair loss beyond the normal hormonal shedding)',
       ],
     },
@@ -120,7 +120,7 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
     bushBathTradition: {
       description: 'Postpartum herbal bath is central to Caribbean recovery. "Bush baths" are prepared with specific medicinal herbs chosen for their healing, cleansing, and strengthening properties.',
       commonHerbs: [
-        { herb: 'Cerasee (Momordica charantia)', benefit: 'Blood cleansing, anti-inflammatory, skin healing' },
+        { herb: 'Cerasee (Momordica charantia)', benefit: 'A traditional bath herb for cleansing' },
         { herb: 'Soursop Leaves', benefit: 'Anti-inflammatory, calming, promotes sleep' },
         { herb: 'Fever Grass (Lemongrass)', benefit: 'Antibacterial, calming, reduces postpartum fever' },
         { herb: 'Neem', benefit: 'Antibacterial, skin healing, antifungal' },
@@ -136,7 +136,7 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
     caribbeanPostpartumFoods: [
       { food: 'Mannish Water (Jamaica)', description: 'A soup made from goat head and feet with scotch bonnet peppers, cho cho, and herbs. Considered one of the most powerful postpartum recovery foods.', benefit: 'Collagen from bones and cartilage (bone broth effect), high protein, galactagogue properties attributed in folk medicine.' },
       { food: 'Carrot Juice', benefit: 'Beta-carotene (pro-vitamin A) for skin repair. Antioxidant. Natural source of energy.' },
-      { food: 'Sea Moss Drink', benefit: 'Mineral-rich. Supports gut health. Traditional Caribbean postpartum supplement. Iodine for thyroid (which fluctuates postpartum).' },
+      { food: 'Sea Moss Drink', benefit: 'A traditional Caribbean postpartum drink. Its iodine content varies a lot, so keep it to a drink, not a daily supplement.' },
       { food: 'Brown Stew Chicken with Root Vegetables', benefit: 'Protein, iron, and warming spices. Provides substantial nutrition for breastfeeding.' },
       { food: 'Pepperpot Soup', benefit: 'Warming, iron-rich, protein-dense. Traditional communal Caribbean healing food.' },
     ],
@@ -195,21 +195,21 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
     ],
     postpartumFoods: [
       { food: 'Dates (Tamr)', benefit: 'The prophetically recommended postpartum food. Rich in iron, natural sugars, magnesium, and oxytocin-releasing compounds that help the uterus contract. Extremely high in calcium.' },
-      { food: 'Helbeh (Fenugreek Tea)', benefit: 'The most important Arab postpartum drink. Strongly galactagogue. Warming. Used across the Middle East and North Africa for new mothers.' },
+      { food: 'Helbeh (Fenugreek Tea)', benefit: 'The most important Arab postpartum drink. Traditionally used to support milk supply. Warming. Used across the Middle East and North Africa for new mothers.' },
       { food: 'Ogga / Ogat (Traditional Postpartum Sweet)', description: 'A traditional Yemeni and Gulf postpartum food — a rich cake/bread made with sesame, fenugreek, honey, and ghee.', benefit: 'High calorie nourishment. Galactagogue seeds. Traditional postpartum food delivered to new mothers by family and neighbors.' },
       { food: 'Mloukhiyeh / Mulukhiyah (Jute Leaf Soup)', benefit: 'Iron-rich green leaves. Anti-inflammatory. Considered a healing food for new mothers across the Levant and Egypt.' },
-      { food: 'Bone Broth (Marak Edam)', benefit: 'Collagen from bones (skin healing, stretch marks). Glycine for sleep quality. Minerals depleted in birth. A universal healing food in Arab tradition.' },
+      { food: 'Bone Broth (Marak Edam)', benefit: 'Protein and warmth; a traditional recovery food in Arab homes.' },
     ],
     hairCare: {
       approach: [
         'Avoid washing hair during nifas (varies by tradition and scholar — some permit washing)',
-        'Black seed (habbatus sauda) oil applied to the scalp for hair loss prevention',
+        'Black seed (habbatus sauda) oil, traditionally applied to the scalp during shedding',
         'Argan oil scalp treatments after the nifas period',
         'Conservative hair covering under hijab during the sensitive postpartum period',
       ],
     },
     skinCare: {
-      mainConcerns: ['Postpartum melasma (very common in Arab women due to higher baseline melanin and sun exposure)', 'Stretch marks', 'Dull skin from fatigue'],
+      mainConcerns: ['Postpartum melasma', 'Stretch marks', 'Dull skin from fatigue'],
       remedies: [
         { concern: 'Melasma', remedy: 'Saffron + camel milk mask. Strict SPF (SPF 50+). Vitamin C serum (breastfeeding safe). Time — often resolves as estrogen normalizes.' },
         { concern: 'Stretch marks', remedy: 'Olive oil applied from early pregnancy through postpartum. Argan oil massaged into stretch marks. Kessa exfoliation once healed to improve texture.' },
@@ -225,7 +225,7 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
       name: 'La Cuarentena (The Quarantine)',
       duration: '40 days',
       beliefs: [
-        'Cold food and drinks slow healing and can reduce breast milk',
+        'Traditional belief: cold food and drinks slow healing',
         'The "open" postpartum body is vulnerable to "mal aire" (bad air)',
         'Rest is the most important medicine',
         'The new mother must not exert herself or do housework',
@@ -256,7 +256,7 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
       { herb: 'Aloe Vera', benefit: 'Skin healing for stretch marks, C-section scar, and any skin irritation.', use: 'Fresh gel applied directly.' },
     ],
     postpartumFoods: [
-      { food: 'Caldo de Pollo / Caldo de Res (Chicken or Beef Broth)', benefit: 'THE central Latina postpartum food. Collagen from the bones (skin healing), protein, electrolytes, warming. Made with vegetables and herbs.' },
+      { food: 'Caldo de Pollo / Caldo de Res (Chicken or Beef Broth)', benefit: 'THE central Latina postpartum food. Protein, salt and fluid, warming. Made with vegetables and herbs.' },
       { food: 'Atole (Hot Corn Drink)', benefit: 'Warming, easy to digest, caloric support for breastfeeding. Traditional corn-based drink thickened with masa.' },
       { food: 'Nopal (Cactus)', benefit: 'Anti-inflammatory. Vitamin C for collagen synthesis. Fiber for gut health post-birth.' },
       { food: 'Pozole', benefit: 'Hominy (nixtamal), broth, and meat — traditionally made for postpartum mothers in Mexico. Protein and caloric density.' },
@@ -278,14 +278,14 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
         'Aloe vera gel on C-section scar (once fully closed, never on open wound)',
         'Cucumber and potato slices for dark circles',
       ],
-      melasmaConcerns: 'Melasma is the "pregnancy mask" — very common in Latina women. After la cuarentena, SPF every day and vitamin C serum are the mainstays. Strict sun avoidance is critical.',
+      melasmaConcerns: 'Melasma is the "pregnancy mask". After la cuarentena, SPF every day and vitamin C serum are the mainstays. Strict sun avoidance is critical.',
     },
   },
 
   'east-asian': {
     communityId: 'east-asian',
     communityName: 'East Asian',
-    postpartumPhilosophy: '"Zuò yuèzi" (做月子) in Chinese, "sanhu" in Korean, "satogaeri bunben" (hometown birth) in Japan — the East Asian postpartum tradition of a dedicated recovery month is one of the world\'s most developed and sophisticated postpartum care systems. In Chinese tradition, zuò yuèzi is not just recommended — in many families it is mandatory. Hundreds of specific rules govern food, behavior, temperature exposure, and rest during the recovery month. Modern China has developed "yuèzi zhōngxīn" (confinement centers) — professional postpartum care facilities where new mothers stay for 30-40 days.',
+    
     zuoYuezi: {
       name: 'Zuò Yuèzi (做月子) — "Doing the Month"',
       duration: '30–40 days (sometimes longer)',
@@ -303,10 +303,10 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
     },
     postpartumFoodsZuoYuezi: [
       { food: 'Pig Trotter and Peanut Soup (猪脚花生汤)', benefit: 'Classic Chinese postpartum food. Collagen and gelatin from pig trotters — the original bone broth for postpartum skin and joint recovery. Peanuts are a galactagogue.' },
-      { food: 'Sesame Oil Chicken (麻油雞)', benefit: 'Taiwanese postpartum dish. Sesame oil has warming properties. Chicken provides protein and collagen. Cooked in rice wine — warming and believed to promote blood flow.' },
-      { food: 'Sheng Hua Tang (生化湯)', description: 'A Traditional Chinese Medicine herbal formula specifically designed for postpartum: dang gui (angelica), chuan xiong, tao ren (peach kernel), pao jiang (charred ginger), and gan cao (licorice).', benefit: 'Promotes uterine contraction and clearing of lochia (postpartum discharge). Not for Western use without TCM guidance.' },
+      { food: 'Sesame Oil Chicken (麻油雞)', benefit: 'Taiwanese postpartum dish. Sesame oil has warming properties. Chicken provides protein. Cooked in rice wine; cooking does not remove all the alcohol, so ask about it while breastfeeding.' },
+      { food: 'Sheng Hua Tang (生化湯)', description: 'A Traditional Chinese Medicine herbal formula specifically designed for postpartum: dang gui (angelica), chuan xiong, tao ren (peach kernel), pao jiang (charred ginger), and gan cao (licorice).', benefit: 'Traditionally given to help the womb recover. A medicine, not a food: use only with a qualified practitioner and tell your doctor or midwife.' },
       { food: 'Red Date (Jujube) Tea', benefit: 'Blood-building in TCM theory. Iron for replenishing blood lost in birth. Sweet, warming, calming.' },
-      { food: 'Black Bean Rice Wine Soup', benefit: 'Black beans (kidney qi support in TCM — associated with hair health and aging). Rice wine (warming). A classic postpartum dish in Taiwan.' },
+      { food: 'Black Bean Rice Wine Soup', benefit: 'Black beans (kidney qi support in TCM — associated with hair health and aging). Rice wine (warming; not all the alcohol cooks off). A classic postpartum dish in Taiwan.' },
       { food: 'Pumpkin Porridge (Hobak Juk) — Korean', benefit: 'Korean postpartum porridge. Easy to digest. Beta-carotene. Gentle on the postpartum digestive system.' },
     ],
     koreanSanhu: {
@@ -386,7 +386,7 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
       east_african_approaches: [
         'Camel milk topically as a skin treatment for postpartum dullness',
         'Honey mask for healing any skin trauma (C-section area once healed, stretch marks)',
-        'Frankincense oil (boswellia) as a facial treatment for scar healing and skin regeneration',
+        'Frankincense oil (boswellia), diluted, as a traditional facial oil',
         'Turmeric paste for skin brightening',
       ],
     },
@@ -399,7 +399,7 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
     zuluPostpartum: {
       name: 'Ukuzala (Postpartum Period)',
       practices: [
-        { practice: 'Isihlambezo (Herbal Preparation)', description: 'Zulu herbal preparations taken during pregnancy and postpartum. Specific plants vary by healer.', beautyNote: 'Support for postpartum recovery from within.' },
+        { practice: 'Isihlambezo (Herbal Preparation)', description: 'Zulu herbal preparations taken during pregnancy and postpartum. Specific plants vary by healer.', beautyNote: 'Some isihlambezo plants act on the womb; tell your midwife or doctor about any herbal preparation you take.' },
         { practice: 'Omama Encane (Young Mother\'s Support Network)', description: 'Community of women who support the new mother. Community care is itself a wellness and beauty practice.' },
         { practice: 'Postpartum Herbal Baths', herbs: ['Umhlonyana (Artemisia afra — African wormwood)', 'Aloe ferox', 'Rooibos'], benefit: 'Cleansing, skin healing, anti-inflammatory.' },
       ],
@@ -414,7 +414,7 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
       ],
     },
     endemicPlantPostpartum: [
-      { plant: 'Aloe Ferox', use: 'Applied to stretch marks, C-section scar (once healed), and for general skin healing.', benefit: 'More potent healing polysaccharides than standard aloe vera.' },
+      { plant: 'Aloe Ferox', use: 'Applied to stretch marks, C-section scar (once healed), and for general skin healing.', benefit: 'A South African aloe used like aloe vera gel; patch-test first.' },
       { plant: 'Rooibos', use: 'Bath additive, consumed as tea.', benefit: 'Aspalathin antioxidant for skin recovery. Anti-inflammatory for postpartum inflammation.' },
       { plant: 'Buchu', use: 'Tea and topical treatment.', benefit: 'Antibacterial, anti-inflammatory. Traditional healing herb for female reproductive health.' },
       { plant: 'Marula Oil', use: 'Applied to stretch marks, C-section scar, and as a facial oil.', benefit: 'Oleic acid deeply penetrates skin. Anti-inflammatory. Skin regeneration.' },
@@ -447,9 +447,9 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
   'black-american': {
     communityId: 'black-american',
     communityName: 'Black American',
-    postpartumPhilosophy: 'The Black American postpartum experience is shaped by both rich African heritage traditions and the realities of navigating healthcare disparities that create disproportionate maternal health risks. Black American women face a 2-3x higher rate of maternal mortality than white American women — a crisis that has catalyzed a powerful Black maternal health movement. Postpartum self-care for Black women is therefore both a beauty and a survival imperative. The "Black girl wellness" movement — represented by voices like Tricia Hersey (The Nap Ministry), Black Mamas Matter Alliance, and the postpartum community of Black mothers online — is reclaiming the right to rest, care, and beauty that Black women have historically been denied.',
+    
     blackMaternalHealth: {
-      context: 'Black women experience significantly higher rates of maternal and postpartum complications — including postpartum hemorrhage, severe preeclampsia, and postpartum depression — often due to systemic factors including bias in pain management and dismissal of concerns by healthcare providers.',
+      context: 'Black women experience significantly higher rates of maternal and postpartum complications — including severe preeclampsia and postpartum haemorrhage — often due to systemic factors including bias in pain management and dismissal of concerns by healthcare providers.',
       advocacy: [
         'Know your rights — you have the right to be heard and taken seriously',
         'Build your "village" — community care is both cultural and practical necessity',
@@ -506,15 +506,15 @@ export const ETHNIC_POSTPARTUM_BEAUTY_GUIDES = {
       ],
     },
     postpartumFoods: [
-      { food: 'Oxtail Soup', benefit: 'Collagen-rich bone broth. Iron from the meat. Warming and hearty. A soul food staple with genuine postpartum healing benefit.' },
-      { food: 'Collard Greens', benefit: 'Iron for blood replenishment. Vitamin K for wound healing. Vitamin C for collagen and immune support. The ultimate soul food superfood.' },
+      { food: 'Oxtail Soup', benefit: 'Collagen-rich bone broth. Iron from the meat. Warming and hearty. A soul food staple.' },
+      { food: 'Collard Greens', benefit: 'Iron for blood replenishment. Vitamin K for wound healing. Vitamin C. A soul food staple.' },
       { food: 'Sweet Potato', benefit: 'Beta-carotene (pro-vitamin A) for skin healing. Vitamin C. Natural sweetness that supports mood.' },
       { food: 'Black-Eyed Peas', benefit: 'Iron, folate, protein. Traditional New Year\'s food with genuine nutritional benefit.' },
       { food: 'Salmon / Catfish', benefit: 'Omega-3 fatty acids for postpartum mood (DHA supplementation during postpartum is linked to reduced postpartum depression risk). Protein for tissue repair.' },
       { food: 'Elderberry Syrup', benefit: 'Immune support during the vulnerable postpartum period. Anti-viral. Now widely used in Black wellness communities.' },
     ],
     postpartumMentalHealth: {
-      importance: 'Postpartum depression and postpartum anxiety affect 1 in 5 new mothers, but Black women are less likely to receive treatment due to stigma and systemic barriers. Mental health IS beauty health — the physical symptoms of depression (dull skin, hair loss, poor self-care) are real.',
+      
       resources: [
         'Postpartum Support International (PSI) — postpartum.net — has a warmline',
         'Therapy for Black Girls (therapyforblackgirls.com) — Black therapist directory',
@@ -534,14 +534,14 @@ export const UNIVERSAL_POSTPARTUM_BEAUTY = {
     name: 'Telogen Effluvium (Postpartum Hair Loss)',
     mechanism: 'During pregnancy, elevated estrogen extends the hair growth phase, resulting in lush pregnancy hair. After birth, estrogen drops sharply, and all that extended-growth hair enters the shedding phase simultaneously.',
     timeline: 'Begins: 3-4 months postpartum. Peaks: around 4 months. Resolves: 6-12 months postpartum.',
-    isItNormal: 'YES — completely normal. The average person loses 50-100 hairs per day; postpartum shedding can be 300-400 per day but this is temporary.',
+    isItNormal: 'YES — completely normal. The average person loses 50-100 hairs per day; postpartum shedding can be several times that, but it is temporary.',
     whenToWorryAndSeeDoctor: 'If shedding continues beyond 12 months postpartum, or is accompanied by other symptoms (extreme fatigue, cold intolerance, heart palpitations) — rule out thyroid issues, which are common postpartum.',
     universalTips: [
       'Protective styles to minimize visible shedding and reduce manipulation',
       'Gentle hair care — wide-tooth comb, no heat, no tight styles',
       'Biotin-rich foods (eggs, almonds, sweet potato)',
       'Iron supplementation if blood loss at birth was significant',
-      'Scalp massage to promote circulation',
+      'Gentle scalp massage, if it feels good',
       'Know it is temporary — regrowth will come',
     ],
   },
@@ -550,7 +550,7 @@ export const UNIVERSAL_POSTPARTUM_BEAUTY = {
     commonChanges: [
       { change: 'Melasma ("pregnancy mask")', description: 'Hyperpigmentation from elevated estrogen during pregnancy. May worsen immediately postpartum before improving.', timeline: 'Can take 6-12 months to fade after hormone normalization. Sun avoidance is the most important intervention.' },
       { change: 'Postpartum acne', description: 'Hormonal fluctuations postpartum can trigger acne, especially in women who had clear skin during pregnancy.', management: 'Gentle cleanser. Non-comedogenic moisturizer. Avoid picking. Azelaic acid and benzoyl peroxide are considered breastfeeding-safe — check with provider.' },
-      { change: 'Stretch marks (Striae gravidarum)', description: 'Occur when skin stretches faster than collagen can keep up. Initially appear red/purple; fade to silver/white over 1-2 years.', management: 'Cannot be fully prevented. Consistent moisturization (shea, cocoa butter, bio oil) from early pregnancy reduces severity. No topical product removes established stretch marks completely.' },
+      { change: 'Stretch marks (Striae gravidarum)', description: 'Occur when skin stretches faster than collagen can keep up. Initially appear red/purple; fade to silver/white over 1-2 years.', management: 'Cannot be fully prevented, and no topical product removes established stretch marks. Moisturising (shea, cocoa butter) eases the itch; marks fade with time.' },
       { change: 'Dull, tired complexion', description: 'Sleep deprivation, stress, and nutritional depletion combine to produce the classic "new mom look."', management: 'Sleep is the real fix. Hydrating products, vitamin C, tinted moisturizer, and mascara are the "emergency glow" kit for tough days.' },
     ],
   },
@@ -579,8 +579,6 @@ export const UNIVERSAL_POSTPARTUM_BEAUTY = {
     whySleepIsTheUltimateBeautyProduct: [
       'Growth hormone — secreted during deep sleep — drives cell repair and collagen synthesis',
       'Cortisol drops to its lowest point during quality sleep — reducing inflammation that drives aging, acne, and dullness',
-      'Blood flow to skin increases during sleep — delivering oxygen and nutrients to skin cells',
-      'Lymphatic drainage is most active during sleep — reducing puffiness',
     ],
     sleepStrategyForNewMothers: [
       '"Sleep when the baby sleeps" — the single most repeated and most ignored postpartum advice. It is also the most important beauty advice.',
@@ -611,10 +609,3 @@ export function getPostpartumBeautyGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const POSTPARTUM_BEAUTY_STATS = {
-  moduleId: 'postpartum_beauty_ethnic_guide',
-  communitiesCovered: 9,
-  postpartumTraditionsCovered: 12,
-  herbsAndFoodsCovered: 55,
-  version: '1.0.0',
-};

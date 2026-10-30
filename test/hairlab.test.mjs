@@ -218,6 +218,22 @@ test('smile and lip care routes over HTTP', async () => {
   assert.equal(lib.shelves.find(s => s.id === 'smile').guides.length, 1);
 });
 
+test('pregnancy and postpartum routes over HTTP', async () => {
+  const B = `http://127.0.0.1:${PORT}`;
+  const h = { 'x-forwarded-for': '10.6.6.14' };
+  const o = await (await fetch(`${B}/api/bump/options`, { headers: h })).json();
+  assert.equal(o.stages.length, 5); assert.equal(o.tones.length, 10);
+  const r = await fetch(`${B}/api/bump/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ stage: 'bf', ingredient: 'hydroquinone', concern: 'hair', community: 'caribbean' }) });
+  assert.equal(r.status, 200);
+  const p = await r.json();
+  assert.equal(p.check.verdict, 'avoid'); assert.equal(p.community.id, 'caribbean'); assert.equal(p.communityNotes.kind, 'postpartum');
+  assert.equal((await fetch(`${B}/api/bump/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  const html = await (await fetch(`${B}/`, { headers: h })).text();
+  assert.ok(html.includes('data-view="bump"') && html.includes('src="bump.js"'));
+  const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
+  assert.equal(lib.shelves.find(s => s.id === 'bump').guides.length, 3);
+});
+
 test('colour and lip studio routes over HTTP', async () => {
   const B = `http://127.0.0.1:${PORT}`;
   const h = { 'x-forwarded-for': '10.6.6.9' };

@@ -115,6 +115,9 @@ import * as bodyHairGuideEthnic from '../body_hair_guide_ethnic.js';
 import * as oralBeautyEthnicGuide from '../oral_beauty_ethnic_guide.js';
 import * as sleepBeautyEthnicGuide from '../sleep_beauty_ethnic_guide.js';
 import * as nightBeautyGuide from '../night_beauty_guide.js';
+import * as pregnancyBeautyEthnicGuide from '../pregnancy_beauty_ethnic_guide.js';
+import * as pregnancyBeautyGuide from '../pregnancy_beauty_guide.js';
+import * as postpartumBeautyEthnicGuide from '../postpartum_beauty_ethnic_guide.js';
 
 export const SHELVES = [
   { id: 'rituals', title: 'Rituals & Heritage', blurb: 'Haldi, hammam, shea, mehndi, bathhouse and festival traditions, with the steps to do them at home.' },
@@ -129,6 +132,7 @@ export const SHELVES = [
   { id: 'bodyhair', title: 'Body Hair & Hair Removal', blurb: 'Shaving, waxing, sugaring, threading, laser and electrolysis compared, which lasers are safe for deeper skin, razor bumps, ingrown hairs and dark marks, timing before an event, and hair removal traditions.' },
   { id: 'smile', title: 'Smile & Oral Care', blurb: 'Chewing sticks, oil pulling, tongue cleaning, salt and tea rinses, charcoal and what it can and cannot do, lip care, and the oral care rituals and smile traditions behind them.' },
   { id: 'night', title: 'Sleep & Night Routines', blurb: 'What happens to skin overnight, the evening routine in order, slugging, sleeping masks, silk and satin, bonnets, wraps and pineapples, sleep position, wind-down rituals and night traditions.' },
+  { id: 'bump', title: 'Pregnancy & Postpartum', blurb: 'What is safe at each stage of pregnancy and while breastfeeding, melasma, breakouts, stretch marks, pregnancy hair and postpartum shedding, and pregnancy and postpartum traditions.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -245,4 +249,7 @@ export const GUIDES = [
   ['oral_beauty_ethnic_guide', 'smile', 'Oral Care Traditions, Rituals and Ingredients', oralBeautyEthnicGuide],
   ['sleep_beauty_ethnic_guide', 'night', 'Beauty Sleep: Science, Hair Protection and Traditions', sleepBeautyEthnicGuide],
   ['night_beauty_guide', 'night', 'The Evening Routine, Slugging and Silk', nightBeautyGuide],
+  ['pregnancy_beauty_ethnic_guide', 'bump', 'Pregnancy Beauty: Trimesters, Safe Ingredients and Traditions', pregnancyBeautyEthnicGuide],
+  ['pregnancy_beauty_guide', 'bump', 'Pregnancy Skin, Melasma, Hair and Ingredient Safety', pregnancyBeautyGuide],
+  ['postpartum_beauty_ethnic_guide', 'bump', 'Postpartum Recovery: Shedding, Skin and Traditions', postpartumBeautyEthnicGuide],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

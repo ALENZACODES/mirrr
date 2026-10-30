@@ -40,7 +40,7 @@ export const PREGNANCY_SKIN_CHANGES = {
       'PUPPP (pruritic urticarial papules and plaques of pregnancy) — itchy rash in third trimester; not dangerous but uncomfortable',
     ],
     puppp: {
-      what: 'PUPPP is a specific pregnancy rash affecting approximately 1 in 160 pregnancies. Itchy, red, raised patches that begin in stretch marks and may spread.',
+      
       typical_patient: 'First-time mothers; multiple pregnancies (twins/triplets); male foetus.',
       treatment: 'Topical corticosteroids (low-potency; see safety below); antihistamines (some safe in pregnancy — discuss with doctor); resolves after delivery.',
       not_dangerous: 'PUPPP is uncomfortable but does not harm mother or baby.',
@@ -50,14 +50,14 @@ export const PREGNANCY_SKIN_CHANGES = {
   melasma_chloasma: {
     what: 'Melasma (called chloasma when pregnancy-related; "the mask of pregnancy") is hyperpigmentation developing on the face — typically forehead, cheeks, upper lip, and chin.',
     cause: 'High oestrogen and progesterone stimulate melanocytes to overproduce melanin. UV exposure triggers and worsens it significantly.',
-    prevalence: 'Affects 15-50% of pregnant women; MUCH more common in women with Fitzpatrick III-VI skin tones — skin with more active melanocytes responds more dramatically to hormonal stimulation.',
-    ethnic_note: 'South Asian, Arab, Latina, East Asian, and Black women have significantly higher rates of pregnancy melasma, and it tends to be darker and more persistent in those with more melanin.',
+    
+    ethnic_note: 'Melasma is more common on medium to deep skin (Fitzpatrick III–VI), and tends to be darker and more persistent the more melanin the skin has.',
     pattern: {
       centrofacial: 'Forehead, cheeks, nose, chin — most common pattern',
       malar: 'Cheeks and nose only',
       mandibular: 'Jawline — less common',
     },
-    will_it_go: '70% of pregnancy melasma fades postpartum (usually within 3-6 months). The remaining 30% may persist and require treatment.',
+    
     prevention: [
       'Consistent broad-spectrum SPF 50+ PA++++ DAILY, even indoors (UV comes through windows)',
       'Wide-brimmed hat outdoors',
@@ -125,7 +125,7 @@ export const PREGNANCY_INGREDIENT_SAFETY = {
     },
     hair_treatments: {
       avoid: [
-        'Permanent hair dye in first trimester (most conservative approach — though evidence suggests low risk)',
+        
         'Chemical relaxers — high alkaline pH; prolonged scalp contact',
         'Keratin treatments with formaldehyde (see above)',
         'Bleach near scalp — chemical exposure risk',
@@ -158,14 +158,10 @@ export const PREGNANCY_INGREDIENT_SAFETY = {
         safety: 'Safe. Anti-inflammatory; pore-minimising; regulates sebum; reduces pigmentation transfer.',
         pregnancy_bonus: 'Excellent for pregnancy acne without hormonal risk.',
       },
-      azelaic_acid: {
-        name: 'Azelaic acid (up to 20%)',
-        safety: 'Safe in pregnancy — one of the few actives specifically approved for use during pregnancy.',
-        use: 'Acne treatment AND melasma treatment. Ideal pregnancy multi-tasker.',
-      },
+      
       glycolic_aha: {
         name: 'Glycolic acid, lactic acid, mandelic acid (low concentrations)',
-        safety: 'Generally considered safe at low concentrations (up to 5-10%) in wash-off formulas.',
+        
         note: 'Avoid high concentrations and professional peels; gentle exfoliation is fine.',
       },
       hyaluronic_acid: {
@@ -179,7 +175,7 @@ export const PREGNANCY_INGREDIENT_SAFETY = {
 
     moisturising: {
       shea_butter: 'Safe and excellent for stretch marks support and dry skin.',
-      cocoa_butter: 'Safe. Widely used for stretch marks (note: not clinically proven to prevent stretch marks but safe to use).',
+      
       glycerin: 'Safe. Excellent humectant.',
       squalane: 'Safe. Derived from olives; excellent emollient; non-comedogenic.',
     },
@@ -208,7 +204,7 @@ export const PREGNANCY_HAIR_CHANGES = {
   },
 
   postpartum_hair_loss: {
-    what: 'Postpartum hair loss (telogen effluvium) is experienced by 40-50% of new mothers. The hair that was retained during pregnancy sheds dramatically in the weeks/months after delivery.',
+    
     timing: 'Typically begins 3-4 months after delivery; peaks around 4-5 months postpartum.',
     duration: 'Lasts 2-6 months in most cases. Hair returns to pre-pregnancy state by 12 months for most women.',
     appearance: 'Significant shedding — women often find large amounts of hair in the shower, on the pillow, in hairbrushes. Hairline thinning is common and can be emotionally distressing.',
@@ -273,7 +269,7 @@ export const POSTPARTUM_BEAUTY = {
   },
 
   self_care_importance: {
-    mental_health_context: 'Postpartum depression and anxiety affect 10-20% of new mothers. Self-care routines — including beauty rituals — have documented benefits for postpartum mental health when framed as self-nourishment.',
+    
     ritual: 'Even a simple 5-minute skincare routine provides a moment of selfhood and sensory pleasure in an exhausting period. The ritual matters independent of the beauty outcome.',
     community_support: 'In many ethnic communities, extended family involvement in postpartum care traditionally provides significant support for the new mother. The South Asian jaapa (40-day postpartum confinement and care), the Latin cuarentena (40-day period of rest and support), and similar traditions across cultures serve as communal beauty and wellness rituals as well as practical support.',
   },
@@ -286,11 +282,11 @@ export const ETHNIC_PREGNANCY_BEAUTY = {
     haldi_ceremony: 'Turmeric paste (haldi) applied to bride\'s skin in pre-wedding ceremony has been adapted as a pregnancy glow ritual in some communities. Turmeric has anti-inflammatory properties; safe for topical use in pregnancy.',
     oil_massage: 'Abhyanga-inspired oil massages during pregnancy are traditional across South Asia — using sesame oil or coconut oil. Safe; supportive for skin suppleness and stretch mark prevention (anecdotally).',
     postpartum: 'Jaapa — 40-day postpartum period where new mother is cared for by female relatives. Includes specific dietary and body care practices including warm oil massages. Widely practiced across Indian diaspora.',
-    melasma_prevalence: 'Very high prevalence of pregnancy melasma in South Asian women. SPF and vitamin C are particularly important.',
+    
   },
 
   west_african: {
-    shea_butter: 'Shea butter is the traditional stretch mark treatment across West Africa — applied generously to belly, hips, and breasts throughout pregnancy. Anecdotally effective; not clinically proven to prevent stretch marks but deeply nourishing and safe.',
+    
     black_soap: 'African black soap sometimes used as gentle face wash during pregnancy. Generally safe; avoid formulations with additional actives.',
     postpartum: 'Ola ilu — Yoruba postpartum practices including specific foods, herbal steam baths, and community support. Belly binding with wrappers is traditional and supports recovery.',
   },
@@ -352,9 +348,3 @@ export function getEthnicPregnancyBeauty(communityId) {
   return ETHNIC_PREGNANCY_BEAUTY[communityId.replace('-', '_')] || null;
 }
 
-export const PREGNANCY_BEAUTY_STATS = {
-  trimestersCovered: 3,
-  avoidIngredientCategories: Object.keys(PREGNANCY_INGREDIENT_SAFETY.AVOID).length,
-  safeIngredientCategories: Object.keys(PREGNANCY_INGREDIENT_SAFETY.SAFE).length,
-  communitiesCovered: Object.keys(ETHNIC_PREGNANCY_BEAUTY).length,
-};

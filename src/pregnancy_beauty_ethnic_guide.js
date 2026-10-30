@@ -17,9 +17,9 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
 
     safeSkincare: {
       avoid: [
-        { ingredient: 'Mercury-based skin lighteners', reason: 'Highly toxic to fetal nervous system; common in some imported African creams' },
+        { ingredient: 'Mercury-based skin lighteners', reason: 'Highly toxic to the fetal nervous system; mercury has been found in imported skin-lightening creams sold in many countries' },
         { ingredient: 'Hydroquinone', reason: 'Absorbed systemically; safety in pregnancy not established' },
-        { ingredient: 'Kojic acid (high concentration)', reason: 'Limited pregnancy safety data; avoid products over 1%' },
+        { ingredient: 'Kojic acid (high concentration)' },
         { ingredient: 'Retinoids / Vitamin A derivatives', reason: 'Teratogenic at high doses; avoid all forms topically and orally' },
         { ingredient: 'Camphor-heavy preparations', reason: 'Can penetrate skin and harm fetus in large amounts' },
       ],
@@ -42,7 +42,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
       ],
       modernApproach: [
         'Layer hyaluronic acid serum under shea butter to lock in water content',
-        'Bio-Oil or Mederma alongside traditional oils for proven stretch mark evidence base',
+        'Bio-Oil or Mederma alongside traditional oils, if you like the feel (no cream is proven to prevent marks)',
         'Silicone sheets on existing marks post-partum',
       ],
       communityWisdom: 'Many Yoruba grandmothers say the secret is consistency — not the oil itself, but touching your belly every single day to keep the skin supple and your bond with baby strong.',
@@ -64,7 +64,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
     },
 
     prenatalBeautyFoods: [
-      { food: 'Moringa (Ewe Igbale)', benefit: 'Exceptionally high in iron, calcium, and vitamin C; supports skin collagen and reduces fatigue-related dullness', note: 'Use as leaf powder in small culinary amounts — avoid concentrated supplements' },
+      { food: 'Moringa (Ewe Igbale)', benefit: 'A leafy green with iron, calcium and vitamin C', note: 'Use as leaf powder in small culinary amounts — avoid concentrated supplements' },
       { food: 'Egusi (melon seeds)', benefit: 'Rich in zinc and vitamin E; supports skin repair and immune function' },
       { food: 'Palm nut soup ingredients (tomato, pepper, leafy greens)', benefit: 'Lycopene from tomatoes + vitamin K from greens supports vascular skin health' },
       { food: 'Tilapia and catfish', benefit: 'Omega-3 DHA for fetal brain and skin barrier development; lower mercury than large fish' },
@@ -127,7 +127,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
       ],
       safeAlternatives: [
         { ingredient: 'Turmeric (haldi) in face paste — small amounts', benefit: 'Anti-inflammatory, brightening for pregnancy melasma; safe topically in paste form' },
-        { ingredient: 'Amla (Indian gooseberry)', benefit: 'Extremely high vitamin C; supports collagen production and skin radiance — safe in food and juice' },
+        { ingredient: 'Amla (Indian gooseberry)', benefit: 'Very high in vitamin C; safe in food and juice' },
         { ingredient: 'Rose water (gulab jal)', benefit: 'Gentle toner for sensitive pregnancy skin; anti-inflammatory and hydrating' },
         { ingredient: 'Coconut oil (nariyal tel)', benefit: 'Safe belly massage oil; antifungal properties help with belly skin microbiome' },
         { ingredient: 'Zinc oxide mineral sunscreen', benefit: 'Safe UV protection critical for managing pregnancy melasma without chemical concern' },
@@ -136,7 +136,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
     },
 
     stretchMarkPrevention: {
-      startingPoint: 'Begin at 12 weeks; South Asian skin tones are prone to hyperpigmented stretch marks that last longer',
+      startingPoint: 'Begin at 12 weeks; on deeper skin, stretch marks often start darker and take longer to fade',
       traditionalApproach: [
         'Coconut oil massage (tel malish) twice daily on belly, breasts, and hips',
         'Chandan (sandalwood) paste mixed with rose water applied weekly to areas prone to marks',
@@ -165,7 +165,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
     },
 
     prenatalBeautyFoods: [
-      { food: 'Amla (Indian gooseberry)', benefit: 'Highest natural vitamin C source; boosts skin collagen, immune function, and iron absorption', note: 'Juice or fresh; avoid concentrated supplements' },
+      { food: 'Amla (Indian gooseberry)', benefit: 'Very high in vitamin C, which helps the body absorb iron from food', note: 'Juice or fresh; avoid concentrated supplements' },
       { food: 'Methi seeds (culinary)', benefit: 'Iron, magnesium, and B vitamins support blood health and reduce skin dullness; cooking quantities safe', note: 'Do not take as supplement' },
       { food: 'Ghee', benefit: 'Ayurveda considers ghee deeply nourishing for ojas — the essential vitality that makes skin luminous; healthy fats support fetal brain development' },
       { food: 'Lentils (dal) — especially masoor and moong', benefit: 'Plant-based iron and folate; iron deficiency is a primary cause of pallor and dullness in pregnancy' },
@@ -229,8 +229,8 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
       ],
       safeAlternatives: [
         { ingredient: 'Aloe vera gel (topical, outer leaf only)', benefit: 'Cooling, healing for itchy pregnancy belly; safe applied externally' },
-        { ingredient: 'Sea moss gel (Irish moss / Gracilaria)', benefit: 'Rich in iodine, collagen-supporting minerals; topical use as mask is safe; oral use in culinary amounts generally considered fine' },
-        { ingredient: 'Coconut oil', benefit: 'Universal moisturizer; safe belly oil for stretch mark prevention' },
+        { ingredient: 'Sea moss gel (Irish moss / Gracilaria)', benefit: 'Rich in iodine; topical use as mask is safe; oral use in culinary amounts generally considered fine' },
+        { ingredient: 'Coconut oil', benefit: 'Universal moisturizer; a safe belly oil for itchy, stretching skin' },
         { ingredient: 'Shea butter', benefit: 'Deeply nourishing for skin elasticity' },
         { ingredient: 'Papaya (ripe only, external)', benefit: 'Ripe papaya is safe to eat and the pulp can be used as an enzyme mask; unripe papaya contains latex and should be avoided' },
       ],
@@ -267,7 +267,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
     },
 
     prenatalBeautyFoods: [
-      { food: 'Sea moss (Irish moss)', benefit: 'Contains minerals such as iodine and zinc; supports collagen matrix, thyroid function, and skin hydration', note: 'Use in culinary amounts; high iodine content means moderation is key' },
+      { food: 'Sea moss (Irish moss)', benefit: 'Contains minerals such as iodine and zinc', note: 'Use in culinary amounts; high iodine content means moderation is key' },
       { food: 'Callaloo (amaranth greens)', benefit: 'High in folate, iron, and calcium; iron supports healthy color and glow in the skin' },
       { food: 'Green banana (boiled)', benefit: 'Resistant starch supports gut health; B vitamins contribute to skin cell turnover' },
       { food: 'Plantain', benefit: 'Vitamin B6, potassium; helps reduce leg swelling and skin water retention' },
@@ -364,13 +364,13 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
       management: [
         'Argan oil scalp treatment once weekly — safe and traditional',
         'Avoid henna dyes in first trimester out of caution; plant-based henna is safer than chemical-added "black henna" which contains PPD',
-        'Rhassoul clay can be used as a scalp detox mask for oily scalp',
+        'Rhassoul clay can be used as a clarifying scalp mask for oily scalp',
         'Black seed oil diluted in a carrier oil for scalp massage — supports circulation and hair health',
       ],
     },
 
     prenatalBeautyFoods: [
-      { food: 'Dates (tamr)', benefit: 'Iron, potassium, and natural sugars; studies suggest dates in final weeks may support cervical ripening; B vitamins contribute to skin health', note: 'Prophetically recommended; modern research supports benefits near term' },
+      { food: 'Dates (tamr)',  note: 'Prophetically recommended; modern research supports benefits near term' },
       { food: 'Olive oil', benefit: 'Monounsaturated fats and polyphenols; consumed daily in Levantine diet, supports skin elasticity and anti-inflammatory benefit' },
       { food: 'Pomegranate (rumman)', benefit: 'Rich in antioxidants and folate; skin brightening properties and anti-inflammatory; widely consumed across Arab world in pregnancy' },
       { food: 'Lentil soup (shorbat adas)', benefit: 'Iron and folate staple of Arab pregnancy diet; directly combats anemia-related pallor' },
@@ -460,7 +460,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
 
     hairChanges: {
       whatHappens: [
-        'Many Latina women experience their thickest, most voluminous hair during pregnancy due to hormonal shifts',
+        'Many people have their thickest hair during pregnancy, because fewer hairs shed',
         'Hair that is normally wavy may become more defined or less defined with hormonal changes',
         'Scalp sensitivity increases; some women develop pregnancy-related dandruff',
       ],
@@ -484,7 +484,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
       {
         name: 'Baby Sprinkle / Babyshower Latina Style',
         community: 'Pan-Latina',
-        description: 'The Latino baby shower is a community-wide celebration, typically organized by close female relatives. Decorations are elaborate, food is abundant, and the mother-to-be is pampered with games, gifts, and beauty treatments. In many families, aunts perform a ritual hair brushing and braiding of the mother\'s hair as an act of blessing.',
+        description: 'Decorations are elaborate, food is abundant, and the mother-to-be is pampered with games, gifts, and beauty treatments. In many families, aunts perform a ritual hair brushing and braiding of the mother\'s hair as an act of blessing.',
         beautyElement: 'Flower crowns, elaborate hair styling, hand lotioning ritual performed by female relatives',
       },
       {
@@ -541,7 +541,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
         { ingredient: 'Green tea extract', benefit: 'Antioxidant, anti-inflammatory; topical use is safe; oral intake in moderation (caffeine watch)' },
         { ingredient: 'Camellia (tsubaki) oil', benefit: 'Japanese quintessential face oil; rich in oleic acid; deeply nourishing for dry pregnancy skin' },
         { ingredient: 'Snow mushroom (tremella) serum', benefit: 'Natural hyaluronic acid analog; deeply hydrating; safe in pregnancy' },
-        { ingredient: 'Centella asiatica (gotu kola / cica)', benefit: 'Widely used in Korean skincare; clinically supported for wound healing and stretch mark prevention' },
+        { ingredient: 'Centella asiatica (gotu kola / cica)', benefit: 'Widely used in Korean skincare to soothe skin; evidence that it prevents stretch marks is limited' },
       ],
       notes: 'Gua sha facial massage is safe when performed gently on the face and neck during pregnancy. Avoid gua sha on the body, particularly the abdomen, ankles, and certain acupressure points (LI4, SP6, BL60, BL67) which are traditionally contraindicated in pregnancy.',
     },
@@ -563,7 +563,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
 
     hairChanges: {
       whatHappens: [
-        'East Asian hair is typically thick with high density; pregnancy can make it even denser',
+        'pregnancy can make it even denser',
         'Scalp condition often improves in pregnancy due to sebum regulation',
         'Postpartum hair loss can be visually dramatic due to high baseline density',
       ],
@@ -578,7 +578,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
     prenatalBeautyFoods: [
       { food: 'Seaweed (kombu, wakame, nori)', benefit: 'Iodine for thyroid function and fetal brain development; minerals support skin hydration', note: 'Moderation important — excess iodine from seaweed is a real concern; 2–3 servings per week is appropriate' },
       { food: 'Miso soup (in moderation)', benefit: 'Probiotics support gut-skin axis; B vitamins in fermented soy support skin cell renewal; watch sodium intake' },
-      { food: 'Tofu and edamame', benefit: 'Plant protein, calcium, and isoflavones; supports collagen production' },
+      { food: 'Tofu and edamame', benefit: 'Plant protein and calcium' },
       { food: 'Goji berries (wolfberry / gou qi zi)', benefit: 'Antioxidants and vitamin C; safe in culinary amounts; traditional Chinese skin nourishing food' },
       { food: 'Job\'s tears (yi yi ren / coix)', benefit: 'Traditional Chinese grain for skin clarity; anti-inflammatory; safe in culinary amounts — avoid concentrated supplements' },
     ],
@@ -593,7 +593,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
       {
         name: 'An Tai Ritual (Calming the Fetus)',
         community: 'Chinese traditional',
-        description: 'An Tai refers to TCM practices to calm and nourish the developing baby. This includes dietary therapy, gentle massage with safe oils, avoiding loud noises and emotional distress, and tai ji or qigong movement. The mother\'s environment, music, and emotional state are all considered prenatal influences on the child.',
+        
         beautyElement: 'Gentle camellia oil full-body self-massage as part of daily an tai routine; beauty and calm are intertwined',
       },
       {
@@ -633,7 +633,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
     safeSkincare: {
       avoid: [
         { ingredient: 'Frankincense essential oil (internally or in high doses)', reason: 'Boswellic acids may affect uterine tissue in concentrated essential oil form; topical diluted use is lower risk but avoid ingestion entirely during pregnancy' },
-        { ingredient: 'Unregulated skin lightening creams', reason: 'Mercury and hydroquinone-containing bleaching creams common in some East African markets; strictly avoid' },
+        { ingredient: 'Unregulated skin lightening creams', reason: 'Unlabelled bleaching creams can contain mercury or hydroquinone; strictly avoid' },
         { ingredient: 'Retinoids', reason: 'Teratogenic; avoid' },
         { ingredient: 'High-dose herbal supplements (cleansing teas)', reason: 'Traditional cleansing herb blends often contain potent uterine stimulants' },
       ],
@@ -669,7 +669,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
         'Scalp health varies; some women experience improvement, others increased dryness',
       ],
       management: [
-        'Castor oil scalp massages — traditional and safe; promotes scalp circulation',
+        'Castor oil scalp massages — traditional and safe on the skin',
         'Shea butter as a leave-in conditioner for natural hair styles',
         'Qasil mixed with water can be used as a scalp clarifying mask',
         'Loose braiding styles preferred; avoid tight styles that stress the hairline',
@@ -747,7 +747,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
         { ingredient: 'Shea butter', benefit: 'The universal safe pregnancy moisturizer; used across South Africa' },
         { ingredient: 'Baobab oil', benefit: 'From the iconic African baobab tree; rich in vitamins C and E; safe nourishing skin oil' },
       ],
-      notes: 'Rooibos tea is one of the only traditional African herbal teas confirmed safe throughout pregnancy — no caffeine, no tannins in significant amounts, rich in antioxidants. It can replace regular tea safely.',
+      notes: 'Rooibos tea is caffeine-free and low in tannins, and is widely drunk in pregnancy in normal amounts as a swap for regular tea; check any herbal tea with your midwife.',
     },
 
     stretchMarkPrevention: {
@@ -758,7 +758,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
         'Aloe ferox gel (topical gel only) as a cooling belly treatment for itch and inflammation',
       ],
       modernApproach: [
-        'Marula oil layered over vitamin C serum for brightening and collagen support',
+        'Marula oil layered over vitamin C serum for brightening',
         'Centella asiatica cream used alongside marula oil for evidence-based prevention',
         'Hyaluronic acid applied to damp skin before marula oil for deep hydration',
       ],
@@ -775,7 +775,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
         'Marula oil scalp treatment — traditional and effective',
         'Loose protective styles (twists, loose braids) to minimize scalp tension',
         'Rooibos tea rinse for the scalp: rich in antioxidants, soothing for sensitive scalp',
-        'Castor oil massages (topical only) to support scalp circulation',
+        'Castor oil massages (topical only)',
         'Avoid chemical relaxers especially in first trimester',
       ],
     },
@@ -784,7 +784,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
       { food: 'Morogo (wild leafy greens — amaranth, cowpea leaves)', benefit: 'Iron, folate, and vitamin C — the traditional South African pregnancy superfood for combating anemia and supporting glow' },
       { food: 'Rooibos tea', benefit: 'Caffeine-free antioxidant beverage safe throughout pregnancy; flavonoids support skin cell protection', note: 'The ideal coffee replacement for pregnant South African women' },
       { food: 'Maize (pap)', benefit: 'Energy and B vitamins; a staple providing steady blood sugar that reduces cortisol-driven skin flares' },
-      { food: 'Baobab fruit powder', benefit: 'Extremely high vitamin C (6x oranges); fiber; supports collagen production and immune function', note: 'Use in culinary amounts in smoothies or porridge' },
+      { food: 'Baobab fruit powder', benefit: 'Very high in vitamin C; fibre', note: 'Use in culinary amounts in smoothies or porridge' },
       { food: 'Samp and beans (umngqusho)', benefit: 'Complete protein from bean and grain combination; iron and zinc support skin healing and cellular renewal' },
     ],
 
@@ -848,15 +848,11 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
       safeAlternatives: [
         { ingredient: 'Unrefined shea butter', benefit: 'The cornerstone of Black American natural beauty care; safe and beneficial throughout pregnancy for skin and hair' },
         { ingredient: 'Jamaican Black Castor Oil (JBCO) — topical', benefit: 'Deeply conditioning for hair and scalp; safe applied topically; do not ingest during pregnancy as castor oil can stimulate labor' },
-        { ingredient: 'Azelaic acid (15% and under)', benefit: 'Safe pregnancy acne and hyperpigmentation treatment recommended by dermatologists; important for Black women managing melasma' },
+        { ingredient: 'Azelaic acid (15% and under)', benefit: 'A pregnancy-safe acne and dark-mark treatment dermatologists use; helpful for melasma on deeper skin' },
         { ingredient: 'Niacinamide', benefit: 'Safe in pregnancy; reduces hyperpigmentation, regulates oil, strengthens skin barrier' },
         { ingredient: 'Vitamin C serum (ascorbic acid)', benefit: 'Safe and important for managing the increased hyperpigmentation Black women may experience during pregnancy' },
       ],
-      notes: `Black Maternal Mortality Context: Black women in the United States face a maternal
-        mortality rate approximately 2–3 times higher than white women. This reality shapes the
-        pregnancy experience profoundly. Advocating for yourself at medical appointments, having
-        a support person or doula, and choosing providers who listen are not beauty topics but are
-        deeply connected to maternal wellness and the lived experience of Black pregnancy.`,
+      
     },
 
     stretchMarkPrevention: {
@@ -868,7 +864,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
       ],
       modernApproach: [
         'Layer niacinamide serum under shea butter to address hyperpigmentation of marks',
-        'Centella asiatica cream added to regimen for clinically supported prevention',
+        'Centella asiatica cream for itch and comfort (evidence for prevention is limited)',
         'Vitamin C serum morning, shea butter at night',
       ],
       communityWisdom: 'Black mothers have passed down "stay greasy" as pregnancy wisdom for generations — the advice to keep skin well-moisturized at all times has real dermatological backing in transepidermal water loss prevention.',
@@ -876,7 +872,7 @@ export const ETHNIC_PREGNANCY_BEAUTY_GUIDES = {
 
     hairChanges: {
       whatHappens: [
-        'Many Black women experience their most lush, retained length during pregnancy due to reduced shedding',
+        'Many people keep more length during pregnancy because fewer hairs shed',
         'Protective styles are common but scalp needs extra attention as hormones change sebum production',
         'Postpartum shedding (3–6 months after birth) can be significant and is often distressing — this is temporary and normal',
       ],
@@ -997,7 +993,7 @@ export const UNIVERSAL_PREGNANCY_BEAUTY = {
 
   safeIngredients: [
     { ingredient: 'Hyaluronic acid', category: 'Hydration', notes: 'Safe at all concentrations; use on damp skin for maximum efficacy' },
-    { ingredient: 'Azelaic acid (up to 20%)', category: 'Acne & hyperpigmentation', notes: 'Pregnancy Category B; safe and dermatologist-recommended for pregnancy acne and melasma' },
+    { ingredient: 'Azelaic acid (15–20%)', category: 'Acne & hyperpigmentation', notes: 'Dermatologists use it for pregnancy acne and melasma; little is absorbed through the skin' },
     { ingredient: 'Vitamin C (L-ascorbic acid)', category: 'Brightening & antioxidant', notes: 'Safe topically; supports collagen and helps manage melasma' },
     { ingredient: 'Niacinamide', category: 'Multi-benefit', notes: 'Safe throughout pregnancy; addresses pores, oil, hyperpigmentation, and barrier simultaneously' },
     { ingredient: 'Glycolic acid (low %, under 10%)', category: 'Exfoliation', notes: 'Low concentration considered safe; avoid high-strength peels' },
@@ -1006,7 +1002,7 @@ export const UNIVERSAL_PREGNANCY_BEAUTY = {
     { ingredient: 'Zinc oxide (mineral SPF)', category: 'Sun protection', notes: 'Preferred sunscreen ingredient in pregnancy over chemical UV filters' },
     { ingredient: 'Titanium dioxide (mineral SPF)', category: 'Sun protection', notes: 'Safe mineral UV filter; often combined with zinc oxide' },
     { ingredient: 'Ceramides', category: 'Barrier repair', notes: 'Safe and beneficial; restores compromised skin barrier common in pregnancy' },
-    { ingredient: 'Centella asiatica / cica', category: 'Healing & stretch marks', notes: 'Safe and supported by evidence for wound healing and stretch mark prevention' },
+    { ingredient: 'Centella asiatica / cica', category: 'Healing & stretch marks', notes: 'Soothing and generally considered safe; evidence that it prevents stretch marks is limited' },
     { ingredient: 'Bakuchiol', category: 'Retinol alternative', notes: 'Plant-based; limited pregnancy safety data — discuss with OB before use' },
   ],
 
@@ -1036,7 +1032,7 @@ export const UNIVERSAL_PREGNANCY_BEAUTY = {
       { week: 'Postpartum', action: 'Continue or increase frequency; tretinoin can be added after breastfeeding ends for mark reduction' },
     ],
     bestIngredients: ['Centella asiatica', 'Hyaluronic acid', 'Vitamin E', 'Rosehip oil', 'Shea butter', 'Argan oil', 'Coconut oil', 'Bio-Oil (as directed)'],
-    managedExpectations: 'Genetics is the primary predictor of stretch marks. Hydration and moisturization are proven to reduce severity; elimination is not guaranteed for those genetically predisposed.',
+    managedExpectations: 'Family history is the strongest predictor of stretch marks. No cream is proven to prevent them; moisturising eases the itch and keeps skin comfortable.',
   },
 
   hairDuringPregnancy: {
@@ -1073,7 +1069,7 @@ export const UNIVERSAL_PREGNANCY_BEAUTY = {
     ],
     strategies: [
       'Iron-clad SPF routine from day 1 — the most important intervention for melasma in any skin tone',
-      'Azelaic acid 15–20% is the gold-standard pregnancy-safe treatment for dark spot management',
+      'Azelaic acid 15–20% is a common pregnancy-safe treatment for dark spots',
       'Niacinamide 10% is a safe, accessible option for hyperpigmentation in pregnancy',
       'Vitamin C serum daily for antioxidant protection and gradual brightening',
       'Post-partum: retinoids can be added after breastfeeding ends for more significant hyperpigmentation treatment',
@@ -1083,28 +1079,6 @@ export const UNIVERSAL_PREGNANCY_BEAUTY = {
 };
 
 // ─── PREGNANCY BEAUTY STATS ───────────────────────────────────────────────────
-
-export const PREGNANCY_BEAUTY_STATS = {
-  skinChanges: {
-    percentageExperienceMelasma: 70,
-    percentageExperienceStretchMarks: 90,
-    percentageExperienceAcne: 40,
-    percentageExperienceHairThickening: 75,
-    percentageExperiencePostpartumHairLoss: 90,
-    sourcesNote: 'Approximate figures from dermatology literature; individual variation is high',
-  },
-  maternalHealth: {
-    blackMaternalMortalityMultiplier: '2–3x higher than white women in the US',
-    importanceOfDoulas: 'Studies suggest doula support can reduce C-section rates by 39% and maternal mortality risk factors',
-    prenatalCareImpact: 'Women who receive adequate prenatal care have significantly better outcomes across all metrics',
-  },
-  communityCount: 9,
-  ingredientsSafe: 12,
-  ingredientsToAvoid: 12,
-  trimesters: 3,
-  lastUpdated: '2026',
-  disclaimer: 'All information in these guides is for educational purposes only. Always consult your OB-GYN, midwife, or dermatologist before starting new skincare, taking any supplements, or using herbal preparations during pregnancy. Cultural practices vary within communities — the guides represent common traditions, not universal prescriptions.',
-};
 
 // ─── EXPORT FUNCTION ──────────────────────────────────────────────────────────
 

@@ -34,6 +34,7 @@ import { handleAgeing } from './ageing/routes.js';
 import { handleHairRemoval } from './bodyhair/routes.js';
 import { handleSmile } from './oral/routes.js';
 import { handleNight } from './sleep/routes.js';
+import { handleBump } from './pregnancy/routes.js';
 import { createRateLimiter, clientAddress, hopShape } from './ratelimit.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -767,6 +768,7 @@ async function router(req, res) {
   if (await handleHairRemoval(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handleSmile(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handleNight(method, path, url, req, res, { sendJSON, readBody })) return;
+  if (await handleBump(method, path, url, req, res, { sendJSON, readBody })) return;
 
   // 404
   return sendJSON(res, 404, { error: 'Not found' });

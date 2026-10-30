@@ -122,6 +122,10 @@ import * as bridalBeautyEthnicGuide from '../bridal_beauty_ethnic_guide.js';
 import * as bridalBeautyGuide from '../bridal_beauty_guide.js';
 import * as ingredientEncyclopedia from '../ingredient_encyclopedia.js';
 import * as skincareIngredientsEncyclopedia from '../skincare_ingredients_encyclopedia.js';
+import * as ecoBeautyGuide from '../eco_beauty_guide.js';
+import * as ecoSustainableBeauty from '../eco_sustainable_beauty.js';
+import * as ecoSustainableBeautyEthnicGuide from '../eco_sustainable_beauty_ethnic_guide.js';
+import * as waterlessBeautyEthnicGuide from '../waterless_beauty_ethnic_guide.js';
 import * as ingredientInteractions from '../ingredient_interactions.js';
 import * as beautyScienceGlossary from '../beauty_science_glossary.js';
 
@@ -141,6 +145,7 @@ export const SHELVES = [
   { id: 'bump', title: 'Pregnancy & Postpartum', blurb: 'What is safe at each stage of pregnancy and while breastfeeding, melasma, breakouts, stretch marks, pregnancy hair and postpartum shedding, and pregnancy and postpartum traditions.' },
   { id: 'bridal', title: 'Bridal Beauty', blurb: 'A countdown from twelve months to the wedding day, skincare for your skin type, wedding hair for natural and extended styles, touch-up kits, choosing a makeup artist, and bridal traditions and scents.' },
   { id: 'ingredients', title: 'Ingredients & Science', blurb: 'What each skincare ingredient does and how to use it, which ones to keep apart and which work together, pH and layering order, morning and night routines, traditional ingredients and where they come from, and a glossary of skin science terms.' },
+  { id: 'eco', title: 'Eco Beauty', blurb: 'Plastic-free swaps, refills and certifications, where shea, argan, marula and other ingredients come from and who benefits, climate threats to beauty crops, waterless and low-waste routines, and each community\'s eco starter kit.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -266,4 +271,8 @@ export const GUIDES = [
   ['skincare_ingredients_encyclopedia', 'ingredients', 'Skincare Actives: Vitamin C to Sunscreen Filters', skincareIngredientsEncyclopedia],
   ['ingredient_interactions', 'ingredients', 'What to Mix, What to Keep Apart, pH and Layering', ingredientInteractions],
   ['beauty_science_glossary', 'ingredients', 'Skin Science Glossary, A to Z', beautyScienceGlossary],
+  ['eco_sustainable_beauty_ethnic_guide', 'eco', 'Eco Beauty by Community: Ingredients, Kits and Seasons', ecoSustainableBeautyEthnicGuide],
+  ['eco_beauty_guide', 'eco', 'Clean Beauty Myths, Packaging and Certifications', ecoBeautyGuide],
+  ['eco_sustainable_beauty', 'eco', 'Ingredient Sourcing Ethics', ecoSustainableBeauty],
+  ['waterless_beauty_ethnic_guide', 'eco', 'Waterless and Low-Waste Beauty', waterlessBeautyEthnicGuide],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

@@ -308,3 +308,21 @@ test('ingredient checker routes over HTTP', async () => {
   const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
   assert.equal(lib.shelves.find(s => s.id === 'ingredients').guides.length, 4);
 });
+
+test('eco beauty routes over HTTP', async () => {
+  const B = `http://127.0.0.1:${PORT}`;
+  const h = { 'x-forwarded-for': '10.6.6.17' };
+  const o = await (await fetch(`${B}/api/eco/options`, { headers: h })).json();
+  assert.equal(o.swaps.length, 7); assert.equal(o.ingredients.length, 32); assert.equal(o.tones.length, 10);
+  const r = await fetch(`${B}/api/eco/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ swap: 'razor', community: 'arab', ingredient: 'argan-oil', fitzpatrick: 'II' }) });
+  assert.equal(r.status, 200);
+  const p = await r.json();
+  assert.equal(p.community.id, 'arab'); assert.match(p.swap.sustainable, /Safety razor/); assert.ok(p.ingredient.sourcing); assert.equal(p.sun.mineral, null);
+  assert.equal((await fetch(`${B}/api/eco/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  const t = await (await fetch(`${B}/api/eco/term?q=upcycling`, { headers: h })).json();
+  assert.match(t.entry.term, /upcycling/i);
+  const html = await (await fetch(`${B}/`, { headers: h })).text();
+  assert.ok(html.includes('data-view="eco"') && html.includes('src="eco.js"'));
+  const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
+  assert.equal(lib.shelves.find(s => s.id === 'eco').guides.length, 4);
+});

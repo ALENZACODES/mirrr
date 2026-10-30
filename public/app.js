@@ -487,6 +487,7 @@ function showTasteLoader(show) {
 
 function renderTasteResults(result) {
   const { aesthetic, looks, narration, narration_source, entities, tags, meta } = result;
+  state.currentLookIds = (looks ?? []).map(r => r.look?.id).filter(Boolean);
 
   // Narration
   const narEl = document.getElementById('tasteNarration');
@@ -1656,6 +1657,7 @@ async function sendStylistMessage() {
       communityId: state.communityId,
       tasteChips: state.tasteChips,
       refinementCount: stylistState.refinementCount,
+      previousLookIds: state.currentLookIds ?? [],
     });
 
     // Remove the "thinking…" bubble
@@ -1670,9 +1672,8 @@ async function sendStylistMessage() {
       // Update the main results
       state.aesthetic = result.aesthetic ?? state.aesthetic;
       state.communityId = result.communityId ?? state.communityId;
+      // The reply above says what changed (or that nothing did); redraw the bars and looks.
       renderTasteResults(result);
-
-      appendStylistMessage('stylist', `✨ I've refreshed your looks above — ${result.looks.length} new recommendations based on what you just told me.`);
     }
   } catch (err) {
     const msgs = document.getElementById('stylistMessages');

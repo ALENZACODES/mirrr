@@ -11,7 +11,9 @@ import { fileURLToPath } from 'url';
 import { dirname, join, extname } from 'path';
 import { runPipeline } from './pipeline/index.js';
 import { narrate } from './llm/index.js';
-import { getArchetypes } from './aesthetic.js';
+import { getArchetypes, buildAestheticVector } from './aesthetic.js';
+import { qlooTaste, provenance } from './taste_signals.js';
+import { refineLooks, describeChanges } from './agent/refine.js';
 import { LOOKS } from './look_engine.js';
 import { scoreDNA, getCommunities, QUIZ_QUESTIONS } from './cultural_dna.js';
 import { buildTransform } from './pipeline/transform.js';
@@ -483,50 +485,30 @@ async function router(req, res) {
     } = body;
 
     try {
+      // Refinements compound: start from the profile the user is looking at now, move it by
+      // what the message asks, and re-rank. Qloo tags (cached) stay as the evidence.
       const apiKey = process.env.QLOO_API_KEY;
-
-      // Build a revised set of taste signals from the message + history
-      const signals = extractRefinementSignals(message, history);
-
-      let looks = [];
-      let qlooPowered = false;
-      let newAesthetic = currentAesthetic;
-      let newCommunityId = communityId;
-
-      // Use taste chips as entity inputs for Qloo if available
-      const qlooInputs = tasteChips;
-
-      if (apiKey && qlooInputs.length > 0) {
-        const agent = new MirrrAgent({
-          qlooApiKey: apiKey,
-          options: { topLooks: 6, topShades: 3, topWigs: 3 },
-        });
-        const result = await agent.run({
-          inputs: qlooInputs,
-          freeText: [message],
-          communityId,
-        });
-        looks = result.looks ?? [];
-        qlooPowered = !!result.meta?.qloo_powered;
-        newAesthetic = result.aesthetic ?? currentAesthetic;
-        newCommunityId = result.communityId ?? communityId;
-      } else {
-        // Keyword-based refinement fallback using look engine
-        looks = getRefinedLooksFallback(signals, communityId);
-      }
-
-      const reply = buildStylistReply(signals, looks, refinementCount);
-
+      const { previousLookIds = [] } = body;
+      let qloo = null;
+      if (apiKey && tasteChips.length > 0) qloo = await qlooTaste(tasteChips.slice(0, 5)).catch(() => null);
+      const evidence = qloo?.kept?.length ? qloo.kept : null;
+      const hasVec = currentAesthetic && ['intensity', 'warmth', 'boldness', 'texture'].every(k => Number.isFinite(currentAesthetic[k]));
+      const base = hasVec ? currentAesthetic : buildAestheticVector(evidence ?? [], { freeText: [] });
+      const { vec, looks, changes } = refineLooks({ vec: base, message, evidence, previousLookIds: Array.isArray(previousLookIds) ? previousLookIds : [] });
+      const reply = describeChanges(changes, looks);
+      const qlooPowered = !!qloo?.qloo_powered;
       return sendJSON(res, 200, {
         reply,
-        looks: looks.slice(0, 6),
+        looks,
+        changes,
         source: qlooPowered ? 'qloo' : 'template',
-        aesthetic: newAesthetic,
-        communityId: newCommunityId,
+        meta: qloo ? { qloo_powered: qlooPowered, qloo: provenance(qloo) } : { qloo_powered: false, no_taste_input: tasteChips.length === 0 },
+        aesthetic: vec,
+        communityId,
       });
     } catch (err) {
       console.error('[/api/agent/refine]', err);
-      return sendJSON(res, 500, { error: err.message ?? 'Stylist refine error' });
+      return sendJSON(res, 500, { error: 'Stylist refine error' });
     }
   }
 
@@ -831,122 +813,3 @@ server.listen(PORT, () => {
 
 export default server;
 
-// ─── REFINEMENT HELPER FUNCTIONS ─────────────────────────────────────────────
-// These functions support the /api/agent/refine endpoint
-
-/**
- * Extract refinement signals from user message and conversation history
- * @param {string} message - The user's refinement message
- * @param {Array} history - Prior conversation history
- * @returns {Object} Extracted signals for refinement
- */
-function extractRefinementSignals(message, history) {
-  const msg = (message || '').toLowerCase();
-  
-  const signals = {
-    wantsMoreBold: /bold|dramatic|intense|stronger|more|brighter/.test(msg),
-    wantsSubtler: /subtle|soft|natural|lighter|less|minimal|understated/.test(msg),
-    wantsDifferentOccasion: /work|office|day|night|wedding|festival|everyday|casual|party|event/.test(msg),
-    wantsTraditional: /traditional|cultural|heritage|classic|authentic/.test(msg),
-    wantsModern: /modern|trendy|contemporary|current|new|fresh/.test(msg),
-    mentionedColour: /red|pink|nude|gold|brown|blue|green|purple|coral|orange|wine|berry/.test(msg),
-    mentionedSkin: /skin|tone|dark|light|deep|fair|medium|melanin/.test(msg),
-    mentionedHair: /hair|curly|coily|straight|wavy|natural|locs|braids/.test(msg),
-    extractedKeywords: msg.split(/\s+/).filter(w => w.length > 3).slice(0, 8),
-    rawMessage: message,
-  };
-
-  // Extract occasion from history if not in current message
-  if (history && history.length > 0) {
-    const historyText = history.map(h => h.content || '').join(' ').toLowerCase();
-    signals.priorOccasion = historyText.match(/wedding|festival|everyday|party|work/)?.[0] || null;
-    signals.priorCommunity = historyText.match(/south-asian|west-african|arab|latina|caribbean|east-asian|east-african|south-african|black-american/)?.[0] || null;
-  }
-
-  return signals;
-}
-
-/**
- * Build refined looks fallback when Qloo is unavailable or returns insufficient results
- * @param {Object} signals - Extracted refinement signals
- * @param {string} communityId - The user's community
- * @returns {Array} Array of look objects
- */
-function getRefinedLooksFallback(signals, communityId) {
-  // Import community looks from look_styles if available
-  const community = communityId || 'all';
-  
-  // Default refined look suggestions
-  const baseLooks = [
-    {
-      id: `refined-${community}-1`,
-      name: signals.wantsBold ? 'Bold Statement Look' : 'Refined Classic Look',
-      community: community,
-      occasion: signals.wantsMoreBold ? 'Evening / Event' : 'Everyday',
-      description: signals.wantsMoreBold
-        ? 'A dramatic, high-impact look with deep colour and definition.'
-        : 'A polished, versatile look that transitions from day to evening.',
-      type: 'look_refinement',
-    },
-    {
-      id: `refined-${community}-2`,
-      name: signals.wantsTraditional ? 'Cultural Heritage Look' : 'Modern Fusion Look',
-      community: community,
-      occasion: signals.wantsTraditional ? 'Cultural Event / Celebration' : 'Contemporary',
-      description: signals.wantsTraditional
-        ? 'Draws from traditional beauty heritage with authentic ingredients and techniques.'
-        : 'A contemporary take that fuses cultural identity with modern beauty.',
-      type: 'look_refinement',
-    },
-    {
-      id: `refined-${community}-3`,
-      name: 'Signature Edit',
-      community: community,
-      occasion: 'Your Choice',
-      description: `A personalised refinement built from your feedback — ${signals.extractedKeywords.join(', ')}.`,
-      type: 'look_refinement',
-    },
-  ];
-
-  return baseLooks;
-}
-
-/**
- * Build a natural stylist reply for the refinement conversation
- * @param {Object} signals - Extracted refinement signals  
- * @param {Array} looks - The refined looks to present
- * @param {number} refinementCount - How many refinements have been done
- * @returns {string} Natural language reply from the AI stylist
- */
-function buildStylistReply(signals, looks, refinementCount) {
-  const lookNames = looks.map(l => l.name ?? l.look?.name).filter(Boolean).join(', ');
-  
-  const openers = [
-    "Got it — I'm reading what you're looking for.",
-    "I hear you. Let me adjust the direction.",
-    "Perfect, that's helpful context.",
-    "Understood — let me refine your recommendations.",
-  ];
-
-  const opener = openers[refinementCount % openers.length];
-
-  let body = '';
-  
-  if (signals.wantsMoreBold) {
-    body = `You want something bolder and more statement-making. I've shifted toward stronger colours and more definition.`;
-  } else if (signals.wantsSubtler) {
-    body = `Softer, more understated — I've moved away from heavy coverage and bold colour toward something more effortless.`;
-  } else if (signals.wantsTraditional) {
-    body = `Leaning into cultural heritage. These are rooted in tradition, with techniques and ingredients from the community's beauty history.`;
-  } else if (signals.wantsModern) {
-    body = `Contemporary and current. These looks draw on cultural identity but read completely modern.`;
-  } else {
-    body = `I've re-ranked the directions around what you described.`;
-  }
-
-  const closer = looks.length > 0 && lookNames
-    ? `Top picks now: ${lookNames}. Which direction resonates most?`
-    : `Let me know if you'd like to refine further — I can keep narrowing this down.`;
-
-  return `${opener} ${body} ${closer}`;
-}

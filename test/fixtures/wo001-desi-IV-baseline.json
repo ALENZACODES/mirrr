@@ -1,0 +1,58 @@
+{
+  "lookId": "desi_baddie",
+  "fitzpatrick": "IV",
+  "undertone": "neutral",
+  "steps": [
+    {
+      "stepName": "Glass Skin Base",
+      "zone": "skin",
+      "technique": "Press foundation into skin with damp beauty sponge. Bounce, do not drag.",
+      "products": {
+        "foundation": "Fenty Pro Filt'r 350W",
+        "concealer": "NARS Radiant Creamy — Custard",
+        "powder": "Laura Mercier Translucent Medium Deep"
+      }
+    },
+    {
+      "stepName": "Kohl Smoky Eye",
+      "zone": "eyes",
+      "technique": "Prime lids. Black shadow on lid, brown in crease. Kohl the entire waterline — both top and bottom. This is the Desi Baddie signature.",
+      "products": {
+        "primer": "Urban Decay EPPP Original",
+        "lid": "MAC Carbon (matte black)",
+        "crease": "MAC Mulch (warm brown)",
+        "liner": "L'Oréal Le Khol 101 Midnight Black",
+        "mascara": "L'Oréal Voluminous Lash Paradise — Blackest Black"
+      }
+    },
+    {
+      "stepName": "Bold Brows",
+      "zone": "brows",
+      "technique": "Short hair-strokes fill gaps only. Do not overdraw.",
+      "products": {
+        "pencil": "Anastasia Brow Wiz — Dark Brown or Ebony",
+        "gel": "Glossier Boy Brow — Brown or Black"
+      }
+    },
+    {
+      "stepName": "Glossy Nude-Brown Lip",
+      "zone": "lips",
+      "technique": "Line with brown liner slightly outside lip line. Fill in. Apply lipstick, then gloss on centre only.",
+      "products": {
+        "liner": "MAC Chestnut Lip Pencil",
+        "lipstick": "MAC Kinda Sexy",
+        "gloss": "Fenty Gloss Bomb — Fu$$y"
+      }
+    }
+  ],
+  "proTips": [
+    "Kohl the entire waterline — top and bottom — this is what makes the look distinctly Desi",
+    "Clean up eyeshadow fallout AFTER completing eyes, not during",
+    "For photos: increase highlighter 20% — cameras eat light"
+  ],
+  "shoppingEstimate": {
+    "low": 85,
+    "high": 220,
+    "currency": "CAD"
+  }
+}

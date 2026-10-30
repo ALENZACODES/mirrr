@@ -706,14 +706,38 @@ async function router(req, res) {
       });
     }
 
+    const typeOrder = ['I', 'II', 'III', 'IV', 'V', 'VI'];
+    const requestedType = typeOrder.includes(fitzpatrick) ? fitzpatrick : 'IV';
+    const requestedIndex = typeOrder.indexOf(requestedType);
+    const nearestType = types => types.reduce((best, type) =>
+      !best || Math.abs(typeOrder.indexOf(type) - requestedIndex) < Math.abs(typeOrder.indexOf(best) - requestedIndex)
+        ? type : best, null);
+
+    // Prefer one skin type supported by every type-specific step so the label is accurate.
+    const typedSteps = guide.steps.map(step => typeOrder.filter(type => Object.hasOwn(step.products, type)))
+      .filter(types => types.length > 0);
+    const commonTypes = typeOrder.filter(type => typedSteps.every(types => types.includes(type)));
+    const candidates = commonTypes.length ? commonTypes : typeOrder.filter(type => typedSteps.some(types => types.includes(type)));
+    const fitzpatrickUsed = nearestType(candidates) ?? requestedType;
+
+    const flattenProduct = value => {
+      if (Array.isArray(value)) return value.map(flattenProduct).filter(Boolean).join(', ');
+      if (value && typeof value === 'object') return Object.entries(value).map(([key, v]) => `${key}: ${flattenProduct(v)}`).join('; ');
+      return String(value ?? '');
+    };
     const personalisedSteps = guide.steps.map(step => {
-      const products = step.products[fitzpatrick] || step.products['all'] || step.products;
+      const types = typeOrder.filter(type => Object.hasOwn(step.products, type));
+      const chosenType = types.includes(fitzpatrickUsed) ? fitzpatrickUsed : nearestType(types);
+      const values = chosenType ? step.products[chosenType] : step.products.all ?? {};
+      const products = Object.fromEntries(Object.entries(values).map(([key, value]) => [key, flattenProduct(value)]));
       return { ...step, products };
     });
 
     return sendJSON(res, 200, {
       lookId,
-      fitzpatrick,
+      fitzpatrick: requestedType,
+      fitzpatrickUsed,
+      fitzpatrickAvailable: candidates,
       undertone,
       steps: personalisedSteps,
       proTips: guide.proTips,

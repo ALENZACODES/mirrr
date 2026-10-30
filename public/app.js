@@ -2075,6 +2075,12 @@ async function loadStyleMatchLooks() {
   }
 }
 
+function flattenStyleProduct(value) {
+  if (Array.isArray(value)) return value.map(flattenStyleProduct).filter(Boolean).join(', ');
+  if (value && typeof value === 'object') return Object.entries(value).map(([key, v]) => `${key}: ${flattenStyleProduct(v)}`).join('; ');
+  return String(value ?? '');
+}
+
 async function openStyleGuide(lookId) {
   const drawer = document.getElementById('smGuideDrawer');
   const titleEl = document.getElementById('smGuideTitle');
@@ -2083,7 +2089,9 @@ async function openStyleGuide(lookId) {
   if (!drawer) return;
 
   // Grab current fitzpatrick filter
-  const fitzpatrick = document.getElementById('smFitzpatrick')?.value || 'IV';
+  // '' means "Any": no skin type chosen, so the server's default (IV) is an assumption, not a selection.
+  const selectedType = document.getElementById('smFitzpatrick')?.value || '';
+  const fitzpatrick = selectedType || 'IV';
   const undertone   = 'neutral';
 
   titleEl.textContent = 'Loading guide…';
@@ -2094,14 +2102,21 @@ async function openStyleGuide(lookId) {
   try {
     const data = await api('/api/style-match/guide', 'POST', { lookId, fitzpatrick, undertone });
     titleEl.textContent = data.lookId?.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) + ' — Step-by-Step Guide';
+    const used = data.fitzpatrickUsed;
+    const range = (data.fitzpatrickAvailable || []).join(', ');
+    const noticeText = !used ? ''
+      : !selectedType ? `Shades shown for Type ${used}. Pick your skin type above to personalise this guide.`
+      : used !== selectedType ? `This guide has shades for Types ${range}. Showing Type ${used}, the closest to your Type ${selectedType}.`
+      : '';
+    const notice = noticeText ? `<p style="color:#c9a96e;margin-bottom:1rem;">${esc(noticeText)}</p>` : '';
 
     if (data.steps?.length) {
-      stepsEl.innerHTML = data.steps.map((step, i) => `
+      stepsEl.innerHTML = notice + data.steps.map((step, i) => `
         <div style="margin-bottom:1.2rem;padding:1rem;background:#111;border-radius:0.75rem;border-left:3px solid #c9a96e;">
           <div style="font-size:0.72rem;color:#c9a96e;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.25rem;">Step ${i+1} · ${step.zone || ''}</div>
           <div style="font-weight:600;color:#f0e8da;margin-bottom:0.4rem;">${step.stepName}</div>
           <div style="font-size:0.85rem;color:#aaa;margin-bottom:0.6rem;">${step.technique}</div>
-          ${step.products ? `<div style="font-size:0.8rem;color:#c9a96e;">${Object.entries(step.products).map(([k,v]) => `<span style="color:#888;">${k}:</span> ${v}`).join(' · ')}</div>` : ''}
+          ${step.products ? `<div style="font-size:0.8rem;color:#c9a96e;">${Object.entries(step.products).map(([k,v]) => `<span style="color:#888;">${esc(k)}:</span> ${esc(flattenStyleProduct(v))}`).join(' · ')}</div>` : ''}
         </div>
       `).join('');
     } else {

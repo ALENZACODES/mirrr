@@ -1,8 +1,8 @@
 /**
  * MIRRR — Men's Grooming Ethnic Guide
- * Comprehensive grooming, skincare, and beauty guidance for men across
- * all 9 ethnic communities. Covers beard care, skincare routines,
- * traditional grooming rituals, and culturally specific practices.
+ * Grooming traditions, barbershop culture and skincare for men from
+ * nine communities. Beard texture and skin type are the reader's own pick,
+ * never assigned by community.
  */
 
 export const ETHNIC_MENS_GROOMING_GUIDES = {
@@ -10,25 +10,17 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
     communityId: 'west-african',
     communityName: 'West African',
     groomingPhilosophy: 'West African men\'s grooming is rooted in dignity, presentation, and cultural pride. A well-groomed West African man is a statement of respect — for himself, his community, and his heritage. From the ceremonially lined fade of Ghanaian barber art to the precisely tapered Afro of Lagos fashion, grooming is cultural expression. Traditional practices using locally sourced ingredients have long maintained the health and appearance of West African men\'s skin, hair, and beards.',
-    commonConcerns: [
-      'Razor bumps (pseudofolliculitis barbae) — extremely prevalent in West African men with tightly coiled beard hair',
-      'Hyperpigmentation from acne or ingrown hairs',
-      'Scalp health and traction alopecia from certain hairstyles',
-      'Ashiness — dry, ashy skin especially on hands, elbows, and darker areas',
-      'Hyperpigmentation of the neckline from chronic razor irritation',
-    ],
     traditionalPractices: [
       {
         name: 'Shea Butter Skin Maintenance',
         description: 'Unrefined shea butter is the cornerstone of West African men\'s skincare — applied post-shower to lock in moisture and prevent ashiness.',
-        application: 'Apply generously to damp skin within 2 minutes of showering. Focus on elbows, knees, ashy areas. For face, use sparingly (shea is comedogenic).',
-        enhancement: 'Add a few drops of tea tree oil to shea butter for antibacterial benefit — helps prevent ingrown hairs.',
+        application: 'Apply to damp skin straight after showering. Focus on elbows, knees and ashy areas. On the face use very little: shea can clog pores on oily or acne-prone skin.',
       },
       {
         name: 'Palm Oil Hair Treatment',
         description: 'Palm oil (red palm oil for higher antioxidant content) applied to the scalp and hair as a deep conditioning treatment.',
         method: 'Warm palm oil. Apply to scalp and hair. Cover with a warm towel. Leave 20–30 minutes. Shampoo out with a clarifying cleanser.',
-        benefit: 'Rich in vitamin E, beta-carotene, and fatty acids that nourish the scalp and reduce breakage.',
+        benefit: 'Red palm oil is rich in fatty acids and carotenoids and coats the hair, which helps it feel softer. It can stain light fabric.',
       },
       {
         name: 'Neem Oil Beard Treatment',
@@ -38,36 +30,15 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
       },
       {
         name: 'African Black Soap Face Wash',
-        description: 'Authentic African black soap used as a daily face cleanser. Removes excess oil, treats acne, and gently exfoliates.',
+        description: 'Authentic African black soap used as a face cleanser. It removes oil well and can suit oily skin.',
         how: 'Work a small amount into a light lather. Apply to face. Leave 30 seconds. Rinse thoroughly. Follow with a light moisturizer.',
         note: 'Black soap is alkaline — overuse can disrupt skin barrier. 1x daily maximum.',
       },
     ],
     razorBumpGuide: {
-      whatAreRazorBumps: 'Pseudofolliculitis barbae (PFB) — when tightly coiled beard hair curls back into the skin after shaving, causing inflammation, bumps, and hyperpigmentation.',
-      prevalence: 'Affects 45–83% of Black men who shave. One of the most significant skincare issues in West African and broader Black communities.',
-      prevention: [
-        'Electric clipper with guards instead of a razor blade — leaves hair slightly longer, reducing in-growth',
-        'Shave in the direction of hair growth (with the grain), not against it',
-        'Single-blade razor if you prefer a close shave — multiple blades cut below the skin surface',
-        'Pre-shave oil to soften hair and reduce drag',
-        'Never dry shave — always with water and a quality shave cream',
-        'Chemical exfoliation (glycolic acid, salicylic acid) to prevent dead skin trapping hairs',
-      ],
-      treatment: [
-        'Warm compress to the affected area to open follicles',
-        'Use a sterilized needle to manually release trapped hairs (not squeeze or pop)',
-        'Salicylic acid product to reduce inflammation and exfoliate',
-        'Benzoyl peroxide if infected bumps are present',
-        'Niacinamide for post-bump hyperpigmentation',
-        'Dark spot corrector for long-term mark reduction',
-      ],
-      products: [
-        'Bump Patrol Aftershave Treatment',
-        'Tend Skin Solution',
-        'Bevel Shave System (designed specifically for Black men\'s grooming needs)',
-        'Walker & Company Bevel Sensitive Skin Shave Cream',
-      ],
+      whatAreRazorBumps: 'Pseudofolliculitis barbae (PFB): after shaving, a tightly curled beard hair curls back into the skin, causing inflamed bumps that can leave dark marks. It is most common with coily beard hair.',
+      prevention: ['Electric clipper with guards instead of a razor blade — leaves hair slightly longer, reducing in-growth', 'Shave in the direction of hair growth (with the grain), not against it', 'Single-blade razor if you prefer a close shave — multiple blades cut below the skin surface', 'Pre-shave oil to soften hair and reduce drag', 'Never dry shave — always with water and a quality shave cream', 'Chemical exfoliation (glycolic acid, salicylic acid) to prevent dead skin trapping hairs'],
+      treatment: ['Warm compress to soften the skin', 'Lift a trapped hair out with a sterile needle or tweezers; do not pluck it or squeeze the bump', 'Salicylic acid to exfoliate and calm', 'See a doctor for painful, pus-filled or spreading bumps; they may need prescription treatment', 'Niacinamide or azelaic acid for dark marks left behind'],
     },
     beardCare: {
       groomingStyles: [
@@ -78,19 +49,11 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
         },
         {
           style: 'Low Fade + Beard',
-          description: 'The Lagos/Accra signature look — a tight fade connecting seamlessly to a shaped beard.',
+          description: 'A tight fade connecting seamlessly to a shaped beard; a familiar look in Lagos and Accra barbershops.',
           maintenance: 'Weekly edge-up. Beard oil daily.',
         },
-        {
-          style: 'Goatee',
-          description: 'Mustache + chin beard. A classic West African masculine grooming style.',
-          maintenance: 'Sharp lining every 1–2 weeks.',
-        },
-        {
-          style: 'Clean Shave',
-          description: 'Smooth, clean-shaven — requires the most disciplined razor bump management.',
-          maintenance: 'Every 2–3 days with proper PFB prevention protocol.',
-        },
+        { style: 'Goatee', description: 'Mustache plus chin beard: a classic everywhere.', maintenance: 'Sharp lining every 1–2 weeks.' },
+        { style: 'Clean Shave', description: 'Smooth, clean-shaven — requires the most disciplined razor bump management.', maintenance: 'Every 2–3 days with proper PFB prevention protocol.' },
       ],
       beardOilRecipe: {
         base: '2 tbsp jojoba oil + 1 tbsp argan oil + 1 tbsp sweet almond oil',
@@ -99,13 +62,7 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
       },
     },
     hairGrooming: {
-      naturalHairCare: [
-        'Co-wash with a lightweight conditioner weekly',
-        'Deep condition with shea butter mix monthly',
-        'Low manipulation styling to minimize breakage',
-        'Protective styles: dreads, twists, braids — reduce daily manipulation',
-        'Scalp oil with tea tree for dandruff prevention',
-      ],
+      naturalHairCare: ['Co-wash with a lightweight conditioner weekly', 'Deep condition with shea butter mix monthly', 'Low manipulation styling to minimize breakage', 'Protective styles: dreads, twists, braids — reduce daily manipulation', 'Scalp oil with tea tree for dandruff prevention'],
       theBarber: {
         note: 'In West African communities, the barbershop is as much a cultural institution as a grooming venue. A skilled barber is a respected community figure.',
         popularStyles: ['Afro Fade', 'Low Cut', 'Shaved Head', 'Temp Fade', 'Drop Fade + Design', 'Locs / Dreads'],
@@ -122,22 +79,14 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
       },
     },
   },
-
   'south-asian': {
     communityId: 'south-asian',
     communityName: 'South Asian',
     groomingPhilosophy: 'South Asian men\'s grooming is deeply influenced by Ayurvedic tradition — the concept that outer appearance reflects inner health. Hair oiling (champi), skincare using natural pastes, and beard grooming are long-standing practices. Modern South Asian men in urban centers have embraced sophisticated grooming routines combining Ayurvedic fundamentals with contemporary products. The beard has become a central style statement across South Asian communities.',
-    commonConcerns: [
-      'Oily skin with large pores (very common in South Asian men)',
-      'Acne and post-acne hyperpigmentation on oily skin',
-      'Thick, coarse beard hair that requires careful management',
-      'Hair loss and male-pattern baldness (androgenetic alopecia is very common in South Asian men)',
-      'Dark circles from genetic periorbital pigmentation',
-    ],
     traditionalPractices: [
       {
         name: 'Champi (Head Massage with Oil)',
-        description: 'Weekly head and scalp massage with warm oil — a foundational Ayurvedic practice. Stimulates hair follicles, reduces hair loss, and deeply conditions the scalp.',
+        description: 'Weekly head and scalp massage with warm oil, a foundational Ayurvedic practice. It conditions the scalp and is relaxing; evidence that it reduces hair loss is limited.',
         oils: ['Coconut oil', 'Sesame oil (til)', 'Amla oil', 'Bhringraj oil', 'Neem oil'],
         technique: 'Warm the oil. Apply to scalp. Use fingertips (not nails) to massage in circular motions for 10–15 minutes. Cover with a warm towel. Leave 1 hour or overnight. Shampoo out.',
         frequency: 'Weekly minimum. Some traditional practitioners do it nightly.',
@@ -146,7 +95,7 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
         name: 'Multani Mitti (Fuller\'s Earth) Face Mask',
         description: 'Fuller\'s earth (multani mitti) used as a weekly face mask for oil control, pore cleansing, and skin brightening.',
         recipe: '2 tbsp multani mitti + rose water to make a paste + a pinch of turmeric. Apply. Leave 15–20 minutes. Rinse.',
-        benefit: 'Absorbs sebum, reduces pore appearance, gently exfoliates, and brightens dull skin.',
+        benefit: 'Absorbs oil and leaves skin feeling clean. It can be drying, so use it once a week at most on dry skin.',
       },
       {
         name: 'Ubtan Beard Scrub',
@@ -160,47 +109,21 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
       },
       {
         name: 'Amla Oil for Hair',
-        description: 'Amla (Indian gooseberry) oil is one of the most powerful hair growth and scalp health treatments in Ayurveda.',
-        benefit: 'High vitamin C content. Reduces premature greying. Strengthens hair shaft. Stimulates follicles.',
+        description: 'Amla (Indian gooseberry) oil is a long-standing Ayurvedic scalp and hair oil: amla fruit steeped in a base oil.',
+        benefit: 'Conditions the scalp and hair. Vitamin C does not dissolve in oil, and evidence that amla oil prevents greying or hair loss is limited.',
         application: 'Apply amla oil to scalp. Massage in. Leave 1–2 hours. Shampoo out with gentle cleanser.',
       },
     ],
     beardCare: {
-      southAsianBeardCharacteristics: 'South Asian men typically have thick, coarse, dark beard hair that grows densely. Beard styles range from the full Sikh beard to the precisely shaped urban style.',
       sikhBeardTradition: {
-        religioussignificance: 'In Sikhism, the beard (dhari) is a sacred element of the five Ks (panj kakars). Sikhs do not cut their hair or beard.',
-        care: [
-          'Daily washing with gentle beard wash or shampoo',
-          'Deep conditioning with coconut or argan oil',
-          'Beard comb to keep neat and tangle-free',
-          'Keski or patka to protect and manage the beard during sports or sleep',
-          'Beard wax or balm for formal occasions',
-        ],
+        religioussignificance: 'In Sikhism, kesh (uncut hair, including the beard, or dhari) is one of the five Ks (panj kakar). Many Sikhs do not cut their hair or beard.',
+        care: ['Daily washing with gentle beard wash or shampoo', 'Deep conditioning with coconut or argan oil', 'Beard comb to keep neat and tangle-free', 'Keski or patka to protect and manage the beard during sports or sleep', 'Beard wax or balm for formal occasions'],
       },
-      groomingStyles: [
-        'Full beard, shaped and conditioned',
-        'Short boxed beard',
-        'Designer stubble (3–7 days growth)',
-        'Clean shave (requires proper technique for thick coarse hair)',
-      ],
-      beardSoftener: 'South Asian beard hair can be wiry. Coconut oil or argan oil applied and left for 30 minutes before washing softens and conditions the hair shaft.',
+      groomingStyles: ['Full beard, shaped and conditioned', 'Short boxed beard', 'Designer stubble (3–7 days growth)', 'Clean shave (requires proper technique for thick coarse hair)'],
     },
     hairLossGuide: {
-      prevalence: 'South Asian men have among the highest rates of androgenetic alopecia globally. Starting as early as the mid-20s.',
-      ayurvedicApproach: [
-        'Bhringraj oil — Ayurvedic "king of herbs for hair"',
-        'Brahmi oil — traditionally used for hair density',
-        'Amla oil — antioxidant protection for follicles',
-        'Scalp massage to improve blood flow',
-        'Diet: include zinc (pumpkin seeds), biotin (eggs), iron (leafy greens)',
-      ],
-      modernMedical: [
-        'Minoxidil (Rogaine) — topical, evidence-based',
-        'Finasteride — prescription oral medication, very effective',
-        'PRP (platelet-rich plasma) injections',
-        'Hair transplant for advanced cases',
-        'Consult a dermatologist for personalized protocol',
-      ],
+      ayurvedicApproach: ['Bhringraj oil, called the "king of herbs for hair" in Ayurveda', 'Brahmi oil, traditionally used for hair density', 'Amla oil for scalp conditioning', 'Regular scalp massage', 'A balanced diet with enough iron, zinc and protein; supplements only help if you are low'],
+      modernMedical: ['Minoxidil: topical, with good evidence', 'Finasteride: a prescription tablet with good evidence; discuss side effects with your doctor', 'PRP (platelet-rich plasma) injections: evidence is mixed', 'Hair transplant for advanced cases', 'See a dermatologist to confirm the cause first'],
     },
     skinCareRoutine: {
       forOilyAcneProneSkin: {
@@ -210,53 +133,36 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
       },
     },
   },
-
-  'caribbean': {
+  caribbean: {
     communityId: 'caribbean',
     communityName: 'Caribbean',
     groomingPhilosophy: 'Caribbean men\'s grooming is cool, confident, and unhurried. The Caribbean man values a crisp fade, a clean shave or neatly shaped beard, and skin that looks healthy and vibrant. Island life influences grooming — salt water, sun, humidity, and outdoor activity shape the products and routines needed. Natural island ingredients — coconut, aloe, tropical herbs — are central to traditional grooming practices.',
-    commonConcerns: [
-      'Razor bumps from tight coily beard hair',
-      'Sun hyperpigmentation from outdoor Caribbean lifestyle',
-      'Scalp health in salt and sun conditions',
-      'Dry skin from constant air conditioning (in urban Caribbean settings)',
-      'Beard styling in humidity',
-    ],
     traditionalPractices: [
       {
         name: 'Coconut Oil Full-Body Moisturizer',
-        description: 'Pure coconut oil pressed from local coconuts applied post-shower as a full-body moisturizer. The quintessential Caribbean grooming product.',
-        application: 'Apply to damp skin within 2 minutes of showering. Coconut oil absorbs beautifully into warm Caribbean skin.',
+        description: 'Coconut oil pressed from local coconuts, used after a shower as an all-over body moisturiser.',
+        application: 'Apply to damp skin straight after showering. Keep it off acne-prone faces: it can clog pores.',
       },
       {
         name: 'Aloe Vera After-Shave',
-        description: 'Fresh aloe gel applied immediately after shaving to cool, soothe, and prevent razor bumps.',
+        description: 'Fresh aloe gel applied straight after shaving to cool and soothe the skin.',
         method: 'Keep an aloe plant at home. Cut a leaf. Scrape the gel. Apply to freshly shaved skin.',
       },
       {
         name: 'Sea Salt Scalp Scrub',
         description: 'Fine sea salt mixed with coconut oil used as a weekly scalp exfoliator.',
         recipe: '2 tbsp fine sea salt + 1 tbsp coconut oil + 3 drops tea tree oil. Massage into wet scalp. Leave 5 minutes. Rinse thoroughly. Shampoo.',
-        benefit: 'Removes product buildup, dead skin, and treats dandruff. The sea environment has long provided these ingredients naturally.',
+        benefit: 'Lifts product build-up and flakes. Be gentle: salt is abrasive, and skip it if your scalp is sore or broken.',
       },
       {
         name: 'Jamaican Black Castor Oil (JBCO)',
-        description: 'JBCO applied to the beard and scalp for growth, moisture, and scalp health.',
+        description: 'Jamaican black castor oil applied to the beard and scalp to soften and condition. It coats hair so it looks fuller; it does not create new hair.',
         application: 'For beard: apply to beard roots and ends nightly. For scalp: massage in before washing.',
       },
     ],
     beachGroomingRoutine: {
-      preBeach: [
-        'SPF 30 on face and any exposed skin',
-        'Lightweight, water-resistant moisturizer',
-        'Waterproof SPF lip balm',
-      ],
-      postBeach: [
-        'Rinse thoroughly with fresh water — salt dries hair and skin',
-        'Aloe gel on any sun-exposed areas',
-        'Deep condition hair after salt water exposure',
-        'Moisturize heavily — salt and sun are dehydrating',
-      ],
+      preBeach: ['SPF 30 on face and any exposed skin', 'Lightweight, water-resistant moisturizer', 'Waterproof SPF lip balm'],
+      postBeach: ['Rinse thoroughly with fresh water — salt dries hair and skin', 'Aloe gel on any sun-exposed areas', 'Deep condition hair after salt water exposure', 'Moisturize heavily — salt and sun are dehydrating'],
     },
     barbershopCulture: {
       significance: 'The Caribbean barbershop is a cornerstone of community life — as much a social institution as a grooming destination. Music, dominoes, conversation, and community happen here.',
@@ -269,18 +175,10 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
       },
     },
   },
-
-  'arab': {
+  arab: {
     communityId: 'arab',
     communityName: 'Arab Middle Eastern',
     groomingPhilosophy: 'Arab men\'s grooming is sophisticated, intentional, and fragrance-forward. The beard holds religious and cultural significance across Muslim Arab communities. Skin care using traditional formulations — oud-infused balms, argan oil preparations, rose water toners — represents a long heritage of grooming sophistication. Modern Arab men in Dubai, Cairo, Riyadh, and Beirut have embraced a fusion of traditional rituals and international luxury grooming.',
-    commonConcerns: [
-      'Dense, thick, fast-growing beard that requires regular maintenance',
-      'Oily skin in humid Gulf environments',
-      'Hyperpigmentation from sun exposure',
-      'Dehydration-related skin issues in desert climates',
-      'Finding fragrances that complement the traditional oud note',
-    ],
     traditionalPractices: [
       {
         name: 'Hammam (Traditional Steam Bath)',
@@ -292,69 +190,41 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
         name: 'Argan Oil Beard Conditioning',
         description: 'Pure Moroccan argan oil applied to the beard for conditioning, shine, and softening.',
         application: '2–3 drops rubbed between palms. Worked through the beard from roots to tips.',
-        benefit: 'High vitamin E and oleic acid content. Softens thick Arab beard hair beautifully.',
+        benefit: 'Rich in oleic acid and vitamin E; softens coarse beard hair.',
       },
       {
         name: 'Oud (Agarwood) Fragrance Ritual',
-        description: 'Burning oud chips in a mabkhara (incense burner) and wafting clothing, hair, and skin over the smoke. The quintessential Arab male fragrance tradition.',
-        modern: 'Oud-based cologne (Amouage, Swiss Arabian, Rasasi) as an everyday luxury scent.',
-        significance: 'Oud fragrance is synonymous with Arab masculine elegance. A man who smells of oud commands respect.',
+        description: 'Burning oud chips or bakhoor in a mabkhara (incense burner) and wafting clothing and hair over the smoke. A treasured fragrance tradition across the Gulf.',
       },
       {
         name: 'Black Seed Oil Skin Treatment',
         description: 'Black seed oil (habbatus sauda) applied topically for skin health, beard growth, and anti-inflammatory benefit.',
-        application: 'Apply a few drops to face as a serum. Mix into beard oil for beard use.',
+        application: 'Dilute a few drops in a carrier oil and patch test first: black seed oil can cause allergic skin reactions.',
       },
       {
         name: 'Rose Water Toner',
-        description: 'Rose water (ma\' al-ward) used as a daily face toner — balancing pH and soothing irritated skin after shaving.',
+        description: 'Rose water (ma\' al-ward) used as a toner to soothe skin after shaving.',
         method: 'Apply to cotton pad or pour into hands. Pat onto face after cleansing.',
       },
     ],
     arabBeardTradition: {
       islamicContext: 'The beard in Islam is considered a sunnah (tradition of the Prophet Muhammad, peace be upon him). Many Muslim Arab men maintain a beard as a religious practice.',
       classicShapes: [
-        {
-          style: 'Full Sunnah Beard',
-          description: 'Full beard, not trimmed on the length (one fist length minimum in some schools), with the mustache trimmed above the lip line.',
-        },
-        {
-          style: 'Shaped Full Beard',
-          description: 'Full coverage beard, shaped and lined on cheek line and neckline for a clean appearance.',
-        },
-        {
-          style: 'Short Shaped Beard',
-          description: 'Shorter beard, precisely shaped. Very popular in Levantine and North African cities.',
-        },
-        {
-          style: 'Gulf Designer Beard',
-          description: 'Often very well maintained, with professional lining, sometimes with decorative shaping.',
-        },
+        { style: 'Full Sunnah Beard', description: 'Full beard, not trimmed on the length (one fist length minimum in some schools), with the mustache trimmed above the lip line.' },
+        { style: 'Shaped Full Beard', description: 'Full coverage beard, shaped and lined on cheek line and neckline for a clean appearance.' },
+        { style: 'Short Shaped Beard', description: 'Shorter beard, precisely shaped. Very popular in Levantine and North African cities.' },
+        { style: 'Gulf Designer Beard', description: 'Often very well maintained, with professional lining, sometimes with decorative shaping.' },
       ],
-      beardCareRituals: [
-        'Daily wash with mild shampoo or beard wash',
-        'Argan or oud-infused beard oil applied daily',
-        'Beard comb or brush for styling',
-        'Professional trimming and shaping at a barber every 2 weeks',
-      ],
+      beardCareRituals: ['Daily wash with mild shampoo or beard wash', 'Argan or oud-infused beard oil applied daily', 'Beard comb or brush for styling', 'Professional trimming and shaping at a barber every 2 weeks'],
     },
     fragranceGuide: {
-      oudBasedScents: ['Amouage Interlude Man', 'Swiss Arabian Shaghaf Oud Aswad', 'Rasasi Dhanal Oudh Al Nokhba', 'Abdul Samad Al Qurashi Royal Oud'],
       layering: 'Traditional Arab fragrance layering: body oil or lotion on skin, then oud perfume on pulse points, then oud clothing smoke (optional). The layers create a complex, evolving scent signature.',
     },
   },
-
-  'latina': {
+  latina: {
     communityId: 'latina',
     communityName: 'Latino',
     groomingPhilosophy: 'Latino men\'s grooming is proud, sharp, and community-rooted. The barbershop (peluquería) is one of the most important community spaces in Latin American neighborhoods. A fresh cut, a clean line-up, and a well-maintained beard or mustache are expressions of self-respect and cultural identity. Traditional grooming practices using local plants and oils have been passed down through generations alongside modern barbering techniques.',
-    commonConcerns: [
-      'Razor bumps from curly/coily beard hair in Afro-Latino communities',
-      'Oily skin and acne common in teen and young adult Latino men',
-      'Sun hyperpigmentation from outdoor lifestyle',
-      'Hair texture ranging from straight to very coily across the community diversity',
-      'Finding products for the wide range of Latino skin tones',
-    ],
     traditionalPractices: [
       {
         name: 'Aceite de Almendra (Sweet Almond Oil) Hair Treatment',
@@ -364,7 +234,7 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
       {
         name: 'Sábila (Aloe Vera) After-Shave',
         description: 'Fresh aloe vera gel applied immediately post-shave to prevent irritation, razor bumps, and soothe skin.',
-        benefit: 'Anti-inflammatory, cooling, and accelerates skin healing.',
+        benefit: 'Cooling and soothing on freshly shaved skin. Patch test: some people react to aloe.',
       },
       {
         name: 'Aceite de Coco (Coconut Oil) Moisturizer',
@@ -379,23 +249,10 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
     ],
     barbershopCulture: {
       significance: 'La peluquería (barber shop) is a cornerstone of Latino male community life. It is where neighborhood connections are maintained, politics and sports are debated, and masculinity is performed.',
-      popularStyles: [
-        'Mid Fade + Textured Top',
-        'High Skin Fade + Curly Top (for curly-haired Latino men)',
-        'Taper + Slick Back',
-        'Low Fade + Comb Over',
-        'Afro Fade (Afro-Latino community)',
-        'Bald Fade + Line-up',
-        'Natural Curls + Defined Shape',
-      ],
-      mustacheTradition: 'The mustache (bigote) carries deep cultural significance in many Latin American communities — from the classic Mexican mustache to the sophisticated pencil mustache of Argentine tango culture.',
+      popularStyles: ['Mid Fade + Textured Top', 'High Skin Fade + Curly Top (for curly-haired Latino men)', 'Taper + Slick Back', 'Low Fade + Comb Over', 'Afro Fade (Afro-Latino community)', 'Bald Fade + Line-up', 'Natural Curls + Defined Shape'],
+      mustacheTradition: 'The mustache (bigote) carries deep cultural meaning in many Latin American communities, from the full Mexican charro mustache to the thin pencil mustache.',
     },
-    beardStyles: [
-      'The Patron: full thick beard, very on-trend in Latin America',
-      'Candado (padlock): mustache connected to chin beard only',
-      'Sombra (shadow): 3-day stubble, permanently maintained',
-      'Clean shave: very sharp, requires regular maintenance',
-    ],
+    beardStyles: ['Full beard, kept thick and shaped', 'Candado (padlock): mustache joined to a chin beard', 'Three-day stubble, kept at that length', 'Clean shave: very sharp, needs regular upkeep'],
     skinCareRoutine: {
       forHotClimate: {
         am: ['Lightweight cleanser', 'Niacinamide serum for oil control', 'SPF 30 gel moisturizer'],
@@ -403,29 +260,21 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
       },
     },
   },
-
   'east-asian': {
     communityId: 'east-asian',
     communityName: 'East Asian',
-    groomingPhilosophy: 'East Asian men\'s grooming has undergone a remarkable transformation. Traditional grooming was simple — hair, cleanliness, and minimal intervention. K-beauty and J-beauty revolutions have created an entire "skincare for men" category that East Asian men adopted first and most thoroughly. Today, a skincare routine in South Korea is normal for men of all ages. Glass skin, a non-shiny, healthy complexion, and neat, styled hair are the aesthetic goals.',
-    commonConcerns: [
-      'Oily T-zone and enlarged pores (common in East Asian male skin)',
-      'Acne and comedones on oily skin',
-      'The shift from sparse/no beard to wanting to maximize beard growth',
-      'Dark circles and under-eye puffiness',
-      'Finding the right gel or wax for straight, fine East Asian hair',
-    ],
+    groomingPhilosophy: 'East Asian men\'s grooming has changed fast. Traditional grooming was simple: hair, cleanliness and little else. Today South Korea has one of the world\'s largest men\'s skincare markets, and a skincare routine is normal for men of all ages there. A healthy, non-shiny complexion and neat, styled hair are the goals.',
     traditionalPractices: [
       {
         name: 'Rice Water Hair Rinse',
         description: 'Fermented rice water used as a hair rinse for strength, shine, and scalp health.',
         method: 'Ferment rice water 24–48 hours. Strain. Apply to scalp and hair after shampoo. Leave 5–10 minutes. Rinse.',
-        history: 'Used in Japan (yuki nagashi technique) and China for centuries.',
+        history: 'A long-standing hair rinse in China and Japan.',
       },
       {
         name: 'Green Tea Toner',
         description: 'Strong-brewed green tea cooled and used as a daily face toner.',
-        benefit: 'EGCG antioxidant reduces oxidative stress, oil production, and inflammation.',
+        benefit: 'Green tea is rich in antioxidants (EGCG) and may calm skin and reduce oiliness a little.',
         method: 'Brew green tea. Cool. Store in refrigerator. Apply with cotton pad after cleansing.',
       },
       {
@@ -435,98 +284,58 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
       },
       {
         name: 'Jade Roller Facial Massage',
-        description: 'Jade roller used for lymphatic drainage and depuffing. Originally a Chinese court beauty tool, now mainstream in East Asian men\'s grooming.',
-        method: 'Roll outward from center of face to hairline. Use downward motion on jawline. 5–10 minutes daily.',
+        description: 'A cool stone roller sold as a traditional Chinese beauty tool. It feels soothing and can briefly reduce morning puffiness.',
+        method: 'Roll outward from the centre of the face to the hairline and down the jaw for a few minutes. Clean it after each use.',
       },
     ],
     kBeautyMensRoutine: {
       description: 'The Korean men\'s skincare routine (known as K-grooming) has been a global export. It is thorough, systematic, and product-driven.',
       steps: [
-        {
-          step: 1,
-          name: 'Oil Cleanser',
-          purpose: 'Remove sunscreen and sebum',
-          products: ['Banila Co Clean It Zero Cleansing Balm', 'DHC Deep Cleansing Oil'],
-        },
-        {
-          step: 2,
-          name: 'Foam Cleanser',
-          purpose: 'Second cleanse for thorough clean',
-          products: ['COSRX Low pH Good Morning Gel Cleanser', 'Innisfree Bija Anti-Trouble Cleansing Foam'],
-        },
-        {
-          step: 3,
-          name: 'Toner',
-          purpose: 'pH balance and hydration prep',
-          products: ['Some By Mi AHA BHA PHA 30 Days Miracle Toner', 'KLAIRS Supple Preparation Toner'],
-        },
-        {
-          step: 4,
-          name: 'Serum / Essence',
-          purpose: 'Targeted treatment (niacinamide for pores, vitamin C for brightness)',
-          products: ['COSRX Advanced Snail 96 Mucin Power Essence', 'Missha Time Revolution Essence'],
-        },
-        {
-          step: 5,
-          name: 'Moisturizer',
-          purpose: 'Hydration and barrier repair',
-          products: ['Laneige Water Bank Blue Hyaluronic Cream', 'BELIF The True Cream'],
-        },
-        {
-          step: 6,
-          name: 'SPF (Morning Only)',
-          purpose: 'UV protection',
-          products: ['Biore UV Aqua Rich SPF 50+', 'ISNTREE Hyaluronic Acid Watery Sun Gel'],
-        },
+        { step: 1, name: 'Oil Cleanser', purpose: 'Remove sunscreen and sebum' },
+        { step: 2, name: 'Foam Cleanser', purpose: 'Second cleanse for thorough clean' },
+        { step: 3, name: 'Toner', purpose: 'pH balance and hydration prep' },
+        { step: 4, name: 'Serum / Essence', purpose: 'Targeted treatment (niacinamide for pores, vitamin C for brightness)' },
+        { step: 5, name: 'Moisturizer', purpose: 'Hydration and barrier repair' },
+        { step: 6, name: 'SPF (Morning Only)', purpose: 'UV protection' },
       ],
     },
     hairStylingGuide: {
-      characteristics: 'East Asian hair is typically straight, fine, and very smooth. It holds products differently than curly or coily hair.',
       styles: ['Two-block cut (Korean)', 'Layered textured top', 'Slick back', 'Curtain bangs', 'Undercut', 'Natural medium length'],
       products: {
-        forHold: ['American Crew Forming Cream', 'Gatsby Moving Rubber', 'Mandom Gatsby Hair Wax'],
         forVolume: ['Dry shampoo at roots', 'Sea salt spray', 'Mousse on damp hair'],
       },
     },
   },
-
   'east-african': {
     communityId: 'east-african',
     communityName: 'East African',
     groomingPhilosophy: 'East African men\'s grooming reflects a proud, traditional aesthetic. Somali, Ethiopian, Eritrean, Kenyan, and Tanzanian grooming traditions emphasize clean presentation, natural skin health, and increasingly, sophisticated beard styling. Traditional practices using castor oil, frankincense, and locally available botanicals maintain skin and hair health. Urban East African men in Nairobi, Addis Ababa, and Mogadishu have embraced international barbering trends while maintaining cultural grooming roots.',
-    commonConcerns: [
-      'Razor bumps from tightly coiled beard hair (very prevalent)',
-      'Ashy skin from dryness in highland climates',
-      'Scalp health and dandruff',
-      'Finding products available locally in East African markets',
-      'Hyperpigmentation from sun exposure',
-    ],
     traditionalPractices: [
       {
         name: 'Castor Oil Beard and Hair Treatment',
-        description: 'Castor oil — an East African traditional staple — applied to the beard and scalp for growth, moisture, and scalp health.',
+        description: 'Castor oil (the castor plant is native to East Africa) applied to the beard and scalp to soften and condition. It makes hair look fuller; it does not create new hair.',
         application: 'Apply to scalp and beard. Massage in. Leave 1–2 hours or overnight. Wash out thoroughly (castor oil is thick and requires proper cleansing).',
       },
       {
         name: 'Frankincense (Lubaan) Skin Treatment',
-        description: 'Frankincense resin-infused oil applied to the skin for healing, anti-inflammatory, and anti-aging benefit.',
-        usage: 'Mix frankincense oil with jojoba carrier oil. Apply to face and beard area as a treatment.',
-        cultural: 'Frankincense is native to Somalia and the Horn of Africa. Its use in male grooming is an ancient tradition.',
+        description: 'Frankincense resin and oil are used for scent and in traditional skin preparations.',
+        usage: 'Dilute frankincense essential oil to 1% or less in a carrier such as jojoba, and patch test first.',
+        cultural: 'Frankincense trees grow in Somalia, the wider Horn of Africa and southern Arabia; frankincense has been traded and burned for thousands of years.',
       },
       {
         name: 'Coffee Scrub Exfoliation',
-        description: 'Ethiopian coffee grounds mixed with a small amount of coconut oil used as a face and body scrub.',
-        recipe: '1 tbsp fine coffee grounds + 1 tbsp coconut oil. Scrub face gently in circular motions. Rinse.',
-        benefit: 'Caffeine reduces puffiness. Grounds exfoliate. Coconut oil moisturizes.',
+        description: 'Ethiopian coffee grounds mixed with a little coconut oil as a body scrub. Grounds are too rough for the face.',
+        recipe: '1 tbsp fine coffee grounds + 1 tbsp coconut oil. Scrub the body gently in circles. Rinse.',
+        benefit: 'Grounds exfoliate and coconut oil moisturises.',
       },
       {
         name: 'Shea and Neem Moisturizer',
         description: 'Shea butter combined with neem oil as an everyday body and beard moisturizer.',
-        ratio: '3 parts shea : 1 part neem (diluted). Apply post-shower.',
+        ratio: 'Melt shea butter and stir in a few drops of neem oil (neem is strong-smelling and can irritate). Apply after showering.',
       },
     ],
     somaliBarbershopCulture: {
-      note: 'Barbers hold significant social standing in Somali communities. The xawadle (barber) is a respected tradesman.',
+      note: 'In Somali neighbourhoods, as in many communities, the barbershop is a social hub.',
       popularStyles: ['Low fade', 'Skin fade', 'Razor part', 'Shaped beard', 'Short taper'],
     },
     skinCareRoutine: {
@@ -536,24 +345,15 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
       },
     },
   },
-
   'south-african': {
     communityId: 'south-african',
     communityName: 'South African',
     groomingPhilosophy: 'South African men\'s grooming reflects the country\'s remarkable cultural diversity. Zulu, Xhosa, Sotho, Venda, Afrikaner, Coloured, and Indian South African men each bring distinct grooming traditions. Urban South African men — particularly in Johannesburg, Cape Town, and Durban — have developed sophisticated international grooming cultures. Traditional practices using rooibos, marula oil, and baobab sit alongside international luxury products.',
-    commonConcerns: [
-      'Razor bumps in Black South African men',
-      'Sun hyperpigmentation in all skin tones from high UV exposure',
-      'Dry skin in Johannesburg\'s high-altitude climate',
-      'Scalp dryness and dandruff',
-      'Skincare for a range of skin tones from very pale to very deep',
-    ],
     traditionalPractices: [
       {
         name: 'Marula Oil Moisturizer',
         description: 'Marula oil from the Southern African marula tree applied as a lightweight facial and body moisturizer.',
         benefit: 'Quickly absorbed, non-greasy, rich in antioxidants and omega fatty acids.',
-        brand: 'African Pride, Weleda Skin Food (contains marula), local craft producers.',
       },
       {
         name: 'Rooibos Tea Toner',
@@ -562,12 +362,12 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
       },
       {
         name: 'Umuthi (Traditional Medicine) Skin Preparations',
-        description: 'Traditional Zulu and Xhosa plant-based skin preparations have long maintained men\'s skin health. Aloe ferox, devil\'s claw, and rooibos are indigenous examples with documented skin benefit.',
+        description: 'Traditional healers prepare plant remedies, and Aloe ferox (Cape aloe) gel is used on the skin. Do not put any remedy on broken skin without advice.',
       },
     ],
     southAfricanBarbershopScene: {
-      note: 'South Africa has a vibrant, internationally influential barber culture. Jo\'burg barbers have won international competitions.',
-      popularStyles: ['Afro Fade', 'Skin Fade with Design', 'Temp Fade', 'Dread/Loc styles', 'Isi (Shaved head)', 'Shaped beard'],
+      note: 'South Africa has a vibrant barbershop culture, from township barbers to city salons.',
+      popularStyles: ['Afro Fade', 'Skin Fade with Design', 'Temp Fade', 'Dread/Loc styles', 'Shaved head', 'Shaped beard'],
     },
     skinCareRoutine: {
       minimal: {
@@ -580,22 +380,14 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
       },
     },
   },
-
   'black-american': {
     communityId: 'black-american',
     communityName: 'Black American',
-    groomingPhilosophy: 'Black American men\'s grooming is a cultural art form. The barbershop is an institution — a community hub, a safe space, and a place where Black masculinity is defined and expressed. The lined fade, the shaped beard, the fresh cut are powerful statements of identity, pride, and belonging. Traditional grooming using JBCO, shea butter, and edge control products are embedded in Black American beauty culture. The rise of Black-owned grooming brands (Bevel, Scotch Porter, SheaMoisture Men) has elevated the quality and cultural resonance of products for this community.',
-    commonConcerns: [
-      'Razor bumps (pseudofolliculitis barbae) — the defining grooming challenge',
-      'Ashy skin and the need for deeply moisturizing products',
-      'Ingrown hairs from tight fades and close shaves',
-      'Hyperpigmentation on the neckline from chronic shaving',
-      'Keloid formation from acne or ingrown hairs (genetic predisposition)',
-    ],
+    groomingPhilosophy: 'Black American men\'s grooming is a cultural art form. The barbershop is an institution: a community hub, a safe space and a place where identity is expressed. The lined fade, the shaped beard and the fresh cut are statements of pride and belonging. Jamaican black castor oil, shea butter and edge control are part of everyday grooming, and Black-owned grooming brands have grown to serve the community.',
     traditionalPractices: [
       {
         name: 'Jamaican Black Castor Oil (JBCO)',
-        description: 'JBCO applied to the scalp, beard, and edges for growth, moisture, and scalp health. THE cornerstone of Black American male grooming.',
+        description: 'Jamaican black castor oil applied to the scalp, beard and edges to condition and seal in moisture. A staple of Black American grooming.',
         applications: {
           scalp: 'Apply to scalp sections with dropper. Massage in. Leave overnight or wash out after 1 hour.',
           beard: 'Apply to beard roots and throughout. Use as a base for beard oil blends.',
@@ -606,11 +398,10 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
         name: 'Shea Butter Full Body Moisture',
         description: 'Unrefined shea butter as the go-to body moisturizer for preventing ashiness.',
         tradition: 'Applied post-shower before skin dries fully. The heat from damp skin helps shea absorb rather than sit on top.',
-        enhancement: 'Add a few drops of tea tree oil for antibacterial benefit around the beard area.',
       },
       {
         name: 'African Black Soap Face Wash',
-        description: 'Authentic African black soap for face cleansing — treats acne, controls oil, and is traditionally made and culturally connected.',
+        description: 'Authentic African black soap for face cleansing: it removes oil well and is traditionally made.',
         note: 'Use 1x daily maximum. Rinse very thoroughly. Follow with moisturizer.',
       },
       {
@@ -622,43 +413,15 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
     barbershopCulture: {
       significance: 'The Black barbershop is one of the most significant cultural institutions in African American life. Beyond grooming, it is a space for community, mentorship, political discourse, and healing.',
       legacyBarbers: 'Master barbers in Black communities are artists and community leaders. The craft is often passed through generations.',
-      popularStyles: [
-        'High Skin Fade',
-        'Temp Fade + Design',
-        'Flat Top (a classic)',
-        'Locs / Dreads',
-        'Low Fade + Curls / Waves',
-        '360 Waves (requires wave cap, brush, and specific products)',
-        'Afro shaped and rounded',
-        'Bald / Shaved head',
-      ],
+      popularStyles: ['High Skin Fade', 'Temp Fade + Design', 'Flat Top (a classic)', 'Locs / Dreads', 'Low Fade + Curls / Waves', '360 Waves (requires wave cap, brush, and specific products)', 'Afro shaped and rounded', 'Bald / Shaved head'],
       edgesAndWaves: {
         edges: 'The laid edges (baby hairs at the hairline) are an art form. Edge control products and a toothbrush or edge brush create sleek, defined baby hairs.',
         waves: '360 waves require: a wave brush (medium-hard bristle), wave grease or pomade, a du-rag/wave cap worn consistently, and daily brushing in the wave pattern.',
       },
     },
     razorBumpProtocol: {
-      prevention: [
-        'Bevel Safety Razor (single-blade, designed for Black men)',
-        'Shave in direction of hair growth ONLY',
-        'Pre-shave oil (3–5 drops applied before shave cream)',
-        'Never dry shave',
-        'Warm water shave or hot towel preparation',
-        'Chemical exfoliation 3x/week (salicylic acid pads) to prevent dead skin trapping hairs',
-      ],
-      treatment: [
-        'Bump Patrol Aftershave Treatment',
-        'Salicylic acid applied to bumps',
-        'Warm compress to draw out trapped hairs',
-        'Dark spot corrector for post-bump marks',
-        'Azelaic acid for redness and hyperpigmentation',
-      ],
-      blackOwnedSolutions: [
-        'Bevel Shave System (razor, brush, cream, balm)',
-        'Scotch Porter Hydrating Beard Balm',
-        'SheaMoisture Men Maracuja Oil & Shea Butter Beard Balm',
-        'Walker & Company Bevel Collection',
-      ],
+      prevention: ['Single-blade safety razor, or a clipper with a guard', 'Shave in the direction of hair growth only', 'Pre-shave oil (3-5 drops before shave cream)', 'Never dry shave', 'Warm water or a hot towel first', 'Chemical exfoliation (salicylic acid pads) about 3 times a week to keep follicles clear'],
+      treatment: ['Salicylic acid on bumps', 'Warm compress to soften the skin', 'Lift trapped hairs with a sterile needle; do not pluck', 'Azelaic acid or niacinamide for redness and dark marks', 'See a doctor for painful or infected bumps, or bumps that leave raised scars'],
     },
     skinCareRoutine: {
       minimal: {
@@ -673,24 +436,10 @@ export const ETHNIC_MENS_GROOMING_GUIDES = {
   },
 };
 
-// ─────────────────────────────────────────────────────────────────────────────
-// UNIVERSAL MEN'S GROOMING GUIDE
-// ─────────────────────────────────────────────────────────────────────────────
-
 export const UNIVERSAL_MENS_GROOMING = {
   skinCareBasics: {
-    whyMenNeedSkincare: [
-      'Men\'s skin is 20–25% thicker than women\'s but still requires care',
-      'Men\'s skin produces more sebum (oil) — leading to acne and enlarged pores',
-      'Daily shaving causes micro-trauma that benefits from proper care',
-      'Sun protection prevents skin cancer and premature aging in all skin tones',
-      'Post-shave care dramatically reduces razor bumps and irritation',
-    ],
-    minimumRoutine: [
-      'Cleanser (1–2x daily)',
-      'Moisturizer with SPF 30 in the morning',
-      'Nighttime moisturizer or oil',
-    ],
+    whyMenNeedSkincare: ['Men\'s skin is usually thicker and oilier than women\'s, but it still needs care', 'More oil can mean more breakouts and visible pores', 'Shaving scrapes the skin, so it benefits from soothing and moisture', 'Sun protection prevents skin cancer and early ageing in all skin tones', 'Good shaving technique and after-care reduce razor bumps and irritation'],
+    minimumRoutine: ['Cleanser (1–2x daily)', 'Moisturizer with SPF 30 in the morning', 'Nighttime moisturizer or oil'],
     powerIngredients: [
       { ingredient: 'Niacinamide', benefit: 'Pore reduction, oil control, brightening' },
       { ingredient: 'Vitamin C', benefit: 'Antioxidant, brightening, dark spot reduction' },
@@ -700,49 +449,19 @@ export const UNIVERSAL_MENS_GROOMING = {
       { ingredient: 'Hyaluronic Acid', benefit: 'Hydration, plumping' },
     ],
   },
-
   shavinGGuide: {
-    universalBestPractices: [
-      'Never dry shave — always with water or shave cream',
-      'Shave after shower when hairs are softer',
-      'Shave with the grain first (with the direction of hair growth)',
-      'Rinse blade after every 2–3 strokes',
-      'Replace blade when it tugs or pulls',
-      'Apply post-shave product immediately (aloe, aftershave balm, or treatment)',
-    ],
-    forTightlyCoiledHair: [
-      'Single-blade razor ONLY',
-      'With the grain ONLY — never against',
-      'Or use a clipper with a guard for a close but above-skin cut',
-      'Chemical exfoliation 3x/week to prevent ingrown hairs',
-      'Post-shave bump treatment (salicylic acid or bump patrol)',
-    ],
+    universalBestPractices: ['Never dry shave — always with water or shave cream', 'Shave after shower when hairs are softer', 'Shave with the grain first (with the direction of hair growth)', 'Rinse blade after every 2–3 strokes', 'Replace blade when it tugs or pulls', 'Apply post-shave product immediately (aloe, aftershave balm, or treatment)'],
+    forTightlyCoiledHair: ['Single-blade razor ONLY', 'With the grain ONLY — never against', 'Or use a clipper with a guard for a close but above-skin cut', 'Chemical exfoliation 3x/week to prevent ingrown hairs', 'Post-shave bump treatment (salicylic acid or bump patrol)'],
   },
-
   beardGroomingUniversal: {
-    growingPhase: [
-      'Patience — beard growth is largely genetic',
-      'Minoxidil (off-label) has some evidence for increasing beard density',
-      'Biotin supplement may support hair growth',
-      'Adequate sleep and reduced stress support growth',
-    ],
-    maintenancePhase: [
-      'Wash beard 3–4x per week with beard wash (not regular shampoo — too harsh)',
-      'Apply beard oil daily after washing',
-      'Comb or brush daily to prevent tangles and train direction of growth',
-      'Shape and line at barbershop every 2–3 weeks',
-      'Trim at home with clippers and a guard to maintain length',
-    ],
+    growingPhase: ['Patience: beard growth is largely genetic', 'Minoxidil on the beard is off-label, with some trial evidence for more density; ask a doctor first', 'Biotin only helps if you are deficient, which is rare', 'Enough sleep, less stress and regular exercise support general health'],
+    maintenancePhase: ['Wash the beard 2-4 times a week with a gentle beard wash', 'Apply beard oil after washing', 'Comb or brush daily to prevent tangles and train the direction of growth', 'Shape and line at the barbershop every 2-3 weeks', 'Trim at home with clippers and a guard to keep the length'],
     beardOilEssentials: {
       baseOils: ['Jojoba oil (best beard carrier oil)', 'Argan oil', 'Sweet almond oil', 'Grapeseed oil'],
-      essentialOilAdds: ['Cedarwood (masculine scent + mild growth support)', 'Tea tree (antibacterial)', 'Peppermint (stimulates follicles)', 'Sandalwood (rich, calming scent)'],
+      essentialOilAdds: ['Cedarwood (woody scent)', 'Tea tree (can help with flakes; can irritate)', 'Peppermint (cooling; keep it very dilute)', 'Sandalwood (warm scent)'],
     },
   },
 };
-
-// ─────────────────────────────────────────────────────────────────────────────
-// LOOKUP FUNCTIONS
-// ─────────────────────────────────────────────────────────────────────────────
 
 export function getMensGroomingGuide(communityId) {
   const directMap = {
@@ -758,11 +477,3 @@ export function getMensGroomingGuide(communityId) {
   };
   return directMap[communityId] || null;
 }
-
-export const MENS_GROOMING_STATS = {
-  moduleId: 'mens_grooming_ethnic_guide',
-  communitiesCovered: 9,
-  traditionalPracticesCovered: 33,
-  groomingStylesCovered: 52,
-  version: '1.0.0',
-};

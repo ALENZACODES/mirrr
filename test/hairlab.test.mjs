@@ -399,3 +399,21 @@ test('routine builder routes over HTTP', async () => {
   const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
   assert.ok(lib.shelves.find(s => s.id === 'ingredients').guides.some(g => g.id === 'skin_analysis'));
 });
+
+test('grooming studio routes over HTTP', async () => {
+  const B = `http://127.0.0.1:${PORT}`;
+  const h = { 'x-forwarded-for': '10.6.6.22' };
+  const o = await (await fetch(`${B}/api/groom/options`, { headers: h })).json();
+  assert.equal(o.textures.length, 3); assert.equal(o.goals.length, 8); assert.equal(o.heritages.length, 10);
+  const r = await fetch(`${B}/api/groom/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ texture: 'coily', goal: 'clean_shave', tool: 'multi_blade', direction: 'against', heritage: 'arab' }) });
+  assert.equal(r.status, 200);
+  const p = await r.json();
+  assert.equal(p.risk.level, 'high'); assert.ok(p.warnings.length >= 2); assert.ok(p.heritage.rituals.some(x => /Hammam/.test(x.name)));
+  assert.equal((await fetch(`${B}/api/groom/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  const sr = await (await fetch(`${B}/api/groom/search?q=castor`, { headers: h })).json();
+  assert.ok(sr.results.length >= 2);
+  const html = await (await fetch(`${B}/`, { headers: h })).text();
+  assert.ok(html.includes('data-view="groom"') && html.includes('src="groom.js"'));
+  const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
+  assert.equal(lib.shelves.find(s => s.id === 'grooming').guides.length, 2);
+});

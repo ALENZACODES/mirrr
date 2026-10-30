@@ -134,7 +134,7 @@ export function buildRoutinePlan(input = {}) {
   // Morning
   const cleanserAM = { oily: 'Gel or foaming cleanser', combination: 'Gentle gel cleanser', normal: 'Gentle cleanser', dry: 'Cream cleanser, or just rinse with water', sensitive: 'Fragrance-free cream cleanser, or just rinse with water' }[c.feel];
   let amActive = ACTIVE[c.concern].am;
-  if (preg && amActive === 'tranexamic_acid') { amActive = 'azelaic_acid'; notes.push('Topical tranexamic acid has little safety data in pregnancy, so the morning step uses azelaic acid instead; ask your doctor or pharmacist before adding it back.'); }
+  if (preg && amActive === 'tranexamic_acid' && n >= 5) { amActive = 'azelaic_acid'; notes.push('Topical tranexamic acid has little safety data in pregnancy, so the morning step uses azelaic acid instead; ask your doctor or pharmacist before adding it back.'); }
   if (c.feel === 'sensitive' && amActive === 'vitamin_c') notes.push('Sensitive skin: choose a gentle vitamin C derivative (ascorbyl glucoside or 3-O-ethyl ascorbic acid) rather than pure L-ascorbic acid.');
   const lightMoist = c.feel === 'oily' || c.climate === 'humid';
   const richMoist = c.feel === 'dry' || c.climate === 'cold' || c.climate === 'dry';

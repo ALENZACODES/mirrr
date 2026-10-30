@@ -366,6 +366,7 @@
             <button class="nav-link" data-view="hairlab" role="menuitem">Hair Colour Lab</button>
             <button class="nav-link" data-view="skin" role="menuitem">Skin Clinic</button>
             <button class="nav-link" data-view="routine" role="menuitem">Routine Builder</button>
+            <button class="nav-link" data-view="groom" role="menuitem">Grooming Studio</button>
             <button class="nav-link" data-view="complexion" role="menuitem">Complexion Lab</button>
             <button class="nav-link" data-view="colour" role="menuitem">Colour &amp; Lip Studio</button>
             <button class="nav-link" data-view="nails" role="menuitem">Nails &amp; Scent Studio</button>
@@ -1281,6 +1282,20 @@
       </div>
     </section>
 
+    <section id="view-groom" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Grooming Studio</h2>
+        <p class="view-sub">Pick your beard hair, the look you want, your razor or trimmer and the skin problem you have. See your razor-bump risk and what drives it, a shave and beard routine, a beard oil to mix, your week, and, if you like, grooming traditions and barbershop styles from your heritage.</p>
+      </div>
+      <div class="st-wrap">
+        <div id="grControls" class="st-controls"></div>
+        <div id="grPreview" class="sk-preview cx-preview" aria-live="polite"></div>
+        <div id="grSummary" class="hl-summary"></div>
+        <div id="grPlan" class="st-plan"></div>
+        <p class="lib-disclaimer">You pick your beard texture: it is never guessed from your community. A heritage only adds traditions and styles. The face is an illustration in the Monk Skin Tone Scale tone you pick (Ellis Monk / Google, CC BY 4.0), not your photo. The risk score is a guide built from the shaving advice in the guides, not a diagnosis; see a doctor for painful, infected or scarring bumps.</p>
+      </div>
+    </section>
+
     <section id="view-routine" class="view hidden">
       <div class="view-header">
         <h2 class="view-title">Routine Builder</h2>
@@ -1513,6 +1528,7 @@
   <script src="calm.js" defer></script>
   <script src="looks.js" defer></script>
   <script src="routine.js" defer></script>
+  <script src="groom.js" defer></script>
   <script src="leap.js" defer></script>
   <script>
     // Community detail panel interactions

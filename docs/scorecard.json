@@ -1,0 +1,3746 @@
+{
+ "meta": {
+  "date": "2026-10-30",
+  "commit": "89c2879+working-tree",
+  "label": "H5 gates"
+ },
+ "rows": [
+  {
+   "slice": "Monk 1-2",
+   "n": 40,
+   "detection": 75,
+   "byCond": {
+    "daylight": 87.5,
+    "tungsten": 75,
+    "fluorescent": 62.5,
+    "shade": 87.5,
+    "under -1 EV": 62.5
+   },
+   "eyeErr": 0.002452290546715322,
+   "mouthErr": 0.017560442667447163,
+   "sampled": 40,
+   "samplingMedian": 8.671182672694062,
+   "samplingP90": 16.022294438787398,
+   "samplingDaylight": 0.29244425365918164,
+   "matchMedian": 8.41602613315607,
+   "matchP90": 14.305238235437848,
+   "matchDaylight": 2.444031332511496,
+   "lipDrift": 0.1370196229978653,
+   "outOfFace": 30523,
+   "falseMatch": 0,
+   "saidOutside": 40,
+   "samplingByCond": {
+    "daylight": 0.29244425365918164,
+    "tungsten": 15.893558017287125,
+    "fluorescent": 8.571995853125493,
+    "shade": 2.979269103159827,
+    "under -1 EV": 15.475394764398546
+   }
+  },
+  {
+   "slice": "Monk 3-4",
+   "n": 40,
+   "detection": 100,
+   "byCond": {
+    "daylight": 100,
+    "tungsten": 100,
+    "fluorescent": 100,
+    "shade": 100,
+    "under -1 EV": 100
+   },
+   "eyeErr": 0.0010874688480874957,
+   "mouthErr": 0.0177262820898972,
+   "sampled": 40,
+   "samplingMedian": 6.410333861420756,
+   "samplingP90": 15.371162039813575,
+   "samplingDaylight": 0.3394814097706978,
+   "matchMedian": 3.7614050597881565,
+   "matchP90": 14.645588533767064,
+   "matchDaylight": 1.0024817622180604,
+   "lipDrift": 0.174911949053282,
+   "outOfFace": 0,
+   "falseMatch": 0,
+   "saidOutside": 40,
+   "samplingByCond": {
+    "daylight": 0.3394814097706978,
+    "tungsten": 11.30378610178896,
+    "fluorescent": 6.410333861420756,
+    "shade": 1.5638330685151602,
+    "under -1 EV": 15.371162039813575
+   }
+  },
+  {
+   "slice": "Monk 5-6",
+   "n": 40,
+   "detection": 100,
+   "byCond": {
+    "daylight": 100,
+    "tungsten": 100,
+    "fluorescent": 100,
+    "shade": 100,
+    "under -1 EV": 100
+   },
+   "eyeErr": 0.0009042245370372014,
+   "mouthErr": 0.017608980455671386,
+   "sampled": 40,
+   "samplingMedian": 1.8239636673118689,
+   "samplingP90": 15.299820924102965,
+   "samplingDaylight": 0.20784862414052294,
+   "matchMedian": 2.3094430035858324,
+   "matchP90": 13.63866476998747,
+   "matchDaylight": 1.7087647652357172,
+   "lipDrift": 0.16488077500988751,
+   "outOfFace": 0,
+   "falseMatch": 0,
+   "saidOutside": 15,
+   "samplingByCond": {
+    "daylight": 0.20784862414052294,
+    "tungsten": 2.1952130087611628,
+    "fluorescent": 1.8239636673118689,
+    "shade": 1.0486137393112696,
+    "under -1 EV": 15.299820924102965
+   }
+  },
+  {
+   "slice": "Monk 7-8",
+   "n": 40,
+   "detection": 100,
+   "byCond": {
+    "daylight": 100,
+    "tungsten": 100,
+    "fluorescent": 100,
+    "shade": 100,
+    "under -1 EV": 100
+   },
+   "eyeErr": 0.0009042245370372014,
+   "mouthErr": 0.07340639467592557,
+   "sampled": 40,
+   "samplingMedian": 1.2729966957121586,
+   "samplingP90": 7.819196484275244,
+   "samplingDaylight": 0.2644439895426178,
+   "matchMedian": 2.369341330461228,
+   "matchP90": 8.204569186211918,
+   "matchDaylight": 1.7755619467301613,
+   "lipDrift": 0.23055246099670157,
+   "outOfFace": 0,
+   "falseMatch": 10,
+   "saidOutside": 0,
+   "samplingByCond": {
+    "daylight": 0.2644439895426178,
+    "tungsten": 1.66562509366556,
+    "fluorescent": 1.25262597991376,
+    "shade": 0.749478489605074,
+    "under -1 EV": 7.819196484275244
+   }
+  },
+  {
+   "slice": "Monk 9-10",
+   "n": 40,
+   "detection": 82.5,
+   "byCond": {
+    "daylight": 87.5,
+    "tungsten": 87.5,
+    "fluorescent": 87.5,
+    "shade": 87.5,
+    "under -1 EV": 62.5
+   },
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.017024742999579345,
+   "sampled": 40,
+   "samplingMedian": 1.1341368383390424,
+   "samplingP90": 4.993350795796618,
+   "samplingDaylight": 0.10310670216659272,
+   "matchMedian": 1.5847077243323164,
+   "matchP90": 3.5622570861979526,
+   "matchDaylight": 1.0186527703106394,
+   "lipDrift": 0.21428244082494885,
+   "outOfFace": 0,
+   "falseMatch": 0,
+   "saidOutside": 0,
+   "samplingByCond": {
+    "daylight": 0.10310670216659272,
+    "tungsten": 1.5043493962959253,
+    "fluorescent": 1.226014677842433,
+    "shade": 0.5919045314099267,
+    "under -1 EV": 4.559808775314648
+   }
+  }
+ ],
+ "oracle": {
+  "mst1": 2.2746126368440245,
+  "mst2": 2.4076089567447925,
+  "mst3": 1.6204835984518735,
+  "mst4": 0.5878012248406713,
+  "mst5": 1.7036611910317276,
+  "mst6": 2.3094430035858324,
+  "mst7": 1.771827313858908,
+  "mst8": 2.369341330461228,
+  "mst9": 0.6694587989036387,
+  "mst10": 1.859020982166685
+ },
+ "spectrum": {
+  "shades": 60,
+  "validHex": 60,
+  "minL": 14.6,
+  "maxL": 93.9,
+  "inBand13to32": 13,
+  "belowL13": 0,
+  "inGamut": 60,
+  "monk": [
+   {
+    "id": "mst1",
+    "dE": 2.27,
+    "shade": "F02"
+   },
+   {
+    "id": "mst2",
+    "dE": 2.41,
+    "shade": "F02"
+   },
+   {
+    "id": "mst3",
+    "dE": 1.62,
+    "shade": "F03"
+   },
+   {
+    "id": "mst4",
+    "dE": 0.59,
+    "shade": "F05"
+   },
+   {
+    "id": "mst5",
+    "dE": 1.7,
+    "shade": "L10"
+   },
+   {
+    "id": "mst6",
+    "dE": 2.31,
+    "shade": "M26"
+   },
+   {
+    "id": "mst7",
+    "dE": 1.77,
+    "shade": "MD31"
+   },
+   {
+    "id": "mst8",
+    "dE": 2.37,
+    "shade": "D40"
+   },
+   {
+    "id": "mst9",
+    "dE": 0.67,
+    "shade": "D45"
+   },
+   {
+    "id": "mst10",
+    "dE": 1.86,
+    "shade": "RD49"
+   }
+  ],
+  "nearDuplicatePairs": 4
+ },
+ "fails": [
+  "Monk 1-2: detection 75.0% < 98%",
+  "Monk 1-2: detection 25.0 pts below the best slice",
+  "Monk 1-2: sampling ΔE2000 median 8.67 > 2.5",
+  "Monk 1-2: match ΔE2000 median 8.42 > 3",
+  "Monk 1-2: match ΔE2000 p90 14.31 > 6",
+  "Monk 1-2: 30523 pixels changed outside the face",
+  "Monk 3-4: sampling ΔE2000 median 6.41 > 2.5",
+  "Monk 3-4: match ΔE2000 median 3.76 > 3",
+  "Monk 3-4: match ΔE2000 p90 14.65 > 6",
+  "Monk 5-6: match ΔE2000 p90 13.64 > 6",
+  "Monk 7-8: match ΔE2000 p90 8.20 > 6",
+  "Monk 7-8: 10.0% of readings claimed a match that is more than ΔE 6 from the true skin",
+  "Monk 9-10: detection 82.5% < 98%",
+  "Monk 9-10: detection 17.5 pts below the best slice"
+ ],
+ "cells": [
+  {
+   "slice": "Monk 1-2",
+   "cond": "daylight",
+   "tone": "mst1",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.004328051643192055,
+   "mouthErr": 0.023579812206573198,
+   "lipDrift": 0.22999363376588633,
+   "outOfFace": 0,
+   "sampledDE": 0.02547576500469109,
+   "confidence": 0.77,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 2.2746126368440245,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "daylight",
+   "tone": "mst1",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.003642486459346388,
+   "mouthErr": 0.018130848239483893,
+   "lipDrift": 0.11024300613904714,
+   "outOfFace": 0,
+   "sampledDE": 0.48290245321927816,
+   "confidence": 0.43,
+   "flags": [
+    "eye whites not found; no white balance",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 2.8080304046829307,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "daylight",
+   "tone": "mst1",
+   "g": 2,
+   "detected": false,
+   "sampledDE": 0.62903105005789,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 2.1597357248451803,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "daylight",
+   "tone": "mst1",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.003997346350615396,
+   "mouthErr": 0.016532003740983587,
+   "lipDrift": 0.05642525217835015,
+   "outOfFace": 0,
+   "sampledDE": 0.5915268753695287,
+   "confidence": 0.57,
+   "flags": [
+    "eye whites not found; no white balance",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 2.46128488318024,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "daylight",
+   "tone": "mst2",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.002452290546715322,
+   "mouthErr": 0.02874620055985962,
+   "lipDrift": 0.24403397703586194,
+   "outOfFace": 0,
+   "sampledDE": 0.05332537117769964,
+   "confidence": 0.79,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 2.4076089567447925,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "daylight",
+   "tone": "mst2",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0019346848370056756,
+   "mouthErr": 0.017953952217458397,
+   "lipDrift": 0.22601279748335656,
+   "outOfFace": 0,
+   "sampledDE": 0.35210664451974344,
+   "confidence": 0.62,
+   "flags": [
+    "eye whites not found; no white balance",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 2.9271372940475437,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "daylight",
+   "tone": "mst2",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.004922261299173131,
+   "mouthErr": 0.015984558593805282,
+   "lipDrift": 0.4904326690960019,
+   "outOfFace": 0,
+   "sampledDE": 0.07827798607033287,
+   "confidence": 0.98,
+   "flags": [],
+   "matchDE": 2.444031332511496,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "daylight",
+   "tone": "mst2",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0019435840208364573,
+   "mouthErr": 0.017560442667447163,
+   "lipDrift": 0.027325901909296846,
+   "outOfFace": 0,
+   "sampledDE": 0.29244425365918164,
+   "confidence": 0.76,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 2.5957655249698885,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "tungsten",
+   "tone": "mst1",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0018343815513626183,
+   "mouthErr": 0.016916491963661667,
+   "lipDrift": 0.09424543596498935,
+   "outOfFace": 0,
+   "sampledDE": 15.893558017287125,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 9.882074842570415,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "tungsten",
+   "tone": "mst1",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.002185885252427163,
+   "mouthErr": 0.0198975996245269,
+   "lipDrift": 0.19731456028715044,
+   "outOfFace": 0,
+   "sampledDE": 16.09159464822783,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 9.868482545213132,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "tungsten",
+   "tone": "mst1",
+   "g": 2,
+   "detected": false,
+   "sampledDE": 65.78842977853428,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 65.84624411585516,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "tungsten",
+   "tone": "mst1",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.001872913891607927,
+   "mouthErr": 0.01837166556777999,
+   "lipDrift": 0.12668630925167434,
+   "outOfFace": 0,
+   "sampledDE": 16.022294438787398,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 9.893776005944131,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "tungsten",
+   "tone": "mst2",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0017222355143009006,
+   "mouthErr": 0.0213562056824023,
+   "lipDrift": 0.07084489486282664,
+   "outOfFace": 0,
+   "sampledDE": 14.91036961842094,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 12.792621393145094,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "tungsten",
+   "tone": "mst2",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0023025640200805488,
+   "mouthErr": 0.005824534013757561,
+   "lipDrift": 0.3022112999999145,
+   "outOfFace": 0,
+   "sampledDE": 15.031436968029965,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 12.85026411940547,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "tungsten",
+   "tone": "mst2",
+   "g": 2,
+   "detected": false,
+   "sampledDE": 64.80551189010208,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 64.99326846479205,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "tungsten",
+   "tone": "mst2",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0019435840208364573,
+   "mouthErr": 0.017560442667447163,
+   "lipDrift": 0.039121755764302435,
+   "outOfFace": 0,
+   "sampledDE": 14.979948744004275,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 12.840430920466167,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "fluorescent",
+   "tone": "mst1",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0018343815513626183,
+   "mouthErr": 0.016916491963661667,
+   "lipDrift": 0.14284081283598127,
+   "outOfFace": 0,
+   "sampledDE": 8.571995853125493,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 6.543264356902087,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "fluorescent",
+   "tone": "mst1",
+   "g": 1,
+   "detected": false,
+   "sampledDE": 13.274041893641263,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 14.305238235437848,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "fluorescent",
+   "tone": "mst1",
+   "g": 2,
+   "detected": false,
+   "sampledDE": 15.16416596479855,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 13.841883675426622,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "fluorescent",
+   "tone": "mst1",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0018364051116262676,
+   "mouthErr": 0.01816366594988435,
+   "lipDrift": 0.03415680723348302,
+   "outOfFace": 0,
+   "sampledDE": 8.671182672694062,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 6.5141484869541,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "fluorescent",
+   "tone": "mst2",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0015481253267272687,
+   "mouthErr": 0.020569232939523136,
+   "lipDrift": 0.06830163747529383,
+   "outOfFace": 0,
+   "sampledDE": 8.22355669722067,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 8.385561255234887,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "fluorescent",
+   "tone": "mst2",
+   "g": 1,
+   "detected": false,
+   "sampledDE": 12.503414791784563,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 13.770737909710475,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "fluorescent",
+   "tone": "mst2",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0010549849281981062,
+   "mouthErr": 0.005051231052543384,
+   "lipDrift": 0.26633963158042206,
+   "outOfFace": 0,
+   "sampledDE": 8.369348017275145,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 10.080027405454837,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "fluorescent",
+   "tone": "mst2",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0017916328928890488,
+   "mouthErr": 0.016426506745197262,
+   "lipDrift": 0.026389591001890977,
+   "outOfFace": 0,
+   "sampledDE": 7.947275661415694,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 8.41602613315607,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "shade",
+   "tone": "mst1",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.004328051643192055,
+   "mouthErr": 0.033651701877934904,
+   "lipDrift": 0.23753336454479168,
+   "outOfFace": 0,
+   "sampledDE": 3.080870429702073,
+   "confidence": 0.8,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 2.2746126368440245,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "shade",
+   "tone": "mst1",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.6821692818097455,
+   "mouthErr": 1.87480669133462,
+   "lipDrift": 16.452540174709817,
+   "outOfFace": 30523,
+   "sampledDE": 13.666314344000122,
+   "confidence": 0.55,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 6.387227312154514,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "shade",
+   "tone": "mst1",
+   "g": 2,
+   "detected": false,
+   "sampledDE": 3.555981945266908,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 2.1597357248451803,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "shade",
+   "tone": "mst1",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.004879202147395056,
+   "mouthErr": 0.015669002523428805,
+   "lipDrift": 0.11941501420302458,
+   "outOfFace": 0,
+   "sampledDE": 3.128028403079663,
+   "confidence": 0.79,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 2.46128488318024,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "shade",
+   "tone": "mst2",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.004328051643192055,
+   "mouthErr": 0.023579812206573198,
+   "lipDrift": 0.1370196229978653,
+   "outOfFace": 0,
+   "sampledDE": 2.7723394883575145,
+   "confidence": 0.79,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 2.4076089567447925,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "shade",
+   "tone": "mst2",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.004775182578510851,
+   "mouthErr": 0.022065908145666075,
+   "lipDrift": 0.26896750132602776,
+   "outOfFace": 0,
+   "sampledDE": 2.8776212025801597,
+   "confidence": 0.79,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 2.9271372940475437,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "shade",
+   "tone": "mst2",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0033134513431477826,
+   "mouthErr": 0.016755554695484506,
+   "lipDrift": 0.3790471357507421,
+   "outOfFace": 0,
+   "sampledDE": 2.904476609198641,
+   "confidence": 0.79,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 2.444031332511496,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "shade",
+   "tone": "mst2",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.004879202147395056,
+   "mouthErr": 0.015669002523428805,
+   "lipDrift": 0.09828540765867544,
+   "outOfFace": 0,
+   "sampledDE": 2.979269103159827,
+   "confidence": 0.79,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 2.5957655249698885,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "under -1 EV",
+   "tone": "mst1",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.005088483972026005,
+   "mouthErr": 0.015396017785360408,
+   "lipDrift": 0.254477713525624,
+   "outOfFace": 0,
+   "sampledDE": 15.475394764398546,
+   "confidence": 0.98,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 5)"
+   ],
+   "matchDE": 14.268827396141628,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "under -1 EV",
+   "tone": "mst1",
+   "g": 1,
+   "detected": false,
+   "sampledDE": 16.22724147370679,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 14.643315654163494,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "under -1 EV",
+   "tone": "mst1",
+   "g": 2,
+   "detected": false,
+   "sampledDE": 15.564040140505814,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 13.841883675426622,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "under -1 EV",
+   "tone": "mst1",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.012007720835788637,
+   "mouthErr": 0.008664072036947227,
+   "lipDrift": 0.0005781004775080589,
+   "outOfFace": 0,
+   "sampledDE": 15.276170724882865,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 4)"
+   ],
+   "matchDE": 14.428329248721427,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "under -1 EV",
+   "tone": "mst2",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0023677505270982033,
+   "mouthErr": 0.02371743917178115,
+   "lipDrift": 0.1658313999643184,
+   "outOfFace": 0,
+   "sampledDE": 15.440068292731237,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 12.748713642167464,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "under -1 EV",
+   "tone": "mst2",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0024911243490372665,
+   "mouthErr": 0.015275046590854066,
+   "lipDrift": 0.573718551898903,
+   "outOfFace": 0,
+   "sampledDE": 15.51925702106945,
+   "confidence": 0.98,
+   "flags": [],
+   "matchDE": 13.199537149433219,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "under -1 EV",
+   "tone": "mst2",
+   "g": 2,
+   "detected": false,
+   "sampledDE": 15.501890055780182,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 12.270733938669132,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 1-2",
+   "cond": "under -1 EV",
+   "tone": "mst2",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.003943259843699495,
+   "mouthErr": 0.015282861683266683,
+   "lipDrift": 0.022610098782415378,
+   "outOfFace": 0,
+   "sampledDE": 15.362929589589996,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 12.946702749713038,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "daylight",
+   "tone": "mst3",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.023717320261438246,
+   "lipDrift": 0.07634697336287743,
+   "outOfFace": 0,
+   "sampledDE": 0.36473878631958223,
+   "confidence": 0.74,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 1.5703969487387812,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "daylight",
+   "tone": "mst3",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.017024742999579345,
+   "lipDrift": 0.15105748999489066,
+   "outOfFace": 0,
+   "sampledDE": 0.6804308627890974,
+   "confidence": 0.34,
+   "flags": [
+    "eye whites not found; no white balance",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 2.4712441344733374,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "daylight",
+   "tone": "mst3",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.000037416187739595465,
+   "mouthErr": 0.010232878352490388,
+   "lipDrift": 0.3576054581064412,
+   "outOfFace": 0,
+   "sampledDE": 0.35900597461432343,
+   "confidence": 0.79,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 0.786927041144693,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "daylight",
+   "tone": "mst3",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0008401283897865932,
+   "mouthErr": 0.019483050701936122,
+   "lipDrift": 0.02751045809201358,
+   "outOfFace": 0,
+   "sampledDE": 0.5154369635559525,
+   "confidence": 0.5,
+   "flags": [
+    "eye whites not found; no white balance",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 2.032614548187134,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "daylight",
+   "tone": "mst4",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.023717320261438246,
+   "lipDrift": 0.10793631562185979,
+   "outOfFace": 0,
+   "sampledDE": 0.05415072087137754,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 0.5878012248406713,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "daylight",
+   "tone": "mst4",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.017024742999579345,
+   "lipDrift": 0.22267076991850487,
+   "outOfFace": 0,
+   "sampledDE": 0.3394814097706978,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 1.0024817622180604,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "daylight",
+   "tone": "mst4",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.000037416187739595465,
+   "mouthErr": 0.010232878352490388,
+   "lipDrift": 0.4458386702302022,
+   "outOfFace": 0,
+   "sampledDE": 0.08032769891162951,
+   "confidence": 1,
+   "flags": [],
+   "matchDE": 1.3311003379846393,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "daylight",
+   "tone": "mst4",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0010156966291113396,
+   "mouthErr": 0.01820187192964025,
+   "lipDrift": 0.1282128350386742,
+   "outOfFace": 0,
+   "sampledDE": 0.24457277524211987,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 0.6510762220800597,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "tungsten",
+   "tone": "mst3",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.023717320261438246,
+   "lipDrift": 0.1460231943529493,
+   "outOfFace": 0,
+   "sampledDE": 12.052729927279957,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 9.391365940328392,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "tungsten",
+   "tone": "mst3",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0019279879507866206,
+   "mouthErr": 0.0177262820898972,
+   "lipDrift": 0.15015569524571148,
+   "outOfFace": 0,
+   "sampledDE": 11.922173589868157,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 9.722404912418094,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "tungsten",
+   "tone": "mst3",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.000037416187739595465,
+   "mouthErr": 0.010232878352490388,
+   "lipDrift": 0.32267242733103174,
+   "outOfFace": 0,
+   "sampledDE": 12.04330180772289,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 8.990192033462172,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "tungsten",
+   "tone": "mst3",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0010681300595213482,
+   "mouthErr": 0.007840385443548334,
+   "lipDrift": 0.015186640681015717,
+   "outOfFace": 0,
+   "sampledDE": 11.914698264007342,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 9.566656064106573,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "tungsten",
+   "tone": "mst4",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.023717320261438246,
+   "lipDrift": 0.11117616885741555,
+   "outOfFace": 0,
+   "sampledDE": 10.891481847756149,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 5.600674884671077,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "tungsten",
+   "tone": "mst4",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.002437380230297592,
+   "mouthErr": 0.019142105673564558,
+   "lipDrift": 0.09239330954560998,
+   "outOfFace": 0,
+   "sampledDE": 10.49911182970261,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 5.8392287450539095,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "tungsten",
+   "tone": "mst4",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.000037416187739595465,
+   "mouthErr": 0.010232878352490388,
+   "lipDrift": 0.174911949053282,
+   "outOfFace": 0,
+   "sampledDE": 11.30378610178896,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 5.4014509192048985,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "tungsten",
+   "tone": "mst4",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0008401283897865932,
+   "mouthErr": 0.019483050701936122,
+   "lipDrift": 0.016159650963007977,
+   "outOfFace": 0,
+   "sampledDE": 10.464252730689557,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 5.706152070426662,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "fluorescent",
+   "tone": "mst3",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.023717320261438246,
+   "lipDrift": 0.12190340735997296,
+   "outOfFace": 0,
+   "sampledDE": 6.410333861420756,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 4.352963395180448,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "fluorescent",
+   "tone": "mst3",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0019346848370056756,
+   "mouthErr": 0.017953952217458397,
+   "lipDrift": 0.31680573114112676,
+   "outOfFace": 0,
+   "sampledDE": 6.2673091486475485,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 4.856328119160247,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "fluorescent",
+   "tone": "mst3",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.000037416187739595465,
+   "mouthErr": 0.010232878352490388,
+   "lipDrift": 0.37811292464228075,
+   "outOfFace": 0,
+   "sampledDE": 6.82431688381425,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 6.61340237222211,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "fluorescent",
+   "tone": "mst3",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0008401283897865932,
+   "mouthErr": 0.019483050701936122,
+   "lipDrift": 0.018196377517373463,
+   "outOfFace": 0,
+   "sampledDE": 6.180942506710455,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 4.607556811181548,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "fluorescent",
+   "tone": "mst4",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.023717320261438246,
+   "lipDrift": 0.26364606725098483,
+   "outOfFace": 0,
+   "sampledDE": 6.898644598927184,
+   "confidence": 0.28,
+   "flags": [
+    "eye whites not found; no white balance",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 3.60879431006183,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "fluorescent",
+   "tone": "mst4",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.017024742999579345,
+   "lipDrift": 0.19397559379046925,
+   "outOfFace": 0,
+   "sampledDE": 6.1940728291392775,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 3.5895933795135067,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "fluorescent",
+   "tone": "mst4",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.000037416187739595465,
+   "mouthErr": 0.010232878352490388,
+   "lipDrift": 0.27570673189017825,
+   "outOfFace": 0,
+   "sampledDE": 6.996161022302955,
+   "confidence": 0.7,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 3.7614050597881565,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "fluorescent",
+   "tone": "mst4",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0008401283897865932,
+   "mouthErr": 0.019483050701936122,
+   "lipDrift": 0.0698728194806506,
+   "outOfFace": 0,
+   "sampledDE": 6.496874569920673,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 3.5367645278078284,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "shade",
+   "tone": "mst3",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0012301536565855478,
+   "mouthErr": 0.02268873238100196,
+   "lipDrift": 0.19317792554101842,
+   "outOfFace": 0,
+   "sampledDE": 2.3054548222933935,
+   "confidence": 0.8,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 1.5703969487387812,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "shade",
+   "tone": "mst3",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.017024742999579345,
+   "lipDrift": 0.3080871344447438,
+   "outOfFace": 0,
+   "sampledDE": 2.486923845852524,
+   "confidence": 0.75,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 2.4712441344733374,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "shade",
+   "tone": "mst3",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0005273575449262844,
+   "mouthErr": 0.011538742570319872,
+   "lipDrift": 0.4309356725854485,
+   "outOfFace": 0,
+   "sampledDE": 2.2497766939317625,
+   "confidence": 0.79,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 0.786927041144693,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "shade",
+   "tone": "mst3",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0008401283897865932,
+   "mouthErr": 0.019483050701936122,
+   "lipDrift": 0.0059054210757594205,
+   "outOfFace": 0,
+   "sampledDE": 2.3845561313329657,
+   "confidence": 0.78,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 2.032614548187134,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "shade",
+   "tone": "mst4",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0010874688480874957,
+   "mouthErr": 0.023140015049014195,
+   "lipDrift": 0.1336859151342189,
+   "outOfFace": 0,
+   "sampledDE": 1.4948372420212797,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 6)"
+   ],
+   "matchDE": 0.5878012248406713,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "shade",
+   "tone": "mst4",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.017024742999579345,
+   "lipDrift": 0.222532648323984,
+   "outOfFace": 0,
+   "sampledDE": 1.3085577627770062,
+   "confidence": 1,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 6)"
+   ],
+   "matchDE": 1.0024817622180604,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "shade",
+   "tone": "mst4",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.000037416187739595465,
+   "mouthErr": 0.010232878352490388,
+   "lipDrift": 0.3816215154660263,
+   "outOfFace": 0,
+   "sampledDE": 1.5030021793725572,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 6)"
+   ],
+   "matchDE": 1.3311003379846393,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "shade",
+   "tone": "mst4",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0010156966291113396,
+   "mouthErr": 0.01820187192964025,
+   "lipDrift": 0.1112981513676985,
+   "outOfFace": 0,
+   "sampledDE": 1.5638330685151602,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 6)"
+   ],
+   "matchDE": 0.6510762220800597,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "under -1 EV",
+   "tone": "mst3",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0018344878059551493,
+   "mouthErr": 0.032298794593486356,
+   "lipDrift": 0.09876600786304834,
+   "outOfFace": 0,
+   "sampledDE": 15.39205779265196,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 15.174365546180812,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "under -1 EV",
+   "tone": "mst3",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014996485639670197,
+   "mouthErr": 0.016130357679660534,
+   "lipDrift": 0.32424137482245996,
+   "outOfFace": 0,
+   "sampledDE": 15.412711641829622,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 15.75157361900674,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "under -1 EV",
+   "tone": "mst3",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.00245112869605847,
+   "mouthErr": 0.010026590538534384,
+   "lipDrift": 0.6314135495311923,
+   "outOfFace": 0,
+   "sampledDE": 15.311492176970592,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 17.20630416798618,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "under -1 EV",
+   "tone": "mst3",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0007217185224490009,
+   "mouthErr": 0.010203439492940447,
+   "lipDrift": 0.02814329374583835,
+   "outOfFace": 0,
+   "sampledDE": 15.259617981949305,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 15.484591748492859,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "under -1 EV",
+   "tone": "mst4",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.033762254901960866,
+   "lipDrift": 0.30629553837981405,
+   "outOfFace": 0,
+   "sampledDE": 15.371162039813575,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 13.978580334966066,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "under -1 EV",
+   "tone": "mst4",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.017024742999579345,
+   "lipDrift": 0.3708556463472057,
+   "outOfFace": 0,
+   "sampledDE": 15.477679926289113,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 14.645588533767064,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "under -1 EV",
+   "tone": "mst4",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0008371549714557613,
+   "mouthErr": 0.012180175231643421,
+   "lipDrift": 0.4838857014567459,
+   "outOfFace": 0,
+   "sampledDE": 15.387507452887565,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 13.266805395144942,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 3-4",
+   "cond": "under -1 EV",
+   "tone": "mst4",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0008401283897865932,
+   "mouthErr": 0.019483050701936122,
+   "lipDrift": 0.1916829540180096,
+   "outOfFace": 0,
+   "sampledDE": 15.317246908640216,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 14.327182069111327,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "daylight",
+   "tone": "mst5",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0007782567049806252,
+   "mouthErr": 0.015885217113665934,
+   "lipDrift": 0.1068803602576942,
+   "outOfFace": 0,
+   "sampledDE": 0.3612869933061549,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 1.7036611910317276,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "daylight",
+   "tone": "mst5",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0006962137325206954,
+   "mouthErr": 0.01810518040599322,
+   "lipDrift": 0.24603718202602565,
+   "outOfFace": 0,
+   "sampledDE": 0.29451941562336414,
+   "confidence": 1,
+   "flags": [],
+   "matchDE": 1.0000304082722637,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "daylight",
+   "tone": "mst5",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0009412558284142677,
+   "mouthErr": 0.01404244591547421,
+   "lipDrift": 0.3817560997193148,
+   "outOfFace": 0,
+   "sampledDE": 0.043079417406905206,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 2.113170126035669,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "daylight",
+   "tone": "mst5",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.000992970658254778,
+   "mouthErr": 0.017608980455671386,
+   "lipDrift": 0.05979015957771949,
+   "outOfFace": 0,
+   "sampledDE": 0.20784862414052294,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 1.2708033423547362,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "daylight",
+   "tone": "mst6",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0007782567049806252,
+   "mouthErr": 0.015885217113665934,
+   "lipDrift": 0.1271815989737881,
+   "outOfFace": 0,
+   "sampledDE": 0.049435555242783154,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 2.3094430035858324,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "daylight",
+   "tone": "mst6",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0006962137325206954,
+   "mouthErr": 0.01810518040599322,
+   "lipDrift": 0.3195159687663036,
+   "outOfFace": 0,
+   "sampledDE": 0.3083175759438043,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 2.759457251826173,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "daylight",
+   "tone": "mst6",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0009042245370372014,
+   "mouthErr": 0.08591073495370397,
+   "lipDrift": 0.4953618279376997,
+   "outOfFace": 0,
+   "sampledDE": 0.09204485069202656,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 1.7087647652357172,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "daylight",
+   "tone": "mst6",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.000992970658254778,
+   "mouthErr": 0.017608980455671386,
+   "lipDrift": 0.09783430819526373,
+   "outOfFace": 0,
+   "sampledDE": 0.33869249163326176,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 2.9549256479159864,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "tungsten",
+   "tone": "mst5",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0014566726023955623,
+   "mouthErr": 0.022561282054161563,
+   "lipDrift": 0.008818682842129277,
+   "outOfFace": 0,
+   "sampledDE": 11.099782346172947,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 1.7036611910317276,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "tungsten",
+   "tone": "mst5",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.017024742999579345,
+   "lipDrift": 0.14182744708268658,
+   "outOfFace": 0,
+   "sampledDE": 10.32030811298732,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 1.0000304082722637,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "tungsten",
+   "tone": "mst5",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.000037416187739595465,
+   "mouthErr": 0.010232878352490388,
+   "lipDrift": 0.2084899346806388,
+   "outOfFace": 0,
+   "sampledDE": 2.704798753552988,
+   "confidence": 0.65,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 29)",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 2.113170126035669,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "tungsten",
+   "tone": "mst5",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0008401283897865932,
+   "mouthErr": 0.019483050701936122,
+   "lipDrift": 0.11391892176145291,
+   "outOfFace": 0,
+   "sampledDE": 10.745883405759228,
+   "confidence": 0,
+   "flags": [
+    "eye whites not found; no white balance",
+    "a colour channel is clipped on the face; the reading may be off",
+    "highlights clipped on the face"
+   ],
+   "matchDE": 1.2708033423547362,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "tungsten",
+   "tone": "mst6",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.00119162466106937,
+   "mouthErr": 0.022754174520896342,
+   "lipDrift": 0.09269978893208375,
+   "outOfFace": 0,
+   "sampledDE": 2.1382246751089076,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 29)"
+   ],
+   "matchDE": 2.3094430035858324,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "tungsten",
+   "tone": "mst6",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.017024742999579345,
+   "lipDrift": 0.14386251606927658,
+   "outOfFace": 0,
+   "sampledDE": 2.0273964682843193,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 30)"
+   ],
+   "matchDE": 3.2969953627547413,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "tungsten",
+   "tone": "mst6",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.000037416187739595465,
+   "mouthErr": 0.010232878352490388,
+   "lipDrift": 0.16488077500988751,
+   "outOfFace": 0,
+   "sampledDE": 2.1952130087611628,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 29)"
+   ],
+   "matchDE": 1.7087647652357172,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "tungsten",
+   "tone": "mst6",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0010156966291113396,
+   "mouthErr": 0.01820187192964025,
+   "lipDrift": 0.06402895990501989,
+   "outOfFace": 0,
+   "sampledDE": 1.9581846018834055,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 29)"
+   ],
+   "matchDE": 3.689011186012983,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "fluorescent",
+   "tone": "mst5",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0012278574250613524,
+   "mouthErr": 0.022185948948760508,
+   "lipDrift": 0.0025888199454122685,
+   "outOfFace": 0,
+   "sampledDE": 1.4854392132295775,
+   "confidence": 1,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 12)"
+   ],
+   "matchDE": 1.7036611910317276,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "fluorescent",
+   "tone": "mst5",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014204305921923816,
+   "mouthErr": 0.015205210953974202,
+   "lipDrift": 0.1954894646833445,
+   "outOfFace": 0,
+   "sampledDE": 1.5766891762969586,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 12)"
+   ],
+   "matchDE": 1.0000304082722637,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "fluorescent",
+   "tone": "mst5",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.000037416187739595465,
+   "mouthErr": 0.010232878352490388,
+   "lipDrift": 0.5041781560953282,
+   "outOfFace": 0,
+   "sampledDE": 1.8330843686557485,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 11)"
+   ],
+   "matchDE": 2.6501373118773364,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "fluorescent",
+   "tone": "mst5",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0008774447146701259,
+   "mouthErr": 0.01599855671184436,
+   "lipDrift": 0.06816529696850182,
+   "outOfFace": 0,
+   "sampledDE": 2.0449840277151243,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 12)"
+   ],
+   "matchDE": 1.2708033423547362,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "fluorescent",
+   "tone": "mst6",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0007782567049806252,
+   "mouthErr": 0.015885217113665934,
+   "lipDrift": 0.12029962740025368,
+   "outOfFace": 0,
+   "sampledDE": 2.014078293281846,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 12)"
+   ],
+   "matchDE": 2.3094430035858324,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "fluorescent",
+   "tone": "mst6",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0006962137325206954,
+   "mouthErr": 0.01810518040599322,
+   "lipDrift": 0.3191304131606998,
+   "outOfFace": 0,
+   "sampledDE": 1.8239636673118689,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 12)"
+   ],
+   "matchDE": 3.2969953627547413,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "fluorescent",
+   "tone": "mst6",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0009042245370372014,
+   "mouthErr": 0.006252170138888827,
+   "lipDrift": 0.4513530441429232,
+   "outOfFace": 0,
+   "sampledDE": 1.903476547925975,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 11)"
+   ],
+   "matchDE": 1.7087647652357172,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "fluorescent",
+   "tone": "mst6",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.000992970658254778,
+   "mouthErr": 0.017608980455671386,
+   "lipDrift": 0.08708235223686245,
+   "outOfFace": 0,
+   "sampledDE": 1.6845778055996203,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 11)"
+   ],
+   "matchDE": 3.689011186012983,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "shade",
+   "tone": "mst5",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0007782567049806252,
+   "mouthErr": 0.015885217113665934,
+   "lipDrift": 0.11269317059617023,
+   "outOfFace": 0,
+   "sampledDE": 1.3069798458743376,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 6)"
+   ],
+   "matchDE": 1.7036611910317276,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "shade",
+   "tone": "mst5",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0006962137325206954,
+   "mouthErr": 0.01810518040599322,
+   "lipDrift": 0.3083795964145146,
+   "outOfFace": 0,
+   "sampledDE": 0.8586963195797075,
+   "confidence": 1,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 5)"
+   ],
+   "matchDE": 1.0000304082722637,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "shade",
+   "tone": "mst5",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.00021883753501391226,
+   "mouthErr": 0.004748482726423623,
+   "lipDrift": 0.565924549486926,
+   "outOfFace": 0,
+   "sampledDE": 1.0072989724592616,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 5)"
+   ],
+   "matchDE": 2.113170126035669,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "shade",
+   "tone": "mst5",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.000992970658254778,
+   "mouthErr": 0.017608980455671386,
+   "lipDrift": 0.11402209499855331,
+   "outOfFace": 0,
+   "sampledDE": 1.3654931915771575,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 6)"
+   ],
+   "matchDE": 1.2708033423547362,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "shade",
+   "tone": "mst6",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0007782567049806252,
+   "mouthErr": 0.015885217113665934,
+   "lipDrift": 0.10816066001166647,
+   "outOfFace": 0,
+   "sampledDE": 1.02114135629387,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 5)"
+   ],
+   "matchDE": 2.3094430035858324,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "shade",
+   "tone": "mst6",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0006962137325206954,
+   "mouthErr": 0.01810518040599322,
+   "lipDrift": 0.2709297718702075,
+   "outOfFace": 0,
+   "sampledDE": 1.2983191042484554,
+   "confidence": 1,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 5)"
+   ],
+   "matchDE": 3.2969953627547413,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "shade",
+   "tone": "mst6",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0009042245370372014,
+   "mouthErr": 0.08591073495370397,
+   "lipDrift": 0.47949897143100983,
+   "outOfFace": 0,
+   "sampledDE": 1.0492252758744847,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 6)"
+   ],
+   "matchDE": 1.7087647652357172,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "shade",
+   "tone": "mst6",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.000992970658254778,
+   "mouthErr": 0.017608980455671386,
+   "lipDrift": 0.1222855038175723,
+   "outOfFace": 0,
+   "sampledDE": 1.0486137393112696,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 6)"
+   ],
+   "matchDE": 2.842478756295434,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "under -1 EV",
+   "tone": "mst5",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.00119162466106937,
+   "mouthErr": 0.03278902855417402,
+   "lipDrift": 0.2652938331398893,
+   "outOfFace": 0,
+   "sampledDE": 15.586854092586128,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 14.771236964484757,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "under -1 EV",
+   "tone": "mst5",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.0070423772294372355,
+   "lipDrift": 0.4068016355196278,
+   "outOfFace": 0,
+   "sampledDE": 15.56199036160989,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 15.675035775064107,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "under -1 EV",
+   "tone": "mst5",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.000037416187739595465,
+   "mouthErr": 0.010232878352490388,
+   "lipDrift": 0.3695652327096539,
+   "outOfFace": 0,
+   "sampledDE": 15.512518650763388,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 13.836831501552279,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "under -1 EV",
+   "tone": "mst5",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0010156966291113396,
+   "mouthErr": 0.01820187192964025,
+   "lipDrift": 0.17993848850174743,
+   "outOfFace": 0,
+   "sampledDE": 15.379711206135482,
+   "confidence": 0.98,
+   "flags": [],
+   "matchDE": 15.247463300659907,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "under -1 EV",
+   "tone": "mst6",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0007782567049806252,
+   "mouthErr": 0.025854885057471577,
+   "lipDrift": 0.16882495362485272,
+   "outOfFace": 0,
+   "sampledDE": 14.68936402734036,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 12.193023014183648,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "under -1 EV",
+   "tone": "mst6",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0009439900429664121,
+   "mouthErr": 0.006910108112338165,
+   "lipDrift": 0.4203498464754176,
+   "outOfFace": 0,
+   "sampledDE": 15.299820924102965,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 13.63866476998747,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "under -1 EV",
+   "tone": "mst6",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0005920660695926053,
+   "mouthErr": 0.0741279706762247,
+   "lipDrift": 0.6209009719845042,
+   "outOfFace": 0,
+   "sampledDE": 14.145323397679281,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 10.738707992312772,
+   "band": "outside"
+  },
+  {
+   "slice": "Monk 5-6",
+   "cond": "under -1 EV",
+   "tone": "mst6",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.000992970658254778,
+   "mouthErr": 0.017608980455671386,
+   "lipDrift": 0.04791685159642256,
+   "outOfFace": 0,
+   "sampledDE": 15.072064675951292,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 12.956023540593064,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "daylight",
+   "tone": "mst7",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0007782567049806252,
+   "mouthErr": 0.09564256066411285,
+   "lipDrift": 0.0731965415035738,
+   "outOfFace": 0,
+   "sampledDE": 0.03504641906525305,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 1.771827313858908,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "daylight",
+   "tone": "mst7",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0006962137325206954,
+   "mouthErr": 0.08178569458041036,
+   "lipDrift": 0.40302179007546357,
+   "outOfFace": 0,
+   "sampledDE": 0.3191494499793901,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 1.7755619467301613,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "daylight",
+   "tone": "mst7",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0009042245370372014,
+   "mouthErr": 0.07340639467592557,
+   "lipDrift": 0.4041040170125676,
+   "outOfFace": 0,
+   "sampledDE": 0.15214245497878803,
+   "confidence": 1,
+   "flags": [],
+   "matchDE": 2.5630299246897925,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "daylight",
+   "tone": "mst7",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.000992970658254778,
+   "mouthErr": 0.0722348394495705,
+   "lipDrift": 0.06543834289436035,
+   "outOfFace": 0,
+   "sampledDE": 0.3417985417704248,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 1.6388192949964786,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "daylight",
+   "tone": "mst8",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0007782567049806252,
+   "mouthErr": 0.09564256066411285,
+   "lipDrift": 0.2689705366112882,
+   "outOfFace": 0,
+   "sampledDE": 0.049479685164869926,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 2.369341330461228,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "daylight",
+   "tone": "mst8",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0009757565431102104,
+   "mouthErr": 0.09867563806115302,
+   "lipDrift": 0.3194208960518772,
+   "outOfFace": 0,
+   "sampledDE": 0.26966394619195566,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 2.1663379931918514,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "daylight",
+   "tone": "mst8",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0003613259678158659,
+   "mouthErr": 0.09070551300053148,
+   "lipDrift": 0.6109754336176962,
+   "outOfFace": 0,
+   "sampledDE": 0.42393546019751305,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 1.5284113291468735,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "daylight",
+   "tone": "mst8",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.000992970658254778,
+   "mouthErr": 0.08221748610570856,
+   "lipDrift": 0.03466877102365018,
+   "outOfFace": 0,
+   "sampledDE": 0.2644439895426178,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 2.5495885931285605,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "tungsten",
+   "tone": "mst7",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.00119162466106937,
+   "mouthErr": 0.022754174520896342,
+   "lipDrift": 0.0452603538869667,
+   "outOfFace": 0,
+   "sampledDE": 1.9079947868873022,
+   "confidence": 1,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 29)"
+   ],
+   "matchDE": 1.771827313858908,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "tungsten",
+   "tone": "mst7",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.07281654893170082,
+   "lipDrift": 0.17470859246008885,
+   "outOfFace": 0,
+   "sampledDE": 1.7416836219410312,
+   "confidence": 1,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 30)"
+   ],
+   "matchDE": 1.7755619467301613,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "tungsten",
+   "tone": "mst7",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.000037416187739595465,
+   "mouthErr": 0.0789710548371647,
+   "lipDrift": 0.309266370015262,
+   "outOfFace": 0,
+   "sampledDE": 1.6943306278689751,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 29)"
+   ],
+   "matchDE": 2.5630299246897925,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "tungsten",
+   "tone": "mst7",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0008401283897865932,
+   "mouthErr": 0.019483050701936122,
+   "lipDrift": 0.03240644109777335,
+   "outOfFace": 0,
+   "sampledDE": 1.6617179512921763,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 29)"
+   ],
+   "matchDE": 1.6388192949964786,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "tungsten",
+   "tone": "mst8",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.023717320261438246,
+   "lipDrift": 0.12387238526337896,
+   "outOfFace": 0,
+   "sampledDE": 1.5160995436198041,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 29)"
+   ],
+   "matchDE": 3.020777061287283,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "tungsten",
+   "tone": "mst8",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.017024742999579345,
+   "lipDrift": 0.13799216842642892,
+   "outOfFace": 0,
+   "sampledDE": 1.3722147722538574,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 30)"
+   ],
+   "matchDE": 2.9399665387502103,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "tungsten",
+   "tone": "mst8",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.000037416187739595465,
+   "mouthErr": 0.010232878352490388,
+   "lipDrift": 0.22887676708236881,
+   "outOfFace": 0,
+   "sampledDE": 1.705105014234999,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 29)"
+   ],
+   "matchDE": 1.5284113291468735,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "tungsten",
+   "tone": "mst8",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0008401283897865932,
+   "mouthErr": 0.019483050701936122,
+   "lipDrift": 0.05611372734708553,
+   "outOfFace": 0,
+   "sampledDE": 1.66562509366556,
+   "confidence": 1,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 29)"
+   ],
+   "matchDE": 2.5495885931285605,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "fluorescent",
+   "tone": "mst7",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0007782567049806252,
+   "mouthErr": 0.09564256066411285,
+   "lipDrift": 0.1055037521684028,
+   "outOfFace": 0,
+   "sampledDE": 1.2729966957121586,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 12)"
+   ],
+   "matchDE": 1.771827313858908,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "fluorescent",
+   "tone": "mst7",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0006962137325206954,
+   "mouthErr": 0.07179660708177,
+   "lipDrift": 0.349072954220798,
+   "outOfFace": 0,
+   "sampledDE": 1.4500033375847863,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 12)"
+   ],
+   "matchDE": 1.7755619467301613,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "fluorescent",
+   "tone": "mst7",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0009042245370372014,
+   "mouthErr": 0.07340639467592557,
+   "lipDrift": 0.33716103030421607,
+   "outOfFace": 0,
+   "sampledDE": 1.3405620103287774,
+   "confidence": 1,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 11)"
+   ],
+   "matchDE": 2.5630299246897925,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "fluorescent",
+   "tone": "mst7",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.000992970658254778,
+   "mouthErr": 0.017608980455671386,
+   "lipDrift": 0.04114410169558269,
+   "outOfFace": 0,
+   "sampledDE": 1.6471527133889863,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 11)"
+   ],
+   "matchDE": 1.6388192949964786,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "fluorescent",
+   "tone": "mst8",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.023717320261438246,
+   "lipDrift": 0.25310278742031045,
+   "outOfFace": 0,
+   "sampledDE": 1.25262597991376,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 11)"
+   ],
+   "matchDE": 3.020777061287283,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "fluorescent",
+   "tone": "mst8",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.017024742999579345,
+   "lipDrift": 0.23055246099670157,
+   "outOfFace": 0,
+   "sampledDE": 0.9493308917305009,
+   "confidence": 1,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 12)"
+   ],
+   "matchDE": 2.1663379931918514,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "fluorescent",
+   "tone": "mst8",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.000037416187739595465,
+   "mouthErr": 0.0789710548371647,
+   "lipDrift": 0.4224164667237176,
+   "outOfFace": 0,
+   "sampledDE": 1.2143303449931573,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 11)"
+   ],
+   "matchDE": 1.5284113291468735,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "fluorescent",
+   "tone": "mst8",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0008401283897865932,
+   "mouthErr": 0.019483050701936122,
+   "lipDrift": 0.08133219913091594,
+   "outOfFace": 0,
+   "sampledDE": 1.216762344226261,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 11)"
+   ],
+   "matchDE": 2.5495885931285605,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "shade",
+   "tone": "mst7",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0007782567049806252,
+   "mouthErr": 0.09564256066411285,
+   "lipDrift": 0.2140832608765173,
+   "outOfFace": 0,
+   "sampledDE": 0.7202518069643539,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 5)"
+   ],
+   "matchDE": 1.771827313858908,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "shade",
+   "tone": "mst7",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0006962137325206954,
+   "mouthErr": 0.08178569458041036,
+   "lipDrift": 0.32712104631321637,
+   "outOfFace": 0,
+   "sampledDE": 0.9824566612986216,
+   "confidence": 1,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 5)"
+   ],
+   "matchDE": 1.7755619467301613,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "shade",
+   "tone": "mst7",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0009042245370372014,
+   "mouthErr": 0.07340639467592557,
+   "lipDrift": 0.5766256057937511,
+   "outOfFace": 0,
+   "sampledDE": 1.301880216999904,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 6)"
+   ],
+   "matchDE": 3.0684770185857553,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "shade",
+   "tone": "mst7",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.000992970658254778,
+   "mouthErr": 0.08221748610570856,
+   "lipDrift": 0.14295461248056185,
+   "outOfFace": 0,
+   "sampledDE": 1.0239482832273936,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 6)"
+   ],
+   "matchDE": 1.6388192949964786,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "shade",
+   "tone": "mst8",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0007782567049806252,
+   "mouthErr": 0.09564256066411285,
+   "lipDrift": 0.32961370669458034,
+   "outOfFace": 0,
+   "sampledDE": 0.5402104879283379,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 5)"
+   ],
+   "matchDE": 2.369341330461228,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "shade",
+   "tone": "mst8",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0006962137325206954,
+   "mouthErr": 0.0980178803951161,
+   "lipDrift": 0.38206031221308834,
+   "outOfFace": 0,
+   "sampledDE": 0.6458965216294228,
+   "confidence": 1,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 5)"
+   ],
+   "matchDE": 2.1663379931918514,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "shade",
+   "tone": "mst8",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0009042245370372014,
+   "mouthErr": 0.07340639467592557,
+   "lipDrift": 0.704257139525037,
+   "outOfFace": 0,
+   "sampledDE": 0.8617485086166118,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 6)"
+   ],
+   "matchDE": 1.5284113291468735,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "shade",
+   "tone": "mst8",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.000992970658254778,
+   "mouthErr": 0.09747015370477523,
+   "lipDrift": 0.0011297565181997982,
+   "outOfFace": 0,
+   "sampledDE": 0.749478489605074,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 6)"
+   ],
+   "matchDE": 2.5495885931285605,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "under -1 EV",
+   "tone": "mst7",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.0010346067126294361,
+   "mouthErr": 0.08145801389129244,
+   "lipDrift": 0.24887808834824554,
+   "outOfFace": 0,
+   "sampledDE": 10.536761083318794,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 9.56492935657378,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "under -1 EV",
+   "tone": "mst7",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0010268123796290986,
+   "mouthErr": 0.0833362789527546,
+   "lipDrift": 0.4966862000856125,
+   "outOfFace": 0,
+   "sampledDE": 10.948664031733191,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 10.970499326975219,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "under -1 EV",
+   "tone": "mst7",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0013892212120422533,
+   "mouthErr": 0.07511675824057946,
+   "lipDrift": 0.4434869145411682,
+   "outOfFace": 0,
+   "sampledDE": 10.108690818893123,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 8.204569186211918,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "under -1 EV",
+   "tone": "mst7",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.000992970658254778,
+   "mouthErr": 0.017608980455671386,
+   "lipDrift": 0.19088454824681023,
+   "outOfFace": 0,
+   "sampledDE": 10.62669749982207,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 10.310046471451694,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "under -1 EV",
+   "tone": "mst8",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.023717320261438246,
+   "lipDrift": 0.2181437560614654,
+   "outOfFace": 0,
+   "sampledDE": 7.590545504173984,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 5.76762218561054,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "under -1 EV",
+   "tone": "mst8",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.0070423772294372355,
+   "lipDrift": 0.47070584941022275,
+   "outOfFace": 0,
+   "sampledDE": 7.741631896245669,
+   "confidence": 1,
+   "flags": [],
+   "matchDE": 6.9655706147035055,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "under -1 EV",
+   "tone": "mst8",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.000037416187739595465,
+   "mouthErr": 0.0789710548371647,
+   "lipDrift": 0.5196244208252345,
+   "outOfFace": 0,
+   "sampledDE": 7.2242164874973955,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 9.55934861561508,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 7-8",
+   "cond": "under -1 EV",
+   "tone": "mst8",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0008401283897865932,
+   "mouthErr": 0.009480221525687801,
+   "lipDrift": 0.04588032916916163,
+   "outOfFace": 0,
+   "sampledDE": 7.819196484275244,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 6.397813645428642,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "daylight",
+   "tone": "mst9",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.023717320261438246,
+   "lipDrift": 0.23852035416692985,
+   "outOfFace": 0,
+   "sampledDE": 0.034739453302547685,
+   "confidence": 1,
+   "flags": [],
+   "matchDE": 0.6694587989036387,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "daylight",
+   "tone": "mst9",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0024586163219116907,
+   "mouthErr": 0.016078052641259905,
+   "lipDrift": 0.33277949078268776,
+   "outOfFace": 0,
+   "sampledDE": 0.10310670216659272,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 1.0186527703106394,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "daylight",
+   "tone": "mst9",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0008877840909090234,
+   "mouthErr": 0.01678326231060678,
+   "lipDrift": 0.3377600252611046,
+   "outOfFace": 0,
+   "sampledDE": 0.24384002143673394,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 1.191493581979961,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "daylight",
+   "tone": "mst9",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0008401283897865932,
+   "mouthErr": 0.019483050701936122,
+   "lipDrift": 0.1686387906678135,
+   "outOfFace": 0,
+   "sampledDE": 0.59049959563392,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 0.6055048970693916,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "daylight",
+   "tone": "mst10",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.023717320261438246,
+   "lipDrift": 0.1060804047819559,
+   "outOfFace": 0,
+   "sampledDE": 0.03668434574688979,
+   "confidence": 0.79,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 2.244863570941424,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "daylight",
+   "tone": "mst10",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.017024742999579345,
+   "lipDrift": 0.2415770877533312,
+   "outOfFace": 0,
+   "sampledDE": 0.08629774934785152,
+   "confidence": 0.79,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 1.0054866119948942,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "daylight",
+   "tone": "mst10",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0008877840909090234,
+   "mouthErr": 0.01678326231060678,
+   "lipDrift": 0.13490807029122465,
+   "outOfFace": 0,
+   "sampledDE": 0.26636582446043344,
+   "confidence": 0.76,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 2.160635664291546,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "daylight",
+   "tone": "mst10",
+   "g": 3,
+   "detected": false,
+   "sampledDE": 0.44438602178174164,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 1.5847077243323164,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "tungsten",
+   "tone": "mst9",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.023717320261438246,
+   "lipDrift": 0.061568344011647014,
+   "outOfFace": 0,
+   "sampledDE": 1.3516637181922422,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 29)"
+   ],
+   "matchDE": 0.6694587989036387,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "tungsten",
+   "tone": "mst9",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.017024742999579345,
+   "lipDrift": 0.21443198332044489,
+   "outOfFace": 0,
+   "sampledDE": 1.651350323079453,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 30)"
+   ],
+   "matchDE": 1.0186527703106394,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "tungsten",
+   "tone": "mst9",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0005997375853563999,
+   "mouthErr": 0.01102286997252788,
+   "lipDrift": 0.04969557940261993,
+   "outOfFace": 0,
+   "sampledDE": 1.6389566952793975,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 29)"
+   ],
+   "matchDE": 1.191493581979961,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "tungsten",
+   "tone": "mst9",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0008401283897865932,
+   "mouthErr": 0.019483050701936122,
+   "lipDrift": 0.08489621553361815,
+   "outOfFace": 0,
+   "sampledDE": 1.609497201658541,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 29)"
+   ],
+   "matchDE": 0.6055048970693916,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "tungsten",
+   "tone": "mst10",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001390086824148531,
+   "mouthErr": 0.017371557988361392,
+   "lipDrift": 0.17544314422829288,
+   "outOfFace": 0,
+   "sampledDE": 1.3027378889990737,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 30)"
+   ],
+   "matchDE": 2.244863570941424,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "tungsten",
+   "tone": "mst10",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0011465755722834274,
+   "mouthErr": 0.016886545344843757,
+   "lipDrift": 0.3649777858507619,
+   "outOfFace": 0,
+   "sampledDE": 1.5043493962959253,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 29)"
+   ],
+   "matchDE": 1.0054866119948942,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "tungsten",
+   "tone": "mst10",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0010434698515494484,
+   "mouthErr": 0.012911288629363266,
+   "lipDrift": 0.15865061158287475,
+   "outOfFace": 0,
+   "sampledDE": 1.1207961947412268,
+   "confidence": 1,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 30)"
+   ],
+   "matchDE": 2.160635664291546,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "tungsten",
+   "tone": "mst10",
+   "g": 3,
+   "detected": false,
+   "sampledDE": 7.281182736231051,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 4.052527242810524,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "fluorescent",
+   "tone": "mst9",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.023717320261438246,
+   "lipDrift": 0.21384693376650432,
+   "outOfFace": 0,
+   "sampledDE": 1.1341368383390424,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 12)"
+   ],
+   "matchDE": 0.6694587989036387,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "fluorescent",
+   "tone": "mst9",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.002260740555214702,
+   "mouthErr": 0.015072550846295366,
+   "lipDrift": 0.2309504161864453,
+   "outOfFace": 0,
+   "sampledDE": 1.5717864971415003,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 12)"
+   ],
+   "matchDE": 2.5163453268906286,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "fluorescent",
+   "tone": "mst9",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0008877840909090234,
+   "mouthErr": 0.01678326231060678,
+   "lipDrift": 0.21428244082494885,
+   "outOfFace": 0,
+   "sampledDE": 1.0109117901842997,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 11)"
+   ],
+   "matchDE": 1.191493581979961,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "fluorescent",
+   "tone": "mst9",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.001371047266309637,
+   "mouthErr": 0.021587808462950164,
+   "lipDrift": 0.12193714386175003,
+   "outOfFace": 0,
+   "sampledDE": 1.3197083450579052,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 11)"
+   ],
+   "matchDE": 0.6055048970693916,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "fluorescent",
+   "tone": "mst10",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.023717320261438246,
+   "lipDrift": 0.16904217533755883,
+   "outOfFace": 0,
+   "sampledDE": 1.3027378889990737,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 12)"
+   ],
+   "matchDE": 2.244863570941424,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "fluorescent",
+   "tone": "mst10",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.017024742999579345,
+   "lipDrift": 0.2793386703697074,
+   "outOfFace": 0,
+   "sampledDE": 1.226014677842433,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 11)"
+   ],
+   "matchDE": 1.0054866119948942,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "fluorescent",
+   "tone": "mst10",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0008877840909090234,
+   "mouthErr": 0.01678326231060678,
+   "lipDrift": 0.042659987619476425,
+   "outOfFace": 0,
+   "sampledDE": 1.1207961947412268,
+   "confidence": 0.96,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 12)"
+   ],
+   "matchDE": 2.160635664291546,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "fluorescent",
+   "tone": "mst10",
+   "g": 3,
+   "detected": false,
+   "sampledDE": 3.3474754009297554,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 1.5847077243323164,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "shade",
+   "tone": "mst9",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.033762254901960866,
+   "lipDrift": 0.23640481605010422,
+   "outOfFace": 0,
+   "sampledDE": 0.6010035563008517,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 5)"
+   ],
+   "matchDE": 0.6694587989036387,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "shade",
+   "tone": "mst9",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.017024742999579345,
+   "lipDrift": 0.37939845108367365,
+   "outOfFace": 0,
+   "sampledDE": 0.5919045314099267,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 5)"
+   ],
+   "matchDE": 1.0186527703106394,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "shade",
+   "tone": "mst9",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0008877840909090234,
+   "mouthErr": 0.01678326231060678,
+   "lipDrift": 0.43595867220942,
+   "outOfFace": 0,
+   "sampledDE": 0.48790157908504217,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 6)"
+   ],
+   "matchDE": 1.191493581979961,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "shade",
+   "tone": "mst9",
+   "g": 3,
+   "detected": true,
+   "eyeErr": 0.0008401283897865932,
+   "mouthErr": 0.019483050701936122,
+   "lipDrift": 0.21711407534020566,
+   "outOfFace": 0,
+   "sampledDE": 0.2914716980889291,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 6)"
+   ],
+   "matchDE": 0.6055048970693916,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "shade",
+   "tone": "mst10",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.023717320261438246,
+   "lipDrift": 0.1439585180825631,
+   "outOfFace": 0,
+   "sampledDE": 0.8068983082018172,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 6)"
+   ],
+   "matchDE": 2.244863570941424,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "shade",
+   "tone": "mst10",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.017024742999579345,
+   "lipDrift": 0.2592558938607219,
+   "outOfFace": 0,
+   "sampledDE": 0.7585203929657007,
+   "confidence": 0.99,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 5)"
+   ],
+   "matchDE": 1.0054866119948942,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "shade",
+   "tone": "mst10",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0008877840909090234,
+   "mouthErr": 0.01678326231060678,
+   "lipDrift": 0.08337834414773226,
+   "outOfFace": 0,
+   "sampledDE": 0.5593633132261963,
+   "confidence": 0.96,
+   "flags": [
+    "colour cast corrected from the eye whites (cast ΔE 6)"
+   ],
+   "matchDE": 3.0203359457868926,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "shade",
+   "tone": "mst10",
+   "g": 3,
+   "detected": false,
+   "sampledDE": 0.9497002684366411,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 2.0899872339484795,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "under -1 EV",
+   "tone": "mst9",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.06668709150326772,
+   "lipDrift": 0.16489088080766834,
+   "outOfFace": 0,
+   "sampledDE": 5.329515608446214,
+   "confidence": 0.99,
+   "flags": [],
+   "matchDE": 4.86944727715201,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "under -1 EV",
+   "tone": "mst9",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0022376424065154296,
+   "mouthErr": 0.005743689003285961,
+   "lipDrift": 0.5218044106300965,
+   "outOfFace": 0,
+   "sampledDE": 5.682231622791243,
+   "confidence": 0.94,
+   "flags": [],
+   "matchDE": 4.1289618197430205,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "under -1 EV",
+   "tone": "mst9",
+   "g": 2,
+   "detected": true,
+   "eyeErr": 0.0008877840909090234,
+   "mouthErr": 0.07221709280303004,
+   "lipDrift": 0.36854037363793424,
+   "outOfFace": 0,
+   "sampledDE": 4.993350795796618,
+   "confidence": 0.95,
+   "flags": [],
+   "matchDE": 3.9050272052939867,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "under -1 EV",
+   "tone": "mst9",
+   "g": 3,
+   "detected": false,
+   "sampledDE": 5.664831710263246,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 3.5622570861979526,
+   "band": "match"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "under -1 EV",
+   "tone": "mst10",
+   "g": 0,
+   "detected": true,
+   "eyeErr": 0.001225490196078501,
+   "mouthErr": 0.023717320261438246,
+   "lipDrift": 0.19756126371742866,
+   "outOfFace": 0,
+   "sampledDE": 4.310987855189545,
+   "confidence": 0.79,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 1.859020982166685,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "under -1 EV",
+   "tone": "mst10",
+   "g": 1,
+   "detected": true,
+   "eyeErr": 0.0014143563664297243,
+   "mouthErr": 0.017024742999579345,
+   "lipDrift": 0.3088985132570983,
+   "outOfFace": 0,
+   "sampledDE": 4.559808775314648,
+   "confidence": 0.79,
+   "flags": [
+    "eye whites not found; no white balance"
+   ],
+   "matchDE": 2.417131659858246,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "under -1 EV",
+   "tone": "mst10",
+   "g": 2,
+   "detected": false,
+   "sampledDE": 3.9999499327606274,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 2.160635664291546,
+   "band": "close"
+  },
+  {
+   "slice": "Monk 9-10",
+   "cond": "under -1 EV",
+   "tone": "mst10",
+   "g": 3,
+   "detected": false,
+   "sampledDE": 4.351505175265823,
+   "confidence": 0.2,
+   "flags": [
+    "no-face: measured the frame centre"
+   ],
+   "matchDE": 2.0899872339484795,
+   "band": "close"
+  }
+ ]
+}

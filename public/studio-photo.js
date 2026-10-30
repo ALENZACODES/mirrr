@@ -66,8 +66,8 @@
         ctx.save(); ctx.globalAlpha = 0.5; ctx.globalCompositeOperation = 'color'; ctx.drawImage(d, 0, 0); ctx.restore();
       }
       if (paint.sheen && mask) { // finish: a soft specular band across the masked area
-        const s = maskedLayer(cv, mask, (g, L) => { const gr = g.createLinearGradient(0, 0, L.width * 0.35, L.height); gr.addColorStop(0, 'rgba(255,255,255,0)'); gr.addColorStop(0.45, 'rgba(255,255,255,1)'); gr.addColorStop(0.6, 'rgba(255,255,255,0)'); g.fillStyle = gr; g.fillRect(0, 0, L.width, L.height); });
-        ctx.save(); ctx.globalAlpha = Math.min(1, paint.sheen) * 0.55; ctx.globalCompositeOperation = 'screen'; ctx.drawImage(s, 0, 0); ctx.restore();
+        const s = maskedLayer(cv, mask, (g, L) => { const gr = g.createLinearGradient(0, 0, L.width * 0.35, L.height); gr.addColorStop(0.42, 'rgba(255,255,255,0)'); gr.addColorStop(0.47, 'rgba(255,255,255,1)'); gr.addColorStop(0.52, 'rgba(255,255,255,0)'); g.fillStyle = gr; g.fillRect(0, 0, L.width, L.height); });
+        ctx.save(); ctx.globalAlpha = Math.min(1, paint.sheen) * 0.4; ctx.globalCompositeOperation = 'screen'; // narrow band: the photo keeps its own highlights ctx.drawImage(s, 0, 0); ctx.restore();
       }
       if (paint.matte && mask) { // matte: flatten highlights
         const m = maskedLayer(cv, mask, g => { g.fillStyle = paint.colour ?? '#888'; g.fillRect(0, 0, cv.width, cv.height); });

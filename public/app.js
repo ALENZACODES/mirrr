@@ -1202,7 +1202,9 @@ function renderTrendingTabs() {
   const tabsEl = document.getElementById('trendingTabs');
   if (!tabsEl || !trendingData) return;
 
-  const regions = Object.keys(trendingData);
+  // Fixed tab order (the server can return regions in the order its lookups finish).
+  const fixed = Object.keys(TRENDING_REGION_LABELS);
+  const regions = Object.keys(trendingData).sort((a, b) => (fixed.indexOf(a) + 1 || 999) - (fixed.indexOf(b) + 1 || 999) || a.localeCompare(b));
   tabsEl.innerHTML = regions.map(r => {
     const meta = TRENDING_REGION_LABELS[r] ?? { label: r, emoji: '🌐' };
     return `
@@ -2188,7 +2190,7 @@ async function loadStyleMatchLooks() {
     container.className = 'sm-grid';
     container.innerHTML = looks.map(look => `
       <div class="shade-card sm-card" style="cursor:pointer;" data-look-id="${look.id}">
-        <div class="sm-photo">${look.image ? `<img src="${look.image}" alt="${look.name} — ${look.community.replace('-', ' ')} look" loading="lazy" decoding="async" onerror="this.remove()">` : ''}</div>
+        <div class="sm-photo${look.image ? '' : ' sm-photo--none'}">${look.image ? `<img src="${look.image}" alt="${look.name} — ${look.community.replace('-', ' ')} look" loading="lazy" decoding="async" onload="this.classList.add('is-loaded')" onerror="this.parentElement.classList.add('sm-photo--none');this.remove()">` : ''}</div>
         <div class="shade-info">
           <div class="shade-name">${look.name}</div>
           <div class="shade-community" style="font-size:0.72rem;color:#c9a96e;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem;">${look.community.replace('-', ' ')}</div>

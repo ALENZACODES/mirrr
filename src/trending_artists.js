@@ -265,17 +265,9 @@ export async function getTrendingArtists({ communityId, qlooClient, limit = 6 })
  */
 export async function getAllTrendingArtists({ qlooClient, limitPerRegion = 4 } = {}) {
   const regions = Object.keys(REGIONAL_ANCHORS);
-  const results = {};
-
-  await Promise.all(
-    regions.map(async (regionKey) => {
-      results[regionKey] = await getTrendingArtists({
-        communityId: regionKey,
-        qlooClient,
-        limit: limitPerRegion,
-      });
-    })
+  // Fetch in parallel, but build the result in a fixed region order (not completion order).
+  const lists = await Promise.all(
+    regions.map((regionKey) => getTrendingArtists({ communityId: regionKey, qlooClient, limit: limitPerRegion }))
   );
-
-  return results;
+  return Object.fromEntries(regions.map((regionKey, i) => [regionKey, lists[i]]));
 }

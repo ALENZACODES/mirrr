@@ -3196,3 +3196,39 @@ body { padding-top: 58px; }
 .plus-card { position: relative; background: #15110d; color: #f0e8da; border: 1px solid #c9a96e; border-radius: 1rem; padding: 1.5rem; max-width: 520px; width: 100%; max-height: 90vh; overflow: auto; }
 .plus-badge { display: inline-block; background: rgba(201,169,110,.15); color: #c9a96e; padding: .2rem .6rem; border-radius: 999px; font-size: .8rem; }
 .plus-gates li { margin: .35rem 0; }
+
+/* Business pages and entry points (earn.js) */
+.earn-page .earn-card { max-width: 980px; }
+.earn-nav { font-size: .8rem; margin: .25rem 0 1rem; color: #9d968c; }
+.earn-nav a, .earn-strip a, .footer-earn a { color: #c9a96e; }
+.earn-table-wrap { overflow-x: auto; }
+.earn-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+.earn-table th, .earn-table td { text-align: left; padding: .5rem; border-bottom: 1px solid #3a2f24; vertical-align: top; }
+.earn-table a { color: #c9a96e; }
+.earn-status { display: inline-block; padding: .1rem .5rem; border-radius: 999px; font-size: .72rem; white-space: nowrap; }
+.earn-built { background: #1f4d2e; color: #c8f2d4; }
+.earn-ready { background: #4d3b12; color: #ffe2a3; }
+.earn-planned { background: #333; color: #ddd; }
+.earn-meta { font-size: .85rem; color: #cfc4b2; }
+.earn-slot { border: 1px dashed #c9a96e; border-radius: .75rem; padding: .75rem 1rem; margin: 1rem 0; font-size: .85rem; }
+.earn-bundles { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+.earn-bundle { border: 1px solid #3a2f24; border-radius: .75rem; padding: .75rem 1rem; }
+.earn-bundle h3 { margin: 0 0 .25rem; font-size: 1rem; }
+.earn-bundle ul { padding-left: 1rem; font-size: .8rem; }
+.earn-bundle li { margin: .3rem 0; }
+.earn-bundle a, .earn-xs a { color: #f0e8da; }
+.earn-two { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.earn-form select, .earn-plusform select { display: block; margin-top: .25rem; padding: .4rem; background: #0e0b08; color: #f0e8da; border: 1px solid #5a4a38; border-radius: .4rem; }
+.earn-strip { margin: 2rem auto 1rem; max-width: 1100px; border: 1px solid #3a2f24; border-radius: 1rem; padding: 1rem 1.25rem; background: rgba(201,169,110,.05); }
+.earn-strip h4 { margin: 0 0 .25rem; color: #c9a96e; }
+.earn-xs { display: flex; flex-wrap: wrap; gap: .5rem; margin: .5rem 0; }
+.earn-chip { display: flex; flex-direction: column; gap: .15rem; padding: .5rem .75rem; border: 1px solid #5a4a38; border-radius: .6rem; font-size: .8rem; text-decoration: none; max-width: 260px; }
+.earn-chip span { color: #9d968c; font-size: .72rem; }
+.earn-home { padding: clamp(2.5rem, 6vw, 4.5rem) 1rem; text-align: center; background: #0a0806; }
+.earn-home-sub { max-width: 720px; margin: .5rem auto 1.5rem; color: #cfc4b2; font-size: .95rem; }
+.earn-home-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .75rem; max-width: 1100px; margin: 0 auto; }
+.earn-home-card { display: flex; flex-direction: column; gap: .35rem; padding: 1rem; border: 1px solid #3a2f24; border-radius: .9rem; color: #f0e8da; text-decoration: none; text-align: left; }
+.earn-home-card:hover, .earn-home-card:focus-visible { border-color: #c9a96e; }
+.earn-home-card span { font-size: .78rem; color: #9d968c; }
+.nav-earn { color: #c9a96e !important; text-decoration: none; }
+@media (max-width: 640px) { .earn-two { grid-template-columns: 1fr; } }

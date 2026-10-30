@@ -146,7 +146,7 @@ function goHome() {
   document.getElementById('profilePanel')?.classList.add('hidden');
   showView('hero');
   document.querySelectorAll('.nav-link').forEach(b => b.classList.remove('nav-link--active'));
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: 'auto' });
 }
 
 function showView(viewId) {
@@ -2843,24 +2843,26 @@ const STYLE_MATCH_PLAN_LOOK = {
 };
 async function becomeThisLook(lookId, community, { tasteChips, fromName } = {}) {
   if (!lookId) return;
+  let mappedNote = '';
   try {
     const looks = await allLooks();
     if (!looks.some(l => l.id === lookId)) {
       const planId = STYLE_MATCH_PLAN_LOOK[lookId];
       if (!planId) { toast('That look has no step-by-step plan yet. Pick another look.', 'warn'); return; }
       const planName = looks.find(l => l.id === planId)?.name ?? planId;
-      if (fromName && planName !== fromName) toast(`${fromName}: your plan uses our ${planName} look, the closest step-by-step match.`, 'info');
+      if (fromName && planName !== fromName) mappedNote = `${fromName} builds on our ${planName} look, the closest step-by-step plan.`;
       lookId = planId;
     }
   } catch { /* keep the id; the plan view will report a clear error */ }
   // The taste that picked this look (Taste results) travels with it, so the plan's
   // "Because you love ..." lines name that taste, not whatever is typed later.
-  persist({ target: { lookId, at: new Date().toISOString(), ...(Array.isArray(tasteChips) ? { tasteChips } : {}) }, plan: null });
+  persist({ target: { lookId, at: new Date().toISOString(), ...(Array.isArray(tasteChips) ? { tasteChips } : {}), ...(mappedNote ? { note: mappedNote } : {}) }, plan: null });
   if (!faceOf()?.shadeId) {
-    toast('First, tell MIRRR your shade. Then your plan builds automatically.', 'info');
+    toast(`${mappedNote ? mappedNote + ' ' : ''}First, tell MIRRR your shade. Then your plan builds automatically.`, 'info');
     showView('face');
     return;
   }
+  if (mappedNote) toast(mappedNote, 'info');
   showView('transform');
 }
 
@@ -3105,6 +3107,7 @@ function renderPlanResult(host, face, data, lookId) {
       <div class="tf-head-body">
         <p class="dna-kicker">Your transformation</p>
         <h3 class="tf-title">${esc(t.name)}</h3>
+        ${targetOf()?.note && targetOf()?.lookId === t.id ? `<p class="tf-desc tf-mapped">${esc(targetOf().note)}</p>` : ''}
         ${t.description ? `<p class="tf-desc">${esc(t.description)}</p>` : ''}
         ${because.length ? `<p class="tf-because">${because.map(esc).join(' ')}</p>` : ''}
         <p class="tf-face-line">${faceSummaryHtml(face)}</p>

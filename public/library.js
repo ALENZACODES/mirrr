@@ -238,6 +238,7 @@ document.addEventListener('keydown', e => {
  * (pillars, festivals, ingredients) and the "Finish your look" options.
  */
 async function openLibraryAt({ community, guide, q } = {}) {
+  if (!guide) { lib.openGuide = null; $('libReader')?.classList.add('hidden'); }
   await showLibrary(community ? { community, guide } : { guide });
   const input = $('libSearch');
   if (input) input.value = q || '';

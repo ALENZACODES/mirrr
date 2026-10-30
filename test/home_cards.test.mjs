@@ -83,3 +83,9 @@ test('the scripts handle the card attributes, by click and by keyboard', () => {
   assert.match(lib, /closest\('\[data-lib-link\]'\)/);
   assert.match(lib, /window\.mirrrOpenLibrary = /);
 });
+
+test('a search-only card closes any guide left open, so the results are what she sees', () => {
+  const lib = fs.readFileSync('public/library.js', 'utf8');
+  const fn = lib.slice(lib.indexOf('async function openLibraryAt'), lib.indexOf('window.mirrrOpenLibrary = '));
+  assert.match(fn, /if \(!guide\) \{ lib\.openGuide = null; \$\('libReader'\)\?\.classList\.add\('hidden'\); \}/);
+});

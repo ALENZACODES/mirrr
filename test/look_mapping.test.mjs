@@ -61,3 +61,8 @@ test('Taste, Library, Look Book and Transform picker cards pass their own look i
   assert.ok(ids.length >= 4, String(ids.length));
   assert.doesNotMatch(app, /data-become="\$\{[^}]*(name|community)[^}]*\}"/);
 });
+
+test('when a signature look builds on a differently named look, the plan says so', () => {
+  assert.match(app, /builds on our \$\{planName\} look, the closest step-by-step plan/);
+  assert.match(app, /tf-mapped/);
+});

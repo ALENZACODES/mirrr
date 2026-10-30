@@ -365,6 +365,7 @@
             <button class="nav-link" data-view="studio" role="menuitem">Brow &amp; Kohl Studio</button>
             <button class="nav-link" data-view="hairlab" role="menuitem">Hair Colour Lab</button>
             <button class="nav-link" data-view="skin" role="menuitem">Skin Clinic</button>
+            <button class="nav-link" data-view="routine" role="menuitem">Routine Builder</button>
             <button class="nav-link" data-view="complexion" role="menuitem">Complexion Lab</button>
             <button class="nav-link" data-view="colour" role="menuitem">Colour &amp; Lip Studio</button>
             <button class="nav-link" data-view="nails" role="menuitem">Nails &amp; Scent Studio</button>
@@ -1280,6 +1281,20 @@
       </div>
     </section>
 
+    <section id="view-routine" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Routine Builder</h2>
+        <p class="view-sub">Pick your own skin type, undertone, how your skin feels, your main concern, your climate and how many steps you want. Get a morning and night routine, the nights for strong actives, the ingredients to keep apart, and, if you like, traditional ingredients from your heritage as swaps.</p>
+      </div>
+      <div class="st-wrap">
+        <div id="rtControls" class="st-controls"></div>
+        <div id="rtPreview" class="sk-preview cx-preview" aria-live="polite"></div>
+        <div id="rtSummary" class="hl-summary"></div>
+        <div id="rtPlan" class="st-plan"></div>
+        <p class="lib-disclaimer">You choose your skin type: it is never guessed from your community, a photo or a colour. Fitzpatrick types describe how skin reacts to sun. A heritage only adds traditional swaps. The face is an illustration in the Monk Skin Tone Scale tone you pick (Ellis Monk / Google, CC BY 4.0), not your photo. This is general skincare information, not medical advice: see a doctor or pharmacist for persistent or painful skin problems, and before using actives in pregnancy.</p>
+      </div>
+    </section>
+
     <section id="view-looks" class="view hidden">
       <div class="view-header">
         <h2 class="view-title">Look Book</h2>
@@ -1497,6 +1512,7 @@
   <script src="eco.js" defer></script>
   <script src="calm.js" defer></script>
   <script src="looks.js" defer></script>
+  <script src="routine.js" defer></script>
   <script src="leap.js" defer></script>
   <script>
     // Community detail panel interactions

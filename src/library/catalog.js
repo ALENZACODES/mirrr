@@ -125,6 +125,7 @@ import * as skincareIngredientsEncyclopedia from '../skincare_ingredients_encycl
 import * as ecoBeautyGuide from '../eco_beauty_guide.js';
 import * as mentalHealthBeautyGuide from '../mental_health_beauty_guide.js';
 import * as lookStyles from '../look_styles.js';
+import * as skinAnalysis from '../skin_analysis.js';
 import * as beautyTutorials from '../beauty_tutorials.js';
 import * as mentalHealthBeautyEthnicGuide from '../mental_health_beauty_ethnic_guide.js';
 import * as ecoSustainableBeauty from '../eco_sustainable_beauty.js';
@@ -276,6 +277,7 @@ export const GUIDES = [
   ['ingredient_encyclopedia', 'ingredients', 'Ingredient Encyclopedia: Traditional and Modern', ingredientEncyclopedia],
   ['skincare_ingredients_encyclopedia', 'ingredients', 'Skincare Actives: Vitamin C to Sunscreen Filters', skincareIngredientsEncyclopedia],
   ['ingredient_interactions', 'ingredients', 'What to Mix, What to Keep Apart, pH and Layering', ingredientInteractions],
+  ['skin_analysis', 'ingredients', 'Your Skin Type, Undertone and Routine Ingredients', skinAnalysis],
   ['beauty_science_glossary', 'ingredients', 'Skin Science Glossary, A to Z', beautyScienceGlossary],
   ['eco_sustainable_beauty_ethnic_guide', 'eco', 'Eco Beauty by Community: Ingredients, Kits and Seasons', ecoSustainableBeautyEthnicGuide],
   ['eco_beauty_guide', 'eco', 'Clean Beauty Myths, Packaging and Certifications', ecoBeautyGuide],

@@ -306,7 +306,7 @@ test('ingredient checker routes over HTTP', async () => {
   const html = await (await fetch(`${B}/`, { headers: h })).text();
   assert.ok(html.includes('data-view="mix"') && html.includes('src="mix.js"'));
   const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
-  assert.equal(lib.shelves.find(s => s.id === 'ingredients').guides.length, 4);
+  assert.equal(lib.shelves.find(s => s.id === 'ingredients').guides.length, 5);
 });
 
 test('eco beauty routes over HTTP', async () => {
@@ -378,4 +378,24 @@ test('taste leap routes over HTTP (demo path, no Qloo call)', async () => {
   assert.equal((await fetch(`${B}/api/leap/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
   const html = await (await fetch(`${B}/`, { headers: h })).text();
   assert.ok(html.includes('data-view="leap"') && html.includes('src="leap.js"') && html.includes('data-open-leap'));
+});
+
+test('routine builder routes over HTTP', async () => {
+  const B = `http://127.0.0.1:${PORT}`;
+  const h = { 'x-forwarded-for': '10.6.6.21' };
+  const o = await (await fetch(`${B}/api/routine/options`, { headers: h })).json();
+  assert.equal(o.types.length, 6); assert.equal(o.concerns.length, 8); assert.equal(o.heritages.length, 10);
+  const r = await fetch(`${B}/api/routine/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ type: 'VI', concern: 'lines', pregnant: 'yes', heritage: 'arab' }) });
+  assert.equal(r.status, 200);
+  const p = await r.json();
+  assert.equal(p.type.id, 'VI');
+  assert.ok(p.night.some(s => s.ingredient?.id === 'bakuchiol')); assert.ok(!p.night.some(s => s.ingredient?.id === 'retinol'));
+  assert.equal(p.heritage.swap.id, 'argan_oil');
+  assert.equal((await fetch(`${B}/api/routine/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  const sr = await (await fetch(`${B}/api/routine/ingredients?q=acne`, { headers: h })).json();
+  assert.ok(sr.results.some(x => x.id === 'salicylic_acid'));
+  const html = await (await fetch(`${B}/`, { headers: h })).text();
+  assert.ok(html.includes('data-view="routine"') && html.includes('src="routine.js"'));
+  const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
+  assert.ok(lib.shelves.find(s => s.id === 'ingredients').guides.some(g => g.id === 'skin_analysis'));
 });

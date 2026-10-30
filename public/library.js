@@ -99,7 +99,7 @@ function renderShelves() {
       ${shelf.id === 'smile' ? '<button type="button" class="btn btn-secondary lib-open" data-open-smile>Open Smile &amp; Lip Care</button>' : ''}
       ${shelf.id === 'night' ? '<button type="button" class="btn btn-secondary lib-open" data-open-night>Open the Night Routine</button>' : ''}
       ${shelf.id === 'bump' ? '<button type="button" class="btn btn-secondary lib-open" data-open-bump>Open the Pregnancy &amp; Postpartum planner</button>' : ''}
-      ${shelf.id === 'ingredients' ? '<button type="button" class="btn btn-secondary lib-open" data-open-mix>Open the Ingredient Checker</button>' : ''}
+      ${shelf.id === 'ingredients' ? '<button type="button" class="btn btn-secondary lib-open" data-open-mix>Open the Ingredient Checker</button> <button type="button" class="btn btn-secondary lib-open" data-open-routine>Build my routine</button>' : ''}
       ${shelf.id === 'eco' ? '<button type="button" class="btn btn-secondary lib-open" data-open-eco>Open the Eco Beauty planner</button>' : ''}
       ${shelf.id === 'mind' ? '<button type="button" class="btn btn-secondary lib-open" data-open-calm>Open the Calm &amp; Self-Image studio</button>' : ''}
       ${shelf.id === 'looks' ? '<button type="button" class="btn btn-secondary lib-open" data-open-looks>Open the Look Book</button> <button type="button" class="btn btn-secondary lib-open" data-open-leap>Leap a look to another culture</button>' : ''}

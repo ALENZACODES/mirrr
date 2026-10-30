@@ -41,6 +41,7 @@ import { handleEco } from './eco/routes.js';
 import { handleCalm } from './calm/routes.js';
 import { handleLooks } from './looks/routes.js';
 import { handleLeap } from './leap/routes.js';
+import { handleRoutine } from './routine/routes.js';
 import { createRateLimiter, clientAddress, hopShape } from './ratelimit.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -781,6 +782,7 @@ async function router(req, res) {
   if (await handleCalm(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handleLooks(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handleLeap(method, path, url, req, res, { sendJSON, readBody })) return;
+  if (await handleRoutine(method, path, url, req, res, { sendJSON, readBody })) return;
 
   // 404
   return sendJSON(res, 404, { error: 'Not found' });

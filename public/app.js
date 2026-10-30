@@ -2478,7 +2478,11 @@ function renderPlan(plan) {
   const wg = plan.wig;
   const wigBody = wg ? `<p><strong>${esc(flat(wg))}</strong>${(wg.why || wg.description) ? ` &mdash; ${esc(wg.why || wg.description)}` : ''}</p>` : '';
   const ritualItems = planList(plan.ritual?.rituals ?? plan.ritual?.steps ?? []).concat(plan.ritual?.skincareTip ? [plan.ritual.skincareTip] : []);
-  const ritualBody = ritualItems.length ? `${(plan.ritual?.festival || plan.ritual?.tradition) ? `<p><strong>${esc(plan.ritual.festival || plan.ritual.tradition)}</strong></p>` : ''}<ul>${ritualItems.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : '';
+  // Fields can be strings or objects (e.g. a bridal signature look); always render them as text.
+  const ritualHead = flat(plan.ritual?.festival) || (typeof plan.ritual?.tradition === 'string' ? plan.ritual.tradition : '');
+  const ritualSig = planList(plan.ritual?.signature ?? (plan.ritual?.tradition && typeof plan.ritual.tradition === 'object'
+    ? Object.entries(plan.ritual.tradition).map(([k, v]) => `${k}: ${flat(v)}`) : []));
+  const ritualBody = (ritualItems.length || ritualSig.length) ? `${ritualHead ? `<p><strong>${esc(ritualHead)}</strong></p>` : ''}${ritualSig.length ? `<p class="muted">Signature look</p><ul>${ritualSig.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : ''}${ritualItems.length ? `<p class="muted">Rituals</p><ul>${ritualItems.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : ''}` : '';
   const tl = Array.isArray(plan.timeline) ? plan.timeline : [];
   const tlBody = tl.length ? `<ul class="plan-timeline">${tl.map(t => `<li><span class="tl-when">${esc(t.when ?? t.time ?? '')}</span><span>${esc(t.step ?? t.text ?? flat(t))}</span></li>`).join('')}</ul>` : '';
   const cons = planList(plan.constraints);

@@ -72,7 +72,11 @@ async function ritualFor(communityId, parsed) {
       const rituals = b.getBridalRitualsForCommunity?.(communityId);
       const profile = b.getCommunityBridalProfile?.(communityId);
       if (Array.isArray(rituals) && rituals.length) {
-        return { source: 'bridal_beauty_planner', festival: null, tradition: profile?.signatureLook ?? null, rituals: rituals.slice(0, 4), skincareTip: null };
+        const sig = profile?.signatureLook;
+        const signature = sig && typeof sig === 'object'
+          ? Object.entries(sig).map(([k, v]) => `${k[0].toUpperCase()}${k.slice(1)}: ${v}`)
+          : (sig ? [String(sig)] : []);
+        return { source: 'bridal_beauty_planner', festival: null, tradition: profile?.name ?? null, signature, rituals: rituals.slice(0, 4), skincareTip: null };
       }
     } catch { /* module unavailable */ }
   }

@@ -258,6 +258,11 @@ export function findFace(img) {
   const mouth = { u: (uL + uR) / 2, v: (vT + vB) / 2, rw: halfW, rh: halfH, contrast: peak };
   const eyeUV = [eL, eR].map(e => { const [u, v] = toUV(e.x, e.y); return { u, v, rw: e.w / d / 2, rh: e.h / d / 2 }; });
   const browUV = brows.map((b, i) => { if (!b) return { u: eyeUV[i].u, v: eyeUV[i].v - 0.36, rw: eyeUV[i].rw * 1.3, rh: 0.06 }; const [u, v] = toUV(b.x, b.y); return { u, v, rw: b.w / d / 2, rh: b.h / d / 2 }; });
+  // Plausibility: on a real face each eye is at least ~0.25 eye-spacings wide and the mouth sits
+  // about one eye-spacing below the eye line. A pick outside that is something else (a highlight, a
+  // nostril, background), and painting makeup there lands off the face, so say so instead.
+  const eyeW = Math.min(...eyeUV.map(e => e.rw * 2));
+  if (eyeW < 0.12 || mouth.v < 0.85 || mouth.v > 1.35) return { ok: false, reason: 'Could not place the eyes and mouth with confidence. Use a front-facing photo in even light with both eyes open.' };
   return {
     ok: true, width: img.width, height: img.height, frame,
     skin: { L: mL, a: ma, b: mb, thr }, eyes: eyeUV, brows: browUV, mouth,

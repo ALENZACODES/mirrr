@@ -37,7 +37,7 @@ export const BLUSH_FORMULAS = {
     best_for: 'Normal to oily skin; beginners (easiest to blend and remove); layering over powder foundation',
     application: 'Fluffy dome brush or angled blush brush. Tap off excess before applying.',
     longevity: 'Moderate. Can fade in heat or with excess oil.',
-    top_picks: ['NARS Orgasm (universally flattering peachy-pink with shimmer)', 'Milani Baked Blush', 'Charlotte Tilbury Pillow Talk (soft mauve-pink)'],
+    top_picks: ['NARS Orgasm (peachy-pink with shimmer)', 'Milani Baked Blush', 'Charlotte Tilbury Pillow Talk (soft mauve-pink)'],
   },
   cream: {
     formula: 'Cream Blush',
@@ -118,7 +118,7 @@ export const BLUSH_BY_FACE_SHAPE = {
 export const MODERN_BLUSH_TRENDS = {
   draping: {
     trend: 'Draping',
-    description: 'Large, sweeping blush application from the cheeks up and around the temples, sometimes connecting under the eyes. A 1980s technique revived by makeup artist Wayne Goss and popularised by TikTok.',
+    description: 'Large, sweeping blush application from the cheeks up and around the temples, sometimes connecting under the eyes. A 1970s and 80s technique revived on social media in the 2020s.',
     how_to: 'Apply a large dome brush loaded with blush from the hairline at the temples, sweeping under the eye and down to the apple. Layer colours for depth.',
     result: 'Creates a dramatic sculpted-without-contour effect. The blush does the work of both blush AND structure.',
   },
@@ -127,7 +127,7 @@ export const MODERN_BLUSH_TRENDS = {
     description: 'Blush applied primarily under and around the eyes, simulating a "naturally flushed" look — as if you\'ve been in the cold or exercising.',
     how_to: 'Use a small dense brush or fingertips to blend cream or powder blush under the eye, very close to the lower lash line and bridge of nose.',
     caution: 'Can emphasise under-eye darkness if you already have significant dark circles.',
-    ethnic_note: 'This trend originated in K-Beauty (Korean beauty) and gained global popularity 2020-2023. Works stunningly on all skin tones with correct blush tone selection.',
+    ethnic_note: 'This trend is associated with K-Beauty and spread widely on social media. Works on all skin tones with correct blush tone selection.',
   },
   monochromatic: {
     trend: 'Monochromatic Makeup',
@@ -164,7 +164,7 @@ export const BRONZER_GUIDE = {
     fair: 'Peachy-golden bronzers (e.g. NARS Laguna, Too Faced Milk Chocolate Soleil)',
     medium: 'Golden-tan bronzers (e.g. Charlotte Tilbury Filmstar Bronze & Glow)',
     tan_olive: 'Warm medium-brown bronzers',
-    deep: 'Rich warm-brown bronzers (e.g. NARS Casino, Fenty Cheeks Out Bronzer in the deepest shades)',
+    deep: 'Rich warm-brown bronzers (e.g. NARS Casino, Fenty Beauty Sun Stalk\'r Instant Warmth Bronzer in the deepest shades)',
     ethnic_note: 'Many bronzers are formulated for lighter skin tones and appear barely visible or too orange on deeper skin. Seek bronzers specifically formulated for or reviewed by people with similar depth: Fenty Beauty, Juvia\'s Place, Danessa Myricks, and Black Moon Cosmetics consistently deliver for deeper skin.',
   },
   flashback_warning: {
@@ -195,7 +195,7 @@ export const HIGHLIGHTER_GUIDE = {
     medium: 'Gold, peach-gold, rose gold',
     tan_olive: 'Gold, copper, bronze-gold',
     deep: 'Warm gold, bronze, copper — AVOID white/silver/icy highlights on deep skin (look ashy or chalky)',
-    ethnic_note: 'Gold and copper highlighters are universally beautiful on deeper skin tones. The warm metallic against rich melanin is one of the most stunning combinations in makeup. "Blinding" highlighters (intense strobe effect) look incredible on deep skin — do not shy away from intense highlighting.',
+    ethnic_note: 'Gold and copper highlighters show up beautifully on deeper skin tones. "Blinding" highlighters (intense strobe effect) look incredible on deep skin — do not shy away from intense highlighting.',
   },
   technique_spotlight: {
     spotlight: 'Spotlight Technique',
@@ -216,7 +216,7 @@ export const HIGHLIGHTER_GUIDE = {
 export const ETHNIC_CHEEK_TRADITIONS = {
   west_african: {
     community: 'West African',
-    traditions: 'Bold bronzed looks popular for festive occasions. Highlighter enthusiastically embraced in Nigerian beauty culture — "blinding" highlight is a beauty status symbol in many Nigerian makeup looks. Shea butter as natural skin luminiser.',
+    traditions: 'Bold bronzed looks popular for festive occasions. Intense "blinding" highlight is a popular choice in Nigerian glam makeup. Shea butter as natural skin luminiser.',
     modern: 'Nigerian MUAs (makeup artists) have pushed blinding highlight and heavy bronze looks to global audiences through YouTube and Instagram.',
   },
   south_asian: {
@@ -253,7 +253,7 @@ export const ETHNIC_CHEEK_TRADITIONS = {
   },
   black_american: {
     community: 'Black American',
-    traditions: 'Bold, warm cheek looks have been central. The 1990s makeup renaissance (led by brands like Fashion Fair for deep skin) brought warm bronzed cheek looks. "Laid" and "snatched" makeup looks often feature dramatic highlight and contour.',
+    traditions: 'Bold, warm cheek looks have been central. Fashion Fair, founded in 1973 for deep skin, made warm bronzed cheek shades widely available. "Laid" and "snatched" makeup looks often feature dramatic highlight and contour.',
     modern: 'Black American MUAs and beauty creators pioneered many cheek application techniques now mainstream. The "blinding highlight" trend, heavy bronze, and bold blush were all part of Black American beauty culture before going global.',
   },
 };
@@ -277,9 +277,3 @@ export function getEthnicCheekTradition(communityId) {
   return ETHNIC_CHEEK_TRADITIONS[key] || Object.values(ETHNIC_CHEEK_TRADITIONS);
 }
 
-export const CHEEK_MAKEUP_STATS = {
-  blushFormulas: Object.keys(BLUSH_FORMULAS).length,
-  faceShapes: Object.keys(BLUSH_BY_FACE_SHAPE).length - 1,
-  modernTrends: Object.keys(MODERN_BLUSH_TRENDS).length,
-  ethnicCommunities: 9,
-};

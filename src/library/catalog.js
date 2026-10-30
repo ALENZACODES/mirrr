@@ -67,6 +67,16 @@ import * as skinBarrierGuide from '../skin_barrier_guide.js';
 import * as skinBarrierEthnicGuide from '../skin_barrier_ethnic_guide.js';
 import * as sensitiveSkinGuide from '../sensitive_skin_guide.js';
 import * as sensitiveSkinEthnic from '../sensitive_skin_ethnic.js';
+import * as colourCorrectingGuide from '../colour_correcting_guide.js';
+import * as colourTheoryMakeup from '../colour_theory_makeup.js';
+import * as foundationGuideExtended from '../foundation_guide_extended.js';
+import * as settingProductsGuide from '../setting_products_guide.js';
+import * as makeupFinishesGuide from '../makeup_finishes_guide.js';
+import * as contouringGuideEthnic from '../contouring_guide_ethnic.js';
+import * as contouringGuideV2 from '../contouring_guide_v2.js';
+import * as cheekMakeupGuide from '../cheek_makeup_guide.js';
+import * as makeupRemovalGuide from '../makeup_removal_guide.js';
+import * as makeupToolsGuide from '../makeup_tools_guide.js';
 
 export const SHELVES = [
   { id: 'rituals', title: 'Rituals & Heritage', blurb: 'Haldi, hammam, shea, mehndi, bathhouse and festival traditions, with the steps to do them at home.' },
@@ -74,6 +84,7 @@ export const SHELVES = [
   { id: 'hair', title: 'Hair, Colour & Texture', blurb: 'Colour and lightening for dark and coily hair, henna and indigo, porosity, curl types, protective styles and wigs.' },
   { id: 'growth', title: 'Hair Growth & Scalp', blurb: 'How hair grows, why length breaks off, edges and traction, heat, scalp conditions and extensions.' },
   { id: 'skin', title: 'Skin: Marks, Breakouts & Sun', blurb: 'Dark marks and melasma, safe brightening, breakouts, sunscreen without a white cast, barrier repair, eczema and rosacea.' },
+  { id: 'complexion', title: 'Makeup: Correct, Base & Sculpt', blurb: 'Colour correcting for your depth, foundation formulas and finishes, primer and powder without flashback, contour, blush and highlight, tools and removal.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -142,4 +153,14 @@ export const GUIDES = [
   ['skin_barrier_ethnic_guide', 'skin', 'Skin Barrier by Community', skinBarrierEthnicGuide],
   ['sensitive_skin_guide', 'skin', 'Eczema, Rosacea and Sensitive Skin', sensitiveSkinGuide],
   ['sensitive_skin_ethnic', 'skin', 'Sensitive Skin by Community', sensitiveSkinEthnic],
+  ['colour_correcting_guide', 'complexion', 'Colour Correcting', colourCorrectingGuide],
+  ['colour_theory_makeup', 'complexion', 'Colour Theory for Makeup', colourTheoryMakeup],
+  ['foundation_guide_extended', 'complexion', 'Foundation: Formula, Coverage and Undertone', foundationGuideExtended],
+  ['makeup_finishes_guide', 'complexion', 'Finishes, Prep and Long Wear', makeupFinishesGuide],
+  ['setting_products_guide', 'complexion', 'Primer, Powder, Spray and Flashback', settingProductsGuide],
+  ['contouring_guide_ethnic', 'complexion', 'Contour by Face Shape', contouringGuideEthnic],
+  ['contouring_guide_v2', 'complexion', 'Contour and Highlight Techniques', contouringGuideV2],
+  ['cheek_makeup_guide', 'complexion', 'Blush, Bronzer and Highlighter', cheekMakeupGuide],
+  ['makeup_tools_guide', 'complexion', 'Brushes, Sponges and Tools', makeupToolsGuide],
+  ['makeup_removal_guide', 'complexion', 'Taking It All Off', makeupRemovalGuide],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

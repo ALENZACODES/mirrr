@@ -27,6 +27,7 @@ import { handleLibrary } from './library/routes.js';
 import { handleStudio } from './studio/routes.js';
 import { handleHairLab } from './hairlab/routes.js';
 import { handleSkinClinic } from './skin/routes.js';
+import { handleComplexion } from './makeup/routes.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT ?? 3000;
@@ -756,6 +757,7 @@ async function router(req, res) {
   if (await handleStudio(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handleHairLab(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handleSkinClinic(method, path, url, req, res, { sendJSON, readBody })) return;
+  if (await handleComplexion(method, path, url, req, res, { sendJSON, readBody })) return;
 
   // 404
   return sendJSON(res, 404, { error: 'Not found' });

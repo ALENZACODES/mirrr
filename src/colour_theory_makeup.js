@@ -47,7 +47,7 @@ export const COMPLEMENTARY_PAIRS = {
         'Fitzpatrick V': 'True orange corrector',
         'Fitzpatrick VI': 'Deep red-orange corrector',
       },
-      recommended_products: ['NARS Radiant Creamy Concealer in Chantilly (peach)', 'Tarte Shape Tape (peach)', 'NYX Orange Correcting Concealer', 'Make Up For Ever Step 1 (orange)'],
+      recommended_products: ['NARS Radiant Creamy Concealer in Chantilly (peach)', 'Tarte Shape Tape Corrector (peach)', 'NYX Orange Correcting Concealer'],
     },
     {
       pair: ['Yellow', 'Purple'],
@@ -65,8 +65,8 @@ export const COLOUR_CORRECTION_BY_FITZPATRICK = {
     label: 'Fitzpatrick I-II — Fair to Light',
     common_concerns: ['Redness (rosacea, acne redness)', 'Blue-purple under-eye circles', 'General dullness'],
     correctors: {
-      redness: { colour: 'Green', products: ['NYX Green Colour Correcting Concealer', 'Krave Beauty Corrector'] },
-      dark_circles: { colour: 'Peach/Light peach', why: 'Under-eye circles on fair skin are blue-purple; peach (a pale orange) neutralises them', products: ['NARS Radiant Creamy Concealer in Chantilly', 'Laura Mercier Secret Concealer Light Peach'] },
+      redness: { colour: 'Green', products: ['NYX Green Colour Correcting Concealer'] },
+      dark_circles: { colour: 'Peach/Light peach', why: 'Under-eye circles on fair skin are blue-purple; peach (a pale orange) neutralises them', products: ['NARS Radiant Creamy Concealer in Chantilly'] },
       dullness: { colour: 'Light pink/lavender-tinged primer', why: 'Adds brightness' },
     },
   },
@@ -91,10 +91,10 @@ export const COLOUR_CORRECTION_BY_FITZPATRICK = {
 
   fitzpatrick_v: {
     label: 'Fitzpatrick V — Brown to Dark Brown',
-    common_concerns: ['PIH (most prevalent skin concern at this skin tone)', 'Dark ashy areas', 'Very dark under-eye circles'],
+    common_concerns: ['PIH (dark marks after spots)', 'Dark ashy areas', 'Very dark under-eye circles'],
     correctors: {
-      pih: { colour: 'True orange', why: 'PIH at this depth is very dark brown — only orange is saturated enough to cancel it before foundation', products: ['NYX Orange Corrector', 'Make Up For Ever Step 1 Corrector in Orange', 'Ben Nye Corrector'] },
-      dark_circles: { colour: 'True orange to red-orange', why: 'Very deep blue-black circles; peach would be invisible. True orange is needed.', products: ['Danessa Myricks Yummy Skin Blurring Balm Powder with Orange Tint'] },
+      pih: { colour: 'True orange', why: 'PIH at this depth is very dark brown — only orange is saturated enough to cancel it before foundation', products: ['NYX Orange Corrector', 'Ben Nye Corrector'] },
+      dark_circles: { colour: 'True orange to red-orange', why: 'Very deep blue-black circles; peach would be invisible. True orange is needed.', products: ['NYX Orange Corrector'] },
       ash_areas: { colour: 'None needed — avoid light-coloured highlights which emphasise ash. Use warm gold highlighters only.' },
     },
   },
@@ -103,8 +103,8 @@ export const COLOUR_CORRECTION_BY_FITZPATRICK = {
     label: 'Fitzpatrick VI — Deep Ebony',
     common_concerns: ['Very dark PIH', 'Extreme under-eye darkness', 'Ash undertone in some areas'],
     correctors: {
-      pih_extreme: { colour: 'Red-orange', why: 'PIH at this depth can appear almost blue-black. Red-orange is the only corrector pigmented enough to work.', products: ['Ben Nye Deep Red-Orange Corrector', 'Mehron Corrector (used in theatrical makeup — highly pigmented)'] },
-      dark_circles: { colour: 'Deep red-orange', products: ['Black Radiance Colour Correct (Red-Orange)', 'Make Up For Ever Full Cover Extreme Camouflage Cream in Peach/Orange'] },
+      pih_extreme: { colour: 'Red-orange', why: 'PIH at this depth can appear almost blue-black. Red-orange is the only corrector pigmented enough to work.', products: ['Ben Nye Corrector', 'Mehron CorrectCover Cream (theatrical, highly pigmented)'] },
+      dark_circles: { colour: 'Deep red-orange', products: ['Make Up For Ever Full Cover Extreme Camouflage Cream (peach or orange shades)'] },
       recommendation: 'For skin this deep, many MUAs recommend working with darkness rather than against it — deep concealers that blend seamlessly rather than full correction which can look orangey if overdone.',
     },
   },
@@ -172,7 +172,7 @@ export const UNDERTONE_GUIDE = {
   },
 
   ethnic_specific_undertone_notes: {
-    south_asian: 'South Asian skin is predominantly warm-to-neutral, though significantly darker South Asian skin can have a blue-toned cool undertone. The most common mistake: choosing too pink a foundation.',
+    south_asian: 'South Asian undertones range from warm and olive to cool on deeper skin. A frequent mistake: choosing too pink a foundation.',
     arab: 'Olive undertone (a unique yellow-green mix) is common in Arab and Mediterranean skin. True olive is sometimes called a fourth undertone — it has warm AND cool elements simultaneously. Olive-undertoned skin needs foundations with yellow-green balance.',
     west_african: 'Deep West African skin often has a rich red or blue-cool undertone, though warm golden undertones also occur. The golden glow of some West African skin is its own beauty — warm gold undertone.',
     east_african: 'East African skin frequently has a warm reddish undertone — striking and unique. Cool deep shades in foundation often look better on East African skin than warm brown which can appear muddy.',
@@ -189,14 +189,14 @@ export const EYESHADOW_COLOUR_THEORY = {
   eye_colour_enhancement: {
     principle: 'Use complementary or analogous colours to make eye colour pop',
     dark_brown_eyes: {
-      note: 'Dark brown eyes are the most common eye colour globally — the richest and most versatile for makeup',
+      note: 'Dark brown eyes suit almost any shadow colour, so they are very versatile for makeup',
       complementary: 'Dark brown contains red and orange pigment — blue, teal, and violet shadows create the most contrast and make brown eyes "pop"',
       analogous: 'Bronze, copper, gold, rust — enhance the warm tones within brown irises',
       safe_classic: 'Warm browns, plums, gold, copper — always flattering',
       bold: 'Electric blue on the lower lashline with copper on the lid — a stunning combination for brown eyes',
     },
     dark_eyes_with_gold_flecks: {
-      note: 'Many South Asian, Arab, and Latina women have dark brown eyes with gold or amber flecks',
+      note: 'Dark brown eyes often show gold or amber flecks in daylight',
       complementary: 'Purple and violet shadows make gold flecks in brown eyes appear to glow',
       recommended: 'Purple-toned smoky eye or violet cut crease',
     },
@@ -205,7 +205,6 @@ export const EYESHADOW_COLOUR_THEORY = {
       enhance_green_in_hazel: 'Reddish-purple (like plum or burgundy) shadows make hazel eyes read more green',
     },
     light_brown_or_honey: {
-      common_in: 'Some Arab, Latina, mixed-heritage communities',
       complementary: 'Blues and purples, or warm golds to enhance the honey tone',
     },
   },
@@ -229,19 +228,16 @@ export const EYESHADOW_COLOUR_THEORY = {
 
   shadow_placement_tips: {
     hooded_eyes: {
-      common_in: 'East Asian, South Asian, some West African communities',
       strategy: 'Apply shadow ABOVE where it naturally settles when eyes are open. A shadow you can only see with eyes closed does nothing.',
       technique: 'Apply cut crease higher than feels natural when eyes are closed — when open, it will appear in the right place',
     },
     deep_set_eyes: {
-      common_in: 'Many ethnic communities',
       strategy: 'Focus shimmer on lid, bring highlight forward; avoid very dark shadows on the lid (they will make the deep setting more pronounced)',
     },
     prominent_eyes: {
       strategy: 'Can carry darker shadows on the lid — this balances the natural forward-projection',
     },
     monolid: {
-      common_in: 'East Asian communities',
       strategy: 'Everything shows — no crease to work with. Line along the lash line (very thin to thick), shadow washed across the lid. Graphic liner is particularly impactful on monolids.',
     },
   },
@@ -307,7 +303,7 @@ export const COLOUR_FOR_SKIN_TONE = {
 export const SEASONAL_COLOUR_ANALYSIS = {
   overview: 'Seasonal colour analysis (SCA) was developed for primarily European skin tones. The original "Spring/Summer/Autumn/Winter" categories assume fair to medium skin. Modern SCA has been expanded to include all skin tones but needs thoughtful application for ethnic skin.',
 
-  criticism: 'Traditional seasonal colour analysis was developed in the 1940s-80s and primarily addressed Northern European colouring. Many professional colour analysts note it\'s less directly applicable to very deep skin tones, though the principles of contrast (high vs low) and undertone (warm vs cool) remain relevant.',
+  criticism: 'Traditional seasonal colour analysis was built mostly around lighter, Northern European colouring, so it is less directly applicable to very deep skin tones, though the principles of contrast (high vs low) and undertone (warm vs cool) remain relevant.',
 
   applicable_principles: {
     contrast_level: {
@@ -425,9 +421,3 @@ export function getContourGuideForSkinTone(skinDepth) {
   };
 }
 
-export const COLOUR_THEORY_STATS = {
-  complementaryPairs: COMPLEMENTARY_PAIRS.pairs.length,
-  fitzpatrickLevelsGuided: Object.keys(COLOUR_CORRECTION_BY_FITZPATRICK).filter(k => k.startsWith('fitzpatrick')).length,
-  undertones: Object.keys(UNDERTONE_GUIDE.three_undertones).length,
-  seasonalTypes: Object.keys(SEASONAL_COLOUR_ANALYSIS.seasonal_types_for_all_skin_tones).length,
-};

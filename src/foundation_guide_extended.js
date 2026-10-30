@@ -131,7 +131,7 @@ export const UNDERTONE_GUIDE = {
       foundation_tip: 'Look for descriptions like "mahogany," "espresso," "ebony" with warm or red-based undertones. Avoid foundations that pull ashy or grey (usually cool-neutral bases that look wrong on warm deep skin).',
     },
     south_asian: {
-      common_undertones: 'Predominantly warm to neutral-olive. Golden or yellow undertones most common. South Asian women with light skin (North India/Pakistan border regions) may have cool undertones.',
+      common_undertones: 'Ranges from warm and golden to neutral-olive and cool. Check your own undertone rather than assuming.',
       foundation_tip: 'Yellow-warm bases essential. Brands that understand this: Fenty Beauty, MAC, NARS. AVOID: cool-pink based foundations — look distinctly unnatural and ashy.',
     },
     caribbean: {
@@ -139,7 +139,7 @@ export const UNDERTONE_GUIDE = {
       foundation_tip: 'Test in natural light on jawline. Caribbean skin often warm; avoid cool or overly neutral bases if skin has golden warmth.',
     },
     arab: {
-      common_undertones: 'Predominantly olive to neutral-warm. Levantine complexions often olive. Gulf complexions often warm. North African: warm to deep warm.',
+      common_undertones: 'Often olive to neutral-warm, but varies widely. Check your own undertone rather than assuming.',
       foundation_tip: 'Olive undertone requires careful shade matching. Yellow-green toned bases often most natural. Products marketed as "beige" can vary widely — test thoroughly.',
     },
     latina: {
@@ -151,7 +151,7 @@ export const UNDERTONE_GUIDE = {
       foundation_tip: 'Many East Asian-market foundations are formulated with yellow undertones for East Asian skin. Watch out for foundations marketed globally that pull pink on East Asian skin. Cushion foundations from Korean brands often better matched.',
     },
     east_african: {
-      common_undertones: 'Warm to warm-red. Ethiopian, Somali, Eritrean complexions often have beautiful red-warm undertones. Deep warm Fitzpatrick V-VI.',
+      common_undertones: 'Often warm to warm-red on deep skin. Check your own undertone rather than assuming.',
       foundation_tip: 'Deep warm shades needed. Red-undertoned deep shades rather than ash/grey bases. Black Opal, Fenty, MAC Studio Fix — better choices.',
     },
     south_african: {
@@ -160,7 +160,7 @@ export const UNDERTONE_GUIDE = {
     },
     black_american: {
       common_undertones: 'Warm to warm-red; occasionally neutral. Huge variety within Black American community (enormous genetic diversity). From deepest warm-red Fitzpatrick VI to light Fitzpatrick III.',
-      foundation_tip: 'The "Black foundation moment" was the Fenty Beauty 40-shade launch in 2017 — now the industry standard. Demand full shade ranges. Do not accept grey-ashy foundations passed off as dark shades. Warm or warm-red bases are correct for most.',
+      foundation_tip: 'Fenty Beauty launched with 40 shades in 2017 and pushed other brands to widen their ranges. Demand full shade ranges. Do not accept grey-ashy foundations passed off as dark shades. Match your own undertone, often warm or warm-red.',
     },
   },
 };
@@ -277,9 +277,3 @@ export function getCoverageGuide(level) {
 }
 export function getFoundationSPFReality() { return FOUNDATION_SPF_REALITY; }
 
-export const FOUNDATION_GUIDE_STATS = {
-  formulas: Object.keys(FOUNDATION_FORMULAS).length,
-  finishes: Object.keys(FOUNDATION_FINISHES).length,
-  communities: 9,
-  coverageLevels: Object.keys(COVERAGE_GUIDE).length,
-};

@@ -43,7 +43,7 @@ export const PRIMER_GUIDE = {
       what_it_does: 'Adds a layer of hydration; creates a dewy base; helps foundation blend seamlessly into skin.',
       finish: 'Natural, hydrated, skin-like',
       best_for: 'Dry and dehydrated skin; those who want minimal product and a natural look',
-      popular: ['e.l.f. Luminous Putty Primer', 'Milk Makeup Hydro Grip Primer', 'Charlotte Tilbury Airbrush Flawless Primer (hydrating version)'],
+      popular: ['e.l.f. Luminous Putty Primer', 'Milk Makeup Hydro Grip Primer'],
     },
     colour_correcting_primer: {
       type: 'Colour-Correcting Primer',
@@ -200,12 +200,11 @@ export const FLASHBACK_GUIDE = {
   ],
   products_to_avoid_deep_skin: [
     '"HD" setting powders (often very high in silica and TiO2)',
-    'Laura Mercier Translucent Powder original formula (significant flashback)',
     'Physical sunscreens without tint or finish adjustment',
   ],
   solutions: {
     powder: 'Use finely milled powders without titanium dioxide. Look for powders specifically reviewed by deep skin makeup artists. Banana powder often performs better.',
-    SPF: 'Use a tinted physical SPF or switch to chemical SPF (no TiO2/ZnO). Chemical SPFs do NOT cause flashback.',
+    SPF: 'Use a tinted physical SPF or switch to chemical SPF (no TiO2/ZnO). Chemical filters rarely cause flashback.',
     test: 'Before any event where photos will be taken, test full makeup look under a phone flash. Better to know at home than to see grey-face in all your photos.',
   },
 };
@@ -215,7 +214,7 @@ export const FLASHBACK_GUIDE = {
 export const ETHNIC_SETTING_TRADITIONS = {
   west_african: {
     community: 'West African',
-    traditions: 'Natural oil-control with blotting cloths (tissue paper historically). Rice paper blotting sheets (adopted globally). Banana powder and baking techniques widely used in Nigerian and Ghanaian makeup artistry. Nigerian makeup artists have been vocal about flashback issues in "universal" setting powders — brands like Fenty (Eaze Drop Setting Powder) and black-owned brands formulated specifically for deep skin are preferred.',
+    traditions: 'Natural oil-control with blotting cloths (tissue paper historically). Rice paper blotting sheets (adopted globally). Banana powder and baking techniques widely used in Nigerian and Ghanaian makeup artistry. Nigerian makeup artists have been vocal about flashback issues in "universal" setting powders — brands like Fenty Beauty (Pro Filt\'r Instant Retouch Setting Powder) and black-owned brands formulated specifically for deep skin are preferred.',
   },
   south_asian: {
     community: 'South Asian',
@@ -273,9 +272,3 @@ export function getEthnicSettingTradition(communityId) {
   return ETHNIC_SETTING_TRADITIONS[key] || Object.values(ETHNIC_SETTING_TRADITIONS);
 }
 
-export const SETTING_PRODUCTS_STATS = {
-  primerTypes: Object.keys(PRIMER_GUIDE.types).length,
-  settingPowderTypes: Object.keys(SETTING_POWDER_GUIDE.types).length,
-  settingSprayTypes: Object.keys(SETTING_SPRAY_GUIDE.types).length,
-  ethnicCommunities: 9,
-};

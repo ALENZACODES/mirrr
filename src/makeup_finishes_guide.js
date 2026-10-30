@@ -78,7 +78,7 @@ export const PRIMER_GUIDE = {
   types: {
     silicone: {
       texture: 'Smooth, slippery, fills in pores and lines.',
-      brands: 'Smashbox Photo Finish, Elf Poreless Putty Primer.',
+      brands: 'Smashbox Photo Finish, e.l.f. Poreless Putty Primer.',
       for_oily_skin: 'Silicone primers may not work well for oily skin — the silicone itself doesn\'t control oil.',
       pair_with: 'Silicone-based or powder foundations.',
     },
@@ -119,14 +119,13 @@ export const SETTING_TECHNIQUES = {
   loose_powder: {
     what: 'Very fine powder applied over foundation and concealer to set makeup and reduce shine.',
     types: {
-      translucent: 'Clear/white setting powder — can leave a white cast on dark skin, particularly with flash photography. Famous examples: Laura Mercier Loose Setting Powder (notorious for flashback), Charlotte Tilbury Airbrush Flawless Finish.',
+      translucent: 'Clear/white setting powder — can leave a white cast on dark skin, particularly with flash photography. Any white translucent powder can flash back if over-applied.',
       tinted: 'Powder in skin-tone shades — sets while adding slight coverage and warmth. More appropriate for dark skin.',
       banana: 'Yellow-toned powder historically used by Black makeup artists to set under-eye concealer on dark skin (yellow complements the purple-blue undertones of dark under-eye areas).',
       setting_vs_finishing: 'Setting powder is applied immediately after foundation/concealer to set product. Finishing powder is applied last for a final blur. These are sometimes the same product used differently.',
     },
     flashback_warning: {
       what: 'Flashback or "white cast in flash" — certain setting powders contain ingredients (silica, particularly) that reflect light differently under flash photography vs natural light. In person the powder looks fine; in flash photographs, it appears as a grey/white cast.',
-      products_notorious: 'Laura Mercier Loose Setting Powder; certain drugstore translucent powders.',
       for_dark_skin: 'CRITICAL issue for dark skin — always check powder reviews specifically from people of similar skin tone before purchasing. Use tinted or banana powder, or test flash before an event.',
       safe_alternatives: 'Makeup Forever HD Microfinishing Powder; Charlotte Tilbury Airbrush Flawless (when used sparingly); Fenty Pro Filt\'r Setting Powder.',
     },
@@ -259,7 +258,7 @@ export const FINISH_BY_COMMUNITY = {
   black_american: {
     traditional_choices: 'Matte finish with baking has been a cornerstone of Black beauty makeup tradition. Glossy lip with matte face (or vice versa) is a classic pairing.',
     modern: 'The "glass skin" and "glazed donut" trends have been enthusiastically embraced by Black beauty creators. Dewy finishes with a subtle glow work beautifully on deep skin tones.',
-    highlight: 'Bronze and gold highlighter rather than pink or silver — Fenty Killawatt in "Ginger Binge/Moscow Mule"; Anastasia Beverly Hills in "Stargazer."',
+    highlight: 'Bronze and gold highlighter rather than pink or silver — such as Fenty Killawatt in Moscow Mule/Ginger Binge.',
   },
 
   south_asian: {
@@ -314,9 +313,3 @@ export function getFinishForCommunity(communityId) {
   return FINISH_BY_COMMUNITY[communityId] || null;
 }
 
-export const MAKEUP_FINISHES_STATS = {
-  foundationFinishes: Object.keys(FOUNDATION_FINISHES).length,
-  primerTypes: Object.keys(PRIMER_GUIDE.types).length,
-  settingTechniques: Object.keys(SETTING_TECHNIQUES).length,
-  communitiesCovered: Object.keys(FINISH_BY_COMMUNITY).length,
-};

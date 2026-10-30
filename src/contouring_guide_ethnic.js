@@ -53,7 +53,6 @@ export const CONTOUR_BY_FACE_SHAPE = {
       'Cupid\'s bow and center chin',
     ],
     shape_goal: 'Create vertical lines with the contour — vertical lines elongate',
-    ethnic_round: 'Very common face shape in East Asian, Black, and Latin American communities. The Korean and Japanese soft, round face is often a deliberate aesthetic choice — don\'t assume round faces need contouring.',
   },
 
   oval: {
@@ -85,7 +84,6 @@ export const CONTOUR_BY_FACE_SHAPE = {
       'Under eyes',
       'Center chin (not too wide — emphasises the square)',
     ],
-    ethnic_square: 'Square jaw shapes appear commonly in some West African, Korean, and East Asian communities. In Korean beauty, a strong jaw is sometimes addressed with botulinum toxin (jaw slimming injections) which non-surgically reduces masseter muscle. A strong, defined jaw is also increasingly embraced as a power feature.',
   },
 
   heart: {
@@ -116,7 +114,6 @@ export const CONTOUR_BY_FACE_SHAPE = {
       'Keep placement wide rather than high',
       'Avoid long vertical highlight down the nose — this elongates further',
     ],
-    ethnic_long: 'Long face shapes appear commonly in East African and some South Asian communities. Horizontal placements and wider application at the widest point of the face (cheekbones) counterbalances length.',
   },
 
   diamond: {
@@ -179,68 +176,55 @@ export const NOSE_CONTOURING = {
 export const ETHNIC_CONTOUR_GUIDE = {
 
   south_asian: {
-    common_face_shapes: 'Oval and heart face shapes are common; diamond and round also common',
-    natural_bone_structure: 'Many South Asian women have naturally prominent cheekbones and brow bones — contouring can be light because structure is already there',
-    contour_shade_recommendation: 'Deep warm brown (2-3 shades deeper than foundation) — NOT grey or cool-toned. South Asian skin is predominantly warm to neutral undertone.',
+    contour_shade_recommendation: 'Deep warm brown (2-3 shades deeper than foundation), not grey or cool-toned, for warm and neutral undertones; check your own undertone first.',
     typical_approach: 'Strong highlight on the cheekbone, defined jawline, very defined brow bone highlight. The Bollywood aesthetic favours dramatic sculpture.',
     recommended_products: [
-      { name: 'Huda Beauty Contour Palette', note: 'Created with diverse skin tones in mind, warm brown shades' },
       { name: 'NYX Highlight & Contour Pro Palette', note: 'Affordable, warm tones' },
       { name: 'Charlotte Tilbury Filmstar Bronze & Glow', note: 'A cult product for warm Mediterranean/South Asian tones' },
     ],
   },
 
   arab: {
-    common_face_shapes: 'Oval and heart shapes common; many Arab women have strong jawlines',
-    natural_features: 'Strong cheekbones, defined jaw structure common — the Arab face shape typically carries makeup beautifully',
     contour_shade: 'Warm medium-to-deep brown. Olive-skin undertone requires a golden-warm contour to avoid looking grey.',
     typical_approach: 'Strong definition of cheekbones and jaw — the "editorial" Arab look favours architectural contour. Nose contour is common in Arab bridal makeup.',
     highlight: 'Gold highlight is iconic in Arab makeup culture. Intense, blinding gold on cheekbones is the expectation for special occasion looks.',
     recommended_products: [
       { name: 'Fenty Beauty Killawatt Highlighter in Trophy Wife', note: 'Intense gold — very popular in Arab beauty community' },
-      { name: 'Huda Beauty Tantour Contour and Bronze Cream', note: 'Warm, buildable' },
+      { name: 'Huda Beauty Tantour Contour & Bronzer Cream', note: 'Warm, buildable' },
     ],
   },
 
   west_african: {
-    common_face_shapes: 'Round faces are common; wide foreheads and prominent jaw common',
-    natural_features: 'Prominent facial features that can carry dramatic makeup',
-    contour_shade: 'Must be DEEP and WARM — this is the most important guidance for West African skin. Products designed for fair/medium skin will be invisible. Look for deep espresso, deep warm brown.',
+    contour_shade: 'On deep skin the contour must be DEEP and WARM. Products designed for fair/medium skin will be invisible. Look for deep espresso, deep warm brown.',
     typical_approach: 'Deep, strong contour that shows up under photography and flash. Heavy highlight (deep gold, copper).',
     challenge: 'Finding contour products deep enough to show on very deep skin tones — mainstream products are often designed for fair to medium skin',
     recommended_products: [
       { name: 'Juvia\'s Place I Am Magic Foundation (used as contour mix-in)', note: 'Deep pigmented, warm tones' },
       { name: 'RCMA No-Color Powder (mixed with dark eyeshadow)', note: 'MUA technique for very deep contour' },
-      { name: 'Danessa Myricks Monochromatic Multisticks', note: 'Made specifically with deep skin in mind' },
     ],
     highlight: [
       'Deep gold — not champagne or light shimmer',
       'Copper for extra warmth',
-      'Fenty Beauty Killawatt Highlighters (specifically created for deep skin)',
+      'Fenty Beauty Killawatt Highlighters (the range includes deep gold and bronze shades)',
     ],
   },
 
   east_asian: {
-    common_face_shapes: 'Round face shapes common; some oval; flat profile typical (less prominent nose bridge)',
     typical_approach: 'K-beauty contouring tends to be minimal — a light grey-brown shadow at temples, a light contour to add dimension rather than dramatic sculpt',
     nose_contour: 'East Asian nose contouring often focuses on ADDING bridge definition (highlight down bridge) rather than slimming',
     favourite_technique: 'The "glass skin" aesthetic prioritises skin texture over heavy contour — sheer glow rather than defined shadows',
     recommend: 'Light hand, buildable products, natural finish',
     recommended_products: [
       { name: 'NARS Soft Matte Complete Concealer (used as contour)', note: 'Very natural-looking when applied sheer' },
-      { name: 'Son & Park Beauty Filter Cream Glow (with light contour)', note: 'Korean brand, naturally glowing skin focus' },
     ],
   },
 
   black_american: {
-    common_face_shapes: 'All face shapes — very diverse community',
-    natural_features: 'Varied widely — from round to oval to square',
     contour_shade: 'Deep warm brown to deep espresso — must be significantly deeper than foundation to show up. Cool-toned contour often reads as ashy on warm Black skin.',
     typical_approach: 'Bold and visible — Black makeup artistry embraces dramatic, well-defined work. Contour should be SEEN as intentional and beautiful, not invisible.',
     highlight: 'Deep gold to copper — the glass skin/highlight trend in Black beauty culture emphasises intense, rich metallic glow',
     recommended_products: [
-      { name: 'Juvia\'s Place Warrior 2 Palette (contour shades)', note: 'Designed for melanin' },
-      { name: 'Make Up For Ever Ultra HD Stick Foundation (dark shade as contour)', note: 'Award-winning technique in Black MUA community' },
+      { name: 'Make Up For Ever Ultra HD Stick Foundation (dark shade as contour)', note: 'A deeper foundation stick blends easily as a cream contour' },
     ],
   },
 };
@@ -320,8 +304,3 @@ export function getContourProductFormulas() {
   return CONTOUR_PRODUCT_FORMULAS;
 }
 
-export const CONTOUR_GUIDE_STATS = {
-  faceShapesCovered: Object.keys(CONTOUR_BY_FACE_SHAPE).length,
-  communitiesWithGuide: Object.keys(ETHNIC_CONTOUR_GUIDE).length,
-  productFormulas: Object.keys(CONTOUR_PRODUCT_FORMULAS).length,
-};

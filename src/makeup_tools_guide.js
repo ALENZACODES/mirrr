@@ -16,8 +16,8 @@ export const FACE_BRUSHES = {
         technique: 'Stipple (press in, don\'t sweep) for maximum coverage and less streaking',
         forMelaninSkin: 'Excellent for building up coverage on uneven skin tone without going cakey',
         picks: [
-          { name: 'Real Techniques Expert Face Brush', price: '$10' },
-          { name: 'Morphe M439 Deluxe Buffer Brush', price: '$18' },
+          { name: 'Real Techniques Expert Face Brush' },
+          { name: 'Morphe M439 Deluxe Buffer Brush' },
         ],
       },
       buffing: {
@@ -26,8 +26,7 @@ export const FACE_BRUSHES = {
         technique: 'Circular buffing motions blend seamlessly',
         forMelaninSkin: 'Great for sheer-to-medium buildable looks — allows very controlled application so you can build specifically in needed areas without overdoing rest of face',
         picks: [
-          { name: 'EcoTools Finish & Glow Brush', price: '$12' },
-          { name: 'Sigma F80 Flat Kabuki', price: '$34' },
+          { name: 'Sigma F80 Flat Kabuki' },
         ],
       },
       flat_shader: {
@@ -69,7 +68,6 @@ export const FACE_BRUSHES = {
         best_for: 'Powder and cream contour; defining cheekbones, nose, temples',
         technique: 'Apply under cheekbone in a C-shape from temple to mid-cheek',
         forMelaninSkin: 'Darker skin tones can use deeper contour shades (cool browns, not grey/taupe) — the contrast threshold is higher, so lighter contour shades can look muddy',
-        picks: [{ name: 'NARS #34 Contour Brush', price: '$44' }],
       },
       small_contour: {
         name: 'Small Contour / Nose Brush',
@@ -120,8 +118,8 @@ export const EYE_BRUSHES = {
       technique: 'Pat — never sweep — to pack pigment. Sweeping with a flat brush kicks product off.',
       forMelaninEyes: 'On deeper skin tones, pigment is harder to see — use this to PACK colour for maximum payoff. Use your finger for ultra-pigmented shadows (warmth activates pigment).',
       topPicks: [
-        { name: 'Zoeva 227 Eyeshadow Blending Brush', price: '$13' },
-        { name: 'Morphe M433 Pro Firm Blending Fluff Brush', price: '$10' },
+        { name: 'Zoeva 227 Eyeshadow Blending Brush' },
+        { name: 'Morphe M433 Pro Firm Blending Fluff Brush' },
       ],
     },
     blending: {
@@ -130,9 +128,9 @@ export const EYE_BRUSHES = {
       technique: 'Windshield-wiper motions in crease; circular buffing motions at edges to diffuse hard lines',
       keyTip: 'Work with a CLEAN blending brush to diffuse and blend product already placed',
       topPicks: [
-        { name: 'Real Techniques Shading Brush', price: '$9' },
-        { name: 'Zoeva 228 Detailed Crease Brush', price: '$13' },
-        { name: 'Hakuhodo J5523 Eyeshadow Blending Brush', price: '$35' },
+        { name: 'Real Techniques Shading Brush' },
+        { name: 'Zoeva 228 Detailed Crease Brush' },
+        { name: 'Hakuhodo J5523 Eyeshadow Blending Brush' },
       ],
     },
     pencil: {
@@ -169,7 +167,7 @@ export const EYE_BRUSHES = {
         'Use pencil brush to smudge lower lash line — this is where monolid eye looks shine',
         'Tight-line upper waterline with kohl — makes lashes look thicker without a visible liner line',
       ],
-      communityNotes: 'Many South Korean makeup techniques (K-beauty) are specifically designed for monolid/epicanthal fold eye shapes — the best reference community',
+      communityNotes: 'Many South Korean makeup techniques (K-beauty) are designed with monolid eye shapes in mind, a useful reference',
     },
     deepSet: {
       shape: 'Deep-Set Eyes (often in Middle Eastern, some South Asian)',
@@ -190,7 +188,6 @@ export const EYE_BRUSHES = {
       ],
     },
     hooded: {
-      shape: 'Hooded Eyes (very common across all ethnicities)',
       brushTechniques: [
         'Apply eyeshadow with eyes OPEN to see where colour will show',
         'Place shimmer above natural crease (not in it)',
@@ -212,16 +209,14 @@ export const SPONGES_AND_APPLICATORS = {
     },
     critical: {
       wet_vs_dry: 'Always dampen the sponge before use. Dry = absorbs too much product = wasteful and cakey. Damp = product sits on surface and transfers to skin.',
-      howToWet: 'Fully saturate with water, squeeze out 80% of the water. Sponge should be visibly expanded and cool to touch but not dripping.',
     },
     forMelaninSkin: {
       coverage: 'Stippling (bounce) with a damp sponge gives the most skin-like, seamless coverage for deeper skin tones — avoids the mask look',
       undereye: 'Pat (never drag) concealer under eyes — dragging on dry under-eye skin creases and looks ashy on darker tones',
     },
     picks: [
-      { name: 'BeautyBlender Original', price: '$20' },
-      { name: 'Real Techniques Miracle Complexion Sponge', price: '$8' },
-      { name: 'e.l.f. Power Grip Putty Primer (use with their sponge)', price: '$10' },
+      { name: 'BeautyBlender Original' },
+      { name: 'Real Techniques Miracle Complexion Sponge' },
     ],
     maintenance: [
       'Clean weekly (daily if acne-prone)',
@@ -259,8 +254,8 @@ export const BRUSH_CARE = {
       when: 'Between looks, when switching colours during a session',
       how: 'Spray brush with quick-dry brush cleaner, wipe on paper towel. 60 seconds per brush.',
       products: [
-        { name: 'Cinema Secrets Brush Cleaner', price: '$24', note: 'Professional standard, fast-drying' },
-        { name: 'e.l.f. Daily Brush Cleaner', price: '$8' },
+        { name: 'Cinema Secrets Brush Cleaner',  note: 'Professional standard, fast-drying' },
+        { name: 'e.l.f. Daily Brush Cleaner' },
       ],
     },
     deep_clean: {
@@ -275,9 +270,8 @@ export const BRUSH_CARE = {
         'Lay flat or hang upside-down to dry — NEVER dry upright (water damages ferrule)',
       ],
       cleansers: [
-        { name: 'Dr. Bronner\'s Castile Soap', price: '$10', note: 'Gentle, no silicones' },
-        { name: 'Daiso Japan Brush Cleaner ($3)', note: 'Cult Japanese brush cleaner, very affordable' },
-        { name: 'Sigma Spa Brush Cleaning Mat', price: '$25', note: 'Textured mat for deep clean' },
+        { name: 'Dr. Bronner\'s Castile Soap',  note: 'Gentle, no silicones' },
+        { name: 'Sigma Spa Brush Cleaning Mat',  note: 'Textured mat for deep clean' },
       ],
     },
   },
@@ -295,27 +289,26 @@ export const BRUSH_CARE = {
 export const BUDGET_VS_INVESTMENT = {
   principle: 'Invest in tools that touch your face (foundation, blending brush, sponge). Save on tools where quality matters less (lip brush, brow spoolie, fan brush).',
   invest_in: [
-    { tool: 'Foundation Brush', why: 'Direct contact with skin; affects finish significantly; used daily', threshold: '$20–$40' },
-    { tool: 'Blending Brush (eye)', why: 'The single most important eye tool; quality bristles blend better', threshold: '$20–$40' },
-    { tool: 'Beauty Sponge', why: 'Replaces frequently; affects complexion finish; $20 BeautyBlender vs $5 dupe matters here', threshold: '$15–$20' },
-    { tool: 'Powder Brush (face)', why: 'Soft, densely packed bristles mean even distribution; poor powder brush = patchy finish', threshold: '$20–$35' },
+    { tool: 'Foundation Brush', why: 'Direct contact with skin; affects finish significantly; used daily' },
+    { tool: 'Blending Brush (eye)', why: 'The single most important eye tool; quality bristles blend better' },
+    { tool: 'Beauty Sponge',  },
+    { tool: 'Powder Brush (face)', why: 'Soft, densely packed bristles mean even distribution; poor powder brush = patchy finish' },
   ],
   save_on: [
-    { tool: 'Fan Brush', why: 'Simple tool; all fan brushes perform similarly', budget: '$5–$12' },
-    { tool: 'Brow Spoolie', why: 'A spoolie is a spoolie; expensive ones offer no benefit', budget: '$3–$8' },
-    { tool: 'Lip Brush', why: 'Used for precise application; budget versions work well', budget: '$5–$10' },
-    { tool: 'Pencil/Smudge Brush', why: 'Simple pressed-hair tool; dupe performs identically', budget: '$5–$10' },
+    { tool: 'Fan Brush', why: 'Simple tool; all fan brushes perform similarly' },
+    { tool: 'Brow Spoolie', why: 'A spoolie is a spoolie; expensive ones offer no benefit' },
+    { tool: 'Lip Brush', why: 'Used for precise application; budget versions work well' },
+    { tool: 'Pencil/Smudge Brush', why: 'Simple pressed-hair tool; dupe performs identically' },
   ],
   starter_kit: {
-    total_budget: '$40–$80',
     tools: [
-      { item: 'Real Techniques Miracle Complexion Sponge', price: '$8' },
-      { item: 'Real Techniques Expert Face Brush (foundation)', price: '$10' },
-      { item: 'EcoTools Interchangeable Blush + Bronzer set', price: '$12' },
-      { item: 'Morphe M433 Eye Blending Brush', price: '$10' },
-      { item: 'Flat eye shader brush (e.l.f. or Real Techniques)', price: '$6' },
-      { item: 'Dual-end pencil/liner brush (NYX Professional Makeup)', price: '$8' },
-      { item: 'Basic angled brow brush with spoolie', price: '$5' },
+      { item: 'Real Techniques Miracle Complexion Sponge' },
+      { item: 'Real Techniques Expert Face Brush (foundation)' },
+      { item: 'EcoTools Interchangeable Blush + Bronzer set' },
+      { item: 'Morphe M433 Eye Blending Brush' },
+      { item: 'Flat eye shader brush (e.l.f. or Real Techniques)' },
+      { item: 'Dual-end pencil/liner brush (NYX Professional Makeup)' },
+      { item: 'Basic angled brow brush with spoolie' },
     ],
   },
 };
@@ -332,17 +325,15 @@ export function getBrushGuideForEyeShape(eyeShape) {
   return map[eyeShape.toLowerCase()] || null;
 }
 
-export function getStarterKitByBudget(budget) {
-  if (budget < 50) {
+export function getStarterKitByBudget(level) {
+  if (level === 'essential') {
     return {
       level: 'Essential',
-      spend: '$40',
       tools: BUDGET_VS_INVESTMENT.starter_kit.tools.slice(0, 4),
     };
   }
   return {
     level: 'Full Starter Kit',
-    spend: '$65',
     tools: BUDGET_VS_INVESTMENT.starter_kit.tools,
   };
 }
@@ -363,9 +354,3 @@ export function getBrushCareGuide() {
   return BRUSH_CARE;
 }
 
-export const TOOLS_GUIDE_STATS = {
-  faceBrushCategories: Object.keys(FACE_BRUSHES).length,
-  eyeBrushCategories: Object.keys(EYE_BRUSHES.essentials).length,
-  eyeShapeGuides: Object.keys(EYE_BRUSHES.for_ethnic_eye_shapes).length,
-  applicatorTypes: Object.keys(SPONGES_AND_APPLICATORS).length,
-};

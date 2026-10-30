@@ -173,7 +173,7 @@ export const ETHNIC_COLOUR_CORRECTING = {
     community: 'West African',
     common_concerns: 'Deep PIH from any inflammation, dark spots from dry skin, dark knuckles, very deep under-eye darkness',
     correctors: {
-      dark_circles: 'Brick red or deep red-orange correctors. NARS Radiant Creamy Concealer in Caramel or Chestnut as corrector base. Beauty Bakerie Colour Correct. Black Opal has correctors formulated for deep skin.',
+      dark_circles: 'Brick red or deep red-orange correctors. NARS Radiant Creamy Concealer in Caramel or Chestnut as corrector base.',
       pimples: 'Deeper olive-green that won\'t look ashy.',
       pih: 'High-coverage concealer colour-matched to the surrounding skin is more effective for brown PIH than colour correctors. Orange-undertoned corrector can help neutralise the very dark edges of deep PIH spots.',
     },
@@ -183,11 +183,11 @@ export const ETHNIC_COLOUR_CORRECTING = {
     community: 'South Asian',
     common_concerns: 'Periorbital hyperpigmentation (hereditary dark circles from childhood), acne PIH, uneven skin tone',
     correctors: {
-      dark_circles: 'Salmon to orange, depending on depth of skin. South Asian dark circles often have a distinct brown-purple tone — a warm peach-orange corrector is needed. Try: e.l.f. Cosmetics Putty Primer in the corrector section, MILK Makeup Colour Chalk.',
+      dark_circles: 'Salmon to orange, depending on depth of skin. Brown-purple circles need a warm peach-orange corrector. Try: e.l.f. Camo Color Corrector in a peach or orange shade.',
       pih: 'Warm orange tone to neutralise the blue-purple edge of deep PIH.',
       redness: 'Green for any redness from acne.',
     },
-    tip: 'South Asian skin often has yellow or olive undertones. A green corrector can sometimes read slightly murky — opt for a yellow-green rather than blue-green.',
+    tip: 'With yellow or olive undertones, a green corrector can sometimes read slightly murky — opt for a yellow-green rather than blue-green.',
   },
   caribbean: {
     community: 'Caribbean',
@@ -202,11 +202,11 @@ export const ETHNIC_COLOUR_CORRECTING = {
     community: 'Arab',
     common_concerns: 'Dark circles (genetic), sun-induced hyperpigmentation, redness',
     correctors: {
-      dark_circles: 'Peach to salmon — Arab skin ranges from fair olive to medium brown. Most benefit from a warm peach-salmon corrector.',
+      dark_circles: 'Peach to salmon on fair-olive to medium skin; orange on deeper skin.',
       sun_spots: 'Orange-toned concealer or corrector where sun spots have a blue-brown depth.',
       redness: 'Green for redness.',
     },
-    tip: 'Arab skin often has olive or yellow undertones. Peach correctors with a yellow base blend most naturally without a pink/clashing finish.',
+    tip: 'With olive or yellow undertones, peach correctors with a yellow base blend most naturally without a pink/clashing finish.',
   },
   latina: {
     community: 'Latina',
@@ -216,26 +216,26 @@ export const ETHNIC_COLOUR_CORRECTING = {
       dark_circles: 'Peach to salmon for lighter Latina skin; orange for deeper.',
       redness: 'Green.',
     },
-    tip: 'Latina skin spans a very wide range — from fair European to deep Indigenous skin tones. Refer to Fitzpatrick type for corrector shade selection.',
+    tip: 'Latina skin spans a very wide range of tones. Refer to Fitzpatrick type for corrector shade selection.',
   },
   east_asian: {
     community: 'East Asian',
     common_concerns: 'Under-eye vascular circles (blue-purple), redness, uneven tone',
     correctors: {
-      dark_circles: 'Peach — East Asian dark circles often have a strong blue-purple vascular tone. Yellow-peach correctors blend well with warm-undertoned East Asian skin.',
-      redness: 'Green. Yellow-green blends particularly well with yellow-undertoned East Asian skin.',
+      dark_circles: 'Peach for blue-purple circles; a yellow-peach corrector blends well on warm undertones.',
+      redness: 'Green. Yellow-green blends well with yellow undertones.',
       sallowness: 'Pink-toned foundation rather than lavender corrector.',
     },
-    tip: 'East Asian skin often has yellow or neutral undertones. NEVER use lavender correctors — they create an ashy, grey appearance. Green with yellow base, peach with yellow base.',
+    tip: 'With yellow or neutral undertones, avoid lavender correctors — they create an ashy, grey appearance. Green with yellow base, peach with yellow base.',
   },
   east_african: {
     community: 'East African',
     common_concerns: 'PIH, dark circles, uneven tone',
     correctors: {
-      dark_circles: 'Orange to red-orange for deeper East African skin tones. Ethiopian, Eritrean, and Somali skin often has a cool-brown or neutral undertone — red-orange correctors with a cool base blend most naturally.',
+      dark_circles: 'Orange to red-orange for deeper skin. With a cool-brown or neutral undertone, a red-orange with a cool base blends most naturally.',
       pih: 'Deep red-orange or brick corrector under full-coverage concealer.',
     },
-    tip: 'East African skin often has a neutral-cool or red undertone, unlike some West African skin which runs warmer. A red-based corrector (rather than a warm orange) may blend more seamlessly.',
+    tip: 'With a neutral-cool or red undertone, a red-based corrector (rather than a warm orange) may blend more seamlessly.',
   },
   south_african: {
     community: 'South African',
@@ -249,13 +249,13 @@ export const ETHNIC_COLOUR_CORRECTING = {
   },
   black_american: {
     community: 'Black American',
-    common_concerns: 'PIH is the primary concern. Dark circles. Dullness. Ashy skin.',
+    common_concerns: 'PIH, dark circles, dullness, ashy skin.',
     correctors: {
-      dark_circles: 'Orange to brick-red. NARS Radiant Creamy Concealer used as orange corrector is a classic community technique. Juvia\'s Place and Fenty Beauty have deep-skin correctors.',
+      dark_circles: 'Orange to brick-red. NARS Radiant Creamy Concealer used as orange corrector is a classic community technique. Choose pigment-dense corrector shades made for deep skin.',
       pih: 'Orange corrector under concealer for the darkest spots.',
       ashiness: 'Ashiness is a surface dryness concern — moisturiser before makeup, not a corrector.',
     },
-    tip: 'Black American beauty community has driven the demand for correctors for deep skin. Fenty Beauty\'s launch in 2017 was partly driven by the lack of correctors for deep skin. Black-owned brands (Juvia\'s Place, Beauty Bakerie, Black Opal, BLK/OPL) have historically served this need when mainstream brands failed to.',
+    tip: 'Black-owned brands (Juvia\'s Place, Beauty Bakerie, Black Opal, BLK/OPL) have historically served this need when mainstream brands failed to.',
   },
 };
 
@@ -352,10 +352,3 @@ export function getEthnicColourCorrecting(communityId) {
 export function getCorrectorFormats() { return CORRECTOR_FORMATS; }
 export function getCorrectorMyths() { return CORRECTOR_MYTHS; }
 
-export const COLOUR_CORRECTING_STATS = {
-  correctorTypes: Object.keys(CORRECTING_BY_CONCERN).length,
-  ethnicEntries: Object.keys(ETHNIC_COLOUR_CORRECTING).length,
-  skinToneVariations: Object.keys(PEACH_ORANGE_CORRECTOR_GUIDE.skin_tone_matching).length,
-  formats: Object.keys(CORRECTOR_FORMATS).length,
-  myths: Object.keys(CORRECTOR_MYTHS).length,
-};

@@ -17,7 +17,6 @@ export const MAKEUP_REMOVAL_OVERVIEW = {
   micellar_water_only: {
     myth: 'Micellar water alone is NOT sufficient makeup removal for a full face of makeup.',
     reality: 'Micellar water is excellent as a FIRST step, particularly for light makeup days. For full coverage foundation, waterproof mascara, or long-wear products, a thorough double cleanse is needed.',
-    evidence: 'Studies show that single-step micellar water application leaves sunscreen and heavy makeup residue on skin. Multiple saturated cotton pad swipes are needed, and even then residue remains.',
   },
 };
 
@@ -82,7 +81,7 @@ export const DOUBLE_CLEANSE = {
         'Massage over dry face',
         'Add water to emulsify or wipe off with warm flannel',
       ],
-      popular_options: ['Banila Co Clean It Zero (Korean bestseller)', 'Farmacy Green Clean', 'Pixi Double Cleanse', 'Clinique Take The Day Off Cleansing Balm'],
+      popular_options: ['Banila Co Clean It Zero', 'Farmacy Green Clean', 'Pixi Double Cleanse', 'Clinique Take The Day Off Cleansing Balm'],
       ethnic_note: 'Cleansing balms with brightening ingredients (vitamin C, niacinamide) are particularly popular in East Asian beauty culture.',
     },
 
@@ -110,7 +109,7 @@ export const DOUBLE_CLEANSE = {
     popular_options: {
       for_all_types: ['CeraVe Hydrating Facial Cleanser', 'La Roche-Posay Toleriane Hydrating Gentle Cleanser'],
       oily_acne: ['Paula\'s Choice CLEAR Pore Normalizing Cleanser', 'CeraVe Acne Control Cleanser'],
-      sensitive: ['Avene Tolerance Extremely Gentle Cleanser', 'Cetaphil Gentle Skin Cleanser'],
+      sensitive: ['Avène Tolerance Extremely Gentle Cleanser', 'Cetaphil Gentle Skin Cleanser'],
       dry: ['First Aid Beauty Pure Skin Face Cleanser', 'Tata Harper Nourishing Oil Cleanser (used as second step for dry skin)'],
     },
   },
@@ -133,7 +132,7 @@ export const OIL_CLEANSING = {
 
   oils_by_skin_type: {
     oily_acne_prone: {
-      jojoba: 'Most skin-identical — chemically most similar to human sebum; signals skin to produce less. Non-comedogenic. Best oil for oily/acne skin.',
+      jojoba: 'A liquid wax close to the wax esters in sebum; light and usually well tolerated on oily skin.',
       hemp_seed: 'Non-comedogenic; anti-inflammatory; balancing.',
       grapeseed: 'Light; non-comedogenic; antioxidant.',
     },
@@ -293,7 +292,7 @@ export const SENSITIVE_SKIN_REMOVAL = {
       'Sponges and flannels may aggravate rosacea skin — use hands',
       'Avoid micellar waters containing polysorbate (can irritate rosacea)',
     ],
-    products: ['Avene Tolerance Very High Tolerance Cleansing Lotion', 'La Roche-Posay Micellar Water Ultra Sensitive Skin', 'Vanicream Gentle Facial Cleanser'],
+    products: ['Avène Tolerance Extremely Gentle Cleanser', 'La Roche-Posay Micellar Water Ultra Sensitive Skin', 'Vanicream Gentle Facial Cleanser'],
   },
 
   eczema_prone: {
@@ -357,8 +356,3 @@ export function getSensitiveSkinRemovalGuide(condition) {
   return SENSITIVE_SKIN_REMOVAL[condition] || SENSITIVE_SKIN_REMOVAL;
 }
 
-export const MAKEUP_REMOVAL_STATS = {
-  removalMethods: ['micellar', 'double_cleanse', 'oil_cleansing', 'balm', 'bi_phase', 'flannel'],
-  communitiesCovered: Object.keys(COMMUNITY_CLEANSING_TRADITIONS).length,
-  oilsByType: Object.keys(OIL_CLEANSING.oils_by_skin_type).length,
-};

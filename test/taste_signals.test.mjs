@@ -56,3 +56,17 @@ test('Rich Deep + Warm returns six real named shades', () => {
   for (const x of r) { assert.ok(x.shade.name && x.name === x.shade.name); assert.match(x.hex, /^#[0-9A-F]{6}$/i); }
   assert.ok(r.filter(x => x.undertoneMatch).length >= 5);
 });
+
+import { spawn } from 'node:child_process';
+test('diagnostics are off by default: /api/qloo/diag is 404 and /api/health shows no key field', async () => {
+  const port = 4300 + Math.floor(Math.random() * 500);
+  const env = { ...process.env, PORT: String(port) }; delete env.MIRRR_DIAG;
+  const child = spawn(process.execPath, ['src/server.js'], { env, stdio: 'ignore' });
+  try {
+    let h = null;
+    for (let i = 0; i < 50 && !h; i++) { await new Promise(r => setTimeout(r, 100)); h = await fetch(`http://127.0.0.1:${port}/api/health`).then(r => r.json()).catch(() => null); }
+    assert.ok(h && h.status === 'ok'); assert.ok(!('qloo_key_set' in h));
+    const d = await fetch(`http://127.0.0.1:${port}/api/qloo/diag`);
+    assert.equal(d.status, 404);
+  } finally { child.kill(); }
+});

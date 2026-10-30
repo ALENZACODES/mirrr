@@ -46,6 +46,9 @@ import { handleGroom } from './groom/routes.js';
 import { handlePhoto } from './photo/routes.js';
 import { createRateLimiter, clientAddress, hopShape } from './ratelimit.js';
 
+// Diagnostics endpoints (/api/qloo/diag, key presence in /api/health) are off unless MIRRR_DIAG=1.
+const DIAG = process.env.MIRRR_DIAG === '1';
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT ?? 3000;
 const PUBLIC_DIR = join(__dirname, '../public');
@@ -193,7 +196,8 @@ async function router(req, res) {
       status: 'ok',
       product: 'MIRRR',
       tagline: 'Your Taste. Your Looks. Your Style.',
-      qloo_key_set: !!process.env.QLOO_API_KEY,
+      // Key presence is a diagnostic: shown only when MIRRR_DIAG=1 (default off).
+      ...(DIAG ? { qloo_key_set: !!process.env.QLOO_API_KEY } : {}),
     });
   }
 
@@ -450,6 +454,7 @@ async function router(req, res) {
 
   // GET /api/qloo/diag — raw boundary check: one live Qloo search, status + shape, no key exposed
   if (method === 'GET' && path === '/api/qloo/diag') {
+    if (!DIAG) return sendJSON(res, 404, { error: 'Not found' });
     const key = process.env.QLOO_API_KEY;
     if (!key) return sendJSON(res, 200, { key_set: false });
     const q = new URL(req.url, 'http://x').searchParams.get('q') || 'Burna Boy';

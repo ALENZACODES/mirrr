@@ -170,11 +170,12 @@
 
   // Moments of delight raised by the app: count them, then offer the list (never blocking).
   const MOMENT_EVENT = { tryon: 'tryon_complete', plan_save: 'plan_save', leap: 'leap_result' };
-  let lastTryon = 0;
+  // One count per kind per 5 seconds, so re-renders of the same result are not counted again.
+  const last = {};
   window.addEventListener('mirrr:moment', e => {
     const kind = e.detail?.kind;
     if (!MOMENT_EVENT[kind]) return;
-    if (kind === 'tryon') { const t = Date.now(); if (t - lastTryon < 5000) return; lastTryon = t; }
+    const t = Date.now(); if (t - (last[kind] || 0) < 5000) return; last[kind] = t;
     count(MOMENT_EVENT[kind]);
     setTimeout(() => offer(kind), 1200);
   });

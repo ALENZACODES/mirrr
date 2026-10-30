@@ -43,10 +43,14 @@ const KNOWN_BEAUTY = /(^|[^a-z])(fenty|savage x|rare beauty|huda|pat mcgrath|mac
 /** Keep only brands that are about beauty or fashion, by Qloo's own tags or by name. */
 export function beautyBrands(brands = []) {
   const seen = new Set();
-  return brands.filter((b) => {
-    const k = norm(b.name); if (!k || seen.has(k) || isBlocked(k)) return false; seen.add(k);
-    return BEAUTY_BRAND_RE.test(b.tags.join(' ')) || BEAUTY_BRAND_RE.test(b.name) || KNOWN_BEAUTY.test(b.name);
-  });
+  const out = [];
+  for (const b of brands) {
+    const k = norm(b.name); if (!k || seen.has(k) || isBlocked(k)) continue; seen.add(k);
+    const tag = (b.tags ?? []).find(t => BEAUTY_BRAND_RE.test(t));
+    const why = tag ? `Qloo tag: ${tag}` : (BEAUTY_BRAND_RE.test(b.name) || KNOWN_BEAUTY.test(b.name)) ? 'brand name' : null;
+    if (why) out.push({ ...b, why });
+  }
+  return out;
 }
 
 /** Split tags into kept (safe and load-bearing) and dropped, de-duplicated by normalised name. */
@@ -117,7 +121,7 @@ export function provenance(q) {
     tags_received: q.received.music + q.received.media, received: q.received,
     tags_used: q.kept.length, dropped: q.dropped,
     brands_received: q.received.brands ?? 0,
-    brands: (q.brands ?? []).map(b => ({ name: b.name, affinity: b.affinity == null ? null : Math.round(b.affinity * 100) / 100 })),
+    brands: (q.brands ?? []).map(b => ({ name: b.name, affinity: b.affinity == null ? null : Math.round(b.affinity * 100) / 100, why: b.why ?? null, qloo_tags: (b.tags ?? []).slice(0, 6) })),
     used: q.kept.slice(0, 12).map(t => ({ name: t.name, kind: t.kind, affinity: t.affinity == null ? null : Math.round(t.affinity * 100) / 100 })),
     calls: q.calls, latency_ms: q.latency_ms, error: q.errors[0] ?? null,
   };

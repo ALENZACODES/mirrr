@@ -1,6 +1,47 @@
 // Studio photo plates present in public/studio/ (AI-generated photos; disclosed in the README).
 // Rebuilt whenever a batch lands; a studio with no entry keeps its drawing.
 window.STUDIO_PHOTOS = {
+ "brow": {
+  "brow-angular_lift": {
+   "src": "/studio/brow/brow-angular_lift.webp"
+  },
+  "brow-flat_horizontal": {
+   "src": "/studio/brow/brow-flat_horizontal.webp"
+  },
+  "brow-high_arch": {
+   "src": "/studio/brow/brow-high_arch.webp"
+  },
+  "brow-low_full": {
+   "src": "/studio/brow/brow-low_full.webp"
+  },
+  "brow-soft_arch": {
+   "src": "/studio/brow/brow-soft_arch.webp"
+  },
+  "brow-straight": {
+   "src": "/studio/brow/brow-straight.webp"
+  },
+  "eye-arab_wing": {
+   "src": "/studio/brow/eye-arab_wing.webp"
+  },
+  "eye-bare": {
+   "src": "/studio/brow/eye-bare.webp"
+  },
+  "eye-cat_eye": {
+   "src": "/studio/brow/eye-cat_eye.webp"
+  },
+  "eye-full_waterline_kohl": {
+   "src": "/studio/brow/eye-full_waterline_kohl.webp"
+  },
+  "eye-graphic": {
+   "src": "/studio/brow/eye-graphic.webp"
+  },
+  "eye-puppy_eye": {
+   "src": "/studio/brow/eye-puppy_eye.webp"
+  },
+  "eye-tightline": {
+   "src": "/studio/brow/eye-tightline.webp"
+  }
+ },
  "lips": {
   "classic_red": {
    "mask": "/studio/lips/classic_red.mask.webp",

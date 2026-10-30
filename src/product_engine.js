@@ -197,6 +197,25 @@ const ARCHETYPE_FORMULA = {
   latina_glam: 'latina_glam', k_beauty: 'k_beauty_glass', clean_minimal: 'clean_minimal',
 };
 
+/**
+ * Curated named-product guides (Style Match: brands, shades by skin type, CAD budget) exist for 8
+ * looks. Where a taste look shares the community and style of one, point to it, labelled as the
+ * closest guide rather than as this look's own list.
+ */
+const NAMED_GUIDES = {
+  west_african_glow: { name: 'West African Glow', looks: ['afro_glam_editorial', 'owambe_glam', 'nollywood_red_carpet', 'afrobeats_concert', 'ghanaian_kente_glam'] },
+  rooibos_glow: { name: 'Rooibos Glow', looks: ['amapiano_beat', 'xhosa_glam', 'zulu_bridal'] },
+  mehndi_bride: { name: 'Mehndi Bride', looks: ['mehndi_bridal', 'bollywood_bridal'] },
+  desi_baddie: { name: 'Desi Baddie', looks: ['desi_everyday_chic', 'diwali_festive', 'tamil_classical', 'indo_arabian_fusion'] },
+  persian_queen: { name: 'Persian Queen', looks: ['persian_editorial', 'gulf_glam', 'arab_chic', 'eid_glam'] },
+  hammam_goddess: { name: 'Hammam Goddess', looks: ['moroccan_soiree', 'amazigh_berber'] },
+  k_beauty_seoul: { name: 'K-Beauty Seoul', looks: ['k_beauty_glass'] },
+};
+export function namedGuideFor(lookId) {
+  const hit = Object.entries(NAMED_GUIDES).find(([, g]) => g.looks.includes(lookId));
+  return hit ? { id: hit[0], name: hit[1].name } : null;
+}
+
 function describeProduct(p) {
   const bits = [p.shade_range, p.shade, p.style, p.colour, p.placement, Array.isArray(p.tones) ? p.tones.join(' / ') : null].filter(Boolean);
   return bits.join(', ') || p.finish || p.category;
@@ -221,6 +240,10 @@ export function getLookProducts(lookId, depthId = 'medium') {
 
   return {
     ...formula,
+    // The dialog is about the look the user clicked, even when the formula is borrowed.
+    label: look?.name ?? formula.label,
+    formulaFrom: basis === 'archetype' ? formula.label : null,
+    namedGuide: namedGuideFor(lookId),
     basis,
     note: basis === 'curated' ? undefined : 'General formula guidance for this look style, not a named-product list.',
     products: formula.products.map(p => ({

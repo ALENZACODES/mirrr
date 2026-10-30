@@ -804,12 +804,17 @@ async function openLookModal(lookId) {
     const depthLabel = depthTargetToLabel(state.depthTarget);
     const data = await api(`/api/products/look/${lookId}?depth=${depthLabel}`);
     const products = data.products;
+    const basisText = products.basis === 'curated' ? 'Curated formula for this look.'
+      : products.basis === 'archetype' ? `General formula from the ${esc(products.formulaFrom ?? 'same style')} family. Product types, not named brands.`
+      : 'Built from this look\'s own spec. Product types, not named brands.';
 
     content.innerHTML = `
       <div class="modal-look-header">
-        <h2 id="modalTitle">${products.label}</h2>
+        <h2 id="modalTitle">${esc(products.label)}</h2>
         <p class="modal-depth-note">Products tuned for: <strong>${depthLabel.replace(/_/g, ' ')}</strong> depth</p>
+        <p class="modal-basis" data-basis="${esc(products.basis ?? '')}">${basisText}</p>
       </div>
+      ${products.namedGuide ? `<div class="modal-named" id="modalNamed"><button class="btn btn-secondary" type="button" id="modalNamedBtn">Named brands &amp; prices: ${esc(products.namedGuide.name)} guide</button></div>` : ''}
       <div class="product-list">
         ${products.products.map(p => `
           <div class="product-item">
@@ -825,8 +830,33 @@ async function openLookModal(lookId) {
         `).join('')}
       </div>
     `;
+    document.getElementById('modalNamedBtn')?.addEventListener('click', () => loadNamedGuide(products.namedGuide, products.label));
   } catch {
     content.innerHTML = '<p class="modal-error">Could not load product details.</p>';
+  }
+}
+
+// Named-product list from the closest curated Style Match guide, shown inside the look dialog
+// and labelled as borrowed from that guide.
+const DEPTH_TO_FITZ = { fair: 'I', light: 'II', light_med: 'III', medium: 'IV', medium_deep: 'IV', deep: 'V', rich_deep: 'VI' };
+async function loadNamedGuide(guide, lookName) {
+  const box = document.getElementById('modalNamed');
+  if (!box || !guide) return;
+  box.innerHTML = '<p class="muted">Loading named products…</p>';
+  try {
+    const fitzpatrick = DEPTH_TO_FITZ[depthTargetToLabel(state.depthTarget)] ?? 'IV';
+    const g = await api('/api/style-match/guide', 'POST', { lookId: guide.id, fitzpatrick, undertone: state.undertone || 'neutral' });
+    const est = g.shoppingEstimate;
+    box.innerHTML = `
+      <p class="modal-basis">Named products from the <strong>${esc(guide.name)}</strong> guide, the closest curated brand list for ${esc(lookName)} (same community and style; not written for this exact look). Shades for skin type ${esc(g.fitzpatrickUsed ?? fitzpatrick)}.</p>
+      <div class="product-list">${(g.steps ?? []).map(st => `
+        <div class="product-item">
+          <strong>${esc(st.stepName)}</strong>
+          ${Object.entries(st.products ?? {}).map(([k, v]) => `<p class="product-formula">${esc(capitalise(k))}: ${esc(v)}</p>`).join('')}
+        </div>`).join('')}</div>
+      ${est ? `<p class="modal-basis">Guide budget: ${esc(est.currency)} $${est.low}–${est.high}</p>` : ''}`;
+  } catch {
+    box.innerHTML = '<p class="modal-error">Could not load the named-product guide.</p>';
   }
 }
 

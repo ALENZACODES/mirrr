@@ -42,6 +42,38 @@ window.STUDIO_PHOTOS = {
    "src": "/studio/brow/eye-tightline.webp"
   }
  },
+ "ingredients": {
+  "argan": {
+   "src": "/studio/ingredients/argan.webp"
+  },
+  "avocado": {
+   "src": "/studio/ingredients/avocado.webp"
+  },
+  "black_seed": {
+   "src": "/studio/ingredients/black_seed.webp"
+  },
+  "frankincense": {
+   "src": "/studio/ingredients/frankincense.webp"
+  },
+  "jamaican_black_castor": {
+   "src": "/studio/ingredients/jamaican_black_castor.webp"
+  },
+  "marula": {
+   "src": "/studio/ingredients/marula.webp"
+  },
+  "rice_water": {
+   "src": "/studio/ingredients/rice_water.webp"
+  },
+  "rooibos": {
+   "src": "/studio/ingredients/rooibos.webp"
+  },
+  "shea_butter": {
+   "src": "/studio/ingredients/shea_butter.webp"
+  },
+  "ubtan": {
+   "src": "/studio/ingredients/ubtan.webp"
+  }
+ },
  "lips": {
   "classic_red": {
    "mask": "/studio/lips/classic_red.mask.webp",

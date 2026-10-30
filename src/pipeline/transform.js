@@ -159,6 +159,7 @@ const describeSpec = (p) => {
   if (!p) return '';
   const bits = [
     Array.isArray(p.tones) ? p.tones.join(', ') : null, p.shade, p.colour, p.style, p.placement,
+    p.spray ? `${p.spray} setting spray` : null, p.type, p.product,
     p.finish ? `${p.finish} finish` : null, p.coverage ? `${p.coverage} coverage` : null,
   ].filter(Boolean);
   return cap(bits.join(' · '));
@@ -258,10 +259,18 @@ export async function buildTransform({ face = {}, targetLookId, tasteChips = [] 
   // --- Stage 3: the full look = finishing touches + maintenance ---
   const finishCats = ['highlight', 'bronzer', 'blush', 'contour', 'setting', 'gems', 'glitter', 'gold_accents', 'bindi', 'accessories', 'mascara'];
   const finishAreas = { highlight: 'base', bronzer: 'base', blush: 'base', contour: 'base', setting: 'base', gems: 'eyes', glitter: 'eyes', gold_accents: 'eyes', bindi: 'brows', accessories: 'hair', mascara: 'eyes' };
+  const FINISH_DEFAULT = {
+    setting: 'Mist a setting spray over the finished face', mascara: 'Coat lashes from root to tip',
+    highlight: 'Tap highlight on the high points of the face', bronzer: 'Sweep bronzer where the sun would hit',
+    blush: 'Blend blush up from the apples of the cheeks', contour: 'Sculpt under the cheekbones, along the jaw and the sides of the nose',
+    gems: 'Press face gems on with lash glue', glitter: 'Press glitter on with a glitter primer', gold_accents: 'Add the gold accents with a fine brush',
+    bindi: 'Place the bindi centred between the brows', accessories: 'Add the accessories',
+  };
   const finishSteps = (look.products ?? []).filter((p) => finishCats.includes(p.category)).map((p) => ({
     area: finishAreas[p.category],
     title: `Finish: ${p.category.replace('_', ' ')}`,
-    technique: `${describeSpec(p) || p.category}. Add this last so it sits on top of the base.`,
+    // Never repeat the title as the technique ("Finish: setting / setting").
+    technique: `${describeSpec(p) || FINISH_DEFAULT[p.category] || cap(p.category.replace('_', ' '))}. Add this last so it sits on top of the base.`,
     why: 'The finishing detail that turns the makeup into the full look.',
   }));
   const fullSteps = [

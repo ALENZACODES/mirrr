@@ -395,6 +395,7 @@
         <details class="nav-more" id="navMore">
           <summary class="nav-link" aria-label="More tools">More</summary>
           <div class="nav-more-menu" role="menu">
+            <button class="nav-link" data-view="sixty" role="menuitem">60-Second Transformation</button>
             <button class="nav-link" data-view="face" role="menuitem">My Face</button>
             <button class="nav-link" data-view="studio" role="menuitem">Brow &amp; Kohl Studio</button>
             <button class="nav-link" data-view="hairlab" role="menuitem">Hair Colour Lab</button>
@@ -438,6 +439,7 @@
       <p class="hero-explain">Upload your photo, pick a look you love, and get a step-by-step transformation matched to your skin tone: face, brows, eyes, lips and hair. Built for the women mainstream beauty overlooks.</p>
       <div class="hero-actions hero-actions--primary">
         <button class="btn btn-primary btn-lg" id="heroTransformBtn" type="button">Start my transformation</button>
+        <button class="btn btn-secondary btn-lg" id="heroSixtyBtn" type="button" data-open-sixty>60-second transformation</button>
         <button class="btn btn-ghost" id="heroPhotoBtn" type="button">Match my skin tone from a selfie</button>
       </div>
       <p class="hero-or">or start from an artist you love</p>
@@ -1341,6 +1343,14 @@
       </div>
     </section>
 
+    <section id="view-sixty" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">60-Second Transformation</h2>
+        <p class="view-sub">Five steps, one chain: who you are, what your taste picks (live from Qloo), your named shade, a staged plan, and the look on the model face nearest your tone.</p>
+      </div>
+      <div id="sxRoot" class="sx-wrap"></div>
+    </section>
+
     <section id="view-leap" class="view hidden">
       <div class="view-header">
         <h2 class="view-title">Taste Leap</h2>
@@ -1586,6 +1596,7 @@
   <script src="looks.js" defer></script>
   <script src="routine.js" defer></script>
   <script src="leap.js" defer></script>
+  <script type="module" src="sixty.js"></script>
   <script>
     // Community detail panel interactions
     (function() {

@@ -1422,6 +1422,11 @@ function setupTryOn() {
     }
     openTryOn(null, d.name || 'your look', { palette, hair: d.hair || null });
   });
+  // The 60-Second Transformation hands over a library look by id; the try-on builds its colours for the face.
+  window.addEventListener('mirrr:tryon-look', (e) => {
+    const d = e.detail || {};
+    if (d.lookId) openTryOn(d.lookId, d.name || 'your look');
+  });
 }
 
 function openTryOn(lookId, lookName, extra = {}) {

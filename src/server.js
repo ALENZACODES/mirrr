@@ -109,7 +109,8 @@ function serveStatic(res, filePath) {
   const mime = MIME[ext] ?? 'application/octet-stream';
   // Images and fonts: cache 7 days; CSS/JS: cache 1 hour (versioned by deploy)
   const isAsset = ['.png','.webp','.jpg','.jpeg','.svg','.ico','.woff','.woff2'].includes(ext);
-  const cacheControl = isAsset ? 'public, max-age=604800, immutable' : 'public, max-age=3600';
+  // Images/fonts are content-addressed by filename and long-cached; HTML/JS/CSS always revalidate so a deploy is never masked by a stale copy.
+  const cacheControl = isAsset ? 'public, max-age=604800, immutable' : 'no-cache';
   try {
     const stat = statSync(filePath);
     res.writeHead(200, {

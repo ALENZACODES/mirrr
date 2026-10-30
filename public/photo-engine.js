@@ -185,7 +185,9 @@ export function findFace(img) {
   const mad = median(seed.map(dist));
   const thr = Math.max(5, Math.min(14, 3 * mad + 2.5));
   const chroma = Math.hypot(ma, mb);
-  if (chroma < 4) return { ok: false, reason: 'Could not find skin in the middle of the photo. Use a colour, front-facing photo with your face centred.' };
+  // Only a greyscale photo is rejected here: real skin runs down to C* about 4 at Monk 10, and lower
+  // in cool shade, so a higher gate turned away the lightest and the deepest skin.
+  if (chroma < 1.5) return { ok: false, reason: 'Could not find skin in the middle of the photo. Use a colour, front-facing photo with your face centred.' };
   const skin = new Uint8Array(w * h);
   for (let k = 0; k < w * h; k++) skin[k] = dist(k) < thr && P.L[k] > mL * 0.3 && P.L[k] < Math.min(99, mL * 1.7 + 12) ? 1 : 0;
   // The skin region holding the centre of the frame.

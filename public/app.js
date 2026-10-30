@@ -4,6 +4,7 @@
  */
 import { findFace, applyLook, recolourHair, scaleFace, labToRgb } from './photo-engine.js';
 import { detectPlatform, canvasToPhotoFile, savePhotoFile, MAX_CANVAS_PIXELS } from './photo-save.js';
+import { measureSkin } from './skin-sample.js';
 
 // ---------------------------------------------------------------------------
 // State
@@ -2624,27 +2625,23 @@ document.addEventListener('DOMContentLoaded', () => {
 // then match shades on the server by colour distance.
 // ===========================================================================
 
+// Skin measurement (public/skin-sample.js): white balance and exposure from the eye whites, then five
+// face patches with a confidence. Runs on this device; the photo is never uploaded.
 function sampleSkin(img) {
-  const W = 240, scale = W / img.width, H = Math.max(1, Math.round(img.height * scale));
+  const maxSide = 720, k = Math.min(1, maxSide / Math.max(img.width, img.height));
+  const W = Math.max(1, Math.round(img.width * k)), H = Math.max(1, Math.round(img.height * k));
   const c = document.createElement('canvas'); c.width = W; c.height = H;
   const ctx = c.getContext('2d', { willReadFrequently: true });
   ctx.drawImage(img, 0, 0, W, H);
-  // Central face area: cheeks/forehead zone of a centred portrait (x 32-68%, y 32-62%)
-  const x0 = Math.round(W * 0.32), x1 = Math.round(W * 0.68), y0 = Math.round(H * 0.32), y1 = Math.round(H * 0.62);
-  const data = ctx.getImageData(x0, y0, x1 - x0, y1 - y0).data;
-  const px = [];
-  for (let i = 0; i < data.length; i += 4) {
-    const r = data[i], g = data[i + 1], b = data[i + 2];
-    const l = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-    if (l < 25 || l > 245) continue;           // drop deep shadow and blown highlights
-    if (!(r > g && g > b * 0.8)) continue;       // keep skin-like hues only
-    px.push([r, g, b, l]);
-  }
-  if (px.length < 200) return null;
-  px.sort((p, q) => p[3] - q[3]);
-  const mid = px.slice(Math.floor(px.length * 0.2), Math.ceil(px.length * 0.8)); // trimmed middle 60%
-  const avg = (k) => Math.round(mid.reduce((a, p) => a + p[k], 0) / mid.length);
-  return { r: avg(0), g: avg(1), b: avg(2) };
+  const m = measureSkin(ctx.getImageData(0, 0, W, H));
+  if (!m) return null;
+  return { ...m.rgb, measure: m };
+}
+
+function measureNote(rgb) {
+  const m = rgb?.measure; if (!m) return '';
+  const conf = m.confidence >= 0.7 ? 'high' : m.confidence >= 0.45 ? 'medium' : 'low';
+  return `Measured from ${m.patches.length} skin patch${m.patches.length === 1 ? '' : 'es'}${m.method === 'centre' ? ' in the centre of the frame (no face found)' : ''}; confidence ${conf} (${m.confidence.toFixed(2)})${m.flags.length ? `; ${m.flags.join('; ')}` : ''}.`;
 }
 
 async function analyzePhoto(file) {
@@ -2657,7 +2654,7 @@ async function analyzePhoto(file) {
     const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = url; });
     const rgb = sampleSkin(img);
     if (!rgb) { out.innerHTML = '<p class="photo-note">Could not find enough skin in the centre of the photo. Try a front-facing selfie in daylight with your face centred.</p>'; return; }
-    const data = await api('/api/shades/match-color', 'POST', { ...rgb, topN: 4 });
+    const data = await api('/api/shades/match-color', 'POST', { r: rgb.r, g: rgb.g, b: rgb.b, topN: 4 });
     const best = data.matches[0];
     state.undertone = data.undertone;
     state.photoUrl = url;
@@ -2670,6 +2667,7 @@ async function analyzePhoto(file) {
         </div>
       </div>
       <p class="match-band" data-band="${esc(data.band ?? '')}"><strong>${esc(data.message ?? best.name)}</strong> ${esc(data.undertone)} undertone. Next nearest: ${data.matches.slice(1).map(m => `${esc(m.name)} (ΔE ${m.deltaE})`).join(', ')}.</p>
+      <p class="photo-note" data-confidence="${esc(rgb.measure?.confidence ?? '')}">${esc(measureNote(rgb))}</p>
       <p class="photo-note">ΔE2000 bands: 3 or less is a match, 3 to 6 is close (check in daylight), above 6 is outside our honest range.</p>
       <p class="photo-note">This is an estimate from your photo. Light, camera and filters change colour, so confirm in daylight or against a swatch. Nothing was uploaded.</p>
       <div class="photo-actions">
@@ -2869,14 +2867,14 @@ async function analyzeFacePhoto(file) {
     const rgb = sampleSkin(img);
     fillFaceForm();
     if (!rgb) { if (msg) msg.textContent = 'Could not find enough skin in the middle of the photo. Use a front-facing selfie in daylight, or pick your shade below.'; return; }
-    const data = await api('/api/shades/match-color', 'POST', { ...rgb, topN: 3 });
+    const data = await api('/api/shades/match-color', 'POST', { r: rgb.r, g: rgb.g, b: rgb.b, topN: 3 });
     const best = data.matches[0];
     faceState.draft.shadeId = best.code;
     if (data.undertone) faceState.draft.undertone = data.undertone;
     fillFaceForm();
     if (msg) msg.textContent = data.honestMatch === false
       ? `${data.message} Pick your shade below; we would rather say so than guess.`
-      : `Suggested: ${best.name}, ${data.undertone} undertone (${best.bandLabel}, ΔE2000 ${best.deltaE}). Adjust it if it does not look like you.`;
+      : `Suggested: ${best.name}, ${data.undertone} undertone (${best.bandLabel}, ΔE2000 ${best.deltaE}). ${measureNote(rgb)} Adjust it if it does not look like you.`;
   } catch (err) {
     if (msg) msg.textContent = 'Could not read that photo. Pick your shade below instead.';
   }

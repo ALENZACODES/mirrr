@@ -15,7 +15,8 @@
     if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
     return res.json();
   }
-  const hexRgb = h => [1, 3, 5].map(i => parseInt(String(h).slice(i, i + 2), 16));
+  // '#rgb' and '#rrggbb' both work ('#000' used to parse as NaN and drop the outline it coloured)
+  const hexRgb = h => { const s = String(h).replace('#', ''); const f = s.length === 3 ? [...s].map(c => c + c).join('') : s; return [0, 2, 4].map(i => parseInt(f.slice(i, i + 2), 16)); };
   const rgbHex = c => '#' + c.map(v => Math.round(Math.max(0, Math.min(255, v))).toString(16).padStart(2, '0')).join('');
   const mix = (a, b, t) => rgbHex(hexRgb(a).map((v, i) => v + (hexRgb(b)[i] - v) * t));
   const lum = h => { const [r, g, b] = hexRgb(h).map(v => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
@@ -35,15 +36,20 @@
   // The concern you are treating is drawn on the face: spots for uneven tone, lines, a softer jaw for
   // firmness, dry flecks, or pores. Older decades soften the jaw a little; the tone is the one you pick.
   function facePanel(p) {
-    const skin = p.tone.hex; const line = lum(skin) < 0.06 ? mix(skin, '#fff', 0.35) : mix(skin, '#000', 0.35); const mark = mix(skin, '#000', 0.3);
+    const skin = p.tone.hex; const deep = lum(skin) < 0.18;
+    const line = deep ? mix(skin, '#fff', 0.35) : mix(skin, '#000', 0.35);
+    // Concern marks must read on every Monk tone: light ink on deep skin, dark ink on light skin.
+    const ink = deep ? mix(skin, '#fff', 0.75) : mix(skin, '#000', 0.55); const mark = mix(skin, '#000', deep ? 0.7 : 0.45);
     const c = p.choices.concern; const age = p.ages.indexOf(p.choices.decade);
     const jaw = 228 + age * 3 + (c === 'firmness' ? 10 : 0);
     const overlay = {
-      pigment: [[88, 150], [96, 162], [152, 152], [146, 166], [120, 112]].map(([x, y], i) => `<ellipse cx="${x}" cy="${y}" rx="${5 + (i % 2) * 2}" ry="4" fill="${mark}" opacity="0.8"/>`).join(''),
-      lines: `<path d="M92,96 Q120,90 148,96 M96,106 Q120,100 144,106" stroke="${line}" fill="none" stroke-width="1.2"/><path d="M70,134 l-8,-4 M70,140 l-9,0 M170,134 l8,-4 M170,140 l9,0 M98,186 Q92,200 96,212 M142,186 Q148,200 144,212" stroke="${line}" fill="none" stroke-width="1.2"/>`,
-      firmness: `<path d="M70,${jaw - 30} Q76,${jaw} 100,${jaw + 4} M170,${jaw - 30} Q164,${jaw} 140,${jaw + 4}" stroke="${line}" fill="none" stroke-width="1.4" stroke-dasharray="3 3"/>`,
-      dryness: [[84, 120], [156, 124], [92, 176], [150, 178], [120, 76], [108, 196]].map(([x, y]) => `<path d="M${x},${y} l6,2 l-4,3" stroke="#fff" fill="none" stroke-width="1" opacity="0.7"/>`).join(''),
-      texture: Array.from({ length: 18 }, (_, i) => `<circle cx="${100 + (i % 6) * 8}" cy="${150 + Math.floor(i / 6) * 8}" r="1.3" fill="${mark}"/>`).join(''),
+      pigment: [[88, 150], [96, 162], [152, 152], [146, 166], [120, 112]].map(([x, y], i) => `<ellipse cx="${x}" cy="${y}" rx="${5 + (i % 2) * 2}" ry="4" fill="${mark}" opacity="0.85"${deep ? ` stroke="${ink}" stroke-width="0.9" stroke-opacity="0.7"` : ''}/>`).join(''),
+      lines: `<path d="M92,96 Q120,90 148,96 M96,106 Q120,100 144,106" stroke="${ink}" fill="none" stroke-width="1.6"/><path d="M70,134 l-8,-4 M70,140 l-9,0 M170,134 l8,-4 M170,140 l9,0 M98,186 Q92,200 96,212 M142,186 Q148,200 144,212" stroke="${ink}" fill="none" stroke-width="1.6"/>`,
+      // jowl lines just inside the jaw, with arrows showing the downward pull
+      firmness: `<path d="M78,${jaw - 44} Q84,${jaw - 10} 108,${jaw - 6} M162,${jaw - 44} Q156,${jaw - 10} 132,${jaw - 6}" stroke="${ink}" fill="none" stroke-width="2.4" stroke-dasharray="5 3" stroke-linecap="round"/>
+        <path d="M86,${jaw - 40} v16 m-5,-5 l5,5 l5,-5 M154,${jaw - 40} v16 m-5,-5 l5,5 l5,-5" stroke="${ink}" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`,
+      dryness: [[84, 120], [156, 124], [92, 176], [150, 178], [120, 76], [108, 196]].map(([x, y]) => `<path d="M${x},${y} l6,2 l-4,3" stroke="${ink}" fill="none" stroke-width="1.4" opacity="0.85"/>`).join(''),
+      texture: Array.from({ length: 18 }, (_, i) => `<circle cx="${100 + (i % 6) * 8}" cy="${150 + Math.floor(i / 6) * 8}" r="1.4" fill="${deep ? ink : mark}" opacity="${deep ? 0.7 : 1}"/>`).join(''),
     }[c] ?? '';
     return `<figure class="hl-panel cx-panel"><svg viewBox="0 0 240 300" role="img" aria-label="Face">
       <rect width="240" height="300" rx="14" fill="#141414"/>

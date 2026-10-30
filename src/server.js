@@ -28,6 +28,7 @@ import { handleStudio } from './studio/routes.js';
 import { handleHairLab } from './hairlab/routes.js';
 import { handleSkinClinic } from './skin/routes.js';
 import { handleComplexion } from './makeup/routes.js';
+import { createRateLimiter } from './ratelimit.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT ?? 3000;
@@ -56,17 +57,7 @@ const MIME = {
 // Rate limiter
 // ---------------------------------------------------------------------------
 
-const _ratemap = new Map();
-function checkRateLimit(ip) {
-  const now = Date.now();
-  const window = 60_000;
-  const limit = 30;
-  let bucket = _ratemap.get(ip);
-  if (!bucket || now - bucket.start > window) bucket = { start: now, count: 0 };
-  bucket.count++;
-  _ratemap.set(ip, bucket);
-  return bucket.count <= limit;
-}
+const takeToken = createRateLimiter();
 
 // ---------------------------------------------------------------------------
 // Helper utilities
@@ -152,7 +143,9 @@ async function router(req, res) {
 
   // Rate limit API routes
   if (path.startsWith('/api/')) {
-    if (!checkRateLimit(getIP(req))) {
+    const { ok, retryAfter } = takeToken(getIP(req), path);
+    if (!ok) {
+      res.setHeader('Retry-After', String(retryAfter));
       return sendJSON(res, 429, { error: 'Too many requests. Please slow down.' });
     }
   }

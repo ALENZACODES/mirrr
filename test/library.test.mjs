@@ -139,7 +139,8 @@ test('every exported function of every wired guide returns real content', () => 
     // keys of a lookup map inside the function itself, quoted or bare ({ eczema: ECZEMA_GUIDE, 'west-african': ... })
     const ownKeys = [...fn.toString().matchAll(/(?:['"]([A-Za-z][\w -]{1,30})['"]|\b([a-z][\w]{1,30}))\s*:/g)].map(m => m[1] ?? m[2]);
     for (const a of [...ownKeys, ...candidates(g.mod)]) {
-      try { if (real(fn(a, a))) { ok = true; break; } } catch { /* try next argument */ }
+      // two-argument lookups such as (laser type, skin type) also get a skin type as the second argument
+      try { if (real(fn(a, a)) || real(fn(a, 'IV'))) { ok = true; break; } } catch { /* try next argument */ }
     }
     if (!ok) dead.push(`${g.id}.${name}`);
   }

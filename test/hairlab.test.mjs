@@ -186,6 +186,22 @@ test('ageing studio routes over HTTP', async () => {
   assert.equal(lib.shelves.find(s => s.id === 'ageing').guides.length, 7);
 });
 
+test('hair removal planner routes over HTTP', async () => {
+  const B = `http://127.0.0.1:${PORT}`;
+  const h = { 'x-forwarded-for': '10.6.6.12' };
+  const o = await (await fetch(`${B}/api/hair-removal/options`, { headers: h })).json();
+  assert.equal(o.methods.length, 9); assert.equal(o.tones.length, 10);
+  const r = await fetch(`${B}/api/hair-removal/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ method: 'laser', fitzpatrick: 'VI', area: 'legs', community: 'caribbean' }) });
+  assert.equal(r.status, 200);
+  const p = await r.json();
+  assert.equal(p.choices.method, 'laser'); assert.equal(p.community.id, 'caribbean'); assert.deepEqual(p.skinType.safeLasers, ['Nd:YAG (1064nm)']); assert.equal(p.verdict.level, 'caution');
+  assert.equal((await fetch(`${B}/api/hair-removal/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  const html = await (await fetch(`${B}/`, { headers: h })).text();
+  assert.ok(html.includes('data-view="hair-removal"') && html.includes('src="hairremoval.js"'));
+  const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
+  assert.equal(lib.shelves.find(s => s.id === 'bodyhair').guides.length, 2);
+});
+
 test('colour and lip studio routes over HTTP', async () => {
   const B = `http://127.0.0.1:${PORT}`;
   const h = { 'x-forwarded-for': '10.6.6.9' };

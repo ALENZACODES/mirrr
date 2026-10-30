@@ -110,6 +110,8 @@ import * as matureBeautyGuide from '../mature_beauty_guide.js';
 import * as skincareRoutinesByAge from '../skincare_routines_by_age.js';
 import * as collagenGuide from '../collagen_guide.js';
 import * as menopauseBeauty from '../menopause_beauty.js';
+import * as bodyHairEthnicGuide from '../body_hair_ethnic_guide.js';
+import * as bodyHairGuideEthnic from '../body_hair_guide_ethnic.js';
 
 export const SHELVES = [
   { id: 'rituals', title: 'Rituals & Heritage', blurb: 'Haldi, hammam, shea, mehndi, bathhouse and festival traditions, with the steps to do them at home.' },
@@ -121,6 +123,7 @@ export const SHELVES = [
   { id: 'colour', title: 'Colour & Lips', blurb: 'Undertones and colour formulas, lip colour for your depth and undertone, finishes, liner and ombre, lip care for dryness and darkening, and the brands and traditions behind them.' },
   { id: 'nails', title: 'Nails & Fragrance', blurb: 'Nail colour for your depth and undertone, shapes, finishes, gel, acrylic and press-ons with safe removal, dark streaks to watch, and fragrance families, concentrations, layering, attar and oud.' },
   { id: 'ageing', title: 'Ageing, Collagen & Menopause', blurb: 'What changes in each decade, retinoids at a pace your depth can take, collagen habits, in-clinic treatments that are safe for deeper skin, perimenopause and menopause care, and ageing traditions.' },
+  { id: 'bodyhair', title: 'Body Hair & Hair Removal', blurb: 'Shaving, waxing, sugaring, threading, laser and electrolysis compared, which lasers are safe for deeper skin, razor bumps, ingrown hairs and dark marks, timing before an event, and hair removal traditions.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -232,4 +235,6 @@ export const GUIDES = [
   ['skincare_routines_by_age', 'ageing', 'Skincare Routines from Teens to 50s+', skincareRoutinesByAge],
   ['collagen_guide', 'ageing', 'Collagen: Types, Loss, Topicals and Supplements', collagenGuide],
   ['menopause_beauty', 'ageing', 'Menopause: Skin, Hair and Hormone Therapy', menopauseBeauty],
+  ['body_hair_ethnic_guide', 'bodyhair', 'Hair Removal: Methods, Lasers and Traditions', bodyHairEthnicGuide],
+  ['body_hair_guide_ethnic', 'bodyhair', 'Shaving, Waxing, Ingrown Hairs and Electrolysis', bodyHairGuideEthnic],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

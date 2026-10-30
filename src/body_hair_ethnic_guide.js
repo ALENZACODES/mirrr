@@ -18,9 +18,9 @@ export const UNIVERSAL_BODY_HAIR = {
       exogen: 'Active shedding phase, sometimes classified separately, during which the old hair is expelled and lost.',
     },
     follicleShape:
-      'The cross-sectional shape of the hair follicle determines curl pattern. Round follicles produce straight hair; oval to highly elliptical follicles produce wavy to tightly coiled hair. Tightly coiled hair — most common in people of West African, East African, Caribbean, and African American ancestry — exits the skin at a sharper angle, making it significantly more prone to re-entering the skin after cutting or removal. This is the anatomical root cause of pseudofolliculitis barbae (PFB) and ingrown hairs in these populations.',
+      'The cross-sectional shape of the hair follicle determines curl pattern. Round follicles produce straight hair; oval to highly elliptical follicles produce wavy to tightly coiled hair. This is the anatomical root cause of pseudofolliculitis barbae (PFB) and ingrown hairs in these populations.',
     density:
-      'Hair density varies enormously between individuals and body areas. East Asian populations statistically tend toward lower body hair density and finer texture; South Asian and Mediterranean/Arab populations toward denser, coarser body hair; African-descended populations toward coarser, tightly coiled hair at moderate-to-high density.',
+      'Hair density varies enormously between individuals and body areas. South Asian and Mediterranean/Arab populations toward denser, coarser body hair; African-descended populations toward coarser, tightly coiled hair at moderate-to-high density.',
   },
 
   removalMethods: {
@@ -162,7 +162,7 @@ export const UNIVERSAL_BODY_HAIR = {
       description:
         'The only FDA-cleared permanent hair removal method. A fine probe is inserted into the individual hair follicle and an electric current (galvanic, thermolytic/RF, or blend) destroys the follicle\'s growth cells. Because each hair is treated individually, it is time-intensive and best suited to small areas. However, it is effective on all hair colors (including white, red, and grey that laser cannot treat) and all skin tones, making it the most universally accessible permanent option.',
       bestFor: 'Eyebrows, upper lip, chin, sparse areas of the face, transgender and non-binary clients transitioning hormonally.',
-      cost: 'Higher total cost than laser for large areas due to time per follicle, but often comparable for small facial areas.',
+      
       risks: [
         'Temporary redness and swelling',
         'Scabbing if intensity is too high',
@@ -205,8 +205,7 @@ export const UNIVERSAL_BODY_HAIR = {
       fullName: 'Pseudofolliculitis Barbae',
       description:
         'A chronic inflammatory condition caused by ingrown hairs, most commonly on the beard area (hence "barbae") but occurring on any shaved or waxed area. The skin produces an inflammatory response to the trapped hair, which appears as red or dark papules (bumps), sometimes with pustules. In darker skin tones, the inflammation frequently triggers post-inflammatory hyperpigmentation, leaving dark spots long after the active ingrown resolves.',
-      prevalence:
-        'PFB affects an estimated 45–83% of Black men who shave, and a significant proportion of Black women in the bikini and underarm areas. The tightly coiled, highly curved follicle structure of afro-textured hair means the hair naturally curves back toward the skin even after growing out of the follicle. This is a structural characteristic, not a hygiene or technique issue.',
+      
       management: [
         'Switching to a single-blade razor or safety razor to avoid cutting below skin level',
         'Shaving with the grain of hair growth only',
@@ -221,7 +220,7 @@ export const UNIVERSAL_BODY_HAIR = {
       'Exfoliate 2–3 times per week with a gentle physical or chemical exfoliant',
       'Keep skin hydrated — dry skin creates a surface that hair cannot easily penetrate',
       'Never shave against the grain on coarse or curly hair',
-      'Stretch skin taut when shaving to improve blade angle',
+      'Do not pull the skin taut while shaving; it lets the hair retract below the surface',
       'Use single-blade razors for curly/coily hair',
       'Apply salicylic acid or glycolic acid 48 hours after removal to keep follicles clear',
     ],
@@ -241,7 +240,7 @@ export const UNIVERSAL_BODY_HAIR = {
     glycolicAcid: {
       name: 'Glycolic Acid (AHA)',
       uses: 'Alpha hydroxy acid that dissolves the dead skin cells trapping ingrown hairs. Accelerates cell turnover. Most effective for treating and preventing ingrown hairs.',
-      concentrations: '5–10% for regular use; up to 20% for targeted spot treatment in experienced users.',
+      
       timing: 'Do not use immediately after removal — wait 48–72 hours. Then use 2–3 times per week.',
       caution: 'Increases sun sensitivity. Always follow with SPF during the day.',
     },
@@ -273,7 +272,7 @@ export const UNIVERSAL_BODY_HAIR = {
 
   darkerSkinLaserGuidance: {
     phototypeSummary:
-      'The Fitzpatrick Scale classifies skin from Type I (always burns, never tans) through Type VI (never burns, deeply pigmented). People of West African, East African, South Asian, Caribbean, Latina (deeper tones), and Black American heritage most commonly fall into Types IV–VI. These skin types carry more melanin in the epidermis (outer skin), creating a risk when using laser wavelengths that are strongly absorbed by melanin.',
+      'The Fitzpatrick Scale classifies skin from Type I (always burns, never tans) through Type VI (never burns, deeply pigmented). These skin types carry more melanin in the epidermis (outer skin), creating a risk when using laser wavelengths that are strongly absorbed by melanin.',
     ndYAGRecommendation:
       'The Nd:YAG 1064nm laser is the established safe choice for phototypes IV–VI. At this longer wavelength, the epidermis absorbs significantly less energy, allowing the pulse to pass through to the follicle without burning the surface. Clinics offering laser hair removal to dark-skinned clients must have the Nd:YAG; alexandrite (755nm) and many diode configurations are inappropriate and dangerous for these skin types.',
     coolingImportance:
@@ -334,10 +333,8 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
     id: 'west-african',
     communityName: 'West African',
     countries: ['Nigeria', 'Ghana', 'Senegal', 'Ivory Coast', 'Mali', 'Sierra Leone', 'Cameroon', 'Togo', 'Benin', 'Liberia'],
-    skinPhototypes: 'Predominantly Fitzpatrick Types V and VI.',
 
-    culturalContext:
-      'Across West Africa, smooth skin has long been associated with femininity, cleanliness, and beauty. Hair removal practices vary significantly by generation, urban vs. rural context, and religion, but the aspiration toward smooth underarms, legs, and body is broadly shared among women. Nigerian and Ghanaian urban culture, heavily influenced by Nollywood and Afrobeats aesthetics, places premium value on radiant, smooth, well-maintained skin. The multi-billion-naira Nigerian beauty industry is deeply invested in body care, with shea butter playing a central role in post-hair-removal skin maintenance.',
+    
 
     threadingTraditions: {
       overview:
@@ -368,7 +365,7 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
       overview:
         'Post-inflammatory hyperpigmentation (PIH) is the single most significant body hair removal concern for West African women. When the skin is irritated — by razor burn, PFB bumps, waxing-related redness, or folliculitis — the melanocytes (pigment-producing cells) in darker skin respond by producing excess melanin, leaving dark spots or patches that can persist for months or years. The bikini area and underarms are particularly susceptible.',
       mechanism:
-        'West African skin phototypes V and VI have highly active melanocytes relative to lighter skin types. Any cutaneous injury or inflammation — even minor inflammation invisible to the eye — can trigger melanin overproduction. The concentration of melanocytes in the groin and axillary (underarm) regions means that even a small amount of irritation from hair removal can produce visible, long-lasting dark marks.',
+        'Skin types V and VI have highly active melanocytes relative to lighter skin types. Any cutaneous injury or inflammation — even minor inflammation invisible to the eye — can trigger melanin overproduction. The concentration of melanocytes in the groin and axillary (underarm) regions means that even a small amount of irritation from hair removal can produce visible, long-lasting dark marks.',
       managementProtocol: {
         immediate: [
           'Apply a barrier soothing cream immediately after hair removal (shea butter is a traditional and highly effective choice)',
@@ -427,7 +424,6 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
     id: 'south-asian',
     communityName: 'South Asian',
     countries: ['India', 'Pakistan', 'Bangladesh', 'Sri Lanka', 'Nepal', 'Bhutan', 'Maldives', 'South Asian diaspora globally'],
-    skinPhototypes: 'Fitzpatrick Types III through V, occasionally Type VI in South Indian and Sri Lankan communities.',
 
     culturalContext:
       'South Asia has arguably the richest and most deeply documented body hair removal traditions of any region in the world. Threading, turmeric paste, sugaring (alam), and waxing have been practiced on the subcontinent for thousands of years and are embedded in Ayurvedic wellness philosophy. South Asian women have historically faced high social pressure to remove body and facial hair — particularly upper lip, chin, arms, and legs — from adolescence. The threading of eyebrows and upper lip is not merely a beauty treatment but a cultural ritual that marks passages such as engagement and wedding preparation.',
@@ -445,8 +441,7 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
     },
 
     turmericPasteHairRemoval: {
-      overview:
-        'The use of turmeric (haldi) in hair removal and skin care is ancient and deeply embedded in Ayurvedic and folk traditions across South Asia. Turmeric-based pastes are used not only to remove fine hair but to inhibit its regrowth over time — a property attributed to the curcumin content, which research suggests may have follicle-inhibiting effects.',
+      
       traditionalRecipes: [
         {
           name: 'Haldi Ubtan (Basic Turmeric Hair Inhibitor)',
@@ -502,10 +497,10 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
     },
 
     piHyperpigmentationNotes:
-      'South Asian skin types III–V are prone to post-inflammatory hyperpigmentation, though less severely than phototypes V–VI in many cases. The underarm and bikini areas in particular can develop dark spots from repeated waxing-related inflammation. Use of niacinamide, azelaic acid, and consistent SPF application is important for managing PIH in these areas.',
+      'Skin types III–V are prone to post-inflammatory hyperpigmentation, though less severely than phototypes V–VI in many cases. The underarm and bikini areas in particular can develop dark spots from repeated waxing-related inflammation. Use of niacinamide, azelaic acid, and consistent SPF application is important for managing PIH in these areas.',
 
     laserConsiderations:
-      'South Asian women with skin phototypes IV–V seeking laser hair removal should request the Nd:YAG 1064nm or a diode laser with appropriate settings. Patch testing is essential. The growing laser hair removal market in India has led to mixed quality of providers; clients should insist on skin-type consultation before treatment.',
+      'Anyone with skin type IV–V seeking laser hair removal should request the Nd:YAG 1064nm or a diode laser with appropriate settings. Patch testing is essential. The growing laser hair removal market in India has led to mixed quality of providers; clients should insist on skin-type consultation before treatment.',
 
     productRecommendations: [
       'Fresh aloe vera gel for immediate post-wax soothing',
@@ -525,20 +520,17 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
     id: 'caribbean',
     communityName: 'Caribbean',
     countries: ['Jamaica', 'Trinidad and Tobago', 'Barbados', 'Haiti', 'Dominican Republic', 'Cuba', 'Puerto Rico', 'Guyana', 'Grenada', 'St. Lucia', 'Bahamas'],
-    skinPhototypes: 'Wide range: Fitzpatrick Types III through VI, reflecting the diverse Afro-Caribbean, Indo-Caribbean, mixed, and lighter-skinned Caribbean population.',
 
     culturalContext:
       'Caribbean beauty culture is vibrant, diverse, and deeply linked to the region\'s beach, carnival, and outdoor lifestyle. The Caribbean beach and swim culture creates practical high demand for body hair removal — particularly bikini, leg, and underarm areas — year-round. Carnival season (occurring in different islands from January through March, with Trinidad Carnival the most prominent) drives peak demand for smooth, flawless body skin. The "soca body" aesthetic — glowing, smooth, toned skin ready for revealing carnival costumes — is a significant cultural driver of body hair removal practices.',
 
     waxingTraditions: {
-      overview:
-        'Waxing is the predominant professional hair removal method across the English-speaking Caribbean. Beauty salons and spas on islands like Barbados, Jamaica, and Trinidad offer Brazilian, Hollywood, and full-leg wax services as standard. The professional waxing industry on these islands has grown substantially, partly driven by tourism (visitors seeking services) and partly by local demand.',
       brazilianWaxing:
         'Brazilian waxing — full bikini hair removal — is widely practiced and normalized across the Caribbean, driven by the bikini-centric beach and carnival culture. The style was popularized in the region in part through Brazilian and American beauty industry influence and has become a standard pre-carnival service.',
       legs:
         'Full leg waxing is common and preferred by many Caribbean women for the longer-lasting smoothness compared to shaving — important in a climate where shorts, skirts, and swimwear are daily wear.',
       underarms:
-        'Underarm waxing is widely performed in salons. The challenge for Afro-Caribbean clients (skin types V–VI) is the high risk of PIH in the axillary area following waxing-related inflammation.',
+        'Underarm waxing is widely performed in salons. The challenge for skin types V–VI is the high risk of PIH in the axillary area following waxing-related inflammation.',
     },
 
     sugaring: {
@@ -551,8 +543,7 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
     coconutOilPostRemoval: {
       overview:
         'Coconut oil holds a central place in Caribbean body care that parallels shea butter in West Africa. Refined and unrefined coconut oil are both used, with unrefined (virgin) coconut oil preferred for its fuller beneficial compound profile. It is applied to skin post-hair-removal as a moisturizer, barrier cream, and soothing agent.',
-      composition:
-        'Coconut oil contains approximately 50% lauric acid, 20% myristic acid, 10% caprylic acid, and 9% capric acid. Lauric acid in particular has well-documented antimicrobial and anti-inflammatory properties. Coconut oil is occlusive, meaning it creates a physical barrier on the skin surface that seals in moisture.',
+      
       applicationMethod:
         'Warm a small amount of virgin coconut oil between the palms and press gently onto freshly waxed or shaved skin. Allow it to absorb. The warmth of Caribbean climates means coconut oil remains liquid; in cooler diaspora climates it may need to be warmed.',
       caution: 'Coconut oil is comedogenic for some individuals — meaning it may clog pores and cause breakouts in acne-prone skin. Patch test on the underarm or inner arm before applying to the bikini area.',
@@ -560,9 +551,9 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
 
     razorBumpConcerns: {
       overview:
-        'For Afro-Caribbean women (skin phototypes V–VI with afro-textured hair), the same structural hair follicle geometry that drives PFB risk in West African and Black American women applies. The tightly coiled, highly curved hair follicle means hairs cut at the skin surface have a sharper angle of regrowth and are more likely to re-enter the skin.',
+        'For anyone with tightly coiled hair, the same curved-follicle geometry that drives PFB applies. The tightly coiled, highly curved hair follicle means hairs cut at the skin surface have a sharper angle of regrowth and are more likely to re-enter the skin.',
       bikiniAreaSpecific:
-        'The bikini area is the highest-risk zone for razor bumps in Afro-Caribbean women. Coarse, tightly coiled pubic hair shaved with multi-blade razors is practically guaranteed to produce PFB without careful technique and aftercare. Many Caribbean women switch to waxing or sugaring for the bikini area specifically because these methods remove hair from the root, producing softer tapered regrowth that is less likely to penetrate the skin.',
+        'With coarse, tightly coiled hair the bikini area is the highest-risk zone for razor bumps; multi-blade razors very often cause PFB without careful technique and aftercare. Many Caribbean women switch to waxing or sugaring for the bikini area specifically because these methods remove hair from the root, producing softer tapered regrowth that is less likely to penetrate the skin.',
       managementProtocol: [
         'Switch to waxing or sugaring for bikini area if PFB is recurrent',
         'If shaving, use a single-blade razor and shave with the grain only',
@@ -597,7 +588,6 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
     id: 'arab',
     communityName: 'Arab',
     countries: ['Saudi Arabia', 'Egypt', 'Lebanon', 'Jordan', 'Morocco', 'Tunisia', 'Algeria', 'UAE', 'Kuwait', 'Syria', 'Iraq', 'Palestine', 'Yemen', 'Libya', 'Sudan'],
-    skinPhototypes: 'Fitzpatrick Types III through V.',
 
     culturalContext:
       'Arab women have practiced elaborate and sophisticated body hair removal for at least 4,000 years. The Islamic jurisprudential tradition (fiqh) includes explicit guidance on body hair removal as part of fitra — the concept of natural human disposition and cleanliness. This religious foundation means hair removal is not merely cultural preference but has a component of religious obligation for observant Muslim women. The practice of full-body hair removal before important life events — weddings, religious holidays like Eid — is deeply embedded across the Arab world.',
@@ -702,7 +692,6 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
     id: 'latina',
     communityName: 'Latina',
     countries: ['Mexico', 'Brazil', 'Colombia', 'Argentina', 'Peru', 'Venezuela', 'Chile', 'Ecuador', 'Guatemala', 'Cuba', 'Dominican Republic', 'El Salvador', 'Honduras', 'Bolivia', 'Paraguay', 'Uruguay'],
-    skinPhototypes: 'Fitzpatrick Types III through V, with wide variation across the region reflecting Indigenous, European, African, and mixed heritage.',
 
     culturalContext:
       'Latin American beauty culture places significant emphasis on body grooming and hair removal. The Brazilian bikini wax achieved global recognition as synonymous with complete hair removal — a practice that originated in Brazilian beach culture and was exported worldwide. Across Latin America, waxing is a standard, affordable, and widely accessible beauty service offered in salons (known as "estética" in Brazil, "salón de belleza" in Spanish-speaking countries). Body hair on women is broadly culturally expected to be managed, particularly in urban areas, though body-positive and feminist movements are growing across the region.',
@@ -712,9 +701,8 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
       overview:
         '"La cera" (the wax) is the colloquial term for waxing across Spanish-speaking Latin America, and it represents the most culturally prevalent professional hair removal method in the region. Waxing salons (estéticas, centros de belleza) are found on virtually every urban block across Mexico, Colombia, Argentina, and beyond, and pricing is extremely accessible relative to disposable income — making professional waxing a routine rather than a luxury.',
       frequency:
-        'Latinas who wax typically maintain a 4–6 week cycle, aligned with hair growth. The consistency of the schedule is part of a broader grooming culture where regular appointments (waxing, nails, hair blowout) are weekly or bi-weekly rituals rather than occasional treats.',
-      brazilianOrigin:
-        'The Brazilian wax — removal of all pubic hair — was introduced to the United States in 1987 by seven sisters from Brazil who opened the J. Sisters salon in New York City. The style rapidly spread globally and became one of Brazil\'s most recognized beauty exports. In Brazil itself, depilação completa (complete bikini depilation) had already been normalized by the prevalence of the fio dental (thong bikini), introduced in the 1970s, which made pubic hair visible at the beach.',
+        'The consistency of the schedule is part of a broader grooming culture where regular appointments (waxing, nails, hair blowout) are weekly or bi-weekly rituals rather than occasional treats.',
+      
       mexicoThreading:
         'Threading is practiced in Mexico, particularly in border cities and urban areas with South Asian community influence. However, it is not as culturally central in Mexico as it is in South Asian or Arab communities.',
     },
@@ -729,16 +717,16 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
 
     hyperpigmentationConcerns: {
       overview:
-        'Post-inflammatory hyperpigmentation is a significant concern for Latinas with deeper Fitzpatrick types (IV–V). The underarm area is particularly prone to "mancha" — dark patches — resulting from repeated waxing, shaving friction, or simply the irritation from antiperspirant products combined with hair removal.',
+        'Post-inflammatory hyperpigmentation is a significant concern on deeper skin types (IV–V). The underarm area is particularly prone to "mancha" — dark patches — resulting from repeated waxing, shaving friction, or simply the irritation from antiperspirant products combined with hair removal.',
       armpit:
-        'Underarm hyperpigmentation is one of the most common beauty concerns raised by Latinas in beauty and social media communities. The combination of shaving or waxing irritation, friction from tight clothing, antiperspirant chemical reaction with sensitive skin, and the natural higher melanocyte concentration in the axillary area creates a compounding PIH risk.',
+        'The combination of shaving or waxing irritation, friction from tight clothing, antiperspirant chemical reaction with sensitive skin, and constant skin-on-skin rubbing in the underarm fold creates a compounding PIH risk.',
       bikinLine:
-        'The bikini area is similarly prone in darker Latina skin types. The aggressive Brazilian wax aesthetic — popular particularly in coastal Brazilian culture — means this area is repeatedly irritated by waxing on a short cycle, and PIH accumulates without a targeted treatment plan.',
+        'The bikini area is similarly prone on deeper skin. A full Brazilian wax repeated on a short cycle irritates the area again and again, and dark marks build up without a targeted treatment plan.',
       managementProtocol: [
         'Allow the skin to rest between waxing sessions — never wax an actively irritated area',
         'Apply azelaic acid 15–20% to underarm and bikini areas nightly to address both PIH and bacterial component',
         'Use niacinamide 10% serum as a daily brightener over the longer term',
-        'Tranexamic acid 2–3% is gaining prominence as a PIH treatment for Latina skin and is generally well tolerated',
+        'Tranexamic acid 2–3% is a newer topical option for stubborn dark marks and is generally well tolerated',
         'SPF 50+ on bikini area when at the beach — UV accelerates PIH darkening',
         'Consider switching from waxing to sugaring, which causes less skin trauma for the same result',
       ],
@@ -755,7 +743,6 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
     laserConsiderations: {
       overview:
         'The laser hair removal market has grown rapidly across Latin America, particularly in Brazil, Argentina, Colombia, and Mexico. Brazil is one of the largest laser hair removal markets globally.',
-      skinType: 'Latina skin types range from III to V, meaning appropriate laser selection varies. Medium-toned Latinas (Type III–IV) can safely use diode or alexandrite lasers in experienced hands. Darker Latinas (Type V) should specifically request Nd:YAG.',
       brazilianMarket:
         'Brazil has developed a thriving medical aesthetics industry. "Depilação a laser" (laser hair removal) is marketed aggressively and is more accessible than in North America in cost terms. The quality of equipment and training varies widely; clients should verify laser type.',
     },
@@ -778,19 +765,17 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
     id: 'east-asian',
     communityName: 'East Asian',
     countries: ['Japan', 'China', 'South Korea', 'Taiwan', 'Hong Kong', 'Mongolia'],
-    skinPhototypes: 'Fitzpatrick Types II through IV, most commonly Type III.',
 
     culturalContext:
       'East Asian beauty culture — and East Asian attitudes toward body hair — are notably diverse and often contrasting between countries. Japanese, Korean, and Chinese norms around body hair removal differ significantly from each other and have evolved rapidly under the influence of K-beauty, J-beauty, and Chinese beauty (C-beauty) industry expansion. However, broadly across East Asia, female body hair (particularly underarm and leg hair) has become increasingly associated with Western feminist discourse in recent years, while in the mainstream, smooth skin remains the dominant aesthetic ideal.',
 
     japaneseDepilation: {
-      overview:
-        'Japan has a long and distinctive history of body hair removal practices, shaped by both traditional aesthetic values and the unique character of Japanese beauty culture. The modern Japanese depilation (datsumou, 脱毛) industry is one of the largest in the world and is highly professionalized.',
+      
       traditionalHadanugi:
         '"Hadanugi" (膚脱ぎ) historically referred to the use of a smooth object (traditionally a coin or pumice stone) to rub hair from the body — a form of mechanical depilation. This practice was also carried out with warm wax derived from plant materials. The concept of smooth, hairless skin as aesthetically refined has deep roots in Japanese aesthetics dating to the Heian period (794–1185 CE).',
       modernIndustry:
         'Modern Japan has developed the most sophisticated commercial laser and IPL hair removal infrastructure of any country. The "datsumou salon" (hair removal salon) industry is enormous — Japan\'s laser/IPL market is the largest in Asia. Dedicated hair removal salon chains (Musee Platinum, B.G., Epi-Lady, Remi Lumine) have hundreds of locations nationwide and offer package deals for long-term hair removal.',
-      ipl: 'IPL (Intense Pulsed Light) is particularly widely used in Japan — often branded as "photo-epilation" (フォト脱毛) — because it is generally gentler and more forgiving on the relatively uniform skin tones of the Japanese market (predominantly Type II–III). While less powerful per session than true laser, the high volume of salons and competitive pricing has made multi-session IPL packages extremely accessible.',
+      ipl: 'While less powerful per session than true laser, the high volume of salons and competitive pricing has made multi-session IPL packages extremely accessible.',
       vio: 'VIO (V = bikini/front, I = inner thigh/perineum, O = perianal) is the Japanese industry terminology for full bikini/pubic hair removal, mirroring the Brazilian wax concept. Full VIO removal is widely marketed in Japanese datsumou salons and has become increasingly common, particularly among younger women.',
       publicBathing:
         'Public bathing culture (onsen hot springs, sento public baths) in Japan, which traditionally requires nudity, has historically influenced hair removal attitudes. In this context, the norms of the bathing group — which in traditional settings excludes people with visible tattoos and has unstated grooming expectations — have contributed to the normalization of full-body hair removal.',
@@ -817,12 +802,10 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
     },
 
     laserGrowth: {
-      overview:
-        'Laser hair removal is the fastest-growing category in East Asian aesthetic medicine. The Chinese medical aesthetics market — already the second largest in the world — has seen explosive growth in laser hair removal as disposable incomes rise and social media amplifies beauty standards. Korea and Japan are more mature markets with established infrastructure; China is in rapid expansion.',
+      
       skinTypeAdvantage:
-        'East Asian skin types II–IV are generally easier to treat with laser than darker skin types, because the greater contrast between hair melanin and skin melanin allows for more precise targeting. Alexandrite and diode lasers are widely used and generally safe for most East Asian skin types.',
-      chineseMarket:
-        'The Chinese laser hair removal market is projected to be one of the largest in the world by 2030. Major chains and hospital-affiliated clinics offer competitive pricing. At-home IPL devices are also extremely popular in China, driven by e-commerce platforms like Taobao and JD.com.',
+        'Alexandrite and diode lasers are widely used and generally safe for most East Asian skin types.',
+      
     },
 
     brightening: {
@@ -856,7 +839,6 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
     id: 'east-african',
     communityName: 'East African',
     countries: ['Ethiopia', 'Somalia', 'Kenya', 'Uganda', 'Tanzania', 'Rwanda', 'Burundi', 'Eritrea', 'Djibouti', 'South Sudan'],
-    skinPhototypes: 'Predominantly Fitzpatrick Types V and VI.',
 
     culturalContext:
       'East Africa is home to extraordinary cultural diversity — from the ancient Christian kingdom of Ethiopia to the Islamic coastal Swahili culture, from the nomadic Maasai to urban Nairobi. Hair removal practices are shaped by this diversity, with Islamic tradition playing a significant role in Somali, Djiboutian, coastal Kenyan, and Tanzanian communities, and Ethiopian Orthodox Christian tradition influencing Ethiopian practices. However, across much of East Africa, female body hair removal is practiced as part of general grooming.',
@@ -899,13 +881,13 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
 
     piHyperpigmentationNotes: {
       overview:
-        'Like West African and Black American communities, East African skin types V–VI are highly susceptible to post-inflammatory hyperpigmentation. All the same PIH management principles apply: soothing post-removal, niacinamide and azelaic acid for fading, consistent SPF application.',
+        'Skin types V–VI are highly susceptible to post-inflammatory hyperpigmentation. All the same PIH management principles apply: soothing post-removal, niacinamide and azelaic acid for fading, consistent SPF application.',
       frankincenseForPIH:
         'Frankincense oil\'s anti-inflammatory properties may help limit the initial inflammatory response that triggers PIH, making it a particularly well-suited post-removal treatment for this community.',
     },
 
     laserConsiderations:
-      'East African skin phototypes V–VI require the Nd:YAG 1064nm laser. As laser hair removal clinics expand in East African cities (Nairobi, Addis Ababa, Kampala), clients must verify laser type. The market is growing rapidly but regulatory oversight varies.',
+      'Skin types V–VI need the Nd:YAG 1064nm laser. As laser hair removal clinics expand in East African cities (Nairobi, Addis Ababa, Kampala), clients must verify laser type. The market is growing rapidly but regulatory oversight varies.',
 
     productRecommendations: [
       'Frankincense essential oil (diluted in jojoba oil) for post-removal soothing and anti-inflammatory care',
@@ -925,14 +907,13 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
     id: 'south-african',
     communityName: 'South African',
     countries: ['South Africa (including Zulu, Xhosa, Sotho, Tswana, Venda, Ndebele, Cape Malay, Afrikaner, Indian-South African, and mixed-heritage communities)'],
-    skinPhototypes: 'Exceptionally diverse: Fitzpatrick Types I through VI depending on ethnic heritage.',
 
     culturalContext:
       'South Africa\'s enormous ethnic and cultural diversity means that body hair removal practices reflect a complex mosaic of Indigenous African tradition, Cape Malay Muslim tradition, Indian-South African tradition, Afrikaner/European practice, and English-influenced South African norms. Urban beauty culture in Johannesburg, Cape Town, and Durban is highly sophisticated and reflects global trends alongside local traditions. The post-apartheid era has seen growth in the Black South African beauty industry and increasing representation of diverse beauty practices.',
 
     bantukSkinConcerns: {
       overview:
-        'The Bantu-language peoples of South Africa — including Zulu, Xhosa, Sotho, and Tswana communities — predominantly have Fitzpatrick skin types V and VI. Like other communities with similar skin phototypes, they face heightened risk of PFB and post-inflammatory hyperpigmentation from hair removal.',
+        'Like other communities with similar skin phototypes, they face heightened risk of PFB and post-inflammatory hyperpigmentation from hair removal.',
       pfbInBantukSkin:
         'The tightly coiled hair follicle structure characteristic of Bantu skin types produces the same high PFB risk documented in West African and Black American communities. The bikini and underarm areas are particularly susceptible. The preference for waxing over shaving in these areas — widely observed in Black South African beauty practice — is a practical response to the PFB risk of repeated shaving.',
       management: 'The same PIH management protocols apply: niacinamide, azelaic acid, consistent SPF, single-blade razors when shaving.',
@@ -990,22 +971,20 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
     id: 'black-american',
     communityName: 'Black American',
     countries: ['United States of America — African American community'],
-    skinPhototypes: 'Predominantly Fitzpatrick Types V and VI, with some Type IV in mixed-heritage individuals.',
 
     culturalContext:
       'Black American beauty culture is a dynamic, complex, and increasingly powerful force in global beauty. It navigates the intersection of deeply felt aesthetic traditions, the ongoing legacy of Eurocentric beauty standards imposed by American society, and a vibrant counter-narrative celebrating natural beauty and Black identity. Hair removal in the Black American community is inseparable from the politics of the body — both head hair and body hair carry cultural and political meaning. At the same time, practical beauty practices around body hair removal are widely observed, with significant awareness of the specific dermatological challenges that afro-textured hair presents.',
 
     pfbCrisis: {
-      overview:
-        'Pseudofolliculitis barbae (PFB) — commonly known as razor bumps — is one of the most significant dermatological concerns affecting Black American men and women, and is disproportionately prevalent in this community due to the structural characteristics of afro-textured hair. It is not an exaggeration to describe this as a dermatological crisis for the community: PFB affects up to 83% of Black men who shave, and a significant proportion of Black women in the bikini, underarm, and leg areas.',
+      
       mechanism:
         'Afro-textured hair grows from a highly elliptical, curved follicle that causes the hair shaft itself to be curled. When this hair is cut at the skin surface by a razor blade, the resulting blunt, sharp tip has a natural tendency to curve back toward the skin. As the hair grows, it can re-enter the follicle wall (transfollicular penetration) or pierce adjacent skin (extrafollicular penetration). The body recognizes the hair as a foreign body and mounts an inflammatory response — this is PFB.',
       appearance:
-        'PFB appears as red or dark papules (raised bumps), sometimes pustules (pustular bumps), in shaved areas. In Black American skin types V–VI, the inflammation rapidly triggers post-inflammatory hyperpigmentation, leaving dark spots that often persist long after the active ingrown hair has resolved. In the bikini and beard areas, untreated chronic PFB can lead to significant scarring.',
+        'PFB appears as red or dark papules (raised bumps), sometimes pustules (pustular bumps), in shaved areas. On skin types V–VI, the inflammation rapidly triggers post-inflammatory hyperpigmentation, leaving dark spots that often persist long after the active ingrown hair has resolved. In the bikini and beard areas, untreated chronic PFB can lead to significant scarring.',
       prevalenceByArea: {
         beard: 'The most studied and historically documented area. PFB of the beard affects the majority of Black men who shave, driving significant quality-of-life impact. This has historically created real-world consequences — military shaving regulations, professional workplace grooming requirements — that disproportionately burden Black men.',
         bikini:
-          'Among Black American women, the bikini and pubic area is the highest-risk zone for PFB. Coarse, tightly coiled pubic hair shaved with standard multi-blade razors is practically guaranteed to produce PFB without proper technique and aftercare.',
+          'With coarse, tightly coiled hair the bikini and pubic area is the highest-risk zone for PFB; standard multi-blade razors very often cause it without proper technique and aftercare.',
         underarms: 'Underarm PFB is common in Black American women. The folded skin geometry of the axilla combined with coarse hair in multiple growth directions increases ingrown risk.',
         legs: 'Leg hair is generally less coily than pubic or underarm hair in most individuals, but PFB can still occur on the legs, particularly on the inner thigh.',
       },
@@ -1073,7 +1052,7 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
 
     laserConsiderations: {
       overview:
-        'Black American skin types V–VI require the Nd:YAG 1064nm laser for safe hair removal. This cannot be overstated: using alexandrite (755nm) or poorly calibrated diode lasers on deep Black skin causes burns, blistering, and permanent pigmentation damage.',
+        'Skin types V–VI need the Nd:YAG 1064nm laser for safe hair removal. This cannot be overstated: using alexandrite (755nm) or poorly calibrated diode lasers on deep skin causes burns, blistering, and permanent pigmentation damage.',
       advocating: 'Black American clients seeking laser hair removal should explicitly ask: "Is this an Nd:YAG laser?" and "What settings have you used successfully on skin types V and VI?" A clinic that cannot answer these questions clearly should be avoided.',
       electrolysisAlternative:
         'Because electrolysis works on individual follicles using electrical current rather than light energy, it is equally effective across all skin tones and all hair colors, including the gray, white, and fine hairs that laser cannot target. It is a viable and safe alternative for Black American clients who cannot access appropriate laser technology or prefer a certified-permanent option.',
@@ -1098,52 +1077,6 @@ export const ETHNIC_BODY_HAIR_GUIDES = {
 // ─────────────────────────────────────────────────────────────────────────────
 // STATISTICAL DATA
 // ─────────────────────────────────────────────────────────────────────────────
-
-export const BODY_HAIR_STATS = {
-  globalMarket: {
-    laserHairRemovalMarketSize2024: 'Approximately USD $1.7 billion globally',
-    projectedGrowth: 'Expected to reach USD $3.9 billion by 2032 (CAGR ~11%)',
-    fastestGrowingRegion: 'Asia-Pacific, led by China, South Korea, and Japan',
-    largestMarket: 'North America, followed by Europe',
-  },
-  pfbPrevalence: {
-    blackMen: 'Estimated 45–83% of Black men who shave experience PFB',
-    blackWomen: 'Significant but less systematically studied; bikini and underarm PFB are highly prevalent',
-    generalPopulation: 'PFB affects all populations with coarser or curly hair, but at dramatically lower rates than Black populations due to hair follicle geometry',
-    economicImpact: 'Lost productivity, medical visits, treatment costs estimated in hundreds of millions annually in the US alone',
-  },
-  methodPreferences: {
-    shaving: 'Most common globally, particularly in lower-income contexts and for leg and underarm use',
-    waxing: 'Dominant professional service in Latin America, Caribbean, Western Europe, and increasing globally',
-    sugaring: 'Traditional dominant method in Arab world and growing globally',
-    laser: 'Fastest growing professional segment globally; dominant in East Asia, USA, and Australia',
-    threading: 'Dominant facial method in South Asia and growing in diaspora communities',
-    electrolysis: 'Niche but only truly permanent method; important for fine/white/grey hair and all skin tones',
-    depilatory: 'Widely used in developing markets for accessibility and cost',
-  },
-  laserSafetyData: {
-    ndYAGBurnRisk: 'Significantly lower than alexandrite on darker skin — documented as the safe standard for phototypes V–VI',
-    alexandriteRisk: 'High risk of burns, hyperpigmentation, and hypopigmentation in skin phototypes V–VI — inappropriate for these skin types',
-    patchTestImportance: 'Patch testing reduces adverse event rates by an estimated 60–70% in published clinical literature on darker skin laser treatment',
-  },
-  ingredientEfficacy: {
-    glycolicAcid: 'Clinical studies show 5–10% glycolic acid reduces ingrown hair occurrence by approximately 60% with consistent use',
-    salicylicAcid: 'Follicle penetration studies confirm BHA efficacy in reducing PFB with 2-week consistent use',
-    niacinamide: '10% niacinamide reduces hyperpigmentation by an average of 35–68% in clinical studies over 8–12 weeks',
-    azelaicAcid: '20% azelaic acid achieves equivalent or superior PIH fading to hydroquinone in clinical comparisons, with better tolerability in dark skin types',
-  },
-  communityHighlights: [
-    { community: 'Arab', signature: 'Halawa (sugaring) — 4,000+ year tradition; hammam ritual hair removal' },
-    { community: 'South Asian', signature: 'Threading — centuries-old technique; turmeric paste as folk depilatory' },
-    { community: 'West African', signature: 'Shea butter post-care; highest PIH risk requiring targeted management' },
-    { community: 'Black American', signature: 'PFB crisis — up to 83% prevalence in men; JBCO and glycolic acid as community solutions' },
-    { community: 'Caribbean', signature: 'Beach/carnival culture driving year-round demand; coconut oil post-care' },
-    { community: 'Latina', signature: '"La cera" salon culture; Brazilian wax global export; aloe vera post-wax tradition' },
-    { community: 'East Asian', signature: 'Fastest-growing laser market globally; K-beauty cica post-removal care; brightening focus' },
-    { community: 'East African', signature: 'Frankincense oil post-removal; Islamic fitra tradition; Somali halawa tradition' },
-    { community: 'South African', signature: 'Marula oil post-removal; diverse ethnic practices; Cape Malay waxing tradition' },
-  ],
-};
 
 // ─────────────────────────────────────────────────────────────────────────────
 // GETTER FUNCTIONS
@@ -1224,30 +1157,15 @@ export function getCommunityProductRecommendations(communityId) {
 
 export function getCommunitySignatureMethod(communityId) {
   const directMap = {
-    'west-african': { primary: 'shaving', postCare: 'shea butter', concern: 'PIH and PFB' },
-    'south-asian': { primary: 'threading', postCare: 'aloe vera and turmeric', concern: 'facial hair management' },
-    'caribbean': { primary: 'waxing', postCare: 'coconut oil', concern: 'razor bumps in Afro-Caribbean skin' },
-    'arab': { primary: 'halawa (sugaring)', postCare: 'argan oil and rose water', concern: 'traditional ritual completeness' },
-    'latina': { primary: 'la cera (waxing)', postCare: 'aloe vera', concern: 'underarm and bikini PIH' },
-    'east-asian': { primary: 'laser / IPL', postCare: 'centella asiatica', concern: 'brightening and even skin tone' },
-    'east-african': { primary: 'sugaring', postCare: 'frankincense oil', concern: 'PIH on deep skin tones' },
-    'south-african': { primary: 'waxing', postCare: 'marula oil', concern: 'PFB in Bantu skin types' },
-    'black-american': { primary: 'waxing or sugaring', postCare: 'JBCO and glycolic acid', concern: 'PFB crisis and PIH' },
-  };
-  return directMap[communityId] || null;
-}
-
-export function getPFBRiskByCommunity(communityId) {
-  const directMap = {
-    'west-african': { risk: 'very high', reason: 'Afro-textured tightly coiled hair follicles; phototype V–VI PIH risk', primaryConcernArea: 'bikini, underarms, legs' },
-    'south-asian': { risk: 'moderate', reason: 'Hair texture ranges from straight to wavy; darker phototypes increase PIH risk', primaryConcernArea: 'face, arms, bikini' },
-    'caribbean': { risk: 'high (Afro-Caribbean) to moderate (Indo-Caribbean)', reason: 'Afro-Caribbean hair follicle geometry; beach culture driving frequent removal', primaryConcernArea: 'bikini, underarms' },
-    'arab': { risk: 'low-to-moderate', reason: 'Traditional halawa technique removes with the grain, reducing ingrown risk; phototype III–V PIH possible', primaryConcernArea: 'bikini, legs' },
-    'latina': { risk: 'moderate', reason: 'Hair texture varies widely; darker phototypes IV–V with waxing-related PIH', primaryConcernArea: 'underarms, bikini' },
-    'east-asian': { risk: 'low', reason: 'Generally finer, less coiled hair; lower PFB rates; phototype II–IV moderate PIH risk only', primaryConcernArea: 'underarms' },
-    'east-african': { risk: 'very high', reason: 'Similar follicle geometry to West African; phototype V–VI PIH risk', primaryConcernArea: 'bikini, underarms, legs' },
-    'south-african': { risk: 'high (Bantu) to low (European)', reason: 'Bantu phototype V–VI with high PFB risk; European phototype I–III with low risk', primaryConcernArea: 'bikini, underarms' },
-    'black-american': { risk: 'very high', reason: 'Highest documented PFB prevalence; up to 83% in Black men; bikini and underarm PFB common in Black women', primaryConcernArea: 'beard (men), bikini and underarms (women)' },
+    'west-african': { primary: 'shaving', postCare: 'shea butter' },
+    'south-asian': { primary: 'threading', postCare: 'aloe vera and turmeric' },
+    'caribbean': { primary: 'waxing', postCare: 'coconut oil' },
+    'arab': { primary: 'halawa (sugaring)', postCare: 'argan oil and rose water' },
+    'latina': { primary: 'la cera (waxing)', postCare: 'aloe vera' },
+    'east-asian': { primary: 'laser / IPL', postCare: 'centella asiatica' },
+    'east-african': { primary: 'sugaring', postCare: 'frankincense oil' },
+    'south-african': { primary: 'waxing', postCare: 'marula oil' },
+    'black-american': { primary: 'waxing or sugaring', postCare: 'JBCO and glycolic acid' },
   };
   return directMap[communityId] || null;
 }
@@ -1329,8 +1247,6 @@ export const EXTENDED_COMMUNITY_PROFILES = {
     },
 
     ghanaianSpecific: {
-      overview:
-        'Ghanaian beauty culture has experienced rapid modernization with the growth of Accra\'s fashion and entertainment industries. Ghanaian celebrities and influencers on social media have created significant consumer demand for more sophisticated hair removal and skin care protocols. Laser hair removal clinics have opened in Accra and Kumasi, offering services that require Nd:YAG for the predominantly phototype V–VI local population.',
       nkuiOil:
         'Palm kernel oil (nkui in Twi) is a traditional Ghanaian skin care ingredient used in post-hair-removal skin care alongside shea butter. It has a different fatty acid profile from shea — primarily lauric acid and myristic acid — giving it antibacterial properties suitable for post-removal folliculitis prevention.',
     },
@@ -1507,8 +1423,7 @@ export const EXTENDED_COMMUNITY_PROFILES = {
     },
 
     japaneseBodyNorms: {
-      underarmTaboo:
-        'In Japan, female underarm hair has been particularly strongly taboo since approximately the Meiji Era (1868–1912) when Western fashion — including sleeveless garments — was adopted. This created an awareness of underarm hair that had not previously been significant in traditional Japanese dress. By the postwar period, underarm hair removal had become essentially universal among Japanese women. The contemporary datsumou salon industry owes much of its scale to this established norm.',
+      
       menBodyHair:
         'Japanese male body hair norms have also shifted dramatically in the 21st century. The concept of "manscaping" has been normalized in Japan earlier and more extensively than in most Western markets. Japanese men visiting datsumou salons for back, chest, and underarm hair removal is now commonplace, and the "ikemen" (cool/handsome male) beauty standard often implies minimal body hair.',
     },
@@ -1579,77 +1494,77 @@ export const OCCASION_GUIDES = {
 export const INGREDIENT_GLOSSARY = {
   sheaButter: {
     inci: 'Butyrospermum Parkii (Shea) Butter',
-    source: 'Shea tree nut kernels, sub-Saharan Africa',
+    
     keyFattyAcids: ['Oleic acid (40–60%)', 'Stearic acid (20–50%)', 'Linoleic acid (3–11%)', 'Palmitic acid (2–9%)'],
     benefitsForHairRemoval: 'Barrier repair, anti-inflammatory, moisturizing, traditional post-removal staple in West African and East African communities.',
     comedogenicRating: '0–2 (low; unlikely to clog pores for most)',
   },
   coconutOil: {
     inci: 'Cocos Nucifera (Coconut) Oil',
-    source: 'Coconut fruit, tropical regions',
+    
     keyFattyAcids: ['Lauric acid (~50%)', 'Myristic acid (~20%)', 'Caprylic acid (~8%)', 'Palmitic acid (~9%)'],
     benefitsForHairRemoval: 'Antibacterial (lauric acid), moisturizing, post-removal soothing. Central in Caribbean and South Asian post-removal practice.',
     comedogenicRating: '4 (high; may cause breakouts in acne-prone individuals — patch test)',
   },
   marulaOil: {
     inci: 'Sclerocarya Birrea Seed Oil',
-    source: 'Marula tree kernels, southern Africa',
+    
     keyFattyAcids: ['Oleic acid (70–78%)', 'Linoleic acid (4–7%)', 'Palmitic acid (~9%)'],
     benefitsForHairRemoval: 'Deep moisturizing, antioxidant, rapid absorption, barrier repair. Post-removal staple in South African beauty.',
     comedogenicRating: '3–4 (moderate; generally well-tolerated but patch test in acne-prone skin)',
   },
   arganOil: {
     inci: 'Argania Spinosa Kernel Oil',
-    source: 'Argan tree kernels, Morocco',
+    
     keyFattyAcids: ['Oleic acid (43–49%)', 'Linoleic acid (29–36%)'],
     benefitsForHairRemoval: 'Skin barrier repair, anti-inflammatory (vitamin E), fast absorption. Central in Moroccan post-halawa practice.',
     comedogenicRating: '0–2 (low; generally non-comedogenic)',
   },
   jojoba: {
     inci: 'Simmondsia Chinensis (Jojoba) Seed Oil',
-    source: 'Jojoba shrub seeds, North American desert',
+    
     composition: 'Technically a liquid wax ester, not an oil. Structure closely mimics human sebum.',
     benefitsForHairRemoval: 'Excellent carrier for essential oils, regulates sebum production, non-comedogenic, soothing. Good base for frankincense dilution.',
     comedogenicRating: '2 (low)',
   },
   frankincenseOil: {
     inci: 'Boswellia Carterii (or Sacra) Oil',
-    source: 'Boswellia tree resin, East Africa and Middle East',
+    
     keyCompounds: ['Boswellic acid esters', 'Alpha-pinene', 'Limonene', 'Incensole acetate'],
     benefitsForHairRemoval: 'Anti-inflammatory (5-LOX inhibition), skin regeneration, calming redness. Post-removal use in East African and Gulf Arab communities. ALWAYS dilute in carrier oil.',
     comedogenicRating: '1 (very low)',
   },
   aloeVera: {
     inci: 'Aloe Barbadensis Leaf Juice',
-    source: 'Aloe vera plant, originally from Africa, now cultivated globally',
+    
     keyCompounds: ['Polysaccharides (acemannan)', 'Anthraquinones (small amounts)', 'Vitamins A, C, E', 'Zinc'],
     benefitsForHairRemoval: 'Immediate soothing and cooling, anti-inflammatory, antibacterial, moisture-attracting (humectant). Universal post-removal standard. Central in South Asian, Latina, and Caribbean post-removal care.',
     comedogenicRating: '0 (non-comedogenic)',
   },
   glycolicAcid: {
     inci: 'Glycolic Acid',
-    source: 'Derived from sugarcane (natural) or synthesized',
+    
     mechanism: 'Smallest alpha-hydroxy acid; dissolves intercellular glue between dead skin cells; accelerates cell turnover',
     benefitsForHairRemoval: 'Prevents and treats ingrown hairs and PFB by dissolving skin that traps hairs. Most effective ingrown hair prevention ingredient with clinical evidence.',
     recommendedConcentration: '5–10% in regular use products; 20–30% in chemical peels (professional use only)',
   },
   salicylicAcid: {
     inci: 'Salicylic Acid',
-    source: 'Derived from willow bark (natural) or synthesized from phenol',
+    
     mechanism: 'Oil-soluble BHA; penetrates follicle pore; exfoliates follicle wall; also anti-inflammatory and antibacterial',
     benefitsForHairRemoval: 'Clears follicle debris that causes ingrown hairs; antibacterial action addresses PFB\'s bacterial component; reduces redness.',
     recommendedConcentration: '0.5–2% in leave-on products; 2% BHA toner for twice-weekly use',
   },
   niacinamide: {
     inci: 'Niacinamide (Nicotinamide)',
-    source: 'Form of vitamin B3',
+    
     mechanism: 'Inhibits melanosome transfer from melanocytes to keratinocytes, reducing visible pigmentation; strengthens skin barrier',
     benefitsForHairRemoval: 'Fades post-inflammatory hyperpigmentation from PFB, razor bumps, waxing-related inflammation. One of the safest and most evidence-based PIH treatments for all skin types.',
     recommendedConcentration: '5–10%',
   },
   azelaicAcid: {
     inci: 'Azelaic Acid',
-    source: 'Produced by Malassezia yeast; derived from grain fermentation',
+    
     mechanism: 'Inhibits tyrosinase (melanin synthesis enzyme); anti-bacterial; anti-inflammatory; mild comedolytic',
     benefitsForHairRemoval: 'Dual action on PIH (brightening) and PFB (antibacterial, anti-inflammatory). One of the best single-ingredient solutions for post-hair-removal dark spots in deeper skin tones.',
     recommendedConcentration: '10% OTC; 15–20% prescription (Finacea gel 15%; Skinoren 20% cream)',
@@ -1801,126 +1716,6 @@ export const COMMON_HAIR_REMOVAL_MISTAKES = {
 // COMMUNITY COMPARISON TABLE
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const COMMUNITY_COMPARISON = {
-  description: 'Quick-reference comparison of body hair removal practices, primary methods, signature post-care ingredients, and key skin concerns across all 9 communities.',
-  communities: [
-    {
-      id: 'west-african',
-      name: 'West African',
-      primaryMethod: 'Waxing / Shaving',
-      facialMethod: 'Threading',
-      signaturePostCare: 'Shea Butter',
-      primaryConcern: 'Post-inflammatory hyperpigmentation (PIH) and PFB',
-      phototype: 'V–VI',
-      laserSafe: 'Nd:YAG only',
-      traditionalIngredient: 'Ori (shea butter), Dudu Osun (black soap)',
-    },
-    {
-      id: 'south-asian',
-      name: 'South Asian',
-      primaryMethod: 'Threading (face) / Waxing (body)',
-      facialMethod: 'Threading',
-      signaturePostCare: 'Aloe vera, turmeric paste',
-      primaryConcern: 'Facial hair management, PIH in deeper skin tones',
-      phototype: 'III–V',
-      laserSafe: 'Diode (III–IV), Nd:YAG (V)',
-      traditionalIngredient: 'Turmeric (haldi), neem, rose water, sesame oil',
-    },
-    {
-      id: 'caribbean',
-      name: 'Caribbean',
-      primaryMethod: 'Waxing',
-      facialMethod: 'Threading / Waxing',
-      signaturePostCare: 'Coconut oil, JBCO',
-      primaryConcern: 'Razor bumps (Afro-Caribbean skin), year-round removal demand',
-      phototype: 'III–VI',
-      laserSafe: 'Diode (III–IV), Nd:YAG (V–VI)',
-      traditionalIngredient: 'Coconut oil, aloe vera, JBCO',
-    },
-    {
-      id: 'arab',
-      name: 'Arab',
-      primaryMethod: 'Halawa / Sugaring',
-      facialMethod: 'Threading',
-      signaturePostCare: 'Argan oil, rose water, olive oil',
-      primaryConcern: 'Ritual completeness, traditional method preservation',
-      phototype: 'III–V',
-      laserSafe: 'Diode or Nd:YAG depending on individual',
-      traditionalIngredient: 'Halawa paste, argan oil, savon beldi, rose water',
-    },
-    {
-      id: 'latina',
-      name: 'Latina',
-      primaryMethod: 'La Cera (Waxing)',
-      facialMethod: 'Waxing / Threading',
-      signaturePostCare: 'Aloe vera (sábila)',
-      primaryConcern: 'Underarm and bikini PIH in deeper skin tones',
-      phototype: 'III–V',
-      laserSafe: 'Alexandrite (III), Diode (III–IV), Nd:YAG (V)',
-      traditionalIngredient: 'Aloe vera, papaya enzyme, nopal cactus gel',
-    },
-    {
-      id: 'east-asian',
-      name: 'East Asian',
-      primaryMethod: 'Laser / IPL',
-      facialMethod: 'Threading / Laser',
-      signaturePostCare: 'Centella asiatica (cica), brightening serum',
-      primaryConcern: 'Even skin tone, brightening, underarm darkness',
-      phototype: 'II–IV',
-      laserSafe: 'Alexandrite or Diode (most types)',
-      traditionalIngredient: 'Centella asiatica, camellia oil, rice ferment',
-    },
-    {
-      id: 'east-african',
-      name: 'East African',
-      primaryMethod: 'Sugaring / Waxing',
-      facialMethod: 'Threading',
-      signaturePostCare: 'Frankincense oil, shea butter',
-      primaryConcern: 'PIH and PFB in phototype V–VI; henna sequencing',
-      phototype: 'V–VI',
-      laserSafe: 'Nd:YAG only',
-      traditionalIngredient: 'Frankincense (luban) oil, shea butter, henna',
-    },
-    {
-      id: 'south-african',
-      name: 'South African',
-      primaryMethod: 'Waxing',
-      facialMethod: 'Waxing / Threading',
-      signaturePostCare: 'Marula oil',
-      primaryConcern: 'PFB in Bantu skin types; diverse ethnic practices',
-      phototype: 'I–VI (varies by ethnic heritage)',
-      laserSafe: 'Assess individually; Nd:YAG for V–VI',
-      traditionalIngredient: 'Marula oil, palm kernel oil',
-    },
-    {
-      id: 'black-american',
-      name: 'Black American',
-      primaryMethod: 'Waxing / Sugaring',
-      facialMethod: 'Waxing / Threading',
-      signaturePostCare: 'JBCO, glycolic acid, salicylic acid',
-      primaryConcern: 'PFB crisis (up to 83% prevalence in Black men who shave), PIH',
-      phototype: 'V–VI',
-      laserSafe: 'Nd:YAG only',
-      traditionalIngredient: 'Jamaican Black Castor Oil (JBCO)',
-    },
-  ],
-};
-
-export function getCommunityComparison(communityId) {
-  const directMap = {
-    'west-african': COMMUNITY_COMPARISON.communities[0],
-    'south-asian': COMMUNITY_COMPARISON.communities[1],
-    'caribbean': COMMUNITY_COMPARISON.communities[2],
-    'arab': COMMUNITY_COMPARISON.communities[3],
-    'latina': COMMUNITY_COMPARISON.communities[4],
-    'east-asian': COMMUNITY_COMPARISON.communities[5],
-    'east-african': COMMUNITY_COMPARISON.communities[6],
-    'south-african': COMMUNITY_COMPARISON.communities[7],
-    'black-american': COMMUNITY_COMPARISON.communities[8],
-  };
-  return directMap[communityId] || null;
-}
-
 export function getMistakesForCommunity(communityId) {
   const universal = COMMON_HAIR_REMOVAL_MISTAKES.forAllSkinTones;
   const communitySpecific = COMMON_HAIR_REMOVAL_MISTAKES.forDarkerSkinTones.filter(
@@ -1929,38 +1724,7 @@ export function getMistakesForCommunity(communityId) {
   return { universal, communitySpecific };
 }
 
-export function getCommunityPhototype(communityId) {
-  const directMap = {
-    'west-african': { range: 'V–VI', primaryTypes: ['V', 'VI'], laserRecommendation: 'Nd:YAG 1064nm only' },
-    'south-asian': { range: 'III–V', primaryTypes: ['III', 'IV', 'V'], laserRecommendation: 'Diode (III–IV); Nd:YAG for type V' },
-    'caribbean': { range: 'III–VI', primaryTypes: ['IV', 'V', 'VI'], laserRecommendation: 'Diode (III–IV); Nd:YAG for V–VI' },
-    'arab': { range: 'III–V', primaryTypes: ['III', 'IV'], laserRecommendation: 'Diode or Nd:YAG depending on individual phototype' },
-    'latina': { range: 'III–V', primaryTypes: ['III', 'IV'], laserRecommendation: 'Alexandrite or diode for III; Nd:YAG for IV–V' },
-    'east-asian': { range: 'II–IV', primaryTypes: ['II', 'III'], laserRecommendation: 'Alexandrite or diode; IPL generally safe' },
-    'east-african': { range: 'V–VI', primaryTypes: ['V', 'VI'], laserRecommendation: 'Nd:YAG 1064nm only' },
-    'south-african': { range: 'I–VI', primaryTypes: ['varies by ethnic heritage'], laserRecommendation: 'Must assess individually; Nd:YAG for V–VI' },
-    'black-american': { range: 'V–VI', primaryTypes: ['V', 'VI'], laserRecommendation: 'Nd:YAG 1064nm only — non-negotiable for safe treatment' },
-  };
-  return directMap[communityId] || null;
-}
-
 // ─────────────────────────────────────────────────────────────────────────────
 // MODULE METADATA
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const MODULE_META = {
-  id: 'body_hair_ethnic_guide',
-  version: '1.0.0',
-  description: 'Body hair removal and management practices across 9 ethnic communities, with universal science, ingredient glossary, occasion guides, and safety matrices.',
-  communities: ['west-african', 'south-asian', 'caribbean', 'arab', 'latina', 'east-asian', 'east-african', 'south-african', 'black-american'],
-  exportedConstants: ['ETHNIC_BODY_HAIR_GUIDES', 'UNIVERSAL_BODY_HAIR', 'BODY_HAIR_STATS', 'EXTENDED_COMMUNITY_PROFILES', 'INGREDIENT_GLOSSARY', 'OCCASION_GUIDES', 'COMMON_HAIR_REMOVAL_MISTAKES', 'COMMUNITY_COMPARISON'],
-  exportedFunctions: ['getBodyHairGuide', 'getAllCommunityIds', 'getUniversalRemovalMethod', 'getSafeIngredient', 'getLaserTypeInfo', 'getCommunityProductRecommendations', 'getCommunitySignatureMethod', 'getPFBRiskByCommunity', 'getPrePostProtocol', 'isLaserSafeForPhototype', 'getExtendedProfile', 'getOccasionGuide', 'getIngredient', 'getRecommendedPostCareOil', 'getAllProductRecommendations', 'getCommunityPhototype', 'getCommunityComparison', 'getMistakesForCommunity'],
-  keyInsights: [
-    'PFB (pseudofolliculitis barbae) disproportionately affects Black, West African, East African, and Caribbean communities due to afro-textured hair follicle geometry.',
-    'Nd:YAG 1064nm laser is the only safe laser type for Fitzpatrick skin phototypes V and VI.',
-    'Sugaring (halawa) has a 4,000+ year documented history in the Arab world and is the gentlest wax-type removal method for ingrown prevention.',
-    'Threading originated independently in South Asia and China and is the gold standard for facial hair removal across both cultures.',
-    'Post-inflammatory hyperpigmentation is the primary post-removal concern for skin phototypes IV–VI and requires targeted treatment with niacinamide, azelaic acid, or alpha-arbutin.',
-    'Shea butter (West Africa), coconut oil (Caribbean/South Asia), marula oil (South Africa), argan oil (Morocco), and frankincense oil (East Africa) are the culturally established post-removal botanicals of their respective communities.',
-  ],
-};

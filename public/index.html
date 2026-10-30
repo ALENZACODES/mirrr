@@ -368,6 +368,7 @@
             <button class="nav-link" data-view="colour" role="menuitem">Colour &amp; Lip Studio</button>
             <button class="nav-link" data-view="nails" role="menuitem">Nails &amp; Scent Studio</button>
             <button class="nav-link" data-view="ageing" role="menuitem">Ageing Studio</button>
+            <button class="nav-link" data-view="hair-removal" role="menuitem">Hair Removal</button>
             <button class="nav-link" data-view="style-match" role="menuitem">Style Match</button>
             <button class="nav-link" data-view="quiz" role="menuitem">DNA Quiz</button>
             <button class="nav-link" data-view="wig" role="menuitem">Wig Match</button>
@@ -1171,6 +1172,20 @@
       </div>
     </section>
 
+    <section id="view-hair-removal" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Hair Removal Planner</h2>
+        <p class="view-sub">Pick the area, your hair and skin type and a method: see whether it suits you, which lasers are safe for your skin, how to stop razor bumps and dark marks, and how to time it before an event.</p>
+      </div>
+      <div class="st-wrap">
+        <div id="hrControls" class="st-controls"></div>
+        <div id="hrPreview" class="sk-preview cx-preview" aria-live="polite"></div>
+        <div id="hrSummary" class="hl-summary"></div>
+        <div id="hrPlan" class="st-plan"></div>
+        <p class="lib-disclaimer">The body and the hair are illustrations in the Monk Skin Tone Scale tone you pick (Ellis Monk / Google, CC BY 4.0), not your photo. General care, not medical advice: have a test patch before laser or IPL and see a dermatologist for lasting razor bumps or dark marks. Skin type, hair texture and colour are yours to choose; nothing is assumed from your community.</p>
+      </div>
+    </section>
+
     <section id="view-help" class="view hidden">
       <div class="view-header">
         <h2 class="view-title">Help, Privacy &amp; About</h2>
@@ -1337,6 +1352,7 @@
   <script src="colour-studio.js" defer></script>
   <script src="nails.js" defer></script>
   <script src="ageing.js" defer></script>
+  <script src="hairremoval.js" defer></script>
   <script>
     // Community detail panel interactions
     (function() {

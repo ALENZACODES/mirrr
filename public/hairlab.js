@@ -101,20 +101,33 @@
   }
 
   // ---- Controls ----------------------------------------------------------------------------
+  // Nothing is pre-selected: every dropdown opens on a disabled "Choose…" and shows a value only once
+  // picked here. Until the first pick the studio shows its neutral base (no tint, no plan); after it,
+  // fields still on "Choose…" fall back to a suggested value so the plan never sees undefined.
+  const PICKED = new Set(); const OWN = new Set(['hlTarget']);
+  const anyPicked = () => [...OWN].some(id => PICKED.has(id));
+  function renderBase() {
+    ++hl.seq; hl.plan = null;
+    const put = (k, h) => { const el = $('hl' + k); if (el) el.innerHTML = h; };
+    put('Preview', '');
+    put('Summary', '<p class="lib-note choose-first">Choose your options above to see your plan.</p>');
+    put('Plan', '');
+  }
   function select(id, label, values, current) {
-    return `<label class="st-field"><span>${esc(label)}</span><select id="${id}">${values.map(v => `<option value="${esc(v.id)}"${String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
+    OWN.add(id);
+    return `<label class="st-field"><span>${esc(label)}</span><select id="${id}"><option value="" disabled${PICKED.has(id) ? '' : ' selected'}>Choose…</option>${values.map(v => `<option value="${esc(v.id)}"${PICKED.has(id) && String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
   }
   function renderControls() {
     const o = hl.options; const c = hl.choices;
-    const targetGroups = Object.entries(o.targets).map(([cat, list]) => `<optgroup label="${esc(nice(cat))}">${list.map(t => `<option value="${esc(t.id)}"${t.id === c.target ? ' selected' : ''}>${esc(t.label)}</option>`).join('')}</optgroup>`).join('');
+    const targetGroups = Object.entries(o.targets).map(([cat, list]) => `<optgroup label="${esc(nice(cat))}">${list.map(t => `<option value="${esc(t.id)}"${PICKED.has('hlTarget') && t.id === c.target ? ' selected' : ''}>${esc(t.label)}</option>`).join('')}</optgroup>`).join('');
     $('hlControls').innerHTML = `
       ${select('hlCommunity', 'Community', o.communities, c.community)}
       ${select('hlTexture', 'Texture', o.textures, c.texture)}
       ${select('hlPorosity', 'Porosity', o.porosities.map(x => ({ id: x, label: nice(x) })), c.porosity)}
       ${select('hlStart', 'Your colour now', o.startLevels.map(s => ({ id: s.level, label: s.label })), c.startLevel)}
       ${select('hlHistory', 'Hair history', o.histories, c.history)}
-      <label class="st-field"><span>Target colour</span><select id="hlTarget">${targetGroups}</select></label>
-      ${select('hlTechnique', 'Technique', [{ id: '', label: 'Recommended for me' }, ...o.techniques.map(t => ({ id: t.id, label: t.label }))], c.technique)}`;
+      <label class="st-field"><span>Target colour</span><select id="hlTarget"><option value="" disabled${PICKED.has('hlTarget') ? '' : ' selected'}>Choose…</option>${targetGroups}</select></label>
+      ${select('hlTechnique', 'Technique', [{ id: 'auto', label: 'Recommended for me' }, ...o.techniques.map(t => ({ id: t.id, label: t.label }))], c.technique || 'auto')}`;
   }
 
   const li = s => `<li>${esc(s)}</li>`;
@@ -166,7 +179,7 @@
         hl.choices = { community: pr.communityId || 'west_african', texture: 'type_4a', porosity: 'medium', startLevel: 2, history: 'virgin', target: 'honey_blonde', technique: '' };
       }
       renderControls();
-      await replan();
+      if (anyPicked()) await replan(); else renderBase();
     } catch (e) {
       $('hlPlan').innerHTML = `<p class="lib-note">The Hair Colour Lab could not load (${esc(e.message)}).</p>`;
     }
@@ -174,10 +187,12 @@
 
   const FIELD = { hlCommunity: 'community', hlTexture: 'texture', hlPorosity: 'porosity', hlStart: 'startLevel', hlHistory: 'history', hlTarget: 'target', hlTechnique: 'technique' };
   document.addEventListener('change', e => {
+    if (OWN.has(e.target.id) && e.target.value !== '') PICKED.add(e.target.id);
     const k = FIELD[e.target.id];
     if (!k || !hl.choices) return;
-    hl.choices[k] = k === 'startLevel' ? Number(e.target.value) : e.target.value;
-    if (k === 'target' || k === 'community') hl.choices.technique = '';
+    if (e.target.id === 'hlTarget') PICKED.add('hlTarget');
+    hl.choices[k] = k === 'startLevel' ? Number(e.target.value) : k === 'technique' && e.target.value === 'auto' ? '' : e.target.value;
+    if (k === 'target' || k === 'community') { hl.choices.technique = ''; PICKED.delete('hlTechnique'); }
     if (k === 'target' || k === 'community') renderControls();
     replan();
   });

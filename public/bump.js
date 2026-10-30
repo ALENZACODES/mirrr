@@ -68,8 +68,21 @@
       <figcaption><strong>${esc(word)}</strong><span>Every stage, left to right</span></figcaption></figure>`;
   }
 
+  // Nothing is pre-selected: every dropdown opens on a disabled "Choose…" and shows a value only once
+  // picked here. Until the first pick the studio shows its neutral base (no tint, no plan); after it,
+  // fields still on "Choose…" fall back to a suggested value so the plan never sees undefined.
+  const PICKED = new Set(); const OWN = new Set();
+  const anyPicked = () => [...OWN].some(id => PICKED.has(id));
+  function renderBase() {
+    ++bp.seq; bp.plan = null;
+    const put = (k, h) => { const el = $('bp' + k); if (el) el.innerHTML = h; };
+    put('Preview', '');
+    put('Summary', '<p class="lib-note choose-first">Choose your options above to see your plan.</p>');
+    put('Plan', '');
+  }
   function select(id, text, values, current) {
-    return `<label class="st-field"><span>${esc(text)}</span><select id="${id}">${values.map(v => `<option value="${esc(v.id)}"${String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
+    OWN.add(id);
+    return `<label class="st-field"><span>${esc(text)}</span><select id="${id}"><option value="" disabled${PICKED.has(id) ? '' : ' selected'}>Choose…</option>${values.map(v => `<option value="${esc(v.id)}"${PICKED.has(id) && String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
   }
   function renderControls() {
     const o = bp.options; const c = bp.choices;
@@ -123,7 +136,7 @@
         bp.choices = { stage: 't2', concern: 'melasma', ingredient: 'retinoid', fitzpatrick: 'V', community: pr.communityId || 'west_african', tone: tone.id };
       }
       renderControls();
-      await replan();
+      if (anyPicked()) await replan(); else renderBase();
     } catch (e) {
       $('bpPlan').innerHTML = `<p class="lib-note">The Pregnancy & Postpartum planner could not load (${esc(e.message)}).</p>`;
     }
@@ -131,6 +144,7 @@
 
   const FIELD = { bpStage: 'stage', bpConcern: 'concern', bpIngredient: 'ingredient', bpFitz: 'fitzpatrick', bpCommunity: 'community', bpTone: 'tone' };
   document.addEventListener('change', e => {
+    if (OWN.has(e.target.id) && e.target.value !== '') PICKED.add(e.target.id);
     const k = FIELD[e.target.id];
     if (!k || !bp.choices) return;
     bp.choices[k] = e.target.value;

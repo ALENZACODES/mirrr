@@ -84,8 +84,21 @@
   }
 
   // ---- Controls ---------------------------------------------------------------------------------
+  // Nothing is pre-selected: every dropdown opens on a disabled "Choose…" and shows a value only once
+  // picked here. Until the first pick the studio shows its neutral base (no tint, no plan); after it,
+  // fields still on "Choose…" fall back to a suggested value so the plan never sees undefined.
+  const PICKED = new Set(); const OWN = new Set();
+  const anyPicked = () => [...OWN].some(id => PICKED.has(id));
+  function renderBase() {
+    ++sm.seq; sm.plan = null;
+    const put = (k, h) => { const el = $('sm' + k); if (el) el.innerHTML = h; };
+    put('Preview', '');
+    put('Summary', '<p class="lib-note choose-first">Choose your options above to see your plan.</p>');
+    put('Plan', '');
+  }
   function select(id, text, values, current) {
-    return `<label class="st-field"><span>${esc(text)}</span><select id="${id}">${values.map(v => `<option value="${esc(v.id)}"${String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
+    OWN.add(id);
+    return `<label class="st-field"><span>${esc(text)}</span><select id="${id}"><option value="" disabled${PICKED.has(id) ? '' : ' selected'}>Choose…</option>${values.map(v => `<option value="${esc(v.id)}"${PICKED.has(id) && String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
   }
   function renderControls() {
     const o = sm.options; const c = sm.choices;
@@ -137,7 +150,7 @@
         sm.choices = { concern: 'whitening', practice: 'chewingSticks', teeth: 'healthy', community: pr.communityId || 'west_african', tone: tone.id };
       }
       renderControls();
-      await replan();
+      if (anyPicked()) await replan(); else renderBase();
     } catch (e) {
       $('smPlan').innerHTML = `<p class="lib-note">The Smile & Lip Care planner could not load (${esc(e.message)}).</p>`;
     }
@@ -145,6 +158,7 @@
 
   const FIELD = { smConcern: 'concern', smPractice: 'practice', smTeeth: 'teeth', smCommunity: 'community', smTone: 'tone' };
   document.addEventListener('change', e => {
+    if (OWN.has(e.target.id) && e.target.value !== '') PICKED.add(e.target.id);
     const k = FIELD[e.target.id];
     if (!k || !sm.choices) return;
     sm.choices[k] = e.target.value;
@@ -152,7 +166,7 @@
   });
   document.addEventListener('click', e => {
     const pickBtn = e.target.closest('[data-sm-practice]');
-    if (pickBtn && sm.choices) { sm.choices.practice = pickBtn.dataset.smPractice; renderControls(); replan(); return; }
+    if (pickBtn && sm.choices) { sm.choices.practice = pickBtn.dataset.smPractice; PICKED.add('smPractice'); renderControls(); replan(); return; }
     const t = e.target.closest('[data-view="smile"], [data-open-smile]');
     if (!t) return;
     if (t.dataset.openSmile !== undefined) { document.querySelector('.nav-link[data-view="smile"]')?.click(); return; }

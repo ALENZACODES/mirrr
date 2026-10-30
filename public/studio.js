@@ -134,10 +134,24 @@ function photoSlot(p, drawing) {
   return `<div class="st-photo-pair">${eye}${brow}</div>`;
 }
 
+// Nothing is pre-selected: every dropdown opens on a disabled "Choose…" and shows a value only once
+// picked here. Until the first pick the studio shows a neutral base (no look, no plan); after it,
+// fields still on "Choose…" fall back to a suggested value so the plan never sees undefined.
+const ST_PICKED = new Set(); const ST_OWN = new Set(['stGlasses']);
+const stAnyPicked = () => [...ST_OWN].some(id => ST_PICKED.has(id));
+function renderStudioBase() {
+  ++st.seq; st.plan = null;
+  const put = (id, h) => { const el = $(id); if (el) el.innerHTML = h; };
+  put('stDiagram', ''); put('stLooks', '');
+  put('stPlan', '<p class="lib-note choose-first">Choose your options above to see your brow and eye plan.</p>');
+}
 function select(id, label, values, current, allowAuto) {
+  ST_OWN.add(id);
+  const on = ST_PICKED.has(id);
   return `<label class="st-field"><span>${esc(label)}</span><select id="${id}">
-    ${allowAuto ? `<option value="">Recommended for me</option>` : ''}
-    ${values.map(v => { const val = typeof v === 'string' ? v : v.id; const lab = typeof v === 'string' ? nice(v) : v.label; return `<option value="${esc(val)}"${val === current ? ' selected' : ''}>${esc(lab)}</option>`; }).join('')}
+    <option value="" disabled${on ? '' : ' selected'}>Choose…</option>
+    ${allowAuto ? `<option value="auto"${on && !current ? ' selected' : ''}>Recommended for me</option>` : ''}
+    ${values.map(v => { const val = typeof v === 'string' ? v : v.id; const lab = typeof v === 'string' ? nice(v) : v.label; return `<option value="${esc(val)}"${on && val === current ? ' selected' : ''}>${esc(lab)}</option>`; }).join('')}
   </select></label>`;
 }
 
@@ -208,8 +222,7 @@ async function openStudio() {
       st.choices = { community: pr.communityId || 'south_asian', faceShape: 'oval', eyeShape: 'almond', browDensity: 'medium', browStyle: '', eyeLook: '', wearsGlasses: false, shadeId: pr.face?.shadeId ?? null, skinTone: '' };
     }
     renderControls();
-    await replan();
-    renderControls();
+    if (stAnyPicked()) { await replan(); renderControls(); } else renderStudioBase();
   } catch (e) {
     $('stPlan').innerHTML = `<p class="lib-note">The Studio could not load (${esc(e.message)}).</p>`;
   }
@@ -217,8 +230,9 @@ async function openStudio() {
 
 const FIELD = { stCommunity: 'community', stFace: 'faceShape', stEyeShape: 'eyeShape', stDensity: 'browDensity', stBrow: 'browStyle', stTone: 'skinTone' };
 document.addEventListener('change', e => {
+  if (ST_OWN.has(e.target.id) && e.target.value !== '') ST_PICKED.add(e.target.id);
   if (FIELD[e.target.id]) {
-    st.choices[FIELD[e.target.id]] = e.target.value;
+    st.choices[FIELD[e.target.id]] = e.target.value === 'auto' ? '' : e.target.value;
     if (e.target.id === 'stCommunity') st.choices.eyeLook = '';
     if (e.target.id === 'stTone') st.toneChanged = true;
     replan();

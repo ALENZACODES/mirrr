@@ -126,8 +126,21 @@
       h ? card(h.label, `<p><strong>Swap:</strong> ${esc(h.how)}</p><p class="lib-note">${esc(h.swap.note)}</p>${h.weekly.length ? `<p><strong>Weekly rituals:</strong></p>${ul(h.weekly.map(w => `${w.treatment} (${w.frequency}): ${w.benefit}`))}` : ''}<p><strong>Traditional ingredients:</strong> ${esc(h.remedies.join(', '))}</p>${h.note ? `<p><em>${esc(h.note)}</em></p>` : ''}`) : card('Heritage swaps', '<p>Pick a heritage to see traditional ingredients and rituals that can stand in for a step. It never changes your skin type.</p>'),
     ].join('');
   }
+  // Nothing is pre-selected: every dropdown opens on a disabled "Choose…" and shows a value only once
+  // picked here. Until the first pick the studio shows its neutral base (no tint, no plan); after it,
+  // fields still on "Choose…" fall back to a suggested value so the plan never sees undefined.
+  const PICKED = new Set(); const OWN = new Set();
+  const anyPicked = () => [...OWN].some(id => PICKED.has(id));
+  function renderBase() {
+    ++rt.seq; rt.plan = null;
+    const put = (k, h) => { const el = $('rt' + k); if (el) el.innerHTML = h; };
+    put('Preview', '');
+    put('Summary', '<p class="lib-note choose-first">Choose your options above to see your plan.</p>');
+    put('Plan', '');
+  }
   function select(id, text, values, current) {
-    return `<label class="st-field"><span>${esc(text)}</span><select id="${id}">${values.map(v => `<option value="${esc(v.id)}"${String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
+    OWN.add(id);
+    return `<label class="st-field"><span>${esc(text)}</span><select id="${id}"><option value="" disabled${PICKED.has(id) ? '' : ' selected'}>Choose…</option>${values.map(v => `<option value="${esc(v.id)}"${PICKED.has(id) && String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
   }
   function renderControls() {
     const o = rt.options; const c = rt.choices;
@@ -175,13 +188,14 @@
         rt.choices = { type: 'IV', undertone: 'unsure', feel: 'combination', concern: 'dark_marks', climate: 'temperate', steps: '5', pregnant: 'no', heritage: 'none', tone: tone.id };
       }
       renderControls();
-      await replan();
+      if (anyPicked()) await replan(); else renderBase();
     } catch (e) {
       $('rtPlan').innerHTML = `<p class="lib-note">The Routine Builder could not load (${esc(e.message)}).</p>`;
     }
   }
   const FIELD = { rtType: 'type', rtUndertone: 'undertone', rtFeel: 'feel', rtConcern: 'concern', rtClimate: 'climate', rtSteps: 'steps', rtPregnant: 'pregnant', rtHeritage: 'heritage', rtTone: 'tone' };
   document.addEventListener('change', e => {
+    if (OWN.has(e.target.id) && e.target.value !== '') PICKED.add(e.target.id);
     const k = FIELD[e.target.id];
     if (!k || !rt.choices) return;
     rt.choices[k] = e.target.value;

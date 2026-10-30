@@ -28,8 +28,21 @@
   const MONTHS = { protective_rotation: [0, 1, 2, 3, 4, 5, 6], locs: [0, 3, 6, 9, 12, 18, 24, 30], transition: [0, 3, 6, 9, 12, 18, 24], length_retention: [0, 3, 6, 9, 12, 18, 24] };
   const LENGTHS = [5, 10, 15, 20, 30];
 
+  // Nothing is pre-selected: every dropdown opens on a disabled "Choose…" and shows a value only once
+  // picked here. Until the first pick the studio shows its neutral base (no tint, no plan); after it,
+  // fields still on "Choose…" fall back to a suggested value so the plan never sees undefined.
+  const PICKED = new Set(); const OWN = new Set();
+  const anyPicked = () => [...OWN].some(id => PICKED.has(id));
+  function renderBase() {
+    ++hj.seq; hj.plan = null;
+    const put = (k, h) => { const el = $('hj' + k); if (el) el.innerHTML = h; };
+    put('Preview', '');
+    put('Summary', '<p class="lib-note choose-first">Choose your options above to see your plan.</p>');
+    put('Plan', '');
+  }
   function select(id, label, values, current) {
-    return `<label class="st-field"><span>${esc(label)}</span><select id="${id}">${values.map(v => `<option value="${esc(v.id)}"${String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
+    OWN.add(id);
+    return `<label class="st-field"><span>${esc(label)}</span><select id="${id}"><option value="" disabled${PICKED.has(id) ? '' : ' selected'}>Choose…</option>${values.map(v => `<option value="${esc(v.id)}"${PICKED.has(id) && String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
   }
   function renderControls() {
     const o = hj.options; const c = hj.choices; const show = CONTROLS[c.journey];
@@ -130,7 +143,7 @@
         hj.choices = { journey: 'protective_rotation', community: pr.communityId || 'west_african', texture: 'type_4a', installHours: 4, months: 0, edges: 'full', scalp: 'none', locMethod: 'starter', strand: 'medium', relaxedCm: 15, goalCm: 10 };
       }
       renderControls();
-      await replan();
+      if (anyPicked()) await replan(); else renderBase();
     } catch (e) {
       $('hjPlan').innerHTML = `<p class="lib-note">Natural Hair Journeys could not load (${esc(e.message)}).</p>`;
     }
@@ -146,6 +159,7 @@
   const FIELD = { hjJourney: 'journey', hjCommunity: 'community', hjTexture: 'texture', hjHours: 'installHours', hjMonths: 'months', hjEdges: 'edges', hjScalp: 'scalp', hjMethod: 'locMethod', hjStrand: 'strand', hjRelaxed: 'relaxedCm', hjGoal: 'goalCm' };
   const NUMERIC = new Set(['installHours', 'months', 'relaxedCm', 'goalCm']);
   document.addEventListener('change', e => {
+    if (OWN.has(e.target.id) && e.target.value !== '') PICKED.add(e.target.id);
     const k = FIELD[e.target.id];
     if (!k || !hj.choices) return;
     hj.choices[k] = NUMERIC.has(k) ? Number(e.target.value) : e.target.value;

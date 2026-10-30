@@ -102,8 +102,21 @@
   }
 
   // ---- Controls ---------------------------------------------------------------------------------
+  // Nothing is pre-selected: every dropdown opens on a disabled "Choose…" and shows a value only once
+  // picked here. Until the first pick the studio shows its neutral base (no tint, no plan); after it,
+  // fields still on "Choose…" fall back to a suggested value so the plan never sees undefined.
+  const PICKED = new Set(); const OWN = new Set();
+  const anyPicked = () => [...OWN].some(id => PICKED.has(id));
+  function renderBase() {
+    ++hr.seq; hr.plan = null;
+    const put = (k, h) => { const el = $('hr' + k); if (el) el.innerHTML = h; };
+    put('Preview', '');
+    put('Summary', '<p class="lib-note choose-first">Choose your options above to see your plan.</p>');
+    put('Plan', '');
+  }
   function select(id, text, values, current) {
-    return `<label class="st-field"><span>${esc(text)}</span><select id="${id}">${values.map(v => `<option value="${esc(v.id)}"${String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
+    OWN.add(id);
+    return `<label class="st-field"><span>${esc(text)}</span><select id="${id}"><option value="" disabled${PICKED.has(id) ? '' : ' selected'}>Choose…</option>${values.map(v => `<option value="${esc(v.id)}"${PICKED.has(id) && String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
   }
   function renderControls() {
     const o = hr.options; const c = hr.choices;
@@ -160,7 +173,7 @@
         hr.choices = { area: 'underarms', hair: 'coily', colour: 'dark', fitzpatrick: 'V', method: 'shaving', occasion: 'none', community: pr.communityId || 'west_african', tone: tone.id };
       }
       renderControls();
-      await replan();
+      if (anyPicked()) await replan(); else renderBase();
     } catch (e) {
       $('hrPlan').innerHTML = `<p class="lib-note">The Hair Removal Planner could not load (${esc(e.message)}).</p>`;
     }
@@ -168,6 +181,7 @@
 
   const FIELD = { hrArea: 'area', hrMethod: 'method', hrHair: 'hair', hrColour: 'colour', hrFitz: 'fitzpatrick', hrOccasion: 'occasion', hrCommunity: 'community', hrTone: 'tone' };
   document.addEventListener('change', e => {
+    if (OWN.has(e.target.id) && e.target.value !== '') PICKED.add(e.target.id);
     const k = FIELD[e.target.id];
     if (!k || !hr.choices) return;
     hr.choices[k] = e.target.value;
@@ -175,7 +189,7 @@
   });
   document.addEventListener('click', e => {
     const pickBtn = e.target.closest('[data-hr-method]');
-    if (pickBtn && hr.choices) { hr.choices.method = pickBtn.dataset.hrMethod; renderControls(); replan(); return; }
+    if (pickBtn && hr.choices) { hr.choices.method = pickBtn.dataset.hrMethod; PICKED.add('hrMethod'); renderControls(); replan(); return; }
     const t = e.target.closest('[data-view="hair-removal"], [data-open-hair-removal]');
     if (!t) return;
     if (t.dataset.openHairRemoval !== undefined) { document.querySelector('.nav-link[data-view="hair-removal"]')?.click(); return; }

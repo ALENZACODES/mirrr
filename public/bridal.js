@@ -71,8 +71,21 @@
     return window.StudioPhoto.panel({ studio: 'bridal', id: p.choices.style, fallback: drawing, w: 720, h: 960, alt: `Bride wearing ${h.style}`, caption: `<strong>${esc(h.style)}</strong><span>${esc(h.type === 'straight' ? 'Straight' : `Type ${h.type}`)} hair · ${esc(h.suited ? 'suits it' : 'not named for it')}</span>` });
   }
 
+  // Nothing is pre-selected: every dropdown opens on a disabled "Choose…" and shows a value only once
+  // picked here. Until the first pick the studio shows its neutral base (no tint, no plan); after it,
+  // fields still on "Choose…" fall back to a suggested value so the plan never sees undefined.
+  const PICKED = new Set(); const OWN = new Set();
+  const anyPicked = () => [...OWN].some(id => PICKED.has(id));
+  function renderBase() {
+    ++br.seq; br.plan = null;
+    const put = (k, h) => { const el = $('br' + k); if (el) el.innerHTML = h; };
+    put('Preview', '');
+    put('Summary', '<p class="lib-note choose-first">Choose your options above to see your plan.</p>');
+    put('Plan', '');
+  }
   function select(id, text, values, current) {
-    return `<label class="st-field"><span>${esc(text)}</span><select id="${id}">${values.map(v => `<option value="${esc(v.id)}"${String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
+    OWN.add(id);
+    return `<label class="st-field"><span>${esc(text)}</span><select id="${id}"><option value="" disabled${PICKED.has(id) ? '' : ' selected'}>Choose…</option>${values.map(v => `<option value="${esc(v.id)}"${PICKED.has(id) && String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
   }
   function renderControls() {
     const o = br.options; const c = br.choices;
@@ -120,7 +133,7 @@
         br.choices = { time: '6m', fitzpatrick: 'V', hairType: '4B', style: 'twist-out-braid-out', community: pr.communityId || 'west_african', tone: tone.id };
       }
       renderControls();
-      await replan();
+      if (anyPicked()) await replan(); else renderBase();
     } catch (e) {
       $('brPlan').innerHTML = `<p class="lib-note">The Bridal Countdown could not load (${esc(e.message)}).</p>`;
     }
@@ -128,6 +141,7 @@
 
   const FIELD = { brTime: 'time', brFitz: 'fitzpatrick', brHairType: 'hairType', brStyle: 'style', brCommunity: 'community', brTone: 'tone' };
   document.addEventListener('change', e => {
+    if (OWN.has(e.target.id) && e.target.value !== '') PICKED.add(e.target.id);
     const k = FIELD[e.target.id];
     if (!k || !br.choices) return;
     br.choices[k] = e.target.value;

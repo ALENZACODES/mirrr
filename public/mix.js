@@ -80,8 +80,21 @@
       <figcaption><strong>${esc(night.day)} night, bottom to top</strong><span>Type ${esc(p.skin.type)} · ${esc(p.tone.label)}</span></figcaption></figure>`;
   }
 
+  // Nothing is pre-selected: every dropdown opens on a disabled "Choose…" and shows a value only once
+  // picked here. Until the first pick the studio shows its neutral base (no tint, no plan); after it,
+  // fields still on "Choose…" fall back to a suggested value so the plan never sees undefined.
+  const PICKED = new Set(); const OWN = new Set();
+  const anyPicked = () => [...OWN].some(id => PICKED.has(id));
+  function renderBase() {
+    ++mx.seq; mx.plan = null;
+    const put = (k, h) => { const el = $('mx' + k); if (el) el.innerHTML = h; };
+    put('Preview', '');
+    put('Summary', '<p class="lib-note choose-first">Choose your options above to see your plan.</p>');
+    put('Plan', '');
+  }
   function select(id, text, values, current) {
-    return `<label class="st-field"><span>${esc(text)}</span><select id="${id}">${values.map(v => `<option value="${esc(v.id)}"${String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
+    OWN.add(id);
+    return `<label class="st-field"><span>${esc(text)}</span><select id="${id}"><option value="" disabled${PICKED.has(id) ? '' : ' selected'}>Choose…</option>${values.map(v => `<option value="${esc(v.id)}"${PICKED.has(id) && String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
   }
   function renderControls() {
     const o = mx.options; const c = mx.choices; const ing = o.ingredients.map(i => ({ id: i.id, label: `${i.label} · ${i.group}` }));
@@ -143,7 +156,7 @@
         mx.choices = { a: 'retinol', b: 'glycolic_acid', c: 'vitamin_c', d: 'niacinamide', fitzpatrick: 'V', stage: 'no', concern: 'darkspots', community: pr.communityId || 'west_african', tone: tone.id };
       }
       renderControls();
-      await replan();
+      if (anyPicked()) await replan(); else renderBase();
     } catch (e) {
       $('mxPlan').innerHTML = `<p class="lib-note">The Ingredient Checker could not load (${esc(e.message)}).</p>`;
     }
@@ -151,6 +164,7 @@
 
   const FIELD = { mxA: 'a', mxB: 'b', mxC: 'c', mxD: 'd', mxFitz: 'fitzpatrick', mxStage: 'stage', mxConcern: 'concern', mxCommunity: 'community', mxTone: 'tone' };
   document.addEventListener('change', e => {
+    if (OWN.has(e.target.id) && e.target.value !== '') PICKED.add(e.target.id);
     const k = FIELD[e.target.id];
     if (!k || !mx.choices) return;
     mx.choices[k] = e.target.value;

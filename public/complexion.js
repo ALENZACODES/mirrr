@@ -124,8 +124,21 @@
   }
 
   // ---- Controls ---------------------------------------------------------------------------------
+  // Nothing is pre-selected: every dropdown opens on a disabled "Choose…" and shows a value only once
+  // picked here. Until the first pick the studio shows its neutral base (no tint, no plan); after it,
+  // fields still on "Choose…" fall back to a suggested value so the plan never sees undefined.
+  const PICKED = new Set(); const OWN = new Set();
+  const anyPicked = () => [...OWN].some(id => PICKED.has(id));
+  function renderBase() {
+    ++cx.seq; cx.plan = null;
+    const put = (k, h) => { const el = $('cx' + k); if (el) el.innerHTML = h; };
+    put('Preview', '');
+    put('Summary', '<p class="lib-note choose-first">Choose your options above to see your plan.</p>');
+    put('Plan', '');
+  }
   function select(id, label, values, current) {
-    return `<label class="st-field"><span>${esc(label)}</span><select id="${id}">${values.map(v => `<option value="${esc(v.id)}"${String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
+    OWN.add(id);
+    return `<label class="st-field"><span>${esc(label)}</span><select id="${id}"><option value="" disabled${PICKED.has(id) ? '' : ' selected'}>Choose…</option>${values.map(v => `<option value="${esc(v.id)}"${PICKED.has(id) && String(v.id) === String(current) ? ' selected' : ''}>${esc(v.label)}</option>`).join('')}</select></label>`;
   }
   function renderControls() {
     const o = cx.options; const c = cx.choices;
@@ -187,7 +200,7 @@
         cx.choices = { correct: 'dark_circles', fitzpatrick: 'V', undertone: 'warm', skinType: 'combination', coverage: 'medium', faceShape: 'oval', occasion: 'everyday', community: pr.communityId || 'west_african', tone: tone.id };
       }
       renderControls();
-      await replan();
+      if (anyPicked()) await replan(); else renderBase();
     } catch (e) {
       $('cxPlan').innerHTML = `<p class="lib-note">The Complexion Lab could not load (${esc(e.message)}).</p>`;
     }
@@ -195,6 +208,7 @@
 
   const FIELD = { cxCorrect: 'correct', cxFitz: 'fitzpatrick', cxUndertone: 'undertone', cxSkin: 'skinType', cxCoverage: 'coverage', cxShape: 'faceShape', cxOccasion: 'occasion', cxCommunity: 'community', cxTone: 'tone' };
   document.addEventListener('change', e => {
+    if (OWN.has(e.target.id) && e.target.value !== '') PICKED.add(e.target.id);
     const k = FIELD[e.target.id];
     if (!k || !cx.choices) return;
     cx.choices[k] = e.target.value;

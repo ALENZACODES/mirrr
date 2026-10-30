@@ -58,11 +58,7 @@ export const SOUTH_ASIAN_MYTHS = [
     relevant_communities: ['south-asian'],
     caveat: 'Coconut oil is excellent for hair, scalp, and body use. The acne issue is specific to face application on acne-prone skin.',
   },
-  {
-    myth: 'Turmeric brightens skin permanently and is safe for everyone',
-    truth: 'Turmeric (specifically curcumin) has some anti-inflammatory and antioxidant properties and may offer mild brightening benefit with consistent use. However: (1) it can stain skin and nails yellow — often difficult to remove; (2) it can cause contact dermatitis in sensitive individuals; (3) the concentrations in DIY masks are not controlled and vary wildly; (4) it does not replace clinically proven brightening treatments for significant hyperpigmentation. The cultural practice is legitimate but the miraculous claims are exaggerated.',
-    relevant_communities: ['south-asian'],
-  },
+  
   {
     myth: 'Threading causes hair to grow back thicker',
     truth: 'Like all hair removal methods that remove from the surface (not the root), threading does not change the thickness or colour of regrowth. Hair appears coarser when it grows back because it has a blunt tip rather than the natural tapered end — the same optical illusion that makes shaved hair appear thicker. The hair itself is identical.',
@@ -74,14 +70,9 @@ export const SOUTH_ASIAN_MYTHS = [
     relevant_communities: ['south-asian', 'arab', 'east-african'],
     critical: 'BLACK HENNA IS NOT NATURAL AND IS DANGEROUS. It is a serious safety concern particularly at tourist destinations and children\'s events.',
   },
+  
   {
-    myth: 'Oil massage (champi) prevents hair loss',
-    truth: 'Regular scalp massage (regardless of whether oil is used) has evidence for increasing hair thickness over time — a 2019 study showed 4 minutes of daily scalp massage over 24 weeks increased hair thickness. The massage itself is the beneficial component. Oils provide conditioning benefits but specific hair growth claims for most oils (except rosemary oil, which has strong evidence, and black seed oil) are not well-supported by clinical trials.',
-    relevant_communities: ['south-asian'],
-    what_is_proven: 'Rosemary oil has clinical trial evidence showing similar efficacy to minoxidil for hair loss. The massage component is also evidence-backed for thickness (not necessarily length).',
-  },
-  {
-    myth: 'Fair skin is naturally better or more desirable than darker skin',
+    myth: 'Fair skin is better or more desirable than darker skin',
     truth: 'Colourism is a harmful system of discrimination that has been reinforced through colonial history and the beauty industry. Skin colour is determined by melanin — the body\'s natural UV protection. There is absolutely no objective basis for equating lighter skin with beauty or worth. Melanin-rich skin has significant advantages including UV protection, skin aging more slowly, and lower rates of UV-related skin cancers. The beauty industry is increasingly recognising and celebrating the full spectrum of skin tones.',
     relevant_communities: ['south-asian'],
     call_to_action: 'Examine product choices and beauty routines — are skin-lightening products chosen from personal preference or from colourism? Many skin-brightening ingredients treat PIH specifically; this is different from trying to change your natural skin tone.',
@@ -106,7 +97,7 @@ export const ARAB_MYTHS = [
     myth: 'Kohl/kajal from traditional lead-based formulas are the most effective eyeliners',
     truth: 'Traditional kohl made from galena (lead sulphide), surma, or kohl-stone can contain significant levels of lead — a known neurotoxin. Traditional preparations that have been used for millennia do carry real risk, particularly for children. Modern kajal products use carbon black or iron oxides instead, which are safe. The cultural and aesthetic identity of kajal can be honoured with safer modern formulations.',
     relevant_communities: ['arab', 'south-asian', 'east-african'],
-    evidence: 'Lead exposure from traditional kohl has been documented in studies across multiple countries. Children are most vulnerable.',
+    
   },
   {
     myth: 'Hammam scrubbing too hard gives better results',
@@ -141,12 +132,7 @@ export const WEST_AFRICAN_MYTHS = [
     relevant_communities: ['west-african', 'black-american', 'caribbean'],
     note: 'Vaseline is excellent for very dry skin, as an overnight lip treatment, on cuticles, and for healing minor wounds. Black Americans have used it for generations — with good reason.',
   },
-  {
-    myth: 'Black hair grows slower than other hair types',
-    truth: 'All hair grows at approximately the same rate — roughly 0.5 inches (1.2cm) per month — regardless of ethnicity or hair type. The difference in apparent length retention between Type 4 coily hair and straight hair is due to SHRINKAGE (coily hair can shrink 50-75% of its actual length) and BREAKAGE (the unique structure of Type 4 hair means more points of vulnerability leading to breakage before length is retained). The goal is not to grow hair faster but to RETAIN more of the hair that is growing.',
-    relevant_communities: ['west-african', 'black-american', 'east-african', 'caribbean'],
-    what_helps: 'Low manipulation styles, LOC method, protective styles, moisture retention, avoiding heat and chemical damage, and regular protein/moisture balance treatments all increase LENGTH RETENTION.',
-  },
+  
   {
     myth: 'You shouldn\'t wash natural Type 4 hair too frequently because it\'s naturally dry',
     truth: 'While it\'s true that the coily structure of Type 4 hair makes natural oil (sebum) slow to travel down the hair shaft — and that washing does remove some moisture — avoiding washing creates scalp buildup (sebum, dead skin cells, product residue, bacteria) that inhibits hair growth and causes scalp conditions. Finding the right washing frequency for YOUR scalp (which may be weekly for most, or twice weekly for active people) and using hydrating, sulphate-free cleansers allows for proper scalp health WITHOUT excessive dryness. Follow washing with LOC method.',
@@ -178,12 +164,7 @@ export const EAST_ASIAN_MYTHS = [
     truth: 'The "10-step K-beauty routine" was partly a marketing concept amplified by Western beauty media. Korean dermatologists and skincare experts themselves rarely advocate for exactly 10 steps — they emphasise thorough cleansing, hydration, and sun protection above all. A well-chosen 3-4 step routine is more sustainable and often more effective than 10 mediocre steps. The QUALITY and consistency of products matters more than the NUMBER of steps.',
     relevant_communities: ['east-asian'],
   },
-  {
-    myth: 'Monolid eyes need double eyelid surgery to be beautiful',
-    truth: 'Monolid eyes are a natural feature associated with East Asian heritage. The pressure on East Asian women to undergo double eyelid (blepharoplasty) surgery has roots in Eurocentric beauty standards, colonialism, and internalised racism. Monolid eyes are beautiful, and there is an active reclamation in East Asian communities of diverse eye shapes as equally beautiful. Many K-beauty and J-beauty makeup techniques celebrate and enhance monolid features rather than disguising them.',
-    relevant_communities: ['east-asian'],
-    makeup_instead: 'Cut crease techniques adapted for monolids, puppy liner, lower lash line emphasis, and graphic liner all celebrate rather than disguise the monolid.',
-  },
+  
 ];
 
 // ─── LATINA BEAUTY MYTHS ──────────────────────────────────────────────────────
@@ -195,11 +176,7 @@ export const LATINA_MYTHS = [
     relevant_communities: ['latina', 'all'],
     what_to_do_instead: 'Use a properly formulated lactic acid or citric acid product at controlled pH and concentration for brightening benefits without the burn risk.',
   },
-  {
-    myth: 'Olive oil is excellent for all skin types',
-    truth: 'Olive oil is very high in oleic acid and contains oleuropein (which can be irritating to the skin barrier). Research has shown that olive oil can actually impair the skin barrier and worsen eczema in some individuals — it is specifically NOT recommended by paediatric dermatologists for baby skin. For cooking: excellent. For dry, non-acne-prone, mature skin: acceptable in small amounts. For babies, sensitive, acne-prone, or barrier-compromised skin: better alternatives exist.',
-    relevant_communities: ['latina'],
-  },
+  
   {
     myth: 'All Latinas have the same skin tone',
     truth: 'Latin America encompasses hundreds of ethnic and racial backgrounds — from predominantly Indigenous to African descent to European to Asian (particularly in Brazil and Peru). "Latina" skin encompasses the full spectrum from very fair to very deep, with the full range of undertones. The beauty industry has historically homogenised Latinas as having medium-tan warm skin, erasing the vast diversity within this community.',
@@ -281,15 +258,3 @@ export function getCriticalMythsForSafety() {
   return critical;
 }
 
-export const MYTHS_STATS = {
-  totalMythsCovered:
-    UNIVERSAL_MYTHS.length +
-    SOUTH_ASIAN_MYTHS.length +
-    ARAB_MYTHS.length +
-    WEST_AFRICAN_MYTHS.length +
-    EAST_ASIAN_MYTHS.length +
-    LATINA_MYTHS.length +
-    UNIVERSAL_HAIR_MYTHS.length,
-  communitiesCovered: 7,
-  criticalSafetyMyths: 4,
-};

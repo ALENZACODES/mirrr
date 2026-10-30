@@ -180,7 +180,7 @@ export const ARAB_RITUALS = {
     eye_kohl: 'The application of kohl (itsmid, surma, or kuhl) is a tradition with both cosmetic and spiritual significance in Arab culture. The Prophet Muhammad is recorded to have recommended kohl use. It is applied to the inner waterline. Note: traditional artisanal kohl may contain lead compounds — lead-free kohl alternatives are available and preferred for safety.',
   },
   fragrance_culture: {
-    overview: 'Arab fragrance culture is among the richest and most sophisticated in the world. Perfumery is a art form and a daily necessity.',
+    
     oud: 'Oud (agarwood — the resinous heartwood of Aquilaria trees infected with a specific mould) is the most prized fragrance material in the world by weight. It is central to Arab perfumery.',
     layering: 'Arab fragrance application involves layering multiple scents. A base of oud or rose attar; a perfume spray; sometimes a body lotion with fragrance. The goal is a personal, evolving scent.',
     rose: 'Rose (oud al-ward) — particularly damask rose from Taif, Saudi Arabia and Bulgaria — is paired with oud in many classic Arab fragrances.',
@@ -435,8 +435,3 @@ export function getAllCommunityRituals() {
   ];
 }
 
-export const COMMUNITY_BEAUTY_RITUALS_STATS = {
-  communities: 9,
-  ritualTypes: ['daily', 'weekly', 'monthly', 'ceremonial', 'rites_of_passage'],
-  ritualsTotal: 9 * 5,
-};

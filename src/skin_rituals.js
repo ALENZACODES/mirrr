@@ -423,7 +423,7 @@ export const SKIN_RITUALS = {
     category: 'mask',
     origin: 'Japan, China, South Korea',
     description: 'Fermented rice water — the ancient Japanese and Korean beauty secret for luminous skin and glossy hair.',
-    culturalContext: 'The Yao women of Huangluo village in China are famous for their hair — up to 6 feet long, mostly black, into their 80s. Their secret: fermented rice water. Japanese Geisha used rice water to cleanse and whiten skin.',
+    culturalContext: 'The Yao women of Huangluo village in China are famous for their very long hair, which they wash with fermented rice water. Rice water rinses also have a long history in Japanese skincare.',
     timing: 'Morning or evening skincare step',
     skinBenefits: ['brightening', 'hydrating', 'pore minimising', 'anti-ageing', 'smooth texture'],
     fitzpatrickBest: ['I', 'II', 'III', 'IV'],
@@ -752,15 +752,4 @@ export function searchRitualsByTag(tag) {
 }
 
 // ─── STATS ───────────────────────────────────────────────────────────────────
-
-export const SKIN_RITUAL_STATS = {
-  total: Object.keys(SKIN_RITUALS).length,
-  communities: [...new Set(Object.values(SKIN_RITUALS).map(r => r.community))],
-  categories: [...new Set(Object.values(SKIN_RITUALS).map(r => r.category))],
-  diyFriendly: Object.values(SKIN_RITUALS).filter(r => r.difficulty <= 2).length,
-  averageTime: Math.round(
-    Object.values(SKIN_RITUALS).reduce((sum, r) => sum + r.timeMinutes, 0) /
-    Object.keys(SKIN_RITUALS).length
-  ),
-};
 

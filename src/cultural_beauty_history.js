@@ -8,8 +8,8 @@
 export const BEAUTY_ERAS = {
   ancient: { id: 'ancient', label: 'Ancient (pre-600 CE)', icon: '🏛️' },
   medieval: { id: 'medieval', label: 'Medieval (600–1500 CE)', icon: '⚔️' },
-  colonial: { id: 'colonial', label: 'Colonial Era (1500–1900)', icon: '🌍' },
-  modern: { id: 'modern', label: 'Modern (1900–2000)', icon: '🎬' },
+  
+  
   contemporary: { id: 'contemporary', label: 'Contemporary (2000–now)', icon: '📱' },
 };
 
@@ -46,10 +46,7 @@ Kohl was democratised — worn by Pharaoh Ramesses II and by field workers alike
     period: 'c. 3000 BCE',
     location: 'Ancient Egypt, Arabia, South Asia',
     summary: 'Henna (Lawsonia inermis) was used for body art, hair colouring, and nail staining across ancient Egypt, Arabia, and the Indus Valley.',
-    details: `Archaeological evidence shows henna on the fingernails of Egyptian mummies — including possibly Queen Hatshepsut's mummy.
-Henna's cooling properties made it ideal for the palms and soles of the feet in hot climates — a practical beauty discovery.
-In ancient Arabia, henna was part of marriage ceremonies — the bride stained with henna to mark her transition.
-The Indus Valley civilisation (3000–1500 BCE) shows evidence of henna use, suggesting simultaneous development or very early trade transmission.`,
+    
     modernLegacy: 'Mehndi (South Asian henna art), Moroccan henna, Sudanese henna — all branches of one ancient tradition. The art form evolved differently in each culture.',
     ingredients: ['Lawsonia inermis leaves', 'lemon juice (citric acid activator)', 'essential oils (eucalyptus, lavender)'],
     significance: 'One of the oldest cosmetic traditions in human history — still alive in billions of celebrations today.',
@@ -68,7 +65,7 @@ The Indus Valley civilisation (3000–1500 BCE) shows evidence of henna use, sug
 The word "alcohol" comes from Arabic "al-kohl" — the same root as kohl. Arabic alchemists developed distillation, making concentrated fragrance possible.
 Ibn Sina (Avicenna, 980–1037 CE) refined steam distillation to produce rosewater and essential oils — the foundation of modern perfumery.
 Oud (agarwood resin) was the ultimate luxury fragrance, documented in Arabian poetry from 500 CE.`,
-    modernLegacy: 'Arab perfumery remains the global standard for deep, resinous fragrance. Oud is now among the world\'s most expensive perfume ingredients.',
+    
     ingredients: ['frankincense (Boswellia sacra)', 'myrrh', 'oud (Aquilaria)', 'rose', 'amber (ambergris)'],
     significance: 'Without Arab perfumery and alchemical distillation, modern fragrance would not exist.',
     tags: ['fragrance', 'oud', 'arab', 'ancient', 'trade-routes', 'frankincense', 'perfumery'],
@@ -129,7 +126,7 @@ Shea is harvested exclusively by women in West Africa — a matrilineal economic
 The processing is entirely handmade: roasting the nuts, grinding, boiling, and cooling to separate the butter.`,
     modernLegacy: 'Shea butter is now in nearly every moisturiser sold globally — but its West African origin and the women who produce it are rarely acknowledged.',
     ingredients: ['Vitellaria paradoxa (shea tree nuts)'],
-    significance: 'The world\'s most-used natural cosmetic ingredient. An African invention that globalised — without its African story being told.',
+    
     tags: ['shea', 'west-african', 'ancient', 'ghana', 'mali', 'women-led', 'heritage'],
   },
 
@@ -161,13 +158,9 @@ Genuine ose dudu is still made by hand in Nigeria — it smells earthy, is soft,
     period: '1500–1900',
     location: 'Global',
     summary: 'European colonisation imposed white European beauty standards as the global norm — through laws, mission schools, and commercial advertising.',
-    details: `Portuguese, Spanish, British, French, and Dutch colonial powers deliberately undermined indigenous beauty traditions.
-Mission schools in Africa banned scarification, traditional dress, and body modification — framing African aesthetics as "primitive."
-The soap industry (Lever Brothers, later Unilever) explicitly marketed to colonised peoples with imagery suggesting darker skin was unclean.
-The "paper bag test" and "brown paper bag test" used in the American South to exclude darker-skinned Black people from venues.
-The Merthyr Tydfil case (1950s): West Indian immigrants to Britain were told to straighten their hair for office jobs.`,
-    modernLegacy: 'Skin-lightening creams remain a $31B global market — a direct legacy of colonial beauty standards. The natural hair movement is explicitly a decolonial project.',
-    ingredients: [],
+    
+    
+    
     significance: 'Understanding the colonial roots of global beauty standards is essential to understanding the ethnic beauty movement as political, not just aesthetic.',
     tags: ['colonialism', 'decolonial', 'beauty-standards', 'history', 'political'],
   },
@@ -182,13 +175,9 @@ The Merthyr Tydfil case (1950s): West Indian immigrants to Britain were told to 
     period: '2000s–present',
     location: 'USA, UK, global',
     summary: 'The modern natural hair movement — Black women and men embracing unprocessed, non-chemically-relaxed hair — is both a beauty movement and a civil rights statement.',
-    details: `The movement emerged online in the 2000s through blogs like NaturallyCurly, CurlyNikki, and YouTube.
-The CROWN Act (Create a Respectful and Open World for Natural Hair) was introduced in the US in 2019 — addressing workplace discrimination against natural Black hair.
-The "big chop" — cutting off all chemically processed hair to grow natural — became a rite of passage for thousands of women.
-The movement has been credited with creating the natural hair product market — worth over $3B as of 2023.
-Celebrities like Solange Knowles, Lupita Nyong'o, and Viola Davis normalised Afros, locs, and braids on red carpets.`,
+    
     modernLegacy: 'The natural hair movement changed the beauty industry — forcing brands to expand their product ranges and change their advertising imagery.',
-    ingredients: [],
+    
     significance: 'Beauty as political statement. Choosing your natural texture is an act of self-love and resistance against white supremacist beauty standards.',
     tags: ['natural-hair', 'black-american', 'political', 'movement', 'contemporary', 'CROWN-Act'],
   },
@@ -203,13 +192,9 @@ Celebrities like Solange Knowles, Lupita Nyong'o, and Viola Davis normalised Afr
     period: '2017–present',
     location: 'Global',
     summary: 'Fenty Beauty\'s 40-shade foundation launch in September 2017 permanently changed the beauty industry\'s approach to shade inclusion.',
-    details: `Before Fenty Beauty, most foundation ranges topped out at 30 shades — with the darkest shades often coming in single-digit numbers.
-Fenty launched with 40 shades across the Fitzpatrick scale — with as many shades at the deep end as at the pale end.
-Within weeks of Fenty\'s launch, MAC, Maybelline, L\'Oréal, and others announced expanded shade ranges — the "Fenty Effect."
-The brand made $100M in its first 40 days — proving that deep skin tones were an underserved, massive market.
-Rihanna specifically cited her Barbadian heritage — seeing women of colour underserved — as her motivation.`,
+    
     modernLegacy: 'The "Fenty Effect" is now a term in the beauty industry for a brand forcing structural change. It remains the single most influential product launch in 21st century beauty.',
-    ingredients: [],
+    
     significance: 'The moment that proved inclusive beauty is not charity — it\'s business. One brand changed an entire industry.',
     tags: ['fenty', 'inclusive', 'shade-range', 'rihanna', 'revolution', 'contemporary', 'industry'],
   },
@@ -240,12 +225,4 @@ export function searchHistoryByTag(tag) {
 export function getAllHistoryEntries() {
   return Object.values(BEAUTY_HISTORY);
 }
-
-export const BEAUTY_HISTORY_STATS = {
-  totalEntries: Object.keys(BEAUTY_HISTORY).length,
-  eras: Object.keys(BEAUTY_ERAS).length,
-  communities: [...new Set(Object.values(BEAUTY_HISTORY).map(h => h.community))],
-  ancientEntries: Object.values(BEAUTY_HISTORY).filter(h => h.era === 'ancient').length,
-  contemporaryEntries: Object.values(BEAUTY_HISTORY).filter(h => h.era === 'contemporary').length,
-};
 

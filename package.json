@@ -9,7 +9,8 @@
     "dev": "node --watch src/server.js",
     "test": "node --experimental-vm-modules node_modules/.bin/jest --runInBand",
     "lint": "eslint src test",
-    "check": "npm run lint && npm test"
+    "check": "npm run lint && npm test",
+    "test:node": "node --test test/*.test.mjs"
   },
   "keywords": [
     "qloo",

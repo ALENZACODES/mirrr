@@ -68,7 +68,7 @@ export const AYURVEDA = {
       forSkin: 'Ubtan ingredient — mixed with gram flour, yoghurt, or milk as brightening mask',
       forHair: 'Anti-dandruff — mix turmeric + coconut oil, apply to scalp',
       caution: 'STAINS everything yellow — use sparingly, rinse thoroughly, use kasturi turmeric (non-staining variety) in face masks',
-      scienceNote: 'Curcumin has 30+ peer-reviewed studies confirming anti-inflammatory and skin-brightening effects',
+      
     },
     neem: {
       name: 'Neem',
@@ -106,7 +106,7 @@ export const AYURVEDA = {
       translation: 'Oil of saffron',
       what: 'A traditional Ayurvedic serum blend of saffron, sandalwood, lotus, and 16+ ingredients',
       uses: ['Brightening', 'Anti-aging', 'Hyperpigmentation', 'Glow enhancement'],
-      modernForm: 'Forest Essentials Kumkumadi Miraculous Beauty Fluid ($70) / Kama Ayurveda Kumkumadi Miraculous Beauty Ayurvedic Night Treatment ($65)',
+      
     },
   },
   modernBrands: [
@@ -146,10 +146,10 @@ export const TRADITIONAL_CHINESE_MEDICINE_BEAUTY = {
         'Do: forehead (outward), under-eye (outward on brow bone), cheek (upward to ear), jaw (outward), neck (downward to aid lymph drainage)',
       ],
       tools: {
-        jade: { name: 'Jade Roller/Gua Sha', price: '$15–$80', note: 'Traditional. Cooling when refrigerated.' },
-        rose_quartz: { name: 'Rose Quartz Gua Sha', price: '$20–$100', note: 'More commonly available today. Natural stone stays cooler than jade.' },
-        bian_stone: { name: 'Bian Stone', price: '$30–$150', note: 'Traditional TCM stone. Emits far-infrared radiation — may enhance circulation.' },
-        stainless: { name: 'Stainless Steel', price: '$10–$30', note: 'Modern. Stays coldest. Easy to sanitise.' },
+        jade: { name: 'Jade Roller/Gua Sha',  note: 'Traditional. Cooling when refrigerated.' },
+        rose_quartz: { name: 'Rose Quartz Gua Sha',  note: 'More commonly available today. Natural stone stays cooler than jade.' },
+        bian_stone: { name: 'Bian Stone',  note: 'Traditional TCM stone. Emits far-infrared radiation — may enhance circulation.' },
+        stainless: { name: 'Stainless Steel',  note: 'Modern. Stays coldest. Easy to sanitise.' },
       },
       frequency: 'Daily if gentle technique. 3–5x per week is ideal for visible results over 4+ weeks.',
     },
@@ -210,12 +210,12 @@ export const UNANI_BEAUTY = {
       traditional: 'Distilled rose water has been produced in Iran (Kashan) for over 1,000 years — first produced through Iranian distillation methods',
       modernBenefit: ['Tones and tightens pores', 'Anti-inflammatory', 'Balances skin pH', 'Mild astringent', 'Aromatherapy'],
       use: 'As toner, face mist, in hair, mixed into face masks',
-      buy: 'Cortas Rose Water ($5 — authentic Lebanese), Heritage Store Rosewater ($8), Jurlique Rose Water Balancing Mist ($30)',
+      
     },
     oud: {
       name: 'Oud (Agarwood)',
       traditional: 'Used in Unani medicine for skin conditions and fragrance for centuries across the Arab world, Persia, and South Asia',
-      modern: 'Luxury fragrance and skincare ingredient — now one of the world\'s most expensive raw materials',
+      
       skinBenefit: 'Anti-inflammatory, antimicrobial',
       note: 'Wild oud is endangered — seek sustainably farmed varieties',
     },
@@ -249,7 +249,7 @@ export const UNANI_BEAUTY = {
         traditional: 'Lead-based kohl (surma) — common in South Asia and Middle East. CAUTION: some traditional formulations contain lead — avoid lead-based versions, especially for children.',
         modern: 'Antimony-based or carbon-based kohl — far safer than lead formulations',
       },
-      safeOptions: ['MAC Cosmetics Eye Kohl ($22)', 'The Khol de Reve by Guerlain ($42)', 'NYX Jumbo Eye Pencil in Milk ($10)'],
+      
     },
   },
 };
@@ -271,7 +271,7 @@ export const AFRICAN_TRADITIONAL_MEDICINE_BEAUTY = {
         raw: 'Pale yellow, strongest smell — minimally processed, highest activity',
       },
       recommendation: 'Unrefined shea butter for skin and hair. Raw shea for body when smell is not a concern.',
-      buy: 'Alaffia Authentic Fair Trade Shea Butter ($10) / Sky Organics Unrefined Shea Butter ($15) / Local West African markets',
+      
     },
     black_soap_tradition: {
       tradition: 'African Black Soap (Alata Samina / Anago Samina)',
@@ -280,7 +280,7 @@ export const AFRICAN_TRADITIONAL_MEDICINE_BEAUTY = {
       uses: ['Facial cleanser', 'Body wash', 'Shampoo', 'Eczema/psoriasis management', 'Acne treatment'],
       benefits: ['Naturally antibacterial', 'Rich in vitamins A and E from plantain ash', 'Gentle for sensitive melanin-rich skin', 'Antifungal properties'],
       caution: 'True African black soap is dark brown, rough, and handmade. If it is perfectly shaped, uniform, or jet black, it is not authentic.',
-      buy: 'SheaMoisture African Black Soap ($10) / Tropical Naturals African Black Soap ($8)',
+      
     },
     orijin_face_ritual: {
       tradition: 'Noni and Hibiscus Beauty (West/East Africa)',
@@ -355,12 +355,7 @@ export const MOROCCAN_BEAUTY_TRADITIONS = {
       { step: 4, name: 'Ghassoul Clay Mask', description: 'Natural Moroccan clay applied to face and/or hair. Rich in minerals. Draws out impurities.' },
       { step: 5, name: 'Argan Oil Final Treatment', description: 'Argan oil applied to face, body, and hair as final step — the Moroccan liquid gold.' },
     ],
-    atHome: {
-      savon_beldi: 'Moroccan black soap — olive oil base, traditionally dark green/black. Buy: Zakia\'s Moroccan Beldi Black Soap ($15)',
-      kessa: 'Moroccan exfoliating glove. Must use in steam or after soaking — never on dry skin. Buy: Brut Kessa Glove ($8)',
-      ghassoul: 'Also called Rhassoul clay. Mix with rose water to paste consistency. Apply to face/hair. Buy: Moroccan Magic Ghassoul Clay ($20)',
-      arganOil: 'Cold-pressed Moroccan argan oil. 100% pure. Buy: Josie Maran 100% Pure Argan Oil ($49) / Pura D\'Or Organic Argan Oil ($25)',
-    },
+    
   },
   arganOil: {
     name: 'Argan Oil',
@@ -371,7 +366,7 @@ export const MOROCCAN_BEAUTY_TRADITIONS = {
       culinary: 'Lightly roasted before pressing. Deeper colour and nutty flavour. Food use only.',
     },
     skinBenefits: ['Vitamin E', 'Linoleic acid (anti-inflammatory omega-6)', 'Oleic acid (penetrating moisturiser)', 'Squalene (mimics skin\'s own oil)', 'Anti-aging antioxidants'],
-    buy: { budget: 'Pura D\'Or Organic Moroccan Argan Oil ($25)', mid: 'Josie Maran 100% Pure Argan Oil ($49)', luxury: 'Kahina Giving Beauty Argan Oil ($72 — fair trade certified)' },
+    
     fairTrade: 'Look for brands that partner with Moroccan women\'s cooperatives — the industry can exploit if not fair-trade certified',
   },
 };
@@ -436,9 +431,3 @@ export function getPracticeByName(practiceName) {
   return null;
 }
 
-export const TRADITIONAL_MEDICINE_STATS = {
-  systemsIndexed: Object.keys(ALL_TRADITIONAL_SYSTEMS).length,
-  ayurvedicDoshas: Object.keys(AYURVEDA.doshas).length,
-  tcmPractices: Object.keys(TRADITIONAL_CHINESE_MEDICINE_BEAUTY.tcmBeautyPractices).length,
-  africanTraditions: Object.keys(AFRICAN_TRADITIONAL_MEDICINE_BEAUTY.traditions).length,
-};

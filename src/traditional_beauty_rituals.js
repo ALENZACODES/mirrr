@@ -44,8 +44,7 @@ export const WEST_AFRICAN_RITUALS = {
   hairRituals: {
     coconutOil: {
       name: 'Pre-Wash Oil Treatment',
-      description: 'Weekly pre-wash oiling of hair and scalp using coconut, palm kernel, or castor oil before shampooing; reduces hygral fatigue (damage from repeated swelling and drying) and protein loss during washing; keeps the scalp and hair nourished',
-      modern: 'The pre-wash oiling tradition is fully validated by hair science; coconut oil\'s ability to penetrate the hair cortex significantly reduces protein loss during washing; this was demonstrated in a seminal 2001 study in the Journal of Cosmetic Science'
+      description: 'Weekly pre-wash oiling of hair and scalp using coconut, palm kernel, or castor oil before shampooing; reduces hygral fatigue (damage from repeated swelling and drying) and protein loss during washing; keeps the scalp and hair nourished'
     },
     shea: {
       name: 'Shea Butter Sealant',
@@ -151,7 +150,7 @@ export const ARAB_RITUALS = {
     },
     argan: {
       name: 'Argan Oil Treatment (Zit Argan)',
-      description: 'Argan oil from the nuts of the Moroccan Argan tree (Argania spinosa) — a tree found only in Morocco; pressed by Berber women\'s cooperatives using traditional or semi-mechanical methods; one of the world\'s most expensive oils due to geographic limitation and labour-intensive production; "liquid gold" of Morocco',
+      
       tradition: 'Traditional Berber women have used argan oil for generations: as a moisturiser; on hair; as a cooking oil; the argan industry supports thousands of Moroccan Berber women through cooperatives; buying from cooperative-certified sources ensures the traditional producers benefit'
     }
   },
@@ -226,7 +225,7 @@ export const EAST_ASIAN_RITUALS = {
     },
     jadeRolling: {
       name: 'Jade Rolling and Gua Sha',
-      description: 'Traditional Chinese facial massage tools; jade rollers (rolling cool jade over the face) are mentioned in Chinese beauty texts dating back to the Qing dynasty (1644-1912); gua sha (scraping technique) has origins in Traditional Chinese Medicine as a therapeutic treatment that has been adapted for facial use',
+      
       science: 'The primary demonstrated benefit is lymphatic drainage enhancement — reducing morning facial puffiness by moving lymph fluid; temporary skin tightening from increased circulation; the "cooling" effect of jade is largely from temperature rather than jade\'s specific properties (any cool stone provides similar benefits); however, the ritual aspect and consistent skin massage do genuinely improve circulation and product absorption'
     }
   },
@@ -360,15 +359,3 @@ export function getTraditionalRituals(communityId) {
   return directMap[communityId] || null;
 }
 
-export const TRADITIONAL_BEAUTY_STATS = {
-  moduleId: 'traditional_beauty_rituals',
-  version: '1.0.0',
-  topics: ['ubtan chickpea turmeric bridal haldi ceremony South Asian', 'shea butter West African Sahel traditional skin hair', 'hammam Arab bathhouse kessa beldi soap ghassoul Morocco', 'rice water fermented inositol Yao women China hair', 'frankincense Boswellia Ethiopia Somalia anti-inflammatory', 'chebe powder Chad natural hair length tradition', 'sea moss Caribbean Irish moss wellness Dr Sebi', 'marula oil South Africa Swazi Sclerocarya birrea', 'rooibos Cederberg Western Cape skin anti-inflammatory', 'black soap ose dudu Yoruba Ghana plantain ash', 'LOC LCO method Black American natural hair moisture', 'phytophotodermatitis lime Caribbean citrus furanocoumarin WARNING', 'camellia tsubaki oil Japanese geisha beauty', 'castor oil Jamaican black roasted JBCO natural hair', 'argan Berber Morocco cooperative Argania spinosa', 'lime phytophotodermatitis Caribbean warning UV citrus PIH'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'Ubtan (the traditional South Asian pre-bridal paste of chickpea flour, turmeric, and rose water) contains multiple validated active ingredients: chickpea flour provides gentle AHA-type exfoliation through its saponin content; turmeric\'s curcumin inhibits tyrosinase (anti-pigmentation) and is anti-inflammatory through multiple pathways; lactic acid in milk provides additional AHA exfoliation — modern dermatologists confirm many ubtan ingredients are genuinely beneficial, making this one of the best-validated traditional beauty practices',
-    'Fermented rice water contains inositol — one of the very few hair care ingredients that has been shown to remain in the hair shaft even after rinsing (hair fibres actively retain it); this property means inositol provides ongoing repair of damaged hair between applications; the tradition of the Yao women of Longji, China using fermented rice water for their reportedly extraordinary 6-foot-long hair is the most famous example of this practice',
-    'CRITICAL WARNING: Traditional practices involving citrus juice (lime, lemon) applied to skin in Caribbean, Latina, and other communities carry significant phytophotodermatitis risk; the furanocoumarins in citrus (particularly bergapten) cause a photochemical burn reaction when citrus-treated skin is exposed to UV light, resulting in severely worsened hyperpigmentation that may be permanent; this risk is especially high in high-UV Caribbean and tropical environments; safer alternatives including vitamin C serums and professional AHA treatments should be recommended instead',
-    'The hammam (Arab bathhouse ritual) is one of the world\'s most comprehensive traditional beauty treatments: the complete ritual (steam room, kessa exfoliation, black soap/savon beldi cleanse, ghassoul clay mask, argan oil moisturisation) provides a full skincare treatment that addresses cleansing, exfoliation, pore clearing, and deep moisturisation; all of the individual components have validated effects; the hammam as a social institution also provides significant stress reduction through community interaction'
-  ]
-};

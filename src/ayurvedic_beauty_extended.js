@@ -80,7 +80,7 @@ export const DOSHAS = {
 // ─── RITUCHARYA — SEASONAL AYURVEDIC BEAUTY ──────────────────────────────────
 
 export const RITUCHARYA_BEAUTY = {
-  overview: 'Ritucharya (seasonal routine) is the Ayurvedic practice of adjusting diet, lifestyle, and skincare/haircare practices according to the seasons to maintain dosha balance and prevent illness.',
+  
   seasons: {
     vasanta_spring: {
       season: 'Vasanta (Spring)',
@@ -166,13 +166,13 @@ export const AYURVEDIC_INGREDIENTS = {
       'Anti-aging — some evidence for collagen support',
       'Hair health — reduces stress-related telogen effluvium',
     ],
-    evidence: 'Good evidence for adaptogenic stress reduction (human RCTs). Topical skin evidence more limited.',
+    
     dosha: 'Primarily Vata-pacifying. Also supports Kapha and Pitta in appropriate forms.',
     use: 'Oral supplement (ashwagandha root powder in warm milk — Golden Milk) or topical in oil or cream.',
   },
   turmeric: {
     name: 'Turmeric (Curcuma longa)',
-    active: 'Curcumin (1-3% of turmeric root by weight)',
+    
     beauty_benefits: [
       'Anti-inflammatory (curcumin)',
       'Tyrosinase inhibitor (reduces melanin production → helps hyperpigmentation and PIH)',
@@ -236,7 +236,7 @@ export const AYURVEDIC_INGREDIENTS = {
       'Traditional use for premature greying',
       'DHT (androgenic alopecia) — some traditional use as anti-androgenic support',
     ],
-    evidence: 'Some animal studies show hair growth stimulation. Limited human RCT evidence. Widely used in Indian hair oil formulations (Mahabringraj oil).',
+    
     use: 'Bhringraj oil: applied to scalp and hair, left overnight, then washed.',
     dosha: 'Tridoshic; particularly Pitta-pacifying for hair.',
   },
@@ -251,7 +251,7 @@ export const AYURVEDIC_INGREDIENTS = {
       'Scalp anti-inflammatory',
       'Traditional brightening ingredient in Ubtan (South Asian skin brightening paste)',
     ],
-    evidence: 'Good evidence for antioxidant properties. Hair growth evidence primarily traditional and animal studies.',
+    
     dosha: 'Tridoshic (good for all doshas). The quintessential Ayurvedic Rasayana (rejuvenating) ingredient.',
     oral_use: 'Amla juice/powder consumed internally is one of the most widely recommended Ayurvedic internal beauty supplements.',
   },
@@ -383,9 +383,3 @@ export function getEthnicAyurvedic(communityId) {
   return ETHNIC_AYURVEDIC_TRADITIONS[key] || Object.values(ETHNIC_AYURVEDIC_TRADITIONS);
 }
 
-export const AYURVEDIC_BEAUTY_STATS = {
-  doshas: 3,
-  ritucharyaSeasons: 6,
-  ayurvedicIngredients: Object.keys(AYURVEDIC_INGREDIENTS).length,
-  ethnicCommunities: 9,
-};

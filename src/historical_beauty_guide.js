@@ -20,7 +20,7 @@ export const ANCIENT_EGYPT_BEAUTY = {
   kohl: {
     product: 'Kohl (Mesdemet)',
     what: 'A mixture of galena (lead sulfide), malachite (green), or kohl. Used to line the eyes in a dramatic almond-shaped elongation.',
-    purposes: 'Cosmetic (the iconic Egyptian eye). Practical: reduced sun glare in desert environment. Religious: protected against the "evil eye." Medical: antimicrobial properties of lead sulfide — prevented eye infections in the Nile fly season.',
+    purposes: 'Cosmetic (the iconic Egyptian eye). Practical: reduced sun glare in desert environment. Religious: protected against the "evil eye." Lead-based kohl is toxic; modern kohl should be lead-free.',
     modern: 'Kohl continues in North African, Arab, and South Asian traditions. Modern kohl has replaced lead with safer alternatives (carbon black, amorphous carbon).',
   },
   castor_oil: {
@@ -62,7 +62,7 @@ export const ANCIENT_INDIA_BEAUTY = {
     product: 'Turmeric (Haldi)',
     ingredient: 'Curcuma longa — the rhizome',
     uses: 'Ubtan (face mask base). Bridal beauty preparations. Anti-inflammatory treatment for skin conditions. Anti-microbial paste.',
-    science: 'Curcumin (turmeric\'s active compound) is a potent anti-inflammatory, antioxidant, and antibacterial agent. Studies confirm anti-inflammatory and skin-brightening effects.',
+    
     haldi_ceremony: 'The haldi ceremony (applying turmeric paste to the bride and groom before a Hindu wedding) is an unbroken tradition thousands of years old.',
   },
   amla: {
@@ -137,7 +137,7 @@ export const ANCIENT_EAST_ASIA_BEAUTY = {
   korea: {
     hanbang: {
       what: 'Hanbang (Korean traditional medicine in beauty) uses centuries-old herbal formulas in modern skincare. Ingredients like ginseng, jujube, and tangerine peel from traditional Korean medicine are central to heritage K-beauty brands.',
-      modern: 'Brands like Sulwhasoo (founded 1966) built their entire identity on hanbang herbal philosophy.',
+      
     },
     galactomyces_discovery: {
       product: 'Galactomyces and Sake Tradition',
@@ -333,11 +333,11 @@ export const ETHNIC_HISTORICAL_BEAUTY = {
     note: 'Black American beauty traditions emerged from a synthesis of West African practices, the devastating disruption of slavery, and post-Reconstruction cultural development.',
     key_ingredients: 'Shea butter, petroleum jelly (Vaseline — developed in 1859, adopted quickly and comprehensively by Black American communities for skin protection and moisture), castor oil, eggs for hair, black soap, cocoa butter, coconut oil',
     key_figures: {
-      madam_cj_walker: 'Madam C.J. Walker (1867-1919) — first female self-made millionaire in America. Developed and sold hair care products for Black women, addressing hair loss and scalp conditions. Her business empire was built on understanding Black hair needs that white companies ignored.',
+      
       annie_turnbo_malone: 'Annie Turnbo Malone — Walker\'s competitor and earlier innovator. Developed Poro Products for Black hair.',
     },
     pressing: 'The hot comb / thermal straightening of Black hair was developed in the early 20th century as one adaptation to European beauty norms during the period of intense assimilation pressure. The history of Black hair — natural vs straightened — is deeply intertwined with American racial history.',
-    natural_hair_movement: 'The Black Power movement of the 1960s-70s reclaimed natural Afro hairstyles as cultural pride. The contemporary natural hair movement (YouTube explosion circa 2010) represents the latest chapter of a century-long relationship between Black American women and their hair.',
+    
   },
   latina: {
     community: 'Latina',
@@ -361,10 +361,3 @@ export function getEthnicHistoricalBeauty(communityId) {
   return ETHNIC_HISTORICAL_BEAUTY[key] || Object.values(ETHNIC_HISTORICAL_BEAUTY);
 }
 
-export const HISTORICAL_BEAUTY_STATS = {
-  ancientCultures: 5,
-  historicalDangers: Object.keys(HISTORICAL_BEAUTY_DANGERS).length,
-  ethnicHistoricalEntries: Object.keys(ETHNIC_HISTORICAL_BEAUTY).length,
-  egyptianProducts: Object.keys(ANCIENT_EGYPT_BEAUTY).filter(k => k !== 'period' && k !== 'culture').length,
-  ayurvedicDoshas: Object.keys(ANCIENT_INDIA_BEAUTY.ayurvedic_skin_types).filter(k => k !== 'application').length,
-};

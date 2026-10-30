@@ -2881,3 +2881,76 @@ body { padding-top: 58px; }
 .tf-why { color: #b9b3aa; font-style: italic; }
 .tf-shade { color: #f0e9de; }
 @media (max-width: 560px) { .tf-target-img { width: 100%; } }
+
+/* ─── Ritual Library ───────────────────────────────────────────────────── */
+.lib-wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.25rem; }
+.lib-communities { margin: 0 0 1rem; }
+.lib-why { color: var(--text-muted); font-size: 0.9rem; margin: 0 0 0.6rem; }
+.lib-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.lib-chip {
+  border: 1px solid rgba(255, 255, 255, 0.18); background: transparent; color: var(--text-primary);
+  padding: 0.4rem 0.9rem; border-radius: 999px; font: inherit; font-size: 0.85rem; cursor: pointer;
+}
+.lib-chip:hover { border-color: var(--accent-light); }
+.lib-chip--on { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+.lib-search-label { display: block; font-size: 0.8rem; color: var(--text-muted); margin: 0.8rem 0 0.3rem; }
+.lib-search {
+  width: 100%; max-width: 560px; padding: 0.7rem 1rem; border-radius: 10px; font: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.04); color: var(--text-primary);
+}
+.lib-results { margin: 1rem 0; }
+.lib-results-count { color: var(--text-muted); font-size: 0.9rem; }
+.lib-hits { list-style: none; padding: 0; margin: 0.5rem 0 0; display: grid; gap: 0.5rem; }
+.lib-hit {
+  display: grid; gap: 0.2rem; width: 100%; text-align: left; font: inherit; cursor: pointer;
+  background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px;
+  padding: 0.7rem 0.9rem; color: var(--text-primary);
+}
+.lib-hit:hover { border-color: var(--accent-light); }
+.lib-hit-guide { font-weight: 600; color: var(--accent-light); font-size: 0.85rem; }
+.lib-hit-path { font-size: 0.75rem; color: var(--text-muted); }
+.lib-hit-snippet { font-size: 0.9rem; line-height: 1.5; }
+.lib-shelves { display: grid; gap: 1.6rem; margin-top: 1.4rem; }
+.lib-shelf-title { font-size: 1.2rem; margin: 0 0 0.2rem; }
+.lib-shelf-blurb { color: var(--text-muted); font-size: 0.9rem; margin: 0 0 0.8rem; }
+.lib-guides { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.7rem; }
+.lib-guide {
+  display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-start; text-align: left; cursor: pointer;
+  font: inherit; color: var(--text-primary); background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 0.9rem;
+}
+.lib-guide:hover, .lib-guide--open { border-color: var(--accent-light); background: rgba(255, 255, 255, 0.08); }
+.lib-guide-title { font-weight: 600; line-height: 1.3; }
+.lib-badge {
+  display: inline-block; font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2); color: var(--text-muted); font-weight: 500;
+}
+.lib-badge--yours { border-color: var(--accent-light); color: var(--accent-light); }
+.lib-reader {
+  scroll-margin-top: 6rem;
+  margin: 1.2rem 0; padding: 1.2rem; border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.14);
+}
+.lib-reader-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.lib-reader-head h3 { margin: 0; font-size: 1.3rem; }
+.lib-section { margin: 1rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 0.8rem; }
+.lib-section h4 { display: inline; font-size: 1rem; margin: 0; }
+.lib-section summary { cursor: pointer; list-style: revert; }
+.lib-section--yours { border-left: 3px solid var(--accent-light); padding-left: 0.9rem; }
+.lib-section p, .lib-section li { line-height: 1.6; font-size: 0.92rem; }
+.lib-dl { margin: 0.4rem 0; }
+.lib-dl dt { font-weight: 600; font-size: 0.85rem; color: var(--accent-light); margin-top: 0.6rem; }
+.lib-dl dd { margin: 0.1rem 0 0 0.8rem; }
+.lib-dl dd p { margin: 0.2rem 0; }
+.lib-list { margin: 0.3rem 0; padding-left: 1.2rem; }
+.lib-cards { display: grid; gap: 0.6rem; margin: 0.4rem 0; }
+.lib-card { background: rgba(0, 0, 0, 0.18); border-radius: 10px; padding: 0.6rem 0.8rem; }
+.lib-card h5 { margin: 0 0 0.3rem; font-size: 0.95rem; display: flex; gap: 0.5rem; align-items: center; }
+.lib-step {
+  display: inline-grid; place-items: center; width: 1.5rem; height: 1.5rem; border-radius: 50%;
+  background: var(--accent); color: #fff; font-size: 0.75rem;
+}
+.lib-note { color: var(--accent-light); font-size: 0.9rem; }
+.lib-loading { color: var(--text-muted); }
+.lib-disclaimer { margin-top: 1.2rem; font-size: 0.8rem; color: var(--text-muted); }
+.lib-open { margin-top: 1rem; }

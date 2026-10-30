@@ -531,11 +531,3 @@ export function getEducationalBodyArt() {
 
 // ─── STATS ───────────────────────────────────────────────────────────────────
 
-export const BODY_ART_STATS = {
-  total: Object.keys(BODY_ART).length,
-  communities: [...new Set(Object.values(BODY_ART).map(a => a.community))],
-  categories: [...new Set(Object.values(BODY_ART).map(a => a.category))],
-  hennaStyles: Object.values(BODY_ART).filter(a => a.category === 'henna').length,
-  jewellery: Object.values(BODY_ART).filter(a => a.category === 'jewellery').length,
-};
-

@@ -355,6 +355,7 @@
         <button class="nav-link" data-view="shade">Shades</button>
         <button class="nav-link" data-view="planner">Occasions</button>
         <button class="nav-link" data-view="taste">Taste</button>
+        <button class="nav-link" data-view="library">Library</button>
         <button class="nav-link" data-view="help">Help &amp; Privacy</button>
         <details class="nav-more" id="navMore">
           <summary class="nav-link" aria-label="More tools">More</summary>
@@ -1033,6 +1034,21 @@
     </section>
 
     <!-- ── HELP / PRIVACY VIEW ───────────────────────────────────────── -->
+    <section id="view-library" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Ritual Library</h2>
+        <p class="view-sub">The traditions behind every look: rituals, remedies, festivals and history, written community by community.</p>
+      </div>
+      <div class="lib-wrap">
+      <div id="libCommunities" class="lib-communities"></div>
+      <label class="lib-search-label" for="libSearch">Search every guide</label>
+      <input id="libSearch" class="lib-search" type="search" placeholder="Try shea, hammam, haldi, kohl, rice water" autocomplete="off" maxlength="80">
+      <div id="libResults" class="lib-results hidden" aria-live="polite"></div>
+      <div id="libReader" class="lib-reader hidden" aria-live="polite"></div>
+      <div id="libShelves" class="lib-shelves"></div>
+      </div>
+    </section>
+
     <section id="view-help" class="view hidden">
       <div class="view-header">
         <h2 class="view-title">Help, Privacy &amp; About</h2>
@@ -1190,6 +1206,7 @@
 
   <script src="icons.js"></script>
   <script type="module" src="app.js"></script>
+  <script type="module" src="library.js"></script>
   <script>
     // Community detail panel interactions
     (function() {

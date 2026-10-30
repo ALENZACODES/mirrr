@@ -682,22 +682,3 @@ export function getCulturalBeautyGuide(communityId) {
 // STATS
 // ============================================================
 
-export const CULTURAL_BEAUTY_RITUALS_STATS = {
-  moduleId: 'cultural_beauty_rituals_guide',
-  version: '1.0.0',
-  communities: 9,
-  ritualsDocumented: 27,
-  keyFacts: [
-    'Haldi (turmeric) ceremony is Ayurvedic medicine applied as communal love — scientifically validated as effective pre-bridal treatment',
-    'Hammam (Arab bath): communal women\'s space for beauty, social exchange, and life marking for 1,000+ years',
-    'The Black hair salon is historically a place of economic independence, community, and political conversation',
-    'Carnival beauty preparation begins months before the event; it is the most elaborate beauty event in Caribbean culture',
-    'Frankincense fumigation (qumera) has been practiced in East Africa for at least 3,000 years',
-    'Ubuntu philosophy makes South African beauty inherently communal — beauty exists in relation to others',
-    'The CROWN Act (against natural hair discrimination) makes natural Black hair a civil rights issue',
-    'Wash Day for Black natural hair is a sacred self-care ritual, not merely hygiene — sometimes taking an entire day',
-    'Quinceañera represents the community witnessing and celebrating a girl\'s transformation into womanhood',
-    'Geisha rice bran skin care observation became the basis for modern enzyme exfoliation in skincare'
-  ],
-  lastUpdated: '2026-10-29'
-};

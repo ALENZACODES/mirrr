@@ -23,6 +23,7 @@ import { DEMO_PROFILES } from './demo_profiles.js';
 import { getTrendingArtists, getAllTrendingArtists, REGIONAL_ANCHORS } from './trending_artists.js';
 import { QlooClient, qlooClient } from './qloo.js';
 import { buildPlan } from './pipeline/plan.js';
+import { handleLibrary } from './library/routes.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT ?? 3000;
@@ -744,6 +745,9 @@ async function router(req, res) {
       shoppingEstimate: guide.budget,
     });
   }
+
+  // GET /api/library, /api/library/search, /api/library/guide/:id
+  if (handleLibrary(method, path, url, res, sendJSON)) return;
 
   // 404
   return sendJSON(res, 404, { error: 'Not found' });

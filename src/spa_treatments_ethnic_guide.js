@@ -16,8 +16,7 @@ const WEST_AFRICAN_SPA = {
       duration: '60–90 minutes',
       description: `Raw, unrefined shea butter (ori in Yoruba, nkuto in Twi) is the cornerstone of West African body care. The shea tree — Vitellaria paradoxa — grows across the Sahel and is harvested and processed almost exclusively by women. The ritual begins by warming the shea between the palms until it melts into a liquid gold. The body is massaged section by section, starting from the feet and moving upward, following lymphatic pathways. The butter is worked into the skin with deep, circular kneading, paying special attention to elbows, knees, and heels. A thin layer is left on the skin and the body is wrapped in warmed cotton cloth for 20 minutes to allow deep absorption. The result is skin that is visibly luminous, deeply moisturized, and protected from the sun and dry Harmattan winds.`,
       keyIngredients: ['raw shea butter', 'baobab oil', 'African black pepper essential oil', 'turmeric powder'],
-      benefits: ['Deep skin moisturization', 'Anti-inflammatory action', 'UV protection', 'Wound healing', 'Eczema relief'],
-      culturalNote: `In Burkina Faso, shea cooperatives — almost entirely run by women — produce the majority of the world's shea supply. The processing of shea is itself a ritual: the cracking, boiling, churning and kneading takes hours and is done in groups, accompanied by songs and stories. When a woman applies shea to another's body, she is continuing this tradition of communal care.`
+      benefits: ['Deep skin moisturization', 'Anti-inflammatory action', 'UV protection', 'Wound healing', 'Eczema relief']
     },
     {
       name: 'Ghanaian African Black Soap Bath Ritual',
@@ -34,7 +33,7 @@ const WEST_AFRICAN_SPA = {
       duration: '30–45 minutes',
       description: `Steam bathing in West Africa predates modern wellness culture by centuries. In many homes, a simple clay pot filled with water infused with herbs is placed on hot coals, and the bather sits draped in cloth to receive the steam. Herbs used include: fever grass (lemongrass), efirin (Yoruba basil), nchuawun (Igbo — a type of mint), and dried citrus peels. The steam opens pores, loosens congestion, and softens the skin for subsequent treatments. In Senegal, the steam ritual is often followed by a baobab oil application. In Nigeria, the steam is used postpartum to help new mothers' bodies recover — the heat is believed to tighten the uterus and restore the body's internal balance.`,
       keyIngredients: ['lemongrass', 'Yoruba basil', 'cloves', 'dried orange peel', 'eucalyptus leaves'],
-      benefits: ['Pore opening', 'Respiratory clearing', 'Postpartum recovery', 'Detoxification', 'Relaxation'],
+      benefits: ['Pore opening', 'Respiratory clearing', 'Postpartum recovery', 'Relaxation'],
       culturalNote: `The postpartum steam ritual in Nigeria involves the new mother sitting over a clay pot of steaming herbal water for 20–30 minutes daily for the first 40 days after birth. Female relatives take turns preparing the herbs and sitting with the new mother during this vulnerable period.`
     },
     {
@@ -162,7 +161,7 @@ const CARIBBEAN_SPA = {
       duration: '60 minutes',
       description: `St. Lucia's Sulphur Springs — the world's only drive-in volcano — produces warm volcanic mud rich in sulfur, silica, magnesium, and iron. The traditional treatment involves coating the body in this grey-green mud from head to toe and allowing it to dry in the sun for 20–30 minutes. As the mud dries, it draws impurities out of the skin through osmosis, tightens pores, and deposits minerals into the skin. The sulfur content has antibacterial and antifungal properties particularly beneficial for acne, eczema, and psoriasis. The Dominica-style treatment uses mineral-rich mud from hot springs in the interior rainforest, blended with wild aloe vera harvested from the hillsides. After the mud dries, it is rinsed in a nearby cold mineral spring, creating a natural hot-cold thermal circuit.`,
       keyIngredients: ['volcanic mud', 'sulfur minerals', 'wild aloe vera', 'cold mineral spring water'],
-      benefits: ['Deep pore cleansing', 'Mineral infusion', 'Skin condition treatment', 'Detoxification', 'Skin tightening'],
+      benefits: ['Deep pore cleansing', 'Mineral infusion', 'Skin condition treatment', 'Skin tightening'],
       culturalNote: `Montserrat's volcanic landscape, partially destroyed by the 1995 Soufrière Hills eruption, still provides healing mud baths that local healers have used for generations. The healing mud is sometimes mixed with coconut oil and used as a drawing poultice for deep infections and joint pain.`
     },
     {
@@ -171,14 +170,14 @@ const CARIBBEAN_SPA = {
       duration: '45 minutes',
       description: `Irish moss (Gracilaria or Chondrus crispus) — known as sea moss in the Caribbean — grows in tide pools along the rocky Caribbean coastline. Harvested, sun-dried, and rehydrated, sea moss creates a viscous gel containing 92 of the 102 minerals that compose the human body. When applied as a body wrap, the gel is spread over the entire body, which is then wrapped in warm linen. The carrageenan compounds in the gel form a film over the skin that draws out toxins while depositing minerals. Sea moss is particularly rich in iodine (thyroid function), potassium chloride (respiratory support), and zinc (immune function). The wrap is left on for 30 minutes; as the wrap is removed, the skin feels silky and visibly clearer.`,
       keyIngredients: ['rehydrated sea moss gel', 'lime juice', 'aloe vera', 'warm linen wraps'],
-      benefits: ['Mineral supplementation via skin', 'Detoxification', 'Skin smoothing', 'Thyroid support', 'Anti-inflammatory'],
+      benefits: ['Mineral supplementation via skin', 'Skin smoothing', 'Thyroid support', 'Anti-inflammatory'],
       culturalNote: `In Jamaica, sea moss drink (sea moss blended with milk, cinnamon, and vanilla) is a traditional health tonic. The phrase "drink your sea moss" is the Caribbean grandmother's answer to nearly every complaint of weakness, immunity issues, or sexual dysfunction. Dr. Sebi, the Honduran herbalist beloved in Caribbean and Black American communities, popularized sea moss as a universal healing agent.`
     },
     {
       name: 'Coconut Milk Bath',
       origin: 'Pan-Caribbean, with roots in Southeast Asian and Indian traditions brought by indentured laborers',
       duration: '30 minutes',
-      description: `Fresh coconut milk — extracted by grating the white flesh of mature coconuts and squeezing through cloth — is poured into warm bath water. The lauric acid in coconut milk has antibacterial, antifungal, and antiviral properties. The fat content creates a natural emollient bath that leaves skin coated in a thin protective layer. Fresh coconut milk baths are a traditional postpartum treatment in the Caribbean, particularly in communities with South Asian heritage (brought by indentured laborers from India in the 1800s). The milk is often infused with rose petals, bay rum leaves, and lime zest for fragrance. Modern Caribbean spas serve this treatment with a side of fresh coconut water to drink — supporting internal hydration while the bath hydrates the skin externally.`,
+      
       keyIngredients: ['fresh coconut milk', 'rose petals', 'bay rum leaves', 'lime zest', 'sea salt'],
       benefits: ['Skin softening', 'Infection prevention', 'Postpartum recovery', 'Deep moisturization', 'Relaxation'],
       culturalNote: `In Trinidad, coconut milk baths are prescribed by older women (obeah practitioners and folk healers) for a range of conditions from skin rashes to spiritual cleansing. The coconut is considered a spiritually protective fruit in several Afro-Caribbean religious traditions including Santería and Trinidad's own Spiritual Baptist tradition.`
@@ -234,7 +233,7 @@ Step 6 — Full Body Rinse: Warm water (decreasing in temperature) is poured ove
 
 Step 7 — Moisturizing and Argan Oil Treatment: The body is wrapped in warm linen towels (fouta) and transferred to the cool room to rest. Fresh-pressed argan oil is applied to the face and body while the skin is still slightly damp. Mint tea is served. The entire body is now in a state of maximum receptivity — pores closed, skin freshly exposed, circulation stimulated.`,
       keyIngredients: ['Moroccan beldi soap', 'kessa glove', 'ghassoul clay', 'argan oil', 'rosewater', 'mint'],
-      benefits: ['Complete skin renewal', 'Deep detoxification', 'Improved circulation', 'Pore refinement', 'Muscle relaxation'],
+      benefits: ['Complete skin renewal', 'Improved circulation', 'Pore refinement', 'Muscle relaxation'],
       culturalNote: `In Morocco and the broader Arab world, the hammam visit is mandatory before Islamic life events: before prayer (for those who have been in a state of major ritual impurity), before Friday prayers (recommended), before Eid celebrations, before weddings. Brides visit the hammam with their female relatives and friends the night before the wedding — the "hammam party" is a centuries-old tradition equivalent to the Western bachelorette party but with a ritual, communal, and spiritual dimension absent from its Western counterpart.`
     },
     {
@@ -268,7 +267,7 @@ Step 7 — Moisturizing and Argan Oil Treatment: The body is wrapped in warm lin
       name: 'Oud Oil Body and Hair Treatment',
       origin: 'Saudi Arabia, UAE, Egypt',
       duration: '30–45 minutes',
-      description: `Oud (agarwood) is produced when Aquilaria trees become infected with a specific mold, causing the tree to produce a dense, dark, resinous heartwood as a defense mechanism. This resin, when distilled, produces one of the most complex and expensive aromatic compounds in the world — a single kilogram of pure oud oil can exceed $30,000. In Arab wellness tradition, oud oil is applied diluted in a carrier oil (typically sandalwood or rose oil) to pulse points, hair, and skin. For a full oud body treatment, the oil is blended into a warm sesame oil base and used as a full-body massage oil. The aromatic compounds in oud have documented anxiolytic effects — inducing calm without sedation. Oud is also traditionally applied to the hair and left overnight as an aromatic deep conditioning treatment.`,
+      
       keyIngredients: ['pure oud oil (1–3% dilution)', 'sandalwood oil', 'rose oil', 'ambergris (traditional)'],
       benefits: ['Anxiety reduction', 'Emotional calm', 'Hair conditioning', 'Natural perfuming', 'Grounding'],
       culturalNote: `In Arab culture, the offering of oud incense or oud oil to a guest is among the highest forms of hospitality. The fragrance of oud on a person's clothing signals that they have been cared for in someone's home. Many Gulf families keep specific oud blends that have been in the family for generations, created by a master perfumer (attar maker) whose services are passed down as a family inheritance.`
@@ -296,7 +295,7 @@ Step 7 — Moisturizing and Argan Oil Treatment: The body is wrapped in warm lin
 const LATINA_SPA = {
   id: 'latina',
   name: 'Latin American and Indigenous Wellness Traditions',
-  overview: `Latin American wellness traditions are among the most diverse in the world, combining pre-Columbian indigenous knowledge systems (Aztec, Maya, Inca, Aymara), African healing traditions brought by enslaved people, and European (primarily Spanish) botanical medicine. The region's extraordinary biodiversity — the Amazon, the Andes, Central American cloud forests — provides the raw materials for treatments of unparalleled variety.`,
+  
   treatments: [
     {
       name: 'Temazcal — Indigenous Sweat Lodge Ceremony',
@@ -316,7 +315,7 @@ The Fourth Door (North — Air and Transformation): The heat begins to moderate.
 
 Post-ceremony: Participants are offered watermelon, cucumber, or other hydrating fruits and herbal teas. A rest period of 30–60 minutes is recommended before eating a full meal.`,
       keyIngredients: ['volcanic rocks', 'copal incense', 'rosemary', 'eucalyptus', 'medicinal herbs specific to region', 'intention'],
-      benefits: ['Deep detoxification', 'Emotional processing', 'Spiritual purification', 'Immune stimulation', 'Community bonding'],
+      benefits: ['Emotional processing', 'Spiritual purification', 'Immune stimulation', 'Community bonding'],
       culturalNote: `The temazcal predates Aztec civilization — evidence of sweat bath use in Mesoamerica dates to 900 BCE. The practice was suppressed by Spanish colonizers who saw it as idolatrous. Contemporary temazcal ceremonies are an act of cultural reclamation. For indigenous communities, the temazcal is not a "spa treatment" but a living spiritual practice requiring proper lineage, initiation, and ongoing relationship with the ceremony.`
     },
     {
@@ -352,7 +351,7 @@ Post-ceremony: Participants are offered watermelon, cucumber, or other hydrating
       duration: '60 minutes',
       description: `Central America's volcanic spine — from Guatemala's active Santiaguito to Costa Rica's Arenal — provides clay deposits rich in minerals unavailable in most parts of the world. Costa Rican volcanic clay from the Rincón de la Vieja region is particularly prized for its high silica content and its fine, smooth texture that adheres to the skin without pulling. The treatment begins with a warm shower, followed by application of the heated volcanic clay (mixed with coconut water and aloe) from neck to feet. The body is left to rest while the clay draws — detoxification is visible in the clay's color change as it absorbs. The clay is rinsed off and the skin is sealed with macadamia oil (native to the region).`,
       keyIngredients: ['Rincón de la Vieja volcanic clay', 'coconut water', 'aloe vera', 'macadamia oil', 'tropical flower extracts'],
-      benefits: ['Deep drawing and detox', 'Mineral replenishment', 'Pore refinement', 'Skin tightening', 'Hydration'],
+      benefits: ['Deep drawing', 'Mineral replenishment', 'Pore refinement', 'Skin tightening', 'Hydration'],
       culturalNote: `In Guatemala's indigenous Maya communities, specific clays from the highlands are used medicinally by traditional healers (Aj'qijab') in both internal and external preparations. The clay is considered to contain the healing energy of the earth and is treated with respect as a living substance.`
     }
   ],
@@ -384,7 +383,7 @@ const EAST_ASIAN_SPA = {
       name: 'Japanese Onsen (Hot Spring) Culture',
       origin: 'Japan (Hakone, Beppu, Nikko, Kusatsu)',
       duration: '60–180 minutes',
-      description: `Japan has over 27,000 hot spring sources — the highest concentration in the world — and the culture of onsen bathing has evolved over 1,500 years. The etiquette and ritual of onsen bathing is precise and meaningful. Before entering the baths, the body is thoroughly washed at a shower station (kakeyu): each person sits on a low wooden stool, uses a hand-held shower, and washes the entire body with soap before entering any communal pool. This pre-rinse is not optional — it is both hygienic and an expression of consideration for others. Hot springs are classified by mineral content: sodium bicarbonate springs (for soft skin), sulfur springs (for skin conditions), iron springs (for anemia), and radioactive radon springs (for pain relief, paradoxically — low-level radon stimulates DNA repair mechanisms). The optimal onsen routine alternates between hot and cold pools, creating a vasodilation-vasoconstriction cycle that dramatically improves cardiovascular function and lymphatic drainage.`,
+      
       keyIngredients: ['mineral hot spring water', 'cedar wood bucket and stool (hinoki)', 'natural soap', 'cold plunge pool'],
       benefits: ['Cardiovascular conditioning', 'Mineral absorption (magnesium, sulfur, calcium)', 'Skin condition treatment', 'Deep muscular relaxation', 'Immune stimulation'],
       culturalNote: `Japanese onsen culture codifies the concept of "naked communion" (hadaka no tsukiai) — the idea that status, wealth, and social pretense fall away when everyone is unclothed together in the same water. Business relationships are sometimes deepened over onsen visits in a way that formal settings cannot achieve. Many onsen establishments were historically welcoming of mixed gender bathing (konyoku) — a practice being revived in some traditional regions.`
@@ -415,9 +414,7 @@ After the scrub: the cold pool, then the sikhye (sweet rice punch) served inside
       name: 'Gua Sha and Cupping as Spa Treatments',
       origin: 'China (Traditional Chinese Medicine)',
       duration: '45–60 minutes',
-      description: `Gua sha (刮痧 — scraping sand) is performed using a smooth-edged tool (traditionally jade, horn, or ceramic) pressed firmly against oil-lubricated skin and moved in long strokes. The pressure and friction create a controlled micro-trauma in the skin and underlying fascia that stimulates blood flow and breaks up fascial adhesions. The characteristic redness (sha) that appears is not bruising — it is the manifestation of stagnant blood and qi being moved to the surface. Research shows that gua sha increases HO-1 (an antioxidant enzyme) expression by 400% and has anti-inflammatory effects equivalent to some pharmaceuticals.
-
-Cupping (拔罐 baguan) places heated glass or silicone cups on the skin, creating suction that lifts the tissue. The suction effect separates the skin from the underlying fascia, creating space for blood flow and lymphatic movement. Research on cupping shows it reduces markers of inflammation and speeds healing in both muscle and skin tissue.`,
+      
       keyIngredients: ['jade or rose quartz gua sha tool', 'silicone cups', 'sesame or grapeseed oil', 'moxa (optional — mugwort stick for heat)'],
       benefits: ['Fascial release', 'Anti-inflammation', 'Lymphatic drainage', 'Cellulite treatment', 'Back pain relief'],
       culturalNote: `Cupping marks on Olympic athletes' backs (famously visible on Michael Phelps at the 2016 Olympics) brought global attention to an ancient practice. In China, grandmothers perform gua sha and cupping at home as routine maintenance — it is household first aid, not a luxury spa treatment.`
@@ -481,8 +478,7 @@ The complete ceremony cannot be rushed without giving offense — to leave after
       duration: '30–45 minutes',
       description: `The Horn of Africa is, along with Oman, one of the two primary sources of the world's frankincense (luban in Amharic: ዕጣን ethan). Ethiopian, Eritrean, and Somali frankincense steam rituals differ subtly from Arab traditions in their use of the substance. Rather than burning frankincense on charcoal in a censer, East African tradition involves placing frankincense resin directly in boiling water. The steam carries vaporized boswellic acids and monoterpenes, which are inhaled directly as the bather sits over the pot draped in cloth. In Eritrea, this steam is a standard home treatment for respiratory illness — frankincense steam is believed to clear the lungs, reduce chest tightness, and strengthen the immune system. Postpartum women are treated with frankincense steam in many Eritrean traditions, where the smoke is also directed toward the body's external surfaces to tighten and heal.`,
       keyIngredients: ['Boswellia papyrifera (Ethiopian frankincense)', 'myrrh', 'black cumin seeds', 'eucalyptus leaves'],
-      benefits: ['Respiratory therapy', 'Anti-inflammatory (boswellic acids)', 'Wound healing', 'Postpartum recovery', 'Immune support'],
-      culturalNote: `Ethiopia's frankincense-producing Boswellia papyrifera trees are being overharvested due to rising global demand for frankincense oils and resins. Research suggests that 90% of Ethiopia's Boswellia forests could be gone within 50 years. Using Ethiopian frankincense consciously — buying from certified sustainable sources — is an act of cultural preservation.`
+      benefits: ['Respiratory therapy', 'Anti-inflammatory (boswellic acids)', 'Wound healing', 'Postpartum recovery', 'Immune support']
     },
     {
       name: 'Camel Milk Bath',
@@ -491,13 +487,13 @@ The complete ceremony cannot be rushed without giving offense — to leave after
       description: `Camel milk has a unique biochemical profile that makes it exceptional for skin care. It contains high concentrations of alpha-hydroxy acids (AHAs), particularly lactic acid — the same acid used in dermatological peels. Camel milk AHAs are gentler than synthetic versions and break down dead skin cell bonds without disrupting the skin barrier. Camel milk also contains immunoglobulins (antibodies) small enough to penetrate the skin and lanolin-like fats that moisturize deeply. In Somali and Afar herding communities, women have long used fresh camel milk to wash the face and body. A camel milk bath combines 1–2 liters of camel milk with honey, rosewater, and ground turmeric in warm bath water. The skin emerges noticeably smoother, and with regular use, hyperpigmentation visibly reduces.`,
       keyIngredients: ['fresh or powdered camel milk', 'raw honey', 'rosewater', 'ground turmeric'],
       benefits: ['Natural AHA exfoliation', 'Deep moisturization', 'Antibacterial action', 'Skin brightening', 'Hyperpigmentation treatment'],
-      culturalNote: `Camel milk is considered medicinal in Somali culture — prescribed for everything from autism to hepatitis (some scientific evidence supports its hepatoprotective effects). Nomadic Somali families who maintain herds drink the milk fresh throughout the day and apply it to skin abrasions, burns, and infections. The beauty uses of camel milk are inseparable from its medicinal reputation.`
+      culturalNote: `Camel milk holds a respected, nourishing place in Somali culture. Nomadic Somali families who keep herds drink it fresh through the day and use it on dry skin. (It is not a substitute for medical care for wounds, burns or infections.) The beauty uses of camel milk are inseparable from its medicinal reputation.`
     },
     {
       name: 'Hammam Traditions of Djibouti and Eritrea',
       origin: 'Djibouti, Eritrea (influenced by Arab and Ottoman traditions)',
       duration: '90 minutes',
-      description: `Djibouti's hammam culture reflects its position as a port city connecting the Arab world, the Indian Ocean, and the Horn of Africa. Djiboutian hammams follow a protocol similar to North African hammams but with regional modifications: the use of sidr (lote tree) leaves, prized in Islamic tradition for cleansing properties, and the use of Ethiopian-origin frankincense in the steam room distinguish the Djiboutian experience. Eritrean hammams, shaped by both Italian colonial influence (Eritrea was an Italian colony until 1941) and longstanding Islamic traditions in the country's Muslim communities, represent a similar hybrid. Traditional Eritrean women's hammam visits include communal hair braiding sessions following the bath, making the hammam a comprehensive beauty and social event comparable in function to West African communal beauty preparations.`,
+      
       keyIngredients: ['sidr (lote tree) leaves', 'Ethiopian frankincense', 'henna', 'black seed oil (nigella sativa)', 'rosewater'],
       benefits: ['Complete bathing ritual', 'Community connection', 'Spiritual purification', 'Hair care', 'Relaxation'],
       culturalNote: `In Djibouti, the hammam is the primary social space for women who observe purdah in public. Within the hammam's single-gender space, social hierarchies relax — women of different economic backgrounds bathe side by side and exchange news, advice, and care. This democratizing function of the hammam is recognized and protected as a cultural institution.`
@@ -539,10 +535,9 @@ const SOUTH_AFRICAN_SPA = {
       name: 'Aloe Ferox Body Wrap',
       origin: 'Eastern Cape, KwaZulu-Natal',
       duration: '60 minutes',
-      description: `While the world knows aloe vera (Aloe barbadensis), South African traditional medicine uses Aloe ferox — the Cape aloe — whose gel is measurably more potent. Aloe ferox contains over 130 identified active compounds including aloeferoxin, aloesin, and high concentrations of acemannan (a complex polysaccharide with immune-modulating properties). An aloe ferox body wrap applies freshly extracted gel to the full body, wraps in linen, and allows 45 minutes for penetration. The acemannan in aloe ferox has documented wound-healing, anti-inflammatory, and immune-stimulating properties. For burn treatment, aloe ferox gel reduces recovery time by approximately 50% compared to silver sulfadiazine cream in clinical studies. South African traditional healers (izinyanga and izangoma) use aloe ferox in preparations for skin disease, arthritis, and as a general tonic.`,
+      
       keyIngredients: ['fresh aloe ferox gel', 'rooibos extract', 'buchu essential oil', 'marula oil'],
-      benefits: ['Wound and burn healing', 'Deep hydration', 'Anti-inflammatory', 'Immune modulation', 'Skin repair'],
-      culturalNote: `Aloe ferox was one of the most important trade goods of the Cape Colony — "Cape aloe" bitter extract was exported to Europe as a laxative and wound treatment for centuries. Today, South Africa remains the world's largest exporter of aloe ferox. The plant is sacred in several Southern African spiritual traditions and is planted around homes for protective purposes.`
+      benefits: ['Wound and burn healing', 'Deep hydration', 'Anti-inflammatory', 'Immune modulation', 'Skin repair']
     },
     {
       name: 'Marula Oil Full-Body Massage',
@@ -557,7 +552,7 @@ const SOUTH_AFRICAN_SPA = {
       name: 'Fynbos Aromatherapy (Cape Botanical Region)',
       origin: 'Western Cape (Fynbos biome)',
       duration: '45 minutes',
-      description: `The fynbos biome — unique to the Cape Floristic Region — contains plants whose essential oils are among the most complex in the world. Buchu (Agathosma betulina) produces an oil with blackcurrant and peppermint notes that has antibacterial, antifungal, and diuretic properties. Cape chamomile (Eriocephalus punctulatus) contains alpha-bisabolol oxide compounds that are more potent than those in German chamomile. Helichrysum (Cape everlasting or rooi sewejaartjie) is perhaps the most medically significant fynbos aromatherapy plant — it contains neryl acetate, italidiones, and curcumin precursors with documented anti-hematoma (bruise-resolving), anti-inflammatory, and nerve-regenerating properties. An aromatherapy session using fynbos essential oils in a diffuser combined with a body oil blend creates effects not achievable with any other plant group.`,
+      
       keyIngredients: ['buchu essential oil', 'Cape chamomile', 'helichrysum', 'rooibos hydrosol', 'protea-infused oil'],
       benefits: ['Anti-inflammation', 'Bruise resolution', 'Antibacterial', 'Nerve regeneration', 'Unique aromatic experience'],
       culturalNote: `The San people of the Cape were the first humans to use fynbos plants medicinally — their pharmacopoeia, developed over 100,000 years, included buchu for urinary infections, helichrysum for wounds, and rooibos for colic. This knowledge, nearly lost with the decimation of San populations, is being recovered and preserved by ethnobotanists working with surviving San communities.`
@@ -610,8 +605,7 @@ The wash day sequence typically includes:
 
 The investment of time in wash day is recognized within Black culture as an act of self-respect and maintenance — taking care of what you have been given.`,
       keyIngredients: ['Jamaican Black Castor Oil (JBCO)', 'deep conditioner', 'leave-in conditioner', 'wide-tooth comb', 'heating cap', 'patience'],
-      benefits: ['Hair retention and growth', 'Scalp health', 'Meditative practice', 'Cultural identity', 'Self-regard'],
-      culturalNote: `The 2009 documentary "Good Hair" by Chris Rock brought mainstream attention to the enormous economic and cultural significance of Black hair care — Black Americans spend an estimated $2.5 billion annually on hair care products, and the natural hair movement has created a multi-billion-dollar industry built by and for Black consumers. Brands like Shea Moisture (founded by Liberian immigrant Richelieu Dennis) began as Black-owned businesses serving Black hair needs before growing into mainstream retail.`
+      benefits: ['Hair retention and growth', 'Scalp health', 'Meditative practice', 'Cultural identity', 'Self-regard']
     },
     {
       name: 'JBCO Scalp Treatment Ritual',
@@ -633,7 +627,7 @@ The investment of time in wash day is recognized within Black culture as an act 
     },
     {
       name: 'Rest as Radical Act — The Nap Ministry',
-      origin: 'Atlanta, GA (Tricia Hersey, 2016)',
+      
       duration: 'As long as the body requires',
       description: `Tricia Hersey founded The Nap Ministry in 2016 with the declaration that rest is a form of resistance against the systems of capitalism and white supremacy that have historically demanded the labor of Black bodies without rest or compensation. Her foundational text "Rest Is Resistance" argues that grind culture — the valorization of busyness and productivity above all else — is an extension of the plantation logic that treated Black bodies as working instruments rather than human beings deserving of rest.
 
@@ -650,8 +644,7 @@ As a wellness practice: The practice of deliberate rest — not productive rest,
       duration: 'Ongoing practice',
       description: `Contemporary Black women's spa culture builds on the Audre Lorde tradition while also creating new forms. The "treat yourself" culture of spa days among Black women friends is both pleasure and politics — a claiming of the right to luxury and care that has been historically denied. Black-owned spas and wellness businesses are a growing sector: spa owners like Tiffany Haddish, Oprah, and countless entrepreneurs have created spaces explicitly designed for Black women's bodies, aesthetics, and cultural needs. Treatments specifically designed for melanin-rich skin (addressing hyperpigmentation, ingrown hairs, post-inflammatory hyperpigmentation from shaving, and the unique needs of Type 4 hair) are increasingly mainstream. The self-care industrial complex's commercialization of the concept has been widely critiqued by Black women who point out that individual pampering does not address the systemic sources of the stress that self-care is meant to address. The more complete vision of Black women's wellness includes community care, political action, and systemic change alongside personal beauty practices.`,
       keyIngredients: ['community', 'intention', 'Black-owned products and businesses', 'political consciousness'],
-      benefits: ['Healing from racial trauma', 'Community building', 'Economic solidarity', 'Cultural affirmation', 'Joy'],
-      culturalNote: `The wellness industry in the United States generates over $4.2 trillion globally (Global Wellness Institute, 2022), but Black consumers have historically been underserved and under-represented in its marketing and product development. Black entrepreneurs in the wellness space represent one of the fastest-growing segments of the wellness industry, creating products and experiences that center Black women's needs, aesthetics, and cultural context.`
+      benefits: ['Healing from racial trauma', 'Community building', 'Economic solidarity', 'Cultural affirmation', 'Joy']
     }
   ],
   diyRecipe: {
@@ -734,8 +727,7 @@ export const UNIVERSAL_SPA_SCIENCE = {
         description: `Gentle, sustained touch (particularly effleurage — long, sweeping strokes) activates C-tactile afferent nerve fibers (CT afferents) that project directly to the hypothalamus, triggering the release of oxytocin — the "bonding hormone." Oxytocin reduces anxiety, increases trust, promotes social bonding, and has anti-inflammatory effects. The optimal touch speed for oxytocin activation is 3–10 cm/second — a deliberate, gentle stroke, not light tickling and not deep pressure. This speed range is thought to have evolved as the "grooming stroke" speed between bonded individuals.`
       },
       {
-        name: 'Cortisol Reduction',
-        description: `Multiple meta-analyses of massage therapy research show consistent reductions in salivary cortisol (15–50% reduction from baseline) following a single 45–60 minute massage. Cortisol chronically elevated from stress is catabolic — it breaks down muscle, suppresses immune function, impairs memory, and accelerates aging. A regular massage practice that keeps cortisol in check produces cascading health benefits across all body systems.`
+        name: 'Cortisol Reduction'
       },
       {
         name: 'NK Cell Activation',
@@ -826,48 +818,6 @@ export const ETHNIC_SPA_GUIDES = {
 // ─────────────────────────────────────────────────────────────────────────────
 // SPA STATISTICS
 // ─────────────────────────────────────────────────────────────────────────────
-export const SPA_STATS = {
-  globalWellnessMarket: {
-    totalValue2022: '$5.6 trillion USD',
-    spaIndustryValue: '$119 billion USD',
-    fastestGrowingRegion: 'Asia-Pacific',
-    annualGrowthRate: '9.9%',
-    source: 'Global Wellness Institute, 2023'
-  },
-  scienceStats: [
-    { stat: '50%', description: 'Reduction in cortisol after a single 45-minute massage (some studies)' },
-    { stat: '400%', description: 'Increase in active ingredient skin absorption following 10 minutes of steam' },
-    { stat: '4x', description: 'Increase in blood flow to skin during hot water immersion at 40°C' },
-    { stat: '30 min', description: 'Yoga nidra duration equivalent to 4 hours of sleep in restorative value (AIIMS study)' },
-    { stat: '92', description: 'Number of essential minerals found in sea moss, matching the mineral composition of the human body' },
-    { stat: '1,472 CE', description: 'Year Kobido Japanese facial massage technique was documented, one of the oldest formalized face treatments' },
-    { stat: '5,000 years', description: 'Age of Ayurvedic wellness system — oldest intact wellness tradition in the world' },
-    { stat: '27,000+', description: 'Hot spring sources in Japan — highest concentration in the world' },
-    { stat: '$2.5 billion', description: 'Annual US Black consumer spending on hair care products' },
-    { stat: '9,000+', description: 'Plant species unique to South Africa\'s Cape Floristic Region (global biodiversity hotspot)' }
-  ],
-  traditionalKnowledgeFacts: [
-    'The Ethiopian coffee ceremony has been practiced for over 600 years',
-    'Temazcal sweat lodges have been used in Mesoamerica for over 2,900 years',
-    'West African shea butter cooperatives produce 80% of the world\'s shea supply, employing 16 million women',
-    'The hammam was institutionalized throughout the Islamic world within 100 years of the religion\'s founding',
-    'Korean Italy towel exfoliation became mainstream in the 1950s–1970s as public bath culture flourished',
-    'Frankincense trade routes were among the first transcontinental trade networks, established 4,000+ years ago',
-    'Marula oil was used by San peoples 40,000 years before commercial cosmetics discovered it',
-    'Audre Lorde\'s self-care manifesto was written in 1988 in "A Burst of Light," one year after her breast cancer diagnosis'
-  ],
-  communityIds: [
-    'west-african',
-    'south-asian',
-    'caribbean',
-    'arab',
-    'latina',
-    'east-asian',
-    'east-african',
-    'south-african',
-    'black-american'
-  ]
-};
 
 // ─────────────────────────────────────────────────────────────────────────────
 // GETTER FUNCTION — directMap pattern required
@@ -890,10 +840,6 @@ export function getSpaGuide(communityId) {
 // ─────────────────────────────────────────────────────────────────────────────
 // ADDITIONAL UTILITY EXPORTS
 // ─────────────────────────────────────────────────────────────────────────────
-
-export function getAllCommunityIds() {
-  return SPA_STATS.communityIds;
-}
 
 export function getAllSpaGuides() {
   return Object.values(ETHNIC_SPA_GUIDES);
@@ -946,16 +892,6 @@ export function getAllDIYRecipes() {
   }));
 }
 
-export function getSpaStatsByCategory(category) {
-  const directMap = {
-    'market': SPA_STATS.globalWellnessMarket,
-    'science': SPA_STATS.scienceStats,
-    'knowledge': SPA_STATS.traditionalKnowledgeFacts,
-    'communities': SPA_STATS.communityIds
-  };
-  return directMap[category] || null;
-}
-
 export function getUniversalScienceTopic(topic) {
   const directMap = {
     'hydrotherapy': UNIVERSAL_SPA_SCIENCE.hydrotherapy,
@@ -981,8 +917,7 @@ export const WELLNESS_PHILOSOPHIES = {
   'south-asian': {
     corePhilosophy: `Ayurveda sees the human being as a microcosm of the universe, governed by the same five elements (space, air, fire, water, earth) that constitute all of creation. The three doshas — Vata (air + space), Pitta (fire + water), Kapha (earth + water) — are the functional intelligences that govern all physiological and psychological processes. Wellness is not the absence of disease but the dynamic balance of these forces, different for each individual and changing with season, age, and life circumstances. Every Ayurvedic treatment is therefore ideally customized to the individual's constitution (prakriti) and current imbalance (vikriti).`,
     bodyViewpoint: `The Ayurvedic body is permeated by prana (life force) flowing through 72,000 nadis (energy channels) and concentrated at seven chakra centers. Blockages in these channels — caused by diet, stress, trauma, seasonal changes, or violation of natural rhythms — are the root cause of disease. Ayurvedic treatments (massage, oil treatments, steam, herbal medicine) restore the free flow of prana. The skin is understood as a sense organ (the organ of touch) and is treated accordingly — not merely cosmetically but as a window into the internal state of the doshas.`,
-    keyValues: ['Individual constitution-based care', 'Prevention over cure', 'Seasonal attunement', 'Integration of food, sleep, movement and ritual', 'The physician as teacher, not fixer'],
-    modernRelevance: `Ayurveda is the fastest-growing wellness system globally. However, the commercialization of Ayurveda has produced significant decontextualization — Ayurvedic products sold without dosha assessment, Ayurvedic treatments performed by practitioners without authentic training, and appropriation of Ayurvedic terminology by brands with no connection to the tradition. Practitioners from authentic lineages emphasize that Ayurveda is a complete system of medicine, not a set of exotic beauty treatments.`
+    keyValues: ['Individual constitution-based care', 'Prevention over cure', 'Seasonal attunement', 'Integration of food, sleep, movement and ritual', 'The physician as teacher, not fixer']
   },
   'caribbean': {
     corePhilosophy: `Caribbean wellness philosophy is shaped by the region's history of forced displacement and the creativity of communities who built wellness from available resources. Enslaved Africans brought healing knowledge from their home countries and integrated it with Caribbean plants and the wisdom of indigenous Taíno and Carib peoples. The result is a wellness tradition that is essentially syncretic — drawing from multiple sources without dogma, guided by what works. Caribbean wellness culture places high value on the healing power of the natural environment: the sea, the sun, volcanic earth, tropical plants, and seasonal food are all understood as medicines.`,
@@ -1017,14 +952,12 @@ export const WELLNESS_PHILOSOPHIES = {
   'south-african': {
     corePhilosophy: `South African indigenous wellness philosophy is rooted in the concept of ubuntu in Zulu/Xhosa tradition and the San philosophy of balanced relationship with the natural world. The traditional healer (isangoma or inyanga) does not treat the body in isolation but addresses the entire web of relationships — with ancestors, with community, with the natural world — that constitute a person's health. Illness is often understood as a signal from the ancestors requiring attention, or as the result of broken relationships in the community that need repair.`,
     bodyViewpoint: `In Zulu and Xhosa traditions, the body is understood as inhabited by multiple entities: the umoya (breath/spirit), the isithunzi (shadow/personality), and the ancestral presence (amadlozi). The isangoma's diagnostic process involves entering a trance state to receive guidance from the amadlozi about the nature and cause of the patient's condition. Physical treatments with plant medicine (imbiza) are prescribed alongside ritual acts of reconciliation, offerings, or behavioral changes.`,
-    keyValues: ['Ancestral connection as health foundation', 'Community diagnosis and healing', 'Botanical biodiversity as medicine', 'Healing as relationship repair', 'Ubuntu — communal wellbeing as individual wellbeing'],
-    modernRelevance: `South Africa's post-apartheid health policy has made notable progress in recognizing and integrating traditional healing. The Traditional Health Practitioners Act (2007) created a framework for regulating traditional healers while preserving their role. However, significant work remains in ensuring that the intellectual property of South African traditional knowledge is protected from corporate appropriation.`
+    keyValues: ['Ancestral connection as health foundation', 'Community diagnosis and healing', 'Botanical biodiversity as medicine', 'Healing as relationship repair', 'Ubuntu — communal wellbeing as individual wellbeing']
   },
   'black-american': {
     corePhilosophy: `Black American wellness philosophy, in its most articulate contemporary form, centers on three interlocking ideas: (1) self-care as political resistance (Audre Lorde's framework), (2) rest as reclamation from a system built on Black labor (Tricia Hersey's Nap Ministry), and (3) community care as the infrastructure of individual wellbeing. These frameworks explicitly connect personal wellness practices to historical trauma (the Middle Passage, slavery, Jim Crow, ongoing structural racism) and argue that the self-care of Black people — particularly Black women — is a form of resistance against systems that profit from Black suffering and exhaustion.`,
     bodyViewpoint: `The Black body in America has been a site of specific historical violation — forced labor, medical experimentation, sexual exploitation, and ongoing police violence. Black feminist scholars and wellness practitioners argue that this history of violation requires a specifically reparative approach to the Black body: one that centers pleasure, rest, and care as responses to harm. The natural hair movement reflects a reclaiming of the Black body's natural state against a history of coercion to conform to white aesthetic standards.`,
-    keyValues: ['Self-care as political act', 'Rest as reclamation', 'Community care infrastructure', 'Joy as resistance', 'Natural hair as embodied freedom', 'Economic solidarity through Black-owned wellness businesses'],
-    modernRelevance: `The $52 billion US wellness industry remains deeply inequitable in its access and representation. Black wellness entrepreneurs, scholars, and practitioners are building an alternative infrastructure: Black-owned spas, natural beauty brands, yoga studios, therapy practices, and community care networks that center Black bodies and Black cultural values. The COVID-19 pandemic, which disproportionately impacted Black communities, accelerated the visibility of racial health disparities and the urgent need for culturally competent wellness care.`
+    keyValues: ['Self-care as political act', 'Rest as reclamation', 'Community care infrastructure', 'Joy as resistance', 'Natural hair as embodied freedom', 'Economic solidarity through Black-owned wellness businesses']
   }
 };
 
@@ -1102,17 +1035,15 @@ export const INGREDIENT_GLOSSARY = {
     keyCompounds: ['aspalathin', 'nothofagin', 'quercetin', 'luteolin', 'orientin'],
     skinBenefits: 'Anti-inflammatory, antihistamine, antioxidant, skin toning, eczema relief',
     hairBenefits: 'Scalp anti-inflammatory, dandruff treatment, growth environment improvement',
-    usedIn: ['south-african'],
-    notes: 'Aspalathin is unique to rooibos — it does not exist in any other known plant. As an antioxidant, it has 50% greater radical-scavenging capacity than epigallocatechin gallate (EGCG, the famous green tea antioxidant) in some assays. Rooibos is entirely caffeine-free, making it suitable for all ages and times of day.'
+    usedIn: ['south-african']
   },
   seaMoss: {
     botanicalName: 'Gracilaria debilis / Chondrus crispus',
     origin: 'Caribbean coasts (Gracilaria), North Atlantic (Chondrus)',
     keyCompounds: ['carrageenan', 'zinc', 'iodine', 'iron', 'potassium', '92 minerals total'],
-    skinBenefits: 'Mineral infusion, detoxification, hydration, skin smoothing, anti-bacterial',
+    skinBenefits: 'Mineral infusion, hydration, skin smoothing, anti-bacterial',
     hairBenefits: 'Scalp minerals, hair thickening, moisture retention, growth environment',
-    usedIn: ['caribbean'],
-    notes: 'The "92 minerals" claim attributed to Dr. Sebi is widely repeated but specific sourcing of the figure is difficult to verify in peer-reviewed literature. What is established is that sea moss contains significantly higher mineral diversity than almost any other food or topical ingredient, and its use as a mineral supplement (internal and external) has a long empirical track record.'
+    usedIn: ['caribbean']
   },
   marula: {
     botanicalName: 'Sclerocarya birrea',
@@ -1300,7 +1231,7 @@ export const SPA_PAIRINGS_BY_CONCERN = {
         primary: 'Warm sesame oil (Vata-reducing)',
         secondary: 'Herbal steam to drive oil in',
         finishing: 'Cotton cloth wrap for 20 minutes',
-        mechanism: 'Sesame oil penetrates all seven dhatus (tissue layers) according to Ayurvedic tradition; steam drives the oil into open pores; the wrap prevents evaporation during absorption',
+        
         frequency: 'Daily (Ayurveda prescribes daily self-abhyanga for everyone)'
       }
     ],
@@ -1344,7 +1275,7 @@ export const SPA_PAIRINGS_BY_CONCERN = {
         primary: 'JBCO scalp massage (2–3x weekly)',
         secondary: 'Ayurvedic Bhringraj oil overnight treatment',
         finishing: 'Rosemary essential oil in carrier oil (daily)',
-        mechanism: 'JBCO ricinoleic acid stimulates prostaglandin E2, a known follicle growth stimulator; Bhringraj (Eclipta prostrata) has demonstrated hair growth activity comparable to minoxidil 2% in a controlled study; rosemary has comparable efficacy to minoxidil in a randomized trial (Panahi et al., 2015)',
+        
         frequency: 'JBCO 2–3x weekly; bhringraj overnight weekly; rosemary daily'
       },
       {
@@ -1527,46 +1458,6 @@ export function getConcernPairing(concern) {
   return directMap[concern] || null;
 }
 
-export const MODULE_META = {
-  name: 'spa_treatments_ethnic_guide',
-  version: '1.0.0',
-  description: 'Traditional spa treatments, self-care rituals, and relaxation practices across 9 ethnic communities with universal wellness science',
-  communities: 9,
-  totalTreatments: 45,
-  universalTopics: 4,
-  exports: [
-    'ETHNIC_SPA_GUIDES',
-    'UNIVERSAL_SPA_SCIENCE',
-    'WELLNESS_PHILOSOPHIES',
-    'INGREDIENT_GLOSSARY',
-    'SEASONAL_SPA_GUIDE',
-    'SPA_STATS',
-    'MODULE_META',
-    'getSpaGuide',
-    'getWellnessPhilosophy',
-    'getIngredientInfo',
-    'getSeasonalGuide',
-    'getAllCommunityIds',
-    'getAllSpaGuides',
-    'getTreatmentsByBenefit',
-    'getDIYRecipeForCommunity',
-    'getAllDIYRecipes',
-    'getSpaStatsByCategory',
-    'getUniversalScienceTopic',
-    'getFullCommunityProfile'
-  ],
-  sources: [
-    'Ayurvedic texts: Ashtanga Hridayam, Charaka Samhita, Sushruta Samhita',
-    'Touch Research Institute, University of Miami (Tiffany Field)',
-    'Global Wellness Institute, Global Wellness Economy Report 2023',
-    'Audre Lorde, A Burst of Light (1988)',
-    'Tricia Hersey, Rest Is Resistance (2022)',
-    'Traditional knowledge sources from indigenous and community practitioners',
-    'Ethnobotanical research on African, Asian, and Latin American plant medicines',
-    'Journal of Ethnopharmacology research on traditional remedies'
-  ]
-};
-
 // ─────────────────────────────────────────────────────────────────────────────
 // QUICK-START GUIDE — first-time home spa setup by community
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1576,10 +1467,10 @@ export const QUICKSTART_GUIDES = {
     communityId: 'west-african',
     title: 'West African Wellness — Your First Week',
     essentialProducts: [
-      { product: 'Raw shea butter (unrefined, ivory or yellow)', where: 'African grocery stores, online African beauty retailers', cost: '$', priority: 1 },
-      { product: 'Authentic Ghanaian black soap (alata samina)', where: 'African grocery stores, avoid supermarket "black soap" imposters', cost: '$', priority: 2 },
-      { product: 'Moringa oil or powder', where: 'Health food stores, West African markets', cost: '$$', priority: 3 },
-      { product: 'Lemongrass dried herb', where: 'Any grocery store', cost: '$', priority: 4 }
+      { product: 'Raw shea butter (unrefined, ivory or yellow)', where: 'African grocery stores, online African beauty retailers',  priority: 1 },
+      { product: 'Authentic Ghanaian black soap (alata samina)', where: 'African grocery stores, avoid supermarket "black soap" imposters',  priority: 2 },
+      { product: 'Moringa oil or powder', where: 'Health food stores, West African markets',  priority: 3 },
+      { product: 'Lemongrass dried herb', where: 'Any grocery store',  priority: 4 }
     ],
     dayOneRitual: 'Begin with the black soap ritual: steam your face for 8 minutes using lemongrass tea, then lather black soap and leave for 5 minutes, rinse and seal with a small amount of shea butter. Notice how your skin feels — different from commercial products.',
     week1Plan: [
@@ -1587,17 +1478,16 @@ export const QUICKSTART_GUIDES = {
       'Day 3: Full lemongrass steam + black soap body wash + shea body moisturizer',
       'Day 5: Moringa oil face mask (moringa powder + honey + rosewater, 20 min)',
       'Day 7: Full shea butter body treatment — warm shea massage after shower, wrap in towel 15 min'
-    ],
-    budgetNote: 'A 1lb block of raw shea butter ($8–15) and a bar of authentic black soap ($3–8) is enough for one month of daily use. This tradition is designed to be economical.'
+    ]
   },
   'south-asian': {
     communityId: 'south-asian',
     title: 'Ayurvedic Wellness — Your First Week',
     essentialProducts: [
-      { product: 'Sesame oil (untoasted, food grade)', where: 'Any grocery store or Indian grocery', cost: '$', priority: 1 },
-      { product: 'Chickpea flour (besan)', where: 'South Asian grocery stores, most grocery stores', cost: '$', priority: 2 },
-      { product: 'Turmeric powder', where: 'Any grocery store', cost: '$', priority: 3 },
-      { product: 'Raw milk or full-fat yogurt', where: 'Any grocery store', cost: '$', priority: 4 }
+      { product: 'Sesame oil (untoasted, food grade)', where: 'Any grocery store or Indian grocery',  priority: 1 },
+      { product: 'Chickpea flour (besan)', where: 'South Asian grocery stores, most grocery stores',  priority: 2 },
+      { product: 'Turmeric powder', where: 'Any grocery store',  priority: 3 },
+      { product: 'Raw milk or full-fat yogurt', where: 'Any grocery store',  priority: 4 }
     ],
     dayOneRitual: 'Begin with self-abhyanga: warm a few tablespoons of sesame oil in your palms. Starting from your feet and moving upward, apply the oil with long strokes on limbs and circular motions on joints. Leave the oil on for 20 minutes before showering. This single practice, done consistently, produces visible improvement in skin quality within two weeks.',
     week1Plan: [
@@ -1606,17 +1496,16 @@ export const QUICKSTART_GUIDES = {
       'Day 3: Full body ubtan (besan + turmeric + yogurt + rosewater)',
       'Day 5: Self-abhyanga again — notice if it already feels easier and more natural',
       'Day 7: Yoga nidra session (30 min) — free recordings available on YouTube'
-    ],
-    budgetNote: 'The entire first-week protocol can be completed for under $20 using ingredients available in any grocery store. Ayurveda was designed for ordinary households, not luxury spas.'
+    ]
   },
   'caribbean': {
     communityId: 'caribbean',
     title: 'Caribbean Wellness — Your First Week',
     essentialProducts: [
-      { product: 'Coconut oil', where: 'Any grocery store', cost: '$', priority: 1 },
-      { product: 'Sea moss (dried or gel)', where: 'Caribbean grocery stores, online retailers, some health food stores', cost: '$$', priority: 2 },
-      { product: 'Epsom salt (simulates ocean mineral experience)', where: 'Any pharmacy or grocery store', cost: '$', priority: 3 },
-      { product: 'Sea salt', where: 'Any grocery store', cost: '$', priority: 4 }
+      { product: 'Coconut oil', where: 'Any grocery store',  priority: 1 },
+      { product: 'Sea moss (dried or gel)', where: 'Caribbean grocery stores, online retailers, some health food stores',  priority: 2 },
+      { product: 'Epsom salt (simulates ocean mineral experience)', where: 'Any pharmacy or grocery store',  priority: 3 },
+      { product: 'Sea salt', where: 'Any grocery store',  priority: 4 }
     ],
     dayOneRitual: 'A Caribbean-inspired mineral bath: dissolve 2 cups Epsom salt and 1 cup sea salt in warm bath water. Add 10 drops of coconut oil and the juice of one lime. Soak for 30 minutes. This creates a mineral bath that approximates the Caribbean ocean\'s therapeutic mineral content. After soaking, apply coconut oil to damp skin.',
     week1Plan: [
@@ -1632,10 +1521,10 @@ export const QUICKSTART_GUIDES = {
     communityId: 'arab',
     title: 'Hammam Wellness — Your First Week',
     essentialProducts: [
-      { product: 'Moroccan black soap (beldi soap)', where: 'Middle Eastern grocery stores, online (Moroccan brands preferred)', cost: '$$', priority: 1 },
-      { product: 'Kessa exfoliating glove', where: 'Middle Eastern beauty stores, online', cost: '$', priority: 2 },
-      { product: 'Argan oil', where: 'Beauty stores, online (Moroccan brand preferred)', cost: '$$', priority: 3 },
-      { product: 'Rosewater (edible grade for maximum purity)', where: 'Middle Eastern grocery stores', cost: '$', priority: 4 }
+      { product: 'Moroccan black soap (beldi soap)', where: 'Middle Eastern grocery stores, online (Moroccan brands preferred)',  priority: 1 },
+      { product: 'Kessa exfoliating glove', where: 'Middle Eastern beauty stores, online',  priority: 2 },
+      { product: 'Argan oil', where: 'Beauty stores, online (Moroccan brand preferred)',  priority: 3 },
+      { product: 'Rosewater (edible grade for maximum purity)', where: 'Middle Eastern grocery stores',  priority: 4 }
     ],
     dayOneRitual: 'Your first home hammam: Take the longest, hottest shower you can comfortably tolerate for 15 minutes, letting the steam fill the bathroom. Apply beldi soap and leave for 7 minutes. With your wet kessa glove, scrub firmly from neck to feet in long strokes. The dead skin that rolls off will surprise you. Rinse thoroughly. Apply argan oil to damp skin. Rest in a warm towel for 20 minutes.',
     week1Plan: [
@@ -1643,17 +1532,16 @@ export const QUICKSTART_GUIDES = {
       'Day 3: Rosewater toning ritual (spray rosewater, allow to dry, apply argan oil)',
       'Day 5: Ghassoul clay hair mask (rhassoul + rosewater + argan, leave 20 min)',
       'Day 7: Full repeat of the hammam protocol — notice the difference between week-one-day-one and one-week-in'
-    ],
-    budgetNote: 'Investing once in a kessa glove ($5–10) and beldi soap ($10–20) provides months of the signature hammam exfoliation experience. Argan oil is the most significant cost — 30ml pure argan ($15–25) lasts 2–3 months.'
+    ]
   },
   'east-asian': {
     communityId: 'east-asian',
     title: 'East Asian Bathing Wellness — Your First Week',
     essentialProducts: [
-      { product: 'Italy towel (이태리 타올)', where: 'Korean grocery stores, Asian beauty stores, online', cost: '$', priority: 1 },
-      { product: 'Camellia (tsubaki) oil', where: 'Japanese beauty stores, online', cost: '$$', priority: 2 },
-      { product: 'Ceremonial grade matcha', where: 'Japanese tea shops, specialty grocery stores', cost: '$$', priority: 3 },
-      { product: 'Gua sha tool (jade or rose quartz)', where: 'Beauty stores, online', cost: '$–$$', priority: 4 }
+      { product: 'Italy towel (이태리 타올)', where: 'Korean grocery stores, Asian beauty stores, online',  priority: 1 },
+      { product: 'Camellia (tsubaki) oil', where: 'Japanese beauty stores, online',  priority: 2 },
+      { product: 'Ceremonial grade matcha', where: 'Japanese tea shops, specialty grocery stores',  priority: 3 },
+      { product: 'Gua sha tool (jade or rose quartz)', where: 'Beauty stores, online',  priority: 4 }
     ],
     dayOneRitual: 'Your first Italy towel experience: Soak in hot water for 20–25 minutes (this is essential — the skin must be truly softened). While still in the water or immediately upon exiting, use the wet Italy towel in long, firm strokes from neck to foot. If it is your first time, you will be amazed. Follow with camellia oil on damp skin.',
     week1Plan: [
@@ -1662,17 +1550,16 @@ export const QUICKSTART_GUIDES = {
       'Day 4: Matcha face mask (1 tsp matcha + 1 tbsp honey + 1 tbsp coconut milk)',
       'Day 5: Hot-cold contrast shower (3 min hot, 30 sec cold, repeat 4 times)',
       'Day 7: Full Japanese bathing sequence — wash first, then soak, then cold rinse, then facial massage, then rest'
-    ],
-    budgetNote: 'A pack of 10 Italy towels costs $5–12 and each lasts months. This is the world\'s most economical deep exfoliation method. Camellia oil is an investment ($15–30 for 30ml) that outperforms products 10x its price.'
+    ]
   },
   'black-american': {
     communityId: 'black-american',
     title: 'Black Wellness Traditions — Your First Week',
     essentialProducts: [
-      { product: 'Jamaican Black Castor Oil (JBCO)', where: 'Beauty supply stores, drugstores, online (Tropic Isle Living is the original brand)', cost: '$', priority: 1 },
-      { product: 'Deep conditioner (for Type 4 hair if applicable, or for all hair types)', where: 'Beauty supply stores', cost: '$', priority: 2 },
-      { product: 'Shea butter or shea-based body butter', where: 'Beauty supply stores, natural grocery stores', cost: '$', priority: 3 },
-      { product: 'Lavender and Epsom salt (for bath ritual)', where: 'Any pharmacy or grocery store', cost: '$', priority: 4 }
+      { product: 'Jamaican Black Castor Oil (JBCO)', where: 'Beauty supply stores, drugstores, online (Tropic Isle Living is the original brand)',  priority: 1 },
+      { product: 'Deep conditioner (for Type 4 hair if applicable, or for all hair types)', where: 'Beauty supply stores',  priority: 2 },
+      { product: 'Shea butter or shea-based body butter', where: 'Beauty supply stores, natural grocery stores',  priority: 3 },
+      { product: 'Lavender and Epsom salt (for bath ritual)', where: 'Any pharmacy or grocery store',  priority: 4 }
     ],
     dayOneRitual: 'Begin with intentional rest. Literally. Set aside 30 minutes on Day One with no phone, no productivity, no justification required. Lie down. This is the Nap Ministry protocol. Notice the resistance your body and mind feel. That resistance is itself the data — it reveals how colonized by productivity culture your relationship with rest has become. The rest is the first treatment.',
     week1Plan: [
@@ -1682,8 +1569,7 @@ export const QUICKSTART_GUIDES = {
       'Day 5: Lavender Epsom bath (2 cups Epsom + 10 drops lavender + shea body butter after)',
       'Day 6: Kitchen table beauty — invite someone you trust to co-care. Do hair together.',
       'Day 7: Rest again. Deliberately. As the culmination of the week\'s practice.'
-    ],
-    budgetNote: 'The most important "product" in Black American wellness is permission — the internal permission to rest and be cared for. Many of the most powerful practices (rest, communal care, intentional slowness) cost nothing. JBCO ($8–12) is the highest-value product purchase for those focusing on hair health.'
+    ]
   }
 };
 
@@ -1771,8 +1657,7 @@ export const CULTURAL_COMPETENCY_NOTES = {
       description: 'A temazcal ceremony led by someone without indigenous training and lineage is not a temazcal in the full sense — it is a steam tent. An Ayurvedic treatment performed without dosha assessment is a pleasant oil massage. Be honest about the level of authenticity your offering represents and let clients make informed choices.'
     },
     {
-      principle: 'Decolonize the Spa',
-      description: 'The global spa industry, dominated by Western European aesthetics and "clean beauty" norms, has historically marginalized the wellness traditions in this guide. Explicitly including and centering these traditions — not as "exotic add-ons" but as equal pillars of a global wellness offering — is an act of decolonization within the spa space.'
+      principle: 'Decolonize the Spa'
     }
   ],
   clientIntakeQuestions: [
@@ -1861,7 +1746,7 @@ export const SKIN_TYPE_GUIDE = {
   oilySkin: {
     bestCommunityApproaches: ['arab', 'east-asian', 'south-asian'],
     recommendedTreatments: [
-      { community: 'arab', treatment: 'Ghassoul clay mask', reason: 'Exceptional oil absorption — 4x greater than kaolin; reduces sebum without stripping' },
+      { community: 'arab', treatment: 'Ghassoul clay mask' },
       { community: 'east-asian', treatment: 'Matcha body/face wrap', reason: 'EGCG inhibits sebaceous gland overactivity and has antibacterial effect on acne bacteria' },
       { community: 'south-asian', treatment: 'Ubtan with neem and multani mitti', reason: 'Multani mitti (Fuller\'s earth) is the most absorbent clay available; neem addresses bacterial component of acne' },
       { community: 'west-african', treatment: 'Black soap with tea tree', reason: 'Black soap\'s plantain AHAs clear pore congestion; tea tree addess P. acnes bacteria' }

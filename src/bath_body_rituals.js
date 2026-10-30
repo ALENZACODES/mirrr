@@ -97,7 +97,7 @@ export const BODY_SCRUB_GUIDE = {
   },
   keratosis_pilaris: {
     name: 'Keratosis Pilaris (KP)',
-    what: 'KP is the clinical name for the rough, bumpy "chicken skin" texture that appears on the upper arms, thighs, and buttocks. It is caused by keratin clogging the hair follicles. Very common — affects 40-80% of the population. Genetic.',
+    
     treatment: 'Chemical exfoliation is more effective than physical. AHA + urea combination body lotion applied daily. BHA can help clear follicles. Hydration alone is not sufficient — you must exfoliate the keratin buildup.',
     realistic_expectations: 'KP can be significantly improved but not "cured" — it is a genetic condition. Consistent chemical exfoliation over months reduces the bumpy texture and redness.',
     ethnic_note: 'KP appears more visually prominent on lighter skin tones. On Fitzpatrick IV-VI, KP can trigger PIH (dark spots at each follicle bump) — making the condition appear more as dark spotting than rough texture.',
@@ -243,9 +243,3 @@ export function getEthnicBathingTradition(communityId) {
   return ETHNIC_BATHING_TRADITIONS[map[key] || key] || Object.values(ETHNIC_BATHING_TRADITIONS);
 }
 
-export const BATH_BODY_STATS = {
-  bathTypes: Object.keys(BATH_TYPES).length,
-  bodyOilTypes: Object.keys(BODY_OIL_GUIDE.types).length,
-  scrubTypes: Object.keys(BODY_SCRUB_GUIDE.physical_scrubs.types).length,
-  bathingTraditions: Object.keys(ETHNIC_BATHING_TRADITIONS).length,
-};

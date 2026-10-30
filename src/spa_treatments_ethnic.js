@@ -90,7 +90,7 @@ export const GLOBAL_SPA_TRADITIONS = {
       why_warm_oil: 'Warm oil penetrates skin more deeply than cold oil. The heat and massage together stimulate circulation, move lymph, and deeply nourish tissue. Ayurveda understands skin as a site of absorption for therapeutic benefit.',
       dosha_oils: {
         vata: 'Sesame oil (grounding, warming) — for Vata types (anxious, dry, light)',
-        pitta: 'Coconut oil (cooling) — for Pitta types (fiery, intense)',
+        
         kapha: 'Sunflower or safflower oil (lighter) — for Kapha types (heavier, slower)',
       },
     },
@@ -198,7 +198,7 @@ export const FACIAL_TREATMENTS = {
   microneedling: {
     what: 'Fine needles create controlled micro-injuries to skin, stimulating collagen production and product penetration.',
     for_dark_skin: 'Generally safe for darker skin tones when done by an experienced professional with appropriate settings. Melanin-stimulating risk exists with some energy-based devices that accompany microneedling — choose RF microneedling carefully, as RF heat can affect melanocytes in dark skin.',
-    evidence: 'Strong clinical evidence for acne scarring, enlarged pores, fine lines, and skin texture improvement across all skin tones.',
+    
   },
 };
 
@@ -381,9 +381,3 @@ export function getAtHomeRitualsForCommunity(communityId) {
   return AT_HOME_RITUALS[communityId] || null;
 }
 
-export const SPA_TREATMENTS_STATS = {
-  spaTraditions: Object.keys(GLOBAL_SPA_TRADITIONS).length,
-  communitiesWithRituals: Object.keys(AT_HOME_RITUALS).length,
-  facialTreatmentTypes: Object.keys(FACIAL_TREATMENTS).length,
-  bodyTreatmentTypes: Object.keys(BODY_TREATMENTS).length,
-};

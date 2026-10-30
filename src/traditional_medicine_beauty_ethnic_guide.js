@@ -117,7 +117,7 @@ export const ETHNIC_TRADITIONAL_MEDICINE_BEAUTY_GUIDES = {
         botanicalName: 'Nigella sativa',
         hadith: '"Use the black seed, for it contains a cure for every disease except death." (Sahih al-Bukhari)',
         activeCompound: 'Thymoquinone — the primary bioactive compound in black seed oil. Extensively studied: anti-inflammatory, antioxidant, anticancer, antimicrobial, antidiabetic effects demonstrated in vitro and in animal studies.',
-        beautyUse: 'Black seed oil applied topically: anti-inflammatory for acne, eczema, psoriasis. Studies show significant improvement in acne vulgaris with topical black seed application. Hair treatment: rubbed into scalp for hair growth and scalp health (thymoquinone\'s anti-inflammatory effects may reduce scalp inflammation that impairs follicle function).',
+        
       },
       Honey: {
         arabicName: 'Asal (عسل)',
@@ -128,7 +128,7 @@ export const ETHNIC_TRADITIONAL_MEDICINE_BEAUTY_GUIDES = {
     },
     aromaticsTradition: {
       tradition: 'The Arab world\'s contribution to perfumery and aromatics is foundational to modern beauty. The word "alcohol" (from Arabic al-kuhl) and the distillation technique itself come from Arab scientists like Avicenna (Ibn Sina) who developed the modern steam distillation process in the 10th century.',
-      oud: 'Oud (agarwood / Aquilaria malaccensis) — the most expensive aromatic material in the world. Used in Arab culture for personal fragrance, home scenting (bakhoor), and spiritual practice. A single gram of pure oud oil can cost $100-500.',
+      
       roseWater: 'Persian/Arab rose water: Rosa damascena distilled water. Origin: Avicenna\'s 10th-century Persian distillation labs. Now produced in bulk in Iran, Bulgaria, and Morocco. Beauty uses: toner, perfume, cooking, religious ritual.',
       frankincense: 'Boswellia sacra from Oman — the finest frankincense in the world. Arab women burn frankincense resin at home for scenting and spiritual protection. Applied as a skin treatment (boswellic acids are validated anti-inflammatory compounds).',
     },
@@ -152,7 +152,7 @@ export const ETHNIC_TRADITIONAL_MEDICINE_BEAUTY_GUIDES = {
     },
     nopales: {
       tradition: 'Nopal (prickly pear cactus — Opuntia spp.) is both a staple food and a medicine in Mexican and Chicano tradition. Nopales have been used for: blood sugar regulation, wound healing, sun protection.',
-      science: 'Prickly pear extract: betaxanthins and betacyanins (the yellow and red pigments) are potent antioxidants. Significant UV absorption (natural SPF properties when applied topically). Studies show prickly pear seed oil has higher vitamin E content than argan oil.',
+      
       beautyUse: 'Nopal gel (from the cactus pad) applied to sunburns, rashes, and as a hydrating face treatment. Prickly pear seed oil applied to face and hair for antioxidant protection and hydration.',
     },
     remedios: {
@@ -204,9 +204,9 @@ export const ETHNIC_TRADITIONAL_MEDICINE_BEAUTY_GUIDES = {
     healingSystem: 'Ethiopian traditional medicine (ETM) / Swahili herbal medicine / Somali traditional medicine',
     beautyPhilosophy: 'Ethiopian traditional medicine (ETM) is one of the world\'s oldest continuous healing traditions — Ethiopian medical texts date to the 14th century (the Zara Yaqob treatises). ETM integrates plant medicine, spiritual practice (within Orthodox Christian, Islamic, and indigenous spiritual frameworks), and dietary practice.',
     frankincense: {
-      species: 'Boswellia papyrifera (Northern Ethiopia/Eritrea) and Boswellia sacra (Ethiopia/Oman). Ethiopia is the world\'s largest producer of natural frankincense.',
+      
       activeCompounds: 'Boswellic acids (AKBA — acetyl-11-keto-β-boswellic acid is the most potent anti-inflammatory). Incensole acetate (anti-anxiety, neuroprotective effects from burning frankincense — validated in studies on mice).',
-      beautyUse: 'Frankincense resin burned for home scenting and spiritual protection. Frankincense oil (steam-distilled from resin) applied to skin: anti-inflammatory, wound healing, anti-aging. Studies show boswellic acids reduce UV-induced inflammatory signaling in skin cells.',
+      
       ethnoKnowledge: 'Ethiopian traditional healers (debtera in Amhara tradition, medicine men in Oromo tradition) use frankincense for: wound treatment, skin infections, stretch marks, and postpartum skin restoration.',
     },
     injera: {
@@ -248,11 +248,11 @@ export const ETHNIC_TRADITIONAL_MEDICINE_BEAUTY_GUIDES = {
     buchu: {
       scientificName: 'Agathosma betulina (round leaf buchu) / Agathosma serratifolia (oval leaf buchu)',
       tradition: 'Buchu is sacred to the Khoisan people of the Western Cape — one of the most important plants in Cape Malay and indigenous South African medicine. Used for urinary tract infections, kidney health, arthritis, and as a general health tonic.',
-      activeCompounds: 'Diosphenol (antibacterial, diuretic), pulegone, limonene, isomenthone. Buchu essential oil is among the most intensely scented in the world (blackcurrant-like).',
+      
       beautyUse: 'Buchu tea as diuretic (reduces puffiness/water retention). Buchu-infused oil as antimicrobial skin treatment. Buchu essential oil in diffusers for aromatherapy.',
     },
     fynbos: {
-      overview: 'The Cape Floristic Region (fynbos biome) of South Africa is one of the six plant kingdoms of the world — extraordinary biodiversity concentrated in the Western Cape. It contains approximately 9,600 species of plants, of which 69% are endemic (found nowhere else on earth).',
+      
       beautyIngredients: ['Rooibos (Aspalathus linearis)', 'Honeybush (Cyclopia spp.)', 'Buchu (Agathosma spp.)', 'Cape chamomile (Eriocephalus punctulatus)', 'Geranium (Pelargonium sidoides)', 'Wild rosemary (Eriocephalus africanus)', 'Pelargonium graveolens (geranium oil)', 'Osmanthus afra (African brake)'],
     },
   },
@@ -263,7 +263,7 @@ export const ETHNIC_TRADITIONAL_MEDICINE_BEAUTY_GUIDES = {
     healingSystem: 'Hoodoo herbalism / Black folk medicine / Gullah Geechee plant tradition',
     beautyPhilosophy: 'Black American folk medicine (often called "hoodoo" or simply "root work") is a synthesis of West and Central African healing knowledge preserved through the Middle Passage and slavery, adapted with indigenous North American plant knowledge, and overlaid with Christian spiritual practice. Enslaved Africans maintained their healing traditions under conditions of extreme repression — preserving knowledge of medicinal plants that was sometimes the only medicine available to them.',
     hoodooBeauty: {
-      RootWork: 'Root workers (rootdoctors, conjurers) treated both spiritual and physical illness with plant preparations. Many of the plants used have been validated by modern pharmacognosy — the study of medicinal plants. Enslaved healers\' knowledge of which North American plants could substitute for African plants they knew demonstrates extraordinary botanical intelligence.',
+      
       FloraSurvival: 'The enslaved knew and used: sassafras (antiseptic, diuretic), pokeweed (strong medicine — skin conditions), comfrey (wound healing), elder (immune support), mullein (respiratory), and dozens of other North American medicinal plants.',
     },
     traditionalPlants: {
@@ -283,7 +283,7 @@ export const ETHNIC_TRADITIONAL_MEDICINE_BEAUTY_GUIDES = {
       },
     },
     selfCareResistance: {
-      history: 'The concept of "self-care as resistance" was articulated by Audre Lorde (1988): "Caring for myself is not self-indulgence, it is self-preservation, and that is an act of political warfare." For Black women whose bodies have been sites of medical exploitation, labor extraction, and beauty standard exclusion, intentional beauty care is a political act.',
+      
       modernMovement: 'The natural hair movement (early 2000s-present), the clean beauty movement within Black communities, and the growth of Black-owned beauty brands are all expressions of this tradition of reclaiming bodily autonomy and cultural beauty standards.',
     },
   },
@@ -322,9 +322,3 @@ export function getTraditionalMedicineBeautyGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const TRADITIONAL_MEDICINE_BEAUTY_STATS = {
-  moduleId: 'traditional_medicine_beauty_ethnic_guide',
-  communitiesCovered: 9,
-  systemsCovered: ['Ayurveda', 'TCM', 'Unani', 'Yoruba Ifa', 'Curanderismo', 'Ethiopian traditional medicine', 'Caribbean bush medicine', 'Hoodoo/root work', 'South African ubuntu medicine'],
-  version: '1.0.0',
-};

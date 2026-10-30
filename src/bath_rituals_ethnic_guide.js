@@ -130,7 +130,7 @@ export const GLOBAL_BATHING_TRADITIONS = {
       etiquette: ['Never enter without washing first', 'No swimwear in traditional onsen', 'Tattoos prohibited in many traditional onsen (yakuza association — changing)', 'Quiet, meditative atmosphere maintained', 'Hair up to keep out of water']
     },
 
-    skinBenefits: ['Mineral absorption varies by spring type', 'Heat therapy and relaxation', 'Sulfur springs clinically shown to help psoriasis and eczema', 'Community and stress relief (psychological benefit to skin)'],
+    skinBenefits: ['Mineral absorption varies by spring type', 'Heat therapy and relaxation',  'Community and stress relief (psychological benefit to skin)'],
     modernEquivalent: 'Japanese onsen-style mineral bath salts; Hida Hot Spring spa treatments internationally'
   },
 
@@ -153,8 +153,7 @@ export const GLOBAL_BATHING_TRADITIONS = {
       description: 'Scratchy green/blue/yellow mesh exfoliation mitt; called "Italy" due to Italian fabric import history',
       use: 'After prolonged hot water soak (30+ min), scrub skin vigorously; dead skin rolls off in grey strands — dramatic visible result',
       skin: 'Best on Fitzpatrick II-IV; use with caution on very sensitive or inflamed skin',
-      frequency: 'Every 2-3 weeks; not daily — too aggressive for regular use',
-      purchase: 'Available in Korean grocery stores, Asian markets, Amazon; extremely affordable ($1-3)'
+      frequency: 'Every 2-3 weeks; not daily — too aggressive for regular use'
     },
 
     ritual: [
@@ -186,7 +185,7 @@ export const GLOBAL_BATHING_TRADITIONS = {
     },
 
     healthEvidence: {
-      cardiovascular: '2018 JAMA study: men using sauna 4-7x/week had 50% lower cardiovascular mortality than 1x/week',
+      
       inflammation: 'Heat shock proteins induced by sauna have anti-inflammatory effects',
       mentalHealth: 'Reduced risk of dementia and depression in Finnish longitudinal studies',
       skin: 'Sweating helps clear follicles; circulation brings nutrients; relaxation reduces cortisol (stress = poor skin barrier)'
@@ -367,13 +366,7 @@ export const ETHNIC_BATH_RITUAL_GUIDES = {
         'Monthly: bush herb bath (soursop leaf, lemongrass, aloe)',
         'If landlocked: Dead Sea salt bath mimics ocean mineral experience'
       ]
-    },
-
-    advice: `Caribbean bathing culture centers on the ocean and the earth\'s plants — a genuinely powerful
-    combination. Sea water is clinically shown to improve psoriasis and eczema (thalassotherapy). Aloe vera
-    from the living plant — not the green gel from a bottle — is genuinely different in potency and
-    effectiveness. If you have access to a living aloe plant, use the fresh gel on your body after bathing;
-    it outperforms most commercial products for soothing and healing.`
+    }
   },
 
   arab: {
@@ -409,13 +402,7 @@ export const ETHNIC_BATH_RITUAL_GUIDES = {
         'Rose water spray as body mist',
         'Pre-event: oud bakhoor body scenting'
       ]
-    },
-
-    advice: `The hammam is not a luxury — it\'s maintenance. Monthly kessa exfoliation removes a level of dead
-    skin that no daily scrub achieves. If you live near a Moroccan or Turkish bath, go monthly. If not, invest
-    in a kessa mitt ($5-15) and savon beldi ($10-20) and recreate the essential steps in your steam shower.
-    Argan oil immediately post-bath on damp skin is one of the best body moisturising practices available —
-    light, fast-absorbing, and genuinely anti-aging for body skin.`
+    }
   },
 
   latina: {
@@ -505,14 +492,7 @@ export const ETHNIC_BATH_RITUAL_GUIDES = {
         'For brightening: sake bath or rice water rinse monthly',
         'TCM foot bath before bed for sleep and circulation'
       ]
-    },
-
-    advice: `East Asian bathing culture is the most sophisticated in the world in terms of variety and technique.
-    The Italian towel exfoliation — after a 30-minute hot soak — reveals skin that feels genuinely different:
-    baby-smooth in a way that daily scrubbing never achieves. Doing this monthly is transformative. For daily
-    practice, the Japanese ofuro (full immersion bath) in warm water, even for 15-20 minutes, has documented
-    benefits for sleep, stress, and skin. The TCM foot bath is underrated: 20 minutes in hot ginger-infused
-    water before bed markedly improves sleep quality.`
+    }
   },
 
   'east-african': {
@@ -529,8 +509,7 @@ export const ETHNIC_BATH_RITUAL_GUIDES = {
       },
       frankincenseBath: {
         tradition: 'Boswellia resin boiled in water; steam and water used for bathing and inhalation',
-        benefit: 'Boswellic acids are anti-inflammatory (documented in research); aromatic compounds are calming',
-        sourcing: 'Somalia, Ethiopia, Eritrea are world\'s largest frankincense producers'
+        benefit: 'Boswellic acids are anti-inflammatory (documented in research); aromatic compounds are calming'
       },
       naturalWater: {
         tradition: 'River bathing, hot spring bathing in Rift Valley areas; Lake Victoria communities; Red Sea coastal communities',
@@ -712,22 +691,3 @@ export function getBathRitualGuide(communityId) {
 // STATS
 // ============================================================
 
-export const BATH_RITUALS_STATS = {
-  moduleId: 'bath_rituals_ethnic_guide',
-  version: '1.0.0',
-  communities: 9,
-  traditionsCount: 12,
-  keyFacts: [
-    'Finnish sauna use 4-7x/week associated with 50% lower cardiovascular mortality in longitudinal studies',
-    'The hammam kessa exfoliation removes significantly more dead skin than daily scrubbing alone',
-    'Italian towel (때밀이) exfoliation after 30-min hot soak reveals dramatically smoother skin',
-    'Japanese onsen (hot spring) bathing has 2,000+ year documented history',
-    'Phytophotodermatitis: lime juice on skin + sun = severe chemical burns — avoid DIY lime treatments',
-    'Epsom salt transdermal magnesium absorption is debated in science but soaking benefit is real',
-    'Applying moisturiser within 3 minutes of bathing (the "3-minute rule") is critical for dark skin',
-    'Rooibos contains aspalathin and nothofagin — unique antioxidants found nowhere else in nature',
-    'Frankincense (boswellic acid) has documented anti-inflammatory properties — Ethiopian steam tradition has scientific basis',
-    'Cold water immersion triggers 300%+ norepinephrine release — anti-inflammatory and mood-elevating effects'
-  ],
-  lastUpdated: '2026-10-29'
-};

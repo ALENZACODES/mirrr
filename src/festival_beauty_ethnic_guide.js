@@ -176,13 +176,7 @@ standing, and beauty as spiritual offering.`,
     id: 'south-asian',
     title: 'South Asian Festival Beauty',
     subtitle: 'Diwali, Holi, Navratri, and Wedding Season Traditions',
-    overview: `South Asian festival beauty is among the world's most richly codified cosmetic
-traditions. Festivals are occasions for maximum adornment — layered gold jewelry,
-silk saris in electric hues, mehndi (henna) patterns covering both hands to the
-elbow, and eyes lined with dark kajal. The beauty preparation process is itself
-ritualistic: oiling the hair the night before, bathing with gram flour paste,
-applying the bindi with precision. Each festival has its own colour vocabulary and
-its own spiritual significance embedded in the beauty choices made.`,
+    
     festivals: [
       {
         name: 'Diwali — Festival of Lights',
@@ -794,11 +788,7 @@ elaborate dress. It is a rite of passage marked in beauty as much as ceremony.`,
       {
         name: 'Carnaval de Barranquilla',
         timing: 'Four days before Ash Wednesday (February/March)',
-        description: `Barranquilla's Carnaval is Colombia's most celebrated festival and one of the
-largest carnivals in the world — a UNESCO Intangible Cultural Heritage. The parade
-of floats, dancers in elaborate costumes, and music traditions blending African,
-Indigenous, and Spanish heritage create an intoxicating visual explosion. Beauty
-at Barranquilla Carnaval is theatrical, loud, and joyfully excessive.`,
+        
         beautyNotes: [
           'Face paint in yellow, red, blue, and green — Colombia\'s flag colours used prominently',
           'Mapalé and cumbia dance costumes incorporate elaborate headdresses with feathers',
@@ -1129,13 +1119,7 @@ jewelry — particularly the multi-strand flat bead necklaces — is the definin
     id: 'south-african',
     title: 'South African Festival Beauty',
     subtitle: 'Heritage Day, Klopse, Zulu Reed Dance & Rainbow Nation Traditions',
-    overview: `South African festival beauty reflects the extraordinary diversity of the Rainbow
-Nation — Zulu, Xhosa, Sotho, Tswana, Venda, Ndebele, Cape Malay, Afrikaner, and
-Indian South African traditions coexist. Heritage Day (September 24) is the nation's
-celebration of this cultural multiplicity. The Cape Town New Year carnival (Klopse
-or Cape Minstrels) is a uniquely Cape Malay-rooted tradition. The Zulu Reed Dance
-(Umkhosi woMhlanga) is one of Africa's largest maidens' ceremonies. South African
-beauty is a study in joyful, proud cultural multiplicity.`,
+    
     festivals: [
       {
         name: 'Heritage Day (September 24)',
@@ -1265,7 +1249,7 @@ a cultural inheritance, and a joyful, unbounded creative expression.`,
     festivals: [
       {
         name: 'Juneteenth (June 19)',
-        timing: 'June 19 annually (US federal holiday since 2021)',
+        
         description: `Juneteenth commemorates June 19, 1865 — the date enslaved people in Texas were
 informed of the Emancipation Proclamation (which had been signed two and a half years
 earlier). It has been celebrated by Black Americans since 1866 and became a federal
@@ -1991,10 +1975,3 @@ export function getUniversalPrinciples() {
 // MODULE METADATA
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const MODULE_METADATA = {
-  name: 'festival_beauty_ethnic_guide',
-  version: '1.0.0',
-  communities: SUPPORTED_COMMUNITIES,
-  totalCommunities: SUPPORTED_COMMUNITIES.length,
-  primaryExport: 'ETHNIC_FESTIVAL_BEAUTY_GUIDES',
-};

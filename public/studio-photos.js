@@ -240,6 +240,12 @@ window.STUDIO_PHOTOS = {
   }
  },
  "nails-real": {
+  "almond__mocha__creme": {
+   "src": "/studio/nails-real/almond__mocha__creme.webp"
+  },
+  "flare__mocha__creme": {
+   "src": "/studio/nails-real/flare__mocha__creme.webp"
+  },
   "oval__black__chrome": {
    "src": "/studio/nails-real/oval__black__chrome.webp"
   },
@@ -254,6 +260,9 @@ window.STUDIO_PHOTOS = {
   },
   "oval__bold_red__creme": {
    "src": "/studio/nails-real/oval__bold_red__creme.webp"
+  },
+  "oval__bold_red__matte": {
+   "src": "/studio/nails-real/oval__bold_red__matte.webp"
   },
   "oval__brick_red__chrome": {
    "src": "/studio/nails-real/oval__brick_red__chrome.webp"
@@ -299,6 +308,56 @@ window.STUDIO_PHOTOS = {
   },
   "oval__plum__matte": {
    "src": "/studio/nails-real/oval__plum__matte.webp"
+  },
+  "oval__plum__shimmer": {
+   "src": "/studio/nails-real/oval__plum__shimmer.webp"
+  },
+  "oval__white__chrome": {
+   "src": "/studio/nails-real/oval__white__chrome.webp"
+  },
+  "oval__white__creme": {
+   "src": "/studio/nails-real/oval__white__creme.webp"
+  },
+  "oval__white__matte": {
+   "src": "/studio/nails-real/oval__white__matte.webp"
+  },
+  "square__mocha__creme": {
+   "src": "/studio/nails-real/square__mocha__creme.webp"
+  },
+  "stiletto__mocha__creme": {
+   "src": "/studio/nails-real/stiletto__mocha__creme.webp"
+  }
+ },
+ "skin": {
+  "acne-now": {
+   "src": "/studio/skin/acne-now.webp"
+  },
+  "marks-months": {
+   "src": "/studio/skin/marks-months.webp"
+  },
+  "marks-now": {
+   "src": "/studio/skin/marks-now.webp"
+  },
+  "marks-weeks": {
+   "src": "/studio/skin/marks-weeks.webp"
+  },
+  "melasma-months": {
+   "src": "/studio/skin/melasma-months.webp"
+  },
+  "melasma-now": {
+   "src": "/studio/skin/melasma-now.webp"
+  },
+  "melasma-weeks": {
+   "src": "/studio/skin/melasma-weeks.webp"
+  },
+  "sun_damage-months": {
+   "src": "/studio/skin/sun_damage-months.webp"
+  },
+  "sun_damage-now": {
+   "src": "/studio/skin/sun_damage-now.webp"
+  },
+  "sun_damage-weeks": {
+   "src": "/studio/skin/sun_damage-weeks.webp"
   }
  }
 };

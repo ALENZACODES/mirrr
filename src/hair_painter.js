@@ -74,7 +74,7 @@ export const HAIR_COLOURS = {
   // ── Reds & Auburns ──
   deep_auburn: {
     id: 'deep_auburn', label: 'Deep Auburn', hexCode: '#6b2020',
-    rgbBase: [107, 32, 32], category: 'natural', culturalContext: 'Rich red-brown seen in Ethiopian and Eritrean communities naturally. Associated with heritage and distinction.',
+    rgbBase: [107, 32, 32], category: 'natural', culturalContext: 'Rich red-brown, a popular henna-adjacent shade on dark hair.',
     warmth: 'warm', intensity: 0.85, season: ['autumn','winter'],
     communities: ['east-african','west-african','black-american','caribbean'],
   },
@@ -459,7 +459,7 @@ export const HAIR_TEXTURES = {
     protective_styles: ['Box braids','Cornrows','Halo braid'],
   },
   type_4c: {
-    id: 'type_4c', label: 'Type 4C — Tightest Coils', description: 'Tightest curl pattern, least defined, most shrinkage (up to 75%). The most common texture in West and East African communities.',
+    id: 'type_4c', label: 'Type 4C — Tightest Coils', 
     curl_pattern: 'coily-tight', communities: ['west-african','east-african','south-african','black-american','caribbean'],
     care_tips: ['High manipulation causes breakage — low manipulation is key','Moisturise and seal daily','Stretch before styling'],
     product_recommendations: ['Castor oil seal','Watkins Petrolatum (for the Africans)','Shea Moisture Manuka Honey'],
@@ -822,7 +822,7 @@ export const PROTECTIVE_STYLES = {
     modernVariants: ['Butterfly locs','Soft locs','River locs'],
   },
   wigs: {
-    id: 'wigs', label: 'Lace Front Wig', description: 'Full lace or lace front wig allowing complete versatility. Billion-dollar industry serving Black beauty globally.',
+    id: 'wigs', label: 'Lace Front Wig', 
     communities: ['black-american','west-african','south-african','caribbean','east-african'],
     maintenanceWeeks: 0, suitableTextures: ['all'],
     culturalOrigin: 'Ancient Egypt — wigs worn for ceremony and beauty 3500 BCE. Modern lace wigs developed in 20th century for Black women.',
@@ -1102,7 +1102,7 @@ export function getHairCareRoutine(textureId, communityId) {
         { step: 4, action: 'Cold rinse', detail: 'Rinse with cool water to seal cuticle and boost shine', frequency: 'weekly' },
         { step: 5, action: 'Lightweight serum', detail: 'Apply to damp hair before heat styling or air drying', frequency: 'weekly' },
       ],
-      products: communityProfile?.care_philosophy ? [communityProfile.traditional_styles[0]] : texture.product_recommendations,
+      products: texture.product_recommendations,
       frequency_notes: 'Wash 1-2x per week. Avoid daily washing — strips natural oils.',
       protective_tips: ['Always use heat protectant before styling','Sleep on silk pillowcase','Never brush dry if prone to breakage'],
     },
@@ -1136,9 +1136,10 @@ export function getHairCareRoutine(textureId, communityId) {
     },
   };
 
-  const routineKey = texture.curl_pattern.includes('coil') || texture.curl_pattern.includes('locs') ? 'coily' :
-    texture.curl_pattern.includes('wavy') ? 'wavy' : 'straight';
+  const cp = texture.curl_pattern;
+  const routineKey = cp.includes('coil') || cp.includes('locs') || cp === 'curly-tight' ? 'coily' :
+    cp.includes('wavy') || cp.startsWith('curly') ? 'wavy' : 'straight';
 
-  return routines[routineKey] ?? routines.coily;
+  return { ...(routines[routineKey] ?? routines.coily), community_care: communityProfile?.care_philosophy ?? null };
 }
 

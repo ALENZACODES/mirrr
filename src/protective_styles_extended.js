@@ -67,7 +67,7 @@ export const BRAIDED_STYLES = {
   cornrows: {
     name: 'Cornrows',
     aka: 'Canerows (Caribbean), Ethiopiques (some East African communities)',
-    origin: 'West Africa — one of the oldest braiding traditions with evidence dating 3000+ years',
+    origin: 'West Africa — a braiding tradition with deep historical roots',
     description: 'Braids plaited flat to the scalp in a continuous row. Can form straight lines, curves, geometric patterns, or complex designs.',
     hairTexturesBestFor: ['3C', '4A', '4B', '4C'],
     installationTime: '1–6 hours depending on complexity',
@@ -112,7 +112,7 @@ export const BRAIDED_STYLES = {
     installationTime: '3–5 hours',
     longevity: '4–6 weeks',
     accessories: ['Gold metal cuffs', 'Cowrie shells', 'Coloured beads', 'Thread wrapping'],
-    culturalSignificance: 'The Fulani people are the largest nomadic pastoralist group in the world. Their braiding tradition uses accessories as identity markers — specific bead arrangements indicate age, marital status, and tribe.',
+    culturalSignificance: 'The Fulani are a pastoralist people spread across West and Central Africa. Their braiding tradition uses accessories as identity markers — specific bead arrangements indicate age, marital status, and tribe.',
   },
 
   ghana_braids: {
@@ -195,7 +195,7 @@ export const LOCS_GUIDE = {
   description: 'Hair that has been allowed to lock, or mat, into rope-like sections. Can be started from various methods.',
   types: {
     traditional: { name: 'Traditional / Freeform Locs', description: 'Hair allowed to loc naturally with minimal manipulation — the way locs form on their own', timeTo: '12–24 months', maintenance: 'Minimal — let the hair do its thing' },
-    sisterlocks: { name: 'Sisterlocks', description: 'Very small, uniform locs created using a specific parting method and locking technique. Requires a certified Sisterlocks consultant.', timeTo: '2–3 years to fully loc', maintenance: 'Retighten every 4–6 weeks with consultant', cost: 'Installation: $400–$800. Retightening: $80–$150/session' },
+    sisterlocks: { name: 'Sisterlocks', description: 'Very small, uniform locs created using a specific parting method and locking technique. Requires a certified Sisterlocks consultant.', timeTo: '2–3 years to fully loc', maintenance: 'Retighten every 4–6 weeks with consultant' },
     interlocked: { name: 'Interlocked Locs', description: 'Hair pulled through a loop tool at the root to create the loc formation', timeTo: '12–18 months', maintenance: 'Reinterlock every 6–8 weeks' },
     starter: { name: 'Starter Locs / Comb Coils', description: 'Small coils created with a styling tool to start the locking process', timeTo: '6–12 months to begin locking' },
   },
@@ -324,9 +324,3 @@ export function getAllProtectiveStyles() {
   };
 }
 
-export const PROTECTIVE_STYLES_STATS = {
-  braidedStylesIndexed: Object.keys(BRAIDED_STYLES).length,
-  twistedStylesIndexed: Object.keys(TWISTED_STYLES).length,
-  communitiesWithTraditionalStyles: Object.keys(TRADITIONAL_STYLES_BY_COMMUNITY).length,
-  locsStages: LOCS_GUIDE.stages.length,
-};

@@ -26,7 +26,7 @@ export const ETHNIC_HAIR_COLOR_GUIDES = {
       {
         name: 'Henna Hair Color',
         description: 'Henna (lawsonia inermis) used for hair and scalp staining during celebrations, weddings, and festivals across West African Muslim communities.',
-        result: 'On dark hair, pure henna deposits a reddish-brown tone visible in sunlight. The conditioning effect and scalp health benefit is as significant as the color.',
+        result: 'On dark hair, pure henna deposits a reddish-brown tone visible in sunlight. Many people also like the way it coats and conditions the hair.',
         application: 'Mix henna powder with warm water, lemon juice, and amla powder to a thick paste. Apply to hair. Cover. Leave 2–4 hours. Rinse thoroughly.',
         note: 'Pure henna (100% lawsonia) is safe and conditioning. Avoid "black henna" (contains PPD — extremely dangerous and sensitizing).',
       },
@@ -118,12 +118,12 @@ export const ETHNIC_HAIR_COLOR_GUIDES = {
     ayurvedicHairColorEnhancers: [
       {
         ingredient: 'Amla (Indian Gooseberry)',
-        effect: 'Deepens natural dark tones, prevents premature greying, strengthens hair',
+        effect: 'Deepens natural dark tones when mixed with henna; traditionally used against greying, without reliable evidence that it prevents it',
         use: 'Add to henna mix or use amla oil as a scalp treatment',
       },
       {
         ingredient: 'Bhringraj',
-        effect: 'Darkens hair naturally over time with regular use, prevents grey',
+        effect: 'Traditional dark-hair oil; any darkening is slight, and there is no reliable evidence it prevents grey',
         use: 'Bhringraj oil massage into scalp weekly. Add powder to henna mix.',
       },
       {
@@ -230,7 +230,7 @@ export const ETHNIC_HAIR_COLOR_GUIDES = {
   'arab': {
     communityId: 'arab',
     communityName: 'Arab Middle Eastern',
-    hairColorPhilosophy: 'Hair coloring in Arab communities balances deep traditional practices with modern elegance. Henna has been used across the Arab world for millennia — for brides, for special occasions, and for grey coverage. Dark, lustrous, natural hair is celebrated as beautiful across Arab cultures. At the same time, modern Arab women in Dubai, Beirut, Cairo, and Amman are among the most style-forward in the world — sophisticated salon color, balayage, and highlights are widely embraced. The hair salon (salon al-sha\'ar) is a vibrant social institution in Arab cities.',
+    hairColorPhilosophy: 'Hair coloring in Arab communities balances deep traditional practices with modern elegance. Henna has been used across the Arab world for millennia — for brides, for special occasions, and for grey coverage. Dark, lustrous, natural hair is celebrated as beautiful across Arab cultures. At the same time, salon colour, balayage and highlights are widely embraced in Dubai, Beirut, Cairo and Amman. The hair salon (salon al-sha\'ar) is a vibrant social institution in Arab cities.',
     naturalHairColorRange: {
       description: 'Arab hair typically ranges from Level 2 (Very Dark Brown/Black) to Level 4–5 (Medium Brown) in North African and Levantine communities. Gulf Arab hair is predominantly very dark.',
       levels: ['Level 1–2 (Black) — Gulf Arab communities', 'Level 2–3 (Very Dark Brown) — Levant region', 'Level 3–4 (Dark Brown) — North Africa and Levant', 'Level 4–5 (Medium Brown) — some Lebanese and North African communities'],
@@ -322,7 +322,7 @@ export const ETHNIC_HAIR_COLOR_GUIDES = {
   'east-asian': {
     communityId: 'east-asian',
     communityName: 'East Asian',
-    hairColorPhilosophy: 'Hair color in East Asian communities has undergone extraordinary evolution over the past three decades. Traditional beauty ideals valued lustrous, jet black hair as the pinnacle of health and beauty. The Korean Wave (Hallyu) transformed this completely — K-pop idol hair colors from auburn to silver to vivid pink became aspirational across East Asia and the global diaspora. Japanese harajuku and gyaru aesthetics championed dramatic bleaching and vivid coloring. Today, East Asian hair color ranges from traditional very dark brown to global fashion-forward colors. The hair salon culture in Seoul, Tokyo, and Shanghai is among the most technically sophisticated in the world.',
+    hairColorPhilosophy: 'Hair color in East Asian communities has undergone extraordinary evolution over the past three decades. Traditional beauty ideals valued lustrous, jet black hair as the pinnacle of health and beauty. The Korean Wave (Hallyu) transformed this completely — K-pop idol hair colors from auburn to silver to vivid pink became aspirational across East Asia and the global diaspora. Japanese harajuku and gyaru aesthetics championed dramatic bleaching and vivid coloring. Today, East Asian hair color ranges from traditional very dark brown to global fashion-forward colors. Salon colour work in Seoul, Tokyo and Shanghai is highly developed.',
     naturalHairColorRange: {
       description: 'East Asian hair is predominantly Level 1–3 (Black to Very Dark Brown). The hair shaft is typically round and thick, creating the characteristic straight, smooth East Asian hair.',
       levels: ['Level 1 (Jet Black) — most common', 'Level 2 (Black)', 'Level 3 (Darkest Brown) — some individuals'],
@@ -647,10 +647,3 @@ export function getHairColorGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const HAIR_COLOR_STATS = {
-  moduleId: 'hair_color_ethnic_guide',
-  communitiesCovered: 9,
-  colorTechniquesCovered: 44,
-  traditionalColorPracticesCovered: 18,
-  version: '1.0.0',
-};

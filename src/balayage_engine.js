@@ -58,7 +58,7 @@ export const TECHNIQUES = {
     },
     difficulty: 4,
     duration: '3-4 hours',
-    averageCost: '$150-300',
+    
     proOnly: true,
     tags: ['balayage', 'low-maintenance', 'sun-kissed', 'blended', 'highlights'],
   },
@@ -98,7 +98,7 @@ export const TECHNIQUES = {
     },
     difficulty: 5,
     duration: '4-6 hours',
-    averageCost: '$200-400',
+    
     proOnly: true,
     tags: ['melanin', 'balayage', 'dark-hair', 'deep-skin', 'warm-tones', 'african'],
     notes: 'Natural black hair requires pre-softening or a slower lift process. Rushing risks damage on tightly coiled textures.',
@@ -139,7 +139,7 @@ export const TECHNIQUES = {
     },
     difficulty: 5,
     duration: '4-5 hours',
-    averageCost: '$200-350',
+    
     proOnly: true,
     tags: ['foilayage', 'foils', 'blonde', 'lift', 'balayage'],
   },
@@ -177,7 +177,7 @@ export const TECHNIQUES = {
     },
     difficulty: 3,
     duration: '1.5-2.5 hours',
-    averageCost: '$80-160',
+    
     proOnly: false,
     tags: ['face-frame', 'highlights', 'quick', 'beginners', 'flattering'],
   },
@@ -213,7 +213,7 @@ export const TECHNIQUES = {
     },
     difficulty: 3,
     duration: '2-3 hours',
-    averageCost: '$100-200',
+    
     proOnly: false,
     tags: ['chunky-highlights', 'y2k', 'bold', 'contrast', 'black-american', 'latina'],
   },
@@ -251,7 +251,7 @@ export const TECHNIQUES = {
     },
     difficulty: 3,
     duration: '2-4 hours',
-    averageCost: '$120-250',
+    
     proOnly: true,
     tags: ['ombre', 'gradient', 'two-tone', 'classic'],
   },
@@ -287,7 +287,7 @@ export const TECHNIQUES = {
     },
     difficulty: 5,
     duration: '4-6 hours',
-    averageCost: '$200-400',
+    
     proOnly: true,
     tags: ['red', 'ombre', 'vivid', 'caribbean', 'afro-latina', 'bold'],
   },
@@ -326,7 +326,7 @@ export const TECHNIQUES = {
     },
     difficulty: 2,
     duration: '3-5 hours (including development)',
-    averageCost: '$5-30 DIY',
+    
     proOnly: false,
     naturalDye: true,
     warnings: ['Henna is permanent — cannot be lifted out easily', 'Chemical dye over henna can cause green result', 'Black henna contains PPD — dangerous'],
@@ -365,7 +365,7 @@ export const TECHNIQUES = {
     },
     difficulty: 2,
     duration: '4-6 hours (two steps)',
-    averageCost: '$10-40 DIY',
+    
     proOnly: false,
     naturalDye: true,
     tags: ['indigo', 'henna', 'black-hair', 'natural', 'traditional', 'south-asian', 'arab', 'plant-based'],
@@ -403,7 +403,7 @@ export const TECHNIQUES = {
     },
     difficulty: 1,
     duration: '45 minutes',
-    averageCost: 'Under $5',
+    
     proOnly: false,
     naturalDye: true,
     tags: ['rooibos', 'natural', 'south-african', 'tea-rinse', 'DIY', 'subtle'],
@@ -441,7 +441,7 @@ export const TECHNIQUES = {
     },
     difficulty: 1,
     duration: '1.5-3 hours',
-    averageCost: '$5-15',
+    
     proOnly: false,
     naturalDye: true,
     tags: ['amla', 'darkening', 'ayurveda', 'south-asian', 'conditioning', 'natural'],
@@ -480,7 +480,7 @@ export const TECHNIQUES = {
     },
     difficulty: 3,
     duration: '1-1.5 hours',
-    averageCost: '$50-100',
+    
     proOnly: true,
     warnings: ['Over-toning turns hair grey/lavender — watch timing', 'Always deep condition after toner'],
     tags: ['toning', 'brass', 'anti-brass', 'correction', 'deep-skin', 'blonde', 'bleached'],
@@ -519,7 +519,7 @@ export const TECHNIQUES = {
     },
     difficulty: 3,
     duration: '2-3 hours',
-    averageCost: '$80-180',
+    
     proOnly: false,
     tags: ['burgundy', 'wine-red', 'bordeaux', 'full-colour', 'deep-skin', 'popular'],
   },
@@ -570,7 +570,7 @@ export const COLOUR_FAMILIES = {
     label: 'Natural Black / Blue-Black',
     shades: ['natural black', 'blue-black', 'jet black', 'soft black', 'off-black'],
     bestFor: ['all undertones', 'all fitzpatrick'],
-    avoidFor: [],
+    
     communityFavourites: ['east-asian', 'south-asian', 'arab'],
     description: 'Timeless black shades — from blue-black (classic K-beauty) to soft black.',
   },
@@ -579,7 +579,7 @@ export const COLOUR_FAMILIES = {
     label: 'Blonde Spectrum',
     shades: ['platinum', 'ash blonde', 'champagne', 'golden blonde', 'honey blonde', 'dirty blonde'],
     bestFor: ['cool-undertone (platinum/ash)', 'warm-undertone (golden/honey)'],
-    avoidFor: [],
+    
     communityFavourites: ['east-asian (platinum)', 'all (personalised to undertone)'],
     description: 'The full blonde family — from icy platinum to warm honey.',
   },
@@ -588,7 +588,7 @@ export const COLOUR_FAMILIES = {
     label: 'Vivid / Fantasy',
     shades: ['pastel pink', 'lilac', 'electric blue', 'teal', 'vivid green', 'rose gold'],
     bestFor: ['all — depends on shade and intention'],
-    avoidFor: [],
+    
     communityFavourites: ['east-asian', 'black-american', 'latina'],
     description: 'Vivid fantasy colours — requires bleached base for maximum vibrancy.',
   },
@@ -609,7 +609,7 @@ export const UNDERTONE_COLOUR_MAP = {
   },
   neutral: {
     recommended: ['all families — most versatile undertone'],
-    avoid: [],
+    
     tip: 'Neutral undertones can wear almost any shade. Experiment with both warm and cool sides of any colour family.',
   },
   deep_warm: {
@@ -714,12 +714,4 @@ export function searchTechniquesByTag(tag) {
 }
 
 // ─── STATS ───────────────────────────────────────────────────────────────────
-
-export const BALAYAGE_ENGINE_STATS = {
-  totalTechniques: Object.keys(TECHNIQUES).length,
-  categories: Object.keys(TECHNIQUE_CATEGORIES).length,
-  naturalDyeTechniques: Object.values(TECHNIQUES).filter(t => t.naturalDye).length,
-  diyFriendly: Object.values(TECHNIQUES).filter(t => !t.proOnly).length,
-  colourFamilies: Object.keys(COLOUR_FAMILIES).length,
-};
 

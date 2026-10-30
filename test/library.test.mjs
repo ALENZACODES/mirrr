@@ -108,7 +108,8 @@ test('no wired guide carries invented statistics, citations or stereotyping phra
 });
 
 // Every exported lookup function of every wired guide must return something real for at
-// least one sensible argument (community ids in each spelling, keys of its own data, months).
+// least one sensible argument (community ids in each spelling, keys and short codes of its own
+// data, months).
 function candidates(mod) {
   const comm = LIBRARY_COMMUNITIES.flatMap(c => [c.id, c.id.replace(/_/g, '-'), c.id.replace(/_([a-z])/g, (_, x) => x.toUpperCase())]);
   const keys = new Set();
@@ -119,6 +120,8 @@ function candidates(mod) {
       if (inner && typeof inner === 'object') {
         for (const f of ['id', 'category', 'name', 'era', 'tag']) if (typeof inner[f] === 'string') keys.add(inner[f]);
         if (Array.isArray(inner.tags)) inner.tags.forEach(t => keys.add(t));
+        // short codes the guide itself uses as values, e.g. hair types '4C' in hairTexturesBestFor
+        if (Array.isArray(inner)) inner.forEach(x => { if (typeof x === 'string' && x.length <= 12) keys.add(x); });
       }
       collect(inner, depth + 1);
     }

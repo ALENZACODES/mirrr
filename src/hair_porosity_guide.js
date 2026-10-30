@@ -10,7 +10,7 @@ export const POROSITY_BIOLOGY = {
     definition: 'Hair porosity refers to the hair\'s ability to absorb and retain moisture; specifically, it describes how open or closed the hair cuticle (the outermost protective layer of the hair shaft) is; porosity is widely considered a MORE important factor in hair product selection than curl type or hair type classification',
     cuticleStructure: {
       anatomy: 'The hair shaft has three layers: the medulla (innermost, hollow or semi-hollow), the cortex (main body of the hair, contains melanin and keratin fibrils), and the cuticle (outermost protective scales); the cuticle consists of overlapping cells (resembling fish scales or roof shingles) that can lie flat, slightly raised, or very raised',
-      lowPorosity: 'In low porosity hair, the cuticle scales lie very flat and tightly overlapping; this provides excellent protection for the inner cortex but makes it difficult for water and product to penetrate; the hair is naturally resistant to moisture absorption but also to moisture loss',
+      
       mediumPorosity: 'In medium/normal porosity hair, the cuticle scales lie moderately flat; moisture is absorbed at a reasonable rate and retained reasonably well; the easiest porosity to care for',
       highPorosity: 'In high porosity hair, the cuticle scales are raised or damaged, creating gaps and holes; moisture is absorbed very quickly but is also lost very quickly; hair may feel perpetually dry even with product application because moisture escapes as fast as it enters'
     }
@@ -136,7 +136,7 @@ export const POROSITY_AND_ETHNICITY = {
   },
   'east-asian': {
     typicalPorosity: 'East Asian hair is typically 1A-1C; very straight; individual cuticle scales are arranged very flatly; typically low porosity; hair is often very shiny due to flat cuticle light reflection; thickest individual hair diameter of any ethnic group on average (approximately 80 micrometers vs 60-70 for European and 60-65 for African hair on average)',
-    thickDiameter: 'The thick individual hair diameter and flat cuticle mean East Asian hair is naturally very resilient and strong per strand; it does not absorb product or colour quickly; bleaching and colour processing require more time or stronger developer; this is why Asian hair can require double-bleaching for very light colour results',
+    
     chemicalDamage: 'Perming (to add wave or curl) and relaxing (some East Asian hair is relaxed for manageability) can significantly increase porosity in an otherwise low-porosity hair type; Korean straight perms and Japanese thermal reconditioning (rebonding) are designed to minimise damage compared to traditional perms and relaxers',
     careApproach: 'Low-porosity care approach; lightweight camellia or argan oil; minimal protein; heat for deep conditioning penetration; clarifying routinely to prevent buildup'
   },
@@ -206,17 +206,3 @@ export function getEthnicPorosityGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const HAIR_POROSITY_STATS = {
-  moduleId: 'hair_porosity_guide',
-  version: '1.0.0',
-  topics: ['hair porosity', 'low porosity hair', 'high porosity hair', 'hair cuticle', 'LOC method', 'LCO method', 'hair float test', 'heat for low porosity', 'protein sensitivity', 'protein moisture balance', 'JBCO', 'slugging hair', 'baggy method', 'greenhouse method', 'natural hair movement', 'curl type vs porosity', 'hair care by porosity', 'clarifying shampoo', 'hair buildup'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'Hair porosity is more predictive of which products work than curl type (the Andre Walker 1A-4C system); two people with the same curl pattern but different porosity need completely different products',
-    'East Asian hair has the largest individual strand diameter of any ethnic group (approximately 80 micrometers) and typically the flattest cuticle, making it naturally low porosity and resistant to colour penetration',
-    'The LOC method (Liquid-Oil-Cream) for moisturising high porosity hair was popularised by the Black American natural hair community in the 2000s-2010s and is now the standard approach globally for coily hair moisture retention',
-    'Low porosity hair is often PROTEIN-SENSITIVE; protein treatments close the cuticle further, causing stiffness and brittleness; low porosity hair generally needs MORE moisture and LESS protein than high porosity hair',
-    'The natural hair community (particularly Black American YouTubers and bloggers from the 2000s-2010s) essentially created the mainstream understanding of hair porosity as a concept; it was not previously well-known outside haircare professional circles',
-    'Heat is the key tool for low porosity deep conditioning: applying a heat cap, warm towel, or steamer temporarily opens the tightly closed cuticle to allow product penetration'
-  ]
-};

@@ -79,10 +79,18 @@ function browPath(g, shift) {
   return `<path class="st-brow" d="${top} ${bottom}" />`;
 }
 
+function luminance(hex) {
+  const m = /^#?([0-9a-f]{6})$/i.exec(String(hex)); if (!m) return 0.5;
+  const [r, g, b] = [0, 2, 4].map(i => parseInt(m[1].slice(i, i + 2), 16) / 255).map(c => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+
 function drawDiagram(plan, skin) {
   const cv = eyeCurves(plan.choices.eyeShape);
   const g = plan.eye.geometry; const b = plan.brow.geometry;
-  const ink = g.colour ?? '#111';
+  // A brown liner too close to the skin would vanish in the drawing, so below a 3:1 contrast it
+  // is drawn in a deeper brown.
+  const ink = g.colour ? ((luminance(skin) + 0.05) / (luminance(g.colour) + 0.05) < 3 ? '#1c0f08' : g.colour) : '#111';
   const upper = `M${cv.inner} Q${cv.upperC} ${cv.outer}`;
   const lower = `M${cv.inner} Q${cv.lowerC} ${cv.outer}`;
   const crease = plan.choices.eyeShape === 'monolid' ? '' :
@@ -147,7 +155,7 @@ function renderPlan() {
     </button>`).join('');
   const li = s => `<li>${esc(s)}</li>`;
   $('stPlan').innerHTML = `
-    ${p.because.length ? `<div class="st-because">${p.because.map(b => `<p><strong>${b.about === 'brow' ? 'Brow' : 'Eye'}:</strong> because ${esc(b.text)}</p>`).join('')}</div>` : ''}
+    ${p.because.length ? `<div class="st-because">${p.because.map(b => `<p><strong>Why this ${b.about === 'brow' ? 'brow' : 'eye look'}:</strong> ${esc(b.text)}</p>`).join('')}</div>` : ''}
     <article class="st-card">
       <h4>${esc(p.brow.label)} <span class="st-sub">${p.brow.chosenBy === 'you' ? 'your choice' : p.brow.chosenBy === 'community' ? `${esc(p.community?.label ?? '')} tradition` : `suits a ${esc(p.choices.faceShape)} face`}</span></h4>
       <ol class="st-steps">${p.brow.steps.map(li).join('')}</ol>

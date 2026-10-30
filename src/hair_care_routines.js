@@ -16,7 +16,7 @@ export const HAIR_POROSITY = {
       'Prone to product build-up',
       'Shiny, but can feel hard or plastic-y when overloaded',
     ],
-    commonIn: 'Straight and wavy hair types (1A-2C) more commonly, but can occur in any texture',
+    
     routine: {
       cleanse: 'Use warm water to open the cuticle. Clarifying shampoo monthly for build-up.',
       condition: 'Apply conditioner with steam (steam cap) to help penetration. Thin, fluid conditioners absorb better than thick.',
@@ -36,7 +36,7 @@ export const HAIR_POROSITY = {
       'Easiest hair to maintain',
       'Products absorb without build-up',
     ],
-    commonIn: 'Any hair texture can be medium porosity',
+    
     routine: {
       cleanse: 'Regular moisturising shampoo. Deep cleanse monthly.',
       condition: 'Standard conditioner routine — no heat needed typically.',
@@ -57,7 +57,7 @@ export const HAIR_POROSITY = {
       'Can feel dry within hours of moisturising',
       'Common in chemically processed, heat-damaged, or very coily hair',
     ],
-    commonIn: 'Coily and kinky hair (3C-4C), chemically processed hair, colour-treated hair',
+    
     routine: {
       cleanse: 'Gentle, moisturising shampoo. Avoid sulphates.',
       condition: 'Deep condition every wash. Protein treatment monthly (high porosity often = damaged cuticle).',
@@ -101,9 +101,9 @@ export const HAIR_ROUTINES = {
       },
     },
     heroIngredients: [
-      { name: 'Amla (Indian gooseberry)', benefit: 'Highest natural vitamin C. Strengthens follicle. Prevents premature greying.' },
+      { name: 'Amla (Indian gooseberry)', benefit: 'Rich in vitamin C. A traditional scalp oil and hair rinse; long used in the hope of keeping hair dark, though there is no reliable evidence it prevents greying.' },
       { name: 'Bhringraj', benefit: 'The "king of hair" in Ayurveda. Promotes growth, reduces hair fall.' },
-      { name: 'Brahmi', benefit: 'Calms scalp, reduces dandruff, nourishes follicles.' },
+      { name: 'Brahmi', benefit: 'Traditional Ayurvedic scalp oil, used to soothe the scalp during champi massage.' },
       { name: 'Neem', benefit: 'Antifungal, antibacterial. Essential for scalp health.' },
       { name: 'Coconut oil', benefit: 'Penetrates the hair shaft (unlike most oils). Reduces protein loss.' },
     ],
@@ -134,7 +134,7 @@ export const HAIR_ROUTINES = {
     },
     heroIngredients: [
       { name: 'Shea butter', benefit: 'Seals in moisture, prevents moisture loss. The West African hair staple.' },
-      { name: 'Jamaican Black Castor Oil (JBCO)', benefit: 'Stimulates growth, thickens hair. Roasted castor beans make a darker, ash-enriched oil.' },
+      { name: 'Jamaican Black Castor Oil (JBCO)', benefit: 'Thick sealing oil for ends and edges. Roasted castor beans make a darker, ash-enriched oil. Popular for growth, though there is no good evidence that it grows hair.' },
       { name: 'African black soap', benefit: 'Natural cleanser that doesn\'t strip — can be diluted for scalp wash.' },
       { name: 'Coconut oil', benefit: 'Penetrates shaft, reduces protein loss. Pre-poo classic.' },
       { name: 'Aloe vera', benefit: 'Moisturising spray base, seals the hair cuticle.' },
@@ -187,7 +187,7 @@ export const HAIR_ROUTINES = {
       { name: 'Castor oil', benefit: 'Thick sealing oil for high porosity hair' },
       { name: 'Marshmallow root', benefit: 'Incredible slip and moisture. Detangling without breakage.' },
       { name: 'AVJ (Aloe Vera Juice)', benefit: 'Pure hydration, closes cuticle, adds shine' },
-      { name: 'JBCO', benefit: 'Growth stimulation, scalp health, thickness' },
+      { name: 'JBCO', benefit: 'Seals moisture into ends and edges; heavy, so a little goes a long way' },
     ],
     shrinkageTips: [
       'Shrinkage is healthy — it means your hair is moisturised and elasticated',
@@ -246,7 +246,7 @@ export const HAIR_ROUTINES = {
     id: 'south_asian_straight_routine',
     community: 'south-asian',
     name: 'South Asian Straight-Wavy Hair Routine',
-    philosophy: 'South Asian hair is typically thick, dark, and fast-growing — but historically weighed down by too-heavy oils and products. The modern approach: strategic oiling + lightweight moisture.',
+    philosophy: 'South Asian hair ranges from fine and straight to thick and wavy or curly, and is often weighed down by too-heavy oils and products. The modern approach: strategic oiling + lightweight moisture.',
     suitableFor: ['1C-2C thick straight to wavy hair', 'Hair prone to scalp oiliness + dry ends'],
     weeklySchedule: {
       oil_night: {
@@ -269,10 +269,10 @@ export const HAIR_ROUTINES = {
       },
     },
     heroIngredients: [
-      { name: 'Amla', benefit: 'Vitamin C powerhouse — prevents premature greying (hereditary in South Asian hair), strengthens follicle' },
-      { name: 'Rosemary', benefit: 'Clinical evidence shows rosemary oil equals minoxidil for hair growth stimulation' },
+      { name: 'Amla', benefit: 'Rich in vitamin C; a traditional rinse and oil long used in the hope of keeping hair dark, without reliable evidence that it prevents greying' },
+      { name: 'Rosemary' },
       { name: 'Rice water (fermented)', benefit: 'High in inositol — penetrates damaged hair. Japanese and Korean tradition also for length and strength.' },
-      { name: 'Castor oil (on scalp only)', benefit: 'Stimulates growth at follicle level — thick straight South Asian hair responds well' },
+      { name: 'Castor oil (on scalp only)', benefit: 'Heavy sealing oil, best used sparingly on the scalp and ends; there is no good evidence that it grows hair' },
     ],
     commonMistakes: [
       'Over-oiling (South Asian hair myth): heavy oiling every day actually causes build-up and hair fall — once weekly pre-wash is optimal',
@@ -317,7 +317,7 @@ export const HAIR_ROUTINES = {
     heroIngredients: [
       { name: 'Fermented rice water', benefit: 'Japanese and Korean tradition — Yao women in China famous for floor-length hair. Inositol strengthens, amino acids nourish.' },
       { name: 'Camellia (tsubaki) oil', benefit: 'Japanese hair beauty staple. Lightweight, absorbs fully, incredible shine without greasiness.' },
-      { name: 'Ginseng', benefit: 'Korean scalp growth ingredient — stimulates blood flow to follicles' },
+      { name: 'Ginseng', benefit: 'Common in Korean scalp tonics and shampoos' },
       { name: 'Scalp probiotics (bifida ferment)', benefit: 'K-beauty innovation — balances scalp microbiome' },
     ],
   },
@@ -345,10 +345,4 @@ export function getPorosityGuide(porosity) {
 export function getAllPorosityGuides() {
   return Object.values(HAIR_POROSITY);
 }
-
-export const HAIR_CARE_STATS = {
-  routines: Object.keys(HAIR_ROUTINES).length,
-  communities: [...new Set(Object.values(HAIR_ROUTINES).map(r => r.community))],
-  porosityTypes: Object.keys(HAIR_POROSITY).length,
-};
 

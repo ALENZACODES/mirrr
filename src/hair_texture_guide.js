@@ -71,7 +71,7 @@ export const HAIR_TYPING_SYSTEMS = {
       subtypes: {
         '4a': 'Defined, springy coils. S-shaped when stretched. Circumference of a pencil or smaller. Some shine when moisturised.',
         '4b': 'Z-shaped kink pattern rather than spiral. Bends sharply in Z or S angles. Less defined in natural state. Very little shine naturally.',
-        '4c': 'Extremely tight, tightly coiled. May appear as cotton or fuzz. Very little curl definition when dry. Highest shrinkage (up to 75%). The most fragile afro-textured hair type due to multiple bends per inch and curl-within-curl structure.',
+        
       },
       care: {
         challenge: 'Extreme moisture needs. High shrinkage. Fragility — the tight bends are points of weakness. Tangling.',
@@ -112,7 +112,7 @@ export const CURL_SCIENCE = {
 // ─── CURLY GIRL METHOD ────────────────────────────────────────────────────────
 
 export const CURLY_GIRL_METHOD = {
-  origin: 'Developed by Lorraine Massey, author of "Curly Girl: The Handbook" (2001). A framework for embracing and caring for natural curly/wavy/coily hair texture.',
+  
 
   core_principles: {
     no_sulfates: 'Avoid harsh sulfate surfactants (sodium lauryl sulfate, sodium laureth sulfate) that strip moisture. Use sulfate-free or cowash.',
@@ -153,7 +153,7 @@ export const HAIR_TEXTURE_POLITICS = {
     history: 'Garrett Augustus Morgan patented a hair straightening cream in 1910. Johnson Products launched Afro Sheen in the 1960s. Relaxers became widely used in Black communities from the 1950s-2000s.',
     peak: 'In the 1980s and 1990s, relaxed hair was the dominant style in many Black communities in the US and UK. The "creamy crack" nickname (for the chemical) reflects both the product\'s hold and its cultural role.',
     dark_side: {
-      health: 'Lye relaxers cause chemical burns if misapplied. Multiple studies have found associations between relaxer use and uterine fibroids (National Institutes of Health study, 2022). Research is ongoing.',
+      
       cultural: 'The normalisation of chemically straightening "kinky" afro-textured hair reflects internalized pressure to conform to Eurocentric beauty standards — a form of anti-Blackness internalised within communities. This is a contested and complex area of discussion.',
     },
   },
@@ -240,8 +240,3 @@ export function getProtectiveStylesByTexture(textureType) {
   return PROTECTIVE_STYLES_BY_TEXTURE.by_texture[textureType] || null;
 }
 
-export const HAIR_TEXTURE_STATS = {
-  hairTypes: 4,
-  hairSubtypes: 12,
-  protectiveStyleCategories: Object.keys(PROTECTIVE_STYLES_BY_TEXTURE.by_texture).length,
-};

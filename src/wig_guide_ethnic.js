@@ -18,7 +18,7 @@ export const WIG_CONSTRUCTION = {
       pros: ['Most affordable', 'Durable', 'Wide range of styles'],
       cons: ['Hairline looks clearly wiglike', 'Less breathable', 'Cannot part anywhere'],
       best_for: 'Beginners, everyday casual wear, budget-conscious',
-      price_range: '$20-$150',
+      
     },
     wefted_cap: {
       name: 'Wefted Cap (Open Weft)',
@@ -26,7 +26,7 @@ export const WIG_CONSTRUCTION = {
       pros: ['More breathable than basic cap', 'Affordable', 'Lightweight'],
       cons: ['Still limited parting', 'Hairline not as natural as lace'],
       best_for: 'Everyday wear, particularly in warm climates',
-      price_range: '$30-$200',
+      
     },
     lace_front: {
       name: 'Lace Front',
@@ -36,7 +36,7 @@ export const WIG_CONSTRUCTION = {
       pros: ['Natural hairline appearance', 'More affordable than full lace', 'Versatile styling near hairline'],
       cons: ['Cannot pull hair into ponytail from roots (cap visible at back)', 'Lace requires careful maintenance', 'Adhesive can irritate skin'],
       best_for: 'Natural hairline appearance; most versatile option for most wearers',
-      price_range: '$80-$400+ (human hair)',
+      
     },
     full_lace: {
       name: 'Full Lace Wig',
@@ -45,7 +45,7 @@ export const WIG_CONSTRUCTION = {
       pros: ['Most versatile styling', 'Natural appearance everywhere', 'Breathable'],
       cons: ['Most expensive', 'More delicate', 'Requires more careful installation'],
       best_for: 'Natural look; high ponytail styles; maximum versatility',
-      price_range: '$200-$1000+',
+      
     },
     hd_lace: {
       name: 'HD Lace (High Definition Lace)',
@@ -54,7 +54,7 @@ export const WIG_CONSTRUCTION = {
       note: 'Originally developed to address the issue of standard lace not matching dark skin tones well.',
       pros: ['Truly invisible lace', 'Works across all skin tones', 'Eliminates "wig" look'],
       cons: ['More delicate than standard lace', 'More expensive', 'Requires careful handling'],
-      price_range: '$150-$500+',
+      
     },
     t_part: {
       name: 'T-Part/U-Part Lace',
@@ -62,13 +62,13 @@ export const WIG_CONSTRUCTION = {
       u_part_note: 'U-Part leaves an opening to pull natural hair through for blending.',
       pros: ['Less expensive than full lace front', 'Natural-looking part', 'U-part protects edges'],
       best_for: 'Protective styling while leaving edges exposed',
-      price_range: '$60-$300',
+      
     },
     '360_lace': {
       name: '360 Lace',
       construction: 'Lace band around the entire perimeter of the wig; machine-sewn cap in the middle.',
       advantage: 'Allows high ponytails and updos (edges look natural all around) without full lace cost.',
-      price_range: '$120-$500',
+      
     },
   },
 
@@ -106,7 +106,7 @@ export const WIG_CONSTRUCTION = {
       types: {
         standard_synthetic: {
           description: 'Basic synthetic fibre; not heat-safe.',
-          pros: ['Most affordable ($20-$80)', 'Retains style well; low maintenance'],
+          pros: [ 'Retains style well; low maintenance'],
           cons: ['Cannot use heat tools', 'Less natural look/feel', 'Shorter lifespan (3-6 months)', 'Can look shiny/fake'],
         },
         heat_resistant: {
@@ -310,7 +310,7 @@ export const ETHNIC_WIG_TRADITIONS = {
       medical: 'Japan has a significant medical wig industry; strong social support for wig use among cancer patients.',
     },
     china: {
-      manufacturing: 'China is the world\'s largest manufacturer of wigs, supplying much of the global market.',
+      
       xuchang: 'Xuchang, Henan Province is the "wig capital of the world" — processes vast quantities of human hair and manufactures wigs for global export.',
     },
   },
@@ -393,8 +393,3 @@ export function getBabyHairGuide() {
   return WIG_INSTALLATION.baby_hairs;
 }
 
-export const WIG_GUIDE_STATS = {
-  capConstructionTypes: Object.keys(WIG_CONSTRUCTION.cap_constructions).length,
-  communitiesCovered: Object.keys(ETHNIC_WIG_TRADITIONS).length,
-  installationMethods: ['clips', 'elastic_band', 'headband', 'velcro', 'glue', 'tape'],
-};

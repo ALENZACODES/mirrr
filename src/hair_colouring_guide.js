@@ -20,7 +20,7 @@ export const HAIR_COLOUR_SCIENCE = {
       { stage: 'Natural dark', description: 'Black or very dark brown — natural melanin at its most concentrated' },
       { stage: 'Brown-red', description: 'First stage of lightening — deep warm red-brown' },
       { stage: 'Red', description: 'True red-orange — the dominant phaeomelanin begins showing' },
-      { stage: 'Red-orange', description: 'Mid-stage — warm, fiery' },
+      { stage: 'Red-orange' },
       { stage: 'Orange', description: 'Pure orange — still very warm' },
       { stage: 'Orange-yellow', description: 'Approaching yellow — mostly phaeomelanin removed' },
       { stage: 'Yellow', description: 'Pale yellow — most melanin lifted' },
@@ -45,7 +45,7 @@ export const BLEACHING_GUIDE = {
   the_challenge: 'Bleaching dark, coily, or Type 4 hair carries significant risks that are often underestimated. Dark melanin is harder to lift; Type 4 hair has more points of weakness (helical twists), thinner cuticle walls, and less moisture than straight hair — making it far more susceptible to breakage during the bleaching process.',
 
   risk_assessment: {
-    fitzpatrick_and_hair_type_intersection: 'Darker skin tones often (not always) correlate with Type 3-4 hair. Both the hair properties AND the person\'s skin type should factor into colouring decisions.',
+    fitzpatrick_and_hair_type_intersection: 'Skin depth and hair texture are separate: both the hair\'s own properties and the person\'s skin type should factor into colouring decisions.',
     high_risk_characteristics: [
       'Type 4 coily hair — most fragile structure',
       'Previously relaxed or permed hair — chemically compromised',
@@ -76,11 +76,11 @@ export const BLEACHING_GUIDE = {
   powder_bleach_selection: {
     note: 'Not all bleach powders are equal. Bleach powder + developer make the bleaching mixture. Premium powders have more conditioning additives, less ammonia irritation, and are gentler on fragile hair.',
     recommendations: [
-      { product: 'Schwarzkopf BlondMe Bleach', note: 'Bond-building technology built in, gentle on ethnic hair, salon quality' },
-      { product: 'Olaplex No. 1 Bond Multiplier', note: 'Added to ANY bleach mix to significantly reduce breakage — non-negotiable for Type 4 lightening' },
+      { product: 'Schwarzkopf BlondMe Bleach', note: 'Salon lightener sold with a built-in bond-protecting technology' },
+      { product: 'Olaplex No. 1 Bond Multiplier', note: 'Bond-building additive mixed into the lightener; widely used by colourists lightening Type 3-4 hair' },
       { product: 'Kenra Platinum Silkening Bleach', note: 'Contains conditioning agents, lower dust, gentler formula' },
     ],
-    bond_building: 'Olaplex or K18 treatment in the bleach mixture is considered essential by most experienced colorists working with Type 3-4 hair. These rebuild broken disulfide bonds during the lightening process, significantly reducing breakage.',
+    bond_building: 'Many colourists who work with Type 3-4 hair add a bond-building treatment such as Olaplex to the lightener, which the brands say protects disulfide bonds during lightening.',
   },
 
   application_tips: {
@@ -178,7 +178,6 @@ export const VIVID_COLOURS = {
       { brand: 'Manic Panic', note: 'The original vivid colour brand. Wide colour range. Conditioning formula.' },
       { brand: 'Pravana ChromaSilk Vivids', note: 'Professional-quality vivid colour, very bold, long-lasting' },
       { brand: 'Overtone', note: 'Conditioning colour treatment — vivid and natural shades in a deep conditioning base. Adds colour AND moisture.' },
-      { brand: 'oVertone for textured hair', note: 'Specifically formulated for textured/coily hair — the deep conditioning formula is excellent for Type 4' },
     ],
     application_for_type_4: 'Apply vivid direct dye to dry, detangled hair. Section in four quadrants. Apply with gloved hands or a colour brush. Let process 30-60 minutes (longer = more intense/longer-lasting). Do not use heat unless the product specifically directs it.',
   },
@@ -262,7 +261,7 @@ export const COLOUR_CARE = {
 export const ETHNIC_COLOUR_TRADITIONS = {
   south_asian: {
     henna_tradition: {
-      history: 'Henna (mehndi) has been used for hair colouring in South Asia for over 5,000 years. The lawsone molecule in henna permanently bonds to hair keratin, creating lasting auburn, copper, and red tones.',
+      history: 'Henna (mehndi) has been used for hair colouring in South Asia for thousands of years. The lawsone molecule in henna permanently bonds to hair keratin, creating lasting auburn, copper, and red tones.',
       how_to: [
         'Mix henna powder with warm water or tea for darker result, or lemon juice for brighter red',
         'Add amla powder for conditioning and to moderate the colour',
@@ -304,7 +303,7 @@ export const ETHNIC_COLOUR_TRADITIONS = {
 
 export const GREY_HAIR_GUIDE = {
   ethnic_grey_patterns: {
-    timing: 'The timing of grey hair onset varies by ethnicity on average: White hair typically greys earliest (mid-30s average), followed by Asian hair (late 30s), then Black and South Asian hair (often 40s). However, premature greying can occur in any community.',
+    timing: 'When greying starts is largely inherited and varies from person to person; premature greying can occur in any community.',
     appearance: 'Grey and white hair in coily textures can appear coarser and more resistant to moisture than pigmented hair — because the cuticle structure changes as the follicle loses pigmentation. Deep conditioning is particularly important.',
     silver_on_dark_skin: 'Silver and white hair against deep skin tones creates a striking, beautiful contrast that has become celebrated rather than stigmatised — many women of colour are choosing to embrace grey.',
   },
@@ -360,9 +359,3 @@ export function getGreyHairGuide() {
   return GREY_HAIR_GUIDE;
 }
 
-export const HAIR_COLOUR_STATS = {
-  liftingStages: HAIR_COLOUR_SCIENCE.underlying_pigment_stages.stages.length,
-  communitiesWithColourTraditions: Object.keys(ETHNIC_COLOUR_TRADITIONS).length,
-  colourCareProducts: COLOUR_CARE.treatments.length,
-  vivid_brands: VIVID_COLOURS.products_for_vivid_colour.brands.length,
-};

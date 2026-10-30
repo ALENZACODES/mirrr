@@ -299,7 +299,7 @@ export const COMMUNITY_LINER_TRADITIONS = {
     products: ['Himalaya Kajal', 'Iba Kajal', 'Urban Decay 24/7 Liner in Zero (for MUA-quality application)'],
   },
   'arab': {
-    iconic: 'Kohl is embedded in Arab beauty identity. The Arabic eye look (full surround kohl) is a cultural aesthetic.',
+    iconic: 'Kohl has deep roots in Arab beauty traditions. The full-surround kohl eye is a classic Arab look.',
     traditional_use: 'Kohl is still given to babies for spiritual protection in many Arab families — a tradition that shows how deeply embedded this is',
     bridal: 'Arab bridal eye is heavily lined, dramatic, precise. The "Arabic eye" look — extended, surrounded — is standard bridal.',
     popular_look: 'Cut crease with deep shadow, heavy kohl surround, extended liner',

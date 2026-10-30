@@ -56,7 +56,7 @@ export const POROSITY_OVERLAY = {
 
 export const TYPE1_ROUTINE = {
   title: 'Type 1 (Straight) Hair Care Routine',
-  characteristics: 'Sebum from the scalp travels easily down the straight shaft — type 1 hair is naturally more moisturised than curly types; tends to get oily faster; has no natural lift unless products are used',
+  
   commonChallenges: ['Oiliness (scalp sebum reaches full length quickly)', 'Limpness/flatness (no texture to create volume)', 'Fine strands easily damaged by heat', 'Difficult to hold curl or wave (for 1A/1B)'],
   weeklyRoutine: {
     washDays: '3-5 times per week typical (more frequent than other types due to oil)',
@@ -89,7 +89,7 @@ export const TYPE3_ROUTINE = {
   title: 'Type 3 (Curly) Hair Care Routine',
   characteristics: 'Visible spiral curl pattern; requires moisture to maintain definition; prone to frizz, dryness, and tangles; shrinkage visible (hair looks shorter when dry than when stretched wet); density and thickness vary significantly',
   curlyGirlMethod: {
-    origin: 'Developed by Lorraine Massey and published in "Curly Girl: The Handbook" (2001); transformed how textured hair was understood and cared for',
+    
     principles: ['Avoid sulphate shampoos (strip natural oils type 3 hair relies on)', 'Avoid silicones that build up without sulphate shampoo to remove them', 'Co-washing (conditioner washing) or low-poo as primary cleansing', 'Deep condition regularly', 'Style on soaking wet hair', 'Diffuse or air dry — minimise manipulation while drying']
   },
   weeklyRoutine: {
@@ -117,7 +117,7 @@ export const TYPE3_ROUTINE = {
 
 export const TYPE4_ROUTINE = {
   title: 'Type 4 (Coily/Kinky) Hair Care Routine',
-  characteristics: 'Tightest curl pattern; most fragile due to multiple bends where the shaft is structurally weakest; highest shrinkage (50-80% in 4B; up to 75-80% in 4C); driest due to difficulty of sebum travelling down coil shaft; most moisture-needy; most manipulation-sensitive',
+  
   criticalPrinciple: 'Type 4 hair requires the most moisture, the gentlest handling, and the most patience. It is NOT more difficult to care for — it is simply different. With the right routine and products, 4C hair thrives.',
   washFrequency: '1-2 times per week maximum; more frequent washing without adequate moisture replacement leads to breakage and dryness; pre-poo before washing is important',
   prePoo: {
@@ -151,7 +151,7 @@ export const TYPE4_ROUTINE = {
     note: 'These are popular styling techniques for type 4 that create a defined stretched style without heat'
   },
   shrinkageManagement: {
-    what: 'Shrinkage is when type 4 hair coils tightly as it dries, making it appear much shorter than when stretched; 4C hair can shrink up to 75-80%',
+    
     isItBad: 'Shrinkage is not damage — it indicates healthy elasticity; fully coiled 4C hair is stronger than stretched 4C hair; shrinkage is natural and healthy',
     ifYouWantLength: ['Braid-out or twist-out to stretch without heat', 'African threading to stretch (no heat at all)', 'Flexi rod set', 'Blow-out on very low heat with heat protectant (occasional use)'],
     heatWarning: 'Frequent heat stretching of type 4 hair leads to heat damage — the coil pattern permanently straightens and cannot be recovered; limit heat to occasional use; always use heat protectant'
@@ -178,7 +178,7 @@ export const ETHNIC_HAIR_ROUTINES = {
   },
   arab: {
     hairTypes: 'Predominantly Type 1-3 (straight to curly); Gulf and North African Arab women often have wavier or curlier hair; Levantine women often straighter; significant variation',
-    traditions: 'Argan oil (Moroccan liquid gold): from the argan tree (Argania spinosa) native to Morocco; UNESCO heritage ingredient; extraordinary emollient, shine, and repair properties; historically applied to hair and skin by Berber women in Morocco; now one of the world\'s most popular hair oil ingredients. Other traditional oils: olive oil (Palestine, Lebanon), black seed oil (Nigella sativa) — Hadith says "there is healing in black seeds for all diseases except death" — applied to scalp for growth; rose water for scalp soothing',
+    
     henna: 'Red henna (Lawsonia inermis) applied to hair for colour and conditioning in many Arab and North African communities; stains hair red/orange; strengthens the shaft; antifungal properties on scalp',
     modernRoutine: 'Hair straightening and blowout culture very prevalent in many Arab countries; K18 and Olaplex treatments popular; argan oil as finishing product ubiquitous'
   },
@@ -207,9 +207,9 @@ export const ETHNIC_HAIR_ROUTINES = {
   },
   'black-american': {
     hairTypes: 'Predominantly Type 3-4; significant Type 4B-4C in many communities; enormous diversity',
-    traditions: 'Deep roots in hair care culture; Black beauty salons are social institutions with cultural significance beyond hair care. Key historical practices: hot comb pressing (invented/popularised by Madame CJ Walker early 1900s for straightening); Madame CJ Walker also developed the first widely marketed Black hair care products, becoming the first female self-made millionaire in American history. Jheri curl (1980s-1990s): chemical curl system very popular in Black American communities; Soul Glo became cultural symbol. Texturizer: milder than relaxer; loosens curl pattern without fully straightening. Natural hair movement: mid-2000s big chop and natural hair renaissance; YouTube natural hair community; WNBA and media representation of natural hair.',
+    
     BigChop: 'The Big Chop: cutting off all relaxed (chemically straightened) or heat-damaged hair to start fresh with natural hair; an important milestone in many Black women\'s hair journeys; often described as a deeply personal and political act',
-    products: 'Black-owned hair care brands historically important and increasingly growing: SheaMoisture (founded by Sofi Tucker 1912), Carol\'s Daughter (Lisa Price), Mielle Organics, Briogeo, Pattern Beauty (Tracee Ellis Ross), Camille Rose Naturals',
+    
     protectiveStyles: 'Box braids, Senegalese twists, crochet braids, Bantu knots, wigs, and locs all important protective style options in Black American communities; locs (dreadlocks) have religious significance in Rastafarian communities and cultural expression in broader Black communities'
   }
 };
@@ -256,19 +256,3 @@ export function getEthnicHairRoutine(communityId) {
   return directMap[communityId] || null;
 }
 
-export const HAIR_ROUTINES_STATS = {
-  moduleId: 'hair_care_routines_by_type',
-  version: '1.0.0',
-  topics: ['hair types', 'type 4 hair', 'natural hair', 'curly girl method', 'LOC method', 'porosity', 'deep conditioning', 'co-washing', 'protective styles', 'big chop', 'champi', 'camellia oil', 'rice water', 'argan oil', 'JBCO', 'shea butter', 'pre-poo'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'Type 4C hair can shrink 75-80% of its actual length when it dries — shrinkage indicates healthy elasticity, not a problem to fix',
-    'Porosity is more predictive of what products a person should use than curl type alone',
-    'Rice water contains inositol which fills cuticle gaps and reduces friction — Yao women in China (Huangluo village) famous for Rapunzel-length hair from fermented rice water rinses',
-    'Pre-pooing (applying oil to type 4 hair before shampooing) significantly reduces protein loss during washing',
-    'Madame CJ Walker, who developed the first widely marketed Black hair care system, became the first female self-made millionaire in American history',
-    'Champi (South Asian scalp oil massage) is one of the most culturally significant and scientifically supported hair care traditions — gentle massage increases scalp circulation',
-    'The Curly Girl Method (CGM), developed by Lorraine Massey, transformed the curly hair care industry starting from 2001',
-    'Type 4 hair requires the most moisture of all hair types because the coiled structure prevents scalp sebum from reaching the length of the hair shaft'
-  ]
-};

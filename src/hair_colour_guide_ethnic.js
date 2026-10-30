@@ -55,7 +55,7 @@ export const HAIR_COLOUR_TYPES = {
     examples: 'Joico Color Butter; Schwarzkopf Color Mask; Ion Color Brilliance semi-permanent'
   },
   demiPermanent: {
-    what: 'Demi-permanent colour uses a low-volume developer (usually 6-10 vol / 2-3%) with small colour molecules that penetrate the cortex; lasts 20-28 shampoos; provides some lift (1 level maximum); covers greys up to 70-80%; minimal damage compared to permanent colour',
+    
     bestFor: 'Grey blending; glossing with slightly longer life; slightly darkening or changing tone without commitment; keeping hair healthier than permanent colour',
     note: 'Hair glosses offered at salons are typically demi-permanent colour'
   },
@@ -75,7 +75,7 @@ export const HAIR_COLOUR_TYPES = {
 
 export const GREY_HAIR_GUIDE = {
   title: 'Grey Hair — Embracing and Managing',
-  biology: 'Grey hair results from the cessation of melanocyte activity in the hair follicle; follicles gradually stop producing melanin; genetic timing of greying is largely inherited; oxidative stress may accelerate the process; premature greying (before age 20 in white, 25 in Asian, 30 in African populations) is considered premature and may have genetic or nutritional causes',
+  biology: 'Grey hair results from the cessation of melanocyte activity in the hair follicle; follicles gradually stop producing melanin; genetic timing of greying is largely inherited; oxidative stress may accelerate the process; greying that starts unusually early may have genetic or nutritional causes and is worth mentioning to a doctor',
   prematureGreying: 'Vitamin B12 deficiency is linked to premature greying (more common in vegetarian/vegan communities); thyroid disorders; autoimmune conditions; chronic stress (some evidence); smoking accelerates greying; nutritional deficiencies',
   characteristics: {
     texture: 'Grey/white hair typically has a coarser texture than pigmented hair; often has a different porosity; can be more resistant to some chemical processes',
@@ -115,7 +115,7 @@ export const ETHNIC_HAIR_COLOUR_GUIDES = {
     bleachingRisk: 'Bleaching Type 4 West African hair requires extreme care; the coiled structure has natural points of weakness at each bend; chemical processing adds stress to already-vulnerable curl points; frequent bleaching of Type 4 hair leads to breakage; work with a professional colourist experienced with natural hair',
     popularColours: 'Honey blonde highlights; burgundy; auburn; dark copper; caramel ombré; vivid colour on starter locs or straight-styled sections; the "mushroom brown" trend adapted for dark skin with caramel undertones',
     protective: 'Colouring protective styles (box braids, weaves, wigs) rather than natural hair allows colour expression without damaging the natural hair underneath; wigs and extensions offer the greatest colour versatility without damage',
-    traditionalContext: 'West African hair colouring traditions include natural plant-based pigments; commercial hair dye is a colonial introduction; natural henna was used in West African Islamic communities; synthetic braiding hair in vibrant colours has become an important cultural expression in many West African communities'
+    traditionalContext: 'West African hair colouring traditions include natural plant-based pigments; commercial hair dye arrived much later; natural henna was used in West African Islamic communities; synthetic braiding hair in vibrant colours has become an important cultural expression in many West African communities'
   },
   'south-asian': {
     naturalHair: 'South Asian hair is typically Level 1-3; predominantly brown-black to black; predominantly eumelanin; South Asian hair is often very long (culturally valued length); fine to medium diameter; can be wavy to straight',
@@ -138,7 +138,7 @@ export const ETHNIC_HAIR_COLOUR_GUIDES = {
   arab: {
     naturalHair: 'Arab hair varies significantly by region and heritage: Gulf, Levantine, Maghrebi, Egyptian; generally Level 1-4; wavy to straight for many Gulf and Levantine women; can be more curly for North African Arab women; very rich and dark brown to black tones predominate',
     popularColours: 'Hair colouring is very popular in Arab beauty culture; most popular: rich chocolate brown; caramel highlights; balayage; auburn; increasingly: blonde (particularly in younger Gulf Arab women); Mediterranean tones (warm chestnut, olive)',
-    marketSize: 'The Middle East and North Africa hair colour market is significant and growing; Saudi Arabia, UAE, and Egypt are major markets for professional hair colour brands; Gulf Arab women are high-spending beauty consumers',
+    
     kuwaitiBlonde: 'The "Kuwaiti blonde" — warm golden blonde colour achieved by lightening naturally dark brown hair — has been a long-standing trend in Gulf Arab beauty; achieved through balayage or full bleach and tone to warm golden levels',
     culturalContext: 'Hair colouring is generally practised within cultural norms; for hijabi women, hair colour is private (visible only to family and women) but is still very popular — hair colouring is as important, sometimes more so, as a personal beauty ritual for women who cover; vibrant fashion colours are popular in private settings',
     oud: 'Oud and oriental-inspired hair perfumes (hair mists, hair oils with fragrance) are increasingly popular in Arab beauty culture; fragrancing the hair is traditional'
@@ -211,16 +211,3 @@ export function getEthnicHairColourGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const HAIR_COLOUR_ETHNIC_STATS = {
-  moduleId: 'hair_colour_guide_ethnic',
-  version: '1.0.0',
-  topics: ['bleaching lightening melanin eumelanin phaeomelanin', 'hair colour levels 1-10 warm cool undertones', 'brassy tones toners neutralise colour wheel', 'bleach damage bond-building Olaplex disulfide', 'temporary semi permanent demi permanent direct dye', 'grey hair biology premature greying silver transition', 'henna lawsone South Asian chemical blocking caution', 'black henna PPD allergic reaction warning', 'indigo henna two-step grey coverage', 'K-beauty hair colour Korean Japanese mushroom brown milk tea', 'East Asian hair resistance bleaching large melanosomes', 'protective style colouring box braids wigs extensions', 'Brazilian blowout keratin formaldehyde caution', 'Rihanna red hair Caribbean colour icon', 'natural hair movement Black American colour evolution', 'colourism South Africa apartheid natural hair movement', 'Kuwaiti blonde Gulf Arab beauty trend', 'marula oil South Africa pre-colour treatment'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'When bleaching very dark hair (Level 1-2, common in all 9 ethnic communities), the hair goes through a predictable sequence of warm undertones (black → dark red → red → orange-red → orange → gold-orange → gold → pale gold → pale yellow → white); achieving ash or cool blonde requires neutralising these warm undertones at each stage with a toner; going from black to platinum in a single session will cause severe breakage in most hair types',
-    'Natural henna (Lawsonia inermis) creates a chemical barrier on the hair shaft that makes subsequent chemical processes — especially bleach — unpredictable and potentially very damaging; anyone who has used henna must disclose this to their salon colourist before any chemical service; a strand test is essential; "black henna" (not real henna) contains PPD and can cause severe chemical burns',
-    'East Asian hair has the largest melanocyte concentration and the most densely packed melanosomes of any hair type; this makes it the most resistant hair type to bleaching; achieving light blonde from East Asian Level 1-2 black hair typically requires 2-4 bleach sessions over several months and professional expertise in East Asian hair',
-    'Protective style colouring — colouring synthetic or human hair extensions, wigs, or braids rather than natural hair — allows colour expression without chemical damage to the natural hair; this practice is significant in West African, Caribbean, and Black American communities where type 4 hair is particularly vulnerable to bleach damage',
-    'K-beauty and J-beauty trends have significantly influenced global hair colour culture; the "mushroom brown," "milk tea," "ash brown," and "caramel balayage" trends from Korea and Japan have been adapted globally; Korean hair colouring trends often combine chemical perms with colour treatment for wavy-coloured styles that have become globally popular'
-  ]
-};

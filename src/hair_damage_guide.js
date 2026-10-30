@@ -27,7 +27,7 @@ export const HAIR_STRUCTURE = {
     disulfide_bonds: {
       description: 'Strong covalent bonds between sulfur atoms in adjacent keratin chains. Responsible for hair\'s permanent shape — straight, wavy, or curly based on bond pattern.',
       damaged_by: 'Chemical processing (relaxers, perms, bleach). Bleach does NOT break disulfide bonds (it targets melanin via oxidation) but secondary processes can damage them.',
-      repaired_by: 'Olaplex (BISOMAL technology — bis-aminopropyl diglycol dimaleate rebuilds disulfide bonds). K18 (peptide that repairs internal protein structure).',
+      repaired_by: 'Bond-building treatments: Olaplex (bis-aminopropyl diglycol dimaleate, which the brand says relinks broken disulfide bonds) and K18 (a peptide the brand says repairs keratin chains).',
     },
     hydrogen_bonds: {
       description: 'Temporary bonds that can be broken by water and reformed on drying. Give hair its "memory" of shape — responsible for temporary set from rollers, blowout, etc.',
@@ -75,12 +75,12 @@ export const DAMAGE_TYPES = {
     bleach_damage: {
       what_happens: 'Bleach (hydrogen peroxide + ammonium persulphate) penetrates hair shaft, oxidises melanin (destroying colour), and degrades protein structure. Raises cuticle permanently in process. Creates porous, weakened hair.',
       signs: ['Extreme dryness and brittleness', 'Hair feels like cotton or candy floss when wet', 'Extreme elasticity (stretches excessively, snaps)', 'Mushy feel when wet (over-processed)', 'Breakage when combing'],
-      recovery: 'Bond repair treatments (Olaplex, K18) are the gold standard for bleach-damaged hair. Protein treatments for protein loss. Moisture for dryness. Cannot restore completely — prevent future damage.',
+      recovery: 'Bond-building treatments (Olaplex, K18) are widely used by colourists for bleach-damaged hair. Protein treatments for protein loss. Moisture for dryness. Cannot restore completely — prevent future damage.',
     },
     relaxer_damage: {
       what_happens: 'Chemical relaxers (NaOH or guanidine) break disulfide bonds in hair at high pH (12-14). Bonds reform in new, straight configuration. Process leaves hair chemically altered and protein-depleted.',
       signs: ['Extreme brittleness, especially at the "line of demarcation" — where relaxed meets natural hair', 'Breakage at this line', 'Scalp burns or scarring if over-processed', 'Thinning'],
-      ethnic_note: 'Relaxer-related damage is one of the most significant hair health concerns in Black American, West African, and Caribbean communities. "Texlaxing" (under-processed relaxer) reduces but does not eliminate damage. The natural hair movement (post-2009) partly emerged from this chronic damage issue.',
+      
       recovery: 'Protein treatments; careful moisture-protein balance; transition to natural or "big chop"; minimal manipulation; protective styles during transition.',
     },
     colour_damage: {
@@ -124,7 +124,7 @@ export const DAMAGE_TYPES = {
 export const BOND_REPAIR_SCIENCE = {
   overview: {
     what_is_it: 'A category of hair treatments that work by repairing broken chemical bonds in the hair\'s protein structure. Primarily targeting disulfide bonds damaged by bleach, colour, and chemical processing.',
-    revolution: 'The category was created by Olaplex (invented 2014 by Craig Hawker and Eric Pressly at UC Santa Barbara). Prior to Olaplex, no product could repair internal bond damage during or after chemical services.',
+    revolution: 'The category was created by Olaplex (invented 2014 by Craig Hawker and Eric Pressly at UC Santa Barbara). It made bond-protecting additives a standard part of salon lightening.',
   },
   olaplex: {
     brand: 'Olaplex',
@@ -147,7 +147,7 @@ export const BOND_REPAIR_SCIENCE = {
     brand: 'K18',
     active_ingredient: 'K18Peptide — a bioidentical peptide matching a specific keratin chain sequence',
     mechanism: 'Peptide molecule (small enough to penetrate deep into cortex) reconnects broken polypeptide chains in the hair\'s keratin network.',
-    key_difference_from_olaplex: 'K18 targets polypeptide chains (not disulfide bonds). Approaches hair repair differently. Both work; many professionals use both for comprehensive repair.',
+    key_difference_from_olaplex: 'K18 says it targets polypeptide chains rather than disulfide bonds, a different approach; many professionals use both.',
     how_to_use: 'Shampoo (no conditioner). Towel dry. Apply K18 mask. Wait 4 minutes. Style as normal — does not need to be rinsed out.',
     main_claim: '4-minute treatment with professional-level repair. No rinsing required.',
   },
@@ -165,7 +165,7 @@ export const BOND_REPAIR_SCIENCE = {
 
 export const PROTEIN_TREATMENTS = {
   why_protein: {
-    explanation: 'Hair is approximately 95% protein (keratin). Chemical and heat damage depletes this protein, leaving hair weak, porous, and prone to breakage. Protein treatments temporarily fill gaps in the cuticle and cortex with protein molecules, restoring strength.',
+    
     note: 'Protein ≠ bond repair. Protein treatments deposit protein externally and temporarily. Bond repair works internally on chemical bonds. Both are needed for comprehensive recovery from chemical damage.',
   },
   protein_types: {
@@ -331,9 +331,3 @@ export function getEthnicHairDamageNotes(communityId) {
   return ETHNIC_HAIR_DAMAGE[key + '_hair'] || Object.values(ETHNIC_HAIR_DAMAGE);
 }
 
-export const HAIR_DAMAGE_STATS = {
-  damageTypes: Object.keys(DAMAGE_TYPES).length,
-  proteinTypes: Object.keys(PROTEIN_TREATMENTS.protein_types).length,
-  recoveryProtocols: Object.keys(DAMAGE_RECOVERY_PROTOCOLS).length,
-  communities: 9,
-};

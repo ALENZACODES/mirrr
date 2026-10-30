@@ -33,10 +33,23 @@ import * as eyeCareEthnicGuide from '../eye_care_ethnic_guide.js';
 import * as eyeCareBeauty from '../eye_care_beauty.js';
 import * as makeupForGlasses from '../makeup_for_glasses.js';
 import * as beautyForGlassesWearers from '../beauty_for_glasses_wearers.js';
+import * as hairPainter from '../hair_painter.js';
+import * as balayageEngine from '../balayage_engine.js';
+import * as hairColorEthnicGuide from '../hair_color_ethnic_guide.js';
+import * as hairColourGuideEthnic from '../hair_colour_guide_ethnic.js';
+import * as hairColouringGuide from '../hair_colouring_guide.js';
+import * as hairPorosityGuide from '../hair_porosity_guide.js';
+import * as hairTextureGuide from '../hair_texture_guide.js';
+import * as hairCareRoutines from '../hair_care_routines.js';
+import * as hairCareRoutinesByType from '../hair_care_routines_by_type.js';
+import * as hairDamageGuide from '../hair_damage_guide.js';
+import * as protectiveStylesExtended from '../protective_styles_extended.js';
+import * as wigGuideEthnic from '../wig_guide_ethnic.js';
 
 export const SHELVES = [
   { id: 'rituals', title: 'Rituals & Heritage', blurb: 'Haldi, hammam, shea, mehndi, bathhouse and festival traditions, with the steps to do them at home.' },
   { id: 'eyes', title: 'Eyes, Brows & Kohl', blurb: 'Kohl and kajal traditions, brow threading and architecture, lashes, eye care, and makeup with glasses.' },
+  { id: 'hair', title: 'Hair, Colour & Texture', blurb: 'Colour and lightening for dark and coily hair, henna and indigo, porosity, curl types, protective styles and wigs.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -71,4 +84,16 @@ export const GUIDES = [
   ['eye_care_beauty', 'eyes', 'Under-Eye Care', eyeCareBeauty],
   ['makeup_for_glasses', 'eyes', 'Makeup with Glasses', makeupForGlasses],
   ['beauty_for_glasses_wearers', 'eyes', 'Glasses and Contact Lens Beauty', beautyForGlassesWearers],
+  ['hair_painter', 'hair', 'Hair Colours, Textures and Styles', hairPainter],
+  ['balayage_engine', 'hair', 'Balayage, Ombré and Highlight Techniques', balayageEngine],
+  ['hair_color_ethnic_guide', 'hair', 'Hair Colour by Community', hairColorEthnicGuide],
+  ['hair_colour_guide_ethnic', 'hair', 'Hair Colour Science, Henna and Grey', hairColourGuideEthnic],
+  ['hair_colouring_guide', 'hair', 'Lightening Dark and Coily Hair Safely', hairColouringGuide],
+  ['hair_porosity_guide', 'hair', 'Hair Porosity', hairPorosityGuide],
+  ['hair_texture_guide', 'hair', 'Hair Texture, Curl Science and Politics', hairTextureGuide],
+  ['hair_care_routines', 'hair', 'Hair Care Routines by Community', hairCareRoutines],
+  ['hair_care_routines_by_type', 'hair', 'Hair Care by Curl Type', hairCareRoutinesByType],
+  ['hair_damage_guide', 'hair', 'Hair Damage and Bond Repair', hairDamageGuide],
+  ['protective_styles_extended', 'hair', 'Protective Styles: Braids, Twists and Locs', protectiveStylesExtended],
+  ['wig_guide_ethnic', 'hair', 'Wigs: Construction, Install and Care', wigGuideEthnic],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

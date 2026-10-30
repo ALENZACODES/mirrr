@@ -541,21 +541,13 @@ function renderTasteResults(result) {
       <div class="looks-grid-inner">
         ${looks.map(r => renderLookCard(r.look, r.score, r)).join('')}
       </div>
-      <div class="looks-actions">
-        <button class="btn btn-secondary" id="toLooksWigBtn">Match Wigs for These Looks →</button>
-      </div>
+      ${finishPanelHTML('taste')}
     `;
 
     looksEl.querySelectorAll('.look-card').forEach(card => {
       card.addEventListener('click', () => openLookModal(card.dataset.lookId));
     });
 
-    document.getElementById('toLooksWigBtn')?.addEventListener('click', () => {
-      showView('wig');
-      // Pre-populate wig form with current aesthetic context
-      const wigSel = document.getElementById('wigCommunitySelect');
-      if (wigSel && state.communityId) wigSel.value = state.communityId;
-    });
   }
 
   document.getElementById('tasteResults')?.classList.remove('hidden');
@@ -976,14 +968,11 @@ function renderShadeResults(shades) {
         </div>
       `).join('')}
     </div>
-    <div class="shade-cta-row">
-      <button class="btn btn-secondary" id="shadeToWigBtn">Now Match Your Wig →</button>
-    </div>
+    ${finishPanelHTML('shade')}
   `;
 
   resultsEl.classList.remove('hidden');
 
-  document.getElementById('shadeToWigBtn')?.addEventListener('click', () => showView('wig'));
 }
 
 // ---------------------------------------------------------------------------
@@ -2544,7 +2533,7 @@ function renderPlan(plan) {
     planCard('chat', 'Constraints it respected', consBody),
     planCard('mirror', 'The look', lookBody),
     planCard('drop', 'Your shade', shadeBody),
-    planCard('wig', 'Wig pairing', wigBody),
+    planCard('wig', 'Finishing — your choice', finishingBody(plan, wigBody)),
     planCard('leaf', 'Ritual & prep', ritualBody),
     planCard('calendar', 'Timeline', tlBody),
   ].join('');
@@ -2569,6 +2558,7 @@ async function buildPlan() {
       fitzpatrick: document.getElementById('plannerFitz')?.value || undefined,
       undertone: document.getElementById('plannerUndertone')?.value || state.undertone || undefined,
       tasteChips: state.tasteChips,
+      finish: loadFinish(),
     });
     renderPlan(plan);
     persist({ lastPlan: { occasion, at: new Date().toISOString() } });
@@ -2989,7 +2979,7 @@ async function renderLookPicker(host, face) {
 
 async function runTransform(host, face, lookId) {
   host.innerHTML = '<div class="modal-loading"><div class="spinner"></div></div><p class="photo-note" style="text-align:center">Building your plan…</p>';
-  const key = `${lookId}|${face.shadeId}|${face.undertone}|${face.hairTexture}|${face.hairLength}|${state.tasteChips.join(',')}`;
+  const key = `${lookId}|${face.shadeId}|${face.undertone}|${face.hairTexture}|${face.hairLength}|${state.tasteChips.join(',')}|${loadFinish().join(',')}`;
   let data = transformCache[key];
   if (!data) {
     try {
@@ -2997,6 +2987,7 @@ async function runTransform(host, face, lookId) {
         face: { shadeId: face.shadeId, depth: face.depth, undertone: face.undertone || undefined, hairTexture: face.hairTexture || undefined, hairLength: face.hairLength || undefined, communityId: face.communityId || undefined },
         targetLookId: lookId,
         tasteChips: state.tasteChips,
+        finish: loadFinish(),
       });
       transformCache[key] = data;
     } catch (err) {
@@ -3186,3 +3177,82 @@ toggleProfilePanel = function () {
     document.getElementById('ppClearFace')?.addEventListener('click', () => { persist({ face: null, plan: null }); panel.classList.add('hidden'); toast('Face profile cleared', 'info'); });
   }
 };
+
+
+// ── FINISH YOUR LOOK — YOUR CHOICE ─────────────────────────────────────────
+// After makeup or shades MIRRR never routes straight to wigs. She picks how to finish, as equals;
+// nothing is pre-selected and nothing auto-advances: each option opens only when she taps it.
+// Her picks are kept in this browser and steer the planner and the Transform hair stage.
+const FINISH_KEY = 'mirrr.finish.v1';
+const FINISH_CHOICES = [
+  { id: 'wigs', label: 'Wigs', note: 'Match a wig to these looks' },
+  { id: 'lashes', label: 'Lashes', note: 'Lash styles and how to wear them' },
+  { id: 'brows', label: 'Brows', note: 'Brow & Kohl Studio' },
+  { id: 'natural', label: 'My Natural Hair', note: 'Styling and care for your own hair' },
+  { id: 'locs', label: 'Locs & Braids', note: 'Locs, braids and protective styles' },
+  { id: 'nails', label: 'Nails', note: 'Nails & Scent Studio' },
+  { id: 'none', label: 'None — I’m done', note: 'Keep just the makeup' },
+];
+function loadFinish() {
+  try { const v = JSON.parse(localStorage.getItem(FINISH_KEY) || '[]'); return Array.isArray(v) ? v.filter(x => FINISH_CHOICES.some(c => c.id === x)) : []; } catch { return []; }
+}
+function saveFinishPick(id) {
+  let cur = loadFinish();
+  cur = id === 'none' ? ['none'] : [...new Set([...cur.filter(x => x !== 'none'), id])];
+  try { localStorage.setItem(FINISH_KEY, JSON.stringify(cur)); } catch { /* private mode */ }
+  for (const k of Object.keys(transformCache ?? {})) delete transformCache[k];
+  return cur;
+}
+function finishPanelHTML(from) {
+  return `<section class="finish-panel" data-finish-from="${esc(from)}" aria-labelledby="finishTitle-${esc(from)}">
+    <h3 class="finish-title" id="finishTitle-${esc(from)}">Finish your look — your choice</h3>
+    <p class="finish-sub">Pick what you want next, or nothing at all. Each option opens only when you tap it.</p>
+    <div class="finish-options" role="group" aria-label="Finishing options">
+      ${FINISH_CHOICES.map(c => `<button type="button" class="finish-opt" data-finish="${c.id}" aria-pressed="false"><span class="finish-opt-label">${esc(c.label)}</span><span class="finish-opt-note">${esc(c.note)}</span></button>`).join('')}
+    </div>
+    <p class="finish-done hidden" role="status"></p>
+  </section>`;
+}
+function finishingBody(plan, wigBody) {
+  const f = plan.finishing;
+  if (!f) return wigBody;
+  const steps = (f.steps ?? []).map(st => `<li><strong>${esc(st.title)}</strong> &mdash; ${esc(st.text)}</li>`).join('');
+  return `<p class="muted">${esc(f.basis)}</p>${steps ? `<ul>${steps}</ul>` : '<p>Makeup only.</p>'}<p class="muted">Change these with “Finish your look” after Taste or Shades.</p>`;
+}
+function openLibrarySearch(q) {
+  document.querySelector('.nav-link[data-view="library"]')?.click();
+  setTimeout(() => {
+    const input = document.getElementById('libSearch');
+    if (!input) return;
+    input.value = q;
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+    input.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 300);
+}
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest?.('.finish-opt[data-finish]');
+  if (!btn) return;
+  const id = btn.dataset.finish;
+  saveFinishPick(id);
+  const panel = btn.closest('.finish-panel');
+  panel?.querySelectorAll('.finish-opt').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+  const nav = (view) => document.querySelector(`.nav-link[data-view="${view}"]`)?.click();
+  switch (id) {
+    case 'wigs': {
+      nav('wig');
+      const wigSel = document.getElementById('wigCommunitySelect');
+      if (wigSel && state.communityId) wigSel.value = state.communityId;
+      break;
+    }
+    case 'lashes': openLibrarySearch('lashes'); break;
+    case 'brows': nav('studio'); break;
+    case 'natural': openLibrarySearch('natural hair'); break;
+    case 'locs': openLibrarySearch('locs'); break;
+    case 'nails': nav('nails'); break;
+    case 'none': {
+      const done = panel?.querySelector('.finish-done');
+      if (done) { done.textContent = 'Done. Your look is the makeup alone; your plans will not add hair or lash steps.'; done.classList.remove('hidden'); }
+      break;
+    }
+  }
+});

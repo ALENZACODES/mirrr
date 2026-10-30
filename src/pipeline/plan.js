@@ -8,6 +8,7 @@
 import { INSPIRATION_LOOKS, getPersonalisedLook } from '../style_match_engine.js';
 import { findShades } from '../shade_finder.js';
 import { matchWigs } from '../wig_matchmaker.js';
+import { wantsWig, finishBasis, finishingSteps } from '../finishing.js';
 import { buildAestheticVector, ARCHETYPE_KEYWORDS } from '../aesthetic.js';
 import { qlooTaste, provenance } from '../taste_signals.js';
 import { lookEvidence } from '../look_engine.js';
@@ -109,7 +110,7 @@ function buildTimeline(look, personalised, parsed, ritual) {
   return tl;
 }
 
-export async function buildPlan({ occasion = '', communityId, fitzpatrick, undertone, tasteChips = [] } = {}) {
+export async function buildPlan({ occasion = '', communityId, fitzpatrick, undertone, tasteChips = [], finish = [] } = {}) {
   const parsed = parseOccasion(occasion);
   const community = COMMUNITIES.includes(normCommunityHyphen(communityId)) ? normCommunityHyphen(communityId) : null;
   const fitz = FITZ_DEPTH[fitzpatrick] ? fitzpatrick : null;
@@ -127,8 +128,11 @@ export async function buildPlan({ occasion = '', communityId, fitzpatrick, under
   const shade = shades[0] ? { name: shades[0].name, code: shades[0].code, hex: shades[0].hex, undertone: tone, depthGap: shades[0].depthGap, undertoneMatch: shades[0].undertoneMatch, note: shades[0].coverageNote } : null;
 
   const aesthetic = buildAestheticVector(kept, { freeText: [occasion, ...(look.tags ?? [])] });
-  const wigs = matchWigs({ aesthetic, communityId: normCommunityUnder(lookCommunity), topN: 1 });
+  // A wig only when she picked Wigs ("Finish your look — your choice"); never by default.
+  const wigs = wantsWig(finish) ? matchWigs({ aesthetic, communityId: normCommunityUnder(lookCommunity), topN: 1 }) : [];
   const wig = wigs[0] ? { name: wigs[0].wig?.name, texture: wigs[0].wig?.texture, length: wigs[0].wig?.length, why: wigs[0].wig?.description ?? null } : null;
+  const lashProduct = (look.products ?? []).find(p => p.category === 'lash');
+  const finishing = { ...finishBasis(finish), steps: finishingSteps(finish, { wig, lash: lashProduct ? [lashProduct.finish, lashProduct.color, lashProduct.notes].filter(Boolean).join(', ') : null }) };
 
   const ritual = await ritualFor(lookCommunity, parsed);
 
@@ -144,6 +148,7 @@ export async function buildPlan({ occasion = '', communityId, fitzpatrick, under
     look: { id: look.id, name: look.name, community: look.community, description: look.description, image: look.image, whyChosen: [parsed.keys.length ? `matched ${parsed.keys.join(', ')}` : null, lookQloo?.tags?.length ? `Qloo tied your taste to ${lookQloo.tags.slice(0, 3).join(', ')}` : null].filter(Boolean).join('; ') || (reason > 0 ? 'matched your community' : 'closest overall match'), qlooEvidence: lookQloo?.tags?.length ? Math.round(lookQloo.share * 100) / 100 : null, alternatives: alternatives.map(a => ({ id: a.id, name: a.name })) },
     shade,
     wig,
+    finishing,
     ritual,
     timeline: buildTimeline(look, personalised, parsed, ritual),
     constraints,

@@ -8,6 +8,7 @@
 import { LOOKS, recommendLooks, scoreLook } from '../look_engine.js';
 import { SHADE_SPECTRUM, findShades } from '../shade_finder.js';
 import { matchWigs } from '../wig_matchmaker.js';
+import { normaliseFinish, wantsWig, wantsLashes, finishBasis } from '../finishing.js';
 import { buildAestheticVector } from '../aesthetic.js';
 import { artistTagsFor } from '../local_taste.js';
 import { getLookProducts } from '../product_engine.js';
@@ -169,7 +170,7 @@ function formulaFor(formulas, cat) {
   return formulas?.products?.find((p) => p.category === cat) ?? null;
 }
 
-export async function buildTransform({ face = {}, targetLookId, tasteChips = [] } = {}) {
+export async function buildTransform({ face = {}, targetLookId, tasteChips = [], finish = [] } = {}) {
   if (!targetLookId || typeof targetLookId !== 'string') throw new TransformInputError('targetLookId is required');
   const look = LOOKS.find((l) => l.id === targetLookId);
   if (!look) throw new TransformInputError(`Unknown look '${String(targetLookId).slice(0, 60)}'`);
@@ -203,10 +204,11 @@ export async function buildTransform({ face = {}, targetLookId, tasteChips = [] 
     technique: [
       eyeSpec ? `Shadow: ${describeSpec(eyeSpec)}. Sweep the lightest tone over the lid, deepen the outer corner and crease.` : null,
       linerSpec ? `Liner: ${describeSpec(linerSpec)}.` : null,
-      lashSpec ? `Lashes: ${describeSpec(lashSpec)}.` : null,
+      // Lashes only when she picked them; otherwise mascara.
+      lashSpec && wantsLashes(finish) ? `Lashes: ${describeSpec(lashSpec)}.` : 'Coat lashes with mascara.',
       linerK ? `Community technique: ${linerK}` : null,
     ].filter(Boolean).join(' ') || 'Define the eyes with a soft wash of shadow and liner along the lash line.',
-    product: [eyeSpec && 'Eyeshadow', linerSpec && 'Liner', lashSpec && 'Lashes'].filter(Boolean).join(' + ') || undefined,
+    product: [eyeSpec && 'Eyeshadow', linerSpec && 'Liner', lashSpec && wantsLashes(finish) && 'Lashes'].filter(Boolean).join(' + ') || undefined,
     why: 'Matches the eye shape and colour story of this look, translated for your depth.',
   };
   const lipStep = {
@@ -231,7 +233,9 @@ export async function buildTransform({ face = {}, targetLookId, tasteChips = [] 
   };
 
   const lookVec = { ...look.weights, archetypes: [look.archetype], hair_vibe: undefined };
-  const wigMatches = matchWigs({ aesthetic: lookVec, communityId: f.community, lengthPref: f.hairLength || null, topN: 3 });
+  const picked = normaliseFinish(finish);
+  // A wig only when she picked Wigs; otherwise her own hair (or locs and braids if she picked them).
+  const wigMatches = wantsWig(picked) ? matchWigs({ aesthetic: lookVec, communityId: f.community, lengthPref: f.hairLength || null, topN: 3 }) : [];
   const lookWigIds = new Set((look.wig_styles ?? []).map((w) => w.id));
   const wigs = [
     ...wigMatches.filter((m) => lookWigIds.has(m.wig.id)),
@@ -247,14 +251,24 @@ export async function buildTransform({ face = {}, targetLookId, tasteChips = [] 
       why: lookWigIds.has(wigs[0].wig.id) ? 'One of the styles this look is built around.' : `Fits your ${f.hairLength ?? 'preferred'} length and the look’s energy.`,
     });
   }
-  hairSteps.push({
-    area: 'hair',
-    title: f.hairTexture ? `Prepare your ${f.hairTexture} hair` : 'Prepare your natural hair',
-    technique: hairK
-      ? `Protective option for your texture: ${hairK}`
-      : 'Cleanse, deep-condition, and put hair in a protective base (braids or flat twists) before installing or styling.',
-    why: 'Healthy hair underneath is what makes the final style last.',
-  });
+  if (picked.includes('locs')) {
+    hairSteps.push({
+      area: 'hair',
+      title: 'Locs & braids',
+      technique: 'Refresh the roots or re-braid a few days before, oil the scalp lightly, and wrap at night in satin so the style stays neat on the day.',
+      why: 'You picked locs and braids to finish this look.',
+    });
+  }
+  if (!picked.includes('none')) {
+    hairSteps.push({
+      area: 'hair',
+      title: f.hairTexture ? `Prepare your ${f.hairTexture} hair` : 'Prepare your own hair',
+      technique: hairK
+        ? `Protective option for your texture: ${hairK}`
+        : wigs.length ? 'Cleanse, deep-condition, and put hair in a protective base (braids or flat twists) before installing the wig.' : 'Cleanse and deep-condition, then style your own hair the way you wear it.',
+      why: 'Healthy hair underneath is what makes the final style last.',
+    });
+  }
 
   // --- Stage 3: the full look = finishing touches + maintenance ---
   const finishCats = ['highlight', 'bronzer', 'blush', 'contour', 'setting', 'gems', 'glitter', 'gold_accents', 'bindi', 'accessories', 'mascara'];
@@ -276,13 +290,13 @@ export async function buildTransform({ face = {}, targetLookId, tasteChips = [] 
   const fullSteps = [
     { area: 'base', title: 'Put it together', technique: `Order of work: skin prep and SPF, base in ${f.shade.name}, brows, eyes, lips, then finish.`, shade: shadeObj(f.shade), why: 'Doing steps in this order keeps colour clean and wear time long.' },
     ...finishSteps,
-    { area: 'hair', title: 'Style the hair last', technique: wigs.length ? `Finish with ${wigs[0].wig.name}, then check the whole look in daylight.` : 'Style hair last and check the whole look in daylight.', why: 'Hair changes how the face reads, so it comes last.' },
+    { area: 'hair', title: 'Style the hair last', technique: wigs.length ? `Finish with ${wigs[0].wig.name}, then check the whole look in daylight.` : picked.includes('locs') ? 'Finish with your locs or braids, then check the whole look in daylight.' : 'Style your own hair last and check the whole look in daylight.', why: 'Hair changes how the face reads, so it comes last.' },
     { area: 'base', title: 'Keep it going', technique: 'Blot, do not wipe, through the day; re-apply lip colour; at night remove with an oil cleanser and moisturise. Re-check your shade each season as your skin tone shifts.', why: 'Maintenance keeps the look repeatable.' },
   ];
 
   const stages = [
     { id: 'today', title: 'Today — makeup only', subtitle: 'Base, eyes and lips in your shades.', steps: [baseStep, eyeStep, lipStep] },
-    { id: 'week', title: 'This week — brows & hair', subtitle: 'Shape brows and book the hair that completes it.', steps: [browStep, ...hairSteps] },
+    { id: 'week', title: 'This week — brows & hair', subtitle: wigs.length ? 'Shape brows and book the wig you picked.' : 'Shape brows and plan how you will wear your hair.', steps: [browStep, ...hairSteps] },
     { id: 'full', title: 'The full look', subtitle: 'Everything together, finished and maintained.', steps: fullSteps },
   ];
 
@@ -293,6 +307,7 @@ export async function buildTransform({ face = {}, targetLookId, tasteChips = [] 
     target: { id: look.id, name: look.name, image: lookImage(look.id), description: look.description, archetype: look.archetype },
     face: { shade: shadeObj(f.shade), undertone: f.undertone, community: communityHy, hairTexture: f.hairTexture, hairLength: f.hairLength },
     stages,
+    finishing: finishBasis(picked),
     because,
     alternatives: alt,
     source: because.length ? 'taste+catalogue' : 'catalogue',

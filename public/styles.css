@@ -3033,3 +3033,15 @@ body { padding-top: 58px; }
 #tryonStatus:empty { display: none; }
 .photo-try { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin: 0.4rem 0 0; }
 .photo-try span { font-size: 0.8rem; opacity: 0.75; }
+
+/* Finish your look — your choice (options as equals, nothing pre-selected) */
+.finish-panel { margin: 1.75rem auto 0; max-width: 960px; padding: 1.25rem; border: 1px solid rgba(212,168,71,0.25); border-radius: 14px; background: rgba(255,255,255,0.02); text-align: center; }
+.finish-title { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.5rem; color: #f0e8da; margin: 0 0 .35rem; }
+.finish-sub { color: #aaa; font-size: .85rem; margin: 0 0 1rem; }
+.finish-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .6rem; }
+.finish-opt { display: flex; flex-direction: column; gap: .2rem; padding: .75rem .8rem; border-radius: 10px; border: 1px solid rgba(212,168,71,0.3); background: #141016; color: #f0e8da; cursor: pointer; text-align: left; font: inherit; }
+.finish-opt:hover, .finish-opt:focus-visible { border-color: #c9a96e; outline: none; }
+.finish-opt[aria-pressed="true"] { border-color: #c9a96e; background: #221a12; }
+.finish-opt-label { font-weight: 600; font-size: .9rem; }
+.finish-opt-note { font-size: .72rem; color: #9a8f80; }
+.finish-done { margin-top: .9rem; color: #c9a96e; }

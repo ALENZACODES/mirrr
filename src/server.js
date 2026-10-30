@@ -431,6 +431,7 @@ async function router(req, res) {
         fitzpatrick: body.fitzpatrick,
         undertone: body.undertone,
         tasteChips: Array.isArray(body.tasteChips) ? body.tasteChips.slice(0, 10) : [],
+        finish: Array.isArray(body.finish) ? body.finish.slice(0, 7) : [],
       });
       return sendJSON(res, 200, plan);
     } catch (err) {
@@ -444,7 +445,7 @@ async function router(req, res) {
     const body = await readBody(req).catch(err => { sendJSON(res, 400, { error: err.message }); return null; });
     if (!body) return;
     try {
-      const plan = await buildTransform({ face: body.face, targetLookId: body.targetLookId, tasteChips: body.tasteChips });
+      const plan = await buildTransform({ face: body.face, targetLookId: body.targetLookId, tasteChips: body.tasteChips, finish: Array.isArray(body.finish) ? body.finish.slice(0, 7) : [] });
       return sendJSON(res, 200, plan);
     } catch (err) {
       if (err?.status === 400) return sendJSON(res, 400, { error: err.message });

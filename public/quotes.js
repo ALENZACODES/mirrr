@@ -12,7 +12,7 @@
     { lang: 'zu', dir: 'ltr', text: 'Umuntu ngumuntu ngabantu.', en: 'A person is a person through other people.', by: 'Zulu proverb · South Africa' },
     { lang: 'sw', dir: 'ltr', text: 'Haraka haraka haina baraka.', en: 'Hurry, hurry has no blessing.', by: 'Swahili proverb · East Africa' },
     { lang: 'am', dir: 'ltr', text: 'ቀስ በቀስ እንቁላል በእግሩ ይሄዳል።', en: 'Slowly, slowly, an egg will walk on its own legs.', by: 'Amharic proverb · Ethiopia' },
-    { lang: 'ar', dir: 'rtl', text: 'إِنَّ اللَّهَ جَمِيلٌ يُحِبُّ الْجَمَالَ', en: 'God is beautiful and loves beauty.', by: 'Saying of the Prophet Muhammad · Sahih Muslim 91' },
+    { lang: 'ar', dir: 'rtl', text: 'إِنَّ اللَّهَ جَمِيلٌ يُحِبُّ الْجَمَالَ', en: 'God is beautiful and loves beauty.', by: 'Saying of the Prophet Muhammad ﷺ (peace be upon him) · Sahih Muslim 91' },
     { lang: 'fa', dir: 'rtl', text: 'هر کسی کو دور ماند از اصل خویش / باز جوید روزگار وصل خویش', en: 'Everyone who is left far from their source wishes back the time when they were one with it.', by: 'Rumi · Masnavi, Book I, line 4 · c. 1260' },
     { lang: 'fa', dir: 'rtl', text: 'بنی‌آدم اعضای یک پیکرند / که در آفرینش ز یک گوهرند', en: 'Human beings are members of one body, created from one essence.', by: 'Saadi · Gulistan · 1258' },
     { lang: 'ur', dir: 'rtl', text: 'خودی کو کر بلند اتنا کہ ہر تقدیر سے پہلے / خدا بندے سے خود پوچھے، بتا تیری رضا کیا ہے', en: 'Raise your selfhood so high that before every decree, God Himself asks you: tell me, what is your wish?', by: 'Muhammad Iqbal · Bal-e-Jibril · 1935' },

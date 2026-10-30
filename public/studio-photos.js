@@ -43,23 +43,71 @@ window.STUDIO_PHOTOS = {
   }
  },
  "ingredients": {
+  "aloe_vera": {
+   "src": "/studio/ingredients/aloe_vera.webp"
+  },
+  "alpha_arbutin": {
+   "src": "/studio/ingredients/alpha_arbutin.webp"
+  },
+  "amla": {
+   "src": "/studio/ingredients/amla.webp"
+  },
   "argan": {
    "src": "/studio/ingredients/argan.webp"
   },
   "avocado": {
    "src": "/studio/ingredients/avocado.webp"
   },
+  "azelaic_acid": {
+   "src": "/studio/ingredients/azelaic_acid.webp"
+  },
+  "baobab": {
+   "src": "/studio/ingredients/baobab.webp"
+  },
   "black_seed": {
    "src": "/studio/ingredients/black_seed.webp"
+  },
+  "camellia": {
+   "src": "/studio/ingredients/camellia.webp"
+  },
+  "castor": {
+   "src": "/studio/ingredients/castor.webp"
+  },
+  "coconut": {
+   "src": "/studio/ingredients/coconut.webp"
+  },
+  "coffee_scrub": {
+   "src": "/studio/ingredients/coffee_scrub.webp"
   },
   "frankincense": {
    "src": "/studio/ingredients/frankincense.webp"
   },
+  "glycolic_acid": {
+   "src": "/studio/ingredients/glycolic_acid.webp"
+  },
+  "henna": {
+   "src": "/studio/ingredients/henna.webp"
+  },
+  "hyaluronic_acid": {
+   "src": "/studio/ingredients/hyaluronic_acid.webp"
+  },
   "jamaican_black_castor": {
    "src": "/studio/ingredients/jamaican_black_castor.webp"
   },
+  "kojic_acid": {
+   "src": "/studio/ingredients/kojic_acid.webp"
+  },
   "marula": {
    "src": "/studio/ingredients/marula.webp"
+  },
+  "moringa": {
+   "src": "/studio/ingredients/moringa.webp"
+  },
+  "niacinamide": {
+   "src": "/studio/ingredients/niacinamide.webp"
+  },
+  "retinol": {
+   "src": "/studio/ingredients/retinol.webp"
   },
   "rice_water": {
    "src": "/studio/ingredients/rice_water.webp"
@@ -67,11 +115,23 @@ window.STUDIO_PHOTOS = {
   "rooibos": {
    "src": "/studio/ingredients/rooibos.webp"
   },
+  "rosehip": {
+   "src": "/studio/ingredients/rosehip.webp"
+  },
   "shea_butter": {
    "src": "/studio/ingredients/shea_butter.webp"
   },
+  "tranexamic_acid": {
+   "src": "/studio/ingredients/tranexamic_acid.webp"
+  },
+  "turmeric": {
+   "src": "/studio/ingredients/turmeric.webp"
+  },
   "ubtan": {
    "src": "/studio/ingredients/ubtan.webp"
+  },
+  "vitamin_c": {
+   "src": "/studio/ingredients/vitamin_c.webp"
   }
  },
  "lips": {
@@ -120,6 +180,38 @@ window.STUDIO_PHOTOS = {
   "stiletto": {
    "mask": "/studio/nails/stiletto.mask.webp",
    "src": "/studio/nails/stiletto.webp"
+  }
+ },
+ "nails-real": {
+  "oval__brick_red__chrome": {
+   "src": "/studio/nails-real/oval__brick_red__chrome.webp"
+  },
+  "oval__brick_red__creme": {
+   "src": "/studio/nails-real/oval__brick_red__creme.webp"
+  },
+  "oval__brick_red__matte": {
+   "src": "/studio/nails-real/oval__brick_red__matte.webp"
+  },
+  "oval__electric_blue__creme": {
+   "src": "/studio/nails-real/oval__electric_blue__creme.webp"
+  },
+  "oval__fuchsia__chrome": {
+   "src": "/studio/nails-real/oval__fuchsia__chrome.webp"
+  },
+  "oval__fuchsia__creme": {
+   "src": "/studio/nails-real/oval__fuchsia__creme.webp"
+  },
+  "oval__fuchsia__matte": {
+   "src": "/studio/nails-real/oval__fuchsia__matte.webp"
+  },
+  "oval__mocha__chrome": {
+   "src": "/studio/nails-real/oval__mocha__chrome.webp"
+  },
+  "oval__mocha__creme": {
+   "src": "/studio/nails-real/oval__mocha__creme.webp"
+  },
+  "oval__mocha__matte": {
+   "src": "/studio/nails-real/oval__mocha__matte.webp"
   }
  }
 };

@@ -9,7 +9,7 @@
 export const MELANIN_SPF_SCIENCE = {
   commonMisconception: 'I don\'t need sunscreen — my skin is dark and I don\'t burn',
   reality: [
-    'Fitzpatrick V-VI skin has a natural SPF equivalent of approximately SPF 13',
+    'Melanin gives Fitzpatrick V-VI skin more built-in UVB protection than lighter skin, but not enough on its own, and it does not stop visible light from darkening pigmentation',
     'SPF 13 does NOT block UVA — the rays that cause hyperpigmentation and dark spots',
     'Every dark spot on melanin-rich skin worsens significantly without SPF',
     'PIH (Post-Inflammatory Hyperpigmentation) fades months faster when SPF is worn daily',
@@ -32,7 +32,7 @@ export const SPF_NUMBERS_EXPLAINED = {
   spf30: { percentBlocked: 97, meaningForEthnicSkin: 'Minimum recommended. 3% UV still getting through — acceptable for daily urban life' },
   spf50: { percentBlocked: 98, meaningForEthnicSkin: 'Recommended for ethnic skin. 2% UV blocked is meaningful difference for PIH prevention' },
   spf100: { percentBlocked: 99, meaningForEthnicSkin: 'Marginal real-world benefit over SPF 50 unless reapplied perfectly — application amount matters more than SPF number' },
-  applicationNote: 'SPF rating is calculated at 2mg/cm² of skin — most people apply 20-25% of the required amount. Even SPF 50 becomes SPF 10 when under-applied. Apply generously.',
+  
   paRating: {
     PA_plus: 'Low UVA protection',
     PA_plus_plus: 'Moderate UVA protection',
@@ -89,10 +89,10 @@ export const SPF_PRODUCTS = {
     {
       name: 'Black Girl Sunscreen SPF 30',
       type: 'Chemical',
-      price: '$20',
+      
       whiteCast: 'None',
       texture: 'Gel-lotion, absorbs quickly',
-      why: 'Literally formulated for Black women\'s skin. No white cast, mango and lavender scent, affordable. One of the best SPFs for melanin-rich skin.',
+      why: 'Made by a Black-owned brand for melanin-rich skin. No white cast, affordable.',
       bestFor: ['Fitzpatrick IV', 'Fitzpatrick V', 'Fitzpatrick VI'],
       coverage: 'SPF 30',
       website: 'https://blackgirlsunscreen.com',
@@ -100,7 +100,7 @@ export const SPF_PRODUCTS = {
     {
       name: 'Beauty of Joseon Relief Sun: Rice + Probiotics SPF50 PA++++',
       type: 'Chemical (K-beauty)',
-      price: '$18',
+      
       whiteCast: 'None',
       texture: 'Thin serum-like, no residue',
       why: 'The K-beauty sunscreen every ethnic skin type can use. SPF50 PA++++, zero white cast, zero grease, zero grey finish. Cult status for good reason.',
@@ -111,7 +111,7 @@ export const SPF_PRODUCTS = {
     {
       name: 'Supergoop Unseen Sunscreen SPF 40',
       type: 'Chemical',
-      price: '$48',
+      
       whiteCast: 'None — truly invisible',
       texture: 'Velvety primer-like',
       why: 'Completely invisible on any skin tone. Works as a makeup primer. Slight silicone feel that smooths skin.',
@@ -122,7 +122,7 @@ export const SPF_PRODUCTS = {
     {
       name: 'ISDIN Eryfotona Ageless Tinted SPF 50+',
       type: 'Tinted Mineral',
-      price: '$65',
+      
       whiteCast: 'None (tinted mineral)',
       texture: 'Light tinted finish',
       why: 'Tinted mineral that works for medium-deep skin. Contains DNA repair enzymes. Tint provides some coverage + neutralises mineral cast.',
@@ -133,7 +133,7 @@ export const SPF_PRODUCTS = {
     {
       name: 'EltaMD UV Clear Broad-Spectrum SPF 46',
       type: 'Chemical + Mineral hybrid',
-      price: '$39',
+      
       whiteCast: 'Minimal (slight white on very deep tones)',
       texture: 'Lightweight, slightly matte finish',
       why: 'Dermatologist favourite. Contains niacinamide. Excellent for acne-prone skin. The "serious skincare" SPF recommendation.',
@@ -144,10 +144,10 @@ export const SPF_PRODUCTS = {
     {
       name: 'Altruist Dermatologist Sunscreen SPF 50',
       type: 'Chemical',
-      price: '$4',
+      
       whiteCast: 'None',
       texture: 'Lotion',
-      why: 'The best budget sunscreen. Formulated by a dermatologist. SPF 50. No white cast. €3 in Europe. Makes SPF accessible.',
+      
       bestFor: ['All skin types', 'Budget-conscious', 'Daily use'],
       coverage: 'SPF 50',
       availability: 'UK/Europe widely available. Amazon for US.',
@@ -155,7 +155,7 @@ export const SPF_PRODUCTS = {
     {
       name: 'Banana Boat Light as Air SPF 50+',
       type: 'Chemical',
-      price: '$13',
+      
       whiteCast: 'None',
       texture: 'Ultra-light, invisible',
       why: 'Budget US option with no white cast. SPF 50+. Accessible at drugstores.',
@@ -167,31 +167,30 @@ export const SPF_PRODUCTS = {
     {
       name: 'La Roche-Posay Anthelios Mineral Tinted SPF 50+',
       note: 'Contains iron oxides that block visible light — which triggers melasma — in addition to UV',
-      price: '$40',
+      
       why: 'Tinted mineral with iron oxide is the gold standard for melasma protection. Visible light (not just UV) triggers melasma pigment production.',
     },
     {
       name: 'ISDIN Eryfotona Ageless Tinted Mineral SPF 50+',
       note: 'DNA repair enzymes + UVA/UVB + visible light protection',
-      price: '$65',
+      
       why: 'Most comprehensive sun protection for melasma-prone skin. Worth the premium.',
     },
   ],
   forOilySkin: [
-    { name: 'Beauty of Joseon Relief Sun SPF50 PA++++', note: 'No grease, matte-ish finish', price: '$18' },
-    { name: 'Biore UV Aqua Rich Watery Essence SPF50+ PA++++', note: 'Japanese formula. Water-light. Virtually undetectable.', price: '$18', note2: 'Import from Amazon or Asian beauty stores' },
-    { name: 'INNISFREE Intensive Long Lasting Sunscreen EX SPF50+ PA++++', note: 'K-beauty matte finish', price: '$22' },
+    { name: 'Beauty of Joseon Relief Sun SPF50 PA++++', note: 'No grease, matte-ish finish' },
+    { name: 'Biore UV Aqua Rich Watery Essence SPF50+ PA++++', note: 'Japanese formula. Water-light. Virtually undetectable.',  note2: 'Import from Amazon or Asian beauty stores' },
+    { name: 'INNISFREE Intensive Long Lasting Sunscreen EX SPF50+ PA++++', note: 'K-beauty matte finish' },
   ],
   forDrySkin: [
-    { name: 'Tatcha The Silk Sunscreen SPF 50', note: 'Luxurious moisturising finish', price: '$68' },
-    { name: 'First Aid Beauty Ultra Repair Tinted Moisturizer SPF 30', note: 'Hydrating base with SPF', price: '$38' },
-    { name: 'Honest Beauty Everyday Sunny Face Mineral Tinted SPF 20', note: 'Light, moisturising', price: '$20' },
+    { name: 'Tatcha The Silk Sunscreen SPF 50', note: 'Luxurious moisturising finish' },
+    { name: 'First Aid Beauty Ultra Repair Tinted Moisturizer SPF 30', note: 'Hydrating base with SPF' },
+    { name: 'Honest Beauty Everyday Sunny Face Mineral Tinted SPF 20', note: 'Light, moisturising' },
   ],
   touchUpOverMakeup: [
-    { name: 'Supergoop Glowscreen SPF 40 Mist', type: 'Spray', price: '$38', note: 'Reapply over makeup. Setting spray format.' },
-    { name: 'Kate Somerville Daily Deflector Mineral SPF 50+ Multi-Vitamin Face Protector', type: 'Mist', price: '$55', note: 'Fine mist reapplication over a full face of makeup' },
-    { name: 'Beauty of Joseon Matte Sun Stick SPF 50+ PA++++', type: 'Stick', price: '$17', note: 'Solid stick — can dab over makeup for touch-up. Clean, no mess.' },
-    { name: 'Colorescience Sunforgettable Total Protection Color Balm SPF 50', type: 'Tinted stick', price: '$48', note: 'Tinted + SPF in a stick — touch up over makeup' },
+    { name: 'Kate Somerville UncompliKated SPF 50 Soft Focus Makeup Setting Spray', type: 'Mist',  note: 'Fine mist reapplication over a full face of makeup' },
+    { name: 'Beauty of Joseon Matte Sun Stick SPF 50+ PA++++', type: 'Stick',  note: 'Solid stick — can dab over makeup for touch-up. Clean, no mess.' },
+    { name: 'Colorescience Sunforgettable Total Protection Color Balm SPF 50', type: 'Tinted stick',  note: 'Tinted + SPF in a stick — touch up over makeup' },
   ],
 };
 
@@ -206,7 +205,7 @@ export const REAPPLICATION_GUIDE = {
     '4. Remove and reapply — for very long outdoor days, remove makeup mid-day and reapply full SPF',
   ],
   indoorRule: 'UVA penetrates glass — if sitting near a window at work, SPF still applies. Reapply when you leave the building.',
-  cloudyDayRule: 'Up to 80% of UV rays penetrate clouds. Cloudy day ≠ no SPF day.',
+  
   melaninRichSkinNote: 'Even Fitzpatrick VI skin benefits from SPF — every dark spot you have was darkened by unprotected UV exposure. SPF is PIH treatment, not optional.',
 };
 
@@ -277,8 +276,3 @@ export function getAllSPFProducts() {
   };
 }
 
-export const SPF_GUIDE_STATS = {
-  productsIndexed: Object.values(SPF_PRODUCTS).flat().length,
-  fitzpatrickTypesAddressed: 6,
-  sunscreenTypesExplained: 3,
-};

@@ -112,7 +112,7 @@ or other occlusive products on skin. Worth ruling out before treating as bacteri
     salicylic_acid: {
       name: 'Salicylic Acid (BHA)',
       type: 'Beta-hydroxy acid (oil-soluble exfoliant)',
-      concentration_range: '0.5% - 2% OTC; up to 30% in professional peels',
+      
       how_it_works: `Oil-soluble, so it penetrates into the sebaceous follicle. Dissolves the
 "glue" holding dead skin cells together (desmosomes). Unclogs pores from inside.
 Anti-inflammatory properties. Mild antibacterial.`,
@@ -264,11 +264,11 @@ PREVENTING acne — and treating it early and gently — the highest-priority sk
     title: 'Diet and Acne: What the Evidence Actually Shows',
     evidence_based: {
       high_glycemic_foods: {
-        evidence_level: 'Moderate — multiple randomized controlled trials',
+        
         mechanism: `High-GI foods spike blood glucose → insulin spike → increased IGF-1
 (insulin-like growth factor) → stimulates androgen production → increased sebum output.`,
         foods: 'White bread, white rice, sugary drinks, candy, processed snacks.',
-        evidence: 'A 2007 RCT (Smith et al.) showed significant acne reduction on low-GI diet.',
+        
       },
       dairy: {
         evidence_level: 'Moderate — observational studies; mechanism plausible',
@@ -276,8 +276,7 @@ PREVENTING acne — and treating it early and gently — the highest-priority sk
 endogenous IGF-1 production. Skim milk is more acnegenic than whole milk — possibly because
 fat-removal processing concentrates whey proteins.`,
         most_implicated: 'Skim milk, whey protein supplements, ice cream.',
-        nuance: `Not everyone reacts to dairy. Population studies show correlation but individual
-response varies significantly. Elimination trial (4-6 weeks off dairy) can clarify personal response.`,
+        
       },
       whey_protein: {
         evidence_level: 'Growing — case reports and small studies',
@@ -560,11 +559,7 @@ documented in other populations. A lower-GI approach may benefit those with acne
   'south-asian': {
     community: 'South Asian (Indian, Pakistani, Bangladeshi, Sri Lankan, Nepali)',
     fitzpatrick_range: 'III-V, with warm olive to deep brown undertones',
-    intro: `South Asian communities approach acne through a dual lens: modern dermatological science
-and centuries of Ayurvedic tradition. Both frameworks offer valuable insights, and for many South
-Asian individuals, integrating both — not choosing between them — produces the best outcomes.
-Hormonal acne (especially in South Asian women, where PCOS prevalence is notably elevated) and
-acne that leaves PIH on warm-toned medium-to-deep skin are the defining clinical concerns.`,
+    
 
     primary_concerns: {
       ayurvedic_understanding: {
@@ -600,10 +595,7 @@ properties in modern research.`,
 
       pcos_and_hormonal_acne: {
         name: 'PCOS and Hormonal Acne in South Asian Women',
-        prevalence: `PCOS (Polycystic Ovary Syndrome) affects approximately 3.7-22.5% of South Asian
-women — higher than many other ethnic groups. Studies from India show PCOS prevalence of up to 22%.
-In the South Asian diaspora (UK, Canada, USA), prevalence is similarly elevated, likely due to
-genetic predisposition combined with dietary and environmental factors.`,
+        
         why_south_asian_women: `South Asian individuals have a higher tendency toward insulin resistance
 at lower BMIs compared to European populations. Insulin resistance drives PCOS — elevated insulin
 stimulates ovarian androgen (testosterone) production → increased sebum → hormonal acne.`,
@@ -647,7 +639,7 @@ and chest of the cook. This is an underrecognized acne trigger in South Asian ho
 millennia. "Haldi" application before weddings is a cultural ritual. For acne, turmeric paste
 applied to blemishes is a widespread home remedy.`,
         active_compound: 'Curcumin — anti-inflammatory, antioxidant, antibacterial (against C. acnes).',
-        evidence: 'Multiple in vitro studies confirm curcumin inhibits C. acnes and inflammatory pathways. Clinical studies growing.',
+        
         how_to_use: [
           'Turmeric + honey mask (anti-inflammatory, antibacterial)',
           'Turmeric + neem powder + water paste as spot treatment',
@@ -680,7 +672,7 @@ Neem paste, neem water, and neem oil are all used for acne.`,
         description: `A magnesium silicate clay traditionally used across South Asia for skin and
 hair. Absorbs excess oil, mildly exfoliates, and cools the skin (Pitta-pacifying in Ayurvedic terms).`,
         how_to_use: 'Mixed with rose water, neem water, or aloe vera gel to form a paste. Applied as a weekly face mask for 10-15 minutes.',
-        evidence: 'Traditional use; oil absorption is well-established. Not a primary acne treatment but good for oily skin management.',
+        
         note: 'Dries the skin significantly — always follow with moisturizer. Not recommended for dry or combination skin types.',
       },
     },
@@ -767,9 +759,7 @@ not a cosmetic one.`,
 
       hormonal_acne_caribbean: {
         name: 'Hormonal Acne in Caribbean Women',
-        description: `PCOS prevalence data specific to Caribbean women is limited, but studies of
-Afro-Caribbean and Indo-Caribbean women in the UK suggest elevated rates of insulin resistance
-and PCOS. Hormonal acne — particularly on the jawline and chin — is a common complaint.`,
+        
         approach: 'Same as general hormonal acne management. If irregular periods, excess hair growth, or weight difficulty coexist with jawline acne, pursue PCOS workup.',
       },
     },
@@ -789,9 +779,7 @@ traditional "blood purifier" for skin conditions.`,
           'Vitamin C (antioxidant)',
           'Iron and zinc (mineral support for skin)',
         ],
-        evidence: `In vitro studies confirm antibacterial activity against multiple strains including
-S. aureus and some acne-relevant bacteria. Limited human clinical trials for acne specifically.
-Traditional use is extensive.`,
+        
         how_to_use: [
           'Steep 5-6 leaves in 2 cups boiling water for 10 minutes; allow to cool; apply to skin',
           'Use as a facial rinse or apply with cotton pad to breakout areas',
@@ -871,9 +859,7 @@ ingredient compatibility with Halal principles in skincare.`,
 Wedding culture, social gatherings, and concepts of personal honor and family appearance
 create substantial psychological pressure around skin conditions. Acne can have profound
 effects on mental health, confidence, and social participation in Arab communities.`,
-        impact: `Studies show acne has higher psychological impact in cultures with stronger
-communal beauty standards. Shame, social withdrawal, and delayed marriage (in cultures where
-skin is scrutinized at marriage negotiations) are real consequences.`,
+        
         recommendation: `Address the mental health dimension alongside the physical one. Acknowledge
 that acne is a medical condition, not a hygiene failure or character flaw. Community education
 is important — acne is not caused by "not washing enough."`,
@@ -933,9 +919,7 @@ support skin health internally.`,
 black seed (Nigella sativa) is the most important traditional remedy in Arab and Islamic medicine.
 Its oil is widely used both internally and topically for acne.`,
         active_compound: 'Thymoquinone — the primary active; anti-inflammatory, antioxidant, antibacterial.',
-        evidence_for_acne: `A 2013 study (Aljabre et al.) found topical black seed oil cream was
-as effective as the standard acne treatment (combination of 1% clindamycin + 0.025% tretinoin)
-in a randomized controlled trial. This is significant evidence for a traditional remedy.`,
+        
         how_to_use: [
           'Diluted black seed oil (1-2 drops in a carrier like jojoba) as spot treatment',
           'Black seed oil + honey mask (anti-inflammatory combination)',
@@ -962,7 +946,7 @@ ghassoul clay as a skin purifying treatment.`,
           'Removes dead skin cells without mechanical abrasion',
         ],
         how_to_use: 'Mix ghassoul powder with rose water, green tea, or plain water to a spreadable paste. Apply to face for 5-10 minutes. Rinse thoroughly. Use once weekly as a deep-cleansing mask.',
-        evidence: 'Traditional use for oil control; limited clinical trials. Oil absorption is mechanically established.',
+        
         as_weekly_prevention: `Weekly ghassoul clay mask is a reasonable preventive strategy for oily,
 acne-prone skin — removes excess sebum, mildly exfoliates, and controls oil accumulation
 in pores between actives-based treatments.`,
@@ -1003,19 +987,12 @@ Certified Halal brands specifically formulated for Muslim consumers are availabl
   'latina': {
     community: 'Latina / Latinx (Mexican, Central American, South American, Caribbean Latina)',
     fitzpatrick_range: 'II-V, extremely diverse; mestiza skin typically III-IV',
-    intro: `Latina skin encompasses one of the most diverse spectrums in the world — from fair
-European-descended skin to deep indigenous and Afro-Latina complexions. The shared language
-and cultural heritage create common traditional remedy knowledge ("abuelas' remedies," or
-"remedios de abuela") across this diverse spectrum. Hormonal acne — particularly linked to PCOS,
-which has elevated prevalence in Latina women — is a defining clinical concern.`,
+    
 
     primary_concerns: {
       pcos_latina: {
         name: 'PCOS and Hormonal Acne in Latina Women',
-        prevalence: `PCOS prevalence in Latina/Hispanic women is estimated at 12-13%, among the
-highest of any ethnic group studied. Some studies in Mexican-American women show even higher rates.
-Insulin resistance, which drives PCOS, is more common in Latina women — linked to genetic factors,
-dietary patterns high in refined carbohydrates, and metabolic predispositions.`,
+        
         acne_manifestation: `Classic hormonal acne: deep cystic lesions on jawline and chin,
 worsening before menstruation, often accompanied by excess facial hair and irregular periods.`,
         cultural_barrier: `PCOS is underdiagnosed in Latina communities due to multiple factors:
@@ -1060,9 +1037,7 @@ help regulate blood sugar and thereby reduce hormonally-driven acne.`,
           'Nopal contains betalains (anti-inflammatory), vitamins C and E (antioxidant)',
           'Commercial nopal-based face masks available',
         ],
-        evidence: `Strong evidence for nopal as a hypoglycemic food (blood sugar lowering).
-Limited direct clinical evidence for topical acne treatment, but anti-inflammatory properties
-and traditional use are well documented.`,
+        
       },
 
       aloe_latina: {
@@ -1093,9 +1068,7 @@ Calendula has more clinical research; Tagetes has more traditional use in Mexico
 It is used as a diluted toner, spot treatment, and dietary supplement for skin health.`,
         rationale: `ACV contains acetic acid (antimicrobial), malic acid (mild AHA exfoliant),
 and trace minerals. Theory: the acidic pH kills bacteria and mildly exfoliates.`,
-        evidence_reality: `Limited formal clinical evidence for ACV on acne. Laboratory evidence shows
-it kills bacteria, but skin penetration and clinical outcome data is sparse. Many users report
-benefit; others report irritation.`,
+        
         safe_use: [
           'Always dilute: 1 part ACV to 3-4 parts water (minimum)',
           'Apply with cotton pad, leave on briefly (1-2 min), rinse well',
@@ -1133,9 +1106,7 @@ and use SPF the next day.`,
 can use the same approach as European skin. Medium olive skin (Fitzpatrick III-IV) should
 follow mild PIH-prevention protocols. Afro-Latina women with deeper skin should follow
 the same approach as the West African/Black American communities.`,
-      hormonal_priority: `Given elevated PCOS prevalence, always screen for hormonal causes in
-Latina women with persistent jawline/chin acne. Internal treatment is essential — topicals alone
-will not resolve PCOS-driven acne.`,
+      
     },
   },
 
@@ -1267,7 +1238,7 @@ products. K-beauty propolis ampoules (notably COSRX Propolis Light Ampule) are g
           'Antioxidant — reduces oxidative stress in acne lesions',
           'Calms redness and post-acne marks',
         ],
-        evidence: 'Growing research base. Several studies confirm antibacterial and anti-inflammatory effects of propolis relevant to acne.',
+        
         how_to_use: 'Apply propolis ampoule after toner/essence, before moisturizer. Can be used morning and night.',
         cautions: 'Bee/honey allergies — patch test carefully. Anyone with bee allergy should avoid.',
       },
@@ -1310,7 +1281,7 @@ Some herbal combinations have liver toxicity risks. Ensure herbs are from reputa
         name: 'Tea Tree Oil',
         description: `While not originally East Asian, tea tree oil has been enthusiastically adopted
 into K-beauty and Japanese skincare as an anti-acne spot treatment.`,
-        evidence: 'A 1990 randomized trial (Bassett et al.) found 5% tea tree oil gel as effective as 5% BPO for mild-to-moderate acne, with fewer side effects (though slower onset).',
+        
         how_to_use: 'Always dilute to 5% in a carrier. Apply as spot treatment to individual lesions. Do not apply to large areas of skin — too drying and potentially irritating.',
       },
     },
@@ -1336,11 +1307,7 @@ into K-beauty and Japanese skincare as an anti-acne spot treatment.`,
   'east-african': {
     community: 'East African (Ethiopian, Eritrean, Somali, Kenyan, Ugandan, Tanzanian)',
     fitzpatrick_range: 'IV-VI, with predominantly deep brown to blue-black tones',
-    intro: `East Africa encompasses remarkable diversity — from the relatively fairer skin of some
-Ethiopian and Eritrean populations to the very deep tones of many Kenyan, Ugandan, and Somali
-communities. The region has ancient traditions of medicinal plant use, incense traditions
-(frankincense, myrrh), and honey-based remedies. The acne picture is similar to West Africa —
-PIH is the dominant concern — with region-specific traditional remedies.`,
+    
 
     primary_concerns: {
       pih_east_african: {
@@ -1357,9 +1324,7 @@ deep skin tones need SPF for PIH prevention even without sunburn risk.`,
 
       hormonal_factors: {
         name: 'Hormonal Factors in East African Communities',
-        description: `PCOS and hormonal acne occur across all ethnic groups. Specific prevalence
-data for East African communities is limited in the published literature, but hormonal acne
-(jawline, chin, cyclical) should always be evaluated.`,
+        
         diet_hormonal_connection: `Traditional East African diets (injera, lentils, vegetables, some dairy
 in Ethiopian/Eritrean cuisine; rice and goat meat common in Somali and coastal Kenya) are generally
 lower in high-GI refined carbohydrates than Western diets. As East African diaspora communities
@@ -1376,9 +1341,7 @@ ancient medicinal substances known to humanity, referenced in ancient Egyptian, 
 Ayurvedic medical texts. In East African communities, frankincense is used topically and as
 incense for respiratory and skin health.`,
         active_compounds: 'Boswellic acids — particularly AKBA (acetyl-11-keto-beta-boswellic acid); potent anti-inflammatory; inhibits 5-LOX (leukotriene pathway responsible for inflammatory acne).',
-        evidence_for_skin: `Multiple studies confirm boswellic acids have significant anti-inflammatory
-effects. Research on boswellic acid cream for acne is growing. In vitro studies show inhibition
-of C. acnes inflammatory response.`,
+        
         how_to_use: [
           'Frankincense resin dissolved in carrier oil (almond, jojoba) — traditional application',
           'Commercial boswellic acid serums/creams (increasingly available)',
@@ -1412,7 +1375,7 @@ wounds and infections. Honey is applied to blemishes in traditional practice.`,
           'Honey spot treatment on individual lesions overnight',
           'Honey + neem powder mask for combined antibacterial effect',
         ],
-        evidence: 'Honey antibacterial properties are very well established. Clinical trials for acne specifically exist and show moderate effectiveness, particularly for Manuka honey.',
+        
       },
 
       shea_and_butters: {
@@ -1485,9 +1448,7 @@ significant potential for acne-prone skin.`,
           'No caffeine — not drying',
           'Tannins — mildly astringent, pore-tightening',
         ],
-        evidence: `Rooibos research is growing. Anti-inflammatory and antioxidant effects are well
-established. Animal studies show skin barrier benefit. Human clinical trials for acne specifically
-are limited but promising.`,
+        
         how_to_use: [
           'Strong brewed rooibos tea (cooled) as a toner — apply with cotton pad',
           'Rooibos tea bag as a compress on active blemishes',
@@ -1735,46 +1696,6 @@ extensive real-world testing of accessible products.`,
 // ACNE STATISTICS
 // ---------------------------------------------------------------------------
 
-export const ACNE_STATS = {
-  global_prevalence: {
-    worldwide: 'Acne affects approximately 9.4% of the global population — making it the 8th most prevalent disease worldwide (Vos et al., 2012, Global Burden of Disease).',
-    adolescent: 'Up to 85% of people aged 12-24 experience at least minor acne.',
-    adult_female: 'Adult acne in women (25+) is increasing, affecting an estimated 26% of women aged 31-40.',
-    adult_male: 'Adult acne in men is less common than in women but still affects approximately 12% of men over 25.',
-  },
-  ethnic_disparities: {
-    dermatology_access: 'Black Americans are significantly underrepresented in dermatology patients relative to population share, and overrepresented in emergency department visits for skin conditions — indicating access barriers to preventive dermatological care.',
-    research_representation: 'Studies have found that fewer than 5% of images in major dermatology textbooks depict dark skin. This training gap contributes to delayed diagnosis and suboptimal treatment of acne and PIH in darker skin tones.',
-    pcos_by_ethnicity: {
-      south_asian: '22-26% of South Asian women in some population studies',
-      latina_hispanic: '12-13%; some studies of Mexican-American women show up to 20%',
-      black_american: '8-10%; potentially underdiagnosed due to differing presentation',
-      east_asian: '5-6% (lower BMI threshold for insulin resistance affects presentation)',
-      general_population: '6-12% globally',
-    },
-  },
-  pih_burden: {
-    prevalence: 'PIH is the most common skin concern among patients with skin of color seeking dermatological care.',
-    dark_spot_duration: 'Without treatment, epidermal PIH from acne can persist 6-24 months. Without SPF, duration extends significantly.',
-    keloid_risk: 'African American individuals have a 5-16x higher risk of keloid formation than European Americans. Keloid prevalence in Africa: approximately 6% of the population.',
-  },
-  traditional_medicine: {
-    who_statistics: 'The WHO estimates 80% of the world\'s population relies on traditional medicine for primary healthcare. For skin conditions, this percentage is particularly high in low- and middle-income countries.',
-    integration_trend: 'Global skincare market integration of traditional botanical ingredients is growing at approximately 8% CAGR as of 2024. Ingredients like niacinamide, centella asiatica, and neem have moved from traditional medicine to mainstream clinical use.',
-  },
-  ingredient_evidence: {
-    salicylic_acid: 'Level 1 evidence (multiple RCTs) for comedonal and mild-moderate inflammatory acne.',
-    benzoyl_peroxide: 'Level 1 evidence (multiple RCTs); gold standard antimicrobial for acne.',
-    niacinamide: 'Level 2 evidence for acne; Level 1 for PIH reduction.',
-    azelaic_acid: 'Level 1 evidence for acne; Level 2 for PIH. Especially strong data for Fitzpatrick IV-VI skin.',
-    adapalene: 'Level 1 evidence; preferred retinoid for acne due to safety and tolerability profile.',
-    black_seed_oil: 'Level 2 (1 RCT showing equivalence to clindamycin/tretinoin combination).',
-    honey: 'Level 2 evidence for antibacterial effect; limited acne-specific RCTs.',
-    tea_tree_oil: 'Level 2 evidence (1 RCT vs BPO); slower onset but fewer side effects.',
-    rooibos: 'Level 3 evidence (in vitro studies, observational); human clinical trials ongoing.',
-  },
-};
-
 // ---------------------------------------------------------------------------
 // GETTER FUNCTIONS
 // ---------------------------------------------------------------------------
@@ -1796,10 +1717,6 @@ export function getAcneGuide(communityId) {
 
 export function getUniversalAcne() {
   return UNIVERSAL_ACNE;
-}
-
-export function getAcneStats() {
-  return ACNE_STATS;
 }
 
 export function getAllCommunityIds() {

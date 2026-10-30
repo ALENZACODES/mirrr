@@ -24,8 +24,8 @@ export const ETHNIC_SUN_CARE_GUIDES = {
     ],
     traditionalSunProtection: [
       {
-        name: 'Shea Butter Natural SPF',
-        description: 'Unrefined shea butter has a natural SPF estimated at 6–10. While far too low for full sun protection, it represents the understanding that oils provide some UV protection.',
+        name: 'Shea Butter (a moisturiser, not a sunscreen)',
+        description: 'Unrefined shea butter absorbs a little UV, far too little to count as sun protection. Its traditional role is moisture; sunscreen goes on top.',
         modernContext: 'Shea butter alone is NOT adequate sun protection. Use as a moisturizer under a proper SPF 30+ formula.',
         history: 'West African women historically applied shea butter before outdoor work and market activities — providing very modest but real UV protection.',
       },
@@ -109,7 +109,7 @@ export const ETHNIC_SUN_CARE_GUIDES = {
         name: 'Turmeric (Haldi) Skin Protection',
         description: 'Turmeric mixed with milk or curd applied to skin before outdoor exposure. Curcumin has antioxidant properties that may reduce UV-induced damage at a cellular level.',
         modernContext: 'Turmeric is an adjunct — not a sunscreen. But curcumin\'s antioxidant activity genuinely protects against UV-induced free radical damage. Use alongside SPF.',
-        topicalResearch: 'Some studies show curcumin can inhibit UV-induced inflammation when applied topically. More research needed.',
+        
       },
       {
         name: 'Full Coverage Clothing',
@@ -117,8 +117,8 @@ export const ETHNIC_SUN_CARE_GUIDES = {
         modernAdaptation: 'UPF-rated clothing for outdoor sports and activities. A sun-protective dupatta as a fashion choice.',
       },
       {
-        name: 'Coconut Oil UV Partial Protection',
-        description: 'Virgin coconut oil has an estimated natural SPF of 4–6 — primarily because of its UV-absorbing fatty acid profile.',
+        name: 'Coconut Oil (a moisturiser, not a sunscreen)',
+        description: 'Virgin coconut oil absorbs very little UV. It softens skin but does not replace sunscreen.',
         modernContext: 'Not adequate sun protection alone. Use as a moisturizer under SPF, not instead of it.',
       },
     ],
@@ -197,7 +197,7 @@ export const ETHNIC_SUN_CARE_GUIDES = {
         description: 'Fresh aloe vera (endemic to Caribbean landscapes) applied after sun exposure to cool, hydrate, and heal. The single most widely used Caribbean sun remedy.',
         method: 'Cut a fresh aloe leaf. Refrigerate for 30 minutes. Apply the cool gel to sun-exposed skin. Leave on.',
         benefit: 'Aloe\'s acemannan polysaccharide reduces UV-induced inflammation. Dramatically reduces the visible and felt impact of sunburn.',
-        science: 'Multiple studies confirm aloe vera\'s efficacy as an after-sun treatment for UV-induced burns and inflammation.',
+        
       },
       {
         name: 'Coconut Oil After-Sun Treatment',
@@ -293,7 +293,7 @@ export const ETHNIC_SUN_CARE_GUIDES = {
       ],
     },
     melasmaProtocol: {
-      prevalence: 'Melasma is extremely prevalent in Middle Eastern skin. Often called "the mask of pregnancy" but also triggered by UV, heat, and hormonal birth control.',
+      
       protocol: [
         'SPF 50+ daily WITHOUT EXCEPTION — this is non-negotiable for melasma management',
         'Tinted SPF with iron oxide (blocks visible light, which also triggers melasma)',
@@ -343,7 +343,7 @@ export const ETHNIC_SUN_CARE_GUIDES = {
       },
     ],
     latinaMelasmaGuide: {
-      prevalence: 'Melasma affects an estimated 8–35% of Latina women, making it one of the most pressing skin concerns in the community.',
+      
       triggers: ['UV exposure (primary trigger)', 'Oral contraceptives', 'Pregnancy', 'IUD hormones in some cases', 'Heat'],
       management: {
         sunProtection: 'SPF 50+ with iron oxide (iron oxide pigments block visible light, which is a melasma trigger alongside UV)',
@@ -414,7 +414,7 @@ export const ETHNIC_SUN_CARE_GUIDES = {
       {
         name: 'Green Tea Antioxidant Protection',
         description: 'Green tea (ocha in Japan, nok-cha in Korea) consumed abundantly and applied topically for antioxidant UV protection.',
-        evidence: 'EGCG in green tea has multiple documented anti-UV mechanisms: DNA repair support, anti-inflammatory effect, and antioxidant free-radical neutralization.',
+        
         topicalUse: 'Green tea extract in toners, essences, and moisturizers. Look for products with "Camellia sinensis" in the ingredients list.',
       },
       {
@@ -438,7 +438,7 @@ export const ETHNIC_SUN_CARE_GUIDES = {
         {
           format: 'Sunscreen Stick',
           description: 'Solid SPF stick for on-the-go application and reapplication over makeup.',
-          examples: ['Missha All Around Safe Block SPF50+ PA++++', 'Round Lab Dokdo Sunstick'],
+          examples: ['Missha All Around Safe Block SPF50+ PA++++', 'Round Lab Birch Juice Moisturizing Sun Cream'],
         },
         {
           format: 'Setting Spray with SPF',
@@ -481,8 +481,8 @@ export const ETHNIC_SUN_CARE_GUIDES = {
     ],
     traditionalSunProtection: [
       {
-        name: 'Shea Butter Natural Protection',
-        description: 'Shea butter applied before outdoor activities provides modest UV protection (estimated SPF 6–10) and antioxidant protection against UV-induced oxidative stress.',
+        name: 'Shea Butter Under Sunscreen',
+        description: 'Shea butter applied before outdoor activities keeps skin moisturised; its UV protection is too small to count, so it belongs under sunscreen.',
         modernContext: 'Use as a moisturizer base under SPF 30+ — not as a standalone sun protection strategy.',
       },
       {
@@ -522,10 +522,10 @@ export const ETHNIC_SUN_CARE_GUIDES = {
   'south-african': {
     communityId: 'south-african',
     communityName: 'South African',
-    sunCarePhilosophy: 'South Africa has one of the highest rates of skin cancer in the world — for white and light-skinned South Africans. But for Black South Africans, skin cancer awareness has historically been lower, and sun protection culture has been slower to develop. Today, South African dermatologists and beauty influencers are increasingly making sun protection relevant for all South African skin tones. Indigenous ingredients (rooibos, marula, baobab) are emerging as powerful antioxidant complements to modern SPF.',
+    
     uvExposureContext: {
       geography: 'South Africa spans 22°S to 35°S. Johannesburg at altitude has extreme UV. Cape Town has high UV in summer (October–March). Durban is coastal and tropical.',
-      skinCancerContext: 'South Africa has one of the world\'s highest malignant melanoma rates, primarily in the white Afrikaner and English-descent community. Black South Africans have significantly lower rates but should not be complacent.',
+      
       melaninAndUV: 'Black South African skin has significant natural melanin protection but still accumulates UV damage over time — particularly in the form of hyperpigmentation and photoaging.',
     },
     commonConcerns: [
@@ -547,12 +547,12 @@ export const ETHNIC_SUN_CARE_GUIDES = {
         description: 'Rooibos (indigenous to the Western Cape) is rich in aspalathin, a unique antioxidant found nowhere else in nature. Applied topically or consumed as tea.',
         topical: 'Rooibos extract in toners, essences, and serums applied before SPF.',
         consumed: 'Daily rooibos tea provides internal antioxidant support.',
-        science: 'Studies show rooibos aspalathin inhibits melanin production and reduces UV-induced inflammation.',
+        
       },
       {
         name: 'Baobab Oil Skin Protection',
         description: 'Baobab oil from the iconic African tree is rich in vitamins A, D, E, and omega fatty acids. Applied as an antioxidant base layer before SPF.',
-        benefit: 'Strengthens skin barrier, reducing UV penetration at a cellular level.',
+        benefit: 'Moisturises and supports the skin barrier; it is not UV protection.',
       },
       {
         name: 'Shade Culture and Ubuntu',
@@ -586,7 +586,7 @@ export const ETHNIC_SUN_CARE_GUIDES = {
     sunCarePhilosophy: 'Black American sun care is experiencing a cultural renaissance. For generations, the harmful myth that "Black people don\'t need sunscreen" (internalized from colorism and lack of community-specific dermatological guidance) left many Black Americans unprotected. Today, Black dermatologists, beauty founders, and influencers are leading a SPF-for-Black-skin movement. The creation of sunscreens formulated without white cast specifically for Black skin (Black Girl Sunscreen, Unsun Cosmetics) is transforming accessibility. Sun protection is now a growing priority in Black American beauty culture.',
     uvExposureContext: {
       skinProtection: 'Black American skin ranges from Fitzpatrick IV (lighter) to VI (deepest). Melanin provides natural UV protection but does NOT prevent UV damage, hyperpigmentation, or skin cancer.',
-      melanomaMortality: 'Black Americans have a lower incidence of melanoma but a higher mortality rate. Melanoma in Black skin is often diagnosed later and in atypical locations (palms, soles, under nails — acral lentiginous melanoma).',
+      
     },
     commonConcerns: [
       'The "Black people don\'t get skin cancer" myth — dangerous and false',
@@ -670,7 +670,7 @@ export const ETHNIC_SUN_CARE_GUIDES = {
 
 export const UNIVERSAL_SUN_CARE = {
   spfBasics: {
-    whatIsSpf: 'Sun Protection Factor — measures how much UV radiation is needed to cause sunburn relative to unprotected skin. SPF 30 blocks ~97% of UVB. SPF 50 blocks ~98%. SPF 100 blocks ~99%.',
+    
     broadSpectrum: 'Look for "broad spectrum" on the label — means protection against both UVB (burning) and UVA (aging and deeper skin damage).',
     minimumRecommendation: 'SPF 30 daily for everyone. SPF 50 for outdoor activities, beach, or skin of color managing hyperpigmentation.',
     applicationTiming: 'Apply 15–30 minutes before sun exposure for chemical sunscreens. Mineral sunscreens work immediately.',
@@ -721,11 +721,3 @@ export function getSunCareGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const SUN_CARE_STATS = {
-  moduleId: 'sun_care_ethnic_guide',
-  communitiesCovered: 9,
-  traditionalPracticesCovered: 28,
-  spfGuidesCovered: 9,
-  mythsBusted: 4,
-  version: '1.0.0',
-};

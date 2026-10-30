@@ -90,6 +90,7 @@ function renderShelves() {
       ${shelf.id === 'eyes' ? '<button type="button" class="btn btn-secondary lib-open" data-open-studio>Open the Brow &amp; Kohl Studio</button>' : ''}
       ${shelf.id === 'hair' ? '<button type="button" class="btn btn-secondary lib-open" data-open-hairlab>Open the Hair Colour Lab</button>' : ''}
       ${shelf.id === 'growth' ? '<button type="button" class="btn btn-secondary lib-open" data-open-journeys>Plan a Natural Hair Journey</button>' : ''}
+      ${shelf.id === 'skin' ? '<button type="button" class="btn btn-secondary lib-open" data-open-skin>Open the Skin Clinic</button>' : ''}
       <div class="lib-guides">${shelf.guides.map(g => `
         <button type="button" class="lib-guide${g.id === lib.openGuide ? ' lib-guide--open' : ''}" data-lib-guide="${g.id}">
           <span class="lib-guide-title">${esc(g.title)}</span>

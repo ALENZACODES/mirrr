@@ -7,7 +7,7 @@
 // ─── ACNE OVERVIEW ────────────────────────────────────────────────────────────
 
 export const ACNE_OVERVIEW = {
-  definition: 'Acne vulgaris is a chronic, inflammatory skin condition involving the pilosebaceous unit (hair follicle + sebaceous gland). It is one of the most common skin conditions globally — affecting up to 85% of people aged 12-24 and increasingly prevalent in adult women.',
+  
   cause_components: {
     sebum: 'Sebaceous glands produce sebum (skin oil). In acne-prone skin, sebum production is typically elevated (androgenic stimulation) or the sebum composition is altered.',
     follicle_hyperkeratinisation: 'The inner lining of the follicle sheds skin cells. In acne-prone skin, these cells are shed abnormally and accumulate inside the follicle, mixing with sebum to form a plug (microcomedone — the precursor to all visible acne).',
@@ -148,8 +148,8 @@ export const ACNE_TREATMENT_LADDER = {
   },
   step4: {
     level: 'Severe / Nodulocystic acne / Isotretinoin',
-    about: 'Oral isotretinoin (brand names: Accutane, Roaccutane, Epuris). Vitamin A derivative. The only treatment that addresses all four causes of acne simultaneously: reduces sebum production by up to 80%, normalises follicle keratinisation, reduces C. acnes, anti-inflammatory. 20-30% of patients have lasting remission after one course; others may need a second course.',
-    requirements: 'Requires strict monitoring (liver function, lipids, pregnancy prevention — isotretinoin causes severe birth defects; women must use two forms of contraception). In Canada: iPLEDGE / Accutane distribution programme. Monthly blood tests typically required.',
+    
+    requirements: 'Requires strict monitoring (liver function, lipids, pregnancy prevention — isotretinoin causes severe birth defects; women must use two forms of contraception). In the US this runs through the iPLEDGE programme; other countries have their own pregnancy-prevention programmes. Monthly blood tests typically required.',
     side_effects: 'Dry lips, eyes, and skin (near-universal), muscle aches, sun sensitivity, initial flare (can be significant in first 4-6 weeks). Mental health monitoring is recommended.',
   },
   procedures: {
@@ -215,7 +215,7 @@ export const ETHNIC_ACNE = {
   },
   black_american: {
     community: 'Black American',
-    notes: 'PIH is the dominant concern. A dermatologist survey found Black patients most often present about dark spots, not acne — because the marks last longer and are more prominent than the acne itself. Azelaic acid and niacinamide are first-choice actives. Heavy, occlusive products (particularly coconut oil) can be comedogenic on acne-prone skin despite the cultural tradition.',
+    
     concern: 'PIH prevention and treatment is as important as acne treatment itself.',
   },
 };
@@ -240,9 +240,3 @@ export function getEthnicAcne(communityId) {
   return ETHNIC_ACNE[key] || Object.values(ETHNIC_ACNE);
 }
 
-export const ACNE_SCIENCE_STATS = {
-  acneTypes: Object.keys(ACNE_TYPES).length,
-  locations: Object.keys(ACNE_LOCATIONS).length,
-  treatmentSteps: 4,
-  ethnicCommunities: Object.keys(ETHNIC_ACNE).length,
-};

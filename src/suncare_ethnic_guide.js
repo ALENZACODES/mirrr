@@ -8,15 +8,14 @@ export const UV_SCIENCE = {
   uvSpectrum: {
     uva: {
       range: 'UVA: 320-400nm wavelength',
-      penetration: 'Penetrates deeply into the dermis (deeper skin layer); can penetrate glass and clouds; accounts for approximately 95% of UV that reaches the earth\'s surface',
+      
       effects: 'Photoageing (the "A" in UVA = Ageing); causes direct DNA damage; generates free radicals; degrades collagen and elastin; causes pigmentation changes; associated with melanoma',
       protection: 'SPF does NOT measure UVA protection; UVA protection is measured by Persistent Pigment Darkening (PPD) test or PA+ system (used in Japan and South Korea); broad-spectrum sunscreens protect against both UVA and UVB; look for "broad-spectrum" label in the US; EU sunscreens have mandatory UVA protection relative to SPF'
     },
     uvb: {
       range: 'UVB: 280-320nm wavelength',
       penetration: 'Affects the outer skin layer (epidermis); blocked by glass; most intense at midday and in summer; varies significantly with altitude and latitude',
-      effects: 'Sunburn; the primary cause of sunburn erythema; triggers vitamin D synthesis in the skin; direct DNA damage (thymine dimers); the primary driver of squamous cell carcinoma and basal cell carcinoma; also contributes to melanoma',
-      protection: 'SPF (Sun Protection Factor) specifically measures UVB protection; SPF 30 blocks approximately 97% of UVB; SPF 50 blocks approximately 98%; the percentage difference between SPF 30 and 50 is small (97% vs 98%) but matters for long sun exposure'
+      effects: 'Sunburn; the primary cause of sunburn erythema; triggers vitamin D synthesis in the skin; direct DNA damage (thymine dimers); the primary driver of squamous cell carcinoma and basal cell carcinoma; also contributes to melanoma'
     },
     uvc: {
       range: 'UVC: 100-280nm wavelength',
@@ -25,10 +24,10 @@ export const UV_SCIENCE = {
     }
   },
   spfMath: {
-    spf30: 'SPF 30 = blocks 97% of UVB rays; means it takes 30× longer to burn vs no sunscreen',
-    spf50: 'SPF 50 = blocks 98% of UVB rays',
-    spf100: 'SPF 100 = blocks 99% of UVB rays',
-    diminishingReturns: 'Each SPF doubling provides diminishing additional protection; SPF 30 to SPF 60 adds 1% more UVB blocking; the major benefit of higher SPF comes when the product is applied thinly (most people apply 25-50% of the test amount) or fades with time — in realistic use conditions, SPF 50 provides meaningfully more protection than SPF 30',
+    
+    
+    
+    
     reapplication: 'SPF is measured from a freshly applied standard dose; sunscreen must be reapplied every 2 hours outdoors and immediately after swimming or sweating; no sunscreen is truly water-proof (only water-resistant for 40 or 80 minutes per FDA labelling rules)'
   },
   uvIndex: {
@@ -39,8 +38,7 @@ export const UV_SCIENCE = {
       high: 'UVI 6-7: High; SPF 30-50 required; wear protective clothing; limit midday sun',
       veryHigh: 'UVI 8-10: Very High; SPF 50+ required; minimise sun exposure 10am-4pm',
       extreme: 'UVI 11+: Extreme; SPF 50+ required; maximise protection; found at high altitude and near the equator'
-    },
-    geographicVariation: 'UV intensity is higher: at lower latitudes (closer to the equator); at higher altitudes (thinner atmosphere absorbs less UV); in summer vs winter; during midday vs morning/evening; on reflective surfaces (snow reflects 80% of UV; sand reflects 25%; water reflects 10%); on the South African plateau (2000m altitude in Johannesburg) and in Ethiopia\'s highlands (Addis Ababa at 2355m)'
+    }
   }
 };
 
@@ -79,13 +77,13 @@ export const SUNSCREEN_TYPES = {
 
 export const WHITE_CAST_SOLUTIONS = {
   title: 'The White Cast Problem — Solutions for Darker Skin Tones',
-  problem: 'White cast (the grey or chalky appearance left by mineral sunscreens on dark skin) is the primary reason darker-skinned individuals avoid sunscreen; studies show consistent lower sunscreen use in darker skin tone communities partly due to cosmetically unacceptable mineral formulas; white cast is a legitimate concern, not vanity — it leads to real skin health disparities',
+  
   solutions: {
     chemicalSunscreens: 'Pure chemical sunscreens leave no white cast; if oxybenzone is a concern, formulations with avobenzone-only or newer filters (Korean/Asian sunscreens with Tinosorb) avoid oxybenzone entirely; EltaMD UV Clear, Supergoop Unseen, La Roche-Posay Anthelios Chemical provide elegant formulas with no white cast',
     asianSunscreens: 'Korean and Japanese sunscreens with Tinosorb S and Tinosorb M filters are often considered the gold standard for daily wear — photostable; no white cast; lightweight; often with skincare ingredients incorporated; brands: Anessa (Shiseido); Biore UV Aqua Rich; Skin Aqua; COSRX; Beauty of Joseon; Elta MD UV AOX; these are widely available online',
     blackGirlSunscreen: 'Black Girl Sunscreen Make It Glow SPF 30 (SPF 30, chemical, specifically developed by a Black woman for dark skin tones; no white cast; leaves a subtle glow)',
     tintedOptions: 'Tinted mineral sunscreens with iron oxide pigments; the tint counteracts the white cast; the iron oxides also provide additional protection against visible light (relevant for melasma); EltaMD UV Elements Tinted; Colorescience Sunforgettable (powder SPF for reapplication over makeup)',
-    bronzingFormulas: 'Sunscreens with light-diffusing or bronzing properties: Supergoop Glowscreen SPF 40; Haus Labs by Lady Gaga Triclone Glow Serum (hybrid formula with glow)',
+    bronzingFormulas: 'Sunscreens with light-diffusing or bronzing properties: Supergoop Glowscreen SPF 40',
     layering: 'Applying tinted moisturiser or foundation over mineral sunscreen to cover the white cast — this is valid and effective; the makeup does not reduce SPF significantly if it is applied on top'
   }
 };
@@ -96,7 +94,7 @@ export const VITAMIN_D_CONSIDERATIONS = {
   melaninAndVitaminD: 'Higher melanin content in darker skin significantly reduces UVB penetration to the stratum basale where vitamin D synthesis occurs; darker-skinned individuals require 3-5× more sun exposure to produce the same amount of vitamin D as lighter-skinned individuals; this has significant implications for vitamin D deficiency risk',
   deficiencyRisk: {
     highRisk: 'Darker-skinned individuals living at higher latitudes (UK, Canada, Northern US, Scandinavia, Northern Europe) are at very high risk of vitamin D deficiency; UVB intensity at high latitudes is insufficient for vitamin D synthesis for most of the year (in the UK, UVB is too weak for vitamin D synthesis from October to April); African, South Asian, Caribbean, and Middle Eastern communities in the UK are among the most vitamin D deficient populations documented in Western countries',
-    prevalence: 'In the UK, the NHS estimates that approximately 40% of the total population is vitamin D deficient; prevalence is significantly higher in South Asian and Black British communities; in the US, vitamin D deficiency is more common in Black Americans than any other group; in dark-skinned individuals in northern climates, deficiency rates of 80% or more have been documented in studies',
+    
     symptoms: 'Vitamin D deficiency: fatigue; bone pain; muscle weakness; depression; compromised immune function; in severe cases (rickets in children; osteomalacia in adults) bone deformity; for skin, vitamin D deficiency may worsen atopic dermatitis and psoriasis'
   },
   sunscreenAndVitaminD: {
@@ -137,13 +135,13 @@ export const ETHNIC_SUNCARE_GUIDES = {
     community: 'Arab',
     uvExposure: 'The Arab world spans very different UV conditions: Gulf (Qatar, UAE, Saudi, Kuwait): extreme UV year-round (UV index 8-12+); Iraq, Syria, Egypt: very high UV summer, lower winter; North Africa (Morocco, Algeria, Tunisia): Mediterranean pattern — high summer, moderate winter; proximity to desert (no cloud cover) intensifies UV',
     cultureAndSun: 'Traditional Arab culture has practical sun protection built in: abaya (full covering garment) provides significant UV protection for women who wear it; keffiyeh/ghutra (traditional head covering) protects the head and face in Gulf culture; traditional architecture (indoor courtyards; shaded souks) limited midday sun exposure; the modern shift to cars and air-conditioned buildings has reduced some traditional sun protection while maintaining the cultural preference for lighter skin',
-    sunscreenAdvice: 'SPF 50+ for face; daily use important for melasma prevention (hormonal + UV triggers are common in the Gulf); in extreme UAE/Saudi heat, setting spray and powder help sunscreen last; the prevalence of facials and skincare in Gulf beauty culture means SPF incorporation into beauty routines is feasible',
+    
     vitaminD: 'A paradox: Middle Eastern populations have very high rates of vitamin D deficiency despite living in one of the sunniest regions on earth; reasons: covering (abaya, hijab, niqab); cultural preference for staying indoors during peak heat (40°C+); avoidance of sun for skin lightening preference; supplementation is commonly needed in the Gulf despite sun intensity'
   },
   latina: {
     community: 'Latina/Latin American',
     uvExposure: 'Latin America spans enormous geographic range: Mexico City (altitude 2240m — higher UV despite lower latitude); Brazilian northeast coast — intense UV; Andean altiplano (Bolivia, Peru at 3500-4000m — very high UV); Argentina/Chile southern tip — UV lower than tropics; ozone hole above southern South America (March-November) increases UV particularly in Patagonia',
-    mainConcern: 'Melasma is one of the most common dermatological concerns in Latina women; Latin America has some of the highest melasma prevalence in the world; the combination of sun exposure and hormonal factors (PCOS, oral contraceptive pill use) drives the prevalence; strict SPF and visible light protection (tinted sunscreens with iron oxide) are essential',
+    
     sunscreenAdvice: 'Tinted SPF 50+ with iron oxide for melasma prevention and treatment; daily application including overcast days (UVA penetrates clouds); wide-brimmed hats are popular in Mexican and Andean cultures and are effective; for tropical Latina skin: oil-control primers under SPF for longevity in heat',
     culturalNotes: 'Sunscreen use is complicated by: the "sunkissed" aesthetic prized in some Latin countries; the beach culture of Brazil and Mexico; the tanning culture in higher-income lighter-skinned Latin communities; the very legitimate concern among darker-skinned Latinas about white cast from mineral SPF; chemical formulas solve the white cast issue',
     vitaminD: 'Latin American communities in tropical/subtropical regions: generally adequate vitamin D; diaspora communities in Northern US, Canada, Spain, Italy at higher latitudes: moderate deficiency risk; darker-skinned Latina women at higher risk than lighter-skinned'
@@ -158,8 +156,8 @@ export const ETHNIC_SUNCARE_GUIDES = {
   },
   'east-african': {
     community: 'East African',
-    uvExposure: 'East Africa has complex UV: equatorial coastal (Mombasa, Dar es Salaam) — extreme UV year-round; Ethiopian highlands (Addis Ababa at 2355m) — UV increased approximately 30% by altitude vs sea level at same latitude; East African Great Lakes region — moderate-high UV; Lake Victoria area (1133m altitude) — elevated UV',
-    altitudeEffect: 'The Ethiopian highlands present a particular UV challenge: approximately 30% more UV than at sea level at the same latitude because the thinner atmosphere at altitude absorbs less UV; this means darker-skinned Ethiopians at high altitude receive paradoxically high UV exposure that their melanin alone does not fully protect against; PIH from any source worsens significantly with the high altitude UV',
+    
+    
     diaspora: 'Ethiopian, Somali, Eritrean, Kenyan, and other East African diaspora communities in Scandinavia, UK, and Northern Europe have extremely high vitamin D deficiency rates combined with low sunscreen use; the combination of very dark skin, high latitude, minimal sun exposure, and traditional modesty dress creates severe vitamin D insufficiency risk',
     sunscreenAdvice: 'Chemical or hybrid SPF 30-50; lightweight textures for hot, humid coastal environments; in Ethiopian highlands, SPF becomes particularly important despite the cold; for diaspora communities, prioritise daily SPF face use and vitamin D supplementation',
     vitaminD: 'East African diaspora in Northern Europe and North America: among the highest-risk groups for severe vitamin D deficiency globally; NHS UK specifically identifies Black British as high risk; Ethiopian and Somali communities in Scandinavia show very high deficiency rates in studies; supplementation at higher doses (2000-4000 IU daily) may be needed to correct deficiency'
@@ -168,17 +166,16 @@ export const ETHNIC_SUNCARE_GUIDES = {
     community: 'South African',
     uvExposure: 'South Africa receives extremely high UV: Johannesburg plateau (1753m above sea level) has elevated UV despite lower absolute temperature; Cape Town — Mediterranean pattern with very high summer UV; Durban subtropical — high year-round UV; the southern hemisphere ozone hole extends over southern South Africa, particularly March-October, increasing UV further compared to equivalent northern hemisphere latitudes',
     ozoneHole: 'The Antarctic ozone hole grows and shifts northward over the southern tip of South Africa each spring (September-November); UV levels during ozone hole events can be significantly higher than the UV index forecast; the 2023 ozone hole was among the largest recorded; South Africans in the Western and Eastern Cape should be particularly vigilant about SPF during this period',
-    skinCancerRisk: 'South Africa has among the highest melanoma rates in the world for the White South African population; South African weather is extremely sun-intense; Fitzpatrick I-III South African skin (Afrikaner and Cape Coloured with lighter skin tone) is at very high skin cancer risk; Fitzpatrick IV-VI Black South African skin is at lower but non-zero risk, particularly for acral lentiginous melanoma',
+    
     sunscreenAdvice: 'SPF 50+ mandatory for light-skinned South Africans; SPF 30-50 for dark-skinned South Africans with particular attention to UV prevention for PIH and hyperpigmentation; physical barriers (hat, UV-protective clothing) are widely used and appropriate given the extreme UV; South African brands: Dermalogica SA; Skin Creamery (Cape Town); Hamilton Sun (widely available in SA supermarkets)',
     vitaminD: 'South African communities in South Africa: generally adequate vitamin D from sun exposure; South African diaspora in UK: high deficiency risk; supplementation recommended for diaspora'
   },
   'black-american': {
     community: 'Black American',
     uvExposure: 'US UV index varies significantly by geography: Miami FL — near tropical, high year-round; Los Angeles CA — Mediterranean, high summer; New York NY — moderate-high summer; Seattle WA — low-moderate; Black Americans are the most geographically diverse group in the US and UV exposure varies accordingly',
-    sunscreenMythology: 'The "Black people don\'t need sunscreen" myth is one of the most damaging in Black American communities; it has led to: lower sunscreen use rates (studies show significantly lower SPF use in Black vs white Americans); delayed diagnosis of skin cancers (partly from not being checked because "Black people don\'t get skin cancer"); higher morbidity from melanoma when it does occur in Black Americans (later stage at diagnosis)',
-    melanomaCaveat: 'While melanoma incidence is much lower in Black Americans than white Americans, when Black Americans are diagnosed with melanoma: it is more often acral lentiginous melanoma (under nails, on palms/soles — not UV-driven); it is more often at advanced stage at diagnosis (partly because it is not expected and not checked); 5-year survival is significantly lower for Black Americans than white Americans with melanoma — demonstrating a health equity disparity',
-    sunscreenAdvice: 'Black Girl Sunscreen (the most celebrated Black-founded sunscreen brand; no white cast; SPF 30 and SPF 50 options); EltaMD UV Clear SPF 46 (popular among dermatologists; no white cast chemical); Supergoop! Unseen Sunscreen SPF 40 (no white cast chemical); tinted mineral SPF with iron oxide for visible light protection; daily SPF as part of skincare routine (not just beach/outdoor)',
-    vitaminD: 'Black Americans have the highest rates of vitamin D deficiency of any US demographic group; studies show approximately 80% of Black Americans have insufficient vitamin D; the combination of high melanin (reduces vitamin D synthesis) and generally lower sun exposure in northern cities creates significant deficiency risk; supplementation (1000-2000 IU daily) is appropriate for most Black Americans; higher doses (2000-4000 IU) for those with documented deficiency'
+    
+    
+    sunscreenAdvice: 'Black Girl Sunscreen (the most celebrated Black-founded sunscreen brand; no white cast; SPF 30 and SPF 50 options); EltaMD UV Clear SPF 46 (popular among dermatologists; no white cast chemical); Supergoop! Unseen Sunscreen SPF 40 (no white cast chemical); tinted mineral SPF with iron oxide for visible light protection; daily SPF as part of skincare routine (not just beach/outdoor)'
   }
 };
 
@@ -197,15 +194,3 @@ export function getSuncareGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const SUNCARE_STATS = {
-  moduleId: 'suncare_ethnic_guide',
-  version: '1.0.0',
-  topics: ['UVA UVB spectrum UV index', 'SPF 30 97% UVB blocking', 'Tinosorb photostable EU filter', 'white cast mineral sunscreen dark skin', 'vitamin D synthesis melanin 3-5x', 'Black American vitamin D deficiency 80%', 'South Asian UK vitamin D NHS', 'melasma UV iron oxide tinted SPF', 'ozone hole South Africa September November', 'acral lentiginous melanoma dark skin', 'chemical sunscreen no white cast', 'Black Girl Sunscreen founded', 'East Asian sun protection umbrella UV-cut'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'The white cast from mineral sunscreens on dark skin tones is the primary documented reason for lower sunscreen use in communities of colour — it is a legitimate concern, not vanity; the solution is using chemical or hybrid sunscreens (which leave no white cast), Asian sunscreens with Tinosorb filters, or tinted mineral formulas; "Black people don\'t need sunscreen" is a myth that has contributed to real health disparities including later-stage melanoma diagnosis in Black Americans',
-    'Darker-skinned individuals require 3-5× more sun exposure to synthesise the same amount of vitamin D as lighter-skinned individuals due to melanin absorbing the UVB that triggers vitamin D synthesis; Black Americans have the highest vitamin D deficiency rates of any US demographic (approximately 80% insufficient); South Asian British communities are similarly deficient; the practical solution for darker-skinned people living above 35° latitude is vitamin D supplementation, not reducing sunscreen use',
-    'Japanese and Korean sunscreens are widely considered the global gold standard for daily wear due to their access to advanced EU-approved UV filters (Tinosorb S and M) that are photostable (don\'t degrade in UV), lightweight, leave no white cast, and often include skincare actives; these filters have been available in Asia and Europe for years but remain unapproved in the US due to FDA review delays; Japanese brands Anessa, Biore, Skin Aqua and Korean brands COSRX, Beauty of Joseon are available internationally and recommended by dermatologists globally',
-    'The southern hemisphere ozone hole, centred over Antarctica, shifts northward over southern South Africa each spring (September-November), increasing UV levels significantly beyond normal UV index forecasts; combined with South Africa\'s already-high UV (Johannesburg plateau at 1753m altitude; extreme summer UV) and very high melanoma incidence in White South African populations, South Africa requires among the most vigilant sun protection practices globally'
-  ]
-};

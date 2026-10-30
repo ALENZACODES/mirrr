@@ -11,25 +11,24 @@ export const SKIN_BARRIER_SCIENCE = {
   },
   lipidComposition: {
     ceramides: {
-      role: 'Ceramides make up approximately 50% of the lipid matrix of the stratum corneum; they are the most important component of the skin barrier; ceramides are sphingolipids that form the lamellar bodies (layered lipid structures) of the barrier',
+      
       ceramideTypes: 'There are at least 12 ceramide types (Cer EOS, Cer NS, Cer NP, etc.); Ceramide NP (Ceramide 3) is the most studied; different ceramides serve different structural roles',
-      ageAndCeramides: 'Ceramide content decreases with age — this is a primary reason for increased skin dryness, sensitivity, and barrier impairment in aging skin; adults over 50 may have 30-40% less ceramide than young adults',
-      ethnicVariation: 'Studies have found significant variation in ceramide levels between ethnic groups: Black/African American skin has been found to have higher overall ceramide content than white skin in some studies, which may partly explain why Black skin shows less clinical dryness despite having higher TEWL in some measurements; research is ongoing and the picture is complex'
+      
     },
     fattyAcids: {
-      role: 'Free fatty acids (primarily linoleic acid, oleic acid, palmitic acid) make up approximately 15% of the stratum corneum lipid matrix; they contribute to the acidic pH and structural integrity of the barrier',
+      
       linoleicAcid: 'Linoleic acid (an omega-6 essential fatty acid) is particularly important for barrier integrity; deficiency of linoleic acid is associated with dry, scaly skin and barrier impairment; it cannot be synthesised by the body and must come from diet or topical application',
       note: 'This is why facial oils rich in linoleic acid (rosehip, hemp seed, sea buckthorn) are beneficial for barrier support, while high-oleic oils (marula, argan, olive oil) are better for moisturisation than barrier repair'
     },
     cholesterol: {
-      role: 'Cholesterol makes up approximately 25% of the stratum corneum lipid matrix; it regulates the fluidity and permeability of the lipid bilayers; without sufficient cholesterol, the barrier becomes too rigid or too permeable',
+      
       practical: 'This is why some barrier repair creams include cholesterol as an ingredient alongside ceramides; the ideal ratio for barrier repair is roughly ceramides:cholesterol:fatty acids = 3:1:1'
     }
   },
   naturalMoisturisingFactor: {
     definition: 'NMF (Natural Moisturising Factor) is a collection of water-soluble compounds found within the corneocytes (skin cells) of the stratum corneum; NMF is hygroscopic — it draws water from the environment and from deeper skin layers to maintain skin hydration',
     components: 'NMF includes amino acids (40%), PCA (pyrrolidone carboxylic acid, 12%), lactate (12%), urea (7%), and smaller amounts of sugars, ions, and other organic acids',
-    filaggrin: 'Filaggrin is a protein essential for NMF production; it breaks down into the amino acid components of NMF; mutations in the filaggrin gene are strongly associated with atopic dermatitis (eczema) and ichthyosis; approximately 10% of people of European descent carry a filaggrin mutation; filaggrin mutations are much rarer in East Asian and African populations (which may partly explain why atopic dermatitis, though still present, may present differently)',
+    
     importance: 'When NMF is depleted (through excessive cleansing, harsh surfactants, hot water, low humidity), the skin becomes dehydrated even if the structural barrier is intact; NMF is distinct from the lipid barrier — you can have good structural barrier but depleted NMF, or vice versa'
   },
   acidMantle: {
@@ -100,7 +99,7 @@ export const SLUGGING_GUIDE = {
   title: 'Slugging — The Vaseline Final Step',
   whatItIs: 'Slugging is the practice of applying a thin layer of petroleum jelly (Vaseline) or another occlusive over your entire skincare routine as the final step; the name comes from the glistening, slug-like appearance of the face afterwards',
   popularised: 'Popularised as a Korean skincare technique on Reddit and TikTok from 2020-2022; the term "slugging" was popularised by Reddit\'s r/SkincareAddiction community; the practice itself has been used by dermatologists for decades to treat barrier damage',
-  howItWorks: 'Petroleum jelly is a mixture of mineral oils and waxes; it does not penetrate the skin and does not add moisture; it is purely occlusive — it creates a physical seal on the surface that dramatically reduces TEWL; studies show petroleum jelly reduces TEWL by up to 98%; this keeps all the moisture applied underneath locked in',
+  
   benefits: ['Dramatically improves skin hydration overnight', 'Accelerates barrier repair', 'Reduces sensitivity by protecting the compromised barrier from environmental irritants', 'Reduces fine lines temporarily (by keeping skin hydrated)', 'Inexpensive and highly evidence-based'],
   whoShouldSlug: ['People with dry or very dry skin', 'People with a compromised or recovering barrier', 'People in dry or cold climates', 'Aging skin with reduced lipid production'],
   whoShouldAvoid: ['People prone to milia (small white cysts); petroleum jelly does not cause acne (it is non-comedogenic) but can cause milia in some people by trapping dead skin cells', 'Oily or acne-prone skin may find slugging too heavy', 'Anyone with a current active breakout'],
@@ -132,7 +131,7 @@ export const ETHNIC_BARRIER_GUIDE = {
     ingredients: 'Avocado oil (high oleic and linoleic acid — good for barrier); rosehip oil (linoleic acid — good for barrier repair); aloe vera (widely used throughout Latin America)'
   },
   'east-asian': {
-    skinCharacteristics: 'East Asian skin (Fitzpatrick II-III) typically has lower transepidermal water loss than European skin in some studies, suggesting a stronger barrier baseline; however, the K-beauty and J-beauty industries have driven enormous focus on barrier care, suggesting sensitivity and barrier concerns are very common',
+    skinCharacteristics: 'East Asian skin (often Fitzpatrick II-IV): measurements of barrier water loss compared with other groups disagree, and many people report sensitivity; K-beauty and J-beauty put barrier care at the centre of the routine',
     layering: 'The K-beauty layering approach (toner, essence, serum, ampoule, moisturiser) can paradoxically lead to barrier disruption if some layers contain active ingredients or alcohol; the philosophy of layering moisture is correct but product choice matters',
     doubleCleanseNote: 'The double cleanse (oil cleanser + water cleanser) standard in K-beauty can be barrier-disruptive if the second step uses a harsh cleanser; the first oil cleanse is very gentle; the second cleanse should be equally gentle (a low-surfactant milky cleanser rather than a foaming gel)'
   },
@@ -147,7 +146,7 @@ export const ETHNIC_BARRIER_GUIDE = {
     rooibos: 'Rooibos (Aspalathus linearis) — indigenous to the Western Cape of South Africa — contains the unique antioxidant aspalathin; rooibos tea infusion and rooibos extract are used in South African skincare products; anti-inflammatory and antioxidant benefits for skin'
   },
   'black-american': {
-    skinCharacteristics: 'Fitzpatrick IV-VI primarily; higher melanin content provides some photoprotection but does not eliminate the need for SPF or barrier care; some studies show higher TEWL in Black skin despite higher ceramide content — an apparent paradox suggesting complex barrier dynamics',
+    
     ashySkinconcern: 'Ashy, dry-looking skin is a primary concern; the standard beauty product market historically did not prioritise products for this concern as effectively as for lighter skin tones; Black-owned beauty brands have pioneered heavy-duty moisturisers and barrier products',
     shea: 'Shea butter (imported from West Africa or sourced from US Black-owned brands) is a cornerstone of Black American skin and hair care; used in its raw form or as an ingredient in countless skincare products',
     skinIssues: 'Eczema (atopic dermatitis) disproportionately affects Black children in the US; research is ongoing on the causes; barrier repair approaches developed for eczema-prone skin are highly relevant for the Black American community'
@@ -190,17 +189,3 @@ export function getEthnicBarrierGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const SKIN_BARRIER_STATS = {
-  moduleId: 'skin_barrier_guide',
-  version: '1.0.0',
-  topics: ['skin barrier', 'stratum corneum', 'ceramides', 'TEWL', 'barrier repair', 'slugging', 'vaseline', 'acid mantle', 'NMF', 'filaggrin', 'linoleic acid', 'ashy skin', 'barrier damage', 'overexfoliation', 'dry skin', 'sensitive skin', 'eczema', 'atopic dermatitis', 'ceramide moisturiser'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'The skin barrier lipid matrix has an ideal ratio of approximately ceramides:cholesterol:fatty acids = 3:1:1 — barrier repair moisturisers that include all three components are more effective than those with ceramides alone',
-    'Filaggrin gene mutations are found in approximately 10% of people of European descent and are strongly associated with atopic dermatitis; they are much rarer in East Asian and African populations, which may partly explain different presentations of eczema across ethnicities',
-    'Petroleum jelly (Vaseline) reduces TEWL by up to 98% — it is the most effective occlusive available and is non-comedogenic; the "slugging" trend makes this dermatological knowledge mainstream',
-    'The "ashy" appearance of dry dark skin is caused by the same barrier disruption that causes flaking on light skin — the difference is visibility; white skin fragments are highly visible against deeply pigmented skin',
-    'South Asian skin with a compromised barrier is at high PIH (post-inflammatory hyperpigmentation) risk from any continued irritation — this is why the "stop all actives" step in barrier repair is especially critical for this community',
-    'Marula oil from the marula tree native to sub-Saharan Africa has been used for skin care for generations before being popularised globally by brands like Drunk Elephant'
-  ]
-};

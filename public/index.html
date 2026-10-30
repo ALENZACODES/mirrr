@@ -363,6 +363,7 @@
             <button class="nav-link" data-view="face" role="menuitem">My Face</button>
             <button class="nav-link" data-view="studio" role="menuitem">Brow &amp; Kohl Studio</button>
             <button class="nav-link" data-view="hairlab" role="menuitem">Hair Colour Lab</button>
+            <button class="nav-link" data-view="skin" role="menuitem">Skin Clinic</button>
             <button class="nav-link" data-view="style-match" role="menuitem">Style Match</button>
             <button class="nav-link" data-view="quiz" role="menuitem">DNA Quiz</button>
             <button class="nav-link" data-view="wig" role="menuitem">Wig Match</button>
@@ -1096,6 +1097,20 @@
       </div>
     </section>
 
+    <section id="view-skin" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Skin Clinic</h2>
+        <p class="view-sub">Dark marks, melasma, breakouts, a sore barrier, eczema or rosacea: a routine, the ingredients that suit your skin type, sunscreen without a white cast, and how long it really takes.</p>
+      </div>
+      <div class="st-wrap">
+        <div id="skControls" class="st-controls"></div>
+        <div id="skPreview" class="sk-preview" aria-live="polite"></div>
+        <div id="skSummary" class="hl-summary"></div>
+        <div id="skPlan" class="st-plan"></div>
+        <p class="lib-disclaimer">The skin patch is an illustration in the Monk Skin Tone Scale tone you pick (Ellis Monk / Google, CC BY 4.0), not your photo. Plans come from the skin guides and are not a diagnosis; anything painful, spreading or not improving needs a dermatologist.</p>
+      </div>
+    </section>
+
     <section id="view-help" class="view hidden">
       <div class="view-header">
         <h2 class="view-title">Help, Privacy &amp; About</h2>
@@ -1257,6 +1272,7 @@
   <script type="module" src="studio.js"></script>
   <script src="hairlab.js" defer></script>
   <script src="journeys.js" defer></script>
+  <script src="skin.js" defer></script>
   <script>
     // Community detail panel interactions
     (function() {

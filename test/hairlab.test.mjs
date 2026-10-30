@@ -145,3 +145,20 @@ test('hair lab routes over HTTP', async () => {
   assert.equal((await fetch(`${B}/api/hairlab/journey`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
   assert.ok(html.includes('data-hl-tab="journeys"') && html.includes('src="journeys.js"'));
 });
+
+// The Skin Clinic shares this file's server so the suite starts one process, not two.
+test('skin clinic routes over HTTP', async () => {
+  const B = `http://127.0.0.1:${PORT}`;
+  const h = { 'x-forwarded-for': '10.6.6.7' };
+  const o = await (await fetch(`${B}/api/skin/options`, { headers: h })).json();
+  assert.equal(o.concerns.length, 7); assert.equal(o.tones.length, 10);
+  const r = await fetch(`${B}/api/skin/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ concern: 'melasma', fitzpatrick: 'VI', community: 'latina' }) });
+  assert.equal(r.status, 200);
+  const p = await r.json();
+  assert.equal(p.choices.concern, 'melasma'); assert.equal(p.community.id, 'latina');
+  assert.equal((await fetch(`${B}/api/skin/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  const html = await (await fetch(`${B}/`, { headers: h })).text();
+  assert.ok(html.includes('data-view="skin"') && html.includes('src="skin.js"'));
+  const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
+  assert.equal(lib.shelves.find(s => s.id === 'skin').guides.length, 13);
+});

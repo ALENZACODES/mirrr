@@ -11,7 +11,7 @@ export const UV_SCIENCE = {
     uva: {
       type: 'UVA (320-400nm)',
       penetration: 'Penetrates deep into the dermis — the middle layer of skin where collagen, elastin, and fibroblasts live.',
-      percentage: 'Makes up approximately 95% of UV reaching the Earth\'s surface.',
+      
       damage: 'Primary driver of photoaging — breaks down collagen and elastin, causing wrinkles, laxity, and leathery texture. Also causes indirect DNA damage via free radical generation. A — stands for Aging.',
       glass: 'UVA PENETRATES GLASS. You receive UVA exposure through car windows and office windows. This is why left-side facial skin often ages faster in people who drive.',
       constant: 'UVA levels remain relatively constant throughout the day and year, unlike UVB.',
@@ -19,7 +19,7 @@ export const UV_SCIENCE = {
     uvb: {
       type: 'UVB (280-320nm)',
       penetration: 'Shorter wavelength — primarily absorbed in the epidermis (outer skin layer).',
-      percentage: 'Makes up approximately 5% of UV reaching Earth\'s surface.',
+      
       damage: 'Direct DNA damage — photoproducts form in the DNA of skin cells. The primary cause of sunburn (erythema). The primary cause of skin cancer (via accumulated DNA mutations). B — stands for Burning.',
       variable: 'UVB is highest midday (10am-4pm), in summer, at high altitude, and near the equator.',
       glass: 'Standard glass BLOCKS UVB. Windshields have additional UV-filtering treatment.',
@@ -98,9 +98,9 @@ export const SUN_DAMAGE_TYPES = {
 export const SPF_GUIDE = {
   what_spf_means: {
     definition: 'Sun Protection Factor — measures the fraction of UVB that reaches the skin compared to unprotected skin.',
-    spf_30: 'SPF 30 allows 1/30 of UVB through = blocks approximately 97% of UVB.',
-    spf_50: 'SPF 50 allows 1/50 of UVB through = blocks approximately 98% of UVB.',
-    spf_100: 'SPF 100 allows 1/100 of UVB through = blocks approximately 99% of UVB.',
+    
+    
+    
     practical: 'The difference between SPF 30 and 50 is small (97% vs 98%). SPF 30-50+ is the recommended range. Higher SPF provides marginal additional benefit but is not harmful.',
     uvb_only: 'SPF is a measure of UVB protection ONLY. For full UVA protection, look for "broad-spectrum" on the label (regulated to mean UVA protection exists).',
   },
@@ -128,7 +128,7 @@ export const SPF_GUIDE = {
     },
   },
   application: {
-    amount: '1/4 teaspoon (approximately 1.5ml) for the face. 2mg/cm² for the body. Most people apply 20-50% of the recommended amount — this drastically reduces effective protection.',
+    
     timing: 'Chemical SPF: 15-20 minutes before UV exposure. Mineral SPF: immediately protective.',
     reapplication: 'Every 2 hours of UV exposure. Immediately after swimming or sweating.',
     layering: 'SPF goes on AFTER moisturiser and before makeup. Do not mix SPF into moisturiser or makeup — this dilutes the SPF.',
@@ -136,7 +136,7 @@ export const SPF_GUIDE = {
   common_mistakes: {
     not_enough: 'Under-application — most common error. Use enough.',
     not_reapplying: 'SPF wears off with sweating, touching face, and exposure time. Reapply.',
-    skipping_cloudy: 'UV penetrates clouds. Up to 80% of UV reaches skin on overcast days. SPF needed on cloudy days.',
+    
     skipping_winter: 'UV persists year-round. UVA (the aging ray) doesn\'t reduce much in winter. SPF in winter, especially for the face.',
     skipping_indoors: 'UVA penetrates glass. Apply SPF before sitting near windows or driving.',
   },
@@ -221,14 +221,14 @@ export const ETHNIC_SUN_DAMAGE = {
   },
   east_asian: {
     community: 'East Asian',
-    sun_protection_culture: 'East Asian (particularly South Korean and Japanese) sun protection culture is among the most developed in the world. UV-protective clothing, hats, UV umbrellas, and daily SPF are mainstream and widely practiced.',
+    
     driver: 'The cultural ideal of even, fair skin (preferred in some East Asian beauty standards) drives excellent SPF compliance.',
     innovation: 'Korean and Japanese SPF formulations are often superior to Western formulations — ultra-lightweight, skin-like finish, elegant texture. Korean "essence SPFs" are near-invisible.',
     recommendation: 'Continue excellent SPF habits. Year-round UVA protection for anti-aging.',
   },
   black_american: {
     community: 'Black American',
-    spf_adoption: 'Surveys show SPF adoption is lower in the Black American community than in white or Asian American communities. Contributing factors: the melanin protects fully myth, historical exclusion from SPF marketing, products with white cast (making mineral SPFs impractical), physician recommendation gaps.',
+    
     white_cast: 'White cast from traditional mineral SPFs on deep skin has been a practical barrier to SPF adoption. Chemical and tinted mineral SPFs (Black Girl Sunscreen, Unsun, Fenty Skin) formulated specifically for deep skin have significantly improved this.',
     sun_cancer_note: 'Although melanoma is less common in Black Americans, acral lentiginous melanoma (under nails, palms, soles) occurs at similar rates to white Americans and is often diagnosed late.',
     recommendation: 'Community education around SPF. Brands formulated specifically for dark skin without white cast. Normalising SPF in Black American beauty culture.',
@@ -241,7 +241,7 @@ export const ETHNIC_SUN_DAMAGE = {
   },
   east_african: {
     community: 'East African',
-    high_altitude: 'Ethiopia, Eritrea, Rwanda are high-altitude countries — UV intensity increases with altitude (approximately 10-12% per 1000m elevation). East Africans face higher UV than coastal counterparts.',
+    
     recommendation: 'SPF adoption education. The combination of equatorial latitude + high altitude creates very high UV exposure.',
   },
   south_african: {
@@ -272,10 +272,3 @@ export function getEthnicSunDamage(communityId) {
   return ETHNIC_SUN_DAMAGE[key] || Object.values(ETHNIC_SUN_DAMAGE);
 }
 
-export const SUN_DAMAGE_STATS = {
-  damageTypes: Object.keys(SUN_DAMAGE_TYPES).length,
-  spfTypes: Object.keys(SPF_GUIDE.types).length,
-  topicalTreatments: Object.keys(SUN_DAMAGE_REVERSAL.topical).length,
-  professionalTreatments: Object.keys(SUN_DAMAGE_REVERSAL.professional).length,
-  ethnicEntries: Object.keys(ETHNIC_SUN_DAMAGE).length,
-};

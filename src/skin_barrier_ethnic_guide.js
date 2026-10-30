@@ -12,8 +12,8 @@ export const ETHNIC_SKIN_BARRIER_GUIDES = {
     communityId: 'west-african',
     communityName: 'West African',
     barrierProfile: {
-      description: 'West African skin (and broadly, skin with high melanin content) has a skin barrier with distinct characteristics that are often misunderstood by mainstream dermatology. The assumption that "Black skin is tougher" is a harmful myth. In fact, Black skin has a more reactive stratum corneum in certain respects, with higher rates of transepidermal water loss (TEWL) in some studies — meaning the barrier requires consistent and thoughtful protection.',
-      ceramideContent: 'Studies have shown lower ceramide content in darker skin tones (Fitzpatrick IV-VI) compared to lighter tones, contributing to the tendency toward dryness and ashy appearance.',
+      description: 'West African skin (and broadly, skin with high melanin content) has a skin barrier with distinct characteristics that are often misunderstood by mainstream dermatology. The assumption that "Black skin is tougher" is a harmful myth. Measurements of water loss through Black skin disagree from study to study, and ashy, dry-looking skin is common, so the barrier still needs consistent and thoughtful care.',
+      
       sebumProduction: 'Sebum production varies by individual, but higher sebum in the T-zone with dryness on the cheeks is a common pattern in West African skin types.',
       uniqueStrengths: 'Higher melanin content provides inherent UV protection (though NOT sufficient — SPF is still required). Greater skin thickness in some studies may offer structural resilience.',
     },
@@ -232,15 +232,13 @@ export const ETHNIC_SKIN_BARRIER_GUIDES = {
   'south-african': {
     communityId: 'south-african',
     communityName: 'South African',
-    barrierProfile: {
-      description: 'South African skin reflects the nation\'s extraordinary diversity: Bantu-origin skin (Zulu, Xhosa, Sotho, Tswana) is Fitzpatrick V-VI; Cape Malay and Indian heritage communities are Fitzpatrick III-IV; Afrikaner and other European-descended South Africans are Fitzpatrick I-III. South Africa\'s UV index is among the highest in the world — Johannesburg at high altitude receives intense UV year-round, and the South African coast receives extreme summer UV. This makes barrier protection from UV-induced damage a universal concern across all ethnic groups.',
-    },
+    
     uniqueBarrierAssets: {
-      description: 'South Africa\'s extraordinary endemic flora provides some of the world\'s most effective barrier-supporting botanicals.',
+      
       plants: [
         { plant: 'Rooibos (Aspalathus linearis)', mechanism: 'Aspalathin — a unique dihydrochalcone antioxidant found only in rooibos — has been shown to reduce UV-induced barrier damage. Zinc in rooibos supports barrier enzyme activity.', use: 'Rooibos toner (cooled tea). Rooibos-infused skincare products. Consumed as tea.' },
         { plant: 'Aloe Ferox (Cape Aloe)', mechanism: 'Higher polysaccharide content than aloe vera. More potent barrier support, healing, and anti-inflammatory action.', use: 'Fresh aloe ferox gel applied to skin. Aloe ferox-based skincare products.' },
-        { plant: 'Marula Oil (Sclerocarya birrea)', mechanism: 'Extremely high oleic acid (up to 76%) — the same fatty acid found in human sebum. Mimics the skin\'s natural oil. Absorbs rapidly without residue. Rich in procyanidin antioxidants.', use: 'Applied as a facial oil or body oil on damp skin. Blended into DIY skincare.' },
+        { plant: 'Marula Oil (Sclerocarya birrea)',  use: 'Applied as a facial oil or body oil on damp skin. Blended into DIY skincare.' },
         { plant: 'Kalahari Melon Seed Oil', mechanism: 'Rich in linoleic acid (omega-6) — a critical fatty acid for ceramide synthesis. Barriers low in ceramides benefit particularly from linoleic acid supplementation.', use: 'Facial oil. Included in South African natural skincare formulations.' },
       ],
     },
@@ -312,7 +310,7 @@ export const UNIVERSAL_SKIN_BARRIER = {
   },
 
   ceramides: {
-    description: 'Ceramides are the most critical lipids in the skin barrier — comprising approximately 50% of the barrier\'s lipid matrix. Without adequate ceramides, the barrier cannot hold moisture or protect against environmental damage.',
+    
     typesAndFunctions: [
       'Ceramide 1 (EOS): Critical for overall barrier organization',
       'Ceramide 3 (NP): Most abundant; water retention',
@@ -342,13 +340,13 @@ export const UNIVERSAL_SKIN_BARRIER = {
   },
 
   barrierRepairIngredients: [
-    { ingredient: 'Ceramides', function: 'Direct barrier lipid replenishment', sources: 'CeraVe, Curel, Elizabeth Arden Ceramide, wheat germ oil, sunflower oil' },
+    { ingredient: 'Ceramides', function: 'Direct barrier lipid replenishment' },
     { ingredient: 'Niacinamide (Vitamin B3)', function: 'Stimulates ceramide synthesis, reduces TEWL, anti-inflammatory, PIH reduction', dosage: '2-10% effective range', suitability: 'All skin types, all skin tones. A universal hero ingredient.' },
     { ingredient: 'Hyaluronic Acid', function: 'Humectant — draws moisture into the skin. Can hold 1000x its weight in water.', note: 'Must be applied to damp skin and immediately followed with an emollient/occludent or it will pull moisture out of skin in dry environments.' },
     { ingredient: 'Glycerin', function: 'The most studied humectant. Draws moisture from environment and from deeper skin layers.', suitability: 'All skin types. Very gentle.' },
-    { ingredient: 'Petrolatum (Petroleum Jelly)', function: 'The gold standard occludent. Reduces TEWL by up to 98%.', suitability: 'All skin types topically. Some prefer to use on body rather than face (comedogenicity concerns, though evidence is mixed).' },
-    { ingredient: 'Squalane', function: 'Emollient. Mimics the skin\'s natural squalene (a natural skin oil that declines with age). Lightweight, non-comedogenic.', source: 'Plant-derived (olive, sugarcane). The gold standard facial oil for barrier support.' },
-    { ingredient: 'Linoleic Acid (Omega-6)', function: 'A ceramide precursor. Skin deficient in linoleic acid has compromised barriers.', sources: 'Rosehip seed oil, sunflower oil, safflower oil. Particularly important for acne-prone skin (which is commonly linoleic acid deficient).' },
+    { ingredient: 'Petrolatum (Petroleum Jelly)',  suitability: 'All skin types topically. Some prefer to use on body rather than face (comedogenicity concerns, though evidence is mixed).' },
+    { ingredient: 'Squalane', function: 'Emollient. Mimics the skin\'s natural squalene (a natural skin oil that declines with age). Lightweight, non-comedogenic.' },
+    { ingredient: 'Linoleic Acid (Omega-6)', function: 'A ceramide precursor. Skin deficient in linoleic acid has compromised barriers.' },
     { ingredient: 'Centella Asiatica (Cica)', function: 'Anti-inflammatory. Stimulates collagen synthesis. Promotes barrier repair.', products: 'Dr. Jart Cicapair, numerous K-beauty products. Growing evidence base.' },
     { ingredient: 'Panthenol (Provitamin B5)', function: 'Penetrates the skin and converts to pantothenic acid. Highly effective humectant and skin soother. Supports barrier repair.', products: 'Found in countless skincare products. Very gentle.' },
     { ingredient: 'Aloe Vera', function: 'Polysaccharides support barrier function. Anti-inflammatory. Hydrating.', note: 'Best used in its whole form (from the plant) or as a product where it is the primary ingredient.' },
@@ -397,10 +395,3 @@ export function getSkinBarrierGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const SKIN_BARRIER_STATS = {
-  moduleId: 'skin_barrier_ethnic_guide',
-  communitiesCovered: 9,
-  barrierIngredientsCovered: 12,
-  traditionalPracticesCovered: 35,
-  version: '1.0.0',
-};

@@ -35,7 +35,7 @@ export const MELANIN_SCIENCE = {
   },
 
   fitzpatrick_scale: {
-    overview: 'The Fitzpatrick scale (developed by dermatologist Thomas Fitzpatrick in 1975) classifies skin types I through VI based on how skin responds to UV exposure. It remains the clinical standard for treatment decisions, though it was originally designed with lighter skin in mind and has limitations for accurately representing the full range of darker skin tones.',
+    
     types: {
       I: 'Always burns, never tans. Very fair, often with freckles, light eyes, red or blonde hair. Hyperpigmentation risk: low for PIH, higher for sunburn-induced freckling.',
       II: 'Usually burns, sometimes tans. Fair skin. Hyperpigmentation risk: moderate.',
@@ -161,7 +161,7 @@ export const UNIVERSAL_HYPERPIGMENTATION = {
 
   colorism_awareness: {
     what_is_colorism: 'Colorism is prejudice or discrimination against individuals with a darker skin tone, typically among people of the same ethnic or racial group. It has roots in colonialism and continues to affect communities worldwide, placing social value on lighter skin.',
-    global_impact: 'The global skin lightening market was valued at over USD 8 billion in 2023 and is projected to grow significantly — driven in part by colorism-induced social pressures in South Asian, East Asian, West African, Caribbean, and Latin American communities.',
+    
     harmful_messages: 'Advertising across South Asia, East Africa, and Southeast Asia has historically equated lighter skin with beauty, success, and marriageability. These messages create real psychological harm and drive demand for dangerous unregulated products.',
     reclaiming_narrative: 'A growing global movement — led by dermatologists, beauty educators, and community advocates — reframes the conversation: the goal is not to become lighter, it is to achieve even-toned, healthy, glowing skin at your natural complexion. Treating PIH is legitimate skin health; bleaching to change your baseline tone carries physical and psychological costs.',
     distinction: 'Treating hyperpigmentation (dark spots, PIH, melasma) is skin health — it returns skin to its natural baseline. Attempting to permanently bleach skin lighter than one\'s natural tone is a different pursuit with far greater risk and complex cultural implications.',
@@ -169,24 +169,6 @@ export const UNIVERSAL_HYPERPIGMENTATION = {
 };
 
 // ─── HYPERPIGMENTATION STATS ──────────────────────────────────────────────────
-
-export const HYPERPIGMENTATION_STATS = {
-  global_prevalence: {
-    pih: 'PIH affects an estimated 65% of people with Fitzpatrick III-VI skin who experience inflammatory skin conditions (acne, eczema, psoriasis).',
-    melasma: 'Melasma affects approximately 5–6 million people in the US alone. Worldwide prevalence estimated at 1–50% depending on population and UV exposure. Women account for ~90% of melasma cases.',
-    darker_skin_burden: 'In studies of dermatology outpatient clinics, pigmentation disorders (PIH, melasma, vitiligo) are among the top 3 presenting conditions in patients with Fitzpatrick IV-VI skin.',
-  },
-  market_data: {
-    global_brightening_market: 'USD 8.6 billion in 2023; projected to reach USD 14.9 billion by 2030.',
-    largest_markets: 'Asia-Pacific (driven by South Asia, Southeast Asia, East Asia), Sub-Saharan Africa, Latin America.',
-    dangerous_product_prevalence: 'The WHO estimates up to 77% of women in Nigeria, 59% in Togo, 27% in Senegal use skin-lightening products — many containing mercury or unlabelled steroids.',
-  },
-  clinical_data: {
-    treatment_success: 'Triple combination cream (hydroquinone + tretinoin + fluocinolone) achieves complete clearing of melasma in approximately 77% of patients after 8 weeks — but recurrence is high without maintenance.',
-    spf_impact: 'Studies consistently show that SPF use alone reduces melasma severity and slows PIH formation. SPF 50 outperforms SPF 30 in UV-triggered pigmentation prevention.',
-    tranexamic_acid_evidence: 'Multiple RCTs show oral tranexamic acid (250mg twice daily) significantly improves melasma at 8–12 weeks. Topical tranexamic acid also shows efficacy in comparative studies.',
-  },
-};
 
 // ─── ETHNIC HYPERPIGMENTATION GUIDES ─────────────────────────────────────────
 
@@ -198,24 +180,24 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
     communityName: 'West African',
     skinToneRange: {
       fitzpatrick: 'Predominantly V–VI, with some IV',
-      description: 'Rich medium brown to very deep brown and blue-black skin. Among the highest melanin density of any population. Melanocytes are highly reactive, producing intense, fast, and long-lasting PIH in response to any skin trauma or inflammation.',
+      description: 'Rich medium brown to very deep brown and blue-black skin. Melanocytes are highly reactive, producing intense, fast, and long-lasting PIH in response to any skin trauma or inflammation.',
       nuance: 'West African skin is not monolithic — there is significant diversity across the region. Skin tones range from lighter olive-brown in parts of Senegal and Ghana\'s coastal communities to very deep tones across Nigeria, Mali, Guinea, and the Sahel. Treatment must always be individualised.',
     },
 
     primaryHyperpigmentationTypes: {
       pih: {
-        prevalence: 'Extremely common — PIH is the most pressing skin concern across West African communities. Nearly every inflammatory event (acne, ingrown hair, insect bite, minor cut) leaves a dark mark that can persist for 12–24 months without treatment.',
+        
         severity: 'Tends to be darker and more persistent than in lighter skin types due to high melanocyte reactivity. Dermal PIH (blue-grey deep pigmentation) is more likely to develop in FP VI skin.',
         common_triggers: ['Acne and acne picking', 'Razor bumps (pseudofolliculitis barbae)', 'Ingrown hairs', 'Eczema flares', 'Insect bites', 'Friction from clothing or wigs', 'Hair removal (threading, waxing)'],
       },
       melasma: {
-        prevalence: 'Significant, particularly in women using hormonal contraceptives, during pregnancy, or post-partum. Often presents as very dark patches on cheeks, forehead, and upper lip.',
+        
         pattern: 'Centrofacial pattern (forehead, nose, upper lip, chin) is most common in West African women with melasma.',
         aggravators: 'Hormonal contraceptives, pregnancy, heat, and sun exposure all trigger or worsen melasma. Even cooking over open flames or high heat sources has been implicated as a trigger (infrared radiation stimulates melanocytes).',
       },
       pseudofolliculitis_barbae: {
         what: 'Razor bumps — a form of traumatic PIH and inflammatory response specific to curly and coily hair. When tightly coiled hairs are cut, they curl back and re-enter the skin, causing a foreign body inflammatory reaction.',
-        prevalence: 'Affects an estimated 45–85% of Black men who shave regularly. One of the most common causes of facial and neck PIH in West African men.',
+        
         skin_impact: 'Each razor bump leaves PIH. For men who shave daily, the PIH accumulation can be extensive and psychologically distressing.',
         treatment: 'Reduce shaving frequency, use single-blade razors, direction-of-growth shaving, electric clippers leaving some length, topical retinoids to reduce hair curl-back, chemical depilatories (barium sulfide or calcium thioglycolate — use with caution, patch test). Benzoyl peroxide or salicylic acid to reduce inflammation. Eflornithine cream (prescription) slows hair regrowth.',
       },
@@ -274,7 +256,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
         risk_level: 'CRITICAL — LIFE-THREATENING',
         what: 'Mercury compounds (mercurous chloride, amide mercury, calomel, mercury iodide) are used in illegal skin-lightening creams across West Africa and in diaspora communities in the UK, US, Canada, and Europe.',
         why_used: 'Mercury inhibits melanin production effectively — it works fast and visibly. This makes mercury-containing creams popular despite their severe toxicity.',
-        prevalence: 'Studies have found mercury in 6–45% of skin-lightening creams tested from West African markets and diaspora shops. Products with names like "Movate," "Stillman\'s," "Maxi White," "Crème Carotène" have historically contained mercury or steroids.',
+        
         health_effects: [
           'Kidney damage and failure (mercury is directly nephrotoxic)',
           'Neurological damage — tremors, memory loss, numbness, psychiatric symptoms',
@@ -380,7 +362,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
     },
 
     spf_guidance: {
-      importance: 'SPF is non-negotiable even for Fitzpatrick VI skin, despite the common myth that very dark skin does not need sunscreen. While high melanin content provides some natural protection (estimated SPF equivalent of 8–13 in very dark skin), this does not prevent UV-triggered PIH or melasma.',
+      importance: 'SPF is non-negotiable even for Fitzpatrick VI skin, despite the common myth that very dark skin does not need sunscreen. High melanin content gives some built-in protection, but it does not prevent UV-triggered PIH or melasma.',
       challenges: 'White cast from traditional mineral sunscreens (zinc oxide, titanium dioxide) is a major reason for SPF non-compliance in West African communities. This is a real formulation problem — many traditional sunscreens do appear white and chalky on dark skin.',
       solutions: [
         'Tinted mineral SPF formulations designed for medium-deep to deep skin tones.',
@@ -393,7 +375,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
 
     culturalContext: {
       colorism_in_community: 'Colorism is deeply embedded in many West African societies and across the West African diaspora. Terms like "yellow" or "bright" (used to describe lighter skin) carry social weight in Nigerian, Ghanaian, and Cameroonian cultural contexts, while darker skin tones have historically been subject to social disadvantage in certain settings.',
-      bleaching_crisis: 'Skin bleaching is a public health crisis in parts of West Africa. WHO data shows Nigeria has one of the highest global rates of cosmetic skin bleaching. The drivers are complex: colorism, economic aspiration, colonial legacies, and aggressive marketing by cosmetic companies.',
+      
       reclaiming_movement: 'A significant counter-movement is growing — social media campaigns like #BlackIsBeautiful and #MelaninPoppin originating in the US have global reach. Nigerian and Ghanaian influencers are increasingly challenging the bleaching norm and promoting skin health over skin colour change.',
       community_conversations: 'Open conversations about colorism within families, communities, and religious spaces are growing. Educating on the difference between treating PIH (health) and attempting to bleach to a lighter baseline (different goal, significant risk) is important nuance.',
       safe_messaging: 'Beauty professionals and dermatologists working in West African communities are encouraged to: lead with skin health, not lightness; avoid using "brighter" as a proxy for "lighter"; discuss PIH as a medical concern, not a cosmetic failing; and provide explicit warnings about dangerous products rather than assuming patients know.',
@@ -421,18 +403,18 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
 
     primaryHyperpigmentationTypes: {
       melasma: {
-        prevalence: 'Among the highest globally. South Asian women have a documented elevated risk of melasma due to genetic predisposition, high sun exposure, and widespread use of hormonal contraceptives. Melasma is sometimes called "the mask of pregnancy" — first-generation South Asian immigrant women in temperate countries often experience melasma flares when returning to South Asia for visits (sun exposure change).',
+        
         pattern: 'Centrofacial and malar (cheek-focused) patterns are most common.',
         triggers: 'Pregnancy, oral contraceptive pills (especially older combined OCPs), perimenopause, sun exposure. Spicy food and heat (cooking over gas flames) has been anecdotally linked — some evidence that infrared heat activates melanocytes.',
         cultural_notes: 'Melasma is sometimes called "chloasma" historically; in South Asian communities, the term "pregnancy mask" (rang ka daag) is used colloquially in Hindi/Urdu. Considerable pressure on South Asian women to treat melasma, as it conflicts with cultural beauty ideals around clear, even skin.',
       },
       pih: {
-        prevalence: 'Very common in Fitzpatrick IV-V South Asian skin. Acne, eczema, and ingrown hairs from threading are primary triggers.',
+        
         common_triggers: ['Acne', 'Eyebrow threading (causes micro-trauma along brow)', 'Upper lip threading and waxing', 'Eczema (atopic dermatitis)', 'Prickly heat rash (miliaria) from high heat and humidity'],
         threading_pih: 'Upper lip and eyebrow threading is a nearly universal practice among South Asian women. The repeated micro-trauma of threading can cause persistent PIH along the brow line and upper lip — often dismissed as normal but treatable.',
       },
       sun_damage: {
-        prevalence: 'High sun exposure in South Asia (UV index commonly 8–12+ for most of the year) leads to cumulative sun damage including freckling, diffuse hyperpigmentation, and premature photoaging. Many South Asians lack the habit of daily SPF use (the concept was poorly promoted historically).',
+        
         reverse_migration_pattern: 'UK/Canada/US-raised South Asians who move back or visit South Asia frequently see new hyperpigmentation develop rapidly — their skin has adapted to lower UV environments.',
       },
       periorbital_hyperpigmentation: {
@@ -459,13 +441,13 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
         active_compounds: 'Safranal, crocin, crocetin — antioxidants and potential melanin inhibitors. Limited clinical skin evidence but good antioxidant data.',
         traditional_use: 'Saffron strands soaked in raw milk or cream, applied to skin. Also taken internally — warm milk with saffron is a traditional tonic.',
         hyperpigmentation_role: 'Mild antioxidant brightening effect. Anti-inflammatory. Moisturising when used in milk base.',
-        cost: 'Authentic saffron is one of the world\'s most expensive spices by weight — many commercial "saffron" skincare products use minimal real saffron and rely more on yellow dyes.',
+        
         caution: 'Authentic saffron is safe. Ensure authenticity — fake saffron (dyed safflower threads) are common. Internal saffron consumption in large quantities has medicinal effects — stay within culinary doses.',
       },
       sandalwood: {
         name: 'Sandalwood (Chandan)',
         origin: 'Sandalwood paste (chandan) is a cornerstone of Indian Ayurvedic skin and spiritual practice. Used in daily beauty routines and religious ceremonies across India, Nepal, and Sri Lanka.',
-        active_compounds: 'Alpha- and beta-santalol — bioactive sesquiterpene alcohols. Anti-inflammatory, antioxidant, and emerging evidence suggests santalol inhibits melanin synthesis.',
+        
         benefits: 'Cooling sensation (valuable in South Asian climates), anti-inflammatory, antibacterial, mild brightening.',
         forms: 'Pure sandalwood powder mixed with rosewater or milk for paste. Commercial sandalwood soaps and creams (note: many commercial products use synthetic sandalwood fragrance rather than actual sandalwood).',
         caution: 'True sandalwood (Santalum album, Mysore sandalwood) is highly regulated due to overharvesting. Many products use synthetic santalol or adulterated sandalwood. Australian sandalwood (Santalum spicatum) is a legal sustainable alternative. Sandalwood fragrance ≠ sandalwood active compounds — look for actual extract or oil.',
@@ -484,15 +466,15 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
         vitamin_c_content: 'One of the highest natural vitamin C concentrations of any food — estimated 445–921 mg per 100g (fresh). For comparison, oranges contain ~53 mg per 100g.',
         hyperpigmentation_role: 'Topical vitamin C (from amla extract) functions as an antioxidant and mild tyrosinase inhibitor. Also used as a dietary supplement for skin health.',
         forms: 'Amla powder, amla oil (for hair, not typically for face), amla juice (dietary), amla extract in skincare formulations.',
-        evidence: 'Good antioxidant evidence. Topical formulations with standardised vitamin C (L-ascorbic acid) remain more evidence-backed than natural amla extract for specific PIH treatment.',
+        
       },
     },
 
     dangerousIngredients: {
       fairness_cream_industry: {
-        overview: 'India has the world\'s largest market for skin fairness products. The "Fair & Lovely" era (now renamed "Glow & Lovely" following 2020 consumer pressure) is just one example of a multi-billion dollar industry built on colorism-driven demand. Many products combine marginal brighteners with hidden ingredients.',
+        
         mercury_in_south_asia: 'Mercury-containing creams are less prevalent in South Asia than West Africa but still found in unregulated markets, particularly herbal "whitening" creams from smaller manufacturers. Some Ayurvedic preparations (Rasa Shastra preparations) use heavy metals including mercury — while traditionally detoxified through specific processes, contamination risk exists.',
-        steroids_in_fairness_creams: 'Multiple studies in India have found potent steroids (clobetasol propionate, betamethasone valerate) in unlabelled over-the-counter fairness creams. A 2014 study in IJDVL found steroids in 60%+ of fairness creams tested from local Indian pharmacies. These cause steroid-induced skin damage including acne, atrophy, and telangiectasia — often appearing after months of use.',
+        
         how_to_identify: 'If a cream promises dramatic results in days, it likely contains a steroid. If skin \'rebounds\' badly when you stop using it (skin becomes severely red, itchy, burning), it almost certainly contained a steroid.',
       },
       kojic_acid_overuse: {
@@ -511,7 +493,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
           components: 'Hydroquinone 4% + tretinoin 0.05% + fluocinolone acetonide 0.01%',
           why: 'Most studied melasma treatment. HQ inhibits melanin synthesis, tretinoin speeds cell turnover and enhances HQ penetration, fluocinolone reduces inflammation.',
           caution: 'Should only be used under dermatologist supervision. Maximum 8–12 weeks continuous use, then transition to maintenance. Fluocinolone (a steroid) causes atrophy with long-term use.',
-          evidence: 'Studies in Indian patients show 75–90% improvement in melasma severity at 8 weeks.',
+          
         },
         {
           ingredient: 'Tranexamic Acid (oral or topical)',
@@ -551,10 +533,10 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
     },
 
     spf_guidance: {
-      importance: 'UV Index in South Asian countries is among the highest in the world. SPF is essential and currently under-used. Traditional cultural norms around SPF are shifting with social media education from South Asian dermatologists.',
+      
       cultural_shift: 'Prominent South Asian dermatologists and skincare educators (particularly on Instagram and YouTube) have significantly increased awareness of daily SPF use in South Asian communities over 2018–2024. The framing of SPF as an anti-aging and anti-pigmentation tool (not merely a beach product) has driven adoption.',
       recommended: 'SPF 50 PA++++ (Japan/Korea PA rating is a better indicator of UVA protection than the star rating system). Tinted SPFs that complement warm olive skin tones are increasingly available from Korean and Japanese brands.',
-      application: 'Teaspoon rule: 1/4 teaspoon for the face alone. Most people apply 20–50% of the required SPF amount and therefore receive significantly less protection than the label states.',
+      
     },
 
     culturalContext: {
@@ -586,18 +568,16 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
 
     primaryHyperpigmentationTypes: {
       pih: {
-        prevalence: 'Very high, particularly in individuals with Fitzpatrick IV-VI ancestry. Acne, eczema, insect bites (a common tropical issue), and skin injury are primary drivers.',
+        
         island_specific: 'Island living means high UV exposure year-round combined with high humidity. Humidity can worsen acne (clogged pores, sweat-induced breakouts) — more acne = more PIH triggers. High sweat also washes off sunscreen quickly, reducing UV protection effectiveness.',
         rosacea_intersection: 'Caribbean individuals with lighter skin and European ancestry may experience rosacea-associated PIH, which presents differently and requires different treatment from melanin-based PIH.',
       },
       sun_damage: {
-        prevalence: 'Very high. Caribbean UV Index commonly reaches 10–12+ year-round (extreme range). Cumulative sun damage causes freckling, uneven patches, dark spots, and photoaging.',
+        
         compounding_issue: 'Ocean reflectance, white sand reflectance, and direct tropical sun creates high cumulative UV burden even for people who do not intentionally sunbathe.',
         darker_skin_spf_myth: 'In Caribbean communities, there is a widespread belief that darker skin does not need sunscreen. This is incorrect — while melanin provides some protection, the UV exposure levels in the Caribbean are sufficient to cause pigmentation changes and DNA damage in all skin types.',
       },
-      melasma: {
-        prevalence: 'Particularly high in Caribbean women of South Asian ancestry (Indo-Caribbean) and mixed-ancestry populations. Triggers: pregnancy, hormonal contraception, high sun exposure.',
-      },
+      
       eczema_pih: {
         note: 'Atopic dermatitis (eczema) is notably prevalent in Afro-Caribbean populations. Each eczema flare leaves PIH. Managing eczema actively is essential to preventing ongoing PIH accumulation.',
       },
@@ -617,7 +597,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
         name: 'Aloe Vera (Aloe barbadensis)',
         origin: 'Widely grown across the Caribbean. A household plant in most Caribbean homes — the gel is used for sunburn, skin rashes, hair, and general skin soothing.',
         active_compounds: 'Aloesin (a chromone derivative) — a direct tyrosinase inhibitor. Acemannan — anti-inflammatory polysaccharide. Anthraquinones — mild exfoliants in small amounts.',
-        hyperpigmentation_role: 'Aloesin specifically inhibits tyrosinase — a direct melanin-reducing mechanism. Studies have shown aloe vera extract and aloesin reduce UV-induced hyperpigmentation in human subjects. This is one of the more evidence-backed natural brighteners.',
+        
         how_to_use: 'Fresh aloe gel (cut a lower leaf, scoop gel) applied as a leave-on overnight treatment or a 20-minute mask. Or use a formulated aloe vera gel product (99% aloe).',
         caution: 'Some people are allergic to aloe — patch test. The yellow sap just under the aloe leaf skin (aloe latex, containing aloin) can be irritating — scoop only the inner clear gel. Commercial aloe gels sometimes contain preservatives that can cause reactions.',
       },
@@ -642,14 +622,14 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
         active_compounds: 'Carrageenan (a polysaccharide), vitamins A, C, E, and K, iodine, magnesium, zinc.',
         hyperpigmentation_role: 'Antioxidant vitamins support skin health. No direct depigmenting mechanism established. Used as a nutrient-dense hydrating mask rather than a specific brightening treatment.',
         how_to_use: 'Blend soaked sea moss gel with honey or rosewater, apply as a face mask for 15–20 minutes.',
-        evidence: 'Currently popular in wellness culture but limited clinical evidence for hyperpigmentation specifically.',
+        
       },
     },
 
     dangerousIngredients: {
       mercury_in_caribbean: {
-        prevalence: 'Mercury-containing brightening creams have been documented in Caribbean markets and Caribbean diaspora shops in the US (particularly New York, Miami, Orlando). Products from Haitian and Dominican markets have shown significant contamination in testing studies.',
-        specific_concern: 'In Haiti, surveys have found high use of skin-lightening products, some containing mercury, particularly in urban areas. Post-earthquake aid workers identified high mercury body burden in populations surveyed in Port-au-Prince.',
+        
+        
         diaspora_access: 'Products purchased online or from specialty shops catering to Caribbean diaspora communities may come from unregulated sources. Country of manufacture and regulatory oversight varies enormously.',
         symptoms: 'See West African section for full symptom list. Early symptoms: skin rash, kidney function changes, tingling or numbness in extremities.',
       },
@@ -705,7 +685,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
 
     culturalContext: {
       colorism_complexity: 'Caribbean colorism is deeply rooted and uniquely complex — shaped by the specific history of the plantation system, where proximity to lighter skin often correlated with slightly less brutal conditions of enslavement, creating internal hierarchies that persisted into post-emancipation society. Terms like "red skin," "brown skin," and "clear skin" carry specific social weight in different Caribbean island contexts.',
-      jamaica: 'In Jamaica, a "browning" (light brown skin) has historically been coded as attractive and socially aspirational. Bleaching is common and often openly discussed — Jamaica has one of the highest rates of skin bleaching in the Caribbean. Studies have found up to 40% of Jamaican women use skin-lightening products.',
+      
       haiti: 'Haitian colorism has colonial French roots — lighter-skinned Haitians (mulattos) historically occupied elite social positions. This legacy creates internal colorism that persists today.',
       indo_caribbean: 'Indo-Caribbean communities (particularly Trinidad, Guyana, Suriname) experience colorism from both South Asian traditions (fair skin preference) and from position within Caribbean multiracial hierarchies.',
       reclaiming_roots: 'Rastafarian philosophy and the Black consciousness movement have historically challenged colorism in Jamaica and across the Caribbean — "black is beautiful" as a spiritual and political affirmation. Contemporary Caribbean artists, writers, and activists are actively reclaiming diverse Caribbean skin tones as beautiful.',
@@ -732,18 +712,18 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
 
     primaryHyperpigmentationTypes: {
       melasma: {
-        prevalence: 'Very high. Arab women have among the highest documented rates of melasma globally. Factors: high UV index across the Arab world (especially Gulf and North Africa), widespread hormonal contraceptive use, and genetic predisposition in Fitzpatrick III-V skin.',
+        
         pattern: 'Centrofacial (forehead, nose, upper lip) and malar (cheek) patterns. Bilateral symmetry is a diagnostic hallmark of melasma vs PIH.',
         specific_triggers: 'Gulf Arab women who wear the niqab (face veil) have an interesting and sometimes overlooked melasma pattern — the face covered by the veil is typically more protected, while any exposed areas (sometimes just the eye area) receive intense sun exposure. Conversely, women who wear the niqab and remove it during extended indoor periods may experience microenvironment heat under the fabric contributing to melasma via infrared exposure.',
         hormonal: 'The relationship between melasma and combined oral contraceptive pills is well-established. Arab women who discontinue hormonal contraceptives often see some improvement in melasma — this option should be discussed with their GP/gynaecologist.',
       },
       pih: {
-        prevalence: 'Common in Fitzpatrick III-V Arab skin. Acne is the primary trigger — Arab skin (particularly in humid Gulf environments and under occlusive cosmetics) is prone to both acne and consequent PIH.',
+        
         acne_context: 'The combination of high-humidity Gulf environments, heavy full-coverage foundation routines (used for both cultural and covering purposes), and high UV exposure creates ideal conditions for acne and resultant PIH.',
         periorbital_darkening: 'Dark under-eye circles are extremely common in Arab communities — both genetically and from the shadow-enhancing effect of deeper-set eyes with prominent brow bones common in Levantine Arab facial structure. Both pigmentary and structural components are usually present.',
       },
       photo_damage: {
-        prevalence: 'High — much of the Arab world has UV Index of 8–12+ during summer months. Saudi Arabia, UAE, Egypt, and Libya receive particularly intense sun. Cultural practices vary in sun protection — in Gulf countries, women\'s traditional modest dress provides significant incidental sun protection, while Gulf men often wear thobe (white garment) that reflects UV. However, face and hands still receive high exposure.',
+        
         tanning_culture: 'Among Arab diaspora and particularly Arab youth in Western countries, tanning culture creates a paradox: cultural pressure for lighter skin at home vs. fashionable tan in Western social contexts. This creates inconsistent SPF use.',
       },
       rosacea: {
@@ -801,7 +781,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
 
     dangerousIngredients: {
       mercury_and_lighteners_in_arab_markets: {
-        prevalence: 'Studies from Egypt, Saudi Arabia, and Jordan have documented the sale of mercury-containing and steroid-containing lightening creams. A 2020 study from Saudi Arabia found mercury in multiple commercially available brightening creams.',
+        
         black_market_products: 'Products smuggled or informally imported from India, Southeast Asia, and Africa sometimes contain mercury or unlabelled steroids. Social media influencers in Arab countries sometimes promote unregulated lightening products.',
         regulatory_landscape: 'GCC (Gulf Cooperation Council) countries have drug and cosmetic regulations, but enforcement is variable. Saudi SFDA (Saudi Food and Drug Authority) and UAE MOH regulations prohibit mercury in cosmetics, but market enforcement is imperfect.',
       },
@@ -856,7 +836,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
     },
 
     spf_guidance: {
-      uv_context: 'Saudi Arabia, UAE, Oman, Egypt, and Libya have among the highest UV indices in the world — UV Index 10–12 in summer months is common. Riyadh in summer reaches UV Index 12 (extreme). SPF 50+ is the minimum standard for hyperpigmentation management.',
+      
       cultural_factors: 'In Gulf countries, modest dress provides significant incidental UV protection for women\'s bodies, but faces, hands, and feet may receive high exposure during outdoor activity, commuting, or travel. Men in Gulf countries wear white thobe (highly UV reflective) which offers some natural protection.',
       white_cast_in_arab_skin: 'Arab olive skin (especially Fitzpatrick III-IV) shows white cast from mineral-only sunscreens. Korean and Japanese chemical and hybrid SPFs (with tinosorb formulations) tend to be better cosmetically suited to olive and warm-toned skin.',
       recommended: 'SPF 50 PA++++ with blue light protection (visible light also triggers melasma in darker-toned Arab skin). Tinted SPF that complements olive undertones. Reapply every 2 hours outdoors.',
@@ -890,23 +870,21 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
 
     primaryHyperpigmentationTypes: {
       melasma: {
-        prevalence: 'Latin America has some of the highest documented melasma prevalence rates globally. A Brazilian epidemiological study found melasma prevalence of 8.8% in women aged 18–65 in São Paulo. Colombian and Mexican dermatology data show similarly high rates.',
+        
         genetic_factors: 'Some evidence of genetic predisposition to melasma in Latin American populations beyond what would be expected from Fitzpatrick type alone — the mixed genetic heritage may create specific melanocyte reactivity patterns.',
-        hormonal_triggers: 'Very high contraceptive use in Latin America. Pill-induced melasma is extremely common. Pregnancy-induced melasma is colloquially called "el paño" (the cloth/rag) in Spanish — the name reflecting how it appears as a cloth-like dark patch across the face.',
+        hormonal_triggers: 'Hormonal contraceptives and pregnancy can both trigger melasma. Pregnancy-induced melasma is colloquially called "el paño" (the cloth/rag) in Spanish — the name reflecting how it appears as a cloth-like dark patch across the face.',
         el_pano: '"El paño" is the Spanish colloquial term for melasma — widely understood across Latin American communities. Understanding this term is important for culturally competent clinical communication.',
       },
       pih: {
-        prevalence: 'High in Afro-Latina and mestiza Fitzpatrick IV-VI skin. Acne is the primary trigger.',
+        
         afro_latina_specific: 'Afro-Latina patients face the same PIH severity as other individuals with African heritage — intense, long-lasting PIH from inflammatory events. The PIH burden may be compounded by facing colorism from both the Latina community and from anti-Black racism more broadly.',
       },
       sun_damage: {
-        prevalence: 'High — much of Latin America lies in tropical or subtropical zones with intense UV year-round. Mexico City, Bogotá, Caracas, Lima are all high-UV environments.',
+        
         outdoor_culture: 'Latin American culture features significant outdoor activity — markets, outdoor social gathering, agriculture. UV exposure is cumulative and often unavoidable.',
         historical_spf_gap: 'SPF adoption in Latin America has historically lagged behind European and North American patterns. This is changing with strong social media education from Latina dermatologists, particularly on Instagram.',
       },
-      acne_dark_spots: {
-        note: 'Acne vulgaris prevalence is broadly similar across populations, but PIH from acne is more severe and longer-lasting in darker-skinned Latinas. The combination of hormonal acne (very common in Latin American clinical observations) and PIH creates a significant skin health burden for Latina women aged 15–35.',
-      },
+      
     },
 
     traditionalBrighteningPractices: {
@@ -914,7 +892,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
         name: 'Aloe Vera (Sábila)',
         origin: 'Native to the Arabian Peninsula but naturalised across Latin America for centuries. Called "sábila" in Spanish-speaking Latin America. A household staple plant across Mexico, Cuba, the Dominican Republic, and throughout Central and South America.',
         use: 'Fresh aloe gel from the plant applied directly to dark spots and sun-damaged areas. Also used as a post-sunburn soother, hair conditioner, and general skin moisturiser.',
-        evidence: 'Aloesin in aloe vera has documented tyrosinase-inhibiting properties. One of the better-evidenced traditional brighteners. See Caribbean section for full detail.',
+        
         how_to_use: 'Slice an aloe vera leaf, scoop the clear inner gel, apply to skin as a treatment mask or leave-on serum. Refrigerate unused gel (fresh gel lasts 1 week refrigerated, or freeze in ice cube trays).',
       },
       papaya_enzyme: {
@@ -938,7 +916,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
         active_compounds: 'Lycopene — a potent antioxidant carotenoid. Vitamin C. Acids (citric, malic) — very mild natural AHAs.',
         benefits: 'Lycopene provides antioxidant protection against UV-free radicals. Vitamin C contributes mild brightening. Natural acids provide very gentle exfoliation.',
         traditional_use: 'Tomato halves rubbed on dark spots, or tomato pulp applied as a face mask — a widespread grandmother\'s remedy across Latin America.',
-        evidence: 'Lycopene has good in vivo evidence for UV protection when consumed — 10 weeks of dietary lycopene (tomato paste) has been shown to reduce UV-induced skin redness. Topical lycopene has some in vitro evidence but less clinical data.',
+        
         caution: 'Citric acid in tomatoes is a mild photosensitiser when applied topically — rinse off before sun exposure. The acidic pH of tomato juice (pH ~4) can irritate sensitive skin.',
       },
       royal_jelly: {
@@ -1015,7 +993,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
 
     spf_guidance: {
       importance: 'UV in tropical Latin America is extreme. The UV index in Mexico City, Bogotá (high altitude = less atmospheric UV filtration), Lima, Rio de Janeiro, and San Juan regularly reaches 10–14 (extreme range).',
-      altitude_factor: 'High-altitude cities (Mexico City at 2,240m; Bogotá at 2,600m; Quito at 2,850m; La Paz at 3,650m) receive significantly more UV radiation than sea-level locations of the same latitude. UV increases approximately 10–12% per 1,000m altitude. Residents of Andean cities need higher SPF than their UV index alone suggests.',
+      
       white_cast_issue: 'White cast from mineral SPF is a concern across medium-to-dark Latina skin tones. Chemical SPF or tinted mineral SPF are more cosmetically appropriate. Korean and Japanese SPF formulations have driven improvement in this area.',
       lifestyle_factors: 'Outdoor markets, agricultural work, sports culture, and beach culture in Latin America all involve high cumulative UV. SPF education in these cultural contexts is more effective than generic messaging.',
     },
@@ -1023,7 +1001,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
     culturalContext: {
       colorism_in_latin_america: 'Latin American colorism ("pigmentocracia") is a direct inheritance of the Spanish and Portuguese colonial caste systems (sistema de castas), which assigned legal status, privileges, and social position partly based on skin colour and European vs. Indigenous vs. African ancestry. While formal caste systems ended with independence, the social hierarchies they created persist.',
       terms_used: '"Morena" (brown-skinned) and "trigueña" (wheat-coloured) are used with sometimes positive, sometimes diminishing connotations depending on context. "Clara" (light) skin is often celebrated. Phrases like "mejorar la raza" (improve the race, i.e., through lighter-skinned partners) reveal the persistence of colorist hierarchy.',
-      brazil: 'Brazil presents the most complex case — with the world\'s largest African diaspora population outside Africa, and a history of "racial democracy" mythology that masked real racial and colour-based inequality. Brazilian colorism operates along a complex spectrum with many named colour categories. Black consciousness ("Consciência Negra") movements have gained tremendous strength in Brazil since the late 20th century.',
+      
       afro_latina_visibility: 'Afro-Latina women are underrepresented in mainstream Latin media, advertising, and beauty standards despite comprising a significant portion of Latin American populations. The Afro-Latina beauty movement — led by creators across the Dominican Republic, Colombia, Cuba, Puerto Rico, and the US — is actively challenging these norms.',
       hyperpigmentation_as_community_issue: 'In communities where dark skin carries social stigma and where hyperpigmentation marks are extremely visible, skin care for PIH and melasma becomes bound up in complex social and psychological dynamics. Dermatologists and estheticians in Latin communities are most effective when they acknowledge these social dimensions explicitly.',
     },
@@ -1048,7 +1026,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
 
     primaryHyperpigmentationTypes: {
       melasma: {
-        prevalence: 'Very high. East Asian women are among the highest-risk populations globally for melasma. A study in Korean women found melasma prevalence of 11.9%. Japanese dermatology data similarly shows high rates.',
+        
         pattern: 'Malar (cheek) pattern is most common in East Asian melasma. Mixed epidermal-dermal melasma is frequent — the dermal component explains why some melasma is resistant to topical treatment.',
         sun_exposure: 'UV-induced melasma is extremely common even in populations with moderate UV exposure (Korea, Japan) — East Asian melanocytes are highly responsive to UV at lower doses than would cause melasma in lighter Caucasian skin.',
       },
@@ -1056,10 +1034,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
         what: 'Age spots / liver spots — discrete, flat, well-demarcated brown spots caused by chronic UV exposure. Very common in East Asian skin from the 40s onward, even in individuals who have been careful about sun exposure.',
         why_common: 'East Asian skin tends to develop solar lentigos as a primary form of sun-induced pigmentation, while Caucasian skin more commonly develops diffuse freckling and wrinkling. The discrete lentigo pattern can be easier to treat with targeted procedures (Q-switched laser, cryotherapy for lighter skin).',
       },
-      periorbital_hyperpigmentation: {
-        prevalence: 'Very common in East Asian populations — both the structural (hollow tear troughs casting shadows) and pigmentary components. Thin periorbital skin (common in East Asians) makes vascular dark circles (blue-purple tinge from vessels) very visible.',
-        treatment: 'Multitargeted: retinol for skin thickening, vitamin C for pigment, caffeine for vascular constriction, filler for structural component. Korean skincare\'s emphasis on eye care products reflects this high-prevalence concern.',
-      },
+      
       seborrheic_melanosis: {
         what: 'A particularly common form of diffuse facial hyperpigmentation seen in East Asian skin — non-discrete, diffuse grayish-brown discolouration across the cheeks and nose, sometimes with a dusty or ashy quality.',
         cause: 'Combination of sun exposure, melanin in the dermis, and aging-related melanocyte clustering.',
@@ -1067,7 +1042,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
       },
       hori_naevus: {
         what: 'Hori\'s naevus (acquired bilateral naevus of Ota-like macules, ABNOMs) — grey-blue pigmented macules on the cheeks, in a distribution similar to melasma but with blue-grey rather than brown colour.',
-        prevalence: 'Predominantly in East Asian women (Japanese, Chinese, Korean). Rare in other ethnicities.',
+        
         appearance: 'Discrete or semi-confluent grey-blue to slate-grey macules on the cheekbones. Does NOT respond to topical brighteners — purely dermal melanin.',
         treatment: 'Q-switched 1064nm Nd:YAG or Q-switched 755nm alexandrite laser. Multiple sessions (6–10) required. Excellent response to laser in most cases.',
         misdiagnosis: 'Commonly misdiagnosed as melasma — the distinction matters enormously because topical melasma treatments (hydroquinone, azelaic acid) do not work on Hori\'s naevus, while laser is very effective.',
@@ -1080,7 +1055,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
         origin: 'A centuries-old Japanese and East Asian beauty tradition. Geisha in Japan historically used rice water as a skin toner and hair rinse. Korean women in rice-growing communities are documented as having notably smooth, even-toned skin, attributed to rice water use.',
         active_compounds: 'Inositol (a carbohydrate that penetrates hair and skin to repair damage), ferulic acid (antioxidant), allantoin (soothing, promotes cell regeneration), PABA (paraaminobenzoic acid — a natural UV filter), enzymes and vitamins from the rice bran.',
         how_prepared: 'Traditional: wash rice, soak in water for 30 minutes, strain the milky water. Fermented rice water: allow strained rice water to sit at room temperature for 24–48 hours until slightly sour — fermentation concentrates nutrients.',
-        hyperpigmentation_role: 'Inositol repairs UV damage to skin cells. Ferulic acid is an antioxidant that reduces UV-free radical-mediated pigmentation. Some studies show commercial inositol and ferulic acid reduce hyperpigmentation markers in clinical settings. Rice water itself has limited but positive clinical evidence.',
+        
         commercial: 'SK-II\'s Pitera (Saccharomyces ferment filtrate) is a luxury commercialisation of the fermented rice concept — derived from yeast used in rice wine making.',
         how_to_use: 'Apply fermented rice water as a toner on cotton pad after cleansing. Or use as a final rinse after cleansing (pour over face, do not rinse off). Daily use.',
       },
@@ -1088,9 +1063,9 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
         name: 'Kojic Acid (麹酸)',
         origin: 'Derived from Aspergillus oryzae mould used in Japanese sake, miso, and soy sauce fermentation. A Japanese discovery in the 1900s — emerged from observations about sake brewery workers having unusually even-toned hands.',
         mechanism: 'Kojic acid chelates (binds) the copper atom in tyrosinase — inactivating the enzyme and directly reducing melanin production.',
-        evidence: 'Strong clinical evidence. One of the most-studied natural brightening ingredients. Comparable to hydroquinone in some head-to-head studies with better tolerability.',
+        
         forms: 'Kojic acid soap (popular in East and Southeast Asia), kojic acid serum, kojic acid in combination creams (often combined with niacinamide or glycolic acid).',
-        prevalence: 'Kojic acid products are dominant in Japanese, Korean, and Thai skincare markets. K-beauty and J-beauty both feature kojic acid prominently.',
+        
         how_to_use: 'Cleanser: kojic acid soap used daily as face wash. Serum: kojic acid 1–2% applied to spots, 1–2x daily. Combined with niacinamide and tranexamic acid for enhanced efficacy.',
         caution: 'Kojic acid can cause contact sensitisation (allergic contact dermatitis) in some users, particularly with long-term use. Cycle use — 3 months on, 1 month off. Start at 1% concentration.',
       },
@@ -1099,7 +1074,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
         origin: 'Tea (Camellia sinensis) is central to East Asian culture — Chinese, Japanese, and Korean tea traditions date back thousands of years. Green tea\'s use in skincare follows naturally from cultural familiarity.',
         active_compounds: 'EGCG (epigallocatechin gallate) — the primary polyphenol. Catechins, polyphenols, caffeine, amino acids (L-theanine).',
         benefits: 'EGCG is one of the most potent naturally occurring antioxidants. It inhibits UV-induced reactive oxygen species (free radicals) that trigger melanocyte activation. Anti-inflammatory. Some evidence for direct tyrosinase inhibition. Caffeine in green tea provides mild vasoconstriction beneficial for vascular dark circles.',
-        evidence: 'Multiple studies show topical EGCG reduces UV-induced pigmentation and inflammation. In vitro studies show tyrosinase inhibition.',
+        
         how_to_use: 'Cooled green tea as a toner (cotton pad application). Green tea extract in serums and moisturisers. Green tea-infused sheet masks (a K-beauty staple).',
         caution: 'Green tea in skincare is generally very safe. Ensure caffeine content is low for acne-prone skin (caffeine is controversial in some acne contexts but generally skin-applied caffeine is safe).',
       },
@@ -1114,7 +1089,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
         name: 'Licorice Root Extract (甘草 / 감초)',
         origin: 'Used in Traditional Chinese Medicine (TCM) and Korean herbal medicine (hanbang) for thousands of years. Glabridin (the primary active compound) was identified in modern research as the brightening component.',
         active_compounds: 'Glabridin — inhibits UVB-induced pigmentation and tyrosinase activity. Liquiritin — disperses melanin already deposited in skin cells. Glycyrrhizin — anti-inflammatory.',
-        evidence: 'Multiple clinical studies show licorice root extract and glabridin reduce melasma and PIH. Good tolerability across all Fitzpatrick types. One of the most evidence-backed plant-derived brighteners.',
+        
         how_to_use: 'Licorice root extract as a serum ingredient (1–5%). Often found in combination brightening products from Korean (K-beauty) and Japanese brands.',
         caution: 'Licorice root is generally well-tolerated. Rare contact allergy to glycyrrhizin. Distinguish from licorice candy (contains anise as the flavour, not licorice root active compounds).',
       },
@@ -1123,7 +1098,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
         origin: 'Used in Traditional Chinese Medicine and beauty for over 2,000 years. Pearl powder is made from freshwater or marine pearls ground into a fine powder.',
         active_compounds: 'Calcium carbonate (primary component — mild physical buffering), conchiolin protein (similar to silk), amino acids, trace minerals.',
         traditional_claims: 'Brightening, anti-aging, skin-smoothing.',
-        evidence: 'Some evidence that pearl powder application may modulate melanin synthesis — conchiolin inhibits endothelin-1, a melanocyte-stimulating factor. Clinical evidence in humans is limited. The brightening effect may partly be optical (pearl\'s natural luminescence).',
+        
         how_to_use: 'Pearl powder mixed with water, rosewater, or serum as a brightening mask. Also found in commercial formulations.',
         caution: 'Source matters — pearls from polluted marine environments may contain heavy metals. Look for certified clean sources.',
       },
@@ -1131,9 +1106,9 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
 
     dangerousIngredients: {
       mercury_in_east_asian_markets: {
-        prevalence: 'A 2018 study published in the American Journal of Public Health tested skin lightening creams from East Asian markets in the US and found mercury in multiple products from Korean, Chinese, and Southeast Asian brands. Japan has strict cosmetic regulations that largely prevent mercury-containing domestic products, but imported products are a concern.',
+        
         specific_products: 'Products labeled in Chinese without English ingredient translation, or with vague ingredient listings, from informal sellers have shown mercury contamination in multiple studies.',
-        regulatory_note: 'Japan\'s Pharmaceutical and Medical Devices Act has among the world\'s most stringent cosmetic safety standards. PMDA-registered Japanese cosmetics are among the safest. Products from other East Asian markets vary in regulatory rigour.',
+        
       },
       hydroquinone_regulation: {
         note: 'Japan and Korea have banned OTC hydroquinone in cosmetics. This has driven innovation in alternative brightening ingredients (kojic acid, tranexamic acid, arbutin) in J-beauty and K-beauty — with global benefit, as many of these alternatives are safer for long-term use than HQ.',
@@ -1148,7 +1123,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
       k_beauty_evidence_based_stack: [
         {
           ingredient: 'Tranexamic Acid 2–5% (topical)',
-          note: 'Has become a cornerstone of K-beauty hyperpigmentation treatment. Strong clinical evidence in Korean and East Asian populations. Multiple Korean dermatology studies confirm efficacy for melasma specifically.',
+          
         },
         {
           ingredient: 'Niacinamide 5–10%',
@@ -1225,14 +1200,14 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
 
     primaryHyperpigmentationTypes: {
       pih: {
-        prevalence: 'Extremely high — comparable to West African skin in PIH burden. Every inflammatory event leaves a dark mark. Acne, eczema (atopic dermatitis), insect bites, and trauma are primary triggers.',
+        
         severity: 'PIH in East African Fitzpatrick V-VI skin is characteristically intense and long-lasting. Dermal PIH (blue-grey deep pigmentation) is more likely in Fitzpatrick VI.',
         eczema_pih: 'Atopic dermatitis is notably prevalent in East African diaspora populations in Scandinavia and the UK — possibly related to vitamin D deficiency in low-UV environments and allergen exposure differences. Eczema PIH adds a significant layer to the hyperpigmentation burden.',
       },
       melasma: {
-        prevalence: 'Significant, particularly in East African women using hormonal contraceptives and during pregnancy. Melasma in Fitzpatrick V-VI skin presents as very dark, diffuse patches.',
+        
         compounding_factor: 'East African countries (Kenya, Ethiopia, Tanzania) have high UV year-round. Equatorial UV in Nairobi (at altitude 1,795m) is extremely high — altitude increases UV intensity.',
-        nairobi_altitude: 'Nairobi, Addis Ababa, and Kampala are high-altitude cities with intense UV. UV radiation increases approximately 10% per 1,000m. This significantly increases the melasma and PIH trigger burden for residents.',
+        
       },
       pseudofolliculitis: {
         note: 'As with West African communities, razor bumps are a significant concern for East African men, particularly Somali and Ethiopian men in the diaspora who adopt Western shaving practices. Treatment is identical to West African section — reducing shaving frequency, alternative hair removal methods, topical retinoids.',
@@ -1242,7 +1217,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
     traditionalBrighteningPractices: {
       frankincense_east_african: {
         name: 'Frankincense / Olibanum (East African variety)',
-        origin: 'Boswellia papyrifera from Ethiopia and Eritrea, and Boswellia carterii/sacra from Somalia and Oman. Ethiopia and Somalia are among the world\'s most important frankincense-producing regions. Frankincense has been used in East African traditional medicine and beauty for millennia — predating its fame in the ancient incense trade.',
+        
         active_compounds: 'Boswellic acids (alpha- and beta-boswellic acid, AKBA), incensole acetate, terpenoids.',
         benefits: 'Strong anti-inflammatory properties — particularly relevant for reducing PIH formation from inflammatory skin events. Cell-regenerating properties. Wound healing support.',
         traditional_use: 'Frankincense resin chewed (traditional Somali and Ethiopian custom — a health food, not just cosmetic). Frankincense oil used topically on skin. Smoke exposure of skin during traditional beauty rituals (zar ceremonies, etc.) though direct smoke is not recommended from a respiratory standpoint.',
@@ -1281,7 +1256,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
     dangerousIngredients: {
       mercury_crisis: {
         severity: 'CRITICAL — East Africa faces a serious public health problem with mercury-containing skin lightening products.',
-        prevalence: 'Studies from Kenya, Tanzania, Ethiopia, and Somalia show high rates of skin lightening product use — many containing mercury. A 2013 study in Dar es Salaam found 52% of women surveyed used skin lightening products. Testing of products available in East African markets found mercury in a significant proportion.',
+        
         specific_countries: 'Kenya and Tanzania have had regulatory actions against mercury-containing cosmetics. Somalia has limited regulatory infrastructure — mercury products flow freely in Somali markets both locally and in diaspora communities (UK, Scandinavia, US, Canada).',
         diaspora_risk: 'East African diaspora communities — particularly Somali communities in the UK, Sweden, Norway, Finland, US, and Canada — maintain strong community trade networks. Products purchased in community shops or brought back from visits may contain mercury. Healthcare workers in Somali diaspora communities have documented unexpectedly high mercury body burden in women presenting for unrelated health concerns.',
         products_to_avoid: 'Any cream with no English ingredient list, or with ingredient lists that include "calomel," "mercurous chloride," "amide mercury," "mercury," or no list at all. Community-sourced creams with promise of fast lightening. Injectable "brightening" treatments.',
@@ -1329,7 +1304,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
     },
 
     spf_guidance: {
-      importance_near_equator: 'East African countries straddle the equator — UV intensity is among the highest in the world, and altitude compounds this. Nairobi (UV Index commonly 8–10), Addis Ababa (UV 8–10 at altitude), Kampala (UV 10–12) all receive intense UV year-round with minimal seasonal variation.',
+      
       diaspora_uv_complication: 'East African diaspora in Scandinavia and northern UK experience very low UV environments — the vitamin D deficiency risk is high, but sun-seeking behaviour in these communities may create unprotected intense UV exposure during rare sunny periods, triggering PIH and melasma in susceptible skin.',
       white_cast_solutions: 'As with West African skin, white cast from mineral SPF is a significant barrier to compliance in East African and diaspora communities. Solutions: tinted mineral SPF (matching deep skin tones), chemical SPF, hybrid formulas.',
     },
@@ -1361,16 +1336,16 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
 
     primaryHyperpigmentationTypes: {
       pih: {
-        prevalence: 'Very high in Black South African (FP V-VI) and Coloured (FP III-V) populations. Acne is the primary trigger, followed by eczema, insect bites, and trauma.',
+        
         apartheid_healthcare_legacy: 'Apartheid left deep inequities in healthcare access that persist today — Black South Africans have less access to dermatology care, less representation in clinical research, and have historically been sold unsafe bleaching products in township pharmacies and spaza shops.',
       },
       melasma: {
-        prevalence: 'High in Indian South African and some Coloured communities. Also present in Black South African women on hormonal contraceptives.',
+        
         triggers: 'High UV exposure in South Africa (Johannesburg UV Index commonly 10–12 in summer), hormonal contraceptive use, pregnancy.',
         gauteng_altitude: 'Johannesburg and Pretoria are high-altitude cities (1,700m+) — UV exposure is significantly higher than the UV index might suggest to residents used to coastal UV references.',
       },
       photo_damage: {
-        prevalence: 'Significant across all South African populations but particularly high in the White South African population (highest skin cancer rate in the world outside Australia) and in outdoor-working Black and Coloured populations who may have limited SPF access.',
+        
         sun_seeking_culture: 'South African culture involves significant outdoor activity — braai (barbecue) culture, outdoor sports, beach culture. This creates high cumulative UV for all populations.',
       },
     },
@@ -1382,7 +1357,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
         active_compounds: 'Aspalathin and nothofagin — unique dihydrochalcone antioxidants. Quercetin, luteolin, rutin — flavonoids. Phenylpyruvic acid-2-O-glucoside. Zinc, manganese, and other minerals.',
         benefits: 'Very high antioxidant activity — among the highest of any commonly used plant. Anti-inflammatory properties (particularly aspalathin). Zinc content has mild anti-acne properties.',
         hyperpigmentation_role: 'Antioxidants quench UV-induced free radicals that trigger melanocyte activation. Quercetin has some evidence for tyrosinase inhibition. Anti-inflammatory properties reduce PIH formation from inflammatory events.',
-        evidence: 'Some in vitro evidence for anti-melanogenic properties of rooibos polyphenols. Limited but positive emerging clinical data. Rooibos is generally well-tolerated and an excellent skin health ingredient even if direct brightening evidence is developing.',
+        
         how_to_use: 'Brewed rooibos tea (cooled) as a skin toner applied with a cotton pad. Rooibos extract in commercial skincare formulations — the South African skincare industry (Faithful to Nature, Carmien, Dr. Hauschka South Africa, Esse) features rooibos prominently.',
         caution: 'Rooibos is extremely safe topically. Some tannin content may have mild astringent effect on sensitive skin. Generally well-tolerated.',
       },
@@ -1398,16 +1373,16 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
       marula_oil: {
         name: 'Marula Oil (Sclerocarya birrea)',
         origin: 'From the marula tree native to southern Africa (South Africa, Swaziland/eSwatini, Botswana, Zimbabwe). The marula fruit is famous — elephants in the wild eat fermented fallen marula fruit. The oil is cold-pressed from the marula nut kernel.',
-        active_compounds: 'Oleic acid (70–78% — the highest oleic acid concentration of any plant oil), linoleic acid, palmitic acid, vitamin C, tocopherols (vitamin E), procyanidins (potent antioxidants).',
+        active_compounds: 'Oleic acid (the main fatty acid), linoleic acid, palmitic acid, vitamin C, tocopherols (vitamin E), procyanidins (potent antioxidants).',
         benefits: 'Extremely stable due to very high oleic acid content. Deeply moisturising. Absorbs quickly without greasy residue (despite being oil-rich). Non-comedogenic or low-comedogenic. Very high antioxidant content from procyanidins and vitamin C.',
-        hyperpigmentation_role: 'Vitamin C and procyanidin antioxidants reduce oxidative UV damage that triggers pigmentation. High oleic acid supports barrier repair — a healthy barrier reduces PIH formation. A study found marula oil reduces transepidermal water loss and improves skin barrier comparable to argan oil.',
+        
         how_to_use: '2–3 drops pressed into face as a final layer or mixed with moisturiser. Excellent as a body oil. South African skincare brand Africology has used marula prominently.',
         commercial: 'Marula oil has had a global moment — Drunk Elephant, Africology, and multiple others have featured it. Ensure sourcing is from South African sustainable marula producers to support local communities.',
       },
       aloe_ferox: {
         name: 'Aloe Ferox (Cape Aloe)',
         origin: 'Aloe ferox (Cape aloe) is a South African native — distinct from Aloe vera (native to Arabia/North Africa) though related. Grows wild in the Eastern and Western Cape. Used by Khoikhoi, Xhosa, and other indigenous Southern African peoples for skin and health.',
-        comparison_to_aloe_vera: 'Aloe ferox contains higher concentrations of aloesin, aloin, and other bioactive compounds than Aloe vera by weight. Some research suggests stronger anti-inflammatory and moisturising properties.',
+        
         benefits: 'Higher aloesin content than A. vera — potentially more direct tyrosinase inhibition. Strong anti-inflammatory and wound-healing properties.',
         how_to_use: 'A. ferox gel (from the leaf) or A. ferox extract in commercial South African skincare formulations.',
         commercial: 'Aloe Ferox skincare is a growing South African industry. Companies like the Aloe Ferox range, Esse Organic Skincare, and several Western Cape-based brands use A. ferox as a hero ingredient.',
@@ -1416,7 +1391,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
 
     dangerousIngredients: {
       bleaching_in_south_african_townships: {
-        overview: 'Skin bleaching is common in Black South African township communities and has been for decades. A 2010 study in Johannesburg\'s township communities found approximately 35% of Black South African women used skin-lightening products. Products available in township spaza shops and hair salons include unregulated creams with mercury, unlabelled steroids, and high-dose hydroquinone.',
+        
         historical_context: 'Apartheid-era hierarchies assigned lighter skin different legal status in some contexts. Post-apartheid, the psychological impact of these hierarchies on skin tone attitudes persists. Skin bleaching in South African township communities is partly a legacy of apartheid-era colorism.',
         regulatory_landscape: 'SAHPRA (South African Health Products Regulatory Authority) has regulations against mercury in cosmetics and regulates hydroquinone as a prescription ingredient above 2%. However, enforcement in informal markets is limited.',
         specific_products: '"Skin Light" cream, "Ponds" modified formulations, and various township-available creams have been flagged in South African public health studies. Some products sold at hair salons and shebeens have no ingredient labelling.',
@@ -1513,23 +1488,23 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
 
     primaryHyperpigmentationTypes: {
       pih: {
-        prevalence: 'PIH is the number one skin concern among Black American women — consistently documented as the top presenting complaint in dermatology visits. A 2007 study in the Journal of the American Academy of Dermatology found that among Black patients seeking dermatological care, PIH was the most frequent reason for visits.',
+        
         primary_triggers: ['Acne (most common)', 'Pseudofolliculitis barbae (razor bumps) in Black men', 'Eczema/atopic dermatitis', 'Ingrown hairs from shaving and hair removal', 'Keloid formation', 'Lichen planus pigmentosus', 'Friction from clothing (bra straps, waistbands)', 'Scratching and skin picking'],
         emotional_impact: 'Research has documented that PIH significantly affects quality of life for Black Americans — often more so than the original acne or inflammatory condition. PIH can affect self-esteem, social engagement, and mental health. The psychological burden of PIH is disproportionate to its medical severity because of how visible it is and how long it persists.',
       },
       pseudofolliculitis_barbae: {
-        prevalence: 'Affects approximately 60% of Black men who shave. A significant source of facial and neck PIH in Black American men. PFB is a major cause of skin care avoidance and dermatology reluctance among Black men.',
+        
         stigma: 'PFB and its associated PIH and scarring can be misread as untidy by employers or social contexts unfamiliar with the condition — creating workplace discrimination concerns for Black men.',
         treatment_access: 'Black men are significantly underrepresented in dermatology settings — combination of systemic healthcare access barriers, discomfort with seeking medical care for "cosmetic" concerns, and historical medical racism affecting trust in healthcare institutions.',
       },
       dermatosis_papulosa_nigra: {
-        what: 'Benign skin-colored or darkly pigmented papules that develop on the face — particularly the cheeks, temples, and neck — in people with darker skin. Very common in Black Americans — estimated in 30–35% of Black adults.',
+        
         appearance: 'Small, raised, smooth papules, 1–5mm. Not malignant. Often darker than surrounding skin. Frequently mistaken for warts or moles.',
         treatment: 'Can be removed by electrodessication, cryotherapy, or laser. Cosmetically bothersome for many patients. Risk of post-treatment hypopigmentation or hyperpigmentation — requires experienced dermatologist.',
         note: 'Often presents alongside PIH in clinical settings — important to distinguish the two as they require different approaches.',
       },
       keloid_scarring: {
-        prevalence: 'Black Americans have a significantly higher risk of keloid formation than other populations — estimated 15x higher than White Americans. Keloids are raised, thick scar tissue that extends beyond the original wound boundary.',
+        
         hyperpigmentation_connection: 'Keloids themselves are often darker (hyperpigmented) than surrounding skin. The fear of keloid formation makes some Black Americans reluctant to have procedures, even beneficial ones.',
         treatment: 'Keloid management: intralesional corticosteroid injections, silicone sheets, pressure therapy, 5-fluorouracil injection, laser, combination approaches. NOT the same as PIH treatment.',
       },
@@ -1566,7 +1541,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
       castor_oil: {
         name: 'Castor Oil (Jamaican Black Castor Oil)',
         origin: 'Castor oil (Ricinus communis) has been used in Black American and Caribbean communities for skin and hair. Jamaican Black Castor Oil (JBCO) — made from roasted castor beans, giving it a darker colour and ash content — has become particularly prominent in the natural hair community.',
-        benefits: 'Ricinoleic acid (a unique fatty acid, ~90% of castor oil) has anti-inflammatory properties. Very thick and occlusive — excellent moisturising and sealing properties.',
+        
         hyperpigmentation_role: 'Indirect — occlusive moisturising. Limited direct brightening action. Used in some households on dark spots based on cultural tradition more than clinical evidence.',
         how_to_use: 'Body and hair applications. Too thick for standalone facial use — mix 1 part castor oil with 3 parts lighter carrier oil (jojoba, argan, rosehip) for facial application.',
       },
@@ -1659,9 +1634,9 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
         'Cost and access barriers in some communities',
         'SPF not embedded in multigenerational skincare traditions',
       ],
-      why_spf_matters_for_black_skin: 'Even FP VI skin with the highest melanin density accumulates UV damage over time. UV exposure is a primary trigger for PIH and melasma. The melanin provides some natural protection (estimated equivalent to SPF 8–13 in very dark skin) — but this is vastly insufficient given that dermatologists recommend SPF 30–50. For Black Americans treating PIH, SPF is the single most important daily step — without it, brightening actives are working against constant UV melanocyte stimulation.',
+      why_spf_matters_for_black_skin: 'Even FP VI skin with the highest melanin density accumulates UV damage over time. UV exposure is a primary trigger for PIH and melasma. The melanin provides some natural protection, but far less than the SPF 30–50 dermatologists recommend. For Black Americans treating PIH, SPF is the single most important daily step — without it, brightening actives are working against constant UV melanocyte stimulation.',
       solutions: [
-        'Tinted mineral SPF formulations designed for deep skin tones (Black Girl Sunscreen, Kinlo, Supergoop Glowscreen, Unsun Cosmetics)',
+        'Sheer or tinted SPFs made with deep skin tones in mind (Black Girl Sunscreen, Kinlo, Unsun Cosmetics)',
         'Chemical SPF with no white cast (EltaMD UV Clear, La Roche-Posay Anthelios)',
         'Black-owned SPF brands specifically formulated for melanated skin',
         'Celebrity education campaigns (Black dermatologists on social media have dramatically shifted SPF acceptance in Black American communities)',
@@ -1670,7 +1645,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
     },
 
     dermatology_access: {
-      disparity: 'Black Americans are significantly underrepresented in dermatology — both as patients and as physicians. As of recent data, Black dermatologists represent approximately 3% of dermatologists in the US, while Black Americans are 13% of the population. This creates a documented mismatch between patient needs and physician training.',
+      
       skin_of_color_society: 'The Skin of Color Society (SOCS) — founded in 2004 — is a professional medical organisation dedicated to advancing the understanding and treatment of skin of color. Their website (skinofcolorsociety.org) maintains a directory of dermatologists with expertise in treating skin of color.',
       historical_medical_racism: 'The history of medical racism in the US — from the Tuskegee Study to documented bias in pain management — has eroded trust between Black Americans and healthcare institutions. This is a real and valid historical basis for healthcare avoidance that dermatologists must acknowledge, not dismiss.',
       telehealth_expansion: 'Teledermatology has expanded access to dermatological care for Black Americans in underserved communities. Platforms like Hims & Hers, Curology, and dedicated dermatology telehealth services have democratised access to prescription treatments (retinoids, azelaic acid) that previously required in-person visits.',
@@ -1795,7 +1770,7 @@ export function getDangerousProductWarning(ingredient) {
     'citrus-juice-on-skin': {
       danger_level: 'MODERATE — risk of phytophotodermatitis',
       applies_to: ['Lime juice', 'Lemon juice', 'Orange juice', 'Bergamot oil', 'Grapefruit juice'],
-      risk: 'Psoralens in citrus activate with UV light — causes severe burns and intense PIH worse than the original spots. Very common in Caribbean and Latin American communities.',
+      risk: 'Psoralens in citrus activate with UV light — causes severe burns and intense PIH worse than the original spots. A known risk wherever citrus is used as a home remedy for dark spots.',
       action: 'Do not apply citrus juice to skin before sun exposure. If used at all, use only at night and rinse completely before morning. Use lactic acid or vitamin C as a safer evidence-based alternative.',
     },
     'lead-kohl': {

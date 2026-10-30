@@ -6,7 +6,7 @@
 
 export const ACNE_SCIENCE = {
   title: 'The Science of Acne',
-  what: 'Acne vulgaris is the most common skin condition in the world; affects approximately 85% of people between ages 12-24; can persist into the 30s, 40s, and beyond (adult acne); characterised by blocked follicles, sebum overproduction, bacterial proliferation, and inflammation',
+  
   formation: {
     step1: 'Sebum (oil) is produced in the sebaceous gland attached to each hair follicle; androgen hormones (testosterone and its derivatives, present in both males and females) increase sebum production; excess sebum contributes to pore blockage',
     step2: 'Dead skin cells accumulate in the follicle opening and combine with excess sebum; this creates a "plug" that blocks the pore; without inflammation, this plug creates a comedo (blackhead or whitehead)',
@@ -36,7 +36,7 @@ export const ACNE_SCIENCE = {
   hormonal: {
     what: 'Hormonal acne is driven by hormonal fluctuations that increase sebum production; affects the lower face (jawline, chin, cheeks), neck, and sometimes back and chest; often cyclical in women (worsening in the week before menstruation when oestrogen drops and androgen effects are relatively unopposed)',
     causes: ['Menstrual cycle (premenstrual flares)', 'Polycystic ovary syndrome (PCOS) — a common cause of persistent adult female acne with elevated androgens', 'Starting, stopping, or changing hormonal contraception', 'Pregnancy', 'Perimenopause', 'Thyroid disorders', 'Adrenal issues'],
-    PCOS: 'PCOS affects approximately 5-15% of women globally; characterised by elevated androgens, irregular periods, and often ovarian cysts; acne is one of the most visible symptoms; more common in South Asian and Middle Eastern women than in other populations in some studies; requires a medical diagnosis and treatment beyond topical skincare',
+    
     treatments: ['Combined oral contraceptive pill (estrogen + progestin): FDA-approved acne treatment; reduces androgen effects; Ortho Tri-Cyclen, Yaz, Estrostep are FDA-approved for acne', 'Spironolactone: oral medication; androgen blocker; very effective for hormonal acne in women; not used in men; 25-100mg daily', 'Topical treatments may have limited effect on hormonal acne if the underlying hormonal cause is not addressed']
   },
   fungalAcne: {
@@ -88,7 +88,7 @@ export const ACNE_TREATMENTS_OVERVIEW = {
     oral: ['Antibiotics: doxycycline, minocycline (tetracycline class); azithromycin; used for moderate-severe acne; should be combined with topicals and have a defined course (3-6 months maximum to reduce antibiotic resistance)', 'Spironolactone: for hormonal acne in women; androgen blocker', 'Combined oral contraceptive pill: for women with hormonal acne', 'Isotretinoin (Roaccutane/Accutane): the most powerful acne treatment; oral vitamin A derivative; dramatically reduces sebum production; clears even severe cystic acne in the majority of patients; 16-20 week course typically produces prolonged remission; requires iPLEDGE program in US due to teratogenicity (causes severe birth defects); numerous side effects including dryness; absolutely must not be used during pregnancy; monitored by a dermatologist with regular blood tests']
   },
   isotretinoin: {
-    what: 'Isotretinoin (brand names: Accutane, Roaccutane, Oratane, Claravis) is oral vitamin A (retinoic acid) taken systemically; it is the most effective acne treatment available; reduces sebum production by up to 90%; clears severe, scarring, and cystic acne in the majority of patients',
+    
     darkSkin: 'Isotretinoin in Fitzpatrick IV-VI skin is effective but requires careful monitoring; during treatment, dryness and irritation can trigger PIH if the skin is not well moisturised and protected; moisturising intensively during the isotretinoin course is critical for darker skin; a dermatologist with skin of colour experience is important',
     sideEffects: 'Lips and skin become very dry (standard; treat with rich lip balm and moisturiser); transient initial worsening of acne ("purge") in some patients; joint pain; elevated lipids (monitored with blood tests); teratogenic (requires two forms of contraception and monthly pregnancy tests for women of childbearing age in most countries); the depression risk has been studied extensively — the relationship is complex; current evidence does not confirm isotretinoin causes depression; severe acne itself is associated with depression which resolves when acne is successfully treated'
   }
@@ -96,7 +96,7 @@ export const ACNE_TREATMENTS_OVERVIEW = {
 
 export const ETHNIC_ACNE_GUIDES = {
   'west-african': {
-    prevalence: 'Acne is extremely prevalent in West African and Black populations; acne affects approximately 37% of Black women in some studies; inflammatory acne leading to PIH is the primary acne concern in this population — the PIH aftermath is often more distressing and longer-lasting than the active acne lesions themselves',
+    
     specificChallenges: ['PIH (post-inflammatory hyperpigmentation) from even minor inflammatory lesions; in very dark skin (Fitzpatrick VI), PIH can be intensely dark and take years to fade', 'Pseudofolliculitis barbae (razor bumps) in men — a beard/skin concern that mimics acne', 'Keloid scar risk from severe cystic acne in predisposed individuals (more common in Fitzpatrick V-VI skin)'],
     treatment: {
       priorities: ['SPF 50+ daily: the single most impactful step for PIH fading and prevention of darkening', 'Azelaic acid 10-20%: treats acne and PIH simultaneously; safest for dark skin', 'Niacinamide 4-5%: anti-inflammatory, reduces PIH', 'Adapalene 0.1% gel: effective with lower irritation risk than tretinoin', 'African black soap: anti-inflammatory, gentle cleansing'],
@@ -105,7 +105,7 @@ export const ETHNIC_ACNE_GUIDES = {
     products: 'SkinByHyram endorsements of niacinamide; The Ordinary Azelaic Acid 10%; Differin Adapalene Gel; products marketed specifically for skin of colour (e.g. Topicals Faded Serum, which was created specifically for PIH and melanin-rich skin by a Black American founder)'
   },
   'south-asian': {
-    prevalence: 'Acne is a significant concern in South Asian skin; Fitzpatrick III-V skin; hormonal acne along the jawline is particularly common in South Asian women; PCOS (polycystic ovary syndrome) has higher prevalence in South Asian women than other groups in some studies, contributing to hormonal acne rates; PIH from acne is significant for South Asian skin',
+    
     dietary: 'Dietary associations with acne in South Asian communities include: high glycaemic diet (white rice, refined flour/maida used extensively in South Asian cooking raises blood glucose and IGF-1 which increases sebum); dairy consumption (milk and products increase IGF-1); highly spiced foods may trigger redness in some individuals though direct acne link is debated',
     ayurvedic: {
       traditional: 'Ayurvedic approaches to acne include: neem (Azadirachta indica) preparations (antibacterial, anti-inflammatory; widely used and with some scientific evidence); turmeric (curcumin: anti-inflammatory, applied topically; limited penetration but traditional significance); multani mitti (Fuller\'s earth clay mask: absorbs excess oil; traditional South Asian acne treatment); manjistha (Indian madder) for skin brightening',
@@ -114,46 +114,46 @@ export const ETHNIC_ACNE_GUIDES = {
     treatment: 'Niacinamide for PIH; azelaic acid; vitamin C with SPF for brightening; adapalene for comedonal acne; dermatologist consultation for hormonal acne (spironolactone or OCP consideration); avoid bleaching creams for PIH (hydroquinone overuse risk)'
   },
   caribbean: {
-    prevalence: 'Caribbean skin (spanning the full Fitzpatrick range) has acne patterns correlating with skin tone and heritage; Afro-Caribbean individuals experience similar PIH challenges to West African and Black American communities; Indo-Caribbean individuals follow similar patterns to South Asian communities',
+    
     climate: 'The tropical Caribbean climate creates specific acne triggers: high humidity promotes Malassezia folliculitis (fungal "acne"); sweat and heat can trigger acne mechanica; SPF use is critical but many chemical sunscreens can trigger breakouts in acne-prone skin — look for non-comedogenic mineral SPF options',
     cultural: 'Natural remedies for acne in Caribbean culture include: aloe vera (widely grown and used; anti-inflammatory); sea water (salt water drying effect; some antimicrobial properties); lime juice applied to spots (citric acid provides some exfoliation but is very photosensitising — must never be used before sun exposure)',
     caution: 'Lime juice on skin before sun exposure can cause phytophotodermatitis — severe permanent hyperpigmentation where lime juice contacted the skin; commonly affects arms and skin of people who squeeze limes outdoors in Caribbean communities; avoid lime juice on skin before sun exposure'
   },
   arab: {
-    prevalence: 'Acne is prevalent across Arab skin tones (Fitzpatrick III-VI); hormonal acne patterns; dairy-heavy diets in some communities; the Gulf heat and humidity can worsen acne; PIH concern varies with skin tone from moderate (III-IV) to significant (V-VI)',
+    
     rosewater: 'Rose water (maʾ al-ward) as a toner is a traditional Arab remedy for acne-prone skin; rose water has mild anti-inflammatory and antibacterial properties; it is pH-balancing; using rose water as a toner after cleansing is traditional and supported by some evidence; Damascus rose water (from Syria) is traditionally considered the finest quality',
     blackSeed: 'Black seed oil (Nigella sativa / black cumin) is one of the most important traditional remedies in Arab medicine (referenced in Islamic texts); it has genuine anti-inflammatory, antibacterial, and antioxidant properties with scientific evidence; topical application of black seed oil has been studied for acne with promising results; oral black seed supplementation also has evidence for inflammatory conditions',
     diet: 'Diet in the Gulf region has changed significantly with increasing Westernisation; high glycaemic diet (white bread, rice, processed foods, sugary drinks) and increased dairy consumption are associated with increased acne; traditional Arab diets with olive oil, legumes, and lower dairy may be more skin-friendly',
     hammam: 'Regular hammam (Turkish bath/Arab bath) visits provide thorough pore cleansing; steam softens comedones; traditional hammam exfoliation (with kessa mitt) can help with mild comedonal acne; however, aggressive scrubbing can worsen inflammatory acne'
   },
   latina: {
-    prevalence: 'Acne affects Latina women across the full Fitzpatrick range; melasma (often triggered by the same hormonal changes that cause hormonal acne — pregnancy, OCP changes) can coexist with acne and complicate treatment; PIH from acne is significant for Fitzpatrick III-V Latina skin',
+    
     hormonal: 'Latina women, particularly of Mexican and Central American heritage, have higher rates of PCOS than other demographic groups in some US studies; this translates to higher rates of hormonal acne; evaluation for PCOS is important for Latina women with persistent adult hormonal acne along the jawline',
     diet: 'The dairy-acne link is relevant; traditional Mexican and Latin American diets include cheese, sour cream (crema), and milk; correlation between dairy consumption and acne has been found in multiple studies (through IGF-1 pathway); reduced dairy or dairy alternatives may help dairy-sensitive acne patients',
     cultural: 'Traditional Latin American remedies for acne: aloe vera (sábila) — universally used; aguacate (avocado) masks — rich, nourishing but potentially comedogenic for acne-prone skin; limón (lime/lemon) — used for spot treatment but photosensitising risk as in Caribbean communities; papaya enzyme — gentle natural exfoliant',
     treatment: 'Azelaic acid is particularly well-suited for Latina skin with mixed acne and PIH/melasma concerns; niacinamide; SPF 50+ with iron oxide for melasma-prone skin; adapalene; dermatologist consultation for PCOS-related hormonal acne'
   },
   'east-asian': {
-    prevalence: 'Acne is common in East Asian skin; Fitzpatrick II-IV; PIH concern is moderate; East Asian skin tends to be sensitive (large ceramide composition differences have been observed compared to European and African skin types in some studies); approach is typically to use the minimum effective treatment at the lowest irritation level',
+    
     kBeauty: 'K-beauty approach to acne is typically gentler and more layered than Western approaches; focuses on: thorough double cleansing (removing comedone-causing impurities); centella asiatica (cica) for calming inflammation; tea tree oil (cautiously; can be irritating at high concentrations); BHA toners (2% BHA toners from COSRX, Stridex); snail mucin (growth factor content supports post-acne healing); rather than spot-treating with harsh high-concentration actives',
     centella: 'Centella asiatica (cica, gotu kola) is one of the most important East Asian skincare ingredients for acne-prone and sensitive skin; contains asiaticoside, madecassoside, and asiatic acid; anti-inflammatory; supports wound healing; reduces redness; widely used in Korean skincare; products: COSRX Centella Blemish Cream; Dr. Jart+ Cicapair Tiger Grass; Skin1004 Madagascar Centella',
     snail: 'Snail secretion filtrate (snail mucin) contains growth factors, glycoproteins, and hyaluronic acid; supports skin healing and regeneration; widely used in K-beauty for post-acne healing; COSRX Advanced Snail 96 Mucin Power Essence is the iconic K-beauty snail mucin product',
     diet: 'High glycaemic Korean and East Asian diets (white rice, ramyeon/instant noodles, ddeok rice cakes) may contribute to acne in susceptible individuals; the "glass skin" ideal in Korean beauty culture creates motivation for addressing acne that drives sophisticated skincare adoption'
   },
   'east-african': {
-    prevalence: 'East African skin (Fitzpatrick IV-VI) has significant PIH risk from acne; the hot, often humid climates in coastal East African regions contribute to Malassezia folliculitis risk; Horn of Africa communities have lower sebum-related acne rates in some observations (though data is limited)',
+    
     traditional: 'Traditional East African acne remedies: neem preparations (used across East Africa as well as South Asia); aloe vera (widely grown in East Africa; applied directly from the plant); coffee grounds as a gentle scrub (Ethiopian heritage); frankincense (Boswellia) resin preparations applied to blemishes — anti-inflammatory and antimicrobial properties',
     diet: 'Injera (Ethiopian fermented flatbread from teff grain) is a low-glycaemic complex carbohydrate; traditional Ethiopian diet with lentils (misir), chickpeas, and injera is relatively skin-friendly compared to high-GI Western diets; the increasing consumption of Western fast food in urban Ethiopian cities is associated with increasing acne rates in younger generations',
     treatment: 'For Fitzpatrick IV-VI East African skin: niacinamide; SPF 30-50; azelaic acid; careful introduction of adapalene; avoid bleaching creams for PIH; see a dermatologist for cystic acne'
   },
   'south-african': {
-    prevalence: 'South African skin spans the full Fitzpatrick range; acne prevalence and PIH risk correlate with skin tone; Black South African individuals experience the same Fitzpatrick V-VI challenges as other African communities; Coloured South African individuals (the Cape Malay/mixed heritage community) have intermediate Fitzpatrick types with moderate PIH risk; white South African individuals have European Fitzpatrick I-III considerations',
+    
     rooibos: 'Rooibos (red bush) tea is endemic to South Africa; applied topically, cooled rooibos tea has anti-inflammatory properties (antioxidant quercetin, luteolin content); using cooled rooibos tea as a toner or applying a rooibos tea bag directly to blemishes is a traditional South African remedy; Africology and other South African natural beauty brands use rooibos in acne preparations',
     marula: 'Marula oil (from the Sclerocarya birrea tree, native to southern Africa) has been studied for use on acne-prone skin; it is non-comedogenic and contains oleic and palmitic acids with anti-inflammatory properties; counterintuitively, some facial oils with appropriate fatty acid profiles can reduce rather than worsen acne by reducing the skin\'s need to overproduce sebum (the oil-cleansing/sebum regulation theory)',
     access: 'Access to dermatology in South Africa is significantly inequitable; private dermatology care is expensive and primarily available to higher-income (disproportionately white) communities; public sector dermatology waiting lists are very long; affordable OTC treatments (niacinamide, adapalene, azelaic acid) are particularly important in this access-constrained environment'
   },
   'black-american': {
-    prevalence: 'Acne is the most common skin concern among Black American women, with PIH (the dark spots left behind) being the primary complaint and often more distressing than the active acne; research shows that Black patients are significantly less likely to see a dermatologist for acne than white patients, and when they do, are often given treatments not optimised for melanin-rich skin',
+    
     underrepresentation: 'Medical education in the US has historically taught skin conditions primarily on images of white skin; medical students and doctors may misidentify acne presentations on dark skin; acne on Fitzpatrick V-VI skin has a different visual presentation (less redness, more purple/grey tones to inflammation; PIH more prominent than active redness) and requires awareness from practitioners',
     cultural: 'Cultural perspectives on acne in Black American communities include "Black don\'t crack" mythology extending to skin care — sometimes leading to insufficient attention to active skincare interventions; however, beauty standards in Black American culture that value clear, radiant skin create strong motivation for acne treatment; content creators like Hyram Yarbro have become major acne skincare educators with specific attention to skin of colour',
     topicals: {
@@ -192,16 +192,3 @@ export function getEthnicAcneGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const ACNE_MANAGEMENT_STATS = {
-  moduleId: 'acne_management_ethnic',
-  version: '1.0.0',
-  topics: ['acne vulgaris C. acnes sebum comedone inflammatory', 'PIH post-inflammatory hyperpigmentation dark spots acne', 'PIH vs atrophic scars keloid Fitzpatrick IV-VI', 'hormonal acne PCOS spironolactone South Asian Latina', 'isotretinoin dark skin dryness moisturise protocol', 'pseudofolliculitis barbae razor bumps PIH men coily', 'azelaic acid acne PIH dual action skin of colour', 'adapalene Differin OTC preferred dark skin', 'Malassezia folliculitis fungal acne tropical climate', 'niacinamide PIH melanin melanosome transfer', 'centella asiatica cica K-beauty acne calming', 'snail mucin COSRX post-acne healing Korean', 'black seed oil Nigella sativa Arab acne', 'rooibos South Africa anti-inflammatory acne toner', 'Topicals Faded Serum Black-founded PIH melanin skin', 'Bevel Black men shaving PFB grooming', 'lime juice phytophotodermatitis Caribbean caution', 'Ayurvedic neem turmeric multani mitti acne South Asian'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'Post-inflammatory hyperpigmentation (PIH) is the primary acne concern for Fitzpatrick IV-VI skin (West African, Black American, East African, darker South Asian, Arab, and Latina communities); the dark spots left after acne clear can be more distressing and last significantly longer than the active lesions; PIH in very dark skin can take 12-24 months to fully fade without treatment; SPF 50+ daily is the single most impactful intervention as UV exposure dramatically slows PIH fading',
-    'Malassezia folliculitis (pityrosporum folliculitis) is frequently confused with acne because it looks similar but is caused by yeast (the same organism as dandruff), not bacteria; it does NOT respond to antibacterial acne treatments and is actually worsened by oral antibiotics (which eliminate competing bacteria and allow Malassezia to flourish); it is more common in hot, humid environments (Caribbean, West African, coastal East African); treatment is antifungal (ketoconazole shampoo used as a face wash)',
-    'Lime and lemon juice applied to the skin before sun exposure can cause phytophotodermatitis — a severe photochemical reaction that causes intense, often permanent hyperpigmentation in the shape of where the juice contacted the skin; this is relevant to Caribbean and Latina communities where lime juice is commonly used as a DIY spot treatment; it must never be applied to skin before outdoor sun exposure',
-    'Azelaic acid (10% OTC; 15-20% prescription) is one of the most recommended treatments for skin of colour with acne because it simultaneously addresses both acne (antibacterial + anti-inflammatory) and PIH (tyrosinase inhibition that reduces pigmentation) in a single ingredient with an excellent tolerability profile that does not risk worsening PIH through irritation',
-    'The K-beauty approach to acne treatment typically emphasises gentler interventions (centella asiatica for calming; low-concentration BHA toners; snail mucin for post-acne repair) compared to Western approaches; this gentler layered philosophy is particularly appropriate for sensitive skin and for skin tones where irritation itself can trigger PIH — making K-beauty acne approaches influential beyond East Asian communities, particularly in darker skin communities'
-  ]
-};

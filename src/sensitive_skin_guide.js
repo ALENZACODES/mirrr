@@ -42,8 +42,8 @@ export const ECZEMA_GUIDE = {
 
   prevalence_in_ethnic_communities: {
     black_children: 'Atopic dermatitis is significantly more prevalent in Black children than in white children in the US (19.3% vs 12.1% in some studies). Under-treated and under-diagnosed.',
-    south_asian: 'High prevalence in South Asian communities, particularly those who have migrated to colder, less humid climates.',
-    mechanism: 'Darker-skinned individuals may have different microbiome compositions and filaggrin gene variant prevalence — though research is ongoing. Environmental factors including dry northern climates affecting people from tropical origins play a significant role.',
+    
+    
   },
 
   presentation_in_dark_skin: {
@@ -58,7 +58,7 @@ export const ECZEMA_GUIDE = {
     first_line: {
       moisturisation: 'The #1 intervention. Apply immediately after bathing (within 3 minutes — "soak and seal" technique) to lock moisture in.',
       emollients: [
-        { product: 'Vaseline (petroleum jelly)', note: 'The most evidence-backed occlusive for eczema. Clinical studies show it outperforms many prescription moisturisers for eczema barrier repair.' },
+        { product: 'Vaseline (petroleum jelly)' },
         { product: 'CeraVe Healing Ointment', note: 'Petroleum-based with ceramides added — excellent for severe eczema' },
         { product: 'Aquaphor', note: 'Petroleum with lanolin — excellent healing properties' },
         { product: 'Aveeno Eczema Therapy', note: 'Colloidal oatmeal — excellent for itch relief and mild eczema' },
@@ -100,7 +100,7 @@ export const ROSACEA_GUIDE = {
 
   underdiagnosis_in_ethnic_skin: {
     why: 'Rosacea has historically been described as a "condition of fair-skinned individuals." Dermatology education and images primarily show rosacea on light skin as obvious facial redness. On darker skin, this signature redness is less visible — the condition presents differently and is routinely missed.',
-    actual_prevalence: 'Studies suggest rosacea is significantly underdiagnosed and under-treated in people of colour. The condition exists across skin tones but isn\'t being caught.',
+    
   },
 
   presentation_in_darker_skin: {
@@ -318,8 +318,3 @@ export function getSkinConditionGuide(condition) {
   return map[condition] || null;
 }
 
-export const SENSITIVE_SKIN_STATS = {
-  conditionsCovered: 5,
-  safeIngredients: GENTLE_SKINCARE_PRINCIPLES.ingredients_universally_safe.length,
-  ethnicPresentationDifferences: true,
-};

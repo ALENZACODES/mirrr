@@ -54,12 +54,26 @@ import * as scalpConditionsGuide from '../scalp_conditions_guide.js';
 import * as scalpHealthEthnicGuide from '../scalp_health_ethnic_guide.js';
 import * as hairCareScienceExtended from '../hair_care_science_extended.js';
 import * as hairExtensionsGuide from '../hair_extensions_guide.js';
+import * as hyperpigmentationEthnicGuide from '../hyperpigmentation_ethnic_guide.js';
+import * as acneEthnicGuide from '../acne_ethnic_guide.js';
+import * as acneScienceExtended from '../acne_science_extended.js';
+import * as acneManagementEthnic from '../acne_management_ethnic.js';
+import * as spfGuideEthnic from '../spf_guide_ethnic.js';
+import * as sunCareEthnicGuide from '../sun_care_ethnic_guide.js';
+import * as suncareEthnicGuide from '../suncare_ethnic_guide.js';
+import * as sunProtectionExtended from '../sun_protection_extended.js';
+import * as sunDamageGuide from '../sun_damage_guide.js';
+import * as skinBarrierGuide from '../skin_barrier_guide.js';
+import * as skinBarrierEthnicGuide from '../skin_barrier_ethnic_guide.js';
+import * as sensitiveSkinGuide from '../sensitive_skin_guide.js';
+import * as sensitiveSkinEthnic from '../sensitive_skin_ethnic.js';
 
 export const SHELVES = [
   { id: 'rituals', title: 'Rituals & Heritage', blurb: 'Haldi, hammam, shea, mehndi, bathhouse and festival traditions, with the steps to do them at home.' },
   { id: 'eyes', title: 'Eyes, Brows & Kohl', blurb: 'Kohl and kajal traditions, brow threading and architecture, lashes, eye care, and makeup with glasses.' },
   { id: 'hair', title: 'Hair, Colour & Texture', blurb: 'Colour and lightening for dark and coily hair, henna and indigo, porosity, curl types, protective styles and wigs.' },
   { id: 'growth', title: 'Hair Growth & Scalp', blurb: 'How hair grows, why length breaks off, edges and traction, heat, scalp conditions and extensions.' },
+  { id: 'skin', title: 'Skin: Marks, Breakouts & Sun', blurb: 'Dark marks and melasma, safe brightening, breakouts, sunscreen without a white cast, barrier repair, eczema and rosacea.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -115,4 +129,17 @@ export const GUIDES = [
   ['scalp_conditions_guide', 'growth', 'Scalp Conditions: Dandruff to Tinea', scalpConditionsGuide],
   ['scalp_health_ethnic_guide', 'growth', 'Scalp Health by Community', scalpHealthEthnicGuide],
   ['hair_extensions_guide', 'growth', 'Extensions and Added Hair', hairExtensionsGuide],
+  ['hyperpigmentation_ethnic_guide', 'skin', 'Dark Marks, Melasma and Safe Brightening', hyperpigmentationEthnicGuide],
+  ['acne_ethnic_guide', 'skin', 'Breakouts by Community', acneEthnicGuide],
+  ['acne_science_extended', 'skin', 'The Acne Treatment Ladder', acneScienceExtended],
+  ['acne_management_ethnic', 'skin', 'Acne and the Marks It Leaves', acneManagementEthnic],
+  ['spf_guide_ethnic', 'skin', 'SPF Without a White Cast', spfGuideEthnic],
+  ['sun_care_ethnic_guide', 'skin', 'Sun Care Traditions and Today', sunCareEthnicGuide],
+  ['suncare_ethnic_guide', 'skin', 'Sunscreen Types and Vitamin D', suncareEthnicGuide],
+  ['sun_protection_extended', 'skin', 'Sun Protection by Community', sunProtectionExtended],
+  ['sun_damage_guide', 'skin', 'Sun Damage and Repair', sunDamageGuide],
+  ['skin_barrier_guide', 'skin', 'Skin Barrier Repair', skinBarrierGuide],
+  ['skin_barrier_ethnic_guide', 'skin', 'Skin Barrier by Community', skinBarrierEthnicGuide],
+  ['sensitive_skin_guide', 'skin', 'Eczema, Rosacea and Sensitive Skin', sensitiveSkinGuide],
+  ['sensitive_skin_ethnic', 'skin', 'Sensitive Skin by Community', sensitiveSkinEthnic],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

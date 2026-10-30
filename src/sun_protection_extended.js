@@ -31,12 +31,12 @@ export const UV_BASICS = {
   spf_rating_explained: {
     what: 'SPF (Sun Protection Factor) measures protection against UVB only — the burning rays. It does NOT directly measure UVA protection.',
     numbers: [
-      { spf: 'SPF 15', blocks: '93% of UVB rays' },
-      { spf: 'SPF 30', blocks: '97% of UVB rays' },
-      { spf: 'SPF 50', blocks: '98% of UVB rays' },
-      { spf: 'SPF 100', blocks: '99% of UVB rays' },
+      { spf: 'SPF 15' },
+      { spf: 'SPF 30' },
+      { spf: 'SPF 50' },
+      { spf: 'SPF 100' },
     ],
-    interpretation: 'The difference between SPF 30 and SPF 100 is just 1-2% more UVB blockage — but the difference between SPF 15 and SPF 30 is 4% which is meaningful. Most dermatologists recommend SPF 30 as the minimum and SPF 50 for daily use.',
+    
     the_gap: 'SPF ONLY rates UVB protection. A product can have SPF 100 and offer poor UVA protection if it doesn\'t contain appropriate UVA filters. This is why "broad spectrum" labelling matters — it means the product protects against both UVA and UVB.',
   },
 
@@ -64,7 +64,7 @@ export const UV_DAMAGE_ETHNIC_SKIN = {
       check: 'Check palms, soles of feet, and under nails during skin self-examination. See a dermatologist annually.',
     },
     why_later_detection: 'Skin cancer is found later in people of colour because: (1) fewer check-ups due to belief that dark skin is immune; (2) dermatologists may miss skin cancer in darker skin; (3) acral melanoma isn\'t in a typical sun-exposed area.',
-    statistics: 'While skin cancer rates are lower in Black and Hispanic populations, 5-year survival rates are significantly lower — 65-70% vs 90%+ in white patients. Later diagnosis is the primary reason.',
+    
   },
 
   hyperpigmentation_and_uv: {
@@ -168,8 +168,7 @@ export const SPF_BY_COMMUNITY = {
     skin_concerns: 'Same as West African. Additionally: hair-wearing habits may mean SPF on scalp often neglected.',
     recommendations: [
       'Same as West African recommendations',
-      'Bask & Lather SPF Scalp Spray — for natural hair wearers, SPF for exposed parts',
-      'Kreyol Essence Haitian Gold SPF for face and body',
+      'Sun Bum Scalp & Hair Mist SPF 30 — for natural hair wearers, SPF for exposed parts',
     ],
     scalp_note: 'The part of natural or protective-styled hair is often left exposed to direct sun. Powder SPF or spray SPF along the parting is important.',
   },
@@ -203,7 +202,7 @@ export const SPF_APPLICATION_GUIDE = {
   how_much: {
     face: '1/4 teaspoon (approximately 2mg/cm²) for the face — most people use far less than this, significantly reducing actual SPF received',
     body: '1 ounce (30mL, a shot glass) for full body',
-    how_to_check: 'The SPF on the label is only achieved at this application density. Studies consistently show people apply 20-50% of the required amount.',
+    
   },
 
   timing: {
@@ -249,7 +248,7 @@ export const COMPREHENSIVE_PHOTOPROTECTION = {
 
   physical_protection: {
     hats: 'UPF 50 broad-brimmed hat protects face, ears, and neck. The most effective sun protection available — no reapplication needed.',
-    clothing: 'UPF-rated clothing (Coolibar, Solbari, REI) blocks significant UV. Regular cotton provides approximately UPF 10-15; UPF 50 blocks 98% of UV.',
+    
     sunglasses: 'UV-blocking sunglasses protect the periorbital area (around eyes) — an area where skin cancer is common and where lines form from UV damage. Look for "100% UV protection" or "UV400."',
     shade: 'Seeking shade between 10am-4pm (peak UV hours) significantly reduces exposure. UV index tracking apps help plan outdoor activities.',
     parasol: 'The Japanese and Korean tradition of UV-protective parasols (umbrellas) is genuinely effective — provides shade and reduces UV exposure significantly.',
@@ -287,8 +286,3 @@ export function getComprehensivePhotoprotection() {
   return COMPREHENSIVE_PHOTOPROTECTION;
 }
 
-export const SUN_PROTECTION_STATS = {
-  communitiesCovered: Object.keys(SPF_BY_COMMUNITY).length,
-  chemicalFiltersListed: UV_BASICS.spf_rating_explained.numbers.length,
-  whiteCastSolutions: Object.keys(WHITE_CAST_GUIDE.solutions).length,
-};

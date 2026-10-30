@@ -30,15 +30,18 @@ Black, South Asian, Arab, Latina, Caribbean and East Asian women are often an af
 
 ## How Qloo Powers MIRRR
 
-All Qloo calls go through `src/qloo.js` (`QlooClient`) on the server; the API key never reaches the browser. MIRRR uses Qloo in three ways:
+All Qloo calls go through `src/qloo.js` (`QlooClient`) on the server; the API key never reaches the browser. MIRRR uses Qloo in four ways:
 
 ### 1. Entity resolution: `GET /v2/search`
 She types an artist, show, film or brand. `qlooTaste()` in `src/taste_signals.js` calls `GET /v2/search` to resolve it to a Qloo entity, preferring artist, person, movie, TV show, brand, destination, book and podcast types. The badge names the entity Qloo resolved.
 
 ### 2. Taste tags: `GET /v2/insights` (music genres and media themes)
-For the resolved entity, MIRRR calls `GET /v2/insights` twice with `filter.type=urn:tag` and `signal.interests.entities=<id>`: once with `filter.tag.types=urn:tag:genre:music` and once with `urn:tag:genre:media,urn:tag:keyword:media`. That is 3 Qloo calls per taste input, returning up to 50 affinity-scored tags (25 + 25). A beauty-vocabulary allowlist and a safety blocklist keep the tags that can inform a look (for example `afrobeats`, `naija`, `Africa` for Burna Boy). The tags feed a taste vector (`src/aesthetic.js`: intensity, warmth, boldness, texture, colour palette), and each look is scored as **0.5 × taste-vector fit + 0.5 × Qloo evidence share**, with the arithmetic shown in the agent trace.
+For the resolved entity, MIRRR calls `GET /v2/insights` twice with `filter.type=urn:tag` and `signal.interests.entities=<id>`: once with `filter.tag.types=urn:tag:genre:music` and once with `urn:tag:genre:media,urn:tag:keyword:media`. Together with the brand call below, that is 4 Qloo calls per taste input (one search, three insights; each extra name adds one search), returning up to 50 affinity-scored tags (25 + 25). A beauty-vocabulary allowlist and a safety blocklist keep the tags that can inform a look (for example `afrobeats`, `naija`, `Africa` for Burna Boy). The tags feed a taste vector (`src/aesthetic.js`: intensity, warmth, boldness, texture, colour palette), and each look is scored as **0.5 × taste-vector fit + 0.5 × Qloo evidence share**, with the arithmetic shown in the agent trace.
 
-### 3. Trending artists: `GET /v2/insights` (artist affinity)
+### 3. Beauty and fashion brands: `GET /v2/insights` (brand affinity)
+Alongside the two tag calls, `QlooClient.insightBrands` calls `GET /v2/insights` with `filter.type=urn:entity:brand` and the same entities as signals, and gets up to 50 brands with affinity. `beautyBrands()` in `src/taste_signals.js` keeps a brand only when one of its Qloo tags is a beauty or fashion category (or its name is an unmistakable beauty or fashion house) and no tag files it under another industry (drinks, apps, electronics, sport clubs, shops). The top 8 appear under the Taste badge as "Brands Qloo links to this taste", each with its affinity and, in the API reply, the Qloo tag that qualified it. Live on Oct 30, 2026, Rihanna → Fenty Beauty first. If Qloo links no beauty or fashion brand to a taste, the row is not shown.
+
+### 4. Trending artists: `GET /v2/insights` (artist affinity)
 `GET /api/trending` resolves each region's anchor artists with `/v2/search`, then calls `GET /v2/insights` with `filter.type=urn:entity:music:artist` and those entities as signals (`src/trending_artists.js`). Artists Qloo returns that are also on MIRRR's curated regional list are marked as confirmed by two sources; Qloo's top 3 are shown even if they are not on the list; the rest of the panel is filled from the curated list. If Qloo is unreachable, the curated list is used on its own.
 
 ---

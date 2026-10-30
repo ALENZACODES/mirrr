@@ -94,7 +94,11 @@
   const sw = x => `<span class="cx-swatch" style="background:${esc(x.hex)}" title="${esc(x.word)}"></span>`;
   function renderPlan() {
     const p = cl.plan; const l = p.lips; const pal = p.palette; const f = p.finish; const ln = p.liner; const c = p.care; const n = p.communityNotes;
-    $('clPreview').innerHTML = lipsPanel(p) + palettePanel(p);
+    $('clPreview').innerHTML = lipsPanel(p) + palettePanel(p) + '<p class="photo-try"><button type="button" class="btn btn-primary photo-try-btn" id="clPhotoTry">Try it on my photo</button><span>Laid on your own face, on this device. Nothing is uploaded.</span></p>';
+    $('clPhotoTry').addEventListener('click', () => window.dispatchEvent(new CustomEvent('mirrr:tryon', { detail: {
+      name: p.lips.shade.colour.word ?? 'your lip colour',
+      picture: { lip: p.lips.shade.colour.hex, lipFinish: p.choices.finish, lipSheer: /gloss|stain|balm|sheer/.test(String(p.choices.finish)), intensity: 0.7 },
+    } })));
     $('clSummary').innerHTML = `
       <p class="hl-big">${esc(l.shade.colour.word)} ${esc(l.look.name.toLowerCase())} · ${esc(f.finish)} · ${esc(pal.formula)}</p>
       ${p_('Why this shade', l.shade.from === 'undertone' ? `Every shade the guide names for your depth clashes with a ${p.choices.undertone} undertone, so this one comes from your undertone list.` : `From the guide for Fitzpatrick ${p.choices.fitzpatrick}: ${l.shade.line}`)}`;

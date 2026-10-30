@@ -80,7 +80,14 @@
   const card = (title, body, cls = '') => (body ? `<article class="st-card${cls}"><h4>${esc(title)}</h4>${body}</article>` : '');
   function renderPlan() {
     const p = lp.plan; const t = p.taste; const F = p.focus;
-    $('lpPreview').innerHTML = pathPanel(p) + p.leaps.map((L, i) => facePanel(p, L, i)).join('');
+    $('lpPreview').innerHTML = pathPanel(p) + p.leaps.map((L, i) => facePanel(p, L, i)).join('') + '<p class="photo-try"><button type="button" class="btn btn-primary photo-try-btn" id="lpPhotoTry">Try it on my photo</button><span>Laid on your own face, on this device. Nothing is uploaded.</span></p>';
+    $('lpPhotoTry').addEventListener('click', () => {
+      const L = p.leaps[Number(p.choices.focus) || 0] ?? p.leaps[0]; const pal = L.palette;
+      window.dispatchEvent(new CustomEvent('mirrr:tryon', { detail: {
+        name: `${L.destination.label}: ${L.look.name}`,
+        picture: { lip: pal.lip.hex, lipFinish: pal.lip.finish ?? (pal.finish === 'glass' ? 'gloss' : pal.finish), lid: pal.lid.map(c => c.hex), liner: pal.liner ?? '', linerColour: '#111111', highlight: pal.highlight.hex, baseFinish: pal.base ?? '', intensity: pal.drama },
+      } }));
+    });
     $('lpSummary').innerHTML = `<p class="hl-big">${esc(p.leaps.map(L => L.destination.label).join(' · '))}</p><p>${esc(t.label)} · ${esc(STR[p.strength.id] ?? p.strength.id)} · ${esc(p.tone.label)}</p>`;
     $('lpPlan').innerHTML = [
       p.note ? `<p class="lib-note">${esc(p.note)}</p>` : '',

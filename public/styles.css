@@ -3023,3 +3023,9 @@ body { padding-top: 58px; }
 .hr-compare li { display: flex; align-items: center; gap: 0.5rem; }
 .hr-dot { width: 0.8rem; height: 0.8rem; border-radius: 50%; flex: none; }
 .hr-flag { color: #e9c46a; }
+
+/* Photo try-on: honest notes and the studio buttons that open it */
+.tryon-note { font-size: 0.78rem; opacity: 0.75; margin-top: 0.6rem; text-align: center; }
+#tryonStatus:empty { display: none; }
+.photo-try { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin: 0.4rem 0 0; }
+.photo-try span { font-size: 0.8rem; opacity: 0.75; }

@@ -737,33 +737,34 @@
 
         <!-- Step 1: Upload or Camera -->
         <div id="tryonUploadStep" class="tryon-step">
-          <p class="tryon-hint">Upload a selfie or use your camera to see this look on you</p>
+          <p class="tryon-hint">Upload a front-facing photo or use your camera. The look is laid on your own face, on this device: the photo is never uploaded.</p>
           <div class="tryon-photo-options">
-            <button class="btn btn-primary" id="tryonUploadBtn">📁 Upload Photo</button>
-            <button class="btn btn-secondary" id="tryonCameraBtn">📷 Use Camera</button>
+            <button class="btn btn-primary" id="tryonUploadBtn">Upload Photo</button>
+            <button class="btn btn-secondary" id="tryonCameraBtn">Use Camera</button>
           </div>
           <input type="file" id="tryonFileInput" accept="image/*" class="hidden" />
           <!-- Camera stream -->
           <div id="tryonCameraWrap" class="tryon-camera-wrap hidden">
             <video id="tryonVideo" class="tryon-video" autoplay playsinline muted></video>
-            <button class="btn btn-primary tryon-capture-btn" id="tryonCaptureBtn">📸 Capture</button>
+            <button class="btn btn-primary tryon-capture-btn" id="tryonCaptureBtn">Capture</button>
           </div>
         </div>
 
-        <!-- Step 2: Canvas overlay -->
+        <!-- Step 2: the edited photo -->
         <div id="tryonPreviewStep" class="tryon-step hidden">
           <div class="tryon-canvas-wrap">
             <canvas id="tryonCanvas" class="tryon-canvas"></canvas>
             <canvas id="tryonOverlay" class="tryon-overlay"></canvas>
           </div>
+          <p class="tryon-hint" id="tryonStatus" role="status"></p>
           <div class="tryon-controls">
             <div class="tryon-control-row">
-              <label class="tryon-label">Blend Intensity</label>
-              <input type="range" id="tryonOpacity" min="10" max="80" value="40" class="tryon-slider" />
-              <span id="tryonOpacityVal" class="tryon-val">40%</span>
+              <label class="tryon-label" for="tryonOpacity">Strength</label>
+              <input type="range" id="tryonOpacity" min="10" max="100" value="70" class="tryon-slider" />
+              <span id="tryonOpacityVal" class="tryon-val">70%</span>
             </div>
             <div class="tryon-control-row">
-              <label class="tryon-label">Blend Mode</label>
+              <label class="tryon-label">Finish</label>
               <div class="tryon-blend-btns">
                 <button class="chip-btn chip-btn--active" data-blend="multiply">Natural</button>
                 <button class="chip-btn" data-blend="soft-light">Soft</button>
@@ -773,10 +774,11 @@
             </div>
           </div>
           <div class="tryon-before-after">
-            <button class="btn btn-ghost" id="tryonBeforeAfterBtn">⟷ Before / After</button>
-            <button class="btn btn-secondary" id="tryonSaveBtn">💾 Save Look</button>
-            <button class="btn btn-ghost" id="tryonRetakeBtn">🔄 New Photo</button>
+            <button class="btn btn-ghost" id="tryonBeforeAfterBtn">Before / After</button>
+            <button class="btn btn-secondary" id="tryonSaveBtn">Save to Photos</button>
+            <button class="btn btn-ghost" id="tryonRetakeBtn">New Photo</button>
           </div>
+          <p class="tryon-note">Saved at your photo's full size as a JPEG (browsers can't write HEIC), with your photo's own date and camera details kept and nothing added.</p>
         </div>
       </div>
     </div>

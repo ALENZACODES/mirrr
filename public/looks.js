@@ -126,7 +126,11 @@
   }
   function renderPlan() {
     const p = lb.plan; const L = p.look;
-    $('lbPreview').innerHTML = facePanel(p) + orderPanel(p) + fitPanel(p);
+    $('lbPreview').innerHTML = facePanel(p) + orderPanel(p) + fitPanel(p) + '<p class="photo-try"><button type="button" class="btn btn-primary photo-try-btn" id="lbPhotoTry">Try it on my photo</button><span>Laid on your own face, on this device. Nothing is uploaded.</span></p>';
+    $('lbPhotoTry').addEventListener('click', () => window.dispatchEvent(new CustomEvent('mirrr:tryon', { detail: {
+      name: p.look.label,
+      picture: { ...p.picture, baseFinish: p.look.face?.base ?? '', intensity: Math.min(1, 0.35 + 0.1 * (p.look.difficulty ?? 3)) },
+    } })));
     $('lbSummary').innerHTML = `<p class="hl-big">${esc(L.label)}</p><p>${esc(L.community)} · ${esc(L.category)} · ${L.minutes} minutes · ${esc(L.level)}</p>`;
     $('lbPlan').innerHTML = [
       card(p.fits ? 'Looks that fit' : 'Closest looks', `<p>${esc(p.message)}</p><ul>${p.matches.map(m => `<li>${m.id === L.id ? '<strong>' : ''}${esc(m.label)}${m.id === L.id ? '</strong>' : ''} · ${m.minutes} min · ${esc(m.level)}</li>`).join('')}</ul>`),

@@ -417,3 +417,22 @@ test('grooming studio routes over HTTP', async () => {
   const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
   assert.equal(lib.shelves.find(s => s.id === 'grooming').guides.length, 2);
 });
+
+test('photo palette routes over HTTP, and the photo modules are served', async () => {
+  const B = `http://127.0.0.1:${PORT}`;
+  const h = { 'x-forwarded-for': '10.6.6.23' };
+  const looks = await (await fetch(`${B}/api/photo/looks`, { headers: h })).json();
+  assert.ok(looks.looks.length >= 60);
+  const p = await (await fetch(`${B}/api/photo/palette?look=latina_glam&skin=4a2c20`, { headers: h })).json();
+  assert.match(p.lip, /^#[0-9a-f]{6}$/); assert.ok(p.lid.length >= 1);
+  assert.equal((await fetch(`${B}/api/photo/palette?look=nope`, { headers: h })).status, 404);
+  const q = await (await fetch(`${B}/api/photo/palette`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ picture: { lip: '#c1121f', liner: 'wing' } }) })).json();
+  assert.equal(q.lip, '#c1121f'); assert.equal(q.linerStyle, 'wing');
+  assert.equal((await fetch(`${B}/api/photo/palette`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  for (const f of ['photo-engine.js', 'photo-save.js']) {
+    const r = await fetch(`${B}/${f}`, { headers: h });
+    assert.equal(r.status, 200); assert.match(r.headers.get('content-type'), /javascript/);
+  }
+  const html = await (await fetch(`${B}/`, { headers: h })).text();
+  assert.ok(html.includes('id="tryonStatus"') && html.includes("browsers can't write HEIC"));
+});

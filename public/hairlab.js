@@ -81,7 +81,8 @@
     panels.push(panel('hlGoal', p.sessions > 1 ? `Goal (${p.sessions} sessions)` : 'Goal', p.start.hex, goal, pattern, curl, p.plantDye && p.chemicalLift > 0 ? 'Shows as a tint' : p.target.label, sub));
     const fadeTo = p.stage ? p.stage.swatch : p.start.hex;
     panels.push(panel('hlFade', 'Weeks later', p.start.hex, mix(goal, fadeTo, FADE[p.choices.porosity]), pattern, curl, `${nice(p.choices.porosity)} porosity fades ${p.fade}`, sub));
-    $('hlPreview').innerHTML = panels.join('');
+    $('hlPreview').innerHTML = panels.join('') + '<p class="photo-try"><button type="button" class="btn btn-primary photo-try-btn" id="hlPhotoTry">Try it on my photo</button><span>Laid on your own face, on this device. Nothing is uploaded.</span></p>';
+    $('hlPhotoTry').addEventListener('click', () => window.dispatchEvent(new CustomEvent('mirrr:tryon', { detail: { name: p.target.label, hair: goal } })));
   }
 
   // ---- Controls ----------------------------------------------------------------------------

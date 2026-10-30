@@ -2,6 +2,8 @@
  * MIRRR — Frontend Application
  * Your Taste. Your Looks. Your Style.
  */
+import { findFace, applyLook, recolourHair, scaleFace, labToRgb } from './photo-engine.js';
+import { detectPlatform, canvasToPhotoFile, savePhotoFile, MAX_CANVAS_PIXELS } from './photo-save.js';
 
 // ---------------------------------------------------------------------------
 // State
@@ -1251,7 +1253,19 @@ const tryonState = {
   stream: null,
   showingOriginal: false,
   blendMode: 'multiply',
+  userImg: null,     // the photo as loaded (the browser has already turned it upright)
+  file: null,        // the original File, kept so its EXIF can be copied into the saved photo
+  palette: null,     // the look's colours, from /api/photo/palette or a studio's picture
+  hair: null,        // a hair colour (hex), from the Hair Colour Lab
+  face: null,        // the face found in the preview copy
+  base: null,        // the unedited preview pixels
+  seq: 0,
 };
+// The four finish chips keep their old data-blend values so saved links and tests still match.
+const TRYON_FINISH = { multiply: 'natural', 'soft-light': 'soft', overlay: 'bold', screen: 'luminous' };
+const TRYON_PREVIEW_MAX = 1000;
+const tryonStrength = () => Math.max(0.1, Math.min(1, parseInt(document.getElementById('tryonOpacity')?.value ?? 70, 10) / 100));
+const tryonStatus = (msg) => { const el = document.getElementById('tryonStatus'); if (el) el.textContent = msg || ''; };
 
 function setupTryOn() {
   document.getElementById('tryonClose')?.addEventListener('click', closeTryOn);
@@ -1265,7 +1279,7 @@ function setupTryOn() {
 
   document.getElementById('tryonFileInput')?.addEventListener('change', e => {
     const file = e.target.files?.[0];
-    if (file) loadTryOnPhoto(URL.createObjectURL(file));
+    if (file) loadTryOnPhoto(URL.createObjectURL(file), file);
   });
 
   document.getElementById('tryonCameraBtn')?.addEventListener('click', startCamera);
@@ -1294,13 +1308,28 @@ function setupTryOn() {
     document.getElementById('tryonUploadStep').classList.remove('hidden');
     document.getElementById('tryonFileInput').value = '';
   });
+
+  // Studios (Look Book, Taste Leap, Colour & Lip, Hair Colour Lab) open the try-on with their own
+  // colours: { name, picture } for makeup, { name, hair: hex } for hair colour.
+  window.addEventListener('mirrr:tryon', async (e) => {
+    const d = e.detail || {};
+    let palette = null;
+    if (d.picture) {
+      try { palette = await api('/api/photo/palette', 'POST', { picture: d.picture }); } catch { toast('Could not load the colours for this look', 'error'); return; }
+    }
+    openTryOn(null, d.name || 'your look', { palette, hair: d.hair || null });
+  });
 }
 
-function openTryOn(lookId, lookName) {
+function openTryOn(lookId, lookName, extra = {}) {
   tryonState.lookId = lookId;
   tryonState.lookName = lookName;
   tryonState.lookImg = null;
   tryonState.showingOriginal = false;
+  tryonState.palette = extra.palette ?? null;
+  tryonState.hair = extra.hair ?? null;
+  tryonState.face = null;
+  tryonState.base = null;
 
   const modal = document.getElementById('tryonModal');
   document.getElementById('tryonLookName').textContent = `Try On: ${lookName}`;
@@ -1308,6 +1337,7 @@ function openTryOn(lookId, lookName) {
   document.getElementById('tryonPreviewStep').classList.add('hidden');
   document.getElementById('tryonCameraWrap').classList.add('hidden');
   document.getElementById('tryonFileInput').value = '';
+  tryonStatus('');
 
   modal.classList.remove('hidden');
   modal.classList.add('open');
@@ -1325,7 +1355,7 @@ function closeTryOn() {
 async function startCamera() {
   try {
     tryonState.stream = await navigator.mediaDevices.getUserMedia({
-      video: { facingMode: 'user', width: { ideal: 640 }, height: { ideal: 480 } },
+      video: { facingMode: 'user', width: { ideal: 1920 }, height: { ideal: 1440 } },
     });
     const video = document.getElementById('tryonVideo');
     video.srcObject = tryonState.stream;
@@ -1350,101 +1380,157 @@ function captureCamera() {
   canvas.height = video.videoHeight || 480;
   canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
   stopCamera();
-  loadTryOnPhoto(canvas.toDataURL('image/jpeg', 0.92));
+  // A camera frame has no EXIF, and none is invented for it.
+  loadTryOnPhoto(canvas.toDataURL('image/jpeg', 0.92), null);
 }
 
-function loadTryOnPhoto(src) {
-  const img = new Image();
-  img.onload = () => {
-    tryonState.userImg = img;
-    const canvas = document.getElementById('tryonCanvas');
-    const maxW = Math.min(500, window.innerWidth - 48);
-    const scale = maxW / img.width;
-    canvas.width = Math.round(img.width * scale);
-    canvas.height = Math.round(img.height * scale);
-    canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+const loadImage = (src) => new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = () => rej(new Error('That file could not be opened as a photo. If it is HEIC, export it as JPEG first.')); i.src = src; });
+const labHex = ([L, a, b]) => { const c = labToRgb(L, a, b); return `#${c.map(v => v.toString(16).padStart(2, '0')).join('')}`; };
 
-    // Size overlay canvas to match
-    const overlay = document.getElementById('tryonOverlay');
-    overlay.width = canvas.width;
-    overlay.height = canvas.height;
-
-    document.getElementById('tryonUploadStep').classList.add('hidden');
-    document.getElementById('tryonCameraWrap').classList.add('hidden');
-    document.querySelector('.tryon-photo-options')?.classList.remove('hidden');
-    document.getElementById('tryonPreviewStep').classList.remove('hidden');
-
-    loadLookOverlay();
-  };
-  img.src = src;
+/** The look's colours for this face: the server builds them from the look database. */
+async function tryonPalette() {
+  if (tryonState.palette || !tryonState.lookId) return tryonState.palette;
+  const skin = tryonState.face?.ok ? labHex([tryonState.face.skin.L, tryonState.face.skin.a, tryonState.face.skin.b]) : '';
+  try {
+    tryonState.palette = await api(`/api/photo/palette?look=${encodeURIComponent(tryonState.lookId)}&skin=${encodeURIComponent(skin.replace('#', ''))}`);
+  } catch { tryonState.palette = null; }
+  return tryonState.palette;
 }
 
-function loadLookOverlay() {
-  const imgFile = LOOK_IMAGES[tryonState.lookId];
-  if (!imgFile) { applyOverlay(); return; }
+async function loadTryOnPhoto(src, file = null) {
+  const seq = ++tryonState.seq;
+  let img;
+  try { img = await loadImage(src); } catch (err) { toast(err.message, 'error'); return; }
+  if (seq !== tryonState.seq) return;
+  tryonState.userImg = img;
+  tryonState.file = file;
+  const canvas = document.getElementById('tryonCanvas');
+  const scale = Math.min(1, TRYON_PREVIEW_MAX / Math.max(img.naturalWidth, img.naturalHeight));
+  canvas.width = Math.round(img.naturalWidth * scale);
+  canvas.height = Math.round(img.naturalHeight * scale);
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  tryonState.base = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-  const lookImg = new Image();
-  lookImg.onload = () => {
-    tryonState.lookImg = lookImg;
-    applyOverlay();
-  };
-  lookImg.onerror = () => applyOverlay();
-  lookImg.src = imgFile;
+  const overlay = document.getElementById('tryonOverlay');
+  overlay.width = canvas.width;
+  overlay.height = canvas.height;
+  overlay.getContext('2d').clearRect(0, 0, overlay.width, overlay.height);
+
+  document.getElementById('tryonUploadStep').classList.add('hidden');
+  document.getElementById('tryonCameraWrap').classList.add('hidden');
+  document.querySelector('.tryon-photo-options')?.classList.remove('hidden');
+  document.getElementById('tryonPreviewStep').classList.remove('hidden');
+
+  tryonStatus('Finding your face…');
+  await new Promise(r => setTimeout(r, 0));
+  tryonState.face = findFace(tryonState.base);
+  if (!tryonState.face.ok) { tryonStatus(tryonState.face.reason); return; }
+  await tryonPalette();
+  if (seq !== tryonState.seq) return;
+  tryonStatus('');
+  applyOverlay();
 }
 
+function editPixels(imageData, face) {
+  const opts = { strength: tryonStrength(), finish: TRYON_FINISH[tryonState.blendMode] ?? 'natural' };
+  if (tryonState.palette) applyLook(imageData, face, tryonState.palette, opts);
+  if (tryonState.hair) recolourHair(imageData, face, tryonState.hair, opts);
+}
+
+/** Redraw the preview: the photo as it was, or with the look laid on it. */
 function applyOverlay() {
   const canvas = document.getElementById('tryonCanvas');
-  const overlay = document.getElementById('tryonOverlay');
-  if (!canvas || !overlay || !tryonState.userImg) return;
-
-  const ctx = canvas.getContext('2d');
-  // Redraw base photo
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(tryonState.userImg, 0, 0, canvas.width, canvas.height);
-
-  if (tryonState.showingOriginal || !tryonState.lookImg) return;
-
-  const opacity = parseInt(document.getElementById('tryonOpacity')?.value ?? 40) / 100;
-
-  // Draw look overlay with blend mode on the overlay canvas
-  const octx = overlay.getContext('2d');
-  octx.clearRect(0, 0, overlay.width, overlay.height);
-  octx.globalAlpha = opacity;
-  octx.globalCompositeOperation = tryonState.blendMode === 'multiply' ? 'multiply' :
-    tryonState.blendMode === 'soft-light' ? 'soft-light' :
-    tryonState.blendMode === 'overlay' ? 'overlay' : 'screen';
-  octx.drawImage(tryonState.lookImg, 0, 0, overlay.width, overlay.height);
+  const base = tryonState.base;
+  if (!canvas || !base) return;
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  if (tryonState.showingOriginal || !tryonState.face?.ok || (!tryonState.palette && !tryonState.hair)) {
+    ctx.putImageData(base, 0, 0);
+    return;
+  }
+  const out = new ImageData(new Uint8ClampedArray(base.data), base.width, base.height);
+  editPixels(out, tryonState.face);
+  ctx.putImageData(out, 0, 0);
 }
 
 function toggleBeforeAfter() {
   tryonState.showingOriginal = !tryonState.showingOriginal;
   const btn = document.getElementById('tryonBeforeAfterBtn');
-  btn.textContent = tryonState.showingOriginal ? '✨ See With Look' : '⟷ Before / After';
+  btn.textContent = tryonState.showingOriginal ? 'See With Look' : 'Before / After';
   applyOverlay();
 }
 
-function saveTryOnImage() {
-  // Composite canvas + overlay into one download
-  const base = document.getElementById('tryonCanvas');
-  const overlay = document.getElementById('tryonOverlay');
-  const out = document.createElement('canvas');
-  out.width = base.width;
-  out.height = base.height;
-  const ctx = out.getContext('2d');
-  ctx.drawImage(base, 0, 0);
-  ctx.drawImage(overlay, 0, 0);
-
-  // Add MIRRR watermark
-  ctx.font = `bold ${Math.round(base.width / 20)}px Inter, sans-serif`;
-  ctx.fillStyle = 'rgba(255,255,255,0.85)';
-  ctx.fillText('🪞 MIRRR', 12, base.height - 12);
-
-  const link = document.createElement('a');
-  link.download = `mirrr-${tryonState.lookId ?? 'look'}.jpg`;
-  link.href = out.toDataURL('image/jpeg', 0.92);
-  link.click();
-  toast('Look saved!', 'info');
+/**
+ * The full-size edit as a canvas: the photo at its own resolution (upright, as the browser shows
+ * it), with the same edit as the preview, worked again at full size so nothing is upscaled.
+ */
+function fullSizeEdit() {
+  const img = tryonState.userImg;
+  let w = img.naturalWidth, h = img.naturalHeight, reduced = false;
+  if (w * h > MAX_CANVAS_PIXELS) { const k = Math.sqrt(MAX_CANVAS_PIXELS / (w * h)); w = Math.floor(w * k); h = Math.floor(h * k); reduced = true; }
+  const c = document.createElement('canvas'); c.width = w; c.height = h;
+  const x = c.getContext('2d', { willReadFrequently: true });
+  x.drawImage(img, 0, 0, w, h);
+  if (!tryonState.showingOriginal && tryonState.face?.ok && (tryonState.palette || tryonState.hair)) {
+    const full = x.getImageData(0, 0, w, h);
+    editPixels(full, scaleFace(tryonState.face, w / tryonState.base.width));
+    x.putImageData(full, 0, 0);
+  }
+  return { canvas: c, reduced };
 }
+
+async function saveTryOnImage() {
+  if (!tryonState.userImg) return;
+  const btn = document.getElementById('tryonSaveBtn');
+  if (btn) btn.disabled = true;
+  tryonStatus('Preparing your full-size photo…');
+  try {
+    await new Promise(r => setTimeout(r, 0));
+    const { canvas, reduced } = fullSizeEdit();
+    const platform = detectPlatform(navigator);
+    const originalBytes = tryonState.file ? new Uint8Array(await tryonState.file.arrayBuffer()) : null;
+    const { file } = await canvasToPhotoFile(canvas, { originalBytes, platform });
+    const how = await savePhotoFile(file, { platform });
+    tryonStatus(reduced ? 'This photo is larger than this browser can edit at once, so it was saved at the largest size it allows.' : '');
+    if (how === 'share') toast(platform === 'ios' ? 'Choose "Save Image" to add it to Photos' : 'Saved through your share sheet', 'info');
+    else if (how === 'download') toast(`Saved ${file.name}`, 'info');
+  } catch (err) {
+    tryonStatus('');
+    toast(err?.message || 'Could not save the photo', 'error');
+  } finally {
+    if (btn) btn.disabled = false;
+  }
+}
+
+// Audit and test hook: the same pipeline the modal uses, on a photo given as a URL, never uploaded.
+window.mirrrTryon = {
+  async renderForAudit(look, src, { strength = 0.7, finish = 'natural', hair = null } = {}) {
+    const img = await loadImage(src);
+    const c = document.createElement('canvas'); c.width = img.naturalWidth; c.height = img.naturalHeight;
+    const x = c.getContext('2d', { willReadFrequently: true }); x.drawImage(img, 0, 0);
+    const data = x.getImageData(0, 0, c.width, c.height);
+    const face = findFace(data);
+    if (!face.ok) return { ok: false, reason: face.reason, out: c.toDataURL('image/jpeg', 0.92), w: c.width, engine: 'photo-engine' };
+    const skin = labHex([face.skin.L, face.skin.a, face.skin.b]).slice(1);
+    const palette = typeof look === 'string' ? await api(`/api/photo/palette?look=${encodeURIComponent(look)}&skin=${skin}`) : look ? await api('/api/photo/palette', 'POST', { picture: look }) : null;
+    if (palette) applyLook(data, face, palette, { strength, finish });
+    if (hair) recolourHair(data, face, hair, { strength, finish });
+    x.putImageData(data, 0, 0);
+    return { ok: true, out: c.toDataURL('image/jpeg', 0.92), w: c.width, h: c.height, engine: 'photo-engine', palette, confidence: face.confidence };
+  },
+  /** Run the save pipeline on given JPEG bytes (base64) without sharing; returns what would be saved. */
+  async exportForTest(b64, look = 'soft_glam') {
+    const bytes = Uint8Array.from(atob(b64), ch => ch.charCodeAt(0));
+    const file = new File([bytes], 'original.jpg', { type: 'image/jpeg' });
+    openTryOn(look, look);
+    await loadTryOnPhoto(URL.createObjectURL(file), file);
+    const { canvas } = fullSizeEdit();
+    const out = await canvasToPhotoFile(canvas, { originalBytes: bytes, platform: detectPlatform(navigator) });
+    const outBytes = new Uint8Array(await out.file.arrayBuffer());
+    closeTryOn();
+    return { name: out.file.name, size: out.size, exif: out.exif, natural: { w: tryonState.userImg.naturalWidth, h: tryonState.userImg.naturalHeight }, faceOk: !!tryonState.face?.ok, b64: btoa(Array.from(outBytes, b => String.fromCharCode(b)).join('')) };
+  },
+};
 
 // ===========================================================================
 // FEATURE 2 — BEFORE / AFTER on look cards (inline, no modal)
@@ -2578,7 +2664,7 @@ async function analyzePhoto(file) {
         const { looks } = await api('/api/looks');
         const pick = state.tasteResult?.looks?.[0]?.look ?? looks[0];
         openTryOn(pick.id, pick.name);
-        loadTryOnPhoto(url);
+        loadTryOnPhoto(url, file);
       } catch { toast('Could not open try-on', 'error'); }
     });
     document.getElementById('photoShadesBtn').addEventListener('click', () => {
@@ -2607,7 +2693,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // PURPOSE FLOW — My Face -> Become This Look -> Transform (staged plan)
 // ===========================================================================
 
-const faceState = { photoUrl: null, spectrum: null, draft: {}, wired: false };
+const faceState = { photoUrl: null, photoFile: null, spectrum: null, draft: {}, wired: false };
 const faceOf = () => (loadProfile() || {}).face || null;
 const targetOf = () => (loadProfile() || {}).target || null;
 const planOf = () => (loadProfile() || {}).plan || null;
@@ -2762,6 +2848,7 @@ async function analyzeFacePhoto(file) {
   try {
     const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = url; });
     faceState.photoUrl = url;
+    faceState.photoFile = file;
     const rgb = sampleSkin(img);
     fillFaceForm();
     if (!rgb) { if (msg) msg.textContent = 'Could not find enough skin in the middle of the photo. Use a front-facing selfie in daylight, or pick your shade below.'; return; }
@@ -2925,7 +3012,7 @@ function renderPlanResult(host, face, data, lookId) {
 
   document.getElementById('tfChange')?.addEventListener('click', () => { persist({ target: null, plan: null }); renderTransform(); });
   document.getElementById('tfEdit')?.addEventListener('click', () => showView('face'));
-  document.getElementById('tfTryOn')?.addEventListener('click', () => { openTryOn(t.id, t.name); loadTryOnPhoto(faceState.photoUrl); });
+  document.getElementById('tfTryOn')?.addEventListener('click', () => { openTryOn(t.id, t.name); loadTryOnPhoto(faceState.photoUrl, faceState.photoFile); });
   document.getElementById('tfShare')?.addEventListener('click', () => sharePlanCard(face, data, img));
 }
 

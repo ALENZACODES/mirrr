@@ -21,7 +21,7 @@ export const FRAGRANCE_OVERVIEW = {
 export const OUD_GUIDE = {
   what_is_oud: 'Oud (Arabic: عود — also called agarwood, aloeswood, eaglewood) is the dark, resinous heartwood that forms in Aquilaria and Gyrinops trees when they are infected with a specific mould (Phialophora parasitica and others). The tree\'s immune response produces a dark, aromatic resin as a defense mechanism. This resin saturates the wood over years or decades, producing agarwood.',
   why_so_valuable: [
-    'Extremely rare: only trees infected with the specific mould produce oud; approximately 7-10% of wild Aquilaria trees are infected.',
+    
     'Time: wild oud takes decades to form. Farmed oud (artificially inoculated) takes 5-20 years.',
     'Sustainability crisis: wild agarwood trees are heavily over-harvested; many species are now CITES-protected (Convention on International Trade in Endangered Species). Responsible oud from plantation sources is essential.',
     'Complexity: oud aroma is extraordinarily complex — simultaneously woody, animalic, leathery, sweet, balsamic, smoky. No synthetic can fully replicate it (though many attempt to).',
@@ -44,7 +44,7 @@ export const OUD_GUIDE = {
     arab: 'Oud is THE prestige fragrance ingredient in Arab culture. Its importance cannot be overstated. Wealthy Gulf families may spend tens of thousands of dollars on fine oud annually. Gifting fine oud is a gesture of great respect.',
     south_asian: 'Oud use has a long history in South Asian attar tradition. Indian oud is considered particularly fine. Oud-based attars are used in South Asian celebrations, temples, and mosques.',
     east_african: 'Swahili coast trade has brought oud culture to East Africa, particularly to Muslim communities.',
-    global_fashion: 'Since the early 2000s, oud has entered global luxury perfumery — Tom Ford Oud Wood (2007) was watershed. Now virtually every luxury brand has an oud offering (Chanel, Dior, Guerlain, etc.). Many use synthetic oud analogues; few use genuine agarwood.',
+    
   },
   buying_guide: {
     oil: 'Genuine oud oil: buy from specialist oud dealers, not generic perfume sites. Price per gram of oil is in the hundreds to thousands of dollars for genuine high-grade Hindi oud. Skepticism warranted for cheap "oud" oils.',
@@ -63,7 +63,7 @@ export const ROSE_FRAGRANCE_GUIDE = {
       name: 'Rosa damascena (Damask Rose)',
       origin: 'Primarily Bulgaria (Rose Valley, Kazanlak) and Turkey (Isparta). Also Iran, Morocco, Saudi Arabia (Taif).',
       character: 'Rich, deep, slightly fruity, honeyed, with green/spicy top notes. The most prized in perfumery.',
-      taif_rose: 'Taif rose (Rose of Taif, Saudi Arabia): grown at high altitude (1800m); has a fruity, almost candy quality unlike Bulgarian damask. Extremely expensive. Central to Saudi perfumery.',
+      
       extraction: {
         absolute: 'Solvent extraction. Rose absolute is dark orange/brown; very concentrated; rich, almost jammy rose.',
         otto: 'Steam distillation. Rose otto (attar of roses) is pale yellow; lighter, more refined, slightly waxy and honey-like.',
@@ -80,7 +80,7 @@ export const ROSE_FRAGRANCE_GUIDE = {
     arab: 'Rose water (ma\' al-ward) is used in cooking (baklava, qatayef, rice dishes), as a face and body toner, and in prayer. Rose sherbet is drunk at celebrations. The scent of rose is considered pure, healing, and connected to the divine in Sufi Islamic tradition (the rose as a symbol of the Prophet Muhammad\'s beauty).',
     south_asian: 'Gulab (rose) is deeply embedded in South Asian culture — gulabi (rose-flavoured) desserts, rose water in religious offerings, rose garlands on deities and at celebrations. Rose sherbet (gulab sharbat). Attar of roses (ruh gulab) is a luxury ingredient in South Asian attar making.',
     east_asian: 'Rose hip oil (C-Beauty ingredient). Rose water as a toner. In Chinese beauty, rose is used in Traditional Chinese Medicine for liver Qi stagnation and emotional wellbeing.',
-    bulgarian: 'Bulgaria produces approximately 70% of the world\'s rose oil for perfumery. The Rose Festival in Kazanlak (May-June) is a national celebration.',
+    
   },
 };
 
@@ -88,9 +88,9 @@ export const ROSE_FRAGRANCE_GUIDE = {
 
 export const SANDALWOOD_GUIDE = {
   overview: 'Sandalwood (Santalum album — Indian/Mysore sandalwood; S. spicatum — Australian sandalwood; S. paniculatum — Hawaiian sandalwood) is one of the most beloved and widely-used fragrance materials in world perfumery and traditional medicine.',
-  character: 'Creamy, warm, milky, woody, slightly sweet. One of the most universally appreciated base notes in perfumery — rarely disliked.',
+  character: 'Creamy, warm, milky, woody, slightly sweet. A widely loved base note in perfumery.',
   scarcity: {
-    mysore: 'Indian (Mysore) sandalwood (Santalum album) is the most prized variety. The Mysore state historically controlled most of the world supply. Wild Indian sandalwood is now severely over-harvested and strictly regulated. Genuine Mysore oil is extraordinarily expensive and increasingly rare.',
+    
     australia: 'Australian sandalwood (S. spicatum) is now the most sustainably available and widely used commercial sandalwood. Quality is good but character is slightly different from Mysore — drier, less rich.',
     synthetic: 'Sandalore, Javanol, Polysantol, Ebanol — synthetic sandalwood molecules widely used in mainstream perfumery. They capture aspects of the scent but are one-dimensional versus natural sandalwood oil\'s complexity.',
   },
@@ -207,7 +207,7 @@ export const ETHNIC_FRAGRANCE_TRADITIONS = {
   },
   east_asian: {
     community: 'East Asian',
-    traditions: 'Japanese Kōdō (incense ceremony). Chinese temple incense (sandalwood, benzoin). Korean fragrance culture historically more subtle — skin-scent focus rather than sillage-heavy fragrances. Korean "clean" fragrance trends are global. Chinese prestige fragrance market is now one of the largest in the world.',
+    
   },
   east_african: {
     community: 'East African',
@@ -243,8 +243,3 @@ export function getEthnicFragranceTradition(communityId) {
   return ETHNIC_FRAGRANCE_TRADITIONS[key] || Object.values(ETHNIC_FRAGRANCE_TRADITIONS);
 }
 
-export const FRAGRANCE_COMMUNITIES_STATS = {
-  fragranceMaterials: ['oud', 'rose', 'sandalwood', 'musk', 'frankincense', 'attar'],
-  incenseTypes: Object.keys(INCENSE_BEAUTY.types_by_community).length,
-  ethnicCommunities: 9,
-};

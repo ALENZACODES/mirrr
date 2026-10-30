@@ -154,6 +154,22 @@ test('skin clinic routes over HTTP', async () => {
   assert.equal(o.concerns.length, 7); assert.equal(o.tones.length, 10);
   const r = await fetch(`${B}/api/skin/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ concern: 'melasma', fitzpatrick: 'VI', community: 'latina' }) });
 
+test('nails and scent studio routes over HTTP', async () => {
+  const B = `http://127.0.0.1:${PORT}`;
+  const h = { 'x-forwarded-for': '10.6.6.10' };
+  const o = await (await fetch(`${B}/api/nails/options`, { headers: h })).json();
+  assert.equal(o.shapes.length, 6); assert.equal(o.tones.length, 10);
+  const r = await fetch(`${B}/api/nails/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ shape: 'stiletto', wear: 'natural', scentOccasion: 'religious', community: 'arab' }) });
+  assert.equal(r.status, 200);
+  const p = await r.json();
+  assert.equal(p.choices.shape, 'stiletto'); assert.equal(p.community.id, 'arab'); assert.ok(p.nails.wear.lengthWarning); assert.ok(p.scent.concentration.alcoholFree);
+  assert.equal((await fetch(`${B}/api/nails/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  const html = await (await fetch(`${B}/`, { headers: h })).text();
+  assert.ok(html.includes('data-view="nails"') && html.includes('src="nails.js"'));
+  const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
+  assert.equal(lib.shelves.find(s => s.id === 'nails').guides.length, 14);
+});
+
 test('colour and lip studio routes over HTTP', async () => {
   const B = `http://127.0.0.1:${PORT}`;
   const h = { 'x-forwarded-for': '10.6.6.9' };

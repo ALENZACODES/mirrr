@@ -11,16 +11,14 @@ export const FRAGRANCE_FAMILIES = {
     name: 'Oriental / Amber',
     characteristics: 'Warm, rich, sensual, long-lasting. Dominant in Middle Eastern, South Asian, and East African traditions.',
     keyNotes: ['Oud', 'Amber', 'Musk', 'Sandalwood', 'Vanilla', 'Incense', 'Benzoin'],
-    communities: ['arab', 'south-asian', 'east-african'],
     bestFor: 'Evening wear, cooler weather, intimate occasions, making a statement',
     layeringTip: 'Start with a dry, woody base oil (sandalwood/oud), then build amber or musky layers on top',
-    longevity: '8–24 hours depending on formula and skin chemistry',
+    
   },
   floral: {
     name: 'Floral',
     characteristics: 'Romantic, feminine (though increasingly gender-neutral), fresh or heady depending on the flower.',
     keyNotes: ['Rose', 'Jasmine', 'Tuberose', 'Ylang-ylang', 'Neroli', 'Magnolia', 'Gardenia'],
-    communities: ['arab', 'south-asian', 'latina', 'east-asian'],
     bestFor: 'Day wear, spring/summer, weddings, gift-giving',
     layeringTip: 'Rose and musk together = classic Middle Eastern attar. Jasmine + sandalwood = South Asian tradition.',
     longevity: '4–8 hours; more ephemeral than oriental',
@@ -30,7 +28,6 @@ export const FRAGRANCE_FAMILIES = {
     name: 'Woody',
     characteristics: 'Earthy, grounding, long-lasting. The backbone of many Middle Eastern and South Asian fragrances.',
     keyNotes: ['Oud', 'Sandalwood', 'Cedarwood', 'Vetiver', 'Patchouli', 'Guaiac wood'],
-    communities: ['arab', 'south-asian', 'east-african', 'black-american'],
     bestFor: 'Year-round, layering foundation, men\'s traditional',
     longevity: '10+ hours — the most long-lasting family',
   },
@@ -38,7 +35,6 @@ export const FRAGRANCE_FAMILIES = {
     name: 'Green / Herbal',
     characteristics: 'Fresh, crisp, nature-inspired. Present in African herbal beauty traditions and light South Asian preparations.',
     keyNotes: ['Eucalyptus', 'Mint', 'Green tea', 'Vetiver', 'Fern', 'Bamboo', 'Basil'],
-    communities: ['east-african', 'east-asian'],
     bestFor: 'Hot weather, sport, daytime office, very fresh effect',
     longevity: '2–4 hours; lightest family',
   },
@@ -46,7 +42,6 @@ export const FRAGRANCE_FAMILIES = {
     name: 'Citrus',
     characteristics: 'Bright, uplifting, clean. The lightest and most ephemeral family — often a top note.',
     keyNotes: ['Bergamot', 'Lemon', 'Orange', 'Grapefruit', 'Yuzu (Japanese citrus)', 'Neroli'],
-    communities: ['latina', 'caribbean', 'east-asian'],
     bestFor: 'Summer, daytime, energising, sport',
     longevity: '1–3 hours (citrus evaporates fast — usually just a top note)',
     layeringTip: 'Layer over musk or white woods to extend the life of citrus. A citrus body spray + sandalwood oil = longer-lasting citrus effect.',
@@ -55,7 +50,6 @@ export const FRAGRANCE_FAMILIES = {
     name: 'Gourmand',
     characteristics: 'Edible-smelling — vanilla, caramel, chocolate, coffee, tonka. A more modern family.',
     keyNotes: ['Vanilla', 'Tonka bean', 'Caramel', 'Coffee', 'Chocolate', 'Sugar', 'Praline'],
-    communities: ['black-american', 'latina', 'caribbean'],
     bestFor: 'Evening, autumn/winter, date night, comforting',
     longevity: '6–12 hours; very skin-close, intimate projection',
   },
@@ -66,7 +60,7 @@ export const FRAGRANCE_FAMILIES = {
 export const ETHNIC_FRAGRANCE_TRADITIONS = {
   arab: {
     community: 'Arab / Middle Eastern',
-    overview: 'The world\'s oldest and most sophisticated fragrance culture. Arabic attar and bakhoor traditions predate modern Western perfumery by thousands of years.',
+    overview: 'An ancient fragrance culture: Arabic attar and bakhoor traditions are far older than modern Western perfumery.',
     signature: 'Heavy, long-lasting, sensual. Skin should smell — not a ghost. The smell should fill a room and linger on clothes for days.',
     traditions: {
       bakhoor: {
@@ -82,24 +76,19 @@ export const ETHNIC_FRAGRANCE_TRADITIONS = {
         what: 'Traditional Arabic/South Asian term for natural essential oil perfume — often oud, rose, jasmine, or musk-based, alcohol-free',
         significance: 'Alcohol-free attar is permissible (halal) for observant Muslims; also non-drying for skin',
         how: 'A few drops on pulse points — wrists, neck, inner elbow, behind knees, even on clothes',
-        legendary: ['Ajmal Mukhallat Dahn Al Oudh ($120–$500)', 'Rasasi Dhan Al Oudh Mubakkhar', 'Arabian Oud Al Maha for Men'],
+        legendary: [ 'Rasasi Dhan Al Oudh Mubakkhar', 'Arabian Oud Al Maha for Men'],
       },
       oud: {
         name: 'Oud (العود)',
         what: 'Agarwood — resinous heartwood from Aquilaria trees infected with a specific mold. The resin creates the deep, complex scent.',
-        why_expensive: 'Only about 2% of Aquilaria trees produce oud. Wild trees take 20–40 years to develop oud. Wild oud is critically endangered.',
+        
         types: {
-          hindi: { origin: 'India', character: 'Dung-y, animalic, earthy, complex', price: 'Very high' },
-          cambodian: { origin: 'Cambodia (Kambodi)', character: 'Smoky, sweet, slightly medicinal', price: 'Very high' },
-          thai: { origin: 'Thailand', character: 'Lighter, sweeter, fruity-floral', price: 'High' },
-          arabic: { origin: 'Gulf (often from India/SE Asia, distilled in Arab Gulf)', character: 'Rose-like, sweet, accessible', price: 'Medium-high' },
+          hindi: { origin: 'India', character: 'Dung-y, animalic, earthy, complex' },
+          cambodian: { origin: 'Cambodia (Kambodi)', character: 'Smoky, sweet, slightly medicinal' },
+          thai: { origin: 'Thailand', character: 'Lighter, sweeter, fruity-floral' },
+          arabic: { origin: 'Gulf (often from India/SE Asia, distilled in Arab Gulf)', character: 'Rose-like, sweet, accessible' },
         },
-        buy: {
-          affordable: 'Al Haramain Oud 36 Hours ($30 — Saudi brand, widely available)',
-          mid: 'Arabian Oud Hindi Oud Oil ($80)',
-          luxury: 'Ensar Oud Hindi Oud ($500+ for genuine Hindi oud)',
-          designer: 'Tom Ford Oud Wood ($185 — Western interpretation), Maison Francis Kurkdjian Oud Satin Mood ($250)',
-        },
+        
       },
     },
     layeringSystem: {
@@ -119,11 +108,10 @@ export const ETHNIC_FRAGRANCE_TRADITIONS = {
         what: 'Strings of fresh jasmine flowers worn in the hair — particularly by South Indian women and on wedding days',
         symbolism: 'Beauty, femininity, auspiciousness, marriage. Worn by brides across South Asia.',
         modern: 'Jasmine absolute in hair oil or hair perfume recreates this tradition year-round',
-        buy: 'Biotique Bio Morning Nector Lotion ($10) / Forest Essentials Silkening Shower Wash Mashobra Honey ($26)',
+        
       },
       ittar: {
         name: 'Indian Ittar',
-        difference: 'Closely related to Arabic attar — South Asian ittars often have more floral character (rose, jasmine, kewra/pandanus)',
         kewra: 'Pandanus flower — distinctly South Asian; used in biryani AND in traditional ittar. Watery, slightly mentholated floral.',
         vetiver: 'Called "khus" in India — vetiver root soaked in water and used as cooling sprays in summer; also as a calming essential oil',
       },
@@ -144,7 +132,7 @@ export const ETHNIC_FRAGRANCE_TRADITIONS = {
         name: 'Scented Shea Butter',
         what: 'Shea butter infused or blended with fragrant ingredients — lavender, rose, frankincense',
         tradition: 'Body butter applied after bath; fragrance comes from the shea base and added botanicals',
-        buy: 'Nubian Heritage Frankincense & Myrrh Shea Butter ($12)',
+        
       },
       frankincense: {
         name: 'Frankincense / Olibanum',
@@ -170,12 +158,12 @@ export const ETHNIC_FRAGRANCE_TRADITIONS = {
         history: 'Dating from the Muromachi period (1336–1573). Originally practiced by court aristocracy and samurai.',
         practice: 'Participants heat premium agarwood on mica above a burning coal in a koro (incense burner). The fragrance is "listened to" (the Japanese say "kiki-koh" — listening to incense) rather than smelled.',
         modernEquivalent: 'Japanese incense sticks (Nippon Kodo, Shoyeido) — very different from Indian/Chinese incense; lighter, often single-note, smoke-minimal',
-        buy: 'Shoyeido Horin incense ($18) / Nippon Kodo Morning Star ($8)',
+        
       },
       white_musk: {
         name: 'Clean / White Musk',
         what: 'The dominant modern East Asian fragrance preference — a skin-close, clean, barely-there musk that smells like clean hair or fresh laundry',
-        examples: ['SHIRO White Lilac ($65 — Japanese brand)', 'Jo Malone Nectarine Blossom and Honey ($145)', 'Issey Miyake L\'Eau d\'Issey ($70)'],
+        
       },
     },
     layeringSystem: {
@@ -219,7 +207,7 @@ export const LAYERING_TECHNIQUES = {
       steps: [
         'Apply unscented body lotion or a carrier oil (jojoba, almond) to pulse points before fragrance',
         'Fragrance bonds to oil and stays longer on moisturised skin',
-        'Dry skin = fragrance disappears in 2 hours. Oiled skin = 6+ hours',
+        'Fragrance fades faster on dry skin and lasts longer on moisturised skin',
         'Apply to warm pulse points: inner wrists, inner elbow, neck, behind knees, décolletage',
       ],
       warning: 'Never apply fragrance immediately after exfoliating — barrier is disrupted; fragrance can irritate',
@@ -310,25 +298,25 @@ export const FRAGRANCE_GIFTING = {
   arab: {
     occasions: ['Eid Al Fitr', 'Eid Al Adha', 'Wedding (nikah)', 'New home', 'Ramadan', 'Religious milestones'],
     gifts: [
-      { item: 'Bakhoor set (chips + burner)', price: '$40–$150', note: 'Classic hospitality gift' },
-      { item: 'Oud oil in ornate bottle', price: '$80–$500', note: 'Prestigious; shows wealth and taste' },
-      { item: 'Attar gift set', price: '$60–$200', note: 'Multiple scents in decorative presentation' },
+      { item: 'Bakhoor set (chips + burner)',  note: 'Classic hospitality gift' },
+      { item: 'Oud oil in ornate bottle',  note: 'Prestigious; shows wealth and taste' },
+      { item: 'Attar gift set',  note: 'Multiple scents in decorative presentation' },
     ],
     protocol: 'Present with both hands; receiving with one hand is polite too. Gift wrap in gold, deep burgundy, or rich purple.',
   },
   south_asian: {
     occasions: ['Wedding (shaadi / vivah)', 'Diwali', 'Eid', 'New Year', 'Housewarming', 'Religious ceremony'],
     gifts: [
-      { item: 'Attar gift set', price: '$50–$150' },
-      { item: 'Sandalwood oil or incense set', price: '$30–$80' },
-      { item: 'Forest Essentials gift set', price: '$80–$250', note: 'Aspirational Indian luxury brand' },
+      { item: 'Attar gift set' },
+      { item: 'Sandalwood oil or incense set' },
+      { item: 'Forest Essentials gift set',  note: 'Aspirational Indian luxury brand' },
     ],
   },
   east_asian: {
     occasions: ['Lunar New Year', 'Mid-Autumn Festival', 'Wedding', 'Career milestone'],
     gifts: [
-      { item: 'Japanese incense set', price: '$30–$150', note: 'Nippon Kodo or Shoyeido' },
-      { item: 'Designer fragrance', price: '$80–$250', note: 'Prestigious Western or Japanese brand in beautiful packaging' },
+      { item: 'Japanese incense set',  note: 'Nippon Kodo or Shoyeido' },
+      { item: 'Designer fragrance',  note: 'Prestigious Western or Japanese brand in beautiful packaging' },
     ],
     protocol: 'Beautiful presentation is as important as the gift itself. Wrap thoughtfully. Avoid gifting one item — pairs or sets preferred.',
   },
@@ -380,8 +368,3 @@ export function getGiftingGuideForCommunity(communityId) {
   return map[communityId] || null;
 }
 
-export const FRAGRANCE_GUIDE_STATS = {
-  familiesIndexed: Object.keys(FRAGRANCE_FAMILIES).length,
-  communitiesWithTraditions: Object.keys(ETHNIC_FRAGRANCE_TRADITIONS).length,
-  concentrationTypes: Object.keys(CONCENTRATION_GUIDE).length,
-};

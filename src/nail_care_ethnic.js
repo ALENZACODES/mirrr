@@ -28,7 +28,7 @@ export const NAIL_FUNDAMENTALS = {
   common_nail_concerns: {
     vertical_ridges: {
       what: 'Vertical lines from base to tip',
-      common_in: 'Everyone — increases with age',
+      
       cause: 'Normal ageing, dehydration, nutritional deficiencies',
       solution: 'Buffing (careful — can thin nails), ridge-filling base coat, hydration, biotin',
     },
@@ -44,14 +44,14 @@ export const NAIL_FUNDAMENTALS = {
     },
     onycholysis: {
       what: 'Nail separating from nail bed',
-      common_in: 'More common in women; associated with thyroid disease, chemical exposure, aggressive nail products',
+      
       solution: 'Keep nails short, gentle approach, see dermatologist if spontaneous',
     },
     melanonychia: {
       what: 'Dark streak or brown-black band on nail',
-      important: 'THIS IS NORMAL IN DARK-SKINNED INDIVIDUALS. Longitudinal melanonychia (vertical dark streak) is COMMON and normal in people with Fitzpatrick IV-VI skin. It is caused by melanin deposits in the nail matrix.',
+      important: 'Often normal on darker skin: longitudinal melanonychia (a vertical dark streak) is common in people with Fitzpatrick IV-VI skin, usually in several nails. It is caused by melanin deposits in the nail matrix.',
       caution: 'ANY sudden new dark streak, especially with irregular edges or Hutchinson\'s sign (pigment spreading to surrounding skin), warrants dermatologist evaluation to rule out subungual melanoma.',
-      statistics: 'Longitudinal melanonychia is found in 77% of Black individuals over age 20 but is rare in white individuals — this contrast means it is sometimes mismanaged in clinical settings where physicians are unfamiliar with this normal variant',
+      
     },
   },
 };
@@ -63,7 +63,7 @@ export const MELANONYCHIA_GUIDE = {
 
   what_is_normal: {
     description: 'A tan, brown, or black longitudinal band running from base to tip of one or more nails',
-    in_darker_skin: 'Occurs in the majority of Black individuals. Also common in South Asian, Middle Eastern, and Hispanic individuals. Normal and benign in most cases.',
+    in_darker_skin: 'Common on darker skin of any heritage, often in several nails. Normal and benign in most cases.',
     mechanism: 'Melanin-producing cells (melanocytes) in the nail matrix are activated. Similar to why skin produces melanin — a normal variation.',
     no_treatment_needed: 'Do NOT bleach, chemically lighten, or aggressively treat a streak you\'ve had for years. This is your nails being your nails.',
   },
@@ -110,7 +110,7 @@ export const NAIL_ART_TRADITIONS = {
 
   nail_art_east_asian: {
     japanese_nail_art: {
-      what: 'Japan has the world\'s most technically advanced nail art culture — 3D nail art, gel sculpture, and highly detailed hand-painted designs originate largely from Japan',
+      
       techniques: ['3D nail art (polymer clay sculptures on nail)', 'Gel painting (highly detailed)', 'Kirakira (sparkle) nails', 'Kawaii nail designs (cute style)', 'Negative space design'],
       history: 'Nail art as a professional art form in Japan dates to the 1980s. Japan has professional nail technician licensing at a high technical level.',
     },
@@ -144,7 +144,7 @@ export const NAIL_ENHANCEMENT_GUIDE = {
       'Can create any length or shape',
       'Very long wear (2-3+ weeks between fills)',
       'Relatively affordable',
-      'Long track record (in use since the 1970s)',
+      
     ],
     cons: [
       'Requires professional removal (acetone + filing)',
@@ -187,18 +187,13 @@ export const NAIL_ENHANCEMENT_GUIDE = {
     what: 'Pre-made artificial nails applied with adhesive tabs or nail glue. Has had a renaissance since 2020.',
     pros: ['DIY friendly', 'No chemicals, no UV', 'Reusable if removed carefully', 'Can match exact styles', 'Accessible and affordable'],
     cons: ['Less durable than professional enhancements', 'Can damage natural nails if removed carelessly'],
-    black_owned_press_on_brands: [
-      { name: 'Glamnetic', note: 'Magnetic press-ons; Black-founded' },
-      { name: 'Static Nails', note: 'Reusable press-ons, large size range' },
-      { name: 'Nails by Dolls', note: 'Handmade custom press-ons, popular in Black beauty community' },
-    ],
-    size_consideration: 'Press-on sizing assumes a narrower nail bed — many Black women have wider nail beds and will find standard sizes too narrow. Look for brands offering size variety or consider custom.',
+    size_consideration: 'Standard press-on sizes do not fit every nail bed. Measure your nails and look for brands offering size variety, or go custom.',
   },
 
   natural_nail_growth: {
-    what: 'Many people, particularly in communities where long natural nails are a point of pride, focus on growing and maintaining long natural nails.',
+    what: 'Growing and keeping long natural nails.',
     tips: [
-      'Biotin supplement (2500mcg per day — allows months to see results)',
+      'Biotin only helps if you are low in it; ask a doctor first, as it can skew some blood tests',
       'Collagen supplement',
       'Keep nails hydrated — cuticle oil daily is the single most impactful natural nail habit',
       'Avoid prolonged water exposure without gloves (dishwashing, swimming)',
@@ -233,7 +228,7 @@ export const NAIL_COLOUR_GUIDE = {
   nude_nail_for_deep_skin: {
     what: 'The "nude" nail look — a very natural-looking, skin-tone-adjacent polish',
     solution: 'Your nude is a deep nude. Look for browns, deep caramels, rich terracottas, deep mauves — NOT the pale pink "nudes" designed for fair skin',
-    recommended: ['Essie Sugar Daddy (sheer beige but more opaque on deep skin)', 'OPI Bare My Soul', 'Fenty Slip Shine Sheer Shiny Lipstick (worn on nails)', 'Sally Hansen Miracle Gel in Toasty Taupe'],
+    recommended: ['Essie Sugar Daddy (sheer beige but more opaque on deep skin)', 'OPI Bare My Soul', 'Sally Hansen Miracle Gel in Toasty Taupe'],
   },
 
   french_manicure_for_deep_skin: {
@@ -394,8 +389,3 @@ export function getMelanonychiInfo() {
   return MELANONYCHIA_GUIDE;
 }
 
-export const NAIL_CARE_STATS = {
-  communitiesWithNailGuide: Object.keys(COMMUNITY_NAIL_NOTES).length,
-  enhancementTypesCovered: Object.keys(NAIL_ENHANCEMENT_GUIDE).filter(k => k !== 'overview').length,
-  nailArtTraditions: Object.keys(NAIL_ART_TRADITIONS).length,
-};

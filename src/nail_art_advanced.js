@@ -87,7 +87,7 @@ export const NAIL_SHAPES_GUIDE = {
       not_for: 'Very narrow nails (makes them look wider).',
     },
     squoval: {
-      what: 'Mostly square with softly rounded corners — the most universally flattering shape.',
+      what: 'Mostly square with softly rounded corners — an easy, flattering shape.',
       best_for: 'All nail beds. The most practical daily shape.',
     },
     round: {
@@ -177,7 +177,7 @@ export const NAIL_ART_TECHNIQUES = {
       'Nail charms and gems — adhered with gel or glue',
       'Gel stickers — flat but pre-made designs applied to tacky gel',
     ],
-    origin: 'Japanese nail art pioneered 3D nail art — elaborate 3D sculptures remain a specialist skill in Japan (nail art can take 4+ hours per set at premium salons).',
+    origin: 'Japan is known for 3D nail art — elaborate sculpted designs are a specialist skill there.',
   },
 
   gel_marbling: {
@@ -192,7 +192,7 @@ export const NAIL_ART_TECHNIQUES = {
 
   nail_wraps_stickers: {
     what: 'Pre-designed nail wrap or sticker systems that apply over bare or polished nails.',
-    brands: ['Sally Hansen Salon Effects', 'Jamberry (by Senegence)', 'Olive & June Nail Art Stickers'],
+    brands: ['Sally Hansen Salon Effects', 'Olive & June Nail Art Stickers'],
     best_for: 'Beginners, those without artistic skills, quick detailed looks.',
   },
 };
@@ -280,14 +280,14 @@ export const NAIL_TRADITIONS = {
 
   east_asian: {
     japanese: {
-      nail_art: 'Japan is the global pioneer of nail art as an art form — "nail salons" in Japan are studios offering elaborate sculpted 3D designs, painted murals, and extreme precision.',
+      nail_art: 'Japan treats nail art as an art form — "nail salons" in Japan are studios offering elaborate sculpted 3D designs, painted murals, and extreme precision.',
       gel_dominance: 'Japan: gel nails are almost universal. The gel nail market in Japan is enormous.',
       aesthetic: 'Pastel colours, kawaii motifs, precise florals, translucent jelly nails, chrome powder effects.',
       nail_salons_culture: 'Going to the nail salon is a significant social and self-care ritual in Japan — appointments can be hours long for elaborate designs.',
     },
     korean: {
       minimalist: 'Korean nail aesthetic tends toward understated elegance — glass nail (translucent, clear), aura nail, milky shades, subtle chrome effects.',
-      glass_nail: 'Translucent gel with pearlescent or holographic chrome powder for a glass-like appearance — pioneered in Korean nail culture.',
+      glass_nail: 'Translucent gel with pearlescent or holographic chrome powder for a glass-like appearance — associated with Korean nail culture.',
       kuku_nails: 'Korean nail art influencer culture is massive — specific Korean techniques like "blooming nail" (pigment in wet top coat creates a soft bloom effect) originated in Korea.',
     },
     chinese: {
@@ -315,8 +315,7 @@ export const NAIL_COLOUR_BY_SKIN_TONE = {
     nudes: ['Caramel brown', 'Rich tan', 'Warm deep brown', 'Coffee', 'Chocolate — deep brown reads as a nude on very dark skin'],
     that_pop: ['Cobalt blue', 'Bright red', 'Electric yellow', 'Deep burgundy', 'True white (sharp contrast)'],
     brands_with_deep_skin_nudes: [
-      'Fenty Beauty — launched specifically inclusive nail shades',
-      'OPI — "I\'m Not Really a Waitress" and other deep nudes',
+      'OPI — deep nudes such as "Don\'t Pretzel My Buttons"',
       'Zoya — wide nude shade range including deeper skin tones',
     ],
   },
@@ -369,9 +368,3 @@ export function getNailColourForSkinTone(depth) {
   return map[depth] || NAIL_COLOUR_BY_SKIN_TONE;
 }
 
-export const NAIL_ART_STATS = {
-  nailShapes: Object.keys(NAIL_SHAPES_GUIDE.shapes).length,
-  artTechniques: Object.keys(NAIL_ART_TECHNIQUES).length,
-  communityTraditions: Object.keys(NAIL_TRADITIONS).length,
-  nailProducts: Object.keys(NAIL_PRODUCTS_GUIDE).length,
-};

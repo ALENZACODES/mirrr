@@ -45,7 +45,7 @@ export const NAIL_BIOLOGY = {
     },
     fungalInfection: {
       clinical: 'Onychomycosis: nail thickening, discoloration (yellow/brown), crumbling; caused by Trichophyton species mostly',
-      prevalence: '14% of US population; more common in toenails; increases with age',
+      
       risk: 'Shared shower/pool without footwear; tight shoes; nail trauma; poor circulation; diabetes',
       treatment: 'Topical (efinaconazole, tavaborole): 6-12 months; for mild-moderate; oral terbinafine: more effective; 12 weeks; liver monitoring needed',
       prevention: 'Dry feet thoroughly after bathing; breathable socks; flip flops in communal showers'
@@ -177,11 +177,9 @@ export const NAIL_ART_CULTURAL_TRADITIONS = {
 export const ETHNIC_NAIL_GUIDES = {
   'west-african': {
     communityName: 'West African',
-    nailProfile: 'Natural nail beds tend toward deeper pink to brownish-pink; nail plate may have slight curvature; cuticle area darker',
 
     traditions: {
       henna: 'Henna on nails and fingertips: West African bridal and festive tradition; natural reddish-brown color',
-      strength: 'West African women\'s nails are often naturally thicker and stronger; shape with care to maintain',
       cultural: 'Long elaborate nails as beauty statement in many West African beauty aesthetics; acrylic art embraced'
     },
 
@@ -210,7 +208,6 @@ export const ETHNIC_NAIL_GUIDES = {
 
   'south-asian': {
     communityName: 'South Asian',
-    nailProfile: 'Warm-toned nail beds (yellowish-pink to tan); cuticle area often darker; nails range from fine to strong',
 
     traditions: {
       mehndi: 'Mehndi (henna) traditionally extends to fingertips; nails stained brown-red from henna application',
@@ -243,7 +240,6 @@ export const ETHNIC_NAIL_GUIDES = {
 
   caribbean: {
     communityName: 'Caribbean',
-    nailProfile: 'Diverse nail types reflecting Caribbean heritage; warm to brown nail beds; often strong natural nails',
 
     traditions: {
       color: 'Caribbean nail aesthetic: vibrant, tropical colors; nails as joy expression',
@@ -274,7 +270,6 @@ export const ETHNIC_NAIL_GUIDES = {
 
   arab: {
     communityName: 'Arab / Middle Eastern',
-    nailProfile: 'Olive to tan nail bed tones; often strong, naturally long nails; cuticle area may be darker',
 
     traditions: {
       henna: 'Henna on nails: Arab and Berber tradition; bride\'s nails stained with henna before wedding',
@@ -307,7 +302,6 @@ export const ETHNIC_NAIL_GUIDES = {
 
   latina: {
     communityName: 'Latina / Hispanic',
-    nailProfile: 'Wide range reflecting Latin American diversity; warm to brown nail beds across the spectrum',
 
     traditions: {
       red: 'Red nails are the quintessential Latina beauty signature — nails as feminine power statement',
@@ -342,7 +336,6 @@ export const ETHNIC_NAIL_GUIDES = {
 
   'east-asian': {
     communityName: 'East Asian',
-    nailProfile: 'Light pink to pinkish-tan nail beds; often fine, smooth nail plate; moderate strength',
 
     traditions: {
       jadeguard: 'Chinese imperial court: jade and gold nail guards worn by Manchu noblewomen; extremely long nails as status symbol',
@@ -362,21 +355,11 @@ export const ETHNIC_NAIL_GUIDES = {
       jbeauty: 'Clear gloss, light pink, subtle nude: J-beauty nail',
       cbeauty: 'Bold red, deep jewel tones, black: C-beauty nail statement',
       classic: 'Cherry blossom pink; translucent with subtle shimmer; spring-inspired pastels'
-    },
-
-    advice: `East Asian nail art is the world's most technically sophisticated — Japanese nail artists
-    who work with gel, acrylic, 3D elements, and hand-painted designs are genuine artists who
-    charge accordingly. Korean nail trends like "glass nails" (ultra-gloss gel) and "aurora nails"
-    (color-shifting holographic gel) originate in Seoul's nail salons and spread globally through
-    K-beauty social media. For natural nail care: tsubaki (camellia) oil is the Japanese traditional
-    and scientifically sound cuticle treatment — oleic acid nourishes while the oil's light texture
-    absorbs without greasiness. For shade selection: the K-beauty gradient nail (darker outer
-    edge to lighter center) is uniquely flattering for East Asian nail bed tones.`
+    }
   },
 
   'east-african': {
     communityName: 'East African',
-    nailProfile: 'Deep brown to dark nail beds on very deep skin; strong, often thick nail plates; beautiful contrast for bold colors',
 
     traditions: {
       henna: 'Somali and Yemeni tradition: henna nails for celebrations; mehndi design on fingertips',
@@ -395,21 +378,11 @@ export const ETHNIC_NAIL_GUIDES = {
       classic: 'Deep red, wine, dark burgundy: elegant and rich against deep skin',
       nude: 'True skin-matching nude for East African skin: deep brown, mocha; not pale pink',
       metallic: 'Gold shimmers and metallics: beautiful contrast against deep skin tones; celebratory'
-    },
-
-    advice: `East African nail aesthetics celebrate the extraordinary contrast available to very deep
-    skin tones — vivid, saturated nail colors against dark brown skin create stunning visual impact
-    that lighter skin simply cannot achieve. The deep skin canvas: jewel-toned nail polishes (cobalt,
-    emerald, vivid fuchsia) that might overwhelm lighter skin are perfect on East African skin.
-    For henna nail traditions: Somali bridal henna extends to fingertips in elaborate Khaleeji-
-    influenced designs — some of the world's most intricate henna art. Castor oil for nail
-    strengthening is the East African ancestral treatment with genuine ricinoleic acid evidence
-    for nail plate keratin fortification.`
+    }
   },
 
   'south-african': {
     communityName: 'South African',
-    nailProfile: 'Broad spectrum reflecting South Africa\'s diversity; deep warm to very deep nail beds for Black South Africans; fair to warm for white South Africans',
 
     traditions: {
       traditional: 'Zulu: beadwork adornment (nails as part of overall ornamental tradition)',
@@ -425,7 +398,6 @@ export const ETHNIC_NAIL_GUIDES = {
 
     nailPolishShades: {
       black: 'Bold jewel tones for deep South African skin; vivid and vibrant',
-      neutral: 'For lighter South African skin: warm peachy-nude or true nude',
       traditional: 'Ochre-inspired terracotta; earth tones reflecting South African landscape',
       celebratory: 'Gold, bright accent colors for umemulo and other celebrations'
     },
@@ -442,7 +414,6 @@ export const ETHNIC_NAIL_GUIDES = {
 
   'black-american': {
     communityName: 'Black American',
-    nailProfile: 'Wide range Fitzpatrick III-VI; warm to deep neutral nail beds; often naturally strong nails',
 
     traditions: {
       acrylic: 'Long acrylic nails: iconic Black American nail aesthetic from the 1980s forward; Bronx nail salons as culture origin',
@@ -460,7 +431,7 @@ export const ETHNIC_NAIL_GUIDES = {
     nailPolishShades: {
       signature: 'Bold, vibrant colors as signature: vivid fuchsia, cobalt, emerald green, burnt orange',
       classic: 'Deep red, burgundy, wine: the classic professional-glam Black American nail',
-      nude: 'Nude for deep Black American skin: brown-based, mocha, caramel — OPI "Don\'t Pretzel My Buttons", Essie "Naked Ambition"',
+      nude: 'Nude for deep Black American skin: brown-based, mocha, caramel — OPI "Don\'t Pretzel My Buttons"',
       black: 'Black nail polish: powerful fashion statement; very popular in Black American nail culture'
     },
 
@@ -499,21 +470,3 @@ export function getNailBeautyGuide(communityId) {
 // STATS
 // ============================================================
 
-export const NAIL_BEAUTY_STATS = {
-  moduleId: 'nail_beauty_ethnic_guide',
-  version: '1.0.0',
-  communities: 9,
-  keyFacts: [
-    'Fingernails grow 3-4mm per month; complete regrowth takes 4-6 months — nail health interventions take time to show results',
-    'Black American nail culture invented the modern nail art movement: long acrylics, coffin shape, elaborate art originated in Black nail salons in the 1980s-90s',
-    'Vietnamese American women dominate the US nail salon industry (80%) — an immigration story shaped by Tippi Hedren and post-1975 refugee experience',
-    'Never cut cuticles aggressively — they seal the gap between nail plate and skin; cutting creates a path for bacterial and fungal infection',
-    'Castor oil ricinoleic acid strengthens nail plate keratin — both East African and Black American traditions use it ancestrally',
-    'Marula oil is the ideal cuticle oil for South African skin: non-greasy, fast-absorbing, antioxidant-rich from the Tsonga people\'s ancestral ingredient',
-    'O2M and Tuesday in Love "breathable" polishes marketed as wudu-friendly: validity of water permeability claims is debated in Islamic scholarship',
-    'Biotin (2.5mg daily) only improves nail brittleness if deficiency is present — won\'t help if levels are adequate',
-    'Coffin and stiletto nail shapes were popularized by Black American nail culture before going mainstream globally',
-    'Japanese nail artists are considered the most technically sophisticated globally — gel art, 3D elements, hand-painted designs as fine art'
-  ],
-  lastUpdated: '2026-10-29'
-};

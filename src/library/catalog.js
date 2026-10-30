@@ -89,6 +89,20 @@ import * as lipCareGuide from '../lip_care_guide.js';
 import * as lipCareEthnicGuide from '../lip_care_ethnic_guide.js';
 import * as lipCareGuideEthnic from '../lip_care_guide_ethnic.js';
 import * as lipHealthEthnicGuide from '../lip_health_ethnic_guide.js';
+import * as nailArtistry from '../nail_artistry.js';
+import * as nailColoursGuide from '../nail_colours_guide.js';
+import * as nailCareEthnic from '../nail_care_ethnic.js';
+import * as nailArtAdvanced from '../nail_art_advanced.js';
+import * as nailArtGuideEthnic from '../nail_art_guide_ethnic.js';
+import * as nailBeautyEthnicGuide from '../nail_beauty_ethnic_guide.js';
+import * as nailCareGuideEthnic from '../nail_care_guide_ethnic.js';
+import * as nailCareEthnicGuide from '../nail_care_ethnic_guide.js';
+import * as fragranceLayeringGuide from '../fragrance_layering_guide.js';
+import * as fragranceGuideExtended from '../fragrance_guide_extended.js';
+import * as fragranceAtlas from '../fragrance_atlas.js';
+import * as fragranceCommunitiesGuide from '../fragrance_communities_guide.js';
+import * as fragranceEthnicGuide from '../fragrance_ethnic_guide.js';
+import * as fragranceGuideEthnic from '../fragrance_guide_ethnic.js';
 
 export const SHELVES = [
   { id: 'rituals', title: 'Rituals & Heritage', blurb: 'Haldi, hammam, shea, mehndi, bathhouse and festival traditions, with the steps to do them at home.' },
@@ -98,6 +112,7 @@ export const SHELVES = [
   { id: 'skin', title: 'Skin: Marks, Breakouts & Sun', blurb: 'Dark marks and melasma, safe brightening, breakouts, sunscreen without a white cast, barrier repair, eczema and rosacea.' },
   { id: 'complexion', title: 'Makeup: Correct, Base & Sculpt', blurb: 'Colour correcting for your depth, foundation formulas and finishes, primer and powder without flashback, contour, blush and highlight, tools and removal.' },
   { id: 'colour', title: 'Colour & Lips', blurb: 'Undertones and colour formulas, lip colour for your depth and undertone, finishes, liner and ombre, lip care for dryness and darkening, and the brands and traditions behind them.' },
+  { id: 'nails', title: 'Nails & Fragrance', blurb: 'Nail colour for your depth and undertone, shapes, finishes, gel, acrylic and press-ons with safe removal, dark streaks to watch, and fragrance families, concentrations, layering, attar and oud.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -188,4 +203,18 @@ export const GUIDES = [
   ['lip_care_ethnic_guide', 'colour', 'Lip Care Traditions by Community', lipCareEthnicGuide],
   ['lip_care_guide_ethnic', 'colour', 'Lip Darkening: Types and Treatments', lipCareGuideEthnic],
   ['lip_health_ethnic_guide', 'colour', 'Lip Health and Ingredients', lipHealthEthnicGuide],
+  ['nail_artistry', 'nails', 'Nail Shapes, Colours and Art Styles', nailArtistry],
+  ['nail_colours_guide', 'nails', 'Nail Colour by Depth, Finishes and French', nailColoursGuide],
+  ['nail_care_ethnic', 'nails', 'Nail Health, Enhancements and Dark Streaks', nailCareEthnic],
+  ['nail_art_advanced', 'nails', 'Nail Art Techniques and Products', nailArtAdvanced],
+  ['nail_art_guide_ethnic', 'nails', 'Nail Art by Community', nailArtGuideEthnic],
+  ['nail_beauty_ethnic_guide', 'nails', 'Nail Biology and Care by Community', nailBeautyEthnicGuide],
+  ['nail_care_guide_ethnic', 'nails', 'Nail Care Basics, Gel and Acrylic', nailCareGuideEthnic],
+  ['nail_care_ethnic_guide', 'nails', 'Nail Conditions and Safety', nailCareEthnicGuide],
+  ['fragrance_layering_guide', 'nails', 'Fragrance Families, Concentration and Layering', fragranceLayeringGuide],
+  ['fragrance_guide_extended', 'nails', 'Applying and Layering Fragrance', fragranceGuideExtended],
+  ['fragrance_atlas', 'nails', 'Fragrance Atlas: Notes and Traditions', fragranceAtlas],
+  ['fragrance_communities_guide', 'nails', 'Attar, Oud, Rose, Sandalwood and Musk', fragranceCommunitiesGuide],
+  ['fragrance_ethnic_guide', 'nails', 'Fragrance by Community', fragranceEthnicGuide],
+  ['fragrance_guide_ethnic', 'nails', 'Fragrance Science and Traditional Scents', fragranceGuideEthnic],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

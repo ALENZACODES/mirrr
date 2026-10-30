@@ -21,7 +21,7 @@ export const NAIL_CARE_SCIENCE = {
 export const NAIL_CONDITIONS_ETHNIC = {
   fungalInfection: {
     name: 'Onychomycosis (Fungal Nail Infection)',
-    prevalence: 'The most common nail condition; 10% of the general population; prevalence increases with age (up to 50% in those over 70); more common in men; more common in immunocompromised individuals; the causal organisms are dermatophytes (particularly Trichophyton rubrum — the most common) in 90% of cases, with Candida and non-dermatophyte moulds in the remainder',
+    
     ethnicConsiderations: 'Humid climates (Sub-Saharan Africa, South Asia, Caribbean, South-East Asia, Latin America) have higher rates of dermatophyte infections; wearing tight shoes in hot, humid conditions creates the ideal environment (warm, dark, moist) for dermatophyte growth; lack of footwear in some traditional contexts (mosques, Hindu temples, beaches) can increase exposure',
     treatment: 'Topical antifungals (efinaconazole, tavaborole) — effective for mild to moderate infections; oral antifungals (terbinafine 250mg/day for 6-12 weeks is the gold standard; itraconazole) — necessary for severe or widespread infection; complete cure takes 12-18 months even with effective treatment (because the new nail must grow out to replace the infected nail at 1mm/month for toenails); nail lacquer antifungals (ciclopirox) are less effective but useful as preventive after treatment',
     culturalNote: 'In Muslim communities, wudu (ablution) requires wet water to reach the nails; thick, lacquered nails with heavy gel or acrylic may prevent water from reaching the nail; the use of "breathable" halal nail polish is a significant issue in Muslim beauty communities — genuine water permeability of these polishes is debated; some scholars say any nail polish must be removed for wudu; others accept breathable polishes; this practical concern drives significant interest in the Muslim beauty community'
@@ -29,15 +29,14 @@ export const NAIL_CONDITIONS_ETHNIC = {
   melanonychia: {
     name: 'Melanonychia (Dark Nail Streaks)',
     description: 'Melanonychia refers to the appearance of longitudinal brown or black streaks (bands) running from the nail base to the tip; caused by melanocytes in the nail matrix producing melanin (unlike white skin where melanocyte activity in the nail matrix is usually inactive)',
-    ethnicRelevance: 'CRITICAL: Longitudinal melanonychia (dark streaks in the nail) is a NORMAL VARIANT and EXTREMELY COMMON in people with dark skin: up to 77% of Black Americans and similar proportions of other melanin-rich groups have single or multiple melanonychia bands; this is so common in dark-skinned individuals that it is considered a normal variant; it is NOT a sign of disease or cancer in most cases in dark-skinned people',
+    
     warningSign: 'HOWEVER: Subungual melanoma (a rare but serious nail cancer) also presents as a dark nail streak; the rule: any NEW or CHANGING dark streak (particularly one that: is getting wider; extends into the skin fold beside the nail/periungual; has irregular borders or multiple colours; appears in a middle-aged or older person without a history of melanonychia) should be evaluated by a dermatologist; the ABCDE rule for nails: A — age 20-90; B — brown to black; C — change in colour or diameter; D — digit (thumb, index finger, and great toenail are highest risk); E — extension to nail fold (Hutchinson\'s sign)',
     differentialDiagnosis: 'Causes of dark nail streaks: normal ethnic variation (most common by far in dark-skinned individuals); trauma (blood under the nail — usually resolves as nail grows out); medication side effects (hydroxychloroquine, chemotherapy, AZT); systemic diseases (Addison\'s disease, HIV); nail fungal infections (rare cause of darkening); subungual naevus (melanocyte lesion — benign); subungual melanoma (rare but must be excluded in new, changing, or concerning lesions)'
   },
   psoriasisNails: {
     name: 'Nail Psoriasis',
-    prevalence: 'Psoriasis affects approximately 2-3% of the population; nail involvement occurs in 50-80% of psoriasis patients; nail psoriasis can occur in the absence of skin psoriasis (isolated nail psoriasis)',
-    signs: 'Pitting (small depressions in the nail plate — the most specific sign; from psoriatic involvement of the proximal nail matrix); onycholysis (nail separation from the nail bed — oil drop sign — amber-coloured area visible under the nail; from distal nail matrix/nail bed involvement); subungual hyperkeratosis (build-up of skin under the nail from nail bed involvement); leukonychia (white patches); splinter haemorrhages',
-    ethnicNote: 'South Asian, Arab, and Middle Eastern populations have significant psoriasis prevalence; this is particularly relevant for nail care providers who should recognise nail psoriasis signs and not attempt aggressive nail care on psoriatic nails'
+    
+    signs: 'Pitting (small depressions in the nail plate — the most specific sign; from psoriatic involvement of the proximal nail matrix); onycholysis (nail separation from the nail bed — oil drop sign — amber-coloured area visible under the nail; from distal nail matrix/nail bed involvement); subungual hyperkeratosis (build-up of skin under the nail from nail bed involvement); leukonychia (white patches); splinter haemorrhages'
   }
 };
 
@@ -68,7 +67,7 @@ export const GEL_ACRYLIC_SAFETY = {
   gel: {
     description: 'Gel nails: a gel polymer is applied to the nail and cured (hardened) by UV or LED light; gel nails last 2-3 weeks and are more flexible than acrylic',
     risks: {
-      uvExposure: 'UV nail lamps: UVA exposure during gel curing has been documented to cause DNA damage in the skin around the nail; a 2023 UC San Diego study showed double-stranded DNA breaks and mitochondrial dysfunction in human cells after UV nail lamp exposure; the clinical relevance in terms of skin cancer risk is not yet determined but applying SPF or wearing UV-blocking gloves during curing is prudent, particularly for frequent gel users',
+      
       HEMA: 'HEMA (hydroxyethyl methacrylate) and related acrylates in gel products: HEMA is a common sensitiser — repeated contact without gloves can cause HEMA allergic contact dermatitis; this is a particular risk for nail technicians; once sensitised to HEMA, the person cannot safely have future gel nails or other acrylate-containing dental and medical products',
       removal: 'Gel removal: acetone soaking is the standard method; acetone is a severe dehydrant; it removes both the gel and the lipids from the nail plate and surrounding skin; proper technique (cotton acetone wrapped under foil for 10-15 minutes rather than prolonged soaking or filing/scraping) minimises but does not eliminate nail damage'
     },
@@ -77,8 +76,8 @@ export const GEL_ACRYLIC_SAFETY = {
   acrylic: {
     description: 'Acrylic nails: a liquid monomer (usually ethyl methacrylate — EMA) and polymer powder are mixed to create a hard, durable nail extension; acrylic is the most durable and longest-lasting nail enhancement method',
     risks: {
-      MMA: 'MMA (methyl methacrylate monomer) is banned by the FDA in nail products in the US due to its severe risks: excessively hard acrylics that do not break on impact (causing nail avulsion injury); inhalation toxicity; skin sensitisation; however, MMA products still circulate in some professional and DIY contexts particularly in communities underserved by mainstream professional nail products; MMA-based products are cheap and may be used in discount nail salons; EMA-based products are the safe professional standard',
-      airborne: 'Acrylic nail application generates fine particles (filing dust) that are acrylic polymer — inhalation risk for technicians; ventilation is critical in nail salons; this is a particular occupational health issue in communities where Vietnamese-American women dominate the nail tech profession (approximately 50% of US nail techs are Vietnamese-American) who may face unacceptable occupational chemical exposure',
+      MMA: 'MMA (methyl methacrylate monomer) liquid is banned for nail use in many US states and the FDA has warned against it, due to its severe risks: excessively hard acrylics that do not break on impact (causing nail avulsion injury); inhalation toxicity; skin sensitisation; however, MMA products still circulate in some professional and DIY contexts; MMA-based products are cheap and may be used in discount nail salons; EMA-based products are the safe professional standard',
+      
       infection: 'The space between an acrylic or gel nail and the natural nail is a warm, moist environment ideal for bacterial (particularly Pseudomonas, which causes the characteristic "green nail" — a green stain from pyocyanin and pyoverdine pigments) and fungal growth; proper prep, application, and infill technique minimise the risk; any lifting between the natural nail and the enhancement should be addressed promptly rather than ignored'
     }
   },
@@ -100,7 +99,6 @@ export const ETHNIC_NAIL_GUIDES = {
     community: 'South Asian',
     mehndiTradition: 'Mehndi (henna) on hands and nails is central to South Asian celebration culture: the mehendi ceremony the night before the wedding (mendhi wali raat) is one of the most joyful pre-wedding celebrations in Desi culture; the henna applied to the hands extends to the fingertips and nails; the depth of colour achieved on the nails is often deeper than on the skin; South Asian henna designs are characteristically intricate with fine line work, floral motifs, paisleys, and geometric patterns',
     nailAndAyurveda: 'Ayurvedic nail health approach: the state of nails is considered a reflection of the doshas (constitutional types) and overall health in Ayurveda; dry, brittle nails indicate Vata imbalance; soft, pale nails indicate Pitta or Kapha imbalance; Ayurvedic remedies include: massaging warm sesame oil into nails and cuticles (sesame oil is Vata-balancing); eating almond, walnut, and sesame seeds for nail-strengthening nutrients; triphala powder as a digestive tonic affecting nail quality; bhringraj oil applied to nails and cuticles',
-    psoriasisConsideration: 'Nail psoriasis is particularly common in South Asian and Middle Eastern populations; South Asian individuals presenting with nail pitting, separation, or subungual build-up should be evaluated for psoriasis; nail psoriasis management requires treating the underlying systemic condition (methotrexate, biologics for severe psoriasis) not just local nail treatment',
     wuduConsideration: 'For South Asian Muslim women: the intersection of nail polish and wudu (ablution) is a significant practical concern; most scholars agree that standard nail polish prevents water from reaching the nail (invalidating wudu); water-permeable "breathable" halal nail polishes exist but their genuine permeability is debated; some women remove nail polish for wudu; others use breathable polishes and accept the debate',
     recommendations: 'Warm sesame or coconut oil daily cuticle and nail massage; mehndi application for celebrations with natural (orange-brown) henna only — no black henna; regular filing in one direction only (not sawing back and forth — damages nail plate layers); biotin-rich foods (dals, nuts, eggs) for nail strength'
   },
@@ -110,8 +108,7 @@ export const ETHNIC_NAIL_GUIDES = {
     carnival: 'Carnival-coordinated nail art: Trinidad and Tobago Carnival, Barbados Crop Over, and London Notting Hill Carnival all inspire elaborate nail art that matches or complements the elaborate masquerade costuming; "costume nails" — nail art specifically designed to complement the Carnival costume — is a Caribbean diasporic beauty tradition',
     naturalRemedies: 'Caribbean natural nail care traditions: coconut oil as a cuticle and nail treatment (widely available; effective occlusive); lime juice as a nail whitening treatment (CAUTION: prolonged lime juice contact can dehydrate the nail plate; rinse off and apply oil after); aloe vera gel for cuticle softening and nail bed moisturisation',
     melanonychia: 'As with West African women, melanonychia (dark nail streaks) is completely normal and common in Caribbean women of African descent; no treatment needed; awareness of warning signs for the rare nail cancer',
-    humidity: 'High humidity in the Caribbean → fungal nail infections are common; breathable footwear, keeping nails dry, and regular nail hygiene are important',
-    recommendations: 'Coconut oil daily cuticle treatment; aloe vera for cuticle softening; EMA-based acrylics only; ventilated salons; check for dermatophyte infection if nails change colour or texture; SPF on hands to prevent age spots (UV index in the Caribbean is among the highest in the world year-round)'
+    humidity: 'High humidity in the Caribbean → fungal nail infections are common; breathable footwear, keeping nails dry, and regular nail hygiene are important'
   },
   arab: {
     community: 'Arab',
@@ -131,10 +128,10 @@ export const ETHNIC_NAIL_GUIDES = {
   },
   'east-asian': {
     community: 'East Asian',
-    nailCulture: 'East Asian nail culture is technically sophisticated: Korean and Japanese nail art (particularly Japanese nail art — "nails art" as a form — is considered some of the most technically accomplished in the world; Japanese nail technicians are trained as specialists; Korean nail influencers and brands are globally significant in beauty)',
+    
     koreanNailTrends: 'Korean nail trends that have achieved global adoption: "glass nails" (extremely shiny, chrome, translucent-looking nails that appear to be made of glass — achieved with iridescent or chrome powders); jelly nails (sheer, translucent, "jelly" appearance using gel); "milk" or "butter" nails (very pale, milky white or neutral tones that give a sophisticated minimalist look); aura nails (gradient, holographic); Korean nail culture values technical innovation, precision, and skin-flattering aesthetics',
-    japaneseNailArt: 'Japanese nail art: known as "nail art" or "3D nail art"; Japanese nail technicians create miniature sculptures on the nail using gel and acrylic; 3D flowers, miniature objects, lace, and elaborate Japanese textile designs are recreated on the nail surface; the technical skill level is comparable to miniature sculpture; Japanese nail salons are considered the world\'s most technically accomplished',
-    imperialLegacy: 'The Chinese imperial long nail tradition (discussed above) is the historical antecedent of the modern long nail aesthetic that is now global beauty; in modern East Asian beauty, the preferred aesthetic is generally shorter, more natural-looking nails with sophisticated finishes rather than the extreme length aesthetic',
+    
+    imperialLegacy: 'The Chinese imperial long nail tradition (discussed above) is the historical antecedent of the modern long nail aesthetic that is now global beauty.',
     nailHealthObsession: 'The K-beauty approach to nail health: just as K-beauty emphasises skin health as the foundation of beauty, the K-nail approach emphasises natural nail health; nail strengtheners; base coats; regular cuticle oil application; treating natural nails with care rather than masking damage with heavy acrylics',
     recommendations: 'Daily cuticle oil application (jojoba oil; camellia oil; rice bran oil — East Asian beauty ingredient); glass nail chrome powder for the K-beauty trend; gentle nail strengthener base coat; proper removal with acetone rather than peeling (peeling gel nails removes the top layers of the natural nail plate causing thinning and surface damage); rice water soak for nails (connects to East Asian rice beauty tradition)'
   },
@@ -179,14 +176,3 @@ export function getNailCareGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const NAIL_CARE_STATS = {
-  moduleId: 'nail_care_ethnic_guide',
-  version: '1.0.0',
-  topics: ['melanonychia dark nail streaks normal dark skin', 'henna mehndi nail application Muslim halal', 'onychomycosis fungal nail infection dermatophyte', 'MMA methyl methacrylate banned unsafe acrylic', 'Korean glass nails chrome jelly nail trends', 'Japanese 3D nail art', 'Ndebele geometric nail art South Africa', 'marula oil cuticle care', 'shea butter nail care', 'nail psoriasis pitting onycholysis', 'wudu halal breathable nail polish', 'UV lamp DNA damage gel nails', 'HEMA sensitisation acrylic allergy', 'mehndi ceremony South Asian wedding'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'Longitudinal melanonychia (brown or black streaks running down the nail from base to tip) is a completely normal variant in people with dark skin: it occurs in up to 77% of Black Americans and similar high proportions of other melanin-rich groups; it is NOT a sign of disease or cancer in most cases; however, any NEW streak, a streak that is GETTING WIDER, or a streak that EXTENDS into the skin fold beside the nail (Hutchinson\'s sign) should be evaluated by a dermatologist to exclude the rare subungual melanoma',
-    'MMA (methyl methacrylate monomer) in acrylic nail products is banned by the FDA for nail use in the United States due to serious risks: it creates acrylic nails so hard they do not break on impact and instead cause nail avulsion (the entire nail being torn off); it causes respiratory and skin sensitisation; MMA-based products are cheaper and may still be used in discount nail salons particularly in underserved communities; EMA (ethyl methacrylate) is the safe professional standard; clients can tell the difference because MMA-based acrylic has a much stronger, more offensive odour than EMA-based products',
-    'The halal nail polish debate in Muslim communities centres on whether conventional nail polish prevents water from reaching the nail plate during wudu (Islamic ablution before prayer); most Islamic scholars agree that if water cannot penetrate to the nail plate, the wudu is invalid; "breathable" or "water-permeable" halal nail polishes are marketed to Muslim women as a solution, but the genuine permeability of these polishes sufficient to satisfy wudu conditions is scientifically debated; natural henna application to nails does not prevent water penetration and is therefore definitively prayer-compatible, making it particularly significant in Muslim beauty communities'
-  ]
-};

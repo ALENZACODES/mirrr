@@ -58,7 +58,7 @@ export const NAIL_CARE_GUIDE = {
       cuticle_oil: 'Apply cuticle oil (jojoba, vitamin E, argan) daily; massages into nail base improve circulation and growth speed; key for maintaining elasticity'
     },
     hydration: {
-      importance: 'Nails are 10-30 times more permeable to water than skin; they lose and gain moisture easily',
+      
       products: ['Cuticle oil (jojoba oil most closely mirrors the skin\'s natural sebum)', 'Nail cream or hand cream applied to nails', 'Urea-based nail conditioner (10-20% urea) for brittle nails'],
       habits: 'Apply hand cream after every hand wash; apply cuticle oil before bed; wear gloves for wet work (dishwashing)'
     },
@@ -71,7 +71,7 @@ export const NAIL_CARE_GUIDE = {
   nutritionForNails: {
     biotin: {
       role: 'B vitamin that supports nail keratin structure; most studied nail supplement',
-      evidence: 'Several studies show 2.5mg daily biotin reduces brittleness and increases thickness in people with brittle nails',
+      
       food_sources: 'Eggs, nuts, seeds, salmon, sweet potato, avocado',
       supplement: '2500mcg (2.5mg) daily; note: biotin can interfere with thyroid and troponin lab tests'
     },
@@ -215,8 +215,7 @@ export const ETHNIC_NAIL_CULTURE = {
   caribbean: {
     culturalSignificance: 'Bold, expressive nail art is embedded in Caribbean beauty culture. Carnival especially drives elaborate nail art — matching costume glam.',
     popularStyles: ['Vibrant tropical colours: turquoise, coral, mango, lime', 'Caribbean flag nail art (Jamaica, Trinidad, Barbados, Haiti flag designs)', 'Carnival glitter and sequin nails', 'Ombre in sunset palettes (orange-pink-purple)', 'Long almond nails as classic Caribbean aesthetic'],
-    celebrations: 'Carnival (Trinidad and Tobago, Barbados, Jamaica), Jouvert, Crop Over — nail art is part of full masquerade beauty look',
-    henna_influence: 'Indian Caribbean communities in Trinidad, Guyana, Suriname continue mehndi traditions from the Indian indenture period (1838-1917)'
+    celebrations: 'Carnival (Trinidad and Tobago, Barbados, Jamaica), Jouvert, Crop Over — nail art is part of full masquerade beauty look'
   },
   arab: {
     culturalSignificance: 'Nail care and adornment is important in Arab beauty culture; Arabic henna (mehndi) is distinct in style — bolder, more geometric, more spaced than Indian mehndi. Gold nail accents reflect gold jewellery prominence in culture.',
@@ -234,7 +233,7 @@ export const ETHNIC_NAIL_CULTURE = {
     traditional: 'Some indigenous Latin American communities historically used plant-derived stains on nails as adornment; e.g. cochineal (carmine dye from Dactylopius coccus) used by Aztec and Maya peoples for red colour on body and textiles'
   },
   'east-asian': {
-    culturalSignificance: 'Nail art is a major part of Korean, Japanese, and Chinese beauty culture. Japan and Korea are the origin of many modern nail art techniques and the world\'s most intricate salon nail art.',
+    
     japanese_nail_art: {
       description: 'Japanese nail art (ネイルアート) is globally revered for precision and innovation. Known for hand-painted detail, 3D gel art, kawaii (cute) motifs, and seasonal designs.',
       styles: ['Kawaii (cat, bear, floral, pastel)', 'Traditional Japanese: sakura (cherry blossom), koi, crane, Mount Fuji, matcha', 'Ultra-detailed miniature paintings', 'Fluffy/velvet texture nails', 'Jelly nails (translucent with embedded elements)'],
@@ -253,7 +252,7 @@ export const ETHNIC_NAIL_CULTURE = {
   },
   'east-african': {
     culturalSignificance: 'Henna use widespread across East Africa, particularly in Muslim communities of Somalia, Ethiopia (Harari community), Djibouti, Kenya coast. Nail adornment increasingly part of contemporary East African beauty culture.',
-    hennaStyle: 'East African henna blends Arabic and Indian styles; Somali henna (xenna) tends toward Arabic-influenced bold motifs; Harari Ethiopian henna distinct regional style',
+    hennaStyle: 'East African henna blends Arabic and Indian styles; Harari Ethiopian henna distinct regional style',
     modernStyle: 'Contemporary East African nail art influenced by global trends via Nairobi, Addis Ababa, and diaspora beauty communities',
     colours: 'Earth tones and jewel tones; matching traditional dress fabrics (habesha kemis fabric prints for nail art)'
   },
@@ -265,7 +264,7 @@ export const ETHNIC_NAIL_CULTURE = {
     modern: 'Johannesburg and Cape Town nail art salons offer world-class work; South African nail artists competitive globally'
   },
   'black-american': {
-    culturalSignificance: 'Long, elaborate nails are a significant part of Black American beauty culture and identity — an assertion of femininity, creativity, and style. The "nail shop" (typically Korean-owned, Black-patronised) is a cultural institution in many communities.',
+    culturalSignificance: 'Long, elaborate nails are a significant part of Black American beauty culture and identity — an assertion of femininity, creativity, and style.',
     history: 'Long decorative nails in Black American beauty trace through blues and jazz-era aesthetics; Josephine Baker documented with painted long nails in 1920s Paris.',
     popularStyles: ['Long stiletto and coffin nails as the dominant aesthetic', 'Intricate nail art as wearable expression/statement', 'Influence on mainstream: "bad and boujee" nails, "trap" nail art', 'Cultural references: flag colours, portraits, name nails, prayer hands, money, roses', 'Modern: glazed donut (by Hailey Bieber but attributed Black beauty influence), French tip reimagined in colour, chrome powder'],
     nail_community: 'Black nail artists and nail influencers drive global trends — Fleek Nails, celebrity nail artists like Tom Bachik serving Black celebrity clients create mainstream trends',
@@ -310,18 +309,3 @@ export function getEthnicNailCulture(communityId) {
   return ETHNIC_NAIL_CULTURE[id] || ETHNIC_NAIL_CULTURE[communityId] || null;
 }
 
-export const NAIL_ART_STATS = {
-  moduleId: 'nail_art_guide_ethnic',
-  version: '1.0.0',
-  topics: ['nail biology', 'nail care', 'gel nails', 'acrylic nails', 'press-on nails', 'dip powder', 'nail art techniques', 'henna nails', 'mehndi', 'ethnic nail culture', 'Japanese nail art', 'Korean nail art', 'Ndebele nail art'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'Fingernails grow approximately 3mm per month; full regrowth takes 6 months',
-    'Black henna (PPD) can cause severe allergic reactions and permanent scarring',
-    'MMA (methyl methacrylate) in acrylic nails is banned in many countries as it can rip the nail plate',
-    'Chinese royal nail adornment documented 3000 years ago; Ming Dynasty nail guards showed leisure class status',
-    'Garden balsam flowers were used in East Asia to stain nails pink before commercial nail polish',
-    'Ndebele geometric art tradition influences South African nail art design',
-    'Japanese nail art (ネイルアート) is globally revered for the highest precision and 3D innovation'
-  ]
-};

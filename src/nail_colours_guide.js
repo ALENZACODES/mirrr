@@ -224,7 +224,7 @@ export const FRENCH_MANICURE_GUIDE = {
     style: 'Modern French',
     description: 'Updated versions replacing white tips with: colour tips, metallic tips, double-line French, negative space, barely-there glazed French.',
     variations: {
-      colour_tips: 'Red tips (very 2020s), black tips, neon tips, pastel tips — any colour in place of white',
+      
       glazed_donut: 'Sheer milky pink base + chrome mirror topcoat. Very popular 2022-2024.',
       reverse_french: 'Colour at the base (half-moon) rather than the tip.',
       double_french: 'Two lines of French tips in different colours or with gap between.',
@@ -237,7 +237,7 @@ export const FRENCH_MANICURE_GUIDE = {
 export const ETHNIC_NAIL_TRADITIONS = {
   west_african: {
     community: 'West African',
-    traditions: 'Nail polish and decoration important in West African celebratory culture. Henna nail staining (mehndi) in some Muslim communities — particularly for Eid. Bright, vivid colours popular for festive occasions. Nigerian, Ghanaian, and Senegalese women known for statement nail looks.',
+    traditions: 'Nail polish and decoration important in West African celebratory culture. Henna nail staining (mehndi) in some Muslim communities — particularly for Eid. Bright, vivid colours popular for festive occasions.',
     modern: 'Nigerian beauty culture pushes the longest, most elaborate nail looks. Coffin and stiletto acrylics with nail art are prominent.',
   },
   south_asian: {
@@ -262,7 +262,7 @@ export const ETHNIC_NAIL_TRADITIONS = {
   },
   east_asian: {
     community: 'East Asian',
-    traditions: 'China is the world\'s largest nail lacquer market. K-Beauty has driven global nail trends (minimalist, jellyfish nails, chrome). Nail art in Japan (kawaii nail) is an elaborate art form with extremely detailed designs.',
+    
     modern: 'Japanese nail art (3D nail art, character nail art) is globally influential and highly skilled. Korean "subtle" nail art (simple geometric, thin line art) widely replicated globally.',
   },
   east_african: {
@@ -303,10 +303,3 @@ export function getEthnicNailTradition(communityId) {
   return ETHNIC_NAIL_TRADITIONS[key] || Object.values(ETHNIC_NAIL_TRADITIONS);
 }
 
-export const NAIL_COLOURS_STATS = {
-  skinToneRanges: Object.keys(NAIL_COLOURS_BY_SKIN_TONE).length,
-  seasons: 4,
-  finishes: Object.keys(NAIL_FINISHES).length,
-  nailShapes: Object.keys(NAIL_SHAPES.shapes).length,
-  ethnicCommunities: 9,
-};

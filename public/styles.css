@@ -3015,3 +3015,5 @@ body { padding-top: 58px; }
 .sk-tier.sk-avoid { border-color: #b84a4a; }
 .cx-preview { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); max-width: 620px; }
 .cx-swatch { display: inline-block; width: 18px; height: 18px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.35); vertical-align: middle; margin-right: 4px; }
+.ns-pick { cursor: pointer; padding: 0; }
+.ns-pick.ns-on { outline: 2px solid #f5f5f5; outline-offset: 2px; }

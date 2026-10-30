@@ -21,9 +21,7 @@ export const NAIL_SHAPES = {
   coffin: {
     id: 'coffin',
     name: 'Coffin / Ballerina',
-    description: 'Long tapered sides with a flat top — dramatic, elongating. The most popular in Black-American and Latina communities.',
-    communities: ['black-american', 'latina', 'caribbean'],
-    popularityScore: 95,
+    description: 'Long tapered sides with a flat top — dramatic, elongating.',
     lengthRequired: 'Long',
     bestFor: 'Nail art, bold colours, detailed designs',
     tips: 'The flat top gives the most canvas for nail art. Most Instagram-viral nail shapes.',
@@ -32,18 +30,14 @@ export const NAIL_SHAPES = {
     id: 'almond',
     name: 'Almond',
     description: 'Tapered sides narrowing to a rounded point. Elegant and feminine.',
-    communities: ['arab', 'south-asian', 'latina'],
-    popularityScore: 85,
     lengthRequired: 'Medium to long',
     bestFor: 'Classic glamour, florals, nude shades',
-    tips: 'The most universally elongating shape — makes fingers look slender.',
+    tips: 'A very elongating shape — makes fingers look slender.',
   },
   square: {
     id: 'square',
     name: 'Square',
     description: 'Straight sides with a flat top and sharp corners. Clean and precise.',
-    communities: ['east-asian', 'all'],
-    popularityScore: 75,
     lengthRequired: 'Short to medium',
     bestFor: 'French manicures, minimalist designs, marble',
     tips: 'The original "professional" nail. K-beauty nail art often uses shorter square shape.',
@@ -52,8 +46,6 @@ export const NAIL_SHAPES = {
     id: 'oval',
     name: 'Oval',
     description: 'Natural egg shape — a rounded point following the cuticle shape. Classic and versatile.',
-    communities: ['all'],
-    popularityScore: 80,
     lengthRequired: 'Short to medium',
     bestFor: 'Everyday wear, soft designs, neutral shades',
     tips: 'The easiest shape to maintain. The go-to for natural nail enthusiasts.',
@@ -62,8 +54,6 @@ export const NAIL_SHAPES = {
     id: 'stiletto',
     name: 'Stiletto / Claw',
     description: 'Very long and sharply pointed like a claw or stiletto heel. Maximum drama.',
-    communities: ['black-american', 'caribbean', 'latina'],
-    popularityScore: 70,
     lengthRequired: 'Very long (acrylic or gel required typically)',
     bestFor: 'Maximum drama, statement making, festivals and events',
     tips: 'Practical for everyday tasks? No. Stunning? Absolutely.',
@@ -72,8 +62,6 @@ export const NAIL_SHAPES = {
     id: 'flare',
     name: 'Duck / Flare',
     description: 'Flared wide at the tip — wider than at the base. 90s revival, strong Latina and Black-American association.',
-    communities: ['black-american', 'latina'],
-    popularityScore: 65,
     lengthRequired: 'Medium to long',
     bestFor: 'Bold colour, Y2K aesthetics, personality statement',
     tips: 'It\'s a statement. Either you love it or you don\'t. No middle ground.',
@@ -304,15 +292,12 @@ export const NAIL_PRODUCT_PICKS = {
     category: 'Nude Polishes for Fitzpatrick V-VI',
     description: 'The right nude for deep skin is warm-toned, not pink or grey. These shades disappear on pale skin but glow on deep melanin.',
     shades: [
-      { name: 'OPI "Espresso Your Style"', hex: '#4A2C1A', notes: 'Deep warm brown — perfect "my nails but better" for Fitzpatrick VI' },
-      { name: 'Fenty Beauty "#WokeUpLikeThis"', hex: '#C07B5A', notes: 'Warm caramel nude for Fitzpatrick IV-V' },
-      { name: 'Zoya "Chantal"', hex: '#A06B4D', notes: 'Golden bronze nude — stunning on warm Fitzpatrick V' },
       { name: 'Essie "Topless and Barefoot"', hex: '#D4A574', notes: 'Peachy-warm for lighter deep skin tones, Fitzpatrick IV' },
     ],
   },
   deep_reds_melanin: {
     category: 'Deep Reds for Melanin-Rich Skin',
-    description: 'Dark reds and wines are universally stunning on deep skin — these shades avoid the "too orange" trap.',
+    description: 'Dark reds and wines are striking on deep skin — these shades avoid the "too orange" trap.',
     shades: [
       { name: 'OPI "Malaga Wine"', hex: '#5C1A2E', notes: 'Deep wine — timeless' },
       { name: 'CND "Rouge Rite"', hex: '#8B1A2B', notes: 'Perfect classic deep red' },
@@ -323,10 +308,9 @@ export const NAIL_PRODUCT_PICKS = {
     category: 'Bright Colours for Deep Skin Tones',
     description: 'On Fitzpatrick V-VI, bold and bright colours have maximum impact. These are the standouts.',
     shades: [
-      { name: 'Zoya "Tanzy"', hex: '#FF6B35', notes: 'Vivid orange — incredible on dark skin' },
       { name: 'OPI "I Just Can\'t Cope-Acabana"', hex: '#FF69B4', notes: 'Hot pink — electric on deep skin' },
       { name: 'Essie "Butler Please"', hex: '#1A1A5E', notes: 'Deep cobalt navy — stunning' },
-      { name: 'CND "Bicycle Yellow"', hex: '#F9D71C', notes: 'Yellow on dark skin = one of the most stunning combinations in beauty' },
+      { name: 'CND "Bicycle Yellow"', hex: '#F9D71C', notes: 'Bright yellow — strong contrast on deep skin' },
     ],
   },
 };
@@ -407,13 +391,4 @@ export function searchNailStylesByTag(tag) {
 }
 
 // ─── STATS ───────────────────────────────────────────────────────────────────
-
-export const NAIL_STATS = {
-  totalStyles: Object.keys(NAIL_STYLES).length,
-  categories: Object.keys(NAIL_CATEGORIES).length,
-  shapes: Object.keys(NAIL_SHAPES).length,
-  communities: [...new Set(Object.values(NAIL_STYLES).map(s => s.community))],
-  bridalStyles: Object.values(NAIL_STYLES).filter(s => s.category === 'bridal').length,
-  festiveStyles: Object.values(NAIL_STYLES).filter(s => s.category === 'festive').length,
-};
 

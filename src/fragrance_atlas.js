@@ -26,10 +26,10 @@ export const FRAGRANCE_NOTES = {
     arabicName: 'عود',
     family: 'oud',
     origin: 'Southeast Asia, South Asia, Middle East',
-    description: 'The "liquid gold" of perfumery. Oud is formed when the Aquilaria tree is infected by a specific mold — the tree produces a dark, resinous heartwood as a defence response. One of the most expensive raw materials in the world.',
+    
     scent: 'Complex: earthy, woody, slightly sweet, animalic, smoky, leathery, incense-like',
     communities: ['arab', 'south-asian', 'east-african'],
-    price: '$300-100,000+ per kg of raw oud oil',
+    
     uses: ['perfume base', 'burning as incense', 'hair fragrance', 'body oil'],
     culturalContext: 'In Arab culture, oud is burned in incense (bukhoor) form at weddings, during Ramadan, and to scent clothes and rooms. In the Gulf, offering oud to guests is a sign of the highest hospitality.',
     tags: ['oud', 'agarwood', 'arab', 'luxury', 'base-note', 'wood'],
@@ -43,7 +43,7 @@ export const FRAGRANCE_NOTES = {
     description: 'The Taif rose (Rosa damascena var.) grows only in the mountains above Taif, Saudi Arabia at 1800m elevation. Each rose petal is harvested by hand before dawn. One of the rarest rose varieties in the world.',
     scent: 'Rich, honey-like rose with notes of lychee and raspberry. Much more complex than standard rose water.',
     communities: ['arab'],
-    price: '$30,000-50,000+ per kg of rose oil',
+    
     uses: ['perfume', 'rose water (premium)', 'skincare'],
     culturalContext: 'Taif rose is given as a gift at the highest level in Saudi and Gulf culture. The rose harvest is a major annual event. Rose water from Taif is used in the Zamzam water vessels for the Kaaba.',
     tags: ['rose', 'taif', 'arabic', 'floral', 'luxury', 'rare'],
@@ -56,7 +56,7 @@ export const FRAGRANCE_NOTES = {
     description: 'Traditional Indian attar (ittar) of rose distilled in sandalwood base. The Indian attar method (degh-bhapka) is a centuries-old hydro-distillation technique unique to Kannauj.',
     scent: 'Rose on a warm, creamy sandalwood base — softer and earthier than pure rose oil',
     communities: ['south-asian', 'arab'],
-    price: '$200-2,000+ per tola (12ml)',
+    
     uses: ['applied to pulse points', 'prayer before namaz', 'gifting', 'bridal'],
     culturalContext: 'Attar (from Arabic \'itr) has been the South Asian perfume tradition for over 3,000 years. Kannauj attars are given as gifts at Eid, weddings, and religious occasions. Alcohol-free — important for Muslim communities.',
     tags: ['attar', 'rose', 'south-asian', 'kannauj', 'sandalwood', 'alcohol-free'],
@@ -66,10 +66,10 @@ export const FRAGRANCE_NOTES = {
     name: 'Mysore Sandalwood (Chandan)',
     family: 'resin',
     origin: 'Mysore, Karnataka, India',
-    description: 'Old-growth Mysore sandalwood (Santalum album) is one of the world\'s most regulated precious woods. Its heartwood oil is the foundation of Indian classical perfumery.',
+    
     scent: 'Creamy, milky, soft wood with a warm dry-down. Vanillic in some varieties.',
     communities: ['south-asian', 'east-asian'],
-    price: '$1,500-2,500+ per kg of Mysore oil',
+    
     uses: ['base note for attars', 'religious ceremonies', 'skin application', 'incense (agarbatti)'],
     culturalContext: 'Sandalwood paste (chandan) is used in puja (Hindu prayer) — applied to the forehead. The smell of sandalwood is inseparable from Indian temple culture and meditation.',
     tags: ['sandalwood', 'chandan', 'south-asian', 'india', 'base-note', 'sacred'],
@@ -83,7 +83,7 @@ export const FRAGRANCE_NOTES = {
     description: 'Frankincense (olibanum) resin from Boswellia sacra. The silver-white Omani frankincense (Hojari grade) is considered the finest in the world.',
     scent: 'Lemon-pine at the opening, deep balsamic resin in the heart, warm dry wood in the base. Clean and sacred.',
     communities: ['arab', 'east-african'],
-    price: '$50-500+ per kg (varies by grade)',
+    
     uses: ['incense', 'skincare (anti-inflammatory)', 'perfume ingredient', 'spiritual ceremonies'],
     culturalContext: 'Frankincense has been traded on the Arabian Peninsula for 5,000+ years — it was one of the three gifts of the Magi. In Oman, the Dhofar region\'s economy has been built on frankincense for millennia. Burned for spiritual purification across Islamic, Ethiopian Orthodox, and ancient pagan traditions.',
     tags: ['frankincense', 'luban', 'arab', 'east-african', 'omani', 'resin', 'sacred', 'ancient'],
@@ -96,7 +96,7 @@ export const FRAGRANCE_NOTES = {
     description: 'Jasminum sambac — the national flower of the Philippines, the flower of all South Asian garlands, and the heart of millions of perfumes.',
     scent: 'Intensely floral, heady, slightly animalic, green and rich. More powerful and complex than common jasmine.',
     communities: ['south-asian', 'east-asian', 'east-african', 'arab'],
-    price: '$3,000-7,000 per kg of absolute',
+    
     uses: ['hair garlands (gajra)', 'temple offerings', 'perfume', 'tea flavouring'],
     culturalContext: 'In South India, jasmine flowers strung into gajra are worn in the hair daily by women, refreshed every morning. At temples, jasmine is offered to the deity. Jasmine flower sellers exist at every South Indian market intersection.',
     tags: ['jasmine', 'mogra', 'sambac', 'south-asian', 'south-east-asian', 'floral', 'gajra'],
@@ -110,7 +110,7 @@ export const FRAGRANCE_NOTES = {
     description: 'Bukhoor is a blend of wood chips (often oud chips), resins, florals, musks, and sweet notes, compressed into chips and burned on charcoal in a mabkhara (incense burner).',
     scent: 'Complex smoky-sweet-woody-floral. Each blend is unique — like a perfume in smoke form.',
     communities: ['arab'],
-    price: '$20-500+ per box depending on oud content',
+    
     uses: ['scenting rooms', 'scenting clothes and hair', 'hospitality ritual', 'wedding preparation'],
     culturalContext: 'Passing bukhoor around to guests (using a mabkhara — a traditional censer) is one of the deepest hospitality gestures in Gulf culture. Brides are fumigated with bukhoor before their wedding night. Homes are scented with bukhoor for Eid and Ramadan.',
     ritual: 'Light charcoal in mabkhara → place bukhoor chip on charcoal → hold fabric or hair over smoke to absorb fragrance → pass mabkhara clockwise among guests',
@@ -124,7 +124,7 @@ export const FRAGRANCE_NOTES = {
     description: 'Black seed (kalonji/habbatus sauda) oil has a sharp, peppery, medicinal scent used in skin and hair care across Arab, South Asian, and East African traditions.',
     scent: 'Sharp, peppery, earthy, slightly bitter — medicinal but distinctive',
     communities: ['arab', 'east-african', 'south-asian'],
-    price: '$15-40 for quality oil',
+    
     uses: ['hair treatment', 'skin treatment', 'aromatherapy'],
     culturalContext: 'The Prophet Muhammad (PBUH) said: "There is healing in black seed for all diseases except death." This hadith has made black seed an essential in Muslim households globally for wellness and beauty.',
     tags: ['black-seed', 'kalonji', 'nigella', 'arab', 'south-asian', 'east-african', 'medicinal', 'religious'],
@@ -137,7 +137,7 @@ export const FRAGRANCE_NOTES = {
     description: 'Neroli (orange blossom water) from bitter orange (Citrus aurantium) trees — a cornerstone of North African wedding and beauty traditions.',
     scent: 'Fresh, light, honey-like floral with sweet citrus undertones. Calming and sophisticated.',
     communities: ['arab', 'latina (Cuba, colonial influence)'],
-    price: '$10-25 for rose water; $500-1,500 per kg of neroli absolute',
+    
     uses: ['orange blossom water as skin toner', 'bridal ritual', 'Moroccan pastry flavouring', 'perfume'],
     culturalContext: 'In Morocco, orange blossom water is sprinkled on guests at weddings and celebrations. It is also used to wash hands before eating at celebratory dinners. The smell of orange blossom defines Moroccan spring.',
     tags: ['neroli', 'orange-blossom', 'zahar', 'moroccan', 'north-african', 'arab', 'floral', 'bridal'],
@@ -148,12 +148,12 @@ export const FRAGRANCE_NOTES = {
     arabicName: 'زعفران',
     family: 'spice',
     origin: 'Iran, Kashmir, Morocco',
-    description: 'Saffron (Crocus sativus) — the world\'s most expensive spice — is also one of the most intoxicating fragrance materials, used in Arab, South Asian, and North African perfumery.',
+    
     scent: 'Warm, golden, honeyed, slightly leathery, sweet-metallic. Distinctive and luxurious.',
     communities: ['arab', 'south-asian'],
-    price: '$5,000-10,000 per kg of saffron',
+    
     uses: ['perfume ingredient', 'skincare (brightening)', 'bridal beauty ritual', 'incense'],
-    culturalContext: 'In Kashmiri Ayurveda, saffron milk (kesar doodh) is the quintessential bridal skin treatment. In Arab perfumery, saffron is a signature note in luxury attars and modern niche perfumes. Iran produces 90% of the world\'s saffron.',
+    
     tags: ['saffron', 'zafaran', 'arab', 'south-asian', 'luxury', 'spice', 'bridal', 'iran', 'kashmir'],
   },
 };
@@ -166,7 +166,7 @@ export const PERFUMERY_TRADITIONS = {
     name: 'Arab Perfumery Tradition',
     communities: ['arab'],
     regions: ['Arabian Peninsula', 'Levant', 'North Africa'],
-    description: 'Arab perfumery is among the oldest and most sophisticated in the world. The Islamic Golden Age (8th-13th century) gave us the first steam distillation of essential oils — credited to Ibn Sina (Avicenna).',
+    
     traditions: [
       {
         name: 'Bukhoor (Incense)',
@@ -199,7 +199,7 @@ export const PERFUMERY_TRADITIONS = {
     traditions: [
       {
         name: 'Degh-Bhapka Distillation',
-        description: 'Flowers are placed in a copper still (degh) over water. Steam carries volatile compounds into a bamboo pipe and condenses in a receiver (bhapka) filled with sandalwood oil. Result: the world\'s most natural attar.',
+        
         occasions: ['Production method — not a ritual'],
       },
       {
@@ -395,11 +395,4 @@ export function searchFragranceByTag(tag) {
 }
 
 // ─── STATS ───────────────────────────────────────────────────────────────────
-
-export const FRAGRANCE_STATS = {
-  totalNotes: Object.keys(FRAGRANCE_NOTES).length,
-  traditions: Object.keys(PERFUMERY_TRADITIONS).length,
-  communityProfiles: Object.keys(COMMUNITY_FRAGRANCE_PROFILES).length,
-  families: Object.keys(FRAGRANCE_FAMILIES).length,
-};
 

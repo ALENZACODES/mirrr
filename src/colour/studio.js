@@ -46,7 +46,7 @@ const TONE_KEY = { I: 'fair', II: 'light_medium', III: 'light_medium', IV: 'medi
  */
 const NAMED = [
   ['dark chocolate', '#3b2016'], ['chocolate', '#5a3020'], ['blackberry', '#3a1530'], ['burnt sienna', '#a0522d'], ['burnt orange', '#cc5500'],
-  ['brick red', '#9c3426'], ['brick brown', '#7a3d2b'], ['brick', '#a8432a'], ['toffee', '#9a5b2e'], ['coffee', '#4b2e20'], ['tomato', '#d4402b'], ['blue-red', '#b0213f'], ['blue-based', '#b0213f'], ['orange-red', '#d2401f'],
+  ['brick red', '#9c3426'], ['brick brown', '#7a3d2b'], ['brick', '#a8432a'], ['toffee', '#9a5b2e'], ['coffee', '#4b2e20'], ['tomato', '#d4402b'], ['blue-red', '#b0213f'], ['blue-based red', '#b0213f'], ['blue-based', '#b0213f'], ['orange-red', '#d2401f'],
   ['warm red', '#c63a24'], ['cool red', '#b31e3b'], ['true red', '#c0202a'], ['classic red', '#c0202a'], ['balanced red', '#bf2630'],
   ['oxblood', '#5a1a1f'], ['burgundy', '#6b2430'], ['wine', '#62182f'], ['plum', '#6e2f55'], ['berry', '#8e2f5a'], ['raspberry', '#b3305f'],
   ['fuchsia', '#c8227a'], ['magenta', '#c2207f'], ['hot pink', '#e2508f'], ['cool pink', '#e38fb0'], ['nude-pink', '#d9a3a0'], ['pink', '#ef9aac'],
@@ -54,7 +54,10 @@ const NAMED = [
   ['caramel', '#b5733c'], ['mocha', '#7a4e36'], ['tawny', '#a5623a'], ['mahogany', '#6a2f22'], ['terracotta', '#c0603d'], ['copper', '#b8693a'],
   ['bronze', '#a8743a'], ['coral', '#f07c5f'], ['peach', '#f4ae86'], ['deep orange', '#d9581c'], ['orange', '#e8772e'], ['mustard', '#d1a23a'],
   ['gold', '#d9aa4c'], ['taupe', '#8d7b6d'], ['warm white', '#f5efe2'], ['silver', '#c0c0c8'], ['emerald', '#1f8a5b'], ['olive green', '#6b7a2e'],
-  ['electric blue', '#1e5bff'], ['cobalt', '#1f4fbf'], ['navy', '#1d2a5b'], ['teal', '#127a7a'], ['warm brown', '#7b4a2c'], ['brown', '#6b4030'],
+  ['electric blue', '#1e5bff'], ['cobalt', '#1f4fbf'], ['navy', '#1d2a5b'], ['baby blue', '#a9cbe8'], ['dusty blue', '#7d97b5'], ['teal', '#127a7a'],
+  ['warm brown', '#7b4a2c'], ['brown', '#6b4030'], ['bold red', '#c0202a'], ['very deep red', '#6e1414'], ['deep red', '#8b1a1a'],
+  ['neon yellow', '#e6ff1a'], ['yellow', '#f1d24a'], ['mint', '#a8e6c8'], ['forest green', '#1f4d2b'], ['midnight green', '#0f3b2e'], ['green', '#2f8a4a'],
+  ['lilac', '#c8a2c8'], ['purple', '#6a3d9a'], ['white', '#f7f7f2'], ['black', '#141414'],
 ];
 const hexRgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
 const lum = h => hexRgb(h).reduce((t, v, i) => t + v * [0.2126, 0.7152, 0.0722][i], 0) / 255;

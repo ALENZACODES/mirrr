@@ -16,7 +16,7 @@ export const FRAGRANCE_SCIENCE = {
 
   olfactoryScience: {
     olfactorySystem: {
-      receptors: '~400 different olfactory receptor types in human nose; can detect 1 trillion different odors',
+      
       limbic: 'Olfactory bulb connects directly to amygdala and hippocampus (emotion + memory) — no thalamic relay (unlike other senses)',
       memory: 'Smell-triggered memories ("Proustian memory"): more emotionally intense than visually-triggered memories; deeper limbic engagement',
       culture: 'Olfactory preferences are heavily culturally conditioned — what smells good is largely learned'
@@ -61,7 +61,7 @@ export const FRAGRANCE_SCIENCE = {
     },
     woody: {
       description: 'Cedar, sandalwood, oud, vetiver, patchouli; earthy, sophisticated; excellent longevity',
-      oud: 'Oud (agarwood): most expensive natural fragrance ingredient; 1 kg = $30,000+; Middle Eastern luxury',
+      
       classic: 'Oud Wood (Tom Ford), Black Oud (Montale), Encre Noire (Lalique)'
     },
     floral: {
@@ -87,17 +87,17 @@ export const FRAGRANCE_SCIENCE = {
 export const TRADITIONAL_FRAGRANCE_INGREDIENTS = {
   oud: {
     name: 'Oud / Agarwood',
-    source: 'Aquilaria tree infected with mold (Phialophora parasitica); produces dark aromatic resin in response to infection',
+    
     origin: 'Primarily Southeast Asia (Cambodia, Vietnam, Indonesia) and Indian subcontinent; Middle East is primary consumer and refiner',
     scent: 'Complex; smoky, dark, woody, sweet, animalic, balsamic; most complex natural fragrance ingredient',
-    price: 'Natural oud: $30,000+ per kg; second most expensive natural ingredient after ambergris',
+    
     culture: 'Arab world: oud chips burned as incense; oud oil applied directly; ultimate luxury fragrance',
     synthetic: 'Iso E Super, Javanol, Sylvester: synthetic oud accords; cheaper; more accessible; increasingly high quality'
   },
 
   sandalwood: {
     name: 'Sandalwood',
-    source: 'Santalum album (Indian sandalwood, most prized) or S. spicatum (Australian sandalwood, more sustainable)',
+    
     origin: 'India (Mysore region: most prized Indian sandalwood); also Australia, Pacific Islands',
     scent: 'Creamy, smooth, warm, milky, woody; excellent fixative (extends longevity of other notes)',
     culture: 'Hindu temples: sacred wood; Ayurvedic medicine; South Asian bridal ritual',
@@ -106,7 +106,7 @@ export const TRADITIONAL_FRAGRANCE_INGREDIENTS = {
 
   frankincense: {
     name: 'Frankincense / Olibanum',
-    source: 'Boswellia tree resin; tapped like maple syrup',
+    
     origin: 'Somalia, Ethiopia, Eritrea, Oman, Yemen; primary growing region is Horn of Africa',
     scent: 'Fresh, resinous, balsamic, slightly lemony, smoky; highly complex',
     culture: 'Christian, Islamic, and Jewish religious traditions; ancient Silk Road trade commodity; sacred in many East African cultures',
@@ -115,7 +115,7 @@ export const TRADITIONAL_FRAGRANCE_INGREDIENTS = {
 
   myrrh: {
     name: 'Myrrh',
-    source: 'Commiphora myrrha tree resin; also from Horn of Africa',
+    
     scent: 'Warm, balsamic, slightly bitter, earthy; excellent base note; great longevity',
     culture: 'Traded since antiquity; one of the three gifts of the Magi; ancient Egyptian embalming; Islamic perfumery',
     modern: 'Used in modern niche perfumery and traditional Arab and East African attars'
@@ -123,16 +123,15 @@ export const TRADITIONAL_FRAGRANCE_INGREDIENTS = {
 
   rose: {
     name: 'Rose / Rosa Damascena',
-    source: 'Rosa damascena (Damask Rose); requires 3-5 tons of rose petals for 1kg rose absolute',
+    
     origin: 'Bulgaria (Rose Valley, Kazanlak): most prized; also Turkey, Morocco, India (Pushkar)',
     scent: 'The queen of fragrance; sweet, deep, multi-faceted; no synthetic fully replicates natural rose',
-    culture: 'Universal in Arab, South Asian, East Asian, Western fragrance traditions; symbol of love',
-    price: 'Rose absolute: $8,000-10,000/kg; rose otto (steam-distilled): even more expensive'
+    culture: 'Universal in Arab, South Asian, East Asian, Western fragrance traditions; symbol of love'
   },
 
   jasmine: {
     name: 'Jasmine',
-    source: 'Jasminum grandiflorum; picked at night (peak aromatic output); absolute = solvent extraction',
+    
     origin: 'Grasse (France): perfumery capital; India (Madurai): Indian jasmine; Egypt',
     scent: 'Rich, intensely floral, slightly animalic, heady; versatile; heart note in most major florals',
     culture: 'South Asian: jasmine garlands for hair (gajra); sacred flowers; Tamil Nadu cultural symbol',
@@ -156,7 +155,7 @@ export const TRADITIONAL_FRAGRANCE_INGREDIENTS = {
 export const ETHNIC_FRAGRANCE_GUIDES = {
   'west-african': {
     communityName: 'West African',
-    fragranceProfile: 'Rich, bold, often incense-forward; shea butter as skin fragrance; skin chemistry often amplifies warm base notes beautifully',
+    
 
     traditions: {
       incense: 'Incense burning in West African homes: oud, frankincense, and local resins used in domestic rituals',
@@ -165,12 +164,12 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
     },
 
     fragrancePairs: {
-      perfect: ['Oud-based orientals: Kayali Oud (Huda Beauty), Tom Ford Oud Wood', 'Vanilla amber: By Kilian Voulez-Vous, Maison Margiela Replica Flower Market', 'Shea butter note: Jo Malone Myrrh & Tonka, Zara Rich Warm Addictive'],
+      perfect: ['Oud-based orientals: Tom Ford Oud Wood', 'Vanilla amber: By Kilian Voulez-Vous, Maison Margiela Replica Flower Market', 'Shea butter note: Jo Malone Myrrh & Tonka, Zara Rich Warm Addictive'],
       avoid: 'Very light, aquatic, ozonic fragrances can disappear quickly on oily warm skin; needs body'
     },
 
     skinInteraction: {
-      oily: 'West African skin often naturally oilier; fragrance will last longer; can apply lighter hand than others',
+      oily: 'On oily skin fragrance lasts longer; a lighter hand is enough',
       heat: 'African heat/diaspora tropical climates: fragrance amplifies; use less; or choose lighter concentration'
     },
 
@@ -179,9 +178,8 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
     warm skin, oriental and woody fragrances bloom and last beautifully for 8-12 hours without
     heavy application. The shea butter tradition is both fragrance and skincare: infused with
     botanicals, it delivers a skin-close intimate scent that is culturally authentic. For modern
-    fragrance: Kayali (Mona Kattan's brand, popular in West African community for oud and oriental
-    notes), Maison Francis Kurkdjian Baccarat Rouge 540 (warm, ambery, long-lasting) — both
-    perform exceptionally on warm oily skin. Diaspora recommendation: keep a small bottle of
+    fragrance: Kayali (Mona Kattan's brand, known for oud and oriental notes) or Maison Francis
+    Kurkdjian Baccarat Rouge 540 (warm, ambery). Diaspora recommendation: keep a small bottle of
     frankincense essential oil (diluted in carrier) for moments of spiritual and ancestral connection.`
   },
 
@@ -199,16 +197,7 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
     fragrancePairs: {
       perfect: ['Rose water and oud: Juliette Has a Gun Not a Perfume, various Arabic oud fragrances', 'Sandalwood and spice: Hermes Terre d\'Hermes, Tom Ford Santal Blush', 'Jasmine soliflore: Carolina Herrera Good Girl, Guerlain Shalimar'],
       DIY: 'Attar oils directly on pulse points: traditional; effective; long-lasting; alcohol-free'
-    },
-
-    advice: `South Asian fragrance culture is one of the world's oldest and richest — the attar tradition
-    of Kannauj predates European perfumery. Jasmine in the hair (gajra) is the quintessential South
-    Asian beauty fragrance statement: intimate, natural, deeply culturally embedded. For Muslim South
-    Asian women: attar (alcohol-free hydro-distillate) is the fragrance tradition — rose, oud,
-    and mitti (petrichor) attars from Kannauj are among the world's finest fragrance experiences.
-    South Asian skin chemistry (warm undertone, moderate oiliness): oriental fragrances bloom
-    beautifully. Sandalwood accords — whether from natural Mysore sandalwood or synthetic Javanol —
-    carry deep spiritual meaning for Hindu South Asians and perform well on warm skin.`
+    }
   },
 
   caribbean: {
@@ -222,7 +211,7 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
     },
 
     fragrancePairs: {
-      perfect: ['Tropical/island: Tocca Florence, Kilian Good Girl Gone Bad', 'Coconut: Sol de Janeiro Cheirosa 62 (cult Caribbean-influenced), Kai perfume oil', 'Vanilla-tropical: Tom Ford Soleil Neige, Escada Sorbetto Rosso'],
+      perfect: ['Tropical/island: Tocca Florence, Kilian Good Girl Gone Bad', 'Coconut: Sol de Janeiro Cheirosa 62 (Brazilian brand), Kai perfume oil', 'Vanilla-tropical: Tom Ford Soleil Neige, Escada Sorbetto Rosso'],
       avoid: 'Very heavy oriental-only with no freshness can feel oppressive in Caribbean heat'
     },
 
@@ -250,17 +239,7 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
     fragrancePairs: {
       arabic: ['Amouage Interlude (Omani luxury house), Arabian Oud (Saudi brand), Rasasi Dhan Al Oudh', 'Tom Ford Tobacco Oud, Dior Oud Ispahan', 'Kayali Vanilla 28 (lighter option for daily)'],
       classic: 'Bvlgari Le Gemme Reali collection targets Arab market with oud and incense blends specifically'
-    },
-
-    advice: `Arab fragrance culture is arguably the world's most sophisticated — the Arabian Peninsula
-    is the epicenter of global oud culture, and Middle Eastern perfumery houses (Amouage from Oman,
-    Arabian Oud from Saudi Arabia, Rasasi and Abdul Samad Al Qurashi from Dubai) produce some of
-    the world's finest fragrances. The experience of oud in Arab culture is not just about wearing
-    fragrance — it's about burning bakhoor to perfume the home, smoke-perfuming clothing over the
-    mabkhara, and applying pure dahn al oud oil for special occasions. For diaspora Arab women:
-    recreate the oud home ritual with a few oud chips and a small electric incense burner —
-    it immediately creates cultural home ambiance. Mukhallat oils from Arabic brands perform
-    better on warm oily Middle Eastern skin than most Western alcohol-based fragrances.`
+    }
   },
 
   latina: {
@@ -270,7 +249,7 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
     traditions: {
       flowers: 'Latin American women: flowers in hair and as room fragrance; marigold (cempasúchil/Day of the Dead), jasmine',
       rosary: 'Rose fragrance: deep Catholic cultural connection; roses for the Virgin Mary; rose water in home shrines',
-      scentOfHome: 'Colombian flowers: world\'s largest flower exporter; Colombian women grew up surrounded by extraordinary floral variety',
+      
       cuba: 'Cuban fragrance tradition: Llanura fragrance house; tobacco and rum notes in masculine tradition'
     },
 
@@ -330,7 +309,7 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
     },
 
     fragrancePairs: {
-      perfect: ['Tom Ford Tobacco Oud, Dior Oud Ispahan: Middle Eastern oud that East African heritage can connect with', 'Maison Francis Kurkdjian Oud Extrait de Parfum: luxury oud', 'Byredo Mojave Ghost: subtle; unexpected fit with East African skin chemistry'],
+      perfect: ['Tom Ford Tobacco Oud, Dior Oud Ispahan: Middle Eastern oud that East African heritage can connect with', 'Maison Francis Kurkdjian Oud Extrait de Parfum: luxury oud'],
       traditional: 'Frankincense essential oil (4-5 drops in 30ml carrier oil): ancestral East African fragrance'
     },
 
@@ -359,17 +338,7 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
     fragrancePairs: {
       perfect: ['African Botanics (South African luxury brand) uses fynbos and Cape florals', 'Amarula body care: South African marula fruit; warm, nutty fragrance', 'Jo Malone Cape Town collaborative (2019 regional collection): tribute to Cape botanicals'],
       international: 'Initio Oud for Greatness: popular in South African luxury market'
-    },
-
-    advice: `South Africa has one of the world's most botanically unique fragrance ingredients: fynbos.
-    The Cape Floral Kingdom is one of the six floral kingdoms of Earth and the most biodiverse
-    per square meter — it contains fragrant plants found nowhere else. Buchu, a Khoikhoi
-    traditional medicine plant with blackcurrant aroma, is making appearances in international
-    niche perfumery. Rooibos extract adds its warm, earthy herbal note. African Botanics (founded
-    in South Africa) uses these Cape Florals authentically in luxury beauty products.
-    For diaspora South Africans: rooibos essential oil as room fragrance creates immediate
-    olfactory home-connection. The South African fragrance identity is still being established
-    as a distinct category — there's exciting territory to explore.`
+    }
   },
 
   'black-american': {
@@ -384,7 +353,7 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
     },
 
     fragrancePairs: {
-      classic: ['Baccarat Rouge 540 (MFK): arguably the most popular luxury fragrance in Black American community currently', 'Flowerbomb (Viktor & Rolf): warm floral-oriental; long-lasting on warm skin', 'YSL Black Opium: coffee-vanilla; enormously popular'],
+      classic: ['Baccarat Rouge 540 (Maison Francis Kurkdjian): amber-woody, sweet and airy', 'Flowerbomb (Viktor & Rolf): warm floral-oriental; long-lasting on warm skin', 'YSL Black Opium: coffee-vanilla'],
       value: 'Black community beauty supply fragrance oils: impressionist versions of luxury fragrances; often excellent performance; significantly affordable',
       power: 'Deep warm Black American skin: Baccarat Rouge 540 EDP performs up to 12-14 hours; legendary longevity combination'
     },
@@ -393,9 +362,8 @@ export const ETHNIC_FRAGRANCE_GUIDES = {
     with community-rooted custom fragrance oils (beauty supply stores selling roll-on impressionist
     versions). The beauty supply fragrance oil tradition is culturally significant — high-quality
     impressionist blends at accessible prices, often customized by the vendor, is a distinctly
-    Black American fragrance experience. Baccarat Rouge 540 (Maison Francis Kurkdjian) has achieved
-    something close to iconic status in Black American beauty culture: the warm jasmine-saffron-
-    ambroxan combination amplifies spectacularly on warm, deep Black skin to project for 10-14 hours.
+    Black American fragrance experience. Baccarat Rouge 540 (Maison Francis Kurkdjian) is a well-loved
+    modern pick: a warm jasmine-saffron-ambroxan blend.
     "Sunday best" church fragrance: White Diamonds (Elizabeth Taylor), Opium (YSL), and Coco (Chanel)
     are classics in many Black American church communities — worn on the wrist and neck, the
     warm church environment creates magnificent sillage.`
@@ -425,21 +393,3 @@ export function getFragranceGuide(communityId) {
 // STATS
 // ============================================================
 
-export const FRAGRANCE_STATS = {
-  moduleId: 'fragrance_ethnic_guide',
-  version: '1.0.0',
-  communities: 9,
-  keyFacts: [
-    'Olfaction is the only sense with direct limbic system connection (bypasses thalamus) — explains why scent triggers memory more powerfully than any other sense',
-    'Natural oud (agarwood): produced when Aquilaria tree is infected with mold; 1kg costs $30,000+ making it the second most expensive natural ingredient after ambergris',
-    'Attar (ittar): traditional alcohol-free hydro-distilled fragrance in sandalwood base; Kannauj, India produces the finest; alcohol-free for Islamic observance',
-    'Japanese kodo (way of fragrance/incense) is one of Japan\'s three classical arts alongside ikebana and chado',
-    'Oily skin holds fragrance longer than dry skin — sebum provides extended release; deeper skin tone is not the factor, skin oiliness is',
-    'Baccarat Rouge 540 performs 10-14 hours on warm deep Black American skin — warm skin chemistry + ambroxan molecule = legendary longevity',
-    'South Africa\'s Cape Floral Kingdom (fynbos) is one of the most biodiverse botanical regions on Earth; buchu (blackcurrant aroma) is a unique fragrance ingredient',
-    'Frankincense (Boswellia) is the primary aromatic of Ethiopian Orthodox church, Somali home rituals, and Islamic tradition — same ingredient, multiple cultural expressions',
-    'Beauty supply fragrance oils in Black communities: impressionist versions of luxury fragrances at accessible prices — a culturally significant alternative fragrance economy',
-    'Jasmine gajra (garland) worn in South Asian women\'s hair is a living fragrance tradition — the daily personal fragrance is botanical and bio-dynamic'
-  ],
-  lastUpdated: '2026-10-29'
-};

@@ -50,7 +50,7 @@ export const FRAGRANCE_SCIENCE = {
     baseNotes: 'The anchor of the fragrance; the longest-lasting components; the final scent impression after hours of wear; typically heavy, rich, and slow-evaporating: musks, woods (sandalwood, oud, cedar), resins (frankincense, benzoin, labdanum), vanilla, amber'
   },
   skinChemistry: {
-    importance: 'The same fragrance smells different on different people due to individual skin chemistry: pH, skin oils (sebum), hydration level, diet, and even medication can change how a fragrance develops on the skin',
+    
     dryVsOilySkin: 'Fragrance lasts longer on oilier skin (the oil base slows evaporation) and shorter on dry skin (the molecules evaporate faster without an oil anchor); applying fragrance to moisturised or oiled skin significantly extends longevity on dry skin types',
     warmth: 'Fragrance projects more on warm skin and in warm weather; pulse points (inner wrist, neck, inside of elbow, behind the knee) generate body heat that magnifies fragrance projection; applying to hair also projects scent because hair retains fragrance oils'
   }
@@ -69,7 +69,7 @@ export const FRAGRANCE_FAMILIES = {
     ethnicContext: 'Woody fragrances are culturally significant in Arab and West African traditions; oud is one of the most important fragrance materials in Arab culture; West African incense traditions also centre on woods and resins'
   },
   oriental: {
-    description: 'Rich, warm, spiced, resinous, and often sweet fragrances; traditionally associated with "exotic" Middle and Far Eastern ingredients; the naming has cultural connotations worth noting',
+    
     culturalNote: 'The fragrance industry\'s "Oriental" category was named by Western perfumers for ingredients and aesthetics they associated with the "Orient"; many fragrance professionals now use "Amber" or "Resinous" as a replacement term to avoid the Orientalist implications',
     subFamilies: ['Amber/Resinous: benzoin, labdanum, vanilla, ambergris-inspired synthetics — warm, sweet, balsamic (Shalimar, Angel)', 'Spicy Oriental: cinnamon, cardamom, pepper, cloves in a warm base (Opium, Youth Dew)', 'Gourmand: edible-smelling sweet fragrances inspired by food — caramel, chocolate, pastry (Angel, Hypnotic Poison)'],
     ethnicContext: 'What Western perfumery calls "Oriental" fragrance is actually deeply rooted in the real fragrance traditions of the Arab world, South Asia, and East Africa; the cultural origin should be acknowledged, not exoticised'
@@ -88,25 +88,24 @@ export const OUD_GUIDE = {
     species: 'The primary oud-producing tree species are Aquilaria malaccensis (Assam, India), Aquilaria crassna (Cambodia, Thailand, Vietnam), and several related Aquilaria and Gyrinops species across South and Southeast Asia; different species and growing regions produce distinctly different scent profiles',
     regions: ['Hindi oud: from India and Bangladesh; rich, balsamic, sweet, slightly barnyard; most associated with traditional Islamic oud oil', 'Cambodian oud: lighter, sweeter, more floral; popular in Western perfumery', 'Vietnamese/Laotian oud: complex, multi-faceted, very highly regarded; some of the most expensive oud comes from Laos', 'Papua New Guinean oud: earthy, dark; the most "wild" and barnyard of commercial oud']
   },
-  price: 'Genuine wild oud oil (as opposed to plantation-grown) is among the most expensive natural materials in the world; high-quality wild Hindi oud oil can cost $30,000-80,000 per kilogram; most "oud" in mass-market fragrance is either synthetic oud (agarwood-inspired aromatic molecules) or plantation-grown oud of much lower quality and price',
+  
   culturalSignificance: {
     Arab: 'Oud is culturally central to Arab beauty and hospitality traditions; burning oud chips or oud incense (known as bakhoor when blended with other ingredients) is done in homes, at celebrations, and for personal fragrance; oud oil applied directly to the skin or to clothing is traditional; gifting fine oud is a significant social gesture in Arab culture; oud is explicitly mentioned in Islamic fragrance traditions (the Prophet Muhammad reportedly favoured oud and encouraged its use)',
     SouthAsia: 'Oud (called "agaru" in Sanskrit) has a 3,000-year history in South Asian use; referenced in Ayurvedic texts; used in temple incense; Indian oud is a distinct and important variety',
     EastAsia: 'Japanese "jinko" (沈香) is oud; used in Japanese incense (kōdō — the art of incense appreciation); Chinese incense traditions also use oud',
     WestAfrica: 'West African incense traditions include oud alongside local woods and resins'
-  },
-  inWesternPerfumery: 'Western niche perfumery discovered oud in the mid-2000s and it became a major trend; Tom Ford Oud Wood (2007) was a significant early populariser; mainstream synthetic oud fragrance followed; authentic oud education is growing in Western fragrance communities but significant misconceptions remain (particularly around price and authenticity)'
+  }
 };
 
 export const TRADITIONAL_ETHNIC_FRAGRANCES = {
   'west-african': {
     traditions: 'West African fragrance traditions centre on incense burning (resins and woods burned on charcoal), body oiling with scented oils, and the use of local aromatic plants; the use of fragrant smoke to perfume the body, hair, and clothing is ancient',
     keyIngredients: ['African oud varieties (Aquilaria species found in parts of West Africa are less common than Southeast Asian varieties but are used)', 'Shea butter fragranced with local botanicals', 'Frankincense and myrrh (the Boswellia and Commiphora species grown in the Horn of Africa trade across West Africa)', 'Local aromatic grasses and herbs', 'African musk (civet cat secretion historically; now synthetic civet musks)', 'Suede and leather accord fragrances inspired by West African leather crafting traditions'],
-    modernScents: 'Contemporary West African niche perfumery draws on these traditions; Lagos has a growing niche fragrance scene; Maison 21G, Parfums de Marly, and various niche houses have created oud-led fragrances with West African sensibility'
+    modernScents: 'Contemporary West African niche perfumery draws on these traditions; Lagos has a growing niche fragrance scene'
   },
   'south-asian': {
     traditions: 'South Asian fragrance traditions are among the most sophisticated and ancient in the world; the art of itr (natural perfume), the use of mogra (jasmine) garlands, the burning of dhoop incense, and the tradition of fragrant powders and pastes are thousands of years old; Kannauj, Uttar Pradesh is the historic heart of Indian perfumery and still produces traditional itrs using the deg-bhapka (copper distillation) method',
-    keyIngredients: ['Rose (gulab): Rosa damascena grown in Kannauj and Uttar Pradesh; foundational to Indian perfumery', 'Jasmine (mogra, chameli): intensely floral; used in garlands, hair adornment, and itr', 'Sandalwood (chandan): Mysore sandalwood (Santalum album) from Mysore, Karnataka is the finest and most expensive sandalwood in the world', 'Vetiver (khus): grass root with a deep earthy, smoky, and cooling scent; traditional in Indian summer fragrances', 'Mitti (earth) attar: a uniquely Indian attar made by distilling the first rains on dry earth (petrichor) into sandalwood; the scent of rain on dry soil', 'Saffron: the spice used as a fragrance ingredient in Indian perfumery', 'Ambergris: historical Indian fragrance ingredient from sperm whale intestine; now primarily synthetic'],
+    keyIngredients: ['Rose (gulab): Rosa damascena grown in Kannauj and Uttar Pradesh; foundational to Indian perfumery', 'Jasmine (mogra, chameli): intensely floral; used in garlands, hair adornment, and itr',  'Vetiver (khus): grass root with a deep earthy, smoky, and cooling scent; traditional in Indian summer fragrances', 'Mitti (earth) attar: a uniquely Indian attar made by distilling the first rains on dry earth (petrichor) into sandalwood; the scent of rain on dry soil', 'Saffron: the spice used as a fragrance ingredient in Indian perfumery', 'Ambergris: historical Indian fragrance ingredient from sperm whale intestine; now primarily synthetic'],
     modernScents: 'Indian brands Naso Profumi, Bombay Perfumery, and All Good Scents have created modern fragrances rooted in Indian traditional ingredients; international houses like Diptyque and Serge Lutens have drawn on Indian fragrance traditions'
   },
   caribbean: {
@@ -118,11 +117,11 @@ export const TRADITIONAL_ETHNIC_FRAGRANCES = {
     }
   },
   arab: {
-    traditions: 'Arab fragrance tradition is one of the oldest and most developed in the world; Arabic perfumery (itr) has a documented 5,000-year history; the ancient trade in frankincense and myrrh from the Arabian Peninsula and Horn of Africa made the Arab world the historic centre of global fragrance trade; Islamic religious tradition explicitly encourages fragrance use',
-    keyIngredients: ['Oud: see full oud section; the most important Arab fragrance material', 'Rose: Taif rose (Rosa damascena from Taif, Saudi Arabia) is one of the most prized rose oils in the world; intensely rich, deep rose with honey-like quality', 'Musk: historically from the musk deer gland (now banned); modern Arab perfumery uses high-quality synthetic musks; Arab fragrance uses musk generously as a skin note', 'Amber: in Arab perfumery, amber refers to a specific warm-resinous-sweet base note made from labdanum, benzoin, and musks (distinct from the petrified tree resin "amber")', 'Frankincense (luban): burned as incense extensively in Arab world; also used in perfumery; cooling, slightly citrusy-pine resinous scent', 'Myrrh: bitter-sweet resinous scent; used in bakhoor (incense blends)', 'Bakhoor: blends of oud chips, rose water, sandalwood, musks, and other ingredients bound with a binder and burned on charcoal to fragrance a room and the body'],
+    
+    keyIngredients: ['Oud: see full oud section; the most important Arab fragrance material',  'Musk: historically from the musk deer gland (now banned); modern Arab perfumery uses high-quality synthetic musks; Arab fragrance uses musk generously as a skin note', 'Amber: in Arab perfumery, amber refers to a specific warm-resinous-sweet base note made from labdanum, benzoin, and musks (distinct from the petrified tree resin "amber")', 'Frankincense (luban): burned as incense extensively in Arab world; also used in perfumery; cooling, slightly citrusy-pine resinous scent', 'Myrrh: bitter-sweet resinous scent; used in bakhoor (incense blends)', 'Bakhoor: blends of oud chips, rose water, sandalwood, musks, and other ingredients bound with a binder and burned on charcoal to fragrance a room and the body'],
     GulfFragrance: {
       culture: 'Gulf Arab (Saudi Arabia, UAE, Kuwait, Bahrain, Qatar) fragrance culture is the most extravagant and concentrated fragrance culture in the world; spending per capita on fragrance in the Gulf far exceeds any other market; very high concentrations (extrait strength), very rich and complex formulas, and generous application are the norm',
-      brands: 'Gulf perfume houses include: Amouage (Oman), Abdul Samad Al Qurashi, Arabian Oud, Rasasi, Lattafa, Swiss Arabian; these houses produce some of the world\'s finest oud and amber compositions and are increasingly available globally',
+      brands: 'Gulf perfume houses include: Amouage (Oman), Abdul Samad Al Qurashi, Arabian Oud, Rasasi, Lattafa, Swiss Arabian; these houses are known for oud and amber compositions',
       tradition: 'Pouring oud oil from a dallah (small ornate bottle) as a gesture of hospitality; passing a mabkhara (incense burner) around the gathering to fragrance everyone\'s clothing is a traditional Gulf hospitality ritual'
     }
   },
@@ -135,7 +134,7 @@ export const TRADITIONAL_ETHNIC_FRAGRANCES = {
     }
   },
   'east-asian': {
-    traditions: 'East Asian fragrance traditions are among the oldest and most codified in the world; Chinese perfumery has 2,000+ years of history; Japanese kōdō (the art of incense appreciation, second only to ikebana in Japanese arts) is a refined practice going back to the Heian period (794-1185 CE); Korean fragrance culture has experienced a major contemporary renaissance',
+    
     japaneseKodo: {
       what: 'Kōdō (香道) — "the way of fragrance" — is the Japanese ceremonial practice of identifying and appreciating incense; like the tea ceremony (chadō) and flower arranging (kadō), it follows strict aesthetic principles and ritual protocols; kōdō uses extraordinary rare ingredients including jihi (frankincense), baieido (sandalwood), and exceptional jinko (oud) from Laos and Cambodia',
       theGame: 'Kumiko (incense games) are competitive identification challenges where participants smell burning incense and identify the ingredients; traditionally held at aristocratic gatherings in Heian-period Japan; still practiced today'
@@ -170,14 +169,14 @@ export const TRADITIONAL_ETHNIC_FRAGRANCES = {
   },
   'black-american': {
     traditions: 'Black American fragrance traditions have multiple roots: West and Central African incense and body oiling traditions that survived the Middle Passage; adoption and transformation of mainstream American commercial fragrance; and the development of distinctly Black American fragrance aesthetics rooted in boldness, richness, and longevity',
-    bassNotes: 'Black American fragrance preferences tend toward rich, lasting base notes: heavy musks, vanilla, amber, warm woods; the "loud" fragrance (heavy projection, long-lasting) is a respected aesthetic; the idea that a person should be able to smell your fragrance is culturally different from the understated European "skin scent" approach',
+    
     bodyOilTradition: {
       what: 'Black American body oil traditions — concentrated fragrance oils (without alcohol) applied directly to skin — have roots in West African oiling traditions and have developed through the unique Black American experience; Black-owned fragrance oil vendors selling concentrated oils at street markets and in beauty supply stores are a long-standing economic and cultural tradition',
       advantages: 'Pure fragrance oil (no alcohol) lasts significantly longer on skin than alcohol-based spray fragrance; particularly beneficial for dry skin types; the warmth of the skin melts and spreads the oil; concentrated oils are also more cost-effective per application',
       vendors: 'Street fragrance oil vendors in Black American communities sell "impression" oils inspired by designer fragrances; this tradition has created a unique fragrance economy and a distinctive Black American relationship to perfume as accessible luxury'
     },
     keyIngredients: ['Vanilla: central to many Black American beauty traditions; "Black Vanilla" is a distinctive aesthetic', 'Amber: warm, resinous richness', 'Musk: heavy white and dark musks', 'Oud: the Black American adoption of oud fragrance has been significant; Black American consumers are among the largest buyers of oud-inspired Western and Arab fragrance'],
-    brands: 'Black-owned fragrance brands are a growing segment: Forvr Mood (Jackie Aina), Fenty Beauty expanded into fragrance, Rihanna; BALS by Yara; Art of Sport; African Pride in haircare fragrance'
+    brands: 'Black-owned fragrance brands include Forvr Mood (Jackie Aina) and Fenty Beauty, which launched Fenty Eau de Parfum'
   }
 };
 
@@ -220,16 +219,3 @@ export function getTraditionalEthnicFragrance(communityId) {
   return directMap[communityId] || null;
 }
 
-export const FRAGRANCE_ETHNIC_STATS = {
-  moduleId: 'fragrance_guide_ethnic',
-  version: '1.0.0',
-  topics: ['fragrance science', 'perfume families', 'oud agarwood', 'Arab fragrance culture', 'kodo Japanese incense', 'bakhoor incense', 'itr South Asian perfume', 'frankincense Somalia', 'myrrh East Africa', 'bay rum Caribbean', 'copal Mesoamerica', 'buchu South Africa', 'fynbos perfumery', 'Black American body oils', 'concentration EDP EDT', 'fragrance pyramid notes', 'Taif rose', 'Indian sandalwood', 'vanilla Mexico', 'Korean fragrance renaissance'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'Wild, high-quality oud oil (from infected Aquilaria trees) can cost $30,000-80,000 per kilogram, making it one of the most expensive natural materials in the world; most "oud" in mass-market fragrance is synthetic agarwood-inspired molecules',
-    'Somalia and Ethiopia are the world\'s primary sources of frankincense (from Boswellia trees) and myrrh (from Commiphora trees) — the same ingredients that made the ancient Arabian incense trade one of the most economically important trade routes in human history; East Africa IS the origin of the global incense trade',
-    'Mitti attar is one of the most unique traditional South Asian fragrance ingredients: it is the scent of petrichor (first rain on dry earth) captured through distilling dry clay into sandalwood oil using the traditional deg-bhapka copper distillation method in Kannauj, India',
-    'Kōdō (香道, "the way of fragrance") is the Japanese ceremonial incense appreciation practice codified during the Heian period (794-1185 CE); it involves ritual identification of rare aromatic woods burned on charcoal — a practice with comparable cultural prestige to the tea ceremony',
-    'Buchu (Agathosma betulina) is a plant found only in the Western Cape of South Africa; its distinctive blackcurrant-like aromatic compounds create a scent note that is completely unique to South African fragrance — it exists nowhere else in the world and is becoming internationally recognized in niche perfumery'
-  ]
-};

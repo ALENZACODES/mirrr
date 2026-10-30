@@ -79,7 +79,7 @@ export const GEL_AND_ACRYLIC = {
       BIAB: 'Builder In A Bottle (BIAB): a thicker gel formula applied in one step to reinforce the natural nail and provide colour; popular in UK especially'
     },
     UVExposure: {
-      concern: 'UV nail curing lamps (both UVA-emitting UV lamps and LED lamps that emit a narrowband UV) do emit UV radiation that can damage skin; a 2023 study in Nature Communications found that repeated gel manicures under UV lamps caused DNA damage and cell death in cultured human cells',
+      
       mitigation: 'Applying SPF 30+ broad-spectrum sunscreen to the hands and fingers before curing reduces UV exposure to the skin surrounding the nails; UV-protective gloves with open fingertip design are commercially available specifically for gel manicures',
       perspective: 'The absolute UV dose from gel curing is low compared to sun exposure; a few sessions a year is a much lower risk than regular hand UV damage; for people who get gel manicures frequently (weekly or bi-weekly), UV protection during curing is advisable'
     },
@@ -97,7 +97,7 @@ export const GEL_AND_ACRYLIC = {
   pressOnNails: {
     what: 'Pre-shaped nail tips applied with nail glue or adhesive tabs; enormous quality improvement in the 2010s-2020s; modern press-on nails can look identical to salon sets; short-term wear (a few days) with tabs; longer wear (1-2 weeks) with nail glue',
     benefits: 'No UV exposure; no monomer fumes; no professional appointment needed; no damage if properly removed (soak in warm soapy water or pure acetone for tab-applied; acetone soak for glue-applied); much more affordable than salon gel or acrylic; available in every shape, length, and design',
-    popularity: 'Press-on nails have experienced a major cultural rehabilitation from "cheap" to accessible luxury; significant adoption in Black American beauty culture particularly; press-on nail small businesses (custom hand-painted sets) are a significant niche in Black entrepreneurship on platforms like Etsy and Instagram'
+    popularity: 'Press-on nails have experienced a major cultural rehabilitation from "cheap" to accessible luxury; custom hand-painted press-on sets are sold by many small businesses on Etsy and Instagram'
   }
 };
 
@@ -107,14 +107,13 @@ export const NAIL_ART_TRADITIONS = {
     ancient: 'Nail decoration is ancient; ancient Egyptians used henna to tint nails and fingertips; the colour of one\'s nails signified social status in ancient China (Ming dynasty records describe gold and silver nail coatings for royalty; dark red and black for upper classes); ancient Babylonians used kohl to colour nails before battle',
     modernHistory: {
       firstPolish: 'Modern nail polish was developed in the 1920s, inspired by automobile paint; the Revlon brand was founded in 1932 specifically on a new range of nail polish colours; the first major nail polish colour was red',
-      fragileFashion: 'For much of the 20th century, nail polish was associated with feminine grooming norms; the nail extension industry grew significantly in the US from the 1970s; Vietnamese-American nail salon culture began in the 1970s when actress Tippi Hedren helped Vietnamese refugees enter the nail industry',
-      vietnameseAmerican: 'Vietnamese-American nail technicians now own approximately 51% of nail salons in the US and up to 80% in California; a remarkable entrepreneurial and cultural story; the nail technician industry became an economic pathway for Vietnamese refugees and immigrants'
+      fragileFashion: 'For much of the 20th century, nail polish was associated with feminine grooming norms; the nail extension industry grew significantly in the US from the 1970s; Vietnamese-American nail salon culture began in the 1970s when actress Tippi Hedren helped Vietnamese refugees enter the nail industry'
     }
   },
   hennaOnNails: {
     what: 'Applying henna paste to nails creates a rich orange-brown stain; used in South Asian and Middle Eastern/Arab cultures; the nail absorbs the lawsone dye from the henna plant (Lawsonia inermis); the result is a natural, non-toxic nail stain that lasts 2-4 weeks as the nail grows out',
     technique: 'Henna paste is applied to clean, oil-free nails; left for 1-6 hours (longer = deeper colour); removed dry; the stain intensifies over the first 24-48 hours; no topcoat needed; stains the nail in a natural gradient from the base outward as it grows',
-    southAsian: 'In South Asian tradition, mehndi (henna) for weddings extends to the nails; the colour of the bride\'s henna and the nail staining is associated with the strength of the husband\'s love in folk tradition',
+    southAsian: 'the colour of the bride\'s henna and the nail staining is associated with the strength of the husband\'s love in folk tradition',
     arab: 'Arab henna tradition similarly encompasses nail staining as part of the pre-wedding and Eid beauty preparations; Yemeni and Moroccan henna traditions have particularly elaborate nail and fingertip patterns'
   },
   blackAmericanNailCulture: {
@@ -156,12 +155,12 @@ export const ETHNIC_NAIL_GUIDES = {
   'west-african': {
     culturalContext: 'West African nail aesthetics favour bold, statement-making nails as an extension of the vibrant colour and pattern sensibility of West African fashion (Ankara fabric, kente cloth colours); nail art that incorporates West African geometric patterns, kente-inspired designs, and bold colour combinations is part of contemporary West African fashion identity; long nails with elaborate designs are a beauty statement across many West African cultures',
     popularStyles: ['Elaborate French tip variations with coloured tips in Ankara-inspired colour combinations', 'Detailed nail art incorporating West African geometric motifs', 'Long coffin or stiletto shapes', 'Coloured stone and rhinestone embellishments', 'Chrome and metallic finishes in gold tones'],
-    healthConsiderations: 'West African skin tones (predominantly Fitzpatrick V-VI) mean that nail care products and base coats should be assessed for their impact on the surrounding skin; some nail hardeners contain formaldehyde which can irritate and darken the cuticle area; formaldehyde-free strengtheners are recommended; the cuticle area on deeper skin tones is susceptible to hyperpigmentation from trauma, so gentle cuticle care is especially important'
+    healthConsiderations: 'some nail hardeners contain formaldehyde which can irritate and darken the cuticle area; formaldehyde-free strengtheners are recommended; the cuticle area on deeper skin tones is susceptible to hyperpigmentation from trauma, so gentle cuticle care is especially important'
   },
   'south-asian': {
     culturalContext: 'South Asian nail traditions have ancient roots in henna staining of the nails and fingertips; modern South Asian nail culture encompasses both traditional mehndi on nails for weddings and celebrations, and contemporary gel/acrylic nail art; bridal nail art for South Asian weddings is an elaborate art form',
     bridalNails: {
-      what: 'Bridal nail preparation for South Asian weddings typically involves gel or acrylic nails in a shape suitable for wearing glass bangle (choorhaan) and applying mehndi; very long nails can be impractical for bangle-wearing; medium length oval or almond shapes are common',
+      what: 'very long nails can be impractical for bangle-wearing; medium length oval or almond shapes are common',
       henna: 'Traditional mehndi extends to the nails as part of the bridal ritual; the stain covers the nails in a rich orange-brown; some brides choose to have gel colour applied after the mehndi event',
       design: 'South Asian bridal nail designs draw on traditional motifs: paisley, lotus, peacock, floral patterns that complement the bridal mehndi design'
     },
@@ -187,7 +186,7 @@ export const ETHNIC_NAIL_GUIDES = {
     chileanNails: 'Coffin-shaped nails are also called "ballerina nails" in some Latin American countries; the shape (tapered sides with a flat, squared-off tip) became strongly associated with Latina beauty aesthetics before mainstream adoption'
   },
   'east-asian': {
-    culturalContext: 'East Asian nail culture is extraordinarily sophisticated and artistically advanced; Japanese nail art (ジェルネイル / gel nail) is among the most technically advanced in the world; Korean nail art (네일아트) is globally influential; Chinese nail design traditions are rich; East Asian nail technicians are among the most skilled and technically innovative nail artists globally',
+    
     japanese: {
       culture: 'Japanese nail art is an elaborate art form; Japanese nail magazines, nail art salons, and nail competition culture have driven extraordinary technical innovation; complex 3D nail art using hard gel sculpting, miniature objects, dried flowers, and intricate hand-painting are Japanese nail art specialties; nail art length and elaborateness tends to peak for celebrations and performances, with more practical everyday designs'
     },
@@ -197,7 +196,6 @@ export const ETHNIC_NAIL_GUIDES = {
     popularStyles: ['Japanese: highly elaborate 3D gel sculptural art; tiny sculptured flowers, fruits, animals', 'Korean: minimalist negative space designs; delicate line work; "glass nails" gel technique', 'Chinese: traditional Chinese patterns; ink wash painting aesthetic translated to nails', 'Gradient/ombre nails originated in East Asian nail art before global mainstream adoption']
   },
   'east-african': {
-    culturalContext: 'East African nail aesthetics vary significantly across the region\'s diverse cultures; Somali, Ethiopian, Eritrean, Kenyan, and Tanzanian nail traditions each have distinct characteristics; henna staining of the nails and fingertips is particularly common among Muslim East African women; Swahili coast fashion and Somali beauty traditions include elaborate henna hand and nail art for celebrations',
     henna: 'Henna on the nails is a significant tradition across East Africa\'s Muslim communities; Somali bridal henna (often applied by a specialist called a "henna lady") includes detailed fingernail staining; the designs are often floral and arabesque, influenced by Arab and South Asian henna traditions through trade route cultural exchange',
     popularStyles: ['Bold bright colours on Fitzpatrick V-VI skin: jewel tones, vibrant brights', 'Gold and metallic designs with cultural pattern inspiration', 'Natural henna staining for traditional occasions', 'Long nails with embellishments in diaspora communities (UK, US, Scandinavia)']
   },
@@ -208,7 +206,7 @@ export const ETHNIC_NAIL_GUIDES = {
     popularStyles: ['Bold geometric patterns inspired by African beadwork', 'Earthy warm tones that complement warm brown skin tones', 'Gold and bronze metallics', 'Vibrant colour combinations from traditional textile patterns']
   },
   'black-american': {
-    culturalContext: 'Black American nail culture is one of the most dynamic, creative, and trend-setting nail cultures globally; Black American nail aesthetics pioneered styles (long nails, elaborate art, coffin/stiletto shapes) that mainstream beauty eventually adopted; the nail salon is a significant social space in many Black American communities; Black-owned nail businesses are a significant niche in Black entrepreneurship',
+    culturalContext: 'Black American nail culture is creative and trend-setting; long nails, elaborate art and coffin or stiletto shapes are long-standing looks that mainstream beauty later adopted; the nail salon is a significant social space in many Black American communities; Black-owned nail businesses are a significant niche in Black entrepreneurship',
     history: 'Long decorative nails have been part of Black American beauty culture since at least the 1980s; airbrush nail art scenes were created in Black and Latina urban salons in the 1990s before becoming mainstream; Black American nail culture on Instagram and TikTok has been the primary driver of nail trends for the past decade',
     popularStyles: ['Long coffin, stiletto, and square shapes', 'Elaborate rhinestone and gem embellishments', '3D nail art', 'Press-on nail art as an accessible and creative business model', 'French tips in dark or coloured variations', 'Almond nails with detailed painted designs'],
     nudeShades: 'The mainstream nail industry\'s historical failure to produce true nude shades for dark skin tones drove Black-owned brands and beauty entrepreneurs to fill the gap; OPI\'s Tickle My France-y and similar "nudes" read pink on dark skin; true nudes for dark skin tones are warm caramel, deep mocha, or rich terracotta; brands like Mented Cosmetics and Beauty Bakerie have addressed this gap'
@@ -266,16 +264,3 @@ export function getEthnicNailGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const NAIL_CARE_STATS = {
-  moduleId: 'nail_care_guide_ethnic',
-  version: '1.0.0',
-  topics: ['nail anatomy matrix lunula', 'gel nails UV exposure', 'acrylic MMA warning', 'press-on nails', 'cuticle care infection risk', 'nail colour by skin tone', 'henna nail staining', 'halal nail polish breathable', 'Vietnamese-American nail salon industry', 'Black American nail culture history', 'Japanese 3D nail art', 'Korean K-nail minimalist', 'South Asian bridal nails', 'West African nail aesthetics', 'coffin stiletto nail shapes', 'nude nails deep skin tones', 'nail brittleness hydration', 'biotin nail growth myth'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'Vietnamese-American nail technicians own approximately 51% of nail salons in the United States and up to 80% in California — a remarkable economic community story that began in 1975 when actress Tippi Hedren helped Vietnamese refugees enter the nail industry at a Sacramento salon',
-    'Cutting cuticles is not recommended by professional dermatologists: the cuticle is a waterproof seal that protects the gap between the nail plate and the skin from bacterial and fungal infection; cutting it breaks this seal and significantly increases the risk of nail infection (paronychia)',
-    'Conventional nail polish creates a waterproof barrier that many Islamic scholars consider to invalidate wudu (ritual washing before prayer); breathable/water-permeable nail polishes (Inglot O2M, ORLY Breathable) are marketed as halal alternatives, though their actual water permeability is debated among scholars',
-    'Long decorative nails, elaborate nail art, coffin and stiletto shapes, and rhinestone embellishments have deep roots in Black American and Latina beauty cultures and were adopted by mainstream beauty years or decades after their creation in these communities',
-    'Most white spots (leukonychia punctata) on nails are caused by minor trauma to the nail matrix during nail formation — not by calcium or zinc deficiency as is commonly believed; a single white spot represents a specific moment of minor trauma that will grow out over several months'
-  ]
-};

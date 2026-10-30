@@ -108,7 +108,7 @@ export const FRAGRANCE_FAMILIES = {
 export const OUD_GUIDE = {
   what_is_oud: {
     botanical: 'Oud (agarwood / aloeswood / eaglewood) is a resinous heartwood formed in Aquilaria trees when infected with a specific mould (Phialophora parasitica). The tree responds to infection by producing a dense, dark, fragrant resin. Not all Aquilaria trees produce oud — only infected trees.',
-    rarity: 'Only approximately 7-10% of Aquilaria trees in the wild produce oud resin. This extreme rarity combined with high demand makes oud one of the most expensive natural ingredients on earth — up to $100,000/kg for the finest grade oil.',
+    
     origin: 'Primary production: Southeast Asia (Cambodia, Thailand, Vietnam, Borneo, Bangladesh, India), Middle East (Arabic oud from Yemen, Oman), and the Indian subcontinent (Hindi oud).',
     pronunciation: 'Oud (Arabic: عود) — rhymes with "mood."',
   },
@@ -282,11 +282,8 @@ export const FRAGRANCE_ALTERNATIVES = {
   philosophy: 'Many mainstream fragrances use the same base ingredients as niche or luxury counterparts. "Clone" fragrances and affordable alternatives allow enjoying similar fragrance profiles at a fraction of designer cost.',
 
   comparison_shopping: [
-    { designer: 'Creed Aventus', alternative: 'Dua Fragrances Harambe, Armaf Club de Nuit Intense', savings: '90%+' },
-    { designer: 'MFK Baccarat Rouge 540', alternative: 'Maison Alhambra Baccarat Rose, Lattafa Yara', savings: '85%+' },
-    { designer: 'Tom Ford Black Orchid', alternative: 'Armaf Venetian Adventure, YSL Black Opium (similar vibe)', savings: '70%+' },
-    { designer: 'Jo Malone Peony & Blush Suede', alternative: 'Zara Rose (very close, remarkable dupe)', savings: '90%+' },
-    { designer: 'Arabian Oud', alternative: 'Al Haramain, Rasasi, Swiss Arabian', savings: 'Vary' },
+    { designer: 'Creed Aventus', alternative: 'Armaf Club de Nuit Intense Man (a widely known inspired-by scent)' },
+    { designer: 'Oud from luxury houses', alternative: 'Al Haramain, Rasasi, Swiss Arabian, Lattafa' },
   ],
 
   budget_brands_with_quality: [
@@ -328,9 +325,3 @@ export function getAffordableAlternatives() {
   return FRAGRANCE_ALTERNATIVES;
 }
 
-export const FRAGRANCE_GUIDE_STATS = {
-  familiesCovered: Object.keys(FRAGRANCE_FAMILIES).length,
-  ethnicTraditions: Object.keys(ETHNIC_FRAGRANCE_TRADITIONS).length,
-  oudTypes: Object.keys(OUD_GUIDE.types_of_oud).length,
-  layeringCombinations: FRAGRANCE_LAYERING_GUIDE.recommended_combinations.length,
-};

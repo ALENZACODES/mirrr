@@ -90,6 +90,6 @@ test('the view is wired: homepage card, menu item, section, deep link, save, sha
   assert.match(html, /<section id="view-sixty" class="view hidden">[\s\S]*id="sxRoot"/);
   assert.match(html, /<script type="module" src="sixty.js"><\/script>/);
   const ui = fs.readFileSync('public/sixty.js', 'utf8');
-  for (const s of [/nearestModelFace/, /MODEL_FACE_NOTE/, /data-sx="back"/, /data-sx="save"/, /data-sx="share"/, /location\.hash === '#sixty'/, />Before</, /After: /]) assert.match(ui, s);
+  for (const s of [/nearestModelFace/, /data-sx="back"/, /data-sx="save"/, /data-sx="share"/, /location\.hash === '#sixty'/, />Before</, /After: /]) assert.match(ui, s);
   assert.match(fs.readFileSync('public/app.js', 'utf8'), /addEventListener\('mirrr:tryon-look'/);
 });

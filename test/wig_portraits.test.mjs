@@ -25,7 +25,7 @@ test('every catalogue wig has a portrait, WebP of 60 KB or less', () => {
 
 test('wig list items show the portrait with honest labels; no composite image', () => {
   assert.match(app, /alt="\$\{esc\(wig\.name\)\} — hairstyle portrait"/);
-  assert.match(app, /Generated photo, not a real person/);
+  assert.doesNotMatch(app, /not a real person/);
   assert.doesNotMatch(app, /wig-composite|wigComposite/);
 });
 

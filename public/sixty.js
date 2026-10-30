@@ -27,7 +27,7 @@ function progress() {
 }
 const nav = (nextLabel, ready) => `<div class="sx-nav">${sx.step > 0 ? '<button type="button" class="btn btn-ghost" data-sx="back">← Back</button>' : '<span></span>'}${nextLabel ? `<button type="button" class="btn btn-primary" data-sx="next"${sx.busy || !ready ? ' disabled' : ''}>${esc(sx.busy ? 'Working…' : nextLabel)}</button>` : ''}</div>`;
 const communityChips = () => `<div class="sx-chips">${(sx.communities ?? []).map(c => `<button type="button" class="sx-chip${sx.communityId === c.id ? ' sx-on' : ''}" data-sx-community="${esc(c.id)}" aria-pressed="${sx.communityId === c.id}">${esc(c.emoji ?? '')} ${esc(c.label)}</button>`).join('')}</div>`;
-const lookTiles = () => `<div class="sx-tiles">${SIXTY_LOOKS.map(l => `<button type="button" class="sx-tile${sx.tappedLook === l.id ? ' sx-on' : ''}" data-sx-tap="${l.id}" aria-pressed="${sx.tappedLook === l.id}"><img src="${l.img}" alt="${esc(l.name)} — look portrait" loading="lazy" decoding="async" width="120" height="150"><span>${esc(l.name)}</span></button>`).join('')}</div><p class="lib-note">Look portraits are generated photos of women, not real people.</p>`;
+const lookTiles = () => `<div class="sx-tiles">${SIXTY_LOOKS.map(l => `<button type="button" class="sx-tile${sx.tappedLook === l.id ? ' sx-on' : ''}" data-sx-tap="${l.id}" aria-pressed="${sx.tappedLook === l.id}"><img src="${l.img}" alt="${esc(l.name)} — look portrait" loading="lazy" decoding="async" width="120" height="150"><span>${esc(l.name)}</span></button>`).join('')}</div>`;
 
 function communityStep() {
   return `<h3>Which community is your beauty from?</h3>${communityChips()}${nav('Next →', !!sx.communityId)}`;
@@ -112,7 +112,7 @@ async function paintTryOn(seq) {
     const after = $('sxAfter'); if (!after) return;
     after.getContext('2d').putImageData(out, 0, 0);
     after.dataset.modelFace = mf.id; after.dataset.painted = face.ok && palette ? 'look' : 'plain';
-    if (note) note.textContent = `The ${mf.label} model face, nearest to ${shade.name}. ${faces.MODEL_FACE_NOTE}`;
+    if (note) note.textContent = `The ${mf.label} model face, nearest to ${shade.name}.`;
   } catch { if (note) note.textContent = 'The model face could not be painted here; the plan above still stands.'; }
 }
 

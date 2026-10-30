@@ -1,9 +1,8 @@
 /**
- * Taste Leap city portraits: one generated sample photo per city (a woman, not a real person),
+ * Taste Leap city portraits: one AI-generated photo of a woman per city,
  * wearing that city's look. `shows` describes what the photo actually shows, and is the alt text;
  * the look the leap ranks for your taste is named separately, beside the photo.
  */
-export const PORTRAIT_NOTE = 'City portraits are generated sample photos of women, not real people.';
 const P = (id, shows) => ({ src: `/leap/${id}.webp`, shows });
 export const LEAP_PORTRAITS = {
   lagos: P('lagos', 'emerald and gold gele headwrap, bronze-gold eyes, berry gloss'),

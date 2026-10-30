@@ -102,6 +102,12 @@ Quiz results seed the AestheticVector and pre-configure ShadeFinder + WigMatchma
 
 ---
 
+## Images
+
+All people shown in MIRRR are AI-generated photos, not real people. Product photos use blank, unbranded packaging.
+
+---
+
 ## Running Locally
 
 ```bash

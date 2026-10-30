@@ -290,7 +290,7 @@ function renderQuizResult(result) {
     <div class="dna-result card">
       <div class="dna-hero dna-hero--big">
         ${topPortrait
-          ? `<figure class="dna-hero-figure" data-dna-portrait="${esc(slug(topComId))}"><img src="${topPortrait}" alt="${esc(topCom?.label ?? 'Community')} beauty portrait" class="dna-big-photo" width="900" height="900" loading="eager" fetchpriority="high" onerror="this.onerror=null;this.nextElementSibling?.remove();${topComImg ? `this.src='${topComImg}'` : 'this.remove()'}" /><figcaption class="gen-badge">Generated photo, not a real person</figcaption></figure>`
+          ? `<figure class="dna-hero-figure" data-dna-portrait="${esc(slug(topComId))}"><img src="${topPortrait}" alt="${esc(topCom?.label ?? 'Community')} beauty portrait" class="dna-big-photo" width="900" height="900" loading="eager" fetchpriority="high" onerror="this.onerror=null;${topComImg ? `this.src='${topComImg}'` : 'this.remove()'}" /></figure>`
           : topComImg
             ? `<img src="${topComImg}" alt="${topCom?.label ?? 'Community'}" class="dna-big-photo" />`
             : `<div class="dna-emoji">${topCom?.emoji ?? '🌍'}</div>`}
@@ -597,7 +597,7 @@ const COMMUNITY_IMAGES = {
 };
 
 // DNA Quiz result hero: one portrait photo per community, reusing that community's signature look photo
-// (generated sample photos of women, not real people). Keyed by community slug.
+// (AI-generated photos; see README). Keyed by community slug.
 const COMMUNITY_PORTRAITS = {
   'west-african':     'look-owambe-glam.webp',
   'east-african':     'look-ethiopian-jewel.webp',
@@ -802,10 +802,6 @@ const WIG_IMAGES = {
   jewelled_updo:       'wig-jewelled_updo.webp',
 };
 
-// Signature look portraits (public/looks/) are generated sample photos; say so on the card.
-function genBadge(src) {
-  return /(^|\/)looks\//.test(String(src ?? '')) ? '<span class="gen-badge">Generated photo, not a real person</span>' : '';
-}
 
 function renderLookCard(look, score, row = {}) {
   (state.lookNames ??= {})[look.id] = look.name;
@@ -815,7 +811,7 @@ function renderLookCard(look, score, row = {}) {
     : `Fit ${scoreBar}: taste-vector fit only (no Qloo evidence for this result)`;
   const imgFile  = LOOK_IMAGES[look.id];
   const imgHtml  = imgFile
-    ? `<div class="look-card-img-wrap"><img src="${imgFile}" alt="${esc(look.name)}" class="look-card-img" loading="lazy" onerror="this.parentElement.remove()" />${genBadge(imgFile)}</div>`
+    ? `<div class="look-card-img-wrap"><img src="${imgFile}" alt="${esc(look.name)}" class="look-card-img" loading="lazy" onerror="this.parentElement.remove()" /></div>`
     : '';
   return `
     <div class="look-card" data-look-id="${look.id}" role="button" tabindex="0" aria-label="View ${look.name} look details">
@@ -1113,7 +1109,7 @@ function wigLabel(kind, id) {
   const list = kind === 'length' ? state.wigLengths : state.wigTextures;
   return (list ?? []).find(x => x.id === id)?.label ?? id;
 }
-// Style portraits for every wig style in the catalogue (generated sample photos; the hairstyle is the subject).
+// Style portraits for every wig style in the catalogue (AI-generated photos; the hairstyle is the subject).
 // A missing file drops back to the text-only card.
 const WIG_PORTRAITS = new Set([
   'kinky_coily_afro', 'big_chop_fro', 'twist_out_natural', 'stretched_puff', 'loc_wig',
@@ -1128,7 +1124,7 @@ const WIG_PORTRAITS = new Set([
 ]);
 function wigPortrait(wig) {
   if (!WIG_PORTRAITS.has(wig.id)) return '';
-  return `<figure class="wig-portrait"><img src="/wigs/${esc(wig.id)}.webp" alt="${esc(wig.name)} — hairstyle portrait" width="480" height="600" loading="lazy" decoding="async" data-wig-portrait="${esc(wig.id)}" onerror="this.parentElement.remove()"><figcaption>Generated photo, not a real person</figcaption></figure>`;
+  return `<figure class="wig-portrait"><img src="/wigs/${esc(wig.id)}.webp" alt="${esc(wig.name)} — hairstyle portrait" width="480" height="600" loading="lazy" decoding="async" data-wig-portrait="${esc(wig.id)}" onerror="this.parentElement.remove()"></figure>`;
 }
 function wigItemHTML({ wig, criteria = {}, reason }) {
   const pts = Object.entries(WIG_POINTS).reduce((n, [k, p]) => n + (criteria[k] ? p : 0), 0);
@@ -1416,7 +1412,7 @@ function setupTryOn() {
   // Model faces: the try-on works with no upload. Each face is a same-origin sample photo.
   const grid = document.getElementById('tryonModelFaces');
   if (grid) {
-    grid.innerHTML = MODEL_FACES.map(f => `<button type="button" class="tryon-model" data-model-face="${f.id}" aria-label="Try on the ${esc(f.label)} model face"><img src="${f.src}" alt="${esc(f.label)} model face (generated sample photo)" loading="lazy" decoding="async" width="72" height="96"><span>${esc(f.label)}</span></button>`).join('');
+    grid.innerHTML = MODEL_FACES.map(f => `<button type="button" class="tryon-model" data-model-face="${f.id}" aria-label="Try on the ${esc(f.label)} model face"><img src="${f.src}" alt="${esc(f.label)} model face" loading="lazy" decoding="async" width="72" height="96"><span>${esc(f.label)}</span></button>`).join('');
     grid.addEventListener('click', e => {
       const b = e.target.closest('[data-model-face]');
       const f = b && MODEL_FACES.find(x => x.id === b.dataset.modelFace);
@@ -2317,7 +2313,7 @@ async function loadStyleMatchLooks() {
     container.className = 'sm-grid';
     container.innerHTML = looks.map(look => `
       <div class="shade-card sm-card" style="cursor:pointer;" data-look-id="${look.id}">
-        <div class="sm-photo${look.image ? '' : ' sm-photo--none'}">${look.image ? `<img src="${look.image}" alt="${look.name} — ${look.community.replace('-', ' ')} look" loading="lazy" decoding="async" onload="this.classList.add('is-loaded')" onerror="this.parentElement.classList.add('sm-photo--none');this.remove()">${genBadge(look.image)}` : ''}</div>
+        <div class="sm-photo${look.image ? '' : ' sm-photo--none'}">${look.image ? `<img src="${look.image}" alt="${look.name} — ${look.community.replace('-', ' ')} look" loading="lazy" decoding="async" onload="this.classList.add('is-loaded')" onerror="this.parentElement.classList.add('sm-photo--none');this.remove()">` : ''}</div>
         <div class="shade-info">
           <div class="shade-name">${look.name}</div>
           <div class="shade-community" style="font-size:0.72rem;color:#c9a96e;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem;">${look.community.replace('-', ' ')}</div>

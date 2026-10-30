@@ -5,7 +5,7 @@
  * finish as a sheen layer, glitter and duochrome as overlays. When there is no photo, or it fails to
  * load, the studio's old drawing renders instead, unchanged.
  *
- * Photos are generated sample photos of women, not real people; the caption says so.
+ * Photos are AI-generated photos of women (disclosed in the README).
  * Manifest: window.STUDIO_PHOTOS[studio][id] = { src, mask?, face? } (paths under /studio/; face is
  * the [x, y, w, h] box, as fractions, that a studio's 240x300 face drawing maps onto).
  */
@@ -19,7 +19,6 @@
   };
   let seq = 0;
   const jobs = new Map();
-  const GEN = 'Generated photo, not a real person';
 
   /** The photo entry for a studio's subject id, or null (then the studio draws its illustration). */
   function photoFor(studio, id) { return PHOTOS[studio]?.[id] ?? null; }
@@ -36,7 +35,7 @@
     jobs.set(key, { ph, paint, fallback });
     return `<figure class="hl-panel cx-panel studio-photo" data-studio-photo="${esc(studio)}:${esc(id)}" data-sp="${key}">
       <canvas width="${w}" height="${h}" role="img" aria-label="${esc(alt)}"></canvas>
-      <figcaption>${caption}<span class="gen-badge sp-gen">${GEN}</span></figcaption></figure>`;
+      <figcaption>${caption}</figcaption></figure>`;
   }
 
   function maskedLayer(cv, mask, fill) {
@@ -121,5 +120,5 @@
     });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', homeIngredients); else homeIngredients();
-  window.StudioPhoto = { panel, photoFor, hydrate, ingredientImg, ingKey, GEN };
+  window.StudioPhoto = { panel, photoFor, hydrate, ingredientImg, ingKey };
 })();

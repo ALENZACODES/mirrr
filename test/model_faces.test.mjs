@@ -27,7 +27,7 @@ test('the faces span light to deep, and the nearest face follows the tone', () =
 test('the try-on dialog offers the model faces next to Upload and Camera', () => {
   const html = fs.readFileSync('public/index.html', 'utf8');
   const step = html.slice(html.indexOf('id="tryonUploadStep"'), html.indexOf('id="tryonPreviewStep"'));
-  assert.match(step, /Or try a model face/); assert.match(step, /id="tryonModelFaces"/); assert.match(step, /not real people/);
+  assert.match(step, /Or try a model face/); assert.match(step, /id="tryonModelFaces"/); assert.doesNotMatch(step, /not real people/);
   const app = fs.readFileSync('public/app.js', 'utf8');
   assert.match(app, /import \{ MODEL_FACES \} from '\.\/model-faces\.js'/);
   assert.match(app, /data-model-face/);

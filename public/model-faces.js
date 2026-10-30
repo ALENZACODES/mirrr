@@ -1,6 +1,6 @@
 /**
- * Built-in model faces for the try-on, so it can be played with no upload. Generated sample photos
- * of women (not real people), one per community, light to deep. `L` is the skin lightness (CIELAB
+ * Built-in model faces for the try-on, so it can be played with no upload. AI-generated photos
+ * of women, one per community, light to deep. `L` is the skin lightness (CIELAB
  * L*) the photo engine measures on each face; Taste Leap uses it to pick the face nearest the tone
  * chosen there.
  */
@@ -21,4 +21,3 @@ export function nearestModelFace(L) {
   return MODEL_FACES.reduce((best, f) => (Math.abs(f.L - L) < Math.abs(best.L - L) ? f : best), MODEL_FACES[0]);
 }
 
-export const MODEL_FACE_NOTE = 'Model faces are generated sample photos of women, not real people.';

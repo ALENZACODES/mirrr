@@ -26,8 +26,8 @@ test('every quiz community has a portrait photo file, reused from its signature 
 test('hero uses the portrait, labels it generated, and falls back to the icon if the photo fails', () => {
   assert.match(app, /topPortrait\s*\n?\s*\? `<figure class="dna-hero-figure"/);
   assert.match(app, /class="dna-big-photo"[^>]*loading="eager"/);
-  assert.match(app, /onerror="this\.onerror=null;this\.nextElementSibling\?\.remove\(\);\$\{topComImg \? `this\.src='\$\{topComImg\}'`/);
-  assert.match(app, /dna-hero-figure[\s\S]{0,600}Generated photo, not a real person/);
+  assert.match(app, /onerror="this\.onerror=null;\$\{topComImg \? `this\.src='\$\{topComImg\}'`/);
+  assert.doesNotMatch(app, /not a real person/); // images carry no caption; the README discloses
 });
 
 test('placeholders: every shipped photo has a palette colour; first row loads eagerly', () => {

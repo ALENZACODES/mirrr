@@ -30,7 +30,7 @@ test('a present plate renders a canvas slot, keyed by the data id, captioned as 
   const html = SP.panel({ studio: 'nails', id: 'oval', alt: 'Hand', fallback: '<svg/>', paint: { colour: '#7a1f2b' } });
   assert.match(html, /data-studio-photo="nails:oval"/);
   assert.match(html, /<canvas/);
-  assert.match(html, /Generated photo, not a real person/);
+  assert.doesNotMatch(html, /not a real person|gen-badge/);
 });
 
 test('recolour logic is applied on the photo: colour into the mask, sheen, glitter, duochrome, overlays', () => {

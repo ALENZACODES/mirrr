@@ -6,7 +6,7 @@ import { readFileSync, statSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { DESTINATIONS, buildLeapPlan, leapOptions } from '../src/leap/studio.js';
-import { LEAP_PORTRAITS, PORTRAIT_NOTE } from '../src/leap/portraits.js';
+import { LEAP_PORTRAITS } from '../src/leap/portraits.js';
 
 const PUB = join(dirname(fileURLToPath(import.meta.url)), '../public');
 const noQloo = () => { throw new Error('pipeline must not be called'); };
@@ -23,7 +23,6 @@ test('every Leap city has a WebP portrait of 120 KB or less', () => {
     assert.ok(p.shows.length > 10, `${d.id} says what it shows`);
   }
   assert.equal(Object.keys(LEAP_PORTRAITS).length, DESTINATIONS.length);
-  assert.match(PORTRAIT_NOTE, /generated sample photos of women, not real people/);
 });
 
 test('the plan carries each city portrait; options list them too', async () => {
@@ -43,7 +42,7 @@ test('the four new cities rank their own culture\'s looks', async () => {
 test('the Leap view shows the portrait with its label and keeps the model face in your tone', () => {
   const js = readFileSync(join(PUB, 'leap.js'), 'utf8');
   assert.match(js, /data-lp-portrait=/);
-  assert.match(js, /Generated photo, not a real person/);
+  assert.doesNotMatch(js, /not a real person|not real people/);
   assert.match(js, /— portrait"/);
   assert.match(js, /data-lp-face=/); // the tone-matched model face is still painted
 });

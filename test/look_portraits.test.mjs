@@ -30,7 +30,7 @@ test('Style Match looks (engine and server copy) use the new portraits', () => {
 test('taste look cards map the four top looks; cards label generated photos and fall back', () => {
   const app = readFileSync(join(PUB, 'app.js'), 'utf8');
   for (const id of TASTE) assert.match(app, new RegExp(`${id}: +'looks/${id}\\.webp'`));
-  assert.match(app, /Generated photo, not a real person/);
+  assert.doesNotMatch(app, /not a real person|gen-badge/);
   assert.match(app, /look-card-img"[^>]*onerror="this\.parentElement\.remove\(\)"/);
   assert.match(app, /sm-photo--none/);
 });

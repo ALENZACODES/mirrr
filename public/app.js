@@ -2661,7 +2661,7 @@ function renderPlan(plan) {
     planCard('chat', 'Constraints it respected', consBody),
     planCard('mirror', 'The look', lookBody),
     planCard('drop', 'Your shade', shadeBody),
-    planCard('wig', 'Finishing — your choice', finishingBody(plan, wigBody)),
+    planCard('wig', 'Hair & finishing', finishingBody(plan, wigBody)),
     planCard('leaf', 'Ritual & prep', ritualBody),
     planCard('calendar', 'Timeline', tlBody),
   ].join('');

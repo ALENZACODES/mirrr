@@ -1050,12 +1050,12 @@ function wigLabel(kind, id) {
 }
 function wigItemHTML({ wig, criteria = {}, reason }) {
   const pts = Object.entries(WIG_POINTS).reduce((n, [k, p]) => n + (criteria[k] ? p : 0), 0);
-  const checks = Object.keys(WIG_POINTS).map(k => `${criteria[k] ? '✓' : '✗'} ${WIG_CHECK_LABEL[k]} (${WIG_POINTS[k]})`).join(' · ');
+  const checks = Object.keys(WIG_POINTS).map(k => `${WIG_CHECK_LABEL[k]} ${criteria[k] ? 'yes' : 'no'} (${criteria[k] ? WIG_POINTS[k] : 0} of ${WIG_POINTS[k]})`).join(' · ');
   return `<li class="wig-item">
     <div class="wig-item-head"><strong class="wig-name">${esc(wig.name)}</strong>
       <span class="wig-item-meta">${esc(wig.texture)} · ${esc(wig.length)} · ${esc(wig.finish ?? '')}</span></div>
     ${wig.description ? `<p class="wig-desc">${esc(wig.description)}</p>` : ''}
-    <p class="wig-checks">Rank score ${pts} of 7 = ${checks}</p>
+    <p class="wig-checks">Rank score ${pts} of 7: ${checks}</p>
     ${reason ? `<p class="wig-reason">${esc(reason)}</p>` : ''}
   </li>`;
 }

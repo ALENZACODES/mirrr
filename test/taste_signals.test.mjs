@@ -40,3 +40,19 @@ test('Qloo unreachable is reported, not hidden', async () => {
   const none = await qlooTaste(['x'], { client: { _apiKey: '' } });
   assert.equal(none.unreachable, true);
 });
+
+import { SHADE_SPECTRUM, findShades } from '../src/shade_finder.js';
+import { validateSpectrum } from '../src/skin_gamut.js';
+
+test('the shade spectrum is real skin: valid hex, L* >= 13, in gamut, every Monk tone within ΔE2000 3', () => {
+  const v = validateSpectrum(SHADE_SPECTRUM);
+  assert.deepEqual(v.problems, []);
+  assert.equal(v.stats.belowL13, 0); assert.ok(v.stats.inBand13to32 >= 13);
+});
+
+test('Rich Deep + Warm returns six real named shades', () => {
+  const r = findShades({ depthTarget: 48, undertone: 'warm', topN: 6 });
+  assert.equal(r.length, 6);
+  for (const x of r) { assert.ok(x.shade.name && x.name === x.shade.name); assert.match(x.hex, /^#[0-9A-F]{6}$/i); }
+  assert.ok(r.filter(x => x.undertoneMatch).length >= 5);
+});

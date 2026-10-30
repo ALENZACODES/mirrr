@@ -910,37 +910,31 @@ function renderShadeResults(shades) {
   spectrumEl.innerHTML = `
     <div class="spectrum-bar">
       ${shades.map(s => `
-        <div class="spectrum-dot" style="background:${s.shade.hex}" title="${s.shade.label}"></div>
+        <div class="spectrum-dot" style="background:${esc(s.shade.hex)}" title="${esc(s.shade.name)}"></div>
       `).join('')}
     </div>
   `;
 
-  // Shade cards
+  // Shade cards: the swatch is the shade's own colour; the ranking is shown as what it is
+  // (depth steps from your pick and whether the undertone matches), not as a percentage.
   cardsEl.innerHTML = `
     <h3 class="section-title">Your Shade Matches</h3>
+    <p class="shade-note">Ranked by closeness to the depth you picked and your undertone. Check the top two on your jaw in daylight.</p>
     <div class="shade-cards-inner">
-      ${shades.map(({ shade, score, coverageNote }) => {
-        const swatchImg = SHADE_IMAGES[shade.id];
-        const swatchHtml = swatchImg
-          ? `<div class="shade-swatch-lg shade-swatch-img"><img src="${swatchImg}" alt="${shade.label}" loading="lazy" /></div>`
-          : `<div class="shade-swatch-lg" style="background:${shade.hex}"></div>`;
-        return `
+      ${shades.map(({ shade, coverageNote, depthGap, undertoneMatch }, i) => `
         <div class="shade-card">
-          ${swatchHtml}
+          <div class="shade-swatch-lg" style="background:${esc(shade.hex)}"></div>
           <div class="shade-info">
-            <strong class="shade-id">${shade.id}</strong>
-            <span class="shade-label">${shade.label}</span>
+            <strong class="shade-id">${esc(shade.id)}</strong>
+            <span class="shade-label">${esc(shade.name)}</span>
             <div class="shade-undertones">
-              ${(shade.undertones ?? []).map(u => `<span class="tag">${u}</span>`).join('')}
+              ${(shade.undertones ?? []).map(u => `<span class="tag">${esc(u)}</span>`).join('')}
             </div>
-            ${coverageNote ? `<p class="shade-note">${coverageNote}</p>` : ''}
-            <div class="shade-match-bar">
-              <div class="shade-match-fill" style="width:${Math.round(score * 100)}%"></div>
-              <span class="shade-match-pct">${Math.round(score * 100)}% match</span>
-            </div>
+            ${coverageNote ? `<p class="shade-note">${esc(coverageNote)}</p>` : ''}
+            <p class="shade-note" data-rank="${i + 1}">#${i + 1} · ${depthGap === 0 ? 'at your depth' : `${depthGap} depth step${depthGap === 1 ? '' : 's'} from your pick`}${undertoneMatch === false ? ' · different undertone' : ''}</p>
           </div>
         </div>
-      `}).join('')}
+      `).join('')}
     </div>
     <div class="shade-cta-row">
       <button class="btn btn-secondary" id="shadeToWigBtn">Now Match Your Wig →</button>

@@ -61,7 +61,10 @@ const DEFAULT_INTRO =
  */
 function templateNarration(results) {
   const { aesthetic, looks, entities, meta } = results;
-  const primaryArchetype = aesthetic?.archetypes?.[0] ?? 'clean_minimal';
+  // When Qloo ranked the looks, open with the archetype of the look Qloo's tags put first, so the
+  // opening line follows the taste graph rather than the coarse vector.
+  const qlooArch = results.qloo?.qloo_powered && looks?.[0]?.qlooEvidence > 0 ? looks[0].look?.archetype : null;
+  const primaryArchetype = (qlooArch && ARCHETYPE_INTROS[qlooArch] ? qlooArch : null) ?? aesthetic?.archetypes?.[0] ?? 'clean_minimal';
   const intro = ARCHETYPE_INTROS[primaryArchetype] ?? DEFAULT_INTRO;
 
   const entityNames = entities?.slice(0, 3).map((e) => e.name ?? e.input).join(', ') ?? '';

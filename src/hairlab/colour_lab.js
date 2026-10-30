@@ -13,7 +13,7 @@
 import { HAIR_COLOURS, HAIR_TEXTURES } from '../hair_painter.js';
 import { TECHNIQUES } from '../balayage_engine.js';
 import { BLEACHING_GUIDE, VIVID_COLOURS, TONING_GUIDE, COLOUR_CARE, COLOUR_OPTIONS_DARK_HAIR, ETHNIC_COLOUR_TRADITIONS } from '../hair_colouring_guide.js';
-import { HAIR_COLOUR_TYPES, ETHNIC_HAIR_COLOUR_GUIDES } from '../hair_colour_guide_ethnic.js';
+import { HAIR_COLOUR_TYPES, ETHNIC_HAIR_COLOUR_GUIDES, BLEACHING_SCIENCE } from '../hair_colour_guide_ethnic.js';
 import { getHairColorGuide } from '../hair_color_ethnic_guide.js';
 import { LOW_POROSITY_GUIDE, HIGH_POROSITY_GUIDE, getEthnicPorosityGuide } from '../hair_porosity_guide.js';
 import { getHairRoutineByType } from '../hair_care_routines_by_type.js';
@@ -174,13 +174,16 @@ function warningsFor({ history, curlClass, porosity, lift, family }) {
     add('Henna in the hair', ETHNIC_HAIR_COLOUR_GUIDES['south-asian']?.henna?.chemicalBlocking);
   }
   if (history === 'lightened' && lift > 0) add('Bleached before', BLEACHING_GUIDE.application_tips.never_overlap);
+  if (history === 'coloured') {
+    add('Dyed before', lift > 0 ? BLEACHING_SCIENCE.lightbulbEffect : 'Dye cannot lift dye: going lighter than your current dyed colour needs a colour remover or lightener, not another box of colour. Going darker or changing tone works.');
+  }
   if (curlClass === 4 && lift > 0) {
     add('Type 4 hair', BLEACHING_GUIDE.application_tips.processing_time);
     add('Type 4 hair', BLEACHING_GUIDE.bleach_on_type_4_reality_check.reality.replace(/ Professionals.*$/, ''));
   }
   if (porosity === 'high') add('High porosity', HIGH_POROSITY_GUIDE.challenges.mainChallenge);
   if (porosity === 'low') add('Low porosity', LOW_POROSITY_GUIDE.challenges.mainChallenge);
-  if (isFashion(family)) add('Vivid colour', VIVID_COLOURS.the_truth);
+  if (isFashion(family)) add(family === 'vivid' ? 'Vivid colour' : 'Very light colour', VIVID_COLOURS.the_truth);
   if (lift > 0) add('Before any bleach', BLEACHING_GUIDE.bleach_on_type_4_reality_check.when_to_walk_away);
   return out;
 }
@@ -248,7 +251,10 @@ export function buildColourPlan(input = {}) {
   const porosityGuide = porosity === 'low' ? LOW_POROSITY_GUIDE : porosity === 'high' ? HIGH_POROSITY_GUIDE : null;
   const community_ = getHairColorGuide(c);
   const porosityNotes = getEthnicPorosityGuide(c);
-  const protective = getStylesForHairTexture(texture.code).slice(0, 3).map(s => ({ name: s.name, installationTime: s.installationTime ?? null, longevity: s.longevity ?? null }));
+  // Styles written for this exact curl type first, then the rest of its family.
+  const styles = getStylesForHairTexture(texture.code);
+  const exact = styles.filter(st => st.hairTexturesBestFor?.includes(texture.code));
+  const protective = [...exact, ...styles.filter(st => !exact.includes(st))].slice(0, 3).map(s => ({ name: s.name, installationTime: s.installationTime ?? null, longevity: s.longevity ?? null }));
 
   return {
     community: { id: community.id, label: community.label, substituted: community.substituted ?? false },
@@ -271,6 +277,7 @@ export function buildColourPlan(input = {}) {
     warnings: warningsFor({ history, curlClass, porosity, lift, family: fam.family }),
     withoutBleach: lift > 0 ? COLOUR_OPTIONS_DARK_HAIR.without_bleaching.options.map(o => ({ technique: o.technique, result: o.result })) : [],
     care: {
+      texture: { label: texture.label, description: HAIR_TEXTURES[texture.id].description, tips: HAIR_TEXTURES[texture.id].care_tips ?? [] },
       routineTitle: routine?.title ?? null,
       principle: routine?.criticalPrinciple ?? routine?.characteristics ?? null,
       washFrequency: routine?.washFrequency ?? null,

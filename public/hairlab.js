@@ -27,13 +27,17 @@
 
   // ---- Strands -----------------------------------------------------------------------------
   const STRANDS = 22;
-  /** Curl class 1-4 sets the strand path: straight, waves, curls, tight coils (with shrinkage). */
-  function strandPath(x0, curl, seed) {
-    const len = [0, 150, 146, 132, 112][curl];
-    const amp = [0, 0, 4, 7, 5][curl]; const freq = [0, 0, 0.05, 0.11, 0.3][curl];
+  /**
+   * Curl type sets the strand path: class 1-4 (straight, waves, curls, coils) and sub-type a-c
+   * (looser to tighter), with shorter strands for the shrinkage tighter patterns show.
+   */
+  function strandPath(x0, curl, seed, sub = 0) {
+    const len = [0, 150, 146, 132, 112][curl] - (curl >= 3 ? sub * 12 : 0);
+    const amp = [0, sub * 0.6, 3 + sub * 1.5, 6 + sub, 4 + sub][curl];
+    const freq = [0, 0.02, 0.04 + sub * 0.015, 0.1 + sub * 0.025, 0.26 + sub * 0.07][curl];
     const pts = [];
     for (let y = 0; y <= len; y += 3) {
-      const x = x0 + (curl === 1 ? 0 : amp * Math.sin(y * freq + seed));
+      const x = x0 + amp * Math.sin(y * freq + seed);
       pts.push(`${x.toFixed(1)},${(14 + y).toFixed(1)}`);
     }
     return { d: 'M' + pts.join(' L'), len };
@@ -48,11 +52,11 @@
       default: return 0;
     }
   }
-  function panel(id, title, base, colour, pattern, curl, note) {
+  function panel(id, title, base, colour, pattern, curl, note, sub) {
     const parts = [];
     for (let i = 0; i < STRANDS; i++) {
       const x = 14 + i * (112 / (STRANDS - 1));
-      const { d, len } = strandPath(x, curl, i * 1.7);
+      const { d, len } = strandPath(x, curl, i * 1.7, sub);
       const from = colour ? strandCoverage(pattern, i) : null;
       let stroke = base;
       if (from != null) {
@@ -67,14 +71,15 @@
 
   const FADE = { low: 0.15, medium: 0.3, high: 0.5 };
   function drawPreview(p) {
-    const curl = Number(p.choices.texture.match(/type_(\d)/)?.[1] ?? 4);
+    const m = p.choices.texture.match(/type_(\d)([abc])/);
+    const curl = Number(m?.[1] ?? 4); const sub = 'abc'.indexOf(m?.[2] ?? 'a');
     const pattern = p.technique.pattern;
     const goal = p.plantDye && p.chemicalLift > 0 ? mix(p.start.hex, p.target.hex, 0.35) : p.target.hex;
-    const panels = [panel('hlNow', 'Now', p.start.hex, null, pattern, curl, p.start.label)];
-    if (p.sessions > 1) panels.push(panel('hlS1', 'After session 1', p.start.hex, p.path[0].swatch, pattern, curl, `Underlying ${p.path[0].underlying.toLowerCase()}`));
-    panels.push(panel('hlGoal', p.sessions > 1 ? `Goal (${p.sessions} sessions)` : 'Goal', p.start.hex, goal, pattern, curl, p.plantDye && p.chemicalLift > 0 ? 'Shows as a tint' : p.target.label));
+    const panels = [panel('hlNow', 'Now', p.start.hex, null, pattern, curl, p.start.label, sub)];
+    if (p.sessions > 1) panels.push(panel('hlS1', 'After session 1', p.start.hex, p.path[0].swatch, pattern, curl, `Underlying ${p.path[0].underlying.toLowerCase()}`, sub));
+    panels.push(panel('hlGoal', p.sessions > 1 ? `Goal (${p.sessions} sessions)` : 'Goal', p.start.hex, goal, pattern, curl, p.plantDye && p.chemicalLift > 0 ? 'Shows as a tint' : p.target.label, sub));
     const fadeTo = p.stage ? p.stage.swatch : p.start.hex;
-    panels.push(panel('hlFade', 'Weeks later', p.start.hex, mix(goal, fadeTo, FADE[p.choices.porosity]), pattern, curl, `${nice(p.choices.porosity)} porosity fades ${p.fade}`));
+    panels.push(panel('hlFade', 'Weeks later', p.start.hex, mix(goal, fadeTo, FADE[p.choices.porosity]), pattern, curl, `${nice(p.choices.porosity)} porosity fades ${p.fade}`, sub));
     $('hlPreview').innerHTML = panels.join('');
   }
 
@@ -112,6 +117,8 @@
       ${p.withoutBleach.length ? `<article class="st-card"><h4>Without bleach</h4><ul>${p.withoutBleach.map(o => `<li><strong>${esc(o.technique)}:</strong> ${esc(o.result)}</li>`).join('')}</ul></article>` : ''}
       ${p.tryOnWig ? `<article class="st-card"><h4>Try it on a wig first</h4><p>${esc(p.tryOnWig.why)}</p><button type="button" class="btn btn-secondary" data-hl-wig>Open Wig Match</button></article>` : ''}
       <article class="st-card"><h4>Aftercare${p.care.routineTitle ? ` · ${esc(p.care.routineTitle)}` : ''}</h4>
+        <p><strong>${esc(p.care.texture.label)}:</strong> ${esc(p.care.texture.description)}</p>
+        ${p.care.texture.tips.length ? `<ul>${p.care.texture.tips.map(li).join('')}</ul>` : ''}
         ${p.care.washFrequency ? `<p>${esc(p.care.washFrequency)}</p>` : ''}
         <ul>${p.care.colour.slice(0, 4).map(li).join('')}</ul>
         ${p.care.porosity ? `<p><strong>${esc(p.care.porosity.title)}:</strong> ${esc([].concat(p.care.porosity.best).slice(0, 3).join(' · '))}</p>` : ''}

@@ -22,16 +22,19 @@ test('colour arithmetic: lightness levels and pigment stages', () => {
   for (const t of TARGETS) assert.ok(colourFamily(t.hexCode), t.id);
 });
 
-test('every option changes the plan', () => {
-  const ref = JSON.stringify(buildColourPlan(base));
+// What the person sees: everything except the echo of their own choices.
+const shown = p => { const { choices, ...rest } = p; return JSON.stringify(rest); };
+
+test('every option changes what the plan shows', () => {
+  const ref = shown(buildColourPlan(base));
   const alt = { community: 'arab', texture: 'type_4c', porosity: 'high', history: 'relaxed', startLevel: 5, target: 'cobalt_blue', technique: 'classic_ombre' };
   for (const [k, v] of Object.entries(alt)) {
     const p = buildColourPlan({ ...base, [k]: v });
-    assert.notEqual(JSON.stringify(p), ref, `${k}=${v} changes the plan`);
+    assert.notEqual(shown(p), ref, `${k}=${v} changes the plan`);
   }
   for (const k of ['texture', 'porosity', 'history', 'startLevel', 'target']) {
     const list = { texture: TEXTURES.map(t => t.id), porosity: POROSITIES, history: HISTORIES.map(h => h.id), startLevel: START_LEVELS.map(s => s.level), target: TARGETS.map(t => t.id) }[k];
-    const seen = new Set(list.map(v => JSON.stringify(buildColourPlan({ ...base, [k]: v }))));
+    const seen = new Set(list.map(v => shown(buildColourPlan({ ...base, [k]: v }))));
     assert.equal(seen.size, list.length, `each ${k} gives its own plan`);
   }
 });

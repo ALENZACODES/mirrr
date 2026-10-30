@@ -47,18 +47,30 @@ The Qloo key stays on the server (`QLOO_API_KEY`); the browser never sees it. Al
 
 ## 3. How MIRRR makes money
 
-**Built and live today**
-- **Named products, from the brands' own stores.** 64 products from 14 brands (`src/data/products_live.json`), each with its page URL, the price as shown, the currency and the date checked (Oct 30, 2026). They cover all 8 Style Match guides and 50 of the 60 looks; the other 10 looks honestly say "product types only". Ownership labels appear only where a source says so, and each links that source: 13 products are from brands sourced as **Black-owned**, plus Black-founded, Latina-owned, South Asian-founded, owned by women of colour, and Indigenous-owned (Canada).
-- **Tagged outbound links.** Every product link carries `utm_source=mirrr&utm_medium=app&utm_campaign=qloo2026&utm_content=<look>`, so a brand can see the traffic MIRRR sends. The app says plainly: **no affiliate deal, MIRRR earns nothing from these links today.**
-- **MIRRR Plus founding-member list.** Offered only after a moment she chose (Save this look, a finished try-on, a Leap result), at most once per visit, as a small closable card with the consent box **unticked**. The Plus page says "Nothing to buy today. Everything in MIRRR stays free." There is no paywall, price, card field or checkout, and there is a "Remove my email" form.
-- **Referral codes on share links.** Shares carry `/?ref=<surface>-<look>`. The code names the card and the look, never the person.
-- **Totals-only stats** at `/api/stats`: taste runs, try-ons, saves, Leap results, shares, product clicks, list sign-ups and referral landings. No cookies, IDs, fingerprints or stored IP addresses.
+MIRRR is free for her. It has **many honest entry points to revenue**, each labelled in the app with its real status. **No revenue has been earned yet, there is no paywall, and nothing is sponsored.** Every page below is one tap from the home page ("MIRRR's business, in the open"), the top bar (**How MIRRR earns**), the footer and Help & Privacy.
 
-**Planned, not built**
-- Affiliate or brand-partner agreements with the brands already linked, using the traffic the UTM tags measure.
-- MIRRR Plus as a paid tier (unlimited Leaps and try-ons, the full Bridal Countdown, a cloud Vanity). All three are marked "coming later" in the app.
+| # | Revenue stream | Status | What is live | See it (live) | Screenshot |
+|---|---|---|---|---|---|
+| 1 | Named products from brands' own stores | **Built today** | 64 real products from 14 brands on 50 of 60 looks and all 8 Style Match guides; price as of Oct 30, 2026; links tagged `utm_source=mirrr`; labelled "no affiliate deal, MIRRR earns nothing from these links today" | Any look → **Shop this look** | [money-01-products](docs/judges/money-01-products.webp) |
+| 2 | Shop-by-look bundles | **Built today** | 14 bundles, each with item count and total at listed prices (`GET /api/shop/bundles`) | [/#shop](https://mirrr-upbn.onrender.com/#shop) | [money-2-shop](docs/judges/money-2-shop.webp) |
+| 3 | Complete-the-routine cross-sell in studios | **Built today** | Colour & Lip, Smile & Lip Care, Brow & Kohl, Skin Clinic and Complexion end with real products for that routine (`GET /api/shop/routine/:routine`). Nails, Hair Colour Lab and Wig Match say plainly there are no named products yet and point to the stylist and brand lists | Bottom of each studio | [money-2-studio-lips](docs/judges/money-2-studio-lips.webp), [money-2-studio-wig](docs/judges/money-2-studio-wig.webp) |
+| 4 | MIRRR Plus founding-member list | **Built today, no charge** | Offered only after Save, a finished try-on or a Leap result; closable, box unticked, at most once per visit | Footer → MIRRR Plus, [/#plus](https://mirrr-upbn.onrender.com/#plus) | [money-02-waitlist-prompt](docs/judges/money-02-waitlist-prompt.webp) |
+| 5 | Digital guides (Bridal beauty plan, Look book, Routine card) | **Built today as a founding list, no charge**; paid guides **Planned** | Founding-list form; Bridal Countdown and Look Book end with a "download planned" note | [/#guides](https://mirrr-upbn.onrender.com/#guides) | [money-2-guides](docs/judges/money-2-guides.webp) |
+| 6 | Referral codes on shared links | **Built today** | `/?ref=<surface>-<look>`; code names the look, never the person; landings counted as totals | [/api/stats](https://mirrr-upbn.onrender.com/api/stats) | [money-05-share-link](docs/judges/money-05-share-link.webp) |
+| 7 | For brands: Qloo taste trends + interest list | **Built today** | Live counts of the Qloo taste tags and top looks from live taste runs (`GET /api/brands/trends`: tag names and look ids only, no person, input text or IP); email-only interest form, consent unticked | [/#brands](https://mirrr-upbn.onrender.com/#brands) | [money-2-brands](docs/judges/money-2-brands.webp) |
+| 8 | For stylists & salons: interest list | **Built today** | Email-only interest form for braiders, wig installers, colourists, makeup artists, bridal artists and salons | [/#pros](https://mirrr-upbn.onrender.com/#pros) | [money-2-pros](docs/judges/money-2-pros.webp) |
+| 9 | Affiliate commission on product links | **Ready to switch on** | Links already carry tags; needs a signed agreement with a brand or network. **None exists.** | Any product link | n/a |
+| 10 | Sponsored placement slot | **Ready to switch on** | One slot on Shop by look, marked "available, not yet sold" | [/#shop](https://mirrr-upbn.onrender.com/#shop) | [money-2-shop](docs/judges/money-2-shop.webp) |
+| 11 | Brand taste-insight reports | **Ready to switch on** | The trends feed exists; a paid report needs a first brand customer. **None yet.** | [/#brands](https://mirrr-upbn.onrender.com/#brands) | [money-2-brands](docs/judges/money-2-brands.webp) |
+| 12 | MIRRR Plus subscription | **Planned** | Unlimited Leaps and try-ons, full Bridal Countdown, cloud Vanity; no price, no checkout | [/#plus](https://mirrr-upbn.onrender.com/#plus) | [money-03-plus-page](docs/judges/money-03-plus-page.webp) |
+| 13 | Paid digital guides | **Planned** | No checkout exists | [/#guides](https://mirrr-upbn.onrender.com/#guides) | [money-2-guides](docs/judges/money-2-guides.webp) |
+| 14 | Stylist listings and booking referrals | **Planned** | Not built beyond the interest form | [/#pros](https://mirrr-upbn.onrender.com/#pros) | [money-2-pros](docs/judges/money-2-pros.webp) |
 
-No revenue has been earned and none is claimed. The list and counts live on a free server and reset on every restart; the app says so.
+The full table, with the same statuses, is in the app at [/#money](https://mirrr-upbn.onrender.com/#money) ([money-2-how-money](docs/judges/money-2-how-money.webp)). Screenshots are kept in the build workspace, not in this repo.
+
+**Rules every stream follows (and the tests check):** no paywall; options, never a forced funnel; nothing pre-selected; every consent box starts unticked; no fake sponsors, partners, affiliate deals or revenue numbers; anonymous totals only (`/api/stats`). Interest lists and the founding list hold only an email she typed with the box ticked, can be removed on the same page, and sit in a server file that this free host wipes on restart (the pages say so). Tests: `test/money.test.mjs`, `test/money_entry_points.test.mjs`.
+
+**Potential Impact tie-in.** The same honest commerce that funds MIRRR sends traffic to the brands women of colour are often told don't exist: of the 64 products, 13 are from brands sourced as Black-owned and 34 carry a sourced Black-founded, Latina-owned, South Asian-founded, women-of-colour-owned or Indigenous-owned label. The stylist list points at the braiders, wig installers and colourists these looks depend on, and the brand trends show indie brands what this audience's taste actually leads to, from Qloo, in totals only.
 
 ---
 
@@ -82,7 +94,7 @@ Criteria from the official rules at https://qloo.devpost.com/rules (Stage 2, equ
 - **It is a whole product.** A first-time visitor goes from one song to a named shade, a plan and a before-and-after in about a minute, and can keep going into 20+ studios.
 - **It is honest where most beauty apps bluff.** No fake match percentages, no "AI" label on templates, "no honest match" when nothing fits, sources on every brand label, and a money model that says what earns nothing today.
 - **It serves people the industry under-serves,** with a deep-shade range checked against a published skin-tone scale and brands owned by the communities it serves.
-- **It is built to make money without breaking trust:** tagged brand traffic and a consent-first, no-paywall Plus list are live today, and both are measured in anonymous totals.
+- **It is built to make money without breaking trust:** 8 revenue entry points are live today (named products, bundles, studio cross-sell, Plus and guide founding lists, referral codes, brand trends and interest, stylist interest), 3 are ready to switch on the day an agreement or first customer exists, and 3 are planned. Each is labelled with that status in the app, and all are measured in anonymous totals.
 
 ---
 

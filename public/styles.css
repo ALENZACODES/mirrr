@@ -3232,3 +3232,4 @@ body { padding-top: 58px; }
 .earn-home-card span { font-size: .78rem; color: #9d968c; }
 .nav-earn { color: #c9a96e !important; text-decoration: none; }
 @media (max-width: 640px) { .earn-two { grid-template-columns: 1fr; } }
+.earn-trends ol { padding-left: 1.75rem; }

@@ -2164,9 +2164,13 @@ async function initStyleMatch() {
 }
 
 async function loadStyleMatchLooks() {
-  const fitzpatrick = document.getElementById('smFitzpatrick')?.value || '';
-  const community   = document.getElementById('smCommunity')?.value || '';
-  const vibe        = document.getElementById('smVibe')?.value || '';
+  // Read the filters from inside the Style Match view only. Another studio (Smile & Lip Care)
+  // once rendered its own #smCommunity select, and the global lookup picked up its value.
+  const view = document.getElementById('view-style-match');
+  const pick = (id) => view?.querySelector(`#${id}`)?.value || '';
+  const fitzpatrick = pick('smFitzpatrick');
+  const community   = pick('smLookCommunity');
+  const vibe        = pick('smVibe');
 
   const params = new URLSearchParams();
   if (fitzpatrick) params.set('fitzpatrick', fitzpatrick);

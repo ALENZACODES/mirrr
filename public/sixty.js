@@ -159,10 +159,12 @@ async function save() {
     sx.status = how === 'cancelled' ? 'Saved on this device; the photo was not shared.' : 'Saved: your plan is kept on this device and the after photo was downloaded.';
   } catch { sx.status = 'Saved your plan on this device; the photo could not be exported here.'; }
   render();
+  window.dispatchEvent(new CustomEvent('mirrr:moment', { detail: { kind: 'plan_save' } }));
 }
 async function share() {
   const look = chosenLook(); const shade = sx.shades[sx.shadeIdx];
-  const text = shareText({ look: look.name, shade, community: communityLabel() }); const url = `${location.origin}/#sixty`;
+  const text = shareText({ look: look.name, shade, community: communityLabel() }); const url = `${window.MirrrMoney ? window.MirrrMoney.shareUrl('sixty', look.id) : `${location.origin}/`}#sixty`;
+  window.MirrrMoney?.count('share');
   try {
     if (navigator.share) { await navigator.share({ title: 'My MIRRR look', text, url }); sx.status = 'Shared.'; }
     else { await navigator.clipboard.writeText(`${text} ${url}`); sx.status = 'Copied a share link to your clipboard.'; }

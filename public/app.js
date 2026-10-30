@@ -281,15 +281,19 @@ function renderQuizResult(result) {
   const seed = result.seedAesthetic ?? {};
 
   const slug = (id) => String(id ?? '').replace(/_/g, '-');
+  // The result hero is the community's portrait photo (a signature look of that community), not its icon.
+  const topPortrait = topComId ? COMMUNITY_PORTRAITS[slug(topComId)] : null;
   const topComImg = topComId ? COMMUNITY_IMAGES[slug(topComId)] : null;
-  const runnerComImg = runnerUpId ? COMMUNITY_IMAGES[slug(runnerUpId)] : null;
+  const runnerComImg = runnerUpId ? (COMMUNITY_PORTRAITS[slug(runnerUpId)] ?? COMMUNITY_IMAGES[slug(runnerUpId)]) : null;
 
   resultEl.innerHTML = `
     <div class="dna-result card">
       <div class="dna-hero dna-hero--big">
-        ${topComImg
-          ? `<img src="${topComImg}" alt="${topCom?.label ?? 'Community'}" class="dna-big-photo" />`
-          : `<div class="dna-emoji">${topCom?.emoji ?? '🌍'}</div>`}
+        ${topPortrait
+          ? `<figure class="dna-hero-figure" data-dna-portrait="${esc(slug(topComId))}"><img src="${topPortrait}" alt="${esc(topCom?.label ?? 'Community')} beauty portrait" class="dna-big-photo" width="900" height="900" loading="eager" fetchpriority="high" onerror="this.onerror=null;this.nextElementSibling?.remove();${topComImg ? `this.src='${topComImg}'` : 'this.remove()'}" /><figcaption class="gen-badge">Generated photo, not a real person</figcaption></figure>`
+          : topComImg
+            ? `<img src="${topComImg}" alt="${topCom?.label ?? 'Community'}" class="dna-big-photo" />`
+            : `<div class="dna-emoji">${topCom?.emoji ?? '🌍'}</div>`}
         <p class="dna-kicker">Your Beauty DNA</p>
         <h2 class="dna-title dna-title--big">${topCom?.label ?? 'Your Community'}</h2>
         ${topCom?.subLabel ? `<p class="dna-sub">${topCom.subLabel}</p>` : ''}
@@ -590,6 +594,26 @@ const COMMUNITY_IMAGES = {
   'pacific-islander':  'community-pacific-islander.webp',
   'south-asian':       'community-south-asian.webp',
   'southeast-asian':   'community-southeast-asian.webp',
+};
+
+// DNA Quiz result hero: one portrait photo per community, reusing that community's signature look photo
+// (generated sample photos of women, not real people). Keyed by community slug.
+const COMMUNITY_PORTRAITS = {
+  'west-african':     'look-owambe-glam.webp',
+  'east-african':     'look-ethiopian-jewel.webp',
+  'south-african':    'look-zulu-bridal.webp',
+  'black-american':   'looks/hbcu_homecoming.webp',
+  'north-african':    'look-moroccan-soiree.webp',
+  'arab':             'look-gulf-glam.webp',
+  'caribbean':        'look-dancehall-queen.webp',
+  'south-asian':      'look-bollywood-bridal.webp',
+  'latina':           'look-latina-glam.webp',
+  'east-asian':       'look-k-beauty-glass.webp',
+  'southeast-asian':  'look-southeast-asian-glow.webp',
+  'central-asian':    'look-central-asian-steppe.webp',
+  'indigenous':       'look-first-nations-powwow.webp',
+  'pacific-islander': 'look-polynesian-warrior.webp',
+  'mixed':            'look-mixed-heritage-luminous.webp',
 };
 
 // Editorial look images — mapped by look ID
@@ -1085,8 +1109,19 @@ function wigLabel(kind, id) {
   const list = kind === 'length' ? state.wigLengths : state.wigTextures;
   return (list ?? []).find(x => x.id === id)?.label ?? id;
 }
-// Style portraits for the top wig styles (generated sample photos, the hairstyle is the subject).
-const WIG_PORTRAITS = new Set(['knotless_box_braids', 'senegalese_twists', 'faux_locs', 'kinky_coily_afro', 'silk_press_natural', 'sleek_bob', 'blunt_lob', 'twist_out_natural', 'cornrow_sleek', 'butterfly_locs', 'jewelled_updo', 'big_chop_fro']);
+// Style portraits for every wig style in the catalogue (generated sample photos; the hairstyle is the subject).
+// A missing file drops back to the text-only card.
+const WIG_PORTRAITS = new Set([
+  'kinky_coily_afro', 'big_chop_fro', 'twist_out_natural', 'stretched_puff', 'loc_wig',
+  'faux_locs', 'butterfly_locs', 'sister_locs', 'knotless_box_braids', 'jumbo_box_braids',
+  'senegalese_twists', 'fulani_braids', 'goddess_braids', 'passion_twists', 'spring_twist',
+  'bone_straight_long', 'ultra_silky_xl', 'sleek_bob', 'blunt_lob', 'curtain_bang_layers',
+  'kpop_idol_straight', 'silk_press_natural', 'pixie_cut', 'indian_remy_wavy',
+  'peruvian_body_wave', 'beach_wave_medium', 'loose_deep_wave', 'curly_ombre', 'water_wave',
+  'kinky_curly_mix', 'jerry_curl', 'khaleeji_blowout', 'bollywood_blowout', 'slicked_bun',
+  'high_pony_sleek', 'coloured_wig', 'highlighted_balayage', 'coloured_wig_silver',
+  'afro_editorial', 'box_braids_updo', 'cornrow_sleek', 'jewelled_updo'
+]);
 function wigPortrait(wig) {
   if (!WIG_PORTRAITS.has(wig.id)) return '';
   return `<figure class="wig-portrait"><img src="/wigs/${esc(wig.id)}.webp" alt="${esc(wig.name)} — hairstyle portrait" width="480" height="600" loading="lazy" decoding="async" data-wig-portrait="${esc(wig.id)}" onerror="this.parentElement.remove()"><figcaption>Generated photo, not a real person</figcaption></figure>`;

@@ -3132,3 +3132,13 @@ body { padding-top: 58px; }
 .sx-ba figcaption { font-size: .8rem; color: var(--clr-mist); margin-top: .3rem; }
 .sx-nav { display: flex; justify-content: space-between; margin-top: 1.2rem; }
 .sx-error { color: #ff8fa3; margin-top: .8rem; }
+
+/* DNA Quiz result hero: the community portrait photo, captioned as generated. */
+.dna-hero-figure { position: relative; margin: 0 0 1rem; aspect-ratio: 1 / 1; max-height: 520px; border-radius: 16px; overflow: hidden; }
+.dna-hero-figure .dna-big-photo { height: 100%; max-height: none; border-radius: 0; box-shadow: none; }
+.dna-hero-figure .gen-badge { position: absolute; left: 10px; bottom: 10px; }
+.dna-runner-icon { object-fit: cover; }
+
+/* Photo placeholders (photo-placeholders.js): palette colour shows in a fixed box until the photo decodes. */
+.sm-photo img.ph-loaded { opacity: 1; }
+.look-card-img-wrap, .lp-photo--portrait, .dna-hero-figure, .studio-photo { background-color: #6b4c3a; }

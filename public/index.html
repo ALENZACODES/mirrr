@@ -361,6 +361,7 @@
           <summary class="nav-link" aria-label="More tools">More</summary>
           <div class="nav-more-menu" role="menu">
             <button class="nav-link" data-view="face" role="menuitem">My Face</button>
+            <button class="nav-link" data-view="studio" role="menuitem">Brow &amp; Kohl Studio</button>
             <button class="nav-link" data-view="style-match" role="menuitem">Style Match</button>
             <button class="nav-link" data-view="quiz" role="menuitem">DNA Quiz</button>
             <button class="nav-link" data-view="wig" role="menuitem">Wig Match</button>
@@ -1049,6 +1050,25 @@
       </div>
     </section>
 
+    <section id="view-studio" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Brow &amp; Kohl Studio</h2>
+        <p class="view-sub">Brow architecture and eye traditions from your culture, step by step, shaped to your face and eyes.</p>
+      </div>
+      <div class="st-wrap">
+        <div id="stControls" class="st-controls"></div>
+        <div class="st-stage">
+          <div id="stDiagram" class="st-diagram" aria-live="polite"></div>
+          <div>
+            <h3 class="st-h">Eye looks</h3>
+            <div id="stLooks" class="st-looks"></div>
+          </div>
+        </div>
+        <div id="stPlan" class="st-plan"></div>
+        <p class="lib-disclaimer">The diagram is a drawing, not your photo. Use kohl and kajal sold as lead-free, and never apply traditional preparations to babies.</p>
+      </div>
+    </section>
+
     <section id="view-help" class="view hidden">
       <div class="view-header">
         <h2 class="view-title">Help, Privacy &amp; About</h2>
@@ -1207,6 +1227,7 @@
   <script src="icons.js"></script>
   <script type="module" src="app.js"></script>
   <script type="module" src="library.js"></script>
+  <script type="module" src="studio.js"></script>
   <script>
     // Community detail panel interactions
     (function() {

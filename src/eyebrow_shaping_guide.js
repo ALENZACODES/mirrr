@@ -129,7 +129,7 @@ export const ETHNIC_EYEBROW_GUIDES = {
     microblading: 'If microblading or tattooed brows are desired, powder brow technique is strongly recommended over traditional microblading hair strokes to minimise PIH risk; must seek a technician experienced with West African skin tones'
   },
   'south-asian': {
-    naturalBrows: 'South Asian brows are characteristically dark, dense, and defined; the natural brow growth is often one of the most beautiful natural brow assets across all ethnicities; full, arched South Asian brows are a defining beauty feature; the natural brow colour is typically very dark brown to black',
+    naturalBrows: 'Many South Asian brows grow dark, dense and defined; full, arched brows are a valued beauty feature; natural brow colour is often very dark brown to black',
     threadingCulture: 'Threading is the quintessential South Asian brow technique; threading salons and threading as a cultural practice originated in South Asia; many South Asian women are threaded from a young age; threading practitioners within South Asian communities are highly skilled; the threading technique is particularly effective on coarser South Asian brow hair',
     bridal: 'Elaborate brow shaping and definition is a critical part of South Asian bridal beauty preparation; brows are professionally threaded, then filled with precision; bold arched brow shapes that frame the detailed eye makeup are traditional for South Asian bridal looks',
     monobrow: {
@@ -234,16 +234,3 @@ export function getEthnicEyebrowGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const EYEBROW_SHAPING_STATS = {
-  moduleId: 'eyebrow_shaping_guide',
-  version: '1.0.0',
-  topics: ['eyebrow anatomy hair growth cycle', 'threading origin South Asia', 'khite Arabic threading', 'microblading PIH risk dark skin', 'powder brow safer Fitzpatrick IV-VI', 'brow mapping golden ratio', 'Korean straight brow trend', 'Frida Kahlo unibrow cultural significance', 'soap brow lamination technique', 'permanent laser eyebrow removal risks', 'brow growth cycle anagen telogen', 'brow colour matching', 'MMA acrylic', 'South Asian bridal brows', 'West African threading care', 'over-plucked brow damage'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'Threading originated in ancient South Asia and spread through the Middle East (where it is called "khite"); it is one of the most precise hair removal techniques available and is particularly effective on coarser brow hair common in South Asian, Arab, and East African populations',
-    'Microblading on Fitzpatrick IV-VI (medium-dark to very dark) skin carries significant risk of post-inflammatory hyperpigmentation (PIH) because the technique creates controlled micro-wounds; powder brow (ombre brow) technique using a tattoo machine causes less skin trauma and is recommended for darker skin tones by experienced brow technicians',
-    'Frida Kahlo\'s unibrow (painted and emphasised in her self-portraits as a deliberate statement against European beauty norms) has become a symbol of cultural pride and body autonomy in Mexican-American and Chicana communities, with modern social media movements reclaiming the unibrow aesthetic',
-    'The "Korean straight brow" trend — a horizontal brow with minimal arch, which contradicted the arched Western ideal — was one of the most influential K-beauty innovations; it spread globally from Korean beauty and has been incorporated into mainstream brow looks internationally',
-    'Permanent laser eyebrow removal is medically inadvisable as a beauty choice alone because brow trends change dramatically over decades; many women who thinned or removed brows in the 1990s now regret it as full brows returned to fashion in the 2010s; repeated aggressive over-plucking can permanently damage follicles and prevent regrowth'
-  ]
-};

@@ -212,15 +212,15 @@ export const LINER_STYLES = {
 export const EYE_SHAPE_LINER_GUIDE = {
 
   almond: {
-    description: 'Neither too round nor too angular — the "ideal" eye shape. Slightly pointed at inner and outer corners.',
-    most_common_in: 'Found across all ethnicities',
+    description: 'Neither very round nor very angular, slightly pointed at the inner and outer corners.',
+    
     liner_tip: 'Most liner styles work. Classic cat eye is particularly flattering.',
     recommended_styles: ['Classic cat eye', 'Kajal smudge', 'Arabic eye', 'Tight-line'],
   },
 
   round: {
     description: 'Very rounded at the outer corner — appears very open',
-    most_common_in: 'East Asian, Black American, many ethnic communities',
+    
     liner_tip: 'Elongate by extending liner beyond the outer corner. Avoid lining the entire lower lash line — this makes round eyes appear more round and droopy.',
     recommended_styles: ['Elongated cat eye', 'Only outer lower liner', 'Winged liner emphasising outer corner'],
     avoid: ['Full circle liner', 'Heavy lower waterline on the full lower lid'],
@@ -228,7 +228,7 @@ export const EYE_SHAPE_LINER_GUIDE = {
 
   monolid: {
     description: 'No visible crease on the eyelid — the entire lid from lash line to brow is smooth and flat. Common in East Asian communities.',
-    most_common_in: 'East Asian — Chinese, Korean, Japanese, Southeast Asian',
+    
     liner_tip: 'Every line shows because there is no crease to hide it. The lid is like a canvas. Bold graphic liner and wings show beautifully on monolids.',
     recommended_styles: ['Graphic liner', 'Bold wing', 'Thick upper lash line', 'Coloured liner'],
     special_note: 'Many Korean and Japanese makeup artists specialise in monolid techniques. The K-beauty dewy, liner-light approach was partly developed FOR monolids.',
@@ -236,7 +236,7 @@ export const EYE_SHAPE_LINER_GUIDE = {
 
   hooded: {
     description: 'A fold of skin from the brow bone droops over the crease, partially or fully covering the lid when the eye is open',
-    most_common_in: 'East Asian, South Asian, some European, increases with age',
+    
     liner_tip: 'Apply liner with eyes OPEN. What you draw with eyes closed will be hidden when eyes open. Draw the wing while looking forward — it will appear to angle upward.',
     recommended_styles: ['Outer wing (visible with eyes open)', 'Tight-line (subtle)', 'Lower lash line emphasis'],
     avoid: ['Elaborate lid art — it disappears behind the hood', 'Heavy upper liner that takes up the already-limited space'],
@@ -244,7 +244,7 @@ export const EYE_SHAPE_LINER_GUIDE = {
 
   deep_set: {
     description: 'Eyes appear to sit back in the face — the brow bone is very prominent',
-    most_common_in: 'Appears across many ethnicities',
+    
     liner_tip: 'Avoid very heavy upper liner — it pushes eyes further back. Keep upper liner light. Emphasise lower lash line to bring eyes forward.',
     recommended_styles: ['Light upper liner only', 'Bright or shimmery lower inner corner', 'Lower waterline with nude liner'],
   },
@@ -352,9 +352,3 @@ export function getKajolHistory() {
   return EYELINER_HISTORY;
 }
 
-export const LINER_GUIDE_STATS = {
-  linerProductTypes: Object.keys(LINER_PRODUCTS).length,
-  linerStyles: Object.keys(LINER_STYLES).length,
-  eyeShapeGuides: Object.keys(EYE_SHAPE_LINER_GUIDE).length,
-  communitiesWithTraditions: Object.keys(COMMUNITY_LINER_TRADITIONS).length,
-};

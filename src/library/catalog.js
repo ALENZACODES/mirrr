@@ -20,9 +20,23 @@ import * as ayurvedicBeautyExtended from '../ayurvedic_beauty_extended.js';
 import * as traditionalMedicineBeauty from '../traditional_medicine_beauty.js';
 import * as traditionalMedicineBeautyEthnicGuide from '../traditional_medicine_beauty_ethnic_guide.js';
 import * as traditionalMedicineBeautyGuide from '../traditional_medicine_beauty_guide.js';
+import * as browShapingEthnicGuide from '../brow_shaping_ethnic_guide.js';
+import * as browShapingGuide from '../brow_shaping_guide.js';
+import * as eyebrowShapingGuide from '../eyebrow_shaping_guide.js';
+import * as lashBrowGrowth from '../lash_brow_growth.js';
+import * as eyeMakeupEthnicGuide from '../eye_makeup_ethnic_guide.js';
+import * as eyeMakeupEthnic from '../eye_makeup_ethnic.js';
+import * as eyelinerStylesGuide from '../eyeliner_styles_guide.js';
+import * as eyeBeautyEthnicGuide from '../eye_beauty_ethnic_guide.js';
+import * as lashGuide from '../lash_guide.js';
+import * as eyeCareEthnicGuide from '../eye_care_ethnic_guide.js';
+import * as eyeCareBeauty from '../eye_care_beauty.js';
+import * as makeupForGlasses from '../makeup_for_glasses.js';
+import * as beautyForGlassesWearers from '../beauty_for_glasses_wearers.js';
 
 export const SHELVES = [
   { id: 'rituals', title: 'Rituals & Heritage', blurb: 'Haldi, hammam, shea, mehndi, bathhouse and festival traditions, with the steps to do them at home.' },
+  { id: 'eyes', title: 'Eyes, Brows & Kohl', blurb: 'Kohl and kajal traditions, brow threading and architecture, lashes, eye care, and makeup with glasses.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -44,4 +58,17 @@ export const GUIDES = [
   ['traditional_medicine_beauty', 'rituals', 'Traditional Medicine Systems', traditionalMedicineBeauty],
   ['traditional_medicine_beauty_ethnic_guide', 'rituals', 'Traditional Remedies by Community', traditionalMedicineBeautyEthnicGuide],
   ['traditional_medicine_beauty_guide', 'rituals', 'Traditional Medicine and Skin', traditionalMedicineBeautyGuide],
+  ['brow_shaping_ethnic_guide', 'eyes', 'Brow Traditions by Community', browShapingEthnicGuide],
+  ['brow_shaping_guide', 'eyes', 'Brow Mapping and Face Shape', browShapingGuide],
+  ['eyebrow_shaping_guide', 'eyes', 'Eyebrow Shaping and Filling', eyebrowShapingGuide],
+  ['lash_brow_growth', 'eyes', 'Lash and Brow Growth', lashBrowGrowth],
+  ['eye_makeup_ethnic_guide', 'eyes', 'Kohl, Kajal, Tiro and Eye Makeup', eyeMakeupEthnicGuide],
+  ['eye_makeup_ethnic', 'eyes', 'Eyeshadow by Skin Tone and Eye Shape', eyeMakeupEthnic],
+  ['eyeliner_styles_guide', 'eyes', 'Eyeliner Styles and the Waterline', eyelinerStylesGuide],
+  ['eye_beauty_ethnic_guide', 'eyes', 'Eye Beauty and Dark Circles', eyeBeautyEthnicGuide],
+  ['lash_guide', 'eyes', 'Lashes: Mascara, Lifts and Extensions', lashGuide],
+  ['eye_care_ethnic_guide', 'eyes', 'Eye Care by Community', eyeCareEthnicGuide],
+  ['eye_care_beauty', 'eyes', 'Under-Eye Care', eyeCareBeauty],
+  ['makeup_for_glasses', 'eyes', 'Makeup with Glasses', makeupForGlasses],
+  ['beauty_for_glasses_wearers', 'eyes', 'Glasses and Contact Lens Beauty', beautyForGlassesWearers],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

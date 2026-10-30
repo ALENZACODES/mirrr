@@ -99,7 +99,7 @@ export const ETHNIC_EYE_CARE_GUIDES = {
   'south-asian': {
     communityId: 'south-asian',
     communityName: 'South Asian',
-    eyeBeautyPhilosophy: 'South Asian eye beauty is arguably one of the most elaborate in the world. The eye is the primary canvas — from the daily kajal line that has been worn for thousands of years to the elaborate eye looks of Bollywood and bridal traditions. Large, dark, doe eyes are the aspirational ideal, and techniques are highly refined.',
+    
     commonConcerns: [
       'Prominent dark circles (very common genetic trait in South Asian skin)',
       'Deep-set or hooded eyelids that require specific techniques',
@@ -172,7 +172,7 @@ export const ETHNIC_EYE_CARE_GUIDES = {
           treatment: 'Cold Potato Compress',
           description: 'Potato contains catecholase, an enzyme with mild brightening properties. Grate raw potato, strain juice, soak cotton pad, apply for 15 minutes.',
           timeline: 'Regular use over 6–8 weeks may show mild improvement',
-          evidence: 'Anecdotal — limited clinical data but widely used in South Asian home beauty',
+          
         },
       ],
     },
@@ -285,7 +285,7 @@ export const ETHNIC_EYE_CARE_GUIDES = {
   'arab': {
     communityId: 'arab',
     communityName: 'Arab Middle Eastern',
-    eyeBeautyPhilosophy: 'Arab eye beauty is one of the most iconic in the world. The kohl-rimmed eye — elongated, darkened, and dramatically beautiful — is the defining aesthetic from ancient Egypt to modern Gulf glamour. Eyes are considered the most important feature; in many traditions where full face coverage is worn, the eyes become the sole visible canvas for self-expression.',
+    
     commonConcerns: [
       'Dark circles from genetic periorbital pigmentation',
       'Dehydration-related dark circles in dry Middle Eastern climates',
@@ -296,13 +296,13 @@ export const ETHNIC_EYE_CARE_GUIDES = {
     traditionalPractices: [
       {
         name: 'Kohl (Al-Kohl / Surma)',
-        description: 'Kohl has been used across the Arab world since ancient times. Egyptian, Gulf, Levantine, and North African traditions all have their own kohl preparation methods. In Islamic tradition, the Prophet Muhammad recommended kohl (ithmid) from antimony stone for eye health.',
+        description: 'Kohl has been used across the Arab world since ancient times. Egyptian, Gulf, Levantine, and North African traditions all have their own kohl preparation methods. In Islamic tradition, hadith report that the Prophet Muhammad recommended kohl (ithmid) from antimony stone.',
         types: [
           {
             type: 'Ithmid (Antimony Kohl)',
             origin: 'Arabian Peninsula / Islamic tradition',
             description: 'Made from ground antimony stone. Considered the most authentic Islamic kohl. Silver-gray metallic color. Used on inner waterline.',
-            safety: 'Antimony kohl has been tested — ithmid from antimony stone has a different safety profile than lead-based kohls. Seek authentic ithmid from reputable Islamic beauty sources.',
+            safety: 'Ithmid is antimony-based rather than lead-based, but products sold as kohl have been found to contain lead, and antimony is not risk-free either. Only use products that list their ingredients and are sold legally as cosmetics where you live, and never use kohl on children.',
           },
           {
             type: 'Homemade Soot Kohl',
@@ -793,12 +793,3 @@ export function getEyeCareGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const EYE_CARE_STATS = {
-  moduleId: 'eye_care_ethnic_guide',
-  communitiesCovered: 9,
-  traditionalPracticesCovered: 31,
-  eyeShapeGuidesCovered: 9,
-  makeupLooksCovered: 28,
-  underEyeTreatmentsCovered: 18,
-  version: '1.0.0',
-};

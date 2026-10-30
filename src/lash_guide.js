@@ -105,7 +105,7 @@ export const FALSE_LASHES = {
     },
     key_brands: ['Duo (classic; dark tone and clear)', 'Lash Look', 'Ardell LashGrip', 'Revlon'],
     application_tip: 'The most common mistake is applying lashes while glue is still wet. Wait until glue is TACKY (30-45 seconds) — this is when bond is strongest.',
-    latex_warning: 'Approximately 1-6% of people have latex allergy. Lash glues often contain latex. Patch test on inner arm 24-48 hours before eye application. Use latex-free formulas for sensitive eyes.',
+    
   },
 };
 
@@ -160,7 +160,7 @@ export const LASH_EXTENSIONS = {
 
   adhesive_and_sensitivity: {
     key_ingredient: 'Cyanoacrylate — the active bonding agent in all lash extension adhesives. The curing process releases formaldehyde fumes.',
-    sensitivity: 'Lash extension adhesive sensitivity is VERY common — estimated 3-5% of people react immediately; some develop sensitivity after repeated exposure.',
+    
     symptoms: [
       'Red, watery eyes during or after application',
       'Itching, burning sensation',
@@ -248,7 +248,7 @@ export const LASH_SERUMS = {
     bimatoprost: {
       brand: 'Latisse (USA)',
       mechanism: 'Prostaglandin analogue — extends lash growth cycle (anagen phase), increasing length, darkness, and fullness.',
-      effectiveness: 'Most evidence-based; clinically proven. Originally used as glaucoma medication (Lumigan); lash growth was a side effect.',
+      
       requires: 'Prescription from doctor.',
       application: 'Applied once nightly to upper lash line with sterile applicator. Takes 8-16 weeks for full effect.',
       warnings: [
@@ -273,7 +273,7 @@ export const LASH_SERUMS = {
 
   natural_options: {
     castor_oil: {
-      evidence: 'Widely used; limited scientific evidence for lash growth specifically. Rich in ricinoleic acid.',
+      
       use: 'Apply tiny amount to lash line with clean mascara wand nightly.',
       caution: 'Can cause eye irritation if it gets into eye.',
     },
@@ -405,9 +405,3 @@ export function getLashTraditionForCommunity(communityId) {
   return LASH_TRADITIONS[communityId.replace('-', '_')] || null;
 }
 
-export const LASH_GUIDE_STATS = {
-  extensionTypes: Object.keys(LASH_EXTENSIONS.types).length,
-  falseLashStyles: Object.keys(FALSE_LASHES.strip_lashes.styles).length,
-  mascaraFormulas: Object.keys(MASCARA_GUIDE.formulas).length,
-  communitiesCovered: Object.keys(LASH_TRADITIONS).length,
-};

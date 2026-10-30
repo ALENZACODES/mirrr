@@ -12,7 +12,7 @@ export const EYE_SHAPES_GUIDE = {
   shapes: {
     monolid: {
       what: 'Little or no visible crease when the eye is open. Common in East Asian, Southeast Asian, and some Central Asian communities. Also referred to as single eyelid.',
-      prevalence: 'Approximately 50% of people with East Asian ancestry have monolids or minimal crease. Also present (less commonly) in some Indigenous peoples of the Americas.',
+      
       technique: {
         colour_placement: 'The standard crease technique (placing darker colour in the crease) doesn\'t apply as the crease isn\'t visible when open. Place colour above where your crease would be (approximately where a crease would fall if it existed) — you\'ll need to look with eyes open in the mirror to assess, not just looking down.',
         lid_space: 'The full lid is the canvas. Gradient from light on the inner area to medium on the outer, darkest at the outer corner/lashline, creates depth.',
@@ -25,7 +25,7 @@ export const EYE_SHAPES_GUIDE = {
 
     hooded: {
       what: 'The brow bone extends over the eyelid, covering some or all of the mobile eyelid when the eye is open. Gives the appearance of less lid space.',
-      prevalence: 'Common across many ethnic backgrounds, becomes more prevalent with age (skin relaxes onto the eyelid).',
+      
       technique: {
         crease: 'Use the "eyes open" method — apply crease colour while looking straight ahead in the mirror, not with eyes closed. The crease colour needs to be above where the hood sits when eyes are open.',
         halo: 'A halo eye — light on centre of lid, darker on inner and outer — can make eyes appear more open.',
@@ -349,9 +349,3 @@ export function getEyePrimerGuide() {
   return EYE_PRIMER_GUIDE;
 }
 
-export const EYE_MAKEUP_STATS = {
-  eyeShapesCovered: Object.keys(EYE_SHAPES_GUIDE.shapes).length,
-  techniquesDetailed: Object.keys(EYESHADOW_TECHNIQUES).length,
-  communitiesCovered: Object.keys(EYE_TRADITIONS_BY_COMMUNITY).length,
-  skinToneGuides: 6,
-};

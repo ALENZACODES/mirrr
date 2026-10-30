@@ -133,7 +133,8 @@ test('every exported function of every wired guide returns real content', () => 
   for (const g of GUIDES) for (const [name, fn] of Object.entries(g.mod)) {
     if (typeof fn !== 'function') continue;
     let ok = false;
-    for (const a of candidates(g.mod)) {
+    const ownKeys = [...fn.toString().matchAll(/['"]([A-Za-z][\w -]{1,30})['"]\s*:/g)].map(m => m[1]);
+    for (const a of [...ownKeys, ...candidates(g.mod)]) {
       try { if (real(fn(a, a))) { ok = true; break; } } catch { /* try next argument */ }
     }
     if (!ok) dead.push(`${g.id}.${name}`);

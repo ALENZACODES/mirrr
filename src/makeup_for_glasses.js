@@ -276,8 +276,3 @@ export function getGlassesGlamRoutine(prescriptionType) {
   return GLASSES_GLAM_ROUTINE;
 }
 
-export const GLASSES_MAKEUP_STATS = {
-  prescriptionTypesCovered: 2,
-  faceShapesCovered: Object.keys(FRAME_FACE_GUIDE.face_shapes).length,
-  contactSafetyTips: Object.keys(CONTACT_LENS_MAKEUP).length - 1,
-};

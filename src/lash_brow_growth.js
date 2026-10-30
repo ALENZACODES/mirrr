@@ -33,9 +33,9 @@ export const LASH_GROWTH_SERUMS = {
       brandName: 'Latisse (US); Careprost (available internationally)',
       origin: 'Originally a glaucoma medication (Lumigan) — patients observed lash growth as side effect; FDA approved for lash growth 2008',
       mechanism: 'Prostaglandin F2α analogue; extends anagen phase of lash follicles; increases number of lashes in anagen; possibly increases follicle size',
-      results: 'Clinically proven: 25% increase in length, 106% increase in thickness, 18% increase in darkness in 16-week trials',
+      
       howToApply: 'Single application to upper lash line nightly; do not apply lower lid directly — blink transfers product to lower lid naturally',
-      sideEffects: ['Iris darkening (permanent): darkens light eyes over time in ~1–2% users; irreversible; use only on upper lash line to minimise eye contact', 'Periorbital fat atrophy (rare): sunken eye appearance with very long-term use', 'Red itchy eyes if product enters eye directly', 'Skin darkening at application site (usually reversible)'],
+      sideEffects: [ 'Periorbital fat atrophy (rare): sunken eye appearance with very long-term use', 'Red itchy eyes if product enters eye directly', 'Skin darkening at application site (usually reversible)'],
       continuation: 'Must continue to maintain results; lashes return to baseline 4–16 weeks after stopping',
       access: 'Prescription required in US/UK/Australia; available OTC in some countries; telemedicine prescriptions increasingly available'
     }
@@ -43,7 +43,7 @@ export const LASH_GROWTH_SERUMS = {
   otcActives: {
     peptides: {
       examples: ['Myristoyl pentapeptide-17: stimulates keratin synthesis in follicle', 'Biotinoyl tripeptide-1: supports follicle anchoring', 'Oligopeptide-10: antimicrobial + follicle stimulation'],
-      evidence: 'Mostly in vitro and company-funded studies; clinical evidence significantly less robust than bimatoprost; results seen but typically more subtle',
+      
       brands_type: 'GrandLASH-MD, NeuLash, RapidLash'
     },
     isopropylCloprostenate: {
@@ -55,8 +55,7 @@ export const LASH_GROWTH_SERUMS = {
     castor_oil: {
       mechanism: 'Not scientifically proven to grow lashes; ricinoleic acid in castor oil may have some anti-inflammatory and follicle-supporting properties; primarily works as a conditioning agent that may reduce lash breakage, giving appearance of thicker lashes',
       benefit: 'Very safe; cheap; no side effects; traditional use across multiple cultures',
-      application: 'Clean mascara wand dipped in castor oil; apply to lashes nightly; wash off in morning',
-      JBCO: 'Jamaican Black Castor Oil (roasted, ash-containing) has different composition; some evidence suggests the ash content changes properties; both are used traditionally'
+      application: 'Clean mascara wand dipped in castor oil; apply to lashes nightly; wash off in morning'
     },
     vitamin_E: 'Antioxidant; reduces oxidative stress in follicles; found in many lash serums as adjunct ingredient; unlikely to be primary growth driver on its own'
   },
@@ -252,19 +251,3 @@ export function getEthnicLashBrowTraditions(communityId) {
   return directMap[communityId] || null;
 }
 
-export const LASH_BROW_STATS = {
-  moduleId: 'lash_brow_growth',
-  version: '1.0.0',
-  topics: ['lash growth', 'brow growth', 'castor oil lashes', 'lash serum', 'bimatoprost', 'Latisse', 'brow threading', 'microblading', 'brow lamination', 'lash extensions', 'lash lift', 'ethnic brow culture', 'JBCO lashes'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'Bimatoprost (Latisse) extends lash anagen phase — clinical trials showed 25% length increase, 106% thickness increase after 16 weeks',
-    'A side effect of bimatoprost use near the eye is permanent iris darkening in light eyes (~1–2% of users) — irreversible',
-    'Eyebrow hairs have a 4–6 month anagen phase; over-plucked brows can take this long to begin recovering',
-    'East Asian lashes typically grow in a downward direction; heated curlers and lash lifts are especially popular for this reason',
-    'Jamaican Black Castor Oil (JBCO) is the most culturally established lash and brow growth tradition in Black American and Caribbean communities',
-    'Threading originated in South Asia and the Middle East thousands of years ago; threading salons are cultural institutions in South Asian diaspora communities globally',
-    'Microblading on Fitzpatrick IV-VI skin carries PIH risk from blade trauma; powder/ombre brow technique is generally safer for deeper skin tones',
-    'Lateral eyebrow thinning (outer third disappearing) is a classic sign of hypothyroidism — "Queen Anne\'s sign"'
-  ]
-};

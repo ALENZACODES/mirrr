@@ -87,6 +87,7 @@ function renderShelves() {
     <section class="lib-shelf">
       <h3 class="lib-shelf-title">${esc(shelf.title)}</h3>
       <p class="lib-shelf-blurb">${esc(shelf.blurb)}</p>
+      ${shelf.id === 'eyes' ? '<button type="button" class="btn btn-secondary lib-open" data-open-studio>Open the Brow &amp; Kohl Studio</button>' : ''}
       <div class="lib-guides">${shelf.guides.map(g => `
         <button type="button" class="lib-guide${g.id === lib.openGuide ? ' lib-guide--open' : ''}" data-lib-guide="${g.id}">
           <span class="lib-guide-title">${esc(g.title)}</span>

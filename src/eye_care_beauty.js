@@ -244,9 +244,3 @@ export function getEyeCreamIngredient(ingredient) {
 export function getMiliaGuide() { return MILIA_GUIDE; }
 export function getEyeContourTechniques() { return EYE_CONTOUR_TECHNIQUES; }
 
-export const EYE_CARE_BEAUTY_STATS = {
-  darkCircleCauses: Object.keys(DARK_CIRCLES_GUIDE.causes).length,
-  eyeCreamIngredients: Object.keys(EYE_CREAM_GUIDE.key_ingredients).length,
-  ethnicCommunities: Object.keys(ETHNIC_DARK_CIRCLES).length,
-  puffinessCauses: Object.keys(UNDEREYE_PUFFINESS.causes).length,
-};

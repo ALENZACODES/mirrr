@@ -6,7 +6,7 @@
 
 export const GLASSES_BEAUTY_FUNDAMENTALS = {
   title: 'Beauty and Glasses — The Core Challenges',
-  summary: 'An estimated 75% of adults worldwide need some form of vision correction, and of those, the majority wear eyeglasses at least part of the time. Yet mainstream beauty advice rarely accounts for the significant ways that eyeglasses change the appearance of makeup, the way skin looks through the lens, and the unique skincare challenges that glasses wearing creates.',
+  
   mainChallenges: {
     nosePatches: 'Eyeglass nose pads create pressure marks, oil accumulation, and often hyperpigmentation on the nose bridge over time; this is rarely discussed in mainstream beauty coverage despite being a universal experience for glasses wearers',
     lensDistortion: {
@@ -217,16 +217,3 @@ export function getEthnicGlassesGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const GLASSES_BEAUTY_STATS = {
-  moduleId: 'beauty_for_glasses_wearers',
-  version: '1.0.0',
-  topics: ['glasses and makeup', 'contact lenses beauty', 'nose bridge hyperpigmentation', 'longsighted makeup', 'shortsighted makeup', 'mascara smudge glasses', 'tubing mascara', 'Asian-fit frames', 'low nose bridge frames', 'PIH nose pads', 'glasses frames and brows', 'glasses frame colour', 'niacinamide nose bridge', 'kajal with glasses', 'concave lens makeup', 'magnifying lens makeup', 'glasses frame fitting ethnic', 'contact lens makeup safety', 'glasses makeup longevity'],
-  communitiesSupported: 9,
-  keyFacts: [
-    '"Asian-fit" or "low nose bridge" frames are designed for flatter, lower nose bridge anatomy common in East Asian faces — and these same frames often provide significantly better fit for Black American, West African, East African, and Caribbean individuals with broader flat nose bridges, who otherwise struggle with standard Western frames sliding down or causing uneven pressure',
-    'For shortsighted (myopic) prescriptions, concave lenses make eyes appear visually smaller; techniques to counteract this include nude liner on the lower waterline, white or champagne inner corner highlight, tight-lining the upper waterline, and heavily curled mascara — the opposite advice to longsighted prescriptions where less eye makeup is often better',
-    'Tubing mascara (which surrounds each lash in a film tube rather than coating it) is the most effective solution for the universal glasses-wearer problem of mascara smudging onto lenses; tubes do not transfer on the inside of the lens during blinking',
-    'PIH (post-inflammatory hyperpigmentation) from nose pad pressure on Fitzpatrick IV-VI skin is a genuinely significant and underrepresented beauty concern; Black American and East African beauty communities have begun creating specific content about treating these marks with niacinamide, vitamin C, and azelaic acid',
-    'Contact lenses should always be inserted before eye makeup application to prevent contamination — and removed before removing eye makeup, since oil-based makeup removers can damage the lens'
-  ]
-};

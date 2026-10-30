@@ -24,6 +24,7 @@ import { getTrendingArtists, getAllTrendingArtists, REGIONAL_ANCHORS } from './t
 import { QlooClient, qlooClient } from './qloo.js';
 import { buildPlan } from './pipeline/plan.js';
 import { handleLibrary } from './library/routes.js';
+import { handleStudio } from './studio/routes.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT ?? 3000;
@@ -748,6 +749,9 @@ async function router(req, res) {
 
   // GET /api/library, /api/library/search, /api/library/guide/:id
   if (handleLibrary(method, path, url, res, sendJSON)) return;
+
+  // GET /api/studio/options, GET /api/studio/looks, POST /api/studio/plan
+  if (await handleStudio(method, path, url, req, res, { sendJSON, readBody })) return;
 
   // 404
   return sendJSON(res, 404, { error: 'Not found' });

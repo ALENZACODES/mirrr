@@ -57,7 +57,7 @@ export const BROW_MAPPING = {
 export const BROW_FOR_FACE_SHAPE = {
 
   oval: {
-    description: 'Oval is the "ideal" face shape for most brow styles — length is about 1.5x the width, no very strong jaw or forehead',
+    description: 'Oval faces suit most brow styles — no very strong jaw or forehead',
     recommended: 'Soft arch — most brow shapes work. A gently arched, well-groomed version of your natural brow.',
     avoid: 'Nothing is off-limits — enjoy experimenting',
   },
@@ -67,7 +67,7 @@ export const BROW_FOR_FACE_SHAPE = {
     goal: 'Add definition and length — create the illusion of a longer, more angular face',
     recommended: 'High, angular arch — the higher the arch, the more it elongates the face. Brows should be well-defined.',
     avoid: 'Very round, flat brows — this emphasises roundness',
-    ethnic_context: 'Round face shapes are very common across Asian communities. Korean and Japanese brow trends (soft, rounded brows) can work beautifully here but an angular brow is more elongating.',
+    
   },
 
   square: {
@@ -89,7 +89,7 @@ export const BROW_FOR_FACE_SHAPE = {
     goal: 'Visually shorten the face — add horizontal width',
     recommended: 'Flat, horizontal brows with minimal arch — extends the brow outward horizontally',
     avoid: 'Very high arches which further elongate the face',
-    ethnic_context: 'Longer face shapes appear commonly in East African communities. This brow advice counterbalances the length.',
+    
   },
 
   diamond: {
@@ -187,7 +187,7 @@ export const BROW_SHAPING_METHODS = {
     process: 'Initial appointment (2-3 hours) + mandatory touchup at 6-8 weeks',
     pain: 'Topical numbing cream applied — mild sensation, not typically painful',
     pros: ['Life-changing for sparse or over-plucked brows', 'Daily brow makeup eliminated', 'Natural-looking when done well'],
-    cons: ['Expensive ($400-1200)', 'Fades and needs touchups every 1-2 years', 'Carries risk if artist is unskilled'],
+    cons: [ 'Fades and needs touchups every 1-2 years', 'Carries risk if artist is unskilled'],
     ethnic_skin_critical_warning: {
       issue: 'Microblading on deeper skin tones is HIGH RISK if the artist is not specifically trained in dark skin tones. The pigment can spread, heal too dark, or create an ashy/blue-grey result.',
       risks_for_dark_skin: [
@@ -240,7 +240,7 @@ export const BROW_FILLING_GUIDE = {
       what: 'A bar of glycerin soap combed through brows for an extremely fluffy, lifted, stiff hold',
       trend: 'The "soap brow" trend went viral as a DIY version of brow lamination',
       how_to: 'Wet a spoolie brush, run over a bar of clear glycerin soap, comb through brows upward. Works as a hold and lifts hairs.',
-      cost: 'Effectively free — a bar of Dove soap or glycerin soap works',
+      
     },
   },
 
@@ -321,9 +321,3 @@ export function getBrowLaminationGuide() {
   return BROW_SHAPING_METHODS.lamination;
 }
 
-export const BROW_GUIDE_STATS = {
-  shapingMethodsCovered: Object.keys(BROW_SHAPING_METHODS).length,
-  faceShapesBrowGuides: Object.keys(BROW_FOR_FACE_SHAPE).length,
-  browProductTypes: Object.keys(BROW_FILLING_GUIDE.products).length,
-  communitiesWithShadeGuide: Object.keys(BROW_FILLING_GUIDE.shade_guide_by_community).length,
-};

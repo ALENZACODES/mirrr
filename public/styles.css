@@ -2954,3 +2954,41 @@ body { padding-top: 58px; }
 .lib-loading { color: var(--text-muted); }
 .lib-disclaimer { margin-top: 1.2rem; font-size: 0.8rem; color: var(--text-muted); }
 .lib-open { margin-top: 1rem; }
+
+/* ─── Brow & Kohl Studio ───────────────────────────────────────────────── */
+.st-wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.25rem; }
+.st-controls { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: flex-end; margin-bottom: 1.2rem; }
+.st-field { display: grid; gap: 0.25rem; font-size: 0.78rem; color: var(--text-muted); }
+.st-field select {
+  font: inherit; font-size: 0.9rem; color: var(--text-primary); background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 0.45rem 0.6rem; min-width: 150px;
+}
+.st-check { display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; color: var(--text-primary); }
+.st-stage { display: grid; grid-template-columns: minmax(280px, 1.2fr) 1fr; gap: 1.2rem; align-items: start; }
+@media (max-width: 760px) { .st-stage { grid-template-columns: 1fr; } }
+.st-diagram { background: var(--bg-card); border-radius: 16px; padding: 0.8rem; border: 1px solid rgba(255, 255, 255, 0.1); }
+.st-svg { width: 100%; height: auto; display: block; }
+.st-brow-strokes line { stroke-width: 1.6; stroke-linecap: round; }
+.st-crease { fill: none; stroke: rgba(60, 35, 25, 0.45); stroke-width: 1.4; }
+.st-water { fill: none; stroke-width: 2.2; opacity: 0.85; }
+.st-h { font-size: 1rem; margin: 0 0 0.6rem; }
+.st-looks { display: grid; gap: 0.5rem; }
+.st-look {
+  display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; text-align: left; cursor: pointer;
+  font: inherit; color: var(--text-primary); background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 10px; padding: 0.6rem 0.8rem;
+}
+.st-look:hover { border-color: var(--accent-light); }
+.st-look--on { border-color: var(--accent); background: rgba(196, 92, 60, 0.18); }
+.st-look-name { font-weight: 600; }
+.st-plan { display: grid; gap: 1rem; margin-top: 1.4rem; }
+.st-because { border-left: 3px solid var(--accent-light); padding-left: 0.9rem; color: var(--text-primary); font-size: 0.92rem; }
+.st-because p { margin: 0.3rem 0; line-height: 1.5; }
+.st-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 14px; padding: 1rem 1.2rem; }
+.st-card h4 { margin: 0 0 0.6rem; font-size: 1.1rem; }
+.st-sub { font-size: 0.75rem; color: var(--accent-light); font-weight: 500; margin-left: 0.4rem; }
+.st-steps { padding-left: 1.2rem; margin: 0.4rem 0; }
+.st-steps li { margin: 0.35rem 0; line-height: 1.55; font-size: 0.92rem; }
+.st-products, .st-avoid { font-size: 0.88rem; color: var(--text-muted); }
+.st-safety { background: rgba(212, 168, 71, 0.08); border-radius: 10px; padding: 0.6rem 0.9rem; font-size: 0.86rem; margin: 0.6rem 0; }
+.st-safety ul { margin: 0.3rem 0 0; padding-left: 1.1rem; }

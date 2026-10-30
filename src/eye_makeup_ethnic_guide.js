@@ -7,8 +7,8 @@ export const ETHNIC_EYE_MAKEUP_GUIDES = {
     id: 'west-african',
     name: 'West African Eye Makeup',
     regions: ['Nigeria', 'Ghana', 'Senegal', 'Côte d\'Ivoire', 'Mali', 'Benin'],
-    overview: `West African eye makeup traditions are among the oldest in the world,
-    rooted in ancient practices that predate modern cosmetics by millennia. The use of kohl —
+    overview: `West African eye makeup traditions are rooted in practices far older
+    than modern cosmetics. The use of kohl —
     called tiro in Yoruba — is a sacred, medical, and aesthetic tradition that spans ethnic groups
     across the region. The dramatic eye is a hallmark of West African beauty, particularly during
     festivals, weddings, and rites of passage.`,
@@ -137,11 +137,10 @@ export const ETHNIC_EYE_MAKEUP_GUIDES = {
     id: 'south-asian',
     name: 'South Asian Eye Makeup',
     regions: ['India', 'Pakistan', 'Bangladesh', 'Sri Lanka', 'Nepal', 'Diaspora'],
-    overview: `Eye makeup in South Asian culture is perhaps the most codified and scientifically
-    studied ancient cosmetic tradition in the world. Kajal and kohl have been used on the
-    Indian subcontinent for at least 5,000 years, with references in the Vedic texts, the
-    Ayurvedic medical canon, and classical Sanskrit poetry. The eyes are culturally considered
-    the most expressive and spiritually significant feature of the face.`,
+    overview: `Eye makeup in South Asian culture is an old and well-documented tradition.
+    Kajal and kohl have been used on the Indian subcontinent for thousands of years, with references in the Vedic texts, the
+    Ayurvedic medical canon, and classical Sanskrit poetry. In many traditions the eyes are treated
+    as the most expressive feature of the face.`,
 
     kajal: {
       history: `Kajal (also called kohl, surma, or anjan depending on region) is the defining
@@ -153,8 +152,6 @@ export const ETHNIC_EYE_MAKEUP_GUIDES = {
         description: `From an Ayurvedic perspective, the eyes (drishti) are governed by
         the Alochaka Pitta sub-dosha. Kajal was believed to protect the eyes by:`,
         mechanisms: [
-          'Blocking UV radiation: the carbon black pigment in traditional kajal absorbs UV light, functioning similarly to a primitive sunblock for the sensitive periorbital area',
-          'Antimicrobial properties: studies of traditional kajal preparations containing galena (lead sulfide), zinc oxide, or plant-based carbons show some antibacterial activity against common eye pathogens',
           'Reducing glare: the dark line on the waterline reduces light scatter, functionally similar to the black grease athletes use under their eyes',
           'Cooling effect: camphor and rose water preparations were believed to reduce inflammation and redness',
           'Tearing stimulation: some preparations caused mild lacrimation, which practitioners believed cleared dust and impurities',
@@ -162,9 +159,8 @@ export const ETHNIC_EYE_MAKEUP_GUIDES = {
         modernCaveats: `Modern analysis has complicated the health claims. Lead-based kajal
         (galena/surma) presents genuine health risks, particularly for infants. The WHO has
         flagged traditional lead-based eye kohl as a source of lead toxicity in children in
-        South Asian and MENA communities. However, plant-based kajal — from castor oil soot,
-        lampblack, or carbon from burned almond/camphor — is considered safe and is backed
-        by emerging evidence of mild antimicrobial benefit.`,
+        South Asian and MENA communities. Choose kajal sold as lead-free and compliant with
+        cosmetics regulations, and never apply traditional preparations to babies.`,
       },
       preparation: {
         traditional: [
@@ -210,7 +206,7 @@ export const ETHNIC_EYE_MAKEUP_GUIDES = {
       shapes: {
         deepSet: {
           name: 'Deep-Set Eyes',
-          prevalence: 'Common across North Indian, Pakistani, and Afghan-origin populations',
+          
           characteristics: 'Eyes appear recessed; brow bone is prominent; lid space appears smaller than average',
           techniques: [
             'Light shimmer or satin shadow on the lid to bring it forward',
@@ -222,7 +218,7 @@ export const ETHNIC_EYE_MAKEUP_GUIDES = {
         },
         almond: {
           name: 'Almond Eyes',
-          prevalence: 'Common across many South Asian groups',
+          
           characteristics: 'Balanced proportions; slightly pointed outer corners; visible lid space',
           techniques: [
             'Most flattering for all techniques — eyeliner, kajal, shadow all work well',
@@ -232,7 +228,7 @@ export const ETHNIC_EYE_MAKEUP_GUIDES = {
         },
         monolid: {
           name: 'Monolid (Epicanthal fold present)',
-          prevalence: 'Northeast Indian populations (Assam, Manipur, Nagaland, Sikkim, Meghalaya), Nepali, and Tibetan-origin communities',
+          
           characteristics: 'No visible crease line; upper lid appears smooth; eye opening may appear smaller',
           techniques: [
             'Skip crease work — it won\'t show when eyes are open',
@@ -247,11 +243,7 @@ export const ETHNIC_EYE_MAKEUP_GUIDES = {
     },
 
     bridalEyeLooks: {
-      overview: `South Asian bridal eye makeup is among the most elaborate in the world.
-      The bridal look (dulhan sajaa) centers on the eyes, which are said to be the first
-      thing the groom sees as the bride approaches. The eye look varies by region, religion,
-      and family tradition but generally emphasizes heaviness, drama, and the use of
-      gold and deep pigments.`,
+      
       classical: {
         name: 'Bharatanatyam-Inspired Bridal Eye',
         description: `Classical Indian dance (Bharatanatyam, Kathak, Odissi) has directly
@@ -381,13 +373,11 @@ export const ETHNIC_EYE_MAKEUP_GUIDES = {
       kajal on the waterline, but paired with Carnival-style shimmer on the lid.`,
     },
 
-    skinToneRange: `The Caribbean encompasses one of the widest natural skin tone ranges
-    in the world — from very dark deep skin in Haiti and parts of Jamaica, to olive-tan
-    in Cuba and Puerto Rico, to fair skin in parts of Martinique and Barbados's creole
-    population. Eye makeup color choices must account for this full spectrum.`,
+    skinToneRange: `Caribbean skin tones run from very deep to fair, often within the
+    same island and the same family. Eye makeup colour choices must account for this full spectrum.`,
 
     productRecommendations: {
-      waterproof: ['Urban Decay All Nighter Setting Spray', 'Too Faced Better Than Sex Waterproof Mascara', 'Maybelline Tattoo Studio Gel Liner'],
+      waterproof: ['Urban Decay All Nighter Setting Spray', 'Too Faced Better Than Sex Waterproof Mascara', 'Maybelline TattooStudio Gel Pencil Eyeliner'],
       glitter: ['Lit Cosmetics glitters', 'NARS Powder Blush (shimmer shades for lid)', 'MAC Reflects Glitter'],
       falseLashes: ['Ardell Wispies', 'House of Lashes Starlet', 'Kiss EverEZ Lashes'],
     },
@@ -472,9 +462,7 @@ export const ETHNIC_EYE_MAKEUP_GUIDES = {
       },
       weddingEye: {
         name: 'Arab Wedding Eye Look',
-        description: `Arab weddings feature some of the most elaborate eye looks in the world.
-        The khaleeji (Gulf) style and the Egyptian style diverge significantly, but both
-        emphasize maximalism.`,
+        
         khaleeji: {
           style: 'Gulf/Khaleeji Bridal',
           elements: [
@@ -683,16 +671,8 @@ export const ETHNIC_EYE_MAKEUP_GUIDES = {
     },
 
     doubleEyelid: {
-      surgeryContext: `Double eyelid surgery (blepharoplasty — specifically upper lid crease
-      creation) is the most commonly performed cosmetic surgery in East Asia and among
-      East Asian diaspora populations. According to ISAPS data, it ranks among the top
-      cosmetic procedures in South Korea, China, and Taiwan.`,
-      statistics: {
-        southKorea: 'Estimated 20-30% of Korean women have had the procedure; South Korea has the highest per capita plastic surgery rate globally',
-        china: 'Over 1 million procedures annually estimated; rising rapidly among urban young women',
-        cultural: 'The procedure is normalized in many East Asian societies — graduation gifts, entrance into the workforce',
-        debate: 'Significant debate exists about whether the surgery represents Western beauty imperialism or simple personal preference; the discussion is nuanced and ongoing',
-      },
+      
+      
       nonsurgicalAlternatives: {
         tape: {
           name: 'Eyelid Tape',
@@ -928,12 +908,7 @@ export const ETHNIC_EYE_MAKEUP_GUIDES = {
     id: 'south-african',
     name: 'South African Eye Makeup',
     regions: ['Johannesburg', 'Cape Town', 'Durban', 'South Africa broadly', 'Diverse ethnic communities'],
-    overview: `South African beauty is one of the most complex in the world, reflecting the
-    country's extraordinary diversity: Zulu, Xhosa, Sotho, Ndebele, Tswana, Cape Malay,
-    Indian-South African, Coloured, Afrikaner, and English-heritage communities each carry
-    their own beauty traditions. South African eye makeup is therefore not one tradition but
-    many — a mosaic that, in the contemporary urban context, is increasingly hybrid and
-    internationally influenced.`,
+    
 
     ndebeleTradition: {
       name: 'Ndebele Decorative Eye Tradition',
@@ -1042,7 +1017,7 @@ export const ETHNIC_EYE_MAKEUP_GUIDES = {
         deliberate, and proud:`,
         elements: [
           'Heavy liner in the Black Power graphic style',
-          'Deep, jewel-toned eyeshadow (emerald green, royal blue, plum) — colors that had been deemed "too loud" by mainstream standards',
+          
           'Strong, unmanipulated eyebrow (rejection of the thin penciled brow)',
           'False lashes as a statement (Lola Falana, Diana Ross-era looks)',
           'Eye looks inspired by the Afrocentric aesthetic movement',
@@ -1117,10 +1092,10 @@ export const ETHNIC_EYE_MAKEUP_GUIDES = {
       significant makeup moments in social media history.`,
       culturalMoments: [
         'The "no-makeup makeup" redefined as Black women showing that full glam and natural beauty are both valid',
-        'Aaliyah\'s graphic liner (1990s) — still referenced and recreated',
+        
         'Beyoncé\'s 2016 Lemonade visual album eye looks — editorial Black beauty at its peak',
-        'The Fox Eye controversy (2020) — Black and Asian beauty communities noting that the "fox eye trend" co-opted looks long worn by WOC',
-        'Fenty Beauty (2017) — Rihanna\'s 40-shade launch forced the entire industry to expand shade ranges',
+        
+        
         'The natural beauty and Afrocentric eye look resurgence in the early 2020s',
       ],
     },
@@ -1345,7 +1320,7 @@ export const UNIVERSAL_EYE_MAKEUP = {
     lashTypes: {
       straight: {
         name: 'Straight Lashes',
-        prevalence: 'Common in East Asian populations; present across all ethnicities',
+        
         challenge: 'Lashes point downward or horizontally, making them appear shorter and less visible',
         solutions: [
           'Use an eyelash curler BEFORE mascara — always',
@@ -1359,7 +1334,7 @@ export const UNIVERSAL_EYE_MAKEUP = {
       },
       sparse: {
         name: 'Sparse or Fine Lashes',
-        prevalence: 'Varies; often associated with hormonal changes, aging, medical conditions, or genetic predisposition',
+        
         challenge: 'Mascara clumps and weighs down few lashes; eyes appear naked without extensive product',
         solutions: [
           'Fiber mascara or lash-building mascara (fibers adhere to existing lashes to increase apparent volume)',
@@ -1372,7 +1347,7 @@ export const UNIVERSAL_EYE_MAKEUP = {
       },
       thick: {
         name: 'Thick, Dense Lashes',
-        prevalence: 'Common in many populations; particularly among Middle Eastern, South Asian, and some African populations',
+        
         challenge: 'Lashes can clump when too much product is applied; already-full lashes need separation more than volume',
         solutions: [
           'Lengthening and separating mascara formula rather than volumizing',
@@ -1588,43 +1563,6 @@ export const UNIVERSAL_EYE_MAKEUP = {
 
 // ─── EYE MAKEUP STATISTICS ───────────────────────────────────────────────────
 
-export const EYE_MAKEUP_STATS = {
-  globalMarket: {
-    eyeMakeupMarketSize2024: '$20.3 billion USD (estimated)',
-    projectedGrowth2030: '$28.5 billion USD (estimated)',
-    fastestGrowingSegment: 'Mascara (driven by Asia-Pacific market)',
-    largestMarket: 'Asia-Pacific (South Korea, China, Japan)',
-    source: 'Estimated from industry reports; figures approximate',
-  },
-  kohl: {
-    countriesWithTraditionalUse: 'Over 40 countries across Africa, Middle East, South Asia',
-    learnedTradition: 'Oral and familial transmission in over 90% of traditional kohl-using communities',
-    leadContamination: 'Studies across multiple countries found 50–90% of traditional kohl samples contain lead (source: multiple WHO-cited studies)',
-    recommendedAge: 'No regulatory body recommends traditional kohl for children under 6',
-  },
-  doubleEyelidSurgery: {
-    southKorea: 'Estimated 1 in 5 South Korean women have undergone the procedure',
-    china: 'Reported over 1 million procedures annually (pre-2020 data)',
-    ranking: 'Consistently top 3 cosmetic procedure globally by volume',
-    trend: 'Non-surgical alternatives (tape, glue) estimated 300M+ annual units sold in Asia',
-  },
-  mascara: {
-    usAnnualSpend: 'Over $2 billion USD in the US alone',
-    averageReplacement: 'Only 32% of mascara users replace every 3 months as recommended',
-    topSellingGlobal: 'Maybelline Great Lash consistently cited as top-selling mascara globally for decades',
-  },
-  diversity: {
-    shadeRange: 'Average number of foundation shades by brand pre-2017: 12–16; post-Fenty Beauty 2017: industry standard shifted to 30–50+',
-    blackBeautySpending: 'Black American consumers spend 2.4x more on beauty products per capita than non-Black consumers (Nielsen/Essence data)',
-    arabBeautyMarket: 'GCC (Gulf Cooperation Council) beauty market: estimated $3+ billion USD; highest per-capita cosmetics spend globally in several countries',
-  },
-  trends: {
-    waterproofDemand: 'Waterproof eye makeup grew 35% in demand during COVID-19 mask-wearing period (only eye visible with mask)',
-    naturalBeauty: '"Clean beauty" eye makeup segment growing at 12% annually',
-    eyebrows: 'Eyebrow product segment grew from negligible to multi-billion dollar category 2010–2024 globally',
-  },
-};
-
 // ─── GETTER FUNCTIONS ─────────────────────────────────────────────────────────
 
 export function getEyeMakeupGuide(communityId) {
@@ -1644,10 +1582,6 @@ export function getEyeMakeupGuide(communityId) {
 
 export function getUniversalEyeMakeup() {
   return UNIVERSAL_EYE_MAKEUP;
-}
-
-export function getEyeMakeupStats() {
-  return EYE_MAKEUP_STATS;
 }
 
 export function getAllCommunities() {

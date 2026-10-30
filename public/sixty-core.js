@@ -8,7 +8,7 @@ export const SIXTY_STEPS = [
   { id: 'community', label: 'Community', seconds: 6 },
   { id: 'pick', label: 'One pick', seconds: 10 },
   { id: 'taste', label: 'Your taste', seconds: 8 },
-  { id: 'shade', label: 'Your shade', seconds: 10 },
+  { id: 'shade', label: 'Your TrueTone shade', seconds: 10 },
   { id: 'plan', label: 'Your plan', seconds: 14 },
   { id: 'tryon', label: 'Before & after', seconds: 12 },
 ];

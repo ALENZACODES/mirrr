@@ -57,12 +57,13 @@ function shadeStep() {
   const tiers = (sx.spectrum?.depth_labels ?? []).filter(t => t.id !== 'mixed');
   const swatch = t => sx.spectrum?.spectrum?.reduce((b, s) => (Math.abs(s.depth - t.depth) < Math.abs(b.depth - t.depth) ? s : b))?.hex ?? '#999';
   const top = sx.shades[sx.shadeIdx];
-  return `<h3>Your exact shade</h3>
+  const tt = sx.shadeIdx === 0 ? 'Your TrueTone shade' : 'Your pick';
+  return `<h3>Your TrueTone shade</h3>
     <div class="sx-field"><span>Tap the tone closest to your skin</span><div class="sx-tones">${tiers.map(t => `<button type="button" class="sx-tone${Number(sx.depth) === t.depth ? ' sx-on' : ''}" data-sx-depth="${t.depth}" aria-pressed="${Number(sx.depth) === t.depth}"><i style="background:${esc(swatch(t))}"></i>${esc(t.label)}</button>`).join('')}</div></div>
     <div class="sx-field"><span>Your undertone</span><div class="chip-row">${SIXTY_UNDERTONES.map(u => `<button type="button" class="chip-btn${sx.undertone === u ? ' chip-btn--active' : ''}" data-sx-under="${u}" aria-pressed="${sx.undertone === u}">${u[0].toUpperCase() + u.slice(1)}</button>`).join('')}</div></div>
-    ${top ? `<div class="sx-shade-hero" data-sx-shade-name="${esc(top.name)}"><i style="background:${esc(top.hex)}"></i><div><strong>${esc(top.name)}</strong><span>${esc(top.code)} · ${esc(top.coverageNote ?? '')}</span></div></div>
+    ${top ? `<div class="sx-shade-hero" data-sx-shade-name="${esc(top.name)}"><i style="background:${esc(top.hex)}"></i><div><strong data-sx-truetone>${tt}: ${esc(top.name)} (${esc(top.code)})</strong><span>${esc(top.coverageNote ?? '')}</span></div></div>
       ${sx.shades.length > 1 ? `<div class="sx-shades">${sx.shades.map((s, i) => `<button type="button" class="sx-shade${i === sx.shadeIdx ? ' sx-on' : ''}" data-sx-shade="${i}" aria-pressed="${i === sx.shadeIdx}"><i style="background:${esc(s.hex)}"></i><strong>${esc(s.name)}</strong><span>${esc(s.code)}</span></button>`).join('')}</div>` : ''}
-      <p class="lib-note">Ranked by the shade finder for ${esc(communityLabel())} skin, on the tone and undertone you tapped. Screen colours; check in daylight.</p>` : (sx.busy ? '<p class="lib-note">Finding your shade…</p>' : '')}
+      <p class="lib-note">TrueTone is MIRRR's name for the shade finder's top-ranked match, ranked for ${esc(communityLabel())} skin on the tone and undertone you tapped. It is a ranking, not a skin scan. Screen colours; check in daylight.</p>` : (sx.busy ? '<p class="lib-note">Finding your shade…</p>' : '')}
     ${nav('Build my plan →', !!top)}`;
 }
 function planStep() {

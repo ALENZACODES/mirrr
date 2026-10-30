@@ -1005,7 +1005,8 @@ function renderShadeResults(shades) {
   // (depth steps from your pick and whether the undertone matches), not as a percentage.
   cardsEl.innerHTML = `
     <h3 class="section-title">Your Shade Matches</h3>
-    <p class="shade-note">Ranked by closeness to the depth you picked and your undertone. Check the top two on your jaw in daylight.</p>
+    ${shades[0] ? `<p class="shade-truetone" data-truetone><strong>Your TrueTone shade: ${esc(shades[0].shade.name)} (${esc(shades[0].shade.id)})</strong></p>` : ''}
+    <p class="shade-note">TrueTone is MIRRR's name for the shade finder's #1 match below. Ranked by closeness to the depth you picked and your undertone; it is a ranking, not a skin scan. Check the top two on your jaw in daylight.</p>
     <div class="shade-cards-inner">
       ${shades.map(({ shade, coverageNote, depthGap, undertoneMatch, math }, i) => `
         <div class="shade-card">
@@ -2675,7 +2676,7 @@ function renderPlan(plan) {
     planCard('sparkle', 'Your plan', summary),
     planCard('chat', 'Constraints it respected', consBody),
     planCard('mirror', 'The look', lookBody),
-    planCard('drop', 'Your shade', shadeBody),
+    planCard('drop', 'Your TrueTone shade', shadeBody),
     planCard('wig', 'Hair & finishing', finishingBody(plan, wigBody)),
     planCard('leaf', 'Ritual & prep', ritualBody),
     planCard('calendar', 'Timeline', tlBody),

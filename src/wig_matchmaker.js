@@ -579,6 +579,12 @@ export const WIG_CATALOGUE = [
 // Wig Matchmaker API
 // ---------------------------------------------------------------------------
 
+/** True when a wig fits a texture filter id from getWigTextures(). */
+export function wigHasTexture(wig, textureId) {
+  if (textureId === 'colour') return (wig.tags ?? []).includes('colour');
+  return String(wig.texture ?? '').includes(textureId);
+}
+
 export function matchWigs({ aesthetic = {}, communityId = 'mixed', lengthPref = null, texturePref = null, topN = 6 }) {
   const hairVibe = aesthetic.hair_vibe ?? 'natural';
 
@@ -590,8 +596,9 @@ export function matchWigs({ aesthetic = {}, communityId = 'mixed', lengthPref = 
     .filter(wig => {
       // Hard filter: only show wigs matching the selected length
       if (effectiveLength && wig.length !== effectiveLength) return false;
-      // Hard filter: only show wigs matching the selected texture (substring match)
-      if (effectiveTexture && !wig.texture.includes(effectiveTexture)) return false;
+      // Hard filter: only show wigs matching the selected texture (substring match). "Bold Colour"
+      // is a colour, not a curl pattern, so it matches wigs tagged as colour statements.
+      if (effectiveTexture && !wigHasTexture(wig, effectiveTexture)) return false;
       return true;
     })
     .map(wig => {

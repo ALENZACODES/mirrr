@@ -3,7 +3,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import fs from 'node:fs';
-import { matchWigsForFilters, getWigLengths, getWigTextures, WIG_CHECK_POINTS } from '../src/wig_matchmaker.js';
+import { matchWigsForFilters, getWigLengths, getWigTextures, WIG_CHECK_POINTS, wigHasTexture } from '../src/wig_matchmaker.js';
 
 const aesthetic = { intensity: 0.6, warmth: 0.6, boldness: 0.5, hair_vibe: 'natural-afro', archetypes: [] };
 
@@ -12,11 +12,11 @@ test('every wig returned fits every selected filter, for every length x texture 
     const r = matchWigsForFilters({ aesthetic, lengthPref: l.id, texturePref: t.id, topN: 10 });
     for (const { wig } of r.wigs) {
       if (l.id !== 'any') assert.equal(wig.length, l.id, `${l.id}/${t.id}: ${wig.name}`);
-      if (t.id !== 'any') assert.ok(wig.texture.includes(t.id), `${l.id}/${t.id}: ${wig.name}`);
+      if (t.id !== 'any') assert.ok(wigHasTexture(wig, t.id), `${l.id}/${t.id}: ${wig.name}`);
     }
     if (!r.wigs.length && l.id !== 'any' && t.id !== 'any') {
       for (const g of r.nearest) for (const { wig } of g.wigs) {
-        if (g.kept === 'texture') assert.ok(wig.texture.includes(t.id)); else assert.equal(wig.length, l.id);
+        if (g.kept === 'texture') assert.ok(wigHasTexture(wig, t.id)); else assert.equal(wig.length, l.id);
       }
     }
   }

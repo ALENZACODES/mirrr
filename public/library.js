@@ -15,6 +15,8 @@ const lib = {
   searchTimer: null,
   fromProfile: false,   // community came from the saved profile
   override: null,       // community requested by a landing-page link
+  pending: null,        // { community, guide, q } requested by a homepage card
+  searchSeq: 0,         // only the newest search may render (no stale, out-of-order results)
 };
 
 const $ = id => document.getElementById(id);
@@ -145,10 +147,12 @@ async function openGuide(id) {
 async function runSearch(q) {
   const el = $('libResults');
   if (!el) return;
+  const seq = ++lib.searchSeq;
   if (q.trim().length < 2) { el.innerHTML = ''; el.classList.add('hidden'); return; }
   const qs = new URLSearchParams({ q }); if (lib.community) qs.set('community', lib.community);
   try {
     const r = await getJSON(`/api/library/search?${qs}`);
+    if (seq !== lib.searchSeq) return; // a newer search (or community change) has started
     el.classList.remove('hidden');
     el.innerHTML = r.hits.length
       ? `<p class="lib-results-count">${r.total} passage${r.total === 1 ? '' : 's'} mention “${esc(q)}”${r.total > r.hits.length ? `, showing the best ${r.hits.length}` : ''}.</p>
@@ -157,6 +161,7 @@ async function runSearch(q) {
            <span class="lib-hit-snippet">${esc(h.snippet)}</span></button></li>`).join('')}</ul>`
       : `<p class="lib-results-count">Nothing in the Library mentions “${esc(q)}” yet.</p>`;
   } catch (e) {
+    if (seq !== lib.searchSeq) return;
     el.classList.remove('hidden');
     el.innerHTML = `<p class="lib-note">Search failed (${esc(e.message)}).</p>`;
   }
@@ -189,6 +194,8 @@ document.addEventListener('click', e => {
   const t = e.target.closest('[data-view="library"], [data-lib-community], [data-lib-guide], [data-lib-close], [data-open-library]');
   if (!t) return;
   if (t.matches('[data-view="library"]')) {
+    const pending = lib.pending; lib.pending = null;
+    if (pending) { openLibraryAt(pending); return; }
     const override = lib.override; lib.override = null;
     showLibrary(override ? { community: override } : undefined);
     return;
@@ -200,8 +207,12 @@ document.addEventListener('click', e => {
   }
   if (t.dataset.libCommunity) {
     lib.fromProfile = false;
-    loadLibrary(t.dataset.libCommunity).then(() => { if (lib.openGuide) openGuide(lib.openGuide); });
-    const q = $('libSearch')?.value; if (q) runSearch(q);
+    // Search again only after the new community has loaded, so results never show the old one.
+    lib.searchSeq++;
+    loadLibrary(t.dataset.libCommunity).then(() => {
+      if (lib.openGuide) openGuide(lib.openGuide);
+      const q = $('libSearch')?.value; if (q) runSearch(q);
+    });
     return;
   }
   if (t.dataset.libGuide) { openGuide(t.dataset.libGuide); return; }
@@ -211,7 +222,40 @@ document.addEventListener('click', e => {
 document.addEventListener('input', e => {
   if (e.target.id !== 'libSearch') return;
   clearTimeout(lib.searchTimer);
+  lib.searchSeq++; // anything still in flight is now stale
   lib.searchTimer = setTimeout(() => runSearch(e.target.value), 250);
+});
+// Enter searches at once, for exactly what is in the box.
+document.addEventListener('keydown', e => {
+  if (e.target.id !== 'libSearch' || e.key !== 'Enter') return;
+  e.preventDefault();
+  clearTimeout(lib.searchTimer);
+  runSearch(e.target.value);
+});
+
+/**
+ * Open the Library at a place: a community, a guide, and/or a search. Used by the homepage cards
+ * (pillars, festivals, ingredients) and the "Finish your look" options.
+ */
+async function openLibraryAt({ community, guide, q } = {}) {
+  await showLibrary(community ? { community, guide } : { guide });
+  const input = $('libSearch');
+  if (input) input.value = q || '';
+  clearTimeout(lib.searchTimer);
+  await runSearch(q || '');
+  const target = guide ? $('libReader') : (q ? $('libResults') : null);
+  (target ?? input)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+window.mirrrOpenLibrary = (place) => {
+  lib.pending = place || {};
+  document.querySelector('.nav-link[data-view="library"]')?.click();
+};
+
+// Homepage cards: [data-lib-link] with data-lib-at-community / -guide / -q.
+document.addEventListener('click', e => {
+  const card = e.target.closest('[data-lib-link]');
+  if (!card) return;
+  window.mirrrOpenLibrary({ community: card.dataset.libAtCommunity || undefined, guide: card.dataset.libAtGuide || undefined, q: card.dataset.libAtQ || '' });
 });
 
 // Landing-page community chips: add a link into that community's Library shelf.

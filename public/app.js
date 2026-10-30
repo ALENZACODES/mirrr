@@ -122,6 +122,11 @@ function setupNav() {
   document.querySelectorAll('.nav-link[data-view]').forEach(btn => {
     btn.addEventListener('click', () => showView(btn.dataset.view));
   });
+  // The logo goes home: close the open view, any open dialog or menu, and scroll to the top.
+  document.querySelector('.nav-logo')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    goHome();
+  });
 
   // Scroll-based nav shadow
   window.addEventListener('scroll', () => {
@@ -132,6 +137,16 @@ function setupNav() {
 function setupHero() {
   document.getElementById('heroQuizBtn').addEventListener('click', () => showView('quiz'));
   document.getElementById('heroTasteBtn').addEventListener('click', () => showView('taste'));
+}
+
+function goHome() {
+  document.querySelectorAll('.modal-overlay.open, .modal-overlay:not(.hidden)').forEach(m => { m.classList.remove('open'); m.classList.add('hidden'); });
+  document.body.style.overflow = '';
+  const more = document.getElementById('navMore'); if (more) more.open = false;
+  document.getElementById('profilePanel')?.classList.add('hidden');
+  showView('hero');
+  document.querySelectorAll('.nav-link').forEach(b => b.classList.remove('nav-link--active'));
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function showView(viewId) {
@@ -437,8 +452,9 @@ async function fetchLooks() {
 
   try {
     const communityId = document.getElementById('communitySelect')?.value || null;
+    const inputs = [...state.tasteChips];
     const result = await api('/api/agent/run', 'POST', {
-      inputs: state.tasteChips,
+      inputs,
       communityId: communityId || undefined,
       dnaAnswers: Object.keys(state.dnaAnswers).length ? state.dnaAnswers : undefined,
       depthTarget: state.depthTarget ?? undefined,
@@ -449,6 +465,7 @@ async function fetchLooks() {
 
     state.aesthetic = result.aesthetic;
     state.communityId = result.communityId;
+    state.resultTasteChips = inputs;
     renderTasteResults(result);
   } catch (err) {
     if (err.name === 'AbortError') {
@@ -459,6 +476,7 @@ async function fetchLooks() {
         demo.meta = { ...(demo.meta ?? {}), qloo_powered: false, qloo_unreachable: true, qloo_error: 'no answer within 30 seconds' };
         state.aesthetic = demo.aesthetic;
         state.communityId = demo.communityId;
+        state.resultTasteChips = []; // demo data: not from her taste
         renderTasteResults(demo);
       } catch (demoErr) {
         toast('Demo error: ' + (demoErr.message ?? ''), 'error');
@@ -478,6 +496,7 @@ async function runDemo(profile) {
     const result = await api('/api/agent/demo', 'POST', { profile });
     state.aesthetic = result.aesthetic;
     state.communityId = result.communityId;
+    state.resultTasteChips = [];
     renderTasteResults(result);
   } catch (err) {
     toast('Demo error: ' + (err.message ?? ''), 'error');
@@ -760,6 +779,7 @@ const WIG_IMAGES = {
 };
 
 function renderLookCard(look, score, row = {}) {
+  (state.lookNames ??= {})[look.id] = look.name;
   const scoreBar = Math.round((score ?? 0) * 100);
   const why = row.qlooEvidence != null
     ? `Fit ${scoreBar}: half taste-vector fit (${Math.round((row.fit ?? 0) * 100)}), half Qloo evidence (${Math.round(row.qlooEvidence * 100)}% of Qloo's tag affinity points here)`
@@ -1016,8 +1036,17 @@ function setupWigForm() {
   document.getElementById('matchWigsBtn')?.addEventListener('click', matchWigs);
 }
 
+let wigMatchSeq = 0;
+function activeChipVal(containerId) {
+  const b = document.querySelector(`#${containerId} .chip-btn--active`);
+  return b ? (b.dataset.val || null) : null;
+}
 async function matchWigs() {
+  const seq = ++wigMatchSeq;
   const communityId = document.getElementById('wigCommunitySelect')?.value || state.communityId || null;
+  // Read the filters from the buttons as they are right now, so results never lag a click behind.
+  state.lengthPref = activeChipVal('wigLengthButtons');
+  state.texturePref = activeChipVal('wigTextureButtons');
 
   // Build aesthetic fallback
   const aesthetic = state.aesthetic ?? {
@@ -1034,6 +1063,7 @@ async function matchWigs() {
       texturePref: state.texturePref ?? undefined,
       topN: 5,
     });
+    if (seq !== wigMatchSeq) return; // a newer MATCH click is in flight
     renderWigResults(data);
   } catch (err) {
     toast('Wig match error: ' + (err.message ?? ''), 'error');
@@ -1232,7 +1262,7 @@ function renderTrendingGrid(regionKey) {
       ${artists.map((artist, i) => `
         <button class="trending-card ${artist.anchor ? 'trending-card--anchor' : ''}"
                 data-artist="${encodeURIComponent(artist.name)}"
-                aria-label="Add ${artist.name} to your taste profile">
+                aria-label="See looks for ${artist.name}. Starts a new taste profile with just ${artist.name}">
           <div class="trending-rank">${i + 1}</div>
           <div class="trending-info">
             <div class="trending-name">${artist.name}
@@ -1242,11 +1272,11 @@ function renderTrendingGrid(regionKey) {
             <div class="trending-genre">${artist.genre}</div>
             <div class="trending-region-label">${artist.region}</div>
           </div>
-          <div class="trending-add" title="See looks for this artist">→</div>
+          <div class="trending-add" title="See looks for this artist (replaces your current taste)">→</div>
         </button>
       `).join('')}
     </div>
-    <p class="trending-cta">Tap an artist to see the looks that match their taste →</p>
+    <p class="trending-cta">Tap an artist to see looks for that artist. This starts a new taste profile and replaces the artists you had; to combine artists, add them in Taste →</p>
   `;
 
   grid.querySelectorAll('.trending-card').forEach(card => {
@@ -1310,6 +1340,7 @@ function setupTryOn() {
 
   document.getElementById('tryonUploadBtn')?.addEventListener('click', () => {
     document.getElementById('tryonFileInput').click();
+    pickerHint('tryonPickerMsg');
   });
 
   document.getElementById('tryonFileInput')?.addEventListener('change', e => {
@@ -1712,6 +1743,7 @@ async function sendStylistMessage() {
       // Update the main results
       state.aesthetic = result.aesthetic ?? state.aesthetic;
       state.communityId = result.communityId ?? state.communityId;
+      state.resultTasteChips = [...state.tasteChips];
       // The reply above says what changed (or that nothing did); redraw the bars and looks.
       renderTasteResults(result);
     }
@@ -1834,6 +1866,7 @@ async function sendStylistPageMessage() {
       state.aesthetic = result.aesthetic ?? state.aesthetic;
       state.communityId = result.communityId ?? state.communityId;
       state.stylistPageLookIds = result.looks.map(r => r.look?.id).filter(Boolean);
+      state.resultTasteChips = [...state.tasteChips];
 
       const resultsEl = document.getElementById('stylistPageResults');
       resultsEl.classList.remove('hidden');
@@ -1851,7 +1884,7 @@ async function sendStylistPageMessage() {
         card.addEventListener('click', () => openLookModal(card.dataset.lookId));
       });
       document.getElementById('stylistToTasteBtn')?.addEventListener('click', () => showView('taste'));
-      document.getElementById('stylistSharePageBtn')?.addEventListener('click', () => openShare());
+      document.getElementById('stylistSharePageBtn')?.addEventListener('click', () => openShare(getTopLookId(state.stylistPageLookIds)));
     }
   } catch {
     const msgs = document.getElementById('stylistPageMessages');
@@ -1940,6 +1973,7 @@ function drawShareCard(lookId) {
   // Look image
   const effectiveLookId = lookId ?? (state.aesthetic ? getTopLookId() : null);
   const imgFile = effectiveLookId ? LOOK_IMAGES[effectiveLookId] : null;
+  canvas.dataset.lookId = effectiveLookId ?? '';
 
   if (imgFile) {
     const lookImg = new Image();
@@ -1969,7 +2003,15 @@ function drawShareCard(lookId) {
   }
 }
 
-function drawShareCardText(ctx, W, startY) {
+function drawShareCardText(ctx, W, startY, lookId) {
+  const lookName = lookId ? state.lookNames?.[lookId] : null;
+  if (lookName) {
+    ctx.font = 'bold 22px Inter, sans-serif';
+    ctx.fillStyle = '#e8c86a';
+    ctx.textAlign = 'center';
+    ctx.fillText(`Top look: ${lookName}`, W / 2, startY + 14);
+    startY += 30;
+  }
   // Aesthetic bars
   const aes = state.aesthetic;
   if (aes) {
@@ -2038,8 +2080,10 @@ function drawShareCardText(ctx, W, startY) {
   ctx.fillText(_lastTaste?.meta?.qloo_powered ? 'mirrr-upbn.onrender.com · Powered by Qloo Taste AI' : 'mirrr-upbn.onrender.com · demo data, not from Qloo', W / 2, footY);
 }
 
-function getTopLookId() {
-  // Return first look in LOOK_IMAGES that matches current community
+function getTopLookId(ids = state.currentLookIds) {
+  // The current top look (after any re-ranking) that has a photo; else a community default.
+  const top = (ids ?? []).find(id => LOOK_IMAGES[id]);
+  if (top) return top;
   const comId = state.communityId;
   if (!comId) return Object.keys(LOOK_IMAGES)[0];
   const communityLookMap = {
@@ -2457,8 +2501,12 @@ function restoreProfile(p) {
 }
 
 function resetEverything() {
+  // Start over erases her saved profile, looks, shades and plan on this device: ask first.
+  const ok = window.confirm('Start over? This deletes your saved taste, looks, shades and plan from this browser. It cannot be undone.');
+  if (!ok) return false;
   clearProfile();
   location.reload();
+  return true;
 }
 
 function showReturnBanner() {
@@ -2609,9 +2657,7 @@ showView = function (viewId) {
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('plannerBtn')?.addEventListener('click', buildPlan);
   document.getElementById('profileBtn')?.addEventListener('click', toggleProfilePanel);
-  document.getElementById('helpClearBtn')?.addEventListener('click', () => {
-    if (confirm('Clear all MIRRR data saved in this browser?')) resetEverything();
-  });
+  document.getElementById('helpClearBtn')?.addEventListener('click', () => resetEverything());
   showReturnBanner();
 });
 
@@ -2749,7 +2795,7 @@ async function analyzePhoto(file) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('photoBtn')?.addEventListener('click', () => document.getElementById('photoInput')?.click());
+  document.getElementById('photoBtn')?.addEventListener('click', () => { document.getElementById('photoInput')?.click(); pickerHint('photoPickerMsg'); });
   document.getElementById('photoInput')?.addEventListener('change', (e) => analyzePhoto(e.target.files?.[0]));
 });
 
@@ -2783,16 +2829,33 @@ function startTransformFlow() {
   showView(faceOf()?.shadeId ? 'transform' : 'face');
 }
 
-async function becomeThisLook(lookId, community) {
+// Style Match signature looks have their own ids. Each one builds its plan on the named library
+// look below (same community, closest description). Never a random pick.
+const STYLE_MATCH_PLAN_LOOK = {
+  desi_baddie: 'desi_everyday_chic',
+  persian_queen: 'persian_editorial',
+  west_african_glow: 'afro_glam_editorial',
+  k_beauty_seoul: 'k_beauty_glass',
+  hammam_goddess: 'moroccan_soiree',
+  mehndi_bride: 'mehndi_bridal',
+  rooibos_glow: 'amapiano_beat',
+  loc_journey: 'hip_hop_glam',
+};
+async function becomeThisLook(lookId, community, { tasteChips, fromName } = {}) {
   if (!lookId) return;
-  // Style Match "signature looks" use their own ids; the transform engine works on the 60 library looks.
   try {
-    if (!(await allLooks()).some(l => l.id === lookId)) {
-      const mapped = await lookForArtist(lookId, String(community || '').replace(/-/g, '_'));
-      if (mapped) lookId = mapped.id;
+    const looks = await allLooks();
+    if (!looks.some(l => l.id === lookId)) {
+      const planId = STYLE_MATCH_PLAN_LOOK[lookId];
+      if (!planId) { toast('That look has no step-by-step plan yet. Pick another look.', 'warn'); return; }
+      const planName = looks.find(l => l.id === planId)?.name ?? planId;
+      if (fromName && planName !== fromName) toast(`${fromName}: your plan uses our ${planName} look, the closest step-by-step match.`, 'info');
+      lookId = planId;
     }
   } catch { /* keep the id; the plan view will report a clear error */ }
-  persist({ target: { lookId, at: new Date().toISOString() }, plan: null });
+  // The taste that picked this look (Taste results) travels with it, so the plan's
+  // "Because you love ..." lines name that taste, not whatever is typed later.
+  persist({ target: { lookId, at: new Date().toISOString(), ...(Array.isArray(tasteChips) ? { tasteChips } : {}) }, plan: null });
   if (!faceOf()?.shadeId) {
     toast('First, tell MIRRR your shade. Then your plan builds automatically.', 'info');
     showView('face');
@@ -2807,7 +2870,12 @@ document.addEventListener('click', (e) => {
   if (!b) return;
   e.preventDefault();
   e.stopPropagation();
-  becomeThisLook(b.dataset.become, b.dataset.community);
+  const fromTaste = !!b.closest('#tasteLooks, #stylistPageResults');
+  const fromName = b.closest('.sm-card')?.querySelector('.shade-name')?.textContent?.trim();
+  becomeThisLook(b.dataset.become, b.dataset.community, {
+    tasteChips: fromTaste && Array.isArray(state.resultTasteChips) ? [...state.resultTasteChips] : undefined,
+    fromName,
+  });
 }, true);
 
 // Trending artists: add a "Become this look" per artist, mapped to a look in their region's style.
@@ -2845,7 +2913,7 @@ function decorateTrending() {
       e.stopPropagation();
       try {
         const look = await lookForArtist(decodeURIComponent(card.dataset.artist || ''), activeRegion);
-        if (look) becomeThisLook(look.id);
+        if (look) becomeThisLook(look.id, undefined, { tasteChips: [] });
       } catch { toast('Could not load looks. Try again.', 'error'); }
     });
     wrap.appendChild(btn);
@@ -2858,7 +2926,7 @@ new MutationObserver(() => { if (document.querySelector('.trending-card:not(.tre
 async function initFaceView() {
   if (!faceState.wired) {
     faceState.wired = true;
-    document.getElementById('facePhotoBtn')?.addEventListener('click', () => document.getElementById('facePhotoInput')?.click());
+    document.getElementById('facePhotoBtn')?.addEventListener('click', () => { document.getElementById('facePhotoInput')?.click(); pickerHint('facePhotoMsg'); });
     document.getElementById('facePhotoInput')?.addEventListener('change', (e) => analyzeFacePhoto(e.target.files?.[0]));
     document.getElementById('faceSaveBtn')?.addEventListener('click', saveFace);
     document.getElementById('faceClearBtn')?.addEventListener('click', () => {
@@ -2989,16 +3057,23 @@ async function renderLookPicker(host, face) {
   } catch { document.getElementById('tfPicker').innerHTML = '<p class="photo-note">Could not load looks. Check your connection and reopen this page.</p>'; }
 }
 
+/** The taste behind the current plan: the one that picked the target look, else the current chips. */
+function planTasteChips() {
+  const t = targetOf();
+  return Array.isArray(t?.tasteChips) ? t.tasteChips : [...state.tasteChips];
+}
+
 async function runTransform(host, face, lookId) {
   host.innerHTML = '<div class="modal-loading"><div class="spinner"></div></div><p class="photo-note" style="text-align:center">Building your plan…</p>';
-  const key = `${lookId}|${face.shadeId}|${face.undertone}|${face.hairTexture}|${face.hairLength}|${state.tasteChips.join(',')}|${loadFinish().join(',')}`;
+  const planChips = planTasteChips();
+  const key = `${lookId}|${face.shadeId}|${face.undertone}|${face.hairTexture}|${face.hairLength}|${planChips.join(',')}|${loadFinish().join(',')}`;
   let data = transformCache[key];
   if (!data) {
     try {
       data = await api('/api/transform', 'POST', {
         face: { shadeId: face.shadeId, depth: face.depth, undertone: face.undertone || undefined, hairTexture: face.hairTexture || undefined, hairLength: face.hairLength || undefined, communityId: face.communityId || undefined },
         targetLookId: lookId,
-        tasteChips: state.tasteChips,
+        tasteChips: planChips,
         finish: loadFinish(),
       });
       transformCache[key] = data;
@@ -3165,7 +3240,7 @@ showReturnBanner = function () {
     <button class="btn ${resume ? 'btn-secondary' : 'btn-primary'}" id="rbContinue">Continue</button>
     <button class="btn btn-ghost" id="rbReset">Start over</button>`;
   banner.classList.remove('hidden');
-  document.getElementById('rbResume')?.addEventListener('click', () => { restoreProfile(p); persist({ target: { lookId: p.plan.targetLookId, at: new Date().toISOString() } }); banner.classList.add('hidden'); showView('transform'); });
+  document.getElementById('rbResume')?.addEventListener('click', () => { restoreProfile(p); persist({ target: { lookId: p.plan.targetLookId, at: new Date().toISOString(), ...(Array.isArray(p.target?.tasteChips) ? { tasteChips: p.target.tasteChips } : {}) } }); banner.classList.add('hidden'); showView('transform'); });
   document.getElementById('rbContinue').addEventListener('click', () => { restoreProfile(p); banner.classList.add('hidden'); });
   document.getElementById('rbReset').addEventListener('click', resetEverything);
 };
@@ -3231,16 +3306,30 @@ function finishingBody(plan, wigBody) {
   const steps = (f.steps ?? []).map(st => `<li><strong>${esc(st.title)}</strong> &mdash; ${esc(st.text)}</li>`).join('');
   return `<p class="muted">${esc(f.basis)}</p>${steps ? `<ul>${steps}</ul>` : '<p>Makeup only.</p>'}<p class="muted">Change these with “Finish your look” after Taste or Shades.</p>`;
 }
-function openLibrarySearch(q) {
-  document.querySelector('.nav-link[data-view="library"]')?.click();
-  setTimeout(() => {
-    const input = document.getElementById('libSearch');
-    if (!input) return;
-    input.value = q;
-    input.dispatchEvent(new Event('input', { bubbles: true }));
-    input.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, 300);
+// The photo picker is the device's own window, so say it opened and what to do if it did not.
+function pickerHint(id) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = 'Your device\'s photo picker is open. Choose a front-facing photo. If no window appeared, check for a blocked pop-up, or use a model face.';
 }
+function openLibrarySearch(q) {
+  if (window.mirrrOpenLibrary) { window.mirrrOpenLibrary({ q }); return; }
+  document.querySelector('.nav-link[data-view="library"]')?.click();
+}
+// Homepage cards: [data-goto-view] opens that view the same way the menu does.
+document.addEventListener('click', (e) => {
+  const card = e.target.closest?.('[data-goto-view]');
+  if (!card) return;
+  const nav = document.querySelector(`.nav-link[data-view="${card.dataset.gotoView}"]`);
+  if (nav) nav.click(); else showView(card.dataset.gotoView);
+});
+// Enter or Space on a homepage card works like a click.
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Enter' && e.key !== ' ') return;
+  const card = e.target.closest?.('.home-link[role="button"]');
+  if (!card || card !== e.target) return;
+  e.preventDefault();
+  card.click();
+});
 document.addEventListener('click', (e) => {
   const btn = e.target.closest?.('.finish-opt[data-finish]');
   if (!btn) return;

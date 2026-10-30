@@ -67,6 +67,7 @@
       flex-shrink: 0;
     }
     .community-bar-item span { color: #c9a96e; }
+    .community-bar, .community-bar * { cursor: default; text-decoration: none; }
 
     /* Stats strip */
     .stats-strip {
@@ -234,6 +235,12 @@
       gap: 0.5rem;
     }
     .ritual-item-icon { font-size: 1rem; flex-shrink: 0; }
+
+    .home-cta { display: block; margin-top: 0.75rem; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: #c9a96e; }
+    .home-link { cursor: pointer; }
+    .hero-try-note { font-size: 0.72rem; color: #9d968c; margin-top: 0.4rem; }
+    .home-link:focus-visible { outline: 2px solid #c9a96e; outline-offset: 2px; }
+    .home-link:hover .home-cta { text-decoration: underline; }
 
     /* Festival Looks */
     .festivals-section {
@@ -445,6 +452,7 @@
         <button type="button" class="hero-try-chip" data-try="BTS">BTS</button>
         <button type="button" class="hero-try-chip" data-try="Anitta">Anitta</button>
       </div>
+      <p class="hero-try-note">Each pick starts a new taste profile with that one artist. To combine artists, add them in Taste.</p>
       <div class="hero-actions">
         <button class="btn btn-ghost" id="heroQuizBtn" type="button">Take the 2-minute DNA quiz</button>
         <button class="btn btn-ghost" id="heroTasteBtn" hidden>Explore by Taste</button>
@@ -469,7 +477,7 @@
     <div class="trending-inner">
       <div class="trending-header">
         <h2 class="trending-title">🔥 Trending Now</h2>
-        <p class="trending-sub">Verified trending artists from across the globe — tap one to build your taste profile</p>
+        <p class="trending-sub">Verified trending artists from across the globe. Tapping one starts a new taste profile with that artist.</p>
       </div>
       <div id="trendingTabs" class="trending-tabs"></div>
       <div id="trendingGrid" class="trending-grid">
@@ -488,59 +496,68 @@
       <h2 class="section-title">Beauty Is a Ritual, Not a Routine</h2>
     </div>
     <div class="pillars-grid">
-      <div class="pillar-card" onclick="document.querySelector('[data-view=quiz]').click()">
+      <div class="pillar-card home-link" role="button" tabindex="0" data-goto-view="quiz">
         <span class="pillar-icon">🧬</span>
         <div class="pillar-name">Cultural DNA Quiz</div>
         <div class="pillar-desc">5 questions that map your beauty archetype to your heritage, taste, and vision.</div>
         <span class="pillar-tag">Start Here</span>
+        <span class="home-cta">Take the quiz →</span>
       </div>
-      <div class="pillar-card" onclick="document.querySelector('[data-view=taste]').click()">
+      <div class="pillar-card home-link" role="button" tabindex="0" data-goto-view="taste">
         <span class="pillar-icon">🎵</span>
         <div class="pillar-name">Taste Intelligence</div>
         <div class="pillar-desc">Your music, icons, and culture — decoded into looks. Powered by Qloo's global taste graph.</div>
         <span class="pillar-tag">Qloo AI</span>
+        <span class="home-cta">Open Taste →</span>
       </div>
-      <div class="pillar-card" onclick="document.querySelector('[data-view=shade]').click()">
+      <div class="pillar-card home-link" role="button" tabindex="0" data-goto-view="shade">
         <span class="pillar-icon">🎨</span>
         <div class="pillar-name">Shade Finder</div>
         <div class="pillar-desc">60 shades spanning the full melanin spectrum. Deep, warm, cool, neutral — all represented.</div>
         <span class="pillar-tag">60 Shades</span>
+        <span class="home-cta">Open the Shade Finder →</span>
       </div>
-      <div class="pillar-card" onclick="document.querySelector('[data-view=wig]').click()">
+      <div class="pillar-card home-link" role="button" tabindex="0" data-goto-view="wig">
         <span class="pillar-icon">👑</span>
         <div class="pillar-name">Wig Matchmaker</div>
         <div class="pillar-desc">Box braids to silk press, afro to bantu knots. 42 styles matched to your vibe and archetype.</div>
         <span class="pillar-tag">42 Styles</span>
+        <span class="home-cta">Open Wig Match →</span>
       </div>
-      <div class="pillar-card" data-pillar="sleep">
+      <div class="pillar-card home-link" role="button" tabindex="0" data-pillar="sleep" data-lib-link data-lib-at-guide="sleep_beauty_ethnic_guide" aria-label="Read the Beauty Sleep guide">
         <span class="pillar-icon">🌙</span>
         <div class="pillar-name">Sleep Beauty Rituals</div>
         <div class="pillar-desc">NREM growth hormone cycles, overnight skin repair, and nighttime rituals from 9 communities — satin bonnets to sleeping packs.</div>
         <span class="pillar-tag">New</span>
+        <span class="home-cta">Read the Beauty Sleep guide →</span>
       </div>
-      <div class="pillar-card" data-pillar="exercise">
+      <div class="pillar-card home-link" role="button" tabindex="0" data-pillar="exercise" data-lib-link data-lib-at-q="dance" aria-label="Search the Library for dance and movement rituals">
         <span class="pillar-icon">💪</span>
         <div class="pillar-name">Movement Beauty</div>
         <div class="pillar-desc">Afrobeats dance skincare, yoga sweat rituals, Carnival prep, adumu jumping — beauty that moves with you.</div>
         <span class="pillar-tag">New</span>
+        <span class="home-cta">Find dance and movement rituals in the Library →</span>
       </div>
-      <div class="pillar-card" data-pillar="mental">
+      <div class="pillar-card home-link" role="button" tabindex="0" data-pillar="mental" data-goto-view="calm" aria-label="Open Calm &amp; Self-Image">
         <span class="pillar-icon">🧘🏽‍♀️</span>
         <div class="pillar-name">Mind-Skin Connection</div>
         <div class="pillar-desc">Cortisol-skin cascade science, stress rituals, and parasympathetic beauty practices across cultures.</div>
         <span class="pillar-tag">New</span>
+        <span class="home-cta">Open Calm &amp; Self-Image →</span>
       </div>
-      <div class="pillar-card" data-pillar="eco">
+      <div class="pillar-card home-link" role="button" tabindex="0" data-pillar="eco" data-goto-view="eco" aria-label="Open Eco Beauty">
         <span class="pillar-icon">🌿</span>
         <div class="pillar-name">Sustainable Beauty</div>
         <div class="pillar-desc">Shea cooperatives, argan fair-trade, rooibos indigenous rights — beauty that gives back to the source.</div>
         <span class="pillar-tag">New</span>
+        <span class="home-cta">Open Eco Beauty →</span>
       </div>
-      <div class="pillar-card" data-pillar="medicine">
+      <div class="pillar-card home-link" role="button" tabindex="0" data-pillar="medicine" data-lib-link data-lib-at-guide="traditional_medicine_beauty_ethnic_guide" aria-label="Read Traditional Remedies by Community">
         <span class="pillar-icon">🌱</span>
         <div class="pillar-name">Traditional Medicine</div>
         <div class="pillar-desc">Ayurveda, TCM, Unani, Yoruba Ifá, Curanderismo, Ubuntu — long-standing beauty traditions.</div>
         <span class="pillar-tag">New</span>
+        <span class="home-cta">Read Traditional Remedies by Community →</span>
       </div>
     </div>
   </section>
@@ -608,59 +625,68 @@
       <h2 class="section-title">Festival & Celebration Looks</h2>
     </div>
     <div class="festivals-grid">
-      <div class="festival-card">
+      <div class="festival-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-guide="festival_beauty_ethnic_guide" data-lib-at-community="west_african" data-lib-at-q="Durbar" aria-label="Read the Durbar Festival festival guide">
         <span class="festival-card-emoji">🎪</span>
         <div class="festival-card-name">Durbar Festival</div>
         <div class="festival-card-community">West African</div>
         <div class="festival-card-look">Glass skin glow, bold orange-coral lip, kente-inspired liner, luminous highlight</div>
+        <span class="home-cta">Read the festival guide →</span>
       </div>
-      <div class="festival-card">
+      <div class="festival-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-guide="festival_beauty_ethnic_guide" data-lib-at-community="caribbean" data-lib-at-q="Carnival" aria-label="Read the Carnival festival guide">
         <span class="festival-card-emoji">🎭</span>
         <div class="festival-card-name">Carnival</div>
         <div class="festival-card-community">Caribbean</div>
         <div class="festival-card-look">Sweat-proof sequin liner, bold lip, full-coverage foundation, waterproof lash</div>
+        <span class="home-cta">Read the festival guide →</span>
       </div>
-      <div class="festival-card">
+      <div class="festival-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-guide="festival_beauty_ethnic_guide" data-lib-at-community="arab" data-lib-at-q="Eid" aria-label="Read the Eid al-Fitr Glam festival guide">
         <span class="festival-card-emoji">🌙</span>
         <div class="festival-card-name">Eid al-Fitr Glam</div>
         <div class="festival-card-community">Arab</div>
         <div class="festival-card-look">Deep kohl liner, jewel-tone eye, berry lip, hammam-glow skin prep</div>
+        <span class="home-cta">Read the festival guide →</span>
       </div>
-      <div class="festival-card">
+      <div class="festival-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-guide="festival_beauty_ethnic_guide" data-lib-at-community="black_american" data-lib-at-q="Kwanzaa" aria-label="Read the Kwanzaa festival guide">
         <span class="festival-card-emoji">🕯️</span>
         <div class="festival-card-name">Kwanzaa</div>
         <div class="festival-card-community">Black American</div>
         <div class="festival-card-look">Red, black & green editorial, bold sculpted brow, jewel lip, crown protective style</div>
+        <span class="home-cta">Read the festival guide →</span>
       </div>
-      <div class="festival-card">
+      <div class="festival-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-guide="festival_beauty_ethnic_guide" data-lib-at-community="east_asian" data-lib-at-q="Lunar New Year" aria-label="Read the Lunar New Year festival guide">
         <span class="festival-card-emoji">🧧</span>
         <div class="festival-card-name">Lunar New Year</div>
         <div class="festival-card-community">East Asian</div>
         <div class="festival-card-look">Glass skin 12-step, gradient cherry lip, straight brow, dewy highlight</div>
+        <span class="home-cta">Read the festival guide →</span>
       </div>
-      <div class="festival-card">
+      <div class="festival-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-guide="festival_beauty_ethnic_guide" data-lib-at-community="latina" data-lib-at-q="Muertos" aria-label="Read the Día de los Muertos festival guide">
         <span class="festival-card-emoji">💀</span>
         <div class="festival-card-name">Día de los Muertos</div>
         <div class="festival-card-community">Latina</div>
         <div class="festival-card-look">Sugar skull art, bold floral liner, marigold gold, deep berry lip</div>
+        <span class="home-cta">Read the festival guide →</span>
       </div>
-      <div class="festival-card">
+      <div class="festival-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-guide="festival_beauty_ethnic_guide" data-lib-at-community="south_african" data-lib-at-q="Heritage Day" aria-label="Read the Heritage Day festival guide">
         <span class="festival-card-emoji">🎉</span>
         <div class="festival-card-name">Heritage Day</div>
         <div class="festival-card-community">South African</div>
         <div class="festival-card-look">Rooibos-tinted skin, terracotta lip, earth-tone shadow, braided crown</div>
+        <span class="home-cta">Read the festival guide →</span>
       </div>
-      <div class="festival-card">
+      <div class="festival-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-guide="festival_beauty_ethnic_guide" data-lib-at-community="black_american" data-lib-at-q="Juneteenth" aria-label="Read the Juneteenth festival guide">
         <span class="festival-card-emoji">✊🏿</span>
         <div class="festival-card-name">Juneteenth</div>
         <div class="festival-card-community">Black American</div>
         <div class="festival-card-look">Red, black & green lip art, melanin-glow skin, afro crown, afrocentric liner</div>
+        <span class="home-cta">Read the festival guide →</span>
       </div>
-      <div class="festival-card">
+      <div class="festival-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-guide="festival_beauty_ethnic_guide" data-lib-at-community="east_african" data-lib-at-q="Timkat" aria-label="Read the Timkat festival guide">
         <span class="festival-card-emoji">⛪</span>
         <div class="festival-card-name">Timkat</div>
         <div class="festival-card-community">East African</div>
         <div class="festival-card-look">Frankincense-infused skin, bold kohl, white shama-inspired liner, bone jewelry glow</div>
+        <span class="home-cta">Read the festival guide →</span>
       </div>
     </div>
   </section>
@@ -673,77 +699,89 @@
       <p class="section-sub">Every ingredient MIRRR recommends has roots in its community's tradition</p>
     </div>
     <div class="ingredients-grid">
-      <div class="ingredient-card">
+      <div class="ingredient-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-community="west_african" data-lib-at-q="shea" aria-label="Search the Library for shea">
         <span class="ingredient-emoji">🥑</span>
         <div class="ingredient-name">Orí (Shea Butter)</div>
         <div class="ingredient-origin">West African</div>
         <div class="ingredient-benefit">Unrefined shea butter, made by hand across West Africa, is a rich moisturiser and sealant for skin and hair.</div>
+        <span class="home-cta">Find shea in the Library →</span>
       </div>
-      <div class="ingredient-card">
+      <div class="ingredient-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-community="caribbean" data-lib-at-q="jamaican black castor" aria-label="Search the Library for jamaican black castor">
         <span class="ingredient-emoji">🌿</span>
         <div class="ingredient-name">Jamaican Black Castor Oil</div>
         <div class="ingredient-origin">Caribbean</div>
         <div class="ingredient-benefit">Castor beans roasted before pressing give the oil its dark colour. A thick sealing oil for ends and edges; popular for growth, though that isn't proven.</div>
+        <span class="home-cta">Find jamaican black castor in the Library →</span>
       </div>
-      <div class="ingredient-card">
+      <div class="ingredient-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-community="arab" data-lib-at-q="argan" aria-label="Search the Library for argan">
         <span class="ingredient-emoji">🌺</span>
         <div class="ingredient-name">Argan Oil</div>
         <div class="ingredient-origin">Moroccan / Arab</div>
         <div class="ingredient-benefit">Pressed from argan kernels in south-west Morocco, often by Amazigh women's cooperatives. Argan know-how is on UNESCO's intangible heritage list.</div>
+        <span class="home-cta">Find argan in the Library →</span>
       </div>
-      <div class="ingredient-card">
+      <div class="ingredient-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-community="east_asian" data-lib-at-q="rice water" aria-label="Search the Library for rice water">
         <span class="ingredient-emoji">🍚</span>
         <div class="ingredient-name">Rice Water (Sake Kasu)</div>
         <div class="ingredient-origin">East Asian</div>
         <div class="ingredient-benefit">Rinsing hair with the water left from washing rice is a long-standing East Asian tradition, still used today as a softening rinse.</div>
+        <span class="home-cta">Find rice water in the Library →</span>
       </div>
-      <div class="ingredient-card">
+      <div class="ingredient-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-community="east_african" data-lib-at-q="frankincense" aria-label="Search the Library for frankincense">
         <span class="ingredient-emoji">🌱</span>
         <div class="ingredient-name">Frankincense (Boswellia)</div>
         <div class="ingredient-origin">East African</div>
         <div class="ingredient-benefit">Resin from Boswellia trees of the Horn of Africa and Arabia, burned as incense in homes and churches and used in fragrant oils.</div>
+        <span class="home-cta">Find frankincense in the Library →</span>
       </div>
-      <div class="ingredient-card">
+      <div class="ingredient-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-community="south_african" data-lib-at-q="rooibos" aria-label="Search the Library for rooibos">
         <span class="ingredient-emoji">🍵</span>
         <div class="ingredient-name">Rooibos</div>
         <div class="ingredient-origin">South African</div>
         <div class="ingredient-benefit">Grown mainly in South Africa's Cederberg region and long used by Khoi and San people; brewed as tea and used in rinses and toners.</div>
+        <span class="home-cta">Find rooibos in the Library →</span>
       </div>
-      <div class="ingredient-card">
+      <div class="ingredient-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-community="south_african" data-lib-at-q="marula" aria-label="Search the Library for marula">
         <span class="ingredient-emoji">🌿</span>
         <div class="ingredient-name">Marula Oil</div>
         <div class="ingredient-origin">South African</div>
         <div class="ingredient-benefit">A light, fast-absorbing oil from the kernels of the marula fruit, used across southern Africa on skin and hair.</div>
+        <span class="home-cta">Find marula in the Library →</span>
       </div>
-      <div class="ingredient-card">
+      <div class="ingredient-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-community="south_asian" data-lib-at-q="ubtan" aria-label="Search the Library for ubtan">
         <span class="ingredient-emoji">🌸</span>
         <div class="ingredient-name">Ubtan (Turmeric Paste)</div>
         <div class="ingredient-origin">South Asian</div>
         <div class="ingredient-benefit">Turmeric, gram flour and milk or rosewater, applied as a paste before weddings in the haldi ceremony. Patch-test first: turmeric stains.</div>
+        <span class="home-cta">Find ubtan in the Library →</span>
       </div>
-      <div class="ingredient-card">
+      <div class="ingredient-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-community="latina" data-lib-at-q="avocado" aria-label="Search the Library for avocado">
         <span class="ingredient-emoji">🥥</span>
         <div class="ingredient-name">Avocado Oil</div>
         <div class="ingredient-origin">Latina</div>
         <div class="ingredient-benefit">Avocado, from the Nahuatl ahuacatl, is native to Mexico and Central America; its rich oil is used as a skin and hair moisturiser.</div>
+        <span class="home-cta">Find avocado in the Library →</span>
       </div>
-      <div class="ingredient-card">
+      <div class="ingredient-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-community="arab" data-lib-at-q="black seed" aria-label="Search the Library for black seed">
         <span class="ingredient-emoji">⚫</span>
         <div class="ingredient-name">Black Seed Oil (Habbatus Sauda)</div>
         <div class="ingredient-origin">Arab</div>
         <div class="ingredient-benefit">Nigella sativa seed oil, valued in Arab and Islamic traditional medicine and used on skin and scalp. Patch-test first: it can irritate.</div>
+        <span class="home-cta">Find black seed in the Library →</span>
       </div>
-      <div class="ingredient-card">
+      <div class="ingredient-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-community="black_american" data-lib-at-q="castor" aria-label="Search the Library for castor">
         <span class="ingredient-emoji">🪆</span>
         <div class="ingredient-name">Castor Oil (Black)</div>
         <div class="ingredient-origin">Black American</div>
         <div class="ingredient-benefit">Ricinoleic acid makes up most of castor oil. A heavy oil often used as the sealing "O" step of the LOC method.</div>
+        <span class="home-cta">Find castor in the Library →</span>
       </div>
-      <div class="ingredient-card">
+      <div class="ingredient-card home-link" role="button" tabindex="0" data-lib-link data-lib-at-community="east_african" data-lib-at-q="coffee scrub" aria-label="Search the Library for coffee scrub">
         <span class="ingredient-emoji">☕</span>
         <div class="ingredient-name">Coffee Scrub</div>
         <div class="ingredient-origin">East African</div>
         <div class="ingredient-benefit">Used coffee grounds mixed with oil or sugar make a simple body scrub, a nod to Ethiopia, widely seen as coffee's birthplace.</div>
+        <span class="home-cta">Find coffee scrub in the Library →</span>
       </div>
     </div>
   </section>
@@ -768,6 +806,7 @@
             <button class="btn btn-primary" id="tryonUploadBtn">Upload Photo</button>
             <button class="btn btn-secondary" id="tryonCameraBtn">Use Camera</button>
           </div>
+          <p class="tryon-hint" id="tryonPickerMsg" role="status"></p>
           <div class="tryon-models">
             <p class="tryon-models-title">Or try a model face</p>
             <div id="tryonModelFaces" class="tryon-model-grid" role="group" aria-label="Model faces"></div>
@@ -973,6 +1012,7 @@
         <p class="photo-match-sub">Add a selfie in daylight. MIRRR reads your skin tone and undertone, matches foundation shades, and lets you try looks on your own face. Your photo stays on your device.</p>
         <input type="file" id="photoInput" accept="image/*" capture="user" hidden />
         <button class="btn btn-secondary" id="photoBtn" type="button">Upload or take a selfie</button>
+        <p class="photo-note" id="photoPickerMsg" role="status"></p>
         <div id="photoResult" class="photo-result hidden"></div>
       </div>
 

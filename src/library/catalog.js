@@ -77,6 +77,18 @@ import * as contouringGuideV2 from '../contouring_guide_v2.js';
 import * as cheekMakeupGuide from '../cheek_makeup_guide.js';
 import * as makeupRemovalGuide from '../makeup_removal_guide.js';
 import * as makeupToolsGuide from '../makeup_tools_guide.js';
+import * as colorTheoryEthnicGuide from '../color_theory_ethnic_guide.js';
+import * as colourTheoryEthnic from '../colour_theory_ethnic.js';
+import * as colourTheoryEthnicSkin from '../colour_theory_ethnic_skin.js';
+import * as colourTheoryBeauty from '../colour_theory_beauty.js';
+import * as makeupEthnicGuide from '../makeup_ethnic_guide.js';
+import * as makeupProductsDb from '../makeup_products_db.js';
+import * as lipArtGuide from '../lip_art_guide.js';
+import * as lipColourGuideExtended from '../lip_colour_guide_extended.js';
+import * as lipCareGuide from '../lip_care_guide.js';
+import * as lipCareEthnicGuide from '../lip_care_ethnic_guide.js';
+import * as lipCareGuideEthnic from '../lip_care_guide_ethnic.js';
+import * as lipHealthEthnicGuide from '../lip_health_ethnic_guide.js';
 
 export const SHELVES = [
   { id: 'rituals', title: 'Rituals & Heritage', blurb: 'Haldi, hammam, shea, mehndi, bathhouse and festival traditions, with the steps to do them at home.' },
@@ -85,6 +97,7 @@ export const SHELVES = [
   { id: 'growth', title: 'Hair Growth & Scalp', blurb: 'How hair grows, why length breaks off, edges and traction, heat, scalp conditions and extensions.' },
   { id: 'skin', title: 'Skin: Marks, Breakouts & Sun', blurb: 'Dark marks and melasma, safe brightening, breakouts, sunscreen without a white cast, barrier repair, eczema and rosacea.' },
   { id: 'complexion', title: 'Makeup: Correct, Base & Sculpt', blurb: 'Colour correcting for your depth, foundation formulas and finishes, primer and powder without flashback, contour, blush and highlight, tools and removal.' },
+  { id: 'colour', title: 'Colour & Lips', blurb: 'Undertones and colour formulas, lip colour for your depth and undertone, finishes, liner and ombre, lip care for dryness and darkening, and the brands and traditions behind them.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -163,4 +176,16 @@ export const GUIDES = [
   ['cheek_makeup_guide', 'complexion', 'Blush, Bronzer and Highlighter', cheekMakeupGuide],
   ['makeup_tools_guide', 'complexion', 'Brushes, Sponges and Tools', makeupToolsGuide],
   ['makeup_removal_guide', 'complexion', 'Taking It All Off', makeupRemovalGuide],
+  ['colour_theory_ethnic', 'colour', 'Undertones and Colour Formulas', colourTheoryEthnic],
+  ['colour_theory_beauty', 'colour', 'Colour Theory: Eyes, Hair and Clothes', colourTheoryBeauty],
+  ['color_theory_ethnic_guide', 'colour', 'Colour Theory by Community', colorTheoryEthnicGuide],
+  ['colour_theory_ethnic_skin', 'colour', 'Colour Theory Fundamentals', colourTheoryEthnicSkin],
+  ['makeup_ethnic_guide', 'colour', 'Makeup Traditions by Community', makeupEthnicGuide],
+  ['makeup_products_db', 'colour', 'Brands, Heritage Products and Picks by Concern', makeupProductsDb],
+  ['lip_art_guide', 'colour', 'Lip Art: Finishes, Liner and Ombre', lipArtGuide],
+  ['lip_colour_guide_extended', 'colour', 'Lip Colour by Depth and Undertone', lipColourGuideExtended],
+  ['lip_care_guide', 'colour', 'Lip Care Routines and Darkening', lipCareGuide],
+  ['lip_care_ethnic_guide', 'colour', 'Lip Care Traditions by Community', lipCareEthnicGuide],
+  ['lip_care_guide_ethnic', 'colour', 'Lip Darkening: Types and Treatments', lipCareGuideEthnic],
+  ['lip_health_ethnic_guide', 'colour', 'Lip Health and Ingredients', lipHealthEthnicGuide],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

@@ -10,11 +10,6 @@ export const ETHNIC_COLOR_THEORY_GUIDES = {
   'west-african': {
     communityId: 'west-african',
     communityName: 'West African',
-    skinToneSpectrum: {
-      description: 'West African skin tones span a rich range within Fitzpatrick IV-VI. Undertones are predominantly warm (golden-brown, red, orange) with some cool (blue-purple) undertones in the deepest tones. The extraordinary melanin richness creates a luminosity that reflects color differently than lighter skin — saturated colors appear vibrant and bold.',
-      undertones: ['warm golden', 'warm red-orange', 'warm neutral', 'cool blue-violet (deepest tones)'],
-      commonFeatures: 'Deep brown to black skin. Dark brown to black eyes. Hair ranges from jet black to dark brown.',
-    },
     foundationMatching: {
       challenge: 'The beauty industry famously failed deep skin tones for decades — 40 shades ended at a medium tan. This is changing but still requires strategy.',
       strategy: [
@@ -22,7 +17,7 @@ export const ETHNIC_COLOR_THEORY_GUIDES = {
         'Swatch on jawline, not hand (different undertone and shade).',
         'For warm undertones: look for shades with N (neutral), W (warm), WN, or specific terms like mahogany, espresso, mocha, amber.',
         'Avoid foundations that oxidize orange — test for 2+ hours before committing.',
-        'Brands doing deep shades well: Fenty Beauty (pioneered), MAC, NARS, Huda Beauty, Juvia\'s Place (Black-owned, specifically for deep tones), Black Opal (historically for Black skin).',
+        'Brands doing deep shades well: Fenty Beauty, MAC, NARS, Huda Beauty, Juvia\'s Place (Black-owned, specifically for deep tones), Black Opal (historically for Black skin).',
       ],
     },
     makeupColors: {
@@ -50,7 +45,7 @@ export const ETHNIC_COLOR_THEORY_GUIDES = {
       considerations: ['Very dark navy and charcoal on very dark skin creates a "lost in shadow" effect — contrast helps', 'Dusty or muted tones work but need care — make sure they don\'t appear to dull your skin vs. illuminate it'],
     },
     jewelryMetals: {
-      gold: 'Universally flattering on warm-toned West African skin. Gold is culturally and aesthetically perfect. Pure gold, yellow gold, rose gold — all excellent.',
+      gold: 'Flatters warm undertones and carries deep cultural meaning. Pure gold, yellow gold, rose gold — all excellent.',
       silver: 'Can work beautifully with cool-undertone deep skin. Less traditional but striking.',
       coppperBronze: 'Spectacular against deep skin. Ancient and contemporary in West African aesthetics.',
     },
@@ -62,10 +57,6 @@ export const ETHNIC_COLOR_THEORY_GUIDES = {
   'south-asian': {
     communityId: 'south-asian',
     communityName: 'South Asian',
-    skinToneSpectrum: {
-      description: 'South Asian skin spans Fitzpatrick III-V with enormous variation by region. North Indian skin tends toward warmer, lighter-medium tones. South Indian and Sri Lankan skin tends toward deeper, richer tones. Pakistani skin spans warm Fitzpatrick III-IV. Undertones are commonly warm (yellow-golden) with some warm-olive, and occasional cool-olive in certain populations.',
-      undertones: ['warm golden (common)', 'warm olive', 'neutral olive', 'warm-cool (some South Indian deep skin)'],
-    },
     foundationMatching: {
       strategy: [
         'South Asian skin often has yellow-olive undertones — avoid foundations with too much pink, which will look mask-like.',
@@ -76,7 +67,7 @@ export const ETHNIC_COLOR_THEORY_GUIDES = {
     },
     makeupColors: {
       eyeshadow: {
-        mostFlattering: ['Purple-plum: universally stunning on warm-brown skin — it\'s the complementary color', 'Bronze and copper: enhance warm undertones beautifully', 'Warm browns: an everyday staple — blends naturally with warm skin', 'Teal and green: surprising but beautiful on warmer undertones', 'Gold: the classic Indian bridal look is a masterclass in gold eyeshadow for a reason'],
+        mostFlattering: ['Purple-plum: the complementary colour to warm-brown skin', 'Bronze and copper: enhance warm undertones beautifully', 'Warm browns: an everyday staple — blends naturally with warm skin', 'Teal and green: surprising but beautiful on warmer undertones', 'Gold: the classic Indian bridal look is a masterclass in gold eyeshadow for a reason'],
         culturalColors: ['The South Asian bridal eye: kohl + gold shadow + deep crease color + red sindoor + gold jewelry. A complete color system developed over centuries.'],
       },
       lipColors: {
@@ -96,9 +87,6 @@ export const ETHNIC_COLOR_THEORY_GUIDES = {
   'caribbean': {
     communityId: 'caribbean',
     communityName: 'Caribbean',
-    skinToneSpectrum: {
-      description: 'Caribbean skin reflects the genetic mosaic of the region: West African, Indigenous, European, South Asian, and East Asian ancestry creates a spectrum from light (for lighter-skinned communities in Cuba, Puerto Rico, Dominican Republic) to very deep (for Afro-Caribbean communities). The diversity within the Caribbean means no single color approach works — undertones span warm to cool, tones span light to very deep.',
-    },
     generalPrinciples: [
       { principle: 'Embrace the tropical palette', why: 'The Caribbean\'s color traditions evolved in a tropical environment — bright ocean blues, intense greens of the forest, vivid hibiscus pinks, hot sunset oranges. These colors were developed IN an environment where the people who used them were Caribbean. Trust the tradition.' },
       { principle: 'Saturated colors are your birthright', why: 'The Carnival/Mas tradition of the Caribbean — among the most spectacular color celebrations in the world — evolved in communities of color. The costuming, the sequins, the feathers, the paint: these are designed for Caribbean skin.' },
@@ -117,12 +105,9 @@ export const ETHNIC_COLOR_THEORY_GUIDES = {
   'arab': {
     communityId: 'arab',
     communityName: 'Arab Middle Eastern',
-    skinToneSpectrum: {
-      description: 'Arab skin ranges from light Mediterranean (Lebanese, Syrian, Jordanian often Fitzpatrick III) to golden-warm (Egyptian, Iraqi, Moroccan — Fitzpatrick III-IV) to deep (Yemeni, Somali-Arab, some Saudi communities — Fitzpatrick IV-V). Undertones are commonly warm olive, warm golden, or warm neutral. The Arab beauty tradition is one of the most sophisticated and ancient color traditions in the world.',
-    },
     arabBeautyColorTradition: {
       kohl: 'Kohl (ithmid) around the eyes is the defining color tradition of Arab beauty — it was both cosmetic and medicinal. The deep black creates the dramatic eye that is the signature of Arab beauty aesthetics.',
-      henna: 'Henna creates the rust-brown-orange color on skin (darker orange to deep brown depending on henna quality and skin chemistry). The patterns create a visual language of celebration and protection. The color becomes personal as it fades from deep orange to brown.',
+      
       gold: 'Gold jewelry and embroidery has been central to Arab beauty aesthetics across all socioeconomic levels. The Khaleeji (Gulf) tradition of heavy gold jewelry is a complete color and aesthetic system.',
     },
     makeupColors: {
@@ -142,16 +127,13 @@ export const ETHNIC_COLOR_THEORY_GUIDES = {
   'latina': {
     communityId: 'latina',
     communityName: 'Latina',
-    skinToneSpectrum: {
-      description: 'Latina skin spans the complete range of human skin tones — from very light (some Southern Cone communities, Caribbean Latina) to very deep (Afro-Latina, darker Indigenous communities). Undertones span warm olive (most common), warm golden, neutral, and occasionally cooler (for Afro-Latina communities with cooler undertones). The extraordinary diversity means color guidance must be customized to the specific individual.',
-    },
     theLatinaPalette: {
-      description: 'The color traditions of Latin America draw from three rich sources: Indigenous textile and paint traditions (brilliant, often symbolic colors — think Oaxacan textiles, Guatemalan huipiles), African aesthetic traditions (brought by enslaved Africans — saturated jewel tones, bold patterns), and European influences filtered through tropical Latin American landscapes. The result is one of the world\'s most vibrant color traditions.',
+      
       oaxacanColors: ['The saturated cochineal red (made from insects — one of the most vivid reds in history)', 'Indigo deep blue', 'Marigold yellow (also deeply spiritual — used in Día de Muertos)', 'Intense tropical greens'],
     },
     makeupColors: {
       eyeshadow: {
-        mostFlattering: ['Warm terracotta, rust, burnt sienna: the "tierra caliente" palette', 'Gold and bronze: complement warm undertones', 'Purple-plum: the complementary to warm skin tones', 'Smoky brown: the universally flattering everyday'],
+        mostFlattering: ['Warm terracotta, rust, burnt sienna: the "tierra caliente" palette', 'Gold and bronze: complement warm undertones', 'Purple-plum: the complementary to warm skin tones', 'Smoky brown: an easy everyday choice'],
         culturalNote: 'Frida Kahlo\'s beauty aesthetic — thick dark brows, colorful flowers in hair, bold statement jewelry, bright colors — was a political and cultural statement that also happened to be perfectly suited to her warm Latina skin tone and dark features.',
       },
       lips: ['Terracotta and clay brown (THE millennial Latina lip, extremely flattering on warm skin)', 'Red (classic — a Latin beauty staple)', 'Warm berry-wine', 'Coral and orange for brightness'],
@@ -165,10 +147,6 @@ export const ETHNIC_COLOR_THEORY_GUIDES = {
   'east-asian': {
     communityId: 'east-asian',
     communityName: 'East Asian',
-    skinToneSpectrum: {
-      description: 'East Asian skin spans Fitzpatrick II-IV with significant variation. Japanese skin tends toward lighter tones with neutral or slightly cool undertones. Korean skin spans medium to light with often neutral-cool undertones (the "porcelain" reference). Chinese skin varies enormously by region — Southern Chinese skin often warmer and deeper; Northern Chinese and Korean-Chinese lighter. The "cool" undertone characterization for East Asian skin is a generalization — many East Asians have warm or neutral undertones.',
-      undertones: ['neutral (very common)', 'cool-neutral', 'warm golden (common in Southern Chinese, Vietnamese, Thai)', 'cool-pink (some Japanese, Northern Chinese)'],
-    },
     theKBeautyColorPhilosophy: {
       title: 'Korean Beauty Color Philosophy: Dewy, Luminous, Effortless',
       philosophy: 'K-beauty aims for a specific aesthetic: "chok chok" (dewy, bouncy skin), glass skin (reflective luminosity), and an "I woke up like this" finish — not a heavily made-up look. The color choices in K-beauty reflect this philosophy: softer, diffused, blurred edges rather than sharp lines; blush applied lightly; lip colors often gradient-blurred.',
@@ -176,7 +154,7 @@ export const ETHNIC_COLOR_THEORY_GUIDES = {
     },
     makeupColors: {
       eyeshadow: {
-        mostFlattering: ['Terracotta and warm brown (universally flattering on East Asian skin)', 'Coral and warm orange (complements neutral-warm undertones)', 'Dusty rose and mauve (for neutral-cool undertones)', 'Burgundy (for depth without drama)', 'Navy blue (interesting depth that works on neutral undertones)'],
+        mostFlattering: ['Terracotta and warm brown (flatter warm and neutral undertones)', 'Coral and warm orange (complements neutral-warm undertones)', 'Dusty rose and mauve (for neutral-cool undertones)', 'Burgundy (for depth without drama)', 'Navy blue (interesting depth that works on neutral undertones)'],
         monolid: 'Eye makeup for monolid eyes is fundamentally different from hooded or double-lid application. Key techniques: apply color all over lid rather than in a crease; emphasize the lash line heavily; lower lash line emphasis creates depth and definition; eyelid tape or glue can create a temporary crease for those who choose to — this is a personal choice with significant cultural debate.',
       },
       lips: {
@@ -191,11 +169,8 @@ export const ETHNIC_COLOR_THEORY_GUIDES = {
   'east-african': {
     communityId: 'east-african',
     communityName: 'East African',
-    skinToneSpectrum: {
-      description: 'East African skin is among the most diverse on the continent. Ethiopian and Eritrean skin tends toward warm-golden deep brown (Fitzpatrick IV-VI) with sometimes an olive warmth. Somali skin tends toward very deep brown-black (Fitzpatrick V-VI) with warm or neutral undertones. Kenyan and Tanzanian skin (particularly Swahili coast and inland) varies significantly by ethnic group. The region\'s ancient trade routes with Arabia, India, and China have left genetic traces in some coastal communities.',
-    },
     colorTraditions: {
-      ethiopian: 'Ethiopian traditional dress (habesha kemis) is typically white with colored embroidery at the borders. The contrast of white fabric against deep warm Ethiopian skin creates one of the most elegant visual traditions. Gold jewelry is universal. The coffee ceremony aesthetic — white clothing, golden jewelry, incense smoke — is a complete color and sensory experience.',
+      ethiopian: 'Ethiopian traditional dress (habesha kemis) is usually white with coloured embroidery at the borders, worn with gold jewellery. The coffee ceremony aesthetic — white clothing, golden jewelry, incense smoke — is a complete color and sensory experience.',
       somali: 'Somali women\'s dirac (traditional dress) features vibrant, saturated colors — hot pink, royal blue, brilliant green, vivid orange — with gold embroidery. The dirac colors were chosen to complement deep Somali skin. Extensive gold jewelry completes the palette.',
       kenyan: 'Maasai beadwork is among the most sophisticated color coding systems in the world — colors have meaning: red for bravery, blue for sky/water/rain (God), orange and yellow for hospitality, green for land/health, white for purity, black for the people. The visual system was designed for deep-toned Maasai skin.',
     },
@@ -204,16 +179,13 @@ export const ETHNIC_COLOR_THEORY_GUIDES = {
       lips: ['Deep berry and wine: magnificent on deep skin', 'Bright red: classic', 'Orange and coral: vibrant and striking', 'Warm nude: must have brown-red base (not grey-pink)'],
     },
     clothingColors: {
-      perfect: ['Brilliant, saturated colors that match the dirac tradition: fuchsia, royal blue, brilliant orange, lime', 'White with colored embroidery: the Ethiopian aesthetic', 'Gold embroidery on rich fabric: universally stunning'],
+      perfect: ['Brilliant, saturated colors that match the dirac tradition: fuchsia, royal blue, brilliant orange, lime', 'White with colored embroidery: the Ethiopian aesthetic', 'Gold embroidery on rich fabric'],
     },
   },
 
   'south-african': {
     communityId: 'south-african',
     communityName: 'South African',
-    skinToneSpectrum: {
-      description: 'South Africa\'s diversity makes color guidance community-specific. Zulu, Xhosa, Sotho, Tswana, and Tsonga communities are predominantly Fitzpatrick V-VI. Cape Malay and Indian South African communities span Fitzpatrick III-IV. Afrikaner and other European-descended communities span Fitzpatrick I-III. The country\'s natural color palette — the fynbos pinks, the savanna ochres, the indigo mountain blues — has shaped a distinct South African aesthetic.',
-    },
     ndebeleMakeup: {
       description: 'Ndebele visual culture is one of the most distinctive geometric color traditions in the world. Ndebele homestead murals use primary colors (red, yellow, blue) against black and white geometric patterns. Ndebele women\'s beadwork follows a color coding system. This tradition influences modern South African beauty in how bold geometric color combinations are embraced.',
     },
@@ -230,9 +202,6 @@ export const ETHNIC_COLOR_THEORY_GUIDES = {
   'black-american': {
     communityId: 'black-american',
     communityName: 'Black American',
-    skinToneSpectrum: {
-      description: 'Black American skin spans the deepest, richest melanin spectrum of any community discussed in MIRRR — from deep golden brown (Fitzpatrick IV) to the deepest blue-black skin tones (Fitzpatrick VI). Undertones include warm red-brown, warm golden, warm orange, neutral, and cool blue-violet (the cool-undertone occurrence is higher in the deepest Fitzpatrick VI tones). The extraordinary range means color guidance must account for all of this variation.',
-    },
     blackBeautyColorHistory: {
       title: 'The History of Color in Black American Beauty',
       description: 'Black American beauty has a complex history with color. During the era of explicit white supremacy, certain colors and styles were coded as "appropriate" or "inappropriate" for Black people. The Civil Rights and Black Power movements reclaimed color as political statement — natural Afro, bright African prints, Black pride symbolism. The 1980s and 1990s brought the Harlem Renaissance influence on color — bold, joyful, expressive. Today, Black beauty is in a renaissance, with Black-owned brands finally offering the depth of shade ranges and the color expertise that had been denied by the mainstream industry.',
@@ -323,9 +292,3 @@ export function getColorTheoryGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const COLOR_THEORY_STATS = {
-  moduleId: 'color_theory_ethnic_guide',
-  communitiesCovered: 9,
-  colorSystemsCovered: 12,
-  version: '1.0.0',
-};

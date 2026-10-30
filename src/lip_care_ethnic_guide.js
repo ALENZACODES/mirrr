@@ -45,7 +45,7 @@ export const ETHNIC_LIP_CARE_GUIDES = {
     ],
     lipHyperpigmentationGuide: {
       causes: [
-        'Genetic (most common in West African skin — melanin concentrated at lip border)',
+        'Genetic (melanin concentrated at the lip border; normal, not a concern)',
         'Sun exposure without SPF on lips',
         'Smoking and tobacco',
         'Hormonal changes',
@@ -718,11 +718,3 @@ export function getLipCareGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const LIP_CARE_STATS = {
-  moduleId: 'lip_care_ethnic_guide',
-  communitiesCovered: 9,
-  traditionalPracticesCovered: 36,
-  lipColorGuidesCovered: 9,
-  brightening_treatmentsCovered: 16,
-  version: '1.0.0',
-};

@@ -19,10 +19,9 @@ export const FOUNDATION_SCIENCE = {
     depth: {
       description: 'How light or dark the skin is; measured on the Fitzpatrick Scale (I-VI) or proprietary shade numbering systems',
       fitzpatrick: {
-        I: 'Very fair; burns always, never tans; Northern European heritage most common',
+        I: 'Very fair; burns always, never tans.',
         II: 'Fair; burns easily, tans minimally; light European',
         III: 'Light-medium; burns moderately, tans gradually; Mediterranean, some East Asian, some Latin',
-        IV: 'Medium-brown; burns minimally, tans well; South Asian, Hispanic/Latino, North African, lighter East African',
         V: 'Dark brown; rarely burns, tans deeply; Middle Eastern, some East African, some South Asian',
         VI: 'Deepest brown to dark; never burns; Sub-Saharan African, Melanesian, indigenous Australian heritage'
       }
@@ -55,8 +54,7 @@ export const FOUNDATION_SCIENCE = {
     melanin: {
       eumelanin: 'Brown/black melanin — primary pigment; amounts determine skin depth',
       pheomelanin: 'Red/yellow melanin — contributes to warm/peachy undertones; more prevalent in lighter skin',
-      distribution: 'Melanin distributed differently in deep skin tones — affects how foundation interacts with skin',
-      ashiness: 'Ashiness in deeper skin tones: product oxidation; can be due to formula not developed for deep skin chemistry'
+      distribution: 'Melanin distributed differently in deep skin tones — affects how foundation interacts with skin'
     }
   },
 
@@ -77,7 +75,6 @@ export const FOUNDATION_SCIENCE = {
   commonMistakes: {
     tooPink: 'Choosing foundation too pink for olive or warm-toned skin — makes skin look ashy or unnatural',
     oxidize: 'Foundation oxidizes (turns orange on skin after hour of wear) — happens more with certain formulas on certain skin chemistries; try before committing',
-    ashy: 'Ashy appearance: formula not designed for deep skin chemistry; try different formula brand; avoid formulas with high titanium dioxide in deepest shades',
     neck: 'Matching to face not neck: face is often lighter than neck/chest; blend down or match neck to chest',
     shade: 'Buying darkest shade in line: if brand\'s darkest doesn\'t match, that brand\'s range is inadequate'
   }
@@ -125,7 +122,7 @@ export const COLOR_THEORY_DIVERSE_SKIN = {
 
   highlighter: {
     deepSkin: 'Gold, bronze, copper highlighters: stunning on deep skin; adds warmth and dimension; avoid silver which can look ashy',
-    mediumSkin: 'Gold and rose-gold: universally flattering on medium skin; champagne also works',
+    mediumSkin: 'Gold and rose-gold flatter medium skin; champagne also works',
     fairSkin: 'Champagne, pearl, silver: complements cool-fair skin; warm gold also beautiful on warm-fair skin',
     formula: 'Formula matters: finely milled formula blends; chunky glitter can look unflattering on any skin tone'
   }
@@ -181,11 +178,8 @@ export const CULTURAL_MAKEUP_TRADITIONS = {
 export const ETHNIC_MAKEUP_GUIDES = {
   'west-african': {
     communityName: 'West African',
-    skinTone: 'Predominantly Fitzpatrick IV-VI; warm to neutral undertones; rich, deep melanin',
 
     foundationAdvice: {
-      depth: 'Deep: W40-W60 on Fenty scale; N50-W60 on MAC; 8.5-10.5 on IL MAKIAGE',
-      undertone: 'Warm to neutral; avoid cool-toned or pink-based foundations — will look ashy',
       brands: 'Brands with true deep shade range: Fenty Beauty, MAC (Studio Fix range), NARS (Deepsea, Stromboli), Pat McGrath Labs, Juvia\'s Place, Uoma Beauty',
       finish: 'Satin to luminous finish most flattering; full matte can look flat; deep skin benefits from some radiance'
     },
@@ -213,11 +207,8 @@ export const ETHNIC_MAKEUP_GUIDES = {
 
   'south-asian': {
     communityName: 'South Asian',
-    skinTone: 'Range: Fitzpatrick II-V; warm, golden, or olive undertones across the spectrum; diverse depth',
 
     foundationAdvice: {
-      depth: 'Extremely diverse: light South Asian (cream, N10-N20) to dark South Asian (N40-W50)',
-      undertone: 'Predominantly warm to olive; avoid pink-based formulas; yellow-to-golden base foundations',
       challenge: 'Olive undertone: avoid formulas that look too yellow OR too pink; look for "olive" labeled or neutral-warm',
       brands: 'Kosas, Armani Luminous Silk (excellent neutral-warm range), NARS, Charlotte Tilbury (Warm Peach, Golden), MAC NC shades (yellowish-warm-neutral)'
     },
@@ -245,11 +236,8 @@ export const ETHNIC_MAKEUP_GUIDES = {
 
   caribbean: {
     communityName: 'Caribbean',
-    skinTone: 'Extremely diverse: light (III) to very deep (VI); warm undertones dominant across many Caribbean heritages',
 
     foundationAdvice: {
-      depth: 'Broad range across Caribbean heritage; identify individual depth and undertone',
-      undertone: 'Often warm to neutral; Dominican, Cuban, Puerto Rican: frequently NC-NW range; Jamaican, Trinidadian, Barbadian: often deeper warm',
       brands: 'Fenty Beauty covers widest Caribbean spectrum; also NARS, MAC'
     },
 
@@ -276,11 +264,8 @@ export const ETHNIC_MAKEUP_GUIDES = {
 
   arab: {
     communityName: 'Arab / Middle Eastern',
-    skinTone: 'Range: Fitzpatrick II-V; olive to warm; Lebanese/Syrian lighter; Gulf and Yemeni often deeper',
 
     foundationAdvice: {
-      depth: 'Moderate range: typically N20-N40 (Fenty); NC20-NC35 (MAC)',
-      undertone: 'Olive most common; also warm; some cool-fair in Levantine populations',
       oliveProblem: 'Olive skin common problem: too yellow foundations look muddy; too pink look ashy; need true olive-neutral',
       brands: 'Armani Luminous Silk (excellent olive range), Huda Beauty (founded by Iraqi-American), Charlotte Tilbury'
     },
@@ -295,24 +280,13 @@ export const ETHNIC_MAKEUP_GUIDES = {
       eyes: 'Brown, gold, copper, champagne, deep black — classic; vivid jewel tones for festive; kohl-black liner essential',
       lips: 'Nudes in brown-beige range; reds; deep berries; lip liner darker than lip for Arab beauty signature',
       blush: 'Minimal blush in Arab beauty tradition; or warm bronze highlight instead'
-    },
-
-    advice: `Arab makeup philosophy places the eyes at the absolute center — the "smoky Arab eye" is one
-    of the world's most iconic beauty traditions, and kohl is the original dramatic eye tool used
-    for millennia. The classic Arab eye: kohl on top and bottom waterline + smudged out + dark
-    shadow deepened at lash line + precise upper liner extending to a wing. Olive skin foundation
-    tip: look for "olive" explicitly labeled or "caramel" neutral shades; avoid pink-based and
-    very yellow-based; Armani Luminous Silk range has excellent olive shades. Huda Beauty was
-    founded specifically with Middle Eastern skin tones in mind — the shade range reflects that.`
+    }
   },
 
   latina: {
     communityName: 'Latina / Hispanic',
-    skinTone: 'Widest diversity of any ethnic group: fair European-heritage Latina to deep Afro-Latina; warm undertones most common',
 
     foundationAdvice: {
-      depth: 'Complete spectrum: N10 (fair) to W60 (deep Afro-Latina)',
-      undertone: 'Predominantly warm to golden; Afro-Latina skin: deep warm; fair Latina: can be neutral-warm',
       brands: 'L\'Oreal True Match (warm-neutral range excellent for Latina midtones); Fenty; MAC; Maybelline Fit Me (affordable, wide range)'
     },
 
@@ -341,11 +315,8 @@ export const ETHNIC_MAKEUP_GUIDES = {
 
   'east-asian': {
     communityName: 'East Asian',
-    skinTone: 'Range: Fitzpatrick II-IV; warm (yellow), cool (pink), or neutral undertones; medium depth most common; full range exists',
 
     foundationAdvice: {
-      depth: 'Light to medium primarily; N10-N30 (Fenty); NC15-NC35 (MAC)',
-      undertone: 'Yellow-warm and pink-cool both common; knowing which is critical for matching',
       yellowWarm: 'Yellow-warm East Asian skin: MAC NC range, Armani (porcelain/medium beige)',
       pinkCool: 'Pink-cool East Asian skin: Nars Deauville, Shiseido lighter shades',
       brands: 'Shiseido (Japanese brand; excellent understanding of East Asian skin tones); Sulwhasoo, Laneige (Korean); Fenty N shades'
@@ -362,25 +333,14 @@ export const ETHNIC_MAKEUP_GUIDES = {
       eyes: 'Brown-bronze for daily (classic K-beauty); pinks and rose-taupes for soft look; bold color for editorial',
       lips: 'Gradient lip (Korean: deeper shade on outer edge blending to lighter center); red lips with white center highlight (J-beauty); true red (C-beauty)',
       blush: 'Soft petal pinks, coral, peach; placed high on cheekbones for J/K-beauty "sick blush" trend'
-    },
-
-    advice: `East Asian beauty philosophy is leading the world in technique and product innovation —
-    glass skin, gradient lips, the 10-step routine. For makeup foundation: knowing your undertone
-    (yellow vs pink) is CRUCIAL because East Asian skin can skew dramatically either direction
-    and the wrong foundation undertone is highly visible. Test foundation on jawline in natural light
-    before committing. K-Beauty gradient lip is uniquely flattering for most East Asian lip shapes:
-    apply bold shade in center, blend outward, wear in the center. Japanese brands (Shiseido, Shu
-    Uemura, SUQQU) make foundations specifically understanding East Asian skin chemistry.`
+    }
   },
 
   'east-african': {
     communityName: 'East African',
-    skinTone: 'Predominantly Fitzpatrick V-VI; range of cool-neutral to warm undertones; very deep melanin',
 
     foundationAdvice: {
-      depth: 'Deep to very deep: W50-W60+ (Fenty); N8-N10 (MAC); deepest shades of any brand',
-      undertone: 'Often neutral to slightly cool in horn of Africa heritage; warm in some East African sub-regions',
-      brands: 'Fenty W series (deepest shades best for East African skin); NARS (Stromboli, Macao); Pat McGrath Labs; Uoma Beauty',
+      brands: 'Fenty W series (deep shades); NARS (Stromboli, Macao); Pat McGrath Labs; Uoma Beauty',
       finish: 'Luminous foundation + glowing highlight shows beautifully on very deep skin'
     },
 
@@ -400,20 +360,16 @@ export const ETHNIC_MAKEUP_GUIDES = {
     advice: `East African skin — particularly from the Horn of Africa — has stunning depth and natural
     luminosity that needs very little product to look radiant. Kohl (kajal) on the waterline is
     the traditional and most transformative tool: in Ethiopian, Somali, and Eritrean tradition,
-    kohl is the anchor of the look. For foundation: Fenty Beauty was the first mainstream brand
-    to truly serve very deep East African skin tones (W60, N60 etc) — the "40 shades" launch
-    was specifically addressing women in this depth range. Graphic white liner as inner corner
+    kohl is the anchor of the look. For foundation: look for ranges with
+    real depth at the deep end (Fenty Beauty, Juvia's Place, Black Opal and others). Graphic white liner as inner corner
     highlight on very deep skin creates a contrast that is breathtaking. Avoid purple-based deep
     foundations which can look cool-ashy on horn of Africa skin that may have neutral undertones.`
   },
 
   'south-african': {
     communityName: 'South African',
-    skinTone: 'Wide range reflecting South Africa\'s diverse heritage: very fair (Afrikaner heritage) to very deep (Zulu, Xhosa, etc.); wide warm-range',
 
     foundationAdvice: {
-      depth: 'Complete spectrum representing all South Africans: N10 (fair) to W60 (deep)',
-      undertone: 'Black South African: often warm undertone; Cape Coloured (mixed): warm-neutral; Afrikaner: cool-neutral to warm',
       brands: 'All major international brands available; local South African brand House of Malia specifically developed for deep South African skin tones',
       local: 'Revlon, Maybelline widely available in South Africa; Fenty available from selected retailers'
     },
@@ -442,11 +398,8 @@ export const ETHNIC_MAKEUP_GUIDES = {
 
   'black-american': {
     communityName: 'Black American',
-    skinTone: 'Range of Fitzpatrick III-VI; warm, cool, and neutral undertones all represented; primarily deep warm to deep neutral',
 
     foundationAdvice: {
-      depth: 'Wide range: medium-brown to very deep; N30-W60 (Fenty); NC35-NC50+ (MAC)',
-      undertone: 'Both warm (W) and neutral (N) common in Black American community; some cool-neutral',
       brands: 'Fenty Beauty (Rihanna is Black American; brand specifically addresses this community); MAC NC range; Morphe; NARS; Uoma Beauty; Juvia\'s Place',
       history: 'For decades, Black women in America were told to buy two foundations and mix because no shade matched — Fenty Beauty 2017 changed that'
     },
@@ -498,21 +451,3 @@ export function getMakeupGuide(communityId) {
 // STATS
 // ============================================================
 
-export const MAKEUP_STATS = {
-  moduleId: 'makeup_ethnic_guide',
-  version: '1.0.0',
-  communities: 9,
-  keyFacts: [
-    'Fenty Beauty\'s 40-shade launch in 2017 forced the beauty industry to expand shade ranges — industry-changing moment',
-    'Foundation undertones: warm (yellow/golden), cool (pink/blue), neutral, olive — undertone matters as much as depth',
-    'Kohl (kajal) has been used for 6000+ years in Arab, South Asian, and East African beauty traditions',
-    'Black American women\'s beauty innovation (red lip, cut crease, natural hair) has shaped global beauty trends',
-    'Deep skin (Fitzpatrick V-VI) requires highly pigmented color makeup — sheer or light formulas disappear',
-    'Olive skin (Mediterranean, Middle Eastern) is a distinct undertone category not covered by warm/cool/neutral binary',
-    'Setting powder flashback (white cast in photos) affects all skin tones but more visible on deep skin — test in flash before events',
-    'Huda Beauty was founded specifically for Middle Eastern skin tones and is the most successful beauty brand founded by an Arab woman',
-    'Titanium dioxide in foundations can cause flashback in photographs — check formulas for deep skin event makeup',
-    'K-Beauty gradient lip technique (darker outer edge to lighter center) is uniquely flattering for East Asian lip shapes'
-  ],
-  lastUpdated: '2026-10-29'
-};

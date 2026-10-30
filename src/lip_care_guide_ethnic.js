@@ -63,7 +63,7 @@ export const LIP_PRODUCTS_GUIDE = {
     emollients: 'Shea butter; cocoa butter; jojoba oil; castor oil; lanolin (animal-derived; very effective occlusive for dry lips) — fill in the gaps between lip skin cells; make lips soft',
     occlusives: 'Petrolatum (Vaseline); beeswax; carnauba wax; candelilla wax (vegan beeswax alternative); mineral oil — seal moisture in and protect against environmental dryness',
     ingredients: {
-      petrolatum: 'Petrolatum (Vaseline/Vaseline Healing Jelly) is the most effective lip occlusive available; FDA-approved skin protectant; often avoided due to associations with petroleum industry, but it is one of the most evidence-backed dry-skin treatments; a thin layer at night significantly heals chapped lips',
+      petrolatum: 'Petrolatum (Vaseline/Vaseline Healing Jelly) is one of the most effective lip occlusives; listed by the FDA as an OTC skin protectant ingredient; often avoided due to associations with petroleum industry, but it is one of the most evidence-backed dry-skin treatments; a thin layer at night significantly heals chapped lips',
       lanolin: 'Lanolin (wool wax) is among the most effective dry-lip treatments; mimics the skin\'s own lipids; can cause reactions in wool-sensitive individuals; highly effective especially for deeply chapped lips',
       beeswax: 'Beeswax is the classic lip balm structuring wax; provides a physical protective film; comedogenic concern is low (lips have no follicles); not vegan'
     }
@@ -75,7 +75,6 @@ export const LIP_PRODUCTS_GUIDE = {
   lipColour: {
     lipstick: {
       ingredients: 'Lipstick = wax (structure) + oils (emolliency) + pigments (colour) + emollients; traditional lipstick pigments include iron oxides, carmine (cochineal — insect-derived; not vegan), ultramarines, titanium dioxide; "lip-safe" FD&C dyes for transparent glosses',
-      leadConcern: 'FDA testing (2012) found lead in 400 lipstick samples at levels up to 7.19 ppm; this is a persistent concern particularly relevant to cheap/unregulated cosmetics; major brands keep lead below 10 ppm FDA action level; still, choosing trusted brands is wise especially for frequent use',
       drying: 'Matte lipsticks are more drying than satin/cream finishes due to lower oil content and the high pigment load; long-wearing liquid lipsticks are often the most drying; using a lip balm base under matte formulas helps significantly'
     },
     lipliner: {
@@ -88,33 +87,26 @@ export const LIP_PRODUCTS_GUIDE = {
 
 export const ETHNIC_LIP_GUIDES = {
   'west-african': {
-    naturalLip: 'West African women often have naturally deep-pigmented lips (shades of dark brown, deep burgundy, plum); this is completely normal physiological variation; the deep colour is due to high melanin density in the lip vermilion; cultural beauty standards within West Africa traditionally celebrate this natural deep pigment',
     products: 'Deep-pigmented lips are beautifully showcased with: terracotta and warm brown lip shades; muted mauve tones; coral-tinted glosses; bright orange-reds (warm-toned red lipstick is stunning against deep pigmented lips); classic black or dark plum for evening looks',
     concerns: 'Most common concern: further darkening from chronic dehydration and licking; the solution is a consistent hydration routine: lip mask at night (overnight with Vaseline or a thick lip treatment); hydrating lip balm throughout the day; breaking the licking habit'
   },
   'south-asian': {
-    naturalLip: 'South Asian natural lip shades range from medium brown to deep burgundy-brown; varying significantly by regional origin (South Indian women often have deeper lip pigmentation than North Indian; Sri Lankan, Bangladeshi, and Pakistani women all have different typical ranges); pigmentation may be uneven with a darker outer vermilion border vs lighter inner area',
-    perioral: 'Perioral hyperpigmentation (shadowing above the upper lip) is a very common concern in South Asian women; particularly those with PCOS (higher androgen levels → increased facial hair and associated PIH from hair removal); waxing, threading, and other hair removal methods in the upper lip area can cause PIH that presents as a shadow',
     threading: 'Threading the upper lip (removing fine lip-area hairs) is a common practice; repeated threading can cause micro-trauma-induced PIH in the perioral area over time; applying a calming serum (niacinamide, centella asiatica) post-threading and using SPF diligently on the treated area minimises post-threading PIH',
     traditional: 'Henna (mehndi) application to lips is a traditional practice in some South Asian contexts (particularly for bridal beauty rituals); henna provides temporary staining with no toxic risk (pure henna — never "black henna" which contains PPD); traditional kumkum (vermilion powder) used on the lips in specific Hindu ritual contexts'
   },
   caribbean: {
-    naturalLip: 'Caribbean women have very diverse lip pigmentation across the Afro-Caribbean, Indo-Caribbean, and mixed-heritage communities; Afro-Caribbean women often have beautifully pigmented dark lips that are a heritage feature; colourism within Caribbean communities has historically created pressure to lighten lips — the wellness movement reclaims natural pigmentation',
     trends: 'Caribbean makeup aesthetics often feature: bold warm reds and fuchsias; coral and orange shades; glossy "juicy" lip looks; the influence of dancehall culture on makeup (bold, expressive, high contrast); the "island beauty" aesthetic uses bright coral and melon lip shades',
     sunProtection: 'Caribbean climate means high UV exposure year-round; SPF lip balm is important but often skipped; actinic cheilitis risk is real for those with significant sun exposure without lip protection; prioritise SPF in any lip care routine for Caribbean climates'
   },
   arab: {
-    naturalLip: 'Arab women\'s natural lip shades vary widely from light pink in lighter-skinned Gulf Arab women to medium-brown in Levantine and darker in East African-heritage Arab women; the Khaleeji (Gulf Arab) makeup aesthetic highly values defined, contoured lips',
     oud: 'Traditional Arab lip stains use natural plant pigments; pomegranate juice (provides temporary red stain); henna for lip staining; carmine-based traditional lip colour; in traditional Gulf Cooperation Council (GCC) beauty, bold deep burgundy and dark red lips are associated with elegance and opulence',
     halal: 'Halal cosmetics certification is important for Muslim consumers: must be free from alcohol (many lipsticks use denatured alcohol as solvent), pork-derived ingredients (pork gelatin is used in some glosses), and carmine (cochineal — insect-derived colouring); the halal beauty market has grown significantly; brands like Inglot and several Korean brands are well-known for halal certification'
   },
   latina: {
-    naturalLip: 'Latina lip tones span a huge range from light pink to deep brown depending on heritage (European-ancestry, Indigenous, Afro-Latina); the natural variation is enormous across the continent; within Latin beauty culture there is significant admiration for naturally full, well-defined lips',
     bold: 'Bold lip is central to many Latina makeup traditions: telenovela-style deep reds; bright corals and fuchsias; the "Mexican holiday lip" with strong red lipstick as a cultural statement; Selena Gomez\'s Rare Beauty and Sofia Vergara\'s TotalBeauty reflect Latina celebrity influence on lip colour trends',
     overline: 'Overlining lips slightly (above the natural vermilion border) is a technique popularised in part through Mexican-American makeup artists and Chicana beauty culture; when done subtly, the goal is a "full lip" effect rather than an obviously artificial look; key: the overline should follow the natural lip shape rather than dramatically changing it'
   },
   'east-asian': {
-    naturalLip: 'East Asian natural lip shades tend toward pinkish to medium-brown tones; Korean and Japanese beauty culture has significantly shaped global lip trends with K-beauty and J-beauty aesthetics',
     gradient: {
       korean: '"Gradient lip" or "ombre lip" is a signature K-beauty look; involves applying lip colour heavily to the inner portion (centre) and barely on the outer edges, then blending; creates a "just-bitten" or "I just ate berries" look; suggests natural flush rather than traditional applied lipstick; the look is youthful and has become globally influential',
       products: 'Korean lip tints are the primary product for this look: water-based formulas that stain the lip very buildably; famous products: Romand Zero Velvet Tints; Peripera Ink Mood Drop Tints; BBIA Last Velvet Lip Tints; 3CE styles; these are lighter and more buildable than Western-formula lipsticks'
@@ -122,17 +114,14 @@ export const ETHNIC_LIP_GUIDES = {
     jbeauty: 'Japanese lip beauty prioritises: moisturised, plump-looking lips; sheer tints over opaque colour; lip masks and treatments (Laneige Lip Sleeping Mask is a K-beauty product but is culturally resonant across East Asia); the "no-makeup makeup" aesthetic often includes sheerly tinted, very moisturised lips rather than strong colour'
   },
   'east-african': {
-    naturalLip: 'East African women (Ethiopian, Kenyan, Somali, Eritrean) often have very deep, beautifully pigmented lips — dark brown to deep burgundy; these tones are stunningly complemented by: bold warm reds and oranges; deep jewel tones (amethyst, garnet, sapphire); metallic gold-toned glosses',
     frankincense: 'Frankincense (Boswellia sacra and related species) has traditional use in Ethiopian and Somali beauty including lip care; frankincense resin has anti-inflammatory and healing properties; traditional incense fumigation (East African ritual of standing over burning incense, including for skin and hair care) reaches the perioral area',
     traditional: 'Traditional Ethiopian bridal beauty involves lip colouring using natural pigments; gold jewellery adorning the lip area (nostril-to-lip traditional piercings in some communities); deep ochre and terracotta tones for traditional occasions vs bold fashion-forward looks for contemporary aesthetic'
   },
   'south-african': {
-    naturalLip: 'South African women span the full spectrum from very light-pigmented (Afrikaner/Cape Dutch heritage) to very dark (Zulu, Xhosa heritage); the lip care needs and typical natural lip tones are accordingly diverse',
     rooibosLip: 'Rooibos extract in lip care formulations is a uniquely South African beauty ingredient; anti-inflammatory for chapped or sensitised lips; small South African brands (Africology, Skin Creamery) use rooibos in lip treatments; rooibos provides antioxidant protection against UV-induced lip ageing',
     dry: 'South Africa\'s dry Highveld climate (Johannesburg, Pretoria) is particularly challenging for lip moisture; the combination of altitude, low humidity, and strong UV requires the most protective lip care; the Western Cape\'s Mediterranean climate is more lip-friendly but still has high UV intensity'
   },
   'black-american': {
-    naturalLip: 'Black American women have naturally deep-pigmented lips reflecting African ancestry; this is a heritage characteristic that has historically been targeted by advertising for "lip lightening" products — a form of colourism internalised from white beauty standards; the contemporary Black beauty movement strongly affirms and celebrates natural deep lip pigmentation',
     trends: {
       brownLip: 'Brown nude lip is a signature Black American beauty aesthetic element — the 90s-era matte brown lip (made famous by TLC and Brandy era) has had multiple high-fashion revivals; this is a look that only works beautifully on deeper skin tones, making it a distinctly Black beauty aesthetic',
       glossy: '"Lip gloss culture" in Black American beauty communities: the thick, high-shine lip gloss associated with Southern hip-hop and R&B aesthetics (Lil Wayne "Lollipop" era); glossy lips remain a key element of many Black American makeup aesthetics',
@@ -166,15 +155,3 @@ export function getEthnicLipGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const LIP_CARE_STATS = {
-  moduleId: 'lip_care_guide_ethnic',
-  version: '1.0.0',
-  topics: ['lip anatomy vermilion mucosa thin skin', 'lip hyperpigmentation Fitzpatrick IV-VI physiological', 'smoker melanosis nicotine melanocyte stimulation', 'actinic cheilitis lower lip UV cancer risk', 'lip licking cycle saliva enzymes inflammation PIH', 'petrolatum Vaseline occlusive lip healing evidence', 'lanolin wool wax dry lip most effective', 'K-beauty gradient ombre lip tint Korean', 'halal cosmetics lipstick alcohol carmine pork', 'brown nude lip Black American 90s aesthetic', 'Fenty Beauty 40 shades inclusive lip range', 'overline Chicana Latino makeup culture', 'threading perioral PIH south asian upper lip'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'Lips lack sebaceous glands entirely — they cannot produce their own oil or moisturise themselves; the thin stratum corneum (3-5 cell layers vs 15-16 in facial skin) means lips dehydrate extremely rapidly; petrolatum (Vaseline) is the most evidence-backed occlusive treatment for dry lips despite being petroleum-derived — FDA-approved as a skin protectant and highly effective as a nighttime lip mask',
-    'The "lip licking cycle" is a major driver of chronic chapped lips AND lip PIH in darker skin: saliva enzymes (amylase, lipase) degrade the thin lip surface; temporary moisture from licking evaporates and draws additional moisture with it; every lick worsens the underlying dryness and inflammation that leads to PIH; breaking the licking habit is the most impactful lip care intervention',
-    'K-beauty gradient lip technique ("gradient lip" or "bitten lip") applies colour heavily to the centre of the lip and barely to the outer edges then blends; this creates the appearance of natural lip flush rather than applied lipstick; Korean lip tints (Romand, Peripera, 3CE) are specifically formulated for this buildable, water-stain technique and have become globally influential',
-    'The lower lip receives significantly more direct UV radiation than the upper lip (due to anatomy — the lower lip faces upward at an angle); this explains why actinic cheilitis (a precancerous rough lower lip condition) is almost exclusively found on the lower lip; SPF lip balm protects against both pigmentation and malignant change'
-  ]
-};

@@ -154,6 +154,22 @@ test('skin clinic routes over HTTP', async () => {
   assert.equal(o.concerns.length, 7); assert.equal(o.tones.length, 10);
   const r = await fetch(`${B}/api/skin/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ concern: 'melasma', fitzpatrick: 'VI', community: 'latina' }) });
 
+test('colour and lip studio routes over HTTP', async () => {
+  const B = `http://127.0.0.1:${PORT}`;
+  const h = { 'x-forwarded-for': '10.6.6.9' };
+  const o = await (await fetch(`${B}/api/colour/options`, { headers: h })).json();
+  assert.equal(o.looks.length, 5); assert.equal(o.tones.length, 10);
+  const r = await fetch(`${B}/api/colour/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ look: 'ombre', finish: 'matte', care: 'dry', community: 'latina' }) });
+  assert.equal(r.status, 200);
+  const p = await r.json();
+  assert.equal(p.choices.look, 'ombre'); assert.equal(p.community.id, 'latina'); assert.ok(p.finish.caution); assert.ok(p.lips.shade.centre);
+  assert.equal((await fetch(`${B}/api/colour/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  const html = await (await fetch(`${B}/`, { headers: h })).text();
+  assert.ok(html.includes('data-view="colour"') && html.includes('src="colour-studio.js"'));
+  const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
+  assert.equal(lib.shelves.find(s => s.id === 'colour').guides.length, 12);
+});
+
 test('complexion lab routes over HTTP', async () => {
   const B = `http://127.0.0.1:${PORT}`;
   const h = { 'x-forwarded-for': '10.6.6.8' };

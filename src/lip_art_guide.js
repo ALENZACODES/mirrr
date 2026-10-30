@@ -10,7 +10,6 @@ export const LIP_ANATOMY = {
   cupids_bow: {
     name: 'Cupid\'s Bow',
     description: 'The double-peaked upper lip contour. Named after the bow of Cupid (the Roman god of love). Defined vs undefined cupid\'s bow varies significantly by ethnicity — both are beautiful and valid; neither requires "correction".',
-    ethnic_note: 'Fuller lips (larger vermilion border) are common and celebrated in Black American, West African, Caribbean, and Arab communities. East Asian lips often have a flatter cupid\'s bow and thinner profile — neither is superior.',
   },
   vermilion_border: {
     name: 'Vermilion Border',
@@ -57,7 +56,6 @@ export const LIP_LINER_TECHNIQUES = {
       'Match the overline colour exactly to your lipstick — a visible liner ring in a contrasting colour defeats the purpose.',
       'Conceal outside the lined area with a nude concealer to blend and "extend" the lip into surrounding skin.',
     ],
-    ethnic_note: 'Overlining is least necessary (but can still be used artistically) for naturally full lips common in Black American, West African, and Caribbean communities.',
   },
   underline: {
     technique: 'Underlining (Slim Technique)',
@@ -84,7 +82,7 @@ export const LIP_FINISHES = {
     cons: ['Can be drying (especially liquid mattes)', 'Emphasises lip texture and dryness', 'Can look flat on very dark skin tones if formula is chalky'],
     prep: 'ALWAYS exfoliate and moisturise lips before matte application. Lip scrub → balm for 5 minutes → blot → apply.',
     best_formulas: 'Satin-matte (slightly less drying than flat matte); cushiony liquid matte (Charlotte Tilbury Matte Revolution; MAC Powder Kiss)',
-    ethnic_note: 'Matte formulas on very deep skin tones must be high-pigment to avoid looking ashy. Test finish in natural light. MAC, Dose of Colors, and Fenty Beauty matte formulas developed with deep skin tones in mind.',
+    ethnic_note: 'Matte formulas on very deep skin tones must be high-pigment to avoid looking ashy. Test finish in natural light.',
   },
   satin: {
     finish: 'Satin / Cream',
@@ -199,7 +197,7 @@ export const STATEMENT_LIP_LOOKS = {
       'Keep the rest of the face minimal (especially eyes) when wearing a dramatic dark lip.',
       'A damp cotton bud dipped in micellar water is your best friend for correction.',
     ],
-    ethnic_note: 'Dark and berry tones look extraordinary on deeper skin tones. The contrast with melanin-rich skin creates dramatic, striking looks that are iconic in Black American beauty and have influenced global makeup trends for decades.',
+    ethnic_note: 'Dark and berry tones look extraordinary on deeper skin tones. The contrast with melanin-rich skin creates dramatic, striking looks.',
   },
   glossy_editorial: {
     look: 'Wet/Glossy Editorial Lip',
@@ -264,7 +262,7 @@ export const ETHNIC_LIP_TRADITIONS = {
   },
   arab: {
     community: 'Arab',
-    traditions: 'Full, defined lips prized. Glossy and defined lip looks popular. Deep reds and berry shades for formal occasions. Natural, overlined lips for daywear. Arabic beauty historically associated with kohl (eyes) but modern Arab beauty celebrates bold lips.',
+    traditions: 'Glossy and defined lip looks popular. Deep reds and berry shades for formal occasions. Arabic beauty historically associated with kohl (eyes) but modern Arab beauty celebrates bold lips.',
     modern: 'Gulf Arab beauty influence has popularised the "snatched" overlined look globally — precise liner, defined cupid\'s bow, nude-liner with a deeper lipstick.',
   },
   latina: {
@@ -274,7 +272,7 @@ export const ETHNIC_LIP_TRADITIONS = {
   },
   east_asian: {
     community: 'East Asian',
-    traditions: 'Korean gradient lip ("my lips but better") has influenced global beauty. Japanese Taisho-era beauty (1920s) celebrated small, bow-shaped, polished red lips. Chinese opera (Peking opera) uses dramatic lip shapes. Modern K-Beauty emphasis on natural, dewy, bitten lip look.',
+    
     modern: 'The Korean concept of "gradient" or "smudged" lip look went global around 2013-2016.',
   },
   east_african: {
@@ -283,11 +281,11 @@ export const ETHNIC_LIP_TRADITIONS = {
   },
   south_african: {
     community: 'South African',
-    traditions: 'Bold and vibrant in the Cape Malay community; more natural in rural Zulu/Xhosa traditions. Rooibos lip scrub (antioxidant).',
+    traditions: 'Bold lips in Cape Malay celebrations. Rooibos lip scrub (antioxidant).',
   },
   black_american: {
     community: 'Black American',
-    traditions: 'The bold lip has been central to Black American beauty culture. Dark berry and deep red lip looks were popularised in the early 20th century and remain iconic. "Chocolate" brown lips are a vintage beauty staple. The overlined, defined lip with a clear or brown liner was pioneered in Black American beauty in the 90s before becoming a global trend.',
+    traditions: 'The bold lip has been central to Black American beauty culture. Dark berry, deep red and brown lips are long-standing looks, and the brown-lined lip of the 1990s became a global trend.',
     icons: 'Aaliyah\'s 90s brown lip; Mary J. Blige\'s bold berry; Iman\'s bold editorial looks; Rihanna\'s Fenty Beauty range created specifically for deep skin tones.',
   },
 };
@@ -312,7 +310,7 @@ export const LIP_CARE_BASICS = {
     concern: 'Lip hyperpigmentation (darkened or uneven lip colour) is a common concern across many ethnic communities, particularly at the corners of the mouth and along the lip border.',
     causes: ['UV exposure', 'Hormonal changes', 'Smoking (significant)', 'Dental issues in some cases', 'Poor-quality lipsticks with potentially irritating ingredients', 'Licking lips excessively'],
     solutions: ['SPF lip balm daily', 'Stop smoking', 'Vitamin C lip treatments', 'AHA lip exfoliation serums'],
-    ethnic_note: 'Lip hyperpigmentation at the corners is particularly common in South Asian, Arab, and Black communities. This is a legitimate concern — not something to feel self-conscious about — and can be addressed with consistent SPF protection and vitamin C.',
+    ethnic_note: 'Darkening at the lip corners is common. This is a legitimate concern — not something to feel self-conscious about — and can be addressed with consistent SPF protection and vitamin C.',
   },
 };
 
@@ -338,10 +336,3 @@ export function getEthnicLipTradition(communityId) {
 }
 export function getLipCareGuide() { return LIP_CARE_BASICS; }
 
-export const LIP_ART_STATS = {
-  linerTechniques: Object.keys(LIP_LINER_TECHNIQUES).length - 2,
-  finishes: Object.keys(LIP_FINISHES).length,
-  statementLooks: Object.keys(STATEMENT_LIP_LOOKS).length,
-  ombreTechniques: Object.keys(OMBRE_LIP_GUIDE).length,
-  ethnicCommunities: 9,
-};

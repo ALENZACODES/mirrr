@@ -109,12 +109,12 @@ export const EYE_COLOUR_THEORY = {
       avoiding: 'Brown-on-brown (same family as the eye colour) tends to make eyes look smaller and muddier without contrast'
     },
     dark: {
-      description: 'Very dark brown to black eyes (predominant in South Asian, East Asian, and African populations); often have a deep, rich, intense natural presence',
+      description: 'Very dark brown to black eyes; a deep, rich natural presence',
       complementary: 'Virtually any colour is complementary against very dark eyes as they provide strong contrast with almost any hue; shimmery and metallic shades are especially stunning as they catch light against dark eyes; deep wine, copper, gold, and emerald are particularly striking',
       technique: 'With very dark eyes, creating definition often means focusing on intensity, cut creases, or graphic liner rather than trying to "make" the dark eyes a different colour'
     },
     monolid: {
-      description: 'Monolid eyes (with no visible eyelid crease, common in East Asian populations) create different canvas conditions for eyeshadow; eyeshadow visible on the lid in a relaxed gaze is less than on hooded or deep-set eyes with a prominent crease',
+      
       techniques: ['All-over lid colour in a single shade or simple gradient is highly effective and elegant', 'Pupil-centred shimmer (applying shimmer only over the pupil area) creates the illusion of a rounder, more open eye', 'Eyeliner-forward looks that define the lash line; graphic liner in bold colours', 'Shadow placement must consider that the crease (if present) is low and may not be visible at first; depositing the "crease" colour higher than it appears in a closed eye']
     }
   },
@@ -122,7 +122,7 @@ export const EYE_COLOUR_THEORY = {
     black: 'Classic black smoky eye; universal but particularly impactful on darker skin tones where the black creates a dramatic but not overpowering effect',
     navy: 'Navy blue smoky eye; creates a similar intensity to black but with more dimension; particularly flattering for cool undertones',
     deepBerry: 'Wine/plum/burgundy smoky eye; very flattering on olive to deep skin tones; creates a romantic, sultry effect',
-    bronze: 'Bronze and copper smoky eye; warm, wearable, universally flattering; particularly stunning on deeper skin tones where bronze catches the light beautifully',
+    bronze: 'Bronze and copper smoky eye; warm and wearable; particularly striking on deeper skin tones where bronze catches the light beautifully',
     forest: 'Deep forest green smoky eye; unexpected and modern; beautiful for warm and neutral undertones'
   }
 };
@@ -140,7 +140,7 @@ export const CLOTHING_COLOUR_ETHNIC = {
       reasonForFlattery: 'Cool-toned colours complement the pink/rosy/blue undertone in cool-undertoned skin, creating a harmonious coolness'
     },
     neutralUndertones: {
-      flatteringColours: 'The broadest range — both warm and cool colours can work; pure white, true navy, classic red, jade green are universally flattering neutrals',
+      flatteringColours: 'The broadest range — both warm and cool colours can work; pure white, true navy, classic red, jade green are easy neutrals',
       advantage: 'Neutral-undertoned people can wear the widest range of colours without the "clash" effect that warm clothes create on cool undertones and vice versa'
     }
   },
@@ -163,7 +163,7 @@ export const HAIR_COLOUR_THEORY = {
     contrast: 'High contrast (very different hair colour from the skin tone — very dark hair on very fair skin, or very light hair on very dark skin) creates a dramatic, striking effect; low contrast (hair colour close to the skin tone) creates a softer, more blended effect'
   },
   deepSkinHairColour: {
-    challenge: 'Hair lightening on highly melanated (Fitzpatrick V-VI) hair requires much more developer and lightening sessions than lighter hair; natural hair pigment in Black and African-descent hair is predominantly eumelanin (black and brown pigment) with very little pheomelanin (red/yellow pigment); this means the lightening stages go from black to reddish-brown to red to orange before reaching gold or yellow-blonde',
+    challenge: 'Hair lightening on highly melanated (Fitzpatrick V-VI) hair requires much more developer and lightening sessions than lighter hair; this means the lightening stages go from black to reddish-brown to red to orange before reaching gold or yellow-blonde',
     stages: ['Black/very dark brown (starting point)', 'Very dark red-brown', 'Red-brown', 'Red', 'Orange-red', 'Orange', 'Gold-orange', 'Gold', 'Yellow-gold', 'Yellow (very difficult to achieve on high-melanin hair without significant damage)'],
     warmTones: 'Warm colours — auburn, copper, burgundy, red, caramel highlights — are achievable with less damage and often look stunning on darker skin tones; Fitzpatrick V-VI skin with warm undertones and warm chestnut or auburn hair colour creates beautiful harmony',
     bleaching: 'Full bleaching to platinum on highly textured Type 4 hair is among the most damaging hair processes possible; the combination of the inherent fragility of Type 4 hair (more breakage points due to the coil) and the chemical damage of bleach requires exceptional care, protein treatments, and sometimes multiple staged sessions spread weeks apart'
@@ -178,47 +178,38 @@ export const HAIR_COLOUR_THEORY = {
 export const ETHNIC_COLOUR_GUIDES = {
   'west-african': {
     colourPhilosophy: 'West African colour philosophy, expressed most vibrantly through Ankara (Dutch wax print fabric) and traditional kente cloth, embraces maximum colour intensity, bold pattern mixing, and a joyful abundance of colour; the "more is more" aesthetic of West African fashion directly contradicts Western "neutral-forward" fashion sensibilities',
-    skinAndColour: 'Fitzpatrick V-VI skin tones — predominant in West Africa — have the remarkable quality of making virtually any colour pop; the depth of the skin tone creates a naturally high-contrast backdrop for both warm and cool colours; jewel tones are particularly magnificent; orange, which can overwhelm lighter skin, creates extraordinary warmth against deeper skin',
-    makeup: 'Deep skin undertones vary: Nigerian Yoruba and Igbo women often have warm undertone; Ghanaian women show variation but warm tones are common; colour correcting should address this specifically; vivid eyeshadow colours — electric blue, emerald, fuchsia — have long been part of West African beauty'
+    makeup: 'Ghanaian women show variation but warm tones are common; colour correcting should address this specifically; vivid eyeshadow colours — electric blue, emerald, fuchsia — have long been part of West African beauty'
   },
   'south-asian': {
     colourPhilosophy: 'South Asian colour use in traditional dress is sophisticated and season/occasion coded; jewellery and clothing colours are carefully selected to harmonise with skin tone; the enormous variety of South Asian textiles (Banarasi silk, Kanjeevaram, Chanderi, Bandhani) involves rich, saturated colour traditions',
-    skinAndColour: 'South Asian skin tones range from very fair (North India/Pakistan) to dark brown (South India/Sri Lanka/Bangladesh) with the full spectrum between; warm olive to golden undertones are very common; jewel tones (emerald, ruby, sapphire, amethyst) complement the warm undertones beautifully; warm corals, oranges, and pinks are harmonious; cool bright pinks may seem to clash with warm undertones but have been traditional bridal colours in North Indian and Pakistani fashion showing that cultural significance overrides Western colour theory',
-    makeup: 'South Asian women often have very dark brows and lashes naturally; this can create a naturally dramatic eye effect; complementary eyeshadow colours for South Asian warm undertones include warm copper, bronze, emerald green, deep purple, warm rose gold'
+    makeup: 'this can create a naturally dramatic eye effect; complementary eyeshadow colours for South Asian warm undertones include warm copper, bronze, emerald green, deep purple, warm rose gold'
   },
   caribbean: {
     colourPhilosophy: 'Caribbean colour sensibility is tropical, vibrant, and celebratory; the natural environment — turquoise sea, tropical flowers, vivid sunsets — inspires a colour palette that translates into fashion and beauty; carnival culture celebrates the most extreme colour combinations possible',
-    skinAndColour: 'Caribbean skin tones span the full range from very fair (with European colonial heritage) to very deep (Afro-Caribbean); warm undertones are very common in Afro-Caribbean and Indo-Caribbean populations; coral, warm red, turquoise, and tropical brights against deeper Caribbean skin tones create the characteristic vibrant Caribbean aesthetic',
     makeup: 'Carnival makeup (for Trinidad Carnival, Crop Over, etc.) is its own art form: full-face body paint, glitter, rhinestones, and designs inspired by masquerade costumes; for everyday Caribbean beauty, natural-enhancing looks with a pop of vivid colour (lip or eye) reflecting the tropical environment'
   },
   arab: {
     colourPhilosophy: 'Arab colour sensibility in makeup is sophisticated: dramatic, defined eye looks with perfectly groomed brows are the centre of Arab makeup culture; in beauty, colour is concentrated on the eyes and lips with a flawless, even skin base; the tradition of kohl-lined eyes in Arab beauty is thousands of years old',
-    skinAndColour: 'Arab skin tones range from very fair (Levant, some North Africa) to medium olive to medium-dark (many Gulf Arab populations) to darker (Yemen, parts of Maghreb influenced by African heritage); warm olive undertones are common; warm earthy tones, jewel tones, and deep sophisticated colours in clothing complement these undertones',
     makeup: 'Arab eye makeup is characterised by very dramatic definition: thick kohl liner, extended cat-eye, smoky build; colour choices range from classic black to deep jewel tones; the warm caramel to medium-dark skin tones that are common across many Arab populations make warm eye colours (copper, bronze, deep rose gold) extremely flattering'
   },
   latina: {
     colourPhilosophy: 'Latina colour aesthetics reflect the vibrant Latin American cultural heritage: Mexican folk art uses cobalt blue, hot pink, lime green, and scarlet; Caribbean-Latina style embraces tropical brights; Andean weavings use earth tones with vivid accents; bold, confident colour use is a hallmark of Latina fashion and beauty identity',
-    skinAndColour: 'Latina skin tones are extraordinarily diverse: fair-to-medium Latin Americans of predominantly European heritage; medium-olive Latin Americans; Afro-Latinas with deeper brown to dark skin; Indigenous-heritage Latin Americans; mixed heritage complexions; warm undertones are broadly common but cool undertones also appear; the diversity means Latina colour recommendations are necessarily individual',
     makeup: 'The "Latina beat" makeup aesthetic (full, glam, contoured, with bold lip) celebrates confident colour use; classic red lip is a staple of Latin beauty; smoky brown or warm bronze eye with a coral-red lip is a beloved combination; vivid colour is embraced'
   },
   'east-asian': {
     colourPhilosophy: 'East Asian beauty colour philosophy emphasises restraint, precision, and skin perfection as the foundation; makeup colour is often subtle and refined rather than vivid and dramatic (outside of specific subcultural aesthetics like J-fashion and visual kei); the K-beauty influence globally has spread a preference for subtle, natural-seeming colour enhancement ("your face but better")',
-    skinAndColour: 'East Asian skin tones range from very fair to medium; warm olive and yellow undertones are extremely common; cool-neutral undertones also appear; the typical East Asian warm-yellow undertone means cool-toned clothing colours (blues, lavenders, pinks) can look very fresh against the skin; warm earth tones also complement; many East Asian fashion aesthetics embrace monochromatic looks or very precise colour combinations',
     makeup: 'East Asian makeup colour trends (from K-beauty and J-beauty) include: gradient lip (ombre red-orange-nude fading from the centre outward); monochromatic peachy-rose cheek and lip coordination; subtle shimmer on the eyes; glass skin (dewy, transparent-looking skin base) with very light colour on top; dramatic cosplay makeup in specific subcultures'
   },
   'east-african': {
     colourPhilosophy: 'East African colour aesthetics reflect the region\'s remarkable diversity; Somali fashion traditionally features white (for men\'s formal dress), jewel-toned dirac (traditional women\'s dress), and gold jewellery; Ethiopian traditional dress features white shema fabric with colourful silk borders; Swahili coast kanga fabric is internationally known for vibrant two-tone printed designs with text proverbs',
-    skinAndColour: 'East African skin tones are predominantly Fitzpatrick V-VI; Somali and Ethiopian populations include individuals across a wide range; warm and cool-neutral undertones both present; the deep skin tones that are most common across the Horn of Africa make jewel tones spectacular and gold jewellery universally flattering',
     makeup: 'Kohl eyeliner is a traditional East African and Arab-influenced beauty element across Muslim East African communities; the same deep, kohled eye tradition that runs through the Horn of Africa connects to Arab beauty traditions through centuries of trade and cultural exchange; vivid lips with a kohled eye is a classic East African beauty combination'
   },
   'south-african': {
     colourPhilosophy: 'South African colour sensibility encompasses the extraordinary diversity of the country\'s population and its cultures; Ndebele geometric painted houses and beadwork use a vibrant and mathematically precise colour language; Zulu beadwork uses a colour-coded system that conveys social messages; contemporary South African fashion (emerging on international fashion weeks) often draws on these indigenous colour traditions with a modern lens',
-    skinAndColour: 'Black South African skin tones (predominantly Fitzpatrick V-VI) are beautifully complemented by the Ndebele and Zulu colour traditions — bold, high-contrast colour combinations that create striking visual impact; warm African earth tones (terracotta, ochre, sienna) harmonise with warm skin undertones; cool jewel tones (cobalt, teal, emerald) create striking contrast',
     makeup: 'South African contemporary makeup, particularly in Johannesburg and Cape Town, follows international trends with the lens of skin tone diversity; "Africa is not a country" awareness means South African makeup artists are highly skilled across the full Fitzpatrick scale; orange-toned correctors for deep under-eye circles; foundation matching for Fitzpatrick V-VI is a core competency of South African professional makeup'
   },
   'black-american': {
-    colourPhilosophy: 'Black American colour aesthetics have pioneered multiple major beauty colour trends that have been adopted by mainstream beauty; vivid colour, bold contrast, and confident colour choices are central to Black American beauty expression; from the Harlem Renaissance\'s bold fashion statements to the Black Arts Movement\'s embrace of African textile colours to contemporary bold lip and eye trends, Black American beauty has always pushed colour forward',
-    skinAndColour: 'Black American skin tones encompass the full spectrum of African-descent skin, from very light (with significant mixed heritage) to the deepest blue-black; warm, cool, and neutral undertones all present; the predominance of warm and neutral undertones in the community means warm clothing colours (terracotta, mustard, burnt orange, forest green) are broadly flattering; deep cool jewel tones are equally celebrated',
+    colourPhilosophy: 'Vivid colour, bold contrast, and confident colour choices are central to Black American beauty expression; from the Harlem Renaissance\'s bold fashion statements to the Black Arts Movement\'s embrace of African textile colours to contemporary bold lip and eye trends, Black American beauty has always pushed colour forward',
     makeup: 'The "BEAT" look (Beautiful, Excellent, Artistry, Talent — a Black American beauty community term for a perfectly done full glam face) is a significant Black American makeup aesthetic; vivid colour is embraced; burgundy and deep berry lips are icons of Black American beauty; the ombre lip, the perfectly baked concealer, and the fiercely contoured face have roots in Black American beauty communities'
   }
 };
@@ -269,16 +260,3 @@ export function getEthnicColourGuide(communityId) {
   return directMap[communityId] || null;
 }
 
-export const COLOUR_THEORY_STATS = {
-  moduleId: 'colour_theory_beauty',
-  version: '1.0.0',
-  topics: ['colour wheel primary secondary tertiary', 'hue value saturation temperature', 'undertone warm cool neutral', 'complementary analogous triadic harmony', 'colour correcting orange for dark skin', 'green corrector for redness', 'foundation shade matching Fenty Effect', 'eyeshadow complementary theory', 'hair colour lightening stages melanin', 'Ankara fabric West African colour', 'kente cloth Ghana', 'Ndebele geometric beadwork South Africa', 'K-beauty natural colour aesthetic', 'Arab kohl eye tradition', 'Latina vivid bold colour', 'grey hair acceptance movement', 'monochromatic makeup trend'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'Orange colour corrector is the complementary colour of blue on the colour wheel; dark circles on Fitzpatrick IV-VI skin often have a blue-grey-brown tone that requires an orange or terracotta corrector — not light peachy-pink correctors designed for fair skin under-eyes — to properly neutralise the darkness before applying concealer',
-    'Fenty Beauty\'s 2017 launch with 40 foundation shades permanently changed the industry standard for shade range inclusivity; the "Fenty Effect" caused major competitor brands to expand their deep shade offerings within months; before Fenty, many mainstream brands offered only 2-5 shades for deep skin tones while providing 15-20 for light skin',
-    'When lightening Black natural hair (high eumelanin content), the hair must pass through a specific sequence of colour stages: black → dark red-brown → red → orange-red → orange → gold before reaching lighter tones; attempting to skip stages by using more aggressive chemicals causes severe breakage on the already fragile structure of Type 4 hair',
-    'West African fashion\'s embrace of bold pattern mixing (multiple Ankara prints together, mixing kente patterns with contemporar design) directly challenges Western fashion\'s "rules" about pattern mixing and colour restraint; the West African aesthetic principle of abundant colour and joyful visual complexity is a distinct and sophisticated design philosophy',
-    'The Ndebele people of South Africa have a remarkable artistic tradition of painting their homes in bold geometric patterns using a mathematically precise colour language (black, white, red, yellow, green, blue); this aesthetic vocabulary — which influenced Western art movements — is now widely recognised as a major African design heritage with significant contemporary fashion relevance'
-  ]
-};

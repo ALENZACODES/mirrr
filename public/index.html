@@ -365,6 +365,7 @@
             <button class="nav-link" data-view="hairlab" role="menuitem">Hair Colour Lab</button>
             <button class="nav-link" data-view="skin" role="menuitem">Skin Clinic</button>
             <button class="nav-link" data-view="complexion" role="menuitem">Complexion Lab</button>
+            <button class="nav-link" data-view="colour" role="menuitem">Colour &amp; Lip Studio</button>
             <button class="nav-link" data-view="style-match" role="menuitem">Style Match</button>
             <button class="nav-link" data-view="quiz" role="menuitem">DNA Quiz</button>
             <button class="nav-link" data-view="wig" role="menuitem">Wig Match</button>
@@ -1126,6 +1127,20 @@
       </div>
     </section>
 
+    <section id="view-colour" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Colour &amp; Lip Studio</h2>
+        <p class="view-sub">A palette for your undertone and depth (harmony, pop or complement), and a lip look planned for you: the shade for your depth that suits your undertone, the finish, the liner technique and a lip-care routine.</p>
+      </div>
+      <div class="st-wrap">
+        <div id="clControls" class="st-controls"></div>
+        <div id="clPreview" class="sk-preview cx-preview" aria-live="polite"></div>
+        <div id="clSummary" class="hl-summary"></div>
+        <div id="clPlan" class="st-plan"></div>
+        <p class="lib-disclaimer">The lips and palette are illustrations in the Monk Skin Tone Scale tone you pick (Ellis Monk / Google, CC BY 4.0), not your photo. Swatches show the colour words the guides use, not product shades. Undertone and depth are yours to choose; nothing is assumed from your community.</p>
+      </div>
+    </section>
+
     <section id="view-help" class="view hidden">
       <div class="view-header">
         <h2 class="view-title">Help, Privacy &amp; About</h2>
@@ -1289,6 +1304,7 @@
   <script src="journeys.js" defer></script>
   <script src="skin.js" defer></script>
   <script src="complexion.js" defer></script>
+  <script src="colour-studio.js" defer></script>
   <script>
     // Community detail panel interactions
     (function() {

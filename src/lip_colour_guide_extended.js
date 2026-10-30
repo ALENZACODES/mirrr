@@ -16,7 +16,7 @@ export const LIP_COLOUR_THEORY = {
     III: { skin: 'Light-medium; can be warm or cool; sometimes olive', nudes: 'Warm nude (caramel-rose), true nude (neutral beige), dusty mauve', bolds: 'Red (warm-toned red for warm undertone; cool red for cool undertone), wine, berry, deep rose', tips: 'Olive skin (III) looks particularly stunning with warm coral, terracotta, warm bronze-red' },
     IV: { skin: 'Medium-tan; olive, warm, or neutral; diverse', nudes: 'Medium nude (caramel, warm beige), cocoa nude, warm mauve', bolds: 'Deep red, brick red, coral, warm plum, burnt orange, terracotta', tips: 'Lighter nudes (light beige) create stark contrast; medium-depth nudes with warm undertone suit best; warm coral or brick red are especially flattering' },
     V: { skin: 'Medium-dark; warm, neutral, or cool undertone depending on heritage', nudes: 'Deep nude (toffee, caramel-brown, warm brown), chocolate nude, coffee', bolds: 'Deep berry, deep plum, dark wine, burgundy, chocolate-red, dark coral, warm dark red', tips: 'For Fitzpatrick V: avoid very pale nudes — they create an unnatural ashy appearance; warm deep nudes are flattering; deep bolds are stunning; a shade close to the natural lip colour can work as a "nude"' },
-    VI: { skin: 'Very deep; highest melanin concentration; warm, neutral, or cool undertone', nudes: 'The deepest warm browns, tawny nudes, chocolate, warm mahogany', bolds: 'Rich plum, deep berry, darkest wine, dark burgundy, deep terracotta, dark chocolate red, deep coral', tips: 'Cool-toned shades (light pink, lavender, icy nude) can look ashy on very deep skin; warm and deeply pigmented shades are the most flattering; MAC has historically served this skin tone well (with deep tones like Diva, Dark Side, Cyber); Fenty Beauty, UOMA Beauty, and other Black-founded brands have specifically developed deep nudes for Fitzpatrick VI' }
+    VI: { skin: 'Very deep; highest melanin concentration; warm, neutral, or cool undertone', nudes: 'The deepest warm browns, tawny nudes, chocolate, warm mahogany', bolds: 'Rich plum, deep berry, darkest wine, dark burgundy, deep terracotta, dark chocolate red, deep coral', tips: 'Cool-toned shades (light pink, lavender, icy nude) can look ashy on very deep skin; warm and deeply pigmented shades are the most flattering; MAC has historically served this skin tone well (with deep tones like Diva, Dark Side, Cyber); Fenty Beauty, UOMA Beauty, and other Black-founded brands offer deep nudes' }
   }
 };
 
@@ -80,15 +80,14 @@ export const LIP_COLOUR_BY_CULTURE = {
     aesthetic: 'Vibrant, expressive colour; full-coverage pigment; bold shades are celebrated and culturally significant; lip looks that can be seen from a distance are valued for events',
     iconicShades: ['Bright coral orange on dark skin', 'Deep berry and wine', 'Bold red', 'Bright fuchsia', 'African-print-inspired orange-red', 'Bold purple-plum'],
     tradition: 'Lip staining with natural plant materials traditionally in some communities; Tuareg women use indigo plant-derived lip colour in some traditions',
-    modern: 'Lagos beauty culture is very trend-forward; Nigerian content creators have pioneered bold lip looks on dark skin tones; YouTube and Instagram have been platforms for West African beauty expression',
+    modern: 'Lagos beauty culture is very trend-forward; Nigerian content creators share bold lip looks on dark skin tones; YouTube and Instagram have been platforms for West African beauty expression',
     productRecs: 'MAC Cosmetics Diva (deep berry-red) became iconic in the Black/West African beauty community; Fenty Beauty Uncuffed, Uninvited, Plum Dragon across the range for deep skin'
   },
   'south-asian': {
     aesthetic: 'Rich, saturated colours for occasions; Bollywood heavily influences South Asian lip colour norms; a traditional bridal lip is always rich — dark red, berry, or deep rose; everyday: subtle and polished',
     iconicShades: ['Classic bridal red (Bollywood red)', 'Deep berry (the kajal + berry lip is a signature South Asian look)', 'Dark wine', 'Coral-red for everyday', 'Nude-pink for modern minimalist look', 'Bold fuchsia (very Bollywood)'],
     tradition: 'Lac/lak (shellac-based) lip colour used in traditional South Asian cosmetics; kajal around the eyes with a deep lip is the classic Bollywood formula',
-    modern: 'Indian beauty market has one of the world\'s most sophisticated lip colour traditions; lakme, Colorbar (Indian brands) alongside global brands; Indian consumers across Fitzpatrick III-V have well-documented product preferences',
-    note: 'Deep lip shades on medium-dark South Indian or Sri Lankan skin is particularly beautiful; warm nudes suit warm olive undertones of North Indian skin well'
+    
   },
   caribbean: {
     aesthetic: 'For events and carnival: no holds barred — bold, bright, dramatic; for daily: often a natural glossy look; the Caribbean beauty vibe values a luminous, not-trying-too-hard base with occasional bold moments',
@@ -142,7 +141,7 @@ export const LIP_COLOUR_FOR_DARK_SKIN = {
   nudeLips: {
     challenge: 'The "nude" lip conventionally means a shade close to the wearer\'s lip colour that gives a natural appearance. For Fitzpatrick V-VI: most mainstream "nude" shades were historically formulated for light-medium skin, reading as light beige on dark skin — not nude at all',
     history: 'The lack of true nude shades for dark skin was a systemic industry failure for decades — one of the primary complaints that Black beauty consumers raised, along with foundation shade gaps',
-    breakthrough: 'Fenty Beauty (2017), UOMA Beauty, Mented Cosmetics, Beauty Bakerie were among brands that explicitly developed nude shade ranges for melanin-rich skin — shades in the toffee, caramel, cocoa, warm brown, mahogany range',
+    
     advice: 'A nude shade for Fitzpatrick V-VI should be: a shade very close to the natural lip tone (often a warm medium-brown or caramel), or the lip colour with a hint more saturation — not a beige or light-pink'
   },
   blueBasedShades: 'Blue-based pinks and lavenders can look grey or ashy on deeper skin tones — avoid cool blue-based shades unless that effect is intentional; warm undertone shades in all colour families typically flatter more',
@@ -199,18 +198,3 @@ export function getLipColourByCulture(communityId) {
   return directMap[communityId] || null;
 }
 
-export const LIP_COLOUR_STATS = {
-  moduleId: 'lip_colour_guide_extended',
-  version: '2.0.0',
-  topics: ['lip colour', 'lip liner', 'nude lips', 'lip undertone', 'liquid lipstick', 'lip gloss', 'lip oil', 'gradient lip', 'ombre lip', 'K-beauty lip', 'Black American beauty', 'Fenty Beauty', 'carmine', 'lip formulation', 'bold lips ethnic'],
-  communitiesSupported: 9,
-  keyFacts: [
-    'Carmine (cochineal insect-derived) is still used in many red and pink lipsticks; the Aztec civilisation developed this pigment for textiles and cosmetics centuries before European contact',
-    'Fenty Beauty (2017) was historically significant in creating nude lip shades for Fitzpatrick V-VI skin — a gap the industry had failed to fill for decades',
-    'The K-beauty gradient lip (jelly lip / 물광 립) concentrates colour at the center with bare or very light edges — deliberately the opposite of traditional Western lip liner technique',
-    'Cool-toned (blue-based) lip shades including many lavenders and blue-reds can read as grey or ashy on deep Fitzpatrick V-VI skin — warm-toned versions of the same colour family typically flatter better',
-    'Aztec crimson from cochineal (Dactylopius coccus) was exported from Mexico to Europe starting in the 1500s and transformed the European dye industry — it remains in use in cosmetics as CI 75470',
-    'Mac Cosmetics\' Viva Glam lipstick, launched with RuPaul in 1994, became one of the most culturally significant lip products in the Black and queer beauty community while raising funds for HIV/AIDS',
-    'Maiko (apprentice geisha) in Japan wear a very specific partially filled lower lip — traditionally leaving the upper lip only partly painted — to suggest youth; the style evolves as they progress'
-  ]
-};

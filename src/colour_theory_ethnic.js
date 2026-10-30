@@ -11,7 +11,6 @@ export const UNDERTONES = {
     label: 'Warm',
     description: 'Yellow, peach, gold, or olive hue beneath the skin',
     howToIdentify: 'Veins appear green or olive. Gold jewellery looks more flattering than silver. The sun gives you a tan, not a burn first.',
-    communities: ['south-asian (primarily)', 'latina (primarily)', 'east-asian (varies)', 'some west-african'],
     makeupGuidance: 'Choose foundations with warm, golden, or peachy undertones. Avoid grey or pink bases.',
     colourPalette: ['warm red', 'coral', 'orange', 'gold', 'copper', 'terracotta', 'peach', 'warm brown', 'mustard'],
     avoidColours: ['cool pinks', 'blue-red', 'silver-grey'],
@@ -23,7 +22,6 @@ export const UNDERTONES = {
     label: 'Cool',
     description: 'Pink, red, or blue hue beneath the skin',
     howToIdentify: 'Veins appear blue or purple. Silver jewellery more flattering. Skin burns before tanning.',
-    communities: ['east-african (some)', 'black-american (many)', 'caribbean (many)', 'some arab'],
     makeupGuidance: 'Choose foundations with pink, rosy, or neutral-cool undertones. Avoid orange or brassy foundations.',
     colourPalette: ['blue-red', 'cool berry', 'plum', 'emerald', 'cobalt', 'silver', 'cool pink', 'lavender', 'magenta'],
     avoidColours: ['orange-based nudes', 'brassy gold', 'warm yellow'],
@@ -35,7 +33,6 @@ export const UNDERTONES = {
     label: 'Neutral',
     description: 'A mix of warm and cool — balanced, versatile',
     howToIdentify: 'Both gold and silver jewellery look equally good. Veins may appear blue-green. Can pull off most colours.',
-    communities: ['all communities — neutral is the most common mixed undertone'],
     makeupGuidance: 'Very versatile. Most foundation shades will work. Focus on depth (light/dark) rather than undertone adjustment.',
     colourPalette: ['balanced red', 'nude-pink', 'mauve', 'taupe', 'warm white', 'classic red', 'rose gold'],
     avoidColours: ['Very few avoided — most colours work with neutral'],
@@ -47,7 +44,6 @@ export const UNDERTONES = {
     label: 'Deep Warm (Rich Warm)',
     description: 'Warm undertones that are rich and complex — mahogany, deep amber, golden-brown',
     howToIdentify: 'Deep skin with very warm, orange-gold, or red-brown richness. Looks incredible in gold and copper.',
-    communities: ['west-african', 'east-african', 'black-american', 'some south-african', 'some caribbean'],
     makeupGuidance: 'Deep warm foundations — avoid pink-toned or grey-toned deep shades. The right shade will be described as "caramel," "mahogany," or "espresso" on warm side.',
     colourPalette: ['gold', 'copper', 'deep orange', 'brick red', 'burnt sienna', 'chocolate brown', 'mustard yellow', 'olive green'],
     avoidColours: ['grey nudes', 'ash-toned foundations', 'cool pink blush without warming'],
@@ -59,7 +55,6 @@ export const UNDERTONES = {
     label: 'Deep Cool (Rich Cool)',
     description: 'Cool undertones in deep skin — blue-black, ebony with cool depth',
     howToIdentify: 'Deep skin with a blue-black or reddish-cool depth. Silver and jewel tones look striking.',
-    communities: ['some west-african', 'some east-african', 'some caribbean', 'some black-american'],
     makeupGuidance: 'Avoid brassy or orange foundations. Choose descriptions like "cool ebony" or "raisin-cool" on deep side.',
     colourPalette: ['cool red', 'berry', 'plum', 'electric blue', 'emerald', 'silver', 'deep wine', 'cobalt'],
     avoidColours: ['orange', 'warm copper', 'brassy gold'],
@@ -114,7 +109,6 @@ export const COMMUNITY_COLOUR_GUIDES = {
   'west-african': {
     communityId: 'west-african',
     title: 'Colour Guide for West African Skin Tones',
-    generalNote: 'West African skin tones span Fitzpatrick III-VI with warm, cool, and neutral undertones. The common thread is richness — deep melanin that responds dramatically to colour.',
     powerColours: [
       { colour: 'Gold', hex: '#FFD700', why: 'Gold is the ultimate West African colour — ceremonially, culturally, and aesthetically. On deep warm skin it is transformative.' },
       { colour: 'Electric Blue', hex: '#0000FF', why: 'High contrast against deep skin. Pops with maximum impact.' },
@@ -127,13 +121,11 @@ export const COMMUNITY_COLOUR_GUIDES = {
       'Cool pink blush without a warm bronzer to balance — reads ashy',
       'Very pale nude lips without warmth — disappears and looks washed out',
     ],
-    foundationRule: 'Choose warm, golden foundations. The word "warm" or "golden" in a shade name is almost always correct for West African skin.',
   },
 
   'south-asian': {
     communityId: 'south-asian',
     title: 'Colour Guide for South Asian Skin Tones',
-    generalNote: 'South Asian skin tones range from very fair (some North Indian/Pakistani) through medium-deep olive to deep (South Indian, Sri Lankan, Bangladeshi). Most have warm or olive undertones.',
     powerColours: [
       { colour: 'Terracotta', hex: '#C94F22', why: 'The warm red-orange of terracotta complements golden-olive South Asian skin perfectly.' },
       { colour: 'Deep Plum', hex: '#5E2D79', why: 'A regal combination — plum on warm skin creates deep contrast that feels luxurious.' },
@@ -146,13 +138,11 @@ export const COMMUNITY_COLOUR_GUIDES = {
       'Cool-toned blush on warm-undertone skin — use peach-warm blush instead',
       'Blue-red lip on warm skin without testing — sometimes works, but the warm brick red is safer',
     ],
-    foundationRule: 'Look for "olive," "golden," or "peachy" in shade descriptions. Avoid "rosy" or "cool pink" foundations.',
   },
 
   'arab': {
     communityId: 'arab',
     title: 'Colour Guide for Arab Skin Tones',
-    generalNote: 'Arab skin tones span enormous diversity — from very fair (Levantine) through olive (Gulf Arab) to deep (Yemeni, Sudanese-Arab). Most have warm or neutral-warm undertones.',
     powerColours: [
       { colour: 'Deep Emerald', hex: '#006400', why: 'The Islamic cultural connection to green combined with its contrast against warm Arab skin makes emerald stunning.' },
       { colour: 'Rich Burgundy', hex: '#800020', why: 'A deep burgundy lip on warm-olive Arab skin is one of the most beautiful combinations in makeup.' },
@@ -164,13 +154,11 @@ export const COMMUNITY_COLOUR_GUIDES = {
       'Very orange bronzer on pale Levantine skin — looks too warm and artificial',
       'Grey-toned foundations — most Arab skin has some warmth',
     ],
-    foundationRule: 'For Levantine skin (lighter): neutral-warm or even neutral. For Gulf/Yemeni (deeper): warm, golden foundations.',
   },
 
   'east-asian': {
     communityId: 'east-asian',
     title: 'Colour Guide for East Asian Skin Tones',
-    generalNote: 'East Asian skin ranges from very fair (some East Asian features) through golden medium. Many East Asian skin tones have yellow or neutral-warm undertones.',
     powerColours: [
       { colour: 'Classic Red', hex: '#CC0000', why: 'Red is the traditional beauty and luck colour across East Asian cultures — and it works beautifully on yellow-warm skin.' },
       { colour: 'Peachy Coral', hex: '#FF7F7F', why: 'Warm coral is the ideal blush and lip tone for yellow-undertone skin — more flattering than cool pink.' },
@@ -182,13 +170,11 @@ export const COMMUNITY_COLOUR_GUIDES = {
       'Ashy or grey foundations — most East Asian skin has warmth; grey makes it look tired',
       'Overdone contour — East Asian bone structure is often defined already; light hand is better',
     ],
-    foundationRule: 'Look for "ivory" (not white) or "porcelain with warmth" for fair East Asian; "golden medium" for deeper. Avoid pink-heavy descriptions.',
   },
 
   'black-american': {
     communityId: 'black-american',
     title: 'Colour Guide for Black American Skin Tones',
-    generalNote: 'Black American skin spans one of the widest ranges of any community — from very light to very deep, warm to cool, across every undertone. Bold and vivid colours often work best.',
     powerColours: [
       { colour: 'Royal Purple', hex: '#7B2D8B', why: 'Purple on deeper Black American skin is royally stunning — the contrast and richness complement each other.' },
       { colour: 'Hot Orange', hex: '#FF4500', why: 'On Fitzpatrick V-VI warm, a hot orange lip or shadow is extraordinary. Arguably no other skin tone wears orange this well.' },
@@ -201,13 +187,11 @@ export const COMMUNITY_COLOUR_GUIDES = {
       'Very pale pink blush — disappears or reads grey',
       'Orange-based nude for cool-undertone deep skin — muddy result',
     ],
-    foundationRule: 'Never grab the deepest shade without checking undertone. Deep cool skin needs cool-neutral foundations. Deep warm needs warm-mahogany-espresso tones.',
   },
 
   'latina': {
     communityId: 'latina',
     title: 'Colour Guide for Latina Skin Tones',
-    generalNote: 'Latina skin tones span the full range due to the diversity of Latin American heritage — Indigenous, African, European, and Asian. Most Latina skin has warm or olive undertones.',
     powerColours: [
       { colour: 'Warm Red', hex: '#CC3300', why: 'A classic warm red lip is quintessentially Latina. This is the power colour of the community.' },
       { colour: 'Coral Pink', hex: '#FF6B6B', why: 'Warm coral reads tropical and vibrant on olive-warm Latina skin.' },
@@ -218,13 +202,11 @@ export const COMMUNITY_COLOUR_GUIDES = {
       'Pink-based foundations for olive undertone — looks grey and cool',
       'Over-highlighting in the wrong gold tone — cool gold on warm skin looks mismatched',
     ],
-    foundationRule: 'Olive skin needs olive-warm or golden foundations. Avoid pink or grey-toned deep shades.',
   },
 
   'caribbean': {
     communityId: 'caribbean',
     title: 'Colour Guide for Caribbean Skin Tones',
-    generalNote: 'Caribbean skin tones reflect the African, Arawak, European, and South Asian heritage of the islands — a wide range, often Fitzpatrick IV-VI with warm or cool-warm undertones.',
     powerColours: [
       { colour: 'Tropical Coral', hex: '#FF6B35', why: 'Island beauty at its most authentic — warm coral on Caribbean skin is sunshine and joy.' },
       { colour: 'Hot Pink', hex: '#FF69B4', why: 'Vivid hot pink on deep Caribbean skin is a cultural staple of carnival and celebration.' },
@@ -235,7 +217,6 @@ export const COMMUNITY_COLOUR_GUIDES = {
       'Very cool-pink nudes for warm Caribbean skin — wrong undertone reads as grey',
       'Ashy powders without warm bronzer correction',
     ],
-    foundationRule: 'Most Caribbean skin needs warm or neutral foundations. Deep Caribbean skin often has warm richness — choose golden-warm shades.',
   },
 
 };
@@ -271,11 +252,4 @@ export function getAvoidMistakesForCommunity(communityId) {
   const guide = COMMUNITY_COLOUR_GUIDES[communityId];
   return guide?.avoidMistakes || [];
 }
-
-export const COLOUR_THEORY_STATS = {
-  undertones: Object.keys(UNDERTONES).length,
-  communityGuides: Object.keys(COMMUNITY_COLOUR_GUIDES).length,
-  colourFormulas: Object.keys(COLOUR_FORMULAS).length,
-  communities: Object.keys(COMMUNITY_COLOUR_GUIDES),
-};
 

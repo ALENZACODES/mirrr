@@ -105,3 +105,18 @@ test('the svg zone overlay maps onto the plate face box and is revoked after dra
   assert.match(helper, /const \[bx, by, bw, bh\] = ph\.face \?\? \[/);
   assert.match(helper, /URL\.revokeObjectURL\(url\)/);
 });
+
+test('nails: a real polish photo is used for an exact shape+colour+finish, otherwise the tint is labelled "Colour preview"; no default swatch is ringed', () => {
+  const js = readFileSync(join(PUB, 'nails.js'), 'utf8');
+  assert.match(js, /photoFor\('nails-real', realId\)/);
+  assert.match(js, /\$\{n\.shape\.id\}__\$\{String\(polish\.word\)/);
+  assert.match(js, /Colour preview: /);
+  assert.match(js, /sw\(x, !!ns\.polish && x\.word === ns\.polish\.word\)/);
+});
+
+test('brow & kohl: no eye look is highlighted until the user taps one; the unpicked plate says Suggested', () => {
+  const js = readFileSync(join(PUB, 'studio.js'), 'utf8');
+  assert.match(js, /l\.id === st\.choices\.eyeLook \? ' st-look--on'/);
+  assert.doesNotMatch(js, /l\.id === p\.eye\.look \? ' st-look--on'/);
+  assert.match(js, /Suggested: /);
+});

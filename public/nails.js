@@ -64,10 +64,17 @@
       <text x="120" y="290" text-anchor="middle" font-size="12" fill="#f5f5f5">${esc(polish.word)} · ${esc(n.finish.name)}</text></svg>
       <figcaption><strong>${esc(n.shape.name)}</strong><span>${esc(n.wear.label)}</span></figcaption></figure>`;
     if (!window.StudioPhoto) return drawing;
+    // A real photo of this exact shape + colour + finish wins; otherwise the colour is painted on the plate and said so.
+    const realId = `${n.shape.id}__${String(polish.word).toLowerCase().replace(/[^a-z0-9]+/g, '_')}__${fin}`;
+    if (window.StudioPhoto.photoFor('nails-real', realId)) return window.StudioPhoto.panel({
+      studio: 'nails-real', id: realId, fallback: drawing, w: 960, h: 720,
+      alt: `Hand with ${polish.word} ${n.shape.name} nails, ${n.finish.name} finish`,
+      caption: `<strong>${esc(n.shape.name)}</strong><span>${esc(polish.word)} · ${esc(n.finish.name)} · ${esc(n.wear.label)}</span>`,
+    });
     return window.StudioPhoto.panel({
       studio: 'nails', id: n.shape.id, fallback: drawing, w: 960, h: 720,
       alt: `Hand with ${polish.word} ${n.shape.name} nails, ${n.finish.name} finish`,
-      caption: `<strong>${esc(n.shape.name)}</strong><span>${esc(polish.word)} · ${esc(n.finish.name)} · ${esc(n.wear.label)}</span>`,
+      caption: `<strong>${esc(n.shape.name)}</strong><span>Colour preview: ${esc(polish.word)} · ${esc(n.finish.name)} · ${esc(n.wear.label)}</span>`,
       paint: { colour: polish.hex, mode: 'multiply', opacity: op === 1 ? 0.95 : 0.7, lift: 0.45, sheen, glitter: fin === 'glitter', duochrome: fin === 'duochrome', matte: fin === 'matte' ? 1 : 0 },
     });
   }
@@ -113,7 +120,7 @@
     const polish = ns.polish ?? n.polish;
     $('nsPreview').innerHTML = handPanel(p) + pyramidPanel(p);
     $('nsSummary').innerHTML = `<p class="hl-big">${esc(polish.word)} ${esc(n.shape.name.toLowerCase())} nails · ${esc(n.finish.name)} · ${esc(s.family.name)} ${esc(s.concentration.name)}</p>${p_('', c.tip)}`;
-    const group = (t, xs) => (xs.length ? `<p><strong>${esc(t)}:</strong> ${xs.map(x => sw(x, x.word === polish.word)).join('')}</p>` : '');
+    const group = (t, xs) => (xs.length ? `<p><strong>${esc(t)}:</strong> ${xs.map(x => sw(x, !!ns.polish && x.word === ns.polish.word)).join('')}</p>` : '');
     $('nsPlan').innerHTML = [
       card(`Polish for ${c.skin}`, `${group('Everyday', c.everyday)}${group('Statement', c.statement)}${group('Dark', c.dark)}${group('Also flattering', c.flattering)}<p class="lib-note">Tap a swatch to try it on the hand.</p>${p_('Metallics', c.metallics)}${c.avoid.length ? p_('Can look muddy or vanish', c.avoid.join('; ')) : ''}${c.skipped.length ? p_(`Left out for a ${p.choices.undertone} undertone`, c.skipped.join('; ')) : ''}${p_('Undertone', c.undertone)}`),
       card(`Shape: ${n.shape.name}`, `${p_('', n.shape.description)}${p_('Length', n.shape.length)}${p_('Best for', n.shape.bestFor)}${p_('Tip', n.shape.tip)}`),

@@ -129,7 +129,7 @@ function drawDiagram(plan, skin) {
 function photoSlot(p, drawing) {
   const SP = window.StudioPhoto;
   if (!SP || !SP.photoFor('brow', `eye-${p.eye.look}`)) return drawing;
-  const eye = SP.panel({ studio: 'brow', id: `eye-${p.eye.look}`, fallback: drawing, w: 1152, h: 648, alt: `${p.eye.label} on a real eye`, caption: `<strong>${esc(p.eye.label)}</strong>` });
+  const eye = SP.panel({ studio: 'brow', id: `eye-${p.eye.look}`, fallback: drawing, w: 1152, h: 648, alt: `${p.eye.label} on a real eye`, caption: st.choices.eyeLook ? `<strong>${esc(p.eye.label)}</strong>` : `<strong>Suggested: ${esc(p.eye.label)}</strong><span>Tap an eye look to choose</span>` });
   const brow = SP.panel({ studio: 'brow', id: `brow-${p.brow.style}`, fallback: '', w: 1152, h: 648, alt: `${p.brow.label} brow`, caption: `<strong>${esc(p.brow.label)}</strong>` });
   return `<div class="st-photo-pair">${eye}${brow}</div>`;
 }
@@ -160,7 +160,7 @@ function renderPlan() {
   const skin = savedHex && st.choices.shadeId && !st.toneChanged ? savedHex : TONE_SWATCH[p.choices.skinTone];
   $('stDiagram').innerHTML = photoSlot(p, drawDiagram(p, skin));
   $('stLooks').innerHTML = p.ranking.map(l => `
-    <button type="button" class="st-look${l.id === p.eye.look ? ' st-look--on' : ''}" data-st-look="${l.id}" aria-pressed="${l.id === p.eye.look}">
+    <button type="button" class="st-look${l.id === st.choices.eyeLook ? ' st-look--on' : ''}" data-st-look="${l.id}" aria-pressed="${l.id === st.choices.eyeLook}">
       <span class="st-look-name">${esc(l.label)}</span>
       ${l.forYou ? `<span class="lib-badge lib-badge--yours">${esc(p.community?.label ?? '')} tradition</span>` : ''}
     </button>`).join('');

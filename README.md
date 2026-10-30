@@ -4,7 +4,7 @@
 
 > **Most beauty apps were built for the West. MIRRR was built for the rest.**
 
-**MIRRR** is a multicultural beauty discovery agent powered by [Qloo Taste AI](https://qloo.com). It uses Qloo's cultural graph to decode a user's aesthetic DNA from the artists, films, and brands they love — and serve personalized beauty looks, foundation shades, and wig matches calibrated to their cultural community.
+**MIRRR** is a multicultural beauty discovery agent powered by [Qloo Taste AI](https://qloo.com). It sends the artists, shows and brands a woman loves to Qloo's taste graph, filters the cultural tags Qloo returns, and uses them to rank makeup and hair looks, then pairs them with a foundation shade and a step-by-step plan for her community.
 
 **Live Demo:** https://mirrr-upbn.onrender.com
 
@@ -14,22 +14,22 @@
 
 MIRRR stands for **Multicultural Intelligence for Real-time Recommendation and Reflection**.
 
-Black, South Asian, Arab, Latina, Caribbean, and East Asian women are a large share of the world's beauty buyers, yet most beauty AI products are tuned on Western beauty standards, Western skin tones, and Western aesthetic references. MIRRR inverts this: Qloo's cultural intelligence is the core, and every recommendation starts from the user's own cultural world.
+Black, South Asian, Arab, Latina, Caribbean and East Asian women are often an afterthought in beauty tools built around Western beauty standards, skin tones and aesthetic references. MIRRR inverts this: Qloo's cultural intelligence is the core, and every recommendation starts from the user's own cultural world.
 
 ---
 
 ## How Qloo Powers MIRRR
 
-MIRRR uses Qloo in three distinct, non-trivial ways:
+All Qloo calls go through `src/qloo.js` (`QlooClient`) on the server; the API key never reaches the browser. MIRRR uses Qloo in three ways:
 
-### 1. Entity Resolution → Cultural Graph
-Users enter cultural signals: an artist name, a film, a city, a brand. MIRRR calls `GET /v2/search` to resolve these to Qloo entity IDs within Qloo's entity graph. This is not a keyword lookup — it's a semantic match into a cultural knowledge graph.
+### 1. Entity resolution: `GET /v2/search`
+She types an artist, show, film or brand. `qlooTaste()` in `src/taste_signals.js` calls `GET /v2/search` to resolve it to a Qloo entity, preferring artist, person, movie, TV show, brand, destination, book and podcast types. The badge names the entity Qloo resolved.
 
-### 2. Taste Profile → Aesthetic Vector
-Resolved entity IDs feed `POST /v2/taste`, requesting `urn:entity:tag` outputs. Qloo returns affinity-scored cultural tags (e.g. `afrobeats`, `bold-glam`, `warm-earth`). MIRRR maps these tags onto a 5-dimension **AestheticVector**: `{intensity, warmth, boldness, texture, colour_palette}`.
+### 2. Taste tags: `GET /v2/insights` (music genres and media themes)
+For the resolved entity, MIRRR calls `GET /v2/insights` twice with `filter.type=urn:tag` and `signal.interests.entities=<id>`: once with `filter.tag.types=urn:tag:genre:music` and once with `urn:tag:genre:media,urn:tag:keyword:media`. That is 3 Qloo calls per taste input, returning up to 50 affinity-scored tags (25 + 25). A beauty-vocabulary allowlist and a safety blocklist keep the tags that can inform a look (for example `afrobeats`, `naija`, `Africa` for Burna Boy). The tags feed a taste vector (`src/aesthetic.js`: intensity, warmth, boldness, texture, colour palette), and each look is scored as **0.5 × taste-vector fit + 0.5 × Qloo evidence share**, with the arithmetic shown in the agent trace.
 
-### 3. Trending Artists → Verified Cultural Feed
-`GET /api/trending` uses Qloo taste affinity from regional anchor artists as seeds, fetching `urn:entity:music:artist` outputs. Results are cross-verified against a curated multi-chart anchor database (Oct 2026) — only artists confirmed trending in ≥2 sources are surfaced. This is MIRRR's live, Qloo-powered "Trending Now" panel.
+### 3. Trending artists: `GET /v2/insights` (artist affinity)
+`GET /api/trending` resolves each region's anchor artists with `/v2/search`, then calls `GET /v2/insights` with `filter.type=urn:entity:music:artist` and those entities as signals (`src/trending_artists.js`). Artists Qloo returns that are also on MIRRR's curated regional list are marked as confirmed by two sources; Qloo's top 3 are shown even if they are not on the list; the rest of the panel is filled from the curated list. If Qloo is unreachable, the curated list is used on its own.
 
 ---
 
@@ -39,10 +39,10 @@ Resolved entity IDs feed `POST /v2/taste`, requesting `urn:entity:tag` outputs. 
 User input (artists / brands / places)
         │
         ▼
-[Qloo /v2/search] → Entity Resolution (Qloo IDs)
+[Qloo GET /v2/search]   → Entity resolution (Qloo IDs)
         │
         ▼
-[Qloo /v2/taste]  → Cultural Tag Affinities
+[Qloo GET /v2/insights] → Music + media tags with affinity → allowlist + safety filter
         │
         ▼
 AestheticVector   → intensity / warmth / boldness / texture / palette
@@ -53,7 +53,7 @@ AestheticVector   → intensity / warmth / boldness / texture / palette
         └──► TrendingArtists → Qloo-verified regional trending artists (9 regions)
 ```
 
-**Stack:** Pure Node.js (zero npm packages), ESM modules, Render free tier  
+**Stack:** Pure Node.js (no runtime npm packages; Jest is a dev-only test tool), ESM modules, Render free tier  
 **API:** Qloo Hackathon API (`https://hackathon.api.qloo.com`)
 
 ---
@@ -61,13 +61,13 @@ AestheticVector   → intensity / warmth / boldness / texture / palette
 ## The Three Engines
 
 ### 🎨 ShadeFinder
-60-shade foundation spectrum from very light to very deep skin (CIELAB L* 15–94), checked against the Monk Skin Tone scale, with 14 shades in the deep and rich-deep tiers. Photo matches report CIEDE2000 distance in bands (≤3 match, 3–6 close, >6 outside the range) and say so when nothing fits. Community-aware starting range; undertone-filtered (warm / cool / neutral / olive).
+60-shade foundation spectrum from very light to very deep skin (CIELAB L* 14.6–93.9), checked against the Monk Skin Tone scale, with 14 shades in the deep and rich-deep tiers. Photo matches report CIEDE2000 distance in bands (≤3 match, 3–6 close, >6 outside the range) and say so when nothing fits. Community-aware starting range; undertone-filtered (warm / cool / neutral / olive).
 
 ### 💇🏾 WigMatchmaker
-42 wig styles scored against the AestheticVector. Box Braids, Senegalese Twists, Goddess Braids, Bone Straight, Kinky Coily Afro, Silk Press, and more — matched to the user's community, aesthetic intensity, and texture preference.
+42 wig styles (Knotless Box Braids, Senegalese Twists, Goddess Braids, Bone Straight, Kinky Coily Afro, Silk Press and more), filtered by the length and texture she picks and ranked on three shown checks: hair vibe, community and look style. Wigs appear only if she chooses them.
 
 ### ✨ LookEngine
-60 complete multicultural beauty looks (makeup, with hair and finishing steps only if she picks them): Afro-Glam Editorial, Gulf Glam, K-Beauty Glass Skin, Caribbean Carnival, Bollywood Bridal, and more. Each look includes formula-level product recommendations tuned to the user's skin depth.
+60 complete multicultural beauty looks (makeup, with hair and finishing steps only if she picks them): Afro-Glam Editorial, Gulf Glam, K-Beauty Glass Skin, Caribbean Carnival, Bollywood Bridal, and more. Each look lists product types (category, shade range, finish), and 50 of the 60 looks also show named products from brands' own stores, with prices as of Oct 30, 2026.
 
 ---
 
@@ -77,10 +77,10 @@ MIRRR's Trending Now panel surfaces regionally trending artists across 9 cultura
 
 - **West Africa** · **East Africa** · **Black America** · **Caribbean** · **South Asian** · **Arab World** · **Latina** · **East Asian** · **South Africa**
 
-**Failsafe architecture:**
-1. **Source 1 (Qloo):** Use anchor artists as seeds → `POST /v2/taste` with `output_type: urn:entity:music:artist` → live recommendations
-2. **Source 2 (Curated):** Oct 2026 multi-chart verified anchor database (Billboard Afrobeats, UK Afro, Apple Music regional, Spotify)
-3. **Verification:** Only surface artists confirmed by ≥2 sources OR flagged as multi-year chart anchors
+**How it works:**
+1. **Qloo:** each region's anchor artists are resolved with `GET /v2/search`, then `GET /v2/insights` with `filter.type=urn:entity:music:artist` returns artists with taste affinity to them.
+2. **Curated list:** a hand-compiled list of regional anchor artists (Oct 2026) in `src/trending_artists.js`.
+3. **Merge:** Qloo artists that are also on the curated list are marked as confirmed by two sources; Qloo's top 3 are kept even if not on the list; the panel is filled from the curated list. If Qloo fails, the curated list is shown alone.
 
 Tapping a trending artist starts a new taste profile with that artist (the app says so on the button) → Qloo resolves it and the looks update. To combine artists, add them in Taste.
 
@@ -90,17 +90,15 @@ Tapping a trending artist starts a new taste profile with that artist (the app s
 
 A 5-question quiz that scores the user's cultural community before any Qloo data is available. Questions reference real trending artists (Tiwa Savage, Nicki Minaj, Anitta, BLACKPINK) and culturally specific occasions (Owambe, HBCU Homecoming, Desi wedding, Carnival).
 
-Quiz results seed the AestheticVector and pre-configure ShadeFinder + WigMatchmaker — ensuring recommendations are relevant even before the user types anything.
+Quiz results seed the taste vector and the starting community for Shades and Wig Match, so the first recommendations reflect her answers before she types anything.
 
 ---
 
 ## Impact
 
-**The problem is real:** Fenty Beauty's 2017 40-shade foundation launch was news precisely because that range was rare.
-
 **The opportunity:** women in MIRRR's target communities are mostly served by beauty apps designed for someone else. Qloo's cultural intelligence enables MIRRR to flip this by default — not as an afterthought.
 
-**What MIRRR demonstrates:** That Qloo's taste graph, normally used for travel or restaurant recommendations, is a powerful substrate for a completely different vertical: personalized beauty for the world's underserved majority.
+**What MIRRR demonstrates:** that the cultural tags in Qloo's taste graph (music genres, media themes) can drive a different vertical: personal beauty looks for women whose taste and skin most tools serve last.
 
 ---
 
@@ -119,7 +117,7 @@ QLOO_API_KEY=your_key node src/server.js
 # → http://localhost:3000
 ```
 
-No npm install needed. Zero external dependencies.
+No npm install needed to run it (no runtime dependencies). Run `npm install` then `npm test` and `npm run test:node` for the test suites.
 
 ---
 

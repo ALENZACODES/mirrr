@@ -5,11 +5,13 @@
  * the MIRRR Agent is a multi-step reasoning agent that:
  *
  *   1. PERCEIVES  — understands user's cultural taste signals
- *   2. RESOLVES   — maps signals to Qloo entities (250M+ graph)
+ *   2. RESOLVES   — maps signals to Qloo entities (GET /v2/search, then GET /v2/insights tags)
  *   3. PROFILES   — builds a taste graph + aesthetic vector
  *   4. REASONS    — uses DNA engine + community signals
  *   5. RECOMMENDS — looks, shades, wigs, products
- *   6. NARRATES   — personalised explanation via LLM
+ *   6. NARRATES   — personalised explanation, template-written from the Qloo signals. The live deploy
+ *                   sets no model key, so narration_source is 'template'; src/llm/index.js only tries
+ *                   a language model if a key is configured on the server.
  *
  * This is what "cultural intelligence as the differentiator" means:
  * a generic LLM cannot do steps 2–4 without Qloo.
@@ -194,7 +196,7 @@ export class MirrrAgent {
     });
     emit('recommend', { looks, shades, wigs, products });
 
-    // ── Step 6: NARRATE — LLM-powered explanation ──────────────────────
+    // ── Step 6: NARRATE — template-written explanation (model path only if a key is set) ──
     const { narration, source: narration_source } = await narrate({
       aesthetic,
       looks,

@@ -1,7 +1,7 @@
 /**
  * MIRRR Wig Matchmaker
  *
- * 35-style wig catalogue covering every wig type that exists — from natural
+ * 42-style wig catalogue — from natural
  * kinky afros to Nilotic locs, from Khaleeji blowouts to K-pop idol cuts,
  * from Senegalese twists to Peruvian body waves to fulani braids.
  *

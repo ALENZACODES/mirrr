@@ -10,7 +10,7 @@
 // Tag signal maps — ordered by priority within each dimension
 // ---------------------------------------------------------------------------
 
-const TAG_SIGNALS = {
+export const TAG_SIGNALS = {
   // intensity (how bold/dramatic the overall look is)
   intensity: {
     high: [
@@ -175,7 +175,8 @@ export function affinityOf(t) {
  * @returns {boolean}
  */
 function anyMatch(normTag, keywords) {
-  return keywords.some((kw) => normTag.includes(kw));
+  // keywords are normalised the same way as tags, so 'k-pop' and 'hip-hop' match 'k pop' and 'hip hop'
+  return keywords.some((kw) => normTag.includes(normalise(kw)));
 }
 
 /**

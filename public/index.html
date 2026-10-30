@@ -355,6 +355,7 @@
         <button class="nav-link" data-view="shade">Shades</button>
         <button class="nav-link" data-view="planner">Occasions</button>
         <button class="nav-link" data-view="taste">Taste</button>
+        <button class="nav-link" data-view="leap">Taste Leap</button>
         <button class="nav-link" data-view="library">Library</button>
         <button class="nav-link" data-view="help">Help &amp; Privacy</button>
         <details class="nav-more" id="navMore">
@@ -917,6 +918,7 @@
 
         <div class="form-actions">
           <button class="btn btn-primary" id="fetchLooksBtn" disabled>Get My Looks</button>
+          <button type="button" class="btn btn-secondary" data-open-leap>Leap my taste to another culture</button>
           <button class="btn btn-ghost" id="demoBtn">Try a Demo</button>
         </div>
         <select id="demoSelect" class="select hidden" style="margin-top:0.75rem">
@@ -1264,6 +1266,20 @@
       </div>
     </section>
 
+    <section id="view-leap" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Taste Leap</h2>
+        <p class="view-sub">Your look, another culture. Your taste becomes a look profile; leap it into Lagos, Seoul, Dubai or nine other cities and see the same face wearing each city's version, with the taste path showing which of your tags moved each part of the palette.</p>
+      </div>
+      <div class="st-wrap">
+        <div id="lpControls" class="st-controls"></div>
+        <div id="lpPreview" class="sk-preview cx-preview" aria-live="polite"></div>
+        <div id="lpSummary" class="hl-summary"></div>
+        <div id="lpPlan" class="st-plan"></div>
+        <p class="lib-disclaimer">The source badge says exactly where the taste came from: a curated demo profile, the live Qloo taste graph (your Taste-page inputs, cached for six hours so changing cities does not call Qloo again), or the built-in artist map. The faces are illustrations in the Monk Skin Tone Scale tone you pick (Ellis Monk / Google, CC BY 4.0), not your photo, and the swatches are approximate colours for the shade names in the look engine.</p>
+      </div>
+    </section>
+
     <section id="view-looks" class="view hidden">
       <div class="view-header">
         <h2 class="view-title">Look Book</h2>
@@ -1481,6 +1497,7 @@
   <script src="eco.js" defer></script>
   <script src="calm.js" defer></script>
   <script src="looks.js" defer></script>
+  <script src="leap.js" defer></script>
   <script>
     // Community detail panel interactions
     (function() {

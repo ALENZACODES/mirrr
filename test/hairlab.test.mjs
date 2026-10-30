@@ -364,3 +364,18 @@ test('look book routes over HTTP', async () => {
   const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
   assert.equal(lib.shelves.find(s => s.id === 'looks').guides.length, 2);
 });
+
+test('taste leap routes over HTTP (demo path, no Qloo call)', async () => {
+  const B = `http://127.0.0.1:${PORT}`;
+  const h = { 'x-forwarded-for': '10.6.6.20' };
+  const o = await (await fetch(`${B}/api/leap/options`, { headers: h })).json();
+  assert.equal(o.destinations.length, 12); assert.equal(o.profiles.length, 8);
+  const r = await fetch(`${B}/api/leap/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ profile: 'kbeauty', dest1: 'lagos', dest2: 'seoul', dest3: 'dubai' }) });
+  assert.equal(r.status, 200);
+  const p = await r.json();
+  assert.equal(p.taste.source, 'demo'); assert.deepEqual(p.leaps.map(l => l.destination.id), ['lagos', 'seoul', 'dubai']);
+  assert.ok(p.leaps.every(l => l.because.length && l.palette.lid.length));
+  assert.equal((await fetch(`${B}/api/leap/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  const html = await (await fetch(`${B}/`, { headers: h })).text();
+  assert.ok(html.includes('data-view="leap"') && html.includes('src="leap.js"') && html.includes('data-open-leap'));
+});

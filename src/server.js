@@ -44,7 +44,6 @@ import { handleCalm } from './calm/routes.js';
 import { handleLooks } from './looks/routes.js';
 import { handleLeap } from './leap/routes.js';
 import { handleRoutine } from './routine/routes.js';
-import { handleGroom } from './groom/routes.js';
 import { handlePhoto } from './photo/routes.js';
 import { createRateLimiter, clientAddress, hopShape } from './ratelimit.js';
 
@@ -774,7 +773,6 @@ async function router(req, res) {
   if (await handleLooks(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handleLeap(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handleRoutine(method, path, url, req, res, { sendJSON, readBody })) return;
-  if (await handleGroom(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handlePhoto(method, path, url, req, res, { sendJSON, readBody })) return;
 
   // 404

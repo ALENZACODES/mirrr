@@ -28,7 +28,7 @@ export const FRAGRANCE_FAMILIES = {
     name: 'Woody',
     characteristics: 'Earthy, grounding, long-lasting. The backbone of many Middle Eastern and South Asian fragrances.',
     keyNotes: ['Oud', 'Sandalwood', 'Cedarwood', 'Vetiver', 'Patchouli', 'Guaiac wood'],
-    bestFor: 'Year-round, layering foundation, men\'s traditional',
+    bestFor: 'Year-round, layering foundation, evening',
     longevity: '10+ hours — the most long-lasting family',
   },
   green: {
@@ -76,7 +76,7 @@ export const ETHNIC_FRAGRANCE_TRADITIONS = {
         what: 'Traditional Arabic/South Asian term for natural essential oil perfume — often oud, rose, jasmine, or musk-based, alcohol-free',
         significance: 'Alcohol-free attar is permissible (halal) for observant Muslims; also non-drying for skin',
         how: 'A few drops on pulse points — wrists, neck, inner elbow, behind knees, even on clothes',
-        legendary: [ 'Rasasi Dhan Al Oudh Mubakkhar', 'Arabian Oud Al Maha for Men'],
+        legendary: [ 'Rasasi Dhan Al Oudh Mubakkhar'],
       },
       oud: {
         name: 'Oud (العود)',
@@ -264,7 +264,7 @@ export const CONCENTRATION_GUIDE = {
     name: 'Eau de Toilette (EDT)',
     concentration: '5–15%',
     longevity: '3–5 hours',
-    character: 'Lighter, more transparent. Classic men\'s fragrance format.',
+    character: 'Lighter, more transparent. An easy everyday format.',
     bestFor: 'Daytime, warm weather, office',
     tip: 'Layer EDT over body lotion to extend longevity',
   },

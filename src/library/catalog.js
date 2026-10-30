@@ -126,8 +126,6 @@ import * as ecoBeautyGuide from '../eco_beauty_guide.js';
 import * as mentalHealthBeautyGuide from '../mental_health_beauty_guide.js';
 import * as lookStyles from '../look_styles.js';
 import * as skinAnalysis from '../skin_analysis.js';
-import * as mensGroomingEthnicGuide from '../mens_grooming_ethnic_guide.js';
-import * as beardGroomingEthnic from '../beard_grooming_ethnic.js';
 import * as beautyTutorials from '../beauty_tutorials.js';
 import * as mentalHealthBeautyEthnicGuide from '../mental_health_beauty_ethnic_guide.js';
 import * as ecoSustainableBeauty from '../eco_sustainable_beauty.js';
@@ -155,7 +153,6 @@ export const SHELVES = [
   { id: 'eco', title: 'Eco Beauty', blurb: 'Plastic-free swaps, refills and certifications, where shea, argan, marula and other ingredients come from and who benefits, climate threats to beauty crops, waterless and low-waste routines, and each community\'s eco starter kit.' },
   { id: 'mind', title: 'Mind & Self-Image', blurb: 'Beauty rituals as comfort: braiding circles, champi, the hammam, sea bathing, the salon and other community rituals, stress recovery routines, what stress does to skin and hair, scent and season, self-image, and support lines.' },
   { id: 'looks', title: 'Looks & Tutorials', blurb: 'Full makeup looks from every community and for everyone, by category, time, level and season, with eye, face and lip details, and step-by-step tutorials: cut crease, kohl, bold lips, brows, foundation for deep skin, ubtan, black soap, champi, starter locs and mehndi.' },
-  { id: 'grooming', title: 'Beards, Shaving & Grooming', blurb: 'Beard biology and textures, shaving without razor bumps, razors compared, beard oils, balms and butters, beard styles, growing a beard, and grooming traditions and barbershop culture from every community.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -290,6 +287,4 @@ export const GUIDES = [
   ['mental_health_beauty_guide', 'mind', 'Self-Care Science and Community Rituals', mentalHealthBeautyGuide],
   ['look_styles', 'looks', 'Look Book: Looks by Community, Occasion and Level', lookStyles],
   ['beauty_tutorials', 'looks', 'Step-by-Step Tutorials', beautyTutorials],
-  ['beard_grooming_ethnic', 'grooming', 'Beards: Biology, Oils, Shaving and Styles', beardGroomingEthnic],
-  ['mens_grooming_ethnic_guide', 'grooming', 'Men\'s Grooming Traditions and Barbershop Culture', mensGroomingEthnicGuide],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

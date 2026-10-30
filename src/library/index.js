@@ -7,6 +7,7 @@ import {
   LIBRARY_COMMUNITIES, resolveCommunity, communityLabel, communityOfExportName,
   isCommunityKeyed, canonicalCommunity, itemMatchesCommunity,
 } from './communities.js';
+import { withoutMensContent } from '../women_only.js';
 
 const BY_ID = new Map(GUIDES.map(g => [g.id, g]));
 
@@ -20,8 +21,17 @@ export function humanize(key) {
     .replace(/\b\w/g, c => c.toUpperCase());
 }
 
+// Each guide's data with men's-grooming passages left out (MIRRR is for women), computed once.
+const CLEAN = new WeakMap();
 function dataExports(mod) {
-  return Object.entries(mod).filter(([, v]) => v !== null && typeof v === 'object');
+  if (!CLEAN.has(mod)) {
+    const seen = new WeakMap();
+    CLEAN.set(mod, Object.entries(mod)
+      .filter(([, v]) => v !== null && typeof v === 'object')
+      .map(([k, v]) => [k, withoutMensContent(v, seen)])
+      .filter(([, v]) => v != null));
+  }
+  return CLEAN.get(mod);
 }
 
 /** Collections whose items carry a community tag (e.g. SKIN_RITUALS entries with community: 'arab'). */

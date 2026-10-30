@@ -28,7 +28,7 @@ export const UNIVERSAL_BODY_HAIR = {
       name: 'Shaving',
       description:
         'The most widely practiced method globally. A blade slices the hair at the skin surface, leaving a blunt, sharp tip that — particularly in curly hair — can curve back and pierce the skin as it grows. Shaving does not change the rate or texture of hair growth; the perception of thicker regrowth is an optical illusion caused by the blunt cut edge.',
-      bestFor: 'Legs, underarms, face (men), bikini line (surface-level).',
+      bestFor: 'Legs, underarms, bikini line (surface-level).',
       risks: [
         'Razor bumps (PFB) — highest risk in tightly coiled hair types',
         'Razor burn from dull blades or inadequate lubrication',
@@ -213,7 +213,7 @@ export const UNIVERSAL_BODY_HAIR = {
         'Using a topical benzoyl peroxide product to manage bacterial component',
         'In severe cases: topical eflornithine cream (prescription) to slow regrowth',
         'Consider switching to sugaring or waxing as an alternative to shaving',
-        'If all else fails and hair removal is not essential: grow a beard (the most effective PFB treatment is not shaving)',
+        'If bumps keep coming back: pause shaving the area and let it grow out, since not shaving is the most effective treatment for razor bumps',
       ],
     },
     prevention: [

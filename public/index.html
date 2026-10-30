@@ -376,9 +376,22 @@
       <p class="hero-eyebrow">🌍 9 Communities · 60 Shades · 42 Wig Styles</p>
       <p class="hero-tagline">Your Taste. Your Looks. Your Style.</p>
       <p class="hero-sub">Most beauty apps were built for the West.<br>MIRRR was built for the rest.</p>
+      <p class="hero-explain">Tell MIRRR an artist, film or brand you love. It reads your taste and gives you the makeup looks, foundation shades and wigs that match it.</p>
+      <form class="hero-try" id="heroTryForm" autocomplete="off">
+        <input id="heroTryInput" class="hero-try-input" type="text" placeholder="Try an artist you love, e.g. Burna Boy" aria-label="Artist, film or brand you love" />
+        <button class="btn btn-primary" type="submit">Show my looks</button>
+      </form>
+      <div class="hero-try-chips" aria-label="Quick picks">
+        <span>or try:</span>
+        <button type="button" class="hero-try-chip" data-try="Burna Boy">Burna Boy</button>
+        <button type="button" class="hero-try-chip" data-try="Tems">Tems</button>
+        <button type="button" class="hero-try-chip" data-try="Rihanna">Rihanna</button>
+        <button type="button" class="hero-try-chip" data-try="BTS">BTS</button>
+        <button type="button" class="hero-try-chip" data-try="Anitta">Anitta</button>
+      </div>
       <div class="hero-actions">
-        <button class="btn btn-primary" id="heroQuizBtn">Take Your DNA Quiz</button>
-        <button class="btn btn-secondary" id="heroTasteBtn">Explore by Taste</button>
+        <button class="btn btn-secondary" id="heroQuizBtn">Or take the 2-minute DNA quiz</button>
+        <button class="btn btn-ghost" id="heroTasteBtn" hidden>Explore by Taste</button>
       </div>
       <p class="hero-communities">West African · South Asian · Arab · Latina · Caribbean · East Asian · East African · South African · Black American</p>
     </div>
@@ -803,9 +816,6 @@
         <div class="results-image-card dna-badge-card">
           <img src="dna-badge.webp" alt="Your Cultural DNA Badge" class="dna-badge-img" />
         </div>
-        <div class="results-image-card share-card-wrap">
-          <img src="result-share-card.webp" alt="My MIRRR Profile — Your signature look, shade and wig style" class="share-card-img" />
-        </div>
       </div>
     </section>
 
@@ -855,13 +865,7 @@
       <div id="tasteResults" class="hidden">
         <div id="tasteNarration" class="narration card"></div>
         <div id="tasteAesthetic" class="aesthetic-card card"></div>
-        <div class="results-image-card your-look-card">
-          <img src="your-look.webp" alt="Your Look — Skin, Eyes, Lips breakdown" class="results-image" />
-        </div>
         <div id="tasteLooks" class="looks-grid"></div>
-        <div class="results-image-card share-card-wrap">
-          <img src="result-share-card.webp" alt="My MIRRR Profile — Your signature look, shade and wig style" class="share-card-img" />
-        </div>
       </div>
     </section>
 

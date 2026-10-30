@@ -1209,21 +1209,17 @@ function renderTrendingGrid(regionKey) {
             <div class="trending-genre">${artist.genre}</div>
             <div class="trending-region-label">${artist.region}</div>
           </div>
-          <div class="trending-add" title="Add to taste profile">+</div>
+          <div class="trending-add" title="See looks for this artist">→</div>
         </button>
       `).join('')}
     </div>
-    <p class="trending-cta">Tap an artist to add to your taste profile →</p>
+    <p class="trending-cta">Tap an artist to see the looks that match their taste →</p>
   `;
 
   grid.querySelectorAll('.trending-card').forEach(card => {
     card.addEventListener('click', () => {
       const artistName = decodeURIComponent(card.dataset.artist);
-      addChip(artistName);
-      showView('taste');
-      toast(`Added ${artistName} to your taste profile ✓`, 'info');
-      card.classList.add('trending-card--added');
-      card.querySelector('.trending-add').textContent = '✓';
+      heroTry(artistName);
     });
   });
 }
@@ -2477,3 +2473,22 @@ async function loadDnaLooks(communityId) {
     }));
   } catch { grid.innerHTML = ''; }
 }
+
+
+// Hero: one-step try — type an artist, land on real results
+function heroTry(name) {
+  const v = String(name || '').trim();
+  if (!v) return;
+  state.tasteChips = [];
+  renderChips();
+  addChip(v);
+  showView('taste');
+  fetchLooks();
+}
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('heroTryForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    heroTry(document.getElementById('heroTryInput')?.value);
+  });
+  document.querySelectorAll('.hero-try-chip').forEach(b => b.addEventListener('click', () => heroTry(b.dataset.try)));
+});

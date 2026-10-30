@@ -1,6 +1,32 @@
 // Studio photo plates present in public/studio/ (AI-generated photos; disclosed in the README).
 // Rebuilt whenever a batch lands; a studio with no entry keeps its drawing.
 window.STUDIO_PHOTOS = {
+ "bridal": {
+  "bantu-knot-out": {
+   "src": "/studio/bridal/bantu-knot-out.webp"
+  },
+  "clip-ins": {
+   "src": "/studio/bridal/clip-ins.webp"
+  },
+  "fusion-keratin-extensions": {
+   "src": "/studio/bridal/fusion-keratin-extensions.webp"
+  },
+  "protective-updo-natural": {
+   "src": "/studio/bridal/protective-updo-natural.webp"
+  },
+  "sew-in-weave": {
+   "src": "/studio/bridal/sew-in-weave.webp"
+  },
+  "twist-out-braid-out": {
+   "src": "/studio/bridal/twist-out-braid-out.webp"
+  },
+  "u-part-wig": {
+   "src": "/studio/bridal/u-part-wig.webp"
+  },
+  "wash-and-go": {
+   "src": "/studio/bridal/wash-and-go.webp"
+  }
+ },
  "brow": {
   "brow-angular_lift": {
    "src": "/studio/brow/brow-angular_lift.webp"
@@ -40,6 +66,20 @@ window.STUDIO_PHOTOS = {
   },
   "eye-tightline": {
    "src": "/studio/brow/eye-tightline.webp"
+  }
+ },
+ "bump": {
+  "pp": {
+   "src": "/studio/bump/pp.webp"
+  },
+  "t1": {
+   "src": "/studio/bump/t1.webp"
+  },
+  "t2": {
+   "src": "/studio/bump/t2.webp"
+  },
+  "t3": {
+   "src": "/studio/bump/t3.webp"
   }
  },
  "face": {
@@ -367,6 +407,26 @@ window.STUDIO_PHOTOS = {
   },
   "stiletto__mocha__creme": {
    "src": "/studio/nails-real/stiletto__mocha__creme.webp"
+  }
+ },
+ "night": {
+  "bonnet": {
+   "src": "/studio/night/bonnet.webp"
+  },
+  "headWrap": {
+   "src": "/studio/night/headWrap.webp"
+  },
+  "looseBraid": {
+   "src": "/studio/night/looseBraid.webp"
+  },
+  "pineapple": {
+   "src": "/studio/night/pineapple.webp"
+  },
+  "silkPillowcase": {
+   "src": "/studio/night/silkPillowcase.webp"
+  },
+  "twistMethod": {
+   "src": "/studio/night/twistMethod.webp"
   }
  },
  "skin": {

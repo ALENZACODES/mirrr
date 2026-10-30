@@ -21,9 +21,9 @@ const LIVE = JSON.parse(readFileSync(join(__dirname, '../data/products_live.json
 
 export const UTM = LIVE.utm;
 export const CLIENT_EVENTS = ['taste_run', 'tryon_complete', 'plan_save', 'leap_result', 'share', 'product_click'];
-export const SERVER_EVENTS = ['waitlist_signup', 'waitlist_removal', 'ref_landing'];
+export const SERVER_EVENTS = ['waitlist_signup', 'waitlist_removal', 'ref_landing', 'brand_interest', 'pro_interest'];
 export const ALL_EVENTS = [...CLIENT_EVENTS, ...SERVER_EVENTS];
-export const MOMENTS = ['tryon', 'plan_save', 'leap', 'plus_page'];
+export const MOMENTS = ['tryon', 'plan_save', 'leap', 'plus_page', 'guide_bridal', 'guide_lookbook', 'guide_routine'];
 const MAX_REF_CODES = 500;
 
 export function withUtm(url, extra = {}) {

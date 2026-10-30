@@ -45,7 +45,7 @@ import { handleLooks } from './looks/routes.js';
 import { handleLeap } from './leap/routes.js';
 import { handleRoutine } from './routine/routes.js';
 import { handlePhoto } from './photo/routes.js';
-import { handleMoney, store as moneyStore } from './money/routes.js';
+import { handleMoney, store as moneyStore, biz as moneyBiz } from './money/routes.js';
 import { createRateLimiter, clientAddress, hopShape } from './ratelimit.js';
 
 // Diagnostics endpoints (/api/qloo/diag, key presence in /api/health) are off unless MIRRR_DIAG=1.
@@ -385,6 +385,7 @@ async function router(req, res) {
         lengthPref: body.lengthPref,
         texturePref: body.texturePref,
       });
+      try { moneyBiz.recordTrend(result); } catch { /* counting never breaks a run */ }
       return sendJSON(res, 200, result);
     } catch (err) {
       console.error('[/api/agent/run]', err);

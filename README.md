@@ -1,5 +1,7 @@
 # 🪞 MIRRR — Your Taste. Your Looks. Your Style.
 
+> **For judges: start here → [JUDGES.md](JUDGES.md)** · what MIRRR does, a 60-second walkthrough, how it uses Qloo, how it makes money, and each official criterion mapped to evidence.
+
 > **Most beauty apps were built for the West. MIRRR was built for the rest.**
 
 **MIRRR** is a multicultural beauty discovery agent powered by [Qloo Taste AI](https://qloo.com). It uses Qloo's cultural graph to decode a user's aesthetic DNA from the artists, films, and brands they love — and serve personalized beauty looks, foundation shades, and wig matches calibrated to their cultural community.

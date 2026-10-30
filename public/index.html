@@ -339,6 +339,25 @@
       margin: 0 auto;
       line-height: 1.5;
     }
+    .manifesto-live { transition: opacity 0.6s ease; }
+    .manifesto-section.quote-fading .manifesto-live { opacity: 0; }
+    .manifesto-quote[dir="rtl"] { font-style: normal; line-height: 1.9; }
+    .manifesto-quote:lang(ar) { font-family: 'Noto Naskh Arabic', 'Noto Sans Arabic', 'Amiri', 'Geeza Pro', 'Segoe UI', serif; }
+    .manifesto-quote:lang(fa), .manifesto-quote:lang(ur) { font-family: 'Noto Nastaliq Urdu', 'Noto Naskh Arabic', 'Noto Sans Arabic', 'Geeza Pro', 'Segoe UI', serif; }
+    .manifesto-quote:lang(he) { font-family: 'Noto Serif Hebrew', 'Noto Sans Hebrew', 'Arial Hebrew', 'Segoe UI', serif; }
+    .manifesto-quote:lang(hi), .manifesto-quote:lang(sa) { font-family: 'Noto Serif Devanagari', 'Noto Sans Devanagari', 'Kohinoor Devanagari', 'Nirmala UI', serif; font-style: normal; }
+    .manifesto-quote:lang(zh), .manifesto-quote:lang(ja), .manifesto-quote:lang(ko) { font-family: 'Noto Serif CJK SC', 'Noto Serif CJK JP', 'Noto Serif KR', 'PingFang SC', 'Hiragino Mincho ProN', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-style: normal; }
+    .manifesto-quote:lang(am) { font-family: 'Noto Serif Ethiopic', 'Noto Sans Ethiopic', 'Kefa', 'Nyala', serif; font-style: normal; }
+    .manifesto-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 2.2vw, 1.35rem);
+      font-style: italic;
+      color: #e8dcc6;
+      max-width: 680px;
+      margin: 1rem auto 0;
+      line-height: 1.5;
+    }
+    @media (prefers-reduced-motion: reduce) { .manifesto-live { transition: none; } }
     .manifesto-attr {
       margin-top: 1.5rem;
       font-size: 0.7rem;
@@ -794,9 +813,12 @@
   </section>
 
   <!-- ─── MANIFESTO ────────────────────────────────────────────────────────── -->
-  <section class="manifesto-section" id="manifesto-section">
-    <p class="manifesto-quote">"Caring for myself is not self-indulgence. It is self-preservation, and that is an act of political warfare."</p>
-    <p class="manifesto-attr">— Audre Lorde · A Burst of Light · 1988</p>
+  <section class="manifesto-section" id="manifesto-section" tabindex="0" aria-roledescription="rotating quote" aria-label="Words on beauty and well-being from around the world. A new quote every minute; hover or focus to pause.">
+    <div class="manifesto-live" aria-live="polite" aria-atomic="true">
+      <p class="manifesto-quote" lang="en" dir="ltr">“Caring for myself is not self-indulgence. It is self-preservation, and that is an act of political warfare.”</p>
+      <p class="manifesto-en" lang="en" hidden></p>
+      <p class="manifesto-attr">— Audre Lorde · A Burst of Light · 1988</p>
+    </div>
   </section>
 
   <!-- ─── TRYON MODAL ───────────────────────────────────────────────────── -->
@@ -1612,6 +1634,7 @@
   <script src="looks.js" defer></script>
   <script src="routine.js" defer></script>
   <script src="leap.js" defer></script>
+  <script src="quotes.js" defer></script>
   <script type="module" src="sixty.js"></script>
   <script>
     // Community detail panel interactions

@@ -154,6 +154,98 @@ window.STUDIO_PHOTOS = {
    "src": "/studio/face/face-square.webp"
   }
  },
+ "hair": {
+  "blue_black": {
+   "src": "/studio/hair/blue_black.webp"
+  },
+  "butterscotch": {
+   "src": "/studio/hair/butterscotch.webp"
+  },
+  "chestnut": {
+   "src": "/studio/hair/chestnut.webp"
+  },
+  "chrome_silver": {
+   "src": "/studio/hair/chrome_silver.webp"
+  },
+  "cinnamon": {
+   "src": "/studio/hair/cinnamon.webp"
+  },
+  "cobalt_blue": {
+   "src": "/studio/hair/cobalt_blue.webp"
+  },
+  "coral": {
+   "src": "/studio/hair/coral.webp"
+  },
+  "dark_chocolate": {
+   "src": "/studio/hair/dark_chocolate.webp"
+  },
+  "electric_blue": {
+   "src": "/studio/hair/electric_blue.webp"
+  },
+  "emerald_green": {
+   "src": "/studio/hair/emerald_green.webp"
+  },
+  "espresso": {
+   "src": "/studio/hair/espresso.webp"
+  },
+  "forest_green": {
+   "src": "/studio/hair/forest_green.webp"
+  },
+  "fuchsia": {
+   "src": "/studio/hair/fuchsia.webp"
+  },
+  "galaxy_purple": {
+   "src": "/studio/hair/galaxy_purple.webp"
+  },
+  "golden_blonde": {
+   "src": "/studio/hair/golden_blonde.webp"
+  },
+  "hazel_brown": {
+   "src": "/studio/hair/hazel_brown.webp"
+  },
+  "honey_blonde": {
+   "src": "/studio/hair/honey_blonde.webp"
+  },
+  "hot_pink": {
+   "src": "/studio/hair/hot_pink.webp"
+  },
+  "jet_black": {
+   "src": "/studio/hair/jet_black.webp"
+  },
+  "lavender": {
+   "src": "/studio/hair/lavender.webp"
+  },
+  "mahogany": {
+   "src": "/studio/hair/mahogany.webp"
+  },
+  "neon_green": {
+   "src": "/studio/hair/neon_green.webp"
+  },
+  "oil_slick": {
+   "src": "/studio/hair/oil_slick.webp"
+  },
+  "platinum_statement": {
+   "src": "/studio/hair/platinum_statement.webp"
+  },
+  "purple_plum": {
+   "src": "/studio/hair/purple_plum.webp"
+  },
+  "silver_grey": {
+   "src": "/studio/hair/silver_grey.webp"
+  },
+  "soft_black": {
+   "src": "/studio/hair/soft_black.webp"
+  },
+  "tangerine": {
+   "src": "/studio/hair/tangerine.webp"
+  },
+  "teal_editorial": {
+   "src": "/studio/hair/teal_editorial.webp"
+  },
+  "warm_brown": {
+   "src": "/studio/hair/warm_brown.webp"
+  }
+ },
  "ingredients": {
   "aloe_vera": {
    "src": "/studio/ingredients/aloe_vera.webp"

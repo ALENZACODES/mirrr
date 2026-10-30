@@ -2678,7 +2678,16 @@ body, p, li, .view-sub, .pillar-desc, .why-card p, .festival-card p, .ingredient
 .community-bar-item { color: #cfc6bb; }
 
 /* Honest source badges */
-.src-badge { display: inline-flex; align-items: center; gap: 0.4em; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.7rem; border-radius: 999px; border: 1px solid; margin-bottom: 0.6rem; }
+/* A rounded box, not a pill: the live badge carries a sentence and chip rows, and a 999px radius on a
+   wrapped multi-line flex box squashed it into an oval on wide, short windows. Plain block flow keeps
+   the text on full lines at every width. */
+.src-badge { display: block; width: fit-content; max-width: 100%; box-sizing: border-box; font-size: 0.72rem; line-height: 1.55; letter-spacing: 0.04em; padding: 0.45rem 0.8rem; border-radius: 12px; border: 1px solid; margin-bottom: 0.6rem; overflow-wrap: anywhere; }
+.src-badge > strong { text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap; }
+.src-badge svg { vertical-align: -0.15em; }
+.src-badge .entity-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.5rem; }
+.src-badge .entity-chips .tag { text-transform: none; letter-spacing: 0.02em; white-space: nowrap; color: inherit; border-color: rgba(143,217,168,0.3); }
+.src-badge .entity-chips .tag--label { flex-basis: 100%; background: none; border: 0; padding-left: 0; opacity: 0.85; white-space: normal; }
+@media (max-width: 600px) { .src-badge { width: auto; font-size: 0.7rem; } .src-badge .entity-chips .tag { white-space: normal; } }
 .src-badge--live { color: #8fd9a8; border-color: rgba(143,217,168,0.5); background: rgba(30,107,74,0.25); }
 .src-badge--template { color: #f0c987; border-color: rgba(212,168,71,0.5); background: rgba(212,168,71,0.12); }
 .src-error { font-size: 0.8rem; color: #f2a79a; margin: 0.3rem 0 0.6rem; }

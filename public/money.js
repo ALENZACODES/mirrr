@@ -146,7 +146,7 @@
         <h3>Remove my email</h3>
         <form class="plus-remove" novalidate><label class="plus-label">Email<input type="email" name="email" maxlength="254" required></label>
           <div class="plus-actions"><button class="btn btn-secondary" type="submit">Remove me</button></div><p class="plus-msg" aria-live="polite"></p></form>
-        <p class="lib-note">The list lives in a file on the MIRRR server. It is used only to send one note when MIRRR Plus opens. It is never sold or shared. On this free hosting plan the file can be lost when the app is redeployed.</p>
+        <p class="lib-note">The list lives in a file on the MIRRR server. It is used only to send one note when MIRRR Plus opens. It is never sold or shared. On this free hosting plan the file is wiped whenever the server restarts (on every update and after the app sits idle), so you may need to add your email again.</p>
       </div>`;
       document.body.appendChild(m);
       const close = () => { m.classList.add('hidden'); if (location.hash === '#plus') history.replaceState(null, '', location.pathname + location.search); };

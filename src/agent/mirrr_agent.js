@@ -139,7 +139,8 @@ export class MirrrAgent {
       }
     }
 
-    trace.push({ step: 'reason', at: timestamp(), communityId, dnaResult: dnaResult ? 'present' : 'skipped' });
+    const reasonStep = { step: 'reason', at: timestamp(), communityId, dnaResult: dnaResult ? 'present' : 'skipped' };
+    trace.push(reasonStep);
     emit('reason', { communityId, dnaResult });
 
     // ── Step 5: RECOMMEND — looks, shades, wigs, products ──────────────
@@ -149,6 +150,14 @@ export class MirrrAgent {
       archetypeKeywords: ARCHETYPE_KEYWORDS,
       communityId,
     });
+
+    // Fill the reason step with the arithmetic behind the top look (the same numbers as the fit breakdown).
+    const t = looks[0];
+    if (t) {
+      reasonStep.explain = t.qlooEvidence == null
+        ? `${t.look.name}: score ${t.score.toFixed(2)} = taste-vector fit ${t.fit.toFixed(2)} (no Qloo evidence)`
+        : `${t.look.name}: score ${t.score.toFixed(2)} = 0.5 × fit ${t.fit.toFixed(2)} + 0.5 × Qloo share ${t.qlooEvidence.toFixed(2)}${t.evidenceTags?.length ? ` (${t.evidenceTags.slice(0, 3).join(', ')})` : ''}`;
+    }
 
     // Shade finder
     let shades = [];

@@ -16,3 +16,11 @@ test('named guides point only at existing looks', () => {
   assert.equal(namedGuideFor('k_beauty_glass').id, 'k_beauty_seoul');
   assert.equal(namedGuideFor('festival_glitter'), null);
 });
+
+test('shade ranking arithmetic is returned and adds up', async () => {
+  const { findShades } = await import('../src/shade_finder.js');
+  for (const r of findShades({ communityId: 'west_african', depthTarget: 30, undertone: 'cool', topN: 8 })) {
+    const m = r.math;
+    assert.ok(Math.abs(Math.max(0, 1 - m.depth - m.undertone - m.range) - m.rank) <= 0.011, JSON.stringify(m));
+  }
+});

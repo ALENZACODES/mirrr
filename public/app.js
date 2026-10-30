@@ -960,7 +960,7 @@ function renderShadeResults(shades) {
     <h3 class="section-title">Your Shade Matches</h3>
     <p class="shade-note">Ranked by closeness to the depth you picked and your undertone. Check the top two on your jaw in daylight.</p>
     <div class="shade-cards-inner">
-      ${shades.map(({ shade, coverageNote, depthGap, undertoneMatch }, i) => `
+      ${shades.map(({ shade, coverageNote, depthGap, undertoneMatch, math }, i) => `
         <div class="shade-card">
           <div class="shade-swatch-lg" style="background:${esc(shade.hex)}"></div>
           <div class="shade-info">
@@ -971,6 +971,7 @@ function renderShadeResults(shades) {
             </div>
             ${coverageNote ? `<p class="shade-note">${esc(coverageNote)}</p>` : ''}
             <p class="shade-note" data-rank="${i + 1}">#${i + 1}${depthGap == null ? '' : ` · ${depthGap === 0 ? 'at your depth' : `${depthGap} depth step${depthGap === 1 ? '' : 's'} from your pick`}`}${undertoneMatch === false ? ' · different undertone' : ''}</p>
+            ${math ? `<p class="shade-math" title="Ranking score: 1 − 0.6 × depth gap / 50 − 0.25 if the undertone differs − 0.30 if outside your community's usual depth range. It orders the shades; it is not a match probability.">Rank score ${math.rank.toFixed(2)} = 1 − depth ${math.depth.toFixed(2)} − undertone ${math.undertone.toFixed(2)} − range ${math.range.toFixed(2)}</p>` : ''}
           </div>
         </div>
       `).join('')}
@@ -1043,13 +1044,15 @@ async function matchWigs() {
       texturePref: state.texturePref ?? undefined,
       topN: 5,
     });
-    renderWigResults(data.wigs);
+    renderWigResults(data.wigs, { length: state.lengthPref, texture: state.texturePref });
   } catch (err) {
     toast('Wig match error: ' + (err.message ?? ''), 'error');
   }
 }
 
-function renderWigResults(wigs) {
+function renderWigResults(wigs, filters = {}) {
+  const f = [filters.length && filters.length !== 'any' ? filters.length : null, filters.texture && filters.texture !== 'any' ? filters.texture : null].filter(Boolean);
+  const filtersNote = f.length ? ` · ✓ your filter${f.length > 1 ? 's' : ''}: ${f.map(esc).join(', ')}` : '';
   const resultsEl = document.getElementById('wigResults');
   const cardsEl = document.getElementById('wigCards');
 
@@ -1066,7 +1069,7 @@ function renderWigResults(wigs) {
           ${wigImgHtml}
           <div class="wig-card-top">
             <span class="wig-emoji">💇🏾</span>
-            <div class="wig-match-pct" title="${esc(criteria ? [criteria.hairVibe ? 'hair vibe' : null, criteria.community ? 'community' : null, criteria.lookStyle ? 'look style' : null].filter(Boolean).join(', ') || 'no criteria matched' : '')}">${matched ?? 0} of ${of ?? 3} match</div>
+            <div class="wig-match-pct" title="Your length and texture filters are applied first. These three checks rank what is left: hair vibe (4 points), community (2), look style (1).">${matched ?? 0} of ${of ?? 3} ranking checks</div>
           </div>
           <h3 class="wig-name">${wig.name}</h3>
           <p class="wig-desc">${wig.description ?? ''}</p>
@@ -1075,6 +1078,7 @@ function renderWigResults(wigs) {
             <span class="tag">${wig.length}</span>
             <span class="tag">${wig.finish}</span>
           </div>
+          ${criteria ? `<p class="wig-checks">${[['hairVibe', 'hair vibe'], ['community', 'community'], ['lookStyle', 'look style']].map(([k, l]) => `${criteria[k] ? '✓' : '✗'} ${l}`).join(' · ')}${filtersNote}</p>` : ''}
           <p class="wig-reason">✨ ${reason}</p>
           <div class="wig-colours">
             ${(wig.colours ?? []).map(c => `<span class="colour-dot" title="${c}" style="background:${colourToHex(c)}"></span>`).join('')}
@@ -2308,6 +2312,8 @@ function describeTraceStep(t) {
   if (t.entities_found != null) bits.push(`${t.entities_found} Qloo entities resolved`);
   if (t.tags_found != null) bits.push(`${t.tags_found} taste signals`);
   if (t.communityId) bits.push(`community: ${t.communityId}`);
+  if (t.explain) bits.push(t.explain);
+  if (t.step === 'reason' && t.dnaResult === 'skipped' && !t.communityId) bits.push('no Cultural DNA answers or community chosen');
   if (t.top_look) bits.push(`top look: ${String(t.top_look).replace(/_/g, ' ')}`);
   if (t.looks_count != null) bits.push(`${t.looks_count} looks scored`);
   if (t.shades_count) bits.push(`${t.shades_count} shades`);
@@ -2477,7 +2483,8 @@ function toggleProfilePanel() {
        <div class="pp-row"><strong>Aesthetic</strong>${esc(arch || 'not built yet')}</div>
        <div class="pp-row"><strong>Community</strong>${esc(p.communityId || 'not set')}</div>
        <div class="pp-row"><strong>Shade result</strong>${p.shades?.[0]?.shade ? esc(p.shades[0].shade.label || p.shades[0].shade.id) : 'none'}</div>
-       <div class="pp-row"><strong>Saved looks</strong>${(p.savedLooks || []).map(l => esc(l.name)).join(', ') || 'none'}</div>
+       <div class="pp-row"><strong>Transformation plan</strong>${p.target?.lookId ? `${esc(String(p.target.lookId).replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()))}${p.plan?.checked ? ` · ${Object.values(p.plan.checked).filter(Boolean).length} step(s) done` : ''}` : 'none'}</div>
+       <div class="pp-row"><strong>Looks you saved</strong>${(p.savedLooks || []).map(l => esc(l.name)).join(', ') || 'none (plans are listed above, not here)'}</div>
        <div class="pp-row" style="opacity:.75">Saved ${esc(new Date(p.savedAt).toLocaleString())}. Stored only in this browser.</div>
        <div class="pp-actions"><button class="btn btn-primary" id="ppRestore">Restore</button><button class="btn btn-secondary" id="ppClear">Clear my data</button><button class="btn btn-ghost" id="ppClose">Close</button></div>`;
   panel.classList.remove('hidden');
@@ -3121,7 +3128,7 @@ async function sharePlanCard(face, data, imgSrc) {
   } catch { /* user cancelled or unsupported: fall through to download */ }
   const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'mirrr-transformation.png';
   document.body.appendChild(a); a.click(); a.remove();
-  toast('Plan card saved', 'info');
+  toast('Plan card downloaded as an image. Your plan progress stays in this browser (see Profile).', 'info');
 }
 
 // ---- wiring: views, hero, banner, profile panel ---------------------------------

@@ -455,8 +455,11 @@ export function findShades({ communityId = 'mixed', depthTarget = 24, undertone 
       const score = 1 - ((depthDiff / 50) * 0.6 + undertoneMatch * 0.25 + inRange * 0.15);
       const coverageNote = buildCoverageNote(shade, undertone, communityId);
 
-      return { shade, score: Math.max(0, score), coverageNote,
-               depthGap: depthDiff, undertoneMatch: undertoneMatch === 0,
+      // The ranking arithmetic, returned so the UI can show it (a ranking, not a match probability).
+      const math = { depthGap: depthDiff, depth: Math.round((depthDiff / 50) * 0.6 * 100) / 100, undertone: undertoneMatch * 0.25,
+                     range: Math.round(inRange * 0.15 * 100) / 100, rank: Math.round(Math.max(0, score) * 100) / 100 };
+      return { shade, score: Math.max(0, score), coverageNote, math,
+               depthGap: depthDiff, undertoneMatch: undertoneMatch === 0, inCommunityRange: inRange === 0,
                name: shade.name, code: shade.id, hex: shade.hex };
     })
     .sort((a, b) => b.score - a.score)

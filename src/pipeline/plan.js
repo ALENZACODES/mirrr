@@ -12,7 +12,8 @@ import { buildAestheticVector, ARCHETYPE_KEYWORDS } from '../aesthetic.js';
 import { qlooTaste, provenance } from '../taste_signals.js';
 import { lookEvidence } from '../look_engine.js';
 
-const FITZ_DEPTH = { I: 4, II: 8, III: 14, IV: 22, V: 34, VI: 46 };
+// Fitzpatrick type -> depth on the shade spectrum (I ~ Monk 1-2 ... VI ~ Monk 9-10, L* about 20).
+const FITZ_DEPTH = { I: 3, II: 8, III: 16, IV: 26, V: 38, VI: 47 };
 const COMMUNITIES = ['west-african', 'south-asian', 'caribbean', 'arab', 'latina', 'east-asian', 'east-african', 'south-african', 'black-american'];
 
 const OCCASION_KEYS = [
@@ -119,7 +120,7 @@ export async function buildPlan({ occasion = '', communityId, fitzpatrick, under
 
   const depthTarget = FITZ_DEPTH[fitz ?? 'IV'];
   const shades = findShades({ communityId: normCommunityUnder(lookCommunity), depthTarget, undertone: tone, topN: 3 });
-  const shade = shades[0] ? { name: shades[0].name, code: shades[0].code, hex: shades[0].hex, undertone: tone, score: Number(shades[0].score.toFixed(2)), note: shades[0].coverageNote } : null;
+  const shade = shades[0] ? { name: shades[0].name, code: shades[0].code, hex: shades[0].hex, undertone: tone, depthGap: shades[0].depthGap, undertoneMatch: shades[0].undertoneMatch, note: shades[0].coverageNote } : null;
 
   const aesthetic = buildAestheticVector(kept, { freeText: [occasion, ...(look.tags ?? [])] });
   const wigs = matchWigs({ aesthetic, communityId: normCommunityUnder(lookCommunity), topN: 1 });

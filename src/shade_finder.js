@@ -13,6 +13,8 @@
 // Shade spectrum — 60 shades across the full human range
 // ---------------------------------------------------------------------------
 
+import { deltaE2000 } from '../public/photo-engine.js';
+
 export const SHADE_SPECTRUM = [
 
   // ── FAIR (depth 1-6) ──────────────────────────────────────────────────────
@@ -511,15 +513,38 @@ export function undertoneFromRgb({ r, g, b }) {
   return 'neutral';
 }
 
+/** ΔE2000 bands used everywhere a sampled colour is matched to a shade. */
+export const MATCH_BANDS = [
+  { id: 'match',   max: 3,        label: 'Match' },
+  { id: 'close',   max: 6,        label: 'Close, check in daylight' },
+  { id: 'outside', max: Infinity, label: 'Outside our honest range' },
+];
+export const bandFor = dE => MATCH_BANDS.find(b => dE <= b.max);
+
+/**
+ * Nearest shades to a sampled skin colour by CIEDE2000, with an honest band. The undertone only
+ * breaks near-ties (within ΔE 1); it never moves a farther shade ahead of a closer one.
+ */
 export function matchShadeByColor({ r, g, b }, { topN = 5, undertone } = {}) {
   const ut = undertone ?? undertoneFromRgb({ r, g, b });
   const sample = srgbToLab(r, g, b);
+  const S = [sample.L, sample.a, sample.b];
   const ranked = SHADE_SPECTRUM.map((shade) => {
     const [sr, sg, sb] = hexToRgb(shade.hex);
-    const lab = srgbToLab(sr, sg, sb);
-    const dE = Math.hypot(sample.L - lab.L, (sample.a - lab.a) * 0.6, (sample.b - lab.b) * 0.6);
-    const penalty = shade.undertones.includes(ut) ? 0 : 3;
-    return { shade, distance: dE + penalty, name: shade.name, code: shade.id, hex: shade.hex };
-  }).sort((x, y) => x.distance - y.distance);
-  return { undertone: ut, sampleLightness: Math.round(sample.L), matches: ranked.slice(0, topN) };
+    const l = srgbToLab(sr, sg, sb);
+    const dE = deltaE2000(S, [l.L, l.a, l.b]);
+    const utMatch = shade.undertones.includes(ut);
+    const band = bandFor(dE);
+    return { shade, deltaE: Number(dE.toFixed(2)), distance: Number(dE.toFixed(2)), band: band.id, bandLabel: band.label, undertoneMatch: utMatch, name: shade.name, code: shade.id, hex: shade.hex, _k: dE - (utMatch ? 0.5 : 0) };
+  }).sort((x, y) => (Math.abs(x.deltaE - y.deltaE) <= 1 ? x._k - y._k : x.deltaE - y.deltaE));
+  const matches = ranked.slice(0, topN).map(({ _k, ...m }) => m);
+  const best = matches[0];
+  const honest = best.band !== 'outside';
+  return {
+    undertone: ut, sampleLightness: Math.round(sample.L), sampleLab: S.map(v => Number(v.toFixed(1))),
+    band: best.band, honestMatch: honest,
+    message: honest ? `${best.name} is ${best.band === 'match' ? 'a match' : 'close'} (ΔE2000 ${best.deltaE}).` : `No honest match in our range: the nearest, ${best.name}, is ΔE2000 ${best.deltaE} from your sample. Shown as the nearest only.`,
+    bands: MATCH_BANDS.map(({ id, max, label }) => ({ id, max: Number.isFinite(max) ? max : null, label })),
+    matches,
+  };
 }

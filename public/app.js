@@ -931,7 +931,7 @@ function renderShadeResults(shades) {
               ${(shade.undertones ?? []).map(u => `<span class="tag">${esc(u)}</span>`).join('')}
             </div>
             ${coverageNote ? `<p class="shade-note">${esc(coverageNote)}</p>` : ''}
-            <p class="shade-note" data-rank="${i + 1}">#${i + 1} · ${depthGap === 0 ? 'at your depth' : `${depthGap} depth step${depthGap === 1 ? '' : 's'} from your pick`}${undertoneMatch === false ? ' · different undertone' : ''}</p>
+            <p class="shade-note" data-rank="${i + 1}">#${i + 1}${depthGap == null ? '' : ` · ${depthGap === 0 ? 'at your depth' : `${depthGap} depth step${depthGap === 1 ? '' : 's'} from your pick`}`}${undertoneMatch === false ? ' · different undertone' : ''}</p>
           </div>
         </div>
       `).join('')}
@@ -2666,10 +2666,11 @@ async function analyzePhoto(file) {
         <img class="photo-thumb" src="${url}" alt="Your photo">
         <div class="photo-swatches">
           <div class="photo-sw"><span style="background:rgb(${rgb.r},${rgb.g},${rgb.b})"></span>Your skin (sampled)</div>
-          <div class="photo-sw"><span style="background:${best.hex}"></span>Best match: <strong>${best.name}</strong></div>
+          <div class="photo-sw"><span style="background:${esc(best.hex)}"></span>${data.honestMatch === false ? 'Nearest (not a match)' : esc(best.bandLabel ?? 'Best match')}: <strong>${esc(best.name)}</strong></div>
         </div>
       </div>
-      <p><strong>${esc(best.name)}</strong> &middot; ${esc(data.undertone)} undertone. Also close: ${data.matches.slice(1).map(m => `${esc(m.name)}`).join(', ')}.</p>
+      <p class="match-band" data-band="${esc(data.band ?? '')}"><strong>${esc(data.message ?? best.name)}</strong> ${esc(data.undertone)} undertone. Next nearest: ${data.matches.slice(1).map(m => `${esc(m.name)} (ΔE ${m.deltaE})`).join(', ')}.</p>
+      <p class="photo-note">ΔE2000 bands: 3 or less is a match, 3 to 6 is close (check in daylight), above 6 is outside our honest range.</p>
       <p class="photo-note">This is an estimate from your photo. Light, camera and filters change colour, so confirm in daylight or against a swatch. Nothing was uploaded.</p>
       <div class="photo-actions">
         <button class="btn btn-primary" id="photoTryBtn" type="button">Try a look on this photo</button>
@@ -2684,7 +2685,7 @@ async function analyzePhoto(file) {
       } catch { toast('Could not open try-on', 'error'); }
     });
     document.getElementById('photoShadesBtn').addEventListener('click', () => {
-      renderShadeResults(data.matches.map(m => ({ shade: m.shade, score: Math.max(0, 1 - m.distance / 40), coverageNote: `${data.undertone} undertone from your photo`, name: m.name, code: m.code, hex: m.hex })));
+      renderShadeResults(data.matches.map(m => ({ shade: m.shade, coverageNote: `ΔE2000 ${m.deltaE} from your photo · ${m.bandLabel}`, name: m.name, code: m.code, hex: m.hex })));
       showView('shade');
     });
   } catch (err) {
@@ -2873,7 +2874,9 @@ async function analyzeFacePhoto(file) {
     faceState.draft.shadeId = best.code;
     if (data.undertone) faceState.draft.undertone = data.undertone;
     fillFaceForm();
-    if (msg) msg.textContent = `Suggested: ${best.name}, ${data.undertone} undertone. This is an estimate, so adjust it if it does not look like you.`;
+    if (msg) msg.textContent = data.honestMatch === false
+      ? `${data.message} Pick your shade below; we would rather say so than guess.`
+      : `Suggested: ${best.name}, ${data.undertone} undertone (${best.bandLabel}, ΔE2000 ${best.deltaE}). Adjust it if it does not look like you.`;
   } catch (err) {
     if (msg) msg.textContent = 'Could not read that photo. Pick your shade below instead.';
   }

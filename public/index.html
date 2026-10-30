@@ -373,6 +373,7 @@
             <button class="nav-link" data-view="night" role="menuitem">Night Routine</button>
             <button class="nav-link" data-view="bump" role="menuitem">Pregnancy &amp; Postpartum</button>
             <button class="nav-link" data-view="bridal" role="menuitem">Bridal Countdown</button>
+            <button class="nav-link" data-view="mix" role="menuitem">Ingredient Checker</button>
             <button class="nav-link" data-view="style-match" role="menuitem">Style Match</button>
             <button class="nav-link" data-view="quiz" role="menuitem">DNA Quiz</button>
             <button class="nav-link" data-view="wig" role="menuitem">Wig Match</button>
@@ -1218,6 +1219,20 @@
       </div>
     </section>
 
+    <section id="view-mix" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Ingredient Checker</h2>
+        <p class="view-sub">Pick up to four skincare ingredients: see which pairs are fine, which to split between morning and night or across nights, and which not to mix; a week of routines in the right order; what the pregnancy guide says at your stage; extra care for your skin type; and the traditional ingredients your community's guides name.</p>
+      </div>
+      <div class="st-wrap">
+        <div id="mxControls" class="st-controls"></div>
+        <div id="mxPreview" class="sk-preview cx-preview" aria-live="polite"></div>
+        <div id="mxSummary" class="hl-summary"></div>
+        <div id="mxPlan" class="st-plan"></div>
+        <p class="lib-disclaimer">The skin block is an illustration in the Monk Skin Tone Scale tone you pick (Ellis Monk / Google, CC BY 4.0), not your photo. Every rule here quotes a guide on the Ingredients shelf; a pair the guides say nothing about is shown as "no rule in the guides", not as safe. Product names come from those guides; this checker sells nothing. Not medical advice: patch-test anything new, and ask a dermatologist, doctor or pharmacist about prescriptions, pregnancy and breastfeeding.</p>
+      </div>
+    </section>
+
     <section id="view-bump" class="view hidden">
       <div class="view-header">
         <h2 class="view-title">Pregnancy &amp; Postpartum</h2>
@@ -1417,6 +1432,7 @@
   <script src="night.js" defer></script>
   <script src="bump.js" defer></script>
   <script src="bridal.js" defer></script>
+  <script src="mix.js" defer></script>
   <script>
     // Community detail panel interactions
     (function() {

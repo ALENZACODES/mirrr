@@ -120,6 +120,10 @@ import * as pregnancyBeautyGuide from '../pregnancy_beauty_guide.js';
 import * as postpartumBeautyEthnicGuide from '../postpartum_beauty_ethnic_guide.js';
 import * as bridalBeautyEthnicGuide from '../bridal_beauty_ethnic_guide.js';
 import * as bridalBeautyGuide from '../bridal_beauty_guide.js';
+import * as ingredientEncyclopedia from '../ingredient_encyclopedia.js';
+import * as skincareIngredientsEncyclopedia from '../skincare_ingredients_encyclopedia.js';
+import * as ingredientInteractions from '../ingredient_interactions.js';
+import * as beautyScienceGlossary from '../beauty_science_glossary.js';
 
 export const SHELVES = [
   { id: 'rituals', title: 'Rituals & Heritage', blurb: 'Haldi, hammam, shea, mehndi, bathhouse and festival traditions, with the steps to do them at home.' },
@@ -136,6 +140,7 @@ export const SHELVES = [
   { id: 'night', title: 'Sleep & Night Routines', blurb: 'What happens to skin overnight, the evening routine in order, slugging, sleeping masks, silk and satin, bonnets, wraps and pineapples, sleep position, wind-down rituals and night traditions.' },
   { id: 'bump', title: 'Pregnancy & Postpartum', blurb: 'What is safe at each stage of pregnancy and while breastfeeding, melasma, breakouts, stretch marks, pregnancy hair and postpartum shedding, and pregnancy and postpartum traditions.' },
   { id: 'bridal', title: 'Bridal Beauty', blurb: 'A countdown from twelve months to the wedding day, skincare for your skin type, wedding hair for natural and extended styles, touch-up kits, choosing a makeup artist, and bridal traditions and scents.' },
+  { id: 'ingredients', title: 'Ingredients & Science', blurb: 'What each skincare ingredient does and how to use it, which ones to keep apart and which work together, pH and layering order, morning and night routines, traditional ingredients and where they come from, and a glossary of skin science terms.' },
 ];
 
 /** guide id = module file name without .js; shelf; display title; module namespace. */
@@ -257,4 +262,8 @@ export const GUIDES = [
   ['postpartum_beauty_ethnic_guide', 'bump', 'Postpartum Recovery: Shedding, Skin and Traditions', postpartumBeautyEthnicGuide],
   ['bridal_beauty_ethnic_guide', 'bridal', 'Bridal Prep: Timelines, Skin, Hair, Kits and Scent', bridalBeautyEthnicGuide],
   ['bridal_beauty_guide', 'bridal', 'The Bridal Year and Wedding Traditions', bridalBeautyGuide],
+  ['ingredient_encyclopedia', 'ingredients', 'Ingredient Encyclopedia: Traditional and Modern', ingredientEncyclopedia],
+  ['skincare_ingredients_encyclopedia', 'ingredients', 'Skincare Actives: Vitamin C to Sunscreen Filters', skincareIngredientsEncyclopedia],
+  ['ingredient_interactions', 'ingredients', 'What to Mix, What to Keep Apart, pH and Layering', ingredientInteractions],
+  ['beauty_science_glossary', 'ingredients', 'Skin Science Glossary, A to Z', beautyScienceGlossary],
 ].map(([id, shelf, title, mod]) => ({ id, shelf, title, mod }));

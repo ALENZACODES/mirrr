@@ -290,3 +290,21 @@ test('complexion lab routes over HTTP', async () => {
   const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
   assert.equal(lib.shelves.find(s => s.id === 'skin').guides.length, 13);
 });
+
+test('ingredient checker routes over HTTP', async () => {
+  const B = `http://127.0.0.1:${PORT}`;
+  const h = { 'x-forwarded-for': '10.6.6.16' };
+  const o = await (await fetch(`${B}/api/mix/options`, { headers: h })).json();
+  assert.equal(o.ingredients.length, 30); assert.equal(o.stages.length, 6); assert.equal(o.tones.length, 10);
+  const r = await fetch(`${B}/api/mix/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ a: 'retinol', b: 'benzoyl_peroxide', c: 'none', d: 'none', stage: 'bf', community: 'east_asian' }) });
+  assert.equal(r.status, 200);
+  const p = await r.json();
+  assert.equal(p.community.id, 'east_asian'); assert.equal(p.pairs[0].level, 'avoid'); assert.equal(p.pregnancy.items[0].verdict, 'avoid');
+  assert.equal((await fetch(`${B}/api/mix/plan`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: '{oops' })).status, 400);
+  const t = await (await fetch(`${B}/api/mix/term?q=humectant`, { headers: h })).json();
+  assert.match(t.entry.term, /Humectant/i);
+  const html = await (await fetch(`${B}/`, { headers: h })).text();
+  assert.ok(html.includes('data-view="mix"') && html.includes('src="mix.js"'));
+  const lib = await (await fetch(`${B}/api/library`, { headers: h })).json();
+  assert.equal(lib.shelves.find(s => s.id === 'ingredients').guides.length, 4);
+});

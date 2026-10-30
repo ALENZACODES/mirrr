@@ -27,8 +27,9 @@ export const INGREDIENT_INTERACTIONS_OVERVIEW = {
 
 export const DO_NOT_COMBINE = {
   vitamin_c_and_niacinamide: {
+    concern: 'An old belief that the two react together (forming niacin, which can flush skin) or cancel each other out.',
     verdict: 'DEBUNKED — this is largely a myth. Can generally be combined.',
-    the_fear: 'Early research suggested that vitamin C (ascorbic acid) and niacinamide together form niacin and could cause flushing.',
+    
     reality: 'This reaction occurs at very high temperatures not found in normal skincare conditions. Modern formulations at concentrations used in skincare do not produce this reaction in practice.',
     caveat: 'Both can be mildly irritating individually. If your skin is sensitive, introduce one at a time. But there is no chemical reason to avoid combining them.',
     recommendation: 'Use both — they are complementary. Niacinamide manages inflammation; vitamin C brightens. Together they are excellent for PIH treatment.',
@@ -63,7 +64,7 @@ export const DO_NOT_COMBINE = {
       'Or: retinoid in PM; AHA in AM (separate by day)',
       'OR for sensitive skin: use retinoid and exfoliating acid in totally separate weeks when beginning each',
     ],
-    for_dark_skin: 'STRONG RECOMMENDATION TO SEPARATE. This combination in dark skin tones almost always causes PIH unless skin is well-acclimatised to both individually.',
+    for_dark_skin: 'STRONG RECOMMENDATION TO SEPARATE. On darker skin this combination can easily cause irritation and dark marks unless skin is well-acclimatised to both individually.',
   },
 
   retinol_and_benzoyl_peroxide: {
@@ -107,15 +108,15 @@ export const GREAT_COMBINATIONS = {
   },
 
   vitamin_c_and_vitamin_e_and_ferulic_acid: {
-    why: 'This is the gold standard antioxidant combination. Vitamin E stabilises vitamin C (which is notoriously unstable); ferulic acid further stabilises both and has its own antioxidant activity. Together they provide synergistic photoprotection and are 8x more effective as antioxidants than individually.',
-    product_reference: 'SkinCeuticals CE Ferulic ($182) is the benchmark formulation. Many "dupe" formulations exist that use this same combination.',
+    
+    
     good_for: 'Anti-aging, brightening, photoprotection — all skin types and tones. Particularly valuable before SPF in AM routine.',
   },
 
   hyaluronic_acid_then_moisturiser: {
     why: 'HA is a humectant — it draws water to itself. Applied to damp skin (immediately after cleansing/toning), it draws water into skin. Immediately sealing with a moisturiser/occlusive traps that moisture.',
     timing: 'Apply HA to damp skin; apply moisturiser within 60 seconds while skin is still slightly damp.',
-    mistake: 'HA applied to dry skin in a dry environment can DRAW moisture OUT of deeper skin layers and dehydrate skin.',
+    mistake: 'HA applied to dry skin in a dry environment may draw moisture out of deeper skin layers and dehydrate skin.',
   },
 
   niacinamide_and_retinoid: {
@@ -140,7 +141,7 @@ export const GREAT_COMBINATIONS = {
     what: 'Apply moisturiser first; let absorb; apply retinoid; apply another layer of moisturiser.',
     why: 'Moisturiser "buffers" retinoid — slowing penetration and reducing irritation without eliminating efficacy.',
     who_for: 'Retinoid beginners; sensitive skin; dark skin where PIH risk makes minimising retinoid irritation critical.',
-    evidence: 'Studied in clinical settings; has been shown to reduce retinoid side effects while maintaining efficacy over longer timeframe.',
+    
   },
 };
 
@@ -271,7 +272,7 @@ export const INGREDIENT_DEEP_DIVES = {
       twenty_percent: '20% — most studies on efficacy at this concentration.',
     },
     texture_options: ['Gel (Finacea, Aziclear)', 'Cream (Skinoren 20%)', 'Foam (Finacea Foam)'],
-    for_dark_skin: 'EXCELLENT for dark skin. Specifically studied and proven for PIH. Anti-inflammatory properties reduce irritation-triggered melanin production. Recommended as a key active for Fitzpatrick IV-VI routines.',
+    for_dark_skin: 'EXCELLENT for dark skin. Studied for PIH in darker skin. Anti-inflammatory properties reduce irritation-triggered melanin production. Recommended as a key active for Fitzpatrick IV-VI routines.',
     side_effects: 'Tingling/stinging on first application; generally mild; usually resolves over first 1-2 weeks.',
   },
 };
@@ -298,14 +299,14 @@ export const ETHNIC_SKIN_INTERACTION_NOTES = {
     },
   },
 
-  oily_skin_common_in_east_african_west_african: {
+  oily_skin: {
     temptation: 'Using multiple drying ingredients together (BHA, benzoyl peroxide, clay masks simultaneously).',
     risk: 'Over-stripping oil triggers reactive sebum overproduction — oiliness gets WORSE.',
     recommendation: 'One drying active per routine; balance with hydrating ingredients even on oily skin.',
   },
 
-  south_asian_combo_skin: {
-    pattern: 'Oily T-zone with dry cheeks is extremely common in South Asian women.',
+  combination_skin: {
+    pattern: 'Oily T-zone with dry cheeks.',
     approach: 'Zone-treat — use BHA on T-zone only; hydrate dry zones.',
   },
 };
@@ -346,9 +347,3 @@ export function getEthnicSkinInteractionNotes(skin_tone_category) {
   return ETHNIC_SKIN_INTERACTION_NOTES[skin_tone_category] || ETHNIC_SKIN_INTERACTION_NOTES;
 }
 
-export const INGREDIENT_INTERACTIONS_STATS = {
-  doNotCombineRules: Object.keys(DO_NOT_COMBINE).length,
-  greatCombinations: Object.keys(GREAT_COMBINATIONS).length,
-  ingredientDeepDives: Object.keys(INGREDIENT_DEEP_DIVES).length,
-  phGuideIngredients: Object.keys(PH_GUIDE.ph_by_ingredient).length,
-};

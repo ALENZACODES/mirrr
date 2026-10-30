@@ -80,7 +80,7 @@ export const GLOSSARY_B = {
 export const GLOSSARY_C = {
   ceramides: {
     term: 'Ceramides',
-    definition: 'Lipid (fat) molecules that make up approximately 50% of the outer skin layer (stratum corneum). Act like the "mortar" between skin cells, maintaining barrier integrity. Depleted by aging, harsh cleansers, eczema, and environmental damage. Replenishing ceramides is the cornerstone of barrier repair skincare.',
+    
     types: 'The most cosmetically significant ceramides are Ceramide NP (formerly Ceramide 3), Ceramide AP (formerly Ceramide 6-II), and Ceramide EOP (formerly Ceramide 1). Often combined in formulations.',
   },
   chemical_exfoliation: {
@@ -232,11 +232,11 @@ export const GLOSSARY_JK = {
   },
   keratin: {
     term: 'Keratin',
-    definition: 'The fibrous structural protein making up hair, nails, and the outer skin layer. Hair is approximately 95% keratin. Damage to keratin structure (from heat, chemicals, UV) causes hair to become weak and porous. Keratin hair treatments (salon) smooth and repair cuticle — but "keratin treatments" using formaldehyde are distinct from protein treatment and carry health risks.',
+    
   },
   keratinocyte: {
     term: 'Keratinocyte',
-    definition: 'The primary cell type of the epidermis (90-95% of cells). Keratinocytes are produced at the base of the epidermis and migrate upward over ~28-45 days (longer with aging), eventually dying and forming the stratum corneum (dead outer layer). Retinoids speed this process; exfoliants remove the dead cells.',
+    
   },
   kojic_acid: {
     term: 'Kojic Acid',
@@ -329,7 +329,7 @@ export const GLOSSARY_P = {
   },
   parabens: {
     term: 'Parabens',
-    definition: 'A family of preservatives used in cosmetics and pharmaceuticals. Highly effective, low-allergenicity preservatives. CLEAN BEAUTY MYTH: parabens became controversial after a 2004 study found them in breast tumour tissue. REALITY: the study showed presence but not causation; subsequent research found parabens to be safe at cosmetic concentrations (per FDA, EU SCCS). The evidence does not support paraben-related cancer claims. The most common parabens: methylparaben, ethylparaben, propylparaben, butylparaben.',
+    
   },
   peptides: {
     term: 'Peptides',
@@ -342,7 +342,6 @@ export const GLOSSARY_P = {
   PIH: {
     term: 'PIH (Post-Inflammatory Hyperpigmentation)',
     definition: 'Darkening of the skin following inflammation. After any inflammatory event (acne, eczema, injury, laser burn, aggressive scrubbing), melanocytes produce excess melanin in the affected area, leaving a dark mark. More common and more severe in Fitzpatrick III-VI skin tones. Can persist for months without treatment. Prevention (avoiding inflammation) is better than treatment.',
-    ethnic_note: 'The dominant skin concern across MIRRR\'s communities for Fitzpatrick III-VI skin tones. The entire approach to ethnic skincare is shaped around PIH risk.',
   },
   propylene_glycol: {
     term: 'Propylene Glycol',
@@ -356,7 +355,7 @@ export const GLOSSARY_R = {
   retinoids: {
     term: 'Retinoids',
     definition: 'A class of vitamin A derivatives with well-documented anti-aging, anti-acne, and skin-normalising effects. Spectrum from weakest to strongest: retinyl palmitate → retinol → retinaldehyde → tretinoin (retinoic acid). All except retinoic acid must be converted by the skin to retinoic acid to be active. This conversion determines potency and irritation level.',
-    ethnic_note: 'Effective for all skin tones including dark skin; however, the irritation risk in dark skin triggers PIH. Introduce very slowly; use with niacinamide; use sandwich method.',
+    ethnic_note: 'Effective for all skin tones including dark skin; however, irritation can leave dark marks (PIH) on darker skin. Introduce very slowly; use with niacinamide; use sandwich method.',
   },
   retinol: {
     term: 'Retinol',
@@ -373,7 +372,7 @@ export const GLOSSARY_R = {
 export const GLOSSARY_S = {
   salicylic_acid: {
     term: 'Salicylic Acid (BHA)',
-    definition: 'The primary BHA used in skincare. Oil-soluble — penetrates INTO the pore to exfoliate and clear sebum. Antimicrobial. Anti-inflammatory (salicylic acid is related to aspirin — salicin). Concentrations: 0.5-2% OTC; up to 6% in higher-strength professional treatments. Ideal for blackheads, whiteheads, and acne-prone skin.',
+    
   },
   sebum: {
     term: 'Sebum',
@@ -390,7 +389,7 @@ export const GLOSSARY_S = {
   },
   SPF: {
     term: 'SPF (Sun Protection Factor)',
-    definition: 'A measure of how well a sunscreen protects against UVB rays (the main cause of sunburn). SPF 30 blocks 97% of UVB; SPF 50 blocks 98%; SPF 100 blocks 99%. NOTE: SPF only measures UVB protection — separate measurement needed for UVA (PA+ rating in Asia; "broad spectrum" label in US). SPF 30 is the minimum recommended for everyday use; SPF 50+ for extended outdoor exposure.',
+    
   },
   squalane: {
     term: 'Squalane',
@@ -495,16 +494,3 @@ export function getFullGlossary() {
   };
 }
 
-export const BEAUTY_SCIENCE_GLOSSARY_STATS = {
-  totalTerms: Object.keys(GLOSSARY_A).length + Object.keys(GLOSSARY_B).length +
-    Object.keys(GLOSSARY_C).length + Object.keys(GLOSSARY_D).length +
-    Object.keys(GLOSSARY_E).length + Object.keys(GLOSSARY_F).length +
-    Object.keys(GLOSSARY_G).length + Object.keys(GLOSSARY_H).length +
-    Object.keys(GLOSSARY_I).length + Object.keys(GLOSSARY_JK).length +
-    Object.keys(GLOSSARY_L).length + Object.keys(GLOSSARY_M).length +
-    Object.keys(GLOSSARY_N).length + Object.keys(GLOSSARY_O).length +
-    Object.keys(GLOSSARY_P).length + Object.keys(GLOSSARY_R).length +
-    Object.keys(GLOSSARY_S).length + Object.keys(GLOSSARY_T).length +
-    Object.keys(GLOSSARY_UZ).length,
-  sections: 19,
-};

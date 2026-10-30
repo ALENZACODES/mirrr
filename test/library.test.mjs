@@ -127,7 +127,7 @@ function candidates(mod) {
     }
   };
   for (const v of Object.values(mod)) collect(v, 0);
-  return [undefined, ...comm, ...keys, 'january', 'March', 1, 3, 6, 'IV', 'V', 'oily', 'dry', 'shea', 'beginner', 'bridal'];
+  return [undefined, ...comm, ...keys, 'january', 'March', 1, 3, 6, 'IV', 'V', 'oily', 'dry', 'shea', 'beginner', 'bridal', 'A'];
 }
 const real = r => r != null && r !== false && !(Array.isArray(r) && r.length === 0) && !(typeof r === 'object' && !Array.isArray(r) && Object.keys(r).length === 0) && r !== '';
 

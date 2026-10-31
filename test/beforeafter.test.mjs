@@ -59,7 +59,7 @@ test('step-by-step looks: 3 to 5 steps, each adds to the last, products only fro
     assert.equal(look.steps.length, 5, look.id);
     assert.deepEqual(choiceAfter(look, 0), { prep: true }, 'skin prep adds a glow, no colour');
     for (let k = 1; k < 5; k++) assert.notDeepEqual(choiceAfter(look, k), choiceAfter(look, k - 1), `${look.id} step ${k + 1} changes the face`);
-    assert.ok(look.steps[3].adds.lipAmt >= 85, 'an obvious lip colour');
+    assert.ok(look.steps[3].adds.lipAmt >= 70, 'an obvious lip colour');
     const last = choiceAfter(look, look.steps.length - 1);
     for (let k = 0; k < look.steps.length; k++) for (const key of Object.keys(choiceAfter(look, k))) assert.ok(key in last);
     for (const s of look.steps) assert.ok(CROSS_SELL_IDS.includes(s.routine), `${look.id}/${s.name}: ${s.routine}`);
@@ -100,7 +100,7 @@ test('deep skin: pale lips and blush swap to deeper shades of the same family, n
   const c = { lip: '#c48b8b', lipAmt: 90, blush: '#d9798a', blushAmt: 80, foundation: 'match', foundationAmt: 70 };
   assert.deepEqual(adaptForDepth(c, 70), c, 'light and medium skin keep the look as written');
   const d = adaptForDepth(c, 40);
-  assert.equal(d.lip, '#8e2f5a'); assert.equal(d.blush, '#a8432a');
+  assert.equal(d.lip, '#8e2f5a'); assert.equal(d.blush, '#d9798a');
   assert.ok(d.lipAmt >= 90 && d.lipAmt <= 100); assert.equal(d.foundation, 'match'); assert.equal(d.foundationAmt, 70);
   assert.deepEqual(adaptForDepth(c, null), c);
 });

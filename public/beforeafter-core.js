@@ -46,31 +46,31 @@ const PREP = { name: 'Skin prep', routine: 'skin', cats: ['prep'], adds: { prep:
 export const LOOKS = [
   { id: 'soft-glam', name: 'Soft glam', steps: [
     PREP,
-    { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 70 }, note: 'Foundation matched to her own skin, blended out, to even the tone.' },
-    { name: 'Eyes', routine: 'eyes', adds: { shadow: '#a8743a', shadowAmt: 100, liner: '#3b2016', linerAmt: 100, linerStyle: 'tight', lashes: 'wispy', brow: '#3b2016', browAmt: 95 }, note: 'Brows filled, shadow from the lash line up to the crease, liner and lashes.' },
-    { name: 'Lips', routine: 'lips', adds: { lip: '#b0213f', lipAmt: 100, lipFinish: 'creme' } },
-    { name: 'Finish', routine: 'glow', adds: { blush: '#d9798a', blushAmt: 100, contour: 'defined', contourAmt: 80, highlight: '#f3d9a4', highlightAmt: 90 }, note: 'Contour under the cheekbones, blush on the apples of the cheeks, highlight on top.' },
+    { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 52 }, note: 'Foundation matched to her own skin, blended out, to even the tone.' },
+    { name: 'Eyes', routine: 'eyes', adds: { shadow: '#a8743a', shadowAmt: 75, liner: '#3b2016', linerAmt: 75, linerStyle: 'tight', lashes: 'wispy', brow: '#3b2016', browAmt: 71 }, note: 'Brows filled, shadow from the lash line up to the crease, liner and lashes.' },
+    { name: 'Lips', routine: 'lips', adds: { lip: '#b0213f', lipAmt: 75, lipFinish: 'creme' } },
+    { name: 'Finish', routine: 'glow', adds: { blush: '#d9798a', blushAmt: 75, contour: 'defined', contourAmt: 60, highlight: '#f3d9a4', highlightAmt: 68 }, note: 'Contour under the cheekbones, blush on the apples of the cheeks, highlight on top.' },
   ] },
   { id: 'bold-red', name: 'Classic red lip', steps: [
     PREP,
-    { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 75 }, note: 'A fuller-coverage base for a polished red-lip look.' },
-    { name: 'Eyes', routine: 'brow_kohl', adds: { liner: '#141414', linerAmt: 100, linerStyle: 'wing', lashes: 'natural', brow: '#141414', browAmt: 95, shadow: '#8d7b6d', shadowAmt: 60 }, note: 'A clean black wing, soft colour in the crease, brows filled.' },
-    { name: 'Lips', routine: 'lips', adds: { lip: '#c0202a', lipAmt: 100, lipFinish: 'matte' } },
-    { name: 'Finish', routine: 'glow', adds: { blush: '#d9798a', blushAmt: 85, contour: 'defined', contourAmt: 80, highlight: '#f3d9a4', highlightAmt: 80 } },
+    { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 56 }, note: 'A fuller-coverage base for a polished red-lip look.' },
+    { name: 'Eyes', routine: 'brow_kohl', adds: { liner: '#141414', linerAmt: 75, linerStyle: 'wing', lashes: 'natural', brow: '#141414', browAmt: 71, shadow: '#8d7b6d', shadowAmt: 45 }, note: 'A clean black wing, soft colour in the crease, brows filled.' },
+    { name: 'Lips', routine: 'lips', adds: { lip: '#c0202a', lipAmt: 75, lipFinish: 'matte' } },
+    { name: 'Finish', routine: 'glow', adds: { blush: '#d9798a', blushAmt: 64, contour: 'defined', contourAmt: 60, highlight: '#f3d9a4', highlightAmt: 60 } },
   ] },
   { id: 'smoky-kohl', name: 'Smoky kohl', steps: [
     PREP,
-    { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 70 } },
-    { name: 'Eyes', routine: 'eyes', adds: { shadow: '#6e2f55', shadowAmt: 100, liner: '#141414', linerAmt: 100, linerStyle: 'kohl', lashes: 'dramatic', brow: '#141414', browAmt: 95 }, note: 'Plum smoked from lash line to crease, black kohl top and bottom, full lashes.' },
-    { name: 'Lips', routine: 'lips', adds: { lip: '#7a4e36', lipAmt: 100, lipFinish: 'creme' } },
-    { name: 'Finish', routine: 'glow', adds: { blush: '#c0603d', blushAmt: 95, contour: 'sculpted', contourAmt: 90, highlight: '#e0a96d', highlightAmt: 85 } },
+    { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 52 } },
+    { name: 'Eyes', routine: 'eyes', adds: { shadow: '#6e2f55', shadowAmt: 75, liner: '#141414', linerAmt: 75, linerStyle: 'kohl', lashes: 'dramatic', brow: '#141414', browAmt: 71 }, note: 'Plum smoked from lash line to crease, black kohl top and bottom, full lashes.' },
+    { name: 'Lips', routine: 'lips', adds: { lip: '#7a4e36', lipAmt: 75, lipFinish: 'creme' } },
+    { name: 'Finish', routine: 'glow', adds: { blush: '#c0603d', blushAmt: 71, contour: 'sculpted', contourAmt: 68, highlight: '#e0a96d', highlightAmt: 64 } },
   ] },
   { id: 'everyday-glow', name: 'Everyday glow', steps: [
     PREP,
-    { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 50 }, note: 'A sheer layer, so her own skin shows through.' },
-    { name: 'Brows & lashes', routine: 'brow_kohl', adds: { brow: '#6b4030', browAmt: 90, lashes: 'natural', shadow: '#d9aa4c', shadowAmt: 60 } },
-    { name: 'Lips', routine: 'lips', adds: { lip: '#d9a3a0', lipAmt: 100, lipFinish: 'gloss' } },
-    { name: 'Finish', routine: 'glow', adds: { blush: '#f4ae86', blushAmt: 95, contour: 'soft', contourAmt: 65, highlight: '#fff4e6', highlightAmt: 85 } },
+    { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 40 }, note: 'A sheer layer, so her own skin shows through.' },
+    { name: 'Brows & lashes', routine: 'brow_kohl', adds: { brow: '#6b4030', browAmt: 68, lashes: 'natural', shadow: '#d9aa4c', shadowAmt: 45 } },
+    { name: 'Lips', routine: 'lips', adds: { lip: '#d9a3a0', lipAmt: 75, lipFinish: 'gloss' } },
+    { name: 'Finish', routine: 'glow', adds: { blush: '#f4ae86', blushAmt: 71, contour: 'soft', contourAmt: 49, highlight: '#fff4e6', highlightAmt: 64 } },
   ] },
 ];
 
@@ -79,8 +79,8 @@ export const LOOKS = [
  * of the same family, and colour layers go on a little stronger). The skin itself is never lightened.
  */
 const DEEP_SWAP = {
-  lip: { '#d9a3a0': '#9a5b2e', '#c48b8b': '#8e2f5a', '#b0213f': '#62182f', '#b07a8c': '#6e2f55', '#7a4e36': '#62182f', '#f07c5f': '#c0603d' },
-  blush: { '#f4ae86': '#c0603d', '#d9798a': '#a8432a', '#f07c5f': '#a8432a' },
+  lip: { '#d9a3a0': '#9a5b2e', '#c48b8b': '#8e2f5a', '#b0213f': '#62182f', '#9c3426': '#62182f', '#8e2f5a': '#62182f', '#b07a8c': '#6e2f55', '#7a4e36': '#62182f', '#f07c5f': '#c0603d' },
+  blush: { '#f4ae86': '#d9798a', '#f07c5f': '#d9798a', '#c0603d': '#d9798a' },
   shadow: { '#a8743a': '#b8693a', '#8d7b6d': '#6e2f55' },
   highlight: { '#fff4e6': '#e0a96d', '#f3d9a4': '#e0a96d', '#d9aa4c': '#e0a96d' },
   liner: { '#3b2016': '#141414' },

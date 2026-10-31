@@ -92,7 +92,7 @@ function overlay(cv, draw, op, alpha) {
   lctx.clearRect(0, 0, layer.width, layer.height); lctx.save(); draw(lctx); lctx.restore(); lctx.filter = 'none';
   W.save(); W.globalCompositeOperation = op; W.globalAlpha = alpha; W.drawImage(layer, 0, 0); W.restore();
 }
-const amt = (c, id, d = 80) => Math.max(0, Math.min(100, Number(c[id + 'Amt'] ?? d))) / 100;
+const amt = (c, id, d = 65) => Math.max(0, Math.min(100, Number(c[id + 'Amt'] ?? d))) / 100;
 const eyeWidth = (L, side, w, h) => { const [o, i] = toPixels(L, [EYE[side].outer, EYE[side].inner], w, h); return Math.hypot(o[0] - i[0], o[1] - i[1]); };
 
 /** Her own skin colour, read from both cheeks and the forehead of this photo. */
@@ -210,16 +210,27 @@ function paintBrows(cv, L, c) {
 }
 
 function paintShadow(cv, L, c) {
-  const w = cv.width, h = cv.height; const a0 = amt(c, 'shadow', 80);
+  const w = cv.width, h = cv.height; const a0 = amt(c, 'shadow', 65);
   for (const side of ['right', 'left']) {
-    const ew = eyeWidth(L, side, w, h); const crease = lidPolygon(L, side, w, h, 0.7); const top = lidPolygon(L, side, w, h, 0.95);
-    // Built like a brush: a soft wash up to the crease, more colour toward the lash line (a gradient).
-    labTint(cv, bbox(top, ew * 0.3), x => {
-      x.globalAlpha = 0.3; x.beginPath(); tracePath(x, lidPolygon(L, side, w, h, 0.95)); x.fill();
-      x.globalAlpha = 0.45; x.beginPath(); tracePath(x, crease); x.fill();
-      x.globalAlpha = 0.6; x.beginPath(); tracePath(x, lidPolygon(L, side, w, h, 0.45)); x.fill();
-      x.globalAlpha = 0.8; x.beginPath(); tracePath(x, lidPolygon(L, side, w, h, 0.22)); x.fill(); x.globalAlpha = 1;
-    }, ew * 0.12, c.shadow, { ab: 0.92, l: 0.6, maxUp: 8, amount: Math.min(1, a0 * 1.15) });
+    const ew = eyeWidth(L, side, w, h); const top = lidPolygon(L, side, w, h, 0.9);
+    const ring = [...toPixels(L, EYE[side].upper, w, h), ...toPixels(L, EYE[side].lower, w, h).reverse()];
+    const [oc] = toPixels(L, [EYE[side].outer], w, h); const [tp] = toPixels(L, [EYE[side].top], w, h);
+    const outX = oc[0] + (oc[0] - tp[0]) * 0.12, outY = oc[1] - ew * 0.12;
+    // Like a brush: densest at the lash line, fading out by the crease; a soft smoke at the outer corner.
+    // The eye itself (whites and iris) is cut out of the mask, so it is never tinted.
+    labTint(cv, bbox(top, ew * 0.45), x => {
+      x.globalAlpha = 0.16; x.beginPath(); tracePath(x, top); x.fill();
+      x.globalAlpha = 0.3; x.beginPath(); tracePath(x, lidPolygon(L, side, w, h, 0.6)); x.fill();
+      x.globalAlpha = 0.42; x.beginPath(); tracePath(x, lidPolygon(L, side, w, h, 0.32)); x.fill();
+      x.globalAlpha = 1;
+      const g = x.createRadialGradient(outX, outY, 0, outX, outY, ew * 0.42); g.addColorStop(0, 'rgba(255,255,255,0.5)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+      x.fillStyle = g; x.beginPath(); x.arc(outX, outY, ew * 0.42, 0, Math.PI * 2); x.fill(); x.fillStyle = '#fff';
+      x.globalCompositeOperation = 'destination-out'; x.beginPath(); tracePath(x, ring); x.fill(); x.globalCompositeOperation = 'source-over';
+    }, ew * 0.16, c.shadow, { ab: 0.85, l: 0.5, maxUp: 6, amount: Math.min(1, a0 * 1.25) });
+    // A subtle shimmer on the centre of the lid.
+    const [ct] = toPixels(L, [EYE[side].top], w, h);
+    W.save(); W.globalCompositeOperation = 'soft-light'; if ('filter' in W) W.filter = `blur(${(ew * 0.06).toFixed(1)}px)`;
+    W.globalAlpha = 0.45 * a0; W.fillStyle = '#fff6e0'; W.beginPath(); W.ellipse(ct[0], ct[1] - ew * 0.12, ew * 0.16, ew * 0.07, 0, 0, Math.PI * 2); W.fill(); W.restore();
   }
 }
 
@@ -228,17 +239,17 @@ function paintLiner(cv, L, c) {
   const draw = x => {
     for (const side of ['right', 'left']) {
       const ew = eyeWidth(L, side, w, h); const line = lashLine(L, side, w, h);
-      const up = line.map(({ p, n, t: k }) => { const th = ew * (0.018 + 0.05 * k * k); return [p[0] + n[0] * th, p[1] + n[1] * th]; });
+      const up = line.map(({ p, n, t: k }) => { const th = ew * (0.011 + 0.04 * k * k); return [p[0] + n[0] * th, p[1] + n[1] * th]; });
       const band = [...line.map(l => l.p), ...up.reverse()];
       if ('filter' in x) x.filter = `blur(${Math.max(0.5, ew * 0.012).toFixed(1)}px)`;
       x.fillStyle = col; x.beginPath(); tracePath(x, band); x.fill();
       if (style === 'wing') {
-        const [base, tip] = wingTip(L, side, w, h, 0.38); const last = line[line.length - 1]; const th = ew * 0.068;
+        const [base, tip] = wingTip(L, side, w, h, 0.32); const last = line[line.length - 1]; const th = ew * 0.042;
         const top = [last.p[0] + last.n[0] * th, last.p[1] + last.n[1] * th]; const prev = line[line.length - 3].p;
         x.beginPath(); x.moveTo(prev[0], prev[1]); x.lineTo(top[0], top[1]); x.lineTo(tip[0], tip[1]); x.lineTo(base[0], base[1]); x.closePath(); x.fill();
       }
       if (style === 'kohl') {
-        x.lineWidth = ew * 0.03; x.lineCap = 'round'; x.strokeStyle = col;
+        x.lineWidth = ew * 0.02; x.lineCap = 'round'; x.strokeStyle = col;
         if ('filter' in x) x.filter = `blur(${(ew * 0.02).toFixed(1)}px)`;
         x.beginPath(); tracePath(x, toPixels(L, EYE[side].lower, w, h), false); x.stroke();
       }
@@ -287,9 +298,9 @@ function paintLips(cv, L, c) {
   pixelPass(cv, bbox(outer, mw * 0.08), m => {
     m.beginPath(); tracePath(m, outer); m.fill();
     m.globalCompositeOperation = 'destination-out'; m.beginPath(); tracePath(m, inner); m.fill(); m.globalCompositeOperation = 'source-over';
-  }, mw * 0.025, (d, m, n, pw, ph) => {
+  }, mw * 0.04, (d, m, n, pw, ph) => {
     const mean = maskedMeanL(d, m, n); const det = lightnessDetail(d, pw, ph, Math.max(1, Math.round(mw * 0.012)));
-    for (let i = 0; i < n; i++) { const a = m[i * 4 + 3] / 255; if (a < 0.01) continue; const o = tintPixel(d[i * 4], d[i * 4 + 1], d[i * 4 + 2], shade, mean, fin, a, 0.5 + 0.5 * a0, det[i]); d[i * 4] = o[0]; d[i * 4 + 1] = o[1]; d[i * 4 + 2] = o[2]; }
+    for (let i = 0; i < n; i++) { const a = m[i * 4 + 3] / 255; if (a < 0.01) continue; const o = tintPixel(d[i * 4], d[i * 4 + 1], d[i * 4 + 2], shade, mean, fin, a, 0.4 + 0.6 * a0, det[i]); d[i * 4] = o[0]; d[i * 4 + 1] = o[1]; d[i * 4 + 2] = o[2]; }
   });
   if (fin === 'gloss') {
     const ang = Math.atan2(outer[10][1] - outer[0][1], outer[10][0] - outer[0][0]);
@@ -301,20 +312,43 @@ function paintLips(cv, L, c) {
 }
 
 function paintBlush(cv, L, c) {
-  const w = cv.width, h = cv.height; const a0 = amt(c, 'blush', 80);
-  for (const side of ['right', 'left']) {
-    const e = blushEllipse(L, side, w, h); const r = e.rx * 1.25;
-    labTint(cv, { x: e.cx - r * 1.2, y: e.cy - r * 1.2, w: r * 2.4, h: r * 2.4 }, x => {
-      x.save(); x.translate(e.cx, e.cy); x.rotate(e.angle); x.scale(1, e.ry / e.rx);
-      const g = x.createRadialGradient(0, 0, 0, 0, 0, r); g.addColorStop(0, 'rgba(255,255,255,0.7)'); g.addColorStop(0.45, 'rgba(255,255,255,0.4)'); g.addColorStop(0.8, 'rgba(255,255,255,0.12)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+  const w = cv.width, h = cv.height; const a0 = amt(c, 'blush', 65);
+  const col = hexToRgb(c.blush).join(',');
+  const draw = x => {
+    for (const side of ['right', 'left']) {
+      const e = blushEllipse(L, side, w, h);
+      const [tm] = toPixels(L, [side === 'right' ? 127 : 356], w, h);
+      // Centred on the apple, swept up and out toward the temple, very soft.
+      const cx = e.cx + (tm[0] - e.cx) * 0.18, cy = e.cy + (tm[1] - e.cy) * 0.18;
+      const ang = Math.atan2(tm[1] - e.cy, tm[0] - e.cx); const r = e.rx * 1.7;
+      x.save(); x.translate(cx, cy); x.rotate(ang); x.scale(1, 0.62);
+      const g = x.createRadialGradient(0, 0, 0, 0, 0, r);
+      g.addColorStop(0, `rgba(${col},1)`); g.addColorStop(0.35, `rgba(${col},0.7)`); g.addColorStop(0.7, `rgba(${col},0.22)`); g.addColorStop(1, `rgba(${col},0)`);
       x.fillStyle = g; x.beginPath(); x.arc(0, 0, r, 0, Math.PI * 2); x.fill(); x.restore();
-    }, 1, c.blush, { ab: 0.62, l: 0.2, maxUp: 0, amount: a0 });
-  }
+    }
+  };
+  overlay(cv, draw, 'multiply', 0.36 * a0);
+  overlay(cv, draw, 'soft-light', 0.24 * a0);
 }
 
 /** Paints choice `c` onto canvas `cv`, which already holds the bare photo. */
+/** Photo grain on everything that was painted, matched to the photo, so no area looks airbrushed. */
+function addGrain(cv, before0) {
+  const ctx = cv.getContext('2d', { willReadFrequently: true }); const img = ctx.getImageData(0, 0, cv.width, cv.height); const d = img.data; const b = before0.data;
+  let seed = 1234567;
+  const rnd = () => { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; };
+  for (let i = 0; i < d.length; i += 4) {
+    const diff = Math.abs(d[i] - b[i]) + Math.abs(d[i + 1] - b[i + 1]) + Math.abs(d[i + 2] - b[i + 2]);
+    if (diff < 6) continue;
+    const k = Math.min(1, diff / 40); const nz = (rnd() + rnd() + rnd() - 1.5) * 7 * k;
+    d[i] = Math.max(0, Math.min(255, d[i] + nz)); d[i + 1] = Math.max(0, Math.min(255, d[i + 1] + nz)); d[i + 2] = Math.max(0, Math.min(255, d[i + 2] + nz));
+  }
+  ctx.putImageData(img, 0, 0);
+}
+
 function paintOn(cv, L, c) {
   const prev = W; W = cv.getContext('2d', { willReadFrequently: true });
+  const before0 = Object.keys(c).length ? W.getImageData(0, 0, cv.width, cv.height) : null;
   try {
     if (c.prep) {
       // Prep sheen in her own skin's colour, a little lighter and warmer (never a white or grey cast).
@@ -330,7 +364,8 @@ function paintOn(cv, L, c) {
     if (c.lip) paintLips(cv, L, c);
     if (c.contour) paintContour(cv, L, Math.min(1, amt(c, 'contour', 75) * ({ soft: 0.7, defined: 1, sculpted: 1.25 }[c.contour] ?? 1)));
     if (c.blush) paintBlush(cv, L, c);
-    if (c.highlight) paintGlow(cv, L, c.highlight, amt(c, 'highlight', 70));
+    if (c.highlight) paintGlow(cv, L, c.highlight, amt(c, 'highlight', 65));
+    if (before0) addGrain(cv, before0);
   } finally { W = prev; }
 }
 
@@ -361,7 +396,7 @@ function readChoice() {
 
 function controls() {
   const sel = l => `<label class="to-field" for="ba-${l.id}"><span>${esc(l.label)}</span><select id="ba-${l.id}"><option value="" disabled selected>Choose…</option><option value="none">None</option>${[...(l.extra || []), ...l.values].map(([v, n]) => `<option value="${esc(v)}">${esc(n)}</option>`).join('')}</select></label>`;
-  const amtIn = l => l.amount ? `<label class="to-field ba-amt" for="ba-${l.id}-amt"><span>${esc(l.label.replace(/ (shade|colour|tint).*$/i, ''))} amount</span><input type="range" id="ba-${l.id}-amt" min="0" max="100" step="1" value="80" disabled></label>` : '';
+  const amtIn = l => l.amount ? `<label class="to-field ba-amt" for="ba-${l.id}-amt"><span>${esc(l.label.replace(/ (shade|colour|tint).*$/i, ''))} amount</span><input type="range" id="ba-${l.id}-amt" min="0" max="100" step="1" value="65" disabled></label>` : '';
   const groups = [['Skin', ['foundation']], ['Eyes & brows', ['brow', 'shadow', 'liner', 'linerStyle', 'lashes']], ['Lips & cheeks', ['lip', 'lipFinish', 'blush', 'contour', 'highlight']]];
   return groups.map(([g, ids]) => `<fieldset class="to-group"><legend>${esc(g)}</legend>${ids.map(id => { const l = LAYERS.find(x => x.id === id); return sel(l) + amtIn(l); }).join('')}</fieldset>`).join('');
 }
@@ -410,21 +445,25 @@ function thumb(c) {
   if (S.L && c) paintOn(cv, S.L, c);
   return cv.toDataURL('image/jpeg', 0.86);
 }
+let stepsTok = 0;
 async function renderSteps() {
-  const el = $('baSteps'); if (!el) return;
+  const el = $('baSteps'); if (!el) return; const tok = ++stepsTok;
   const look = LOOKS.find(l => l.id === S.look);
   $('baApplyLook').disabled = !look || !S.photo;
   if (!look) { el.innerHTML = '<p class="lib-note choose-first">Choose a look above to see it built one step at a time.</p>'; return; }
   if (!S.photo) { el.innerHTML = '<p class="lib-note choose-first">Choose a photo first (yours or a natural-look model).</p>'; return; }
-  const cards = [`<li class="ba-card"><img src="${thumb(null)}" alt="Before: the bare face" width="180" height="225"><h4>Before</h4><p class="lib-note">Bare face, nothing on.</p></li>`];
+  const cards = [`<li class="ba-card"><img src="${thumb(null)}" alt="Before: the bare face" width="180" height="225" decoding="sync"><h4>Before</h4><p class="lib-note">Bare face, nothing on.</p></li>`];
   for (let k = 0; k < look.steps.length; k++) {
     const s = look.steps[k]; const ps = (await products(s.routine)).filter(p => !s.cats || s.cats.includes(p.category));
+    if (tok !== stepsTok) return; // a newer photo or look replaced this one
     const last = k === look.steps.length - 1;
     // The words match what is drawn: on deep skin, the deeper shades actually used.
     const what = describeStep({ ...s, adds: adaptForDepth(s.adds, S.skinL) });
-    cards.push(`<li class="ba-card${last ? ' ba-card--after' : ''}"><img src="${thumb(choiceAfter(look, k))}" alt="${last ? 'After, the finished look' : `After step ${k + 1}: ${esc(s.name)}`}" width="180" height="225"><h4>${last ? `After &middot; ${k + 1}. ${esc(s.name)}` : `${k + 1}. ${esc(s.name)}`}</h4>${s.note ? `<p class="lib-note">${esc(s.note)}</p>` : ''}${what.length ? `<ul class="ba-what">${what.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${ps.length ? `<div class="earn-xs">${productLinks(ps, s.routine, 2)}</div>` : ''}</li>`);
+    cards.push(`<li class="ba-card${last ? ' ba-card--after' : ''}"><img src="${thumb(choiceAfter(look, k))}" alt="${last ? 'After, the finished look' : `After step ${k + 1}: ${esc(s.name)}`}" width="180" height="225" decoding="sync"><h4>${last ? `After &middot; ${k + 1}. ${esc(s.name)}` : `${k + 1}. ${esc(s.name)}`}</h4>${s.note ? `<p class="lib-note">${esc(s.note)}</p>` : ''}${what.length ? `<ul class="ba-what">${what.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${ps.length ? `<div class="earn-xs">${productLinks(ps, s.routine, 2)}</div>` : ''}</li>`);
   }
+  if (tok !== stepsTok) return;
   el.innerHTML = `<ol class="ba-cards">${cards.join('')}</ol>${SHOP_NOTE}`;
+  el.dataset.ready = String(tok);
 }
 
 // ---- real photo sets (shown only once the manifest has complete sets) -------------------------

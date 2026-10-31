@@ -3342,3 +3342,6 @@ body { padding-top: 58px; }
   .view, #hero, section[id] { scroll-margin-top: calc(var(--nav-h, 58px) + 8px); }
 }
 #view-beforeafter, .ba-stage, #baSteps { scroll-margin-top: calc(var(--nav-h, 58px) + 8px); }
+/* Before & After: the makeup controls in an even grid, groups aligned at the top */
+#baControls { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); align-items: start; gap: 1rem; }
+#baControls .to-group { margin: 0; min-width: 0; }

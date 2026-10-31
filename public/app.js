@@ -581,7 +581,7 @@ function renderTasteResults(result) {
 const COMMUNITY_IMAGES = {
   // Until the designed gold emblems arrive (prompts/16-culture-fixes.md), these communities show a
   // neutral, correctly labelled gold ring. The old placeholders carried wrong place names.
-  'black-american':    'community-black-american-fallback.svg',
+  'black-american':    'community-black-american.webp',
   'east-african':      'community-east-african-fallback.svg',
   'north-african':     'community-north-african-fallback.svg',
   'south-african':     'community-south-african-fallback.svg',

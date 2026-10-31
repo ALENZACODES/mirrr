@@ -420,7 +420,9 @@ async function renderSteps() {
   for (let k = 0; k < look.steps.length; k++) {
     const s = look.steps[k]; const ps = (await products(s.routine)).filter(p => !s.cats || s.cats.includes(p.category));
     const last = k === look.steps.length - 1;
-    cards.push(`<li class="ba-card${last ? ' ba-card--after' : ''}"><img src="${thumb(choiceAfter(look, k))}" alt="${last ? 'After, the finished look' : `After step ${k + 1}: ${esc(s.name)}`}" width="180" height="225"><h4>${last ? `After &middot; ${k + 1}. ${esc(s.name)}` : `${k + 1}. ${esc(s.name)}`}</h4>${s.note ? `<p class="lib-note">${esc(s.note)}</p>` : ''}${describeStep(s).length ? `<ul class="ba-what">${describeStep(s).map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${ps.length ? `<div class="earn-xs">${productLinks(ps, s.routine, 2)}</div>` : ''}</li>`);
+    // The words match what is drawn: on deep skin, the deeper shades actually used.
+    const what = describeStep({ ...s, adds: adaptForDepth(s.adds, S.skinL) });
+    cards.push(`<li class="ba-card${last ? ' ba-card--after' : ''}"><img src="${thumb(choiceAfter(look, k))}" alt="${last ? 'After, the finished look' : `After step ${k + 1}: ${esc(s.name)}`}" width="180" height="225"><h4>${last ? `After &middot; ${k + 1}. ${esc(s.name)}` : `${k + 1}. ${esc(s.name)}`}</h4>${s.note ? `<p class="lib-note">${esc(s.note)}</p>` : ''}${what.length ? `<ul class="ba-what">${what.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${ps.length ? `<div class="earn-xs">${productLinks(ps, s.routine, 2)}</div>` : ''}</li>`);
   }
   el.innerHTML = `<ol class="ba-cards">${cards.join('')}</ol>${SHOP_NOTE}`;
 }

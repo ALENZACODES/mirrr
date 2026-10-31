@@ -102,6 +102,7 @@ test('deep skin: pale lips and blush swap to deeper shades of the same family, n
 
 test('the After card is highlighted and the cards sit in a clean grid', () => {
   assert.match(read('beforeafter.js'), /ba-card--after/);
+  assert.match(read('beforeafter.js'), /const what = describeStep\(\{ \.\.\.s, adds: adaptForDepth\(s\.adds, S\.skinL\) \}\);/, 'step words name the shades actually drawn');
   const css = read('styles.css');
   assert.match(css, /@media \(min-width: 700px\) \{ \.ba-cards \{ grid-template-columns: repeat\(3, 1fr\); \} \}/);
 });

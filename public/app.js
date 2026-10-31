@@ -2774,6 +2774,22 @@ function mixedStyles(list, n) {
   for (const l of list) (seen.has(l.archetype) ? rest : (seen.add(l.archetype), first)).push(l);
   return [...first, ...rest].slice(0, n);
 }
+// Look photos made without the look name drawn on them; their cards show the name as text instead.
+const LOOK_PHOTOS_WITHOUT_NAME = new Set([
+  'look-amazigh-berber.webp',
+  'look-east-asian-modern-glam.webp',
+  'look-eid-glam-hijab.webp',
+  'look-first-nations-powwow.webp',
+  'look-haitian-vodou-editorial.webp',
+  'look-limb-difference-glam.webp',
+  'look-mature-50-glam.webp',
+  'look-pacific-islander-everyday.webp',
+  'look-plus-size-glam.webp',
+  'look-plus-size-soft-glam.webp',
+  'look-polynesian-warrior.webp',
+  'look-silver-65-glow.webp',
+  'look-wheelchair-glam.webp',
+]);
 async function loadDnaLooks(communityId) {
   const grid = document.getElementById('dnaLooksGrid');
   if (!grid) return;
@@ -2787,7 +2803,7 @@ async function loadDnaLooks(communityId) {
     if (!picks.length) { grid.innerHTML = ''; return; }
     grid.innerHTML = picks.map(l => `
       <div class="dna-look-item">
-        <button class="dna-look-card" data-look="${l.id}">
+        <button class="dna-look-card${LOOK_PHOTOS_WITHOUT_NAME.has(LOOK_IMAGES[l.id]) ? ' dna-look-card--named' : ''}" data-look="${l.id}">
           <img src="${LOOK_IMAGES[l.id]}" alt="${l.name}" loading="lazy" decoding="async">
           <span class="dna-look-name">${l.name}</span>
         </button>

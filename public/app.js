@@ -2767,6 +2767,7 @@ const COMMUNITY_CULTURES = {
   latina: ['latina', 'latin', 'latin american', 'mexican', 'colombian', 'brazilian', 'dominican', 'afro-latina', 'andean', 'quechua', 'mayan'],
   east_asian: ['korean', 'japanese', 'chinese', 'taiwan', 'hong kong', 'seoul', 'tokyo'],
   southeast_asian: ['southeast asian', 'filipino', 'filipina', 'thai', 'vietnamese', 'indonesian', 'malaysian'],
+  pacific_islander: ['pacific islander', 'pasifika', 'polynesian', 'melanesian', 'micronesian', 'fijian', 'samoan', 'tongan', 'maori', 'hawaiian'],
   mixed: ['mixed', 'biracial', 'multiracial', 'blasian', 'afro-asian', 'fusion'],
 };
 function mixedStyles(list, n) {

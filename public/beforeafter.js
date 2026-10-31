@@ -211,6 +211,9 @@ function paintBrows(cv, L, c) {
 
 function paintShadow(cv, L, c) {
   const w = cv.width, h = cv.height; const a0 = amt(c, 'shadow', 65);
+  // On deep skin the same pigment shows less, so lay down a little more (as a makeup artist would build it up).
+  const skinL = skinLab(L, w, h)[0]; const deep = Math.max(0, Math.min(1, (55 - skinL) / 25));
+  const amtE = Math.min(1, a0 * (1.35 + 0.35 * deep)); const lPull = 0.6 + 0.15 * deep;
   for (const side of ['right', 'left']) {
     const ew = eyeWidth(L, side, w, h); const top = lidPolygon(L, side, w, h, 0.9);
     const ring = [...toPixels(L, EYE[side].upper, w, h), ...toPixels(L, EYE[side].lower, w, h).reverse()];
@@ -226,7 +229,7 @@ function paintShadow(cv, L, c) {
       const g = x.createRadialGradient(outX, outY, 0, outX, outY, ew * 0.42); g.addColorStop(0, 'rgba(255,255,255,0.66)'); g.addColorStop(1, 'rgba(255,255,255,0)');
       x.fillStyle = g; x.beginPath(); x.arc(outX, outY, ew * 0.42, 0, Math.PI * 2); x.fill(); x.fillStyle = '#fff';
       x.globalCompositeOperation = 'destination-out'; x.beginPath(); tracePath(x, ring); x.fill(); x.globalCompositeOperation = 'source-over';
-    }, ew * 0.16, c.shadow, { ab: 0.9, l: 0.6, maxUp: 5, amount: Math.min(1, a0 * 1.35) });
+    }, ew * 0.16, c.shadow, { ab: 0.9 + 0.08 * deep, l: lPull, maxUp: 5 + 3 * deep, amount: amtE });
     // A subtle shimmer on the centre of the lid.
     const [ct] = toPixels(L, [EYE[side].top], w, h);
     W.save(); W.globalCompositeOperation = 'soft-light'; if ('filter' in W) W.filter = `blur(${(ew * 0.06).toFixed(1)}px)`;
@@ -318,8 +321,15 @@ function paintLips(cv, L, c) {
     W.save(); W.beginPath(); tracePath(W, outer); W.closePath(); W.clip();
     if ('filter' in W) W.filter = `blur(${(mw * 0.04).toFixed(1)}px)`;
     // light catching the middle of the lower lip
-    W.globalCompositeOperation = 'soft-light'; W.globalAlpha = 0.55 * a0; W.fillStyle = 'rgb(255,248,240)';
-    W.beginPath(); W.ellipse(li[0] * 0.55 + lo[0] * 0.45, li[1] * 0.55 + lo[1] * 0.45, mw * 0.17, lh * 0.22, ang, 0, Math.PI * 2); W.fill();
+    // a rounded, soft-edged pool of light (radial falloff), never a hard horizontal band
+    {
+      const hx = li[0] * 0.5 + lo[0] * 0.5, hy = li[1] * 0.5 + lo[1] * 0.5, rx = mw * 0.15, ry = lh * 0.42;
+      W.save(); W.globalCompositeOperation = 'soft-light'; W.globalAlpha = 0.5 * a0;
+      W.translate(hx, hy); W.rotate(ang); W.scale(1, ry / rx);
+      const hg = W.createRadialGradient(0, 0, 0, 0, 0, rx);
+      hg.addColorStop(0, 'rgba(255,248,240,0.9)'); hg.addColorStop(0.45, 'rgba(255,248,240,0.45)'); hg.addColorStop(1, 'rgba(255,248,240,0)');
+      W.fillStyle = hg; W.beginPath(); W.arc(0, 0, rx, 0, Math.PI * 2); W.fill(); W.restore();
+    }
     // shade at the corners and the lower edge
     W.globalCompositeOperation = 'multiply'; W.globalAlpha = 0.3 * a0; W.fillStyle = `rgb(${dark})`;
     for (const p of [lc, rc]) { W.beginPath(); W.ellipse(p[0], p[1], mw * 0.11, mw * 0.07, ang, 0, Math.PI * 2); W.fill(); }

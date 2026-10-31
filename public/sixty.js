@@ -114,11 +114,24 @@ function refreshThink() {
   if (wasOpen) h.querySelector('details')?.setAttribute('open', '');
 }
 // Read only when she taps SEE A COMPLETED RUN (and to decide whether to show it); a fresh run never reads it.
-const readLastRun = () => readCompletedRun(globalThis.localStorage);
-/** The SEE A COMPLETED RUN button shows only when a real completed run is cached on this device. */
+// With nothing cached on this device, it falls back to /completed-run.json: one real live run captured from this app's
+// own cache (same shape, same checks). If that file is missing or not a full run, the button stays hidden.
+let seededRun = null;
+const readLastRun = () => readCompletedRun(globalThis.localStorage) ?? seededRun;
+/** The SEE A COMPLETED RUN button shows only when a real completed run exists (this device's, or the captured one). */
 function syncReplayButton() {
-  const has = !!readLastRun();
-  document.querySelectorAll('[data-sx-replay-wrap]').forEach(w => { w.hidden = !has; });
+  const c = readLastRun();
+  document.querySelectorAll('[data-sx-replay-wrap]').forEach(w => {
+    w.hidden = !c;
+    const note = w.querySelector('.sx-replay-note');
+    if (note) note.textContent = SIXTY_REPLAY_LABEL + (c?.at && !Number.isNaN(Date.parse(c.at)) ? ` Captured ${new Date(c.at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}.` : '');
+  });
+}
+function loadSeededRun() {
+  fetch('/completed-run.json', { cache: 'no-cache' }).then(r => (r.ok ? r.json() : null)).then(c => {
+    seededRun = isCompletedRun(c) ? c : null;
+    syncReplayButton();
+  }).catch(() => { /* no captured run: button stays as it was */ });
 }
 function cacheCompletedRun(before, after) {
   if (sx.replay || sx.tappedLook || !sx.outcome || sx.outcome.failed || !sx.run) return;
@@ -302,5 +315,6 @@ document.addEventListener('click', e => {
   else if (a === 'full') { const l = chosenLook(); window.dispatchEvent(new CustomEvent('mirrr:tryon-look', { detail: { lookId: l.id, name: l.name } })); }
 });
 syncReplayButton();
+loadSeededRun();
 // Deep link: /#sixty opens the chain.
 if (location.hash === '#sixty') setTimeout(show, 0);

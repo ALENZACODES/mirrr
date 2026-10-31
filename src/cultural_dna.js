@@ -20,8 +20,8 @@ export const COMMUNITIES = [
     emoji: '🌍',
     seeds: {
       intensity: 0.82, warmth: 0.80, boldness: 0.85, texture: 'shimmer',
-      colour_palette: 'rich-earth', hair_vibe: 'natural-afro',
-      archetypes: ['afro_glam', 'hip_hop_glam'],
+      colour_palette: 'rich-earth',
+      // No pre-set hair or look per community: she picks (nothing pre-selected).
     },
     qloo_anchors: ['Afrobeats', 'Burna Boy', 'Wizkid', 'Tiwa Savage', 'Davido', 'Lagos'],
   },
@@ -32,8 +32,8 @@ export const COMMUNITIES = [
     emoji: '🌄',
     seeds: {
       intensity: 0.75, warmth: 0.78, boldness: 0.80, texture: 'glass',
-      colour_palette: 'jewel-tones', hair_vibe: 'natural-afro',
-      archetypes: ['afro_glam', 'gulf_glam'],
+      colour_palette: 'jewel-tones',
+      // No pre-set hair or look per community: she picks (nothing pre-selected).
     },
     qloo_anchors: ['Ethiopian music', 'Afrobeats', 'Nairobi'],
   },
@@ -44,8 +44,8 @@ export const COMMUNITIES = [
     emoji: '👑',
     seeds: {
       intensity: 0.85, warmth: 0.77, boldness: 0.88, texture: 'shimmer',
-      colour_palette: 'warm-vibrant', hair_vibe: 'long-sleek-wig',
-      archetypes: ['hip_hop_glam', 'afro_glam'],
+      colour_palette: 'warm-vibrant',
+      // No pre-set hair or look per community: she picks (nothing pre-selected).
     },
     qloo_anchors: ['Hip hop', 'R&B', 'Beyoncé', 'Cardi B', 'SZA', 'Atlanta'],
   },
@@ -56,8 +56,8 @@ export const COMMUNITIES = [
     emoji: '🌴',
     seeds: {
       intensity: 0.90, warmth: 0.85, boldness: 0.90, texture: 'shimmer',
-      colour_palette: 'warm-vibrant', hair_vibe: 'curly-ombre',
-      archetypes: ['caribbean_carnival', 'hip_hop_glam'],
+      colour_palette: 'warm-vibrant',
+      // No pre-set hair or look per community: she picks (nothing pre-selected).
     },
     qloo_anchors: ['Dancehall', 'Soca', 'Carnival', 'Rihanna', 'Reggae', 'Jamaica'],
   },
@@ -68,20 +68,20 @@ export const COMMUNITIES = [
     emoji: '💎',
     seeds: {
       intensity: 0.83, warmth: 0.79, boldness: 0.80, texture: 'glass',
-      colour_palette: 'jewel-tones', hair_vibe: 'long-wavy-indian',
-      archetypes: ['desi_glam', 'gulf_glam'],
+      colour_palette: 'jewel-tones',
+      // No pre-set hair or look per community: she picks (nothing pre-selected).
     },
     qloo_anchors: ['Bollywood', 'A.R. Rahman', 'Arijit Singh', 'Mumbai', 'Diwali'],
   },
   {
     id: 'arab',
     label: 'Arab',
-    subLabel: 'Saudi, Emirati, Lebanese, Egyptian, Moroccan…',
+    subLabel: 'Gulf, Levantine, Iraqi, Egyptian · North African: Moroccan, Algerian, Tunisian (Arab and Amazigh)…',
     emoji: '✨',
     seeds: {
       intensity: 0.80, warmth: 0.75, boldness: 0.78, texture: 'glass',
-      colour_palette: 'gold-pearl', hair_vibe: 'long-silky',
-      archetypes: ['gulf_glam', 'desi_glam'],
+      colour_palette: 'gold-pearl',
+      // No pre-set hair or look per community: she picks (nothing pre-selected).
     },
     qloo_anchors: ['Arabic music', 'Fairuz', 'Nancy Ajram', 'Oud', 'Dubai', 'Amman'],
   },
@@ -92,8 +92,8 @@ export const COMMUNITIES = [
     emoji: '🌺',
     seeds: {
       intensity: 0.82, warmth: 0.83, boldness: 0.82, texture: 'shimmer',
-      colour_palette: 'warm-vibrant', hair_vibe: 'curly-ombre',
-      archetypes: ['latina_glam', 'caribbean_carnival'],
+      colour_palette: 'warm-vibrant',
+      // No pre-set hair or look per community: she picks (nothing pre-selected).
     },
     qloo_anchors: ['Reggaeton', 'Bad Bunny', 'J Balvin', 'Shakira', 'Latin pop', 'Mexico City'],
   },
@@ -104,8 +104,8 @@ export const COMMUNITIES = [
     emoji: '🍃',
     seeds: {
       intensity: 0.38, warmth: 0.40, boldness: 0.35, texture: 'glass',
-      colour_palette: 'soft-pastels', hair_vibe: 'straight-sleek',
-      archetypes: ['k_beauty_glass', 'clean_minimal'],
+      colour_palette: 'soft-pastels',
+      // No pre-set hair or look per community: she picks (nothing pre-selected).
     },
     qloo_anchors: ['K-pop', 'BTS', 'BLACKPINK', 'J-pop', 'Korean drama', 'Seoul'],
   },
@@ -116,8 +116,8 @@ export const COMMUNITIES = [
     emoji: '🌸',
     seeds: {
       intensity: 0.60, warmth: 0.62, boldness: 0.58, texture: 'glass',
-      colour_palette: 'soft-pastels', hair_vibe: 'straight-sleek',
-      archetypes: ['k_beauty_glass', 'latina_glam'],
+      colour_palette: 'soft-pastels',
+      // No pre-set hair or look per community: she picks (nothing pre-selected).
     },
     qloo_anchors: ['K-pop', 'OPM', 'Manila', 'Bangkok', 'Vietnamese pop'],
   },
@@ -128,8 +128,8 @@ export const COMMUNITIES = [
     emoji: '🌈',
     seeds: {
       intensity: 0.60, warmth: 0.60, boldness: 0.60, texture: 'shimmer',
-      colour_palette: 'neutral', hair_vibe: 'natural',
-      archetypes: ['clean_minimal', 'afro_glam'],
+      colour_palette: 'neutral',
+      // No pre-set hair or look per community: she picks (nothing pre-selected).
     },
     qloo_anchors: [],
   },
@@ -202,7 +202,7 @@ export const QUIZ_QUESTIONS = [
     prompt: "Your wig is waiting — what's the vibe?",
     emoji: '💁🏾‍♀️',
     options: [
-      { label: 'Natural coils / Kinky afro', communities: ['west_african', 'east_african', 'black_american'] },
+      { label: 'Natural coils / tightly coiled afro', communities: ['west_african', 'east_african', 'black_american'] },
       { label: 'Long sleek bone-straight', communities: ['black_american', 'arab'] },
       { label: 'Long wavy / Indian-texture curls', communities: ['south_asian', 'latina'] },
       { label: 'Silky straight (long)', communities: ['arab', 'east_asian'] },
@@ -260,8 +260,9 @@ function blendSeeds(a, b, wB) {
     boldness: clamp(a.boldness * wA + b.boldness * wB),
     texture: wA >= 0.5 ? a.texture : b.texture,
     colour_palette: wA >= 0.5 ? a.colour_palette : b.colour_palette,
-    hair_vibe: wA >= 0.5 ? a.hair_vibe : b.hair_vibe,
-    archetypes: [...new Set([...a.archetypes, ...b.archetypes])].slice(0, 3),
+    // Communities carry no pre-set hair or look: hair and looks come only from her own taste and picks.
+    hair_vibe: null,
+    archetypes: [],
   };
 }
 

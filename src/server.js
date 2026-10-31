@@ -212,7 +212,7 @@ async function router(req, res) {
 
   // GET /api/looks
   if (method === 'GET' && path === '/api/looks') {
-    const looks = LOOKS.map(({ id, name, archetype, description, tags }) => ({ id, name, archetype, description, tags }));
+    const looks = LOOKS.map(({ id, name, archetype, description, tags, cultural_affinity }) => ({ id, name, archetype, description, tags, cultural_affinity }));
     return sendJSON(res, 200, { looks });
   }
 

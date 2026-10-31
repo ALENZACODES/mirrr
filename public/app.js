@@ -579,12 +579,14 @@ function renderTasteResults(result) {
 
 // Community portrait icons — mapped by community slug
 const COMMUNITY_IMAGES = {
-  'black-american':    'community-black-american.webp',
-  'east-african':      'community-east-african.webp',
-  'north-african':     'community-north-african.webp',
-  'south-african':     'community-south-african.webp',
-  'west-african':      'community-west-african.webp',
-  'arab':              'community-arab.webp',
+  // Until the designed gold emblems arrive (prompts/16-culture-fixes.md), these communities show a
+  // neutral, correctly labelled gold ring. The old placeholders carried wrong place names.
+  'black-american':    'community-black-american-fallback.svg',
+  'east-african':      'community-east-african-fallback.svg',
+  'north-african':     'community-north-african-fallback.svg',
+  'south-african':     'community-south-african-fallback.svg',
+  'west-african':      'community-west-african-fallback.svg',
+  'arab':              'community-arab-fallback.svg', // neutral: Arabs are of many faiths
   'caribbean':         'community-caribbean.webp',
   'central-asian':     'community-central-asian.webp',
   'east-asian':        'community-east-asian.webp',
@@ -1254,9 +1256,9 @@ const TRENDING_REGION_LABELS = {
   black_american: { label: 'Black America', emoji: '👑' },
   caribbean:      { label: 'Caribbean', emoji: '🌴' },
   south_asian:    { label: 'South Asia', emoji: '🌺' },
-  arab:           { label: 'Arab World', emoji: '🌙' },
+  arab:           { label: 'Arab World', emoji: '✨' },
   latina:         { label: 'Latin America', emoji: '🌹' },
-  east_asian:     { label: 'East Asia', emoji: '✨' },
+  east_asian:     { label: 'East Asia', emoji: '🍃' },
   south_african:  { label: 'South Africa', emoji: '🦅' },
 };
 
@@ -2157,20 +2159,8 @@ function getTopLookId(ids = state.currentLookIds) {
   // The current top look (after any re-ranking) that has a photo; else a community default.
   const top = (ids ?? []).find(id => LOOK_IMAGES[id]);
   if (top) return top;
-  const comId = state.communityId;
-  if (!comId) return Object.keys(LOOK_IMAGES)[0];
-  const communityLookMap = {
-    'west-african': 'afrobeats_concert',
-    'black-american': 'hip_hop_glam',
-    'caribbean': 'caribbean_carnival',
-    'south-asian': 'bollywood_bridal',
-    'arab': 'gulf_glam',
-    'latina': 'latina_glam',
-    'east-asian': 'k_beauty_glass',
-    'east-african': 'ethiopian_jewel',
-    'south-african': 'zulu_bridal',
-  };
-  return communityLookMap[comId] ?? Object.keys(LOOK_IMAGES)[0];
+  // No pre-set look per community: with nothing ranked yet, use the neutral Soft Glam photo.
+  return LOOK_IMAGES.soft_glam ? 'soft_glam' : Object.keys(LOOK_IMAGES)[0];
 }
 
 function roundRect(ctx, x, y, w, h, r) {
@@ -2753,20 +2743,37 @@ document.addEventListener('click', (e) => {
 window.openStyleGuide = (id) => openStyleGuide(id);
 
 
-// Quiz result -> real looks for the matched community, with photos
-const COMMUNITY_ARCHETYPES = {
-  west_african: ['afro_glam', 'amapiano_beat'], east_african: ['afro_glam'], black_american: ['hip_hop_glam', 'afro_glam'],
-  caribbean: ['caribbean_carnival'], south_asian: ['bollywood_bridal'], arab: ['gulf_glam'], latina: ['latina_glam'],
-  east_asian: ['k_beauty'], southeast_asian: ['k_beauty', 'clean_minimal'], mixed: ['clean_minimal'],
+// Quiz result -> real looks from her community's own cultures, with photos. Communities are not
+// mapped to one "type" of look: every look tagged with one of her community's cultures is eligible,
+// and the grid shows a mix of styles (one per style family first).
+const COMMUNITY_CULTURES = {
+  west_african: ['west african', 'nigerian', 'ghanaian', 'yoruba', 'igbo', 'akan', 'naija', 'lagos', 'accra', 'owambe', 'aso-ebi', 'kente'],
+  east_african: ['east african', 'ethiopian', 'habesha', 'eritrean', 'somali', 'horn of africa', 'kenyan', 'nairobi', 'swahili', 'nubian', 'sudanese'],
+  south_african: ['south african', 'zulu', 'xhosa', 'nguni', 'ndebele', 'sotho', 'joburg', 'amapiano'],
+  black_american: ['black american', 'hbcu', 'black college', 'natural hair', 'naturalista', 'black culture'],
+  caribbean: ['caribbean', 'jamaican', 'trinidadian', 'haitian', 'creole', 'soca', 'dancehall'],
+  south_asian: ['south asian', 'desi', 'indian', 'pakistani', 'bangladeshi', 'bengali', 'punjabi', 'tamil', 'nepali', 'south indian', 'kerala'],
+  arab: ['arab', 'arabic', 'gulf', 'khaleeji', 'levant', 'middle east', 'egyptian', 'north african', 'moroccan', 'algerian', 'amazigh', 'maghrebi'],
+  latina: ['latina', 'latin', 'latin american', 'mexican', 'colombian', 'brazilian', 'dominican', 'afro-latina', 'andean', 'quechua', 'mayan'],
+  east_asian: ['korean', 'japanese', 'chinese', 'taiwan', 'hong kong', 'seoul', 'tokyo'],
+  southeast_asian: ['southeast asian', 'filipino', 'filipina', 'thai', 'vietnamese', 'indonesian', 'malaysian'],
+  mixed: ['mixed', 'biracial', 'multiracial', 'blasian', 'afro-asian', 'fusion'],
 };
+function mixedStyles(list, n) {
+  const seen = new Set(); const first = []; const rest = [];
+  for (const l of list) (seen.has(l.archetype) ? rest : (seen.add(l.archetype), first)).push(l);
+  return [...first, ...rest].slice(0, n);
+}
 async function loadDnaLooks(communityId) {
   const grid = document.getElementById('dnaLooksGrid');
   if (!grid) return;
   try {
     const key = String(communityId ?? '').replace(/-/g, '_');
-    const archs = COMMUNITY_ARCHETYPES[key] ?? ['clean_minimal'];
+    const cultures = COMMUNITY_CULTURES[key] ?? [];
     const { looks } = await api('/api/looks');
-    const picks = looks.filter(l => archs.includes(l.archetype) && LOOK_IMAGES[l.id]).slice(0, 6);
+    const withPhoto = looks.filter(l => LOOK_IMAGES[l.id]);
+    const own = withPhoto.filter(l => (l.cultural_affinity ?? []).some(a => cultures.includes(a)));
+    const picks = mixedStyles(own.length ? own : withPhoto, 6);
     if (!picks.length) { grid.innerHTML = ''; return; }
     grid.innerHTML = picks.map(l => `
       <div class="dna-look-item">

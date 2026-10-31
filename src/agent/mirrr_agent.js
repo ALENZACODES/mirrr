@@ -265,8 +265,8 @@ function blendAesthetics(a, b, wB) {
     boldness: a.boldness * wA + b.boldness * wB,
     texture: wB > 0.5 ? b.texture : a.texture,
     colour_palette: wB > 0.5 ? b.colour_palette : a.colour_palette,
-    hair_vibe: wB > 0.5 ? b.hair_vibe : a.hair_vibe,
-    archetypes: b.archetypes ?? a.archetypes,
+    hair_vibe: (wB > 0.5 && b.hair_vibe) ? b.hair_vibe : a.hair_vibe,
+    archetypes: b.archetypes?.length ? b.archetypes : a.archetypes,
   };
 }
 

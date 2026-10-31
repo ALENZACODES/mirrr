@@ -1479,6 +1479,27 @@ export const LOOKS = [
     tags: ['mature', 'satin', 'radiant', 'universal'],
   },
 
+  {
+    id: 'silver_65_glow',
+    name: 'Silver Glow 65+',
+    archetype: 'clean_minimal',
+    description: 'Dewy skin tint, soft taupe eyes, brushed-up brows, rose cream blush and a classic red satin lip. Silver hair and laughter lines, worn with pride.',
+    products: [
+      { category: 'foundation', shade_range: 'all', finish: 'dewy', coverage: 'sheer' },
+      { category: 'eyeshadow', tones: ['soft taupe', 'warm beige'] },
+      { category: 'brow', style: 'brushed up' },
+      { category: 'blush', shade: 'rose', finish: 'cream' },
+      { category: 'lip', shade: 'classic red', finish: 'satin' },
+    ],
+    wig_styles: [
+      { id: 'blunt_lob', name: 'Blunt Lob' },
+      { id: 'pixie_cut', name: 'Pixie Cut' },
+    ],
+    weights: { intensity: 0.45, warmth: 0.55, boldness: 0.50, texture: 0.72 },
+    cultural_affinity: ['all', 'mature', 'over 65', 'latina', 'mediterranean'],
+    tags: ['mature', 'dewy', 'red-lip', 'universal'],
+  },
+
 ];
 
 // ---------------------------------------------------------------------------

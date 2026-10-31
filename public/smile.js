@@ -92,7 +92,11 @@
   function renderBase() {
     ++sm.seq; sm.plan = null;
     const put = (k, h) => { const el = $('sm' + k); if (el) el.innerHTML = h; };
-    put('Preview', '');
+    // First view: real smile photos (nothing chosen, nothing tinted); the drawing is only the no-photo fallback.
+    put('Preview', window.StudioPhoto ? window.StudioPhoto.gallery('smile', [
+      { id: 'smile-healthy', title: 'A healthy smile', note: 'Pick your concern above to see yours', alt: 'Close-up of a woman smiling, healthy teeth and gums' },
+      { id: 'smile-lips_care', title: 'Lip care', note: 'Soft, cared-for lips', alt: 'Close-up of a woman\'s smile with cared-for lips' },
+    ]) : '');
     put('Summary', '<p class="lib-note choose-first">Choose your options above to see your plan.</p>');
     put('Plan', '');
   }

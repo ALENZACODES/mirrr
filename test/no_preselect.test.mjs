@@ -42,8 +42,8 @@ for (const f of STUDIOS) {
   });
 }
 
-test('nails and lips show the bare base plate (no paint) before the first pick', () => {
-  assert.match(read('nails.js'), /put\('Preview', window\.StudioPhoto \? window\.StudioPhoto\.panel\(\{ studio: 'nails', id: 'oval', fallback: '', w: 960, h: 720, alt: 'Hand with bare nails' \}\)/);
+test('nails show real manicure photos and lips the bare base plate (no paint) before the first pick', () => {
+  assert.match(read('nails.js'), /put\('Preview', window\.StudioPhoto \? window\.StudioPhoto\.gallery\('nails-real', \[/);
   assert.match(read('colour-studio.js'), /put\('Preview', window\.StudioPhoto \? window\.StudioPhoto\.panel\(\{ studio: 'lips', id: 'nude', fallback: '', w: 960, h: 720, alt: 'Lips, no colour chosen yet' \}\)/);
 });
 

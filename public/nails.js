@@ -71,12 +71,23 @@
       alt: `Hand with ${polish.word} ${n.shape.name} nails, ${n.finish.name} finish`,
       caption: `<strong>${esc(n.shape.name)}</strong><span>${esc(polish.word)} · ${esc(n.finish.name)} · ${esc(n.wear.label)}</span>`,
     });
-    return window.StudioPhoto.panel({
-      studio: 'nails', id: n.shape.id, fallback: drawing, w: 960, h: 720,
-      alt: `Hand with ${polish.word} ${n.shape.name} nails, ${n.finish.name} finish`,
-      caption: `<strong>${esc(n.shape.name)}</strong><span>Colour preview: ${esc(polish.word)} · ${esc(n.finish.name)} · ${esc(n.wear.label)}</span>`,
-      paint: { colour: polish.hex, mode: 'multiply', opacity: op === 1 ? 0.95 : 0.7, lift: 0.45, sheen, glitter: fin === 'glitter', duochrome: fin === 'duochrome', matte: fin === 'matte' ? 1 : 0 },
+    // No photo of this exact combination: show the closest REAL photo (polish actually on, same hand),
+    // labelled as the closest match. Colour is never painted onto a photo in code.
+    const near = closestRealNail(n.shape.id, polish.word, fin);
+    if (near) return window.StudioPhoto.panel({
+      studio: 'nails-real', id: near, fallback: drawing, w: 960, h: 720,
+      alt: `Hand with ${realLabel(near)} nails`,
+      caption: `<strong>Closest real photo: ${esc(realLabel(near))}</strong><span>Your pick: ${esc(n.shape.name)} · ${esc(polish.word)} · ${esc(n.finish.name)}. No photo of that exact set yet.</span>`,
     });
+    return drawing;
+  }
+  const nailKey = w => String(w ?? '').toLowerCase().replace(/[^a-z0-9]+/g, '_');
+  const realLabel = id => id.split('__').map(x => x.replace(/_/g, ' ')).map(x => x[0].toUpperCase() + x.slice(1)).join(' · ');
+  /** The closest real nail photo id: same colour (and finish) first, then same shape, else null. */
+  function closestRealNail(shape, word, fin) {
+    const have = Object.keys(window.STUDIO_PHOTOS?.['nails-real'] ?? {}); const col = nailKey(word);
+    const tries = [`${shape}__${col}__${fin}`, `oval__${col}__${fin}`, `${shape}__${col}__creme`, `oval__${col}__creme`];
+    return tries.find(t => have.includes(t)) ?? have.find(k => k.split('__')[1] === col) ?? have.find(k => k.startsWith(`${shape}__`)) ?? null;
   }
   function pyramidPanel(p) {
     const s = p.scent;
@@ -101,7 +112,13 @@
   function renderBase() {
     ++ns.seq; ns.plan = null;
     const put = (k, h) => { const el = $('ns' + k); if (el) el.innerHTML = h; };
-    put('Preview', window.StudioPhoto ? window.StudioPhoto.panel({ studio: 'nails', id: 'oval', fallback: '', w: 960, h: 720, alt: 'Hand with bare nails' }) : '');
+    // First view: real manicure photos (polish actually on, same hand); nothing is chosen yet.
+    put('Preview', window.StudioPhoto ? window.StudioPhoto.gallery('nails-real', [
+      { id: 'oval__mocha__creme', title: 'Oval · Mocha · Creme' },
+      { id: 'oval__bold_red__creme', title: 'Oval · Bold red · Creme' },
+      { id: 'oval__fuchsia__chrome', title: 'Oval · Fuchsia · Chrome' },
+      { id: 'almond__mocha__creme', title: 'Almond · Mocha · Creme' },
+    ].map(t => ({ ...t, alt: `Hand with ${t.title.replace(/ · /g, ' ')} nails` })), { lead: 'Real manicures from the studio. Choose your own shape, colour and finish above.' }) : '');
     put('Summary', '<p class="lib-note choose-first">Choose your options above to see your plan.</p>');
     put('Plan', '');
   }

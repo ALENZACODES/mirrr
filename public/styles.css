@@ -3345,3 +3345,25 @@ body { padding-top: 58px; }
 /* Before & After: the makeup controls in an even grid, groups aligned at the top */
 #baControls { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); align-items: start; gap: 1rem; }
 #baControls .to-group { margin: 0; min-width: 0; }
+
+/* Loading state (relay fix 3): no solid colour blocks. Photos show a soft shimmer in the card's own
+   palette while they load, keep their box (width/height or aspect-ratio), then fade in. */
+@keyframes mirrrShimmer { 0% { background-position: 120% 0; } 100% { background-position: -20% 0; } }
+@keyframes mirrrFadeIn { from { opacity: 0; filter: blur(6px); } to { opacity: 1; filter: none; } }
+img.ph-wait, .sp-img:not(.sp-loaded), .studio-photo:not(.sp-ready) canvas {
+  background-image: linear-gradient(100deg, rgba(255,255,255,0) 30%, rgba(255,236,214,.13) 50%, rgba(255,255,255,0) 70%);
+  background-size: 220% 100%; animation: mirrrShimmer 1.4s ease-in-out infinite;
+}
+img.ph-loaded, .sp-img.sp-loaded, .studio-photo.sp-ready canvas { animation: mirrrFadeIn .45s ease-out both; }
+.look-card-img-wrap, .lp-photo--portrait, .dna-hero-figure, .studio-photo, .wig-card-img-wrap, .wig-portrait { background-color: #2a1d16; }
+.sp-img { width: 100%; height: auto; display: block; border-radius: 14px; object-fit: cover; background-color: #3a2a20; }
+.sp-gallery { margin-bottom: .4rem; }
+.sp-lead { margin: 0 0 .5rem; }
+.sx-toppick { align-self: flex-start; font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: #141414; background: var(--clr-gold); border-radius: 999px; padding: .15rem .55rem; font-weight: 700; }
+.sx-shade-note { margin: .5rem 0; padding: .55rem .8rem; border-left: 3px solid var(--clr-gold); background: rgba(212,168,71,.08); border-radius: 8px; font-size: .9rem; }
+.sx-saved { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin-bottom: .6rem; }
+.sx-saved .sx-dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%; vertical-align: middle; margin-right: .3rem; }
+@media (prefers-reduced-motion: reduce) { img.ph-wait, .sp-img, .studio-photo canvas, img.ph-loaded { animation: none !important; } }
+.sp-first { grid-column: 1 / -1; width: 100%; display: block; }
+.sp-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: .7rem; width: 100%; }
+.sp-gallery .sp-tile { margin: 0; }

@@ -38,6 +38,21 @@
       <figcaption>${caption}</figcaption></figure>`;
   }
 
+  /**
+   * First-view gallery: real photos as plain <img> tiles (no paint), each with its width/height set so
+   * nothing shifts, a shimmer placeholder while it loads (styles.css .sp-img) and a fade-in on load.
+   * items = [{ id, title, note }]; ids with no photo are skipped; '' when none exist (the caller's
+   * illustration stays the fallback).
+   */
+  function gallery(studio, items, { w = 960, h = 720, lead = '' } = {}) {
+    const tiles = items.filter(it => photoFor(studio, it.id)).map(it => {
+      const ph = photoFor(studio, it.id);
+      return `<figure class="hl-panel cx-panel sp-tile" data-studio-photo="${esc(studio)}:${esc(it.id)}"><img class="sp-img" src="${esc(ph.src)}" alt="${esc(it.alt ?? it.title)}" width="${w}" height="${h}" loading="eager" decoding="async" style="aspect-ratio:${w}/${h}" onload="this.classList.add('sp-loaded')" onerror="this.closest('figure').remove()"><figcaption><strong>${esc(it.title)}</strong>${it.note ? `<span>${esc(it.note)}</span>` : ''}</figcaption></figure>`;
+    });
+    if (!tiles.length) return '';
+    return `<div class="sp-first">${lead ? `<p class="lib-note sp-lead">${esc(lead)}</p>` : ''}<div class="sp-gallery" data-sp-gallery="${esc(studio)}">${tiles.join('')}</div></div>`;
+  }
+
   function maskedLayer(cv, mask, fill) {
     const L = document.createElement('canvas'); L.width = cv.width; L.height = cv.height;
     const g = L.getContext('2d');
@@ -120,5 +135,5 @@
     });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', homeIngredients); else homeIngredients();
-  window.StudioPhoto = { panel, photoFor, hydrate, ingredientImg, ingKey };
+  window.StudioPhoto = { panel, gallery, photoFor, hydrate, ingredientImg, ingKey };
 })();

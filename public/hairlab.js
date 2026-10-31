@@ -109,7 +109,13 @@
   function renderBase() {
     ++hl.seq; hl.plan = null;
     const put = (k, h) => { const el = $('hl' + k); if (el) el.innerHTML = h; };
-    put('Preview', '');
+    // First view: real hair photos (nothing chosen); the drawn strands are only the no-photo fallback.
+    put('Preview', window.StudioPhoto ? window.StudioPhoto.gallery('hair', [
+      { id: 'level1', title: 'Black', note: 'Level 1' },
+      { id: 'level4', title: 'Medium brown', note: 'Level 4' },
+      { id: 'caramel', title: 'Caramel', note: 'A target colour' },
+      { id: 'burgundy', title: 'Burgundy', note: 'A target colour' },
+    ], { w: 400, h: 400, lead: 'Real hair photos. Choose your colour now and a target above to see your plan.' }) : '');
     put('Summary', '<p class="lib-note choose-first">Choose your options above to see your plan.</p>');
     put('Plan', '');
   }

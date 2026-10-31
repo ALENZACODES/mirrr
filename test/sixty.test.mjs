@@ -62,7 +62,9 @@ test('nothing is pre-selected: community, tone, undertone and look all start emp
   const ui = fs.readFileSync('public/sixty.js', 'utf8');
   assert.match(ui, /communityId: null, pick: '', tappedLook: null/);
   assert.match(ui, /depth: null, undertone: null, shades: \[\]/);
-  assert.doesNotMatch(ui, /localStorage\.getItem/);
+  // The only stored value the chain reads is her own saved shade (savedShade), used at the shade step and explained there.
+  assert.equal((ui.match(/localStorage\.getItem/g) || []).length, 1);
+  assert.match(ui, /function savedShade\(\) \{\n  const read = k => \{ try \{ return JSON\.parse\(localStorage\.getItem\(k\)/);
 });
 
 test('the whole chain runs on the real endpoints: taste → named shade → three-stage plan → try-on colours', async () => {

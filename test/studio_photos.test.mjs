@@ -50,8 +50,9 @@ test('ingredient photos dedupe by name: hyphen and _oil variants share a file', 
 
 test('each wired studio passes its own option values to the slot and keeps its drawing as fallback', () => {
   const nails = read('nails.js');
-  assert.match(nails, /studio: 'nails', id: n\.shape\.id, fallback: drawing/);
-  assert.match(nails, /colour: polish\.hex, mode: 'multiply'/);
+  // Nails never paint colour onto a photo: exact real photo, else the closest real photo (labelled), else the drawing.
+  assert.match(nails, /studio: 'nails-real', id: near, fallback: drawing/);
+  assert.doesNotMatch(nails, /colour: polish\.hex, mode: 'multiply'/);
   const lips = read('colour-studio.js');
   assert.match(lips, /studio: 'lips', id: p\.choices\.look, fallback: drawing/);
   assert.match(lips, /colour: shade, mode: 'color'/);
@@ -106,11 +107,12 @@ test('the svg zone overlay maps onto the plate face box and is revoked after dra
   assert.match(helper, /URL\.revokeObjectURL\(url\)/);
 });
 
-test('nails: a real polish photo is used for an exact shape+colour+finish, otherwise the tint is labelled "Colour preview"; no default swatch is ringed', () => {
+test('nails: a real polish photo is used for an exact shape+colour+finish, otherwise the closest real photo is labelled as such; no default swatch is ringed', () => {
   const js = readFileSync(join(PUB, 'nails.js'), 'utf8');
   assert.match(js, /photoFor\('nails-real', realId\)/);
   assert.match(js, /\$\{n\.shape\.id\}__\$\{String\(polish\.word\)/);
-  assert.match(js, /Colour preview: /);
+  assert.match(js, /Closest real photo: /);
+  assert.doesNotMatch(js, /Colour preview: /);
   assert.match(js, /sw\(x, !!ns\.polish && x\.word === ns\.polish\.word\)/);
 });
 

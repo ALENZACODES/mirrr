@@ -54,6 +54,32 @@
         }
       ],
       "after": "after.webp"
+    },
+    {
+      "id": "w4-smoky-nude",
+      "name": "Smoky eye with a nude lip",
+      "before": "before.webp",
+      "steps": [
+        {
+          "name": "Satin base",
+          "image": "step-1.webp",
+          "routine": "complexion",
+          "note": "Primer, a light satin foundation matched to her warm olive skin and concealer under the eyes."
+        },
+        {
+          "name": "Brown smoky eye",
+          "image": "step-2.webp",
+          "routine": "eyes",
+          "note": "Brows brushed up and filled, a chocolate-brown smoky eye with soft edges and bronze shimmer on the lid, smudged liner and fluffy lashes."
+        },
+        {
+          "name": "Nude lip & sculpt",
+          "image": "step-3.webp",
+          "routine": "lips",
+          "note": "A caramel-nude lip lined slightly deeper, soft bronzer under the cheekbones and a rose-bronze blush."
+        }
+      ],
+      "after": "after.webp"
     }
   ]
 }

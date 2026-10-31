@@ -219,14 +219,14 @@ function paintShadow(cv, L, c) {
     // Like a brush: densest at the lash line, fading out by the crease; a soft smoke at the outer corner.
     // The eye itself (whites and iris) is cut out of the mask, so it is never tinted.
     labTint(cv, bbox(top, ew * 0.45), x => {
-      x.globalAlpha = 0.16; x.beginPath(); tracePath(x, top); x.fill();
-      x.globalAlpha = 0.3; x.beginPath(); tracePath(x, lidPolygon(L, side, w, h, 0.6)); x.fill();
-      x.globalAlpha = 0.42; x.beginPath(); tracePath(x, lidPolygon(L, side, w, h, 0.32)); x.fill();
+      x.globalAlpha = 0.24; x.beginPath(); tracePath(x, top); x.fill();
+      x.globalAlpha = 0.42; x.beginPath(); tracePath(x, lidPolygon(L, side, w, h, 0.6)); x.fill();
+      x.globalAlpha = 0.6; x.beginPath(); tracePath(x, lidPolygon(L, side, w, h, 0.32)); x.fill();
       x.globalAlpha = 1;
-      const g = x.createRadialGradient(outX, outY, 0, outX, outY, ew * 0.42); g.addColorStop(0, 'rgba(255,255,255,0.5)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+      const g = x.createRadialGradient(outX, outY, 0, outX, outY, ew * 0.42); g.addColorStop(0, 'rgba(255,255,255,0.66)'); g.addColorStop(1, 'rgba(255,255,255,0)');
       x.fillStyle = g; x.beginPath(); x.arc(outX, outY, ew * 0.42, 0, Math.PI * 2); x.fill(); x.fillStyle = '#fff';
       x.globalCompositeOperation = 'destination-out'; x.beginPath(); tracePath(x, ring); x.fill(); x.globalCompositeOperation = 'source-over';
-    }, ew * 0.16, c.shadow, { ab: 0.85, l: 0.5, maxUp: 6, amount: Math.min(1, a0 * 1.25) });
+    }, ew * 0.16, c.shadow, { ab: 0.9, l: 0.6, maxUp: 5, amount: Math.min(1, a0 * 1.35) });
     // A subtle shimmer on the centre of the lid.
     const [ct] = toPixels(L, [EYE[side].top], w, h);
     W.save(); W.globalCompositeOperation = 'soft-light'; if ('filter' in W) W.filter = `blur(${(ew * 0.06).toFixed(1)}px)`;
@@ -239,7 +239,7 @@ function paintLiner(cv, L, c) {
   const draw = x => {
     for (const side of ['right', 'left']) {
       const ew = eyeWidth(L, side, w, h); const line = lashLine(L, side, w, h);
-      const up = line.map(({ p, n, t: k }) => { const th = ew * (0.011 + 0.04 * k * k); return [p[0] + n[0] * th, p[1] + n[1] * th]; });
+      const up = line.map(({ p, n, t: k }) => { const th = ew * (0.015 + 0.042 * k * k); return [p[0] + n[0] * th, p[1] + n[1] * th]; });
       const band = [...line.map(l => l.p), ...up.reverse()];
       if ('filter' in x) x.filter = `blur(${Math.max(0.5, ew * 0.012).toFixed(1)}px)`;
       x.fillStyle = col; x.beginPath(); tracePath(x, band); x.fill();
@@ -255,7 +255,7 @@ function paintLiner(cv, L, c) {
       }
     }
   };
-  overlay(cv, draw, 'source-over', Math.min(1, (style === 'kohl' ? 0.9 : 1) * (0.4 + 0.65 * a0)));
+  overlay(cv, draw, 'source-over', Math.min(1, (style === 'kohl' ? 0.9 : 1) * (0.5 + 0.6 * a0)));
 }
 
 const LASH_STYLE = { natural: { n: 30, len: 0.17, wid: 0.016, curl: 0.35, jitter: 0.2 }, wispy: { n: 38, len: 0.22, wid: 0.014, curl: 0.42, jitter: 0.6 }, dramatic: { n: 44, len: 0.27, wid: 0.02, curl: 0.45, jitter: 0.25 } };
@@ -309,6 +309,23 @@ function paintLips(cv, L, c) {
       d[i * 4] = o[0]; d[i * 4 + 1] = o[1]; d[i * 4 + 2] = o[2];
     }
   });
+  // Volume: the lower lip is fuller in the middle and turns away from the light at the corners and
+  // along its lower edge, so the colour has light and shade instead of reading flat.
+  {
+    const [lc, rc] = toPixels(L, [61, 291], w, h); const [li, lo] = toPixels(L, [14, 17], w, h);
+    const ang = Math.atan2(rc[1] - lc[1], rc[0] - lc[0]); const lh = Math.max(2, Math.hypot(lo[0] - li[0], lo[1] - li[1]));
+    const dark = shade.map(v => Math.round(v * 0.45)).join(',');
+    W.save(); W.beginPath(); tracePath(W, outer); W.closePath(); W.clip();
+    if ('filter' in W) W.filter = `blur(${(mw * 0.04).toFixed(1)}px)`;
+    // light catching the middle of the lower lip
+    W.globalCompositeOperation = 'soft-light'; W.globalAlpha = 0.55 * a0; W.fillStyle = 'rgb(255,248,240)';
+    W.beginPath(); W.ellipse(li[0] * 0.55 + lo[0] * 0.45, li[1] * 0.55 + lo[1] * 0.45, mw * 0.17, lh * 0.22, ang, 0, Math.PI * 2); W.fill();
+    // shade at the corners and the lower edge
+    W.globalCompositeOperation = 'multiply'; W.globalAlpha = 0.3 * a0; W.fillStyle = `rgb(${dark})`;
+    for (const p of [lc, rc]) { W.beginPath(); W.ellipse(p[0], p[1], mw * 0.11, mw * 0.07, ang, 0, Math.PI * 2); W.fill(); }
+    W.globalAlpha = 0.22 * a0; W.beginPath(); W.ellipse(lo[0], lo[1] + lh * 0.05, mw * 0.3, lh * 0.18, ang, 0, Math.PI * 2); W.fill();
+    W.restore();
+  }
   if (fin === 'gloss') {
     const ang = Math.atan2(outer[10][1] - outer[0][1], outer[10][0] - outer[0][0]);
     const [lo1, lo2] = toPixels(L, [14, 17], w, h); const [up1, up2] = toPixels(L, [13, 0], w, h);
@@ -346,8 +363,10 @@ function addGrain(cv, before0) {
   const rnd = () => { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; };
   for (let i = 0; i < d.length; i += 4) {
     const diff = Math.abs(d[i] - b[i]) + Math.abs(d[i + 1] - b[i + 1]) + Math.abs(d[i + 2] - b[i + 2]);
-    if (diff < 6) continue;
-    const k = Math.min(1, diff / 40); const nz = (rnd() + rnd() + rnd() - 1.5) * 7 * k;
+    if (diff < 4) continue;
+    const t = Math.min(1, (diff - 4) / 50); const k = t * t * (3 - 2 * t);
+    // Fine, low-amplitude luminance grain (like a camera sensor), easing in where the paint starts, so it never reads as speckle.
+    const nz = (rnd() + rnd() + rnd() + rnd() - 2) * 2.6 * k;
     d[i] = Math.max(0, Math.min(255, d[i] + nz)); d[i + 1] = Math.max(0, Math.min(255, d[i + 1] + nz)); d[i + 2] = Math.max(0, Math.min(255, d[i + 2] + nz));
   }
   ctx.putImageData(img, 0, 0);

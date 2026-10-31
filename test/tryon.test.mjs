@@ -194,3 +194,16 @@ test('wig mesh: rings map her face outline onto the model outline, and the brows
   const js = readFileSync(join(PUB, 'tryon.js'), 'utf8');
   for (const w of JSON.parse(js.match(/export const WIGS = (\[.*\]);/)[1])) assert.equal(w.oval?.length, 36, `${w.id} has the model's face outline`);
 });
+
+test('wig seating: hair rings hug her head and the hairline and crown sit lower; chin and face outline sides unchanged', async () => {
+  const { wigMesh: wm, seatRings: sr } = await import('../public/tryon-geometry.js');
+  const oval = Array.from({ length: 36 }, (_, i) => [400 + 100 * Math.cos(2 * Math.PI * i / 36 - Math.PI / 2), 300 + 130 * Math.sin(2 * Math.PI * i / 36 - Math.PI / 2)]);
+  const rings = [0.86, 1, 1.22, 1.55, 2.1, 3.4, 9];
+  const plain = sr(oval, [400, 300], rings), seated = sr(oval, [400, 300], rings, { hug: 0.86, drop: 0.05 });
+  assert.ok(Math.abs(seated[1][18][1] - plain[1][18][1]) < 1e-9, 'chin stays put');
+  assert.ok(Math.abs(seated[1][9][0] - plain[1][9][0]) < 1e-9, 'face side stays put');
+  assert.ok(seated[1][0][1] > plain[1][0][1] + 10, 'hairline lowered');
+  assert.ok(seated[5][0][1] > plain[5][0][1] + 10, 'crown lowered');
+  assert.ok(Math.abs(seated[4][9][0] - 400) < Math.abs(plain[4][9][0] - 400), 'sides hug');
+  assert.equal(wm(oval, oval, rings, { hug: 0.86, drop: 0.05 }).length, 36 * 2 * 6);
+});

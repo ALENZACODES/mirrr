@@ -215,12 +215,14 @@ export function wigAffine(src, dst) {
  * outline already carries them. Returns [{ s: [p, p, p], d: [p, p, p] }].
  */
 export const WIG_RINGS = [0.86, 1, 1.22, 1.55, 2.1, 3.4];
-export function wigMesh(srcOval, dstOval, rings = WIG_RINGS) {
+export function wigMesh(srcOval, dstOval, rings = WIG_RINGS, seat = null) {
   const n = srcOval.length; if (n !== dstOval.length || n < 3) return [];
   const centre = pts => pts.reduce((a, p) => [a[0] + p[0] / pts.length, a[1] + p[1] / pts.length], [0, 0]);
   const cs = centre(srcOval), cd = centre(dstOval);
   const ring = (pts, c, k) => pts.map(p => [c[0] + (p[0] - c[0]) * k, c[1] + (p[1] - c[1]) * k]);
-  const S = rings.map(k => ring(srcOval, cs, k)), D = rings.map(k => ring(dstOval, cd, k));
+  const S = rings.map(k => ring(srcOval, cs, k));
+  let D = rings.map(k => ring(dstOval, cd, k));
+  if (seat) D = seatRings(dstOval, cd, rings, seat);
   const tris = [];
   for (let r = 0; r < rings.length - 1; r++) {
     for (let i = 0; i < n; i++) {
@@ -230,6 +232,25 @@ export function wigMesh(srcOval, dstOval, rings = WIG_RINGS) {
     }
   }
   return tris;
+}
+
+/**
+ * Seats the wig on her scalp rather than around it: the hair rings outside her face outline are
+ * pulled in towards it (`hug` < 1, capped at the 3.4x ring so long hair keeps its length), and the
+ * upper half of the wig (hairline, temples, crown) is lowered along her face's own up-axis by `drop`
+ * of her face height, so it follows roll. `dstOval[0]` is the forehead top (10), `[n/2]` the chin (152).
+ */
+export function seatRings(dstOval, cd, rings, { hug = 1, drop = 0 } = {}) {
+  const n = dstOval.length, top = dstOval[0], chin = dstOval[Math.floor(n / 2)];
+  const H = Math.hypot(top[0] - chin[0], top[1] - chin[1]) || 1, u = [(top[0] - chin[0]) / H, (top[1] - chin[1]) / H];
+  return rings.map(k => {
+    const kk = k <= 1 ? k : k - (1 - hug) * (Math.min(k, 3.4) - 1);
+    return dstOval.map(p => {
+      const up = ((p[0] - cd[0]) * u[0] + (p[1] - cd[1]) * u[1]) / (H / 2);
+      const wgt = Math.max(0, Math.min(1, up)), dd = drop * H * wgt;
+      return [cd[0] + (p[0] - cd[0]) * kk - u[0] * dd, cd[1] + (p[1] - cd[1]) * kk - u[1] * dd];
+    });
+  });
 }
 
 export function applyTransform(m, [x, y]) { return [m[0] * x + m[2] * y + m[4], m[1] * x + m[3] * y + m[5]]; }

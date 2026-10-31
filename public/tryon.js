@@ -284,13 +284,13 @@ function hideOwnHair(L, w, h) {
   const raw0 = toPixels(L, FACE_OVAL, mw, mh);
   const cx = raw0.reduce((a, p) => a + p[0], 0) / raw0.length, cy = raw0.reduce((a, p) => a + p[1], 0) / raw0.length;
   // Above the eyes the sides stay tight (her temple hair is replaced; the wig hugs her face there).
-  const oval = raw0.map(([x, y]) => [cx + (x - cx) * (y < cy ? 1.0 : 1.15), cy + (y - cy) * (y < cy ? 1.32 : 1.04)]);
+  const oval = raw0.map(([x, y]) => [cx + (x - cx) * (y < cy ? 1.0 : 1.15), cy + (y - cy) * (y < cy ? 1.24 : 1.04)]);
   const faceMask = document.createElement('canvas'); faceMask.width = mw; faceMask.height = mh;
   const fm = faceMask.getContext('2d'); fm.fillStyle = '#fff'; fm.beginPath(); tracePath(fm, oval); fm.fill();
   const fd = fm.getImageData(0, 0, mw, mh).data;
   // Just above the forehead, hair is replaced with her own forehead skin, not the background, so a wig
   // with a higher hairline shows a forehead, not a grey band.
-  fm.clearRect(0, 0, mw, mh); fm.beginPath(); tracePath(fm, raw0.map(([x, y]) => [cx + (x - cx) * (y < cy ? 1.1 : 1.08), cy + (y - cy) * (y < cy ? 1.45 : 1)])); fm.fill();
+  fm.clearRect(0, 0, mw, mh); fm.beginPath(); tracePath(fm, raw0.map(([x, y]) => [cx + (x - cx) * (y < cy ? 1.1 : 1.08), cy + (y - cy) * (y < cy ? 1.3 : 1)])); fm.fill();
   const zd = fm.getImageData(0, 0, mw, mh).data;
   const [fx, fy] = toPixels(L, [151], w, h)[0]; const sk = wctx.getImageData(Math.max(0, Math.round(fx) - 4), Math.max(0, Math.round(fy) - 4), 9, 9).data;
   let sr = 0, sg = 0, sb = 0; for (let i = 0; i < sk.length; i += 4) { sr += sk[i]; sg += sk[i + 1]; sb += sk[i + 2]; }
@@ -506,6 +506,8 @@ function paintLashes(L, w, h) {
   wctx.restore();
 }
 
+// Seating: hair hugs her head (rings pulled in) and the hairline/crown sit lower, on her scalp.
+const WIG_SEAT = { hug: 0.86, drop: 0.05 };
 function paintWig(L, w, h) {
   const meta = WIGS.find(x => x.id === t.choice.wig); const img = t.wigImgs[t.choice.wig];
   if (!meta || !img?.complete || !img.naturalWidth) return;
@@ -521,7 +523,7 @@ function paintWig(L, w, h) {
   // Mesh warp: the wig's face opening (the model's 36-point face outline) is mapped ring by ring onto
   // her face outline, so the hairline sits on her hairline and the sides hug her temples and cheeks
   // at any tilt. The last ring is wide enough to carry the full length of the hair.
-  const tris = wigMesh(meta.oval, toPixels(L, FACE_OVAL, w, h), [...WIG_RINGS, 9]);
+  const tris = wigMesh(meta.oval, toPixels(L, FACE_OVAL, w, h), [...WIG_RINGS, 9], WIG_SEAT);
   for (const { s, d } of tris) {
     const m = wigAffine(s, d);
     const gx = (d[0][0] + d[1][0] + d[2][0]) / 3, gy = (d[0][1] + d[1][1] + d[2][1]) / 3;

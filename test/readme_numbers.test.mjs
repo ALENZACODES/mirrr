@@ -16,7 +16,7 @@ test('README counts match the code', () => {
   assert.equal(SHADE_SPECTRUM.length, 60); assert.match(readme, /60-shade foundation spectrum/);
   assert.doesNotMatch(readme, /\b30-shade\b|\b30 shades\b/);
   assert.equal(getWigCatalogue().length, 42); assert.match(readme, /42 wig styles/);
-  assert.equal(LOOKS.length, 68); assert.match(readme, /68 multicultural looks across 9 archetypes/);
+  assert.equal(LOOKS.length, 69); assert.match(readme, /69 multicultural looks across 9 archetypes/);
   assert.equal(new Set(LOOKS.map(l => l.archetype)).size, 9);
   assert.equal(QUIZ_QUESTIONS.length, 5); assert.match(readme, /A 5-question quiz/);
   assert.equal(Object.keys(REGIONAL_ANCHORS).length, 9); assert.match(readme, /across 9 cultural regions/);

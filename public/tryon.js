@@ -389,11 +389,13 @@ function paintShadow(L, w, h) {
     for (const side of ['right', 'left']) {
       const ew = eyeWidth(L, side, w, h);
       if ('filter' in c) c.filter = `blur(${(ew * 0.09).toFixed(1)}px)`;
-      c.fillStyle = col; c.beginPath(); tracePath(c, lidPolygon(L, side, w, h)); c.fill();
+      // Built up like a brush does: a soft wash to the crease, then more colour near the lash line.
+      c.fillStyle = col; c.globalAlpha = 0.55; c.beginPath(); tracePath(c, lidPolygon(L, side, w, h, 0.6)); c.fill();
+      c.globalAlpha = 0.45; c.beginPath(); tracePath(c, lidPolygon(L, side, w, h, 0.3)); c.fill(); c.globalAlpha = 1;
     }
   };
-  overlay(draw, 'multiply', 0.45);
-  overlay(draw, 'soft-light', 0.35);
+  overlay(draw, 'multiply', 0.4);
+  overlay(draw, 'soft-light', 0.3);
 }
 
 function paintBlush(L, w, h) {

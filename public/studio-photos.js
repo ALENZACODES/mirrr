@@ -233,6 +233,9 @@ window.STUDIO_PHOTOS = {
   "espresso": {
    "src": "/studio/hair/espresso.webp"
   },
+  "fire_red": {
+   "src": "/studio/hair/fire_red.webp"
+  },
   "forest_green": {
    "src": "/studio/hair/forest_green.webp"
   },
@@ -293,6 +296,9 @@ window.STUDIO_PHOTOS = {
   "mehndi_orange": {
    "src": "/studio/hair/mehndi_orange.webp"
   },
+  "mushroom_blonde": {
+   "src": "/studio/hair/mushroom_blonde.webp"
+  },
   "neon_green": {
    "src": "/studio/hair/neon_green.webp"
   },
@@ -304,6 +310,9 @@ window.STUDIO_PHOTOS = {
   },
   "purple_plum": {
    "src": "/studio/hair/purple_plum.webp"
+  },
+  "rose_brown": {
+   "src": "/studio/hair/rose_brown.webp"
   },
   "rose_gold_deep": {
    "src": "/studio/hair/rose_gold_deep.webp"

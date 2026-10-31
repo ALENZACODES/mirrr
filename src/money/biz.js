@@ -13,7 +13,9 @@ import { join } from 'path';
 import { tmpdir } from 'os';
 import { productData, withUtm, normaliseEmail } from './store.js';
 
-export const INTEREST_KINDS = ['brand', 'pro'];
+export const INTEREST_KINDS = ['brand', 'pro', 'news'];
+/** Beauty News sign-up: optional interests, none pre-selected. */
+export const NEWS_INTERESTS = ['black', 'latina', 'south_asian', 'east_asian', 'mena', 'indigenous', 'multicultural', 'launches', 'hair', 'skin', 'makeup'];
 export const PRO_TYPES = ['', 'stylist', 'braider', 'wig_install', 'colourist', 'makeup_artist', 'bridal', 'salon'];
 export const BRAND_TYPES = ['', 'black_owned', 'indie', 'women_of_colour_owned', 'indigenous_owned', 'other'];
 const MAX_TAGS = 300;
@@ -61,15 +63,17 @@ export function createBizStore({ dir = process.env.MIRRR_DATA_DIR || join(tmpdir
   let timer = null;
   const later = () => { if (!timer) { timer = setTimeout(() => { timer = null; write(tfile, tr); }, 2000); timer.unref?.(); } };
   return {
-    joinInterest({ kind, email, consent, type = '' } = {}) {
+    joinInterest({ kind, email, consent, type = '', interests = [] } = {}) {
       if (!INTEREST_KINDS.includes(kind)) return { ok: false, error: 'Unknown form.' };
       if (consent !== true) return { ok: false, error: 'Please tick the box to agree before sending.' };
       const e = normaliseEmail(email);
       if (!e) return { ok: false, error: 'Please enter a valid email address.' };
-      const allowed = kind === 'brand' ? BRAND_TYPES : PRO_TYPES;
+      const allowed = kind === 'brand' ? BRAND_TYPES : kind === 'pro' ? PRO_TYPES : [''];
       const t = allowed.includes(type) ? type : '';
       if (list.entries.some(x => x.kind === kind && x.email === e)) return { ok: true, already: true };
-      list.entries.push({ kind, email: e, type: t, at: new Date(now()).toISOString() });
+      const entry = { kind, email: e, type: t, at: new Date(now()).toISOString() };
+      if (kind === 'news') entry.interests = [...new Set((Array.isArray(interests) ? interests : []).filter(x => NEWS_INTERESTS.includes(x)))];
+      list.entries.push(entry);
       write(file, list);
       return { ok: true };
     },
@@ -82,7 +86,7 @@ export function createBizStore({ dir = process.env.MIRRR_DATA_DIR || join(tmpdir
       return { ok: true };
     },
     interestCounts() {
-      const c = { brand: 0, pro: 0 };
+      const c = { brand: 0, pro: 0, news: 0 };
       for (const x of list.entries) c[x.kind] += 1;
       return c;
     },

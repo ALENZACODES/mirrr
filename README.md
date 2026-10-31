@@ -2,7 +2,7 @@
 
 > **For judges: start here → [JUDGES.md](JUDGES.md)** · what MIRRR does, a 60-second walkthrough, how it uses Qloo, how it makes money, and each official criterion mapped to evidence.
 >
-> **How MIRRR makes money:** 14 revenue streams, each labelled built / ready to switch on / planned, live at https://mirrr-upbn.onrender.com/#money (no revenue yet, no paywall, nothing sponsored).
+> **How MIRRR makes money:** 16 revenue streams, each labelled built / ready to switch on / planned, live at https://mirrr-upbn.onrender.com/#money (no revenue yet, no paywall, nothing sponsored).
 
 > **Most beauty apps were built for the West. MIRRR was built for the rest.**
 

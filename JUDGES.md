@@ -24,6 +24,12 @@ MIRRR is a beauty agent for women of colour that starts from culture, not from a
 
 The progress bar counts down ("Step n of 6 · ~Xs left") and Back works at every step.
 
+### Beauty News (the first source of beauty news to you)
+
+| What | How it works | See it (live) |
+|---|---|---|
+| Beauty News: headlines about brands that make beauty for Black, Latina, South Asian, East & Southeast Asian, MENA and Indigenous women | Pulls 20 public RSS/Atom feeds (beauty publications and brand blogs) plus Google News searches for 31 brands and 13 community topics, every 30 minutes. Each source is fetched with a timeout and its own error handling; items are de-duplicated, filtered (beauty only, no men's grooming, no slurs, no colourist "whitening" products, nothing off-topic) and sorted newest first. Only the headline, source, date, a one-line feed snippet and a link out are shown, with a plain initial tile instead of copied images. **3 fail-safe layers:** A direct feeds, B Google News when A finds too few, C the last good set saved to disk plus a real snapshot committed in the repo (`src/news/news-snapshot.json`, refreshed by a GitHub Action every 6 hours), so a cold start shows real headlines at once. The page says when it was updated and which layer served it. Filters start unselected. Sources: [/api/news/sources](https://mirrr-upbn.onrender.com/api/news/sources). Tests: `test/news.test.mjs` | Top bar **Beauty News**, the home band, the footer, [/#news](https://mirrr-upbn.onrender.com/#news) |
+
 ---
 
 ## 2. How MIRRR uses Qloo
@@ -68,6 +74,8 @@ MIRRR is free for her. It has **many honest entry points to revenue**, each labe
 | 12 | MIRRR Plus subscription | **Planned** | Unlimited Leaps and try-ons, full Bridal Countdown, cloud Vanity; no price, no checkout | [/#plus](https://mirrr-upbn.onrender.com/#plus) | [money-03-plus-page](docs/judges/money-03-plus-page.webp) |
 | 13 | Paid digital guides | **Planned** | No checkout exists | [/#guides](https://mirrr-upbn.onrender.com/#guides) | [money-2-guides](docs/judges/money-2-guides.webp) |
 | 14 | Stylist listings and booking referrals | **Planned** | Not built beyond the interest form | [/#pros](https://mirrr-upbn.onrender.com/#pros) | [money-2-pros](docs/judges/money-2-pros.webp) |
+| 15 | Beauty News sign-up list | **Built today, no charge** | "Get the news" form on Beauty News: email, optional interests (none ticked), consent unticked, remove-my-email on the same page. The list is an audience asset; **no emails are sent yet** | [/#news](https://mirrr-upbn.onrender.com/#news) | [news-live](docs/judges/news-live.webp) |
+| 16 | Sponsored Beauty News newsletter slot | **Planned** | One marked sponsor slot in the future email digest. No digest is sent and no sponsor exists | [/#news](https://mirrr-upbn.onrender.com/#news) | n/a |
 
 The full table, with the same statuses, is in the app at [/#money](https://mirrr-upbn.onrender.com/#money) ([money-2-how-money](docs/judges/money-2-how-money.webp)). Screenshots are kept in the build workspace, not in this repo.
 

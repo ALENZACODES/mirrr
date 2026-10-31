@@ -1,0 +1,774 @@
+{
+  "about": "MIRRR Beauty News sources. Brands: the 14 brands in MIRRR's product catalogue (src/data/products_live.json) plus well-known beauty brands founded by, or built for, women in the listed communities. 'communities' is the audience a brand is known for serving; it is used only to filter news, not as an ownership claim (ownership labels with sources live in the product catalogue). Feeds: public RSS/Atom feeds checked on Oct 30, 2026. Google News search feeds are layer B.",
+  "checked_at": "2026-10-30",
+  "communities": [
+    {
+      "id": "black",
+      "label": "Black",
+      "keywords": [
+        "Black-owned",
+        "Black owned",
+        "Black-founded",
+        "Black-led",
+        "Black women",
+        "Black woman",
+        "Black girls",
+        "Black beauty",
+        "Black hair",
+        "Black founder",
+        "Black founders",
+        "Black entrepreneurs",
+        "Black creators",
+        "African American",
+        "Afro-Caribbean",
+        "Afro",
+        "natural hair",
+        "textured hair",
+        "coily",
+        "4C hair",
+        "braids",
+        "braider",
+        "box braids",
+        "locs",
+        "HBCU",
+        "melanin"
+      ]
+    },
+    {
+      "id": "latina",
+      "label": "Latina",
+      "keywords": [
+        "Latina",
+        "Latinas",
+        "Latine",
+        "Latinx",
+        "Latina-owned",
+        "Latino-owned",
+        "Hispanic",
+        "Chicana",
+        "Mexican",
+        "Puerto Rican",
+        "Dominican",
+        "Colombian",
+        "Brazilian"
+      ]
+    },
+    {
+      "id": "south_asian",
+      "label": "South Asian",
+      "keywords": [
+        "South Asian",
+        "Desi",
+        "Ayurveda",
+        "Ayurvedic",
+        "Diwali",
+        "Indian-American",
+        "Indian beauty",
+        "Pakistani",
+        "Bangladeshi",
+        "Sri Lankan",
+        "Bollywood",
+        "mehndi"
+      ]
+    },
+    {
+      "id": "east_asian",
+      "label": "East & Southeast Asian",
+      "keywords": [
+        "K-beauty",
+        "Korean beauty",
+        "Korean skincare",
+        "Korean skin care",
+        "J-beauty",
+        "Japanese beauty",
+        "C-beauty",
+        "Asian American",
+        "Asian-American",
+        "Asian-owned",
+        "Asian-founded",
+        "AAPI",
+        "Lunar New Year",
+        "Filipina",
+        "Vietnamese"
+      ]
+    },
+    {
+      "id": "mena",
+      "label": "Middle Eastern & North African",
+      "keywords": [
+        "Middle Eastern",
+        "Middle East",
+        "Arab",
+        "Arab-American",
+        "North African",
+        "Moroccan",
+        "Egyptian",
+        "Persian",
+        "Lebanese",
+        "Amazigh",
+        "Ramadan",
+        "Eid",
+        "hammam",
+        "argan oil"
+      ]
+    },
+    {
+      "id": "indigenous",
+      "label": "Indigenous",
+      "keywords": [
+        "Indigenous",
+        "Indigenous-owned",
+        "Native American",
+        "Native-owned",
+        "First Nations",
+        "Métis",
+        "Inuit",
+        "Māori",
+        "Aboriginal"
+      ]
+    },
+    {
+      "id": "multicultural",
+      "label": "Women of colour (all)",
+      "keywords": [
+        "women of color",
+        "women of colour",
+        "BIPOC",
+        "people of color",
+        "people of colour",
+        "minority-owned",
+        "diverse-owned",
+        "diverse founders",
+        "inclusive shade",
+        "shade range",
+        "deep skin",
+        "dark skin",
+        "darker skin",
+        "deeper skin tones",
+        "melanin-rich",
+        "multicultural"
+      ]
+    }
+  ],
+  "brands": [
+    {
+      "name": "Juvia's Place",
+      "aliases": [
+        "Juvias Place"
+      ],
+      "communities": [
+        "black"
+      ],
+      "basis": "MIRRR catalogue"
+    },
+    {
+      "name": "Danessa Myricks Beauty",
+      "aliases": [
+        "Danessa Myricks"
+      ],
+      "communities": [
+        "black"
+      ],
+      "basis": "MIRRR catalogue"
+    },
+    {
+      "name": "Mented Cosmetics",
+      "aliases": [
+        "Mented"
+      ],
+      "communities": [
+        "black"
+      ],
+      "basis": "MIRRR catalogue"
+    },
+    {
+      "name": "The Lip Bar",
+      "aliases": [],
+      "communities": [
+        "black"
+      ],
+      "basis": "MIRRR catalogue"
+    },
+    {
+      "name": "UOMA Beauty",
+      "aliases": [
+        "UOMA"
+      ],
+      "communities": [
+        "black"
+      ],
+      "basis": "MIRRR catalogue"
+    },
+    {
+      "name": "Beauty Bakerie",
+      "aliases": [],
+      "communities": [
+        "black"
+      ],
+      "basis": "MIRRR catalogue"
+    },
+    {
+      "name": "Live Tinted",
+      "aliases": [],
+      "communities": [
+        "south_asian"
+      ],
+      "basis": "MIRRR catalogue"
+    },
+    {
+      "name": "Kulfi Beauty",
+      "aliases": [],
+      "communities": [
+        "south_asian"
+      ],
+      "basis": "MIRRR catalogue"
+    },
+    {
+      "name": "Cheekbone Beauty",
+      "aliases": [],
+      "communities": [
+        "indigenous"
+      ],
+      "basis": "MIRRR catalogue"
+    },
+    {
+      "name": "Pat McGrath Labs",
+      "aliases": [
+        "Pat McGrath"
+      ],
+      "communities": [
+        "black"
+      ],
+      "basis": "MIRRR catalogue"
+    },
+    {
+      "name": "Beauty of Joseon",
+      "aliases": [],
+      "communities": [
+        "east_asian"
+      ],
+      "basis": "MIRRR catalogue"
+    },
+    {
+      "name": "Glow Recipe",
+      "aliases": [],
+      "communities": [
+        "east_asian"
+      ],
+      "basis": "MIRRR catalogue"
+    },
+    {
+      "name": "Kahina Giving Beauty",
+      "aliases": [],
+      "communities": [
+        "mena"
+      ],
+      "basis": "MIRRR catalogue"
+    },
+    {
+      "name": "Reina Rebelde",
+      "aliases": [],
+      "communities": [
+        "latina"
+      ],
+      "basis": "MIRRR catalogue"
+    },
+    {
+      "name": "Fenty Beauty",
+      "aliases": [
+        "Fenty Skin",
+        "Fenty Hair"
+      ],
+      "communities": [
+        "black",
+        "multicultural"
+      ],
+      "basis": "curated: founded by Rihanna; 40-shade launch range"
+    },
+    {
+      "name": "Pattern Beauty",
+      "aliases": [
+        "PATTERN by Tracee Ellis Ross"
+      ],
+      "communities": [
+        "black"
+      ],
+      "basis": "curated: founded by Tracee Ellis Ross for curly, coily and tight-textured hair"
+    },
+    {
+      "name": "Cécred",
+      "aliases": [
+        "Cecred"
+      ],
+      "communities": [
+        "black"
+      ],
+      "basis": "curated: hair care founded by Beyoncé"
+    },
+    {
+      "name": "Mielle Organics",
+      "aliases": [
+        "Mielle"
+      ],
+      "communities": [
+        "black"
+      ],
+      "basis": "curated: founded by Monique Rodriguez, textured hair care"
+    },
+    {
+      "name": "Briogeo",
+      "aliases": [],
+      "communities": [
+        "black"
+      ],
+      "basis": "curated: founded by Nancy Twine"
+    },
+    {
+      "name": "Topicals",
+      "aliases": [],
+      "communities": [
+        "black"
+      ],
+      "basis": "curated: founded by Olamide Olowe",
+      "ambiguous": true
+    },
+    {
+      "name": "Black Girl Sunscreen",
+      "aliases": [],
+      "communities": [
+        "black"
+      ],
+      "basis": "curated: founded by Shontay Lundy"
+    },
+    {
+      "name": "Ami Colé",
+      "aliases": [
+        "Ami Cole"
+      ],
+      "communities": [
+        "black"
+      ],
+      "basis": "curated: founded by Diarrha N'Diaye"
+    },
+    {
+      "name": "Bread Beauty Supply",
+      "aliases": [],
+      "communities": [
+        "black"
+      ],
+      "basis": "curated: founded by Maeva Heim, textured hair care"
+    },
+    {
+      "name": "Rare Beauty",
+      "aliases": [],
+      "communities": [
+        "latina"
+      ],
+      "basis": "curated: founded by Selena Gomez"
+    },
+    {
+      "name": "Rizos Curls",
+      "aliases": [],
+      "communities": [
+        "latina"
+      ],
+      "basis": "curated: founded by Julissa Prado, curly hair care"
+    },
+    {
+      "name": "Huda Beauty",
+      "aliases": [],
+      "communities": [
+        "mena"
+      ],
+      "basis": "curated: founded by Huda Kattan"
+    },
+    {
+      "name": "Kayali",
+      "aliases": [],
+      "communities": [
+        "mena"
+      ],
+      "basis": "curated: fragrance founded by Mona Kattan",
+      "ambiguous": true
+    },
+    {
+      "name": "Fable & Mane",
+      "aliases": [
+        "Fable and Mane"
+      ],
+      "communities": [
+        "south_asian"
+      ],
+      "basis": "curated: Ayurvedic hair care founded by Nikita and Akash Mehta"
+    },
+    {
+      "name": "Tower 28",
+      "aliases": [
+        "Tower 28 Beauty"
+      ],
+      "communities": [
+        "east_asian"
+      ],
+      "basis": "curated: founded by Amy Liu",
+      "ambiguous": true
+    },
+    {
+      "name": "Youthforia",
+      "aliases": [],
+      "communities": [
+        "east_asian"
+      ],
+      "basis": "curated: founded by Fiona Co Chan"
+    },
+    {
+      "name": "Prados Beauty",
+      "aliases": [],
+      "communities": [
+        "indigenous"
+      ],
+      "basis": "curated: founded by Cece Meadows"
+    }
+  ],
+  "feeds": [
+    {
+      "id": "essence",
+      "name": "Essence",
+      "url": "https://www.essence.com/feed",
+      "kind": "publication",
+      "community": "black"
+    },
+    {
+      "id": "hellobeautiful",
+      "name": "HelloBeautiful",
+      "url": "https://hellobeautiful.com/category/beauty/feed/",
+      "kind": "publication",
+      "community": "black"
+    },
+    {
+      "id": "browngirl",
+      "name": "Brown Girl Magazine",
+      "url": "https://www.browngirlmagazine.com/feed/",
+      "kind": "publication",
+      "community": "south_asian"
+    },
+    {
+      "id": "allure",
+      "name": "Allure",
+      "url": "https://www.allure.com/feed/rss",
+      "kind": "publication"
+    },
+    {
+      "id": "refinery29",
+      "name": "Refinery29",
+      "url": "https://www.refinery29.com/en-us/beauty/rss.xml",
+      "kind": "publication"
+    },
+    {
+      "id": "vogue",
+      "name": "Vogue",
+      "url": "https://www.vogue.com/feed/beauty/rss",
+      "kind": "publication"
+    },
+    {
+      "id": "elle",
+      "name": "ELLE",
+      "url": "https://www.elle.com/rss/beauty.xml",
+      "kind": "publication"
+    },
+    {
+      "id": "bazaar",
+      "name": "Harper's Bazaar",
+      "url": "https://www.harpersbazaar.com/rss/beauty.xml",
+      "kind": "publication"
+    },
+    {
+      "id": "zoereport",
+      "name": "The Zoe Report",
+      "url": "https://www.thezoereport.com/rss",
+      "kind": "publication"
+    },
+    {
+      "id": "glossy",
+      "name": "Glossy",
+      "url": "https://www.glossy.co/feed/",
+      "kind": "trade"
+    },
+    {
+      "id": "wwd",
+      "name": "WWD",
+      "url": "https://wwd.com/beauty-industry-news/feed/",
+      "kind": "trade"
+    },
+    {
+      "id": "cosmeticsbusiness",
+      "name": "Cosmetics Business",
+      "url": "https://www.cosmeticsbusiness.com/rss",
+      "kind": "trade"
+    },
+    {
+      "id": "cosmopolitan",
+      "name": "Cosmopolitan",
+      "url": "https://www.cosmopolitan.com/rss/style-beauty.xml",
+      "kind": "publication"
+    },
+    {
+      "id": "remezcla",
+      "name": "Remezcla",
+      "url": "https://remezcla.com/feed/",
+      "kind": "publication",
+      "community": "latina"
+    },
+    {
+      "id": "blog-pattern",
+      "name": "Pattern Beauty (brand blog)",
+      "url": "https://patternbeauty.com/blogs/news.atom",
+      "kind": "brand",
+      "brand": "Pattern Beauty"
+    },
+    {
+      "id": "blog-reina",
+      "name": "Reina Rebelde (brand blog)",
+      "url": "https://reinarebelde.com/blogs/news.atom",
+      "kind": "brand",
+      "brand": "Reina Rebelde"
+    },
+    {
+      "id": "blog-joseon",
+      "name": "Beauty of Joseon (brand blog)",
+      "url": "https://beautyofjoseon.com/blogs/news.atom",
+      "kind": "brand",
+      "brand": "Beauty of Joseon"
+    },
+    {
+      "id": "blog-juvia",
+      "name": "Juvia's Place (brand blog)",
+      "url": "https://www.juviasplace.com/blogs/news.atom",
+      "kind": "brand",
+      "brand": "Juvia's Place"
+    },
+    {
+      "id": "blog-bread",
+      "name": "Bread Beauty Supply (brand blog)",
+      "url": "https://breadbeautysupply.com/blogs/news.atom",
+      "kind": "brand",
+      "brand": "Bread Beauty Supply"
+    },
+    {
+      "id": "blog-danessa",
+      "name": "Danessa Myricks Beauty (brand blog)",
+      "url": "https://www.danessamyricksbeauty.com/blogs/news.atom",
+      "kind": "brand",
+      "brand": "Danessa Myricks Beauty"
+    }
+  ],
+  "google_topics": [
+    {
+      "id": "black-owned",
+      "q": "\"Black-owned beauty\"",
+      "community": "black"
+    },
+    {
+      "id": "textured-hair",
+      "q": "\"textured hair\" brand",
+      "community": "black"
+    },
+    {
+      "id": "latina-owned",
+      "q": "\"Latina-owned\" beauty",
+      "community": "latina"
+    },
+    {
+      "id": "latina-beauty",
+      "q": "\"Latina beauty\" brand",
+      "community": "latina"
+    },
+    {
+      "id": "south-asian",
+      "q": "\"South Asian\" beauty brand",
+      "community": "south_asian"
+    },
+    {
+      "id": "asian-american",
+      "q": "\"Asian American\" beauty brand",
+      "community": "east_asian"
+    },
+    {
+      "id": "k-beauty",
+      "q": "\"K-beauty\" brand",
+      "community": "east_asian"
+    },
+    {
+      "id": "middle-eastern",
+      "q": "\"Middle Eastern\" beauty brand",
+      "community": "mena"
+    },
+    {
+      "id": "arab-beauty",
+      "q": "Arab beauty brand",
+      "community": "mena"
+    },
+    {
+      "id": "indigenous",
+      "q": "\"Indigenous\" beauty brand",
+      "community": "indigenous"
+    },
+    {
+      "id": "native-owned",
+      "q": "\"Native-owned\" beauty",
+      "community": "indigenous"
+    },
+    {
+      "id": "women-of-color",
+      "q": "\"women of color\" beauty brand",
+      "community": "multicultural"
+    },
+    {
+      "id": "minority-owned",
+      "q": "\"minority-owned\" beauty",
+      "community": "multicultural"
+    }
+  ],
+  "beauty_words": [
+    "beauty",
+    "makeup",
+    "make-up",
+    "cosmetic*",
+    "skincare",
+    "skin care",
+    "skin-care",
+    "haircare",
+    "hair care",
+    "hair",
+    "hairstyle*",
+    "wig*",
+    "braid*",
+    "locs",
+    "lipstick*",
+    "lip",
+    "lips",
+    "lip gloss",
+    "lip oil",
+    "foundation",
+    "concealer",
+    "mascara",
+    "lash*",
+    "brow*",
+    "nail*",
+    "manicure",
+    "fragrance*",
+    "perfume*",
+    "serum*",
+    "sunscreen*",
+    "SPF",
+    "moisturi*",
+    "shampoo*",
+    "conditioner*",
+    "salon*",
+    "blush",
+    "bronzer",
+    "eyeliner",
+    "eyeshadow",
+    "kohl",
+    "henna",
+    "spa",
+    "self-care",
+    "glow",
+    "Sephora",
+    "Ulta",
+    "eau de parfum",
+    "scent*",
+    "palette*",
+    "skin tint",
+    "cushion"
+  ],
+  "block": {
+    "mens_grooming": [
+      "men's grooming",
+      "mens grooming",
+      "men's skincare",
+      "men's skin care",
+      "men's hair",
+      "for men",
+      "male grooming",
+      "beard",
+      "beards",
+      "barber*",
+      "aftershave",
+      "shaving for men"
+    ],
+    "harmful": [
+      "skin whitening",
+      "skin-whitening",
+      "whitening cream",
+      "skin lightening",
+      "skin-lightening",
+      "lightening cream",
+      "bleaching cream",
+      "skin bleaching",
+      "fairness cream",
+      "fair and lovely"
+    ],
+    "off_topic": [
+      "shooting",
+      "shot dead",
+      "murder*",
+      "killed",
+      "stabbing",
+      "stabbed",
+      "arrested",
+      "obituary",
+      "dies at",
+      "died",
+      "porn*",
+      "OnlyFans",
+      "sex tape",
+      "horoscope*",
+      "zodiac",
+      "cannabis",
+      "CBD",
+      "hemp",
+      "psoriasis",
+      "abduct*",
+      "kidnap*",
+      "intelligence operation",
+      "stock forecast",
+      "analyst predictions",
+      "soccer",
+      "lung cancer"
+    ],
+    "slurs_rot13": [
+      "avttre*",
+      "avttn*",
+      "pbba",
+      "pbbaf",
+      "jrgonpx*",
+      "puvax*",
+      "cnxv",
+      "cnxvf",
+      "gbjryurnq*",
+      "erqfxva*",
+      "fdhnj*",
+      "tbbx*",
+      "fcvp",
+      "fcvpf",
+      "ornare*",
+      "whatyr ohaal",
+      "cbepu zbaxrl"
+    ],
+    "_note": "slurs_rot13 is a blocklist of racial slurs stored in ROT13 so the words themselves never appear in the repo; feed.js decodes it at start-up and drops any headline that contains one.",
+    "sources": [
+      "alphavilleearredores",
+      "IMDb",
+      "YouTube",
+      "Simply Wall St",
+      "Observatory of Economic Complexity",
+      "TFF",
+      "khorasantimes",
+      "EIN News",
+      "Istituto Impariamo",
+      "Whoopsee"
+    ],
+    "_note_ambiguous": "Brands marked ambiguous share their name with people, places or other products, so a headline must also use a beauty word (besides the brand name) to count.",
+    "_note_sources": "Sources dropped: resale listings, video and film listings, stock tools and trade-data pages, sports and unrelated sites, and content farms that rewrite celebrity news."
+  }
+}

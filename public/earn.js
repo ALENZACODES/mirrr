@@ -17,12 +17,14 @@
     ['Referral codes on shares', 'Built today', 'Shared links carry a code that names the look, never the person. Landings are counted as totals.', '/api/stats', '/api/stats'],
     ['For brands: taste trends + interest list', 'Built today', 'Live counts of the Qloo taste tags and top looks from taste runs, and an email-only interest form.', 'For brands', '#brands'],
     ['For stylists & salons: interest list', 'Built today', 'An email-only interest form for braiders, wig installers, colourists, makeup artists and salons.', 'For stylists & salons', '#pros'],
+    ['Beauty News sign-up list', 'Built today (no charge)', 'Beauty News pulls headlines from brands that make beauty for Black, Latina, South Asian, East & Southeast Asian, MENA and Indigenous women. Its \u201cGet the news\u201d list (email only, consent unticked) is an audience asset. No emails are sent yet.', 'Beauty News', '#news'],
     ['Affiliate commission on product links', 'Ready to switch on', 'The links already carry tags. Turning on commission needs a signed agreement with a brand or network. None exists today.', 'Any product link', null],
     ['Sponsored placement slots', 'Ready to switch on', 'One clearly marked slot on Shop by look. It shows \u201cavailable, not yet sold\u201d. Nothing is sponsored today.', 'Shop by look', '#shop'],
     ['Brand taste-insight reports', 'Ready to switch on', 'The trends feed exists. A paid report needs a first brand customer. None exists today.', 'For brands', '#brands'],
     ['MIRRR Plus subscription', 'Planned', 'Unlimited Leaps and try-ons, the full Bridal Countdown and a cloud Vanity. No price set; no checkout exists.', 'MIRRR Plus', '#plus'],
     ['Paid digital guides', 'Planned', 'One-off downloads of the bridal plan and look book. No checkout exists.', 'Digital guides', '#guides'],
     ['Stylist listings and booking referrals', 'Planned', 'A directory of braiders, wig installers, colourists and bridal artists, with a referral fee per booking. Not built beyond the interest form.', 'For stylists & salons', '#pros'],
+    ['Sponsored Beauty News newsletter slot', 'Planned', 'One clearly marked sponsor slot in the future email digest. No digest is sent and no sponsor exists today.', 'Beauty News', '#news'],
   ];
 
   function shell(id, title, inner) {

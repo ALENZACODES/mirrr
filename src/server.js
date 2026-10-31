@@ -46,6 +46,7 @@ import { handleLeap } from './leap/routes.js';
 import { handleRoutine } from './routine/routes.js';
 import { handlePhoto } from './photo/routes.js';
 import { handleMoney, store as moneyStore, biz as moneyBiz } from './money/routes.js';
+import { handleNews, news as beautyNews } from './news/routes.js';
 import { createRateLimiter, clientAddress, hopShape } from './ratelimit.js';
 
 // Diagnostics endpoints (/api/qloo/diag, key presence in /api/health) are off unless MIRRR_DIAG=1.
@@ -780,6 +781,7 @@ async function router(req, res) {
   if (await handleRoutine(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handlePhoto(method, path, url, req, res, { sendJSON, readBody })) return;
   if (await handleMoney(method, path, url, req, res, { sendJSON, readBody, address: getIP(req) })) return;
+  if (await handleNews(method, path, url, req, res, { sendJSON, readBody, address: getIP(req) })) return;
 
   // 404
   return sendJSON(res, 404, { error: 'Not found' });
@@ -803,6 +805,9 @@ server.listen(PORT, () => {
   console.log(`   Most beauty apps were built for the West. MIRRR was built for the rest.\n`);
   console.log(`   Server running on http://localhost:${PORT}`);
   console.log(`   Qloo key: ${process.env.QLOO_API_KEY ? '✓ set' : '✗ not set (demo mode available)'}\n`);
+
+  // Beauty News: serve the saved snapshot at once, then refresh from live feeds every 30 minutes.
+  beautyNews.start();
 
   // Self-ping every 10 minutes to prevent Render free-tier cold starts.
   // Render spins down after ~15 min inactivity; this keeps the process warm.

@@ -58,10 +58,10 @@ test('interest forms: consent must be ticked, email valid, kind known; removal a
   assert.equal(s.joinInterest({ kind: 'brand', email: 'a@brand.com', consent: true, type: 'black_owned' }).ok, true);
   assert.equal(s.joinInterest({ kind: 'brand', email: 'A@Brand.com', consent: true }).already, true);
   assert.equal(s.joinInterest({ kind: 'pro', email: 'b@salon.com', consent: true, type: 'hacker' }).ok, true);
-  assert.deepEqual(s.interestCounts(), { brand: 1, pro: 1 });
+  assert.deepEqual(s.interestCounts(), { brand: 1, pro: 1, news: 0 });
   assert.deepEqual(s.leaveInterest('a@brand.com'), { ok: true });
   assert.deepEqual(s.leaveInterest('never@x.com'), { ok: true });
-  assert.deepEqual(s.interestCounts(), { brand: 0, pro: 1 });
+  assert.deepEqual(s.interestCounts(), { brand: 0, pro: 1, news: 0 });
 });
 
 test('interest endpoint refuses without consent and counts sign-ups only as totals', async () => {

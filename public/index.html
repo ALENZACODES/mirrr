@@ -412,6 +412,7 @@
         <button class="nav-link" data-view="leap">Taste Leap</button>
         <button class="nav-link" data-view="library">Library</button>
         <button class="nav-link" data-view="help">Help &amp; Privacy</button>
+        <a class="nav-link nav-earn nav-news" href="#news">Beauty News</a>
         <a class="nav-link nav-earn" href="#money">How MIRRR earns</a>
         <details class="nav-more" id="navMore">
           <summary class="nav-link" aria-label="More tools">More</summary>
@@ -815,12 +816,23 @@
     </div>
   </section>
 
+  <!-- ─── BEAUTY NEWS ───────────────────────────────────────────────────── -->
+  <section class="earn-home news-home" id="news-home" aria-labelledby="newsHomeTitle">
+    <h2 id="newsHomeTitle" class="section-title">Beauty News, first to you</h2>
+    <p class="earn-home-sub">Headlines from the brands that make beauty for Black, Latina, South Asian, East &amp; Southeast Asian, Middle Eastern &amp; North African and Indigenous women, and every woman of colour. Checked for new stories every 30 minutes, with links to the original.</p>
+    <ul class="news-home-list" id="newsHomeList" aria-live="polite"></ul>
+    <div class="earn-home-grid news-home-cta">
+      <a class="earn-home-card" href="#news"><strong>Read Beauty News</strong><span>Filter by community or brand · nothing pre-selected</span></a>
+      <a class="earn-home-card" href="#news" data-news-signup><strong>Get the news</strong><span>Email sign-up · consent box unticked · remove any time</span></a>
+    </div>
+  </section>
+
   <!-- ─── BUSINESS, IN THE OPEN ─────────────────────────────────────────── -->
   <section class="earn-home" id="earn-home" aria-labelledby="earnHomeTitle">
     <h2 id="earnHomeTitle" class="section-title">MIRRR&rsquo;s business, in the open</h2>
     <p class="earn-home-sub">Free for her. Here is how MIRRR plans to earn, with the honest status of each: what is built, what is ready to switch on, and what is only planned. No revenue yet, no paywall, nothing sponsored.</p>
     <div class="earn-home-grid">
-      <a class="earn-home-card" href="#money"><strong>How MIRRR makes money</strong><span>14 streams · built / ready / planned</span></a>
+      <a class="earn-home-card" href="#money"><strong>How MIRRR makes money</strong><span>16 streams · built / ready / planned</span></a>
       <a class="earn-home-card" href="#shop"><strong>Shop by look</strong><span>14 bundles · 64 real products · 14 brands</span></a>
       <a class="earn-home-card" href="#brands"><strong>For brands</strong><span>Live Qloo taste trends · interest list</span></a>
       <a class="earn-home-card" href="#pros"><strong>For stylists &amp; salons</strong><span>Braids, wigs, colour, bridal · interest list</span></a>
@@ -1669,7 +1681,7 @@
   <footer class="footer">
     <p>🪞 MIRRR · 9 Communities · Built on Qloo Taste AI</p>
     <p class="footer-sub"><a href="#plus" data-plus-link>MIRRR Plus: coming later, nothing to buy today</a></p>
-    <p class="footer-sub footer-earn"><a href="#money">How MIRRR makes money</a> · <a href="#shop">Shop by look</a> · <a href="#brands">For brands</a> · <a href="#pros">For stylists &amp; salons</a> · <a href="#guides">Digital guides</a></p>
+    <p class="footer-sub footer-earn"><a href="#news">Beauty News</a> · <a href="#money">How MIRRR makes money</a> · <a href="#shop">Shop by look</a> · <a href="#brands">For brands</a> · <a href="#pros">For stylists &amp; salons</a> · <a href="#guides">Digital guides</a></p>
     <p class="footer-sub">Powered by <a href="https://qloo.com" target="_blank" rel="noopener">Qloo Taste AI</a> · Built for the Qloo Agentic Hackathon 2026 · Celebrating global beauty diversity</p>
     <p class="footer-sub" style="margin-top:0.25rem;font-size:0.6rem;color:#333">West African · South Asian · Arab · Caribbean · Latina · East Asian · East African · South African · Black American</p>
   </footer>
@@ -1702,6 +1714,7 @@
   <script src="leap.js" defer></script>
   <script src="quotes.js" defer></script>
   <script src="earn.js" defer></script>
+  <script src="news.js" defer></script>
   <script type="module" src="sixty.js"></script>
   <script type="module" src="tryon.js"></script>
   <script>

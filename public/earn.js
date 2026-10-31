@@ -9,7 +9,7 @@
   const money = n => Object.entries(n || {}).map(([c, v]) => `$${Number(v).toFixed(2)} ${c}`).join(' + ');
 
   const STREAMS = [
-    ['Named products from brands\u2019 own stores', 'Built today', '64 real products from 14 brands, on 50 of 63 looks and all 8 Style Match guides. Links carry a MIRRR tag so brands can see the visits. No affiliate deal yet, so MIRRR earns nothing from them today.', 'Any look \u2192 Shop this look', '#shop'],
+    ['Named products from brands\u2019 own stores', 'Built today', '64 real products from 14 brands, on 50 of 65 looks and all 8 Style Match guides. Links carry a MIRRR tag so brands can see the visits. No affiliate deal yet, so MIRRR earns nothing from them today.', 'Any look \u2192 Shop this look', '#shop'],
     ['Shop-by-look bundles', 'Built today', '14 ready-made bundles with the item count and the total at listed prices.', 'Shop by look', '#shop'],
     ['Complete the routine (studios)', 'Built today', 'Lips, Brow & Kohl, Skin Clinic and Complexion end with real products for that routine. Nails, Hair Colour and Wig Match say plainly there are no named products yet.', 'Bottom of each studio', null],
     ['MIRRR Plus founding list', 'Built today (no charge)', 'Offered only after a moment she chose (Save, a finished try-on, a Leap). Box unticked, closable, never blocking.', 'Footer \u2192 MIRRR Plus', '#plus'],

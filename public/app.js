@@ -689,6 +689,8 @@ const LOOK_IMAGES = {
   office_power:             'look-office-power.webp',
   wedding_guest_universal:  'look-wedding-guest-universal.webp',
   // Batch 9 — balance set
+  plus_size_soft_glam:      'look-plus-size-soft-glam.webp',
+  plus_size_glam:           'look-plus-size-glam.webp',
   silver_65_glow:           'look-silver-65-glow.webp',
   mature_50_glam:           'look-mature-50-glam.webp',
   eid_glam_hijab:           'look-eid-glam-hijab.webp',

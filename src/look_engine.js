@@ -1500,6 +1500,45 @@ export const LOOKS = [
     tags: ['mature', 'dewy', 'red-lip', 'universal'],
   },
 
+  {
+    id: 'plus_size_glam',
+    name: 'Ankara Glam',
+    archetype: 'afro_glam',
+    description: 'Glowing bronze base, bold copper-gold shimmer eye, lush lashes and a deep brick-red lip, with a jewel-tone Ankara top. Full-face glam that celebrates a full, round face instead of contouring it away.',
+    products: [
+      { category: 'foundation', shade_range: 'D40–D60', finish: 'luminous', coverage: 'medium-full' },
+      { category: 'eyeshadow', tones: ['copper', 'gold', 'bronze'] },
+      { category: 'lash', style: 'lush full' },
+      { category: 'lip', shade: 'deep brick red', finish: 'satin' },
+    ],
+    wig_styles: [
+      { id: 'knotless_box_braids', name: 'Knotless Box Braids' },
+    ],
+    weights: { intensity: 0.80, warmth: 0.80, boldness: 0.78, texture: 0.70 },
+    cultural_affinity: ['west african', 'nigerian', 'ghanaian', 'ankara', 'plus size'],
+    tags: ['glam', 'bold', 'body-positive', 'occasion'],
+  },
+
+  {
+    id: 'plus_size_soft_glam',
+    name: 'Soft Glam Rose',
+    archetype: 'bollywood_bridal',
+    description: 'Luminous base, warm rose-brown blended eye, kajal on the waterline, soft pink blush and a mauve-nude lip that is her own nude. Soft, everyday-special glam, with no slimming tricks.',
+    products: [
+      { category: 'foundation', shade_range: 'M21–T35', finish: 'luminous', coverage: 'medium' },
+      { category: 'eyeshadow', tones: ['rose brown', 'warm mauve', 'champagne'] },
+      { category: 'liner', style: 'kajal waterline', colour: 'black' },
+      { category: 'blush', shade: 'soft pink', finish: 'satin' },
+      { category: 'lip', shade: 'mauve nude (your own nude)', finish: 'satin' },
+    ],
+    wig_styles: [
+      { id: 'indian_remy_wavy', name: 'Indian Remy Wavy' },
+    ],
+    weights: { intensity: 0.55, warmth: 0.65, boldness: 0.45, texture: 0.70 },
+    cultural_affinity: ['south asian', 'desi', 'indian', 'pakistani', 'bangladeshi', 'plus size'],
+    tags: ['soft-glam', 'everyday', 'body-positive'],
+  },
+
 ];
 
 // ---------------------------------------------------------------------------

@@ -60,7 +60,7 @@ User input (artists / brands / places)
         ▼
 AestheticVector   → intensity / warmth / boldness / texture / palette
         │
-        ├──► LookEngine     → 63 multicultural looks across 9 archetypes, scored + ranked
+        ├──► LookEngine     → 65 multicultural looks across 9 archetypes, scored + ranked
         ├──► ShadeFinder    → 60-point shade spectrum, community-calibrated
         ├──► WigMatchmaker  → 42 wig styles matched to aesthetic + community
         └──► TrendingArtists → Qloo-verified regional trending artists (9 regions)
@@ -80,7 +80,7 @@ AestheticVector   → intensity / warmth / boldness / texture / palette
 42 wig styles (Knotless Box Braids, Senegalese Twists, Goddess Braids, Bone Straight, Kinky Coily Afro, Silk Press and more), filtered by the length and texture she picks and ranked on three shown checks: hair vibe, community and look style. Wigs appear only if she chooses them.
 
 ### ✨ LookEngine
-63 complete multicultural beauty looks (makeup, with hair and finishing steps only if she picks them): Afro-Glam Editorial, Gulf Glam, K-Beauty Glass Skin, Caribbean Carnival, Bollywood Bridal, and more. Each look lists product types (category, shade range, finish), and 50 of the 63 looks also show named products from brands' own stores, with prices as of Oct 30, 2026.
+65 complete multicultural beauty looks (makeup, with hair and finishing steps only if she picks them): Afro-Glam Editorial, Gulf Glam, K-Beauty Glass Skin, Caribbean Carnival, Bollywood Bridal, and more. Each look lists product types (category, shade range, finish), and 50 of the 65 looks also show named products from brands' own stores, with prices as of Oct 30, 2026.
 
 ### 🪞 Live Try-On (on your device)
 Lipstick (creme, gloss, matte), liner and kohl, lashes, brows, eyeshadow, blush and 18 wig previews on her own face, live through her camera, on a photo she picks, or on one of MIRRR's sample photos (for anyone without a camera). A face tracker with 478 landmarks runs inside the browser tab; no frame or photo is uploaded and MIRRR's server never sees it. Lipstick is recoloured pixel by pixel in CIELAB so her own lip lines and light stay; edges are feathered; lashes are drawn as tapered strands along the upper lash line; wigs are hair-only cutouts from MIRRR's own wig photos, fitted to her eye corners and chin so they scale and tilt with her head. Limits, said in the app: colours are colour words, not exact product shades; wigs are a placement preview and some of her own hair can still show; very turned heads track less closely.

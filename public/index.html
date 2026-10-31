@@ -405,6 +405,7 @@
       <a class="nav-logo" href="#hero">🪞 MIRRR</a>
       <div class="nav-links">
         <button class="nav-link" data-view="transform">Transform</button>
+        <button class="nav-link" data-view="tryon">Try it on (live)</button>
         <button class="nav-link" data-view="shade">Shades</button>
         <button class="nav-link" data-view="planner">Occasions</button>
         <button class="nav-link" data-view="taste">Taste</button>
@@ -466,6 +467,7 @@
       <div class="hero-actions hero-actions--primary">
         <button class="btn btn-primary btn-lg" id="heroTransformBtn" type="button">Start my transformation</button>
         <button class="btn btn-ghost" id="heroPhotoBtn" type="button">Match my skin tone from a selfie</button>
+        <button class="btn btn-ghost" type="button" data-tryon-open aria-label="Try makeup, lashes and wigs on live (on your device; nothing is uploaded)">Try makeup, lashes &amp; wigs on live</button>
       </div>
       <p class="hero-or">or start from an artist you love</p>
       <form class="hero-try" id="heroTryForm" autocomplete="off">
@@ -936,6 +938,31 @@
 
     <!-- ── DNA QUIZ VIEW ─────────────────────────────────────────────── -->
     <!-- ── MY FACE VIEW ─────────────────────────────────────────────── -->
+    <section id="view-tryon" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Try it on (live)</h2>
+        <p class="view-sub">Lipstick, liner and kohl, lashes, brows, eyeshadow, blush and a wig preview on your own face, live through your camera or on a photo.</p>
+      </div>
+      <div id="toRoot" class="st-wrap to-wrap">
+        <p class="to-privacy" id="toPrivacy"><strong>On this device only.</strong> The camera starts only when you tap Start camera. Every frame is processed inside this browser tab; no frame or photo is uploaded, and MIRRR&rsquo;s server never sees it. The face-tracking files (about 4 MB) download once, like any web page file. Leaving this page turns the camera off.</p>
+        <div class="to-actions" role="group" aria-label="Camera and photo">
+          <button type="button" class="btn btn-primary" id="toStart" aria-describedby="toPrivacy">Start camera</button>
+          <button type="button" class="btn btn-secondary" id="toStop" hidden>Stop camera</button>
+          <label class="btn btn-secondary to-file-label">Use a photo instead<input type="file" id="toFile" accept="image/*" class="to-file" aria-label="Use a photo instead (stays on this device)" /></label>
+          <button type="button" class="btn btn-secondary" id="toSnap" disabled>Snapshot (saves to this device)</button>
+        </div>
+        <div class="to-samples-wrap"><p class="lib-note">No camera? Try a sample photo (MIRRR&rsquo;s own AI-generated model faces):</p><div id="toSamples" class="to-samples" role="group" aria-label="Sample photos"></div></div>
+        <p id="toStatus" class="lib-note" role="status" aria-live="polite">Camera off. Choose what to try below, then start the camera, pick a photo or tap a sample.</p>
+        <div class="to-stage">
+          <canvas id="toCanvas" class="to-canvas" width="640" height="480" role="img" aria-label="Your camera view or photo with the makeup and wig you chose"></canvas>
+          <p id="toFps" class="to-fps" aria-hidden="true"></p>
+        </div>
+        <div id="toControls" class="st-controls to-controls"></div>
+        <div id="toShop" class="earn-strip to-shop" aria-live="polite"></div>
+        <p class="lib-disclaimer">A live preview drawn on your camera image, not a photo of a product on you. Colours are the colour words MIRRR&rsquo;s guides use, not exact product shades, and screens and lighting change how they look. Lips and liner are tracked most closely; lashes are drawn strands; wigs are a placement preview cut from MIRRR&rsquo;s own wig photos.</p>
+      </div>
+    </section>
+
     <section id="view-face" class="view hidden">
       <div class="view-header">
         <h2 class="view-title">My Face</h2>
@@ -1189,6 +1216,7 @@
         <h2 class="view-title">Brow &amp; Kohl Studio</h2>
         <p class="view-sub">Brow architecture and eye traditions from your culture, step by step, shaped to your face and eyes.</p>
       </div>
+      <p class="to-entry"><button type="button" class="btn btn-secondary" data-tryon-open>Try it on (live) with your camera</button></p>
       <div class="st-wrap">
         <div id="stControls" class="st-controls"></div>
         <div class="st-stage">
@@ -1273,6 +1301,7 @@
         <h2 class="view-title">Colour &amp; Lip Studio</h2>
         <p class="view-sub">A palette for your undertone and depth (harmony, pop or complement), and a lip look planned for you: the shade for your depth that suits your undertone, the finish, the liner technique and a lip-care routine.</p>
       </div>
+      <p class="to-entry"><button type="button" class="btn btn-secondary" data-tryon-open>Try it on (live) with your camera</button></p>
       <div class="st-wrap">
         <div id="clControls" class="st-controls"></div>
         <div id="clPreview" class="sk-preview cx-preview" aria-live="polite"></div>
@@ -1592,6 +1621,7 @@
         <h2 class="view-title">Wig Matchmaker</h2>
         <p class="view-sub">42 styles. Matched to your archetype and vibe.</p>
       </div>
+      <p class="to-entry"><button type="button" class="btn btn-secondary" data-tryon-open>Try it on (live) with your camera</button></p>
 
       <div id="wigFromLooks" class="wig-context-banner hidden card">
         <p>✨ Matching wigs to your looks profile…</p>
@@ -1673,6 +1703,7 @@
   <script src="quotes.js" defer></script>
   <script src="earn.js" defer></script>
   <script type="module" src="sixty.js"></script>
+  <script type="module" src="tryon.js"></script>
   <script>
     // Community detail panel interactions
     (function() {

@@ -3242,3 +3242,29 @@ body { padding-top: 58px; }
 .nav-earn { color: #c9a96e !important; text-decoration: none; }
 @media (max-width: 640px) { .earn-two { grid-template-columns: 1fr; } }
 .earn-trends ol { padding-left: 1.75rem; }
+
+/* ── Live try-on ───────────────────────────────────────────── */
+.to-privacy { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 0.75rem 1rem; font-size: 0.9rem; line-height: 1.5; }
+.to-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin: 0.8rem 0 0.4rem; }
+.to-file { position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden; }
+.to-file-label:focus-within { outline: 2px solid var(--accent-light); }
+.to-file-label { cursor: pointer; }
+.to-stage { position: relative; max-width: 960px; margin: 0.6rem 0; }
+.to-canvas { width: 100%; height: auto; background: #111; border-radius: 12px; display: block; }
+.to-canvas.to-mirror { transform: scaleX(-1); }
+.to-fps { position: absolute; right: 0.6rem; bottom: 0.4rem; margin: 0; font-size: 0.72rem; color: #ddd; background: rgba(0,0,0,0.45); padding: 0.1rem 0.45rem; border-radius: 6px; }
+.to-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.8rem; }
+.to-group { border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 0.6rem 0.8rem; margin: 0; }
+.to-group legend { padding: 0 0.3rem; font-weight: 600; }
+.to-field { display: flex; flex-direction: column; gap: 0.2rem; margin: 0.35rem 0; font-size: 0.85rem; }
+.to-field select { padding: 0.4rem; border-radius: 8px; }
+.to-wig-note { font-size: 0.78rem; }
+.to-entry { margin: 0.4rem 0 0.8rem; }
+.to-shop:empty { display: none; }
+.to-actions .btn:focus-visible, .to-field select:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .to-wrap * { transition: none !important; animation: none !important; } }
+.to-samples { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.3rem 0 0.6rem; }
+.to-sample { padding: 0; border: 2px solid transparent; border-radius: 8px; background: none; cursor: pointer; line-height: 0; }
+.to-sample img { border-radius: 6px; object-fit: cover; }
+.to-sample[aria-pressed="true"] { border-color: var(--accent-light, #c9a96e); }
+.to-sample:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; }

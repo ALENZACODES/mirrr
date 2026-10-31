@@ -691,7 +691,6 @@ const LOOK_IMAGES = {
   // Batch 9 — balance set
   pacific_islander_everyday:'look-pacific-islander-everyday.webp',
   east_asian_modern_glam:   'look-east-asian-modern-glam.webp',
-  wheelchair_glam:          'look-wheelchair-glam.webp',
   limb_difference_glam:     'look-limb-difference-glam.webp',
   plus_size_soft_glam:      'look-plus-size-soft-glam.webp',
   plus_size_glam:           'look-plus-size-glam.webp',
@@ -2788,7 +2787,6 @@ const LOOK_PHOTOS_WITHOUT_NAME = new Set([
   'look-plus-size-soft-glam.webp',
   'look-polynesian-warrior.webp',
   'look-silver-65-glow.webp',
-  'look-wheelchair-glam.webp',
 ]);
 async function loadDnaLooks(communityId) {
   const grid = document.getElementById('dnaLooksGrid');

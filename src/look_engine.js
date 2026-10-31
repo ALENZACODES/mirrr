@@ -1559,25 +1559,6 @@ export const LOOKS = [
   },
 
   {
-    id: 'wheelchair_glam',
-    name: 'Sapphire Evening',
-    archetype: 'afro_glam',
-    description: 'Luminous bronze base, a jewel-tone sapphire liner and a deep rose-wine lip, with gold silk and gold jewellery. Evening glam that can be done seated, in a few steps.',
-    products: [
-      { category: 'foundation', shade_range: 'T35–D50', finish: 'luminous', coverage: 'medium' },
-      { category: 'liner', style: 'jewel-tone wing', colour: 'sapphire blue' },
-      { category: 'lash', style: 'defined' },
-      { category: 'lip', shade: 'deep rose-wine', finish: 'satin' },
-    ],
-    wig_styles: [
-      { id: 'bone_straight_long', name: 'Bone Straight' },
-    ],
-    weights: { intensity: 0.72, warmth: 0.62, boldness: 0.70, texture: 0.70 },
-    cultural_affinity: ['east african', 'ethiopian', 'somali', 'eritrean', 'disability'],
-    tags: ['evening', 'jewel-tone', 'glam', 'adaptive'],
-  },
-
-  {
     id: 'east_asian_modern_glam',
     name: 'Modern Monolid Glam',
     archetype: 'k_beauty',

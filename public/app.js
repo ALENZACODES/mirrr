@@ -585,7 +585,7 @@ const COMMUNITY_IMAGES = {
   'east-african':      'community-east-african.webp',
   'north-african':     'community-north-african.webp',
   'south-african':     'community-south-african.webp',
-  'west-african':      'community-west-african-fallback.svg',
+  'west-african':      'community-west-african.webp',
   'arab':              'community-arab.webp', // neutral: Arabs are of many faiths
   'caribbean':         'community-caribbean.webp',
   'central-asian':     'community-central-asian.webp',
@@ -689,6 +689,10 @@ const LOOK_IMAGES = {
   office_power:             'look-office-power.webp',
   wedding_guest_universal:  'look-wedding-guest-universal.webp',
   // Batch 9 — balance set
+  pacific_islander_everyday:'look-pacific-islander-everyday.webp',
+  east_asian_modern_glam:   'look-east-asian-modern-glam.webp',
+  wheelchair_glam:          'look-wheelchair-glam.webp',
+  limb_difference_glam:     'look-limb-difference-glam.webp',
   plus_size_soft_glam:      'look-plus-size-soft-glam.webp',
   plus_size_glam:           'look-plus-size-glam.webp',
   silver_65_glow:           'look-silver-65-glow.webp',

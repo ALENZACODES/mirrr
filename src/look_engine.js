@@ -1539,6 +1539,83 @@ export const LOOKS = [
     tags: ['soft-glam', 'everyday', 'body-positive'],
   },
 
+  {
+    id: 'limb_difference_glam',
+    name: 'Coral Sun Glam',
+    archetype: 'caribbean_carnival',
+    description: 'Bold coral-and-gold shimmer eye, radiant highlight and a glossy coral lip with a sleek high ponytail. Bright, joyful glam built from cream and stick formulas that are easy to apply one-handed.',
+    products: [
+      { category: 'foundation', shade_range: 'T30–D45', finish: 'radiant', coverage: 'medium' },
+      { category: 'eyeshadow', tones: ['coral', 'gold'] },
+      { category: 'highlight', placement: 'cheekbone', finish: 'radiant' },
+      { category: 'lip', shade: 'coral', finish: 'glossy' },
+    ],
+    wig_styles: [
+      { id: 'high_pony_sleek', name: 'Sleek High Pony' },
+    ],
+    weights: { intensity: 0.75, warmth: 0.82, boldness: 0.72, texture: 0.65 },
+    cultural_affinity: ['caribbean', 'jamaican', 'trinidadian', 'disability', 'limb difference'],
+    tags: ['bright', 'joyful', 'glam', 'adaptive'],
+  },
+
+  {
+    id: 'wheelchair_glam',
+    name: 'Sapphire Evening',
+    archetype: 'afro_glam',
+    description: 'Luminous bronze base, a jewel-tone sapphire liner and a deep rose-wine lip, with gold silk and gold jewellery. Evening glam that can be done seated, in a few steps.',
+    products: [
+      { category: 'foundation', shade_range: 'T35–D50', finish: 'luminous', coverage: 'medium' },
+      { category: 'liner', style: 'jewel-tone wing', colour: 'sapphire blue' },
+      { category: 'lash', style: 'defined' },
+      { category: 'lip', shade: 'deep rose-wine', finish: 'satin' },
+    ],
+    wig_styles: [
+      { id: 'bone_straight_long', name: 'Bone Straight' },
+    ],
+    weights: { intensity: 0.72, warmth: 0.62, boldness: 0.70, texture: 0.70 },
+    cultural_affinity: ['east african', 'ethiopian', 'somali', 'eritrean', 'disability'],
+    tags: ['evening', 'jewel-tone', 'glam', 'adaptive'],
+  },
+
+  {
+    id: 'east_asian_modern_glam',
+    name: 'Modern Monolid Glam',
+    archetype: 'k_beauty',
+    description: 'Soft-matte skin with real texture, a sharp graphic liner shaped for monolids, a subtle peach blush and a deep burgundy satin lip. Modern, powerful, city-ready.',
+    products: [
+      { category: 'foundation', shade_range: 'F04–LM20', finish: 'soft matte', coverage: 'medium' },
+      { category: 'liner', style: 'graphic wing for monolids', colour: 'black' },
+      { category: 'blush', shade: 'peach', finish: 'soft' },
+      { category: 'lip', shade: 'deep burgundy', finish: 'satin' },
+    ],
+    wig_styles: [
+      { id: 'slicked_bun', name: 'Slicked Bun' },
+    ],
+    weights: { intensity: 0.65, warmth: 0.45, boldness: 0.68, texture: 0.60 },
+    cultural_affinity: ['east asian', 'chinese', 'taiwanese', 'hong kong', 'monolid'],
+    tags: ['modern', 'graphic-liner', 'bold-lip', 'urban'],
+  },
+
+  {
+    id: 'pacific_islander_everyday',
+    name: 'Island Everyday Glow',
+    archetype: 'clean_minimal',
+    description: 'Everyday radiant skin, a sheer bronze lid, defined brows, a peach-terracotta cheek and a sheer berry balm. Real-life Pacific beauty for Fijian, Melanesian and Pasifika women.',
+    products: [
+      { category: 'foundation', shade_range: 'T35–D55', finish: 'radiant', coverage: 'sheer' },
+      { category: 'eyeshadow', tones: ['sheer bronze'] },
+      { category: 'brow', style: 'defined natural' },
+      { category: 'blush', shade: 'peach terracotta', finish: 'satin' },
+      { category: 'lip', shade: 'sheer berry balm', finish: 'sheer' },
+    ],
+    wig_styles: [
+      { id: 'afro_editorial', name: 'Afro' },
+    ],
+    weights: { intensity: 0.35, warmth: 0.75, boldness: 0.30, texture: 0.70 },
+    cultural_affinity: ['pacific islander', 'fijian', 'melanesian', 'pasifika', 'samoan', 'tongan'],
+    tags: ['everyday', 'radiant', 'natural'],
+  },
+
 ];
 
 // ---------------------------------------------------------------------------

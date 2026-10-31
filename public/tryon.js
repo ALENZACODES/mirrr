@@ -38,6 +38,7 @@ const t = {
   scale: 1, wigImgs: {}, landmarks: null, mirrored: false, choice: {},
   segmenter: null, segLoading: null, segMode: null, hair: null, segFrame: 0,
 };
+const segIn = document.createElement('canvas'); const segInCtx = segIn.getContext('2d');
 const work = document.createElement('canvas');
 const wctx = work.getContext('2d', { willReadFrequently: true });
 const layer = document.createElement('canvas');
@@ -145,8 +146,13 @@ function loop() {
       const raw = r.faceLandmarks?.[0];
       t.landmarks = raw ? t.smoother.apply(raw, now / 1000) : null;
       if (!raw) t.smoother.reset();
-      // Her own hair, every third frame, only while a wig is on.
-      if (t.choice.wig && t.segmenter && t.segMode === 'VIDEO' && (t.segFrame++ % 3 === 0)) segmentHair(v, now);
+      // Her own hair, a few times a second (less on a slow device), only while a wig is on.
+      if (t.choice.wig && t.segmenter && t.segMode === 'VIDEO' && now - t.segFrame > Math.max(180, (t.segCost || 0) * 6)) {
+        // A small copy of the frame is enough for a 256×256 model, and keeps the camera smooth.
+        t.segFrame = now; segIn.width = 256; segIn.height = Math.round(256 * v.videoHeight / v.videoWidth);
+        segInCtx.drawImage(v, 0, 0, segIn.width, segIn.height);
+        const a0 = performance.now(); segmentHair(segIn, now); t.segCost = performance.now() - a0;
+      }
     }
     paint(w, h);
     $('toCanvas').getContext('2d').drawImage(work, 0, 0);
@@ -212,7 +218,7 @@ function ensureSegmenter(mode) {
       const make = delegate => t.vision.ImageSegmenter.createFromOptions(t.files, {
         baseOptions: { modelAssetPath: SEG_MODEL, delegate }, runningMode: mode, outputConfidenceMasks: true, outputCategoryMask: false,
       });
-      try { t.segmenter = await make('GPU'); } catch { t.segmenter = await make('CPU'); }
+      t.segmenter = await make('CPU'); // a 256×256 model: CPU is quick and avoids GPU read-back stalls
       t.segMode = mode; return t.segmenter;
     })().catch(() => null);
   }
@@ -237,7 +243,7 @@ function segmentHair(source, now) {
     bg[y * mw + x] = B[j]; hair[y * mw + x] = Hm[j];
   }
   masks.forEach(m => m.close?.());
-  t.hair = { mw, mh, bg, hair };
+  t.hair = { mw, mh, bg, hair, ver: (t.hair?.ver ?? 0) + 1 };
 }
 
 // Small scratch canvases for the hair hiding.
@@ -245,8 +251,13 @@ const small = document.createElement('canvas'); const sctx = small.getContext('2
 const fillC = document.createElement('canvas'); const fctx = fillC.getContext('2d');
 
 /** Paint over her own hair (outside the face) with a smooth estimate of the background, before the wig goes on. */
+let fillKey = '';
 function hideOwnHair(L, w, h) {
   const H = t.hair; if (!H) return;
+  // The fill is rebuilt only when a new hair mask arrives; frames in between reuse it.
+  const key = `${H.ver}:${w}x${h}`;
+  if (key === fillKey) { wctx.drawImage(fillC, 0, 0); return; }
+  fillKey = key;
   const { mw, mh, bg, hair } = H;
   small.width = mw; small.height = mh;
   sctx.drawImage(work, 0, 0, mw, mh);

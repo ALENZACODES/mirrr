@@ -48,7 +48,7 @@ export const WEST_AFRICAN_RITUALS = {
     },
     shea: {
       name: 'Shea Butter Sealant',
-      description: 'Applying raw shea butter as the final step of hair moisturising; seals moisture into coily and kinky hair types; traditional across West Africa as a hair "butter"; used on twist-outs, braids, and natural styles'
+      description: 'Applying raw shea butter as the final step of hair moisturising; seals moisture into coily and tightly coiled hair types; traditional across West Africa as a hair "butter"; used on twist-outs, braids, and natural styles'
     }
   }
 };
@@ -220,8 +220,8 @@ export const EAST_ASIAN_RITUALS = {
     },
     camellia: {
       name: 'Camellia Oil Treatment',
-      description: 'Tsubaki oil (camellia oil) from Camellia japonica seeds; traditional Japanese beauty oil; very high in oleic acid (~85%) which mimics the skin\'s own sebum profile and penetrates well; used by Japanese geisha as a makeup remover and skin treatment; also used on hair for shine and protection; the island of Oshima in Japan is famous for camellia oil production',
-      modern: 'Camellia oil has become a global luxury beauty ingredient; Japanese brands (Kosé, Shiseido, Shu Uemura) have elevated camellia into premium products; its cultural roots in geisha beauty culture (the Japanese ideal of flawless skin) enhance its prestige'
+      description: 'Tsubaki oil (camellia oil) from Camellia japonica seeds; traditional Japanese beauty oil; very high in oleic acid (~85%) which mimics the skin\'s own sebum profile and penetrates well; used for centuries by Japanese women (famously including geiko and maiko) as a makeup remover and skin treatment; also used on hair for shine and protection; the island of Oshima in Japan is famous for camellia oil production',
+      modern: 'Camellia oil has become a global luxury beauty ingredient; Japanese brands (Kosé, Shiseido, Shu Uemura) have elevated camellia into premium products; its cultural roots in everyday Japanese hair and skin care enhance its prestige'
     },
     jadeRolling: {
       name: 'Jade Rolling and Gua Sha',
@@ -237,7 +237,7 @@ export const EAST_ASIAN_RITUALS = {
     },
     camelliaHair: {
       name: 'Camellia Oil Hair Treatment',
-      description: 'Tsubaki camellia oil applied to hair and scalp; traditional Japanese geisha practice; high oleic acid content makes it suitable for adding shine to the hair and sealing the cuticle; used particularly on the ends of Asian hair (which tends to be long, straight, and prone to split ends) for protection'
+      description: 'Tsubaki camellia oil applied to hair and scalp; a traditional Japanese practice; high oleic acid content makes it suitable for adding shine to the hair and sealing the cuticle; used particularly on the ends of Asian hair (which tends to be long, straight, and prone to split ends) for protection'
     }
   }
 };

@@ -194,7 +194,7 @@ export const ETHNIC_WATER_BEAUTY_GUIDES = {
       modern: 'East Asian major cities (Tokyo, Seoul, Shanghai, Beijing) have excellent municipal water quality but often high in chlorine. Many East Asian homes use water purifiers. Mineral bottled water is consumed and sometimes used for beauty.',
     },
     riceWaterTradition: {
-      history: 'Rice water use for hair and skin is one of the most ancient documented beauty practices in East Asia. The Yao women of the Huangluo Village in Guangxi, China, famous for their 6-foot-long hair, attribute it to rice water use. Tang Dynasty (618-907 CE) court women used rice water for bathing. Japanese geisha used rice water (yu-su-ru, the water from rinsing rice) as a final hair rinse.',
+      history: 'Rice water use for hair and skin is one of the most ancient documented beauty practices in East Asia. The Yao women of the Huangluo Village in Guangxi, China, famous for their 6-foot-long hair, attribute it to rice water use. Tang Dynasty (618-907 CE) court women used rice water for bathing. Heian-era Japanese court women used rice water (yu-su-ru, the water from rinsing rice) as a final hair rinse.',
       science: {
         inositol: 'Inositol is the key active compound in rice water. It can penetrate the hair shaft and repair surface damage to the cuticle. Studies show rice water-treated hair has reduced surface friction (smoother), increased elasticity (less breakage), and faster growth in some in vitro studies.',
         pitera: 'Pitera is a specific formulation from sake fermentation (Saccharomyces cerevisiae ferment filtrate) — it\'s the most refined modern version of rice water. SK-II\'s Facial Treatment Essence is based on pitera. It contains vitamins, minerals, amino acids, organic acids, and inositol in a highly bioavailable form.',
@@ -311,7 +311,7 @@ export const ETHNIC_WATER_BEAUTY_GUIDES = {
       modern: 'Black American communities disproportionately face issues of water quality — Flint, Michigan\'s lead water crisis primarily affected a Black majority city. Water equity is a civil rights issue. Despite this, or because of it, water-conscious beauty traditions have developed.',
     },
     harshChlorinatedWater: {
-      problem: 'Municipal water in the United States is typically chlorinated to eliminate pathogens. Chlorine and chloramine are effective disinfectants but harsh on hair — especially type 4 (kinky/coily) hair that is already prone to dryness.',
+      problem: 'Municipal water in the United States is typically chlorinated to eliminate pathogens. Chlorine and chloramine are effective disinfectants but harsh on hair — especially type 4 (coily and tightly coiled) hair that is already prone to dryness.',
       hairEffect: 'Chlorine strips natural oils from the hair shaft, dramatically increasing dryness and breakage. For type 4 hair (already the driest hair type due to the coil structure preventing natural oil distribution down the shaft), chlorinated water worsens dryness exponentially. Chlorine also bleaches hair color and can turn color-treated hair green (copper + chlorine reaction).',
       solutions: {
         showerFilter: 'Install a vitamin C or KDF showerhead filter. Vitamin C neutralizes chlorine on contact. KDF (kinetic degradation fluxion) media reduces chlorine, heavy metals, and scale.',

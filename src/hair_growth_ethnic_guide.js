@@ -139,7 +139,7 @@ export const ETHNIC_HAIR_GROWTH_GUIDES = {
     },
     eastAsianGrowthTraditions: [
       { practice: 'Rice Water Rinse', tradition: 'The Yao women of Huangluo, China (the "long hair village") are famous for hair that often reaches well over a metre in length. They credit fermented rice water for their extraordinary hair growth and retention.', science: 'Rice water contains inositol (a carbohydrate that can penetrate the hair shaft and repair damage from the inside out), amino acids, and antioxidants. Fermented rice water has slightly lower pH, which may help close the cuticle.', how: 'Soak rice in water 15-30 min (fresh water) or leave at room temperature 24-48 hours (fermented). Pour off the milky water. Apply to hair as a rinse after shampooing. Leave 5-20 min. Rinse with clean water.' },
-      { practice: 'Camellia Oil (Tsubaki)', tradition: 'Camellia oil has been used for hair in Japan for centuries — particularly by geisha for the high-gloss black hair of traditional Japanese styling.', science: 'The oil is mostly oleic acid, a fatty acid that penetrates hair well. Creates extraordinary shine and smoothness on straight hair.' },
+      { practice: 'Camellia Oil (Tsubaki)', tradition: 'Camellia oil has been used for hair in Japan for centuries — by women across Japan for the high-gloss black hair of traditional Japanese styling.', science: 'The oil is mostly oleic acid, a fatty acid that penetrates hair well. Creates extraordinary shine and smoothness on straight hair.' },
       { practice: 'Ginseng Scalp Treatment', tradition: 'Ginseng is used in both Korean and Chinese traditional medicine for hair growth.',  how: 'Ginseng-infused tonic massaged into scalp.' },
     ],
     japaneseHairCare: {

@@ -139,7 +139,7 @@ export const FERMENTED_OILS = {
 
   fermented_camellia_oil: {
     what: 'Fermented tsubaki (camellia japonica) oil — the classic becomes more bioavailable through fermentation',
-    traditional_use: 'Geisha used pure camellia oil for centuries. Fermented versions have higher concentrations of active compounds.',
+    traditional_use: 'Japanese women have used pure camellia oil for centuries. Fermented versions have higher concentrations of active compounds.',
     benefits: 'Extremely lightweight, rich in oleic acid (penetrates deeply), excellent for damaged and dry hair and skin',
   },
 

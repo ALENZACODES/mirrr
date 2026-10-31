@@ -103,7 +103,7 @@ export const BODY_OILING_TRADITIONS = {
       durac: 'In Somali culture, the use of incense (ud al-qamari, incense burned and the smoke inhaled or used to perfume the body) is central to women\'s grooming; the combination of oiling and smoking the body is considered the height of beauty preparation'
     },
     japaneseBodyCare: {
-      camellia: 'Tsubaki oil (camellia oil, from Camellia japonica) is the traditional Japanese body and skin oil; it has been used in Japan for centuries; it is very high in oleic acid and absorbed moderately slowly; it is associated with the geisha beauty tradition; Japanese women in coastal communities have used tsubaki oil for shiny hair and smooth skin for generations',
+      camellia: 'Tsubaki oil (camellia oil, from Camellia japonica) is the traditional Japanese body and skin oil; it has been used in Japan for centuries; it is very high in oleic acid and absorbed moderately slowly; it is a staple of traditional Japanese hair care; Japanese women in coastal communities have used tsubaki oil for shiny hair and smooth skin for generations',
       furin: 'The Japanese bathing culture (sento — public bath, onsen — hot spring bath) emphasises exfoliation and skin care as part of the bathing ritual; the use of nori (body towels), salt scrubs, and rice bran bags for exfoliation and cleansing'
     }
   }

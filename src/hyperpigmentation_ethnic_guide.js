@@ -1052,7 +1052,7 @@ export const ETHNIC_HYPERPIGMENTATION_GUIDES = {
     traditionalBrighteningPractices: {
       rice_water: {
         name: 'Rice Water (米のとぎ汁 / 淘米水)',
-        origin: 'A centuries-old Japanese and East Asian beauty tradition. Geisha in Japan historically used rice water as a skin toner and hair rinse. Korean women in rice-growing communities are documented as having notably smooth, even-toned skin, attributed to rice water use.',
+        origin: 'A centuries-old Japanese and East Asian beauty tradition. Women in Japan, from Heian-era court women onward, historically used rice water as a skin toner and hair rinse. Korean women in rice-growing communities are documented as having notably smooth, even-toned skin, attributed to rice water use.',
         active_compounds: 'Inositol (a carbohydrate that penetrates hair and skin to repair damage), ferulic acid (antioxidant), allantoin (soothing, promotes cell regeneration), PABA (paraaminobenzoic acid — a natural UV filter), enzymes and vitamins from the rice bran.',
         how_prepared: 'Traditional: wash rice, soak in water for 30 minutes, strain the milky water. Fermented rice water: allow strained rice water to sit at room temperature for 24–48 hours until slightly sour — fermentation concentrates nutrients.',
         

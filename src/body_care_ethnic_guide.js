@@ -447,8 +447,8 @@ export const ETHNIC_BODY_CARE_GUIDES = {
     hairProfile: 'Fine to medium body hair; East Asian laser hair removal highly effective',
 
     traditionalBodyCare: {
-      riceWater: 'Used across Japan, Korea, China for skin brightening and silkening for centuries; Japanese geisha tradition; inositol and B vitamins',
-      cameliaOil: 'Japanese tsubaki oil — used in Kyoto geisha culture for face, body, hair; oleic acid rich; ultra-penetrating',
+      riceWater: 'Used across Japan, Korea, China for skin brightening and silkening for centuries; traditional Japanese rice-bran (nuka) washing; inositol and B vitamins',
+      cameliaOil: 'Japanese tsubaki oil — used across Japan for face, body, hair; oleic acid rich; ultra-penetrating',
       greenTea: 'Matcha body treatments; EGCG antioxidant; anti-inflammatory; anti-aging; used topically and internally',
       sakeBath: 'Japanese sake (koji fermentation) bath tradition; contains kojic acid for brightening; enzymes smooth skin',
       onsen: 'Japanese hot spring bathing (mineral water); sulfur, sodium bicarbonate, calcium springs have different skin benefits; Beppu and Hakone traditions',

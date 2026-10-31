@@ -484,7 +484,7 @@ export const ETHNIC_TRADITIONAL_MEDICINE_GUIDES = {
         examples: {
           galactomyces: 'Galactomyces ferment filtrate (GFF): SK-II Pitera essence; skin tone and texture improvement; strong clinical evidence',
           fermentedSoy: 'Fermented soy extract: smaller isoflavones; better absorption; skin brightening',
-          fermentedRice: 'Rice ferment filtrate: brightening; traditional Japanese geisha beauty'
+          fermentedRice: 'Rice ferment filtrate: brightening; traditional Japanese beauty'
         }
       },
       centella: {

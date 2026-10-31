@@ -1334,7 +1334,7 @@ export const ECO_INGREDIENT_DEEP_DIVES = {
   },
   riceWaterHairCare: {
     ingredient: 'Rice Water',
-    origins: 'Red Yao women of Huangluo village, Guangxi, China; Japanese geisha beauty traditions; widespread across Southeast and East Asia',
+    origins: 'Red Yao women of Huangluo village, Guangxi, China; Heian-era Japanese court beauty traditions; widespread across Southeast and East Asia',
     fermentationBenefit: 'Fermenting rice water for 24–48 hours at room temperature allows beneficial bacteria to produce additional lactic acid and ferulic acid, lower the pH to match skin (around 4.5–5.5), and break down starches into more bioavailable sugars. The result is more potent and skin-compatible than plain rice water.',
     diyProtocol: {
       plainRiceWater: 'Rinse 1/4 cup rice with clean water; soak in 2 cups clean water 30 min; strain; use within 24 hours',

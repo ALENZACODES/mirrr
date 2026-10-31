@@ -216,12 +216,12 @@ export const ETHNIC_MICROBIOME_BEAUTY_GUIDES = {
       {
         practice: 'Double Cleansing — Microbiome Perspective',
         microbiomeScience: 'The K-beauty double cleanse (oil cleanser first, water-based cleanser second) actually makes microbiome sense. Oil cleansing first removes oil-soluble debris (makeup, sunscreen, excess sebum) where pathogenic bacteria colonize, without disrupting the skin\'s aqueous layer. The second water cleanser then cleans any remaining oil cleanser. Two gentle cleansers are less disruptive to the microbiome than one aggressive cleanser needed to remove heavy buildup.',
-        traditional: 'Double cleansing has roots in Japanese geisha beauty culture and was popularized globally by Korean skincare brands.',
+        traditional: 'Double cleansing has roots in Japanese beauty culture (oil cleansing to lift heavy makeup) and was popularized globally by Korean skincare brands.',
       },
       {
         practice: 'Rice Water Toner',
         microbiomeScience: 'Rice water (particularly fermented rice water) has inositol, which can penetrate hair and skin to repair from inside. The fermentation of rice water produces lactic acid (lowering pH) and various postbiotics from Lactobacillus that may support skin microbiome. The slightly acidic pH of fermented rice water (~3.5-4) helps maintain the acid mantle environment favorable for commensal bacteria.',
-        traditional: 'Used by Japanese geisha and the Yao women of China for skin and hair. Rice water rinses have been part of East Asian beauty for centuries.',
+        traditional: 'Used by Heian-era Japanese court women and the Yao women of China for skin and hair. Rice water rinses have been part of East Asian beauty for centuries.',
       },
     ],
     fermentedFoods: {

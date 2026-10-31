@@ -634,7 +634,7 @@ export const ETHNIC_AGING_SKIN_GUIDES = {
       inositol: 'Inositol (vitamin B8) in rice ferment water: may inhibit tyrosinase (hyperpigmentation enzyme); also shown to improve skin texture in some studies',
       pitera: 'Pitera (SKII\'s branded ingredient from sake fermentation): saccharomycopsis ferment filtrate; rich in amino acids, organic acids, vitamins, minerals; clinical evidence for skin renewal',
       galactomyces: 'Galactomyces ferment filtrate: common Korean and Japanese skincare ingredient; brightening, pore-minimizing, barrier-strengthening in clinical studies',
-      traditional: 'Japanese and Korean women washing face with rice water; Geisha using rice bran (nuka) for whole-body exfoliation; still practiced',
+      traditional: 'Japanese and Korean women washing face with rice water; Women across Japan using rice bran (nuka) bags for whole-body exfoliation; still practiced',
       modern: 'Fermented rice products in modern K-beauty (SK-II, many Korean brands): one of the most commercially successful and evidence-backed traditional-to-modern ingredient translations',
     },
     greenTea: {

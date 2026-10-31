@@ -503,7 +503,7 @@ export const ETHNIC_CULTURAL_BEAUTY_GUIDES = {
 
   'east-asian': {
     communityName: 'East Asian',
-    primaryConcerns: ['Glass skin ritual', 'Geisha beauty tradition', 'Family beauty inheritance'],
+    primaryConcerns: ['Glass skin ritual', 'Modern J-beauty (sunscreen, lotion layering, minimal makeup)', 'Family beauty inheritance'],
 
     signatureRituals: {
       glassSkin: {
@@ -525,10 +525,16 @@ export const ETHNIC_CULTURAL_BEAUTY_GUIDES = {
       },
       geisha: {
         name: 'Maiko/Geisha Beauty Tradition (Japanese)',
-        description: 'Traditional Japanese entertainment artist; elaborate months-long beauty training',
+        description: 'Geiko (as geisha are called in Kyoto) and maiko are professional performers of traditional arts: dance, music and conversation. Their stage makeup is a specialist craft and one small part of Japanese beauty history, not how most Japanese women dress or wear makeup.',
         practices: 'White oshiroi face paint; red lip (half for maiko, full for geisha); elaborate kanzashi (hair ornaments); kimono art',
         history: 'Rice bran (nuka) used for skin polishing by geisha; geishas\' hands notably smooth from rice bran exfoliation',
         modern: 'Rice bran beauty products mainstream in Japan; enzyme exfoliation from rice tradition'
+      },
+      modernJBeauty: {
+        name: 'Modern J-Beauty (everyday Japan)',
+        description: 'How most Japanese women care for their skin today: gentle double cleansing, a hydrating "lotion" (keshōsui) patted in in layers, a light milk or emulsion, and daily high-protection sunscreen (Japan makes some of the world\'s most advanced UV filters).',
+        practices: 'Minimal, skin-first makeup; cushion and tinted bases; soft blush placed high on the cheek; precise brows; drugstore innovation from brands sold in every konbini and pharmacy; scalp care and head spas; onsen (hot-spring) bathing culture',
+        meaning: 'Prevention, consistency and quiet care over correction'
       },
       chado: {
         name: 'Chado (Tea Ceremony Beauty)',
@@ -540,9 +546,9 @@ export const ETHNIC_CULTURAL_BEAUTY_GUIDES = {
     advice: `East Asian beauty ritual is mindfulness practice elevated to art form. The Korean glass skin
     routine is meditative when done with full attention — each pat of toner is a self-care gesture.
     The Japanese concepts of wabi-sabi (beauty in imperfection) and ichi-go ichi-e (each moment is
-    unique) transform skincare into philosophy. The geisha rice bran discovery — that silk-smooth hands
-    resulted from daily rice bran use — is the founding observation of modern enzyme exfoliation.
-    Ancient observation became global innovation.`
+    unique) transform skincare into philosophy. Rice bran (nuka) washing, used for centuries by women
+    across Japan, is one root of modern enzyme exfoliation, and today's J-beauty leads the world in gentle
+    cleansing, hydrating lotions and sunscreen. Ancient observation became global innovation.`
   },
 
   'east-african': {

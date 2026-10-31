@@ -265,7 +265,7 @@ export const EAST_ASIAN_RITUALS = {
     scalp_care: 'Scalp care is as important as skin care in East Asian beauty routines. Head spas are popular in Japan and Korea — professional scalp treatments that address scalp health, hair loss prevention, and relaxation.',
   },
   ceremonial: {
-    japanese_geisha: 'The geisha makeup tradition — shiro nuri (white face makeup made from oshiroi rice powder, now often replaced with commercial white makeup), red and black lip, defined eyebrows — is one of the most sophisticated and codified beauty systems in the world. It is a professional beauty practice requiring years of training.',
+    japanese_geisha: 'The geiko and maiko stage-makeup tradition (a professional performing-arts craft in Kyoto and a few other cities, not everyday Japanese beauty) — shiro nuri (white face makeup made from oshiroi rice powder, now often replaced with commercial white makeup), red and black lip, defined eyebrows — is one of the most sophisticated and codified beauty systems in the world. It is a professional beauty practice requiring years of training.',
     korean_hanbok_beauty: 'Traditional Korean hanbok (traditional dress) is worn with specific beauty looks — natural complexion, red lips (traditionally applied in a softer rounded shape inside the natural lip line), traditional light makeup.',
     chinese_opera: 'Chinese opera makeup is another highly codified system. Character is communicated through colour and pattern: red = loyalty/courage; white = cunning/treachery; black = integrity; gold/silver = supernatural beings.',
     coming_of_age: 'Japan\'s Seijin-shiki (Coming of Age Day) — young women wear furisode kimono with elaborate hair styling and makeup. It is a major beauty event.',

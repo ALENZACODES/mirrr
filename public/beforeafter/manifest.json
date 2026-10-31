@@ -1,6 +1,33 @@
 {
   "version": 1,
-  "enabled": false,
+  "enabled": true,
   "how_to_add": "Put a woman's photos in public/beforeafter/<id>/ (before, 3 to 5 steps, after; same woman, same light, same angle; 4:5 portrait, no text), add an entry below, and set enabled to true. Example entry: {\"id\": \"amara\", \"name\": \"Soft glam\", \"before\": \"before.webp\", \"steps\": [{\"name\": \"Skin prep\", \"image\": \"step-1.webp\", \"routine\": \"skin\"}, {\"name\": \"Base\", \"image\": \"step-2.webp\", \"routine\": \"complexion\"}, {\"name\": \"Eyes\", \"image\": \"step-3.webp\", \"routine\": \"eyes\"}], \"after\": \"after.webp\"}. Allowed routine ids: skin, complexion, eyes, brow_kohl, lips, glow.",
-  "models": []
+  "models": [
+    {
+      "id": "w1-redlip-softglam",
+      "name": "Soft glam with a red lip",
+      "before": "before.webp",
+      "steps": [
+        {
+          "name": "Even base",
+          "image": "step-1.webp",
+          "routine": "complexion",
+          "note": "Skin prepped, a light foundation matched to her deep warm skin and a little concealer. Still her own skin."
+        },
+        {
+          "name": "Warm bronze eyes",
+          "image": "step-2.webp",
+          "routine": "eyes",
+          "note": "Brows softly filled, bronze-copper shadow, thin black liner and mascara."
+        },
+        {
+          "name": "Red lip & bronze",
+          "image": "step-3.webp",
+          "routine": "lips",
+          "note": "A blue-red lip with a clean edge, warm bronzer and berry-raisin blush."
+        }
+      ],
+      "after": "after.webp"
+    }
+  ]
 }

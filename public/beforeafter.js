@@ -300,7 +300,14 @@ function paintLips(cv, L, c) {
     m.globalCompositeOperation = 'destination-out'; m.beginPath(); tracePath(m, inner); m.fill(); m.globalCompositeOperation = 'source-over';
   }, mw * 0.04, (d, m, n, pw, ph) => {
     const mean = maskedMeanL(d, m, n); const det = lightnessDetail(d, pw, ph, Math.max(1, Math.round(mw * 0.012)));
-    for (let i = 0; i < n; i++) { const a = m[i * 4 + 3] / 255; if (a < 0.01) continue; const o = tintPixel(d[i * 4], d[i * 4 + 1], d[i * 4 + 2], shade, mean, fin, a, 0.4 + 0.6 * a0, det[i]); d[i * 4] = o[0]; d[i * 4 + 1] = o[1]; d[i * 4 + 2] = o[2]; }
+    for (let i = 0; i < n; i++) {
+      const a = m[i * 4 + 3] / 255; if (a < 0.01) continue;
+      const l0 = rgbToLab(d[i * 4], d[i * 4 + 1], d[i * 4 + 2])[0];
+      let o = tintPixel(d[i * 4], d[i * 4 + 1], d[i * 4 + 2], shade, mean, fin, a, 0.4 + 0.6 * a0, det[i]);
+      // Her lips' own light stays: where the bare lip catches light, the colour lifts with it.
+      if (l0 > mean + 3) { const lab = rgbToLab(o[0], o[1], o[2]); o = labToRgb(lab[0] + (l0 - mean - 3) * 0.55 * a, lab[1], lab[2]); }
+      d[i * 4] = o[0]; d[i * 4 + 1] = o[1]; d[i * 4 + 2] = o[2];
+    }
   });
   if (fin === 'gloss') {
     const ang = Math.atan2(outer[10][1] - outer[0][1], outer[10][0] - outer[0][0]);

@@ -22,7 +22,7 @@ test('no cache, or a partial or failed run, means no completed run (the button s
 test('WATCH MIRRR THINK uses only the run data, in order, and drops steps with no data', () => {
   const all = thinkSteps({ run: slimRun(run), shade: { name: 'Garnet', code: 'D40' }, plan: { target: { name: 'Afrobeats Concert' }, stages: [{ title: 'Skin' }] }, modelFace: { label: 'West African' } });
   assert.deepEqual(all.map(s => s.id), ['resolved', 'received', 'filtered', 'ranked', 'shade', 'plan', 'model']);
-  assert.match(all[2].text, /14 used, 36 filtered out: 9 unsafe, 26 not about beauty, 1 repeats/);
+  assert.match(all[2].text, /14 used, 36 filtered out: 9 unsafe, 26 not about beauty, 1 repeat\./);
   assert.deepEqual(thinkSteps({ shade: { name: 'Garnet', code: 'D40' } }).map(s => s.id), ['shade']);
   assert.deepEqual(thinkSteps({}), []);
 });

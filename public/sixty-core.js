@@ -151,7 +151,7 @@ export function thinkSteps({ run, look, shade, plan, modelFace } = {}) {
   if (d && n(p?.tags_used) != null) {
     const total = (d.blocked ?? 0) + (d.irrelevant ?? 0) + (d.duplicates ?? 0);
     const used = (p.used ?? []).map(u => u.name).filter(Boolean).slice(0, 8);
-    steps.push({ id: 'filtered', title: 'Tags filtered and why', text: `${p.tags_used} used, ${total} filtered out: ${d.blocked ?? 0} unsafe, ${d.irrelevant ?? 0} not about beauty, ${d.duplicates ?? 0} repeats${used.length ? `. Kept: ${used.join(', ')}` : ''}` });
+    steps.push({ id: 'filtered', title: 'Tags filtered and why', text: `${p.tags_used} used, ${total} filtered out: ${d.blocked ?? 0} unsafe, ${d.irrelevant ?? 0} not about beauty, ${d.duplicates ?? 0} ${(d.duplicates ?? 0) === 1 ? "repeat" : "repeats"}${used.length ? `. Kept: ${used.join(', ')}` : ''}` });
   }
   const ranked = (run?.looks ?? []).filter(l => l.look?.name);
   if (ranked.length) steps.push({ id: 'ranked', title: 'Looks ranked', text: ranked.slice(0, 3).map((l, i) => `${i + 1}. ${l.look.name}${n(l.score) != null ? ` (score ${l.score.toFixed(2)})` : ''}${l.evidenceTags?.length ? ` · ${l.evidenceTags.slice(0, 3).join(', ')}` : ''}`).join(' · ') });

@@ -3268,3 +3268,8 @@ body { padding-top: 58px; }
 .to-sample img { border-radius: 6px; object-fit: cover; }
 .to-sample[aria-pressed="true"] { border-color: var(--accent-light, #c9a96e); }
 .to-sample:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; }
+
+/* Skin Clinic safety box: bullets sit inside the box */
+#skSafety ul { padding-left: 1.3rem; margin: 0.4rem 0 0.6rem; }
+#skSafety li { margin: 0.15rem 0; }
+#skSafety h4 { margin-top: 0; }

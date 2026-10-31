@@ -3250,7 +3250,7 @@ body { padding-top: 58px; }
 .to-file-label:focus-within { outline: 2px solid var(--accent-light); }
 .to-file-label { cursor: pointer; }
 .to-stage { position: relative; max-width: 960px; margin: 0.6rem 0; }
-.to-canvas { width: 100%; height: auto; background: #111; border-radius: 12px; display: block; }
+.to-canvas { width: 100%; height: auto; max-height: 78vh; object-fit: contain; background: #111; border-radius: 12px; display: block; }
 .to-canvas.to-mirror { transform: scaleX(-1); }
 .to-fps { position: absolute; right: 0.6rem; bottom: 0.4rem; margin: 0; font-size: 0.72rem; color: #ddd; background: rgba(0,0,0,0.45); padding: 0.1rem 0.45rem; border-radius: 6px; }
 .to-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.8rem; }

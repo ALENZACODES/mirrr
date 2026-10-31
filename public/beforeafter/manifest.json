@@ -28,6 +28,32 @@
         }
       ],
       "after": "after.webp"
+    },
+    {
+      "id": "w3-everyday-glow",
+      "name": "Everyday glow with a gradient lip",
+      "before": "before.webp",
+      "steps": [
+        {
+          "name": "Skin-first glow",
+          "image": "step-1.webp",
+          "routine": "skin",
+          "note": "Hydrated skin and a sheer, skin-like base; her freckles still show."
+        },
+        {
+          "name": "Soft brown monolid eyes",
+          "image": "step-2.webp",
+          "routine": "eyes",
+          "note": "Soft straight brows, taupe-brown shadow blended up from the lash line so it shows with eyes open, thin brown liner and mascara."
+        },
+        {
+          "name": "Gradient lip & flush",
+          "image": "step-3.webp",
+          "routine": "lips",
+          "note": "A coral-red gradient lip, deepest in the centre, and a peach-pink cream blush high on the cheeks."
+        }
+      ],
+      "after": "after.webp"
     }
   ]
 }

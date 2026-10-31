@@ -8,7 +8,7 @@
  */
 import {
   LIPS_OUTER, LIPS_INNER, EYE, toPixels, bbox, smoothClosed, smoothOpen, eyeOpenness, headPose,
-  lashLine, wingTip, lidPolygon, browPolygon, blushEllipse, wigAffine, LandmarkSmoother, FACE_OVAL,
+  lashLine, wingTip, lidPolygon, browPolygon, blushEllipse, wigAffine, wigMesh, WIG_RINGS, LandmarkSmoother, FACE_OVAL,
   hexToRgb, tintPixel, browPixel, maskedMeanL, lightnessDetail,
 } from './tryon-geometry.js';
 import { MODEL_FACES } from './model-faces.js';
@@ -513,8 +513,23 @@ function paintWig(L, w, h) {
   // Three anchors (both outer eye corners and the chin) fix scale, width, tilt and position, so the
   // wig's face opening is fitted to her face and follows her head as it tilts or moves.
   const dst = toPixels(L, [EYE.right.outer, EYE.left.outer, 152], w, h);
-  const m = wigAffine([meta.right, meta.left, meta.chin], dst);
-  wctx.save(); wctx.setTransform(m[0], m[1], m[2], m[3], m[4], m[5]); wctx.drawImage(img, 0, 0); wctx.restore();
+  if (!meta.oval) {
+    const m = wigAffine([meta.right, meta.left, meta.chin], dst);
+    wctx.save(); wctx.setTransform(m[0], m[1], m[2], m[3], m[4], m[5]); wctx.drawImage(img, 0, 0); wctx.restore();
+    return;
+  }
+  // Mesh warp: the wig's face opening (the model's 36-point face outline) is mapped ring by ring onto
+  // her face outline, so the hairline sits on her hairline and the sides hug her temples and cheeks
+  // at any tilt. The last ring is wide enough to carry the full length of the hair.
+  const tris = wigMesh(meta.oval, toPixels(L, FACE_OVAL, w, h), [...WIG_RINGS, 9]);
+  for (const { s, d } of tris) {
+    const m = wigAffine(s, d);
+    const gx = (d[0][0] + d[1][0] + d[2][0]) / 3, gy = (d[0][1] + d[1][1] + d[2][1]) / 3;
+    wctx.save(); wctx.beginPath();
+    d.forEach(([x, y], i) => { const l = Math.hypot(x - gx, y - gy) || 1, g = 0.8 / l; const X = x + (x - gx) * g, Y = y + (y - gy) * g; if (i) wctx.lineTo(X, Y); else wctx.moveTo(X, Y); });
+    wctx.closePath(); wctx.clip();
+    wctx.setTransform(m[0], m[1], m[2], m[3], m[4], m[5]); wctx.drawImage(img, 0, 0); wctx.restore();
+  }
 }
 
 function paint(w, h) {

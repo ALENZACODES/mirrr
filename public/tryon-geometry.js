@@ -287,11 +287,12 @@ export function labToRgb(L, a, b) {
  *    lipstick so dark lips do not glow.
  *  - creme: as above.  matte: texture and shine flattened.  gloss: sheerer, with the pixel's own
  *    highlights pushed into shine.
- * `amount` is the mask strength 0..1 (feathered edges), `opacity` the product's coverage.
+ * `amount` is the mask strength 0..1 (feathered edges), `opacity` the product's coverage, `detail`
+ * the pixel's lightness minus its local average (lip lines), which is kept so the texture survives.
  */
-export function tintPixel(r, g, b, shade, meanL, finish = 'creme', amount = 1, opacity = 0.85) {
+export function tintPixel(r, g, b, shade, meanL, finish = 'creme', amount = 1, opacity = 0.85, detail = 0) {
   if (amount <= 0) return [r, g, b];
-  const [Lp] = rgbToLab(r, g, b);
+  const [Lp, ap, bp] = rgbToLab(r, g, b);
   const [Ls, as, bs] = rgbToLab(shade[0], shade[1], shade[2]);
   // Depth: the lip's own lightness anchors the result. A lipstick only moves it part of the way, and
   // less so when the shade is lighter than the lip (a pigment on a deep lip does not glow).
@@ -299,22 +300,37 @@ export function tintPixel(r, g, b, shade, meanL, finish = 'creme', amount = 1, o
   const toward = (finish === 'gloss' ? 0.55 : finish === 'matte' ? 0.85 : 0.75) * (lighter ? 0.6 : 1);
   // Texture gain: each pixel keeps (and slightly strengthens) its offset from the lip's mean, so
   // lip lines, the lit lower lip and the shaded corners survive under the colour.
-  const gain = finish === 'matte' ? 0.7 : finish === 'gloss' ? 1.2 : 1.05;
-  const base = meanL + (Ls - meanL) * toward - (finish === 'gloss' ? 0 : 2); // pigment absorbs a little light
+  const gain = finish === 'matte' ? 0.95 : finish === 'gloss' ? 1.1 : 1.05;
+  const base = meanL + (Ls - meanL) * toward - (finish === 'gloss' ? 1 : 5); // pigment absorbs light: worn colour sits a touch deeper than the bullet
   const off = Lp - meanL;
   // Shadows deepen fully; lit areas brighten less, since pigment absorbs light (no orange glow).
   let L = base + (off < 0 ? off * gain : off * gain * (finish === 'gloss' ? 1 : 0.35));
   if (finish === 'gloss') L += Math.max(0, Lp - meanL - 12) * 1.5; // highlights become shine
-  if (finish === 'matte') L = Math.min(L, base + 6);
+  if (finish === 'matte') L = Math.min(L, base + 4); // no shine, but the lip lines and shadows stay
+  // Fine texture (lip lines, pores): the pixel's difference from its small neighbourhood, kept in full.
+  L += detail * (finish === 'matte' ? 0.7 : 0.85);
   L = Math.max(2, Math.min(96, L));
   // Chroma follows depth: darker result, proportionally less chroma, and never more than a real
   // pigment can show at that lightness, so a red reads as deep red rather than neon.
   const C = Math.hypot(as, bs);
   const ck = Math.min(1, ((L + 6) / (Ls + 6)) ** 1.15, C > 0 ? (1.25 * L + 10) / C : 1);
   const glossFade = finish === 'gloss' ? Math.max(0.55, 1 - Math.max(0, Lp - meanL - 12) / 30) : 1;
-  const out = labToRgb(L, as * ck * glossFade, bs * ck * glossFade);
+  // Her lip's own colour shows through a little (more through a sheer gloss), so a cool or pale
+  // shade reads as worn on a lip, not as chalky paint.
+  const through = (finish === 'gloss' ? 0.35 : finish === 'matte' ? 0.1 : 0.18) * (lighter ? 1 : 0.35);
+  const out = labToRgb(L, as * ck * glossFade * (1 - through) + ap * through, bs * ck * glossFade * (1 - through) + bp * through);
   const cover = Math.max(0, Math.min(1, amount * (finish === 'gloss' ? opacity * 0.85 : opacity)));
   return [clamp8(r + (out[0] - r) * cover), clamp8(g + (out[1] - g) * cover), clamp8(b + (out[2] - b) * cover)];
+}
+
+/** Lightness detail: each pixel's CIELAB L minus a small box average around it (radius r). */
+export function lightnessDetail(data, w, h, r = 2) {
+  const n = w * h; const Lm = new Float32Array(n);
+  for (let i = 0; i < n; i++) Lm[i] = rgbToLab(data[i * 4], data[i * 4 + 1], data[i * 4 + 2])[0];
+  const tmp = new Float32Array(n); const out = new Float32Array(n);
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) { let s = 0, k = 0; for (let d = -r; d <= r; d++) { const xx = x + d; if (xx >= 0 && xx < w) { s += Lm[y * w + xx]; k++; } } tmp[y * w + x] = s / k; }
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) { let s = 0, k = 0; for (let d = -r; d <= r; d++) { const yy = y + d; if (yy >= 0 && yy < h) { s += tmp[yy * w + x]; k++; } } out[y * w + x] = Lm[y * w + x] - s / k; }
+  return out;
 }
 
 /** Brow tint on one pixel: darkens toward the tint by multiply, strongest on the darker (hair) pixels. */

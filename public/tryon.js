@@ -9,7 +9,7 @@
 import {
   LIPS_OUTER, LIPS_INNER, EYE, toPixels, bbox, smoothClosed, smoothOpen, eyeOpenness, headPose,
   lashLine, wingTip, lidPolygon, browPolygon, blushEllipse, wigAffine, LandmarkSmoother, FACE_OVAL,
-  hexToRgb, tintPixel, browPixel, maskedMeanL,
+  hexToRgb, tintPixel, browPixel, maskedMeanL, lightnessDetail,
 } from './tryon-geometry.js';
 import { MODEL_FACES } from './model-faces.js';
 
@@ -330,7 +330,7 @@ function pixelPass(region, drawMask, feather, perPixel) {
   mctx.restore(); mctx.filter = 'none';
   const m = mctx.getImageData(0, 0, w, h).data;
   const img = wctx.getImageData(x, y, w, h); const d = img.data;
-  perPixel(d, m, w * h);
+  perPixel(d, m, w * h, w, h);
   wctx.putImageData(img, x, y);
 }
 
@@ -341,11 +341,12 @@ function paintLips(L, w, h) {
   pixelPass(bbox(outer, mw * 0.08), c => {
     c.beginPath(); tracePath(c, outer); c.fill();
     c.globalCompositeOperation = 'destination-out'; c.beginPath(); tracePath(c, inner); c.fill(); c.globalCompositeOperation = 'source-over';
-  }, mw * 0.025, (d, m, n) => {
+  }, mw * 0.025, (d, m, n, pw, ph) => {
     const mean = maskedMeanL(d, m, n);
+    const det = lightnessDetail(d, pw, ph, Math.max(1, Math.round(mw * 0.012)));
     for (let i = 0; i < n; i++) {
       const a = m[i * 4 + 3] / 255; if (a < 0.01) continue;
-      const o = tintPixel(d[i * 4], d[i * 4 + 1], d[i * 4 + 2], shade, mean, fin, a, 0.9);
+      const o = tintPixel(d[i * 4], d[i * 4 + 1], d[i * 4 + 2], shade, mean, fin, a, 0.94, det[i]);
       d[i * 4] = o[0]; d[i * 4 + 1] = o[1]; d[i * 4 + 2] = o[2];
     }
   });

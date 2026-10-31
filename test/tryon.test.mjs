@@ -173,3 +173,11 @@ test('wig affine puts the cutout eyes and chin exactly on hers', async () => {
   const m = wa(src, dst);
   src.forEach((s, i) => { const q = ap(m, s); assert.ok(Math.hypot(q[0] - dst[i][0], q[1] - dst[i][1]) < 1e-6); });
 });
+
+test('lip texture: lightness detail is zero on a flat patch and kept through the colour', async () => {
+  const { lightnessDetail: ld, tintPixel: tp, luma: lu } = await import('../public/tryon-geometry.js');
+  const flat = new Uint8ClampedArray(5 * 5 * 4).fill(120);
+  assert.ok(Math.max(...ld(flat, 5, 5, 1).map(Math.abs)) < 1e-6);
+  const red = [192, 32, 42];
+  assert.ok(lu(...tp(120, 80, 80, red, 40, 'creme', 1, 0.9, 6)) > lu(...tp(120, 80, 80, red, 40, 'creme', 1, 0.9, -6)) + 5, 'a lip line stays visible under the colour');
+});

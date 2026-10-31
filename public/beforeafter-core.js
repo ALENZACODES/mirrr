@@ -16,6 +16,8 @@ export const SHADOW = [['#a8743a', 'Bronze'], ['#d9aa4c', 'Gold'], ['#b8693a', '
 export const LINER = [['#141414', 'Black kohl'], ['#3b2016', 'Dark chocolate'], ['#1d2a5b', 'Navy'], ['#1f4d2b', 'Forest green'], ['#6e2f55', 'Plum']];
 export const LINER_STYLE = [['tight', 'Upper lash line'], ['kohl', 'Kohl, upper and lower'], ['wing', 'Winged']];
 export const LASHES = [['natural', 'Natural'], ['wispy', 'Wispy'], ['dramatic', 'Dramatic']];
+export const HIGHLIGHT = [['#fff4e6', 'Pearl'], ['#f3d9a4', 'Champagne'], ['#e0a96d', 'Bronze glow'], ['#d9aa4c', 'Gold']];
+export const CONTOUR = [['soft', 'Soft'], ['defined', 'Defined'], ['sculpted', 'Sculpted']];
 export const BROW = [['#141414', 'Soft black'], ['#3b2016', 'Dark brown'], ['#6b4030', 'Warm brown'], ['#8d7b6d', 'Taupe']];
 
 /** The layers she can play with, in the order they are painted. */
@@ -29,42 +31,67 @@ export const LAYERS = [
   { id: 'lip', label: 'Lip colour', values: LIP, amount: true },
   { id: 'lipFinish', label: 'Lip finish', values: LIP_FINISH },
   { id: 'blush', label: 'Blush', values: BLUSH, amount: true },
+  { id: 'contour', label: 'Contour', values: CONTOUR, amount: true },
+  { id: 'highlight', label: 'Highlight', values: HIGHLIGHT, amount: true },
 ];
 
 const name = (list, v) => (list.find(([h]) => h === v) || [])[1] || v;
 
 /**
  * Step-by-step looks. Each step adds layers on top of the last, so card k shows what the face looks
- * like after steps 1..k. `routine` names the real-product strip (/api/shop/routine/<id>) for that step.
+ * like after steps 1..k; the last step is the finished After. `routine` names the real-product strip
+ * (/api/shop/routine/<id>) for that step; `cats` narrows it to the categories that step uses.
  */
+const PREP = { name: 'Skin prep', routine: 'skin', cats: ['prep'], adds: { prep: true }, note: 'Cleanse, moisturise and SPF: skin looks fresher, with a soft natural glow on the cheekbones and nose.' };
 export const LOOKS = [
   { id: 'soft-glam', name: 'Soft glam', steps: [
-    { name: 'Skin prep', routine: 'skin', cats: ['prep'], adds: {}, note: 'Cleanse, moisturise and SPF. Prep changes how base sits, not the colour, so the picture stays the same here.' },
-    { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 45 }, note: 'A thin layer of foundation matched to her own skin, only where it is needed.' },
-    { name: 'Eyes', routine: 'eyes', adds: { shadow: '#a8743a', shadowAmt: 75, liner: '#3b2016', linerAmt: 80, linerStyle: 'tight', lashes: 'wispy', brow: '#3b2016', browAmt: 60 } },
-    { name: 'Lips', routine: 'lips', adds: { lip: '#c48b8b', lipAmt: 85, lipFinish: 'creme' } },
-    { name: 'Finish', routine: 'glow', adds: { blush: '#d9798a', blushAmt: 70 }, note: 'Blush on the cheeks; set with powder or spray.' },
+    PREP,
+    { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 70 }, note: 'Foundation matched to her own skin, blended out, to even the tone.' },
+    { name: 'Eyes', routine: 'eyes', adds: { shadow: '#a8743a', shadowAmt: 100, liner: '#3b2016', linerAmt: 100, linerStyle: 'tight', lashes: 'wispy', brow: '#3b2016', browAmt: 95 }, note: 'Brows filled, bronze shadow from lash line to crease, brown liner and lashes.' },
+    { name: 'Lips', routine: 'lips', adds: { lip: '#b0213f', lipAmt: 100, lipFinish: 'creme' } },
+    { name: 'Finish', routine: 'glow', adds: { blush: '#d9798a', blushAmt: 100, contour: 'defined', contourAmt: 80, highlight: '#f3d9a4', highlightAmt: 90 }, note: 'Contour under the cheekbones, blush on the apples of the cheeks, highlight on top.' },
   ] },
   { id: 'bold-red', name: 'Classic red lip', steps: [
-    { name: 'Skin prep', routine: 'skin', cats: ['prep'], adds: {}, note: 'Cleanse, moisturise and SPF. No colour change at this step.' },
-    { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 55 } },
-    { name: 'Eyes', routine: 'brow_kohl', adds: { liner: '#141414', linerAmt: 90, linerStyle: 'wing', lashes: 'natural', brow: '#141414', browAmt: 45 } },
-    { name: 'Lips', routine: 'lips', adds: { lip: '#c0202a', lipAmt: 85, lipFinish: 'matte' } },
+    PREP,
+    { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 75 }, note: 'A fuller-coverage base for a polished red-lip look.' },
+    { name: 'Eyes', routine: 'brow_kohl', adds: { liner: '#141414', linerAmt: 100, linerStyle: 'wing', lashes: 'natural', brow: '#141414', browAmt: 95, shadow: '#8d7b6d', shadowAmt: 60 }, note: 'A clean black wing, soft taupe in the crease, brows filled.' },
+    { name: 'Lips', routine: 'lips', adds: { lip: '#c0202a', lipAmt: 100, lipFinish: 'matte' } },
+    { name: 'Finish', routine: 'glow', adds: { blush: '#d9798a', blushAmt: 85, contour: 'defined', contourAmt: 80, highlight: '#f3d9a4', highlightAmt: 80 } },
   ] },
   { id: 'smoky-kohl', name: 'Smoky kohl', steps: [
-    { name: 'Skin prep', routine: 'skin', cats: ['prep'], adds: {}, note: 'Cleanse, moisturise and SPF. No colour change at this step.' },
-    { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 50 } },
-    { name: 'Eyes', routine: 'eyes', adds: { shadow: '#6e2f55', shadowAmt: 70, liner: '#141414', linerAmt: 90, linerStyle: 'kohl', lashes: 'dramatic', brow: '#141414', browAmt: 55 } },
-    { name: 'Lips', routine: 'lips', adds: { lip: '#7a4e36', lipAmt: 65, lipFinish: 'creme' } },
-    { name: 'Finish', routine: 'glow', adds: { blush: '#c0603d', blushAmt: 45 } },
+    PREP,
+    { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 70 } },
+    { name: 'Eyes', routine: 'eyes', adds: { shadow: '#6e2f55', shadowAmt: 100, liner: '#141414', linerAmt: 100, linerStyle: 'kohl', lashes: 'dramatic', brow: '#141414', browAmt: 95 }, note: 'Plum smoked from lash line to crease, black kohl top and bottom, full lashes.' },
+    { name: 'Lips', routine: 'lips', adds: { lip: '#7a4e36', lipAmt: 100, lipFinish: 'creme' } },
+    { name: 'Finish', routine: 'glow', adds: { blush: '#c0603d', blushAmt: 95, contour: 'sculpted', contourAmt: 90, highlight: '#e0a96d', highlightAmt: 85 } },
   ] },
   { id: 'everyday-glow', name: 'Everyday glow', steps: [
-    { name: 'Skin prep', routine: 'skin', cats: ['prep'], adds: {}, note: 'Cleanse, moisturise and SPF. No colour change at this step.' },
-    { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 30 }, note: 'A sheer layer, so her own skin shows through.' },
-    { name: 'Brows & lashes', routine: 'brow_kohl', adds: { brow: '#6b4030', browAmt: 40, lashes: 'natural' } },
-    { name: 'Lips & cheeks', routine: 'lips', adds: { lip: '#d9a3a0', lipAmt: 60, lipFinish: 'gloss', blush: '#f4ae86', blushAmt: 50 } },
+    PREP,
+    { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 50 }, note: 'A sheer layer, so her own skin shows through.' },
+    { name: 'Brows & lashes', routine: 'brow_kohl', adds: { brow: '#6b4030', browAmt: 90, lashes: 'natural', shadow: '#d9aa4c', shadowAmt: 60 } },
+    { name: 'Lips', routine: 'lips', adds: { lip: '#d9a3a0', lipAmt: 100, lipFinish: 'gloss' } },
+    { name: 'Finish', routine: 'glow', adds: { blush: '#f4ae86', blushAmt: 95, contour: 'soft', contourAmt: 65, highlight: '#fff4e6', highlightAmt: 85 } },
   ] },
 ];
+
+/**
+ * Deep skin: the same look in shades that show on it (pale nudes and pinks swap for deeper ones
+ * of the same family, and colour layers go on a little stronger). The skin itself is never lightened.
+ */
+const DEEP_SWAP = {
+  lip: { '#d9a3a0': '#9a5b2e', '#c48b8b': '#8e2f5a', '#b0213f': '#62182f', '#b07a8c': '#6e2f55', '#7a4e36': '#62182f', '#f07c5f': '#c0603d' },
+  blush: { '#f4ae86': '#c0603d', '#d9798a': '#a8432a', '#f07c5f': '#a8432a' },
+  shadow: { '#a8743a': '#b8693a', '#8d7b6d': '#6e2f55' },
+  highlight: { '#fff4e6': '#e0a96d', '#f3d9a4': '#d9aa4c' },
+  liner: { '#3b2016': '#141414' },
+};
+export function adaptForDepth(choice, skinL) {
+  if (typeof skinL !== 'number' || !(skinL < 52)) return { ...choice };
+  const c = { ...choice };
+  for (const [k, map] of Object.entries(DEEP_SWAP)) if (c[k] && map[c[k]]) c[k] = map[c[k]];
+  for (const k of ['lip', 'blush', 'shadow']) if (c[k + 'Amt'] != null) c[k + 'Amt'] = Math.min(100, Math.round(c[k + 'Amt'] * 1.15));
+  return c;
+}
 
 /** The layer settings after steps 0..k of a look (k is inclusive). */
 export function choiceAfter(look, k) {
@@ -83,6 +110,9 @@ export function describeStep(step) {
   if (a.lashes) out.push(`Lashes: ${name(LASHES, a.lashes).toLowerCase()}`);
   if (a.lip) out.push(`Lips: ${name(LIP, a.lip)}${a.lipFinish ? `, ${name(LIP_FINISH, a.lipFinish).toLowerCase()}` : ''}`);
   if (a.blush) out.push(`Blush: ${name(BLUSH, a.blush)}`);
+  if (a.contour) out.push('Contour: under the cheekbones and at the temples');
+  if (a.highlight) out.push(`Highlight: ${name(HIGHLIGHT, a.highlight)}`);
+  if (a.prep) out.push('Skin: moisturised, with a natural glow');
   return out;
 }
 

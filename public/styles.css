@@ -3311,7 +3311,10 @@ body { padding-top: 58px; }
 .ba-split { max-width: 520px; display: block; margin: .5rem 0 1rem; }
 .ba-split input { width: 100%; }
 .ba-amt input { width: 100%; }
-.ba-cards { list-style: none; padding: 0; margin: .75rem 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: .75rem; }
+.ba-cards { list-style: none; padding: 0; margin: .75rem 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+@media (min-width: 700px) { .ba-cards { grid-template-columns: repeat(3, 1fr); } }
+.ba-card--after { border: 2px solid #d4a847; box-shadow: 0 0 0 3px rgba(212,168,71,.25), 0 6px 22px rgba(212,168,71,.18); }
+.ba-card--after h4 { color: #d4a847; }
 .ba-card { background: var(--card, rgba(255,255,255,.04)); border: 1px solid rgba(127,127,127,.25); border-radius: 12px; padding: .5rem; }
 .ba-card img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 8px; display: block; }
 .ba-card h4 { margin: .4rem 0 .2rem; font-size: .95rem; }
@@ -3319,3 +3322,22 @@ body { padding-top: 58px; }
 .ba-card .earn-chip { font-size: .78rem; }
 .ba-set { margin-bottom: 1rem; }
 .ba-models[hidden] { display: none; }
+
+/* Phones and small tablets: the full top bar wrapped to five or six rows there and, being fixed, it
+   covered women's photos and faces on every page. It is now one compact row (logo + Menu); the links
+   open as a panel under it only when she taps Menu, and close when she picks one. The page starts
+   below the bar's real height (measured by mobile-nav.js) and nav taps and jumps land below it. */
+.nav-toggle { display: none; }
+@media (max-width: 900px) {
+  .nav-inner { padding: .55rem 1rem; flex-wrap: nowrap; }
+  .nav-toggle { display: inline-flex; align-items: center; gap: .4rem; background: none; color: var(--clr-ivory, #f0e8da); border: 1px solid rgba(212,168,71,.5); border-radius: 999px; padding: .4rem .9rem; font: inherit; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+  .nav-toggle:focus-visible { outline: 2px solid var(--clr-gold); outline-offset: 2px; }
+  .nav .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: 2px; max-height: calc(100vh - var(--nav-h, 58px)); overflow-y: auto; padding: .5rem 1rem 1rem; background: rgba(10,10,10,.98); border-bottom: 1px solid rgba(212,168,71,.28); box-shadow: 0 12px 40px rgba(0,0,0,.6); }
+  .nav.nav--open .nav-links { display: flex; }
+  .nav .nav-links .nav-link { text-align: left; width: 100%; font-size: .85rem; padding: .6rem .5rem; }
+  .nav .nav-more-menu { position: static; box-shadow: none; border: 0; padding: 0 0 0 .75rem; background: none; }
+  body { padding-top: var(--nav-h, 58px); }
+  .return-banner { top: var(--nav-h, 58px); }
+  .view, #hero, section[id] { scroll-margin-top: calc(var(--nav-h, 58px) + 8px); }
+}
+#view-beforeafter { scroll-margin-top: calc(var(--nav-h, 58px) + 8px); }

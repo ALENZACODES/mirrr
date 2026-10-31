@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { LAYERS, LOOKS, choiceAfter, describeStep, loadManifest, FOUNDATION } from '../public/beforeafter-core.js';
+import { LAYERS, LOOKS, choiceAfter, describeStep, loadManifest, FOUNDATION, adaptForDepth } from '../public/beforeafter-core.js';
 import { CROSS_SELL_IDS } from './fixtures/beforeafter-routines.mjs';
 
 const PUB = join(dirname(fileURLToPath(import.meta.url)), '..', 'public');
@@ -56,13 +56,15 @@ test('every layer has colours, and amount sliders exist for colour layers', () =
 
 test('step-by-step looks: 3 to 5 steps, each adds to the last, products only from real routines', () => {
   for (const look of LOOKS) {
-    assert.ok(look.steps.length >= 3 && look.steps.length <= 5, look.id);
-    assert.deepEqual(choiceAfter(look, 0), {}, 'skin prep adds no colour');
+    assert.equal(look.steps.length, 5, look.id);
+    assert.deepEqual(choiceAfter(look, 0), { prep: true }, 'skin prep adds a glow, no colour');
+    for (let k = 1; k < 5; k++) assert.notDeepEqual(choiceAfter(look, k), choiceAfter(look, k - 1), `${look.id} step ${k + 1} changes the face`);
+    assert.ok(look.steps[3].adds.lipAmt >= 85, 'an obvious lip colour');
     const last = choiceAfter(look, look.steps.length - 1);
     for (let k = 0; k < look.steps.length; k++) for (const key of Object.keys(choiceAfter(look, k))) assert.ok(key in last);
     for (const s of look.steps) assert.ok(CROSS_SELL_IDS.includes(s.routine), `${look.id}/${s.name}: ${s.routine}`);
   }
-  assert.deepEqual(describeStep(LOOKS[0].steps[3]), ['Lips: Dusty rose, creme']);
+  assert.deepEqual(describeStep(LOOKS[0].steps[3]), ['Lips: Blue-red, creme']);
 });
 
 test('the routine ids the steps use exist on the server', () => {
@@ -87,4 +89,31 @@ test('manifest: a complete set appears with paths under /beforeafter/<id>/; brok
   assert.deepEqual(r.skipped.map(s => s.id), ['../x', 'b', 'c', 'd', 'e']);
   assert.equal(loadManifest({ enabled: false, models: [good] }).enabled, false, 'the flag still gates it');
   assert.equal(loadManifest(null).enabled, false);
+});
+
+test('deep skin: pale lips and blush swap to deeper shades of the same family, never lighter skin', () => {
+  const c = { lip: '#c48b8b', lipAmt: 90, blush: '#d9798a', blushAmt: 80, foundation: 'match', foundationAmt: 70 };
+  assert.deepEqual(adaptForDepth(c, 70), c, 'light and medium skin keep the look as written');
+  const d = adaptForDepth(c, 40);
+  assert.equal(d.lip, '#8e2f5a'); assert.equal(d.blush, '#a8432a');
+  assert.ok(d.lipAmt >= 90 && d.lipAmt <= 100); assert.equal(d.foundation, 'match'); assert.equal(d.foundationAmt, 70);
+  assert.deepEqual(adaptForDepth(c, null), c);
+});
+
+test('the After card is highlighted and the cards sit in a clean grid', () => {
+  assert.match(read('beforeafter.js'), /ba-card--after/);
+  const css = read('styles.css');
+  assert.match(css, /@media \(min-width: 700px\) \{ \.ba-cards \{ grid-template-columns: repeat\(3, 1fr\); \} \}/);
+});
+
+test('phones: the top bar is one compact row with a Menu, and the page and nav jumps start below it', () => {
+  const css = read('styles.css');
+  assert.match(css, /\.nav \.nav-links \{ display: none;/);
+  assert.match(css, /\.nav\.nav--open \.nav-links \{ display: flex; \}/);
+  assert.match(css, /body \{ padding-top: var\(--nav-h, 58px\); \}/);
+  assert.match(css, /\.view, #hero, section\[id\] \{ scroll-margin-top: calc\(var\(--nav-h, 58px\) \+ 8px\); \}/);
+  const js = read('mobile-nav.js');
+  assert.match(js, /setProperty\('--nav-h'/);
+  assert.match(js, /aria-expanded/);
+  assert.match(read('index.html'), /<script src="mobile-nav.js"><\/script>/);
 });

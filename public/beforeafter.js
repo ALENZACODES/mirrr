@@ -14,7 +14,7 @@ import {
   maskedMeanL, lightnessDetail, rgbToLab, labToRgb,
 } from './tryon-geometry.js';
 import { MODEL_FACES } from './model-faces.js';
-import { LAYERS, LOOKS, choiceAfter, describeStep, loadManifest } from './beforeafter-core.js';
+import { LAYERS, LOOKS, choiceAfter as rawChoiceAfter, describeStep, loadManifest, adaptForDepth } from './beforeafter-core.js';
 
 const VISION = 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.21';
 const MODEL = 'https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task';
@@ -27,6 +27,9 @@ const after = document.createElement('canvas');
 let W = after.getContext('2d', { willReadFrequently: true }); // the canvas being painted on
 const layer = document.createElement('canvas'); const lctx = layer.getContext('2d');
 const mask = document.createElement('canvas'); const mctx = mask.getContext('2d', { willReadFrequently: true });
+
+/** A look's layers after step k, in shades that show on her skin depth. */
+const choiceAfter = (look, k) => adaptForDepth(rawChoiceAfter(look, k), S.skinL);
 
 function status(msg) { const s = $('baStatus'); if (s) s.textContent = msg; }
 
@@ -57,6 +60,7 @@ async function useImage(src, source, okMsg) {
   bctx.drawImage(img, 0, 0, w, h);
   const r = lm.detect(before);
   S.photo = img; S.L = r.faceLandmarks?.[0] ?? null; S.source = source; S.base = null;
+  if (S.L) { const prev = W; W = bctx; S.skinL = skinLab(S.L, w, h)[0]; W = prev; } else S.skinL = null;
   $('baWork').hidden = false;
   const c = $('baCanvas'); c.width = w; c.height = h;
   status(S.L ? okMsg : 'No face found in that photo. Try a front-facing photo in good light.');
@@ -88,7 +92,7 @@ function overlay(cv, draw, op, alpha) {
   lctx.clearRect(0, 0, layer.width, layer.height); lctx.save(); draw(lctx); lctx.restore(); lctx.filter = 'none';
   W.save(); W.globalCompositeOperation = op; W.globalAlpha = alpha; W.drawImage(layer, 0, 0); W.restore();
 }
-const amt = (c, id, d = 60) => Math.max(0, Math.min(100, Number(c[id + 'Amt'] ?? d))) / 100;
+const amt = (c, id, d = 80) => Math.max(0, Math.min(100, Number(c[id + 'Amt'] ?? d))) / 100;
 const eyeWidth = (L, side, w, h) => { const [o, i] = toPixels(L, [EYE[side].outer, EYE[side].inner], w, h); return Math.hypot(o[0] - i[0], o[1] - i[1]); };
 
 /** Her own skin colour, read from both cheeks and the forehead of this photo. */
@@ -101,8 +105,67 @@ function skinLab(L, w, h) {
   return rgbToLab(r / n, g / n, b / n);
 }
 
+/**
+ * Colour a feathered region in CIELAB: her own light, shadow and skin texture stay (each pixel keeps
+ * its lightness offset), the hue moves toward the shade, and lightness moves only part way (and is
+ * capped at `maxUp` brighter, so skin is never lightened by colour makeup).
+ */
+function labTint(cv, region, drawMask, feather, hex, { ab = 0.7, l = 0.3, maxUp = 4, amount = 1 }) {
+  const [Ls, As, Bs] = rgbToLab(...hexToRgb(hex));
+  pixelPass(cv, region, drawMask, feather, (d, m, n) => {
+    for (let i = 0; i < n; i++) {
+      const a = (m[i * 4 + 3] / 255) * amount; if (a < 0.01) continue;
+      const [l0, A, B] = rgbToLab(d[i * 4], d[i * 4 + 1], d[i * 4 + 2]);
+      const dl = Math.min(maxUp, (Ls - l0) * l) * a;
+      const o = labToRgb(l0 + dl, A + (As - A) * ab * a, B + (Bs - B) * ab * a);
+      d[i * 4] = o[0]; d[i * 4 + 1] = o[1]; d[i * 4 + 2] = o[2];
+    }
+  });
+}
+
+/** Contour: a soft shadow under the cheekbones and at the temples, a few shades deeper than her own skin. */
+function paintContour(cv, L, a0) {
+  const w = cv.width, h = cv.height;
+  const prev = W; const [sl, sa, sb] = skinLab(L, w, h); W = prev;
+  const rgb = labToRgb(Math.max(4, sl - 22), sa + 3, sb + 4);
+  const hex = '#' + rgb.map(v => Math.round(v).toString(16).padStart(2, '0')).join('');
+  const fw = Math.hypot(...[0, 1].map(j => toPixels(L, [454], w, h)[0][j] - toPixels(L, [234], w, h)[0][j]));
+  for (const [ear, mouth, temple] of [[234, 61, 127], [454, 291, 356]]) {
+    const [e, m, t] = toPixels(L, [ear, mouth, temple], w, h);
+    // from the ear toward the corner of the mouth, stopping under the middle of the eye
+    const sx = e[0] + (m[0] - e[0]) * 0.05, sy = e[1] + (m[1] - e[1]) * 0.05 + fw * 0.05;
+    const ex = e[0] + (m[0] - e[0]) * 0.5, ey = e[1] + (m[1] - e[1]) * 0.42 + fw * 0.02;
+    const cx = (sx + ex) / 2, cy = (sy + ey) / 2; const len = Math.hypot(ex - sx, ey - sy); const ang = Math.atan2(ey - sy, ex - sx);
+    labTint(cv, { x: Math.min(sx, ex, t[0]) - fw * 0.1, y: Math.min(sy, ey, t[1]) - fw * 0.15, w: Math.abs(ex - sx) + fw * 0.3, h: Math.abs(ey - t[1]) + fw * 0.35 }, x => {
+      x.save(); x.translate(cx, cy); x.rotate(ang); x.scale(1, 0.28);
+      const g = x.createRadialGradient(0, 0, 0, 0, 0, len * 0.6); g.addColorStop(0, 'rgba(255,255,255,0.75)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+      x.fillStyle = g; x.beginPath(); x.arc(0, 0, len * 0.6, 0, Math.PI * 2); x.fill(); x.restore();
+      const g2 = x.createRadialGradient(t[0], t[1] - fw * 0.05, 0, t[0], t[1] - fw * 0.05, fw * 0.12); g2.addColorStop(0, 'rgba(255,255,255,0.45)'); g2.addColorStop(1, 'rgba(255,255,255,0)');
+      x.fillStyle = g2; x.beginPath(); x.arc(t[0], t[1] - fw * 0.05, fw * 0.12, 0, Math.PI * 2); x.fill();
+    }, fw * 0.02, hex, { ab: 0.4, l: 1, maxUp: 0, amount: a0 });
+  }
+}
+
+/** A soft sheen on the high points (cheekbones, nose bridge): fresh skin after prep, or highlighter. */
+function paintGlow(cv, L, hex, strength) {
+  const w = cv.width, h = cv.height; const col = hexToRgb(hex).join(',');
+  const fw = Math.hypot(...[0, 1].map(j => toPixels(L, [454], w, h)[0][j] - toPixels(L, [234], w, h)[0][j]));
+  const [cr, cl, nb1, nb2] = toPixels(L, [117, 346, 6, 197], w, h);
+  const draw = x => {
+    const spot = ([px, py], rx, ry, ang) => {
+      x.save(); x.translate(px, py); x.rotate(ang); x.scale(1, ry / rx);
+      const g = x.createRadialGradient(0, 0, 0, 0, 0, rx); g.addColorStop(0, `rgba(${col},0.9)`); g.addColorStop(1, `rgba(${col},0)`);
+      x.fillStyle = g; x.beginPath(); x.arc(0, 0, rx, 0, Math.PI * 2); x.fill(); x.restore();
+    };
+    spot([cr[0] - fw * 0.05, cr[1] - fw * 0.01], fw * 0.1, fw * 0.045, -0.5);
+    spot([cl[0] + fw * 0.05, cl[1] - fw * 0.01], fw * 0.1, fw * 0.045, 0.5);
+    spot([(nb1[0] + nb2[0]) / 2, (nb1[1] + nb2[1]) / 2], fw * 0.05, fw * 0.025, Math.PI / 2);
+  };
+  overlay(cv, draw, 'soft-light', 0.55 * strength); overlay(cv, draw, 'screen', 0.07 * strength);
+}
+
 function paintFoundation(cv, L, c) {
-  const w = cv.width, h = cv.height; const a0 = amt(c, 'foundation', 45);
+  const w = cv.width, h = cv.height; const a0 = amt(c, 'foundation', 60);
   const oval = toPixels(L, FACE_OVAL, w, h);
   const cx = oval.reduce((s, p) => s + p[0], 0) / oval.length, cy = oval.reduce((s, p) => s + p[1], 0) / oval.length;
   const inner = oval.map(([x, y]) => [cx + (x - cx) * 0.96, cy + (y - cy) * 0.97]);
@@ -127,38 +190,41 @@ function paintFoundation(cv, L, c) {
       const [l, A, B] = rgbToLab(d[i * 4], d[i * 4 + 1], d[i * 4 + 2]);
       // Shade moves her mean lightness and undertone toward the foundation; a little evening of
       // blotches, while her own light, shadow and texture stay.
-      const lOut = l + ((target[0] - mean) * 0.7 + (mean + (l - mean) * 0.86 - l)) * a;
-      const o = labToRgb(lOut, A + (target[1] - A) * a * 0.75, B + (target[2] - B) * a * 0.75);
+      // Never lightens her skin: a matched base only evens it; a picked shade can deepen, and lifts at most a touch.
+      const shift = c.foundation === 'match' ? 0 : Math.min(3, (target[0] - mean) * 0.7);
+      const lOut = l + (shift + (mean + (l - mean) * 0.9 - l)) * a;
+      const o = labToRgb(lOut, A + (target[1] - A) * a * 0.3, B + (target[2] - B) * a * 0.3);
       d[i * 4] = o[0]; d[i * 4 + 1] = o[1]; d[i * 4 + 2] = o[2];
     }
   });
 }
 
 function paintBrows(cv, L, c) {
-  const w = cv.width, h = cv.height; const tint = hexToRgb(c.brow); const a0 = amt(c, 'brow', 50);
+  const w = cv.width, h = cv.height; const tint = hexToRgb(c.brow); const a0 = amt(c, 'brow', 75);
   for (const side of ['right', 'left']) {
     const poly = browPolygon(L, side, w, h); const bw = Math.hypot(poly[0][0] - poly[4][0], poly[0][1] - poly[4][1]);
     pixelPass(cv, bbox(poly, bw * 0.15), m => { m.beginPath(); tracePath(m, poly); m.fill(); }, bw * 0.05, (d, m, n) => {
-      for (let i = 0; i < n; i++) { const a = m[i * 4 + 3] / 255; if (a < 0.01) continue; const o = browPixel(d[i * 4], d[i * 4 + 1], d[i * 4 + 2], tint, a, 0.25 + 0.6 * a0); d[i * 4] = o[0]; d[i * 4 + 1] = o[1]; d[i * 4 + 2] = o[2]; }
+      for (let i = 0; i < n; i++) { const a = m[i * 4 + 3] / 255; if (a < 0.01) continue; const o = browPixel(d[i * 4], d[i * 4 + 1], d[i * 4 + 2], tint, a, 0.35 + 0.6 * a0); d[i * 4] = o[0]; d[i * 4 + 1] = o[1]; d[i * 4 + 2] = o[2]; }
     });
   }
 }
 
 function paintShadow(cv, L, c) {
-  const w = cv.width, h = cv.height; const a0 = amt(c, 'shadow', 55);
-  const draw = x => {
-    for (const side of ['right', 'left']) {
-      const ew = eyeWidth(L, side, w, h);
-      if ('filter' in x) x.filter = `blur(${(ew * 0.09).toFixed(1)}px)`;
-      x.fillStyle = c.shadow; x.globalAlpha = 0.55; x.beginPath(); tracePath(x, lidPolygon(L, side, w, h, 0.6)); x.fill();
-      x.globalAlpha = 0.45; x.beginPath(); tracePath(x, lidPolygon(L, side, w, h, 0.3)); x.fill(); x.globalAlpha = 1;
-    }
-  };
-  overlay(cv, draw, 'multiply', 0.7 * a0); overlay(cv, draw, 'soft-light', 0.5 * a0);
+  const w = cv.width, h = cv.height; const a0 = amt(c, 'shadow', 80);
+  for (const side of ['right', 'left']) {
+    const ew = eyeWidth(L, side, w, h); const crease = lidPolygon(L, side, w, h, 0.7); const top = lidPolygon(L, side, w, h, 0.95);
+    // Built like a brush: a soft wash up to the crease, more colour toward the lash line (a gradient).
+    labTint(cv, bbox(top, ew * 0.3), x => {
+      x.globalAlpha = 0.3; x.beginPath(); tracePath(x, lidPolygon(L, side, w, h, 0.95)); x.fill();
+      x.globalAlpha = 0.45; x.beginPath(); tracePath(x, crease); x.fill();
+      x.globalAlpha = 0.6; x.beginPath(); tracePath(x, lidPolygon(L, side, w, h, 0.45)); x.fill();
+      x.globalAlpha = 0.8; x.beginPath(); tracePath(x, lidPolygon(L, side, w, h, 0.22)); x.fill(); x.globalAlpha = 1;
+    }, ew * 0.12, c.shadow, { ab: 0.92, l: 0.6, maxUp: 8, amount: Math.min(1, a0 * 1.15) });
+  }
 }
 
 function paintLiner(cv, L, c) {
-  const w = cv.width, h = cv.height; const col = c.liner; const style = c.linerStyle || 'tight'; const a0 = amt(c, 'liner', 80);
+  const w = cv.width, h = cv.height; const col = c.liner; const style = c.linerStyle || 'tight'; const a0 = amt(c, 'liner', 90);
   const draw = x => {
     for (const side of ['right', 'left']) {
       const ew = eyeWidth(L, side, w, h); const line = lashLine(L, side, w, h);
@@ -178,7 +244,7 @@ function paintLiner(cv, L, c) {
       }
     }
   };
-  overlay(cv, draw, 'source-over', (style === 'kohl' ? 0.82 : 0.92) * a0);
+  overlay(cv, draw, 'source-over', Math.min(1, (style === 'kohl' ? 0.9 : 1) * (0.4 + 0.65 * a0)));
 }
 
 const LASH_STYLE = { natural: { n: 30, len: 0.17, wid: 0.016, curl: 0.35, jitter: 0.2 }, wispy: { n: 38, len: 0.22, wid: 0.014, curl: 0.42, jitter: 0.6 }, dramatic: { n: 44, len: 0.27, wid: 0.02, curl: 0.45, jitter: 0.25 } };
@@ -217,13 +283,13 @@ function paintLashes(cv, L, c) {
 function paintLips(cv, L, c) {
   const w = cv.width, h = cv.height; const outer = toPixels(L, LIPS_OUTER, w, h), inner = toPixels(L, LIPS_INNER, w, h);
   const mw = Math.hypot(outer[10][0] - outer[0][0], outer[10][1] - outer[0][1]);
-  const shade = hexToRgb(c.lip); const fin = c.lipFinish || 'creme'; const a0 = amt(c, 'lip', 75);
+  const shade = hexToRgb(c.lip); const fin = c.lipFinish || 'creme'; const a0 = amt(c, 'lip', 90);
   pixelPass(cv, bbox(outer, mw * 0.08), m => {
     m.beginPath(); tracePath(m, outer); m.fill();
     m.globalCompositeOperation = 'destination-out'; m.beginPath(); tracePath(m, inner); m.fill(); m.globalCompositeOperation = 'source-over';
   }, mw * 0.025, (d, m, n, pw, ph) => {
     const mean = maskedMeanL(d, m, n); const det = lightnessDetail(d, pw, ph, Math.max(1, Math.round(mw * 0.012)));
-    for (let i = 0; i < n; i++) { const a = m[i * 4 + 3] / 255; if (a < 0.01) continue; const o = tintPixel(d[i * 4], d[i * 4 + 1], d[i * 4 + 2], shade, mean, fin, a, 0.3 + 0.64 * a0, det[i]); d[i * 4] = o[0]; d[i * 4 + 1] = o[1]; d[i * 4 + 2] = o[2]; }
+    for (let i = 0; i < n; i++) { const a = m[i * 4 + 3] / 255; if (a < 0.01) continue; const o = tintPixel(d[i * 4], d[i * 4 + 1], d[i * 4 + 2], shade, mean, fin, a, 0.5 + 0.5 * a0, det[i]); d[i * 4] = o[0]; d[i * 4 + 1] = o[1]; d[i * 4 + 2] = o[2]; }
   });
   if (fin === 'gloss') {
     const ang = Math.atan2(outer[10][1] - outer[0][1], outer[10][0] - outer[0][0]);
@@ -235,30 +301,31 @@ function paintLips(cv, L, c) {
 }
 
 function paintBlush(cv, L, c) {
-  const w = cv.width, h = cv.height; const col = hexToRgb(c.blush).join(','); const a0 = amt(c, 'blush', 55);
-  const draw = x => {
-    for (const side of ['right', 'left']) {
-      const e = blushEllipse(L, side, w, h);
+  const w = cv.width, h = cv.height; const a0 = amt(c, 'blush', 80);
+  for (const side of ['right', 'left']) {
+    const e = blushEllipse(L, side, w, h); const r = e.rx * 1.25;
+    labTint(cv, { x: e.cx - r * 1.2, y: e.cy - r * 1.2, w: r * 2.4, h: r * 2.4 }, x => {
       x.save(); x.translate(e.cx, e.cy); x.rotate(e.angle); x.scale(1, e.ry / e.rx);
-      const g = x.createRadialGradient(0, 0, 0, 0, 0, e.rx);
-      g.addColorStop(0, `rgba(${col},0.8)`); g.addColorStop(0.5, `rgba(${col},0.35)`); g.addColorStop(1, `rgba(${col},0)`);
-      x.fillStyle = g; x.beginPath(); x.arc(0, 0, e.rx, 0, Math.PI * 2); x.fill(); x.restore();
-    }
-  };
-  overlay(cv, draw, 'soft-light', 0.75 * a0); overlay(cv, draw, 'multiply', 0.2 * a0);
+      const g = x.createRadialGradient(0, 0, 0, 0, 0, r); g.addColorStop(0, 'rgba(255,255,255,0.7)'); g.addColorStop(0.45, 'rgba(255,255,255,0.4)'); g.addColorStop(0.8, 'rgba(255,255,255,0.12)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+      x.fillStyle = g; x.beginPath(); x.arc(0, 0, r, 0, Math.PI * 2); x.fill(); x.restore();
+    }, 1, c.blush, { ab: 0.62, l: 0.2, maxUp: 0, amount: a0 });
+  }
 }
 
 /** Paints choice `c` onto canvas `cv`, which already holds the bare photo. */
 function paintOn(cv, L, c) {
   const prev = W; W = cv.getContext('2d', { willReadFrequently: true });
   try {
+    if (c.prep) paintGlow(cv, L, '#fff8ef', 1);
     if (c.foundation) paintFoundation(cv, L, c);
     if (c.brow) paintBrows(cv, L, c);
     if (c.shadow) paintShadow(cv, L, c);
     if (c.liner) paintLiner(cv, L, c);
     if (c.lashes) paintLashes(cv, L, c);
     if (c.lip) paintLips(cv, L, c);
+    if (c.contour) paintContour(cv, L, Math.min(1, amt(c, 'contour', 75) * ({ soft: 0.7, defined: 1, sculpted: 1.25 }[c.contour] ?? 1)));
     if (c.blush) paintBlush(cv, L, c);
+    if (c.highlight) paintGlow(cv, L, c.highlight, amt(c, 'highlight', 70));
   } finally { W = prev; }
 }
 
@@ -289,8 +356,8 @@ function readChoice() {
 
 function controls() {
   const sel = l => `<label class="to-field" for="ba-${l.id}"><span>${esc(l.label)}</span><select id="ba-${l.id}"><option value="" disabled selected>Choose…</option><option value="none">None</option>${[...(l.extra || []), ...l.values].map(([v, n]) => `<option value="${esc(v)}">${esc(n)}</option>`).join('')}</select></label>`;
-  const amtIn = l => l.amount ? `<label class="to-field ba-amt" for="ba-${l.id}-amt"><span>${esc(l.label.replace(/ (shade|colour|tint).*$/i, ''))} amount</span><input type="range" id="ba-${l.id}-amt" min="0" max="100" step="1" value="60" disabled></label>` : '';
-  const groups = [['Skin', ['foundation']], ['Eyes & brows', ['brow', 'shadow', 'liner', 'linerStyle', 'lashes']], ['Lips & cheeks', ['lip', 'lipFinish', 'blush']]];
+  const amtIn = l => l.amount ? `<label class="to-field ba-amt" for="ba-${l.id}-amt"><span>${esc(l.label.replace(/ (shade|colour|tint).*$/i, ''))} amount</span><input type="range" id="ba-${l.id}-amt" min="0" max="100" step="1" value="80" disabled></label>` : '';
+  const groups = [['Skin', ['foundation']], ['Eyes & brows', ['brow', 'shadow', 'liner', 'linerStyle', 'lashes']], ['Lips & cheeks', ['lip', 'lipFinish', 'blush', 'contour', 'highlight']]];
   return groups.map(([g, ids]) => `<fieldset class="to-group"><legend>${esc(g)}</legend>${ids.map(id => { const l = LAYERS.find(x => x.id === id); return sel(l) + amtIn(l); }).join('')}</fieldset>`).join('');
 }
 
@@ -322,7 +389,7 @@ async function renderShop() {
   if (c.foundation) r.push(['complexion', 'Base']);
   if (c.shadow || c.lashes) r.push(['eyes', 'Eyes']); else if (c.liner || c.brow) r.push(['brow_kohl', 'Brows & liner']);
   if (c.lip) r.push(['lips', 'Lips']);
-  if (c.blush) r.push(['glow', 'Cheeks']);
+  if (c.blush || c.highlight) r.push(['glow', 'Cheeks & glow']);
   const key = r.map(x => x[0]).join(','); if (key === shopKey) return; shopKey = key;
   if (!r.length) { el.innerHTML = ''; return; }
   const parts = [];
@@ -347,7 +414,8 @@ async function renderSteps() {
   const cards = [`<li class="ba-card"><img src="${thumb(null)}" alt="Before: the bare face" width="180" height="225"><h4>Before</h4><p class="lib-note">Bare face, nothing on.</p></li>`];
   for (let k = 0; k < look.steps.length; k++) {
     const s = look.steps[k]; const ps = (await products(s.routine)).filter(p => !s.cats || s.cats.includes(p.category));
-    cards.push(`<li class="ba-card"><img src="${thumb(choiceAfter(look, k))}" alt="After step ${k + 1}: ${esc(s.name)}" width="180" height="225"><h4>${k + 1}. ${esc(s.name)}</h4>${s.note ? `<p class="lib-note">${esc(s.note)}</p>` : ''}${describeStep(s).length ? `<ul class="ba-what">${describeStep(s).map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${ps.length ? `<div class="earn-xs">${productLinks(ps, s.routine, 2)}</div>` : ''}</li>`);
+    const last = k === look.steps.length - 1;
+    cards.push(`<li class="ba-card${last ? ' ba-card--after' : ''}"><img src="${thumb(choiceAfter(look, k))}" alt="${last ? 'After, the finished look' : `After step ${k + 1}: ${esc(s.name)}`}" width="180" height="225"><h4>${last ? `After &middot; ${k + 1}. ${esc(s.name)}` : `${k + 1}. ${esc(s.name)}`}</h4>${s.note ? `<p class="lib-note">${esc(s.note)}</p>` : ''}${describeStep(s).length ? `<ul class="ba-what">${describeStep(s).map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${ps.length ? `<div class="earn-xs">${productLinks(ps, s.routine, 2)}</div>` : ''}</li>`);
   }
   el.innerHTML = `<ol class="ba-cards">${cards.join('')}</ol>${SHOP_NOTE}`;
 }
@@ -399,4 +467,4 @@ function mount() {
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount); else mount();
 // For the automated check: state only, never pixels of her photo.
-window.__mirrrBA = { state: () => ({ photo: !!S.photo, source: S.source, face: !!S.L, choice: { ...S.choice }, look: S.look, split: S.split }) };
+window.__mirrrBA = { state: () => ({ skinL: S.skinL == null ? null : Math.round(S.skinL), photo: !!S.photo, source: S.source, face: !!S.L, choice: { ...S.choice }, look: S.look, split: S.split }) };

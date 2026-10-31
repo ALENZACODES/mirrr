@@ -161,7 +161,7 @@ function paintGlow(cv, L, hex, strength) {
     spot([cl[0] + fw * 0.05, cl[1] - fw * 0.01], fw * 0.1, fw * 0.045, 0.5);
     spot([(nb1[0] + nb2[0]) / 2, (nb1[1] + nb2[1]) / 2], fw * 0.05, fw * 0.025, Math.PI / 2);
   };
-  overlay(cv, draw, 'soft-light', 0.55 * strength); overlay(cv, draw, 'screen', 0.07 * strength);
+  overlay(cv, draw, 'soft-light', 0.5 * strength); overlay(cv, draw, 'screen', 0.06 * strength);
 }
 
 function paintFoundation(cv, L, c) {
@@ -316,7 +316,12 @@ function paintBlush(cv, L, c) {
 function paintOn(cv, L, c) {
   const prev = W; W = cv.getContext('2d', { willReadFrequently: true });
   try {
-    if (c.prep) paintGlow(cv, L, '#fff8ef', 1);
+    if (c.prep) {
+      // Prep sheen in her own skin's colour, a little lighter and warmer (never a white or grey cast).
+      const prev = W; W = cv.getContext('2d', { willReadFrequently: true }); const [sl, sa, sb] = skinLab(L, cv.width, cv.height); W = prev;
+      const rgb = labToRgb(Math.min(92, sl + 18), sa * 1.25, sb * 1.3);
+      paintGlow(cv, L, '#' + rgb.map(v => Math.round(v).toString(16).padStart(2, '0')).join(''), 0.9);
+    }
     if (c.foundation) paintFoundation(cv, L, c);
     if (c.brow) paintBrows(cv, L, c);
     if (c.shadow) paintShadow(cv, L, c);

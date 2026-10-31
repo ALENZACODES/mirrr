@@ -3340,4 +3340,4 @@ body { padding-top: 58px; }
   .return-banner { top: var(--nav-h, 58px); }
   .view, #hero, section[id] { scroll-margin-top: calc(var(--nav-h, 58px) + 8px); }
 }
-#view-beforeafter { scroll-margin-top: calc(var(--nav-h, 58px) + 8px); }
+#view-beforeafter, .ba-stage, #baSteps { scroll-margin-top: calc(var(--nav-h, 58px) + 8px); }

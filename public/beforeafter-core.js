@@ -82,13 +82,14 @@ const DEEP_SWAP = {
   lip: { '#d9a3a0': '#9a5b2e', '#c48b8b': '#8e2f5a', '#b0213f': '#62182f', '#b07a8c': '#6e2f55', '#7a4e36': '#62182f', '#f07c5f': '#c0603d' },
   blush: { '#f4ae86': '#c0603d', '#d9798a': '#a8432a', '#f07c5f': '#a8432a' },
   shadow: { '#a8743a': '#b8693a', '#8d7b6d': '#6e2f55' },
-  highlight: { '#fff4e6': '#e0a96d', '#f3d9a4': '#d9aa4c' },
+  highlight: { '#fff4e6': '#e0a96d', '#f3d9a4': '#e0a96d', '#d9aa4c': '#e0a96d' },
   liner: { '#3b2016': '#141414' },
 };
 export function adaptForDepth(choice, skinL) {
   if (typeof skinL !== 'number' || !(skinL < 52)) return { ...choice };
   const c = { ...choice };
   for (const [k, map] of Object.entries(DEEP_SWAP)) if (c[k] && map[c[k]]) c[k] = map[c[k]];
+  if (c.highlightAmt != null) c.highlightAmt = Math.round(c.highlightAmt * 0.7);
   for (const k of ['lip', 'blush', 'shadow']) if (c[k + 'Amt'] != null) c[k + 'Amt'] = Math.min(100, Math.round(c[k + 'Amt'] * 1.15));
   return c;
 }

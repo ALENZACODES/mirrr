@@ -583,10 +583,10 @@ const COMMUNITY_IMAGES = {
   // neutral, correctly labelled gold ring. The old placeholders carried wrong place names.
   'black-american':    'community-black-american.webp',
   'east-african':      'community-east-african.webp',
-  'north-african':     'community-north-african-fallback.svg',
+  'north-african':     'community-north-african.webp',
   'south-african':     'community-south-african.webp',
   'west-african':      'community-west-african-fallback.svg',
-  'arab':              'community-arab-fallback.svg', // neutral: Arabs are of many faiths
+  'arab':              'community-arab.webp', // neutral: Arabs are of many faiths
   'caribbean':         'community-caribbean.webp',
   'central-asian':     'community-central-asian.webp',
   'east-asian':        'community-east-asian.webp',

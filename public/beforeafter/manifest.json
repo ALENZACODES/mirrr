@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "enabled": false,
+  "how_to_add": "Put a woman's photos in public/beforeafter/<id>/ (before, 3 to 5 steps, after; same woman, same light, same angle; 4:5 portrait, no text), add an entry below, and set enabled to true. Example entry: {\"id\": \"amara\", \"name\": \"Soft glam\", \"before\": \"before.webp\", \"steps\": [{\"name\": \"Skin prep\", \"image\": \"step-1.webp\", \"routine\": \"skin\"}, {\"name\": \"Base\", \"image\": \"step-2.webp\", \"routine\": \"complexion\"}, {\"name\": \"Eyes\", \"image\": \"step-3.webp\", \"routine\": \"eyes\"}], \"after\": \"after.webp\"}. Allowed routine ids: skin, complexion, eyes, brow_kohl, lips, glow.",
+  "models": []
+}

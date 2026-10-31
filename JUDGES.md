@@ -127,6 +127,7 @@ Criteria from the official rules at https://qloo.devpost.com/rules (Stage 2, equ
 ## 6. Privacy and honesty notes
 
 - **On-device photos.** Photo shade matching and try-on run in the browser; her photo is not uploaded.
+- **Before & After studio.** Open **Before & After** in the top bar: use your own photo (upload or camera, processed in the tab, never uploaded) or pick a natural-look model (AI-generated, bare-faced), play with makeup on the still photo, drag the before/after slider, then choose a look under "How she got the look" to see it built step by step with real products per step. Nothing is pre-selected.
 - **Live try-on camera.** Open **Try it on (live)** in the top bar (or tap a sample photo if you have no camera). The camera starts only when she taps Start camera, every frame is processed in the browser tab, nothing is uploaded, and leaving the page turns the camera off. Every picker starts at "Choose…".
 - **What leaves the device:** her taste words (sent to Qloo through our server) and, only if she ticks the box, an email for the MIRRR Plus list. Anonymous totals only; no cookies, visitor IDs or stored IP addresses.
 - **Honest labels.** Shade matches use CIEDE2000 bands (≤3 match, 3–6 "check in daylight", >6 "outside our honest range"). Template text says it is a template. Products say "price as of Oct 30, 2026" and "no affiliate deal".

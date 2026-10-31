@@ -122,6 +122,8 @@ Quiz results seed the taste vector and the starting community for Shades and Wig
 
 All people shown in MIRRR are AI-generated photos, not real people. Product photos use blank, unbranded packaging.
 
+**Before & After studio** (top bar, **Before & After**): she opens her own photo (upload or camera; it stays in the browser tab and is never uploaded) or picks a natural-look model, plays with foundation, brows, eyeshadow, liner, lashes, lips and blush with amount sliders, and compares before and after with a slider. "How she got the look" builds a look one step at a time (skin prep, base, eyes, lips, finish) on the same photo, with real products from brands' own stores for each step. The natural-look models are the same AI-generated, bare-faced model photos the try-on uses. Real before / step / after photo sets (AI-generated, same woman, same light) can be added in `public/beforeafter/<id>/` with an entry in `public/beforeafter/manifest.json`; that gallery stays hidden until complete sets are in.
+
 ---
 
 ## Running Locally

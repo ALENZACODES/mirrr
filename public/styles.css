@@ -3304,3 +3304,18 @@ body { padding-top: 58px; }
 .news-home-list span, .news-home-updated { color: #9d968c; font-size: .75rem; }
 .news-home-updated { border: 0 !important; }
 @media (max-width: 640px) { .news-item { gap: .5rem; } .news-tile { flex-basis: 2rem; height: 2rem; font-size: .9rem; } .news-card { padding: 1rem; } }
+
+/* Before & After studio */
+.ba-models { margin: .5rem 0; }
+.ba-stage { max-width: 520px; }
+.ba-split { max-width: 520px; display: block; margin: .5rem 0 1rem; }
+.ba-split input { width: 100%; }
+.ba-amt input { width: 100%; }
+.ba-cards { list-style: none; padding: 0; margin: .75rem 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: .75rem; }
+.ba-card { background: var(--card, rgba(255,255,255,.04)); border: 1px solid rgba(127,127,127,.25); border-radius: 12px; padding: .5rem; }
+.ba-card img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 8px; display: block; }
+.ba-card h4 { margin: .4rem 0 .2rem; font-size: .95rem; }
+.ba-what { margin: .2rem 0; padding-left: 1.1rem; font-size: .85rem; }
+.ba-card .earn-chip { font-size: .78rem; }
+.ba-set { margin-bottom: 1rem; }
+.ba-models[hidden] { display: none; }

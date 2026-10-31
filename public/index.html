@@ -406,6 +406,7 @@
       <div class="nav-links">
         <button class="nav-link" data-view="transform">Transform</button>
         <button class="nav-link" data-view="tryon">Try it on (live)</button>
+        <button class="nav-link" data-view="beforeafter">Before &amp; After</button>
         <button class="nav-link" data-view="shade">Shades</button>
         <button class="nav-link" data-view="planner">Occasions</button>
         <button class="nav-link" data-view="taste">Taste</button>
@@ -972,6 +973,45 @@
         <div id="toControls" class="st-controls to-controls"></div>
         <div id="toShop" class="earn-strip to-shop" aria-live="polite"></div>
         <p class="lib-disclaimer">A live preview drawn on your camera image, not a photo of a product on you. Colours are the colour words MIRRR&rsquo;s guides use, not exact product shades, and screens and lighting change how they look. Lips and liner are tracked most closely; lashes are drawn strands; wigs are a placement preview cut from MIRRR&rsquo;s own wig photos.</p>
+      </div>
+    </section>
+
+    <section id="view-beforeafter" class="view hidden">
+      <div class="view-header">
+        <h2 class="view-title">Before &amp; After</h2>
+        <p class="view-sub">Start from a bare face, yours or a natural-look model&rsquo;s, play with makeup on it, and see each step that gets to the finished look.</p>
+      </div>
+      <div id="baRoot" class="st-wrap to-wrap ba-wrap">
+        <p class="to-privacy" id="baPrivacy"><strong>On this device only.</strong> Your photo opens inside this browser tab. It is never uploaded, MIRRR&rsquo;s server never sees it, and it is gone when you close the tab. The face-tracking files (about 4 MB) download once, like any web page file.</p>
+        <h3 class="st-h">1. Choose a photo</h3>
+        <div class="to-actions" role="group" aria-label="Choose a photo">
+          <label class="btn btn-secondary to-file-label">Use my photo<input type="file" id="baFile" accept="image/*" class="to-file" aria-label="Use my photo (stays on this device)" aria-describedby="baPrivacy" /></label>
+          <label class="btn btn-secondary to-file-label">Take a photo<input type="file" id="baCam" accept="image/*" capture="user" class="to-file" aria-label="Take a photo with the camera (stays on this device)" aria-describedby="baPrivacy" /></label>
+          <button type="button" class="btn btn-secondary" id="baPickModel" aria-expanded="false" aria-controls="baModels">Pick a natural-look model</button>
+        </div>
+        <div id="baModels" class="to-samples ba-models" role="group" aria-label="Natural-look models, bare-faced" hidden></div>
+        <p id="baStatus" class="lib-note" role="status" aria-live="polite">No photo yet. Use your own photo or pick a natural-look model.</p>
+        <div id="baWork" hidden>
+          <div class="to-stage ba-stage">
+            <canvas id="baCanvas" class="to-canvas" width="640" height="800" role="img" aria-label="Your photo: before on the left of the line, with your makeup on the right"></canvas>
+          </div>
+          <label class="to-field ba-split" for="baSplit"><span>Before &larr; compare &rarr; After</span><input type="range" id="baSplit" min="0" max="100" step="1" value="50"></label>
+          <h3 class="st-h">2. Play with makeup</h3>
+          <div id="baControls" class="st-controls to-controls"></div>
+          <div class="to-actions"><button type="button" class="btn btn-secondary" id="baClear">Clear all makeup</button><button type="button" class="btn btn-secondary" id="baSave">Save (to this device)</button></div>
+          <div id="baShop" class="earn-strip to-shop" aria-live="polite"></div>
+        </div>
+        <h3 class="st-h">3. How she got the look</h3>
+        <div class="to-actions">
+          <label class="to-field" for="baLook"><span>Look</span><select id="baLook"></select></label>
+          <button type="button" class="btn btn-secondary" id="baApplyLook" disabled>Put this look on the sliders</button>
+        </div>
+        <div id="baSteps" aria-live="polite"></div>
+        <div id="baGallery" hidden>
+          <h3 class="st-h">Real before and after photo sets</h3>
+          <div id="baGallerySets"></div>
+        </div>
+        <p class="lib-disclaimer">The makeup is a preview drawn on the photo in this browser tab, not a photo of a product on her. Colours are the colour words MIRRR&rsquo;s guides use, not exact product shades, and screens and light change how they look. &ldquo;Match my skin&rdquo; reads the colour of her cheeks and forehead in this photo.</p>
       </div>
     </section>
 
@@ -1717,6 +1757,7 @@
   <script src="news.js" defer></script>
   <script type="module" src="sixty.js"></script>
   <script type="module" src="tryon.js"></script>
+  <script type="module" src="beforeafter.js"></script>
   <script>
     // Community detail panel interactions
     (function() {

@@ -80,6 +80,58 @@
         }
       ],
       "after": "after.webp"
+    },
+    {
+      "id": "w5-bridal-softglam",
+      "name": "Bridal soft glam",
+      "before": "before.webp",
+      "steps": [
+        {
+          "name": "Luminous base",
+          "image": "step-1.webp",
+          "routine": "complexion",
+          "note": "A luminous primer, a light foundation matched to her warm-neutral beige skin and a peach-beige concealer."
+        },
+        {
+          "name": "Champagne eyes & sculpted brows",
+          "image": "step-2.webp",
+          "routine": "eyes",
+          "note": "Brows brushed up and shaped, champagne-gold shimmer with warm brown in the crease, a fine black wing and wispy lashes."
+        },
+        {
+          "name": "Rosy lip & cheeks",
+          "image": "step-3.webp",
+          "routine": "lips",
+          "note": "A soft rosy-mauve lip with matching liner, light warm bronzer and a soft rose blush."
+        }
+      ],
+      "after": "after.webp"
+    },
+    {
+      "id": "w6-terracotta-mono",
+      "name": "Terracotta monochrome",
+      "before": "before.webp",
+      "steps": [
+        {
+          "name": "Warm skin base",
+          "image": "step-1.webp",
+          "routine": "complexion",
+          "note": "Moisturiser, a natural-finish foundation matched to her warm golden-olive skin and concealer."
+        },
+        {
+          "name": "Terracotta eyes",
+          "image": "step-2.webp",
+          "routine": "eyes",
+          "note": "Matte terracotta and burnt-orange shadow on the lids and lower lash line, thin brown liner and mascara."
+        },
+        {
+          "name": "Terracotta lip & cheeks",
+          "image": "step-3.webp",
+          "routine": "lips",
+          "note": "A matte terracotta-brick lip, matching blush swept toward the temples and warm bronzer."
+        }
+      ],
+      "after": "after.webp"
     }
   ]
 }

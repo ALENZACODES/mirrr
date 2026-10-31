@@ -26,6 +26,7 @@
     { lang: 'ko', dir: 'ltr', text: '보기 좋은 떡이 먹기도 좋다.', en: 'A rice cake that looks good also tastes good.', by: 'Korean proverb' },
     { lang: 'vi', dir: 'ltr', text: 'Tốt gỗ hơn tốt nước sơn.', en: 'Good wood is better than good paint.', by: 'Vietnamese proverb' },
     { lang: 'tl', dir: 'ltr', text: 'Ang hindi lumingon sa pinanggalingan ay hindi makararating sa paroroonan.', en: 'Whoever does not look back to where she came from will not reach where she is going.', by: 'Tagalog proverb · Philippines' },
+    { lang: 'oj', dir: 'ltr', text: 'Mino-bimaadiziwin.', en: 'The good life: living well, in good health.', by: 'Anishinaabe (Ojibwe) teaching · Anishinaabemowin' },
     { lang: 'mi', dir: 'ltr', text: 'Ehara taku toa i te toa takitahi, engari he toa takitini.', en: 'My strength is not that of one alone, but the strength of many.', by: 'Māori whakataukī · Aotearoa New Zealand' },
     { lang: 'grc', dir: 'ltr', text: 'ὀ μὲν γὰρ κάλος ὄσσον ἴδην πέλεται, ὀ δὲ κἄγαθος αὔτικα καὶ κάλος ἔσσεται.', en: 'The beautiful are beautiful to look at; the good will soon be beautiful too.', by: 'Sappho · Fragment 50 · c. 600 BCE' },
     { lang: 'la', dir: 'ltr', text: 'Mens sana in corpore sano.', en: 'A sound mind in a sound body.', by: 'Juvenal · Satire X · c. 100 CE' },

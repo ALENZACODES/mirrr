@@ -5,7 +5,7 @@
  * finish as a sheen layer, glitter and duochrome as overlays. When there is no photo, or it fails to
  * load, the studio's old drawing renders instead, unchanged.
  *
- * Photos are AI-generated photos of women (disclosed in the README).
+ * Photos are model photos of women created for the app (see the README).
  * Manifest: window.STUDIO_PHOTOS[studio][id] = { src, mask?, face? } (paths under /studio/; face is
  * the [x, y, w, h] box, as fractions, that a studio's 240x300 face drawing maps onto).
  */

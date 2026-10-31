@@ -599,7 +599,7 @@ const COMMUNITY_IMAGES = {
 };
 
 // DNA Quiz result hero: one portrait photo per community, reusing that community's signature look photo
-// (AI-generated photos; see README). Keyed by community slug.
+// (model photos; see README). Keyed by community slug.
 const COMMUNITY_PORTRAITS = {
   'west-african':     'look-owambe-glam.webp',
   'east-african':     'look-ethiopian-jewel.webp',
@@ -1121,7 +1121,7 @@ function wigLabel(kind, id) {
   const list = kind === 'length' ? state.wigLengths : state.wigTextures;
   return (list ?? []).find(x => x.id === id)?.label ?? id;
 }
-// Style portraits for every wig style in the catalogue (AI-generated photos; the hairstyle is the subject).
+// Style portraits for every wig style in the catalogue (model photos; the hairstyle is the subject).
 // A missing file drops back to the text-only card.
 const WIG_PORTRAITS = new Set([
   'kinky_coily_afro', 'big_chop_fro', 'twist_out_natural', 'stretched_puff', 'loc_wig',
@@ -2159,7 +2159,7 @@ function drawShareCardText(ctx, W, startY, lookId) {
   ctx.font = '13px Inter, sans-serif';
   ctx.fillStyle = 'rgba(255,255,255,0.4)';
   ctx.textAlign = 'center';
-  ctx.fillText(_lastTaste?.meta?.qloo_powered ? 'mirrr-upbn.onrender.com · Powered by Qloo Taste AI' : 'mirrr-upbn.onrender.com · demo data, not from Qloo', W / 2, footY);
+  ctx.fillText(_lastTaste?.meta?.qloo_powered ? 'mirrr-upbn.onrender.com · Powered by the Qloo taste API' : 'mirrr-upbn.onrender.com · demo data, not from Qloo', W / 2, footY);
   // Referral code: names the card and look that were shared, not the person.
   const refCode = window.MirrrMoney?.refCode('card', lookId || _shareLookId);
   if (refCode) ctx.fillText(`Code ${refCode.toUpperCase()} · open mirrr-upbn.onrender.com/?ref=${refCode}`, W / 2, footY + 20);

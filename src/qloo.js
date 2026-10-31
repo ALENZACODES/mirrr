@@ -1,5 +1,5 @@
 /**
- * Qloo Taste AI client for MIRRR.
+ * Qloo taste API client for MIRRR.
  *
  * Wraps the Qloo Hackathon API with:
  *   - Entity search (name → Qloo UID)

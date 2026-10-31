@@ -34,7 +34,7 @@ MIRRR is a beauty agent for women of colour that starts from culture, not from a
 3. **Step 2:** type an artist, for example `Burna Boy`, and continue. The reply line reads *"Live Qloo: 'Burna Boy' resolved to Burna Boy; 14 taste tags picked these looks"* and the top looks appear (Afrobeats Concert, Afro-Glam Editorial, Amapiano Beat on our live run).
 4. **Step 3:** pick one of the looks.
 5. **Step 4:** tap a depth and an undertone (for example **Deep** + **Warm**). MIRRR names the shade (for example *"Your TrueTone shade: Garnet (D40)"*) and says plainly it is a ranking, not a skin scan.
-6. **Step 5–6:** read the 3-stage plan, then see the before and after painted on the generated model face nearest that shade. Press **Save**. Only now does a small, closable MIRRR Plus card appear, with its consent box unticked.
+6. **Step 5–6:** read the 3-stage plan, then see the before and after painted on the model face nearest that shade. Press **Save**. Only now does a small, closable MIRRR Plus card appear, with its consent box unticked.
 7. Bonus 20 seconds: open **Taste** from the top bar, run `BLACKPINK` and then `Bad Bunny`. The **POWERED BY QLOO · LIVE** badge shows how many Qloo tags came back, how many were used and why the rest were dropped, and the top looks change completely. On any look card, click **Leap this look: see it in three other cultures →**.
 
 The progress bar counts down ("Step n of 6 · ~Xs left") and Back works at every step.
@@ -102,7 +102,7 @@ The full table, with the same statuses, is in the app at [/#money](https://mirrr
 
 **"There are no users or revenue yet."** True, and we say so. MIRRR launched for this hackathon. What exists today is the measurement: every product link is UTM-tagged, [`/api/stats`](https://mirrr-upbn.onrender.com/api/stats) counts taste runs, try-ons, saves and product clicks (anonymous totals only; this free host resets them on every restart), and the MIRRR Plus founding list is consent-first. The first milestone after the hackathon is real usage numbers from those counters, then a first brand partnership with one of the brands already linked.
 
-**"Perfect Corp (YouCam) and L'Oréal already do beauty AI."** They start from the face: scan it, then sell a product. MIRRR starts from taste: what she listens to and watches, through Qloo, and from her culture, before any face scan. MIRRR's 60-shade range (CIELAB L* 14.6 to 93.9) is checked against all 10 tones of the Monk Skin Tone scale, the deepest included, each matched within ΔE2000 3 (`test/shade_match.test.mjs`), and its Looks studio covers 9 communities. The two can work together: MIRRR could send a chosen look to a try-on engine.
+**"Perfect Corp (YouCam) and L'Oréal already do beauty tech."** They start from the face: scan it, then sell a product. MIRRR starts from taste: what she listens to and watches, through Qloo, and from her culture, before any face scan. MIRRR's 60-shade range (CIELAB L* 14.6 to 93.9) is checked against all 10 tones of the Monk Skin Tone scale, the deepest included, each matched within ΔE2000 3 (`test/shade_match.test.mjs`), and its Looks studio covers 9 communities. The two can work together: MIRRR could send a chosen look to a try-on engine.
 
 **"Why would she come back next week?"** Because her occasions change: a concert, a wedding, Eid, Diwali, Carnival. The Occasion Planner plans for whatever event she names, Bridal Countdown counts down to the wedding, Skin Clinic shows what to expect at weeks and months, a new artist gives a new look, and she can save looks in her browser to come back to. Planned, not built: reminders before the occasion she saved.
 
@@ -133,7 +133,7 @@ Criteria from the official rules at https://qloo.devpost.com/rules (Stage 2, equ
 
 - **Qloo is the engine, not a garnish.** Half of every look's score is Qloo evidence, the arithmetic is on screen, and swapping one artist swaps the whole result. Take Qloo away and the app says DEMO DATA in red.
 - **It is a whole product.** A first-time visitor goes from one song to a named shade, a plan and a before-and-after in about a minute, and can keep going into 20+ studios.
-- **It is honest where most beauty apps bluff.** No fake match percentages, no "AI" label on templates, "no honest match" when nothing fits, sources on every brand label, and a money model that says what earns nothing today.
+- **It is honest where most beauty apps bluff.** No fake match percentages, no inflated labels on templates, "no honest match" when nothing fits, sources on every brand label, and a money model that says what earns nothing today.
 - **It serves people the industry under-serves,** with a deep-shade range checked against a published skin-tone scale and brands owned by the communities it serves.
 - **It is built to make money without breaking trust:** 8 revenue entry points are live today (named products, bundles, studio cross-sell, Plus and guide founding lists, referral codes, brand trends and interest, stylist interest), 3 are ready to switch on the day an agreement or first customer exists, and 3 are planned. Each is labelled with that status in the app, and all are measured in anonymous totals.
 
@@ -142,9 +142,9 @@ Criteria from the official rules at https://qloo.devpost.com/rules (Stage 2, equ
 ## 6. Privacy and honesty notes
 
 - **On-device photos.** Photo shade matching and try-on run in the browser; her photo is not uploaded.
-- **Before & After studio.** Open **Before & After** in the top bar: use your own photo (upload or camera, processed in the tab, never uploaded) or pick a natural-look model (AI-generated, bare-faced), play with makeup on the still photo, drag the before/after slider, then choose a look under "How she got the look" to see it built step by step with real products per step. Nothing is pre-selected.
+- **Before & After studio.** Open **Before & After** in the top bar: use your own photo (upload or camera, processed in the tab, never uploaded) or pick a natural-look model (bare-faced), play with makeup on the still photo, drag the before/after slider, then choose a look under "How she got the look" to see it built step by step with real products per step. Nothing is pre-selected.
 - **Live try-on camera.** Open **Try it on (live)** in the top bar (or tap a sample photo if you have no camera). The camera starts only when she taps Start camera, every frame is processed in the browser tab, nothing is uploaded, and leaving the page turns the camera off. Every picker starts at "Choose…".
 - **What leaves the device:** her taste words (sent to Qloo through our server) and, only if she ticks the box, an email for the MIRRR Plus list. Anonymous totals only; no cookies, visitor IDs or stored IP addresses.
 - **Honest labels.** Shade matches use CIEDE2000 bands (≤3 match, 3–6 "check in daylight", >6 "outside our honest range"). Template text says it is a template. Products say "price as of Oct 30, 2026" and "no affiliate deal".
-- **No real people.** Every face and person shown in MIRRR is an AI-generated photo, not a real person and not a model's likeness. No real faces were used to build or tune the shade matching; its accuracy numbers come from a synthetic test harness and are published in `docs/SCORECARD.md` with their limits.
+- **No real people.** Model photos are created for the app and do not show real people or any model's likeness. No real faces were used to build or tune the shade matching; its accuracy numbers come from a synthetic test harness and are published in `docs/SCORECARD.md` with their limits.
 - **Women only,** by design.

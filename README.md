@@ -6,7 +6,7 @@
 
 > **Most beauty apps were built for the West. MIRRR was built for the rest.**
 
-**MIRRR** is a multicultural beauty discovery agent powered by [Qloo Taste AI](https://qloo.com). It sends the artists, shows and brands a woman loves to Qloo's taste graph, filters the cultural tags Qloo returns, and uses them to rank makeup and hair looks, then pairs them with a foundation shade and a step-by-step plan for her community.
+**MIRRR** is a multicultural beauty discovery agent built on the [Qloo taste API](https://qloo.com). It sends the artists, shows and brands a woman loves to Qloo's taste graph, filters the cultural tags Qloo returns, and uses them to rank makeup and hair looks, then pairs them with a foundation shade and a step-by-step plan for her community.
 
 **Live Demo:** https://mirrr-upbn.onrender.com
 
@@ -120,9 +120,9 @@ Quiz results seed the taste vector and the starting community for Shades and Wig
 
 ## Images
 
-All people shown in MIRRR are AI-generated photos, not real people. Product photos use blank, unbranded packaging.
+Model photos are created for the app and do not show real people. Product photos use blank, unbranded packaging.
 
-**Before & After studio** (top bar, **Before & After**): she opens her own photo (upload or camera; it stays in the browser tab and is never uploaded) or picks a natural-look model, plays with foundation, brows, eyeshadow, liner, lashes, lips and blush with amount sliders, and compares before and after with a slider. "How she got the look" builds a look one step at a time (skin prep, base, eyes, lips, finish) on the same photo, with real products from brands' own stores for each step. The natural-look models are the same AI-generated, bare-faced model photos the try-on uses. Real before / step / after photo sets (AI-generated, same woman, same light) can be added in `public/beforeafter/<id>/` with an entry in `public/beforeafter/manifest.json`; that gallery stays hidden until complete sets are in.
+**Before & After studio** (top bar, **Before & After**): she opens her own photo (upload or camera; it stays in the browser tab and is never uploaded) or picks a natural-look model, plays with foundation, brows, eyeshadow, liner, lashes, lips and blush with amount sliders, and compares before and after with a slider. "How she got the look" builds a look one step at a time (skin prep, base, eyes, lips, finish) on the same photo, with real products from brands' own stores for each step. The natural-look models are the same bare-faced model photos the try-on uses. Before / step / after photo sets (same woman, same light) can be added in `public/beforeafter/<id>/` with an entry in `public/beforeafter/manifest.json`; that gallery stays hidden until complete sets are in.
 
 ---
 
@@ -145,4 +145,4 @@ Built solo by **John Khan** (ALENZACODES / Alenza Capital) for the **Qloo Agenti
 
 ---
 
-*Built for the Qloo Agentic Hackathon 2026 · Powered by Qloo Taste AI*
+*Built for the Qloo Agentic Hackathon 2026 · Powered by the Qloo taste API*

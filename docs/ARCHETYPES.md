@@ -1,6 +1,6 @@
 # MIRRR Look Archetypes
 
-MIRRR defines eight look archetypes that map cultural taste signals — drawn from Qloo's Taste AI — to full beauty looks including makeup, wigs, and styling direction.
+MIRRR defines eight look archetypes that map cultural taste signals — drawn from Qloo's taste API — to full beauty looks including makeup, wigs, and styling direction.
 
 ---
 

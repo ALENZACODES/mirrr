@@ -173,7 +173,7 @@ async function usePhoto(file) {
   await useImage(url, 'Photo loaded on this device. Nothing is uploaded.');
 }
 
-/** A sample photo (MIRRR's own AI-generated model faces), for trying it with no camera and no upload. */
+/** A sample photo (MIRRR's own model faces), for trying it with no camera and no upload. */
 async function useSample(id) {
   const f = MODEL_FACES.find(x => x.id === id); if (!f) return;
   await useImage(f.src, 'Sample photo loaded. The makeup is drawn in this browser tab.');

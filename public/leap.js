@@ -40,7 +40,7 @@
   }
 
   // ---- Panels 2-4: the same face in each city ------------------------------------------------------
-  // A real photographic model face (AI-generated photo, nearest to the tone picked above) wearing
+  // A real photographic model face (model photo, nearest to the tone picked above) wearing
   // each city's palette, laid on by the same on-device photo engine as the try-on.
   function facePanel(p, L, i) {
     const bars = L.dims.map((d, k) => `<rect x="${30 + k * 48}" y="${40 - 28 * d.you}" width="9" height="${(28 * d.you).toFixed(1)}" fill="#6c757d"/><rect x="${40 + k * 48}" y="${40 - 28 * d.leap}" width="9" height="${(28 * d.leap).toFixed(1)}" fill="${DIM_COL[d.id]}"/><text x="${40 + k * 48}" y="50" text-anchor="middle" font-size="6.5" fill="#c9c9c9">${d.label.slice(0, 5)}</text>`).join('');

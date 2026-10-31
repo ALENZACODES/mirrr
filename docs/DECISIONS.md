@@ -23,7 +23,7 @@ This document records the key architectural decisions made during the design and
 
 ## ADR-002: Qloo as the sole external data dependency
 
-**Decision:** All cultural taste intelligence flows exclusively through Qloo's Taste AI API. No additional social graph, trend API, or recommendation engine.
+**Decision:** All cultural taste intelligence flows exclusively through Qloo's taste API. No additional social graph, trend API, or recommendation engine.
 
 **Rationale:**  
 - The hackathon requirement is to demonstrate Qloo's value  
@@ -61,16 +61,16 @@ This document records the key architectural decisions made during the design and
 
 ---
 
-## ADR-005: Three-tier LLM narration cascade
+## ADR-005: Narration with a built-in template fallback
 
-**Decision:** Narration is attempted in order: OpenAI GPT-4o-mini → Google Gemini 1.5 Flash → built-in template. The template is the guaranteed fallback.
+**Decision:** Narration can optionally use an external text service if a key is configured; otherwise the built-in template is used. The template is the guaranteed fallback.
 
 **Rationale:**  
 - Narration enriches the experience but must never crash the pipeline  
-- Two external LLM providers cover each other's outages  
+- Optional external services cover each other's outages  
 - The template narration (`src/llm/index.js :: templateNarration`) is rich enough to stand alone — it uses archetype-specific intros and product details
 
-**Error behaviour:** Each LLM tier logs a warning on failure and falls through silently; the response always includes a `narration` field and a `source` field indicating which tier produced it.
+**Error behaviour:** Each optional tier logs a warning on failure and falls through silently; the response always includes a `narration` field and a `source` field indicating which tier produced it.
 
 ---
 
@@ -126,6 +126,6 @@ This document records the key architectural decisions made during the design and
 **Decision:** MIRRR includes the Python API layer (`beljour_core/`) and TypeScript frontend (`beljour_web/`) from the Beljour project, authorized by John Khan as creator of both projects.
 
 **Rationale:**  
-- The Beljour codebase contains 19,512 LOC of Python beauty AI infrastructure and 134,025 LOC of production-grade TypeScript frontend  
+- The Beljour codebase contains 19,512 LOC of Python beauty infrastructure and 134,025 LOC of production-grade TypeScript frontend  
 - These shared foundations accelerate MIRRR's development within the hackathon timebox  
 - MIRRR's ethnic-first aesthetic engine and Qloo integration layer are original to this repo; Beljour code provides supporting infrastructure

@@ -1,5 +1,5 @@
 /**
- * Built-in model faces for the try-on, so it can be played with no upload. AI-generated photos
+ * Built-in model faces for the try-on, so it can be played with no upload. Model photos
  * of women, one per community, light to deep. `L` is the skin lightness (CIELAB
  * L*) the photo engine measures on each face; Taste Leap uses it to pick the face nearest the tone
  * chosen there.

@@ -95,6 +95,6 @@ test('pages are reachable from home, nav, footer and Help, with honest status an
   assert.ok(!/type="checkbox"[^>]*checked/.test(earn), 'no pre-ticked box');
   assert.ok(!/<option[^>]*selected/.test(earn), 'no pre-selected option');
   for (const s of ['Built today', 'Ready to switch on', 'Planned', 'available, not yet sold', 'No revenue has been earned yet', 'no affiliate deal'.replace('no', 'No')]) assert.ok(earn.includes(s), s);
-  assert.ok(!/\b(ChatGPT|OpenAI|Gemini|Claude|Fenty|Sephora|Ulta)\b/.test(earn), 'no AI tool or competitor names');
+  assert.ok(!/\b(ChatGPT|OpenAI|Gemini|Claude|Fenty|Sephora|Ulta)\b/.test(earn), 'no tool or competitor names');
   assert.ok(!/\b(men|man|beard)\b/i.test(earn), 'women-only copy');
 });

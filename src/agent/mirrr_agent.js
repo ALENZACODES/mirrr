@@ -14,7 +14,7 @@
  *                   a language model if a key is configured on the server.
  *
  * This is what "cultural intelligence as the differentiator" means:
- * a generic LLM cannot do steps 2–4 without Qloo.
+ * a generic recommender cannot do steps 2–4 without Qloo.
  */
 
 import { QlooClient, qlooClient as sharedQloo } from '../qloo.js';

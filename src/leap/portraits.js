@@ -1,5 +1,5 @@
 /**
- * Taste Leap city portraits: one AI-generated photo of a woman per city,
+ * Taste Leap city portraits: one model photo of a woman per city,
  * wearing that city's look. `shows` describes what the photo actually shows, and is the alt text;
  * the look the leap ranks for your taste is named separately, beside the photo.
  */

@@ -2,14 +2,14 @@
  * MIRRR Trending Artists Engine
  *
  * Surfaces culturally relevant trending artists for each community region.
- * Failsafe architecture: Qloo Taste AI is primary source. If Qloo returns
+ * Failsafe architecture: Qloo taste API is primary source. If Qloo returns
  * fewer than 3 results for a region, we cross-reference against 2 curated
  * regional databases (updated Oct 2026) and only surface artists confirmed
  * by ≥2 sources OR flagged as "anchor" artists with sustained multi-year
  * chart presence.
  *
  * Sources:
- *   1. Qloo Taste AI API (live, real-time cultural affinity graph)
+ *   1. Qloo taste API (live, real-time cultural affinity graph)
  *   2. Curated regional anchor list (Oct 2026, multi-chart verified)
  *   3. Cross-community affinity fallback (similarity scoring)
  */
@@ -137,7 +137,7 @@ const CROSS_COMMUNITY_FALLBACK = ['Beyoncé', 'Rihanna', 'Rosalía', 'Bad Bunny'
  * Verify a set of Qloo-returned artists against our curated anchor list.
  * Returns only artists confirmed by ≥2 sources OR anchor artists.
  *
- * Source 1: Qloo Taste AI (live)
+ * Source 1: Qloo taste API (live)
  * Source 2: Curated regional anchor list (Oct 2026)
  * Source 3: Cross-community affinity (fallback)
  *

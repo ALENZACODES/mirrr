@@ -1,7 +1,7 @@
 {
   "name": "mirrr",
   "version": "1.0.0",
-  "description": "Your Taste. Your Looks. Your Style. Beauty discovery for the rest of the world, powered by Qloo Taste AI.",
+  "description": "Your Taste. Your Looks. Your Style. Beauty discovery for the rest of the world, built on the Qloo taste API.",
   "type": "module",
   "main": "src/server.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "wigs",
     "black beauty",
     "cultural intelligence",
-    "taste AI",
+    "taste API",
     "diversity",
     "inclusion"
   ],

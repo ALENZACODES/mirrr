@@ -2,7 +2,7 @@
  * MIRRR Look Engine
  *
  * 75-look catalogue — the most comprehensive multicultural beauty catalog
- * ever built into a beauty AI. Covers every major ethnic community, every
+ * ever built into a beauty app. Covers every major ethnic community, every
  * occasion, every aesthetic — West African, East African, Southern African,
  * North African, Caribbean, Black American, South Asian, Arab, Latina,
  * East Asian, Southeast Asian, Pacific Islander, Indigenous, Central Asian,

@@ -57,7 +57,7 @@ export const CLIP_IN_GUIDE = {
   removal: 'Press the clip release buttons simultaneously; gently slide out. Never pull or yank — stresses the root.',
   care: ['Brush before and after each use (start from tips, work upward)', 'Wash when visibly dirty or after 15-20 wears', 'Store in a container or hanging to prevent tangling', 'Heat protectant before styling'],
   ethnic_note: {
-    type_4: 'For Type 4 natural hair, clip-ins on loose natural hair may have poor grip. Options: install clip-ins on stretched natural hair (blown out or braided-then-unravelled); use clip-ins in kinky/coily texture that blends with natural hair; or use a headband-style clip-in over a slicked-back natural hair base.',
+    type_4: 'For Type 4 natural hair, clip-ins on loose natural hair may have poor grip. Options: install clip-ins on stretched natural hair (blown out or braided-then-unravelled); use clip-ins in a coily or tightly coiled texture that blends with natural hair; or use a headband-style clip-in over a slicked-back natural hair base.',
     edges: 'Do NOT clip extensions directly at the hairline or edges — this can cause traction at the most fragile hair.',
   },
   damage_potential: 'Low when used correctly and not worn daily. The clip grip, teasing, and weight can cause breakage if the same sections are clipped repeatedly without rotation.',

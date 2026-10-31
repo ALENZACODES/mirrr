@@ -11,7 +11,7 @@ export const HAIR_TYPE_SYSTEM = {
     type1: { label: 'Straight', subcategories: { '1A': 'Very fine/thin; no wave pattern; very difficult to hold a curl', '1B': 'Medium texture; some volume; slight body wave', '1C': 'Coarse; some body; resistant; slight wave in sections' } },
     type2: { label: 'Wavy', subcategories: { '2A': 'Fine, loose S-wave; easily straightened; prone to getting weighed down by products', '2B': 'Medium; S-wave more defined; starts at mid-length; some frizz', '2C': 'Coarse; defined S-wave from root; strong frizz tendency; almost curly' } },
     type3: { label: 'Curly', subcategories: { '3A': 'Loose, large spiral curls; diameter of sidewalk chalk; shiny when healthy', '3B': 'Medium spiral curls; diameter of a Sharpie marker; some frizz', '3C': 'Tight corkscrew curls; diameter of a pencil; dense; lots of volume; high shrinkage' } },
-    type4: { label: 'Coily/Kinky', subcategories: { '4A': 'Tight S-coils; diameter of a knitting needle; defined when wet; visible coil pattern', '4B': 'Z-shaped pattern; less defined curl; bends in sharp angles; fluffy', '4C': 'Very tight Z-coils; least defined pattern; most shrinkage (75-80%); most fragile; must be handled gently' } }
+    type4: { label: 'Coily / Tightly coiled', subcategories: { '4A': 'Tight S-coils; diameter of a knitting needle; defined when wet; visible coil pattern', '4B': 'Z-shaped pattern; less defined curl; bends in sharp angles; fluffy', '4C': 'Very tight Z-coils; least defined pattern; most shrinkage (75-80%); most fragile; must be handled gently' } }
   },
   limitations: [
     'Most people have multiple hair types on their head — crown, temples, nape all behave differently',
@@ -116,7 +116,7 @@ export const TYPE3_ROUTINE = {
 };
 
 export const TYPE4_ROUTINE = {
-  title: 'Type 4 (Coily/Kinky) Hair Care Routine',
+  title: 'Type 4 (Coily / Tightly coiled) Hair Care Routine',
   
   criticalPrinciple: 'Type 4 hair requires the most moisture, the gentlest handling, and the most patience. It is NOT more difficult to care for — it is simply different. With the right routine and products, 4C hair thrives.',
   washFrequency: '1-2 times per week maximum; more frequent washing without adequate moisture replacement leads to breakage and dryness; pre-poo before washing is important',

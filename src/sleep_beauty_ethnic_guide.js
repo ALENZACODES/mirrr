@@ -1278,7 +1278,7 @@ export const HAIR_PROTECTION_SLEEP_METHODS = {
       name: 'Satin/Silk Bonnet',
       bestFor: ['Type 4A', 'Type 4B', 'Type 4C', 'Type 3C'],
       description: `The bonnet is the most comprehensive nighttime hair protection tool for tightly
-      coiled and kinky hair textures. It encloses all hair inside a smooth, low-friction dome that
+      coily and tightly coiled hair textures. It encloses all hair inside a smooth, low-friction dome that
       prevents cuticle abrasion, seals in moisture, and keeps styled hair intact. Essential for
       natural hair protective styling.`,
       tips: [

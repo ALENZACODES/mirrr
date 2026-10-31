@@ -2,7 +2,7 @@
  * MIRRR Wig Matchmaker
  *
  * 42-style wig catalogue — from natural
- * kinky afros to Nilotic locs, from Khaleeji blowouts to K-pop idol cuts,
+ * tightly coiled afros to Nilotic locs, from Khaleeji blowouts to K-pop idol cuts,
  * from Senegalese twists to Peruvian body waves to fulani braids.
  *
  * Wigs are a cornerstone of Black, South Asian, Arab, and Caribbean beauty.
@@ -11,7 +11,7 @@
 
 export const WIG_CATALOGUE = [
 
-  // ── NATURAL KINKY / COILY ─────────────────────────────────────────────────
+  // ── NATURAL TIGHTLY COILED / COILY ─────────────────────────────────────────────────
   {
     id: 'kinky_coily_afro',
     name: 'Kinky Coily Afro',
@@ -671,7 +671,7 @@ export function getWigTextures() {
     { id: 'straight',      label: 'Straight / Silky' },
     { id: 'wavy',          label: 'Wavy' },
     { id: 'curly',         label: 'Curly' },
-    { id: 'kinky',         label: 'Kinky / Natural' },
+    { id: 'kinky',         label: 'Tightly coiled / Natural' },
     { id: 'braided',       label: 'Braided / Protective' },
     { id: 'locs',          label: 'Locs / Dreadlocks' },
     { id: 'twist-braided', label: 'Twists' },

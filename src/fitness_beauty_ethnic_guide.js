@@ -97,7 +97,7 @@ export const ATHLETIC_HAIR_MANAGEMENT = {
   },
 
   type4Hair: {
-    description: 'Type 4a-4c (tightly coiled to kinky)',
+    description: 'Type 4A-4C (coily to tightly coiled)',
     challenges: 'Extreme dryness from frequent washing; sweat can cause shrinkage and matting; 1-2 washes per week maximum for most',
     solutions: [
       'Protective style during exercise: braids, cornrows, twists prevent manipulation and sweat exposure',

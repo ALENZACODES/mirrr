@@ -67,7 +67,7 @@ export const HAIR_TYPING_SYSTEMS = {
     },
 
     type_4: {
-      description: 'Coily/kinky hair. Very tight curl pattern. Often densely packed. Afro-textured hair.',
+      description: 'Coily, tightly coiled hair. Very tight curl pattern. Often densely packed. Afro-textured hair.',
       subtypes: {
         '4a': 'Defined, springy coils. S-shaped when stretched. Circumference of a pencil or smaller. Some shine when moisturised.',
         '4b': 'Z-shaped kink pattern rather than spiral. Bends sharply in Z or S angles. Less defined in natural state. Very little shine naturally.',

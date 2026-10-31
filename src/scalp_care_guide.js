@@ -28,7 +28,7 @@ export const SCALP_ANATOMY = {
     follicleShape: {
       round: 'Round follicle cross-section produces straight hair (common in East Asian populations)',
       oval: 'Oval follicle cross-section produces wavy hair (common in European and South Asian populations)',
-      elliptical: 'Elliptical to ribbon-shaped follicle cross-section produces coiled/curly/kinky hair (common in African and African-descent populations); the more elliptical the follicle, the tighter the curl pattern; highly coiled Type 4 hair has a significantly flattened elliptical follicle cross-section'
+      elliptical: 'Elliptical to ribbon-shaped follicle cross-section produces curly, coily and tightly coiled hair (common in African and African-descent populations); the more elliptical the follicle, the tighter the curl pattern; highly coiled Type 4 hair has a significantly flattened elliptical follicle cross-section'
     }
   }
 };
@@ -172,7 +172,7 @@ export const ETHNIC_SCALP_GUIDES = {
     commonConcerns: ['Higher sebum production on average — oily scalp/roots with dryness at the ends is common', 'Scalp congestion from heavy silicone-based styling products', 'Sensitivity to the highly alkaline perm chemicals (permanent wave solutions) used extensively in East Asian hair styling', 'Hair loss (androgenetic alopecia affects a significant portion of East Asian men; Korean hair loss treatment market is enormous)']
   },
   'east-african': {
-    hairType: 'Predominantly Type 4 (4A-4C); tight coil to kinky curl patterns; highly textured; scalp sebum adequate but travels extremely slowly down the hair shaft',
+    hairType: 'Predominantly Type 4 (4A-4C); coily to tightly coiled curl patterns; highly textured; scalp sebum adequate but travels extremely slowly down the hair shaft',
     traditions: 'Shea butter as scalp and hair moisturiser; castor oil (African castor oil, distinct from Jamaican Black Castor Oil); Ethiopian Tilossissa hair butter; traditional braiding with natural oiling at the scalp; frankincense and myrrh smoke as hair fragrance (smoke-based hair care tradition throughout East Africa)',
     commonConcerns: ['Dryness: high priority in East African hair care', 'Traction alopecia from tight traditional styles (braids, cornrows)', 'Scalp sensitivity from chemical straightening', 'Flaky scalp from product buildup and dry conditions'],
     washingRoutine: 'Pre-poo (pre-shampoo oil treatment) with castor or shea butter applied to the scalp and hair before shampooing provides protection against the drying effect of shampoo; leave on for at least 30 minutes before shampooing'

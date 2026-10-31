@@ -26,7 +26,7 @@ export const ETHNIC_EXERCISE_BEAUTY_GUIDES = {
       benefitOfSweat: 'Eccrine sweat (the clear sweat from exercise) contains: water, lactic acid (natural AHA), dermcidin (antimicrobial peptide), glycerol (humectant), minerals. A good workout is a natural mild exfoliation and antimicrobial facial treatment. The key is washing it off before it sits too long.',
     },
     activeHairManagement: {
-      challenge: 'Managing type 4 (kinky/coily) hair during frequent exercise is one of the most-discussed topics in Black women\'s fitness communities globally. Sweat saturates the hair and, if not properly managed, causes hygral fatigue (over-wetting of protein-damaged hair leading to breakage), reversion (straightened/styled hair returns to natural state), and scalp buildup.',
+      challenge: 'Managing type 4 (coily, tightly coiled) hair during frequent exercise is one of the most-discussed topics in Black women\'s fitness communities globally. Sweat saturates the hair and, if not properly managed, causes hygral fatigue (over-wetting of protein-damaged hair leading to breakage), reversion (straightened/styled hair returns to natural state), and scalp buildup.',
       solutions: {
         protectiveStyles: 'The single best solution: wear a protective style during exercise. Braids, twists, cornrows, bantu knots all protect the hair from sweat saturation while allowing scalp to breathe. A workout week in braids followed by a wash day is the standard cycle for many West African and Black women athletes.',
         pineapple: 'Pineapple method: gather all hair into a loose high ponytail on top of the head. Prevents flattening of curl pattern. Use a satin scrunchie (not elastic that damages hair at the tie point).',
@@ -333,7 +333,7 @@ export const UNIVERSAL_EXERCISE_BEAUTY = {
   hairManagementByType: {
     type1_2: 'Fine straight hair: use a snug cap during pool swimming to prevent chlorine penetration. Dry shampoo between workout washes if exercising frequently.',
     type3: 'Wavy/curly: pineapple bun or loose braid during workouts. Refresh curl pattern with water spray after workout. Cowash frequently.',
-    type4: 'Kinky/coily: protective styles during workout season are most practical. Pineapple, cornrows, braids, bantu knots all protect while allowing scalp ventilation. Schedule wash days around workout intensity.',
+    type4: 'Coily and tightly coiled: protective styles during workout season are most practical. Pineapple, cornrows, braids, bantu knots all protect while allowing scalp ventilation. Schedule wash days around workout intensity.',
   },
   uvProtocolForAthletes: {
     beforeOutdoorActivity: 'SPF 50+ water-resistant applied 30 min before. Covering clothing (UPF 50). Hat or cap.',

@@ -870,7 +870,7 @@ export const HAIR_MENTAL_HEALTH_SCIENCE = {
       },
       {
         community: 'Latina',
-        narrative: 'Hair politics in Latinx communities involve the tension between the straight-hair ideal (reflecting European beauty standards) and the curly, wavy, and kinky textures of Indigenous and African heritage. The "pelo malo" (bad hair) versus "pelo bueno" (good hair) dichotomy is a direct manifestation of colorism in the beauty domain. The curly/natural hair movement in Latinx communities mirrors the Black natural hair movement in its psychological liberation dimension.',
+        narrative: 'Hair politics in Latinx communities involve the tension between the straight-hair ideal (reflecting European beauty standards) and the curly, wavy, and tightly coiled textures of Indigenous and African heritage. The "pelo malo" (bad hair) versus "pelo bueno" (good hair) dichotomy is a direct manifestation of colorism in the beauty domain. The curly/natural hair movement in Latinx communities mirrors the Black natural hair movement in its psychological liberation dimension.',
       },
       { community: 'East Asian' },
       {

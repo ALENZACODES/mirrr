@@ -594,7 +594,7 @@ const BLACK_AMERICAN_SPA = {
       name: 'Wash Day as Self-Care Ritual',
       origin: 'African American culture, nationwide',
       duration: '3–6 hours',
-      description: `Natural hair wash day — the elaborate process of washing, conditioning, detangling, treating, and styling kinky, coily, or curly natural hair — is one of the most significant self-care practices in Black American culture. It is a commitment of time (typically 3–6 hours, sometimes more for longer or denser hair), attention, and love to hair that has historically been policed, devalued, and mandatorily altered to conform to white professional standards (the CROWN Act, passed in many US states, specifically outlaws discrimination based on natural hair).
+      description: `Natural hair wash day — the elaborate process of washing, conditioning, detangling, treating, and styling tightly coiled, coily, or curly natural hair — is one of the most significant self-care practices in Black American culture. It is a commitment of time (typically 3–6 hours, sometimes more for longer or denser hair), attention, and love to hair that has historically been policed, devalued, and mandatorily altered to conform to white professional standards (the CROWN Act, passed in many US states, specifically outlaws discrimination based on natural hair).
 
 The wash day sequence typically includes:
 - Pre-poo (pre-shampoo treatment): Applying oils or a conditioning mask before shampooing to protect the hair from the stripping effects of cleansers. JBCO (Jamaican Black Castor Oil) is the most popular pre-poo oil — its ricinoleic acid content strengthens the hair shaft and stimulates scalp circulation.

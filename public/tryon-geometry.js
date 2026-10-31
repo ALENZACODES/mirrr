@@ -207,6 +207,31 @@ export function wigAffine(src, dst) {
   return [a, b, c, d, e, f];
 }
 
+/**
+ * A piecewise-affine mesh for the wig: rings scaled about each face outline's centre (inside the
+ * face for the lace-front edge, on the outline, then out through the hair), joined into triangles.
+ * Each triangle maps the wig model's face outline onto hers, so the wig's hairline lands on her
+ * forehead, its sides hug her temples and cheeks, and it follows roll, yaw and pitch, because her
+ * outline already carries them. Returns [{ s: [p, p, p], d: [p, p, p] }].
+ */
+export const WIG_RINGS = [0.86, 1, 1.22, 1.55, 2.1, 3.4];
+export function wigMesh(srcOval, dstOval, rings = WIG_RINGS) {
+  const n = srcOval.length; if (n !== dstOval.length || n < 3) return [];
+  const centre = pts => pts.reduce((a, p) => [a[0] + p[0] / pts.length, a[1] + p[1] / pts.length], [0, 0]);
+  const cs = centre(srcOval), cd = centre(dstOval);
+  const ring = (pts, c, k) => pts.map(p => [c[0] + (p[0] - c[0]) * k, c[1] + (p[1] - c[1]) * k]);
+  const S = rings.map(k => ring(srcOval, cs, k)), D = rings.map(k => ring(dstOval, cd, k));
+  const tris = [];
+  for (let r = 0; r < rings.length - 1; r++) {
+    for (let i = 0; i < n; i++) {
+      const j = (i + 1) % n;
+      tris.push({ s: [S[r][i], S[r][j], S[r + 1][i]], d: [D[r][i], D[r][j], D[r + 1][i]] });
+      tris.push({ s: [S[r][j], S[r + 1][j], S[r + 1][i]], d: [D[r][j], D[r + 1][j], D[r + 1][i]] });
+    }
+  }
+  return tris;
+}
+
 export function applyTransform(m, [x, y]) { return [m[0] * x + m[2] * y + m[4], m[1] * x + m[3] * y + m[5]]; }
 
 // ---- smoothing -----------------------------------------------------------------------------------

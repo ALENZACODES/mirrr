@@ -181,3 +181,16 @@ test('lip texture: lightness detail is zero on a flat patch and kept through the
   const red = [192, 32, 42];
   assert.ok(lu(...tp(120, 80, 80, red, 40, 'creme', 1, 0.9, 6)) > lu(...tp(120, 80, 80, red, 40, 'creme', 1, 0.9, -6)) + 5, 'a lip line stays visible under the colour');
 });
+
+test('wig mesh: rings map her face outline onto the model outline, and the browser file parses', async () => {
+  const { wigMesh: wm, wigAffine: wa, applyTransform: ap } = await import('../public/tryon-geometry.js');
+  const circle = (cx, cy, r, n = 36, rot = 0) => Array.from({ length: n }, (_, i) => [cx + r * Math.cos(2 * Math.PI * i / n + rot), cy + r * 1.3 * Math.sin(2 * Math.PI * i / n + rot)]);
+  const src = circle(200, 250, 80), dst = circle(400, 300, 100);
+  const tris = wm(src, dst);
+  assert.equal(tris.length, 36 * 2 * 5);
+  for (const { s, d } of tris.slice(0, 20)) { const m = wa(s, d); s.forEach((p, i) => { const q = ap(m, p); assert.ok(Math.hypot(q[0] - d[i][0], q[1] - d[i][1]) < 1e-6); }); }
+  const { execFileSync } = await import('node:child_process');
+  execFileSync(process.execPath, ['--check', join(PUB, 'tryon.js')]);
+  const js = readFileSync(join(PUB, 'tryon.js'), 'utf8');
+  for (const w of JSON.parse(js.match(/export const WIGS = (\[.*\]);/)[1])) assert.equal(w.oval?.length, 36, `${w.id} has the model's face outline`);
+});

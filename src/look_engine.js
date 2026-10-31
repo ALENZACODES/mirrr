@@ -1437,6 +1437,48 @@ export const LOOKS = [
     tags: ['milestone', 'glow', 'photograph-ready', 'universal'],
   },
 
+  // Balance set (Oct 30): hijab, 50+, 65+, plus-size, disabled and under-shown communities
+
+  {
+    id: 'eid_glam_hijab',
+    name: 'Eid Glam with Hijab',
+    archetype: 'gulf_glam',
+    description: 'Luminous satin base, soft gold-and-bronze shimmer lid, precise wing, fluttery lashes, rose-gold highlight and a warm rose-nude satin lip, framed by a neatly pinned hijab. Eid beauty for women who cover.',
+    products: [
+      { category: 'foundation', shade_range: 'all', finish: 'satin', coverage: 'medium' },
+      { category: 'eyeshadow', tones: ['soft gold', 'bronze', 'champagne'] },
+      { category: 'liner', style: 'precise wing', colour: 'black' },
+      { category: 'lash', style: 'fluttery' },
+      { category: 'highlight', placement: 'cheekbone', finish: 'rose gold' },
+      { category: 'lip', shade: 'warm rose-nude', finish: 'satin' },
+    ],
+    wig_styles: [],
+    weights: { intensity: 0.70, warmth: 0.68, boldness: 0.55, texture: 0.70 },
+    cultural_affinity: ['muslim', 'eid', 'hijab', 'arab', 'south asian', 'north african', 'southeast asian'],
+    tags: ['festive', 'occasion', 'glam', 'modest-beauty', 'hijab'],
+  },
+
+  {
+    id: 'mature_50_glam',
+    name: 'Radiant at 50+',
+    archetype: 'clean_minimal',
+    description: 'Satin (never flat matte) skin, soft plum-bronze eyes, a defined brow, warm berry satin lip and a cream blush lifted high on the cheekbone. Beauty that works with her lines, not against them.',
+    products: [
+      { category: 'foundation', shade_range: 'all', finish: 'satin', coverage: 'light-medium' },
+      { category: 'eyeshadow', tones: ['plum', 'bronze', 'soft taupe'] },
+      { category: 'brow', style: 'defined, softly filled' },
+      { category: 'blush', shade: 'warm cream', finish: 'cream' },
+      { category: 'lip', shade: 'warm berry', finish: 'satin' },
+    ],
+    wig_styles: [
+      { id: 'pixie_cut', name: 'Pixie Cut' },
+      { id: 'blunt_lob', name: 'Blunt Lob' },
+    ],
+    weights: { intensity: 0.50, warmth: 0.66, boldness: 0.45, texture: 0.70 },
+    cultural_affinity: ['all', 'mature', 'over 50', 'black', 'african american'],
+    tags: ['mature', 'satin', 'radiant', 'universal'],
+  },
+
 ];
 
 // ---------------------------------------------------------------------------

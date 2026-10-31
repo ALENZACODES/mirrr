@@ -688,6 +688,9 @@ const LOOK_IMAGES = {
   mixed_heritage_luminous:  'look-mixed-heritage-luminous.webp',
   office_power:             'look-office-power.webp',
   wedding_guest_universal:  'look-wedding-guest-universal.webp',
+  // Batch 9 — balance set
+  mature_50_glam:           'look-mature-50-glam.webp',
+  eid_glam_hijab:           'look-eid-glam-hijab.webp',
 };
 
 // Shade swatch images — mapped by shade ID

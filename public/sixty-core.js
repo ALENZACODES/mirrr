@@ -99,3 +99,69 @@ export function transformRequest({ shade, undertone, communityId, lookId, pick }
 export function shareText({ look, shade, community }) {
   return `My MIRRR look: ${look} in ${shade.name} (${shade.code})${community ? `, ${community}` : ''}. Find yours in 60 seconds:`;
 }
+
+/** Where the last completed 60-Second run is cached on this device (real payloads only). */
+export const SIXTY_LAST_RUN_KEY = 'mirrr.sixty.lastRun.v1';
+export const SIXTY_REPLAY_LABEL = 'A completed run · live runs call Qloo now.';
+
+/** The parts of a real /api/agent/run answer the replay and the trace need; nothing is added. */
+export function slimRun(run) {
+  if (!run || typeof run !== 'object') return null;
+  const p = run.meta?.provenance ?? null;
+  return {
+    meta: {
+      qloo_powered: !!run.meta?.qloo_powered,
+      tags_from_qloo: run.meta?.tags_from_qloo ?? null,
+      provenance: p ? {
+        entities: (p.entities ?? []).map(e => ({ input: e.input, name: e.name })),
+        unresolved: p.unresolved ?? [],
+        tags_received: p.tags_received, received: p.received ?? null,
+        tags_used: p.tags_used, dropped: p.dropped ?? null,
+        used: (p.used ?? []).map(u => ({ name: u.name, kind: u.kind })),
+        calls: p.calls, latency_ms: p.latency_ms,
+      } : null,
+    },
+    looks: (run.looks ?? []).map(l => ({ look: { id: l.look?.id, name: l.look?.name, description: l.look?.description ?? '' }, score: l.score, evidenceTags: Array.isArray(l.evidenceTags) ? l.evidenceTags : [] })),
+  };
+}
+
+/** A completed run is only one where Qloo really answered and every later step really produced data. */
+export function isCompletedRun(c) {
+  return !!(c && c.v === 1 && c.outcome && !c.outcome.failed && c.outcome.live && c.run?.meta?.qloo_powered
+    && Array.isArray(c.shades) && c.shades[c.shadeIdx] && c.plan?.stages?.length && c.modelFace?.id
+    && typeof c.before === 'string' && c.before.startsWith('data:image/') && typeof c.after === 'string' && c.after.startsWith('data:image/'));
+}
+
+const n = v => (typeof v === 'number' && Number.isFinite(v) ? v : null);
+/**
+ * WATCH MIRRR THINK: the steps this run really took, in order, built only from its own data.
+ * A step whose data is missing is left out; nothing here is written by hand.
+ */
+export function thinkSteps({ run, look, shade, plan, modelFace } = {}) {
+  const steps = [];
+  const p = run?.meta?.provenance;
+  const ents = (p?.entities ?? []).filter(e => e?.name);
+  if (ents.length) steps.push({ id: 'resolved', title: 'Artist resolved', text: ents.map(e => (e.input && e.input !== e.name ? `“${e.input}” → ${e.name}` : e.name)).join(' · ') + (n(p.calls) != null ? ` (${p.calls} Qloo calls${n(p.latency_ms) != null ? `, ${p.latency_ms} ms` : ''})` : '') });
+  if (n(p?.tags_received) != null) {
+    const r = p.received ?? {};
+    const parts = [n(r.music) != null ? `${r.music} music genres` : '', n(r.media) != null ? `${r.media} media themes` : ''].filter(Boolean);
+    steps.push({ id: 'received', title: 'Taste tags received', text: `${p.tags_received} taste tags from Qloo${parts.length ? ` (${parts.join(', ')})` : ''}` });
+  }
+  const d = p?.dropped;
+  if (d && n(p?.tags_used) != null) {
+    const total = (d.blocked ?? 0) + (d.irrelevant ?? 0) + (d.duplicates ?? 0);
+    const used = (p.used ?? []).map(u => u.name).filter(Boolean).slice(0, 8);
+    steps.push({ id: 'filtered', title: 'Tags filtered and why', text: `${p.tags_used} used, ${total} filtered out: ${d.blocked ?? 0} unsafe, ${d.irrelevant ?? 0} not about beauty, ${d.duplicates ?? 0} repeats${used.length ? `. Kept: ${used.join(', ')}` : ''}` });
+  }
+  const ranked = (run?.looks ?? []).filter(l => l.look?.name);
+  if (ranked.length) steps.push({ id: 'ranked', title: 'Looks ranked', text: ranked.slice(0, 3).map((l, i) => `${i + 1}. ${l.look.name}${n(l.score) != null ? ` (score ${l.score.toFixed(2)})` : ''}${l.evidenceTags?.length ? ` · ${l.evidenceTags.slice(0, 3).join(', ')}` : ''}`).join(' · ') });
+  if (shade?.name && shade?.code) steps.push({ id: 'shade', title: 'TrueTone shade chosen', text: `${shade.name} (${shade.code})` });
+  if (plan?.stages?.length) steps.push({ id: 'plan', title: 'Plan staged', text: `${plan.target?.name ?? look?.name ?? 'Look'}: ${plan.stages.map((s, i) => `${i + 1}. ${s.title}`).join(' · ')}` });
+  if (modelFace?.label) steps.push({ id: 'model', title: 'Try-on model selected', text: `The ${modelFace.label} model face, nearest to ${shade?.name ?? 'the shade'}` });
+  return steps;
+}
+
+/** The cached completed run, or null when there is none or it is not a full, real run. */
+export function readCompletedRun(storage) {
+  try { const c = JSON.parse(storage?.getItem(SIXTY_LAST_RUN_KEY) || 'null'); return isCompletedRun(c) ? c : null; } catch { return null; }
+}

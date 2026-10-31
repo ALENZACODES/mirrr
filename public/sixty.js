@@ -4,9 +4,9 @@
  * (plan), /api/photo/palette (try-on colours). The try-on paints the model face nearest the picked
  * shade on this device; nothing is uploaded. Nothing is pre-selected: every choice is hers.
  */
-import { SIXTY_STEPS, SIXTY_UNDERTONES, SIXTY_LOOKS, cleanPick, stepAfter, progressLabel, secondsLeft, tasteRequest, tasteOutcome, shadeRequest, transformRequest, shareText } from './sixty-core.js';
+import { SIXTY_STEPS, SIXTY_UNDERTONES, SIXTY_LOOKS, cleanPick, stepAfter, progressLabel, secondsLeft, tasteRequest, tasteOutcome, shadeRequest, transformRequest, shareText, SIXTY_LAST_RUN_KEY, SIXTY_REPLAY_LABEL, slimRun, isCompletedRun, readCompletedRun, thinkSteps } from './sixty-core.js';
 
-const fresh = () => ({ step: 0, communities: sx?.communities ?? null, spectrum: sx?.spectrum ?? null, communityId: null, pick: '', tappedLook: null, outcome: null, lookIdx: null, depth: null, undertone: null, shades: [], shadeIdx: 0, shadeNote: '', finderTop: '', plan: null, seq: 0, busy: false, error: '', status: '' });
+const fresh = () => ({ step: 0, communities: sx?.communities ?? null, spectrum: sx?.spectrum ?? null, communityId: null, pick: '', tappedLook: null, outcome: null, lookIdx: null, depth: null, undertone: null, shades: [], shadeIdx: 0, shadeNote: '', finderTop: '', plan: null, run: null, modelFace: null, replay: null, seq: 0, busy: false, error: '', status: '' });
 let sx = null; sx = fresh();
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -91,13 +91,42 @@ function planStep() {
 }
 function tryonStep() {
   const l = chosenLook(); const s = sx.shades[sx.shadeIdx];
-  return `<h3>${esc(l?.name)} in ${esc(s?.name)}: before and after</h3>
+  return `${sx.replay ? `<p class="sx-replay-label" data-sx-replay-label>${esc(SIXTY_REPLAY_LABEL)}</p>` : ''}<h3>${esc(l?.name)} in ${esc(s?.name)}: before and after</h3>
     <div class="sx-ba"><figure><canvas id="sxBefore" width="300" height="400" role="img" aria-label="Model face before"></canvas><figcaption>Before</figcaption></figure>
       <figure><canvas id="sxAfter" width="300" height="400" role="img" aria-label="Model face wearing ${esc(l?.name)}"></canvas><figcaption>After: ${esc(l?.name)}</figcaption></figure></div>
     <p class="lib-note" id="sxFaceNote">Painting the look…</p>
     <div class="sx-save"><button type="button" class="btn btn-primary" data-sx="save">Save</button><button type="button" class="btn btn-secondary" data-sx="share">Share</button><button type="button" class="btn btn-ghost" data-sx="full">Try it on my own photo</button></div>
     <p class="sx-status" id="sxStatus" role="status">${esc(sx.status)}</p>
+    <div id="sxThinkHolder">${thinkHtml()}</div>
     ${nav('', false)}<p><button type="button" class="btn btn-ghost" data-sx="restart">Start again</button></p>`;
+}
+
+/** WATCH MIRRR THINK: rendered only from this run's own data; a step with no data is left out. */
+function thinkHtml() {
+  const steps = thinkSteps({ run: sx.tappedLook ? null : sx.run, look: chosenLook(), shade: sx.shades[sx.shadeIdx], plan: sx.plan, modelFace: sx.modelFace });
+  if (!steps.length) return '';
+  return `<details class="sx-think" data-sx-think><summary>WATCH MIRRR THINK</summary><ol>${steps.map(st => `<li data-think-step="${esc(st.id)}"><strong>${esc(st.title)}</strong><span>${esc(st.text)}</span></li>`).join('')}</ol></details>`;
+}
+function refreshThink() {
+  const h = $('sxThinkHolder'); if (!h) return;
+  const wasOpen = !!h.querySelector('details')?.open;
+  h.innerHTML = thinkHtml();
+  if (wasOpen) h.querySelector('details')?.setAttribute('open', '');
+}
+// Read only when she taps SEE A COMPLETED RUN (and to decide whether to show it); a fresh run never reads it.
+const readLastRun = () => readCompletedRun(globalThis.localStorage);
+/** The SEE A COMPLETED RUN button shows only when a real completed run is cached on this device. */
+function syncReplayButton() {
+  const has = !!readLastRun();
+  document.querySelectorAll('[data-sx-replay-wrap]').forEach(w => { w.hidden = !has; });
+}
+function cacheCompletedRun(before, after) {
+  if (sx.replay || sx.tappedLook || !sx.outcome || sx.outcome.failed || !sx.run) return;
+  const c = { v: 1, at: new Date().toISOString(), communityId: sx.communityId, pick: sx.pick, outcome: sx.outcome, lookIdx: sx.lookIdx, run: sx.run,
+    depth: sx.depth, undertone: sx.undertone, shades: sx.shades, shadeIdx: sx.shadeIdx, plan: sx.plan, modelFace: sx.modelFace, before, after };
+  if (!isCompletedRun(c)) return;
+  try { localStorage.setItem(SIXTY_LAST_RUN_KEY, JSON.stringify(c)); } catch { /* storage full or blocked: no replay offered */ }
+  syncReplayButton();
 }
 
 const STEP_VIEWS = [communityStep, pickStep, tasteStep, shadeStep, planStep, tryonStep];
@@ -109,6 +138,19 @@ function render() {
 
 async function paintTryOn(seq) {
   const note = $('sxFaceNote');
+  if (sx.replay) {
+    try {
+      const load = src => new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = src; });
+      const [b, a] = await Promise.all([load(sx.replay.before), load(sx.replay.after)]);
+      if (seq !== sx.seq) return;
+      $('sxBefore')?.getContext('2d').drawImage(b, 0, 0, 300, 400);
+      const after = $('sxAfter'); if (!after) return;
+      after.getContext('2d').drawImage(a, 0, 0, 300, 400);
+      after.dataset.modelFace = sx.modelFace?.id ?? ''; after.dataset.painted = 'replay';
+      if (note) note.textContent = `The ${sx.modelFace?.label ?? ''} model face, nearest to ${sx.shades[sx.shadeIdx]?.name ?? ''}.`;
+    } catch { if (note) note.textContent = 'The saved before and after could not be shown here; the plan above still stands.'; }
+    return;
+  }
   try {
     const [engine, faces] = await Promise.all([import('./photo-engine.js'), import('./model-faces.js')]);
     const shade = sx.shades[sx.shadeIdx]; const look = chosenLook();
@@ -128,6 +170,10 @@ async function paintTryOn(seq) {
     after.getContext('2d').putImageData(out, 0, 0);
     after.dataset.modelFace = mf.id; after.dataset.painted = face.ok && palette ? 'look' : 'plain';
     if (note) note.textContent = `The ${mf.label} model face, nearest to ${shade.name}.`;
+    sx.modelFace = { id: mf.id, label: mf.label }; refreshThink();
+    if (face.ok && palette) {
+      try { cacheCompletedRun($('sxBefore').toDataURL('image/jpeg', 0.82), after.toDataURL('image/jpeg', 0.82)); } catch { /* canvas not exportable: no replay */ }
+    }
   } catch { if (note) note.textContent = 'The model face could not be painted here; the plan above still stands.'; }
 }
 
@@ -165,6 +211,7 @@ async function next() {
       // The shade step waits for this answer: the chain only moves on once the taste is back.
       let run = null;
       try { run = await api('/api/agent/run', tasteRequest(sx)); } catch { run = null; }
+      sx.run = slimRun(run);
       sx.outcome = tasteOutcome(run, sx.pick); sx.lookIdx = null; // nothing pre-selected: the top pick is badged, she taps to choose
     } else if (sx.step === 2) {
       if (!sx.spectrum) sx.spectrum = await api('/api/shades/spectrum');
@@ -201,11 +248,20 @@ async function share() {
   render();
 }
 
+let replayNext = false;
 async function open() {
+  const wantReplay = replayNext; replayNext = false;
   sx = fresh();
+  const c = wantReplay ? readLastRun() : null;
+  if (c) {
+    // Replays the cached payloads of her last completed live run, exactly as they came back. No sample data.
+    Object.assign(sx, { communityId: c.communityId, pick: c.pick, outcome: c.outcome, lookIdx: c.lookIdx, run: c.run, depth: c.depth, undertone: c.undertone,
+      shades: c.shades, shadeIdx: c.shadeIdx, plan: c.plan, modelFace: c.modelFace, replay: { before: c.before, after: c.after, at: c.at }, step: 5 });
+    render();
+  }
   try {
     if (!sx.communities) sx.communities = (await api('/api/communities')).communities ?? [];
-  } catch { sx.error = 'The community list could not load. Refresh to try again.'; }
+  } catch { if (!c) sx.error = 'The community list could not load. Refresh to try again.'; }
   render();
 }
 function show() { document.querySelector('.nav-link[data-view="sixty"]')?.click(); }
@@ -220,6 +276,7 @@ document.addEventListener('input', e => {
 });
 document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.closest?.('[data-open-sixty]') && e.target.tagName !== 'BUTTON') { e.preventDefault(); e.target.click(); } });
 document.addEventListener('click', e => {
+  if (e.target.closest('[data-sx-replay]')) { if (readLastRun()) { replayNext = true; show(); } return; }
   if (e.target.closest('[data-open-sixty]')) { show(); return; }
   if (e.target.closest('.nav-link[data-view="sixty"]')) { open(); return; }
   if (!e.target.closest('#sxRoot')) return;
@@ -237,12 +294,13 @@ document.addEventListener('click', e => {
   }
   if (t.dataset.sxSaved) { const sv = savedShade(); if (sv) { sx.shades = [sv]; sx.shadeIdx = 0; sx.finderTop = ''; sx.undertone ??= sv.undertone; sx.shadeNote = `Using your saved shade, ${sv.name} (${sv.code}). Tap a tone to see other matches.`; } render(); return; }
   const a = t.dataset.sx;
-  if (a === 'back') { sx.error = ''; sx.status = ''; sx.step = stepAfter(sx.step, 'back'); render(); }
+  if (a === 'back') { sx.replay = null; sx.error = ''; sx.status = ''; sx.step = stepAfter(sx.step, 'back'); render(); }
   else if (a === 'next') next();
   else if (a === 'restart') open();
   else if (a === 'save') save();
   else if (a === 'share') share();
   else if (a === 'full') { const l = chosenLook(); window.dispatchEvent(new CustomEvent('mirrr:tryon-look', { detail: { lookId: l.id, name: l.name } })); }
 });
+syncReplayButton();
 // Deep link: /#sixty opens the chain.
 if (location.hash === '#sixty') setTimeout(show, 0);

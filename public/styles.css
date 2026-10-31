@@ -3367,3 +3367,15 @@ img.ph-loaded, .sp-img.sp-loaded, .studio-photo.sp-ready canvas { animation: mir
 .sp-first { grid-column: 1 / -1; width: 100%; display: block; }
 .sp-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: .7rem; width: 100%; }
 .sp-gallery .sp-tile { margin: 0; }
+/* SEE A COMPLETED RUN + WATCH MIRRR THINK */
+.sx-replay-wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .5rem .8rem; margin: -.4rem auto 1rem; max-width: 560px; }
+.sx-replay-wrap[hidden] { display: none; }
+.sx-replay-note, .sx-replay-label { font-size: .8rem; color: var(--clr-gold); letter-spacing: .02em; }
+.sx-replay-label { margin: 0 0 .6rem; padding: .35rem .7rem; border: 1px solid var(--clr-gold); border-radius: 999px; display: inline-block; }
+.hero-impact { max-width: 640px; margin: .2rem auto 1rem; font-size: .85rem; line-height: 1.5; color: var(--clr-mist); }
+.hero-impact small { display: block; font-size: .72rem; opacity: .8; margin-top: .25rem; }
+.sx-think { margin: 1rem 0; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; padding: .6rem .9rem; }
+.sx-think summary { cursor: pointer; font-weight: 700; letter-spacing: .12em; font-size: .8rem; color: var(--clr-gold); }
+.sx-think ol { margin: .7rem 0 0; padding-left: 1.2rem; display: grid; gap: .45rem; }
+.sx-think li strong { display: block; font-size: .85rem; color: var(--clr-ivory); }
+.sx-think li span { font-size: .8rem; color: var(--clr-mist); }

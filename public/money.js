@@ -141,6 +141,9 @@
           <li><strong>The full Bridal Countdown</strong>, every week from engagement to the day: coming later</li>
           <li><strong>A cloud Vanity</strong>, so your saved looks and plans follow you across devices: coming later</li>
         </ul>
+        <div class="plus-planned" data-planned-pricing><p class="plus-badge">PLANNED pricing · not live</p>
+          <p><strong>MIRRR Plus (planned):</strong> Free — taste looks, shade match, one transformation plan · Plus $5.99/mo — unlimited Leaps &amp; try-ons, full Bridal Countdown, Occasion Autopilot · Pro $29/mo — stylists &amp; salons: client look books and chair-side shade matching.</p>
+          <p class="lib-note">Planned pricing only. Nothing is for sale: there is no checkout, no paywall and no revenue today. The founding list below is free.</p></div>
         <h3>Join the founding list</h3>
         ${formHtml('plus_page')}
         <h3>Remove my email</h3>

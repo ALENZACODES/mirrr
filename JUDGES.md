@@ -6,6 +6,21 @@
 
 ---
 
+## Proof: live Qloo outputs
+
+| Input | Qloo calls | Tags received | Used | Filtered | Result |
+|---|---|---:|---:|---:|---|
+| Burna Boy | 4 · ~700 ms | 50 | 14 | 36 — 9 unsafe, 26 not about beauty, 1 repeat | Afrobeats Concert; Afro-Glam Editorial; Amapiano Beat |
+| Burna Boy + Tems | 5 · ~530 ms | 50 | 18 | 32 — 8 unsafe, 23 not about beauty, 1 repeat | Resolved 2 entities; third look changes to HBCU Homecoming |
+
+These are live outputs, reproducible in the app: add a second artist in Taste and the recommendations change.
+
+<sub>Observed on the live app (`POST /api/agent/run`) on Oct 30, 2026, 10:12 PM ET. Timings are the first, uncached Qloo round-trip and vary per run; repeat runs are served from MIRRR's short cache.</sub>
+
+**Why it matters.** 304M people live outside their birth country. MIRRR serves a bigger displacement: the women Western beauty never built for. Black consumers alone spend $16.2B a year on beauty in the US, and 61% of women with darker skin have walked away from a brand whose shade range left them out. MIRRR also filters taste responsibly: unsafe and off-topic tags are removed in the open, with reasons shown.
+
+<sub>Sources: 304M = 304,021,813 international migrants, mid-2024 (UN DESA, in [IOM World Migration Report 2026](https://worldmigrationreport.iom.int/what-we-do/wmr-2026/chapter-2/international-migrants-numbers-and-trends)). $16.2B = Black consumers' US beauty spending in the past year ([NielsenIQ, 2026](https://nielseniq.com/global/en/insights/commentary/2026/black-beauty-landscape-culture-meets-care/)). 61% = US women with darker skin tones who abandoned a brand over a non-inclusive shade line-up ([The Benchmarking Company, March 2026 survey of 4,300+ US women](https://benchmarkingcompany.com/news/shade-mismatch-inclusivity-2026-infographic-series-1/)).</sub>
+
 ## 1. What MIRRR does
 
 > **Who it is for:** MIRRR is made for women — and a woman is anyone who identifies as one. Trans women are welcome here, always.
@@ -71,7 +86,7 @@ MIRRR is free for her. It has **many honest entry points to revenue**, each labe
 | 9 | Affiliate commission on product links | **Ready to switch on** | Links already carry tags; needs a signed agreement with a brand or network. **None exists.** | Any product link | n/a |
 | 10 | Sponsored placement slot | **Ready to switch on** | One slot on Shop by look, marked "available, not yet sold" | [/#shop](https://mirrr-upbn.onrender.com/#shop) | [money-2-shop](docs/judges/money-2-shop.webp) |
 | 11 | Brand taste-insight reports | **Ready to switch on** | The trends feed exists; a paid report needs a first brand customer. **None yet.** | [/#brands](https://mirrr-upbn.onrender.com/#brands) | [money-2-brands](docs/judges/money-2-brands.webp) |
-| 12 | MIRRR Plus subscription | **Planned** | Unlimited Leaps and try-ons, full Bridal Countdown, cloud Vanity; no price, no checkout | [/#plus](https://mirrr-upbn.onrender.com/#plus) | [money-03-plus-page](docs/judges/money-03-plus-page.webp) |
+| 12 | MIRRR Plus subscription | **Planned** | Planned pricing, not live: Free (taste looks, shade match, one transformation plan) · Plus $5.99/mo (unlimited Leaps & try-ons, full Bridal Countdown, Occasion Autopilot) · Pro $29/mo (stylists & salons: client look books, chair-side shade matching). No checkout, no revenue | [/#plus](https://mirrr-upbn.onrender.com/#plus) | [money-03-plus-page](docs/judges/money-03-plus-page.webp) |
 | 13 | Paid digital guides | **Planned** | No checkout exists | [/#guides](https://mirrr-upbn.onrender.com/#guides) | [money-2-guides](docs/judges/money-2-guides.webp) |
 | 14 | Stylist listings and booking referrals | **Planned** | Not built beyond the interest form | [/#pros](https://mirrr-upbn.onrender.com/#pros) | [money-2-pros](docs/judges/money-2-pros.webp) |
 | 15 | Beauty News sign-up list | **Built today, no charge** | "Get the news" form on Beauty News: email, optional interests (none ticked), consent unticked, remove-my-email on the same page. The list is an audience asset; **no emails are sent yet** | [/#news](https://mirrr-upbn.onrender.com/#news) | [news-live](docs/judges/news-live.webp) |

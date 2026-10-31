@@ -47,14 +47,14 @@ export const LOOKS = [
   { id: 'soft-glam', name: 'Soft glam', steps: [
     PREP,
     { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 70 }, note: 'Foundation matched to her own skin, blended out, to even the tone.' },
-    { name: 'Eyes', routine: 'eyes', adds: { shadow: '#a8743a', shadowAmt: 100, liner: '#3b2016', linerAmt: 100, linerStyle: 'tight', lashes: 'wispy', brow: '#3b2016', browAmt: 95 }, note: 'Brows filled, bronze shadow from lash line to crease, brown liner and lashes.' },
+    { name: 'Eyes', routine: 'eyes', adds: { shadow: '#a8743a', shadowAmt: 100, liner: '#3b2016', linerAmt: 100, linerStyle: 'tight', lashes: 'wispy', brow: '#3b2016', browAmt: 95 }, note: 'Brows filled, shadow from the lash line up to the crease, liner and lashes.' },
     { name: 'Lips', routine: 'lips', adds: { lip: '#b0213f', lipAmt: 100, lipFinish: 'creme' } },
     { name: 'Finish', routine: 'glow', adds: { blush: '#d9798a', blushAmt: 100, contour: 'defined', contourAmt: 80, highlight: '#f3d9a4', highlightAmt: 90 }, note: 'Contour under the cheekbones, blush on the apples of the cheeks, highlight on top.' },
   ] },
   { id: 'bold-red', name: 'Classic red lip', steps: [
     PREP,
     { name: 'Base', routine: 'complexion', adds: { foundation: 'match', foundationAmt: 75 }, note: 'A fuller-coverage base for a polished red-lip look.' },
-    { name: 'Eyes', routine: 'brow_kohl', adds: { liner: '#141414', linerAmt: 100, linerStyle: 'wing', lashes: 'natural', brow: '#141414', browAmt: 95, shadow: '#8d7b6d', shadowAmt: 60 }, note: 'A clean black wing, soft taupe in the crease, brows filled.' },
+    { name: 'Eyes', routine: 'brow_kohl', adds: { liner: '#141414', linerAmt: 100, linerStyle: 'wing', lashes: 'natural', brow: '#141414', browAmt: 95, shadow: '#8d7b6d', shadowAmt: 60 }, note: 'A clean black wing, soft colour in the crease, brows filled.' },
     { name: 'Lips', routine: 'lips', adds: { lip: '#c0202a', lipAmt: 100, lipFinish: 'matte' } },
     { name: 'Finish', routine: 'glow', adds: { blush: '#d9798a', blushAmt: 85, contour: 'defined', contourAmt: 80, highlight: '#f3d9a4', highlightAmt: 80 } },
   ] },

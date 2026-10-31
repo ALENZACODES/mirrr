@@ -8,13 +8,15 @@
  */
 import {
   LIPS_OUTER, LIPS_INNER, EYE, toPixels, bbox, smoothClosed, smoothOpen, eyeOpenness, headPose,
-  lashLine, wingTip, lidPolygon, browPolygon, blushEllipse, wigAffine, LandmarkSmoother,
+  lashLine, wingTip, lidPolygon, browPolygon, blushEllipse, wigAffine, LandmarkSmoother, FACE_OVAL,
   hexToRgb, tintPixel, browPixel, maskedMeanL,
 } from './tryon-geometry.js';
 import { MODEL_FACES } from './model-faces.js';
 
 const VISION = 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.21';
 const MODEL = 'https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task';
+// Hair/background segmenter, loaded only when she picks a wig, so her own hair can be hidden where the wig does not cover it.
+const SEG_MODEL = 'https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/latest/selfie_multiclass_256x256.tflite';
 
 // Colour words the MIRRR guides use (the same swatches as the Colour & Lip Studio). Swatches, not product shades.
 const LIP = [['Nude-pink', '#d9a3a0'], ['Dusty rose', '#c48b8b'], ['Mauve', '#b07a8c'], ['Caramel', '#b5733c'], ['Toffee', '#9a5b2e'], ['Mocha', '#7a4e36'], ['Terracotta', '#c0603d'], ['Coral', '#f07c5f'], ['Classic red', '#c0202a'], ['Blue-red', '#b0213f'], ['Brick red', '#9c3426'], ['Berry', '#8e2f5a'], ['Fuchsia', '#c8227a'], ['Plum', '#6e2f55'], ['Wine', '#62182f'], ['Oxblood', '#5a1a1f'], ['Chocolate', '#5a3020']];
@@ -34,6 +36,7 @@ const t = {
   landmarker: null, mode: null, stream: null, video: null, photo: null, running: false, raf: 0,
   smoother: new LandmarkSmoother({ minCutoff: 1.0, beta: 0.03 }), lastTs: -1, frames: 0, fpsT: 0, fps: 0,
   scale: 1, wigImgs: {}, landmarks: null, mirrored: false, choice: {},
+  segmenter: null, segLoading: null, segMode: null, hair: null, segFrame: 0,
 };
 const work = document.createElement('canvas');
 const wctx = work.getContext('2d', { willReadFrequently: true });
@@ -58,7 +61,7 @@ function controls() {
       ${select('toBrow', 'Brow tint', BROW)}${select('toBlush', 'Blush', BLUSH)}</fieldset>
     <fieldset class="to-group"><legend>Wig</legend>
       ${select('toWig', 'Wig style', WIGS.map(w => [w.id, w.name]))}
-      <p class="lib-note to-wig-note">Preview: placement follows your head; for an exact look see <a href="#" data-to-view="wig">Wig Match</a>. Wig shapes are cut from MIRRR's own wig photos, so some of your own hair may still show.</p></fieldset>`;
+      <p class="lib-note to-wig-note">Preview: placement follows your head; for an exact look see <a href="#" data-to-view="wig">Wig Match</a>. Wig shapes are cut from MIRRR's own wig photos. Your own hair outside the wig is softly painted over with the background behind you, on this device; some may still show.</p></fieldset>`;
 }
 
 function readChoice() {
@@ -71,6 +74,9 @@ function readChoice() {
     const img = new Image(); img.onload = () => { if (!t.running && t.photo) drawPhoto(); };
     img.src = `/tryon/wigs/${t.choice.wig}.webp`; t.wigImgs[t.choice.wig] = img;
   }
+  if (t.choice.wig) {
+    ensureSegmenter(t.running ? 'VIDEO' : 'IMAGE').then(sg => { if (sg && !t.running && t.photo && !t.hair) drawPhoto(); });
+  }
   if (!t.running && t.photo) drawPhoto();
   renderShop();
 }
@@ -82,6 +88,7 @@ async function ensureLandmarker(mode) {
     status('Loading the face tracker (about 4 MB, once). It runs on this device.');
     const vision = await import(`${VISION}/vision_bundle.mjs`);
     const files = await vision.FilesetResolver.forVisionTasks(`${VISION}/wasm`);
+    t.vision = vision; t.files = files;
     const make = delegate => vision.FaceLandmarker.createFromOptions(files, {
       baseOptions: { modelAssetPath: MODEL, delegate }, runningMode: mode, numFaces: 1,
       outputFaceBlendshapes: false, outputFacialTransformationMatrixes: false,
@@ -105,7 +112,8 @@ async function startCamera() {
   Object.assign(t.video, { muted: true, playsInline: true, autoplay: true });
   t.video.setAttribute('playsinline', '');
   t.video.srcObject = t.stream; await t.video.play();
-  t.photo = null; t.mirrored = true; t.smoother.reset(); t.scale = 1;
+  t.photo = null; t.hair = null; t.mirrored = true; t.smoother.reset(); t.scale = 1;
+  if (t.choice.wig) ensureSegmenter('VIDEO');
   $('toCanvas').classList.add('to-mirror');
   $('toStop').hidden = false; $('toSnap').disabled = false;
   t.running = true; status('Camera on. Everything is processed on this device; nothing is uploaded.');
@@ -137,6 +145,8 @@ function loop() {
       const raw = r.faceLandmarks?.[0];
       t.landmarks = raw ? t.smoother.apply(raw, now / 1000) : null;
       if (!raw) t.smoother.reset();
+      // Her own hair, every third frame, only while a wig is on.
+      if (t.choice.wig && t.segmenter && t.segMode === 'VIDEO' && (t.segFrame++ % 3 === 0)) segmentHair(v, now);
     }
     paint(w, h);
     $('toCanvas').getContext('2d').drawImage(work, 0, 0);
@@ -171,7 +181,8 @@ async function useImage(src, okMsg) {
   const k = Math.min(1, 1280 / Math.max(img.naturalWidth, img.naturalHeight));
   const w = Math.round(img.naturalWidth * k), h = Math.round(img.naturalHeight * k);
   sizeTo(w, h);
-  t.photo = img; t.mirrored = false; $('toCanvas').classList.remove('to-mirror');
+  t.photo = img; t.hair = null; t.mirrored = false; $('toCanvas').classList.remove('to-mirror');
+  if (t.choice.wig) await ensureSegmenter('IMAGE');
   wctx.drawImage(img, 0, 0, w, h);
   const r = t.landmarker.detect(work);
   t.landmarks = r.faceLandmarks?.[0] ?? null;
@@ -183,8 +194,108 @@ async function useImage(src, okMsg) {
 function drawPhoto() {
   const w = work.width, h = work.height;
   wctx.drawImage(t.photo, 0, 0, w, h);
+  if (t.choice.wig && t.segmenter && !t.hair) segmentHair(work, 0);
   paint(w, h);
   $('toCanvas').getContext('2d').drawImage(work, 0, 0);
+}
+
+
+/** The hair segmenter (about 16 MB, once), loaded only after she picks a wig. Runs on this device. */
+function ensureSegmenter(mode) {
+  if (t.segmenter) {
+    if (t.segMode !== mode) { t.segMode = mode; return t.segmenter.setOptions({ runningMode: mode }).then(() => t.segmenter); }
+    return Promise.resolve(t.segmenter);
+  }
+  if (!t.segLoading) {
+    t.segLoading = (async () => {
+      if (!t.vision) return null;
+      const make = delegate => t.vision.ImageSegmenter.createFromOptions(t.files, {
+        baseOptions: { modelAssetPath: SEG_MODEL, delegate }, runningMode: mode, outputConfidenceMasks: true, outputCategoryMask: false,
+      });
+      try { t.segmenter = await make('GPU'); } catch { t.segmenter = await make('CPU'); }
+      t.segMode = mode; return t.segmenter;
+    })().catch(() => null);
+  }
+  return t.segLoading;
+}
+
+/**
+ * Her own hair, as a small mask (hair confidence 0..1) plus a background estimate at the same size,
+ * so hair the wig does not cover can be painted over with the background behind her.
+ */
+function segmentHair(source, now) {
+  const seg = t.segmenter; if (!seg) return;
+  if ((t.running ? 'VIDEO' : 'IMAGE') !== t.segMode) return;
+  const r = t.running ? seg.segmentForVideo(source, now) : seg.segment(source);
+  const masks = r.confidenceMasks; if (!masks?.length) return;
+  const W0 = masks[0].width, H0 = masks[0].height;
+  const k = Math.min(1, 192 / Math.max(W0, H0)); const mw = Math.max(2, Math.round(W0 * k)), mh = Math.max(2, Math.round(H0 * k));
+  const B = masks[0].getAsFloat32Array(), Hm = masks[1].getAsFloat32Array();
+  const bg = new Float32Array(mw * mh), hair = new Float32Array(mw * mh);
+  for (let y = 0; y < mh; y++) for (let x = 0; x < mw; x++) {
+    const j = Math.min(H0 - 1, Math.floor((y + 0.5) * H0 / mh)) * W0 + Math.min(W0 - 1, Math.floor((x + 0.5) * W0 / mw));
+    bg[y * mw + x] = B[j]; hair[y * mw + x] = Hm[j];
+  }
+  masks.forEach(m => m.close?.());
+  t.hair = { mw, mh, bg, hair };
+}
+
+// Small scratch canvases for the hair hiding.
+const small = document.createElement('canvas'); const sctx = small.getContext('2d', { willReadFrequently: true });
+const fillC = document.createElement('canvas'); const fctx = fillC.getContext('2d');
+
+/** Paint over her own hair (outside the face) with a smooth estimate of the background, before the wig goes on. */
+function hideOwnHair(L, w, h) {
+  const H = t.hair; if (!H) return;
+  const { mw, mh, bg, hair } = H;
+  small.width = mw; small.height = mh;
+  sctx.drawImage(work, 0, 0, mw, mh);
+  const px = sctx.getImageData(0, 0, mw, mh); const d = px.data;
+  // Normalised blur of the background pixels fills the whole frame with "what is behind her".
+  const n = mw * mh; let acc = new Float32Array(n * 4);
+  for (let i = 0; i < n; i++) { const m = bg[i] > 0.85 && hair[i] < 0.05 ? 1 : 0; acc[i * 4] = d[i * 4] * m; acc[i * 4 + 1] = d[i * 4 + 1] * m; acc[i * 4 + 2] = d[i * 4 + 2] * m; acc[i * 4 + 3] = m; }
+  const box = (src, r) => {
+    const out = new Float32Array(src.length); const tmp = new Float32Array(src.length);
+    for (let y = 0; y < mh; y++) for (let c = 0; c < 4; c++) { let s = 0; for (let x = -r; x <= r; x++) s += src[(y * mw + Math.min(mw - 1, Math.max(0, x))) * 4 + c]; for (let x = 0; x < mw; x++) { tmp[(y * mw + x) * 4 + c] = s; s += src[(y * mw + Math.min(mw - 1, x + r + 1)) * 4 + c] - src[(y * mw + Math.max(0, x - r)) * 4 + c]; } }
+    for (let x = 0; x < mw; x++) for (let c = 0; c < 4; c++) { let s = 0; for (let y = -r; y <= r; y++) s += tmp[(Math.min(mh - 1, Math.max(0, y)) * mw + x) * 4 + c]; for (let y = 0; y < mh; y++) { out[(y * mw + x) * 4 + c] = s; s += tmp[(Math.min(mh - 1, y + r + 1) * mw + x) * 4 + c] - tmp[(Math.max(0, y - r) * mw + x) * 4 + c]; } }
+    return out;
+  };
+  for (const r of [3, 8, 20]) {
+    const b = box(acc, r);
+    for (let i = 0; i < n; i++) if (acc[i * 4 + 3] < 0.5 && b[i * 4 + 3] > 0) { const k = b[i * 4 + 3]; acc[i * 4] = b[i * 4] / k; acc[i * 4 + 1] = b[i * 4 + 1] / k; acc[i * 4 + 2] = b[i * 4 + 2] / k; acc[i * 4 + 3] = 1; }
+  }
+  // The face itself is never painted over (hair on the forehead and cheeks stays; the wig covers it).
+  // A slightly grown face outline, so her own hairline stays under the wig's edge (it reads as hair,
+  // where a painted-over band would read as a bald strip).
+  const raw0 = toPixels(L, FACE_OVAL, mw, mh);
+  const cx = raw0.reduce((a, p) => a + p[0], 0) / raw0.length, cy = raw0.reduce((a, p) => a + p[1], 0) / raw0.length;
+  const oval = raw0.map(([x, y]) => [cx + (x - cx) * 1.15, cy + (y - cy) * (y < cy ? 1.32 : 1.04)]);
+  const faceMask = document.createElement('canvas'); faceMask.width = mw; faceMask.height = mh;
+  const fm = faceMask.getContext('2d'); fm.fillStyle = '#fff'; fm.beginPath(); tracePath(fm, oval); fm.fill();
+  const fd = fm.getImageData(0, 0, mw, mh).data;
+  // Just above the forehead, hair is replaced with her own forehead skin, not the background, so a wig
+  // with a higher hairline shows a forehead, not a grey band.
+  fm.clearRect(0, 0, mw, mh); fm.beginPath(); tracePath(fm, raw0.map(([x, y]) => [cx + (x - cx) * 1.08, cy + (y - cy) * (y < cy ? 1.45 : 1)])); fm.fill();
+  const zd = fm.getImageData(0, 0, mw, mh).data;
+  const [fx, fy] = toPixels(L, [151], w, h)[0]; const sk = wctx.getImageData(Math.max(0, Math.round(fx) - 4), Math.max(0, Math.round(fy) - 4), 9, 9).data;
+  let sr = 0, sg = 0, sb = 0; for (let i = 0; i < sk.length; i += 4) { sr += sk[i]; sg += sk[i + 1]; sb += sk[i + 2]; }
+  const skin = [sr / (sk.length / 4), sg / (sk.length / 4), sb / (sk.length / 4)];
+  for (let i = 0; i < n; i++) { const z = zd[i * 4 + 3] / 255; if (z > 0) { acc[i * 4] += (skin[0] - acc[i * 4]) * z; acc[i * 4 + 1] += (skin[1] - acc[i * 4 + 1]) * z; acc[i * 4 + 2] += (skin[2] - acc[i * 4 + 2]) * z; } }
+  // Hair strength, grown by two mask pixels so no dark fringe of her own hair is left at the edge.
+  const raw = new Float32Array(n);
+  for (let i = 0; i < n; i++) raw[i] = Math.max(0, Math.min(1, (hair[i] - 0.12) / 0.3));
+  for (let y = 0; y < mh; y++) for (let x = 0; x < mw; x++) {
+    let a = 0;
+    for (let dy = -2; dy <= 2; dy++) for (let dx = -2; dx <= 2; dx++) { const yy = y + dy, xx = x + dx; if (yy >= 0 && yy < mh && xx >= 0 && xx < mw) { const v = raw[yy * mw + xx]; if (v > a) a = v; } }
+    const i = y * mw + x; a *= 1 - fd[i * 4 + 3] / 255;
+    d[i * 4] = acc[i * 4]; d[i * 4 + 1] = acc[i * 4 + 1]; d[i * 4 + 2] = acc[i * 4 + 2]; d[i * 4 + 3] = Math.round(a * 255);
+  }
+  sctx.putImageData(px, 0, 0);
+  fillC.width = w; fillC.height = h;
+  fctx.clearRect(0, 0, w, h); fctx.imageSmoothingQuality = 'high';
+  if ('filter' in fctx) fctx.filter = `blur(${Math.max(1, w / mw).toFixed(1)}px)`;
+  fctx.drawImage(small, 0, 0, w, h); fctx.filter = 'none';
+  wctx.drawImage(fillC, 0, 0);
 }
 
 // ---- painting ----------------------------------------------------------------------------------
@@ -367,6 +478,7 @@ function paintLashes(L, w, h) {
 function paintWig(L, w, h) {
   const meta = WIGS.find(x => x.id === t.choice.wig); const img = t.wigImgs[t.choice.wig];
   if (!meta || !img?.complete || !img.naturalWidth) return;
+  hideOwnHair(L, w, h);
   // Three anchors (both outer eye corners and the chin) fix scale, width, tilt and position, so the
   // wig's face opening is fitted to her face and follows her head as it tilts or moves.
   const dst = toPixels(L, [EYE.right.outer, EYE.left.outer, 152], w, h);

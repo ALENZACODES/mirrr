@@ -127,6 +127,7 @@ Criteria from the official rules at https://qloo.devpost.com/rules (Stage 2, equ
 ## 6. Privacy and honesty notes
 
 - **On-device photos.** Photo shade matching and try-on run in the browser; her photo is not uploaded.
+- **Live try-on camera.** Open **Try it on (live)** in the top bar (or tap a sample photo if you have no camera). The camera starts only when she taps Start camera, every frame is processed in the browser tab, nothing is uploaded, and leaving the page turns the camera off. Every picker starts at "Choose…".
 - **What leaves the device:** her taste words (sent to Qloo through our server) and, only if she ticks the box, an email for the MIRRR Plus list. Anonymous totals only; no cookies, visitor IDs or stored IP addresses.
 - **Honest labels.** Shade matches use CIEDE2000 bands (≤3 match, 3–6 "check in daylight", >6 "outside our honest range"). Template text says it is a template. Products say "price as of Oct 30, 2026" and "no affiliate deal".
 - **No real people.** Every face and person shown in MIRRR is an AI-generated photo, not a real person and not a model's likeness. No real faces were used to build or tune the shade matching; its accuracy numbers come from a synthetic test harness and are published in `docs/SCORECARD.md` with their limits.

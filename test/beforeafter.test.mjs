@@ -2,7 +2,7 @@
 // and a photo-set manifest that keeps the gallery hidden until complete sets exist.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { LAYERS, LOOKS, choiceAfter, describeStep, loadManifest, FOUNDATION, adaptForDepth } from '../public/beforeafter-core.js';
@@ -72,10 +72,15 @@ test('the routine ids the steps use exist on the server', () => {
   for (const id of CROSS_SELL_IDS) assert.match(src, new RegExp(`\\b${id}: \\[`));
 });
 
-test('manifest: shipped empty and disabled, so the photo gallery stays hidden', () => {
+test('manifest: the shipped photo sets are all complete and every photo exists, so the gallery only shows real sets', () => {
   const m = JSON.parse(read('beforeafter/manifest.json'));
-  assert.equal(m.enabled, false);
-  assert.deepEqual(loadManifest(m), { enabled: false, models: [], skipped: [] });
+  const r = loadManifest(m);
+  assert.deepEqual(r.skipped, []);
+  assert.equal(r.models.length, m.models.length);
+  assert.equal(r.enabled, m.enabled === true && m.models.length > 0);
+  for (const set of r.models) {
+    for (const f of [set.before, set.after, ...set.steps.map(s => s.image)]) assert.ok(existsSync(join(PUB, f)), f);
+  }
 });
 
 test('manifest: a complete set appears with paths under /beforeafter/<id>/; broken ones are skipped', () => {

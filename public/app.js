@@ -582,9 +582,9 @@ const COMMUNITY_IMAGES = {
   // Until the designed gold emblems arrive (prompts/16-culture-fixes.md), these communities show a
   // neutral, correctly labelled gold ring. The old placeholders carried wrong place names.
   'black-american':    'community-black-american.webp',
-  'east-african':      'community-east-african-fallback.svg',
+  'east-african':      'community-east-african.webp',
   'north-african':     'community-north-african-fallback.svg',
-  'south-african':     'community-south-african-fallback.svg',
+  'south-african':     'community-south-african.webp',
   'west-african':      'community-west-african-fallback.svg',
   'arab':              'community-arab-fallback.svg', // neutral: Arabs are of many faiths
   'caribbean':         'community-caribbean.webp',

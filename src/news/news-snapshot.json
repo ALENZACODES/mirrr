@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-01T06:04:36.689Z",
+ "fetched_at": "2026-11-01T13:24:26.723Z",
  "layer": "A+B",
  "sources": {
   "tried": 64,
@@ -8,14 +8,28 @@
  },
  "items": [
   {
-   "title": "\"K-Beauty is a category, not a trend\"… Amorepacific accelerates push into Europe",
-   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBHR2FIY0FlWWNrUjI3OGVnbmh4R1BTYzdQb0QzZnMweGh4YXh4OUF1V25lZUpyeUk5ekkxcHltOVpoN0hteWI5ZkNLOEUxU012SGU1VGVBUHJtaVFaeVlnMk00QlFpZkhHaFd6M1lB?oc=5",
-   "source": "머니투데이",
-   "date": "2026-11-01T04:10:00.000Z",
+   "title": "Beauty Brands Raise the Bar on Sustainable Innovation",
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPcjFmRjhNblo2dmlGWmRDS2pYZzJ3cEEyQnh2R0pNeTZnd3JpX3RUMXFUa1dFRUFLUHVrbXZVUGxCUWNmbldMTXl0UVA5LXE5VGRBSU02dzdtMlRHMF9sT3RlT2liWWwzSFVvRVZ3SkN3NnRXRFlyX2ZURENqbUJFc21n?oc=5",
+   "source": "Happi | Household And Personal Products Industry",
+   "date": "2026-11-01T11:11:00.000Z",
    "snippet": "",
    "brands": [],
    "communities": [
-    "east_asian"
+    "indigenous"
+   ],
+   "via": "google"
+  },
+  {
+   "title": "I’ve Tried Dozens of Shampoos, but I Always Go Back to Briogeo’s Exfoliating Formula for Soft, Voluminous Hair",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQOE43TE90Vzh0VDQtTjl1RkNyOGtmMWxMd0F2Z1Y3RnBPZGVxTzRfYWxBeWVGS1pRdHgxUzgxcnRDejJWMEt6VWVRY1Y2LVFxcHNhY01HV3lhU29CMFpBbjRiZGdPMzhiLUNKVU5aZkNXSVVWbEtMY2NnZUVyNDdTRzhIbw?oc=5",
+   "source": "InStyle",
+   "date": "2026-11-01T10:00:00.000Z",
+   "snippet": "",
+   "brands": [
+    "Briogeo"
+   ],
+   "communities": [
+    "black"
    ],
    "via": "google"
   },
@@ -58,6 +72,18 @@
    "via": "google"
   },
   {
+   "title": "The Booming Business of Beauty on TikTok Shop",
+   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQMmZlWWZMWlZwSEw5V1picjFWYm5ndG13OW1QT0UzS1ZIczYzc1FjX1lqcUtINldtX29SR3BpNXMzd05WeEhta2FkeGtSZVA2MVFSMkYwTVJXaFNJeHdTOXUzSVFCYktaTzdXMlQ3TGtKUGVDdV9NRTRjZ1ZQZlNlbDUtSE1ETmd3bzBNREdiR2FHcTVQQVBCQmdnU3hzSFd4NGxDNHdmS1hHYWY1?oc=5",
+   "source": "WWD",
+   "date": "2026-10-31T11:53:27.000Z",
+   "snippet": "",
+   "brands": [],
+   "communities": [
+    "mena"
+   ],
+   "via": "google"
+  },
+  {
    "title": "11 Perfumes & Body Mists For Your October Wishlist Ft. Dior, KAYALI & More",
    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOQ3VXMGtuV0c1QWFGeE00aUZBc2V5X3hlMU1ZUndSajY2R1o4TkFvR3VySkdXZFlMUHVvRkNlamJNVzVPUFozdVNfaFo3eHYwVGZIVHEwQ1N0cTdkVXctQ2gwV0FuV1Q5NVkwRXV5Y2M1TWxZdnQ4Vk1BR3BteE5rT3JSZ24zdDVFTmhfWHF2T2JleTQ1SmhoOGdRbmJCRS13SmRQQ0R4TnYxOUU2?oc=5",
    "source": "GirlStyle 女生日常",
@@ -84,6 +110,18 @@
    "via": "google"
   },
   {
+   "title": "Bustle’s 2026 Big Life Beauty Awards",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE51R2NGSHNvWHFDMHJma3NUenFfX3pLTFlmQTlfdjZZOEhfdWJ4RENrZlFPQjZGOFZQWVBQUE5RMWNWbG15ckRHdjd0M2lrX2hGVllVY0Q5eHN3M1R1MVJqVzZyU1FEUXk0?oc=5",
+   "source": "Bustle",
+   "date": "2026-10-31T07:00:00.000Z",
+   "snippet": "",
+   "brands": [],
+   "communities": [
+    "black"
+   ],
+   "via": "google"
+  },
+  {
    "title": "Beyoncé chose to fund Cécred herself after investors pushed to cut research costs, Tina Knowles reveals",
    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPMzlOZ0NJR01CMUFrNHM3Tzd2NlVTV3pidVg1eWlDMExac3R4M3d2cERKYUYxT25aVlBKcE9RanBsM1otVThSNnpzMUFiSFJzVGlrbzdKbHVLOTNlTFJ0dm1rak4tRHZHcktpdHVob212UzFocVFpVGZXTVpESVpIODlLaTlNOXVNUHZlSXR4a1RCb28?oc=5",
    "source": "TheGrio",
@@ -99,8 +137,8 @@
   },
   {
    "title": "The Black-Owned Beauty Brands To Add To Your Holiday Shopping List",
-   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQSHJVOVVtMG1nRmZnLUk0a2ZRQjhlM0xfVU1MTTZUQnpZYmtFZzVKcnFObjdMNG9QNXNZSTJZdVRDdGtmLTRGYnRvTG9TaV9oYkhBZm9DNmdMM081TG5vRGNwdkpXMGVKLTk3R3J2ZmdBNV9OSGFiSTVHVGZ1UTQ2aWlHTzZ0ZFJKcURwUURaVGsxUFpkRzNhdjZvQ1ZCZTAxR1ZnaU9PVTVzNTd5YUpaNEVFcVNFRnNxQlJRNA?oc=5",
-   "source": "Forbes",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPV2NyWEVHZ2xnbU5hMjlHNWNOZk1ubVRmX2gtRFVGRElCcExmODI4Wkd6aFpaM1REcDVSMnZtdExxdUw2RGJSR2FrZGpONkhPR1VLYkJ0NmxnYVExODVsamlWLUpMcGpGSkNtSU9IbTZHUHFOZ0ZDYnZ3dE9jRTJBek8yOGtxUm9FeDFfS253a0c?oc=5",
+   "source": "Yahoo",
    "date": "2026-10-30T22:55:36.000Z",
    "snippet": "",
    "brands": [],
@@ -134,20 +172,6 @@
    "via": "direct"
   },
   {
-   "title": "This Week In Music: Selena Gomez and Demi Lovato’s Rare Beauty Campaign and Noah Kahan’s 2027 World Tour",
-   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOYzRmcnhaTHg3N2wyNGxOX1AySEd0c2FoZUJrZEw1THhKYjVNNXlrNVBGdWZueVdNXzBOTWpia2c3bUliajV2OFQxOVNkVVI2ZFBxQnk1Y2lwZ3F4dThQell2ZVJnZkFFTVpMMTg4YmtsTUE2VGhmenVMb1BNdmFGOGdaWTZzRUsxVUIyNG50NWIxOVc2TlZJaGZtbUhiNXJaQjZNbGgwbVZqVjB0TmFYS2xUNVlTbUJ4YlRzUmJFWlNLVlloZlpJaA?oc=5",
-   "source": "beatroutemedia.com",
-   "date": "2026-10-30T20:24:48.000Z",
-   "snippet": "",
-   "brands": [
-    "Rare Beauty"
-   ],
-   "communities": [
-    "latina"
-   ],
-   "via": "google"
-  },
-  {
    "title": "Selena Gomez and Demi Lovato Reunite for Nostalgic Rare Beauty Collaboration",
    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1qYVVDbWZnWUFhRzY4dGlldnVhNi1DNHRsS3FmREFuM2xtVTRBRlNrNjFGMlZtajBLQmJOckJpY1g2XzdPWGdPZHFQVzVwQ0pUd3pNbW1zVW9ZcWM4VkdSQlpYY1ZoQUp1ZFE?oc=5",
    "source": "Mix 93.3 Kansas City",
@@ -174,14 +198,16 @@
    "via": "google"
   },
   {
-   "title": "[K-POP & Beauty] Lisa's Dating Confession, TREASURE's 'SHOCK' Comeback, and Hailey Bieber's $5M Donation",
-   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE55WFNFTDBmNlAwVDlFVEV0VHVzLWlpS2ZXcmRzUGtiOEFqZnB2aGJ6R0U3ajRmWkdLSGxkc1lUMDVQWE9jN3pYVkF5dHh2cThwQzRFNllsWDltUVhsMFNRcGVuXzNGZw?oc=5",
-   "source": "Kagit",
-   "date": "2026-10-30T18:38:23.000Z",
+   "title": "Selena Gomez & Demi Lovato partner for Rare Beauty launch",
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOa0FpbURzT3JZNklGM2VkSl82UkpybkJ3bVNycUQ3YWtCTUE1S0lMU2tfanpVOGVMd1NQTUpORnJSR0RXR0hvN2NqWWVTR2ZVUXppNjM5VkdTYUZ1SURvYVoxckdtcXp6emM2Qzl1TUxtVW1La0VhdGFmRHQwVmFOWXA1MHVrN1o3N2c?oc=5",
+   "source": "The Lagos Review",
+   "date": "2026-10-30T17:15:33.000Z",
    "snippet": "",
-   "brands": [],
+   "brands": [
+    "Rare Beauty"
+   ],
    "communities": [
-    "east_asian"
+    "latina"
    ],
    "via": "google"
   },
@@ -239,10 +265,36 @@
    "via": "google"
   },
   {
+   "title": "Selena Gomez and Demi Lovato Reunite for Rare Beauty Campaign After 25 Years of Friendship",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9oQll2N3pucDA2NHRhdTBfVWVHYnprcjdoV21sbm8yVGpIOXZURlFSN2dOYW01R2c2cFlfZnJqMVd2ZGFwMGF0Zy1aYnRpWV9pNTJJSFpCb2tJRW9OWUxkUEtNQmxpREozNk9kSXNpWWtaR2ZfcVdqanRsdUJSUQ?oc=5",
+   "source": "HOLR Magazine",
+   "date": "2026-10-30T15:42:35.000Z",
+   "snippet": "",
+   "brands": [
+    "Rare Beauty"
+   ],
+   "communities": [
+    "latina"
+   ],
+   "via": "google"
+  },
+  {
    "title": "Peptides, anti-aging and K-beauty? This under-$20 serum is the perfect glowy cocktail",
    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOMWlrcHdkb0w0UGx3OXFtQWpGVjFTeUhlaGVzcTV2NjVvRzJPYmpfU1F4ZWRZYU9xeEZuZUVqdl9HUHByVGNlMkdqT2YzRUtJdk8zUjRqY1hnajFBaWlMemNFbk1GNjdXeGpNSDl4N29NYnN4dDFLazR6RC0zVDFJS3F1aGpFMUNreDFFR2g0UE1Pd2Y2aTktRQ?oc=5",
    "source": "New York Post",
    "date": "2026-10-30T14:11:00.000Z",
+   "snippet": "",
+   "brands": [],
+   "communities": [
+    "east_asian"
+   ],
+   "via": "google"
+  },
+  {
+   "title": "How a Terrible Accident Led Mihwa Kim to Start a Global Beauty Brand",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNeWFZY1pXWG56RUZNSEI2cVpLQ1R4Z1hMclZNckwxb1V4THphSENlT253VEUza0pCREhSWVU5OUlSemNhdHFhQXhtTE43ejhDNTZkc2xyU3ZTSEFFclROOUtMMTRYN3k4dHhkS3I2RDBVQmE5TjFlYVg1YlZoSkpVUmtOdmlkd0lZQUpkLV9yNGFfbEpBQUdGdWFuZl9uQQ?oc=5",
+   "source": "ELLE",
+   "date": "2026-10-30T14:06:43.000Z",
    "snippet": "",
    "brands": [],
    "communities": [
@@ -262,6 +314,20 @@
    "communities": [
     "black",
     "multicultural"
+   ],
+   "via": "google"
+  },
+  {
+   "title": "'Ask Taylor': How Selena Gomez and Demi Lovato's Rare Beauty Reunion Revived the Years-Old Fall Out Lore Allegedly Involving Taylor Swift",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNU3JHT1QxY0JWSXFLUTc5Mkc5S2xlVkV4UFd5RXZuTEFQU1Z1LW9tR3E5Vm0xUmNiNzE5QlMtcGFxYmJISFpZR1ltQTJyNUxjRjBmSUg2LUxTZFFnRHNhZWxDTVJXbjJJVzRwLU5tVU52Qk8xTThXNW1xY3pHWFVZWDktRVYxRmRTd1lv?oc=5",
+   "source": "Fashion Times UK",
+   "date": "2026-10-30T13:31:26.000Z",
+   "snippet": "",
+   "brands": [
+    "Rare Beauty"
+   ],
+   "communities": [
+    "latina"
    ],
    "via": "google"
   },
@@ -306,6 +372,20 @@
    "via": "google"
   },
   {
+   "title": "Selena Gomez and Demi Lovato Reunite for Rare Beauty Collaboration",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZXhNUmVKZG1KRWJ2UGtXa0E4Q0VBRmtKakkxb3Zab05lLWwwWFhzb0dISWMxWjlNbnVCT2NKeHpCaUVQXzgxcGktdkNBS0kwUVUtalpjd0JiQmFoTVBWa2EtTGptUi1CQWgycXJGWWptWXY4TzNhT3ZpamFhTWtwWVF0RHIzc3ZwcEJv?oc=5",
+   "source": "MusiCulture",
+   "date": "2026-10-30T07:45:00.000Z",
+   "snippet": "",
+   "brands": [
+    "Rare Beauty"
+   ],
+   "communities": [
+    "latina"
+   ],
+   "via": "google"
+  },
+  {
    "title": "The Best Rhode Skincare Products, According to Editors",
    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNVGtQQTgzM3ZBVjZDTUVfM0Y2ZFlwREZSMzhJaDdmRm81UmFvcXNDc3JjcVQ3eXVUV19weUtsVkFOc215R0tkb0VzYk9XbTluRjdsbkx1dkZuWjBBVXd6NDZPbVY5ZVBWb0lQcEVOUVFkTWd3dktNbEJjVjlBaW92NEJ3dw?oc=5",
    "source": "Harper's BAZAAR",
@@ -314,6 +394,20 @@
    "brands": [],
    "communities": [
     "east_asian"
+   ],
+   "via": "google"
+  },
+  {
+   "title": "Watch: Huda Beauty Founder Huda Kattan On Being Your Own Boss",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPNGlmdVhOMWViV2lHdEZjRkJQd2JWNWZrQlRVNk50Q0lzMnY2S2NaRS11Ri01amJuMlAtcDZrSndkenI2M2dGT21fYmhBZklqTGp0NnFFZDg2ak5PMlY5MDZNUnRENi1NcjNUVHFIUGl0ck0zYnduSjFqdGdfVDl0Qk5makFMRmhzczNn?oc=5",
+   "source": "WWD",
+   "date": "2026-10-30T07:00:00.000Z",
+   "snippet": "",
+   "brands": [
+    "Huda Beauty"
+   ],
+   "communities": [
+    "mena"
    ],
    "via": "google"
   },
@@ -398,20 +492,6 @@
    "via": "google"
   },
   {
-   "title": "The Selena Gomez vs. Demi Lovato Fan War Lasted Over a Decade and a Rare Beauty Campaign Just Made It Irrelevant",
-   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOR0ZHMVpMck45ZDhVU3Z1VmlURWh6d01qb0F5c056T3dwSHU5aFN1TDBoeG5pS2phX253cl9tNkkxVGFIeVVLcFlzZGZTLWc3TjZiVmxXOGNMbVhlQ3h1V1kwblIzcG9LVjUyOUpETUhVS25lQm1vMFNOTXllU2Nib0o2R0d3Y19vQjZpODRlMFQyUFlveXFoSE1ubmRMVmRTWFdoNjAyMmtnbjZHSlFaNllDVUdXVTVScDFZX0NNLXZJYS1ZeUdiMVhRRmdiZ9IB0wFBVV95cUxNX0Z5RFpCYXE0UWRKcXk5cjc0Skl2V2luZk1xRDNBQUxFV3I2LUdqTkk2TUhsUTBhMHNhVHpqdE5rTFJoVUpoVG1GckJOdW1lSDFQczFocjZkUG1uUHBkNUhENFpUY3JPWkVfRWRsZmpkUVduTl9qZzk4WUhMYm1JdExoUTE2SEtrSFJOSERGZEZOUmh0eG1hVzVDVGFlRVJIRnlVNnNuQVBqeGtwRnpPTFlHNGd6SjhXZ1g2VjBTaGFOeW9pNjZvWUcySzVZdy10aWFn?oc=5",
-   "source": "BELatina",
-   "date": "2026-10-29T18:18:42.000Z",
-   "snippet": "",
-   "brands": [
-    "Rare Beauty"
-   ],
-   "communities": [
-    "latina"
-   ],
-   "via": "google"
-  },
-  {
    "title": "10 Latine-Owned Body, Hair & Fragrance Products That Earned a Spot in My Shower Routine & Why",
    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPc09Wbl9nOWxRN1owMkRTa3p6YXVKMUlnOTNlTjhhcUZfdGtqa0VwQm9lSlFDZlp1XzZXTVNkXzJFdklOOHdwWGtpWWVjN29na2w4WDVEUXhsT3NrSmw5dzdYUjFnNjBXRHEyU1VXYWFCMUptazNIRWg0SG92U0ZMNjR1WHA1T05BN0huZE1pd2tNSDM0cWQxN19GVEZ5STdxN2RTUUx0RUFCdFF5eE9XLQ?oc=5",
    "source": "HipLatina",
@@ -424,6 +504,20 @@
    "via": "google"
   },
   {
+   "title": "Tina Knowles Says Beyoncé Self-Funded Cécred After Investors Pushed Back on Research Budget",
+   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQd0I2Wk9FOHQ1ZDlTVWN2UnQ4WklUZVdrc0Z4dHNPLVZ6alpJaUU0S3JCdE4tV0pIcXQ2ckh4OWF2ZFI0OUNXc0E1c0lWenc0MTE1azlodjBFd29mREIwQ004Y0VSUnNNTTJGbTVQMHFhaUlwTGUwbXc2MktOV2dsZzFOekJsb3haYzMycmkxUGpocGJ3S0JXdWFxaUJULU9iTG1OVXFnUjhsQ1A3YXk0VkU3THlMZlZzanNz?oc=5",
+   "source": "HOT 97",
+   "date": "2026-10-29T16:58:35.000Z",
+   "snippet": "",
+   "brands": [
+    "Cécred"
+   ],
+   "communities": [
+    "black"
+   ],
+   "via": "google"
+  },
+  {
    "title": "Founders With Experience In AI Responsibility And Governance Launch AI-Native Textured Hair Platform Guided By Identity Preservation And Realism",
    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1jNW1IdzJXVW40Q2FwMUk3NzZROHJQY1NXTDVBZEUydXgyWDI5dWp0b3BwWkd4WDBERmgxOUxobHIwYWhWdV9PT2doUUZwUGx4dkpGdjlwLW9fOEp6Mkt5ZjRqcEJzYUU?oc=5",
    "source": "AfroTech",
@@ -432,20 +526,6 @@
    "brands": [],
    "communities": [
     "black"
-   ],
-   "via": "google"
-  },
-  {
-   "title": "Selena Gomez and Demi Lovato Reunite: Nostalgia at the Heart of Rare Beauty’s New Campaign",
-   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNcVktc0N4RmVKaFdvVkZReThTM1c5cG9oZm1GcHhBUzNtVU12bVJPWDVEMnpFWU9zUVBfQmZURjl0NkZhd3V6WlVDLUcwLUpJZTBhWndmeG82eTdwRV9FTHVrTjFhSzhvSTFRaXpnSkRDNncwa2NXdjNrTV9LNzNxc0tTZ3ZsMVRIVk5wTGpiTFVUS1VoNWsyMm5hcXpmQV9ncERNY2dHM2Q0THltZDRsSHdSczF4MXZJUHp3Uk1YZXBVUHFELUZDVQ?oc=5",
-   "source": "media-marketing.com",
-   "date": "2026-10-29T16:24:31.000Z",
-   "snippet": "",
-   "brands": [
-    "Rare Beauty"
-   ],
-   "communities": [
-    "latina"
    ],
    "via": "google"
   },
@@ -516,6 +596,18 @@
    "via": "google"
   },
   {
+   "title": "Cosmax, Kolmar, Cosmecca make 200 mn units a month as cosmetics ODM trio expands on K-beauty boom",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBDMXdmeU4yMS1FbXY3aVdleThFV2FOX2E1dG4xNEFSaWVzTXJ3R1BuaGsyN1ROUWxHR0lQMjFnUFVxeDVwMk81QW9XLTdvNTktYUNZRWN5aWN2TzFWaDF6X3FZcndLN3J4djE3Qk9EUDI0a3FKY0E?oc=5",
+   "source": "KED Global",
+   "date": "2026-10-29T11:26:00.000Z",
+   "snippet": "",
+   "brands": [],
+   "communities": [
+    "east_asian"
+   ],
+   "via": "google"
+  },
+  {
    "title": "Rihanna Praises Fenty Beauty’s Fluid Flex Foundation",
    "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE02OS1TaGNoc01xVHZNOS1PS1gtR3F3NllxME1YSFVMVEZRSUZ5S3ozWHA1eUQyX0hsNnFod3RFSkJCb2k1OHpPS1g0WXdMSGdDeEZoSHFqTGxqYzhhS0Zmb1dDdEt6elI1bWdQdWg5M29Ca2pOenhxcllB?oc=5",
    "source": "HOLR Magazine",
@@ -543,10 +635,38 @@
    "via": "google"
   },
   {
+   "title": "Selena Gomez and Demi Lovato Launch Rare Beauty Campaign",
+   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5WNVBQdk9fTGV3eUJ4dW5FeHZ6dnE2cThWYm1YVWxGVkxWOFJ3VHdSR09wRFJLUl9BQzAxbDlveTkyTTd2amVkSHVMSnJkUXpkcENtY01HbzMxTWVNLTB1akpOMmZHLUpVQzR0bldNZm1yUUhHQk5lRFQtZw?oc=5",
+   "source": "HOLR Magazine",
+   "date": "2026-10-29T10:26:26.000Z",
+   "snippet": "",
+   "brands": [
+    "Rare Beauty"
+   ],
+   "communities": [
+    "latina"
+   ],
+   "via": "google"
+  },
+  {
+   "title": "Selena Gomez and Demi Lovato Reunite for Rare Beauty’s New Campaign, Celebrating 25 Years of Friendship",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPcjhuQkFIcmZHcmRaekUzT3lrSkFYSEF5WkxzZGtob1lMd3pNQnZteTJ3SDE1UHU4V3M1d0VnYWpETE1Vb204YnRfU2F2azI4Tkh3VjdRWlo2WTBUWmxFRzZBR2FTOGFXNzlnd19tSFZVRUJYYk9kbXBFU3ZZeVZJdU9SaTM4MkNDOEowa280S21qSEVESGJYbnBBQTRjU2hGc3JUSkV1MVJPdFFObk44aHJ4NlJZU0xoUFllOUE4eFI?oc=5",
+   "source": "Xmag UK",
+   "date": "2026-10-29T09:40:15.000Z",
+   "snippet": "",
+   "brands": [
+    "Rare Beauty"
+   ],
+   "communities": [
+    "latina"
+   ],
+   "via": "google"
+  },
+  {
    "title": "Fenty Beauty x CASETiFY: Glam on the Go",
    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5ZZnlJN3VUZ2xON051dW9wS08wTkk4TTZYMjNSX2h4NXB6ZnFzbWQzaUJJR01fMXk2WWdyYl9lOExMNDBZU0E2M19rOWNrbUZZY0p0Z0J0UWpvQVdCUENxeXphZkFlWm54cGVBRw?oc=5",
    "source": "NYLON SINGAPORE",
-   "date": "2026-10-29T09:10:22.000Z",
+   "date": "2026-10-29T09:10:59.000Z",
    "snippet": "",
    "brands": [
     "Fenty Beauty"
@@ -554,6 +674,18 @@
    "communities": [
     "black",
     "multicultural"
+   ],
+   "via": "google"
+  },
+  {
+   "title": "Cardi B is prioritizing local African-American businesses to launch her hair care brand \"Grow-Good\".",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQY0Q1THRIcjFhYk9FZ2liS3NfRzlBRWZoLWEySllTYWh1dmh6M2xBeFU5bFQtaDZscXNTSl9jbU5tRC1BeXcxWUxNZWh5UFhXamJ0Sm1aUlhMLWpnZGwzdXNYNXRfSWVZX1FWWlFEQndSRi1Jejh1Q0tJX3V3UWRqY2hPbTJRZkI5aUdTVTdvTE0tN2ZBY3FlSkNzUWVKZE5IRkRQNnJnRGlGa1FzaFJZLU5ZUUEzSGRNTGpFWEh1YkxsLTdWQjJN?oc=5",
+   "source": "selecta bisso",
+   "date": "2026-10-29T09:10:44.000Z",
+   "snippet": "",
+   "brands": [],
+   "communities": [
+    "black"
    ],
    "via": "google"
   },
@@ -584,6 +716,20 @@
    "via": "direct"
   },
   {
+   "title": "Selena Gomez, Demi Lovato revisit their Disney Channel era in Rare Beauty campaign",
+   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQU3ZFdFdBdUhZX0tPV0ZhOUxJSTNBQ3FCcURxbFRvVDlPT0l5RGhJdHV1NjBNZGZWdGhtZzFadkJzNTk1NnRsM2x5Mjl0eVpfWml6MTVTV1VsWXJQODd4LXNRM2FJWFppTmpHRU5uazhvWGJRd0VUcExueXppNDRNNndQaVQxU21kaldaQVo0bkZKMXlocnBqYm4waFBQaVAzaFJ3U1RSXzI1OTI3TTM0bjdLbW5jcGs1V3AzYTBLb2RBSUlHaVNlUXVHN0NBdHNQVXhnLdIB2gFBVV95cUxNRnJ2cDlDZEZwWHBZcng4WE5FY3RJRXd1RzEtNDhKZ1otc1NTdm90MVVUQnE1Ml9RMG9VRmdxVzR1NzQySGJZOTdtSlY5cHA1VHhZYmItNGl5Q3VYdkxYdlMzQzFyaGVBQzk3WG05OXFZb0dDdlg1bmh2dnotQWQ2R1QzNlNkZWJGbkpBZVgyQU5UUWMzRGVKcEtpeEV0Rzl0cGk3WG9tWWR1VWE4WHBpZ052d3UzQXRaODdNWmZzZjBjd1daeGxMZEd2YzloX0FYVFZSZ2JQUUdnUQ?oc=5",
+   "source": "Telegraph India",
+   "date": "2026-10-29T08:10:49.000Z",
+   "snippet": "",
+   "brands": [
+    "Rare Beauty"
+   ],
+   "communities": [
+    "latina"
+   ],
+   "via": "google"
+  },
+  {
    "title": "Rihanna's Fenty Beauty Enters Wearable Beauty Tech With Mini Lip Gloss and Powder Phone Accessories",
    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQQ2pNTTRiVWpYT1ZFTjhkcmlscGd0SGlFSlAtUjNpekMtenhhZVh1QmlmTy1FbzBYWTMwTlJHbFV1cUI5dDNHVGx5ME8tVUJhWFJWZFA4aEJwbmpIYUtHRFk0R1Z3OFpmaTJBenZCbFkzb19DSmtpMWpnVURsQXUwSmNkSVNPU05YcWsxeXNvbS1qOWZv?oc=5",
    "source": "Fashion Times UK",
@@ -595,62 +741,6 @@
    "communities": [
     "black",
     "multicultural"
-   ],
-   "via": "google"
-  },
-  {
-   "title": "Delena forever: Selena Gomez, Demi Lovato reunite for Rare Beauty's latest campaign",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPcTRJLWliclF0QUwzWmQxYzlFQkpGNFVHRGRtMW1kVDlMTDNuT1hNNXlFYUxLZ1JKX01HcElCaG9GQ0ZfU05LQ2wwOE1wUElQNDV3R0I3YWVtMjBMS2dKbEJfWTg2V2xrTldlaGt0dzl4UXh4U2RveFNtNzFvdXRsQVoyeUh0SWI1S0xUY3oyS3BNVzBtMkVnSkU0OTZLWlFKaWU4dg?oc=5",
-   "source": "Philstar Life",
-   "date": "2026-10-29T03:47:15.000Z",
-   "snippet": "",
-   "brands": [
-    "Rare Beauty"
-   ],
-   "communities": [
-    "latina"
-   ],
-   "via": "google"
-  },
-  {
-   "title": "Selena Gomez Taps Bestie Demi Lovato for Latest Rare Beauty Campaign",
-   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNQkNTZTFIXzZ6LWlvWVhVYnA1U0lPNVFrQWxhZWVnLWg5UmpuZndqN3FXMEVXMFBGd0xtaEF3dGZiaV95TUk2SVM5UGtRUDM0TzUyS0ZxMm40aDY0SXlxdEV6NjZsM2wyd2w1WmNYWGEtd0g0QWxoeVRBaDloZlh2SUI1ZmRSUk9oMHhlX1Z2UXcyVEhrZ1VpdElJOHNWOGtKRm9GanRQR0U2VkhhakJFTWI0bDRYY3FyYXfSAb8BQVVfeXFMTTVCby1ISXlaSUM0bUpxc0xsZzJuZy1DS2N2VjRxSVdSamNLT2RzTjUtTkREYzA3dFVNajNsQmg1QXV4ZjRUTngzeUlUbkF5RzIweU9SMFZqaE1aMW1PX3lpX0pOVGtUbGtmMDFGYzdoM1BmTFBmR1NGLXVIdU5SdWxJUXRMQzZPZzhhbzNTSEs5MG1vUzcwQ0JjUF9sbVVYRk5sT0tueThnN092TUZLQTFTeERzRThINl9LN2I1cDQ?oc=5",
-   "source": "That Grape Juice.net",
-   "date": "2026-10-29T00:48:44.000Z",
-   "snippet": "",
-   "brands": [
-    "Rare Beauty"
-   ],
-   "communities": [
-    "latina"
-   ],
-   "via": "google"
-  },
-  {
-   "title": "Selena Gomez and Demi Lovato Reunite for Rare Beauty’s New Campaign: ‘Still Making Each Other Blush’",
-   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNTW14OFJURmM0NnJkYlNnQWhoeHJDRlRYU2dOeklCTjB0MzlMbVJwRUZieFNNUmRRYW91S05TeTFZejQ4c2hXY0FhZUpKWk1RZFRvbjl1SGhucjhfNnlIa08zd1RaeUJ4dzlnUmQ4Q1MxWXdfQUJFQ2lXWlFzSnN6cVo3V3U1YVJpVHRRLXZXSXNNcVl3SUhjaHl5RlVRdU1oc2lacWRwcTkwbUdGNE5OZnpEVTVPU3NRbThhQTdBYw?oc=5",
-   "source": "LAmag",
-   "date": "2026-10-29T00:07:07.000Z",
-   "snippet": "",
-   "brands": [
-    "Rare Beauty"
-   ],
-   "communities": [
-    "latina"
-   ],
-   "via": "google"
-  },
-  {
-   "title": "Selena Gomez And Demi Lovato Just Teamed Up For Rare Beauty & Nature Is Healing",
-   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPcmJmaS1EbEI3ekdRUFZDRGVDX09hZ1JKZHBvY1llWHplbzJ5WWg4WF9xVDh6RHd5Q2Y2NXZjcHFkWW5FN1R1LVE5SlZRcVlmcWNQbVFqR1lTRUEwa1YwNy1UaDZzVm56cEdNc0tVOXhjczVTTG1sZEkxdG1HcE56em54ZWhDZ0FlZFBISGctVDllM3BCeDdvc01MaHhvQUtISWVyelR3?oc=5",
-   "source": "inkl",
-   "date": "2026-10-28T23:03:55.000Z",
-   "snippet": "",
-   "brands": [
-    "Rare Beauty"
-   ],
-   "communities": [
-    "latina"
    ],
    "via": "google"
   },
@@ -746,18 +836,6 @@
    "via": "google"
   },
   {
-   "title": "How mentorship helped a student bring textured hair care to WashU’s campus",
-   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOTGh3THdWbEJNOWZETzlrR2JweFM2MWRpS0RldVlndmNkeGNicXIwWXJ6eS1BV0xJcUJjSWJYQ2hSZ0ZiUEVqcS1oS2laSmZRT0htd0x6TzROX1gxN3FwSEdaT0tMRjRqc2tjRm8ySlJ6eHBjT3NpNFI5cWR0UzNQWkx2OWZ5cW12X3hsR3VxeWZ1X2FmN1g1a1A0TjJ1S1dxM2F1T3c1aUxHVDZkQjV6eWVKSWJxWlo3aEE?oc=5",
-   "source": "St. Louis American",
-   "date": "2026-10-28T17:02:58.000Z",
-   "snippet": "",
-   "brands": [],
-   "communities": [
-    "black"
-   ],
-   "via": "google"
-  },
-  {
    "title": "TRIED IT: Xtressé Takes A Scalp-First Approach To Hair Care With Its New Wash Day Systems",
    "url": "https://hellobeautiful.com/4605985/xtresse-wash-day-systems/",
    "source": "HelloBeautiful",
@@ -793,6 +871,18 @@
    "communities": [
     "black",
     "multicultural"
+   ],
+   "via": "google"
+  },
+  {
+   "title": "Pressed Roots to Open First East Coast Salon in Washington, D.C.",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQVEpUS0JJQzhoWEo5dXVvZmp1RGJCNV9WREhncGI5TUZUMVRsVE5PTjdBMWFUc3dUQk13OW1telFfZk44OXlXTkYzekoycE9xRXAwZWliODlwWXpOQlZicHdNbTUtVW5jNkRPbXZUUlp2SFdNUXBuOG9uWF9PZ0RoVzExT01PaUdpYzVJemkwRjFOY0pnUmV0N2pYeFUyMklxRmUxSTNJb2lHUy1aV1NHTmF2a1Z3VWpr?oc=5",
+   "source": "PR Newswire",
+   "date": "2026-10-28T14:00:00.000Z",
+   "snippet": "",
+   "brands": [],
+   "communities": [
+    "black"
    ],
    "via": "google"
   },
@@ -838,6 +928,18 @@
    "communities": [
     "black",
     "multicultural"
+   ],
+   "via": "google"
+  },
+  {
+   "title": "How mentorship helped a student bring textured hair care to WashU's campus",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQeFpMVmFPSjY3d1JydkF3d1JBbkk1SW5rczlRQlF6VlRfR01HTmdjcC1oTTZYSHExOGh4SlItNU5RU0lkeE9YVU13WkM4OTZjUy1HaDVPRjJTZTZOZERTNXJSNHRzZ3RvWGlBcUVhTEdBcno1a08tU2FlUFAtV19WY3NyYk1KUlZSeEphSnkxRjhPTEMtS3NvUjVWQW41aFdVN0tnVmhyQW43VzEwSmp5bzg4MU5rRU0?oc=5",
+   "source": "STLPR",
+   "date": "2026-10-28T10:00:00.000Z",
+   "snippet": "",
+   "brands": [],
+   "communities": [
+    "black"
    ],
    "via": "google"
   },
@@ -892,30 +994,6 @@
    "communities": [
     "black",
     "multicultural"
-   ],
-   "via": "google"
-  },
-  {
-   "title": "Global health and beauty distribution company Grace (CEO Cho Abraham-sun) participated in the larges..",
-   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9DdUJwRkpibHZSSnlrX0ZOcF80M2ltSlBOVldUNmp2VTlOSXNzbnVreDFJbDUzUVk4S2pkVW5MbFkwQTZucURZQndxV3hTSFVBXzhN?oc=5",
-   "source": "매일경제",
-   "date": "2026-10-28T02:50:45.000Z",
-   "snippet": "",
-   "brands": [],
-   "communities": [
-    "mena"
-   ],
-   "via": "google"
-  },
-  {
-   "title": "Guillaume Motte: Innovator, Former Deputy CEO of LVMH Fashion Group, and President and CEO of Sephora",
-   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPNENKQmRlbklEZGNET0FzN1hpdDFhLUFXUGhmWkZjcDZnaC1jMEFrMVBnNzFGUURhQjlDRnJOenBRSzNxUk1JMGl6eHkybk43MXBIQlp0V2V0ZnJQbTUxTm9fblZCRXUzbEh4OXZ3MDNuaDZPV2RUM1NEaUZFc2pQM281YVBPMm1NM0ZTam44V1ZXQ0VsMldWV1Vtb0s2cWY1RlJia3NMenpaRzdDeDdQRWtNalpDVlZiamZNbkFYX2V1Mm5FdFQwSDdMOGRIZw?oc=5",
-   "source": "BBN Times",
-   "date": "2026-10-27T23:28:50.000Z",
-   "snippet": "",
-   "brands": [],
-   "communities": [
-    "mena"
    ],
    "via": "google"
   },
@@ -1105,20 +1183,6 @@
    "via": "google"
   },
   {
-   "title": "Beyoncé STUNS for i-D, Celebrates Cécred in Rare Interview",
-   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPd3VKVkZXUVhDMEJNUFZ1dzhfRFVFalkzQ1NtcDF5aEdxN0ctMnd0aFJCV0JkcFJQSUdmLVpfR2REUzMxNnhqbXEyZjJiLWx6MkdJSFhxV1dVX3czUXdxZHZBZkdQQWRTN2s2V1hNRHVlTjhxQ2p6bm05OUJGWGlUYTdqSURwbkZWeDcycklCY0RRQ2F6STNRMtIBngFBVV95cUxPQmlZVUxYTERDTThNTFAyRWZ2X21oQ3hTRG9XNEtJTHIyUmJxQmFpMTNPOFpMMXA1TGpPMnlxSmxoMUlzNDZaMzVDZUN6c0wwV0g4a2dGdnFVRk9sYVJGTkZZUFhJd1NQYkRwVm5wT2R2R29iR2JwZDFtcGZnd2piUWJzMTBINXk1ckE0TUhWRjBPSlBYREtRNllOdGtIZw?oc=5",
-   "source": "That Grape Juice.net",
-   "date": "2026-10-26T17:09:21.000Z",
-   "snippet": "",
-   "brands": [
-    "Cécred"
-   ],
-   "communities": [
-    "black"
-   ],
-   "via": "google"
-  },
-  {
    "title": "K-Culture Buzz: 3CE's New Blusher Trend & Kayali's Big China Debut with Sephora",
    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1xQWJuY0hGMklIOTkyTU04UEhlVlBDRjlTQmhMTmYzWVhxZE5qSW5rSEZ1ekRuX056ang5ZUExdVhhMGwtYWwtWVhCaFJ0UlN2S3NneVh5UGVxd2RB?oc=5",
    "source": "Kagit",
@@ -1239,6 +1303,20 @@
    "via": "google"
   },
   {
+   "title": "Beauty of Joseon expands to 1,263 Boots stores across Britain",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNMXJKVTU1SmFNY185ajZ4LTU2TEg4SjlKQm9zSEs3M2hqMU5ZZmlsMm1FNUg5MXZJYjNuOC1QMlkxMW5iNWlxMzBMeFN4eHRTaERUdEswM0tYT0Z4NEx1T0pVTkI3eUdpVlhkS2NLVGJfdUJIRzV5a0VSNTQwZ2U2ZUpuYzk0eUZiM01aTTljelBaa2dYQWUxaWp5bmR6TU5zc2xOMzVtM1RpRmU2MGxOTjNYQkI2R2tk0gG-AUFVX3lxTE1oRm9sa044TDB2dFZQTjBjZG1QX0lXQlNFcFJpQzBkQnhJRU0xbDlGeS03RWJhTE9XQWVnbGRCNVZNTmpDMFItOU9uWUhBWi1JdTdkODJBZG80THJ2Nlo1bFBpMU4yMmROcWJFaW1wUWQ4MWhFc2ZJM1VreFAtWW9GUHFfOWZwd2t6bjNjQThHendWNjZvbXJCSXlBTml3WXNRTmwzWmE1d3ZhRWw1QzZRNkEtOTVkU0RWbGc3LVE?oc=5",
+   "source": "The Korea Times",
+   "date": "2026-10-23T07:00:00.000Z",
+   "snippet": "",
+   "brands": [
+    "Beauty of Joseon"
+   ],
+   "communities": [
+    "east_asian"
+   ],
+   "via": "google"
+  },
+  {
    "title": "Minnesota sues L’Oréal for selling toxic hair products to Black girls and women",
    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNWHN6cW5FYVl4cU5reURkLWdrQlBZdGVYZWNheGJIMzdJLWRZNUxCaTVBcW5SNWpDRXByOUVhN2MyeUczbkhHbk9xeXFjYnNSLUFERmMzVzVIWGhiQ3F1LUlZaEJiNXdzakVPM2N0S1ppN1RFZk1wdE9YVzJxaGpQUTNJUHZGOUpla29xUXgyeF9qUy1LNDJQdk4xXzBuTF9TRzBrTnV2Q1lkLVAxRXU1YkNn?oc=5",
    "source": "Star Tribune",
@@ -1260,20 +1338,6 @@
    "brands": [],
    "communities": [
     "multicultural"
-   ],
-   "via": "google"
-  },
-  {
-   "title": "Beauty of Joseon expands to 1,263 Boots stores across Britain",
-   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNMXJKVTU1SmFNY185ajZ4LTU2TEg4SjlKQm9zSEs3M2hqMU5ZZmlsMm1FNUg5MXZJYjNuOC1QMlkxMW5iNWlxMzBMeFN4eHRTaERUdEswM0tYT0Z4NEx1T0pVTkI3eUdpVlhkS2NLVGJfdUJIRzV5a0VSNTQwZ2U2ZUpuYzk0eUZiM01aTTljelBaa2dYQWUxaWp5bmR6TU5zc2xOMzVtM1RpRmU2MGxOTjNYQkI2R2tk0gG-AUFVX3lxTE1oRm9sa044TDB2dFZQTjBjZG1QX0lXQlNFcFJpQzBkQnhJRU0xbDlGeS03RWJhTE9XQWVnbGRCNVZNTmpDMFItOU9uWUhBWi1JdTdkODJBZG80THJ2Nlo1bFBpMU4yMmROcWJFaW1wUWQ4MWhFc2ZJM1VreFAtWW9GUHFfOWZwd2t6bjNjQThHendWNjZvbXJCSXlBTml3WXNRTmwzWmE1d3ZhRWw1QzZRNkEtOTVkU0RWbGc3LVE?oc=5",
-   "source": "The Korea Times",
-   "date": "2026-10-23T07:00:00.000Z",
-   "snippet": "",
-   "brands": [
-    "Beauty of Joseon"
-   ],
-   "communities": [
-    "east_asian"
    ],
    "via": "google"
   },
@@ -1480,6 +1544,18 @@
    "via": "google"
   },
   {
+   "title": "16 best hair dryers, tried and tested for different hair types",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOVVZBa0ZOdTdUd1A2d25EMHNVdVkyM1gxY1NWSEdYNFZON0pfeEpKSHdFUWVPMzVxckExSWRUVkc4aTc4cmhUWUQxYlpWY3ZkWC1kNm0zcF90T3IwblVVbURfbEtKUi02SXNDcXRLQjFwMG82LXBadkgtZHhVVjR0VWFCRUFKOXE3Wm1tXzV5NnJJa0dQM3JUS2w3RQ?oc=5",
+   "source": "The Independent",
+   "date": "2026-10-20T07:00:00.000Z",
+   "snippet": "",
+   "brands": [],
+   "communities": [
+    "black"
+   ],
+   "via": "google"
+  },
+  {
    "title": "Glow Recipe Teams Up With Buldak",
    "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9iYlExdkh4WGlYRHhGenRYZ3g0cTRPbzNKb1o1aGtLcG9JR084SlE0LWpLN3FhMldpNFhoQTJHQ19RbW9oYXBYLU02dld3aTRyV2ZvRFZkR19EelotNU9xMU5NV1J2ckkwUHVPTHQyUTNCSHUyUnI5S2lB?oc=5",
    "source": "License Global",
@@ -1562,6 +1638,18 @@
    "via": "direct"
   },
   {
+   "title": "Jennifer Lawrence is breaking into beauty with her own hair care brand Mes°",
+   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPQTBpa1FQdHcwSHpXaE03bDV2aHo3VkZBQ2Yzd1Y1dFkwTzQwSnNYZi1NaF9VNE5za1Q1c0ZOcmdPNVI5VWo2c2pDdmxJYm9mR3dXanY5WUVkdkdPaXBsQXJxUWozdVplX21XMndLUVd0NHFJamhUT2JLY2xEZ1VPeTBRU1pZQU0?oc=5",
+   "source": "Cosmetics Business",
+   "date": "2026-10-19T07:00:00.000Z",
+   "snippet": "",
+   "brands": [],
+   "communities": [
+    "black"
+   ],
+   "via": "google"
+  },
+  {
    "title": "Beautyworld Middle East stands out as a global fragrance hub amid Gulf tensions",
    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOaW1BOG1QdXlXcGdfMldnN2VIUVdudWVta0o4bEVsR2lYV0NfZFVETEpRNW8tdUdfSE90eXhkbVR2Mi0wYUtidndHLUprSUFZdTdZaWN0VGhMWHV3dmUyLVhtVGItdHpnMi1YU0tleldFcjdMMEZEQXctQlF5N3B3ZjZGMA?oc=5",
    "source": "Premium Beauty News",
@@ -1574,14 +1662,14 @@
    "via": "google"
   },
   {
-   "title": "WF Beauty brings global fragrance and beauty brands to South Africa",
-   "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNZ3hPWGJ5UWM4RHM0eHViZnZIUEZSRjM5ZXVPVVFzdWlKYzc5TGplMlJ3cWp0Wm9tMHlFbWNzZFFYWUxnQU5hbEdOU2R6cFYwWmtrVTdJR3hWc21ESVlmVkFsTmhRSmo5LUpZNWdIb3BIWHllb2JZemVFYXFjNHdybXpVb1VKU294a0t5cFpsS3ZjRlVOa2FCR1J1MTZ4WWs1MGZob0VaZW1jSW42T1R5MmxNeUZpWWU2d1Zlei0xUy16STVCTFRyZzlEakx2ZHJUbW8xQ1VXcw?oc=5",
-   "source": "Glamour South Africa",
+   "title": "The 11 Best Nude Lipsticks of 2026, Tested and Reviewed",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBiU3BZRnEwSjAtOVM4bWVhX2JZUWI1ajJLdzY5UkNKRjczRGtCc0MxRXVFcV8ySVFuUEN6eU1zdUhwRERnWkg0eXVvUG53S3JXOEd2cmhQVzRZd25qcEM1Rw?oc=5",
+   "source": "InStyle",
    "date": "2026-10-19T07:00:00.000Z",
    "snippet": "",
    "brands": [],
    "communities": [
-    "mena"
+    "multicultural"
    ],
    "via": "google"
   },
@@ -1614,6 +1702,18 @@
    "via": "google"
   },
   {
+   "title": "Type 2B Hair: What It Is and How to Care for It",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFB0SUlzaVJ0cFRvT2ZIbGJxQ3RKb2pqS0ZfYlJheUdncEJjaWZLLWhtUzZjWEc5SDhvMkVhZUl3QlFiMmlpQ21UYk1zdzR5enVGTHRZV2pn?oc=5",
+   "source": "Byrdie",
+   "date": "2026-10-18T07:00:00.000Z",
+   "snippet": "",
+   "brands": [],
+   "communities": [
+    "black"
+   ],
+   "via": "google"
+  },
+  {
    "title": "Buldak Goes Beyond Ramen With Glow Recipe",
    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOX2lhLUJfSXRUa2ZGTUJFMUlCdFZrZ1M4Q21ZbXB0S0RQa3VqbzNVX05ILTNOaGpYSWpkNERZRVpjcFo3TmFLN3Nxc3l5NFJQNzFaWmJqMXdfaHR6dTQ4dld0M1pMcEVVcWNNRm9nbUY1eFV1SXNBM0JBTVF3MVd1Q3VRXzZtek1sV09wcnhpOA?oc=5",
    "source": "BusinessToday Malaysia",
@@ -1628,6 +1728,30 @@
    "via": "google"
   },
   {
+   "title": "CEW’s New Blueprint: Strategies Reshaping the Beauty Landscape",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNa0swZXM4QXM3Q3lob2Ffa2RvWnRZTXlhYnZjZjJERmlkUnVmWFpSYWs2MFRxWUJsTHVUUUlBekFtSzlEZlNJNmVTeno2RU13ZDBvTjd3V3o0TU9fMjdJemp1aWZ0OHFJQWVFNGZyMWRkdC1VQ3pGbkZIaTYzbk1fSUFnNlU3ZTk0NU9TWEp3X0RlMDdndm45OGhNa3hrRGpUc3IwVVotYw?oc=5",
+   "source": "Beauty Packaging",
+   "date": "2026-10-17T07:00:00.000Z",
+   "snippet": "",
+   "brands": [],
+   "communities": [
+    "mena"
+   ],
+   "via": "google"
+  },
+  {
+   "title": "‘Saudis, raise your heads high,’ beauty entrepreneur Abeer Sinder tells followers",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSTR4a0FxX3BqMWkydG1YY1k2VURGdkY5LXIzMU8weDBmcFBkZTBUbEpGYl9zMG9ZcnJ6Zm8xdXRveXlZQUt4NDZiXzVuRlkzY1VnYnJaZkllempqTHY2NG1kVU4wV29xMkZSampYVVZjLXRrLWV0ZUEyeUgtLUUxV0dDNUlfRkNNQmNkbzhTZTdMVWg3QmNYUDIxdUFQWGZWYkhDWDU2dUw1Qm1nTUxNR0o2a1JTbzl3U3c?oc=5",
+   "source": "Arab News",
+   "date": "2026-10-17T07:00:00.000Z",
+   "snippet": "",
+   "brands": [],
+   "communities": [
+    "mena"
+   ],
+   "via": "google"
+  },
+  {
    "title": "10 Black-owned beauty products to have on your radar",
    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5mTG1DMzhRWmkyZ1I0VG5UTF84bWlTOXdSWTE0ZHpUTTQ0Q1JqMHN5N09LczRUeDlrdnhKMFZsQjlrT09QNWZDU1ZpaXRWUDJqX0hMdXhiTjhMbXZrdXRhNWVEYTM4djN5MUg1WDk5WGRBR1AwbHczRXBZTQ?oc=5",
    "source": "The Sun",
@@ -1636,18 +1760,6 @@
    "brands": [],
    "communities": [
     "black"
-   ],
-   "via": "google"
-  },
-  {
-   "title": "‘Saudis, raise your heads high,’ beauty entrepreneur Abeer Sinder tells followers",
-   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSTR4a0FxX3BqMWkydG1YY1k2VURGdkY5LXIzMU8weDBmcFBkZTBUbEpGYl9zMG9ZcnJ6Zm8xdXRveXlZQUt4NDZiXzVuRlkzY1VnYnJaZkllempqTHY2NG1kVU4wV29xMkZSampYVVZjLXRrLWV0ZUEyeUgtLUUxV0dDNUlfRkNNQmNkbzhTZTdMVWg3QmNYUDIxdUFQWGZWYkhDWDU2dUw1Qm1nTUxNR0o2a1JTbzl3U3c?oc=5",
-   "source": "Arab News",
-   "date": "2026-10-16T07:00:00.000Z",
-   "snippet": "",
-   "brands": [],
-   "communities": [
-    "mena"
    ],
    "via": "google"
   },
@@ -1760,18 +1872,6 @@
    "via": "google"
   },
   {
-   "title": "Meet Zaiie, a Makeup Veteran’s Vision for Palestinian-rooted Beauty",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQV0FsRlMwYUlzdllZay03OFFLWHJHY2dzSmtiTVhTbTU2dHgzcnVDcWU0c0luc0NsNGdnQmlZZTJiWWFleVJTd1ZZc3FoalIzTXNVMmc4anJVMVJJdXRjcmM4UGNrZF9wZkxUcnFpUmQwVG5ncXU0MWZQbFY5RWlqNVJVVmdwN2NYTHhGd1M5WVdIWFRWMjNUYXd3NlBzRzBweFpaUA?oc=5",
-   "source": "WWD",
-   "date": "2026-10-15T07:00:00.000Z",
-   "snippet": "",
-   "brands": [],
-   "communities": [
-    "mena"
-   ],
-   "via": "google"
-  },
-  {
    "title": "Glow Recipe Launches Buldak-Inspired Lip Balms",
    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNOG12czhKT3RhVGUyVzEzSEFTM0ZkTElkZk5ia21hekxYRGNwZ0dYUlZ4Z2s5aEhhVFhPN3BZMGxoUkloR1QzaHVoTGMxUFZpZGZ5VzhGWVVPUUQwS3VHNmNJSWxJNGpRQnl0OW15QjQ3UEZMUDlaaDRhc3dGYWhhNi04dko1b2lzaHhEVVJCc2M2OXpEaElZ?oc=5",
    "source": "WWD",
@@ -1814,29 +1914,14 @@
    "via": "google"
   },
   {
-   "title": "Huda Beauty Bronze Filter Palette",
-   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPX0F4WkFqdWpBTmdWajBLbjgyYUdzMU1ndWVpMG5CMy1YUXNtaTM1RFRFT1BGYTkzVEZvS1YyT0dJcEV3WDh4R1RxNzY4X0JuQW1sUk9aSDF3dzZmZ3NYQWZOcmdqQnB1ZGpidVV4VUZUU2tnTS10NUExX1ZRenJmSTloY0doeW15QjR0TmNPUWNnQUdYQkNTcWFNc3gzSWNGUVpfbmpCWVpqWFRaekIzTDZ0WQ?oc=5",
-   "source": "Savoir Flair",
-   "date": "2026-10-15T07:00:00.000Z",
-   "snippet": "",
-   "brands": [
-    "Huda Beauty"
-   ],
-   "communities": [
-    "mena"
-   ],
-   "via": "google"
-  },
-  {
-   "title": "A Convergence of 5,000+ Salon Owners from 18 States and 50+ Cities Set to Give Indian Beauty Brands a New Boost.",
-   "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNUjl5Y1FzeHllUWdUTlEzQmVvbzdhTm5kZkdidjdoWTRmWHJmMHhwdDhZbEd2cWlqUkl4N2gxR01CMGlNbmc1VlpGcDlTNGpBaVZlVjc1cWQxZjNKRTEtRlhzcWlTRWZ0VjRhekhnMVJNekhVSV8tZ19nVlFJR3FLSGRvRFl2MzRkeDlqUkJUY0FRWDk1UE45NnhMVW9sYWdPY3BiZ0xLRjVpSVZPX3B2YXh6NXB3SmtueGN1V0p1dlp0dXpxUHREYTB6c3U3Slp5QV9FOXduVmQ?oc=5",
-   "source": "TRIPURA STAR NEWS",
+   "title": "BeautyPro Buys Supercover as Ibs Ansari Takes Charge of the Make-Up Brand His Parents Founded",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNSWNKa0N6cW1Gbk5MS0NTNThYYXVBQ1dwa19RekVuY1dHVzFlNXpIaUljVXB4ZXhfM1BrSzVsNWZBV0hfVlZIOWRzb09SVkxHd21aUnFhSjFXSUNRbnRGZmU4Q2N3T2FpODRGeXlLTDBqQzB6c2o4RTRDYmtJeFk4aGR2aGRQUTBjaE1tN2tB?oc=5",
+   "source": "Fashion Times UK",
    "date": "2026-10-14T07:00:00.000Z",
    "snippet": "",
    "brands": [],
    "communities": [
-    "south_asian",
-    "indigenous"
+    "south_asian"
    ],
    "via": "google"
   },
@@ -1865,26 +1950,14 @@
    "via": "google"
   },
   {
-   "title": "Indonesian beauty brands record $2.2M in UAE trade fair deals",
-   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOTFRsNnpJYnZwUDc2SVptX1NCMC13UFBLMkNZaEl0ZFREMTlJTGdmX2UwWHpCVlRPRGt5N2hYSmhuS1N1UUdYQl9BejhxU3J2SnUwNVNiMW41U1lQTjhBZFphTEhEOW85QklUV29jMjhxcE9XZU1lZDdDQ0xPR3c5YkJHWDhuaTFXbXFwbTctdE5DYXhXaVNXVmJva3haUdIBowFBVV95cUxPVU9VX1BRX2dVcEFUQW8wSE9NaHRrclVCcVdEeDFhYWphQXhQclJmZ1NNaENEajI0Q0hYZXNWbTdGR3hUWTIza29ZbGhJX2ROQWw1VjhuR0xmMDJYUDVDRHl3MFlyN25aa1VFRnZJQ1RPTnhjSDFHZWpVME1lVE1DbXdDXy1hYmFNZU9PckNya1pUcGNhLUxMOUJGUkZNdy1MVm5F?oc=5",
-   "source": "ANTARA News",
+   "title": "This Dubai-Based Perfume Brand Created a Scent Inspired by Palawan and Calamansi",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBrellRX0Z4NG9rWkkzZTVTRDNxY3g0MlBRaHNQWnhuM2JrY1E2YUZhZGtlSGN5Vm40TjdnSXc4SDJWWXRWWkN5NXl4Z2xmZFRaUGdZaHNfWWIxVU1qMWhiX1ktSVZmVUVqV3BRc3ktMFBqelJoSml4d1Z1dWVCZw?oc=5",
+   "source": "Preview.ph",
    "date": "2026-10-13T07:00:00.000Z",
    "snippet": "",
    "brands": [],
    "communities": [
     "mena"
-   ],
-   "via": "google"
-  },
-  {
-   "title": "The Best Old-School Beauty Tips From Dolly Parton, Joan Crawford & More Hollywood Icons",
-   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQS1dqc2h6Wk1Qc2x5X2oyR2otZnBfTzdLQm56N3hRZUhCU2xxRWpPN21DWHJxX0ZYaUhSbVk3am1Nbk9kOXV0b2V4cFo2WVBOam9OWDhCZXQxWEJRa1FfWV91S2NrMHUtNVRZNXBaS1N6b3k2cFM1QVpQZUFUZGZiWFFERU1IY2lFMFVnR1M2bW5ObkM5LXpIeEl3YkZLRFF2cm1TRnRHVV9OcWRIOXF3?oc=5",
-   "source": "Glam",
-   "date": "2026-10-13T07:00:00.000Z",
-   "snippet": "",
-   "brands": [],
-   "communities": [
-    "multicultural"
    ],
    "via": "google"
   },
@@ -1911,78 +1984,6 @@
    ],
    "communities": [
     "east_asian"
-   ],
-   "via": "google"
-  },
-  {
-   "title": "This Dubai-Based Perfume Brand Created a Scent Inspired by Palawan and Calamansi",
-   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBrellRX0Z4NG9rWkkzZTVTRDNxY3g0MlBRaHNQWnhuM2JrY1E2YUZhZGtlSGN5Vm40TjdnSXc4SDJWWXRWWkN5NXl4Z2xmZFRaUGdZaHNfWWIxVU1qMWhiX1ktSVZmVUVqV3BRc3ktMFBqelJoSml4d1Z1dWVCZw?oc=5",
-   "source": "Preview.ph",
-   "date": "2026-10-13T03:19:59.000Z",
-   "snippet": "",
-   "brands": [],
-   "communities": [
-    "mena"
-   ],
-   "via": "google"
-  },
-  {
-   "title": "TRIED IT: The Potion Studio’s Control Potion Styling Gel Is A Gem For Natural Hair",
-   "url": "https://hellobeautiful.com/4604953/potion-studios-control-potion/",
-   "source": "HelloBeautiful",
-   "date": "2026-10-12T16:47:17.000Z",
-   "snippet": "The Potion Studio's Control Potion Styling Gel delivers soft, defined curls with lasting hold and hydration for textured hair without crunchiness or buildup.",
-   "brands": [],
-   "communities": [
-    "black"
-   ],
-   "via": "direct"
-  },
-  {
-   "title": "Katrina Kaif: Beyond Bollywood, The Beauty and Vision Behind Kay Beauty",
-   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPX1BIaEZvUHpVMjNUdTZzRTczcDJLRWhxbGRGOW5ZcFlEbGd4RzVoSDF1eUFCM3BSdlBieDRUR0pxbjIwSTBFcU9KU1NKakxEaXFKUnJ4ZUVCZEZlazJ2b0F3RHZua2U5czlWdG5qcFMwb1o3WEhjcFBTaFVvSVZEejVxc3BOM3RZUmUxczdfV1ppcW4teDB4WGtn?oc=5",
-   "source": "Luxurist Magazine",
-   "date": "2026-10-12T07:00:00.000Z",
-   "snippet": "",
-   "brands": [],
-   "communities": [
-    "south_asian"
-   ],
-   "via": "google"
-  },
-  {
-   "title": "Katrina Kaif marks Kay Beauty’s first year in the UK: “Weve always created products with South Asian skin tones and beauty needs at the heart of everything we do”",
-   "url": "https://news.google.com/rss/articles/CBMirwJBVV95cUxNQ1lQR1hJM1hIYXZZeWl1OWNnTkwzUjViWk0yZEF3eThvNEJtY0RJNHZfVlYzdUpyb2dnRlphbGJTNjdPVS00YVZ4dERIRWRzSTc0a1Atazh6NXBHd0tDYU10b3E5dEpRMXExSFJONm5sQkttOEVGRlJmVXdCbXVwY2RNSFFEVjJRTGdxbFN2eU9vT3FLbnVhWl9SYVUwQUtQUFVjWHlKYW1XME80T2RKREhvNUJ3OWFxd2UtcWE2TlYydEdLTUlyZ0pTVTg0MmdRZ2l1Q2h0TFR6RHh1QVZ3U3JnWkdDTDAzcDBOaHVlYWV3bF9lUE9ZNFF6OXJtZGx5VE5janJsNXMtQVNTemZQNEcwRTAtcVE0S05UeFFZS2d1WFEwUmdHSVZfTWU0bEnSAbQCQVVfeXFMUGI4ZE1femZPeDJpZU9kLWNZM3pGV1hLdDc2a2xRbERIV0QxR1lVUWRTMXB4YWJjaEhoQjBsREhLd1NSa0w4Tm1QWGt1WWhPUzdlM0RZV1FtVEJxWWNIcnRaTU04OXI1QVRLbzBoTHFpX1phaUVLdVk3WlR2cE5zZF9MOW1WNnhGcW90ZWxzLU1QcWdUdy10ejkwM3plNUFxN2p0UHBuV1hpWGNqQWtBZ1F4QnNmUlhZNHVVRUZCSkpqMUxSU09iRHdzYi1JVmlMTWFmWmxDSXpSeGhNb2cxMW1xOG9NWU13VmVscDBJVUxCT09RQ2hWTGU5R2Z2SW1xU000c0lQbldHQlRKRUNwZ2g4eEQwNk5GWlFhM3ZhLWotZWxIbV9JbHg3Z1pScU13SnNTbUc?oc=5",
-   "source": "Bollywood Hungama",
-   "date": "2026-10-12T07:00:00.000Z",
-   "snippet": "",
-   "brands": [],
-   "communities": [
-    "south_asian"
-   ],
-   "via": "google"
-  },
-  {
-   "title": "Katrina Kaif marks Kay Beauty’s first UK anniversary with Space NK event",
-   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQam03bUpmNE1KbkQ4SE1kamgtdmRvZ21mMWtOYXJKZjB5cjIwZGdBZnBNTUdEY09LTFN2SE90QTBXM2xERmg2THlhRWtKbWFWTkg5ZHRBNUFfSW5OVTdCTmxGS2J1VWE0aVRCUmxWUG5SOXNVam5BRDY5VUlCR1RWRTNEWU1PbnpMbE5RSF9hMlVTemE4M0xnOGRkZ1R0ejlMYVRzdDBJSWk?oc=5",
-   "source": "Indian Television Dot Com",
-   "date": "2026-10-12T07:00:00.000Z",
-   "snippet": "",
-   "brands": [],
-   "communities": [
-    "south_asian"
-   ],
-   "via": "google"
-  },
-  {
-   "title": "Beauty Updates: Grace & Stella’s Boots Debut & More",
-   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPM3U3VFgxeFB6ZXFxRFpkUjJKMnRlTGE0clhTT0lHNU1EMFBjSElNQ3BleUZuNExDU2pvbDBhWWR5YUxXUUJJTWd5Q2ZmeWJteTU0SXZoRlFCX25YeXZadnlhQnlfaEhiLVV3UWpacWRpVWtHeWR5MmFucVNBLU53V1Zod09meXpZV0Z3a3RmVEF1SzhK?oc=5",
-   "source": "BeautyNewsDaily",
-   "date": "2026-10-12T07:00:00.000Z",
-   "snippet": "",
-   "brands": [],
-   "communities": [
-    "south_asian"
    ],
    "via": "google"
   }
